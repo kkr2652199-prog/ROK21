@@ -1,0 +1,107 @@
+{
+  "label": "배선전",
+  "start_draw": 1132,
+  "end_draw": 1231,
+  "seed": 20260725,
+  "snapshot_restore_draw": 1131,
+  "reviewed": 100,
+  "skipped": 0,
+  "stat_avg_match": 1.7,
+  "stat_match_sum": 170,
+  "match_distribution": {
+    "0": 1,
+    "1": 40,
+    "2": 47,
+    "3": 12,
+    "4": 0,
+    "5": 0,
+    "6": 0
+  },
+  "stat_learn_state_end": {
+    "adjustments": {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.5,
+      "pair_boost": 0.5,
+      "consecutive_boost": 0.5,
+      "overdue_boost": 0.5,
+      "odd_even_balance": 0.5
+    },
+    "miss_counts": {
+      "ending_digit": 1232,
+      "odd_even": 358,
+      "consecutive": 338,
+      "pair": 62,
+      "carry_over": 207,
+      "overdue": 158
+    },
+    "review_count": 1269,
+    "last_draw_no": 1231,
+    "recent_avg_match": 1.691
+  },
+  "sample_last_3": [
+    {
+      "draw_no": 1229,
+      "matched_count": 1,
+      "best_set_no": 1,
+      "best_nums": [
+        3,
+        12,
+        14,
+        15,
+        26,
+        35
+      ],
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.5,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    },
+    {
+      "draw_no": 1230,
+      "matched_count": 1,
+      "best_set_no": 1,
+      "best_nums": [
+        8,
+        15,
+        18,
+        24,
+        29,
+        38
+      ],
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.5,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    },
+    {
+      "draw_no": 1231,
+      "matched_count": 1,
+      "best_set_no": 1,
+      "best_nums": [
+        9,
+        13,
+        15,
+        16,
+        28,
+        41
+      ],
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.5,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    }
+  ],
+  "learn_state_backup_note": "restored after measure"
+}

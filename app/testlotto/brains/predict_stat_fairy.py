@@ -40,7 +40,7 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
         out.append(
             {
                 "nums": sorted(nums),
-                "confidence": float(r.get("confidence", 70)),
+                "confidence": conf,
                 "reasoning": reasoning,
                 "method": "통계요정",
                 "brain_tag": "stat",
