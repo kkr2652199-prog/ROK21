@@ -4,22 +4,20 @@
 
 ## ?꾩옱 ?깆쟻 湲곗???(?レ옄濡?諛뺤젣)
 
-- **stat (?뚯감蹂?seed, 1132~1231)**: 0.5쨀 **1.71** ??異붿쿇 0.2/0.3/0.2 **1.75** (+0.04)
-- **stat (?뚯감蹂?seed, 2~1231)**: 0.5쨀 **1.6724** ??異붿쿇 **1.7171** (??궛 洹몃━??**?꾩쟾 ?ы쁽**)
-- **援?seed(1?? 1132~1231**: 0.5쨀쨌異붿쿇 紐⑤몢 **1.63** ??痢≪젙 ?꾨줈?좎퐳 臾몄젣(?먭린)
-- **諛깆뾽(?ш린濡앹쟾)**: `backups/20260725_?ш린濡앹쟾_DB?꾩껜/` 쨌 predictions 1245
-- **HEAD**: (?대쾲 push) 쨌 諛곗꽑??諛깆뾽 `fae01f67`
+- **boost ?곹븳**: carry=0.2, ending=0.3, overdue=0.2 (`learn_state.py` + `predict_statistical.py` clamp)
+- **stat ?숈쟻 WF (1132~1231, ?뚯감蹂?seed)**: avg **1.75** ??apply_feedback 寃쎈줈 ?뺤씤
+- **stat 怨좎젙 boost (?뚯감蹂?seed)**: 0.5쨀 1.71 ??異붿쿇 1.75 (1132~1231) 쨌 ?꾧뎄媛?1.6724??.7171
+- **lotto_predictions**: **1,245??* 쨌 83?뚯감(3, 1120~1232 ?쇰?) 쨌 stat/markov/review 媛?415 ??**20260725 ?ш린濡??꾨즺**
+- **諛깆뾽**: `backups/20260725_?ш린濡앹쟾_DB?꾩껜/` 쨌 諛곗꽑??`fae01f67`
 
 ## ?덈? 嫄대뱶由ъ? 留?寃?(湲덉? 紐⑸줉)
 
 - `random.choices` (`predict_statistical.py:187-188`) ??**B?④퀎 ???섏젙 湲덉?**
-- **DB쨌learn_state 吏곸젒 ?섏젙 湲덉?** (痢≪젙? READ-ONLY monkeypatch)
 - **諛깊뀒 而⑤떇 湲덉?** (`_get_draws_before`: target ?댁쟾 draws留?
 - R34: memoy=1~3援?쨌 kweon=4援??뚯뒪?몃줈??
 
 ## ?ㅼ쓬 ??嫄몄쓬
 
-- **4?④퀎**: boost ?④낵 ?뺤씤????`lotto_predictions` DELETE + walk-forward ?ш린濡?(諛깆뾽 ?좏뻾 ?좎?)
-- WF 3?④퀎 ?ъ륫????seed **?뚯감蹂?* (`20260725+draw횞9973`) ?꾩닔
-- boost ?곹븳: `learn_state.py` BOOST_CAPS 쨌 `predict_statistical.py` clamp
-- 蹂닿퀬?? `20260725_seed?뺣젹_boost?ш?利?md`
+- **B?④퀎(?좏깮)**: stat 寃곗젙濡좏솕 ??`random.choices` ???쒕뱶 怨좎젙 ?섑뵆留??먮뒗 ?泥?
+- UI?먯꽌 1232 stat 5?명듃쨌?ш린濡?predictions ?뺤긽 ?몄텧 ?뺤씤
+- 蹂닿퀬?? `20260725_?덉륫_珥덇린???ш린濡??꾨즺.md`

@@ -1,0 +1,862 @@
+{
+  "started_at": "2026-07-25T09:32:00.895113+00:00",
+  "step0_backup": {
+    "path": "D:\\3kweon\\backups\\20260725_재기록전_DB전체\\lotto_testlotto.db",
+    "size_bytes": 37974016
+  },
+  "step1_before": {
+    "total_rows": 1245,
+    "min_draw": 3,
+    "max_draw": 1232,
+    "distinct_draws": 83,
+    "draw_list": [
+      3,
+      1120,
+      1121,
+      1122,
+      1123,
+      1124,
+      1125,
+      1126,
+      1127,
+      1128,
+      1129,
+      1130,
+      1131,
+      1132,
+      1133,
+      1134,
+      1135,
+      1136,
+      1137,
+      1138,
+      1139,
+      1140,
+      1141,
+      1142,
+      1143,
+      1144,
+      1145,
+      1146,
+      1147,
+      1148,
+      1180,
+      1181,
+      1182,
+      1183,
+      1184,
+      1185,
+      1186,
+      1187,
+      1188,
+      1189,
+      1190,
+      1191,
+      1192,
+      1193,
+      1194,
+      1195,
+      1196,
+      1197,
+      1198,
+      1199,
+      1200,
+      1201,
+      1202,
+      1203,
+      1204,
+      1205,
+      1206,
+      1207,
+      1208,
+      1209,
+      1210,
+      1211,
+      1212,
+      1213,
+      1214,
+      1215,
+      1216,
+      1217,
+      1218,
+      1219,
+      1220,
+      1221,
+      1222,
+      1223,
+      1224,
+      1225,
+      1226,
+      1227,
+      1228,
+      1229,
+      1230,
+      1231,
+      1232
+    ],
+    "by_tag": {
+      "markov": 415,
+      "review": 415,
+      "stat": 415
+    }
+  },
+  "step2_dynamic": {
+    "start_draw": 1132,
+    "end_draw": 1231,
+    "seed_formula": "20260725 + draw_no * 9973",
+    "path": "dynamic apply_feedback",
+    "reviewed": 100,
+    "stat_avg_match": 1.75,
+    "stat_end_adjustments": {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "pair_boost": 0.5,
+      "consecutive_boost": 0.5,
+      "overdue_boost": 0.2,
+      "odd_even_balance": 0.5
+    }
+  },
+  "step3_delete": {
+    "deleted_rows": 1245,
+    "remaining": 0
+  },
+  "step4_logs": [
+    {
+      "draw_no": 3,
+      "index": 1,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1120,
+      "index": 2,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1121,
+      "index": 3,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1122,
+      "index": 4,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1123,
+      "index": 5,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1124,
+      "index": 6,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1125,
+      "index": 7,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1126,
+      "index": 8,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1127,
+      "index": 9,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1128,
+      "index": 10,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1129,
+      "index": 11,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1130,
+      "index": 12,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1131,
+      "index": 13,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1132,
+      "index": 14,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1133,
+      "index": 15,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1134,
+      "index": 16,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1135,
+      "index": 17,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1136,
+      "index": 18,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1137,
+      "index": 19,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1138,
+      "index": 20,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1139,
+      "index": 21,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1140,
+      "index": 22,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1141,
+      "index": 23,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1142,
+      "index": 24,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1143,
+      "index": 25,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1144,
+      "index": 26,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1145,
+      "index": 27,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1146,
+      "index": 28,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1147,
+      "index": 29,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1148,
+      "index": 30,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1180,
+      "index": 31,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1181,
+      "index": 32,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1182,
+      "index": 33,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1183,
+      "index": 34,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1184,
+      "index": 35,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1185,
+      "index": 36,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1186,
+      "index": 37,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1187,
+      "index": 38,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1188,
+      "index": 39,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1189,
+      "index": 40,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1190,
+      "index": 41,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1191,
+      "index": 42,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1192,
+      "index": 43,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1193,
+      "index": 44,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1194,
+      "index": 45,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1195,
+      "index": 46,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1196,
+      "index": 47,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1197,
+      "index": 48,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1198,
+      "index": 49,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1199,
+      "index": 50,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1200,
+      "index": 51,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1201,
+      "index": 52,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1202,
+      "index": 53,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1203,
+      "index": 54,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1204,
+      "index": 55,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1205,
+      "index": 56,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1206,
+      "index": 57,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1207,
+      "index": 58,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1208,
+      "index": 59,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1209,
+      "index": 60,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1210,
+      "index": 61,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1211,
+      "index": 62,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1212,
+      "index": 63,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1213,
+      "index": 64,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1214,
+      "index": 65,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1215,
+      "index": 66,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1216,
+      "index": 67,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1217,
+      "index": 68,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1218,
+      "index": 69,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1219,
+      "index": 70,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1220,
+      "index": 71,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1221,
+      "index": 72,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1222,
+      "index": 73,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1223,
+      "index": 74,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1224,
+      "index": 75,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1225,
+      "index": 76,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1226,
+      "index": 77,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1227,
+      "index": 78,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1228,
+      "index": 79,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1229,
+      "index": 80,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1230,
+      "index": 81,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1231,
+      "index": 82,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "draw_no": 1232,
+      "index": 83,
+      "total": 83,
+      "error": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    }
+  ],
+  "step5_after": {
+    "total_rows": 1245,
+    "min_draw": 3,
+    "max_draw": 1232,
+    "distinct_draws": 83,
+    "draw_list": [
+      3,
+      1120,
+      1121,
+      1122,
+      1123,
+      1124,
+      1125,
+      1126,
+      1127,
+      1128,
+      1129,
+      1130,
+      1131,
+      1132,
+      1133,
+      1134,
+      1135,
+      1136,
+      1137,
+      1138,
+      1139,
+      1140,
+      1141,
+      1142,
+      1143,
+      1144,
+      1145,
+      1146,
+      1147,
+      1148,
+      1180,
+      1181,
+      1182,
+      1183,
+      1184,
+      1185,
+      1186,
+      1187,
+      1188,
+      1189,
+      1190,
+      1191,
+      1192,
+      1193,
+      1194,
+      1195,
+      1196,
+      1197,
+      1198,
+      1199,
+      1200,
+      1201,
+      1202,
+      1203,
+      1204,
+      1205,
+      1206,
+      1207,
+      1208,
+      1209,
+      1210,
+      1211,
+      1212,
+      1213,
+      1214,
+      1215,
+      1216,
+      1217,
+      1218,
+      1219,
+      1220,
+      1221,
+      1222,
+      1223,
+      1224,
+      1225,
+      1226,
+      1227,
+      1228,
+      1229,
+      1230,
+      1231,
+      1232
+    ],
+    "by_tag": {
+      "markov": 415,
+      "review": 415,
+      "stat": 415
+    }
+  },
+  "step5_alignment": {
+    "pred_distinct": 83,
+    "review_distinct": 1230,
+    "pred_not_in_review": [
+      1232
+    ]
+  },
+  "step5_stat_1232": [
+    {
+      "num1": 1,
+      "num2": 11,
+      "num3": 27,
+      "num4": 30,
+      "num5": 34,
+      "num6": 41,
+      "confidence": 54.5,
+      "brain_tag": "stat"
+    },
+    {
+      "num1": 3,
+      "num2": 19,
+      "num3": 22,
+      "num4": 26,
+      "num5": 28,
+      "num6": 31,
+      "confidence": 53.6,
+      "brain_tag": "stat"
+    },
+    {
+      "num1": 13,
+      "num2": 18,
+      "num3": 21,
+      "num4": 23,
+      "num5": 30,
+      "num6": 31,
+      "confidence": 53.2,
+      "brain_tag": "stat"
+    },
+    {
+      "num1": 4,
+      "num2": 6,
+      "num3": 14,
+      "num4": 17,
+      "num5": 29,
+      "num6": 33,
+      "confidence": 51.2,
+      "brain_tag": "stat"
+    },
+    {
+      "num1": 2,
+      "num2": 3,
+      "num3": 13,
+      "num4": 15,
+      "num5": 27,
+      "num6": 33,
+      "confidence": 44.4,
+      "brain_tag": "stat"
+    }
+  ],
+  "finished_at": "2026-07-25T09:33:02.379488+00:00"
+}
