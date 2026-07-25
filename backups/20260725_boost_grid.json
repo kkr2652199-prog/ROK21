@@ -1,0 +1,1056 @@
+{
+  "method": "offline grid re-score READ-ONLY (optimized)",
+  "boost_values": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.5
+  ],
+  "draws_used": 1230,
+  "draw_range": [
+    2,
+    1231
+  ],
+  "seed_per_draw": "random.seed(20260725 + draw_no * 9973)",
+  "miss_counts_source": "weight_snapshot stat at draw_no-1",
+  "total_combos": 125,
+  "elapsed_sec": 103.6,
+  "current_all_0.5": {
+    "carry_over_boost": 0.5,
+    "ending_digit_boost": 0.5,
+    "overdue_boost": 0.5,
+    "avg_match": 1.6724,
+    "match_sum": 2057,
+    "reviewed": 1230
+  },
+  "current_rank": 124,
+  "top3": [
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7171,
+      "match_sum": 2112,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7138,
+      "match_sum": 2108,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.3,
+      "avg_match": 1.7138,
+      "match_sum": 2108,
+      "reviewed": 1230
+    }
+  ],
+  "all_combos": [
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7171,
+      "match_sum": 2112,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7138,
+      "match_sum": 2108,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.3,
+      "avg_match": 1.7138,
+      "match_sum": 2108,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.0,
+      "avg_match": 1.713,
+      "match_sum": 2107,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7098,
+      "match_sum": 2103,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7098,
+      "match_sum": 2103,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7089,
+      "match_sum": 2102,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.0,
+      "avg_match": 1.7081,
+      "match_sum": 2101,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.3,
+      "avg_match": 1.7081,
+      "match_sum": 2101,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7081,
+      "match_sum": 2101,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.3,
+      "avg_match": 1.7065,
+      "match_sum": 2099,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.5,
+      "avg_match": 1.7065,
+      "match_sum": 2099,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7065,
+      "match_sum": 2099,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7057,
+      "match_sum": 2098,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7057,
+      "match_sum": 2098,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.0,
+      "avg_match": 1.7057,
+      "match_sum": 2098,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.5,
+      "avg_match": 1.7057,
+      "match_sum": 2098,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7057,
+      "match_sum": 2098,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.5,
+      "avg_match": 1.7049,
+      "match_sum": 2097,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.0,
+      "avg_match": 1.7049,
+      "match_sum": 2097,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.5,
+      "avg_match": 1.7041,
+      "match_sum": 2096,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.3,
+      "avg_match": 1.7041,
+      "match_sum": 2096,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7041,
+      "match_sum": 2096,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.0,
+      "avg_match": 1.7033,
+      "match_sum": 2095,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7033,
+      "match_sum": 2095,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.5,
+      "avg_match": 1.7033,
+      "match_sum": 2095,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7024,
+      "match_sum": 2094,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.5,
+      "avg_match": 1.7024,
+      "match_sum": 2094,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.0,
+      "avg_match": 1.7024,
+      "match_sum": 2094,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.5,
+      "avg_match": 1.7016,
+      "match_sum": 2093,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2,
+      "avg_match": 1.7016,
+      "match_sum": 2093,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.3,
+      "avg_match": 1.7016,
+      "match_sum": 2093,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7016,
+      "match_sum": 2093,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.3,
+      "avg_match": 1.7016,
+      "match_sum": 2093,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.0,
+      "avg_match": 1.7008,
+      "match_sum": 2092,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.3,
+      "avg_match": 1.7008,
+      "match_sum": 2092,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7008,
+      "match_sum": 2092,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.1,
+      "avg_match": 1.7008,
+      "match_sum": 2092,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.0,
+      "avg_match": 1.7,
+      "match_sum": 2091,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6992,
+      "match_sum": 2090,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6992,
+      "match_sum": 2090,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6992,
+      "match_sum": 2090,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6984,
+      "match_sum": 2089,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6984,
+      "match_sum": 2089,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6984,
+      "match_sum": 2089,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6984,
+      "match_sum": 2089,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6984,
+      "match_sum": 2089,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6976,
+      "match_sum": 2088,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6976,
+      "match_sum": 2088,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6967,
+      "match_sum": 2087,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6959,
+      "match_sum": 2086,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6959,
+      "match_sum": 2086,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6959,
+      "match_sum": 2086,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6951,
+      "match_sum": 2085,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6951,
+      "match_sum": 2085,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6951,
+      "match_sum": 2085,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6943,
+      "match_sum": 2084,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6943,
+      "match_sum": 2084,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6943,
+      "match_sum": 2084,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6943,
+      "match_sum": 2084,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6943,
+      "match_sum": 2084,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6943,
+      "match_sum": 2084,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6935,
+      "match_sum": 2083,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6935,
+      "match_sum": 2083,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6927,
+      "match_sum": 2082,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6927,
+      "match_sum": 2082,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6919,
+      "match_sum": 2081,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6911,
+      "match_sum": 2080,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6902,
+      "match_sum": 2079,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6902,
+      "match_sum": 2079,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6902,
+      "match_sum": 2079,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6894,
+      "match_sum": 2078,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6894,
+      "match_sum": 2078,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6894,
+      "match_sum": 2078,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6894,
+      "match_sum": 2078,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6886,
+      "match_sum": 2077,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6886,
+      "match_sum": 2077,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6886,
+      "match_sum": 2077,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6886,
+      "match_sum": 2077,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6886,
+      "match_sum": 2077,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6886,
+      "match_sum": 2077,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6878,
+      "match_sum": 2076,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6878,
+      "match_sum": 2076,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6878,
+      "match_sum": 2076,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6878,
+      "match_sum": 2076,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.1,
+      "avg_match": 1.687,
+      "match_sum": 2075,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.1,
+      "avg_match": 1.687,
+      "match_sum": 2075,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.2,
+      "avg_match": 1.687,
+      "match_sum": 2075,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.2,
+      "avg_match": 1.687,
+      "match_sum": 2075,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6862,
+      "match_sum": 2074,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6862,
+      "match_sum": 2074,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6854,
+      "match_sum": 2073,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6854,
+      "match_sum": 2073,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6854,
+      "match_sum": 2073,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6854,
+      "match_sum": 2073,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6854,
+      "match_sum": 2073,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6846,
+      "match_sum": 2072,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6846,
+      "match_sum": 2072,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6846,
+      "match_sum": 2072,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6846,
+      "match_sum": 2072,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6837,
+      "match_sum": 2071,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6837,
+      "match_sum": 2071,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.1,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6837,
+      "match_sum": 2071,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6837,
+      "match_sum": 2071,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6837,
+      "match_sum": 2071,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6829,
+      "match_sum": 2070,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6829,
+      "match_sum": 2070,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6829,
+      "match_sum": 2070,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6829,
+      "match_sum": 2070,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6821,
+      "match_sum": 2069,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6813,
+      "match_sum": 2068,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6813,
+      "match_sum": 2068,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.3,
+      "avg_match": 1.6805,
+      "match_sum": 2067,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6805,
+      "match_sum": 2067,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6805,
+      "match_sum": 2067,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.2,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6797,
+      "match_sum": 2066,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6797,
+      "match_sum": 2066,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.2,
+      "avg_match": 1.678,
+      "match_sum": 2064,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.5,
+      "avg_match": 1.678,
+      "match_sum": 2064,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.2,
+      "avg_match": 1.6772,
+      "match_sum": 2063,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.0,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6756,
+      "match_sum": 2061,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.0,
+      "avg_match": 1.6732,
+      "match_sum": 2058,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.0,
+      "ending_digit_boost": 0.1,
+      "overdue_boost": 0.1,
+      "avg_match": 1.6732,
+      "match_sum": 2058,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6724,
+      "match_sum": 2057,
+      "reviewed": 1230
+    },
+    {
+      "carry_over_boost": 0.3,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.5,
+      "avg_match": 1.6659,
+      "match_sum": 2049,
+      "reviewed": 1230
+    }
+  ]
+}
