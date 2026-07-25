@@ -1,0 +1,191 @@
+{
+  "measured_at": "2026-07-25T09:25:07.871873+00:00",
+  "method": "READ-ONLY fixed boost + per-draw seed (grid-aligned)",
+  "db_writes": 0,
+  "conditions": [
+    {
+      "key": "current_0.5",
+      "carry": 0.5,
+      "ending": 0.5,
+      "overdue": 0.5
+    },
+    {
+      "key": "recommended",
+      "carry": 0.2,
+      "ending": 0.3,
+      "overdue": 0.2
+    }
+  ],
+  "seed_formula": "random.seed(20260725 + draw_no * 9973)",
+  "miss_counts_source": "weight_snapshot stat at draw_no-1",
+  "results": [
+    {
+      "label": "current_0.5_1132_1231",
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.5,
+      "start_draw": 1132,
+      "end_draw": 1231,
+      "seed_formula": "20260725 + draw_no * 9973",
+      "reviewed": 100,
+      "skipped": 0,
+      "stat_avg_match": 1.71,
+      "stat_match_sum": 171,
+      "match_distribution": {
+        "0": 0,
+        "1": 45,
+        "2": 40,
+        "3": 14,
+        "4": 1,
+        "5": 0,
+        "6": 0
+      },
+      "sample_last_3": [
+        {
+          "draw_no": 1229,
+          "seed": 32517542,
+          "matched_count": 1,
+          "best_set_no": 2
+        },
+        {
+          "draw_no": 1230,
+          "seed": 32527515,
+          "matched_count": 4,
+          "best_set_no": 4
+        },
+        {
+          "draw_no": 1231,
+          "seed": 32537488,
+          "matched_count": 1,
+          "best_set_no": 2
+        }
+      ]
+    },
+    {
+      "label": "recommended_1132_1231",
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2,
+      "start_draw": 1132,
+      "end_draw": 1231,
+      "seed_formula": "20260725 + draw_no * 9973",
+      "reviewed": 100,
+      "skipped": 0,
+      "stat_avg_match": 1.75,
+      "stat_match_sum": 175,
+      "match_distribution": {
+        "0": 3,
+        "1": 33,
+        "2": 51,
+        "3": 12,
+        "4": 1,
+        "5": 0,
+        "6": 0
+      },
+      "sample_last_3": [
+        {
+          "draw_no": 1229,
+          "seed": 32517542,
+          "matched_count": 1,
+          "best_set_no": 4
+        },
+        {
+          "draw_no": 1230,
+          "seed": 32527515,
+          "matched_count": 3,
+          "best_set_no": 3
+        },
+        {
+          "draw_no": 1231,
+          "seed": 32537488,
+          "matched_count": 1,
+          "best_set_no": 1
+        }
+      ]
+    },
+    {
+      "label": "current_0.5_2_1231",
+      "carry_over_boost": 0.5,
+      "ending_digit_boost": 0.5,
+      "overdue_boost": 0.5,
+      "start_draw": 2,
+      "end_draw": 1231,
+      "seed_formula": "20260725 + draw_no * 9973",
+      "reviewed": 1230,
+      "skipped": 0,
+      "stat_avg_match": 1.6724,
+      "stat_match_sum": 2057,
+      "match_distribution": {
+        "0": 20,
+        "1": 503,
+        "2": 575,
+        "3": 124,
+        "4": 8,
+        "5": 0,
+        "6": 0
+      },
+      "sample_last_3": [
+        {
+          "draw_no": 1229,
+          "seed": 32517542,
+          "matched_count": 1,
+          "best_set_no": 2
+        },
+        {
+          "draw_no": 1230,
+          "seed": 32527515,
+          "matched_count": 4,
+          "best_set_no": 4
+        },
+        {
+          "draw_no": 1231,
+          "seed": 32537488,
+          "matched_count": 1,
+          "best_set_no": 2
+        }
+      ]
+    },
+    {
+      "label": "recommended_2_1231",
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2,
+      "start_draw": 2,
+      "end_draw": 1231,
+      "seed_formula": "20260725 + draw_no * 9973",
+      "reviewed": 1230,
+      "skipped": 0,
+      "stat_avg_match": 1.7171,
+      "stat_match_sum": 2112,
+      "match_distribution": {
+        "0": 19,
+        "1": 466,
+        "2": 596,
+        "3": 142,
+        "4": 7,
+        "5": 0,
+        "6": 0
+      },
+      "sample_last_3": [
+        {
+          "draw_no": 1229,
+          "seed": 32517542,
+          "matched_count": 1,
+          "best_set_no": 4
+        },
+        {
+          "draw_no": 1230,
+          "seed": 32527515,
+          "matched_count": 3,
+          "best_set_no": 3
+        },
+        {
+          "draw_no": 1231,
+          "seed": 32537488,
+          "matched_count": 1,
+          "best_set_no": 1
+        }
+      ]
+    }
+  ]
+}

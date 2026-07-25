@@ -4,21 +4,22 @@
 
 ## 현재 성적 기준선 (숫자로 박제)
 
-- **stat 평균 적중 (1132~1231, seed=20260725 1회)**: 배선전 **1.70** → A배선(0.5³) **1.63** → boost상한적용 후 **1.63** (개선 없음)
-- **역산 그리드 (회차별 seed, 2~1231)**: 0.5³ **1.6724** → 추천 0.2/0.3/0.2 **1.7171**
-- **백업(재기록전)**: `backups/20260725_재기록전_DB전체/` · review 3689 · predictions 1245
-- **A배선+boost코드 HEAD**: (이번 push) · **배선전 백업**: `fae01f67`
+- **stat (회차별 seed, 1132~1231)**: 0.5³ **1.71** → 추천 0.2/0.3/0.2 **1.75** (+0.04)
+- **stat (회차별 seed, 2~1231)**: 0.5³ **1.6724** → 추천 **1.7171** (역산 그리드 **완전 재현**)
+- **구 seed(1회) 1132~1231**: 0.5³·추천 모두 **1.63** — 측정 프로토콜 문제(폐기)
+- **백업(재기록전)**: `backups/20260725_재기록전_DB전체/` · predictions 1245
+- **HEAD**: (이번 push) · 배선전 백업 `fae01f67`
 
 ## 절대 건드리지 말 것 (금지 목록)
 
 - `random.choices` (`predict_statistical.py:187-188`) — **B단계 전 수정 금지**
-- **DB·learn_state 직접 수정 금지** (measure 스크립트는 측정 후 원복 필수)
+- **DB·learn_state 직접 수정 금지** (측정은 READ-ONLY monkeypatch)
 - **백테 컨닝 금지** (`_get_draws_before`: target 이전 draws만)
 - R34: memoy=1~3군 · kweon=4군/테스트로또
 
 ## 다음 한 걸음
 
-- **3단계 재검증**: `_measure_stat_wf_range.py` seed를 역산과 동일(`20260725+draw×9973`)으로 정렬 후 1132~1231 재측정
-- **통과 기준**: avg **> 1.67** (이번 1.63으로 4단계 재기록 **중단됨**)
-- boost 상한 코드 적용됨: `learn_state.py` BOOST_CAPS · `predict_statistical.py` clamp
-- 보고서: `My_Drive_Sync/커서보고서/20260725_boost적용_재기록_결과.md`
+- **4단계**: boost 효과 확인됨 → `lotto_predictions` DELETE + walk-forward 재기록 (백업 선행 유지)
+- WF 3단계 재측정 시 seed **회차별** (`20260725+draw×9973`) 필수
+- boost 상한: `learn_state.py` BOOST_CAPS · `predict_statistical.py` clamp
+- 보고서: `20260725_seed정렬_boost재검증.md`
