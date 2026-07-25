@@ -1,0 +1,125 @@
+# 테스트로또 실동작 진단 (READ-ONLY 실행)
+
+- **일시**: 2026-07-25 (KST)
+- **저장소**: kweon (`d:\3kweon`)
+- **규칙**: 코드·DB·learn_state 수정 없음. 예측 함수 메모리 호출 + SQLite `mode=ro` 조회만.
+- **입력**: `target_draw_no=1232` 예측 시나리오 — `_get_draws_before(1232)` → draws **1,231**회 (마지막 `draw_no=1231`)
+
+---
+
+## 1) 결정론 테스트 — 통계요정(stat) 3회 연속
+
+`predict_stat_fairy.predict_sets(draws, 5)` 동일 draws로 3회 호출.
+
+| run | set1 nums | set1 confidence |
+|-----|-----------|-----------------|
+| 1 | `[7, 15, 16, 24, 34, 35]` | 96.5 |
+| 2 | `[4, 15, 21, 34, 35, 38]` | 96.1 |
+| 3 | `[3, 18, 28, 29, 36, 45]` | 96.4 |
+
+- **3회 set1 nums 동일?** **아니오** (`determinism_all_identical=false`)
+- run1 전체 5세트 ≠ run2 ≠ run3 (매 run마다 5세트 전부 상이)
+
+**소견**: `_statistical_predict` 내부 `random.choices`(`predict_statistical.py:187-188`) 때문에 **비결정론**. 동일 입력이라도 호출마다 번호가 바뀜 → 랜덤 희석 **실측 확인**.
+
+---
+
+## 2) learn_state 반영 실측
+
+### DB `testlotto_brain_learn_state` — stat (READ-ONLY)
+
+```json
+{
+  "adjustments": {
+    "carry_over_boost": 0.5,
+    "ending_digit_boost": 0.5,
+    "pair_boost": 0.5,
+    "consecutive_boost": 0.5,
+    "overdue_boost": 0.5,
+    "odd_even_balance": 0.5
+  },
+  "miss_counts": {
+    "ending_digit": 1231,
+    "odd_even": 359,
+    "consecutive": 337,
+    "pair": 62,
+    "carry_over": 214,
+    "overdue": 162
+  },
+  "review_count": 1269,
+  "last_draw_no": 1231,
+  "recent_avg_match": 1.6878
+}
+```
+
+→ adjustments **6키 모두 0.5** (0 아님). `any_adj_nonzero=true`.
+
+### 동일 호출 1회 내 base vs fairy 번호 (런타임 후킹, DB 미기록)
+
+`_statistical_predict` 1회 캡처 vs 그 직후 `predict_sets` 출력:
+
+| set | base nums == fairy nums | base_conf | fairy_conf |
+|-----|-------------------------|-----------|------------|
+| 1 | **True** | 97.9 | 97.9 |
+| 2 | **True** | 95.7 | 95.7 |
+| 3 | **True** | 94.3 | 94.3 |
+| 4 | **True** | 88.8 | 88.8 |
+| 5 | **True** | 87.4 | 87.4 |
+
+- **`within_call_identical=true`** — fairy는 base 번호를 **그대로** 사용.
+- reasoning에 `[학습조정 이월×1.50 끝수×1.50]` 문자열 포함 확인.
+- `predict_stat_fairy.py:43` — 출력 `confidence`가 계산된 `conf`가 아니라 **`r.get("confidence")` 재사용** → carry_boost로 올린 conf도 **출력에 반영 안 됨**(코드 버그 수준).
+
+**소견**: learn_state adj **0.5로 존재**하나 **번호(freq/weights) 경로 미연결 실측 확인**. reasoning만 adj 표기, conf boost 로직도 출력 필드에 미반영(`:43`). **「freq 미연결」 추정 = 사실**.
+
+---
+
+## 3) 3뇌 실동작 상태
+
+동일 draws, 각 `predict_sets(draws, 5)` 1회:
+
+| 뇌 | ok | count | set1 nums | brain_tag | error |
+|----|-----|-------|-----------|-----------|-------|
+| 통계요정 | ✅ | 5 | `[14, 18, 28, 29, 35, 41]` | stat | — |
+| 흐름술사 | ✅ | 5 | `[6, 8, 13, 30, 39, 40]` | markov | — |
+| 복습왕 | ✅ | 5 | `[19, 28, 35, 36, 38, 40]` | review | — |
+
+**소견**: 3뇌 모두 **에러·빈값 없이** 5세트 정상 반환.
+
+---
+
+## 4) 데이터 출처 — brain_review vs lotto_predictions
+
+SQLite READ-ONLY (`data/lotto_testlotto.db`):
+
+| 테이블 | 총 행수 | MAX 회차 | MIN 회차 | DISTINCT 회차 |
+|--------|---------|----------|----------|---------------|
+| `testlotto_brain_review` | **3,689** | **1231** | 2 | **1,230** |
+| `lotto_predictions` | **1,245** | **1232** | 3 | **83** |
+
+**태그별 MAX 회차**
+
+| brain_tag | review cnt / max_d | predictions cnt / max_d |
+|-----------|-------------------|-------------------------|
+| stat | 1,230 / 1231 | 415 / 1232 |
+| markov | 1,229 / 1231 | 415 / 1232 |
+| review | 1,230 / 1231 | 415 / 1232 |
+
+- **`max_draw_match=false`** (review 1231 vs predictions 1232)
+- 행수·distinct 회차 **대량 불일치** (3689 vs 1245, 1230 vs 83)
+
+**소견**: 상세(walk-forward·`brain_review`)와 `lotto_predictions`(coordinator INSERT 구간)는 **별 SSOT**. UI 상세는 review/page 쪽, 예측 API 잔존물은 predictions — **동기화 가정하면 안 됨**.
+
+---
+
+## 종합 소견 (3~5줄)
+
+1. **결정론**: stat 3회 연속 번호 전부 다름 → random 샘플링으로 **재현 불가** 확인.
+2. **learn_state**: DB adj 0.5 존재하나 **번호는 `_statistical_predict` 결과와 1:1 동일** — freq 미연결 **실측 확정**.
+3. **3뇌**: stat/markov/review 모두 5세트 정상 — **엔진 죽음 없음**.
+4. **데이터**: `brain_review`(1231회·3689행) ≠ `lotto_predictions`(1232 max·83 distinct) — **출처 분리** 확인.
+5. **다음**: `predict_statistical.py:174-177` learn_state→weights 배선 적용 후 WF 재측정(별 작업, DB 쓰기).
+
+---
+
+*READ-ONLY 진단 — 코드·DB·learn_state 변경 없음.*
