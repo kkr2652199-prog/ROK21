@@ -21,6 +21,16 @@ DEFAULT_ADJUSTMENTS: dict[str, float] = {
 
 PREDICT_BRAIN_TAGS = ("stat", "markov", "review")
 
+# stat 오답패턴 boost 상한 (역산 1위: carry=0.2, ending=0.3, overdue=0.2)
+BOOST_CAPS: dict[str, float] = {
+    "carry_over_boost": 0.2,
+    "ending_digit_boost": 0.3,
+    "overdue_boost": 0.2,
+    "pair_boost": 0.5,
+    "consecutive_boost": 0.5,
+    "odd_even_balance": 0.5,
+}
+
 
 def _empty_state() -> dict[str, Any]:
     return {
@@ -116,7 +126,8 @@ def apply_feedback(
                 "odd_even": "odd_even_balance",
             }.get(pattern)
             if boost_key:
-                adj[boost_key] = min(0.5, float(adj.get(boost_key, 0)) + 0.05)
+                cap = BOOST_CAPS.get(boost_key, 0.5)
+                adj[boost_key] = min(cap, float(adj.get(boost_key, 0)) + 0.05)
 
     rc = int(state.get("review_count", 0)) + 1
     prev_avg = float(state.get("recent_avg_match", 0.0))
