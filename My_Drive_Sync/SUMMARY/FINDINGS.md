@@ -5,9 +5,11 @@
 
 | ID | 상태 | 요약 | 위치 | 비고 |
 |----|------|------|------|------|
-| K-00 | OPEN | 4군 정밀분석 미착수 | app/lotto4/ | 분석 후 K-A~ 채움 |
-| K-01 | OPEN | STATUS_LATEST 최신화 지연(07-18 vs RESUME 07-25) | SUMMARY/ | 운영 |
-| K-02 | OPEN | STATUS/RESUME .md·.txt 이중 사본(sha 동일) | SUMMARY/ | 동기화 or 단일화 |
-| K-03 | OPEN | app/lotto·lotto2 소속 미확인 | app/ | MAP.md로 확정 |
-| K-04 | OPEN | .gitignore 부재(현재) | 루트 | STEP1에서 신설 |
-| K-05 | OPEN | public 레포·90MB·data/*.db 추적 | 루트 | 형 승인 후 결정 |
+| K-00 | OPEN | 4군 정밀분석 미착수 | `app/lotto4/` | 분석 후 K-A~ 채움 |
+| K-01 | CLOSED | STATUS_LATEST 최신화 지연 | `My_Drive_Sync/SUMMARY/STATUS_LATEST.md` | 20260726 갱신 (07-25 재기록+07-26 인프라/UI 반영) |
+| K-02 | OPEN | STATUS/RESUME .md·.txt 이중 사본 | `My_Drive_Sync/SUMMARY/` | 갱신 시 양쪽 동기화 유지 |
+| K-03 | CLOSED | app/lotto·lotto2 = 1~2군 레거시 잔존 | `app/lotto/`, `app/lotto2/` | main_v13 router 미등록 · init/scheduler만 공유 (STEP0 20260726) |
+| K-04 | CLOSED | .gitignore 신설 | 루트 `.gitignore` | 커밋 `0a1a55c` (20260726) |
+| K-05 | OPEN | public 레포·tracked *.db ~306MB | `data/*.db`, `data/combos/` | 24 files · 320,983,040 byte (20260726 실측) · 형 승인 전 untrack 금지 |
+| K-06 | OPEN | per-draw fan-out 미구현 | `app/lotto/draw_scheduler.py` | 스케줄러→`collect_latest_forward` lotto4.db만 · testlotto/hyodo 미연동 · draws gap lotto4=1234 vs testlotto/hyodo=1231 |
+| K-07 | OPEN | fetch-latest 수동복구 필요 | `app/testlotto/routes.py` `/fetch-latest`, `app/hyodo/routes.py` `/fetch-latest` | `fetch_latest_draw()` UI/API 수동 · 1232~1234 testlotto draws 미동기(20260726 실측) |
