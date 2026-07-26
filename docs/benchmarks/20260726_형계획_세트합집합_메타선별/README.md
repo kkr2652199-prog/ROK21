@@ -35,6 +35,17 @@
 → 단독 Vote≥2는 best세트보다 열세 → 다음 **하이브리드 / Vote≥3 / cover=6 규칙**.  
 파일: `vote2_wf_summary.json` · `tools/run_meta_vote2_wf.py`
 
+## PIN 실행 결과 (20260726 P0~P5)
+| Phase | 결과 |
+|-------|------|
+| P1 hybrid | seed/meta **0.80** vs oracle **2.22** · **pass_p1=false** · UI deferred |
+| P2 cover6 | best rule `hist_only` hit~0.94 on cover6; all-WF meta still ~0.77 |
+| P3 swarm | **KEEP L_ending** (lift +0.024); 나머지 REJECT |
+| P4 KPI | unique~36.5 · cover6 27.9% · Jaccard 0.10 · **gate_pass** |
+| P5 API | `GET/POST /api/testlotto/meta/*` · ui_enabled=false until pass |
+
+문서: [PINNED_PLAN.md](PINNED_PLAN.md)
+
 ## 유사과거 (컨닝금지)
 - `tools/scout_similar_past_patterns.py` · 최근20회 샘플 avg 유사과거 ~30.2 · top15∩actual ~1.8  
 - 검색·past_next는 **target 이전만**

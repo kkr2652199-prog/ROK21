@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "n_draws": 1233,
+  "avg_unique_pool": 36.5264,
+  "cover6_rate": 0.279,
+  "avg_pairwise_jaccard": 0.0976,
+  "gate": {
+    "min_avg_unique_pool": 20.0,
+    "min_cover6_rate": 0.25,
+    "max_avg_pairwise_jaccard": 0.45
+  },
+  "gate_pass_current_baseline": true,
+  "brain_add_rule": "새 뇌 추가 후 avg_unique≥min AND cover6_rate≥min AND avg_jaccard≤max. 하나라도 악화(unique↓ cover6↓ jaccard↑)면 거부.",
+  "window_last100": {
+    "n": 100,
+    "avg_unique_pool": 36.67,
+    "cover6_rate": 0.23,
+    "avg_pairwise_jaccard": 0.0955
+  },
+  "note": "현재 3뇌 베이스라인. Track C 진입 전 이 KPI로 게이트."
+}

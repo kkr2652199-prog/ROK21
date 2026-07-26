@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "no_peek": true,
+  "lenses": {
+    "L_struct": {
+      "n": 1184,
+      "avg_overlap_top6": 0.7542,
+      "avg_overlap_top15": 1.7179,
+      "avg_baseline_hist_top6": 0.7728,
+      "lift_vs_hist_top6": -0.0186,
+      "avg_similar_past_count": 13.26,
+      "keep": false,
+      "verdict": "REJECT"
+    },
+    "L_ending": {
+      "n": 1184,
+      "avg_overlap_top6": 0.7965,
+      "avg_overlap_top15": 1.9527,
+      "avg_baseline_hist_top6": 0.7728,
+      "lift_vs_hist_top6": 0.0236,
+      "avg_similar_past_count": 127.35,
+      "keep": true,
+      "verdict": "KEEP"
+    },
+    "L_gap": {
+      "n": 1184,
+      "avg_overlap_top6": 0.7787,
+      "avg_overlap_top15": 1.9392,
+      "avg_baseline_hist_top6": 0.7728,
+      "lift_vs_hist_top6": 0.0059,
+      "avg_similar_past_count": 240.54,
+      "keep": false,
+      "verdict": "REJECT"
+    },
+    "L_zone": {
+      "n": 1184,
+      "avg_overlap_top6": 0.788,
+      "avg_overlap_top15": 1.989,
+      "avg_baseline_hist_top6": 0.7728,
+      "lift_vs_hist_top6": 0.0152,
+      "avg_similar_past_count": 47.74,
+      "keep": false,
+      "verdict": "REJECT"
+    },
+    "L_pair": {
+      "n": 1184,
+      "avg_overlap_top6": 0.7635,
+      "avg_overlap_top15": 1.9062,
+      "avg_baseline_hist_top6": 0.7728,
+      "lift_vs_hist_top6": -0.0093,
+      "avg_similar_past_count": 15.15,
+      "keep": false,
+      "verdict": "REJECT"
+    }
+  },
+  "kept": [
+    "L_ending"
+  ],
+  "rejected": [
+    "L_struct",
+    "L_gap",
+    "L_zone",
+    "L_pair"
+  ],
+  "note": "리프트=유사과거 next빈도 top6 ∩ actual − 역사빈도 top6 ∩ actual. keep if lift>0.02"
+}

@@ -255,6 +255,54 @@ async def api_brain_status():
 
     return get_brain_status()
 
+
+@router.get("/meta/status")
+async def api_meta_status():
+    """PIN 메타선별기 게이트 — P1 pass 전에는 ui_enabled=false."""
+    from app.testlotto.meta_picker import meta_picker_status
+
+    return meta_picker_status()
+
+
+@router.post("/meta/assemble/{target_draw_no}")
+async def api_meta_assemble(target_draw_no: int, k: int = 1):
+    """풀→메타 K세트. draws는 target 이전만. P1 미통과 시 assemble은 가능·UI 경고."""
+    from app.testlotto.data_service import _get_draws_before
+    from app.testlotto.meta_picker import meta_assemble_sets, meta_picker_status
+    from app.testlotto.models import get_lotto_db
+
+    status = meta_picker_status()
+    conn = get_lotto_db()
+    try:
+        rows = conn.execute(
+            """
+            SELECT num1,num2,num3,num4,num5,num6 FROM lotto_predictions
+            WHERE target_draw_no=? AND brain_tag IN ('stat','markov','review')
+            ORDER BY brain_tag, id
+            """,
+            (target_draw_no,),
+        ).fetchall()
+        pool = [
+            [int(r["num1"]), int(r["num2"]), int(r["num3"]),
+             int(r["num4"]), int(r["num5"]), int(r["num6"])]
+            for r in rows
+        ]
+    finally:
+        conn.close()
+
+    draws = _get_draws_before(target_draw_no)
+    sets = meta_assemble_sets(pool, draws, target_draw_no, k=max(1, min(k, 3)))
+    return {
+        "ok": True,
+        "target_draw_no": target_draw_no,
+        "pool_size": len(pool),
+        "ui_enabled": status.get("ui_enabled"),
+        "gate": status,
+        "sets": sets,
+        "no_peek": True,
+    }
+
+
 @router.get("/brain/hall-of-fame")
 async def api_hall_of_fame():
     """적중 명예의 전당 — 가장 많이 맞춘 예측 TOP 10."""

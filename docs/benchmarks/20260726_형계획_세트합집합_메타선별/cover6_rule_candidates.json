@@ -1,0 +1,53 @@
+{
+  "ok": true,
+  "n_cover6": 344,
+  "n_all_wf": 1233,
+  "rule_avg_hit_on_cover6": {
+    "vote_hist": 0.8924,
+    "vote_sim": 0.9012,
+    "sim_hist": 0.9244,
+    "hist_only": 0.9448,
+    "vote_only": 0.9128,
+    "hybrid_r2": 0.9302
+  },
+  "best_rule_on_cover6": "hist_only",
+  "best_rule_avg_hit": 0.9448,
+  "avg_win_vote_mean": 2.3847,
+  "avg_win_in_vote_ge2": 4.064,
+  "wf_all_avg_meta": 0.7721,
+  "wf_all_avg_oracle": 2.2206,
+  "wf_cover6_avg_meta": 0.9448,
+  "candidates": [
+    {
+      "rule": "vote_hist",
+      "avg_hit_cover6": 0.8924,
+      "note": "풀 순위에서 top6 조립"
+    },
+    {
+      "rule": "vote_sim",
+      "avg_hit_cover6": 0.9012,
+      "note": "풀 순위에서 top6 조립"
+    },
+    {
+      "rule": "sim_hist",
+      "avg_hit_cover6": 0.9244,
+      "note": "풀 순위에서 top6 조립"
+    },
+    {
+      "rule": "hist_only",
+      "avg_hit_cover6": 0.9448,
+      "note": "풀 순위에서 top6 조립"
+    },
+    {
+      "rule": "vote_only",
+      "avg_hit_cover6": 0.9128,
+      "note": "풀 순위에서 top6 조립"
+    },
+    {
+      "rule": "hybrid_r2",
+      "avg_hit_cover6": 0.9302,
+      "note": "P1 하이브리드(min_vote=2,replace=2)"
+    }
+  ],
+  "no_peek": true
+}
