@@ -1,0 +1,902 @@
+[
+  {
+    "draw_no": 1135,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.946280065806196,
+    "ev_top3_mean_pop": -17.015062261502848,
+    "pool_mean_ev": 16.946280065806196
+  },
+  {
+    "draw_no": 1136,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.964127793527386,
+    "ev_top3_mean_pop": -17.054444314722147,
+    "pool_mean_ev": 16.964127793527386
+  },
+  {
+    "draw_no": 1137,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.982434243967226,
+    "ev_top3_mean_pop": -17.04723242755418,
+    "pool_mean_ev": 16.982434243967226
+  },
+  {
+    "draw_no": 1138,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.93797890003734,
+    "ev_top3_mean_pop": -17.05166544227199,
+    "pool_mean_ev": 16.93797890003734
+  },
+  {
+    "draw_no": 1139,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -17.00594368729385,
+    "ev_top3_mean_pop": -17.061600655647926,
+    "pool_mean_ev": 17.00594368729385
+  },
+  {
+    "draw_no": 1140,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.964575695730005,
+    "ev_top3_mean_pop": -17.08268006841919,
+    "pool_mean_ev": 16.964575695730005
+  },
+  {
+    "draw_no": 1141,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.952689251445893,
+    "ev_top3_mean_pop": -17.04416751050842,
+    "pool_mean_ev": 16.952689251445893
+  },
+  {
+    "draw_no": 1142,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.94006769485451,
+    "ev_top3_mean_pop": -17.032459038425007,
+    "pool_mean_ev": 16.94006769485451
+  },
+  {
+    "draw_no": 1143,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.93910733176814,
+    "ev_top3_mean_pop": -17.01486576098755,
+    "pool_mean_ev": 16.93910733176814
+  },
+  {
+    "draw_no": 1144,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.954874657531956,
+    "ev_top3_mean_pop": -17.03251366672212,
+    "pool_mean_ev": 16.954874657531956
+  },
+  {
+    "draw_no": 1145,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.926465423813003,
+    "ev_top3_mean_pop": -17.006501891212988,
+    "pool_mean_ev": 16.926465423813003
+  },
+  {
+    "draw_no": 1146,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.935016926271814,
+    "ev_top3_mean_pop": -17.005226445802453,
+    "pool_mean_ev": 16.935016926271814
+  },
+  {
+    "draw_no": 1147,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.936076026273252,
+    "ev_top3_mean_pop": -16.991025568522236,
+    "pool_mean_ev": 16.936076026273252
+  },
+  {
+    "draw_no": 1148,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.948311614757163,
+    "ev_top3_mean_pop": -17.02397985289039,
+    "pool_mean_ev": 16.948311614757163
+  },
+  {
+    "draw_no": 1149,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.928649110925402,
+    "ev_top3_mean_pop": -17.028542838249205,
+    "pool_mean_ev": 16.928649110925402
+  },
+  {
+    "draw_no": 1150,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.95986276138388,
+    "ev_top3_mean_pop": -17.02966622911367,
+    "pool_mean_ev": 16.95986276138388
+  },
+  {
+    "draw_no": 1151,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.909098194227827,
+    "ev_top3_mean_pop": -16.973275206326832,
+    "pool_mean_ev": 16.909098194227827
+  },
+  {
+    "draw_no": 1152,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.908584509902447,
+    "ev_top3_mean_pop": -16.966624773922135,
+    "pool_mean_ev": 16.908584509902447
+  },
+  {
+    "draw_no": 1153,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.928172177681056,
+    "ev_top3_mean_pop": -17.0305088838703,
+    "pool_mean_ev": 16.928172177681056
+  },
+  {
+    "draw_no": 1154,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.938754764152716,
+    "ev_top3_mean_pop": -17.024154479619565,
+    "pool_mean_ev": 16.938754764152716
+  },
+  {
+    "draw_no": 1155,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.958117718119784,
+    "ev_top3_mean_pop": -17.06366056045304,
+    "pool_mean_ev": 16.958117718119784
+  },
+  {
+    "draw_no": 1156,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.92546029616436,
+    "ev_top3_mean_pop": -17.00509191273929,
+    "pool_mean_ev": 16.92546029616436
+  },
+  {
+    "draw_no": 1157,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.948632943912465,
+    "ev_top3_mean_pop": -17.057400302873177,
+    "pool_mean_ev": 16.948632943912465
+  },
+  {
+    "draw_no": 1158,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.929991320469025,
+    "ev_top3_mean_pop": -17.040225832420735,
+    "pool_mean_ev": 16.929991320469025
+  },
+  {
+    "draw_no": 1159,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.981871257773058,
+    "ev_top3_mean_pop": -17.065757594190725,
+    "pool_mean_ev": 16.981871257773058
+  },
+  {
+    "draw_no": 1160,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.969642643179935,
+    "ev_top3_mean_pop": -17.048458617220444,
+    "pool_mean_ev": 16.969642643179935
+  },
+  {
+    "draw_no": 1161,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.95463950068501,
+    "ev_top3_mean_pop": -17.047336201777657,
+    "pool_mean_ev": 16.95463950068501
+  },
+  {
+    "draw_no": 1162,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.91064413031619,
+    "ev_top3_mean_pop": -17.010244316895353,
+    "pool_mean_ev": 16.91064413031619
+  },
+  {
+    "draw_no": 1163,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.926314786165204,
+    "ev_top3_mean_pop": -16.99904583320539,
+    "pool_mean_ev": 16.926314786165204
+  },
+  {
+    "draw_no": 1164,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.972854143054676,
+    "ev_top3_mean_pop": -17.0493260616546,
+    "pool_mean_ev": 16.972854143054676
+  },
+  {
+    "draw_no": 1165,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.951394390340212,
+    "ev_top3_mean_pop": -17.057770881292537,
+    "pool_mean_ev": 16.951394390340212
+  },
+  {
+    "draw_no": 1166,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.94281018176856,
+    "ev_top3_mean_pop": -17.02225109526763,
+    "pool_mean_ev": 16.94281018176856
+  },
+  {
+    "draw_no": 1167,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.942690969121873,
+    "ev_top3_mean_pop": -17.01931335995932,
+    "pool_mean_ev": 16.942690969121873
+  },
+  {
+    "draw_no": 1168,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.95075084209399,
+    "ev_top3_mean_pop": -17.022973278907937,
+    "pool_mean_ev": 16.95075084209399
+  },
+  {
+    "draw_no": 1169,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.95043514725768,
+    "ev_top3_mean_pop": -17.016868083666445,
+    "pool_mean_ev": 16.95043514725768
+  },
+  {
+    "draw_no": 1170,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.928899352417183,
+    "ev_top3_mean_pop": -16.983689922314486,
+    "pool_mean_ev": 16.928899352417183
+  },
+  {
+    "draw_no": 1171,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.95330114747617,
+    "ev_top3_mean_pop": -17.028806329730454,
+    "pool_mean_ev": 16.95330114747617
+  },
+  {
+    "draw_no": 1172,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.947235737707,
+    "ev_top3_mean_pop": -16.989571236225032,
+    "pool_mean_ev": 16.947235737707
+  },
+  {
+    "draw_no": 1173,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.946508874205833,
+    "ev_top3_mean_pop": -17.059695128148174,
+    "pool_mean_ev": 16.946508874205833
+  },
+  {
+    "draw_no": 1174,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.964158127413576,
+    "ev_top3_mean_pop": -17.048959265179562,
+    "pool_mean_ev": 16.964158127413576
+  },
+  {
+    "draw_no": 1175,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.914811483283287,
+    "ev_top3_mean_pop": -16.991626574099424,
+    "pool_mean_ev": 16.914811483283287
+  },
+  {
+    "draw_no": 1176,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.92544492334325,
+    "ev_top3_mean_pop": -16.991579171303453,
+    "pool_mean_ev": 16.92544492334325
+  },
+  {
+    "draw_no": 1177,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.936891000686565,
+    "ev_top3_mean_pop": -16.99560007563301,
+    "pool_mean_ev": 16.936891000686565
+  },
+  {
+    "draw_no": 1178,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.92409849558394,
+    "ev_top3_mean_pop": -16.994410970484886,
+    "pool_mean_ev": 16.92409849558394
+  },
+  {
+    "draw_no": 1179,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.941891926596348,
+    "ev_top3_mean_pop": -17.00009775033293,
+    "pool_mean_ev": 16.941891926596348
+  },
+  {
+    "draw_no": 1180,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.960720617548994,
+    "ev_top3_mean_pop": -17.03549963910412,
+    "pool_mean_ev": 16.960720617548994
+  },
+  {
+    "draw_no": 1181,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.952084593972206,
+    "ev_top3_mean_pop": -17.044600910366384,
+    "pool_mean_ev": 16.952084593972206
+  },
+  {
+    "draw_no": 1182,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.92005095048278,
+    "ev_top3_mean_pop": -17.026755612384708,
+    "pool_mean_ev": 16.92005095048278
+  },
+  {
+    "draw_no": 1183,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.93185028695323,
+    "ev_top3_mean_pop": -17.0161445946031,
+    "pool_mean_ev": 16.93185028695323
+  },
+  {
+    "draw_no": 1184,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.944114772220043,
+    "ev_top3_mean_pop": -17.02471092678184,
+    "pool_mean_ev": 16.944114772220043
+  },
+  {
+    "draw_no": 1185,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.946500450865685,
+    "ev_top3_mean_pop": -17.008986751280194,
+    "pool_mean_ev": 16.946500450865685
+  },
+  {
+    "draw_no": 1186,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.951266066648927,
+    "ev_top3_mean_pop": -17.04241099108494,
+    "pool_mean_ev": 16.951266066648927
+  },
+  {
+    "draw_no": 1187,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.942749307766213,
+    "ev_top3_mean_pop": -17.019792044381195,
+    "pool_mean_ev": 16.942749307766213
+  },
+  {
+    "draw_no": 1188,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.927338435812754,
+    "ev_top3_mean_pop": -17.006832658525934,
+    "pool_mean_ev": 16.927338435812754
+  },
+  {
+    "draw_no": 1189,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.948014004396246,
+    "ev_top3_mean_pop": -17.014761903580876,
+    "pool_mean_ev": 16.948014004396246
+  },
+  {
+    "draw_no": 1190,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.95297195893145,
+    "ev_top3_mean_pop": -17.049249723525463,
+    "pool_mean_ev": 16.95297195893145
+  },
+  {
+    "draw_no": 1191,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.95125002976926,
+    "ev_top3_mean_pop": -17.040159804342647,
+    "pool_mean_ev": 16.95125002976926
+  },
+  {
+    "draw_no": 1192,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.937479778008058,
+    "ev_top3_mean_pop": -17.019770847829747,
+    "pool_mean_ev": 16.937479778008058
+  },
+  {
+    "draw_no": 1193,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.90224820344225,
+    "ev_top3_mean_pop": -17.00816748296533,
+    "pool_mean_ev": 16.90224820344225
+  },
+  {
+    "draw_no": 1194,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.902772449057775,
+    "ev_top3_mean_pop": -16.984536799589016,
+    "pool_mean_ev": 16.902772449057775
+  },
+  {
+    "draw_no": 1195,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.938359431946438,
+    "ev_top3_mean_pop": -17.024643367928373,
+    "pool_mean_ev": 16.938359431946438
+  },
+  {
+    "draw_no": 1196,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.939007230083956,
+    "ev_top3_mean_pop": -17.04704649803061,
+    "pool_mean_ev": 16.939007230083956
+  },
+  {
+    "draw_no": 1197,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.936270766065284,
+    "ev_top3_mean_pop": -16.999645077993552,
+    "pool_mean_ev": 16.936270766065284
+  },
+  {
+    "draw_no": 1198,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.918537493893332,
+    "ev_top3_mean_pop": -16.99701770949891,
+    "pool_mean_ev": 16.918537493893332
+  },
+  {
+    "draw_no": 1199,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.964080254670012,
+    "ev_top3_mean_pop": -17.05192401565572,
+    "pool_mean_ev": 16.964080254670012
+  },
+  {
+    "draw_no": 1200,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.9281450499106,
+    "ev_top3_mean_pop": -17.028384022371586,
+    "pool_mean_ev": 16.9281450499106
+  },
+  {
+    "draw_no": 1201,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.894052335880748,
+    "ev_top3_mean_pop": -16.974544738013947,
+    "pool_mean_ev": 16.894052335880748
+  },
+  {
+    "draw_no": 1202,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.943446509946444,
+    "ev_top3_mean_pop": -16.997630163056023,
+    "pool_mean_ev": 16.943446509946444
+  },
+  {
+    "draw_no": 1203,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.96533112529195,
+    "ev_top3_mean_pop": -17.071912168406342,
+    "pool_mean_ev": 16.96533112529195
+  },
+  {
+    "draw_no": 1204,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.935207001613843,
+    "ev_top3_mean_pop": -17.00151834748182,
+    "pool_mean_ev": 16.935207001613843
+  },
+  {
+    "draw_no": 1205,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.897252287210776,
+    "ev_top3_mean_pop": -16.986004466343207,
+    "pool_mean_ev": 16.897252287210776
+  },
+  {
+    "draw_no": 1206,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.901688624145905,
+    "ev_top3_mean_pop": -16.99728629133573,
+    "pool_mean_ev": 16.901688624145905
+  },
+  {
+    "draw_no": 1207,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.92177087676358,
+    "ev_top3_mean_pop": -16.9914343221942,
+    "pool_mean_ev": 16.92177087676358
+  },
+  {
+    "draw_no": 1208,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.956338702356284,
+    "ev_top3_mean_pop": -17.020676084706235,
+    "pool_mean_ev": 16.956338702356284
+  },
+  {
+    "draw_no": 1209,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.953209592252414,
+    "ev_top3_mean_pop": -17.045867561008418,
+    "pool_mean_ev": 16.953209592252414
+  },
+  {
+    "draw_no": 1210,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.911737724186906,
+    "ev_top3_mean_pop": -17.00161146501198,
+    "pool_mean_ev": 16.911737724186906
+  },
+  {
+    "draw_no": 1211,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.904869133020174,
+    "ev_top3_mean_pop": -16.98342244616582,
+    "pool_mean_ev": 16.904869133020174
+  },
+  {
+    "draw_no": 1212,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.94120411286635,
+    "ev_top3_mean_pop": -17.026469025106014,
+    "pool_mean_ev": 16.94120411286635
+  },
+  {
+    "draw_no": 1213,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.924060325521136,
+    "ev_top3_mean_pop": -16.999583288939736,
+    "pool_mean_ev": 16.924060325521136
+  },
+  {
+    "draw_no": 1214,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.94696089890284,
+    "ev_top3_mean_pop": -17.065207005676623,
+    "pool_mean_ev": 16.94696089890284
+  },
+  {
+    "draw_no": 1215,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.93135956757593,
+    "ev_top3_mean_pop": -16.994305027875825,
+    "pool_mean_ev": 16.93135956757593
+  },
+  {
+    "draw_no": 1216,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.912896608952277,
+    "ev_top3_mean_pop": -17.033403291300907,
+    "pool_mean_ev": 16.912896608952277
+  },
+  {
+    "draw_no": 1217,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.91583713041573,
+    "ev_top3_mean_pop": -17.013630628104575,
+    "pool_mean_ev": 16.91583713041573
+  },
+  {
+    "draw_no": 1218,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.925695085154004,
+    "ev_top3_mean_pop": -17.00221811549748,
+    "pool_mean_ev": 16.925695085154004
+  },
+  {
+    "draw_no": 1219,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.924203841385832,
+    "ev_top3_mean_pop": -17.00971544251497,
+    "pool_mean_ev": 16.924203841385832
+  },
+  {
+    "draw_no": 1220,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.96009572458087,
+    "ev_top3_mean_pop": -17.026006098501565,
+    "pool_mean_ev": 16.96009572458087
+  },
+  {
+    "draw_no": 1221,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.923362693384394,
+    "ev_top3_mean_pop": -17.033002749749098,
+    "pool_mean_ev": 16.923362693384394
+  },
+  {
+    "draw_no": 1222,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.92177749192684,
+    "ev_top3_mean_pop": -17.02350433804825,
+    "pool_mean_ev": 16.92177749192684
+  },
+  {
+    "draw_no": 1223,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.92636256494362,
+    "ev_top3_mean_pop": -17.004315493322284,
+    "pool_mean_ev": 16.92636256494362
+  },
+  {
+    "draw_no": 1224,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.922707996377955,
+    "ev_top3_mean_pop": -17.022642806700798,
+    "pool_mean_ev": 16.922707996377955
+  },
+  {
+    "draw_no": 1225,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.944621709176502,
+    "ev_top3_mean_pop": -17.001232863904026,
+    "pool_mean_ev": 16.944621709176502
+  },
+  {
+    "draw_no": 1226,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.907899204404707,
+    "ev_top3_mean_pop": -16.98689321314937,
+    "pool_mean_ev": 16.907899204404707
+  },
+  {
+    "draw_no": 1227,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.960302313384933,
+    "ev_top3_mean_pop": -17.021210029595135,
+    "pool_mean_ev": 16.960302313384933
+  },
+  {
+    "draw_no": 1228,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.909226586456438,
+    "ev_top3_mean_pop": -17.002411667538254,
+    "pool_mean_ev": 16.909226586456438
+  },
+  {
+    "draw_no": 1229,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.93273612524464,
+    "ev_top3_mean_pop": -16.979526604238156,
+    "pool_mean_ev": 16.93273612524464
+  },
+  {
+    "draw_no": 1230,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.89346527618146,
+    "ev_top3_mean_pop": -16.946034943600974,
+    "pool_mean_ev": 16.89346527618146
+  },
+  {
+    "draw_no": 1231,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.952230524348995,
+    "ev_top3_mean_pop": -17.010400668913075,
+    "pool_mean_ev": 16.952230524348995
+  },
+  {
+    "draw_no": 1232,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.902954823644873,
+    "ev_top3_mean_pop": -16.998223085474475,
+    "pool_mean_ev": 16.902954823644873
+  },
+  {
+    "draw_no": 1233,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.914161238882976,
+    "ev_top3_mean_pop": -16.983489203979854,
+    "pool_mean_ev": 16.914161238882976
+  },
+  {
+    "draw_no": 1234,
+    "pool_n": 15,
+    "tier1_pass_frac": 1.0,
+    "ev_top3_tier1_pass_frac": 1.0,
+    "pool_mean_pop": -16.90220342664835,
+    "ev_top3_mean_pop": -17.000449783279816,
+    "pool_mean_ev": 16.90220342664835
+  }
+]

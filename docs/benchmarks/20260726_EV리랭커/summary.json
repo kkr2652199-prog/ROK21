@@ -1,0 +1,168 @@
+{
+  "ok": true,
+  "readonly": true,
+  "no_generation": true,
+  "features_used": [
+    "n_le31",
+    "n_le12",
+    "sum_nums",
+    "carry_from_prev"
+  ],
+  "features_excluded_dead": [
+    "odd_count",
+    "consec_pairs",
+    "num_dummies",
+    "ending",
+    "bands",
+    "diag"
+  ],
+  "label": "log(tier3_winners/sales); EV_score=-popularity_hat",
+  "train_mode": "walk_forward_ridge_train_draw_no_lt_N",
+  "last_n": 100,
+  "n_draws_evaluated": 100,
+  "k": 3,
+  "baseline_A_mean_hit": {
+    "mean": 0.773333,
+    "ci95": [
+      0.69,
+      0.86
+    ],
+    "n": 100
+  },
+  "arms": {
+    "A": {
+      "label": "현행메타_portfolio_K3",
+      "mean_hit": {
+        "mean": 0.773333,
+        "ci95": [
+          0.683333,
+          0.86
+        ],
+        "n": 100
+      },
+      "expected_payout_ratio_vs_A": 1.0,
+      "payout_ratio_ci95_vs_A": [
+        1.0,
+        1.0
+      ],
+      "unique_nums_mean": 16.95,
+      "mean_ev_score": 16.934123,
+      "verdict": "비채택",
+      "mean_sig_below_A": false,
+      "ci_overlap_A": true
+    },
+    "B": {
+      "label": "EV_top3",
+      "mean_hit": {
+        "mean": 0.81,
+        "ci95": [
+          0.713333,
+          0.906667
+        ],
+        "n": 100
+      },
+      "expected_payout_ratio_vs_A": 1.088287,
+      "payout_ratio_ci95_vs_A": [
+        1.081671,
+        1.094709
+      ],
+      "unique_nums_mean": 14.13,
+      "mean_ev_score": 17.018728,
+      "verdict": "채택후보(mean CI겹침 + 수령배율 유의↑)",
+      "mean_sig_below_A": false,
+      "ci_overlap_A": true
+    },
+    "C": {
+      "label": "coverage_top3",
+      "mean_hit": {
+        "mean": 0.733333,
+        "ci95": [
+          0.656667,
+          0.806667
+        ],
+        "n": 100
+      },
+      "expected_payout_ratio_vs_A": 1.000201,
+      "payout_ratio_ci95_vs_A": [
+        0.994041,
+        1.006252
+      ],
+      "unique_nums_mean": 17.51,
+      "mean_ev_score": 16.934324,
+      "verdict": "관찰(배율↑이나 CI가 1 포함)",
+      "mean_sig_below_A": false,
+      "ci_overlap_A": true
+    },
+    "D": {
+      "label": "hybrid_EV_cov_0.5",
+      "mean_hit": {
+        "mean": 0.803333,
+        "ci95": [
+          0.72,
+          0.89
+        ],
+        "n": 100
+      },
+      "expected_payout_ratio_vs_A": 1.07745,
+      "payout_ratio_ci95_vs_A": [
+        1.070584,
+        1.084151
+      ],
+      "unique_nums_mean": 16.09,
+      "mean_ev_score": 17.008721,
+      "verdict": "채택후보(mean CI겹침 + 수령배율 유의↑)",
+      "mean_sig_below_A": false,
+      "ci_overlap_A": true
+    },
+    "E": {
+      "label": "random3_from15_x30",
+      "mean_hit": {
+        "mean": 0.802667,
+        "ci95": [
+          0.756444,
+          0.850667
+        ],
+        "n": 100
+      },
+      "expected_payout_ratio_vs_A": 1.00314,
+      "payout_ratio_ci95_vs_A": [
+        0.997942,
+        1.00836
+      ],
+      "unique_nums_mean": 15.2523,
+      "mean_ev_score": 16.937258,
+      "verdict": "관찰(배율↑이나 CI가 1 포함)",
+      "mean_sig_below_A": false,
+      "ci_overlap_A": true
+    }
+  },
+  "traps": {
+    "a_tier1": {
+      "avg_pool_tier1_pass_frac": 1.0,
+      "avg_ev_top3_tier1_pass_frac": 1.0,
+      "avg_pool_mean_pop": -16.936836,
+      "avg_ev_top3_mean_pop": -17.018728,
+      "note": "풀이 이미 tier1에 갇혀 있으면 EV 상위도 인기 구간에 잔류 가능"
+    },
+    "b_pool_vs_universe": {
+      "pool_pop_mean": -16.936836,
+      "pool_pop_std": 0.063642,
+      "universe_sample_pop_mean": -16.919788,
+      "universe_sample_pop_std": 0.060815,
+      "pool_minus_universe_mean": -0.017048,
+      "n_pool": 1500,
+      "n_universe_sample": 4000,
+      "interpretation": "pool_pop > universe → 15장 풀이 더 인기 편향(리랭크 상한 낮음). pool_pop < universe → 풀이 이미 비인기 쪽."
+    },
+    "c_proxy_limit": "수령배율은 3등 winners/매출 프록시. 1등 당첨자 분포와 다를 수 있음."
+  },
+  "k09": {
+    "affects_this_run": true,
+    "label": "K-09 미해결 전제",
+    "reason": "리랭커 자체는 learn_state 미사용·저장 세트만 재정렬. 그러나 후보 15장은 과거 생성 경로(learn_state 전역) 산물 → 간접 영향 가능."
+  },
+  "decision_rule": {
+    "adopt_candidate": "mean CI overlaps A AND payout_ratio CI lower > 1",
+    "reject": "mean CI entirely below A (수령배율 무관)"
+  }
+}
