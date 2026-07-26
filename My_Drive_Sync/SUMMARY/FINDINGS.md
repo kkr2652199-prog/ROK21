@@ -14,7 +14,7 @@
 | K-06 | OPEN | per-draw fan-out 미구현 | `app/lotto/draw_scheduler.py` | 스케줄러→`collect_latest_forward` lotto4.db만 · testlotto/hyodo 미연동 · draws gap lotto4=1234 vs testlotto/hyodo=1231 |
 | K-07 | OPEN | fetch-latest 수동복구·팬아웃 | `app/testlotto/routes.py`, `app/hyodo/routes.py` | **20260726 재실측:** testlotto/lotto4 MAX=1234 · **hyodo만 1231**. 옛 “testlotto=1231” 서술은 폐기. hyodo 1232~1234 동기화는 형 승인 후 |
 | K-08 | OPEN | 평가지표 정의(best vs mean) | 메타·다양성 WF · `reports/20260726_ROK21_지표재정의_검증.md` | best-of-15는 초기하 천장≈2.27(MC 재현). 실력 판별은 **mean**. STATUS/벤치에 mean 병기 필수. best 단독 목표 금지 |
-| K-09 | OPEN | learn_state 전역 시계열 누수 위험 | `app/testlotto/learn_state.py` · review/stat 경로 | draws는 `_get_draws_before`로 정상. `load_learn_state`는 cutoff 없음 → 과거 회차 재생성 시 미래 피드백 오염 가능. 저장세트 review mean>0.80 **미입증**. `reports/20260726_ROK21_뇌감사_비인기검증.md` |
+| K-09 | CLOSED | learn_state 컷오프 · 실질 누수 무해 | `learn_state_cutoff.py` · `reports/20260726_ROK21_K09컷오프_EV재검증.md` | 재구성(b) 플래그 `ROK21_LEARN_CUTOFF=1`. 200회 X−Y mean Δ CI에 0. **CLOSED**. 전제 라벨 제거. 스키마 변경 없음 |
 | K-10 | OPEN | tier1 완화 헤드룸≈0 | `filters.py` · EV보정·최종 보고서 | T1~T3 p10 실현배율 vs T0 ≤1.002. **헤드룸0 기록·코드 완화 보류** |
-| K-11 | OPEN | 적중축 폐기 · D배선(기본OFF) · 창200 생존 | `ev_rerank.py` · `reports/20260726_ROK21_D배선_사전등록검증.md` | 적중폐기 유지. D=EV0.5+커버0.5 · `ROK21_EV_RERANK=1`만 활성. 창200 순효과 1.032 CI[1.020,1.044] **YES**. OFF해시 동일. `K-09 전제` |
+| K-11 | OPEN | 적중축 폐기 · EV배선 유지(Y풀 재검증) | `ev_rerank.py` · K09컷오프 보고서 | 적중폐기 박제. Y(컷오프) 풀 순효과 1.033 CI[1.019,1.048] **YES→배선 유지**. K-09 전제 라벨 **제거**. 기본 OFF opt-in |
 | K-12 | OPEN | RULES_FIXED 정합성 2건 (보고만) | `My_Drive_Sync/SUMMARY/RULES_FIXED.md` | (a) R33 복원 SSOT=kweon 기재 → ROK21 작업 오유도 → **RESTORE.md로 우회**. (b) R29 "7활성+2Hidden=9뇌" ≠ 테스트로또 실측 3예측+4보조. **형만 수정 가능 · 동생/커서는 보고만** |

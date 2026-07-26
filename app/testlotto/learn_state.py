@@ -42,7 +42,8 @@ def _empty_state() -> dict[str, Any]:
     }
 
 
-def load_learn_state(brain_tag: str) -> dict[str, Any]:
+def _load_global_learn_state(brain_tag: str) -> dict[str, Any]:
+    """전역 1행 (기존 동작). apply_feedback 은 항상 이쪽만 사용."""
     conn = get_lotto_db()
     try:
         row = conn.execute(
@@ -57,6 +58,22 @@ def load_learn_state(brain_tag: str) -> dict[str, Any]:
         return base
     finally:
         conn.close()
+
+
+def load_learn_state(brain_tag: str) -> dict[str, Any]:
+    """ROK21_LEARN_CUTOFF=1 + as_of 컨텍스트 시 컷오프 재구성, 아니면 전역.
+
+    기본 OFF → 전역과 100% 동일. 예외 시 전역 폴백.
+    """
+    try:
+        from app.testlotto.learn_state_cutoff import try_load_cutoff
+
+        cut = try_load_cutoff(brain_tag)
+        if cut is not None:
+            return cut
+    except Exception:
+        pass
+    return _load_global_learn_state(brain_tag)
 
 
 def save_learn_state(brain_tag: str, state: dict[str, Any]) -> None:
@@ -109,7 +126,8 @@ def apply_feedback(
     window: int = 20,
 ) -> dict[str, Any]:
     """오답 패턴 → 조정값 누적 (복습 루프 핵심)."""
-    state = load_learn_state(brain_tag)
+    # 컷오프 컨텍스트와 무관하게 전역 행을 갱신 (오염 방지·기존 쓰기 경로 유지)
+    state = _load_global_learn_state(brain_tag)
     adj = state.setdefault("adjustments", dict(DEFAULT_ADJUSTMENTS))
     miss_counts = state.setdefault("miss_counts", {})
 

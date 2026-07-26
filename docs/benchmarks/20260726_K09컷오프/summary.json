@@ -1,0 +1,310 @@
+{
+  "ok": true,
+  "call_sites": [
+    {
+      "file": "app/testlotto/learn_state.py",
+      "fn": "load_learn_state",
+      "note": "진입점+컷오프훅"
+    },
+    {
+      "file": "app/testlotto/learn_state.py",
+      "fn": "apply_feedback",
+      "note": "전역만 갱신"
+    },
+    {
+      "file": "app/testlotto/brains/predict_stat_fairy.py",
+      "fn": "predict_sets",
+      "line": "~23"
+    },
+    {
+      "file": "app/testlotto/brains/predict_review_king.py",
+      "fn": "predict_sets",
+      "line": "~20"
+    },
+    {
+      "file": "app/testlotto/predict_statistical.py",
+      "fn": "_statistical_predict",
+      "line": "~181"
+    },
+    {
+      "file": "app/testlotto/brains/aux_referee.py",
+      "fn": "score_set/get_referee_weights"
+    },
+    {
+      "file": "app/testlotto/brains/coordinator.py",
+      "fn": "_apply_aux_scoring",
+      "line": "~48"
+    },
+    {
+      "file": "app/testlotto/walkforward.py",
+      "fn": "review_single_draw",
+      "line": "~110 apply_feedback"
+    },
+    {
+      "file": "tools/_rerun_lotto_predictions.py",
+      "fn": "apply_feedback"
+    }
+  ],
+  "P1": {
+    "off_hash_unset": "744a41d986b9447e99e429ca5d8da0a0695700d8a67d219f2ea3714de55213c0",
+    "off_hash_explicit0": "744a41d986b9447e99e429ca5d8da0a0695700d8a67d219f2ea3714de55213c0",
+    "off_identical": true,
+    "on_off_diff_samples": [
+      {
+        "draw_no": 1232,
+        "x_hash": "36c53a7a5a56640fd04f83cc90763e80fa2828ab589ea997f9ff555ebe169ea4",
+        "y_hash": "a2c7bf1a6871cf55d1bdf3235377a54a75182552722c8c6fe4b14c30705c8588",
+        "identical": false,
+        "x_preview": [
+          [
+            7,
+            12,
+            26,
+            27,
+            41,
+            43
+          ],
+          [
+            17,
+            20,
+            25,
+            30,
+            35,
+            42
+          ]
+        ],
+        "y_preview": [
+          [
+            7,
+            12,
+            26,
+            27,
+            41,
+            43
+          ],
+          [
+            3,
+            4,
+            13,
+            35,
+            42,
+            45
+          ]
+        ]
+      },
+      {
+        "draw_no": 1233,
+        "x_hash": "4f5d83699d2d12d83e86c08c89e3603996adbdb493ee35d78b047baa7e0f5340",
+        "y_hash": "6e9bf591494fb96fbd6ba4d2581c6f306d862556d1c7a0b8a5d2461461aed302",
+        "identical": false,
+        "x_preview": [
+          [
+            1,
+            10,
+            16,
+            28,
+            32,
+            37
+          ],
+          [
+            9,
+            19,
+            22,
+            36,
+            39,
+            45
+          ]
+        ],
+        "y_preview": [
+          [
+            1,
+            10,
+            16,
+            28,
+            32,
+            37
+          ],
+          [
+            9,
+            19,
+            22,
+            36,
+            39,
+            45
+          ]
+        ]
+      },
+      {
+        "draw_no": 1234,
+        "x_hash": "5a36041b9e61e4dd1291368f5c21a104df1a580c5057a694d91e93823381a06c",
+        "y_hash": "ff9f0d53e5967b17cd90fd4ec436bf1a7ca556f63022f7c4008677378761d597",
+        "identical": false,
+        "x_preview": [
+          [
+            3,
+            6,
+            13,
+            26,
+            28,
+            45
+          ],
+          [
+            4,
+            12,
+            15,
+            19,
+            23,
+            37
+          ]
+        ],
+        "y_preview": [
+          [
+            3,
+            6,
+            13,
+            26,
+            28,
+            45
+          ],
+          [
+            4,
+            12,
+            15,
+            20,
+            23,
+            37
+          ]
+        ]
+      }
+    ],
+    "choice": {
+      "method": "b_replay_from_brain_review",
+      "rejected_a": "DB 스키마 변경 금지로 history 테이블 불가",
+      "cost": "피드백 3698행 1회 재생 O(D)·메모리 수 MB·이후 조회 O(log D)"
+    }
+  },
+  "P2": {
+    "n": 200,
+    "X_global": {
+      "mean_hit": {
+        "mean": 0.776333,
+        "ci95": [
+          0.742667,
+          0.810667
+        ],
+        "n": 200
+      },
+      "unique_nums_mean": 37.325,
+      "by_brain_mean": {
+        "stat": {
+          "mean": 0.78,
+          "ci95": [
+            0.732,
+            0.83
+          ],
+          "n": 1000
+        },
+        "markov": {
+          "mean": 0.782,
+          "ci95": [
+            0.735,
+            0.831
+          ],
+          "n": 1000
+        },
+        "review": {
+          "mean": 0.767,
+          "ci95": [
+            0.717,
+            0.817
+          ],
+          "n": 1000
+        }
+      }
+    },
+    "Y_cutoff": {
+      "mean_hit": {
+        "mean": 0.786,
+        "ci95": [
+          0.752667,
+          0.820667
+        ],
+        "n": 200
+      },
+      "unique_nums_mean": 37.22,
+      "by_brain_mean": {
+        "stat": {
+          "mean": 0.809,
+          "ci95": [
+            0.758,
+            0.858
+          ],
+          "n": 1000
+        },
+        "markov": {
+          "mean": 0.782,
+          "ci95": [
+            0.735,
+            0.831
+          ],
+          "n": 1000
+        },
+        "review": {
+          "mean": 0.767,
+          "ci95": [
+            0.717,
+            0.817
+          ],
+          "n": 1000
+        }
+      }
+    },
+    "delta_X_minus_Y_mean": -0.009667,
+    "delta_X_minus_Y_ci95": [
+      -0.024,
+      0.004333
+    ],
+    "X_significantly_above_Y": false,
+    "verdict": "실질_누수_없음_비유의",
+    "review_focus": {
+      "X": {
+        "mean": 0.767,
+        "ci95": [
+          0.717,
+          0.817
+        ],
+        "n": 1000
+      },
+      "Y": {
+        "mean": 0.767,
+        "ci95": [
+          0.717,
+          0.817
+        ],
+        "n": 1000
+      },
+      "audit_ref_0_856": 0.856
+    }
+  },
+  "P3": {
+    "b_reestimated": 0.649567,
+    "n_cal_pairs": 200,
+    "mean_hit_A": 0.798333,
+    "mean_hit_D": 0.791667,
+    "actual_realized": 1.052928,
+    "placebo_mean": 1.018867,
+    "empirical_p": 0.0,
+    "net_ratio": 1.03343,
+    "net_ci95": [
+      1.018942,
+      1.047802
+    ],
+    "ci_lower_gt_1": true,
+    "stop_rule_verdict": "EV_배선_유지_K09라벨제거"
+  },
+  "K09": {
+    "status": "CLOSED",
+    "note": "컷오프 구현+실측 비유의 → 실질 무해 CLOSED"
+  },
+  "label_K09_premise_removable": true
+}
