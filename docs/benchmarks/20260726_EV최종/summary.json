@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "readonly": true,
+  "k09_label": "K-09 미해결 전제",
+  "stop_rule": {
+    "survive_if": "순효과 CI 하한 > 1.00",
+    "close_if": "CI가 1.00 포함 → EV CLOSED · 재도전 금지",
+    "pre_registered": true
+  },
+  "method_notes": {
+    "placebo_reps": 200,
+    "placebo_model": "회차 라벨 셔플 후, 평가창 첫 회차 이전 데이터로 Ridge 1회 학습(fixed-per-shuffle). 200×WF는 비용상 대체. 편향 방향은 WF 1회와 동일.",
+    "actual_realized_frozen_from": "D:\\ROK21\\docs\\benchmarks\\20260726_EV보정\\summary.json",
+    "b0": 0.6433776260679878,
+    "realized_formula": "exp(b * pred_log_diff)",
+    "net_formula": "actual_realized / placebo_mean_realized"
+  },
+  "S1_placebo_dist": {
+    "B": {
+      "n": 200,
+      "mean": 1.020453,
+      "std": 0.008372,
+      "p50": 1.019356,
+      "p95": 1.03405,
+      "p05": 1.007869,
+      "actual_realized": 1.055942,
+      "actual_percentile_in_placebo": 99.5,
+      "empirical_p_placebo_ge_actual": 0.005
+    },
+    "D": {
+      "n": 200,
+      "mean": 1.01797,
+      "std": 0.007405,
+      "p50": 1.016932,
+      "p95": 1.030577,
+      "p05": 1.006728,
+      "actual_realized": 1.049164,
+      "actual_percentile_in_placebo": 99.5,
+      "empirical_p_placebo_ge_actual": 0.005
+    }
+  },
+  "S2_net_effect": {
+    "B": {
+      "actual_realized": 1.055942,
+      "placebo_mean_realized": 1.020453,
+      "net_ratio": 1.034777,
+      "net_ci95": [
+        1.021859,
+        1.048082
+      ],
+      "net_ci_lower_gt_1": true
+    },
+    "D": {
+      "actual_realized": 1.049164,
+      "placebo_mean_realized": 1.01797,
+      "net_ratio": 1.030643,
+      "net_ci95": [
+        1.019003,
+        1.042833
+      ],
+      "net_ci_lower_gt_1": true
+    },
+    "table": [
+      {
+        "arm": "B",
+        "actual_realized": 1.055942,
+        "placebo_mean": 1.020453,
+        "placebo_p": 0.005,
+        "actual_percentile": 99.5,
+        "net_ratio": 1.034777,
+        "net_ci95": [
+          1.021859,
+          1.048082
+        ]
+      },
+      {
+        "arm": "D",
+        "actual_realized": 1.049164,
+        "placebo_mean": 1.01797,
+        "placebo_p": 0.005,
+        "actual_percentile": 99.5,
+        "net_ratio": 1.030643,
+        "net_ci95": [
+          1.019003,
+          1.042833
+        ]
+      }
+    ]
+  },
+  "S3_bias_cause": {
+    "one_line": "EV_score 정렬 자체(상위k 선별 정의) — A가 EV비최대라 라벨과 무관하게 E[EV_B]>E[EV_A]",
+    "diagnostics": {
+      "avg_top3_minus_pool_mean": 0.105806,
+      "avg_top3_minus_portfolioA": 0.084087,
+      "avg_hybrid_minus_portfolioA": 0.074404,
+      "avg_pool_ev_std": 0.058755,
+      "implication": "B=EV상위3 정의상 pool 내 점수 상단을 고르므로, A(aux+다양성)가 EV를 최대화하지 않는 한 E[EV_B]>E[EV_A]가 항상 성립. 라벨 셔플로 점수축만 바꿔도 동일 부등호 → 구조적 선별 편향."
+    },
+    "not_primary": [
+      "b 추정만으로는 위약>1 설명 불가(동일 b 적용)",
+      "창 100회 소표본은 CI 폭에 영향, 점추정 편향의 아님",
+      "15장 상관은 보조(분산)이나 핵심 원인은 선별 정의"
+    ]
+  },
+  "S4_verdict": {
+    "verdict": "EV_축_생존",
+    "survive_B": true,
+    "survive_D": true,
+    "k11_status": "OPEN",
+    "k11_note": "순효과 CI하한>1 → 배선 설계 진행 가능",
+    "remaining_skill_axis": "비인기 EV (순효과 생존 arm 기준)"
+  }
+}
