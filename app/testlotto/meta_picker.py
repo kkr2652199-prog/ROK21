@@ -62,7 +62,26 @@ def meta_assemble_sets(
                     "meta": {"seed": {"nums": nums}},
                 }
             )
-    return out[:k]
+    # D 하이브리드: 메타 조립 *이후*만 (ROK21_EV_RERANK=1). 기본 OFF → 위 결과 불변.
+    from app.testlotto.ev_rerank import maybe_apply_d_rerank
+
+    def _ending_hook(nums: list[int]) -> dict:
+        return hybrid_ending(
+            nums,
+            pool_sets,
+            draws_before,
+            ending,
+            min_vote=min_vote,
+            replace_slots=replace_slots,
+        )
+
+    return maybe_apply_d_rerank(
+        pool_sets,
+        draws_before,
+        out[:k],
+        k=k,
+        ending_hook=_ending_hook if replace_slots > 0 else None,
+    )
 
 
 def meta_picker_status() -> dict[str, Any]:

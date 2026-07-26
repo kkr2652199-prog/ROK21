@@ -1,0 +1,53 @@
+{
+  "ok": true,
+  "k09_label": "K-09 미해결 전제",
+  "S2_off_hash": {
+    "off_hash_sha256": "3b806ee37d4b585cc52142b89e01831e0413f549f58c4808c519dfca139679fc",
+    "off_explicit0_hash": "3b806ee37d4b585cc52142b89e01831e0413f549f58c4808c519dfca139679fc",
+    "off_identical": true,
+    "on_vs_off_sample15": {
+      "differ": 15,
+      "same": 0
+    },
+    "n_draws_hashed": 30
+  },
+  "S3_window200": {
+    "n_draws": 200,
+    "mean_hit_A": 0.793333,
+    "mean_hit_D": 0.82,
+    "actual_realized_D": 1.051234,
+    "placebo_mean": 1.018957,
+    "placebo_p95": 1.031337,
+    "empirical_p": 0.0,
+    "actual_percentile": 100.0,
+    "net_ratio": 1.031676,
+    "net_ci95": [
+      1.019694,
+      1.044026
+    ],
+    "ci_lower_gt_1": true,
+    "verdict_YES_NO": "YES",
+    "default_off_if_NO": false
+  },
+  "S4_risks": {
+    "k09_snapshot_design": {
+      "table": "testlotto_brain_learn_state_history",
+      "pk": "(brain_tag, as_of_draw_no)",
+      "load": "as_of = max{k | k < target}",
+      "note": "패치 전 설계만. 본 턴 스키마 미적용"
+    },
+    "tier1_vs_first": {
+      "quantifiable": true,
+      "n": 1220,
+      "pearson_log_w3_sales_vs_log_w1_sales": 0.70418,
+      "note": "상관 낮으면 3등 프록시→1등 괴리 큼. 배선 이득을 1등 환급으로 단정 금지."
+    },
+    "honest_roi_vs_payout_rate": "순효과 ~1.032×는 3등 분배 프록시 상대값이며, 티켓 환급률(≈50%대) 대비 '구매 기대값 +3%'가 아님. 당첨 조건부 수령액 쪽 소폭 이득 가설."
+  },
+  "wiring": {
+    "env": "ROK21_EV_RERANK=1",
+    "default": "OFF",
+    "entry": "meta_picker.meta_assemble_sets → maybe_apply_d_rerank",
+    "new_file": "app/testlotto/ev_rerank.py"
+  }
+}

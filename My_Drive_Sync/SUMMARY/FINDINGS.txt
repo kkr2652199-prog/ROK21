@@ -16,5 +16,5 @@
 | K-08 | OPEN | 평가지표 정의(best vs mean) | 메타·다양성 WF · `reports/20260726_ROK21_지표재정의_검증.md` | best-of-15는 초기하 천장≈2.27(MC 재현). 실력 판별은 **mean**. STATUS/벤치에 mean 병기 필수. best 단독 목표 금지 |
 | K-09 | OPEN | learn_state 전역 시계열 누수 위험 | `app/testlotto/learn_state.py` · review/stat 경로 | draws는 `_get_draws_before`로 정상. `load_learn_state`는 cutoff 없음 → 과거 회차 재생성 시 미래 피드백 오염 가능. 저장세트 review mean>0.80 **미입증**. `reports/20260726_ROK21_뇌감사_비인기검증.md` |
 | K-10 | OPEN | tier1 완화 헤드룸≈0 | `filters.py` · EV보정·최종 보고서 | T1~T3 p10 실현배율 vs T0 ≤1.002. **헤드룸0 기록·코드 완화 보류** |
-| K-11 | OPEN | 적중축 폐기 · EV 순효과 생존 | `reports/20260726_ROK21_EV최종판정.md` | 적중 학습 폐기 **박제**. 위약200 보정 순효과 B/D CI하한>1 → **EV축 생존·배선설계 허용**. CLOSED/재도전금지는 순효과 실패 시에만. `K-09 전제` |
+| K-11 | OPEN | 적중축 폐기 · D배선(기본OFF) · 창200 생존 | `ev_rerank.py` · `reports/20260726_ROK21_D배선_사전등록검증.md` | 적중폐기 유지. D=EV0.5+커버0.5 · `ROK21_EV_RERANK=1`만 활성. 창200 순효과 1.032 CI[1.020,1.044] **YES**. OFF해시 동일. `K-09 전제` |
 | K-12 | OPEN | RULES_FIXED 정합성 2건 (보고만) | `My_Drive_Sync/SUMMARY/RULES_FIXED.md` | (a) R33 복원 SSOT=kweon 기재 → ROK21 작업 오유도 → **RESTORE.md로 우회**. (b) R29 "7활성+2Hidden=9뇌" ≠ 테스트로또 실측 3예측+4보조. **형만 수정 가능 · 동생/커서는 보고만** |
