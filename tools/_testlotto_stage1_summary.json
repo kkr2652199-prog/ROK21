@@ -1,0 +1,285 @@
+{
+  "baseline_path": "D:\\ROK21\\tools\\_testlotto_stage1_baseline_1232_1234.json",
+  "atlas_path": "D:\\ROK21\\tools\\_testlotto_pattern_atlas_1234.json",
+  "atlas_meta": {
+    "max_draw": 1234,
+    "draw_count": 1234,
+    "min_draw": 1,
+    "note": "historical signal atlas - no future jackpot claim; independent draws"
+  },
+  "atlas_sum": {
+    "min": 48,
+    "max": 238,
+    "mean": 138.262,
+    "p25": 117,
+    "p50": 138,
+    "p75": 160
+  },
+  "atlas_top_numbers": [
+    {
+      "number": 34,
+      "main_count": 184,
+      "bonus_count": 24,
+      "main_rate_per_draw": 0.149109,
+      "gap_since_last": 5
+    },
+    {
+      "number": 27,
+      "main_count": 181,
+      "bonus_count": 32,
+      "main_rate_per_draw": 0.146677,
+      "gap_since_last": 10
+    },
+    {
+      "number": 12,
+      "main_count": 179,
+      "bonus_count": 27,
+      "main_rate_per_draw": 0.145057,
+      "gap_since_last": 2
+    },
+    {
+      "number": 13,
+      "main_count": 179,
+      "bonus_count": 28,
+      "main_rate_per_draw": 0.145057,
+      "gap_since_last": 3
+    },
+    {
+      "number": 18,
+      "main_count": 176,
+      "bonus_count": 19,
+      "main_rate_per_draw": 0.142626,
+      "gap_since_last": 3
+    },
+    {
+      "number": 45,
+      "main_count": 175,
+      "bonus_count": 22,
+      "main_rate_per_draw": 0.141815,
+      "gap_since_last": 10
+    },
+    {
+      "number": 33,
+      "main_count": 174,
+      "bonus_count": 32,
+      "main_rate_per_draw": 0.141005,
+      "gap_since_last": 11
+    },
+    {
+      "number": 37,
+      "main_count": 173,
+      "bonus_count": 26,
+      "main_rate_per_draw": 0.140194,
+      "gap_since_last": 1
+    },
+    {
+      "number": 40,
+      "main_count": 173,
+      "bonus_count": 22,
+      "main_rate_per_draw": 0.140194,
+      "gap_since_last": 1
+    },
+    {
+      "number": 3,
+      "main_count": 172,
+      "bonus_count": 32,
+      "main_rate_per_draw": 0.139384,
+      "gap_since_last": 4
+    }
+  ],
+  "atlas_top_pairs": [
+    {
+      "pair": [
+        11,
+        21
+      ],
+      "count": 34
+    },
+    {
+      "pair": [
+        33,
+        40
+      ],
+      "count": 33
+    },
+    {
+      "pair": [
+        6,
+        38
+      ],
+      "count": 31
+    },
+    {
+      "pair": [
+        12,
+        24
+      ],
+      "count": 31
+    },
+    {
+      "pair": [
+        37,
+        40
+      ],
+      "count": 30
+    },
+    {
+      "pair": [
+        1,
+        28
+      ],
+      "count": 30
+    },
+    {
+      "pair": [
+        10,
+        31
+      ],
+      "count": 30
+    },
+    {
+      "pair": [
+        34,
+        42
+      ],
+      "count": 30
+    },
+    {
+      "pair": [
+        19,
+        21
+      ],
+      "count": 29
+    },
+    {
+      "pair": [
+        14,
+        15
+      ],
+      "count": 29
+    }
+  ],
+  "atlas_bonus_top": [
+    {
+      "number": 2,
+      "count": 36
+    },
+    {
+      "number": 4,
+      "count": 35
+    },
+    {
+      "number": 43,
+      "count": 35
+    },
+    {
+      "number": 6,
+      "count": 34
+    },
+    {
+      "number": 32,
+      "count": 34
+    },
+    {
+      "number": 1,
+      "count": 33
+    },
+    {
+      "number": 17,
+      "count": 33
+    },
+    {
+      "number": 24,
+      "count": 33
+    },
+    {
+      "number": 30,
+      "count": 32
+    },
+    {
+      "number": 3,
+      "count": 32
+    }
+  ],
+  "predict_1235": {
+    "ok": true,
+    "max_prior_draw": 1234,
+    "prior_count": 1234,
+    "prediction_keys": [
+      "target_draw_no",
+      "status",
+      "total_sets",
+      "predictions",
+      "all_predictions",
+      "top5",
+      "actual_numbers",
+      "actual_bonus",
+      "brain_system"
+    ],
+    "error": null,
+    "saved_counts": {
+      "markov": 5,
+      "review": 5,
+      "stat": 5
+    },
+    "total_saved": 15
+  },
+  "baseline_avgs": [
+    {
+      "draw_no": 1232,
+      "avg_match": 0.4,
+      "n": 15
+    },
+    {
+      "draw_no": 1233,
+      "avg_match": 0.9333,
+      "n": 15
+    },
+    {
+      "draw_no": 1234,
+      "avg_match": 0.8,
+      "n": 15
+    }
+  ],
+  "learn_states": {
+    "stat": {
+      "review_count": 1272,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.687,
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    },
+    "markov": {
+      "review_count": 1268,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.6057,
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    },
+    "review": {
+      "review_count": 1271,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.6607,
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    }
+  }
+}

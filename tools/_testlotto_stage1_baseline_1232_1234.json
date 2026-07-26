@@ -1,0 +1,176 @@
+{
+  "start": 1232,
+  "end": 1234,
+  "per_draw": [
+    {
+      "draw_no": 1232,
+      "scores_refreshed": true,
+      "review": {
+        "skipped": null,
+        "reason": null,
+        "brains": []
+      },
+      "prediction_stats": [
+        {
+          "brain_tag": "markov",
+          "n": 5,
+          "avg_match": 0.2,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        },
+        {
+          "brain_tag": "review",
+          "n": 5,
+          "avg_match": 0.4,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        },
+        {
+          "brain_tag": "stat",
+          "n": 5,
+          "avg_match": 0.6,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        }
+      ],
+      "overall_avg_match": 0.4,
+      "prediction_count": 15
+    },
+    {
+      "draw_no": 1233,
+      "scores_refreshed": true,
+      "review": {
+        "skipped": null,
+        "reason": null,
+        "brains": []
+      },
+      "prediction_stats": [
+        {
+          "brain_tag": "markov",
+          "n": 5,
+          "avg_match": 0.4,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        },
+        {
+          "brain_tag": "review",
+          "n": 5,
+          "avg_match": 1.4,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        },
+        {
+          "brain_tag": "stat",
+          "n": 5,
+          "avg_match": 1.0,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        }
+      ],
+      "overall_avg_match": 0.9333,
+      "prediction_count": 15
+    },
+    {
+      "draw_no": 1234,
+      "scores_refreshed": true,
+      "review": {
+        "skipped": null,
+        "reason": null,
+        "brains": []
+      },
+      "prediction_stats": [
+        {
+          "brain_tag": "markov",
+          "n": 5,
+          "avg_match": 0.8,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        },
+        {
+          "brain_tag": "review",
+          "n": 5,
+          "avg_match": 1.0,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        },
+        {
+          "brain_tag": "stat",
+          "n": 5,
+          "avg_match": 0.6,
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 0
+        }
+      ],
+      "overall_avg_match": 0.8,
+      "prediction_count": 15
+    }
+  ],
+  "learn_states": {
+    "stat": {
+      "review_count": 1272,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.687,
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    },
+    "markov": {
+      "review_count": 1268,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.6057,
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    },
+    "review": {
+      "review_count": 1271,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.6607,
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      }
+    }
+  }
+}

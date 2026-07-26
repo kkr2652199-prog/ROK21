@@ -1,18 +1,20 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-07-26 KST (테스트로또 준비감사)
+📅 최종 갱신: 2026-07-26 KST (테스트로또 1단계 빅데이터 정렬)
 
 ## git / 원격
 - `D:\ROK21` · `kkr2652199-prog/ROK21` · 원본 kweon **미접촉**
 - 브라우저: `http://127.0.0.1:7021/`
 
-## 테스트로또 준비감사 (패치 전)
-- 메인 배선: **stat / markov / review** + 보조4 (miss·pattern·balance·referee)
-- DATA: draws 1231 · predictions 1275 · review/page 3689 · features/detail 1231
-- 이미 있음: 감쇠빈도·쌍·전이·AC·boost·WF · 순수균등 랜덤 아님
-- 없음/약함: 전세계 논문급 벤치 재현 · lotto4 CDM/Bayesian/gapZ/EV/graph 미이식
-- 다음 핀: P0 기준선 → P1 번호·쌍 대시보드 → P2 A/B → P3 외부베이스라인
+## 테스트로또 1단계 (완료)
+- draws / features / tiers / detail **MAX=1234**
+- 1232~1234 채점 기준선: avg_match **0.40 / 0.93 / 0.80** (뇌당 5세트×3)
+- 패턴 아틀라스: `tools/_testlotto_pattern_atlas_1234.json`
+- **1235** 예측 15세트 저장 (`_get_draws_before` prior=1234)
+
+## 다음
+- 1235 추첨 후: fetch → 채점 → feedback → 분석
+- 2단계(선택): lotto4 기법 A/B — 형 지시 후
 
 ## 최신 보고서
-- `reports/20260726_ROK21_테스트로또_준비감사.md`
-- 캔버스: testlotto-prep-audit
+- `reports/20260726_ROK21_테스트로또_1단계_빅데이터정렬.md`
