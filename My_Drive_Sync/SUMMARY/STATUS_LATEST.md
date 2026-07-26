@@ -1,23 +1,27 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-07-26 KST (ending_digit 루프 진단·수정)
+📅 최종 갱신: 2026-07-26 KST (형 계획 메타선별 병행)
 
 ## git / 원격
 - `D:\ROK21` · `kkr2652199-prog/ROK21` · 원본 kweon **미접촉**
+- 규칙: 말 없어도 **commit+push로 히스토리 저장**
 
-## ending_digit
-- 판결: **자기강화 오탐** (miss~97% ≈ 랜덤)
-- 수정: detect를 “직전 끝수 재등장 전무”로 정렬 · learn ending 리셋
-- 벤치: `docs/benchmarks/20260726_ending_digit_루프진단/`
+## 형 계획 (병행 권한)
+- 5세트×N뇌 풀 → 6수(+보너스) **메타 재조립**
+- 뇌 추가 = 다양성 렌즈 · 과거 패턴 중요
+- 문서: `docs/benchmarks/20260726_형계획_세트합집합_메타선별/`
 
-## 유지
-- draws MAX=1234 · 명분/벤치 카탈로그
-- 1235는 비초점
+## 실측
+- 3뇌 합집합 cover6 **27.9%** (단일뇌5 &lt;1%)
+- avg 풀커버 4.87 vs best세트 2.22 → 선별 갭 = 다음 숙제
+
+## 최근 수정
+- ending_digit 자기강화 오탐 수정 (`af4a522`)
 
 ## 다음
-- (선택) review 전구간 재WF로 missed_patterns 정화
-- odd_even 등 다른 miss 패턴 유사 점검
-- ≥4 희귀 케이스 해부
+- Vote≥2 메타 프로토타입
+- cover=6 회차 선별 규칙
+- odd_even 유사 점검
 
 ## 최신 보고서
-- `reports/20260726_ROK21_ending_digit_루프진단.md`
+- `reports/20260726_ROK21_형계획_메타선별_병행.md`
