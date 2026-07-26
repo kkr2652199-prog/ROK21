@@ -4,20 +4,20 @@
 ROK21 = kweon 복사본. SSOT=`kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021**. 원본 미접촉.
 
 ## 1) 현재 스레드 (매턴 3줄만 갱신)
-- 지금: L_ending 1슬롯 교체 채택 — avg 0.810(+0.006) · 여전히 ≪ best 2.22
-- 직전: PIN 메타 P0~P5 · pass_p1=false
-- 다음: 시드 재설계(형승인) 또는 cover6 회차만 심층 선별
+- 지금: cover6·시드A/B 완료 — 시드 변경 기각(aux 유지) · 병목=15장 중 장선택
+- 직전: L_ending 1슬롯 채택 (0.81)
+- 다음: 장선택 학습(과거 성적 피처만, 컨닝금지) 또는 형 지시
 
 ## 2) 숫자 (근거 없으면 미확인)
-ending_r1 0.810 · baseline 0.803 · oracle 2.22 · UI deferred
+aux+ending 0.81 · cover6 hist_ending 0.97 vs 최고장 2.50 · 시드 대안 전부 열세
 
 ## 3) 열린 과제 -> FINDINGS.md
 K-00·K-02·K-05·K-06·K-07 OPEN.
 
 ## 4) 주의
-- PIN 시드(보조4뇌) 유지 · 교체만 ending · 컨닝금지
-- UI는 pass 전 비활성
+- 시드=aux 유지 · PIN 시드 변경 불필요(증거 없음)
+- cover6은 평가분리 · 운영 시 cover 모름
 
 ## 5) 더 필요하면
-docs/benchmarks/20260726_형계획_세트합집합_메타선별/hybrid_ending_wf_summary.json
-reports/20260726_ROK21_Lending결합_다음단계.md
+docs/benchmarks/20260726_형계획_세트합집합_메타선별/cover6_deep_seed_ab.json
+reports/20260726_ROK21_cover6시드비교.md

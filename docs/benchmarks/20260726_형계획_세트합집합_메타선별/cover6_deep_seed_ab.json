@@ -1,0 +1,189 @@
+{
+  "ok": true,
+  "no_peek": true,
+  "seed_plain": {
+    "aux": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.8034,
+      "avg_cover6": 0.9417,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "vote_sum": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7839,
+      "avg_cover6": 0.9271,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "conf": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7725,
+      "avg_cover6": 0.9329,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "ending_sum": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7807,
+      "avg_cover6": 0.9504,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "hist_sum": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7855,
+      "avg_cover6": 0.9563,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "overlap_top": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.788,
+      "avg_cover6": 0.93,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    }
+  },
+  "seed_plus_ending_r1": {
+    "aux": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.8099,
+      "avg_cover6": 0.9563,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "vote_sum": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7864,
+      "avg_cover6": 0.9388,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "conf": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.779,
+      "avg_cover6": 0.9475,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "ending_sum": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7595,
+      "avg_cover6": 0.9096,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "hist_sum": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7742,
+      "avg_cover6": 0.93,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "overlap_top": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7929,
+      "avg_cover6": 0.9359,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    }
+  },
+  "pool_rank_rules": {
+    "hist_only": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7725,
+      "avg_cover6": 0.9446,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "ending_vote_hist": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7677,
+      "avg_cover6": 0.9592,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "vote_ending_hist": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7823,
+      "avg_cover6": 0.898,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "hist_ending": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7799,
+      "avg_cover6": 0.9708,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    },
+    "cooccur_greedy": {
+      "n": 1231,
+      "n_cover6": 343,
+      "avg_all": 0.7847,
+      "avg_cover6": 0.9096,
+      "avg_oracle_all": 2.2218,
+      "avg_oracle_cover6": 2.4985
+    }
+  },
+  "best_seed_ending_r1_all": {
+    "name": "aux",
+    "n": 1231,
+    "n_cover6": 343,
+    "avg_all": 0.8099,
+    "avg_cover6": 0.9563,
+    "avg_oracle_all": 2.2218,
+    "avg_oracle_cover6": 2.4985,
+    "delta_vs_aux": 0.0
+  },
+  "best_seed_ending_r1_cover6": {
+    "name": "aux",
+    "n": 1231,
+    "n_cover6": 343,
+    "avg_all": 0.8099,
+    "avg_cover6": 0.9563,
+    "avg_oracle_all": 2.2218,
+    "avg_oracle_cover6": 2.4985
+  },
+  "best_pool_rule_cover6": {
+    "name": "hist_ending",
+    "n": 1231,
+    "n_cover6": 343,
+    "avg_all": 0.7799,
+    "avg_cover6": 0.9708,
+    "avg_oracle_all": 2.2218,
+    "avg_oracle_cover6": 2.4985
+  },
+  "best_pool_rule_all": {
+    "name": "cooccur_greedy",
+    "n": 1231,
+    "n_cover6": 343,
+    "avg_all": 0.7847,
+    "avg_cover6": 0.9096,
+    "avg_oracle_all": 2.2218,
+    "avg_oracle_cover6": 2.4985
+  },
+  "recommend": {
+    "seed": "aux",
+    "adopt_seed_change": false,
+    "pool_rule_for_cover6_study": "hist_ending",
+    "note_ko": "시드 변경은 improve>=0.05일 때만 자동 채택 권고. cover6 규칙은 평가분리·연구용(운영 시 cover 모름)."
+  }
+}

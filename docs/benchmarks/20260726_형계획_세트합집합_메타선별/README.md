@@ -51,6 +51,11 @@
 - 벤치: `hybrid_ending_wf_summary.json` · 기본 조립에 반영
 - 여전히 oracle best 2.22에 크게 못 미침 → 시드 재설계는 형 승인
 
+## 다음단계2 (20260726) — cover6 + 시드 A/B
+- 시드 6종 비교 → **aux 유지** (변경 기각)
+- cover6 재조립 최고 ~0.97 vs 최고장 2.50 → **장선택이 병목**
+- `cover6_deep_seed_ab.json`
+
 ## 유사과거 (컨닝금지)
 - `tools/scout_similar_past_patterns.py` · 최근20회 샘플 avg 유사과거 ~30.2 · top15∩actual ~1.8  
 - 검색·past_next는 **target 이전만**

@@ -53,3 +53,13 @@
 - ending_r1: avg 0.810 (+0.006 vs baseline 0.803), closer_to_oracle
 - 시드 혼합·r2·풀top6은 악화 → **1슬롯만** 메타 기본에 반영
 - `tools/run_meta_hybrid_ending_wf.py` · `hybrid_ending_wf_summary.json`
+
+## I-12 cover6·시드 A/B (20260726) — **시드 변경 기각**
+- 시드 후보 6종(+ending_r1): **aux가 all/cover6 모두 1위** → PIN 시드 유지
+- cover6 재조립 hist_ending ~0.97 ≪ 그 회차 최고장 2.50
+- 병목=**15장 중 장선택** · 다음 I-13 후보
+- `tools/run_cover6_deep_and_seed_ab.py` · `cover6_deep_seed_ab.json`
+
+## I-13 (다음) 장선택 학습
+- 입력: 세트별 vote합·aux·ending·brain_tag·set_no 등 (당첨 미사용)
+- 출력: 15장 중 1장 선택 → WF vs aux 시드
