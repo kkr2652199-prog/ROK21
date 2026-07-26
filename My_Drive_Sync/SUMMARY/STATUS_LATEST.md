@@ -6,6 +6,7 @@
 
 - 로컬: `D:\ROK21`
 - remote: `https://github.com/kkr2652199-prog/ROK21.git`
+- HEAD: `5f6da19` — ROK21 1단계 분리 (원격 main 일치)
 - 원본 kweon: `D:\3kweon` · `kkr2652199-prog/kweon` — **미접촉**
 
 ## 충돌 방지 (1단계)
