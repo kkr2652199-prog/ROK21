@@ -1,0 +1,145 @@
+{
+  "as_of": "2026-07-26",
+  "purpose": "past_prediction_homework_not_future_1235",
+  "source_table": "testlotto_brain_review",
+  "note": "review = best-set-per-brain per draw after walkforward; not raw 5-set average",
+  "draws_in_db": {
+    "max": 1234,
+    "count": 1234
+  },
+  "brain_review": {
+    "markov": {
+      "brain_tag": "markov",
+      "n": 1232,
+      "mn": 3,
+      "mx": 1234,
+      "avg_m": 1.6193,
+      "ge3": 130,
+      "ge4": 8,
+      "ge5": 0,
+      "bonus_hits": 138
+    },
+    "review": {
+      "brain_tag": "review",
+      "n": 1233,
+      "mn": 2,
+      "mx": 1234,
+      "avg_m": 1.6805,
+      "ge3": 131,
+      "ge4": 6,
+      "ge5": 0,
+      "bonus_hits": 118
+    },
+    "stat": {
+      "brain_tag": "stat",
+      "n": 1233,
+      "mn": 2,
+      "mx": 1234,
+      "avg_m": 1.6999,
+      "ge3": 128,
+      "ge4": 9,
+      "ge5": 1,
+      "bonus_hits": 126
+    }
+  },
+  "match_hist_all_brains": {
+    "0": 84,
+    "1": 1478,
+    "2": 1747,
+    "3": 366,
+    "4": 22,
+    "5": 1
+  },
+  "window_1132_1234": {
+    "markov": {
+      "brain_tag": "markov",
+      "n": 103,
+      "avg_m": 1.6117
+    },
+    "review": {
+      "brain_tag": "review",
+      "n": 103,
+      "avg_m": 1.7573
+    },
+    "stat": {
+      "brain_tag": "stat",
+      "n": 103,
+      "avg_m": 1.6602
+    }
+  },
+  "learn_state_miss_patterns": {
+    "stat": {
+      "miss_counts": {
+        "ending_digit": 1234,
+        "odd_even": 360,
+        "consecutive": 337,
+        "pair": 62,
+        "carry_over": 214,
+        "overdue": 162
+      },
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      },
+      "review_count": 1272,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.687
+    },
+    "markov": {
+      "miss_counts": {
+        "carry_over": 207,
+        "ending_digit": 1231,
+        "odd_even": 365,
+        "consecutive": 306,
+        "pair": 67,
+        "overdue": 170
+      },
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      },
+      "review_count": 1268,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.6057
+    },
+    "review": {
+      "miss_counts": {
+        "ending_digit": 1235,
+        "odd_even": 378,
+        "consecutive": 304,
+        "pair": 72,
+        "carry_over": 47,
+        "overdue": 157
+      },
+      "adjustments": {
+        "carry_over_boost": 0.5,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.5,
+        "odd_even_balance": 0.5
+      },
+      "review_count": 1271,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.6607
+    }
+  },
+  "lotto_predictions_scored_sparse": {
+    "distinct_draws": 86,
+    "rows": 1290
+  },
+  "homework_questions": [
+    "Why is ending_digit the dominant miss pattern across brains?",
+    "ge4 is rare (single digits) — what structural filters appear before 4-match?",
+    "review avg > markov on 1132-1234 — is feedback helping or noise?",
+    "Expand lotto_predictions coverage vs rely on brain_review as SSOT homework?"
+  ]
+}
