@@ -303,7 +303,10 @@ async def api_predictions_tier_wins(target_draw_no: int):
 
     집계 제외는 `/predictions/draw/{n}` 과 동일(`miss_analysis`, `snake`).
     """
+    from app.testlotto.engine import refresh_prediction_scores_for_target_draw
     from app.testlotto.models import get_lotto_db
+
+    refresh_prediction_scores_for_target_draw(target_draw_no)
 
     conn = get_lotto_db()
     try:
@@ -357,7 +360,10 @@ async def api_predictions_tier_wins(target_draw_no: int):
 @router.get("/predictions/draw/{target_draw_no}")
 async def api_predictions_for_draw(target_draw_no: int):
     """단일 회차의 기저 6뇌 예측 전부(드롭다운 선택 시 캐시 LIMIT·created_at 정렬로 과거 회차가 빠지는 문제 방지)."""
+    from app.testlotto.engine import refresh_prediction_scores_for_target_draw
     from app.testlotto.models import get_lotto_db
+
+    refresh_prediction_scores_for_target_draw(target_draw_no)
 
     conn = get_lotto_db()
     rows = conn.execute(

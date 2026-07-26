@@ -6,7 +6,7 @@
   <title>나의 지식 도서관 — 4군 AI 예측</title>
   <link rel="stylesheet" href="/static/css/lotto4.css?v=20260620c" />
   <link rel="stylesheet" href="/static/css/hyodo.css?v=20260711" />
-  <link rel="stylesheet" href="/static/css/testlotto.css?v=20260711" />
+  <link rel="stylesheet" href="/static/css/testlotto.css?v=20260725c" />
 </head>
 <body>
   <div class="app-shell">
@@ -559,8 +559,31 @@
     </div>
   </div>
 
+  <!-- 테스트로또·효도로또: 1~5등 적중 모달 (testlotto.js / hyodo.js) -->
+  <div id="lottoTierWinsModal" class="lotto-tier-wins-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lottoTierWinsModalTitle">
+    <div class="lotto-tier-wins-modal__backdrop" onclick="lottoCloseTierWinsModal()"></div>
+    <div class="lotto-tier-wins-modal__panel">
+      <div class="lotto-tier-wins-modal__chrome">
+        <div class="lotto-tier-wins-modal__head">
+          <h2 id="lottoTierWinsModalTitle" class="lotto-tier-wins-modal__title">회차 · 1~5등 적중</h2>
+          <div class="lotto-tier-wins-modal__toolbar">
+            <button type="button" class="btn btn-secondary lotto-tier-wins-modal__close" onclick="lottoCloseTierWinsModal()" aria-label="닫기">✕</button>
+          </div>
+        </div>
+        <div class="lotto-tier-wins-modal__jump">
+          <button type="button" class="btn btn-secondary btn-tier-nav" onclick="lottoTierWinsModalNav(-1)">◀</button>
+          <label class="lotto-tier-wins-modal__jump-label" for="lottoTierWinsJumpInput">회차</label>
+          <input type="number" id="lottoTierWinsJumpInput" class="lotto-tier-wins-modal__jump-input" min="1" placeholder="회차" />
+          <button type="button" class="btn btn-secondary lotto-tier-wins-modal__jump-btn" onclick="lottoTierWinsModalGoDraw()">이동</button>
+          <button type="button" class="btn btn-secondary btn-tier-nav" onclick="lottoTierWinsModalNav(1)">▶</button>
+        </div>
+      </div>
+      <div id="lottoTierWinsModalBody" class="lotto-tier-wins-modal__body"></div>
+    </div>
+  </div>
+
   <script src="/static/js/hyodo.js?v=20260711"></script>
-  <script src="/static/js/testlotto.js?v=20260711n"></script>
+  <script src="/static/js/testlotto.js?v=20260725c"></script>
   <script src="/static/js/lotto4.js?v=20260620c"></script>
 </body>
 </html>

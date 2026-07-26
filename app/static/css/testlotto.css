@@ -60,6 +60,34 @@
   line-height: 1.5;
 }
 
+/* 회차별 1~5등 적중 한 줄 요약 (4군 tier 요약과 유사) */
+.lotto-hit-summary {
+  margin: 10px 0 0;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  line-height: 1.45;
+}
+.lotto-hit-summary--pending {
+  color: var(--accent);
+}
+.lotto-hit-summary--none {
+  color: var(--text-secondary);
+}
+.lotto-hit-summary__link {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* 1군: 회차별 1~5등 적중 요약 모달(읽기 전용) — 상단 고정·본문만 스크롤 */
 .lotto-tier-wins-modal {
   position: fixed;

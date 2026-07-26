@@ -298,8 +298,21 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
 
     const detailResult = await _fetchPredictionRowsFromDetail(d);
     if (detailResult.rows.length) {
-      rows = detailResult.rows;
-      dataSource = detailResult.source;
+      const actual = detailResult.detail && detailResult.detail.actual_nums;
+      const hasActual = Array.isArray(actual) && actual.length >= 6;
+      if (hasActual) {
+        const legacy = await _fetchPredictionRowsLegacy(d);
+        if (legacy.rows.length) {
+          rows = legacy.rows;
+          dataSource = legacy.source;
+        } else {
+          rows = detailResult.rows;
+          dataSource = detailResult.source;
+        }
+      } else {
+        rows = detailResult.rows;
+        dataSource = detailResult.source;
+      }
     } else if (detailResult.detail && detailResult.detail.error) {
       // 미래 회차(당첨번호 없음): lotto_predictions 폴백
       const legacy = await _fetchPredictionRowsLegacy(d);
@@ -360,6 +373,35 @@ function renderMiniBall(num, isHit, extraClass) {
   const hitClass = isHit ? 'is-hit' : '';
   const ex = extraClass ? String(extraClass) : '';
   return `<span class="lotto-mini-ball ${hitClass} ${ex}" style="background:${bg};">${n}</span>`;
+}
+
+function testlottoTierRank(row) {
+  const m = row.matched_count != null ? Number(row.matched_count) : NaN;
+  const bonus = row.bonus_matched === 1 || Number(row.bonus_matched) === 1;
+  if (!Number.isFinite(m) || m < 0) return 0;
+  if (m === 6) return 1;
+  if (m === 5 && bonus) return 2;
+  if (m === 5) return 3;
+  if (m === 4) return 4;
+  if (m === 3) return 5;
+  return 0;
+}
+
+function testlottoHitSummaryHtml(rows) {
+  const c = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  (rows || []).forEach((r) => {
+    const tr = testlottoTierRank(r);
+    if (tr) c[tr] += 1;
+  });
+  const total = c[1] + c[2] + c[3] + c[4] + c[5];
+  if (!total) {
+    const pending = (rows || []).some((r) => r.matched_count != null && Number(r.matched_count) < 0);
+    if (pending) {
+      return '<p class="lotto-hit-summary lotto-hit-summary--pending">미추첨 회차 — 당첨 채점 전</p>';
+    }
+    return '<p class="lotto-hit-summary lotto-hit-summary--none">이 회차 1~5등 적중 세트 없음 · <button type="button" class="lotto-hit-summary__link" onclick="testlottoOpenTierWinsModal()">자세히</button></p>';
+  }
+  return `<p class="lotto-hit-summary">적중 요약: 1등 ${c[1]} · 2등 ${c[2]} · 3등 ${c[3]} · 4등 ${c[4]} · 5등 ${c[5]} · <button type="button" class="lotto-hit-summary__link" onclick="testlottoOpenTierWinsModal()">1~5등 목록</button></p>`;
 }
 
 function renderBrainSetCard(row, idx) {
@@ -535,10 +577,13 @@ async function renderPredictionsByBrain(drawNo, rows) {
     ? selectedRows.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
     : '<p style="color:#888; padding: 16px;">이 두뇌는 이 회차에 예측 데이터가 없습니다.</p>';
 
+  const hitSummaryHtml = testlottoHitSummaryHtml(rows);
+
   container.innerHTML = `
     <div class="lotto-result-header">
       <h3>${drawNo}회 (${date} ${dow})</h3>
       ${actualHtml}
+      ${hitSummaryHtml}
     </div>
     <div class="lotto-brain-tabs">${tabsHtml}</div>
     <div class="lotto-brain-cards" id="hyodoBrainCards">${cardsHtml}</div>
@@ -772,7 +817,10 @@ async function testlottoOpenTierWinsModal() {
     return;
   }
   const modal = document.getElementById('lottoTierWinsModal');
-  if (!modal) return;
+  if (!modal) {
+    alert('1~5등 적중 모달을 찾을 수 없습니다. 페이지를 새로고침(Ctrl+F5)하세요.');
+    return;
+  }
   if (_testlottoTierWinsEscHandler) {
     document.removeEventListener('keydown', _testlottoTierWinsEscHandler);
     _testlottoTierWinsEscHandler = null;
