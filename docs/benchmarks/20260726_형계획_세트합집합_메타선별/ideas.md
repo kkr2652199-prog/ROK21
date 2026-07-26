@@ -61,7 +61,6 @@
 - `tools/run_cover6_deep_and_seed_ab.py` · `cover6_deep_seed_ab.json`
 
 ## I-13 장선택 학습 (20260726) — **미채택**
-- 선형 ridge WF: picker 0.80 � 장선택 학습 (20260726) — **미채택**
 - 선형 ridge WF: picker 0.80 ≪ aux 0.81 · adopt=false
 - `tools/run_set_picker_wf.py` · `set_picker_wf_summary.json`
 - 다음: 순위학습/트리 등 재시도 또는 짧은 오탐 점검
