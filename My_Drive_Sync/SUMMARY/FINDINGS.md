@@ -11,8 +11,8 @@
 | K-03 | CLOSED | app/lotto·lotto2 = 1~2군 레거시 잔존 | `app/lotto/`, `app/lotto2/` | main_v13 router 미등록 · init/scheduler만 공유 (STEP0 20260726) |
 | K-04 | CLOSED | .gitignore 신설 | 루트 `.gitignore` | 커밋 `0a1a55c` (20260726) |
 | K-05 | OPEN | public 레포·tracked *.db ~306MB | `data/*.db`, `data/combos/` | 24 files · 320,983,040 byte (20260726 실측) · 형 승인 전 untrack 금지 |
-| K-06 | OPEN | per-draw fan-out 미구현 | `app/lotto/draw_scheduler.py` | 스케줄러→`collect_latest_forward` lotto4.db만 · testlotto/hyodo 미연동 · draws gap lotto4=1234 vs testlotto/hyodo=1231 |
-| K-07 | OPEN | fetch-latest 수동복구·팬아웃 | `app/testlotto/routes.py`, `app/hyodo/routes.py` | **20260726 재실측:** testlotto/lotto4 MAX=1234 · **hyodo만 1231**. 옛 “testlotto=1231” 서술은 폐기. hyodo 1232~1234 동기화는 형 승인 후 |
+| K-06 | OPEN | per-draw fan-out 미구현 | `app/lotto/draw_scheduler.py` | 스케줄러→`collect_latest_forward` lotto4.db만 · testlotto/hyodo 미연동 · draws gap **hyodo=1231** (testlotto/lotto4=1234, 20260727 실측) |
+| K-07 | OPEN | fetch-latest 수동복구·팬아웃 | `app/testlotto/routes.py`, `app/hyodo/routes.py` | **20260727:** testlotto 백업+fetch검증 완료(MAX=1234·1232~1234 공식MATCH·pred/review 있음). **잔여=hyodo만 1231**. hyodo 동기화는 형 승인 후 |
 | K-08 | OPEN | 평가지표 정의(best vs mean) | 메타·다양성 WF · `reports/20260726_ROK21_지표재정의_검증.md` | best-of-15는 초기하 천장≈2.27(MC 재현). 실력 판별은 **mean**. STATUS/벤치에 mean 병기 필수. best 단독 목표 금지 |
 | K-09 | CLOSED | learn_state 컷오프 · 실질 누수 무해 | `learn_state_cutoff.py` · `reports/20260726_ROK21_K09컷오프_EV재검증.md` | 재구성(b) 플래그 `ROK21_LEARN_CUTOFF=1`. 200회 X−Y mean Δ CI에 0. **CLOSED**. 전제 라벨 제거. 스키마 변경 없음 |
 | K-10 | OPEN | tier1 완화 헤드룸≈0 | `filters.py` · EV보정·최종 보고서 | T1~T3 p10 실현배율 vs T0 ≤1.002. **헤드룸0 기록·코드 완화 보류** |

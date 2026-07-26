@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-07-26 KST  
-📌 사유: K-09 컷오프 구현·누수 비유의 CLOSED · EV 순효과 Y풀 재검증 생존 · K-09 전제 라벨 제거
+📅 최종 갱신: 2026-07-27 KST  
+📌 사유: K-07 testlotto 복구검증 + 테스트로또 정밀정찰(READ-ONLY)
 
 ---
 
@@ -16,51 +16,59 @@
 
 ---
 
-## 1) K-09 최종
+## 1) K-07 (이번 턴)
 
 | 항목 | 값 |
 |------|-----|
-| 구현 | `learn_state_cutoff.py` · 피드백 재구성(b) |
-| 플래그 | `ROK21_LEARN_CUTOFF=1` + `set_learn_as_of` · **기본 OFF** |
-| OFF 해시 | 동일 |
-| 누수 X−Y (200회) | −0.010 CI[−0.024,+0.004] **비유의** |
-| review X/Y | 둘 다 mean **0.767** |
-| **상태** | **CLOSED** (실질 무해) · 플래그는 가용 |
-
-**K-09 미해결 전제 라벨: 제거.**
+| 백업 | `backups/20260726_K07복구전/lotto_testlotto.db` |
+| testlotto MAX | **1234** (이미 충족 · fetch→None=1235미발표) |
+| 1232~1234 공식대조 | **전부 MATCH** |
+| predictions 1232~1234 | 각 15행 (stat/markov/review) |
+| brain_review MAX | **1234** |
+| hyodo MAX | **1231** (미접촉 · OPEN 잔여) |
+| lotto4 | read-only · MAX 1234 |
 
 ---
 
-## 2) EV (Y 컷오프 풀 · 창200)
+## 2) 정밀정찰 요약
 
-| 지표 | 값 |
+| 항목 | 값 |
 |------|-----|
-| mean A / D | **0.798** / **0.792** |
-| 순배율 | **1.033** CI **[1.019, 1.048]** |
-| 정지규칙 | **YES → 배선 유지** |
-| env | `ROK21_EV_RERANK=1` opt-in · 기본 OFF |
-
-환급률 대비: +3.3% ≠ 티켓 구매 EV.
-
----
-
-## 3) 동결·운영 플래그
-
-- 동결: `random.choices` · `_get_draws_before` · boost  
-- `ROK21_EV_RERANK` 기본 OFF  
-- `ROK21_LEARN_CUTOFF` 기본 OFF  
+| 활성 | 3예측 + 4보조 (coordinator) |
+| 클릭 경로 fusion | **없음** |
+| AUX 가중 | 하드코딩 0.25×4 |
+| referee live | ≈0.335 / 0.332 / 0.334 |
+| seed | 미고정 · cache 없으면 비재현 |
+| 코드 패치 | **0건** |
+| 보고서 | `reports/20260726_테스트로또_정밀정찰.md` |
 
 ---
 
-## 4) 다음
+## 3) EV / CUTOFF (이전 확정 유지)
 
-1. (선택) 운영 opt-in 시험  
-2. K-10 tier1 완화 보류 유지  
-3. 열린 K: 00,02,05~08,10~12  
+| 플래그 | 기본 |
+|--------|------|
+| `ROK21_EV_RERANK` | OFF |
+| `ROK21_LEARN_CUTOFF` | OFF |
+| K-09 | **CLOSED** |
 
 ---
 
-## 5) 산출물
+## 4) 동결
 
-`reports/20260726_ROK21_K09컷오프_EV재검증.md`  
-`docs/benchmarks/20260726_K09컷오프/`
+- `random.choices` · `_get_draws_before` · boost 상한
+
+---
+
+## 5) 다음
+
+1. hyodo 1232~1234 동기화 (형 승인)
+2. 정찰 관찰목록 → 형·외부AI가 K-A~ 부여
+3. (선택) EV/CUTOFF opt-in 운영시험
+
+---
+
+## 6) 산출물
+
+`reports/20260726_테스트로또_정밀정찰.md`  
+`My_Drive_Sync/커서보고서/` 동일 복사
