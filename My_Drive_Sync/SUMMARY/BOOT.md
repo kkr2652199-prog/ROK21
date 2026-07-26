@@ -5,9 +5,9 @@
 1~3군은 memoy 관할 — 여기 기록 금지(R34). 앱 지도=SUMMARY/MAP.md
 
 ## 1) 현재 스레드 (매턴 3줄만 갱신)
-- 지금: R36 인프라 구축 완료 (BOOT/FINDINGS/hooks/rules/gitignore)
-- 직전: 테스트로또 lotto_predictions 재기록 1,245행 (20260725)
-- 다음: K-00 4군 정밀분석 · MAP.md · per-draw fan-out 자동화
+- 지금: 테스트로또 UI 패치 커밋 (tier-wins 모달·적중요약·routes) push `22ac617`
+- 직전: R36 인프라 BOOT/FINDINGS/hooks/rules/gitignore push `0a1a55c`
+- 다음: K-00 4군 정밀분석 · per-draw fan-out · fetch-latest 수동복구
 
 ## 2) 숫자 (근거 없으면 미확인)
 lotto_predictions=1,245행 / 83회차(1120~1232 일부) / stat·markov·review 각 415
