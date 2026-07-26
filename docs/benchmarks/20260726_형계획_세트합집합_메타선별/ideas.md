@@ -60,6 +60,12 @@
 - 병목=**15장 중 장선택** · 다음 I-13 후보
 - `tools/run_cover6_deep_and_seed_ab.py` · `cover6_deep_seed_ab.json`
 
-## I-13 (다음) 장선택 학습
-- 입력: 세트별 vote합·aux·ending·brain_tag·set_no 등 (당첨 미사용)
-- 출력: 15장 중 1장 선택 → WF vs aux 시드
+## I-13 장선택 학습 (20260726) — **미채택**
+- 선형 ridge WF: picker 0.80 � 장선택 학습 (20260726) — **미채택**
+- 선형 ridge WF: picker 0.80 ≪ aux 0.81 · adopt=false
+- `tools/run_set_picker_wf.py` · `set_picker_wf_summary.json`
+- 다음: 순위학습/트리 등 재시도 또는 짧은 오탐 점검
+
+## I-14 판단 메모
+- 튜닝 vs 메타 · DB초기화: `JUDGMENT_튜닝vs메타.md`
+- 권고: 고르기 우선 · DB 전체초기화 비권고 · 3+4 역할 유지

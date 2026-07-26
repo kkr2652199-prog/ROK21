@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "no_peek": true,
+  "n_eval": 1144,
+  "min_train_draws": 80,
+  "avg_oracle": 2.2203,
+  "avg_aux": 0.8103,
+  "avg_aux_ending": 0.8164,
+  "avg_picker": 0.8033,
+  "avg_picker_ending": 0.7841,
+  "picker_beats_aux": 334,
+  "picker_ties_aux": 469,
+  "picker_loses_aux": 341,
+  "mean_delta_vs_aux": -0.007,
+  "mean_gap_to_oracle_picker": 1.417,
+  "mean_gap_to_oracle_aux": 1.41,
+  "pass_vs_aux": false,
+  "pass_closer_oracle": false,
+  "brain_pick_counts": {
+    "markov": 200,
+    "review": 571,
+    "stat": 373
+  },
+  "feature_weights": {
+    "vote_sum": 0.00537,
+    "aux": -0.03944,
+    "ending_sum": -0.00016,
+    "hist_sum": 2e-05,
+    "overlap_top12": -0.01513,
+    "brain_stat": 0.00119,
+    "brain_markov": -0.0147,
+    "brain_review": 0.01351,
+    "set_no_norm": 0.01127,
+    "uniq_boost": 0.0009,
+    "bias": 0.74424
+  },
+  "adopt_picker": false,
+  "note": "장선택=과거 피처→match 선형회귀 WF. 당첨은 학습 라벨로만 쓰고 예측 시점 피처에 넣지 않음."
+}
