@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "n": 40,
+  "last_n_requested": 40,
+  "seed": 20260726,
+  "no_peek": true,
+  "random_choices_untouched": true,
+  "avg_unique_stored": 36.875,
+  "avg_unique_diversified": 37.65,
+  "avg_unique_random": 39.675,
+  "avg_jaccard_stored": 0.0943,
+  "avg_jaccard_diversified": 0.0953,
+  "avg_best_stored": 2.125,
+  "avg_best_diversified": 2.325,
+  "avg_best_random": 2.4,
+  "delta_best_div_vs_stored": 0.2,
+  "delta_best_div_vs_random": -0.075,
+  "delta_unique_div_vs_stored": 0.775,
+  "adopt": true,
+  "note": "diversified=각 뇌 oversample 후 diversify_pick→5장×3. stored=DB 과거 산출. random=동일 장수 균등샘플."
+}

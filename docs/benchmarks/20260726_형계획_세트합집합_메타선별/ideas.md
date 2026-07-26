@@ -73,4 +73,10 @@
 - 뇌15 best 2.22 ≪ 랜덤15 best 2.28 (겹침) · 평균장은 ≈랜덤
 - odd_even KEEP · 순위장선택 REJECT
 - 포트폴리오3 best **1.44** vs aux1 **0.80** → 메타 기본
-- 다음: 예측 내부 다양성 페널티 (I-16)
+
+## I-16 다양성 oversample→diversify (20260726) — **채택**
+- `set_diversity.diversify_pick` · 3예측뇌 배선 · random.choices 미수정
+- 저장 Jaccard markov 뇌내 0.15가 가장 높음
+- 최근40: best 2.33(+0.20 vs 저장) · unique +0.78 · vs 랜덤 best -0.075
+- 벤치: `docs/benchmarks/20260726_겹침분석_다양성패치/`
+- 다음: markov 페널티 강화 A/B · port3+신풀 재측정

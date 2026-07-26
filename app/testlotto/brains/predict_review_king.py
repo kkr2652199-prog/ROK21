@@ -12,6 +12,8 @@ from app.testlotto.learn_state import load_learn_state
 def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
     if not draws:
         return []
+    from app.testlotto.set_diversity import diversify_pick, oversample_factor
+
     prev = draws[-1]
     prev_nums = sorted_nums(prev)
     rates = repeat_rate_after_draw(draws)
@@ -25,10 +27,11 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
         if n not in prev_nums:
             weights[n] *= 0.85
 
+    raw_n = oversample_factor(n_sets)
     results: list[dict] = []
     used: set[tuple[int, ...]] = set()
     attempts = 0
-    while len(results) < n_sets and attempts < 3000:
+    while len(results) < raw_n and attempts < 3000:
         attempts += 1
         pool = list(range(1, 46))
         w = [weights[n] for n in pool]
@@ -66,4 +69,4 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 "rank": len(results) + 1,
             }
         )
-    return results
+    return diversify_pick(results, n_sets)

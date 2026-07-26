@@ -7,7 +7,10 @@ from app.testlotto.predict_markov import _markov_predict
 
 
 def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
-    base = _markov_predict(draws, n_sets)
+    """후보 oversample 후 다양성 선별 (random.choices 라인 미수정)."""
+    from app.testlotto.set_diversity import diversify_pick, oversample_factor
+
+    base = _markov_predict(draws, oversample_factor(n_sets))
     pair_freq = build_pair_freq(draws)
     out: list[dict] = []
     for i, r in enumerate(base):
@@ -25,4 +28,4 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 "rank": i + 1,
             }
         )
-    return out
+    return diversify_pick(out, n_sets)

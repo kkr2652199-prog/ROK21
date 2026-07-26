@@ -1,0 +1,18 @@
+{
+  "n": 1233,
+  "avg_jaccard_all15": 0.0976,
+  "avg_jaccard_within_brain": {
+    "review": 0.1242,
+    "stat": 0.0916,
+    "markov": 0.1503
+  },
+  "avg_unique_all15": 36.5264,
+  "avg_top6_share": 0.3286,
+  "avg_best15": 2.2206,
+  "avg_best_per_brain": {
+    "review": 1.6878,
+    "stat": 1.7072,
+    "markov": 1.6185
+  },
+  "note": "저장 풀(과거 산출) 기준. 패치 전 베이스라인."
+}

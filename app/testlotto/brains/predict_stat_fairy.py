@@ -10,16 +10,21 @@ from app.testlotto.predict_statistical import _statistical_predict
 
 
 def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
-    """기존 통계 엔진 + 끝수/이월수 reasoning + 학습 조정."""
-    base = _statistical_predict(draws, n_sets)
+    """기존 통계 엔진 + 끝수/이월수 reasoning + 학습 조정.
+
+    다양성: random.choices 동결 유지. 후보를 더 뽑은 뒤 Jaccard 패널티로 n_sets 선별.
+    """
+    from app.testlotto.set_diversity import diversify_pick, oversample_factor
+
+    raw_n = oversample_factor(n_sets)
+    base = _statistical_predict(draws, raw_n)
     prev = draws[-1] if draws else None
     gaps = build_number_gaps(draws)
     learn = load_learn_state("stat")
     adj = learn.get("adjustments", {})
     carry_boost = 1.0 + float(adj.get("carry_over_boost", 0))
     ending_boost = 1.0 + float(adj.get("ending_digit_boost", 0))
-    overdue_boost = 1.0 + float(adj.get("overdue_boost", 0))
-    out: list[dict] = []
+    tagged: list[dict] = []
     for i, r in enumerate(base):
         nums = sorted(r["nums"])
         carry = carry_over_from_prev(prev, nums)
@@ -37,7 +42,7 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
             f"+미출30+{overdue if overdue else '없음'}"
             f"{learn_note}"
         )
-        out.append(
+        tagged.append(
             {
                 "nums": sorted(nums),
                 "confidence": conf,
@@ -47,4 +52,4 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 "rank": i + 1,
             }
         )
-    return out
+    return diversify_pick(tagged, n_sets)
