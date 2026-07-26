@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "n": 1233,
+  "k": 3,
+  "avg_oracle_best1": 2.2206,
+  "avg_aux1": 0.8029,
+  "avg_portfolio3_best": 1.4355,
+  "avg_portfolio3_union_cover": 2.1825,
+  "avg_random3_best": 1.4566,
+  "mean_delta_port_vs_aux": 0.6326,
+  "mean_delta_port_vs_rand3": -0.0211,
+  "adopt_portfolio": true,
+  "note": "포트폴리오=aux상위 후보에서 Jaccard 패널티로 K=3 선택. 평가=3장 중 best match 및 union cover."
+}

@@ -1,0 +1,62 @@
+{
+  "ok": true,
+  "odd_even_current": {
+    "detect_code_brain_rate": 0.305,
+    "detect_code_random_rate": 0.3875,
+    "review_stat_odd_even_rate": 0.2782,
+    "n_brain": 400,
+    "n_random": 1200,
+    "self_reinforce_suspect": false
+  },
+  "odd_even_proposed": {
+    "new_brain_rate": 0.01,
+    "new_random_rate": 0.1392,
+    "rule": "actual_odd in 2..4 AND pred_odd in {0,1,5,6}"
+  },
+  "apply_odd_even_fix": false,
+  "trust_brain_vs_random": {
+    "n": 1233,
+    "avg_brain_best_of_sets": 2.2206,
+    "avg_random_best_of_same_n": 2.2782,
+    "avg_brain_mean_set": 0.7984,
+    "lift_best_vs_random": -0.0576,
+    "brain_has_signal": false,
+    "note": "동일 장수 랜덤 대비 뇌 best 세트. 양수 lift=패턴 신호."
+  },
+  "rank_picker": {
+    "ok": true,
+    "n_eval": 1203,
+    "avg_oracle": 2.2228,
+    "avg_aux": 0.8096,
+    "avg_rank_picker": 0.7681,
+    "avg_rank_picker_ending": 0.7772,
+    "beats_aux": 295,
+    "mean_delta_vs_aux": -0.0416,
+    "adopt": false,
+    "feat_names": [
+      "vote_sum",
+      "aux",
+      "ending_sum",
+      "hist_sum",
+      "overlap_top12",
+      "brain_stat",
+      "brain_markov",
+      "brain_review",
+      "set_no_norm",
+      "uniq_boost"
+    ]
+  },
+  "decisions": {
+    "odd_even": "KEEP",
+    "rank_picker": "REJECT",
+    "brains_trusted_over_random": false,
+    "portfolio_k3": "ADOPT",
+    "note_ko": "뇌 평균≈랜덤·best-of-15는 랜덤보다 약간 낮음(겹침). 한 장 고르기 한계 → 분산 3장 포트폴리오 채택(avg best 1.44 vs aux 0.80)."
+  },
+  "portfolio": {
+    "avg_portfolio3_best": 1.4355,
+    "avg_aux1": 0.8029,
+    "avg_random3_best": 1.4566,
+    "adopt": true
+  }
+}
