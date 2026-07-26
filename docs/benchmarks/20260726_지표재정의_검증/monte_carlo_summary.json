@@ -1,0 +1,167 @@
+{
+  "ok": true,
+  "no_peek": true,
+  "db_readonly": true,
+  "random_choices_untouched": true,
+  "actual_range": [
+    1135,
+    1234
+  ],
+  "n_actuals": 100,
+  "n_trials": 10000,
+  "seed": 20260726,
+  "theory": {
+    "single_E": 0.8,
+    "best_of_5_E": 1.728935,
+    "best_of_15_E": 2.269229,
+    "best_of_45_E": 2.724229
+  },
+  "mc_curve": {
+    "5": {
+      "n_tickets": 5,
+      "n_trials": 10000,
+      "mean_of_per_ticket_avg": 0.80028,
+      "std_of_per_ticket_avg": 0.350017,
+      "mean_of_best": 1.741,
+      "std_of_best": 0.699227
+    },
+    "15": {
+      "n_tickets": 15,
+      "n_trials": 10000,
+      "mean_of_per_ticket_avg": 0.801767,
+      "std_of_per_ticket_avg": 0.201477,
+      "mean_of_best": 2.2765,
+      "std_of_best": 0.59401
+    },
+    "45": {
+      "n_tickets": 45,
+      "n_trials": 10000,
+      "mean_of_per_ticket_avg": 0.799867,
+      "std_of_per_ticket_avg": 0.115201,
+      "mean_of_best": 2.7278,
+      "std_of_best": 0.569831
+    }
+  },
+  "means_last40": {
+    "draw_nos": {
+      "min": 1195,
+      "max": 1234,
+      "n": 40
+    },
+    "theory_single": 0.8,
+    "stored_mean": {
+      "mean": 0.751667,
+      "std": 0.230452,
+      "n": 40
+    },
+    "stored_best": {
+      "mean": 2.125,
+      "std": 0.556215,
+      "n": 40
+    },
+    "diversified_mean": {
+      "mean": 0.835,
+      "std": 0.284795,
+      "n": 40
+    },
+    "diversified_best": {
+      "mean": 2.375,
+      "std": 0.764444,
+      "n": 40
+    },
+    "random15_mean": {
+      "mean": 0.758333,
+      "std": 0.188378,
+      "n": 40
+    },
+    "random15_best": {
+      "mean": 2.175,
+      "std": 0.586835,
+      "n": 40
+    },
+    "bootstrap_div_best_minus_rand_best": {
+      "diff_mean": 0.1966,
+      "ci95": [
+        -0.1,
+        0.525
+      ],
+      "n_boot": 5000,
+      "ci_includes_zero": true
+    },
+    "bootstrap_div_mean_minus_theory08": {
+      "diff_mean": 0.034282,
+      "ci95": [
+        -0.055,
+        0.123333
+      ],
+      "n_boot": 5000,
+      "ci_includes_zero": true
+    },
+    "bootstrap_stored_mean_minus_theory08": {
+      "diff_mean": -0.049248,
+      "ci95": [
+        -0.118333,
+        0.02
+      ],
+      "n_boot": 5000,
+      "ci_includes_zero": true
+    },
+    "mean_above_theory_div": true,
+    "mean_above_theory_stored": false
+  },
+  "db_gap": {
+    "lotto_testlotto.db": {
+      "exists": true,
+      "max": 1234,
+      "n": 1234
+    },
+    "lotto4.db": {
+      "exists": true,
+      "max": 1234,
+      "n": 1234
+    },
+    "lotto_hyodo.db": {
+      "exists": true,
+      "max": 1231,
+      "n": 1231
+    }
+  },
+  "claim_checks": {
+    "A_single_08_reproduced_by_MC": true,
+    "A_detail": {
+      "mc_mean": 0.801767,
+      "theory": 0.8
+    },
+    "B_theory_best15_near_227": true,
+    "B_MC_matches_theory_best15": true,
+    "B_detail": {
+      "theory_best15": 2.269229,
+      "mc_best15": 2.2765,
+      "external_claim": 2.27
+    },
+    "C_mean_significantly_above_08": false,
+    "C_detail": {
+      "div_mean": 0.835,
+      "stored_mean": 0.751667,
+      "bootstrap_div_mean_minus_08": {
+        "diff_mean": 0.034282,
+        "ci95": [
+          -0.055,
+          0.123333
+        ],
+        "n_boot": 5000,
+        "ci_includes_zero": true
+      },
+      "bootstrap_best_div_minus_rand": {
+        "diff_mean": 0.1966,
+        "ci95": [
+          -0.1,
+          0.525
+        ],
+        "n_boot": 5000,
+        "ci_includes_zero": true
+      }
+    },
+    "tickets_increase_best": true
+  }
+}
