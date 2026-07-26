@@ -1,4 +1,4 @@
-"""쌍 주기성(STEP C) + snake 커버리지(STEP D) 검증."""
+﻿"""쌍 주기성(STEP C) + snake 커버리지(STEP D) 검증."""
 
 from __future__ import annotations
 
@@ -29,9 +29,9 @@ from app.lotto4.brains.shape_brain import (
 )
 from app.lotto4.pair_periodicity_analysis import run_full_analysis
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_pair_periodicity_snake_coverage.json")
-PERIOD_JSON = Path(r"d:\3kweon\tools\_pair_periodicity_summary.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_pair_periodicity_snake_coverage.json")
+PERIOD_JSON = Path(r"d:\ROK21\tools\_pair_periodicity_summary.json")
 
 ERA_C_START = 262
 ERA_C_END = 1228

@@ -1,4 +1,7 @@
-"""4군 서버 진입점: sys.path 에 d:\\3kweon 루트만 추가 (외부 lotto 트리 미포함)."""
+"""ROK21 서버 진입점: sys.path 에 D:\\ROK21 루트만 추가 (외부 lotto 트리 미포함).
+
+원본 kweon(D:\\3kweon · 포트 6124)과 충돌 방지: 포트 7021 · 로컬 DB만 사용.
+"""
 
 from __future__ import annotations
 
@@ -9,6 +12,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
 sys.path.insert(0, str(ROOT))
+
+# 원본 kweon=6124 — ROK21 복사본은 별도 포트
+HOST = "127.0.0.1"
+PORT = 7021
 
 if __name__ == "__main__":
     import json
@@ -22,12 +29,13 @@ if __name__ == "__main__":
 
     import uvicorn
 
-    host = "127.0.0.1"
-    port = 6124
+    host = HOST
+    port = PORT
     print(
-        "[4군] 서버 기동 중… (이 창을 닫지 마세요. 중지: Ctrl+C)\n"
+        "[ROK21] 서버 기동 중… (이 창을 닫지 마세요. 중지: Ctrl+C)\n"
         f"  브라우저: http://{host}:{port}/\n"
-        f"  API 예시: http://{host}:{port}/api/lotto4/v13/brain/status\n",
+        f"  API 예시: http://{host}:{port}/api/lotto4/v13/brain/status\n"
+        "  (원본 kweon과 분리: 포트 7021 · 루트 D:\\ROK21)\n",
         flush=True,
     )
     try:
@@ -42,9 +50,9 @@ if __name__ == "__main__":
         winerr = getattr(e, "winerror", None)
         if winerr == 10048 or e.errno == 98:
             print(
-                "[4군] 오류: 포트 6124 가 이미 사용 중입니다.\n"
+                f"[ROK21] 오류: 포트 {PORT} 가 이미 사용 중입니다.\n"
                 "  - 다른 터미널의 run_v13.py 를 종료하거나, 작업 관리자에서 python/uvicorn 을 확인하세요.\n"
-                "  PowerShell: Get-NetTCPConnection -LocalPort 6124 | Format-Table OwningProcess\n",
+                f"  PowerShell: Get-NetTCPConnection -LocalPort {PORT} | Format-Table OwningProcess\n",
                 flush=True,
             )
         raise

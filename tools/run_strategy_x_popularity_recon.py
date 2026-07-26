@@ -1,4 +1,4 @@
-"""4군 전략X 인기신호 정밀정찰 — lotto4_winners_full 적재 + 상관/walk-forward."""
+﻿"""4군 전략X 인기신호 정밀정찰 — lotto4_winners_full 적재 + 상관/walk-forward."""
 from __future__ import annotations
 
 import json
@@ -7,8 +7,8 @@ import sqlite3
 import statistics
 from pathlib import Path
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_strategy_x_popularity_recon.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_popularity_recon.json")
 
 ERA_A = (1, 87)
 ERA_B = (88, 261)

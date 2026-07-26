@@ -1,4 +1,4 @@
-"""4군 풀백·예측·진화 이력 완전 삭제 (lotto_draws 유지)."""
+﻿"""4군 풀백·예측·진화 이력 완전 삭제 (lotto_draws 유지)."""
 
 from __future__ import annotations
 
@@ -6,12 +6,12 @@ import glob
 import os
 import sqlite3
 
-DB = r"d:\3kweon\data\lotto4.db"
+DB = r"d:\ROK21\data\lotto4.db"
 
 MODEL_DIRS = (
-    r"d:\3kweon\models",
-    r"d:\3kweon\app\lotto4\models",
-    r"d:\3kweon\app\lotto4\brains\models",
+    r"d:\ROK21\models",
+    r"d:\ROK21\app\lotto4\models",
+    r"d:\ROK21\app\lotto4\brains\models",
 )
 MODEL_EXTENSIONS = ("*.pt", "*.pth", "*.ubj", "*.pkl", "*.joblib")
 

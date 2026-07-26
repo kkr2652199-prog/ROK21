@@ -1,4 +1,4 @@
-"""814만 전체 조합 — 20분할 part DB (d:\\3kweon\\data\\combos\\, 로컬 전용)."""
+"""814만 전체 조합 — 20분할 part DB (프로젝트 data/combos/, 로컬 전용)."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 TABLE = "lotto_all_combos"
 PART_COUNT = 20
 PART_SIZE = math.ceil(TOTAL_COMBOS / PART_COUNT)  # 407_253
-COMBOS_DIR = Path(r"d:\3kweon\data\combos")
+COMBOS_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "combos"
 BATCH_SIZE = 25_000
 
 _CREATE_SQL = """

@@ -1,4 +1,4 @@
-"""하이에나(cooccur_favor) era별·누적효과 walk-forward 백테스트 (R13)."""
+﻿"""하이에나(cooccur_favor) era별·누적효과 walk-forward 백테스트 (R13)."""
 
 from __future__ import annotations
 
@@ -26,8 +26,8 @@ from app.lotto4.brains.shape_brain import (
     generate_shape_sets,
 )
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_strategy_x_hyena_era_backtest.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_hyena_era_backtest.json")
 
 ERA_RANGES = {"A": (1, 87), "B": (88, 261), "C": (262, 1228)}
 MIN_TRAIN_DRAWS = 80

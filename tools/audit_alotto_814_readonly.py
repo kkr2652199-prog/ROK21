@@ -1,4 +1,4 @@
-"""READ-ONLY 형 앱 A.LOTTO 814만 조합 DB 정찰."""
+﻿"""READ-ONLY 형 앱 A.LOTTO 814만 조합 DB 정찰."""
 from __future__ import annotations
 
 import csv
@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(r"C:\Users\user\Desktop\A.LOTTO")
 PARTS = ROOT / "db_parts"
-OUT = Path(r"d:\3kweon\tools\_audit_alotto_814.json")
+OUT = Path(r"d:\ROK21\tools\_audit_alotto_814.json")
 TOTAL = 8_145_060
 PART_COUNT = 20
 

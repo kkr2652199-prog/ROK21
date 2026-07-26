@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""afterFileEdit: kweon 동결 토큰·R34 역방향 차단 (exit 2)."""
+"""afterFileEdit: ROK21 동결 토큰·R34 역방향 차단 (exit 2)."""
 from __future__ import annotations
 
 import json
@@ -10,7 +10,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
-# R34 역방향: kweon 기록에 1~3군 내용 금지
+# R34 역방향: ROK21 기록에 1~3군 내용 금지
 R34_KEYWORDS = ("1군", "2군", "3군", "memoy", "My_Library", "MONEY lol")
 STATUS_MARKERS = (
     "my_drive_sync/summary/status_latest.md",
@@ -53,7 +53,7 @@ def main() -> None:
     if any(m in path_norm for m in STATUS_MARKERS):
         hit = [k for k in R34_KEYWORDS if k in combined]
         if hit:
-            sys.stderr.write(f"R34 위반: kweon 기록에 1~3군 내용 금지 ({', '.join(hit)})\n")
+            sys.stderr.write(f"R34 위반: ROK21 기록에 1~3군 내용 금지 ({', '.join(hit)})\n")
             sys.exit(2)
 
     if any(seg in path_norm for seg in WARN_SEGMENTS):

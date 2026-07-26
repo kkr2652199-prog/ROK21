@@ -1,23 +1,24 @@
-﻿# RESUME_HERE ???뚯뒪?몃줈??蹂듭썝 ?듭빱 (kweon)
+# RESUME_HERE — 테스트로또 복원 앵커 (ROK21)
 
-> 留??묒뾽 push ?????뚯씪??理쒖떊?뷀븳?? ?뺤텞 蹂듭썝???⑥씪 吏꾩엯??
+> 매 작업 push 시 이 파일을 최신화한다. 압축 복원용 단일 진입점.
 
-## ?꾩옱 ?깆쟻 湲곗???(?レ옄濡?諛뺤젣)
+## 현재 성적 기준선 (숫자로 박제)
 
-- **boost ?곹븳**: carry=0.2, ending=0.3, overdue=0.2 (`learn_state.py` + `predict_statistical.py` clamp)
-- **stat ?숈쟻 WF (1132~1231, ?뚯감蹂?seed)**: avg **1.75** ??apply_feedback 寃쎈줈 ?뺤씤
-- **stat 怨좎젙 boost (?뚯감蹂?seed)**: 0.5쨀 1.71 ??異붿쿇 1.75 (1132~1231) 쨌 ?꾧뎄媛?1.6724??.7171
-- **lotto_predictions**: **1,245??* 쨌 83?뚯감(3, 1120~1232 ?쇰?) 쨌 stat/markov/review 媛?415 ??**20260725 ?ш린濡??꾨즺**
-- **諛깆뾽**: `backups/20260725_?ш린濡앹쟾_DB?꾩껜/` 쨌 諛곗꽑??`fae01f67`
+- **boost 상한**: carry=0.2, ending=0.3, overdue=0.2 (`learn_state.py` + `predict_statistical.py` clamp)
+- **stat 동적 WF (1132~1231, 회차별 seed)**: avg **1.75** — apply_feedback 경로 확인
+- **stat 고정 boost (회차별 seed)**: 0.5³ 1.71 → 추천 1.75 (1132~1231) · 전구간 1.6724→1.7171
+- **lotto_predictions**: **1,245행** · 83회차(3, 1120~1232 일부) · stat/markov/review 각 415 — **20260725 재기록 완료**
+- **백업**: `backups/20260725_재기록전_DB전체/` · 배선전 `fae01f67`
 
-## ?덈? 嫄대뱶由ъ? 留?寃?(湲덉? 紐⑸줉)
+## 절대 건드리지 말 것 (금지 목록)
 
-- `random.choices` (`predict_statistical.py:187-188`) ??**B?④퀎 ???섏젙 湲덉?**
-- **諛깊뀒 而⑤떇 湲덉?** (`_get_draws_before`: target ?댁쟾 draws留?
-- R34: memoy=1~3援?쨌 kweon=4援??뚯뒪?몃줈??
+- `random.choices` (`predict_statistical.py:187-188`) — **B단계 전 수정 금지**
+- **백테 컨닝 금지** (`_get_draws_before`: target 이전 draws만)
+- R34: memoy=1~3군 · ROK21=4군/테스트로또 (원본 kweon 미접촉)
+- 충돌방지: 포트 **7021** · 루트 `D:\ROK21` · remote `kkr2652199-prog/ROK21`
 
-## ?ㅼ쓬 ??嫄몄쓬
+## 다음 한 걸음
 
-- **B?④퀎(?좏깮)**: stat 寃곗젙濡좏솕 ??`random.choices` ???쒕뱶 怨좎젙 ?섑뵆留??먮뒗 ?泥?
-- UI?먯꽌 1232 stat 5?명듃쨌?ш린濡?predictions ?뺤긽 ?몄텧 ?뺤씤
-- 蹂닿퀬?? `20260725_?덉륫_珥덇린???ш린濡??꾨즺.md`
+- ROK21 1단계(원격·포트·경로 분리) 완료 후 기능 작업은 별도 지시
+- UI에서 `http://127.0.0.1:7021/` 기동 확인
+- 보고서: `20260726_ROK21_1단계_복사본분리.md`

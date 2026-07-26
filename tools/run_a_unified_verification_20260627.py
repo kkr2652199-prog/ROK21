@@ -1,4 +1,4 @@
-"""20260627 A안 통합검증 — 랜덤 vs 9뇌 vs 전략X + 비인기(Matheson) + Stömmer 0.766%."""
+﻿"""20260627 A안 통합검증 — 랜덤 vs 9뇌 vs 전략X + 비인기(Matheson) + Stömmer 0.766%."""
 
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ from app.lotto4.combinadic import combo_to_no
 from app.lotto4.coverage_optimizer_walkforward import avg_pairwise_jaccard, union_coverage
 from app.lotto4.unpopularity_signal_walkforward import compute_unpopularity_before, set_unpopularity_score
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
+DB = Path(r"d:\ROK21\data\lotto4.db")
 OUT_JSON = _ROOT / "tools" / "_audit_20260627_a_unified_verification.json"
 REPORT = _ROOT / "reports" / "20260627_4군_A안통합검증_비인기회피_논문근거.txt"
 

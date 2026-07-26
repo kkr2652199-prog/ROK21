@@ -1,4 +1,4 @@
-"""stat_generator 단독 성능 테스트 (1회성, DB 읽기 전용)."""
+﻿"""stat_generator 단독 성능 테스트 (1회성, DB 읽기 전용)."""
 
 import json
 import os
@@ -8,7 +8,7 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from app.lotto4.brains.stat_generator import generate_candidates
 
-db_path = os.path.abspath("d:/3kweon/data/lotto4.db")
+db_path = os.path.abspath("d:/ROK21/data/lotto4.db")
 conn = sqlite3.connect(db_path)
 
 START, END = 1100, 1222
@@ -110,7 +110,7 @@ for r in results:
             )
         )
 
-out_path = "d:/3kweon/reports/stat_generator_solo_results.json"
+out_path = "d:/ROK21/reports/stat_generator_solo_results.json"
 with open(out_path, "w", encoding="utf-8") as f:
     json.dump(results, f, indent=2, ensure_ascii=False)
 print()

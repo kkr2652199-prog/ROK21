@@ -1,4 +1,4 @@
-"""3군 LSTM 누수 격리 + 순방향 재백테 (코드 수정 없음)."""
+﻿"""3군 LSTM 누수 격리 + 순방향 재백테 (코드 수정 없음)."""
 from __future__ import annotations
 
 import hashlib
@@ -15,7 +15,7 @@ sys.path.insert(0, str(ROOT))
 DB = ROOT / "data" / "lotto.db"
 PT = ROOT / "models" / "lstm_lotto.pt"
 PT_BAK = ROOT / "models" / "lstm_lotto.pt.bak_20260529"
-OUT = Path(r"d:\3kweon\tools\_army3_backtest_run.json")
+OUT = Path(r"d:\ROK21\tools\_army3_backtest_run.json")
 
 
 def sha256(p: Path) -> str:

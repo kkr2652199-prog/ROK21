@@ -1,4 +1,4 @@
-"""5005 전수 커버리지 최적화 walk-forward 검증 (era_C, R13)."""
+﻿"""5005 전수 커버리지 최적화 walk-forward 검증 (era_C, R13)."""
 
 from __future__ import annotations
 
@@ -36,8 +36,8 @@ from app.lotto4.coverage_optimizer_walkforward import (
     union_coverage,
 )
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_strategy_x_5005_coverage.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_5005_coverage.json")
 
 ERA_C_START = 262
 ERA_C_END = 1228

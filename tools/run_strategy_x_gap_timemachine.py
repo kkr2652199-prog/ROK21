@@ -1,4 +1,4 @@
-"""미출현 간격(gap) 신호 walk-forward 타임머신 검증 (era_C, R13)."""
+﻿"""미출현 간격(gap) 신호 walk-forward 타임머신 검증 (era_C, R13)."""
 
 from __future__ import annotations
 
@@ -28,8 +28,8 @@ from app.lotto4.brains.shape_brain import (
 )
 from app.lotto4.gap_signal_walkforward import GapState, generate_gap_sets
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_strategy_x_gap_timemachine.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_gap_timemachine.json")
 
 ERA_C_START = 262
 ERA_C_END = 1228

@@ -863,7 +863,7 @@ async def api_v13_stats_comprehensive_full():
     base["trend_last_10"] = _pack(draws[max(0, n - 10) :])
     base["trend_last_30"] = _pack(draws[max(0, n - 30) :])
     base["trend_last_50"] = _pack(draws[max(0, n - 50) :])
-    base["db_note"] = "lotto_draws from d:\\3kweon\\data\\lotto4.db (app.lotto.models.LOTTO_DB_PATH)"
+    base["db_note"] = "lotto_draws from <ROK21>/data/lotto4.db (app.lotto.models.LOTTO_DB_PATH)"
     return base
 
 

@@ -1,4 +1,4 @@
-"""전략 X 하이에나 조율뇌 walk-forward 백테스트 (era_C, R13)."""
+﻿"""전략 X 하이에나 조율뇌 walk-forward 백테스트 (era_C, R13)."""
 
 from __future__ import annotations
 
@@ -35,8 +35,8 @@ from app.lotto4.brains.shape_brain import (
     generate_shape_sets,
 )
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_strategy_x_hyena_backtest.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_hyena_backtest.json")
 
 ERA_C_START = 262
 ERA_C_END = 1228

@@ -1,4 +1,4 @@
-"""동반출현/출현간격 패턴 walk-forward 예측력 검증 (4군 정찰)."""
+﻿"""동반출현/출현간격 패턴 walk-forward 예측력 검증 (4군 정찰)."""
 from __future__ import annotations
 
 import json
@@ -10,8 +10,8 @@ from collections import defaultdict
 from itertools import combinations
 from pathlib import Path
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_cooccur_gap_backtest.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_cooccur_gap_backtest.json")
 BASELINE = 0.7894
 DRAW_MIN = 6
 DRAW_MAX = 1225

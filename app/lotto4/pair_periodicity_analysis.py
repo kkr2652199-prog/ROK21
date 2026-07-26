@@ -13,7 +13,9 @@ from typing import Any
 
 from app.lotto4.models import LOTTO_DB_PATH
 
-ANALYSIS_DB_DEFAULT = Path(r"d:\3kweon\tools\pair_periodicity_analysis.db")
+ANALYSIS_DB_DEFAULT = (
+    Path(__file__).resolve().parent.parent.parent / "tools" / "pair_periodicity_analysis.db"
+)
 RANDOM_SIMS = 1000
 MIN_GAPS_FOR_TEST = 2
 MIN_APPEAR_FOR_WF = 4

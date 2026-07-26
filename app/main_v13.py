@@ -19,7 +19,7 @@ logging.basicConfig(
     format="%(asctime)s %(name)s %(levelname)s %(message)s",
 )
 
-app = FastAPI(title="나의 지식 도서관 — 4군 AI 예측", version="0.1.0")
+app = FastAPI(title="ROK21 — 4군 AI 예측", version="0.1.0")
 
 _ALLOW_ORIGIN_REGEX = (
     r"https?://("

@@ -1,4 +1,4 @@
-"""4군 비인기 전략 기반분석 정찰 — lotto4_winners 적재 + 상관 분석."""
+﻿"""4군 비인기 전략 기반분석 정찰 — lotto4_winners 적재 + 상관 분석."""
 from __future__ import annotations
 
 import json
@@ -7,8 +7,8 @@ import sqlite3
 import statistics
 from pathlib import Path
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_unpopular_recon_result.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_unpopular_recon_result.json")
 
 
 def _decade_bucket(n: int) -> int:

@@ -1,4 +1,4 @@
-"""4군 개별번호/쌍 인기도 분석 — 비인기 엔진 v2 정찰."""
+﻿"""4군 개별번호/쌍 인기도 분석 — 비인기 엔진 v2 정찰."""
 from __future__ import annotations
 
 import json
@@ -8,8 +8,8 @@ from collections import defaultdict
 from itertools import combinations
 from pathlib import Path
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_number_popularity_recon.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_number_popularity_recon.json")
 
 
 def rankdata(vals: list[float]) -> list[float]:

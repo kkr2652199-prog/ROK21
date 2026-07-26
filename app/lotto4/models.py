@@ -5,7 +5,7 @@
 import sqlite3
 from pathlib import Path
 
-LOTTO_DB_PATH = Path(r"d:\3kweon\data\lotto4.db")
+LOTTO_DB_PATH = Path(__file__).resolve().parent.parent.parent / "data" / "lotto4.db"
 
 
 def get_lotto4_db() -> sqlite3.Connection:

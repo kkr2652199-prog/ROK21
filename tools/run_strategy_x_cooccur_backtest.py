@@ -1,4 +1,4 @@
-"""전략 X 5뇌 cooccur 단독 walk-forward 백테스트 (era_C, R13)."""
+﻿"""전략 X 5뇌 cooccur 단독 walk-forward 백테스트 (era_C, R13)."""
 
 from __future__ import annotations
 
@@ -28,9 +28,9 @@ from app.lotto4.brains.coordinator_brain import (
 from app.lotto4.brains.shape_brain import _segment_summary, extract_shape_metrics
 from app.lotto4.brains._utils import jaccard
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_strategy_x_cooccur_backtest.json")
-BASELINE_4 = Path(r"d:\3kweon\tools\_strategy_x_backtest_v2.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_cooccur_backtest.json")
+BASELINE_4 = Path(r"d:\ROK21\tools\_strategy_x_backtest_v2.json")
 
 ERA_C_START = 262
 ERA_C_END = 1228

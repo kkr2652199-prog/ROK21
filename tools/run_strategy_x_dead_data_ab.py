@@ -1,4 +1,4 @@
-"""죽은 데이터 부활 A/B 검증 — 비인기회피 + 튄쌍이상치 (era_C, R13)."""
+﻿"""죽은 데이터 부활 A/B 검증 — 비인기회피 + 튄쌍이상치 (era_C, R13)."""
 
 from __future__ import annotations
 
@@ -36,8 +36,8 @@ from app.lotto4.unpopularity_signal_walkforward import (
     winner_dispersion_score,
 )
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_strategy_x_dead_data_ab.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_dead_data_ab.json")
 
 ERA_C_START = 262
 ERA_C_END = 1228

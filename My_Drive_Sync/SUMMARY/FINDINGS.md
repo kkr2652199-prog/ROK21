@@ -1,6 +1,6 @@
-# FINDINGS — kweon 결함 대장 (ID 영구 고정)
+# FINDINGS — ROK21 결함 대장 (ID 영구 고정 · kweon 복사본)
 
-> memoy는 F-*, kweon은 **K-*** 로 구분. ID 재사용·재번호 금지.
+> memoy는 F-*, ROK21/kweon계는 **K-*** 로 구분. ID 재사용·재번호 금지.
 > 상태: OPEN -> VERIFYING -> PATCHED -> CLOSED
 
 | ID | 상태 | 요약 | 위치 | 비고 |

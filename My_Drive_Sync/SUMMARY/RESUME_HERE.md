@@ -1,4 +1,4 @@
-# RESUME_HERE — 테스트로또 복원 앵커 (kweon)
+# RESUME_HERE — 테스트로또 복원 앵커 (ROK21)
 
 > 매 작업 push 시 이 파일을 최신화한다. 압축 복원용 단일 진입점.
 
@@ -14,10 +14,11 @@
 
 - `random.choices` (`predict_statistical.py:187-188`) — **B단계 전 수정 금지**
 - **백테 컨닝 금지** (`_get_draws_before`: target 이전 draws만)
-- R34: memoy=1~3군 · kweon=4군/테스트로또
+- R34: memoy=1~3군 · ROK21=4군/테스트로또 (원본 kweon 미접촉)
+- 충돌방지: 포트 **7021** · 루트 `D:\ROK21` · remote `kkr2652199-prog/ROK21`
 
 ## 다음 한 걸음
 
-- **B단계(선택)**: stat 결정론화 — `random.choices` → 시드 고정 샘플링 또는 대체
-- UI에서 1232 stat 5세트·재기록 predictions 정상 노출 확인
-- 보고서: `20260725_예측_초기화_재기록_완료.md`
+- ROK21 1단계(원격·포트·경로 분리) 완료 후 기능 작업은 별도 지시
+- UI에서 `http://127.0.0.1:7021/` 기동 확인
+- 보고서: `20260726_ROK21_1단계_복사본분리.md`

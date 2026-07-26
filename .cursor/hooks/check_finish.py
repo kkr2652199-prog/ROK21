@@ -14,7 +14,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 ROOT = Path(__file__).resolve().parents[2]
 REPORT_DIRS = (ROOT / "My_Drive_Sync" / "커서보고서", ROOT / "reports")
-KWEON_SCOPE = ("My_Drive_Sync/SUMMARY", "My_Drive_Sync/커서보고서",
+ROK21_SCOPE = ("My_Drive_Sync/SUMMARY", "My_Drive_Sync/커서보고서",
                "reports", ".cursor", "app")
 
 
@@ -27,8 +27,8 @@ def _git_lines(args: list[str]) -> list[str]:
 def _dirty() -> list[str]:
     out: set[str] = set()
     for cmd in (
-        ["git", "diff", "--name-only", "HEAD", "--", *KWEON_SCOPE],
-        ["git", "diff", "--cached", "--name-only", "--", *KWEON_SCOPE],
+        ["git", "diff", "--name-only", "HEAD", "--", *ROK21_SCOPE],
+        ["git", "diff", "--cached", "--name-only", "--", *ROK21_SCOPE],
     ):
         out.update(_git_lines(cmd))
     return sorted(out)
@@ -44,7 +44,7 @@ def main() -> None:
     try:
         d = _dirty()
         if d:
-            issues.append("kweon 경로 미커밋 변경: " + ", ".join(d[:5])
+            issues.append("ROK21 경로 미커밋 변경: " + ", ".join(d[:5])
                           + (" ..." if len(d) > 5 else "") + " — commit+push 완료하세요.")
     except OSError as exc:
         issues.append(f"git diff 실행 실패: {exc}")
@@ -55,7 +55,7 @@ def main() -> None:
 
     if issues:
         sys.stdout.write(json.dumps(
-            {"followup_message": "[KWEON 종료체크] " + " / ".join(issues)},
+            {"followup_message": "[ROK21 종료체크] " + " / ".join(issues)},
             ensure_ascii=False))
     sys.exit(0)
 

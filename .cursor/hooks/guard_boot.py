@@ -9,13 +9,13 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
-CONTEXT_LINES = """[KWEON] SSOT=kweon main / 4군·테스트로또·효도로또만
-[R34] 1~3군·memoy·My_Library 내용 kweon 기록 금지
+CONTEXT_LINES = """[ROK21] SSOT=ROK21 main / 4군·테스트로또·효도로또만
+[R34] 1~3군·memoy·My_Library 내용 ROK21 기록 금지
+[충돌방지] 원본 kweon(D:\\3kweon·6124) 미접촉 · 본복제 D:\\ROK21·7021
 [동결] random.choices = B단계 전 수정 금지
 [동결] 백테 컨닝 금지 (_get_draws_before: target 이전만)
 [시작] SUMMARY/BOOT.md + FINDINGS.md 확인
-[종료] 보고서+STATUS+BOOT 3줄+push
-[원칙] 추측금지, 모르면 미확인"""
+[종료] 보고서+STATUS+BOOT 3줄+push(ROK21)"""
 
 
 def main() -> None:

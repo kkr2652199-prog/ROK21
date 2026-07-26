@@ -1,4 +1,4 @@
-"""전략 X 5뇌 era_C 전회차 walk-forward 적재 실행."""
+﻿"""전략 X 5뇌 era_C 전회차 walk-forward 적재 실행."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ if str(_ROOT) not in sys.path:
 
 from app.lotto4.strategy_x_fullbackfill import ERA_C_END, ERA_C_START, run_fullbackfill
 
-OUT = Path(r"d:\3kweon\tools\_strategy_x_fullbackfill_result.json")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_fullbackfill_result.json")
 
 
 def main() -> None:

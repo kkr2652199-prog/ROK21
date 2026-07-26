@@ -1,4 +1,4 @@
-"""READ-ONLY 4군 lotto4.db 데이터 활용도 정찰."""
+﻿"""READ-ONLY 4군 lotto4.db 데이터 활용도 정찰."""
 from __future__ import annotations
 
 import json
@@ -6,9 +6,9 @@ import re
 import sqlite3
 from pathlib import Path
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-ROOT = Path(r"d:\3kweon\app\lotto4")
-OUT = Path(r"d:\3kweon\tools\_audit4_data_util.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+ROOT = Path(r"d:\ROK21\app\lotto4")
+OUT = Path(r"d:\ROK21\tools\_audit4_data_util.json")
 
 FOCUS = [
     "lotto4_winners_full",

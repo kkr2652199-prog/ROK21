@@ -1,4 +1,4 @@
-# CURSOR_RULES.md — 커서 행동 강제 규칙
+﻿# CURSOR_RULES.md — 커서 행동 강제 규칙
 # 최종 갱신: 2026-07-18 (push 검증·RESUME_HERE 반영)
 # 이 파일은 READ-ONLY. 형(사용자)만 수정 가능.
 
@@ -17,9 +17,9 @@
 
 모든 작업 시작 전 아래 3파일을 읽고 첫 줄에 확인 출력:
 
- 파일 1: D:\3kweon\My_Drive_Sync\SUMMARY\RULES_FIXED.md
- 파일 2: D:\3kweon\My_Drive_Sync\SUMMARY\STATUS_LATEST.md
- 파일 3: D:\3kweon\My_Drive_Sync\SUMMARY\CURSOR_RULES.md
+ 파일 1: D:\ROK21\My_Drive_Sync\SUMMARY\RULES_FIXED.md
+ 파일 2: D:\ROK21\My_Drive_Sync\SUMMARY\STATUS_LATEST.md
+ 파일 3: D:\ROK21\My_Drive_Sync\SUMMARY\CURSOR_RULES.md
 
 출력 형식:
  ✅ RULES_FIXED.md 확인 (R1~R33)
@@ -34,8 +34,8 @@
 
 아래 폴더/파일은 어떤 이유로도 수정하지 않는다:
 
- ❌ app/lotto/ (1군 — memoy 관할, kweon 내 READ-ONLY)
- ❌ app/lotto2/ (2군 — memoy 관할, kweon 내 READ-ONLY)
+ ❌ app/lotto/ (1군 — memoy 관할, ROK21 내 READ-ONLY)
+ ❌ app/lotto2/ (2군 — memoy 관할, ROK21 내 READ-ONLY)
  ❌ RULES_FIXED.md (형만 수정)
  ❌ CURSOR_RULES.md (형만 수정)
 
@@ -50,7 +50,7 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
 모든 작업/정찰/백테스트 완료 후 아래를 반드시 수행:
 
 ### 3-1. 보고서 저장 (R7)
- 경로: d:\3kweon\reports\YYYYMMDD_4군_{작업명}_보고서.md
+ 경로: D:\ROK21\reports\YYYYMMDD_4군_{작업명}_보고서.md
  필수 포함:
  - SHA256 비교 (변경 전 vs 후)
  - 성적표 (해당 시)
@@ -58,7 +58,7 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  - 1~3군 간섭 여부 (반드시 "0건" 확인)
 
 ### 3-2. STATUS_LATEST.md 갱신 (R10)
- 경로: D:\3kweon\My_Drive_Sync\SUMMARY\STATUS_LATEST.md
+ 경로: D:\ROK21\My_Drive_Sync\SUMMARY\STATUS_LATEST.md
  갱신 항목:
  - 기억 번호 업데이트
  - 4군 현재 단계/상태
@@ -66,7 +66,7 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  - 다음 작업 예고
 
 ### 3-3. 기억 파일 저장 (R18/R25)
- 경로: D:\3kweon\My_Drive_Sync\동생기억\YYYYMMDD_기억{N}_v1.md
+ 경로: D:\ROK21\My_Drive_Sync\동생기억\YYYYMMDD_기억{N}_v1.md
  필수 포함:
  - 이전 기억 번호 (체인 연결)
  - 작업 요약 1줄
@@ -74,17 +74,17 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  - 다음 작업
 
 ### 3-4. Drive 보고서 복사 (R8)
- 경로: D:\3kweon\My_Drive_Sync\커서보고서\{보고서파일명}
+ 경로: D:\ROK21\My_Drive_Sync\커서보고서\{보고서파일명}
 
-### 3-5. git push + 원격 재확인 (R34 kweon만)
- `git add` → `commit` → **`push origin main` (kweon)** — memoy push 금지.
+### 3-5. git push + 원격 재확인 (R34 ROK21만)
+ `git add` → `commit` → **`push origin main` (ROK21)** — memoy·원본 kweon push 금지.
  push 후 **원격에서 파일 존재·커밋 SHA 대조**까지 해야 "완료":
  - `git rev-parse HEAD` 로컬 SHA
  - `git ls-remote origin refs/heads/main` 원격 SHA 일치 확인
  - (선택) `git show origin/main:My_Drive_Sync/SUMMARY/RESUME_HERE.md` 원격 파일 존재 확인
 
 ### 3-6. RESUME_HERE.md 갱신 (매 push 동반)
- 경로: `D:\3kweon\My_Drive_Sync\SUMMARY\RESUME_HERE.md` (+ 동일 `.txt`)
+ 경로: `D:\ROK21\My_Drive_Sync\SUMMARY\RESUME_HERE.md` (+ 동일 `.txt`)
  3섹션 고정: **지금 어디까지** / **살아있는 진실** / **다음 한 걸음**
  push할 때마다 "지금 어디까지"·"다음 한 걸음"을 최신화.
 
@@ -92,12 +92,12 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  작업 마지막에 아래 체크리스트 출력:
 
  📋 저장 체크리스트:
- [ ] 보고서 저장 → d:\3kweon\reports\...
+ [ ] 보고서 저장 → D:\ROK21\reports\...
  [ ] STATUS_LATEST 갱신 → 기억{N}, 상태: ...
  [ ] 기억 파일 저장 → 기억{N}_v1.md
  [ ] Drive 복사 완료 → 커서보고서\...
  [ ] RESUME_HERE.md 갱신 + .txt
- [ ] push origin main (kweon) + 원격 SHA 대조
+ [ ] push origin main (ROK21) + 원격 SHA 대조
  [ ] 1~3군 간섭: 0건
 
  모든 항목 [✅] 확인 후에만 "작업 완료" 선언.
@@ -152,7 +152,7 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
 ## 7. 폴더 구조 (저장 위치)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- d:\3kweon\
+ D:\ROK21\
  ├── app/lotto4/brains/ ← 4군 뇌 코드
  ├── app/lotto4/ ← 엔진, 라우트
  ├── app/static/ ← UI (js/css/html)
@@ -161,7 +161,7 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  ├── data/lotto4.db ← DB
  └── run_v13.py ← 서버 진입점
 
- D:\3kweon\My_Drive_Sync\
+ D:\ROK21\My_Drive_Sync\
  ├── SUMMARY/
  │ ├── RESUME_HERE.md ← **복원 앵커 (매 push 최신화, 3섹션 고정)**
  │ ├── README_START.md ← 복원 진입점(레거시)
@@ -173,15 +173,17 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  ├── 동생기억/ ← 기억N_v1.md 파일
  └── 커서보고서/ ← 보고서 Drive 복사본
 
- D:\MONEY lol\ ← memoy(1·2·3군) 원본 — kweon 작업 시 미접촉
+ D:\MONEY lol\ ← memoy(1·2·3군) 원본 — ROK21 작업 시 미접촉
+ D:\3kweon\ ← 원본 kweon — ROK21에서 쓰기·push 금지 (포트 6124)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## 8. 저장소·경로 지도 (혼동 방지, 20260711 박제)
+## 8. 저장소·경로 지도 (혼동 방지, 20260726 ROK21 분리)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
  memoy 저장소 = 1·2·3군 앱 = 로컬 D:\MONEY lol
- kweon 저장소 = 4군 앱 + 효도로또(1.5군) = 로컬 D:\3kweon
- 1·2·3군은 memoy에서만, 4군·효도로또는 kweon에서만 작업
+ kweon 원본 = D:\3kweon · 포트 6124 · kkr2652199-prog/kweon
+ ROK21 복사본 = 4군 앱 + 효도로또(1.5군) = D:\ROK21 · 포트 7021 · kkr2652199-prog/ROK21
+ 1·2·3군은 memoy에서만, 4군·효도로또는 ROK21에서만 작업 (원본 kweon 미접촉)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## 9. 효도로또(1.5군) 원칙 (20260711)

@@ -1,4 +1,4 @@
-"""READ-ONLY 1~3군 백테스트 누수 정찰 — lotto_audit.db only."""
+﻿"""READ-ONLY 1~3군 백테스트 누수 정찰 — lotto_audit.db only."""
 from __future__ import annotations
 
 import json
@@ -181,7 +181,7 @@ def main() -> None:
         out[f"step3_all_brains_ts_draw_{d}"] = times
 
     conn.close()
-    out_path = Path(r"d:\3kweon\tools\_audit_123_output.json")
+    out_path = Path(r"d:\ROK21\tools\_audit_123_output.json")
     out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     print("written", out_path)
 

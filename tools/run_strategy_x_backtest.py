@@ -1,4 +1,4 @@
-"""전략 X 정직성·적합도 walk-forward 백테스트 (era_C, R13).
+﻿"""전략 X 정직성·적합도 walk-forward 백테스트 (era_C, R13).
 
 적중률 무작위 수준 확인 + 인기영역 적합도 측정.
 커닝 금지: 회차 N 예측 시 drw_no < N 데이터만 사용.
@@ -30,8 +30,8 @@ from app.lotto4.brains.shape_brain import (
     extract_shape_metrics,
 )
 
-DB = Path(r"d:\3kweon\data\lotto4.db")
-OUT = Path(r"d:\3kweon\tools\_strategy_x_backtest.json")
+DB = Path(r"d:\ROK21\data\lotto4.db")
+OUT = Path(r"d:\ROK21\tools\_strategy_x_backtest.json")
 
 ERA_C_START = 262
 ERA_C_END = 1228

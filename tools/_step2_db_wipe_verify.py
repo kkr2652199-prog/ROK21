@@ -1,6 +1,6 @@
-import sqlite3
+﻿import sqlite3
 
-db = r"d:\3kweon\data\lotto4.db"
+db = r"d:\ROK21\data\lotto4.db"
 conn = sqlite3.connect(db)
 conn.execute("PRAGMA busy_timeout = 120000")
 
