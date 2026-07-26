@@ -37,3 +37,14 @@
 
 ## I-08 (보류) lotto4 기법 이식
 - CDM/gapZ/EV는 **새 예측 렌즈**로 풀 다양성↑ 목적일 때만 A/B
+
+## I-09 Vote≥2 WF 결과 (20260726) — **기각(단독)** / 하이브리드로 승격
+- 실측: avg Vote≥2 **0.79** vs best단일세트 **2.22** (n=1233) → 단독 메타로는 열세
+- 원인 가설: vote≥2 풀 ~25개 + 역사빈도로 6수 조립 → 이미 강한 단일세트 신호를 희석
+- 다음: **하이브리드** = best세트 시드 + vote≥2 보강 / Vote≥3 / cover=6 회차만 규칙학습
+- 스크립트: `tools/run_meta_vote2_wf.py` · 요약 `vote2_wf_summary.json`
+
+## I-10 유사과거 패턴 (형 방향성 · 컨닝금지)
+- 「지금 구조와 비슷한 과거 회차 → 그 다음 당첨 분포」를 target **이전만**으로 스카우트
+- 스크립트: `tools/scout_similar_past_patterns.py` · `similar_past_scout.json`
+- 무리(swarm) 후보: 홀짝/고저/합/AC · 끝수 · 갭 · 구간 · 학자 필터 등 역할분담 A/B

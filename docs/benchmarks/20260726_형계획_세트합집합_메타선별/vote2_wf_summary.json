@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "n_draws": 1233,
+  "min_vote": 2,
+  "no_peek": true,
+  "avg_best_single": 2.2206,
+  "avg_vote2": 0.7899,
+  "avg_vote2_similar_past": 0.7835,
+  "avg_cover_oracle": 4.8727,
+  "vote2_beats_best": 4,
+  "vote2_ties_best": 123,
+  "vote2_loses_best": 1106,
+  "vote2_sim_beats_best": 3,
+  "vote2_ge3": 22,
+  "best_ge3": 345,
+  "vote2_ge4": 2,
+  "best_ge4": 25,
+  "mean_delta_vs_best": -1.4307,
+  "mean_delta_sim_vs_best": -1.4371,
+  "avg_vote_ge2_pool_size": 25.0049,
+  "window_1132_1234": {
+    "n": 103,
+    "avg_best": 2.2233,
+    "avg_vote2": 0.8447,
+    "avg_vote2_sim": 0.8252,
+    "mean_delta": -1.3786,
+    "mean_delta_sim": -1.3981
+  },
+  "note": "메타는 오라클 합집합(cover)이 아님. Vote≥2+역사빈도(+유사과거)로 6수 조립. 유사과거는 target 이전 당첨 구조만 사용."
+}

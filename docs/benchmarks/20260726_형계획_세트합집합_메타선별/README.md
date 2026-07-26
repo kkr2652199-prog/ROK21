@@ -21,3 +21,20 @@
 ## 실측 한 줄 (상세는 union_coverage.json)
 3뇌 합집합이 당첨 6개를 풀에 담는 비율 **~27.9%** (단일 뇌 5세트는 **&lt;1%**).  
 평균 풀 커버 **4.87** vs 최선 단일세트 적중 **2.22** → **메타 선별 갭이 형 계획의 본체**.
+
+## Vote≥2 메타 WF (20260726) — 진행 방향 확인 + 단독은 기각
+| 지표 | 값 (n=1233) |
+|------|-------------|
+| avg best 단일세트 | **2.22** |
+| avg Vote≥2 (역사빈도) | **0.79** |
+| avg Vote≥2+유사과거 | **0.78** |
+| Vote≥2가 best 이김 | 4회 |
+| 오라클 풀 cover (상한) | **4.87** |
+
+→ **형 지시대로 tools에 올려 best 대비 WF한 것은 맞음.**  
+→ 단독 Vote≥2는 best세트보다 열세 → 다음 **하이브리드 / Vote≥3 / cover=6 규칙**.  
+파일: `vote2_wf_summary.json` · `tools/run_meta_vote2_wf.py`
+
+## 유사과거 (컨닝금지)
+- `tools/scout_similar_past_patterns.py` · 최근20회 샘플 avg 유사과거 ~30.2 · top15∩actual ~1.8  
+- 검색·past_next는 **target 이전만**
