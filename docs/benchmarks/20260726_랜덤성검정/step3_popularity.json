@@ -1,0 +1,81 @@
+{
+  "label": "log(tier3_winners / total_sales)",
+  "train": "1..1000",
+  "val": "1001..1234",
+  "n_train": 1000,
+  "n_val": 234,
+  "n_features": 72,
+  "feature_groups": [
+    "n_le31,n_le12,sum,odd,consec,carry",
+    "num_dummy_1_45",
+    "ending_0_9",
+    "band_5",
+    "same_ending_pairs,arithmetic3",
+    "diag_diff,diag_sum,max_row,max_col"
+  ],
+  "univariate_sum_pearson_train": -0.110262,
+  "models": {
+    "ridge": {
+      "val_r2": -4.558614,
+      "val_spearman": 0.440295,
+      "vs_univariate_r": {
+        "univariate_pearson_train_sum": -0.110262,
+        "univariate_val_r2": -4.403425,
+        "univariate_val_spearman": 0.386267,
+        "model_minus_uni_spearman": 0.054028,
+        "model_minus_uni_r2": -0.155189
+      },
+      "quintile20": {
+        "n_each": 46,
+        "unpop_avg_prize": 1553474.54,
+        "pop_avg_prize": 1316818.17,
+        "prize_ratio_unpop_over_pop": 1.179718,
+        "unpop_avg_winners": 3014.0435,
+        "pop_avg_winners": 3428.2391,
+        "beats_1p20": false
+      }
+    },
+    "gbm": {
+      "val_r2": -5.575355,
+      "val_spearman": 0.344377,
+      "vs_univariate_r": {
+        "univariate_pearson_train_sum": -0.110262,
+        "univariate_val_r2": -4.403425,
+        "univariate_val_spearman": 0.386267,
+        "model_minus_uni_spearman": -0.04189,
+        "model_minus_uni_r2": -1.17193
+      },
+      "quintile20": {
+        "n_each": 46,
+        "unpop_avg_prize": 1504498.37,
+        "pop_avg_prize": 1328664.54,
+        "prize_ratio_unpop_over_pop": 1.132339,
+        "unpop_avg_winners": 3081.0,
+        "pop_avg_winners": 3426.8261,
+        "beats_1p20": false
+      }
+    },
+    "hist_gbm": {
+      "val_r2": -6.20468,
+      "val_spearman": 0.235747,
+      "vs_univariate_r": {
+        "univariate_pearson_train_sum": -0.110262,
+        "univariate_val_r2": -4.403425,
+        "univariate_val_spearman": 0.386267,
+        "model_minus_uni_spearman": -0.15052,
+        "model_minus_uni_r2": -1.801255
+      },
+      "quintile20": {
+        "n_each": 46,
+        "unpop_avg_prize": 1527521.3,
+        "pop_avg_prize": 1385306.02,
+        "prize_ratio_unpop_over_pop": 1.10266,
+        "unpop_avg_winners": 3027.2826,
+        "pop_avg_winners": 3306.6522,
+        "beats_1p20": false
+      }
+    }
+  },
+  "best_prize_ratio": 1.179718,
+  "any_beats_1p20": false
+}

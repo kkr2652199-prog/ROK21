@@ -1,0 +1,463 @@
+{
+  "ok": true,
+  "readonly": true,
+  "n_draws": 1234,
+  "step1_randomness": {
+    "frequency": {
+      "main_only": {
+        "chi2": 28.585089,
+        "df": 44,
+        "p": 0.9651596450097096,
+        "cramers_v": 0.009367,
+        "n_counts_sum": 7404,
+        "expected_each": 164.533333,
+        "min_count": 136,
+        "max_count": 184,
+        "era": "all",
+        "with_bonus": false,
+        "n_draws": 1234
+      },
+      "with_bonus": {
+        "chi2": 33.413522,
+        "df": 44,
+        "p": 0.8773135390626752,
+        "cramers_v": 0.009376,
+        "n_counts_sum": 8638,
+        "expected_each": 191.955556,
+        "min_count": 162,
+        "max_count": 213,
+        "era": "all",
+        "with_bonus": true,
+        "n_draws": 1234
+      }
+    },
+    "eras": {
+      "main_only": {
+        "1_400": {
+          "chi2": 33.3,
+          "df": 44,
+          "p": 0.8802485322415785,
+          "cramers_v": 0.017758,
+          "n_counts_sum": 2400,
+          "expected_each": 53.333333,
+          "min_count": 41,
+          "max_count": 65,
+          "era": "1_400",
+          "with_bonus": false,
+          "n_draws": 400
+        },
+        "401_800": {
+          "chi2": 34.9125,
+          "df": 44,
+          "p": 0.8345700151509794,
+          "cramers_v": 0.018183,
+          "n_counts_sum": 2400,
+          "expected_each": 53.333333,
+          "min_count": 36,
+          "max_count": 68,
+          "era": "401_800",
+          "with_bonus": false,
+          "n_draws": 400
+        },
+        "801_1234": {
+          "chi2": 31.334101,
+          "df": 44,
+          "p": 0.9242256891726729,
+          "cramers_v": 0.016537,
+          "n_counts_sum": 2604,
+          "expected_each": 57.866667,
+          "min_count": 42,
+          "max_count": 70,
+          "era": "801_1234",
+          "with_bonus": false,
+          "n_draws": 434
+        }
+      },
+      "with_bonus": {
+        "1_400": {
+          "chi2": 38.953571,
+          "df": 44,
+          "p": 0.6872850956449308,
+          "cramers_v": 0.017781,
+          "n_counts_sum": 2800,
+          "expected_each": 62.222222,
+          "min_count": 44,
+          "max_count": 81,
+          "era": "1_400",
+          "with_bonus": true,
+          "n_draws": 400
+        },
+        "401_800": {
+          "chi2": 35.578571,
+          "df": 44,
+          "p": 0.8132802635990474,
+          "cramers_v": 0.016994,
+          "n_counts_sum": 2800,
+          "expected_each": 62.222222,
+          "min_count": 44,
+          "max_count": 77,
+          "era": "401_800",
+          "with_bonus": true,
+          "n_draws": 400
+        },
+        "801_1234": {
+          "chi2": 30.294931,
+          "df": 44,
+          "p": 0.9423586815893131,
+          "cramers_v": 0.015054,
+          "n_counts_sum": 3038,
+          "expected_each": 67.511111,
+          "min_count": 52,
+          "max_count": 80,
+          "era": "801_1234",
+          "with_bonus": true,
+          "n_draws": 434
+        }
+      }
+    },
+    "transition": {
+      "main_only": {
+        "with_bonus": false,
+        "transition_chi2": 1501.673,
+        "transition_df": 1936,
+        "transition_p": 0.9999999999999817,
+        "transition_cramers_v": 0.027729,
+        "n_transitions_cells_sum": 44388,
+        "carry": {
+          "n_pairs": 1233,
+          "mean_obs": 0.824818,
+          "mean_hypergeom_E": 0.8,
+          "hist_obs_0to6": [
+            477,
+            523,
+            207,
+            24,
+            2,
+            0,
+            0
+          ],
+          "hist_exp_0to6": [
+            493.8962,
+            522.9489,
+            186.7675,
+            27.6693,
+            1.6826,
+            0.0354,
+            0.0002
+          ],
+          "chi2": 3.351852,
+          "p": 0.6459130547953525
+        }
+      },
+      "with_bonus": {
+        "with_bonus": true,
+        "transition_chi2": 1409.5517,
+        "transition_df": 1936,
+        "transition_p": 1.0,
+        "transition_cramers_v": 0.023027,
+        "n_transitions_cells_sum": 60417,
+        "carry": {
+          "n_pairs": 1233,
+          "mean_obs": 0.824818,
+          "mean_hypergeom_E": 0.8,
+          "hist_obs_0to6": [
+            477,
+            523,
+            207,
+            24,
+            2,
+            0,
+            0
+          ],
+          "hist_exp_0to6": [
+            493.8962,
+            522.9489,
+            186.7675,
+            27.6693,
+            1.6826,
+            0.0354,
+            0.0002
+          ],
+          "chi2": 3.351852,
+          "p": 0.6459130547953525
+        }
+      }
+    },
+    "gaps": {
+      "main_only": {
+        "with_bonus": false,
+        "n_gaps": 7359,
+        "gap_mean_obs": 7.464329,
+        "gap_mean_geom": 7.5,
+        "p_appear": 0.13333333333333333,
+        "ks_stat": 0.133333,
+        "ks_p": 1.5060513265644325e-114,
+        "note": "기하분포 근사(복원추출). 비복원 내 회차 의존은 미모형화."
+      },
+      "with_bonus": {
+        "with_bonus": true,
+        "n_gaps": 8593,
+        "gap_mean_obs": 6.398231,
+        "gap_mean_geom": 6.428571,
+        "p_appear": 0.15555555555555556,
+        "ks_stat": 0.155556,
+        "ks_p": 4.691499731233097e-182,
+        "note": "기하분포 근사(복원추출). 비복원 내 회차 의존은 미모형화."
+      }
+    },
+    "bh_fdr": {
+      "alpha": 0.05,
+      "m": 14,
+      "max_reject_rank": 2,
+      "rejected": [
+        "gaps_ks_with_bonus",
+        "gaps_ks_main_only"
+      ],
+      "n_rejected": 2,
+      "details": [
+        {
+          "id": "gaps_ks_with_bonus",
+          "p": 4.691499731233097e-182,
+          "rank": 1,
+          "bh_crit": 0.0035714285714285718,
+          "pass": true,
+          "rejected": true
+        },
+        {
+          "id": "gaps_ks_main_only",
+          "p": 1.5060513265644325e-114,
+          "rank": 2,
+          "bh_crit": 0.0071428571428571435,
+          "pass": true,
+          "rejected": true
+        },
+        {
+          "id": "carry_main_only",
+          "p": 0.6459130547953525,
+          "rank": 3,
+          "bh_crit": 0.010714285714285716,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "carry_with_bonus",
+          "p": 0.6459130547953525,
+          "rank": 4,
+          "bh_crit": 0.014285714285714287,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "freq_1_400_with_bonus",
+          "p": 0.6872850956449308,
+          "rank": 5,
+          "bh_crit": 0.017857142857142856,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "freq_401_800_with_bonus",
+          "p": 0.8132802635990474,
+          "rank": 6,
+          "bh_crit": 0.021428571428571432,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "freq_401_800_main_only",
+          "p": 0.8345700151509794,
+          "rank": 7,
+          "bh_crit": 0.025,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "freq_all_with_bonus",
+          "p": 0.8773135390626752,
+          "rank": 8,
+          "bh_crit": 0.028571428571428574,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "freq_1_400_main_only",
+          "p": 0.8802485322415785,
+          "rank": 9,
+          "bh_crit": 0.03214285714285715,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "freq_801_1234_main_only",
+          "p": 0.9242256891726729,
+          "rank": 10,
+          "bh_crit": 0.03571428571428571,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "freq_801_1234_with_bonus",
+          "p": 0.9423586815893131,
+          "rank": 11,
+          "bh_crit": 0.03928571428571429,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "freq_all_main_only",
+          "p": 0.9651596450097096,
+          "rank": 12,
+          "bh_crit": 0.042857142857142864,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "transition_main_only",
+          "p": 0.9999999999999817,
+          "rank": 13,
+          "bh_crit": 0.04642857142857143,
+          "pass": false,
+          "rejected": false
+        },
+        {
+          "id": "transition_with_bonus",
+          "p": 1.0,
+          "rank": 14,
+          "bh_crit": 0.05,
+          "pass": false,
+          "rejected": false
+        }
+      ]
+    },
+    "bias_survives_fdr5pct": true,
+    "verdict_YES_NO": "YES",
+    "gap_chi2_supplement_main_only": {
+      "chi2": 16.6523,
+      "df": 19,
+      "p": 0.6134,
+      "note": "이산 기하 카이제곱(간격1-19,20+). KS 기각은 연속KS×이산분포 인공물 가능"
+    },
+    "substantive_ball_fairness": "NO_bias_in_freq_era_carry_transition_gapchi2",
+    "formal_fdr_verdict_YES_NO": "YES"
+  },
+  "step2_predictability_ceiling": {
+    "train": "1..1000",
+    "val": "1001..1234",
+    "n_val": 234,
+    "models": {
+      "freq": {
+        "mean": 0.747863,
+        "ci95": [
+          0.653846,
+          0.846154
+        ],
+        "n": 234,
+        "theory_random_mean": 0.8,
+        "ci_lower_gt_0p80": false
+      },
+      "markov": {
+        "mean": 0.769231,
+        "ci95": [
+          0.675214,
+          0.858974
+        ],
+        "n": 234,
+        "theory_random_mean": 0.8,
+        "ci_lower_gt_0p80": false
+      },
+      "recency": {
+        "mean": 0.752137,
+        "ci95": [
+          0.662393,
+          0.846154
+        ],
+        "n": 234,
+        "theory_random_mean": 0.8,
+        "ci_lower_gt_0p80": false
+      }
+    },
+    "any_ci_lower_gt_0p80": false,
+    "verdict_abandon_hit_learning": true
+  },
+  "step3_popularity": {
+    "label": "log(tier3_winners / total_sales)",
+    "train": "1..1000",
+    "val": "1001..1234",
+    "n_train": 1000,
+    "n_val": 234,
+    "n_features": 72,
+    "feature_groups": [
+      "n_le31,n_le12,sum,odd,consec,carry",
+      "num_dummy_1_45",
+      "ending_0_9",
+      "band_5",
+      "same_ending_pairs,arithmetic3",
+      "diag_diff,diag_sum,max_row,max_col"
+    ],
+    "univariate_sum_pearson_train": -0.110262,
+    "models": {
+      "ridge": {
+        "val_r2": -4.558614,
+        "val_spearman": 0.440295,
+        "vs_univariate_r": {
+          "univariate_pearson_train_sum": -0.110262,
+          "univariate_val_r2": -4.403425,
+          "univariate_val_spearman": 0.386267,
+          "model_minus_uni_spearman": 0.054028,
+          "model_minus_uni_r2": -0.155189
+        },
+        "quintile20": {
+          "n_each": 46,
+          "unpop_avg_prize": 1553474.54,
+          "pop_avg_prize": 1316818.17,
+          "prize_ratio_unpop_over_pop": 1.179718,
+          "unpop_avg_winners": 3014.0435,
+          "pop_avg_winners": 3428.2391,
+          "beats_1p20": false
+        }
+      },
+      "gbm": {
+        "val_r2": -5.575355,
+        "val_spearman": 0.344377,
+        "vs_univariate_r": {
+          "univariate_pearson_train_sum": -0.110262,
+          "univariate_val_r2": -4.403425,
+          "univariate_val_spearman": 0.386267,
+          "model_minus_uni_spearman": -0.04189,
+          "model_minus_uni_r2": -1.17193
+        },
+        "quintile20": {
+          "n_each": 46,
+          "unpop_avg_prize": 1504498.37,
+          "pop_avg_prize": 1328664.54,
+          "prize_ratio_unpop_over_pop": 1.132339,
+          "unpop_avg_winners": 3081.0,
+          "pop_avg_winners": 3426.8261,
+          "beats_1p20": false
+        }
+      },
+      "hist_gbm": {
+        "val_r2": -6.20468,
+        "val_spearman": 0.235747,
+        "vs_univariate_r": {
+          "univariate_pearson_train_sum": -0.110262,
+          "univariate_val_r2": -4.403425,
+          "univariate_val_spearman": 0.386267,
+          "model_minus_uni_spearman": -0.15052,
+          "model_minus_uni_r2": -1.801255
+        },
+        "quintile20": {
+          "n_each": 46,
+          "unpop_avg_prize": 1527521.3,
+          "pop_avg_prize": 1385306.02,
+          "prize_ratio_unpop_over_pop": 1.10266,
+          "unpop_avg_winners": 3027.2826,
+          "pop_avg_winners": 3306.6522,
+          "beats_1p20": false
+        }
+      }
+    },
+    "best_prize_ratio": 1.179718,
+    "any_beats_1p20": false
+  }
+}

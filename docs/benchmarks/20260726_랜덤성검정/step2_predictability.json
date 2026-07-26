@@ -1,0 +1,39 @@
+{
+  "train": "1..1000",
+  "val": "1001..1234",
+  "n_val": 234,
+  "models": {
+    "freq": {
+      "mean": 0.747863,
+      "ci95": [
+        0.653846,
+        0.846154
+      ],
+      "n": 234,
+      "theory_random_mean": 0.8,
+      "ci_lower_gt_0p80": false
+    },
+    "markov": {
+      "mean": 0.769231,
+      "ci95": [
+        0.675214,
+        0.858974
+      ],
+      "n": 234,
+      "theory_random_mean": 0.8,
+      "ci_lower_gt_0p80": false
+    },
+    "recency": {
+      "mean": 0.752137,
+      "ci95": [
+        0.662393,
+        0.846154
+      ],
+      "n": 234,
+      "theory_random_mean": 0.8,
+      "ci_lower_gt_0p80": false
+    }
+  },
+  "any_ci_lower_gt_0p80": false,
+  "verdict_abandon_hit_learning": true
+}
