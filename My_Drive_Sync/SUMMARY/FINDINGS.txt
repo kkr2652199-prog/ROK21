@@ -15,6 +15,6 @@
 | K-07 | OPEN | fetch-latest 수동복구·팬아웃 | `app/testlotto/routes.py`, `app/hyodo/routes.py` | **20260726 재실측:** testlotto/lotto4 MAX=1234 · **hyodo만 1231**. 옛 “testlotto=1231” 서술은 폐기. hyodo 1232~1234 동기화는 형 승인 후 |
 | K-08 | OPEN | 평가지표 정의(best vs mean) | 메타·다양성 WF · `reports/20260726_ROK21_지표재정의_검증.md` | best-of-15는 초기하 천장≈2.27(MC 재현). 실력 판별은 **mean**. STATUS/벤치에 mean 병기 필수. best 단독 목표 금지 |
 | K-09 | OPEN | learn_state 전역 시계열 누수 위험 | `app/testlotto/learn_state.py` · review/stat 경로 | draws는 `_get_draws_before`로 정상. `load_learn_state`는 cutoff 없음 → 과거 회차 재생성 시 미래 피드백 오염 가능. 저장세트 review mean>0.80 **미입증**. `reports/20260726_ROK21_뇌감사_비인기검증.md` |
-| K-10 | OPEN | tier1 대중선호 강화(비인기 EV 충돌) | `app/testlotto/filters.py::tier1_filter` | 합80~210·홀수1~5·구간≥2·연속≤3. pass/fail mean 차이 비유의(적중 조작 아님). 비인기 축과 충돌 → 완화 A/B만 검토. 동상 보고서 |
-| K-11 | OPEN | 랜덤성검정·적중학습축 폐기 | `reports/20260726_ROK21_랜덤성검정_인기도모델.md` · EV리랭커 WF | 적중 학습 축 폐기 **확정 유지**. EV WF: B/D 채택후보(배율 +8.8%/+7.7%, mean CI≈A). `K-09 미해결 전제` |
+| K-10 | OPEN | tier1 대중선호 · 완화 실익 미확인 | `filters.py` · `reports/20260726_ROK21_EV보정_tier1시뮬.md` | 오프라인 T1~T3 완화 시 p10 실현배율 vs T0 ≤1.002. **코드 완화 보류**. 적중 mean≈0.80 유지 |
+| K-11 | OPEN | 적중축 폐기 · EV리랭크 이득 미입증 | 랜덤성검정 + EV보정 보고서 | 적중축 폐기 유지. 예측배율 순환·위약편향 YES → **EV 이득 미입증 · D배선 철회**. 보정 b≈0.643. `K-09 미해결 전제` |
 | K-12 | OPEN | RULES_FIXED 정합성 2건 (보고만) | `My_Drive_Sync/SUMMARY/RULES_FIXED.md` | (a) R33 복원 SSOT=kweon 기재 → ROK21 작업 오유도 → **RESTORE.md로 우회**. (b) R29 "7활성+2Hidden=9뇌" ≠ 테스트로또 실측 3예측+4보조. **형만 수정 가능 · 동생/커서는 보고만** |

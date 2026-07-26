@@ -1,0 +1,348 @@
+{
+  "ok": true,
+  "readonly": true,
+  "k09_label": "K-09 미해결 전제",
+  "p1_calibration": {
+    "fixed_split_train_1_1000_val_1001_1234": {
+      "a": -5.717341081047062,
+      "b": 0.647657672337809,
+      "b_se": 0.12114895710298712,
+      "r2": 0.10967603649407331,
+      "resid_std": 0.1159955308789793,
+      "n": 234
+    },
+    "walk_forward_pairs_OLS": {
+      "a": -5.80636445120677,
+      "b": 0.6433776260679878,
+      "b_se": 0.12162163752627814,
+      "r2": 0.10763748655686245,
+      "resid_std": 0.11612825081639205,
+      "n": 234
+    },
+    "b_roll50_tail": [
+      {
+        "draw_no": 1230,
+        "b_roll50": 0.6481874756494913
+      },
+      {
+        "draw_no": 1231,
+        "b_roll50": 0.6465109092606881
+      },
+      {
+        "draw_no": 1232,
+        "b_roll50": 0.6561790435888417
+      },
+      {
+        "draw_no": 1233,
+        "b_roll50": 0.7081637521641712
+      },
+      {
+        "draw_no": 1234,
+        "b_roll50": 0.6980887879013565
+      }
+    ],
+    "b_fixed_vs_wf": {
+      "b_fixed": 0.647657672337809,
+      "b_wf": 0.6433776260679878,
+      "abs_diff": 0.004280046269821258
+    }
+  },
+  "p1_realized_table": [
+    {
+      "arm": "A",
+      "pred_ratio_old": 1.0,
+      "pred_log_diff": 0.0,
+      "b_used": 0.643378,
+      "b_source": "walk_forward_OLS_on_val_pairs",
+      "realized_ratio": 1.0,
+      "realized_ci95": [
+        0.981508,
+        1.018514
+      ],
+      "realized_ci_width": 0.037006,
+      "old_ci_width": 0.0,
+      "ci_wider_than_old": true,
+      "mean_hit": {
+        "mean": 0.773333,
+        "ci95": [
+          0.683333,
+          0.86
+        ],
+        "n": 100
+      }
+    },
+    {
+      "arm": "B",
+      "pred_ratio_old": 1.088287,
+      "pred_log_diff": 0.084605,
+      "b_used": 0.643378,
+      "b_source": "walk_forward_OLS_on_val_pairs",
+      "realized_ratio": 1.055942,
+      "realized_ci95": [
+        1.026151,
+        1.085512
+      ],
+      "realized_ci_width": 0.059361,
+      "old_ci_width": 0.013038,
+      "ci_wider_than_old": true,
+      "mean_hit": {
+        "mean": 0.81,
+        "ci95": [
+          0.713333,
+          0.906667
+        ],
+        "n": 100
+      }
+    },
+    {
+      "arm": "C",
+      "pred_ratio_old": 1.000201,
+      "pred_log_diff": 0.000201,
+      "b_used": 0.643378,
+      "b_source": "walk_forward_OLS_on_val_pairs",
+      "realized_ratio": 1.000129,
+      "realized_ci95": [
+        0.981909,
+        1.018757
+      ],
+      "realized_ci_width": 0.036848,
+      "old_ci_width": 0.012211,
+      "ci_wider_than_old": true,
+      "mean_hit": {
+        "mean": 0.733333,
+        "ci95": [
+          0.656667,
+          0.806667
+        ],
+        "n": 100
+      }
+    },
+    {
+      "arm": "D",
+      "pred_ratio_old": 1.07745,
+      "pred_log_diff": 0.074597,
+      "b_used": 0.643378,
+      "b_source": "walk_forward_OLS_on_val_pairs",
+      "realized_ratio": 1.049164,
+      "realized_ci95": [
+        1.022739,
+        1.076493
+      ],
+      "realized_ci_width": 0.053755,
+      "old_ci_width": 0.013567,
+      "ci_wider_than_old": true,
+      "mean_hit": {
+        "mean": 0.803333,
+        "ci95": [
+          0.72,
+          0.89
+        ],
+        "n": 100
+      }
+    },
+    {
+      "arm": "E",
+      "pred_ratio_old": 1.00314,
+      "pred_log_diff": 0.003135,
+      "b_used": 0.643378,
+      "b_source": "walk_forward_OLS_on_val_pairs",
+      "realized_ratio": 1.002019,
+      "realized_ci95": [
+        0.983373,
+        1.021332
+      ],
+      "realized_ci_width": 0.03796,
+      "old_ci_width": 0.010418,
+      "ci_wider_than_old": true,
+      "mean_hit": {
+        "mean": 0.802667,
+        "ci95": [
+          0.756444,
+          0.850667
+        ],
+        "n": 100
+      }
+    }
+  ],
+  "p1_cv_winners": {
+    "n": 234,
+    "mean": 3178.0726,
+    "std": 511.863,
+    "cv": 0.161061
+  },
+  "p1_placebo": {
+    "B": {
+      "ratio": 1.023281,
+      "ci95": [
+        1.021442,
+        1.025057
+      ]
+    },
+    "D": {
+      "ratio": 1.020147,
+      "ci95": [
+        1.018462,
+        1.021874
+      ]
+    },
+    "bias_detected_YES_NO": "YES",
+    "note": "라벨 회차 셔플 후 동일 리랭크 파이프라인"
+  },
+  "p1_verdict": {
+    "verdict": "EV_이득_미입증",
+    "reason": "위약(라벨셔플)에서도 배율>1 → 파이프라인 편향",
+    "withdraw_D_wiring": true,
+    "survive_rule": "실현 CI하한>1 AND 위약 NO"
+  },
+  "p2_tier1_sim": {
+    "universe": {
+      "n": 8000,
+      "pop_mean": -16.928687,
+      "p10": -16.994246
+    },
+    "scenarios": {
+      "T0": {
+        "n_pass": 4000,
+        "attempts": 4235,
+        "pass_rate": 0.94451,
+        "pop_mean": -16.929848,
+        "pop_std": 0.054217,
+        "pop_deciles": {
+          "p10": -16.994445445141185,
+          "p25": -16.962372080516822,
+          "p50": -16.92457628452714,
+          "p75": -16.88860694541769,
+          "p90": -16.854172890345247
+        },
+        "frac_in_universe_bottom10": 0.1005,
+        "mean_minus_universe": -0.001161,
+        "extreme_frac": 0.0,
+        "mean_hit_vs_val_actuals": {
+          "mean": 0.775478,
+          "n": 1884,
+          "theory": 0.8
+        }
+      },
+      "T1": {
+        "n_pass": 4000,
+        "attempts": 4122,
+        "pass_rate": 0.970403,
+        "pop_mean": -16.930069,
+        "pop_std": 0.056735,
+        "pop_deciles": {
+          "p10": -16.996216554843222,
+          "p25": -16.972595312911107,
+          "p50": -16.92546183937816,
+          "p75": -16.888385556704932,
+          "p90": -16.85308038373374
+        },
+        "frac_in_universe_bottom10": 0.10775,
+        "mean_minus_universe": -0.001382,
+        "extreme_frac": 0.0,
+        "mean_hit_vs_val_actuals": {
+          "mean": 0.803194,
+          "n": 1941,
+          "theory": 0.8
+        }
+      },
+      "T2": {
+        "n_pass": 4000,
+        "attempts": 4142,
+        "pass_rate": 0.965717,
+        "pop_mean": -16.932774,
+        "pop_std": 0.053522,
+        "pop_deciles": {
+          "p10": -16.996880720981487,
+          "p25": -16.97870517452374,
+          "p50": -16.926790171654684,
+          "p75": -16.89015666640697,
+          "p90": -16.85595843699955
+        },
+        "frac_in_universe_bottom10": 0.10725,
+        "mean_minus_universe": -0.004087,
+        "extreme_frac": 0.0,
+        "mean_hit_vs_val_actuals": {
+          "mean": 0.811526,
+          "n": 1926,
+          "theory": 0.8
+        }
+      },
+      "T3": {
+        "n_pass": 4000,
+        "attempts": 4023,
+        "pass_rate": 0.994283,
+        "pop_mean": -16.930106,
+        "pop_std": 0.056855,
+        "pop_deciles": {
+          "p10": -16.995552388704958,
+          "p25": -16.962538122051384,
+          "p50": -16.926126005516423,
+          "p75": -16.888994375665007,
+          "p90": -16.85308038373374
+        },
+        "frac_in_universe_bottom10": 0.10375,
+        "mean_minus_universe": -0.001419,
+        "extreme_frac": 0.0,
+        "mean_hit_vs_val_actuals": {
+          "mean": 0.794859,
+          "n": 1984,
+          "theory": 0.8
+        }
+      }
+    },
+    "headroom_realized_b": {
+      "T0": {
+        "p10_pop": -16.994445445141185,
+        "delta_p10_vs_T0": 0.0,
+        "realized_ratio_vs_T0_p10": 1.0,
+        "p10_vs_universe_p10": -0.000199,
+        "note": "p10 꼬리 대 p10 꼬리 대비 (최대 근접 헤드룸)"
+      },
+      "T1": {
+        "p10_pop": -16.996216554843222,
+        "delta_p10_vs_T0": -0.001771,
+        "realized_ratio_vs_T0_p10": 1.00114,
+        "p10_vs_universe_p10": -0.00197,
+        "note": "p10 꼬리 대 p10 꼬리 대비 (최대 근접 헤드룸)"
+      },
+      "T2": {
+        "p10_pop": -16.996880720981487,
+        "delta_p10_vs_T0": -0.002435,
+        "realized_ratio_vs_T0_p10": 1.001568,
+        "p10_vs_universe_p10": -0.002635,
+        "note": "p10 꼬리 대 p10 꼬리 대비 (최대 근접 헤드룸)"
+      },
+      "T3": {
+        "p10_pop": -16.995552388704958,
+        "delta_p10_vs_T0": -0.001107,
+        "realized_ratio_vs_T0_p10": 1.000712,
+        "p10_vs_universe_p10": -0.001306,
+        "note": "p10 꼬리 대 p10 꼬리 대비 (최대 근접 헤드룸)"
+      }
+    },
+    "both_tail_popular": {
+      "T0": {
+        "p90_pop": -16.854172890345247,
+        "p90_minus_T0_p90": 0.0
+      },
+      "T1": {
+        "p90_pop": -16.85308038373374,
+        "p90_minus_T0_p90": 0.001093
+      },
+      "T2": {
+        "p90_pop": -16.85595843699955,
+        "p90_minus_T0_p90": -0.001786
+      },
+      "T3": {
+        "p90_pop": -16.85308038373374,
+        "p90_minus_T0_p90": 0.001093
+      }
+    },
+    "vs_rerank": {
+      "B_realized": 1.055942,
+      "D_realized": 1.049164,
+      "T3_headroom_vs_T0": 1.000712
+    },
+    "part2_is_reference_only": true
+  }
+}
