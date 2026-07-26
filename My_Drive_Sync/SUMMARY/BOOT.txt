@@ -5,13 +5,12 @@ ROK21 = kweon 원본 복사본. 4군+테스트로또+효도로또. SSOT=`kkr2652
 원본 kweon(`D:\3kweon`·6124) 미접촉. 1~3군은 memoy — 여기 기록 금지(R34).
 
 ## 1) 현재 스레드 (매턴 3줄만 갱신)
-- 지금: ROK21 1단계 push 완료 · HEAD `5f6da19`
-- 직전: remote·포트7021·경로 분리 커밋
+- 지금: __pycache__ 132개 추적 해제 · 종료체크 노이즈 필터 · push
+- 직전: ROK21 1단계 독립 분리 완료
 - 다음: 기동 확인(http://127.0.0.1:7021/) · 기능 작업은 별도 지시
 
 ## 2) 숫자 (근거 없으면 미확인)
 브라우저: http://127.0.0.1:7021/ (원본 6124와 분리)
-git HEAD: `5f6da19` · remote SHA 일치
 boost 상한 carry 0.2 / ending 0.3 / overdue 0.2
 
 ## 3) 열린 과제 -> FINDINGS.md (ID로 지시)
@@ -21,6 +20,7 @@ K-00·K-02·K-05·K-06·K-07 OPEN. K-01/K-03/K-04 CLOSED.
 - **원본과 동시 기동 시 포트·DB 분리됨** (7021 / 상대경로 data/)
 - STATUS_LATEST / RESUME_HERE 가 .md·.txt 이중 사본 — 갱신 시 양쪽 동기화
 - public 레포 · data/*.db 추적 중 (K-05) · 형 승인 전 untrack 금지
+- `__pycache__` 는 gitignore — 커밋 금지
 
 ## 5) 더 필요하면
 RESUME_HERE / RULES_FIXED / CURSOR_RULES / HYODO_PLAN / DECISION_LOG / reports

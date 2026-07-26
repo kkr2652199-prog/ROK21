@@ -24,13 +24,23 @@ def _git_lines(args: list[str]) -> list[str]:
     return [ln.strip() for ln in (r.stdout or "").splitlines() if ln.strip()]
 
 
+def _is_noise(path: str) -> bool:
+    p = path.replace("\\", "/").lower()
+    return (
+        "/__pycache__/" in f"/{p}/"
+        or p.endswith(".pyc")
+        or p.endswith(".pyo")
+        or p.endswith(".pyd")
+    )
+
+
 def _dirty() -> list[str]:
     out: set[str] = set()
     for cmd in (
         ["git", "diff", "--name-only", "HEAD", "--", *ROK21_SCOPE],
         ["git", "diff", "--cached", "--name-only", "--", *ROK21_SCOPE],
     ):
-        out.update(_git_lines(cmd))
+        out.update(x for x in _git_lines(cmd) if not _is_noise(x))
     return sorted(out)
 
 
