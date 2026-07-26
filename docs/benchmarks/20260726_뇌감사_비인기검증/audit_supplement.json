@@ -1,0 +1,280 @@
+{
+  "brain_mean_diffs": {
+    "review_minus_stat": {
+      "mean_diff": 0.042,
+      "ci95": [
+        -0.062,
+        0.144
+      ],
+      "includes_0": true
+    },
+    "review_minus_markov": {
+      "mean_diff": 0.134,
+      "ci95": [
+        0.022,
+        0.246
+      ],
+      "includes_0": false
+    },
+    "stat_minus_markov": {
+      "mean_diff": 0.092,
+      "ci95": [
+        -0.024,
+        0.202
+      ],
+      "includes_0": true
+    },
+    "review_minus_0p8": {
+      "mean_diff": 0.056,
+      "ci95": [
+        -0.022,
+        0.138
+      ],
+      "includes_0": true
+    },
+    "stat_minus_0p8": {
+      "mean_diff": 0.014,
+      "ci95": [
+        -0.056,
+        0.086
+      ],
+      "includes_0": true
+    },
+    "markov_minus_0p8": {
+      "mean_diff": -0.078,
+      "ci95": [
+        -0.16,
+        0.008
+      ],
+      "includes_0": true
+    }
+  },
+  "coverage_unique_delta_vs_all3": {
+    "no_stat": {
+      "mean_diff": -6.6,
+      "ci95": [
+        -6.99,
+        -6.19
+      ],
+      "includes_0": false
+    },
+    "no_markov": {
+      "mean_diff": -4.41,
+      "ci95": [
+        -4.78,
+        -4.05
+      ],
+      "includes_0": false
+    },
+    "no_review": {
+      "mean_diff": -6.04,
+      "ci95": [
+        -6.45,
+        -5.63
+      ],
+      "includes_0": false
+    }
+  },
+  "learn_state_now": {
+    "stat": {
+      "last_draw_no": 1234,
+      "review_count": 1272,
+      "recent_avg_match": 1.687,
+      "adjustments": {
+        "carry_over_boost": 0.2,
+        "ending_digit_boost": 0.0,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.2,
+        "odd_even_balance": 0.5
+      }
+    },
+    "markov": {
+      "last_draw_no": 1234,
+      "review_count": 1268,
+      "recent_avg_match": 1.6057,
+      "adjustments": {
+        "carry_over_boost": 0.2,
+        "ending_digit_boost": 0.0,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.2,
+        "odd_even_balance": 0.5
+      }
+    },
+    "review": {
+      "last_draw_no": 1234,
+      "review_count": 1271,
+      "recent_avg_match": 1.6607,
+      "adjustments": {
+        "carry_over_boost": 0.2,
+        "ending_digit_boost": 0.0,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.2,
+        "odd_even_balance": 0.5
+      }
+    }
+  },
+  "sales_normalized_corr": {
+    "n_le31": {
+      "r_log_winners": 0.075415,
+      "r_log_winners_per_sales": 0.098502,
+      "sig_raw": true,
+      "sig_norm": true,
+      "thresh": 0.055863
+    },
+    "n_le12": {
+      "r_log_winners": 0.103609,
+      "r_log_winners_per_sales": 0.103508,
+      "sig_raw": true,
+      "sig_norm": true,
+      "thresh": 0.055863
+    },
+    "consec_pairs": {
+      "r_log_winners": -0.031038,
+      "r_log_winners_per_sales": -0.041396,
+      "sig_raw": false,
+      "sig_norm": false,
+      "thresh": 0.055863
+    },
+    "odd_count": {
+      "r_log_winners": -0.001076,
+      "r_log_winners_per_sales": -0.000226,
+      "sig_raw": false,
+      "sig_norm": false,
+      "thresh": 0.055863
+    },
+    "sum_nums": {
+      "r_log_winners": -0.104568,
+      "r_log_winners_per_sales": -0.111625,
+      "sig_raw": true,
+      "sig_norm": true,
+      "thresh": 0.055863
+    },
+    "carry_from_prev": {
+      "r_log_winners": -0.080184,
+      "r_log_winners_per_sales": -0.060037,
+      "sig_raw": true,
+      "sig_norm": true,
+      "thresh": 0.055863
+    }
+  },
+  "sig_norm_vars": [
+    "n_le31",
+    "n_le12",
+    "sum_nums",
+    "carry_from_prev"
+  ],
+  "effect_norm": {
+    "feature": "sum_nums",
+    "r_norm": -0.111625,
+    "unpop_avg_prize": 1728432.38,
+    "pop_avg_prize": 1434793.61,
+    "prize_ratio": 1.2047,
+    "unpop_avg_winners": 1843.85,
+    "pop_avg_winners": 2061.64
+  },
+  "filter_pass_minus_fail_ci": {
+    "mean_pass": 0.790673,
+    "mean_fail": 0.804598,
+    "diff_ci95": [
+      -0.149425,
+      0.118774
+    ],
+    "includes_0": true
+  },
+  "ablation_table": [
+    {
+      "config": "all3",
+      "brains": [
+        "stat",
+        "markov",
+        "review"
+      ],
+      "mean": 0.797333,
+      "mean_std": 0.24017,
+      "mean_ci95": [
+        0.75,
+        0.845333
+      ],
+      "delta_mean_vs_all3_ci95": [
+        0.0,
+        0.0
+      ],
+      "unique_nums": 36.67,
+      "jaccard": 0.095505,
+      "n": 100,
+      "verdict": "기준"
+    },
+    {
+      "config": "no_stat",
+      "brains": [
+        "markov",
+        "review"
+      ],
+      "mean": 0.789,
+      "mean_std": 0.305907,
+      "mean_ci95": [
+        0.731,
+        0.849
+      ],
+      "delta_mean_vs_all3_ci95": [
+        -0.039,
+        0.022333
+      ],
+      "unique_nums": 30.07,
+      "jaccard": 0.106603,
+      "n": 100,
+      "verdict": "잉여후보(mean변화 CI내 0)"
+    },
+    {
+      "config": "no_markov",
+      "brains": [
+        "stat",
+        "review"
+      ],
+      "mean": 0.835,
+      "mean_std": 0.285438,
+      "mean_ci95": [
+        0.781,
+        0.891
+      ],
+      "delta_mean_vs_all3_ci95": [
+        0.005,
+        0.070667
+      ],
+      "unique_nums": 32.26,
+      "jaccard": 0.094149,
+      "n": 100,
+      "verdict": "제거 시 mean 상승(유해 가능)"
+    },
+    {
+      "config": "no_review",
+      "brains": [
+        "stat",
+        "markov"
+      ],
+      "mean": 0.768,
+      "mean_std": 0.277806,
+      "mean_ci95": [
+        0.716,
+        0.823
+      ],
+      "delta_mean_vs_all3_ci95": [
+        -0.06,
+        0.002667
+      ],
+      "unique_nums": 30.63,
+      "jaccard": 0.102433,
+      "n": 100,
+      "verdict": "잉여후보(mean변화 CI내 0)"
+    }
+  ],
+  "leak_judgment_notes": {
+    "draws_path": "coordinator/walkforward → _get_draws_before(target) → predict_sets(draws) — draws 누수 없음(코드)",
+    "learn_state_path": "load_learn_state는 draw cutoff 없이 전역 1행. 과거 회차 재생성 시 미래 피드백 오염 가능",
+    "stored_sets": "본 감사 A2/A3는 저장 tagged 세트 기준 — 생성 당시 시점 오염 여부는 미확인",
+    "review_vs_0p8": "CI가 0을 포함하면 mean 우위 미입증"
+  }
+}

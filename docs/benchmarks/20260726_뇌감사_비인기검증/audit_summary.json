@@ -1,0 +1,452 @@
+{
+  "ok": true,
+  "readonly": true,
+  "A1_brain_inventory": {
+    "predict_brains": [
+      {
+        "tag": "stat",
+        "code": "stat_fairy",
+        "name": "통계요정",
+        "role": "predict",
+        "desc": "빈도·끝수·이월수 가중 통계",
+        "short_desc": "최근 빈도·끝수·이월수로 자주 나온 흐름을 잡는다",
+        "sets_per_draw": 5,
+        "module": "app/testlotto/brains/predict_stat_fairy.py::predict_sets",
+        "engine_impl": "predict_statistical._statistical_predict"
+      },
+      {
+        "tag": "markov",
+        "code": "flow_shaman",
+        "name": "흐름술사",
+        "role": "predict",
+        "desc": "전이행렬·동반출현 흐름",
+        "short_desc": "직전 회차와의 전이·궁합수 연결을 추적한다",
+        "sets_per_draw": 5,
+        "module": "app/testlotto/brains/predict_flow_shaman.py::predict_sets",
+        "engine_impl": "predict_markov._markov_predict"
+      },
+      {
+        "tag": "review",
+        "code": "review_king",
+        "name": "복습왕",
+        "role": "predict",
+        "desc": "전회차 복습·반복률 학습형",
+        "short_desc": "과거 오답을 복습해 놓쳤던 구간을 보정한다",
+        "sets_per_draw": 5,
+        "module": "app/testlotto/brains/predict_review_king.py::predict_sets",
+        "engine_impl": "predict_review_king.predict_sets (inline)"
+      }
+    ],
+    "aux_brains": [
+      {
+        "tag": "miss_aux",
+        "code": "miss_detective",
+        "name": "오답탐정",
+        "role": "aux",
+        "desc": "과거 오답 패턴 페널티",
+        "short_desc": "자주 틀린 패턴을 찾아 경고한다",
+        "module": "brains/aux_miss_detective.py::score_set",
+        "role_detail": "채점/가중 (새 세트 생성 안 함). coordinator._apply_aux_scoring"
+      },
+      {
+        "tag": "pattern_aux",
+        "code": "pattern_spotlight",
+        "name": "패턴돋보기",
+        "role": "aux",
+        "desc": "쌍수·연속수·AC값 신호",
+        "short_desc": "쌍수·연속수·AC값 신호를 읽는다",
+        "module": "brains/aux_pattern_spotlight.py::score_set",
+        "role_detail": "채점/가중 (새 세트 생성 안 함). coordinator._apply_aux_scoring"
+      },
+      {
+        "tag": "balance_aux",
+        "code": "balance_keeper",
+        "name": "균형지킴이",
+        "role": "aux",
+        "desc": "홀짝·고저·구간 쏠림 방지",
+        "short_desc": "홀짝·고저·합계 균형을 점검한다",
+        "module": "brains/aux_balance_keeper.py::score_set",
+        "role_detail": "채점/가중 (새 세트 생성 안 함). coordinator._apply_aux_scoring"
+      },
+      {
+        "tag": "referee_aux",
+        "code": "referee",
+        "name": "심판관",
+        "role": "aux",
+        "desc": "최근 성적 좋은 예측뇌 가중치 배분",
+        "short_desc": "세트 간 겹침·쏠림을 최종 판정한다",
+        "module": "brains/aux_referee.py::score_set",
+        "role_detail": "채점/가중 (새 세트 생성 안 함). coordinator._apply_aux_scoring"
+      }
+    ],
+    "contribution_nominal": "각 예측뇌 5장 → 합 15장. 보조뇌 0장.",
+    "coordinator": "app/testlotto/brains/coordinator.py::run_coordinated_prediction"
+  },
+  "A2_overlap": {
+    "n_draws": 100,
+    "avg_cross_brain_set_jaccard": {
+      "stat_markov": 0.086176,
+      "stat_review": 0.08667,
+      "markov_review": 0.083667
+    },
+    "avg_unique_set_fraction": {
+      "stat": 1.0,
+      "markov": 1.0,
+      "review": 1.0
+    },
+    "sets_counted": {
+      "markov": 500,
+      "review": 500,
+      "stat": 500
+    },
+    "note": "Jaccard=뇌 간 세트쌍 평균. unique=타 뇌와 완전동일 세트가 아닌 비율."
+  },
+  "A3_ablation": {
+    "n_draws": 100,
+    "table": [
+      {
+        "config": "all3",
+        "brains": [
+          "stat",
+          "markov",
+          "review"
+        ],
+        "mean": 0.797333,
+        "mean_std": 0.24017,
+        "mean_ci95": [
+          0.752667,
+          0.844667
+        ],
+        "delta_mean_vs_all3_ci95": [
+          0.0,
+          0.0
+        ],
+        "unique_nums": 36.67,
+        "jaccard": 0.095505,
+        "n": 100,
+        "verdict": "기준"
+      },
+      {
+        "config": "no_stat",
+        "brains": [
+          "markov",
+          "review"
+        ],
+        "mean": 0.789,
+        "mean_std": 0.305907,
+        "mean_ci95": [
+          0.73,
+          0.849
+        ],
+        "delta_mean_vs_all3_ci95": [
+          -0.039,
+          0.022333
+        ],
+        "unique_nums": 30.07,
+        "jaccard": 0.106603,
+        "n": 100,
+        "verdict": "잉여후보(mean변화 CI내 0)"
+      },
+      {
+        "config": "no_markov",
+        "brains": [
+          "stat",
+          "review"
+        ],
+        "mean": 0.835,
+        "mean_std": 0.285438,
+        "mean_ci95": [
+          0.78,
+          0.892
+        ],
+        "delta_mean_vs_all3_ci95": [
+          0.005,
+          0.070667
+        ],
+        "unique_nums": 32.26,
+        "jaccard": 0.094149,
+        "n": 100,
+        "verdict": "제거 시 mean 상승(유해 가능)"
+      },
+      {
+        "config": "no_review",
+        "brains": [
+          "stat",
+          "markov"
+        ],
+        "mean": 0.768,
+        "mean_std": 0.277806,
+        "mean_ci95": [
+          0.712,
+          0.826
+        ],
+        "delta_mean_vs_all3_ci95": [
+          -0.06,
+          0.002667
+        ],
+        "unique_nums": 30.63,
+        "jaccard": 0.102433,
+        "n": 100,
+        "verdict": "잉여후보(mean변화 CI내 0)"
+      }
+    ],
+    "all3_mean_ci95": [
+      0.753333,
+      0.844667
+    ]
+  },
+  "A4_review_leak": {
+    "predict_sets_signature_uses_draws_arg": true,
+    "coordinator_passes__get_draws_before": true,
+    "review_uses_only_passed_draws": true,
+    "review_direct_db_query_in_predict_sets": false,
+    "learn_state_load": true,
+    "learn_state_leak_risk": "미확인 — learn_state가 미래 피드백으로 오염됐는지는 별도 감사 필요",
+    "note": "정상 경로: coordinator → _get_draws_before(target) → predict_sets(draws). predict_sets 자체는 DB에서 target 이후 draws를 읽지 않음(코드 정적).",
+    "mean_last100_by_brain": {
+      "markov": {
+        "mean": 0.722,
+        "ci95": [
+          0.642,
+          0.808
+        ],
+        "n": 100
+      },
+      "review": {
+        "mean": 0.856,
+        "ci95": [
+          0.78,
+          0.938
+        ],
+        "n": 100
+      },
+      "stat": {
+        "mean": 0.814,
+        "ci95": [
+          0.744,
+          0.886
+        ],
+        "n": 100
+      }
+    },
+    "review_higher_than_stat_markov": true
+  },
+  "A5_filters": {
+    "filters_in_generation_path": [
+      {
+        "name": "tier1_filter",
+        "file": "app/testlotto/filters.py",
+        "used_in": "predict_statistical, predict_review_king (생성 중 거부)",
+        "source_excerpt_present": true
+      },
+      {
+        "name": "odd_even miss/boost",
+        "file": "draw_analysis / learn_state",
+        "used_in": "사후 miss 기록·boost (생성 필터 아님)"
+      },
+      {
+        "name": "L_ending",
+        "file": "meta hybrid ending",
+        "used_in": "메타 1슬롯 교체 (생성 필터 아님)"
+      },
+      {
+        "name": "sum/odd/range in statistical confidence",
+        "file": "predict_statistical.py",
+        "used_in": "신뢰도 가산 + tier1과 연계된 합·홀짝·구간"
+      }
+    ],
+    "tier1_random_probe": {
+      "n_pass": 4739,
+      "n_fail": 261,
+      "mean_pass": 0.790673,
+      "mean_fail": 0.804598,
+      "theory": 0.8,
+      "note": "필터가 적중기댓값을 올리면 안 됨(상수). pass≈fail≈0.8이면 편향 없음."
+    },
+    "popular_pattern_judgment": {
+      "tier1_typical_mass_preferences": [
+        "합계 대역",
+        "홀짝 균형",
+        "구간 분산",
+        "과도 연속 제한(추정 — filters.py 본문 확인)"
+      ],
+      "pushes_popular_patterns": "정성: 예(대중 필터와 유사 가능) — 코드 본문 근거는 filters.py"
+    }
+  },
+  "A5_tier1_source": "\"\"\"로또 1티어 조합 필터 — 공통 모듈.\"\"\"\n\n\ndef tier1_filter(nums: list[int]) -> bool:\n    \"\"\"1티어 필터 통과 여부.\n    합계 80~210, 홀수 1~5개, 범위 2개+, 연속 3개 이하.\n    True = 통과, False = 탈락.\"\"\"\n    s = sum(nums)\n    odd_count = sum(1 for n in nums if n % 2 == 1)\n    ranges_hit = len({(n - 1) // 10 for n in nums})\n    consec = 1\n    max_consec = 1\n    for i in range(1, len(nums)):\n        if nums[i] == nums[i - 1] + 1:\n            consec += 1\n            max_consec = max(max_consec, consec)\n        else:\n            consec = 1\n    if s < 80 or s > 210:\n        return False\n    if odd_count == 0 or odd_count == 6:\n        return False\n    if ranges_hit <= 1:\n        return False\n    if max_consec >= 4:\n        return False\n    return True\n",
+  "B0_data_availability": {
+    "testlotto_lotto_draws_cols": [
+      "draw_no",
+      "draw_date",
+      "num1",
+      "num2",
+      "num3",
+      "num4",
+      "num5",
+      "num6",
+      "bonus",
+      "total_sales",
+      "first_prize",
+      "first_winners",
+      "created_at"
+    ],
+    "first_winners_positive_rows": 1220,
+    "first_winners_total_draws": 1234,
+    "prize_tier_info": {
+      "table": "testlotto_draw_prize_tiers",
+      "cols": [
+        "draw_no",
+        "tier_rank",
+        "winner_count",
+        "prize_per_game",
+        "total_prize",
+        "source",
+        "detail_json",
+        "updated_at"
+      ],
+      "by_tier": [
+        {
+          "tier": 1,
+          "rows": 1234,
+          "rows_with_winners": 1220,
+          "avg_winner_count": 8.5373,
+          "avg_prize_per_game": 2632303872.99
+        },
+        {
+          "tier": 2,
+          "rows": 1234,
+          "rows_with_winners": 1232,
+          "avg_winner_count": 51.53,
+          "avg_prize_per_game": 62828098.39
+        },
+        {
+          "tier": 3,
+          "rows": 1234,
+          "rows_with_winners": 1234,
+          "avg_winner_count": 1946.8801,
+          "avg_prize_per_game": 1576424.39
+        },
+        {
+          "tier": 4,
+          "rows": 1234,
+          "rows_with_winners": 1234,
+          "avg_winner_count": 95281.2601,
+          "avg_prize_per_game": 56857.73
+        },
+        {
+          "tier": 5,
+          "rows": 1234,
+          "rows_with_winners": 1234,
+          "avg_winner_count": 1562117.6694,
+          "avg_prize_per_game": 5352.51
+        }
+      ]
+    },
+    "archive_tables_with_winner_cols": {
+      "testlotto_draw_detail": [
+        "draw_no",
+        "draw_date",
+        "game_seq_no",
+        "total_sales",
+        "cumulative_sales",
+        "total_winners",
+        "win_type_0",
+        "win_type_1",
+        "win_type_2",
+        "win_type_3",
+        "raw_lt645_json",
+        "store_fetch_status",
+        "store_fetch_note",
+        "source",
+        "synced_at"
+      ]
+    },
+    "lotto4": {
+      "tables_prize_like": [
+        "lotto4_winners",
+        "lotto_draw_tiers",
+        "lotto4_winners_full"
+      ],
+      "lotto_draws_cols": [
+        "draw_no",
+        "draw_date",
+        "num1",
+        "num2",
+        "num3",
+        "num4",
+        "num5",
+        "num6",
+        "bonus",
+        "total_sales",
+        "first_prize",
+        "first_winners",
+        "created_at"
+      ],
+      "first_winners_gt0": 1219
+    },
+    "collection_hint": {
+      "api_path_in_code": "app/testlotto/data_service.py fetch — firstPrzwnerCo → first_winners",
+      "detail_tiers": "draw_archive / prize_tiers 수집 경로 존재",
+      "execute_collection": "금지(이번 지시 READ-ONLY)"
+    }
+  },
+  "B1_signal": {
+    "status": "OK",
+    "prefer_tier": 3,
+    "n": 1234,
+    "correlations": {
+      "n_le31": {
+        "r": 0.075415,
+        "abs_r": 0.075415,
+        "approx_sig_threshold": 0.055863,
+        "significant_rough": true
+      },
+      "n_le12": {
+        "r": 0.103609,
+        "abs_r": 0.103609,
+        "approx_sig_threshold": 0.055863,
+        "significant_rough": true
+      },
+      "consec_pairs": {
+        "r": -0.031038,
+        "abs_r": 0.031038,
+        "approx_sig_threshold": 0.055863,
+        "significant_rough": false
+      },
+      "odd_count": {
+        "r": -0.001076,
+        "abs_r": 0.001076,
+        "approx_sig_threshold": 0.055863,
+        "significant_rough": false
+      },
+      "sum_nums": {
+        "r": -0.104568,
+        "abs_r": 0.104568,
+        "approx_sig_threshold": 0.055863,
+        "significant_rough": true
+      },
+      "carry_from_prev": {
+        "r": -0.080184,
+        "abs_r": 0.080184,
+        "approx_sig_threshold": 0.055863,
+        "significant_rough": true
+      }
+    },
+    "signal_vars_significant": [
+      "n_le31",
+      "n_le12",
+      "sum_nums",
+      "carry_from_prev"
+    ],
+    "effect": {
+      "feature": "sum_nums",
+      "r": -0.104568,
+      "unpop_avg_winners": 1843.8496,
+      "pop_avg_winners": 2061.6423,
+      "unpop_avg_prize_per_game": 1728432.38,
+      "pop_avg_prize_per_game": 1434793.61,
+      "prize_ratio_unpop_over_pop": 1.2047
+    },
+    "note": "유의는 |r|>1.96/sqrt(n-3) 근사. 다중비교 보정 없음."
+  }
+}
