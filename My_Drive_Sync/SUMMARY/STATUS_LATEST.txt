@@ -4,7 +4,7 @@
 
 ## git HEAD
 
-- `616db13` — BOOT 3줄 (UI패치 반영)
+- `4e48320` — FINDINGS 갱신 · STATUS 최신화 · K-00 착수 준비
 - `22ac617` — 테스트로또 UI (tier-wins 모달·적중요약·routes)
 - `0a1a55c` — R36 인프라 (BOOT/FINDINGS/hooks/rules/gitignore)
 

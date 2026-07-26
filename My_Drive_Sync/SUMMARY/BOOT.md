@@ -13,7 +13,7 @@
 lotto_predictions=1,245행 / 83회차 / stat·markov·review 각 415
 lotto4 draws MAX=1234 · testlotto/hyodo draws MAX=1231 (20260726 실측)
 boost 상한 carry 0.2 / ending 0.3 / overdue 0.2
-git HEAD 작업 전: `616db13`
+git HEAD: `4e48320`
 
 ## 3) 열린 과제 -> FINDINGS.md (ID로 지시)
 K-00·K-02·K-05·K-06·K-07 OPEN. K-01/K-03/K-04 CLOSED.
