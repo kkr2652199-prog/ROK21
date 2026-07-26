@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.log
+logs/
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+~$*
+.pytest_cache/
+.ipynb_checkpoints/
+# 주의: data/lotto.db · data/lotto4.db 는 이미 추적 중 — 형 승인 전 untrack 금지

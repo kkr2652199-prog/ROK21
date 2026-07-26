@@ -1,0 +1,37 @@
+---
+description: kweon 4군·테스트로또·효도로또 핵심 규칙 (SUMMARY 압축 사본)
+alwaysApply: true
+---
+
+# KWEON Core Rules (충돌 시 SUMMARY/RULES_FIXED.md 우선)
+
+## 시작 시 (매 작업)
+1. `My_Drive_Sync/SUMMARY/BOOT.md` + `FINDINGS.md` 읽고 첫 응답에 확인 출력
+2. `RESUME_HERE.md` · `RULES_FIXED.md` · `CURSOR_RULES.md` 확인
+
+## R34 (절대)
+- **4군·테스트로또·효도로또** -> **kweon only** (`kkr2652199-prog/kweon` · main · `D:\3kweon`)
+- **1~3군** -> memoy(`D:\MONEY lol`). kweon STATUS/BOOT/보고서에 **1~3군 내용 기록 금지**
+
+## 동결 (형 승인 없이 수정 금지 · `KWEON_ALLOW_FROZEN=1`)
+- `random.choices` (predict_statistical.py) — B단계 전 금지
+- `_get_draws_before` — 백테 컨닝 방지, target 이전 draws만
+- boost 상한: carry 0.2 / ending 0.3 / overdue 0.2
+
+## 미확인 영역
+- `app/lotto/`, `app/lotto2/` 소속 불명. MAP.md 확定 전 수정 금지.
+
+## 레포 위생 (형 승인 전 금지)
+- 이 레포는 public · 약 90MB. `data/*.db` 가 추적 중.
+- `git rm --cached` · DB 대용량 커밋 금지. 신규 바이너리는 .gitignore 로 차단.
+
+## 종료 4종
+1. 보고서 -> `reports/YYYYMMDD_*.md` -> `My_Drive_Sync/커서보고서/`로 복사
+2. `STATUS_LATEST.md` 갱신 (+ `.txt` 동일 내용 동기화)
+3. `BOOT.md` 1번 현재 스레드 3줄 갱신
+4. `git add` -> commit -> `push origin main`
+
+## 원칙
+- 추측 금지. 코드·DB·숫자는 파일에서만. 못 찾으면 **「미확인」**
+- READ-ONLY 지시 시 DB 쓰기·백테스트 재실행 금지
+- FINDINGS(K-*)는 ID로 지시받을 때만 패치
