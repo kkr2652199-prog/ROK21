@@ -144,10 +144,17 @@ def detect_missed_patterns(
         if actual_carry and not pred_carry:
             missed.append("carry_over")
 
-    actual_endings = {n % 10 for n in actual}
-    pred_endings = {n % 10 for n in predicted}
-    if actual_endings - pred_endings:
-        missed.append("ending_digit")
+    # 끝수 miss: boost(직전 회차 끝수 가중)와 동일 의미로만 기록.
+    # 구로직 `actual_endings - pred_endings` 는 6수 커버 한계상 ~97% 항상 참
+    # → miss_count 폭주·boost 조기 포화(자기강화). 실측 20260726 evidence.json.
+    # 신로직: 직전 끝수 중 당첨에 재등장한 끝을 예측이 **하나도** 못 담음.
+    if prev:
+        prev_endings = {n % 10 for n in sorted_nums(prev)}
+        actual_endings = {n % 10 for n in actual}
+        pred_endings = {n % 10 for n in predicted}
+        replayed = prev_endings & actual_endings
+        if replayed and not (replayed & pred_endings):
+            missed.append("ending_digit")
 
     if consecutive_pairs(actual) > 0 and consecutive_pairs(predicted) == 0:
         missed.append("consecutive")

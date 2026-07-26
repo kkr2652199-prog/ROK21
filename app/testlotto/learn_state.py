@@ -127,7 +127,14 @@ def apply_feedback(
             }.get(pattern)
             if boost_key:
                 cap = BOOST_CAPS.get(boost_key, 0.5)
-                adj[boost_key] = min(cap, float(adj.get(boost_key, 0)) + 0.05)
+                cur = float(adj.get(boost_key, 0) or 0)
+                if cur < cap:
+                    adj[boost_key] = min(cap, cur + 0.05)
+
+    # 저장값도 상한 클램프 (읽기 경로와 불일치 방지)
+    for bk, cap in BOOST_CAPS.items():
+        if bk in adj:
+            adj[bk] = min(float(cap), float(adj.get(bk, 0) or 0))
 
     rc = int(state.get("review_count", 0)) + 1
     prev_avg = float(state.get("recent_avg_match", 0.0))

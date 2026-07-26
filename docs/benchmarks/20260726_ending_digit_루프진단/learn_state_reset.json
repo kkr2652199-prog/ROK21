@@ -1,0 +1,59 @@
+[
+  {
+    "brain_tag": "stat",
+    "before": {
+      "ending_miss": 1234,
+      "ending_boost": 0.3
+    },
+    "after": {
+      "ending_miss": 0,
+      "ending_boost": 0.0,
+      "adj": {
+        "carry_over_boost": 0.2,
+        "ending_digit_boost": 0.0,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.2,
+        "odd_even_balance": 0.5
+      }
+    }
+  },
+  {
+    "brain_tag": "review",
+    "before": {
+      "ending_miss": 1235,
+      "ending_boost": 0.3
+    },
+    "after": {
+      "ending_miss": 0,
+      "ending_boost": 0.0,
+      "adj": {
+        "carry_over_boost": 0.2,
+        "ending_digit_boost": 0.0,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.2,
+        "odd_even_balance": 0.5
+      }
+    }
+  },
+  {
+    "brain_tag": "markov",
+    "before": {
+      "ending_miss": 1231,
+      "ending_boost": 0.3
+    },
+    "after": {
+      "ending_miss": 0,
+      "ending_boost": 0.0,
+      "adj": {
+        "carry_over_boost": 0.2,
+        "ending_digit_boost": 0.0,
+        "pair_boost": 0.5,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.2,
+        "odd_even_balance": 0.5
+      }
+    }
+  }
+]

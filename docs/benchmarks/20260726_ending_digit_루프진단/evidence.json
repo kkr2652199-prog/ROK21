@@ -1,0 +1,83 @@
+{
+  "ending_miss_rate_by_brain": {
+    "stat": {
+      "n": 1233,
+      "ed": 1195,
+      "rate": 0.9692
+    },
+    "review": {
+      "n": 1233,
+      "ed": 1197,
+      "rate": 0.9708
+    },
+    "markov": {
+      "n": 1232,
+      "ed": 1195,
+      "rate": 0.97
+    }
+  },
+  "ending_miss_rate_by_era200": {
+    "0": {
+      "n": 593,
+      "ed": 573,
+      "rate": 0.9663
+    },
+    "200": {
+      "n": 600,
+      "ed": 582,
+      "rate": 0.97
+    },
+    "400": {
+      "n": 600,
+      "ed": 584,
+      "rate": 0.9733
+    },
+    "600": {
+      "n": 600,
+      "ed": 581,
+      "rate": 0.9683
+    },
+    "800": {
+      "n": 600,
+      "ed": 583,
+      "rate": 0.9717
+    },
+    "1000": {
+      "n": 600,
+      "ed": 581,
+      "rate": 0.9683
+    },
+    "1200": {
+      "n": 105,
+      "ed": 103,
+      "rate": 0.981
+    }
+  },
+  "random_baseline_old_detect": {
+    "n": 3699,
+    "rate": 0.9881
+  },
+  "random_baseline_aligned_detect": {
+    "n": 3699,
+    "rate": 0.0178
+  },
+  "stat_ending_boost_approx_saturate_draw": 10,
+  "stat_ending_miss_cumulative_total": 1195,
+  "coverage_mean_by_era_stat": {
+    "0": 0.5591,
+    "200": 0.5629,
+    "400": 0.5686,
+    "600": 0.5811,
+    "800": 0.5815,
+    "1000": 0.5746,
+    "1200": 0.5095
+  },
+  "verdict_hint": "old detect nearly always true; boost targets prev endings — mismatch => self-count inflation",
+  "fix": {
+    "detect": "replayed prev endings completely absent from pred",
+    "random_baseline_after_fix": 0.1949,
+    "learn_state_ending_reset": true,
+    "boost_caps_clamp_on_save": true
+  },
+  "verdict": "SELF_REINFORCING_FALSE_POSITIVE — fixed detect + reset ending learn keys"
+}
