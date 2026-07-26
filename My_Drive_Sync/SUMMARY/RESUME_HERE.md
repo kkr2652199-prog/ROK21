@@ -1,24 +1,32 @@
-# RESUME_HERE — 테스트로또 복원 앵커 (ROK21)
+# RESUME_HERE — ROK21 복원 앵커
 
-> 매 작업 push 시 이 파일을 최신화한다. 압축 복원용 단일 진입점.
+> 매 작업 push 시 최신화. 압축 복원이 아니라 **현황 진입점**.
 
-## 현재 성적 기준선 (숫자로 박제)
+## 정체
+- SSOT: `kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021**
+- 원본 kweon(`D:\3kweon`·6124) **미접촉**
+- 관할: 테스트로또(3예측+4보조) · 효도 · (4군 lotto4는 K-00)
 
-- **boost 상한**: carry=0.2, ending=0.3, overdue=0.2 (`learn_state.py` + `predict_statistical.py` clamp)
-- **stat 동적 WF (1132~1231, 회차별 seed)**: avg **1.75** — apply_feedback 경로 확인
-- **stat 고정 boost (회차별 seed)**: 0.5³ 1.71 → 추천 1.75 (1132~1231) · 전구간 1.6724→1.7171
-- **lotto_predictions**: **1,245행** · 83회차(3, 1120~1232 일부) · stat/markov/review 각 415 — **20260725 재기록 완료**
-- **백업**: `backups/20260725_재기록전_DB전체/` · 배선전 `fae01f67`
+## 지금 단계
+- **분석·패치 준비** (추가 뇌·세트 수 확장 보류)
+- 메타 선별 범위 = **3뇌×5 ≈ 15장 전체**
+- 메타 기본 출력 = **포트폴리오 K=3** (분산)
+- 시드 규칙 = 보조4뇌 합산 최고 (aux)
 
-## 절대 건드리지 말 것 (금지 목록)
+## 성적·실험 앵커 (20260726)
+- 15장 best avg ~2.22 · aux 1장 ~0.80 · port3 best ~1.44
+- Vote≥2 단독·선형/순위 장선택 = 기각
+- odd_even = 유지 · L_ending = KEEP
+- 뇌15 best(2.22) < 랜덤15 best(2.28) → 겹침이 다음 분석 초점
 
-- `random.choices` (`predict_statistical.py:187-188`) — **B단계 전 수정 금지**
-- **백테 컨닝 금지** (`_get_draws_before`: target 이전 draws만)
-- R34: memoy=1~3군 · ROK21=4군/테스트로또 (원본 kweon 미접촉)
-- 충돌방지: 포트 **7021** · 루트 `D:\ROK21` · remote `kkr2652199-prog/ROK21`
+## 절대 금지
+- `random.choices` B단계 전 수정
+- 백테 컨닝 (`_get_draws_before`)
+- STATUS/reports를 「간략」핑계로 과도 압축 (채팅만 간략)
+- DB 전체 초기화(비권고) · 원본/memoy 쓰기
 
 ## 다음 한 걸음
+15장·뇌내 5장 겹침 정량 분석 → 패치 설계(동결 준수) → WF로 채택/기각
 
-- ROK21 1단계(원격·포트·경로 분리) 완료 후 기능 작업은 별도 지시
-- UI에서 `http://127.0.0.1:7021/` 기동 확인
-- 보고서: `20260726_ROK21_1단계_복사본분리.md`
+## 읽을 파일
+- `STATUS_LATEST.md` · `BOOT.md` · `PINNED_PLAN.md` · `MIDCHECK_선별범위.md`
