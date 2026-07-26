@@ -1,0 +1,62 @@
+{
+  "ok": true,
+  "no_peek": true,
+  "baseline_name": "baseline_aux_r0",
+  "best_variant": "ending_r1",
+  "variants": {
+    "baseline_aux_r0": {
+      "n": 1231,
+      "avg_match": 0.8034,
+      "avg_oracle": 2.2218,
+      "avg_gap_to_oracle": 1.4184,
+      "avg_match_cover6": 0.9417,
+      "beats_baseline": false,
+      "delta_vs_baseline": 0.0,
+      "closer_than_baseline": false
+    },
+    "ending_r1": {
+      "n": 1231,
+      "avg_match": 0.8099,
+      "avg_oracle": 2.2218,
+      "avg_gap_to_oracle": 1.4119,
+      "avg_match_cover6": 0.9563,
+      "beats_baseline": true,
+      "delta_vs_baseline": 0.0065,
+      "closer_than_baseline": true
+    },
+    "ending_r2": {
+      "n": 1231,
+      "avg_match": 0.7977,
+      "avg_oracle": 2.2218,
+      "avg_gap_to_oracle": 1.424,
+      "avg_match_cover6": 0.9534,
+      "beats_baseline": false,
+      "delta_vs_baseline": -0.0057,
+      "closer_than_baseline": false
+    },
+    "aux_ending_seed_r1": {
+      "n": 1231,
+      "avg_match": 0.7855,
+      "avg_oracle": 2.2218,
+      "avg_gap_to_oracle": 1.4362,
+      "avg_match_cover6": 0.9388,
+      "beats_baseline": false,
+      "delta_vs_baseline": -0.0179,
+      "closer_than_baseline": false
+    },
+    "pool_ending_top6": {
+      "n": 1231,
+      "avg_match": 0.7677,
+      "avg_oracle": 2.2218,
+      "avg_gap_to_oracle": 1.4541,
+      "avg_match_cover6": 0.9592,
+      "beats_baseline": false,
+      "delta_vs_baseline": -0.0357,
+      "closer_than_baseline": false
+    }
+  },
+  "improved_over_baseline": [
+    "ending_r1"
+  ],
+  "note": "L_ending=직전 끝자리 유사 과거의 다음회 당첨빈도(target 이전만). PIN 시드(보조4뇌) 유지 변형 + 혼합시드/풀top6 비교."
+}

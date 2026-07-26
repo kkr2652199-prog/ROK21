@@ -48,3 +48,8 @@
 - 「지금 구조와 비슷한 과거 회차 → 그 다음 당첨 분포」를 target **이전만**으로 스카우트
 - 스크립트: `tools/scout_similar_past_patterns.py` · `similar_past_scout.json`
 - 무리(swarm) 후보: 홀짝/고저/합/AC · 끝수 · 갭 · 구간 · 학자 필터 등 역할분담 A/B
+
+## I-11 L_ending 결합 (20260726) — **소폭 채택**
+- ending_r1: avg 0.810 (+0.006 vs baseline 0.803), closer_to_oracle
+- 시드 혼합·r2·풀top6은 악화 → **1슬롯만** 메타 기본에 반영
+- `tools/run_meta_hybrid_ending_wf.py` · `hybrid_ending_wf_summary.json`

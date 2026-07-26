@@ -46,6 +46,11 @@
 
 문서: [PINNED_PLAN.md](PINNED_PLAN.md)
 
+## 다음단계 (20260726) — L_ending 1슬롯 교체
+- baseline 0.803 → **ending_r1 0.810** (+0.006, 소폭) · 2개 교체/풀top6은 악화
+- 벤치: `hybrid_ending_wf_summary.json` · 기본 조립에 반영
+- 여전히 oracle best 2.22에 크게 못 미침 → 시드 재설계는 형 승인
+
 ## 유사과거 (컨닝금지)
 - `tools/scout_similar_past_patterns.py` · 최근20회 샘플 avg 유사과거 ~30.2 · top15∩actual ~1.8  
 - 검색·past_next는 **target 이전만**
