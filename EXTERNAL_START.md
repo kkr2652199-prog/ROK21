@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6361a5e` |
+| HEAD(실측) | `5349b9c` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-B BENCH SSOT 고정·기계검증 PASS |
-| 직전 | K-W post-KP3 · K-P5 · PIN/P스택 |
-| BOOT다음 | K-AWAIT — 형 다음 본선 1건 (1235·K-D·K-H 후보) |
+| 지금 | K-H 미등록 AUX _unused 격리 PASS |
+| 직전 | K-B BENCH SSOT · K-W · P5 |
+| BOOT다음 | K-AWAIT — 형 다음 본선 1건 (1235·K-D 후보) |
 | NEXT1 ID | **K-AWAIT** |
-| NEXT1 할일 | 형 다음 본선 1건 지시 대기 (후보: 1235루프 · K-D · K-H) |
+| NEXT1 할일 | 형 다음 본선 1건 지시 대기 (후보: 1235루프 · K-D) |
 | 승인필요 | 아니오 |
-| 선행 | K-B PATCHED · K-W · PIN `640cb67` |
+| 선행 | K-H·K-B PATCHED · PIN `640cb67` |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6361a5e · 지금=K-B BENCH SSOT 고정·기계검증 PASS · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=5349b9c · 지금=K-H 미등록 AUX _unused 격리 PASS · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 6361a5e_
+_generated: 5349b9c_

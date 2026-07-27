@@ -1,0 +1,34 @@
+{
+  "task": "K-H",
+  "moved_to": "app/testlotto/brains/_unused",
+  "files": [
+    "aux_gap_scout.py",
+    "aux_structure_guard.py"
+  ],
+  "import_hits_live_app": [],
+  "registry": {
+    "predict": [
+      "stat",
+      "markov",
+      "review"
+    ],
+    "aux": [
+      "miss_aux",
+      "pattern_aux",
+      "balance_aux",
+      "referee_aux"
+    ]
+  },
+  "checks": {
+    "unused_dir_exists": true,
+    "dead_files_in_unused": true,
+    "dead_absent_from_brains_root": true,
+    "live_aux_present": true,
+    "predict_3": true,
+    "aux_4": true,
+    "aux_tags_ok": true,
+    "no_live_imports": true
+  },
+  "verify_pass": true,
+  "note": "재배선 금지 기본 · 3+4 구조 유지 · 예측력 무관"
+}

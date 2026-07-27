@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-28 KST  
-📌 사유: K-B BENCH SSOT 고정·기계검증
+📌 사유: K-H 미등록 AUX `_unused` 격리
 
 ---
 
@@ -18,16 +18,15 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-B** | BENCH SSOT · review100·pred갭31 | verify_pass |
-| K-W | post-KP3 ending χ²/df↓ · rates수정 | verify_pass · vsA 13.37→2.82 |
+| **K-H** | gap/structure AUX → `_unused` | verify_pass · import0 · 3+4 |
+| K-B | BENCH SSOT · review100·pred갭31 | verify_pass |
+| K-W | post-KP3 ending χ²/df↓ | verify_pass |
 | K-P5 | hyodo LSTM·인프라 UI | verify_pass |
-| K-PIN-CLOSE | drift·3DB 마감 | verify_pass |
-| K-P4 | hyodo LSTM 샌드박스 | verify_pass |
 
 ---
 
 ## 2) 다음 (형)
 
-`K-AWAIT` — 후보: 1235 루프 · K-D 문서정합 · K-H 죽은 AUX
+`K-AWAIT` — 후보: **1235** 루프(MAX 아직 1234) · **K-D** 문서정합
 
-근거: [`BENCH_PROTOCOL.md`](BENCH_PROTOCOL.md) · [`PINNED_BASELINE.md`](PINNED_BASELINE.md)
+근거: [`PINNED_BASELINE.md`](PINNED_BASELINE.md)

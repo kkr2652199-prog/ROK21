@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-B BENCH SSOT 고정·기계검증 PASS
-- 직전: K-W post-KP3 · K-P5 · PIN/P스택
-- 다음: K-AWAIT — 형 다음 본선 1건 (1235·K-D·K-H 후보)
+- 지금: K-H 미등록 AUX _unused 격리 PASS
+- 직전: K-B BENCH SSOT · K-W · P5
+- 다음: K-AWAIT — 형 다음 본선 1건 (1235·K-D 후보)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
