@@ -7,7 +7,7 @@
 - 할일: 형 다음 본선 1건 지시 대기 (P·핀 스택 마감 완료)
 - 선행조건: K-PIN-CLOSE PASS · BASELINE_PIN `640cb67`
 - 승인필요: 아니오
-- 최종갱신: `(커밋 전)`
+- 최종갱신: `e945b84`
 
 ## WORKSTATE
 IDLE

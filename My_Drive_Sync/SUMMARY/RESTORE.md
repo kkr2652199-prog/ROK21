@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `799cf5b` · WORK=`IDLE`
+1. **HEAD:** `e945b84` · WORK=`IDLE`
 2. **지금:** K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234
 3. **다음1건:** K-AWAIT — 형 다음 본선 1건 지시 대기 (P·핀 스택 마감 완료) (승인필요=아니오 · 선행=K-PIN-CLOSE PASS · BASELINE_PIN `640cb67`)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-27 | K-PIN-CLOSE 마감 | drift0·3DB1234·P스택게이트 PASS | K-PIN-CLOSE | `(커밋 전)` |
+| 2026-07-27 | K-PIN-CLOSE 마감 | drift0·3DB1234·P스택게이트 PASS | K-PIN-CLOSE | `e945b84` |
 | 2026-07-27 | K-P4 hyodo LSTM | 샌드박스 ckpt·as_of·PMF PASS · prod무침범 | K-P4 PATCHED | `e6356dc` |
 | 2026-07-27 | K-P3 review끝수 | ending질량균등 · l1↓ · verify PASS | K-P3·KX PATCHED | `da68a99` |
 | 2026-07-27 | K-P2 기각뇌표시 | 탭배지·정책스트립 · 산출0 | K-P2 PATCHED | `815a9ca` |
