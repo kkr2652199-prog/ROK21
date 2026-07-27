@@ -1,0 +1,24 @@
+{
+  "stats": {
+    "lotto4": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    },
+    "testlotto": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    },
+    "hyodo": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    }
+  },
+  "mismatches": {
+    "testlotto": [],
+    "hyodo": []
+  },
+  "pass": true
+}

@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d42ddcb` · WORK=`IDLE`
-2. **지금:** K-AG pair/zone재정의 · 미소비3키 배선 PATCHED
-3. **다음1건:** K-AG-FOLLOW — 형—다음 본선 선택 (기각뇌 처리 / UI쓸모 / K-X끝수 / hyodo후속) (승인필요=예 · 선행=K-AG PATCHED)
+1. **HEAD:** `640cb67` · WORK=`IDLE`
+2. **지금:** 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED
+3. **다음1건:** K-PIN-FOLLOW — 형—본선 1개 선택 (P1 UI쓸모 / P2 기각뇌표시 / P3 K-X끝수 / P4 hyodo후속) (승인필요=예 · 선행=PINNED_BASELINE `640cb67` 고정)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -26,7 +26,7 @@
 2. **3자 역할:** 형=결정 / 동생(Claude)=판단·지시서만 / 커서=실행·commit·push
 3. **확정 결론:** 적중축 **폐기**. EV 배선 유지(Y풀 순1.033). **K-09 CLOSED**(실질 누수 무해)·전제라벨 제거
 4. **물리 상수:** 1장 mean=**0.80** · best-of-15 천장=**2.27** (개선 목표 아님)
-5. **현재 초점:** K-AG=pair/zone·미소비3키 **PATCHED**.
+5. **현재 초점:** **PINNED_BASELINE** `640cb67` · K-Z~AG 완료분 고정 · 다음 P1~P4.
 
 ---
 
@@ -34,18 +34,18 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-27 | K-AG pair/zone·3키 | null_q95÷32·LMH PMF·learn배선 · verify PASS | K-AG PATCHED | `(push후)` |
+| 2026-07-27 | 핀 베이스라인 | K-Z~AG 고정 · KY/AC정합 · 재검증PASS | PIN 고정 | `(push후)` |
+| 2026-07-27 | K-AG pair/zone·3키 | null_q95÷32·LMH PMF·learn배선 · verify PASS | K-AG PATCHED | `640cb67` |
 | 2026-07-27 | K-AF 팬아웃잔여정합 | catch-up무조건·조기게이트·T1~7PASS·R37 | K-AF PATCHED | `e1e7a58` |
 | 2026-07-27 | K-AE 룰+K-06팬아웃 | R35/R36·§6반영 · draw_fanout · 샌드박스PASS | K-AE·06 PATCHED | 137f4a3 |
 | 2026-07-27 | K-AD 훅즉시복귀 | guard동적주입·NEXT1건·RESTORE동기 · 검증PASS | K-AD PATCHED | 40b651d |
-| 2026-07-27 | K-AC 압축대비 룰 | PART1답·RESTORE보정·drift0 · RULES초안승인대기 | K-AC OPEN | `2e38198` |
-| 2026-07-27 | K-AB 회차갭정합 | hyodo INSERT 1232–1234 · mismatch0 · 회귀PASS | K-AB·07 PATCHED · K-06 OPEN | `e1a7cd2` |
-| 2026-07-27 | K-AA 이론값적용·명분복귀 | 폴백138·AC8·consecPMF·배선PASS·실증2 · warrant동기 | K-AA·Z PATCHED | `bb3fa91` |
-| 2026-07-27 | K-Z 이론값·상수대조 | 전수C45,6·AC8≠7·시뮬A거리↑ · 적용0 | K-Z→PATCHED(K-AA) | `3791727` |
-| 2026-07-27 | K-Y 보조4 정밀감사 | 라벨강등·기여Δ·미소비키3 · 코드0 | K-Y OPEN · WARRANT개정 | `1c561bf` |
-| 2026-07-27 | K-X review끝수 원인규명 | rate투영·폐루프없음·KS0.66 · 코드0 | 1차원인특정 · 교정대기 | `c7fe78d` |
-| 2026-07-27 | K-W 정합성+명분라벨 | A/B/C거리·WARRANT·brain_warrant · 산출/dedup0 | K-W OPEN측정 · 라벨확정 | `5ebe898` |
-| 2026-07-27 | K-V dedup 구현·검증 | E[k]97.09→100 · unresolved0 · 이표본OK · +0.015s | K-V PATCHED | `ba98f34` |
+| 2026-07-27 | K-AC 압축대비 룰 | R35/R36/R37·§6반영 · drift0 | K-AC PATCHED | `2e38198` |
+| 2026-07-27 | K-AB 회차갭정합 | hyodo INSERT 1232–1234 · mismatch0 · 회귀PASS | K-AB·07 PATCHED | `e1a7cd2` |
+| 2026-07-27 | K-AA 이론값적용·명분복귀 | 폴백138·AC8·consecPMF·배선PASS·실증2 | K-AA·Z PATCHED | `bb3fa91` |
+| 2026-07-27 | K-Z 이론값·상수대조 | 전수C45,6·AC8≠7·시뮬A거리↑ | K-Z PATCHED | `3791727` |
+| 2026-07-27 | K-Y 보조4 정밀감사 | 라벨강등·기여Δ · 후속K-AA/AG | K-Y OPEN(이력) | `1c561bf` |
+| 2026-07-27 | K-X review끝수 원인규명 | rate투영·폐루프없음·KS0.66 | K-X OPEN | `c7fe78d` |
+| 2026-07-27 | K-W 정합성+명분라벨 | A/B/C거리·WARRANT | K-W OPEN | `5ebe898` |
 
 ---
 
@@ -80,11 +80,11 @@
 
 ## E) 열린 결함 (FINDINGS.md 원본 · 여기 사본)
 
-**OPEN (29):** K-00 · K-02 · K-05 · K-08 · K-10 · K-11 · K-12 · K-A · K-B · K-C · K-D · K-E · K-F · K-G · K-H · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · K-W · K-X · K-Y · **K-AC**  
+**OPEN (28):** K-00 · K-02 · K-05 · K-08 · K-10 · K-11 · K-12 · K-A · K-B · K-C · K-D · K-E · K-F · K-G · K-H · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · K-W · K-X · **K-Y(이력)**  
 
 **HOLD (2):** K-M · K-N  
 
-**PATCHED (참고):** K-06 · K-07 · K-S · K-V · K-Z · K-AA · K-AB · K-AD · K-AE · K-AF · **K-AG**  
+**PATCHED (참고):** K-06 · K-07 · K-S · K-V · K-Z · K-AA · K-AB · K-AC · K-AD · K-AE · K-AF · **K-AG**  
 
 **CLOSED:** K-01 · K-03 · K-04 · K-09  
 

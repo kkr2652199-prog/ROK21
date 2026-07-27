@@ -5,21 +5,20 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-AG pair/zone재정의 · 미소비3키 배선 PATCHED
-- 직전: K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF
-- 다음: 형—기각뇌/UI쓸모/K-X/hyodo 중 선택
+- 지금: 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED
+- 직전: K-AG pair/zone·3키 배선 · K-AF 팬아웃
+- 다음: K-PIN-FOLLOW — P1~P4 중 형 승인 1건
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
 |------|-----|------|
+| BASELINE_PIN | **640cb67** | PINNED_BASELINE |
 | K-AG verify | **PASS** | KAG JSON |
-| pair divisor | **32.0** | null_q95 |
-| E[k] | **100.000** | KAG T |
-| kweon 동결 | **264de3c** | 실측 |
+| 3DB MAX | **1234** | PIN_3db_smoke |
+| drift | **0** | 핀 직전 |
 
 ## 3) 열린 과제 -> FINDINGS.md
-K-AG·AF·AE·06…=**PATCHED**. K-AC OPEN(이력). K-M·N=**HOLD**.  
-명분·배선정합. 1등↑아님.
+핀=K-Z~AG **고정**. OPEN 본선=P1~P4(형선택). K-M/N=**HOLD**.
 
 ## 4) 주의 (붕괴 방지)
 - 이 레포=ROK21 (kweon 20260726 04:38 복사본). SSOT=ROK21 main

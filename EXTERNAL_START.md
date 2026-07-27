@@ -2,21 +2,23 @@
 
 > **이 파일 하나면 흐름 복구.** GitHub 404 / 로컬 미접근이면 형이 이 파일 전체를 채팅에 붙여넣는다.
 > 상세 복사용 프롬프트: `My_Drive_Sync/SUMMARY/EXTERNAL_AI_BOOTSTRAP.md`
+> **핀 베이스라인:** `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md`
 > 동생 큐(권한 있을 때): `My_Drive_Sync/SUMMARY/RESTORE.md`
 
 ## LIVE 작업 흐름 (자동 동기 · 외부AI 1순위)
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d42ddcb` |
+| HEAD(실측) | `640cb67` |
+| BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-AG pair/zone재정의 · 미소비3키 배선 PATCHED |
-| 직전 | K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF |
-| BOOT다음 | 형—기각뇌/UI쓸모/K-X/hyodo 중 선택 |
-| NEXT1 ID | **K-AG-FOLLOW** |
-| NEXT1 할일 | 형—다음 본선 선택 (기각뇌 처리 / UI쓸모 / K-X끝수 / hyodo후속) |
+| 지금 | 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED |
+| 직전 | K-AG pair/zone·3키 배선 · K-AF 팬아웃 |
+| BOOT다음 | K-PIN-FOLLOW — P1~P4 중 형 승인 1건 |
+| NEXT1 ID | **K-PIN-FOLLOW** |
+| NEXT1 할일 | 형—본선 1개 선택 (P1 UI쓸모 / P2 기각뇌표시 / P3 K-X끝수 / P4 hyodo후속) |
 | 승인필요 | 예 |
-| 선행 | K-AG PATCHED |
+| 선행 | PINNED_BASELINE `640cb67` 고정 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -30,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d42ddcb · 지금=K-AG pair/zone재정의 · 미소비3키 배선 PATCHED · 다음=K-AG-FOLLOW`
+1. 첫줄 `[복귀] HEAD=640cb67 · 지금=핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED · 다음=K-PIN-FOLLOW`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -42,6 +44,7 @@
 | 매턴요약 | `My_Drive_Sync/SUMMARY/FLOW_BRIEF.md` |
 | 결함 | `My_Drive_Sync/SUMMARY/FINDINGS.md` |
 | 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |
+| 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: d42ddcb_
+_generated: 640cb67_

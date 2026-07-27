@@ -235,6 +235,19 @@ def build_flow_brief() -> str:
     return "\n".join(lines)
 
 
+def read_baseline_pin() -> str:
+    """PINNED_BASELINE.md 의 BASELINE_PIN — 없으면 HEAD."""
+    path = SUMMARY / "PINNED_BASELINE.md"
+    try:
+        text = path.read_text(encoding="utf-8")
+        m = re.search(r"BASELINE_PIN:\s*`([^`]+)`", text)
+        if m:
+            return m.group(1).strip()
+    except OSError:
+        pass
+    return short_head()
+
+
 def build_live_flow_block() -> str:
     """외부AI가 한 블록으로 흐름을 잡기 위한 LIVE 스냅샷."""
     head = short_head()
@@ -252,6 +265,7 @@ def build_live_flow_block() -> str:
     now = _strip(boot[0])
     prev = _strip(boot[1])
     boot_next = _strip(boot[2])
+    pin = read_baseline_pin()
     lines = [
         "<!-- ROK21_LIVE_FLOW -->",
         "## LIVE 작업 흐름 (자동 동기 · 외부AI 1순위)",
@@ -259,6 +273,7 @@ def build_live_flow_block() -> str:
         f"| 키 | 값 |",
         f"|----|-----|",
         f"| HEAD(실측) | `{head}` |",
+        f"| BASELINE_PIN | `{pin}` |",
         f"| WORK | `{work}` |",
         f"| 지금 | {now} |",
         f"| 직전 | {prev} |",
@@ -299,6 +314,7 @@ def build_external_start() -> str:
             "",
             "> **이 파일 하나면 흐름 복구.** GitHub 404 / 로컬 미접근이면 형이 이 파일 전체를 채팅에 붙여넣는다.",
             "> 상세 복사용 프롬프트: `My_Drive_Sync/SUMMARY/EXTERNAL_AI_BOOTSTRAP.md`",
+            "> **핀 베이스라인:** `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md`",
             "> 동생 큐(권한 있을 때): `My_Drive_Sync/SUMMARY/RESTORE.md`",
             "",
             body,
@@ -311,6 +327,7 @@ def build_external_start() -> str:
             "| 매턴요약 | `My_Drive_Sync/SUMMARY/FLOW_BRIEF.md` |",
             "| 결함 | `My_Drive_Sync/SUMMARY/FINDINGS.md` |",
             "| 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |",
+            "| 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |",
             "| 수치 | `docs/benchmarks/*.json` |",
             "",
             f"_generated: {short_head()}_",

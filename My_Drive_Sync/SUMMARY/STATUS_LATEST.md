@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-27 KST  
-📌 사유: K-AG pair/zone 재정의 + 미소비 3키 배선
+📌 사유: 핀 베이스라인 — K-Z~K-AG 완료분 고정
 
 ---
 
@@ -10,24 +10,25 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
-| kweon | `264de3c` 동결 |
-| 테스트로또 | 3예측+4보조 **유지** |
+| BASELINE_PIN | **`640cb67`** |
+| 테스트로또 | 3예측+4보조 유지 |
 
 ---
 
-## 1) K-AG 요지
+## 1) 핀 요지
 
-| 항목 | 결과 |
-|------|------|
-| pair | ÷**32.0** (null_q95) |
-| zone | LMH 이론 PMF |
-| 3키 배선 | pair/consec/odd → aux |
-| verify_pass | **true** · E[k]=100 |
-
-> 1등 확률 상승 작업이 아니다. 명분·배선 정합 작업이다.
+| 게이트 | 결과 |
+|--------|------|
+| K-AG 재검증 | **PASS** · E[k]=100 |
+| 3DB smoke | MAX 1234 · mismatch 0 |
+| drift | **0** |
+| FINDINGS | K-Y·K-AC 문구 정합 |
 
 ---
 
-## 2) 다음
+## 2) 다음 (형)
 
-`K-AG-FOLLOW` — 형 선택 (기각뇌 / UI쓸모 / K-X / hyodo)
+`K-PIN-FOLLOW` — **P1~P4 중 1개만** 승인:
+- P1 UI쓸모 · P2 기각뇌표시 · P3 K-X끝수 · P4 hyodo후속
+
+근거: [`PINNED_BASELINE.md`](PINNED_BASELINE.md)

@@ -56,11 +56,11 @@
 | K-V | PATCHED | 발권 dedup: E[k] 97.091→100.000 · unresolved0 · OFF/ON 이표본 왜곡없음 | `ticket_dedup.py` · coordinator 후처리 · `reports/20260727_KV_중복제거_구현검증.md` | `ROK21_DEDUP` 기본 ON. P배수≈1.030. 예측력↑ 아님. 절대이론 GOF는 뇌가중 산출물에서 OFF/ON 공통 기각 → 왜곡게이트=이표본 |
 | K-W | OPEN | 산출 정합성: 명분(당첨≈이론) vs 뇌 산출 거리 측정 · 명분 라벨 SSOT | `docs/benchmarks/20260727_KW_alignment.json` · `WARRANT.md` · KW 보고서 | stat→A근접 · markov/review→C근접 · review끝수 편향경보. 라벨=기각5/실증2/미정의1. 기각뇌 제거금지 |
 | K-X | OPEN | review 끝수편향 원인=`repeat_rate` 투영(5·8↑/7↓) · 예측폐루프·자기강화증폭 미입증 | `predict_review_king.py` · `repeat_rate_after_draw` · `docs/benchmarks/20260727_KX_review_ending.json` · KX 보고서 | early↔late KS p=0.66. ending_digit_boost는 review 미사용. 교정 구현 금지(형승인). P(1등) 관점 교정 불필요 가능 |
-| K-Y | OPEN | 보조4 감사: pattern/balance→전제실증·구현미검증 강등 · miss/referee 순위기여0 · pair/consec/odd_even 미소비 | `docs/benchmarks/20260727_KY_aux_audit.json` · KY 보고서 · WARRANT | fusion 미배선 재확인(K-D). live≠DB referee(K-J). balance 기본합150≠138. 코드0 |
+| K-Y | OPEN | 보조4 감사(이력): miss/referee 순위기여0 · fusion미배선(K-D) · live≠DB referee(K-J) | `docs/benchmarks/20260727_KY_aux_audit.json` · KY 보고서 | **후속:** K-AA pattern/balance→실증 · K-AG pair÷32·LMH·3키배선. 감사 시점(미소비)은 K-AG로 해소됨 |
 | K-Z | PATCHED | C(45,6) 이론값 확정 후 K-AA에서 코드 적용(AC=8·폴백합138·consec PMF) | `docs/benchmarks/20260727_KZ_theory_constants.json` · KZ/KAA 보고서 | A거리 미개선→K-AA에서 게이트↓관측 |
 | K-AA | PATCHED | 이론값 적용·구현검증·명분복귀: pattern/balance→실증 · warrant.py동기화 · E[k]=100·SHA일치 | `docs/benchmarks/20260727_KAA_apply_verify.json` · diff · KAA 보고서 | 판정축=조합론 참값. A거리 관측만. 1등확률↑아님. pair/30·zone목표 미변경 |
 | K-AB | PATCHED | 회차갭정합: hyodo 1232–1234를 lotto4에서 INSERT · 3DB MAX=1234·번호불일치0 · 회귀PASS | `docs/benchmarks/20260727_KAB_draw_gap.json` · backup_hashes · KAB 보고서 | 크롤링0·UPDATE0. K-06 영구팬아웃은 안만. 예측력무관·무결성 |
-| K-AC | OPEN | 압축대비 룰: Q1~Q8답 · RESTORE드리프트보정 · drift n=0 · RULES/CURSOR 초안은 형승인대기 | KAC 보고서 · `tools/_doc_drift_check.py` · drafts/ | R28 미준수 자인. R33/R29 충돌 기록. 예측력무관·방향상실방지 |
+| K-AC | PATCHED | 압축대비 룰: Q1~Q8답 · RESTORE드리프트보정 · R35/R36/R37·§6 반영(K-AE) · drift0 | KAC 보고서 · `tools/_doc_drift_check.py` · drafts/이력 | R28→1줄복귀·EXTERNAL_START. 예측력무관·방향상실방지 |
 | K-AD | PATCHED | 압축즉시복귀: guard_boot 동적주입(HEAD·BOOT§1·NEXT1건) · NEXT_ACTIONS앵커 · RESTORE복귀5줄 동기 · drift0·회귀PASS | KAD 보고서 · `rok21_inject.py` · `20260727_KAD_hook_inject.json` | R28→1줄[복귀]. 젠스파크는 hooks없음→RESTORE큐. 예측력무관·운영인프라 |
 | K-AE | PATCHED | 룰 R35/R36·CURSOR §6 반영 + K-06 영구팬아웃 구현·샌드박스검증 | KAE 보고서 · fanout_verify.json · draw_fanout.py | 수집무결성. lotto4 실패롤백없음(K-AB). drafts 이력유지 |
 | K-AF | PATCHED | 팬아웃 잔여정합: 순차commit위험명시·catch-up무조건·조기게이트·T1~T7 PASS · R37 FLOW_BRIEF | KAF 보고서 · `20260727_KAF_fanout_followup.json` | 예측력무관·무결성. 실전발화0회(logs없음) |
