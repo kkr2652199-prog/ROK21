@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-27 KST  
-📌 사유: K-AB 회차 갭 정합 (hyodo 1232–1234)
+📌 사유: K-AC 압축대비 룰 현황·RESTORE 보강
 
 ---
 
@@ -11,33 +11,32 @@
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | kweon | `264de3c` 동결 |
-| draws | lotto4 / testlotto / hyodo **MAX=1234** 정합 |
+| 문서원본 | 수치=benchmarks · 결함=FINDINGS · 라벨=WARRANT |
 
 ---
 
-## 1) K-AB 요지
+## 1) K-AC 요지
 
 | 항목 | 결과 |
 |------|------|
-| 갭 | hyodo만 trailing **1232–1234** (내부구멍0) |
-| 번호 불일치 | **0** |
-| 보정 | lotto4→hyodo INSERT 3건 · UPDATE 없음 |
-| 회귀 | E[k]=100 · SHA일치 · as_of OK |
-| K-06 | OPEN (영구 팬아웃 미구현) |
-| K-07 | **PATCHED** |
+| rules | alwaysApply 2개 (core · drive-sync) |
+| hooks | boot 주입 확인 · path/stop 발동횟수 모름 |
+| R28 | **매턴 ✅3줄 미수행** (자인) |
+| RESTORE | C/E/F/B 보정 · drift **0** |
+| RULES/CURSOR | **초안만** (형 승인 대기) |
 
-> 이 정합은 예측력과 무관하다. 분석 기반 데이터의 무결성 확보다.
+> 이 작업은 예측력과 무관하다. 압축으로 인한 방향 상실 방지다.
 
 ---
 
 ## 2) OPEN / PATCHED
 
-K-AB·K-07·K-AA·Z·V·S **PATCHED** · K-06 OPEN · K-M/N HOLD
+K-AC OPEN · K-AB·07·AA·Z·V·S PATCHED · K-06 OPEN · K-M/N HOLD
 
 ---
 
 ## 3) 다음 (형)
 
-1. K-06 스케줄러 팬아웃 구현 승인 여부 (STEP5 안)  
-2. pair/30·zone · 미소비 키  
-3. hyodo 예측/review 후속 여부
+1. RULES_FIXED R35·R36 · CURSOR_RULES §6 초안 **승인/반영**  
+2. K-06 팬아웃 구현 승인  
+3. pair/30·zone · 미소비 키
