@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `bb7b004` · WORK=`IDLE`
+- HEAD: `95dc47b` · WORK=`IDLE`
 - 지금: K-W post-KP3 재측정 PASS · rates NameError 수정
 - 직전: K-P5 인프라UI · K-PIN-CLOSE · P1~P4
 - BOOT다음: K-AWAIT — 형 다음 본선 1건 (K-B·1235 후보)
