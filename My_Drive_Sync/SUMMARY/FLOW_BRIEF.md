@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `764f8ae` · WORK=`IDLE`
+- HEAD: `1d0be4f` · WORK=`IDLE`
 - 지금: K-B BENCH SSOT 고정·기계검증 PASS
 - 직전: K-W post-KP3 · K-P5 · PIN/P스택
 - BOOT다음: K-AWAIT — 형 다음 본선 1건 (1235·K-D·K-H 후보)

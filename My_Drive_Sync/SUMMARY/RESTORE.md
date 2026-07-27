@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `764f8ae` · WORK=`IDLE`
+1. **HEAD:** `1d0be4f` · WORK=`IDLE`
 2. **지금:** K-B BENCH SSOT 고정·기계검증 PASS
 3. **다음1건:** K-AWAIT — 형 다음 본선 1건 지시 대기 (후보: 1235루프 · K-D · K-H) (승인필요=아니오 · 선행=K-B PATCHED · K-W · PIN `640cb67`)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-28 | K-B BENCH SSOT | review100·pred갭31·세트동일0 · verify PASS | K-B PATCHED | `(커밋 전)` |
+| 2026-07-28 | K-B BENCH SSOT | review100·pred갭31·세트동일0 · verify PASS | K-B PATCHED | `1d0be4f` |
 | 2026-07-27 | K-W post-KP3 | ending χ²/df↓ · rates NameError수정 · verify PASS | K-W PATCHED | `bb7b004` |
 | 2026-07-27 | K-P5 hyodo 인프라UI | infra-dashboard·LSTM패널 · verify PASS | K-P5 PATCHED | `6f0d0e0` |
 | 2026-07-27 | K-PIN-CLOSE 마감 | drift0·3DB1234·P스택게이트 PASS | K-PIN-CLOSE | `e945b84` |
