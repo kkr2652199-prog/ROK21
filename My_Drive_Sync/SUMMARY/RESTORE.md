@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e6356dc` · WORK=`IDLE`
+1. **HEAD:** `81551eb` · WORK=`IDLE`
 2. **지금:** K-P4 hyodo LSTM 샌드박스 · ckpt격리·as_of검증 PASS
 3. **다음1건:** K-PIN-CLOSE — P1~P4 스택 마감 — drift·3DB 재스모크 (형 지시 시) (승인필요=예 · 선행=K-P1/P2/P3/P4 완료 · PINNED_BASELINE `640cb67`)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
