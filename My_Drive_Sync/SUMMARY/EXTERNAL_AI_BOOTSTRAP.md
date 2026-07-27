@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `8f3be86` |
-| BASELINE_PIN | `8f3be86` |
+| HEAD(실측) | `e27db5f` |
+| BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED |
-| 직전 | K-AG pair/zone·3키 배선 · K-AF 팬아웃 |
-| BOOT다음 | K-PIN-FOLLOW — P1~P4 중 형 승인 1건 |
+| 지금 | K-P2 기각뇌 표시 · 탭 배지·정책 스트립 |
+| 직전 | K-P1 warrant-dashboard · 명분 패널 |
+| BOOT다음 | K-PIN-FOLLOW — P3 K-X 또는 P4 hyodo (형 승인) |
 | NEXT1 ID | **K-PIN-FOLLOW** |
-| NEXT1 할일 | 형—본선 1개 선택 (P1 UI쓸모 / P2 기각뇌표시 / P3 K-X끝수 / P4 hyodo후속) |
-| 승인필요 | 예 |
-| 선행 | PINNED_BASELINE `640cb67` 고정 |
+| NEXT1 할일 | 형—본선 1개 선택 (**P3 K-X끝수** / **P4 hyodo후속**) — P1·P2 완료 |
+| 승인필요 | 예 (P3 코드교정 시 필수) |
+| 선행 | PINNED_BASELINE `640cb67` 고정 · K-P1/P2 UI |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=8f3be86 · 지금=핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED · 다음=K-PIN-FOLLOW`
+1. 첫줄 `[복귀] HEAD=e27db5f · 지금=K-P2 기각뇌 표시 · 탭 배지·정책 스트립 · 다음=K-PIN-FOLLOW`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
