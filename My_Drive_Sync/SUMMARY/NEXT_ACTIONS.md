@@ -7,7 +7,7 @@
 - 할일: P1~P4 스택 마감 — drift·3DB 재스모크 (형 지시 시)
 - 선행조건: K-P1/P2/P3/P4 완료 · PINNED_BASELINE `640cb67`
 - 승인필요: 예
-- 최종갱신: `(커밋 전)`
+- 최종갱신: `e6356dc`
 
 ## WORKSTATE
 IDLE

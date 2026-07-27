@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `da68a99` · WORK=`IDLE`
+- HEAD: `e6356dc` · WORK=`IDLE`
 - 지금: K-P4 hyodo LSTM 샌드박스 · ckpt격리·as_of검증 PASS
 - 직전: K-P3 review끝수 · K-P2 기각뇌 · K-P1 명분패널
 - BOOT다음: K-PIN-CLOSE — drift·3DB 재스모크 (형 지시)
