@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""K-P1: 명분·제약·학습키 대시보드 (표시 전용 · 산출 로직 무관).
+"""K-P1/P2: 명분·제약·학습키·기각뇌 표시 (표시 전용 · 산출 로직 무관).
 
 SSOT: My_Drive_Sync/SUMMARY/WARRANT.md · PINNED_BASELINE.md
 """
@@ -32,6 +32,64 @@ FROZEN_TOKENS = [
     "_get_draws_before",
     "boost 상한 (carry 0.2 / ending 0.3 / overdue 0.2)",
 ]
+
+# K-P2: 라벨별 UI 역할 (WARRANT §0~§2)
+LABEL_DISPLAY: dict[str, dict[str, Any]] = {
+    "실증": {
+        "short": "명분 실증",
+        "role_line": "전제 실증·구현 검증. 제약·형태 점수에 기여.",
+        "tab_hint": "실증 — 제약 명분",
+    },
+    "기각": {
+        "short": "명분 없음·무해",
+        "role_line": "전제 미입증. 당첨확률 동일. 조합 다양성·설명·차후 배선용 유지.",
+        "tab_hint": "기각 — 제거 안 함",
+    },
+    "미정의": {
+        "short": "명분 미정의",
+        "role_line": "메타 정책. 성적 가중 전달효율 미검증(K-M). 채점 보조.",
+        "tab_hint": "미정의 — 메타",
+    },
+    "전제실증·구현미검증": {
+        "short": "전제만 실증",
+        "role_line": "draws/이론 OK · 모듈 구현 미검증.",
+        "tab_hint": "구현미검증",
+    },
+}
+
+REJECTED_BRAIN_POLICY: dict[str, Any] = {
+    "id": "WARRANT-2",
+    "title": "기각·무효 뇌를 제거하지 않는 이유",
+    "summary": (
+        "확률이 조합불변이므로 명분 없는/기여 0인 산출도 당첨확률은 동일하다. "
+        "조합 다양성·설명 문자열·차후 배선에 기여할 수 있다. 제거·비활성은 형 승인 전 금지."
+    ),
+    "remove_brains_allowed": False,
+    "hit_rate_optimization": False,
+    "labels_legend": [
+        {"label": "실증", "meaning": "전제 실증 + 모듈 구현 검증"},
+        {"label": "기각", "meaning": "전제 미입증 · 무해 유지"},
+        {"label": "미정의", "meaning": "메타·정책 · 검증 대기"},
+    ],
+}
+
+
+def _brain_display_hint(tag: str, label: str, kw_alignment: str | None, role: str) -> dict[str, Any]:
+    base = dict(LABEL_DISPLAY.get(label, LABEL_DISPLAY["미정의"]))
+    hint = {
+        **base,
+        "warrant_label": label,
+        "kw_alignment": kw_alignment,
+        "brain_role": role,
+        "removal_allowed": False,
+    }
+    if tag == "review" and kw_alignment and "끝수" in str(kw_alignment):
+        hint["warning"] = "끝수 편향 경보(K-X). 교정은 형 승인 후(P3)."
+    if tag == "miss_aux":
+        hint["contrib_note"] = "순위 기여 ≈0 (K-Y) · 경고 신호용"
+    if tag == "referee_aux":
+        hint["contrib_note"] = "가중 실효 ≈균등 (K-M HOLD)"
+    return hint
 
 
 def _max_draw_no() -> int | None:
@@ -130,15 +188,18 @@ def build_warrant_dashboard(as_of: int | None = None) -> dict[str, Any]:
                     }
                 )
 
+        lbl = w.get("label", "미정의")
+        kw = w.get("kw_alignment")
         brains.append(
             {
                 **get_brain_meta(tag),
-                "warrant_label": w.get("label", "미정의"),
+                "warrant_label": lbl,
                 "warrant_evidence": w.get("evidence", ""),
                 "warrant_p": w.get("p"),
-                "kw_alignment": w.get("kw_alignment"),
+                "kw_alignment": kw,
                 "source_ids": w.get("source_ids") or [],
                 "learn_keys": learn_keys,
+                "display_hint": _brain_display_hint(tag, lbl, kw, role),
             }
         )
 
@@ -159,5 +220,7 @@ def build_warrant_dashboard(as_of: int | None = None) -> dict[str, Any]:
         "frozen": FROZEN_TOKENS,
         "learn_key_wiring": LEARN_KEY_WIRING,
         "predict_adjustments": predict_adjustments,
+        "rejected_brain_policy": REJECTED_BRAIN_POLICY,
+        "label_display": LABEL_DISPLAY,
         "brains": brains,
     }

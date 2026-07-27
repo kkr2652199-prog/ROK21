@@ -45,6 +45,74 @@ let _currentDraw = 2;
 let _currentBrain = 'stat';
 let _mode = 'single';
 let _detailCache = {};
+let _warrantByTag = {};
+let _warrantPolicy = null;
+
+function _tldEscape(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function _tldWarrantClass(label) {
+  if (label === '실증') return 'tld-wlbl--proved';
+  if (label === '기각') return 'tld-wlbl--rejected';
+  return 'tld-wlbl--undefined';
+}
+
+async function _loadWarrantMeta(drawNo) {
+  const d = parseInt(drawNo, 10) || _currentDraw;
+  try {
+    const r = await fetch(`/api/testlotto/warrant-dashboard?as_of=${d}`);
+    if (!r.ok) return;
+    const data = await r.json();
+    _warrantByTag = {};
+    (data.brains || []).forEach((b) => {
+      if (b.tag) _warrantByTag[b.tag] = b;
+    });
+    _warrantPolicy = data.rejected_brain_policy || null;
+    _renderRejectedPolicyBanner();
+  } catch (e) {
+    console.warn('warrant meta:', e);
+  }
+}
+
+function _renderRejectedPolicyBanner() {
+  const el = document.getElementById('tldRejectedPolicy');
+  if (!el || !_warrantPolicy) return;
+  el.hidden = false;
+  el.innerHTML =
+    `<p class="tld-rejected-policy__title">${_tldEscape(_warrantPolicy.title)}</p>` +
+    `<p class="tld-rejected-policy__body">${_tldEscape(_warrantPolicy.summary)}</p>`;
+}
+
+function _tldWarrantBadgeHtml(tag) {
+  const meta = _warrantByTag[tag];
+  if (!meta) return '';
+  const lbl = meta.warrant_label || '미정의';
+  const hint = meta.display_hint || {};
+  return (
+    `<span class="tld-wlbl ${_tldWarrantClass(lbl)}">${_tldEscape(lbl)}</span>` +
+    (hint.tab_hint ? `<span class="tld-warrant-hint">${_tldEscape(hint.tab_hint)}</span>` : '')
+  );
+}
+
+function _tldBrainPolicyBlock(tag) {
+  const meta = _warrantByTag[tag];
+  if (!meta) return '';
+  const hint = meta.display_hint || {};
+  let extra = '';
+  if (hint.warning) extra += `<p class="tld-policy-warn">⚠ ${_tldEscape(hint.warning)}</p>`;
+  if (meta.kw_alignment) extra += `<p class="tld-policy-kw">K-W: ${_tldEscape(meta.kw_alignment)}</p>`;
+  return (
+    `<div class="tld-brain-policy">` +
+    `<strong>${_tldEscape(hint.short || meta.warrant_label)}</strong> ` +
+    `<span>${_tldEscape(hint.role_line || '')}</span>` +
+    extra +
+    `</div>`
+  );
+}
 
 function _params() {
   return new URLSearchParams(window.location.search);
@@ -366,7 +434,7 @@ function _renderBrainScorecards(detail) {
       `<button type="button" role="tab" aria-selected="${active}" ` +
       `class="tld-scorecard${active ? ' tld-scorecard--active' : ''}${!has ? ' tld-scorecard--empty' : ''}" ` +
       `data-brain="${b.tag}" style="--brain-color:${b.color}" title="${desc}">` +
-      `<span class="tld-scorecard__name">${b.name}</span>` +
+      `<span class="tld-scorecard__name">${b.name} ${_tldWarrantBadgeHtml(b.tag)}</span>` +
       `<span class="tld-scorecard__desc">${desc}</span>` +
       `<span class="tld-scorecard__ring" style="--pct:${pct}"><span class="tld-scorecard__mc">${has ? mc + '/6' : '—'}</span></span>` +
       `<span class="tld-scorecard__label">${scoreText}${grade ? ' · ' + grade : ''}</span>` +
@@ -1018,7 +1086,8 @@ function _renderBrainDetail(detail, brainTag) {
   if (title) {
     const desc = brain?.short_desc || _brainShortDesc(brainTag, detail);
     title.innerHTML = `${bmeta?.name || '예측 뇌'} · 제 ${detail.draw_no}회 오답노트` +
-      (desc ? `<span class="tld-brain-short-desc">${desc}</span>` : '');
+      (desc ? `<span class="tld-brain-short-desc">${desc}</span>` : '') +
+      _tldBrainPolicyBlock(brainTag);
   }
 
   if (!brain) {
@@ -1448,6 +1517,7 @@ async function _refreshView() {
   if (_mode === 'range') {
     await _loadRangeTimeline();
   } else {
+    await _loadWarrantMeta(_currentDraw);
     await _loadSingleDraw(_currentDraw);
   }
 }
@@ -1531,6 +1601,7 @@ async function initTestlottoDetailPage() {
   await Promise.all([_loadDrawList(), _loadProgressMeta(), _loadHitDrawList(_currentBrain)]);
   _syncDrawControls();
   _updateNavButtons();
+  await _loadWarrantMeta(_currentDraw);
   await _refreshView();
 }
 

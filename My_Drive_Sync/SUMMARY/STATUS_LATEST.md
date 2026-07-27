@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-27 KST  
-📌 사유: 핀 베이스라인 — K-Z~K-AG 완료분 고정
+📌 사유: K-P2 기각뇌 표시 정책 UI
 
 ---
 
@@ -15,20 +15,17 @@
 
 ---
 
-## 1) 핀 요지
+## 1) 최근 완료
 
-| 게이트 | 결과 |
-|--------|------|
-| K-AG 재검증 | **PASS** · E[k]=100 |
-| 3DB smoke | MAX 1234 · mismatch 0 |
-| drift | **0** |
-| FINDINGS | K-Y·K-AC 문구 정합 |
+| ID | 요지 |
+|----|------|
+| K-P2 | 기각뇌 탭 배지·정책 스트립·상세 §2 배너 |
+| K-P1 | warrant-dashboard API · 명분 패널 |
 
 ---
 
 ## 2) 다음 (형)
 
-`K-PIN-FOLLOW` — **P1~P4 중 1개만** 승인:
-- P1 UI쓸모 · P2 기각뇌표시 · P3 K-X끝수 · P4 hyodo후속
+`K-PIN-FOLLOW` — **P3 K-X끝수** 또는 **P4 hyodo** (1개만 승인)
 
 근거: [`PINNED_BASELINE.md`](PINNED_BASELINE.md)

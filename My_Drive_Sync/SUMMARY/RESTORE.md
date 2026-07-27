@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-27 | 핀 베이스라인 | K-Z~AG 고정 · KY/AC정합 · 재검증PASS | PIN 고정 | `(push후)` |
+| 2026-07-27 | K-P2 기각뇌표시 | 탭배지·정책스트립·상세§2 · 산출0 | K-P2 PATCHED | `(push후)` |
+| 2026-07-27 | 핀 베이스라인 | K-Z~AG 고정 · KY/AC정합 · 재검증PASS | PIN 고정 | `431fe20` |
 | 2026-07-27 | K-AG pair/zone·3키 | null_q95÷32·LMH PMF·learn배선 · verify PASS | K-AG PATCHED | `640cb67` |
 | 2026-07-27 | K-AF 팬아웃잔여정합 | catch-up무조건·조기게이트·T1~7PASS·R37 | K-AF PATCHED | `e1e7a58` |
 | 2026-07-27 | K-AE 룰+K-06팬아웃 | R35/R36·§6반영 · draw_fanout · 샌드박스PASS | K-AE·06 PATCHED | 137f4a3 |
@@ -44,8 +45,6 @@
 | 2026-07-27 | K-AA 이론값적용·명분복귀 | 폴백138·AC8·consecPMF·배선PASS·실증2 | K-AA·Z PATCHED | `bb3fa91` |
 | 2026-07-27 | K-Z 이론값·상수대조 | 전수C45,6·AC8≠7·시뮬A거리↑ | K-Z PATCHED | `3791727` |
 | 2026-07-27 | K-Y 보조4 정밀감사 | 라벨강등·기여Δ · 후속K-AA/AG | K-Y OPEN(이력) | `1c561bf` |
-| 2026-07-27 | K-X review끝수 원인규명 | rate투영·폐루프없음·KS0.66 | K-X OPEN | `c7fe78d` |
-| 2026-07-27 | K-W 정합성+명분라벨 | A/B/C거리·WARRANT | K-W OPEN | `5ebe898` |
 
 ---
 

@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED
-- 직전: K-AG pair/zone·3키 배선 · K-AF 팬아웃
-- 다음: K-PIN-FOLLOW — P1~P4 중 형 승인 1건
+- 지금: K-P2 기각뇌 표시 · 탭 배지·정책 스트립
+- 직전: K-P1 warrant-dashboard · 명분 패널
+- 다음: K-PIN-FOLLOW — P3 K-X 또는 P4 hyodo (형 승인)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -105,7 +105,7 @@ function renderTestlottoWarrantPanelHtml(data, drawNo) {
   return (
     '<div class="tl-warrant-inner">' +
     '<div class="tl-warrant-head">' +
-    '<h3 class="tl-warrant-title">뇌 명분 · 제약 (K-P1)</h3>' +
+    '<h3 class="tl-warrant-title">뇌 명분 · 제약 (K-P1 · P2)</h3>' +
     `<p class="tl-warrant-note">${_tlEscapeHtml(data.evaluation_axis || '')}</p>` +
     '</div>' +
     '<div class="tl-warrant-gates">' +
@@ -122,15 +122,87 @@ function renderTestlottoWarrantPanelHtml(data, drawNo) {
   );
 }
 
+async function fetchTestlottoWarrantDashboard(drawNo) {
+  const d = parseInt(drawNo, 10);
+  const qs = Number.isFinite(d) && d > 0 ? `?as_of=${d}` : '';
+  const r = await fetch(_testlottoResolveApiUrl('/api/testlotto/warrant-dashboard' + qs));
+  if (!r.ok) throw new Error(String(r.status));
+  return r.json();
+}
+
+let _testlottoWarrantByTag = {};
+let _testlottoWarrantPolicy = null;
+let _testlottoWarrantCacheAsOf = null;
+
+function _testlottoApplyWarrantCache(data, drawNo) {
+  _testlottoWarrantByTag = {};
+  (data.brains || []).forEach((b) => {
+    if (b && b.tag) _testlottoWarrantByTag[b.tag] = b;
+  });
+  _testlottoWarrantPolicy = data.rejected_brain_policy || null;
+  _testlottoWarrantCacheAsOf = drawNo || null;
+}
+
+async function ensureTestlottoWarrantLoaded(drawNo) {
+  const d = parseInt(drawNo, 10);
+  if (_testlottoWarrantPolicy && _testlottoWarrantCacheAsOf === d) {
+    return { brains: Object.values(_testlottoWarrantByTag), rejected_brain_policy: _testlottoWarrantPolicy };
+  }
+  const data = await fetchTestlottoWarrantDashboard(d);
+  _testlottoApplyWarrantCache(data, d);
+  return data;
+}
+
+function testlottoGetWarrantMeta(tag) {
+  return _testlottoWarrantByTag[String(tag || '').toLowerCase()] || null;
+}
+
+function testlottoWarrantTabBadgeHtml(tag) {
+  const meta = testlottoGetWarrantMeta(tag);
+  if (!meta) return '';
+  const lbl = meta.warrant_label || '미정의';
+  const hint = meta.display_hint || {};
+  const tabHint = hint.tab_hint || lbl;
+  return (
+    `<span class="lotto-warrant-tabline">` +
+    `<span class="tl-wlbl ${_tlWarrantLabelClass(lbl)} lotto-warrant-tabline__lbl">${_tlEscapeHtml(lbl)}</span>` +
+    `<span class="lotto-warrant-tabline__hint">${_tlEscapeHtml(tabHint)}</span>` +
+    `</span>`
+  );
+}
+
+function testlottoBrainPolicyStripHtml(tag) {
+  const meta = testlottoGetWarrantMeta(tag);
+  if (!meta) return '';
+  const hint = meta.display_hint || {};
+  const lbl = meta.warrant_label || '미정의';
+  const cls = lbl === '기각' ? 'lotto-brain-policy--rejected' : (lbl === '미정의' ? 'lotto-brain-policy--undefined' : 'lotto-brain-policy--proved');
+  let extra = '';
+  if (hint.warning) {
+    extra += `<span class="lotto-brain-policy__warn">⚠ ${_tlEscapeHtml(hint.warning)}</span>`;
+  }
+  if (hint.contrib_note) {
+    extra += `<span class="lotto-brain-policy__note">${_tlEscapeHtml(hint.contrib_note)}</span>`;
+  }
+  if (meta.kw_alignment) {
+    extra += `<span class="lotto-brain-policy__kw">K-W: ${_tlEscapeHtml(meta.kw_alignment)}</span>`;
+  }
+  return (
+    `<div class="lotto-brain-policy ${cls}" role="note">` +
+    `<strong>${_tlEscapeHtml(hint.short || lbl)}</strong>` +
+  `<span class="lotto-brain-policy__role">${_tlEscapeHtml(hint.role_line || '')}</span>` +
+    extra +
+    `<span class="lotto-brain-policy__keep">제거·비활성 금지 (WARRANT §2)</span>` +
+    `</div>`
+  );
+}
+
 async function loadTestlottoWarrantPanel(drawNo) {
   const panel = document.getElementById('testlottoWarrantPanel');
   if (!panel) return;
   const d = parseInt(drawNo, 10);
-  const qs = Number.isFinite(d) && d > 0 ? `?as_of=${d}` : '';
   try {
-    const r = await fetch(_testlottoResolveApiUrl('/api/testlotto/warrant-dashboard' + qs));
-    if (!r.ok) throw new Error(String(r.status));
-    const data = await r.json();
+    const data = await ensureTestlottoWarrantLoaded(d);
     panel.hidden = false;
     panel.innerHTML = renderTestlottoWarrantPanelHtml(data, d);
   } catch (e) {
@@ -604,6 +676,11 @@ async function renderPredictionsByBrain(drawNo, rows) {
   const container = document.getElementById('testlottoPredictionResults');
   if (!container) return;
   await ensureLottoBrainPowerLoaded();
+  try {
+    await ensureTestlottoWarrantLoaded(drawNo);
+  } catch (e) {
+    console.warn('warrant cache:', e);
+  }
   container.classList.remove('testlotto-results-pending');
   container.removeAttribute('aria-busy');
   const date = _testlottoDrawDates[drawNo] || '?';
@@ -673,6 +750,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
     const active = b.tag === _testlottoCurrentBrainTab ? 'active' : '';
     const disabled = cnt === 0 ? 'disabled' : '';
     const nano = lottoBrainTierNanoHtml(b.tag);
+    const warrantLine = testlottoWarrantTabBadgeHtml(b.tag);
     return `
       <button class="lotto-brain-tab ${active} ${disabled}"
               data-brain="${b.tag}"
@@ -684,6 +762,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
           <span class="lotto-brain-name">${testlottoGetBrainDisplayName(b.tag)}</span>
           <span class="lotto-brain-cnt">${cnt}</span>
         </span>
+        ${warrantLine}
         ${nano}
       </button>
     `;
@@ -695,6 +774,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
     : '<p style="color:#888; padding: 16px;">이 두뇌는 이 회차에 예측 데이터가 없습니다.</p>';
 
   const hitSummaryHtml = testlottoHitSummaryHtml(rows);
+  const policyStripHtml = testlottoBrainPolicyStripHtml(_testlottoCurrentBrainTab);
 
   container.innerHTML = `
     <div class="lotto-result-header">
@@ -703,6 +783,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
       ${hitSummaryHtml}
     </div>
     <div class="lotto-brain-tabs">${tabsHtml}</div>
+    ${policyStripHtml}
     <div class="lotto-brain-cards" id="hyodoBrainCards">${cardsHtml}</div>
   `;
 }

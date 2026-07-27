@@ -2056,3 +2056,70 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* K-P2: 기각뇌 표시 */
+.tld-rejected-policy {
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #3d4f7c;
+  background: rgba(30, 41, 59, 0.5);
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+.tld-rejected-policy__title {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+.tld-rejected-policy__body {
+  margin: 0;
+  line-height: 1.45;
+}
+.tld-wlbl {
+  display: inline-block;
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-weight: 600;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.tld-wlbl--proved {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+}
+.tld-wlbl--rejected {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+.tld-wlbl--undefined {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+.tld-warrant-hint {
+  display: block;
+  font-size: 0.62rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+.tld-brain-policy {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid #334155;
+  font-size: 0.78rem;
+  color: #a8b4d0;
+  line-height: 1.4;
+}
+.tld-policy-warn {
+  margin: 0.35rem 0 0;
+  color: #fbbf24;
+  font-weight: 600;
+}
+.tld-policy-kw {
+  margin: 0.25rem 0 0;
+  color: #64748b;
+  font-size: 0.72rem;
+}

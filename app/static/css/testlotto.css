@@ -1087,3 +1087,62 @@
   color: #64748b;
   font-size: 11px;
 }
+
+/* K-P2: 뇌 탭·기각 정책 스트립 */
+.lotto-warrant-tabline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.lotto-warrant-tabline__lbl {
+  font-size: 10px;
+  padding: 1px 6px;
+}
+.lotto-warrant-tabline__hint {
+  font-size: 10px;
+  color: #94a3b8;
+  line-height: 1.2;
+}
+.lotto-brain-policy {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  border: 1px solid #334155;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  align-items: baseline;
+}
+.lotto-brain-policy--rejected {
+  border-color: rgba(148, 163, 184, 0.45);
+  background: rgba(30, 41, 59, 0.55);
+}
+.lotto-brain-policy--undefined {
+  border-color: rgba(250, 204, 21, 0.35);
+}
+.lotto-brain-policy--proved {
+  border-color: rgba(74, 222, 128, 0.35);
+}
+.lotto-brain-policy__role {
+  color: #a8b4d0;
+  flex: 1 1 200px;
+}
+.lotto-brain-policy__warn {
+  color: #fbbf24;
+  font-weight: 600;
+}
+.lotto-brain-policy__note,
+.lotto-brain-policy__kw {
+  color: #94a3b8;
+  font-size: 11px;
+}
+.lotto-brain-policy__keep {
+  color: #64748b;
+  font-size: 11px;
+  font-style: italic;
+}
