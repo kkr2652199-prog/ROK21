@@ -5,22 +5,22 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-W 정합성·명분라벨 (WARRANT SSOT · brain_warrant 데이터만)
-- 직전: K-V dedup E[k]→100 · PATCHED
-- 다음: 형—review끝수경보 · 제약채택 · K-R/WF/hyodo
+- 지금: K-X review끝수 원인=`repeat_rate`투영 · 자기강화증폭 미유의
+- 직전: K-W 정합성·WARRANT 명분라벨
+- 다음: 형—K-X교정 여부(기본불필요) · 제약/K-R/hyodo
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
 |------|-----|------|
+| review 끝5/8/7 슬롯 | **430 / 381 / 184** | K-X |
+| rate mean 끝8·5·7 | **0.183 / 0.176 / 0.111** | K-X |
+| early↔late 끝수 KS p | **0.660** | K-X |
 | 명분 실증/기각/미정의 | **2 / 5 / 1** | WARRANT |
-| K-W review끝수 d_A | **13.37** | K-W |
-| 100장 E[k] ON | **100.000** | K-V |
-| DEDUP·CUTOFF | **기본 ON** | K-V·S |
 | draws MAX | **1234** | DB |
 | kweon 동결 | **264de3c** | 실측 |
 
 ## 3) 열린 과제 -> FINDINGS.md
-K-W OPEN(측정완료). K-V·S=**PATCHED**. K-T/U OPEN. K-M·N=**HOLD**.  
+K-X OPEN(원인특정·교정대기). K-W OPEN. K-V·S=**PATCHED**. K-M·N=**HOLD**.  
 명분=`WARRANT.md`. 기각뇌 제거금지.
 
 ## 4) 주의 (붕괴 방지)
@@ -34,7 +34,7 @@ K-W OPEN(측정완료). K-V·S=**PATCHED**. K-T/U OPEN. K-M·N=**HOLD**.
 - 원본 kweon 미접촉. DB 전체초기화 비권고. 수집·크롤링은 형 승인 전 금지.
 
 ## 5) 더 필요하면
-1. `WARRANT.md` (뇌 명분 SSOT)
-2. `reports/20260727_KW_산출정합성_명분라벨.md`
-3. `BENCH_PROTOCOL.md` · `FINDINGS.md`
+1. `WARRANT.md` · `reports/20260727_KX_review끝수편향_원인규명.md`
+2. `docs/benchmarks/20260727_KX_review_ending.json`
+3. `FINDINGS.md` (K-X)
 4. `RESTORE.md` · `STATUS_LATEST.md`

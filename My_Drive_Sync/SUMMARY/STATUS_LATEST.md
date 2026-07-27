@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-27 KST  
-📌 사유: K-W 산출 정합성 측정 · 뇌 명분 라벨(WARRANT SSOT)
+📌 사유: K-X review 끝수편향 원인규명 (READ-ONLY)
 
 ---
 
@@ -11,34 +11,29 @@
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | kweon | `264de3c` 동결 |
-| 명분 | **`WARRANT.md`** |
-| 성적 | `BENCH_PROTOCOL.md` |
+| 명분 | `WARRANT.md` |
 
 ---
 
-## 1) K-W 요지
+## 1) K-X 요지
 
-| 뇌 | vs A/C | 명분 라벨 |
-|----|--------|-----------|
-| stat | **A근접**(정합) | 기각 (K-Q) |
-| markov | **C근접**(무해) | 기각 (K-T) |
-| review | C근접 · **끝수 편향경보** | 기각 (K-T) |
-| pattern/balance | — | **실증** |
-| miss | — | 기각 |
-| referee | — | 미정의 |
-
-이탈 TOP: review끝수 · markov끝수 · stat홀짝
+| 항목 | 판정 |
+|------|------|
+| 형태 | 끝5·8 **과다** · 끝7 **과소** (중복허용도 이상 아님) |
+| 1차 원인 | `repeat_rate_after_draw` → 끝수 투영 |
+| 예측 폐루프 | **없음** (rates=당첨만) |
+| 자기강화 증폭 | early↔late KS **p=0.66** 미유의 |
+| 교정 | 구현 금지 · P관점 교정 불필요 가능 |
 
 ---
 
-## 2) PATCHED
+## 2) PATCHED / HOLD
 
-K-S · K-V · K-09 CLOSED · K-M/N HOLD
+K-S·K-V PATCHED · K-M/N HOLD · K-W/X OPEN
 
 ---
 
 ## 3) 다음 (형)
 
-1. review 끝수 편향 원인 규명 승인 여부  
-2. pattern/balance 제약 공식 채택  
-3. K-R / WF 잔여 · hyodo  
+1. K-X 교정안 채택 여부(기본=불필요)  
+2. pattern/balance 제약 · K-R/WF · hyodo  
