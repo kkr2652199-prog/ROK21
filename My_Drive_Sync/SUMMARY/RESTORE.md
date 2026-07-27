@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6cb69c8` · WORK=`IDLE`
+1. **HEAD:** `137f4a3` · WORK=`IDLE`
 2. **지금:** K-AE 룰반영(R35/R36·§6) · K-06팬아웃 PATCHED
 3. **다음1건:** K-AE-FOLLOW — 형—다음 과제 선택 (pair/30·zone 재정의 / 미소비 learn키 / hyodo 예측후속 중 하나) (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -33,6 +33,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-27 | K-AE 룰+K-06팬아웃 | R35/R36·§6반영 · draw_fanout · 샌드박스PASS | K-AE·06 PATCHED | 137f4a3 |
 | 2026-07-27 | K-AD 훅즉시복귀 | guard동적주입·NEXT1건·RESTORE동기 · 검증PASS | K-AD PATCHED | 40b651d |
 | 2026-07-27 | K-AC 압축대비 룰 | PART1답·RESTORE보정·drift0 · RULES초안승인대기 | K-AC OPEN | `2e38198` |
 | 2026-07-27 | K-AB 회차갭정합 | hyodo INSERT 1232–1234 · mismatch0 · 회귀PASS | K-AB·07 PATCHED · K-06 OPEN | `e1a7cd2` |
