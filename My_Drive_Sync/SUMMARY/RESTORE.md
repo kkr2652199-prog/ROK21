@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8f3be86` · WORK=`IDLE`
-2. **지금:** 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED
-3. **다음1건:** K-PIN-FOLLOW — 형—본선 1개 선택 (P1 UI쓸모 / P2 기각뇌표시 / P3 K-X끝수 / P4 hyodo후속) (승인필요=예 · 선행=PINNED_BASELINE `640cb67` 고정)
+1. **HEAD:** `815a9ca` · WORK=`IDLE`
+2. **지금:** K-P2 기각뇌 표시 · 탭 배지·정책 스트립
+3. **다음1건:** K-PIN-FOLLOW — 형—본선 1개 선택 (**P3 K-X끝수** / **P4 hyodo후속**) — P1·P2 완료 (승인필요=예 (P3 코드교정 시 필수) · 선행=PINNED_BASELINE `640cb67` 고정 · K-P1/P2 UI)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-27 | K-P2 기각뇌표시 | 탭배지·정책스트립·상세§2 · 산출0 | K-P2 PATCHED | `(push후)` |
+| 2026-07-27 | K-P2 기각뇌표시 | 탭배지·정책스트립·상세§2 · 산출0 | K-P2 PATCHED | `815a9ca` |
 | 2026-07-27 | 핀 베이스라인 | K-Z~AG 고정 · KY/AC정합 · 재검증PASS | PIN 고정 | `431fe20` |
 | 2026-07-27 | K-AG pair/zone·3키 | null_q95÷32·LMH PMF·learn배선 · verify PASS | K-AG PATCHED | `640cb67` |
 | 2026-07-27 | K-AF 팬아웃잔여정합 | catch-up무조건·조기게이트·T1~7PASS·R37 | K-AF PATCHED | `e1e7a58` |

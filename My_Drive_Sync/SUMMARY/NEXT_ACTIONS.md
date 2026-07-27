@@ -7,7 +7,7 @@
 - 할일: 형—본선 1개 선택 (**P3 K-X끝수** / **P4 hyodo후속**) — P1·P2 완료
 - 선행조건: PINNED_BASELINE `640cb67` 고정 · K-P1/P2 UI
 - 승인필요: 예 (P3 코드교정 시 필수)
-- 최종갱신: `(push후)`
+- 최종갱신: 815a9ca
 
 ## WORKSTATE
 IDLE
