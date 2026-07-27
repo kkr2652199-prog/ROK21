@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `815a9ca` · WORK=`IDLE`
+- HEAD: `5b6c312` · WORK=`IDLE`
 - 지금: K-P2 기각뇌 표시 · 탭 배지·정책 스트립
 - 직전: K-P1 warrant-dashboard · 명분 패널
 - BOOT다음: K-PIN-FOLLOW — P3 K-X 또는 P4 hyodo (형 승인)
