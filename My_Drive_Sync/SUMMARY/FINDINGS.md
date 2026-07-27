@@ -53,4 +53,4 @@
 | K-S | PATCHED | 미래참조 누수 선결 해소 · WF전체는 미구현 | `feedback.py` · `learn_state*.py` · coordinator/walkforward · `reports/20260727_KT_KV_전제검정_포트폴리오감사.md` | as_of 필수·CUTOFF **기본 ON**·격리 2회동일 증명. 번호산출·random.choices 미수정. WF뼈대 잔여=형승인 |
 | K-T | OPEN | 뇌 전제 검정: 의존/기하이탈 기각 · 형태·균형은 이론부합(제약명분) · referee 미정의 | `docs/benchmarks/20260727_KT_KV_results.json` · KT_KV 보고서 | markov lag1 χ² p=0.764 · miss χ² p=0.483 · pattern/balance 전부 p≥0.13 |
 | K-U | OPEN | 쌍층 표본: 분산=null · FDR0 · Bonf 검출폭 ±~79%RR | 동상 | 25914 슬롯 · E=26.18 · perm(C45,7)×10k p≈0.48 · 삼중 생략 |
-| K-V | OPEN | 포트폴리오: 회차내중복0 · 100장 E[k]≈97 · 중복제거≈1.03× | 동상 · review 1135–1234 | P(1등) 레버=유효조합수 k. 구현은 형승인 |
+| K-V | PATCHED | 발권 dedup: E[k] 97.091→100.000 · unresolved0 · OFF/ON 이표본 왜곡없음 | `ticket_dedup.py` · coordinator 후처리 · `reports/20260727_KV_중복제거_구현검증.md` | `ROK21_DEDUP` 기본 ON. P배수≈1.030. 예측력↑ 아님. 절대이론 GOF는 뇌가중 산출물에서 OFF/ON 공통 기각 → 왜곡게이트=이표본 |

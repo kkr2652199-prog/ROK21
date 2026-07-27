@@ -5,24 +5,23 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-S선결(CUTOFF기본ON·as_of격리증명) · K-T/U/V 전제·쌍·포트폴리오
-- 직전: K-O~S 볼단위·χ²균등·WF설계만
-- 다음: 형 승인—중복제거(K-V)·제약채택·WF잔여/K-R
+- 지금: K-V dedup 구현·검증 (E[k]97.09→100 · DEDUP기본ON · PATCHED)
+- 직전: K-S선결 · K-T/U/V 전제·쌍·포트폴리오 감사
+- 다음: 형—제약채택 · WF잔여/K-R · hyodo
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
 |------|-----|------|
-| E[세트적중] | **0.8** 상수 | K-O |
-| markov lag1 χ² p | **0.764** | K-T |
-| 쌍 null p (var) | **≈0.48** | K-U |
-| 100장 E[k] | **≈97.06** | K-V |
+| 100장 E[k] OFF/ON | **97.091 / 100.000** | K-V |
+| P배수(낭비제거) | **≈1.030×** | K-V |
+| DEDUP 기본 | **ON** | K-V |
 | CUTOFF 기본 | **ON** | K-S |
 | draws MAX (testlotto) | **1234** | DB |
 | kweon 동결 | **264de3c** | 실측 |
 
 ## 3) 열린 과제 -> FINDINGS.md
-K-S=**PATCHED**(선결). K-T/U/V OPEN. K-O~R OPEN. K-M·N=**HOLD**.  
-정당성=전제 실증. 성적=`BENCH_PROTOCOL`.
+K-V=**PATCHED**. K-S=**PATCHED**. K-T/U OPEN. K-M·N=**HOLD**.  
+정당성=전제 실증. 발권 조합 회차내 유일.
 
 ## 4) 주의 (붕괴 방지)
 - 이 레포=ROK21 (kweon 20260726 04:38 복사본). SSOT=ROK21 main
@@ -35,7 +34,7 @@ K-S=**PATCHED**(선결). K-T/U/V OPEN. K-O~R OPEN. K-M·N=**HOLD**.
 - 원본 kweon 미접촉. DB 전체초기화 비권고. 수집·크롤링은 형 승인 전 금지.
 
 ## 5) 더 필요하면
-1. `BENCH_PROTOCOL.md` (정당성=전제 실증)
-2. `reports/20260727_KT_KV_전제검정_포트폴리오감사.md`
-3. `FINDINGS.md` (K-S·T·U·V)
+1. `BENCH_PROTOCOL.md` (정당성·발권유일)
+2. `reports/20260727_KV_중복제거_구현검증.md`
+3. `FINDINGS.md` (K-V PATCHED)
 4. `RESTORE.md` · `STATUS_LATEST.md`

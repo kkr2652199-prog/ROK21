@@ -78,6 +78,17 @@
 
 ---
 
+---
+
+## 발권) 회차 내 조합 유일 (K-V)
+
+- 발권 최종 출력의 조합(정렬 6튜플)은 **회차/배치 내에서 유일**해야 한다.
+- 계층: 뇌 산출 → 기존 파이프라인 → **dedup** → 발권. 뇌·fusion·referee 로직 수정 금지.
+- 스위치: `ROK21_DEDUP` 기본 ON (`0/false/off/no`만 OFF). OFF=기존 동작 동일.
+- 이 규칙은 **조합 낭비 제거**이지 예측력 향상이 아니다. P(1등)=k/8,145,060.
+
+---
+
 ## 6) 관련 FINDINGS
 
-K-B · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED 선결) · K-T · K-U · K-V · K-M/K-N(HOLD)
+K-B · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED 선결) · K-T · K-U · K-V(PATCHED) · K-M/K-N(HOLD)

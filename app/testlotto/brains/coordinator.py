@@ -113,6 +113,29 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
     scored = _apply_aux_scoring(candidates, draws, target_draw_no)
     scored.sort(key=lambda x: x["confidence"], reverse=True)
 
+    # ── K-V 발권 후처리 dedup (뇌/fusion/referee 미수정) ──
+    from app.testlotto.ticket_dedup import dedup_enabled, dedup_ticket_list
+
+    dedup_stats: dict = {"dedup_enabled": False, "unresolved_count": 0}
+    if dedup_enabled():
+
+        def _regen(
+            brain_tag: str,
+            seen: set[tuple[int, ...]],
+            replace_of: dict | None = None,
+        ):
+            mod = PREDICT_MODULES.get(brain_tag)
+            if mod is None:
+                return None
+            # 같은 뇌·같은 draws 조건으로 1세트 재요청
+            raw = mod.predict_sets(draws, 1)
+            if not raw:
+                return None
+            return _apply_aux_scoring(raw, draws, target_draw_no)[0]
+
+        scored, dedup_stats = dedup_ticket_list(scored, regenerate=_regen)
+        scored.sort(key=lambda x: x["confidence"], reverse=True)
+
     actual_row = conn.execute(
         "SELECT * FROM lotto_draws WHERE draw_no = ?", (target_draw_no,)
     ).fetchone()
@@ -167,6 +190,7 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
     out = _build_cached_response(target_draw_no)
     out["status"] = "예측 완료 (3+4뇌 체계)"
     out["brain_system"] = "testlotto_3predict_4aux"
+    out["dedup"] = dedup_stats
     if len(draws) < 10:
         out["warning"] = f"데이터 부족 (이전 {len(draws)}회)"
     return out

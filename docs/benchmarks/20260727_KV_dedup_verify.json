@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "seed": 20260727,
+    "n_sim": 1000,
+    "total_combos": 8145060
+  },
+  "step2_1": {
+    "off": {
+      "dedup_on": false,
+      "n_sim": 1000,
+      "E_k": 97.091,
+      "k_min": 70,
+      "k_max": 100,
+      "k_std": 6.0097187122194,
+      "k_all_100": false,
+      "unresolved_total": 0,
+      "dup_events_total": 0,
+      "retries_total": 0,
+      "brain_counts_sum": {
+        "stat": 33378,
+        "markov": 33293,
+        "review": 33329
+      },
+      "brain_counts_mean_per_100": {
+        "stat": 33.378,
+        "markov": 33.293,
+        "review": 33.329
+      },
+      "elapsed_sec": 0.22634950000792742,
+      "elapsed_per_100_sec": 0.0002263495000079274
+    },
+    "on": {
+      "dedup_on": true,
+      "n_sim": 1000,
+      "E_k": 100.0,
+      "k_min": 100,
+      "k_max": 100,
+      "k_std": 0.0,
+      "k_all_100": true,
+      "unresolved_total": 0,
+      "dup_events_total": 2909,
+      "retries_total": 2909,
+      "brain_counts_sum": {
+        "stat": 33378,
+        "markov": 33293,
+        "review": 33329
+      },
+      "brain_counts_mean_per_100": {
+        "stat": 33.378,
+        "markov": 33.293,
+        "review": 33.329
+      },
+      "elapsed_sec": 165.64932899991982,
+      "elapsed_per_100_sec": 0.16564932899991983
+    }
+  },
+  "step2_2_theory_gof": {
+    "off": {
+      "n_sets": 5000,
+      "sum_mean": 138.0424,
+      "sum_theo": 138.0,
+      "sum_ks_p": 0.0007920956633571128,
+      "odd_chi2": {
+        "chi2": 152.83536817339797,
+        "df": 6,
+        "p": 1.9451105592683523e-30
+      },
+      "zone_chi2": {
+        "chi2": 201.2376871276416,
+        "df": 25,
+        "p": 1.772052566153327e-29
+      },
+      "consec_chi2": {
+        "chi2": 25.246148685851843,
+        "df": 5,
+        "p": 0.00012488274967416
+      },
+      "ending_chi2": {
+        "chi2": 347.52314999999993,
+        "df": 9,
+        "p": 2.0858638005533134e-69
+      },
+      "p_values": {
+        "sum_ks_p": 0.0007920956633571128,
+        "odd_chi2_p": 1.9451105592683523e-30,
+        "zone_chi2_p": 1.772052566153327e-29,
+        "consec_chi2_p": 0.00012488274967416,
+        "ending_chi2_p": 2.0858638005533134e-69
+      },
+      "any_p_lt_0_01": true
+    },
+    "on": {
+      "n_sets": 5000,
+      "sum_mean": 138.0824,
+      "sum_theo": 138.0,
+      "sum_ks_p": 0.0005664532194967684,
+      "odd_chi2": {
+        "chi2": 152.29631250260041,
+        "df": 6,
+        "p": 2.5291232969811413e-30
+      },
+      "zone_chi2": {
+        "chi2": 201.2567157662655,
+        "df": 25,
+        "p": 1.7571613887296427e-29
+      },
+      "consec_chi2": {
+        "chi2": 21.587565195681513,
+        "df": 5,
+        "p": 0.0006270519248687739
+      },
+      "ending_chi2": {
+        "chi2": 350.1434249999999,
+        "df": 9,
+        "p": 5.776333559317616e-70
+      },
+      "p_values": {
+        "sum_ks_p": 0.0005664532194967684,
+        "odd_chi2_p": 2.5291232969811413e-30,
+        "zone_chi2_p": 1.7571613887296427e-29,
+        "consec_chi2_p": 0.0006270519248687739,
+        "ending_chi2_p": 5.776333559317616e-70
+      },
+      "any_p_lt_0_01": true
+    }
+  },
+  "step2_2_distort_off_vs_on": {
+    "p_values": {
+      "sum_ks2_p": 0.9999999999051078,
+      "odd_chi2_p": 0.9982409884120961,
+      "zone_chi2_p": 0.9999999999999994,
+      "consec_chi2_p": 0.9740183015309306,
+      "ending_chi2_p": 0.9999959962131973
+    },
+    "any_p_lt_0_01": false,
+    "sum_mean_off": 138.0424,
+    "sum_mean_on": 138.0824,
+    "note": "절대 이론 GOF는 뇌 가중 산출물에서 OFF/ON 모두 기각됨(대표본). dedup 왜곡 판정은 OFF vs ON 이표본 p>=0.01 유지 여부."
+  },
+  "step2_3_brain_ratio": {
+    "off_mean": {
+      "stat": 33.378,
+      "markov": 33.293,
+      "review": 33.329
+    },
+    "on_mean": {
+      "stat": 33.378,
+      "markov": 33.293,
+      "review": 33.329
+    },
+    "abs_diff": {
+      "stat": 0.0,
+      "markov": 0.0,
+      "review": 0.0
+    },
+    "max_abs_diff": 0.0
+  },
+  "step2_4_sha": {
+    "on_run1": "17f723ba319b7c86b6af1d5fb70449ef3bea11810c1ee782ea6591d80effeb27",
+    "on_run2": "17f723ba319b7c86b6af1d5fb70449ef3bea11810c1ee782ea6591d80effeb27",
+    "on_match": true,
+    "off_match": true,
+    "off_sha": "17f723ba319b7c86b6af1d5fb70449ef3bea11810c1ee782ea6591d80effeb27"
+  },
+  "step2_5_timing": {
+    "off_sec_mean20": 3.149849362671375e-07,
+    "on_sec_mean20": 0.01491471499321051,
+    "delta_sec": 0.014914400008274242,
+    "over_2s": false
+  },
+  "step3_prob": {
+    "k_off": 97.091,
+    "k_on": 100.0,
+    "p_off": 1.1920231404065776e-05,
+    "p_on": 1.2277380399898834e-05,
+    "ratio_100_over_k_off": 1.0299615824329753,
+    "p_on_explicit": "100/8145060",
+    "p_off_explicit": "97.091/8145060",
+    "p_on_via_scale": "1.1920231404065776e-05 * (100/97.091) = 1.2277380399898834e-05",
+    "disclaimer": "이 개선은 조합 낭비를 없앤 것이며, 예측력 향상이 아니다. 단일 회차 1등 확률은 여전히 100/8,145,060 ≈ 1.23e-5 이다."
+  },
+  "gate": {
+    "off_near_97": true,
+    "on_exact_100": true,
+    "unresolved_zero": true,
+    "distort_ok_off_vs_on": true,
+    "brain_ratio_unchanged": true,
+    "sha_ok": true,
+    "theory_note": "절대이론 GOF는 OFF/ON 모두 대표본에서 기각(뇌 가중). 왜곡게이트=이표본. theory_on.any_p_lt_0_01=True",
+    "pass_step2": true
+  }
+}
