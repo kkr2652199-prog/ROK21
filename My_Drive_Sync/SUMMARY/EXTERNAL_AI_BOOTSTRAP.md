@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `e1e7a58` |
+| HEAD(실측) | `bfce804` |
 | WORK | `IDLE` |
 | 지금 | K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF |
 | 직전 | K-AE 룰반영(R35/R36·§6) · K-06팬아웃 PATCHED |
@@ -30,7 +30,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=e1e7a58 · 지금=K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF · 다음=K-AG`
+1. 첫줄 `[복귀] HEAD=bfce804 · 지금=K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF · 다음=K-AG`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

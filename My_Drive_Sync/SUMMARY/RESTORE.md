@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e1e7a58` · WORK=`IDLE`
+1. **HEAD:** `bfce804` · WORK=`IDLE`
 2. **지금:** K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF
 3. **다음1건:** K-AG — pair/30·zone 목표 재정의 (K-Y 미소비 3키 연계) (승인필요=예 · 선행=K-AF PATCHED)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
