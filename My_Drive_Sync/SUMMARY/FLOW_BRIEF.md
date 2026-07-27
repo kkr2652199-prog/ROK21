@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `59a8739` · WORK=`IDLE`
+- HEAD: `a862a4d` · WORK=`IDLE`
 - 지금: K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF
 - 직전: K-AE 룰반영(R35/R36·§6) · K-06팬아웃 PATCHED
 - BOOT다음: K-AG pair/30·zone 목표 재정의 (형 승인)
