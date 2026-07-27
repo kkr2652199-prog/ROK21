@@ -18,7 +18,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-27 | K-S선결+K-T/U/V 전제·포트 | as_of필수·CUTOFF기본ON·전제표·쌍null·k≈97 | K-S PATCHED · T/U/V OPEN | (push후) |
+| 2026-07-27 | K-S선결+K-T/U/V 전제·포트 | as_of필수·CUTOFF기본ON·전제표·쌍null·k≈97 | K-S PATCHED · T/U/V OPEN | `fecb9a7` |
 | 2026-07-27 | K-O~S 볼단위전환+WF설계 | 데이터감사·χ²균등·±30%·층화대기·WF설계 · 코드0 | K-M/N HOLD · 볼층위 | `93218f8` |
 | 2026-07-27 | K-B프로토콜+K-M/N분산 | BENCH_PROTOCOL·null비실력·가중(a)~(b)5% | K-M무의미·K-N분산 | (push후) |
 | 2026-07-27 | K-A~L부여+KB/C/D규명 | FINDINGS등재 · 표본비공유·best가중·fusion의도 | K-B SSOT=review JSON · 코드0 | `29d4594` |
