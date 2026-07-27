@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `40b651d` · WORK=`IDLE`
-2. **지금:** K-AD 훅동적주입 · NEXT1건앵커 · 동생복귀5줄 동기화
-3. **다음1건:** K-AD-FOLLOW — 형—RULES_FIXED R35·R36·CURSOR_RULES §6 초안 승인/반영 (그다음 K-06 팬아웃) (승인필요=예 · 선행=없음)
+1. **HEAD:** `6cb69c8` · WORK=`IDLE`
+2. **지금:** K-AE 룰반영(R35/R36·§6) · K-06팬아웃 PATCHED
+3. **다음1건:** K-AE-FOLLOW — 형—다음 과제 선택 (pair/30·zone 재정의 / 미소비 learn키 / hyodo 예측후속 중 하나) (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -25,7 +25,7 @@
 2. **3자 역할:** 형=결정 / 동생(Claude)=판단·지시서만 / 커서=실행·commit·push
 3. **확정 결론:** 적중축 **폐기**. EV 배선 유지(Y풀 순1.033). **K-09 CLOSED**(실질 누수 무해)·전제라벨 제거
 4. **물리 상수:** 1장 mean=**0.80** · best-of-15 천장=**2.27** (개선 목표 아님)
-5. **현재 초점:** K-AD=훅동적주입(HEAD·지금·NEXT) · 동생=`RESTORE.md` 큐.
+5. **현재 초점:** K-AE=룰반영+K-06 영구팬아웃 **PATCHED**.
 
 ---
 
@@ -79,11 +79,11 @@
 
 ## E) 열린 결함 (FINDINGS.md 원본 · 여기 사본)
 
-**OPEN (30):** K-00 · K-02 · K-05 · K-06 · K-08 · K-10 · K-11 · K-12 · K-A · K-B · K-C · K-D · K-E · K-F · K-G · K-H · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · K-W · K-X · K-Y · **K-AC**  
+**OPEN (29):** K-00 · K-02 · K-05 · K-08 · K-10 · K-11 · K-12 · K-A · K-B · K-C · K-D · K-E · K-F · K-G · K-H · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · K-W · K-X · K-Y · **K-AC**  
 
 **HOLD (2):** K-M · K-N  
 
-**PATCHED (참고):** K-07 · K-S · K-V · K-Z · K-AA · K-AB · **K-AD**  
+**PATCHED (참고):** K-06 · K-07 · K-S · K-V · K-Z · K-AA · K-AB · K-AD · **K-AE**  
 
 **CLOSED:** K-01 · K-03 · K-04 · K-09  
 

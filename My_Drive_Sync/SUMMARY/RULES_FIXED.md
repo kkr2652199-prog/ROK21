@@ -215,12 +215,36 @@ R31: [폐기됨 — R33으로 대체] (구) .txt 병행 저장 — 불필요.
 R32: [폐기됨 — R33으로 대체] (구) 스프레드시트/.txt 복원 절차.
 
 R33 (복원 SSOT 확정, 2026-07-10):
+- **적용범위: kweon(동결) 한정.** ROK21 작업 복원은 `RESTORE.md` 우선 (R35).
 - 압축/새 동생 복원 1순위 = GitHub kkr2652199-prog/kweon · main
   → /My_Drive_Sync/SUMMARY/README_START.md 먼저 읽는다.
 - README_START 지시 4파일 순서: ①STATUS_LATEST ②NEXT_ACTIONS ③DECISION_LOG ④RULES_FIXED
 - 2순위 = 형 채팅 직접 붙여넣기.
 - 구글드라이브/스프레드시트/.txt/preview(구 R23·R31·R32)는 전면 폐기.
 - 복원 첫 보고 4줄: draw_no / lead1 공식 / LM홀딩·유령2뇌 상태 / 다음 STEP.
+
+## R35 (NEW 동생 복원 규칙 · 2026-07-27 K-AC/K-AE)
+
+- 동생(Claude)은 **압축 후 첫 턴**에 아래를 **반드시** 읽는다 (순서 고정):
+  1. `RESTORE.md`
+  2. `BOOT.md`
+  3. `FINDINGS.md`
+  4. `CURSOR_RULES.md` §6 (현행 뇌 체계)
+- **읽기 전 지시서 작성 금지.**
+- 지시서의 **모든 수치**에 출처파일 병기 (`docs/benchmarks/*.json` · DB실측 · FINDINGS ID).
+- 지시서에 없는 값 **추정 금지.** 불확실하면 **"미확인"**으로 형에게 질문.
+- ROK21 작업은 구 R33 kweon/README_START 경로를 쓰지 않는다. **RESTORE.md 우선.**
+
+## R36 (NEW 문서 SSOT 충돌 · 2026-07-27 K-AC/K-AE)
+
+| 종류 | 원본 (이김) | 사본 (짐) |
+|------|-------------|-----------|
+| 수치 | `docs/benchmarks/*.json` (+ DB 실측) | BOOT §2 · STATUS · RESTORE C · RESUME_HERE |
+| 결함 상태 | `FINDINGS.md` | BOOT §3 · RESTORE E · STATUS 요약 |
+| 명분 라벨 | `WARRANT.md` | `brains/warrant.py` · 보고서 재서술 |
+
+- 충돌 시 **원본이 이긴다.** 사본은 원본에 맞춰 고친다.
+- 드리프트 검사: `tools/_doc_drift_check.py` (자동수정 금지 · 보고만).
 
 ---
 

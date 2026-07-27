@@ -1,5 +1,5 @@
 ﻿# CURSOR_RULES.md — 커서 행동 강제 규칙
-# 최종 갱신: 2026-07-18 (push 검증·RESUME_HERE 반영)
+# 최종 갱신: 2026-07-27 (K-AE · §6 testlotto 현행화 · 구 9뇌는 §6b)
 # 이 파일은 READ-ONLY. 형(사용자)만 수정 가능.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -122,10 +122,27 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  - 풀 백테스트 완료 = 모든 회차 OK, skip 0건
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-## 6. 4군 뇌 체계 (현행)
+## 6. 테스트로또 뇌 체계 (현행 · ROK21 주작업)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- 총 9뇌 = 7활성 + 2Hidden
+ 총 **3예측 + 4보조** (coordinator 등록분)
+
+ [예측]
+ - stat (`predict_stat_fairy` / statistical)
+ - markov (`predict_flow_shaman`)
+ - review (`predict_review_king`)
+
+ [보조]
+ - miss_aux · pattern_aux · balance_aux · referee_aux
+
+ 명분 라벨 SSOT = `WARRANT.md` (코드 미러 `brains/warrant.py`)
+ 뇌 수/구성 변경 시: STATUS_LATEST 선언 + FINDINGS 갱신
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## 6b. 4군(lotto4) 뇌 체계 (별도 · 레거시 문서)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ (구 §6 이관) 총 9뇌 = 7활성 + 2Hidden
 
  [Ace - 번호 생성]
  v13_seq : LSTM(45→128→64) + Attention + Sigmoid
@@ -136,7 +153,7 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  v13_diversity: Jaccard + 십단위 커버리지
  v13_ev : 인기도 역수 기대값
 
- [Meta - 감독]
+ [Meta - 조합]
  v13_evolution: Ace 2뇌 동적 가중치 (seq, struct만)
 
  [Commander]
@@ -146,6 +163,7 @@ memoy(1·2·3군) 앱 원본: D:\MONEY lol — 절대 미접촉.
  [Hidden - 미호출]
  v13_cdm, v13_cond_prob
 
+ ※ testlotto 작업과 **혼용 금지**. 4군 작업 지시서에만 인용.
  뇌 수 변경 시: 반드시 "4군 뇌 수 변경 선언" + STATUS 갱신
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

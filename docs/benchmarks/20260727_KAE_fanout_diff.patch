@@ -1,0 +1,279 @@
+diff --git a/app/lotto/data_service.py b/app/lotto/data_service.py
+index bba1477..3a7c4ad 100644
+--- a/app/lotto/data_service.py
++++ b/app/lotto/data_service.py
+@@ -487,12 +487,26 @@ def collect_latest_forward(max_probe: int = 10) -> dict:
+         collected.append(int(draw["draw_no"]))
+         _refresh_scores_after_collect(int(draw["draw_no"]))
+ 
++    # K-06/K-AE: lotto4 → testlotto/hyodo 팬아웃 (실패해도 수집 결과 유지)
++    fanout: dict = {"skipped": True, "note": "no collected"}
++    if collected:
++        try:
++            from app.lotto.draw_fanout import fanout_after_collect
++
++            fanout = fanout_after_collect(collected)
++            if not fanout.get("ok", True):
++                logger.warning("draw fanout issues: %s", fanout.get("errors"))
++        except Exception as e:  # noqa: BLE001
++            logger.warning("draw fanout exception: %s", e)
++            fanout = {"ok": False, "errors": [str(e)], "note": "swallowed"}
++
+     return {
+         "ok": True,
+         "collected": collected,
+         "count": len(collected),
+         "next_tried": next_no,
+         "errors": errors,
++        "fanout": fanout,
+     }
+ 
+ 
+diff --git a/app/lotto/draw_fanout.py b/app/lotto/draw_fanout.py
+new file mode 100644
+index 0000000..129fa91
+--- /dev/null
++++ b/app/lotto/draw_fanout.py
+@@ -0,0 +1,222 @@
++# -*- coding: utf-8 -*-
++"""lotto4 → testlotto/hyodo draws 팬아웃 (K-06 / K-AE).
++
++INSERT OR IGNORE only. 기존 행 UPDATE/DELETE 없음.
++스위치: ROK21_FANOUT 기본 ON (0/false/off/no 만 OFF).
++"""
++from __future__ import annotations
++
++import logging
++import os
++import sqlite3
++from pathlib import Path
++from typing import Any
++
++logger = logging.getLogger(__name__)
++
++ROOT = Path(__file__).resolve().parents[2]
++LOTTO4_DB = ROOT / "data" / "lotto4.db"
++TESTLOTTO_DB = ROOT / "data" / "lotto_testlotto.db"
++HYODO_DB = ROOT / "data" / "lotto_hyodo.db"
++
++COLS = (
++    "draw_no",
++    "draw_date",
++    "num1",
++    "num2",
++    "num3",
++    "num4",
++    "num5",
++    "num6",
++    "bonus",
++    "total_sales",
++    "first_prize",
++    "first_winners",
++    "created_at",
++)
++NUM_KEY = ("num1", "num2", "num3", "num4", "num5", "num6", "bonus")
++
++
++def fanout_enabled() -> bool:
++    raw = os.environ.get("ROK21_FANOUT")
++    if raw is None or str(raw).strip() == "":
++        return True
++    v = str(raw).strip().lower()
++    if v in ("0", "false", "off", "no"):
++        return False
++    return True
++
++
++def _connect(path: Path) -> sqlite3.Connection:
++    con = sqlite3.connect(str(path))
++    con.row_factory = sqlite3.Row
++    return con
++
++
++def _load_num_map(con: sqlite3.Connection) -> dict[int, tuple]:
++    q = f"SELECT draw_no,{','.join(NUM_KEY)} FROM lotto_draws"
++    out: dict[int, tuple] = {}
++    for r in con.execute(q):
++        out[int(r["draw_no"])] = tuple(r[k] for k in NUM_KEY)
++    return out
++
++
++def check_overlap_mismatch(
++    src: dict[int, tuple], dst: dict[int, tuple]
++) -> list[int]:
++    mism: list[int] = []
++    for n in set(src) & set(dst):
++        if src[n] != dst[n]:
++            mism.append(n)
++    return sorted(mism)
++
++
++def _fetch_rows(con: sqlite3.Connection, draw_nos: list[int]) -> list[tuple]:
++    rows = []
++    for n in draw_nos:
++        r = con.execute(
++            f"SELECT {','.join(COLS)} FROM lotto_draws WHERE draw_no=?", (n,)
++        ).fetchone()
++        if r is not None:
++            rows.append(tuple(r[c] for c in COLS))
++    return rows
++
++
++def fanout_from_lotto4(
++    draw_nos: list[int] | None = None,
++    *,
++    catch_up_missing: bool = True,
++    db_lotto4: Path | None = None,
++    db_testlotto: Path | None = None,
++    db_hyodo: Path | None = None,
++) -> dict[str, Any]:
++    """lotto4 행을 testlotto·hyodo에 INSERT OR IGNORE.
++
++    대상 두 DB는 동일 배치를 각각 트랜잭션으로 적용.
++    한쪽 실패 시 양쪽 rollback → testlotto/hyodo MAX가 서로 갈라지지 않음.
++    lotto4는 수정·롤백하지 않음 (K-AB STEP5).
++    """
++    result: dict[str, Any] = {
++        "enabled": fanout_enabled(),
++        "ok": True,
++        "skipped": False,
++        "inserted_testlotto": [],
++        "inserted_hyodo": [],
++        "planned": [],
++        "mismatches": {},
++        "errors": [],
++        "note": "",
++    }
++    if not fanout_enabled():
++        result["skipped"] = True
++        result["note"] = "ROK21_FANOUT=OFF"
++        return result
++
++    p4 = db_lotto4 or LOTTO4_DB
++    pt = db_testlotto or TESTLOTTO_DB
++    ph = db_hyodo or HYODO_DB
++    if not p4.exists():
++        result["ok"] = False
++        result["errors"].append(f"missing source {p4}")
++        return result
++
++    src = None
++    targets: list[tuple[str, Path, sqlite3.Connection]] = []
++    try:
++        src = _connect(p4)
++        src_map = _load_num_map(src)
++        for path, label in ((pt, "testlotto"), (ph, "hyodo")):
++            if not path.exists():
++                result["errors"].append(f"missing target {label}:{path}")
++                result["ok"] = False
++                return result
++            targets.append((label, path, _connect(path)))
++
++        mism_all: dict[str, list[int]] = {}
++        for label, path, con in targets:
++            mism = check_overlap_mismatch(src_map, _load_num_map(con))
++            if mism:
++                mism_all[label] = mism
++        if mism_all:
++            result["ok"] = False
++            result["mismatches"] = mism_all
++            result["errors"].append("overlap mismatch — fanout aborted")
++            result["note"] = "INSERT 금지 (불일치)"
++            return result
++
++        missing_union: set[int] = set()
++        for label, path, con in targets:
++            missing_union |= set(src_map) - set(_load_num_map(con))
++        if draw_nos is not None:
++            planned = sorted(set(int(x) for x in draw_nos) & set(src_map))
++            if catch_up_missing:
++                planned = sorted(set(planned) | missing_union)
++        else:
++            planned = sorted(missing_union) if catch_up_missing else []
++
++        result["planned"] = planned
++        if not planned:
++            result["note"] = "no-op (already aligned or empty plan)"
++            return result
++
++        rows = _fetch_rows(src, planned)
++        placeholders = ",".join("?" for _ in COLS)
++        sql = (
++            f"INSERT OR IGNORE INTO lotto_draws ({','.join(COLS)}) "
++            f"VALUES ({placeholders})"
++        )
++
++        inserted: dict[str, list[int]] = {"testlotto": [], "hyodo": []}
++        befores: dict[str, set[int]] = {}
++        try:
++            for label, path, con in targets:
++                befores[label] = set(_load_num_map(con))
++                con.execute("BEGIN")
++                for row in rows:
++                    con.execute(sql, row)
++            # 둘 다 성공 시에만 커밋
++            for label, path, con in targets:
++                con.commit()
++                after = set(_load_num_map(con))
++                inserted[label] = sorted(after - befores[label])
++        except Exception as e:
++            for label, path, con in targets:
++                try:
++                    con.rollback()
++                except Exception:
++                    pass
++            result["ok"] = False
++            result["errors"].append(f"fanout txn failed: {e}")
++            result["note"] = "양쪽 대상 롤백(트랜잭션). lotto4 미변경"
++            logger.warning("fanout failed: %s", e)
++            return result
++
++        result["inserted_testlotto"] = inserted["testlotto"]
++        result["inserted_hyodo"] = inserted["hyodo"]
++        result["note"] = "ok"
++        return result
++    finally:
++        if src is not None:
++            try:
++                src.close()
++            except Exception:
++                pass
++        for label, path, con in targets:
++            try:
++                con.close()
++            except Exception:
++                pass
++
++
++def fanout_after_collect(collected: list[int]) -> dict[str, Any]:
++    """수집 직후 호출: collected + 누락 catch-up. 예외는 삼키고 dict 반환."""
++    try:
++        return fanout_from_lotto4(list(collected or []), catch_up_missing=True)
++    except Exception as e:
++        logger.warning("fanout_after_collect error: %s", e)
++        return {
++            "ok": False,
++            "enabled": fanout_enabled(),
++            "errors": [str(e)],
++            "note": "exception swallowed — collect pipeline continues",
++        }
+diff --git a/app/lotto/draw_scheduler.py b/app/lotto/draw_scheduler.py
+index 4eec885..c854356 100644
+--- a/app/lotto/draw_scheduler.py
++++ b/app/lotto/draw_scheduler.py
+@@ -32,11 +32,14 @@ def _job_collect_latest() -> None:
+                     conn.close()
+             except Exception as e:  # noqa: BLE001
+                 logger.warning("all_combos scheduled sync: %s", e)
++        # fanout은 collect_latest_forward 내부에서 수행 (K-AE). 결과만 로그.
++        fo = result.get("fanout") or {}
+         logger.info(
+-            "scheduled lotto collect: count=%s collected=%s errors=%s",
++            "scheduled lotto collect: count=%s collected=%s errors=%s fanout=%s",
+             result.get("count"),
+             result.get("collected"),
+             result.get("errors"),
++            fo.get("note") or fo.get("errors"),
+         )
+     except Exception as e:  # noqa: BLE001
+         logger.exception("scheduled lotto collect failed: %s", e)

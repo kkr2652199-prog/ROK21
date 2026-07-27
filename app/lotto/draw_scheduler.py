@@ -32,11 +32,14 @@ def _job_collect_latest() -> None:
                     conn.close()
             except Exception as e:  # noqa: BLE001
                 logger.warning("all_combos scheduled sync: %s", e)
+        # fanout은 collect_latest_forward 내부에서 수행 (K-AE). 결과만 로그.
+        fo = result.get("fanout") or {}
         logger.info(
-            "scheduled lotto collect: count=%s collected=%s errors=%s",
+            "scheduled lotto collect: count=%s collected=%s errors=%s fanout=%s",
             result.get("count"),
             result.get("collected"),
             result.get("errors"),
+            fo.get("note") or fo.get("errors"),
         )
     except Exception as e:  # noqa: BLE001
         logger.exception("scheduled lotto collect failed: %s", e)

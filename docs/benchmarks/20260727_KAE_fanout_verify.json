@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "disclaimer": "이 작업은 예측력과 무관하다. 수집 파이프라인의 데이터 무결성 확보다.",
+    "sandbox": "D:\\ROK21\\data\\_kae_fanout_sandbox",
+    "fanout_default_on": true
+  },
+  "ops_before": {
+    "lotto4": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    },
+    "testlotto": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    },
+    "hyodo": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    }
+  },
+  "ops_after_unchanged": true,
+  "ops_after": {
+    "lotto4": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    },
+    "testlotto": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    },
+    "hyodo": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234
+    }
+  },
+  "noop_aligned": {
+    "enabled": true,
+    "ok": true,
+    "skipped": false,
+    "inserted_testlotto": [],
+    "inserted_hyodo": [],
+    "planned": [],
+    "mismatches": {},
+    "errors": [],
+    "note": "no-op (already aligned or empty plan)"
+  },
+  "noop_second": {
+    "enabled": true,
+    "ok": true,
+    "skipped": false,
+    "inserted_testlotto": [],
+    "inserted_hyodo": [],
+    "planned": [],
+    "mismatches": {},
+    "errors": [],
+    "note": "no-op (already aligned or empty plan)"
+  },
+  "multi_gap": {
+    "before": {
+      "testlotto": {
+        "min": 1,
+        "max": 1232,
+        "count": 1232
+      },
+      "hyodo": {
+        "min": 1,
+        "max": 1232,
+        "count": 1232
+      },
+      "lotto4": {
+        "min": 1,
+        "max": 1234,
+        "count": 1234
+      }
+    },
+    "result": {
+      "enabled": true,
+      "ok": true,
+      "skipped": false,
+      "inserted_testlotto": [
+        1233,
+        1234
+      ],
+      "inserted_hyodo": [
+        1233,
+        1234
+      ],
+      "planned": [
+        1233,
+        1234
+      ],
+      "mismatches": {},
+      "errors": [],
+      "note": "ok"
+    },
+    "after": {
+      "testlotto": {
+        "min": 1,
+        "max": 1234,
+        "count": 1234
+      },
+      "hyodo": {
+        "min": 1,
+        "max": 1234,
+        "count": 1234
+      },
+      "lotto4": {
+        "min": 1,
+        "max": 1234,
+        "count": 1234
+      }
+    },
+    "filled": true
+  },
+  "idempotent_same_draw": {
+    "first": {
+      "enabled": true,
+      "ok": true,
+      "skipped": false,
+      "inserted_testlotto": [],
+      "inserted_hyodo": [],
+      "planned": [
+        1234
+      ],
+      "mismatches": {},
+      "errors": [],
+      "note": "ok"
+    },
+    "second": {
+      "enabled": true,
+      "ok": true,
+      "skipped": false,
+      "inserted_testlotto": [],
+      "inserted_hyodo": [],
+      "planned": [
+        1234
+      ],
+      "mismatches": {},
+      "errors": [],
+      "note": "ok"
+    },
+    "count_1234_test": 1,
+    "count_1234_hyodo": 1
+  },
+  "switch_off": {
+    "enabled": false,
+    "ok": true,
+    "skipped": true,
+    "inserted_testlotto": [],
+    "inserted_hyodo": [],
+    "planned": [],
+    "mismatches": {},
+    "errors": [],
+    "note": "ROK21_FANOUT=OFF"
+  },
+  "regression": {
+    "as_of_ok": true,
+    "E_k": 100.0,
+    "unresolved": 0,
+    "sha_ok": true,
+    "dedup_on": true,
+    "gate_pass": true
+  },
+  "path_notes": {
+    "hook": "collect_latest_forward → fanout_after_collect (스케줄·수동 공통, K-AB STEP5 옵션2)",
+    "hyodo_separate_fetch": "app/hyodo/data_service.fetch_latest_draw 별도 경로 존재 — 팬아웃은 lotto4 소스 내부복사",
+    "lotto4_on_fanout_fail": "롤백 안 함 (K-AB). 대상 DB만 트랜잭션 롤백"
+  },
+  "verify_pass": true
+}

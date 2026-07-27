@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-27 KST  
-📌 사유: K-AD 압축 즉시복귀 · guard_boot 동적 주입
+📌 사유: K-AE 룰 반영 + K-06 영구 팬아웃
 
 ---
 
@@ -11,32 +11,29 @@
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | kweon | `264de3c` 동결 |
-| 복귀 | 커서=훅주입 · 동생=**RESTORE.md** |
+| 수집 | lotto4→testlotto/hyodo **자동 팬아웃** |
 
 ---
 
-## 1) K-AD 요지
+## 1) K-AE 요지
 
 | 항목 | 결과 |
 |------|------|
-| guard_boot | HEAD+BOOT§1+NEXT+WORK+경고 · ≤15줄 |
-| NEXT_ACTIONS | **1건** 앵커 고정 |
-| RESTORE | 동생복귀5줄 = 훅과 동일 소스 |
-| 검증 | 파손continue · drift0 · E[k]=100 |
-| 젠스파크 | hooks 없음 → RESTORE 큐 필수 |
+| R35·R36 · CURSOR §6 | **반영** |
+| K-06 | **PATCHED** |
+| 스위치 | `ROK21_FANOUT` 기본 ON |
+| 샌드박스 검증 | **PASS** · 운영 DB 실험 없음 |
 
-> 이 작업은 예측력과 무관하다. 압축 후 즉시 복귀를 위한 운영 인프라다.
+> 이 작업은 예측력과 무관하다. 수집 파이프라인의 데이터 무결성 확보다.
 
 ---
 
 ## 2) OPEN / PATCHED
 
-K-AD **PATCHED** · K-AC OPEN · K-06 OPEN · K-AB·07·AA·Z·V·S PATCHED
+K-AE·K-06 **PATCHED** · K-AC OPEN · K-M/N HOLD
 
 ---
 
 ## 3) 다음 (형)
 
-1. R35/R36·§6 초안 승인  
-2. K-06 팬아웃  
-3. 젠스파크에 RESTORE 큐 정착
+`NEXT_ACTIONS` K-AE-FOLLOW — pair/zone · 미소비키 · hyodo후속 중 선택

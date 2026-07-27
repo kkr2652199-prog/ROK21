@@ -487,12 +487,26 @@ def collect_latest_forward(max_probe: int = 10) -> dict:
         collected.append(int(draw["draw_no"]))
         _refresh_scores_after_collect(int(draw["draw_no"]))
 
+    # K-06/K-AE: lotto4 → testlotto/hyodo 팬아웃 (실패해도 수집 결과 유지)
+    fanout: dict = {"skipped": True, "note": "no collected"}
+    if collected:
+        try:
+            from app.lotto.draw_fanout import fanout_after_collect
+
+            fanout = fanout_after_collect(collected)
+            if not fanout.get("ok", True):
+                logger.warning("draw fanout issues: %s", fanout.get("errors"))
+        except Exception as e:  # noqa: BLE001
+            logger.warning("draw fanout exception: %s", e)
+            fanout = {"ok": False, "errors": [str(e)], "note": "swallowed"}
+
     return {
         "ok": True,
         "collected": collected,
         "count": len(collected),
         "next_tried": next_no,
         "errors": errors,
+        "fanout": fanout,
     }
 
 
