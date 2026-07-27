@@ -1,7 +1,15 @@
 # FINDINGS — ROK21 결함 대장 (ID 영구 고정 · kweon 복사본)
 
 > memoy는 F-*, ROK21/kweon계는 **K-*** 로 구분. ID 재사용·재번호 금지.
-> 상태: OPEN -> VERIFYING -> PATCHED -> CLOSED
+> 상태: OPEN -> VERIFYING -> PATCHED -> CLOSED · **HOLD**(원인확정·조치 대기)
+
+## 배경 확정 (20260727 · 볼단위 전환)
+
+1. **(K-O)** E[적중]=6×(6/45)=**0.8** 상수 → 세트 mean만으로 뇌 서열화 **불가**.
+2. **(K-P)** 전이력×100세트 백테의 5개일치 기대 ≈ **3.5건**(실측식 1245×100×P₅≈3.58) → 세트단위 상위등수 지표는 **학습신호 부재**.
+3. 따라서 검정 층위를 **세트 → 볼(번호)** 로 하향. 볼 표본 실측 n_draws=1234 → 본+보너스 슬롯 **8638**.
+
+성적 비교는 `BENCH_PROTOCOL.md` 준수. 원본 kweon(`264de3c`) 동결.
 
 | ID | 상태 | 요약 | 위치 | 비고 |
 |----|------|------|------|------|
@@ -13,16 +21,16 @@
 | K-05 | OPEN | public 레포·tracked *.db ~306MB | `data/*.db`, `data/combos/` | 24 files · 320,983,040 byte (20260726 실측) · 형 승인 전 untrack 금지 |
 | K-06 | OPEN | per-draw fan-out 미구현 | `app/lotto/draw_scheduler.py` | 스케줄러→`collect_latest_forward` lotto4.db만 · testlotto/hyodo 미연동 · draws gap **hyodo=1231** (testlotto/lotto4=1234, 20260727 실측) |
 | K-07 | OPEN | fetch-latest 수동복구·팬아웃 | `app/testlotto/routes.py`, `app/hyodo/routes.py` | **20260727:** testlotto 백업+fetch검증 완료(MAX=1234·1232~1234 공식MATCH·pred/review 있음). **잔여=hyodo만 1231**. hyodo 동기화는 형 승인 후 |
-| K-08 | OPEN | 평가지표 정의(best vs mean) | 메타·다양성 WF · `reports/20260726_ROK21_지표재정의_검증.md` | best-of-15는 초기하 천장≈2.27(MC 재현). 실력 판별은 **mean**. STATUS/벤치에 mean 병기 필수. best 단독 목표 금지 |
+| K-08 | OPEN | 평가지표 정의(best vs mean) | 메타·다양성 WF · `reports/20260726_ROK21_지표재정의_검증.md` | best-of-15는 초기하 천장≈2.27(MC 재현). 실력 판별은 **mean**. STATUS/벤치에 mean 병기 필수. best 단독 목표 금지 · **K-O와 병행 재정의 중** |
 | K-09 | CLOSED | learn_state 컷오프 · 실질 누수 무해 | `learn_state_cutoff.py` · `reports/20260726_ROK21_K09컷오프_EV재검증.md` | 재구성(b) 플래그 `ROK21_LEARN_CUTOFF=1`. 200회 X−Y mean Δ CI에 0. **CLOSED**. 전제 라벨 제거. 스키마 변경 없음 |
 | K-10 | OPEN | tier1 완화 헤드룸≈0 | `filters.py` · EV보정·최종 보고서 | T1~T3 p10 실현배율 vs T0 ≤1.002. **헤드룸0 기록·코드 완화 보류** |
 | K-11 | OPEN | 적중축 폐기 · EV배선 유지(Y풀 재검증) | `ev_rerank.py` · K09컷오프 보고서 | 적중폐기 박제. Y(컷오프) 풀 순효과 1.033 CI[1.019,1.048] **YES→배선 유지**. K-09 전제 라벨 **제거**. 기본 OFF opt-in |
 | K-12 | OPEN | RULES_FIXED 정합성 2건 (보고만) | `My_Drive_Sync/SUMMARY/RULES_FIXED.md` | (a) R33 복원 SSOT=kweon 기재 → ROK21 작업 오유도 → **RESTORE.md로 우회**. (b) R29 불일치 → **K-L로 승계**. **형만 수정 가능 · 동생/커서는 보고만** |
-| K-A | OPEN | stat mean 0.760 < baseline 0.788/이론 0.80 | `brains/predict_stat_fairy.py:12` · `predict_statistical.py` | 최근100회(1135-1234)·500세트. **단 K-B 해소 전 패치 금지** |
-| K-B | OPEN | 성능 표본 2종 충돌 | `testlotto_brain_review` vs `lotto_predictions` | review100: stat0.760/markov0.802 ↔ pred69: stat0.835/markov0.710 **역전**. 원인규명 최우선 |
-| K-C | OPEN | referee 가중이 성적 역행 | `learn_state.py:108` `get_referee_weights` | 최저성적 stat이 최고가중 0.3348. 식 `(1+avg×0.15)/Σ` 의 avg 출처 검증 필요 |
+| K-A | OPEN | stat mean 0.760 < baseline 0.788/이론 0.80 | `brains/predict_stat_fairy.py:12` · `predict_statistical.py` | 최근100회(1135-1234)·500세트. **단 K-B 해소 전 패치 금지** · K-O 이후 mean 서열 해석 재검토 |
+| K-B | OPEN | 성능 표본 2종 충돌 | `testlotto_brain_review` vs `lotto_predictions` | review100: stat0.760/markov0.802 ↔ pred69: stat0.835/markov0.710 **역전**. **BENCH_PROTOCOL로 SSOT 고정** |
+| K-C | OPEN | referee 가중이 성적 역행 | `learn_state.py:108` `get_referee_weights` | 최저성적 stat이 최고가중 0.3348. 식 `(1+avg×0.15)/Σ` 의 avg 출처 검증 필요 · **K-M과 연계** |
 | K-D | OPEN | 클릭 경로에 fusion 부재 | `fusion.py` 미호출 · `coordinator._apply_aux_scoring:47` | 실제 융합=AUX 하드코딩 [0.25]×4. 문서/기대 흐름 불일치 |
-| K-E | OPEN | seed 미고정 → 비재현 | `predict_statistical.py:234` · `predict_markov.py:57,59,150,156` · `predict_review_king.py:42` | 동일입력 2회 stat/markov/review 모두 False. **동결항목 — 형 승인 전 수정금지** |
+| K-E | OPEN | seed 미고정 → 비재현 | `predict_statistical.py:234` · `predict_markov.py:57,59,150,156` · `predict_review_king.py:42` | 동일입력 2회 stat/markov/review 모두 False. **동결항목 — 형 승인 전 수정금지** · K-S 재현성 설계와 연계 |
 | K-F | OPEN | markov가 learn_state 미소비 | `brains/predict_flow_shaman.py:9` | boost 미적용. 3뇌 중 유일 |
 | K-G | OPEN | ending boost 휴면 | `learn_state.py:134-150` | `ending_digit_boost=0.0` · miss ending=0. 경로는 살아있으나 무효 |
 | K-H | OPEN | 미등록 AUX 파일 잔존 | `brains/aux_gap_scout.py` · `aux_structure_guard.py` | coordinator 미등록. 죽은 코드 |
@@ -30,5 +38,10 @@
 | K-J | OPEN | 가중치 이중 체계 | `testlotto_brain_weights.current_weight` vs live referee | DB 1.1687 ↔ live 0.3348. 어느 것이 진짜인지 불명 |
 | K-K | OPEN | 클릭 예측이 feedback 미연결 | `learn_state.apply_feedback` | 백테/복습 경로에서만 호출. 단발 클릭은 학습 안 됨 |
 | K-L | OPEN | R29 ↔ 실제 뇌 구성 전면 불일치 | `RULES_FIXED.md` R29 | 9뇌 중 실재 0개. 실제=3예측+4보조. **형만 수정 가능** |
-| K-M | OPEN | referee 가중 실효격차 0.33% (사실상 균등) | `learn_state.py:108` `get_referee_weights` | w=0.33477/0.33372/0.33151. 계수 0.15 과소 + `recent_avg_match` 창 없는 누적(rc=1272) → 신규 1회 기여 0.08%. 학습→가중 전달 사실상 0 |
-| K-N | OPEN | 학습지표 best → 고분산 뇌를 실력으로 오인 | `walkforward.py:91,110` `apply_feedback(best)` | stat: set mean 최저(0.760) & best 최고(1.687) = 분산 시그니처. 실력 아닌 산포 가능성 |
+| K-M | HOLD | referee 가중 실효격차 0.33% (사실상 균등) | `learn_state.py:108` `get_referee_weights` | **원인확정**: w≈균등 · top5 멤버십차 5%. 학습→가중 전달 사실상 0. 조치 설계 대기 |
+| K-N | HOLD | 학습지표 best → 고분산 뇌를 실력으로 오인 | `walkforward.py:91,110` `apply_feedback(best)` | **원인확정**: null상 best 전원 비실력. 조치(학습입력을 mean/볼지표로) 대기 |
+| K-O | OPEN | 세트 mean=0.8 상수 → 서열화 불가 | 초기하 E[X]=6×6/45 | 배경확정. 벤치에서 mean 단독 서열 금지 |
+| K-P | OPEN | 세트 5적중 기대≈3.5/대규모백테 → 학습신호 부재 | P₅≈2.87e-5 | 상위등수 최적화 축 폐기 후보 |
+| K-Q | OPEN | 볼빈도 균등부합 · 검출한계 ±~30% | `lotto_draws` 1–1234 | χ² p≈0.97 · FDR 0건 · 시간분할 공통상위 없음 |
+| K-R | OPEN | 볼세트/추첨기 식별자 결측 · 층화 대기 | DB 전테이블 | 스키마 설계만. 수집금지. 층화 n≈249 시 검출폭 ±66% |
+| K-S | OPEN | walk-forward 뼈대 설계(미구현) | `reports/20260727_KO_KS_볼단위전환_walkforward설계.md` | as_of컷오프·seed·null병기·K기록·볼지표. **구현=형승인 후** |
