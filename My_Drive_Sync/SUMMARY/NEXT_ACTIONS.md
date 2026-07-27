@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT
-- 할일: 형 다음 본선 1건 — **1235 발표 후** fetch·채점 루프 (MAX=1234)
-- 선행조건: K-D·K-H·K-B PATCHED · PIN `640cb67`
+- 할일: **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`)
+- 선행조건: K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기
 - 승인필요: 아니오
-- 최종갱신: `a556a3f`
+- 최종갱신: `600407d` (K-1235-PREP)
 
 ## WORKSTATE
 IDLE

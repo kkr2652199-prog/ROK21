@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `a1b7e87` |
+| HEAD(실측) | `600407d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-D fusion 클릭경로 정합 PASS (coordinator 전용) |
-| 직전 | K-H _unused · K-B BENCH · K-W |
-| BOOT다음 | K-AWAIT — 1235 발표 후 fetch·채점 루프 (MAX=1234) |
+| 지금 | K-1235-PREP — 1235 루프·협업 핸드오프 준비 PASS (API 미발표) |
+| 직전 | K-D fusion · K-H · K-B · K-W |
+| BOOT다음 | K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` |
 | NEXT1 ID | **K-AWAIT** |
-| NEXT1 할일 | 형 다음 본선 1건 — **1235 발표 후** fetch·채점 루프 (MAX=1234) |
+| NEXT1 할일 | **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) |
 | 승인필요 | 아니오 |
-| 선행 | K-D·K-H·K-B PATCHED · PIN `640cb67` |
+| 선행 | K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=a1b7e87 · 지금=K-D fusion 클릭경로 정합 PASS (coordinator 전용) · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=600407d · 지금=K-1235-PREP — 1235 루프·협업 핸드오프 준비 PASS (API 미발표) · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

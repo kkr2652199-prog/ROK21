@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a1b7e87` · WORK=`IDLE`
-- 지금: K-D fusion 클릭경로 정합 PASS (coordinator 전용)
-- 직전: K-H _unused · K-B BENCH · K-W
-- BOOT다음: K-AWAIT — 1235 발표 후 fetch·채점 루프 (MAX=1234)
-- NEXT1: K-AWAIT — 형 다음 본선 1건 — **1235 발표 후** fetch·채점 루프 (MAX=1234) (승인=아니오)
+- HEAD: `600407d` · WORK=`IDLE`
+- 지금: K-1235-PREP — 1235 루프·협업 핸드오프 준비 PASS (API 미발표)
+- 직전: K-D fusion · K-H · K-B · K-W
+- BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
+- NEXT1: K-AWAIT — **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) (승인=아니오)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

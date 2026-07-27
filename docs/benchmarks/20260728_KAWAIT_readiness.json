@@ -1,0 +1,41 @@
+{
+  "task": "K-AWAIT",
+  "mode": "readiness",
+  "draw_target": 1235,
+  "draw_predict": 1236,
+  "max_by_db": {
+    "lotto4": 1234,
+    "testlotto": 1234,
+    "hyodo": 1234
+  },
+  "api_probe": {
+    "available": false,
+    "draw_no": 1235
+  },
+  "predict_1235_counts": {
+    "markov": 5,
+    "review": 5,
+    "stat": 5
+  },
+  "stage1_artifacts": {
+    "stage1_script": true,
+    "atlas": true,
+    "baseline": true,
+    "summary": true
+  },
+  "checks": {
+    "3db_max_1234": true,
+    "api_1235": false,
+    "stage1_artifacts": true,
+    "predict_1235_saved": true,
+    "ready_for_execute": false
+  },
+  "verify_pass": true,
+  "next_when_api_yes": [
+    "python tools/_kawait_1235_loop.py --execute",
+    "python tools/_pin_3db_smoke.py",
+    "python tools/_kpin_close_verify.py (선택)"
+  ],
+  "collab_doc": "My_Drive_Sync/SUMMARY/COLLAB_HANDOFF.md",
+  "note": "READ-ONLY unless --execute and api_1235 available"
+}

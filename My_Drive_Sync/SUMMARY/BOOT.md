@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-D fusion 클릭경로 정합 PASS (coordinator 전용)
-- 직전: K-H _unused · K-B BENCH · K-W
-- 다음: K-AWAIT — 1235 발표 후 fetch·채점 루프 (MAX=1234)
+- 지금: K-1235-PREP — 1235 루프·협업 핸드오프 준비 PASS (API 미발표)
+- 직전: K-D fusion · K-H · K-B · K-W
+- 다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

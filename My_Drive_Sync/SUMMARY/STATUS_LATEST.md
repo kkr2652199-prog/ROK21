@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-28 KST  
-📌 사유: K-D fusion 클릭경로 정합
+📌 사유: K-1235-PREP — 1235 루프·협업 핸드오프 준비
 
 ---
 
@@ -19,15 +19,16 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-D** | fusion 미배선 문서화 · dead import 제거 | verify_pass |
+| **K-1235-PREP** | 1235 루프 스크립트 · COLLAB_HANDOFF · readiness | verify_pass |
+| K-D | fusion 미배선 문서화 · dead import 제거 | verify_pass |
 | K-H | 미등록 AUX `_unused` | verify_pass |
 | K-B | BENCH SSOT | verify_pass |
-| K-W | post-KP3 ending↓ | verify_pass |
 
 ---
 
 ## 2) 다음 (형)
 
-`K-AWAIT` — **1235** 발표 후 fetch·채점·feedback 루프
+`K-AWAIT` — **1235** 발표 후 `tools/_kawait_1235_loop.py --execute`  
+협업: [`COLLAB_HANDOFF.md`](COLLAB_HANDOFF.md)
 
 근거: [`PINNED_BASELINE.md`](PINNED_BASELINE.md)
