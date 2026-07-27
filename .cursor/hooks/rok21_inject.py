@@ -16,6 +16,8 @@ BOOT = SUMMARY / "BOOT.md"
 NEXT_ACTIONS = SUMMARY / "NEXT_ACTIONS.md"
 FLOW_BRIEF = SUMMARY / "FLOW_BRIEF.md"
 FINDINGS = SUMMARY / "FINDINGS.md"
+EXTERNAL_START = ROOT / "EXTERNAL_START.md"
+EXTERNAL_BOOTSTRAP = SUMMARY / "EXTERNAL_AI_BOOTSTRAP.md"
 MAX_LINES = 15
 
 
@@ -152,7 +154,7 @@ def build_restore_resume_block() -> str:
         "4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.",
         "5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.",
         "",
-        "> 큐: **동생, ROK21 RESTORE.md 읽고 시작해.**",
+        "> 큐: **동생, EXTERNAL_START.md(또는 RESTORE) 읽고 시작해. GitHub 404면 형이 붙여준 LIVE 블록만 써.**",
         "<!-- /ROK21_RESUME_BLOCK -->",
     ]
     return "\n".join(lines)
@@ -226,11 +228,95 @@ def build_flow_brief() -> str:
         f"- OPEN샘플: {_findings_open_sample()}",
         "- SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT",
         "- 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축",
-        "- 큐: **동생, ROK21 RESTORE.md 읽고 시작해.** (FLOW_BRIEF는 보조)",
-        "- 주의: 이 파일 HEAD는 **생성 시점** git. push 직후 1커밋 지연 가능 → `git rev-parse` 재확인.",
+        "- 진입: **EXTERNAL_START.md** (레포 루트) → 없으면 이 FLOW_BRIEF",
+        "- 주의: HEAD는 생성 시점 git. push 직후 1커밋 지연 가능.",
         "",
     ]
     return "\n".join(lines)
+
+
+def build_live_flow_block() -> str:
+    """외부AI가 한 블록으로 흐름을 잡기 위한 LIVE 스냅샷."""
+    head = short_head()
+    boot = parse_boot_section1()
+    nxt = parse_next_block()
+    work = parse_workstate()
+
+    def _strip(ln: str) -> str:
+        s = ln.lstrip("- ").strip()
+        for pref in ("지금:", "직전:", "다음:"):
+            if s.startswith(pref):
+                return s[len(pref) :].strip()
+        return s
+
+    now = _strip(boot[0])
+    prev = _strip(boot[1])
+    boot_next = _strip(boot[2])
+    lines = [
+        "<!-- ROK21_LIVE_FLOW -->",
+        "## LIVE 작업 흐름 (자동 동기 · 외부AI 1순위)",
+        "",
+        f"| 키 | 값 |",
+        f"|----|-----|",
+        f"| HEAD(실측) | `{head}` |",
+        f"| WORK | `{work}` |",
+        f"| 지금 | {now} |",
+        f"| 직전 | {prev} |",
+        f"| BOOT다음 | {boot_next} |",
+        f"| NEXT1 ID | **{nxt['id']}** |",
+        f"| NEXT1 할일 | {nxt['todo']} |",
+        f"| 승인필요 | {nxt['need_approval']} |",
+        f"| 선행 | {nxt['precond']} |",
+        f"| OPEN샘플 | {_findings_open_sample()} |",
+        "",
+        "### 역할",
+        "- 형=결정 · 동생(너)=판단·짧은 지시서 · 커서=실행·commit·push",
+        "- 너는 D:\\ROK21 / 비공개 GitHub를 못 열 수 있다 → **이 LIVE 블록이 SSOT**",
+        "- 404 = 권한 없음(경로 오류 아님). D:\\3kweon·memoy·1~3군 미접촉",
+        "",
+        "### 본선 vs 인프라",
+        "- 테스트로또 **3예측+4보조 유지** (구조 해체 없음)",
+        "- K-AB~AF = 수집/문서/훅(예측력 무관) · 인프라 지시 남발 금지",
+        "- 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)",
+        "",
+        "### 네가 할 일",
+        f"1. 첫줄 `[복귀] HEAD={head} · 지금={now} · 다음={nxt['id']}`",
+        "2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개",
+        "3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`",
+        "<!-- /ROK21_LIVE_FLOW -->",
+    ]
+    return "\n".join(lines)
+
+
+def build_external_start() -> str:
+    """레포 루트 EXTERNAL_START.md — 외부AI가 제일 먼저 볼 파일."""
+    live = build_live_flow_block()
+    # strip HTML comments for cleaner paste, keep content
+    body = re.sub(r"<!--.*?-->\n?", "", live).strip()
+    return "\n".join(
+        [
+            "# EXTERNAL_START — 외부 에이전트 작업 흐름 진입점",
+            "",
+            "> **이 파일 하나면 흐름 복구.** GitHub 404 / 로컬 미접근이면 형이 이 파일 전체를 채팅에 붙여넣는다.",
+            "> 상세 복사용 프롬프트: `My_Drive_Sync/SUMMARY/EXTERNAL_AI_BOOTSTRAP.md`",
+            "> 동생 큐(권한 있을 때): `My_Drive_Sync/SUMMARY/RESTORE.md`",
+            "",
+            body,
+            "",
+            "## 파일 지도 (권한 있을 때만)",
+            "| 용도 | 경로 |",
+            "|------|------|",
+            "| 복귀5줄 | `My_Drive_Sync/SUMMARY/RESTORE.md` |",
+            "| NEXT 1건 | `My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md` |",
+            "| 매턴요약 | `My_Drive_Sync/SUMMARY/FLOW_BRIEF.md` |",
+            "| 결함 | `My_Drive_Sync/SUMMARY/FINDINGS.md` |",
+            "| 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |",
+            "| 수치 | `docs/benchmarks/*.json` |",
+            "",
+            f"_generated: {short_head()}_",
+            "",
+        ]
+    )
 
 
 def sync_flow_brief() -> bool:
@@ -242,9 +328,49 @@ def sync_flow_brief() -> bool:
         return False
 
 
+def sync_external_start() -> bool:
+    try:
+        EXTERNAL_START.write_text(build_external_start(), encoding="utf-8")
+        return True
+    except OSError:
+        return False
+
+
+def sync_external_bootstrap_live() -> bool:
+    """EXTERNAL_AI_BOOTSTRAP.md 안의 LIVE 블록만 교체."""
+    path = EXTERNAL_BOOTSTRAP
+    block = build_live_flow_block()
+    try:
+        if not path.exists():
+            path.write_text(
+                "# EXTERNAL_AI_BOOTSTRAP\n\n" + block + "\n",
+                encoding="utf-8",
+            )
+            return True
+        text = path.read_text(encoding="utf-8")
+        if "<!-- ROK21_LIVE_FLOW -->" in text and "<!-- /ROK21_LIVE_FLOW -->" in text:
+            new = re.sub(
+                r"<!-- ROK21_LIVE_FLOW -->.*?<!-- /ROK21_LIVE_FLOW -->",
+                lambda _m: block,
+                text,
+                count=1,
+                flags=re.S,
+            )
+        else:
+            # insert after title
+            parts = text.split("\n", 1)
+            new = parts[0] + "\n\n" + block + "\n\n" + (parts[1] if len(parts) > 1 else "")
+        path.write_text(new, encoding="utf-8")
+        return True
+    except OSError:
+        return False
+
+
 def sync_all_resume_docs() -> dict[str, bool]:
-    """종료루틴: RESTORE 복귀5줄 + FLOW_BRIEF."""
+    """종료루틴: RESTORE + FLOW_BRIEF + EXTERNAL_START + BOOTSTRAP LIVE."""
     return {
         "restore": sync_restore_header(),
         "flow_brief": sync_flow_brief(),
+        "external_start": sync_external_start(),
+        "external_bootstrap": sync_external_bootstrap_live(),
     }

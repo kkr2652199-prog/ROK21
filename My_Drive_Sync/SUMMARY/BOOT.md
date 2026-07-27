@@ -33,8 +33,8 @@ K-AF·AE·06·AD·AB…=**PATCHED**. K-AC OPEN(이력). K-M·N=**HOLD**.
 - 원본 kweon 미접촉. DB 전체초기화 비권고. 수집·크롤링은 형 승인 전 금지.
 
 ## 5) 더 필요하면
-1. `reports/20260727_KAE_룰반영_K06팬아웃.md`
-2. `app/lotto/draw_fanout.py` · `docs/benchmarks/20260727_KAE_fanout_verify.json`
-3. `RULES_FIXED.md` R35·R36 · `CURSOR_RULES.md` §6
-4. `NEXT_ACTIONS.md` · `FINDINGS.md`
+1. **`EXTERNAL_START.md`** (루트 · 외부AI 흐름 1순위)
+2. `reports/20260727_KAF_팬아웃잔여정합.md`
+3. `RULES_FIXED.md` R35·R36·R37 · `CURSOR_RULES.md` §6
+4. `NEXT_ACTIONS.md` · `FINDINGS.md` · `FLOW_BRIEF.md`
 

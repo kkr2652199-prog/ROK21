@@ -1,23 +1,16 @@
-﻿# 🚩 여기부터 읽으세요 (압축/새 동생/누구든 복원 진입점)
+﻿# 🚩 여기부터 (ROK21 복원 진입점)
 
-이 프로젝트를 이어받는 사람(AI/사람)은 아래 4개 파일만 순서대로 읽으면 됩니다.
-GitHub raw 링크만 있으면 5분 내 현재 작업을 이해하고 이어갈 수 있습니다.
+## 외부 에이전트 (동생) — 권한 없을 때
+1. 형이 채팅에 붙여준 **`EXTERNAL_START.md`** 또는 LIVE 블록만 읽는다.
+2. GitHub 404면 fetch 재시도하지 않는다 (권한 문제).
+3. `## NEXT (1건)` 승인 전 장문 지시서 금지.
 
-## 복원 순서 (딱 4개)
-1. STATUS_LATEST.md ← 지금 무슨 상태인지 (최상단 '압축대비 스냅샷' 표가 핵심)
-2. NEXT_ACTIONS.md ← 다음에 뭘 할지 + 보류 목록
-3. DECISION_LOG.md ← 왜 그렇게 결정했는지 (근거)
-4. RULES_FIXED.md ← 절대 지켜야 할 불변 규칙
+## 권한 있을 때 / 커서
+읽기 순서:
+1. `EXTERNAL_START.md` (레포 루트) ← **작업 흐름 1순위**
+2. `My_Drive_Sync/SUMMARY/RESTORE.md`
+3. `My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md` 의 `## NEXT (1건)` 만
+4. 필요 시 `FINDINGS.md` · `WARRANT.md` · `BOOT.md`
 
-## 이 프로젝트 한 줄 요약
-ROK21 = kweon 원본의 복사본. 4군 앱 + 효도로또(1.5군). memoy·원본 kweon과 분리 관리.
-
-## 현재 작업 (이 줄만 매턴 갱신)
-- **1단계 완료**: GitHub·포트·경로를 ROK21로 분리 (원본 충돌 방지)
-- 브라우저: `http://127.0.0.1:7021/` (원본 6124와 분리)
-- 목적: 기능 변경 없이 복사본 독립 운영 기반 마련
-
-## 복원 경로 규칙
-- 1순위: GitHub kkr2652199-prog/ROK21 · main · /My_Drive_Sync/SUMMARY/ raw
-- 2순위: 형 채팅 직접 붙여넣기
-- (구 구글드라이브/스프레드시트/.txt/preview 경로는 폐기됨 — 사용 안 함)
+## 한 줄
+ROK21 = kweon 복사본 샌드박스 · 포트 7021 · 원본 kweon(`264de3c`) 동결.

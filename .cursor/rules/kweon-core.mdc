@@ -13,7 +13,7 @@ alwaysApply: true
 1. **세션 첫 응답 첫 줄에 반드시 출력 (R28 대체 · 1줄):**  
    `[복귀] HEAD=<해시> · 지금=<BOOT §1 1행> · 다음=<NEXT_ACTIONS ID+할일>`  
    이 줄 없이 작업 시작 금지. (값은 `guard_boot` 주입·BOOT·NEXT_ACTIONS에서)
-2. `My_Drive_Sync/SUMMARY/RESTORE.md` 확인 (압축 복원 1순위 · 동생 큐용)
+2. `EXTERNAL_START.md`(루트) 또는 `My_Drive_Sync/SUMMARY/RESTORE.md` 확인
 3. `BOOT.md` + `FINDINGS.md` 확인
 4. 필요 시 `RESUME_HERE.md` · `RULES_FIXED.md` · `CURSOR_RULES.md`
 
@@ -22,10 +22,10 @@ alwaysApply: true
 - `## WORKSTATE` 를 `IDLE` 또는 `RUNNING:<지시서ID>` 로 맞춤
 - `python -c "from pathlib import Path; import sys; sys.path.insert(0,'.cursor/hooks'); from rok21_inject import sync_all_resume_docs; print(sync_all_resume_docs())"` 로 RESTORE 복귀5줄 + **FLOW_BRIEF** 동기화 (R37 · 필수)
 
-## R37 (외부AI 압축대비 · FLOW_BRIEF 매턴 push)
-- 매 턴 **의미 커밋 push 직후** `FLOW_BRIEF.md` 를 갱신하고 **같은 종료 루틴에서 push**한다.
-- 동생(외부AI) 복귀 큐는 여전히 `RESTORE.md` 1순위. FLOW_BRIEF는 **보조 전원**(≤15줄 흐름).
-- HEAD 표기는 `git rev-parse` 실측. 문서동기 커밋은 1커밋 지연될 수 있으니 push 후 `ls-remote` 대조.
+## R37 (외부AI 압축대비 · FLOW + EXTERNAL_START 매턴 push)
+- 매 턴 종료: `sync_all_resume_docs()` → RESTORE복귀5줄 · FLOW_BRIEF · **EXTERNAL_START.md(루트)** · BOOTSTRAP LIVE
+- 외부AI 진입 1순위 = 레포 루트 `EXTERNAL_START.md` (404면 형이 붙여넣기)
+- HEAD 표기는 `git rev-parse` 실측. 문서동기 커밋은 1커밋 지연 가능 → `ls-remote` 대조.
 
 
 ## R34 (절대)

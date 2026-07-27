@@ -3,19 +3,20 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a862a4d` · WORK=`IDLE`
+1. **HEAD:** `e1e7a58` · WORK=`IDLE`
 2. **지금:** K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF
 3. **다음1건:** K-AG — pair/30·zone 목표 재정의 (K-Y 미소비 3키 연계) (승인필요=예 · 선행=K-AF PATCHED)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
-> 큐: **동생, ROK21 RESTORE.md 읽고 시작해.**
+> 큐: **동생, EXTERNAL_START.md(또는 RESTORE) 읽고 시작해. GitHub 404면 형이 붙여준 LIVE 블록만 써.**
 <!-- /ROK21_RESUME_BLOCK -->
 
 
-> 새 세션 시작 큐 = **"동생, ROK21 RESTORE.md 읽고 시작해."**  
+> 새 세션 시작 큐 = **"동생, EXTERNAL_START.md 읽고 시작해."** (GitHub 404면 형이 파일 전체 붙여넣기)  
 > **수치 SSOT:** `docs/benchmarks/*.json` · **결함:** `FINDINGS.md` · **명분 라벨:** `WARRANT.md`  
-> BOOT/STATUS/RESTORE/RESUME_HERE 는 사본 — 충돌 시 위 원본이 이긴다.
+> BOOT/STATUS/RESTORE/RESUME_HERE 는 사본 — 충돌 시 위 원본이 이긴다.  
+> 외부AI 진입 1순위(루트): `EXTERNAL_START.md` · 보조: `FLOW_BRIEF.md` · `EXTERNAL_AI_BOOTSTRAP.md`
 
 ---
 
