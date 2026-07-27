@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-27 KST  
-📌 사유: K-A~K-L 등재 · K-B/C/D READ-ONLY 원인규명
+📌 사유: BENCH_PROTOCOL 고정 · K-M/K-N 등재 · 분산·가중 시뮬
 
 ---
 
@@ -9,47 +9,39 @@
 
 | 항목 | 값 |
 |------|-----|
-| SSOT | `kkr2652199-prog/ROK21` · main |
-| 로컬 | `D:\ROK21` · **7021** |
+| SSOT | `kkr2652199-prog/ROK21` |
+| 성적 | **`BENCH_PROTOCOL.md`** |
 
 ---
 
-## 1) K-B 결론 (최우선)
+## 1) K-B 프로토콜 (고정)
 
-| 항목 | 판정 |
-|------|------|
-| 역전 원인 | **서로 다른 난수 재생성** (교집합 69회 세트일치 **0**) |
-| pred 희소 | **1149–1179** 연속 31회 갭 (07-25 재기록) |
-| 성적 SSOT(mean) | **`testlotto_brain_review.predicted_sets_json`** |
-| 운영 캐시 | `lotto_predictions` (비교용 SSOT 아님) |
+성적 SSOT = `testlotto_brain_review.predicted_sets_json` **전세트 mean**  
+`lotto_predictions` = 성적 비교 **금지**
 
 ---
 
-## 2) K-C / K-D
+## 2) K-N / K-M 판정
 
 | ID | 판정 |
 |----|------|
-| K-C | referee는 **best 누적 avg** 반영 · set mean과 지표 불일치(버그 아님) |
-| K-D | testlotto 최초부터 coordinator · fusion 클릭경로 **원래 없음**(의도적 3+4) |
+| K-N | 창100 best-of-5 **전원** null 기대 미상회 → **실력 증거 없음**. stat 1.687=분산/best 산물 |
+| K-M | (a)현행 vs (b)균등: top5 멤버십차 **5%** → 학습가중 **사실상 무의미** |
+
+mean100: stat 0.760 / markov 0.802 / review 0.852  
+best천장 ≈2.27
 
 ---
 
-## 3) FINDINGS
+## 3) 산출
 
-K-A~K-L OPEN 등재. K-12b → K-L 승계.  
-보고서: `reports/20260727_KB_KC_KD_원인규명.md`
-
----
-
-## 4) 동결
-
-- `random.choices` · K-E 형승인 전 수정금지  
-- K-A는 K-B 해소 전 패치 금지  
+`reports/20260727_KM_KN_분산검정.md`  
+`My_Drive_Sync/SUMMARY/BENCH_PROTOCOL.md`
 
 ---
 
-## 5) 다음
+## 4) 다음
 
-1. K-B 성적 SSOT 선언 확정  
-2. K-C/J 설계(형)  
-3. hyodo 1232~1234 (형 승인)  
+1. K-N: 학습입력을 mean으로 바꿀지(형)  
+2. K-M: 계수/창 또는 set-mean 가중(형 · 코드는 승인 후)  
+3. K-A: 프로토콜 준수 재측정 후에만  

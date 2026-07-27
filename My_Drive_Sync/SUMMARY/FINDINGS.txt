@@ -30,3 +30,5 @@
 | K-J | OPEN | 가중치 이중 체계 | `testlotto_brain_weights.current_weight` vs live referee | DB 1.1687 ↔ live 0.3348. 어느 것이 진짜인지 불명 |
 | K-K | OPEN | 클릭 예측이 feedback 미연결 | `learn_state.apply_feedback` | 백테/복습 경로에서만 호출. 단발 클릭은 학습 안 됨 |
 | K-L | OPEN | R29 ↔ 실제 뇌 구성 전면 불일치 | `RULES_FIXED.md` R29 | 9뇌 중 실재 0개. 실제=3예측+4보조. **형만 수정 가능** |
+| K-M | OPEN | referee 가중 실효격차 0.33% (사실상 균등) | `learn_state.py:108` `get_referee_weights` | w=0.33477/0.33372/0.33151. 계수 0.15 과소 + `recent_avg_match` 창 없는 누적(rc=1272) → 신규 1회 기여 0.08%. 학습→가중 전달 사실상 0 |
+| K-N | OPEN | 학습지표 best → 고분산 뇌를 실력으로 오인 | `walkforward.py:91,110` `apply_feedback(best)` | stat: set mean 최저(0.760) & best 최고(1.687) = 분산 시그니처. 실력 아닌 산포 가능성 |

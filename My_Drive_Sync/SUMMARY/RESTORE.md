@@ -16,8 +16,10 @@
 
 ## B) 턴 로그 (최신 ↑ · 최대 12행)
 
+| 2026-07-27 | K-B프로토콜+K-M/N분산 | BENCH_PROTOCOL·null비실력·가중(a)~(b)5% | K-M무의미·K-N분산 | (push후) |
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-27 | K-B프로토콜+K-M/N분산 | BENCH_PROTOCOL·null비실력·가중(a)~(b)5% | K-M무의미·K-N분산 | (push후) |
 | 2026-07-27 | K-A~L부여+KB/C/D규명 | FINDINGS등재 · 표본비공유·best가중·fusion의도 | K-B SSOT=review JSON · 코드0 | `29d4594` |
 | 2026-07-27 | testlotto정밀정찰 K-A용 | R29불일치·흐름·mean실측·결함12목록 · 코드0 | K-A미부여·외부AI대기 | 16f58af |
 | 2026-07-27 | SSOT확정+인코딩수정 | UTF-8로컬확인 · 규칙/훅/BOOT §4 · FINDINGS경위 | SSOT=ROK21 · kweon 264de3c동결 | `152e1bc` |
