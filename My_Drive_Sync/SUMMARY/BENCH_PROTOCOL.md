@@ -11,6 +11,8 @@
 - **정당성 정의:** 해당 뇌가 가정하는 **전제(의존·간격·형태·균형 등)가 데이터에서 실증되는가**.
 - 판정 라벨: **실증 / 기각 / 미정의**. 적중 mean·best만으로 정당성 선언 금지.
 - 이론분포와 **일치**해도 형태·균형 제약은 실패가 아님(비균등 이론 = 명분 있는 제약).
+- **명분 SSOT:** `WARRANT.md` (뇌 7개 라벨·근거·p·출처ID). 코드 미러 `brains/warrant.py`.
+- **산출 정합성(K-W):** 당첨 draws(A) vs 뇌 산출(B) vs 균등(C). A근접=정합 · C근접=무해 · 양쪽원격=편향경보.
 
 ---
 
@@ -91,4 +93,4 @@
 
 ## 6) 관련 FINDINGS
 
-K-B · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED 선결) · K-T · K-U · K-V(PATCHED) · K-M/K-N(HOLD)
+K-B · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED 선결) · K-T · K-U · K-V(PATCHED) · K-W · K-M/K-N(HOLD) · **WARRANT.md**

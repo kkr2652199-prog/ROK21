@@ -1,4 +1,9 @@
-"""흐름술사 — 마르코프 전이 + 동반출현 (lottery_predictor STRAT05 벤치마킹)."""
+"""흐름술사 — 마르코프 전이 + 동반출현 (lottery_predictor STRAT05 벤치마킹).
+
+[명분] 기각 · K-T lag1 중복 χ² p=0.764 (회차의존 전제 기각) · 출처 K-T/K-W
+[K-W] 산출 정합성: 균등(C) 근접 (명분 없으나 무해) — WARRANT.md
+※ 기각이어도 제거·비활성 금지(조합불변·다양성 기여).
+"""
 
 from __future__ import annotations
 

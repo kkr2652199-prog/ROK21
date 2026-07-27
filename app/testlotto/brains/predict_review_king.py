@@ -1,4 +1,9 @@
-"""복습왕 — 전회차 복습 학습형 (walk-forward 반복률, LotteryML lag 벤치마킹)."""
+"""복습왕 — 전회차 복습 학습형 (walk-forward 반복률, LotteryML lag 벤치마킹).
+
+[명분] 기각 · K-T 이월성향(lag1 대리) p=0.764 · 출처 K-T/K-W
+[K-W] 전반 C근접 · 끝수 지표 A·C 양쪽 원격(편향경보) — WARRANT.md
+※ 기각이어도 제거·비활성 금지(조합불변·다양성 기여).
+"""
 
 from __future__ import annotations
 

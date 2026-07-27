@@ -85,9 +85,12 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
     tags_in_db = {r[0] for r in existing}
     if existing and (not bf) and all(t in tags_in_db for t in PREDICT_TAGS):
         conn.close()
+        from app.testlotto.brains.warrant import get_brain_warrant
         from app.testlotto.engine import _build_cached_response
 
-        return _build_cached_response(target_draw_no)
+        cached = _build_cached_response(target_draw_no)
+        cached["brain_warrant"] = get_brain_warrant()
+        return cached
 
     draws = _get_draws_before(target_draw_no)
     if not draws:
@@ -191,6 +194,10 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
     out["status"] = "예측 완료 (3+4뇌 체계)"
     out["brain_system"] = "testlotto_3predict_4aux"
     out["dedup"] = dedup_stats
+    # 명분 라벨 데이터만 적재 (UI 노출 금지 · 산출/dedup 로직 무관)
+    from app.testlotto.brains.warrant import get_brain_warrant
+
+    out["brain_warrant"] = get_brain_warrant()
     if len(draws) < 10:
         out["warning"] = f"데이터 부족 (이전 {len(draws)}회)"
     return out

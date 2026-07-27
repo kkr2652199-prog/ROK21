@@ -1,4 +1,7 @@
-"""패턴돋보기 — 쌍수·연속수·AC값 (SELMA consecutive + pair 벤치마킹)."""
+"""패턴돋보기 — 쌍수·연속수·AC값 (SELMA consecutive + pair 벤치마킹).
+
+[명분] 실증 · K-T 형태지표 이론부합 p≥0.13 (조합론적 비균등 제약) · 출처 K-T
+"""
 
 from __future__ import annotations
 
