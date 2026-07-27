@@ -14,6 +14,8 @@ ROOT = HOOKS_DIR.parents[1]
 SUMMARY = ROOT / "My_Drive_Sync" / "SUMMARY"
 BOOT = SUMMARY / "BOOT.md"
 NEXT_ACTIONS = SUMMARY / "NEXT_ACTIONS.md"
+FLOW_BRIEF = SUMMARY / "FLOW_BRIEF.md"
+FINDINGS = SUMMARY / "FINDINGS.md"
 MAX_LINES = 15
 
 
@@ -184,3 +186,65 @@ def sync_restore_header() -> bool:
         return True
     except OSError:
         return False
+
+
+def _findings_open_sample(limit: int = 3) -> str:
+    raw = _safe_read(FINDINGS)
+    opens: list[str] = []
+    for m in re.finditer(
+        r"\|\s*(K-[A-Z0-9]+)\s*\|\s*OPEN\s*\|",
+        raw,
+    ):
+        opens.append(m.group(1))
+        if len(opens) >= limit:
+            break
+    return ", ".join(opens) if opens else "(OPEN 없음/미확인)"
+
+
+def build_flow_brief() -> str:
+    """외부 AI 압축 대비 매턴 요약본 (≤15줄). GitHub이 살아 있는 전원."""
+    head = short_head()
+    boot = parse_boot_section1()
+    nxt = parse_next_block()
+    work = parse_workstate()
+
+    def _strip(ln: str) -> str:
+        s = ln.lstrip("- ").strip()
+        for pref in ("지금:", "직전:", "다음:"):
+            if s.startswith(pref):
+                return s[len(pref) :].strip()
+        return s
+
+    lines = [
+        "# FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)",
+        "",
+        f"- HEAD: `{head}` · WORK=`{work}`",
+        f"- 지금: {_strip(boot[0])}",
+        f"- 직전: {_strip(boot[1])}",
+        f"- BOOT다음: {_strip(boot[2])}",
+        f"- NEXT1: {nxt['id']} — {nxt['todo']} (승인={nxt['need_approval']})",
+        f"- OPEN샘플: {_findings_open_sample()}",
+        "- SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT",
+        "- 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축",
+        "- 큐: **동생, ROK21 RESTORE.md 읽고 시작해.** (FLOW_BRIEF는 보조)",
+        "- 주의: 이 파일 HEAD는 **생성 시점** git. push 직후 1커밋 지연 가능 → `git rev-parse` 재확인.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
+def sync_flow_brief() -> bool:
+    """FLOW_BRIEF.md 갱신. 실패 시 False."""
+    try:
+        FLOW_BRIEF.write_text(build_flow_brief(), encoding="utf-8")
+        return True
+    except OSError:
+        return False
+
+
+def sync_all_resume_docs() -> dict[str, bool]:
+    """종료루틴: RESTORE 복귀5줄 + FLOW_BRIEF."""
+    return {
+        "restore": sync_restore_header(),
+        "flow_brief": sync_flow_brief(),
+    }

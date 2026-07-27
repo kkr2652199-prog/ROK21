@@ -1,0 +1,241 @@
+﻿diff --git a/.cursor/hooks/rok21_inject.py b/.cursor/hooks/rok21_inject.py
+index c4db877..8a06252 100644
+--- a/.cursor/hooks/rok21_inject.py
++++ b/.cursor/hooks/rok21_inject.py
+@@ -14,6 +14,8 @@ ROOT = HOOKS_DIR.parents[1]
+ SUMMARY = ROOT / "My_Drive_Sync" / "SUMMARY"
+ BOOT = SUMMARY / "BOOT.md"
+ NEXT_ACTIONS = SUMMARY / "NEXT_ACTIONS.md"
++FLOW_BRIEF = SUMMARY / "FLOW_BRIEF.md"
++FINDINGS = SUMMARY / "FINDINGS.md"
+ MAX_LINES = 15
+ 
+ 
+@@ -184,3 +186,65 @@ def sync_restore_header() -> bool:
+         return True
+     except OSError:
+         return False
++
++
++def _findings_open_sample(limit: int = 3) -> str:
++    raw = _safe_read(FINDINGS)
++    opens: list[str] = []
++    for m in re.finditer(
++        r"\|\s*(K-[A-Z0-9]+)\s*\|\s*OPEN\s*\|",
++        raw,
++    ):
++        opens.append(m.group(1))
++        if len(opens) >= limit:
++            break
++    return ", ".join(opens) if opens else "(OPEN ?놁쓬/誘명솗??"
++
++
++def build_flow_brief() -> str:
++    """?몃? AI ?뺤텞 ?鍮?留ㅽ꽩 ?붿빟蹂?(??5以?. GitHub???댁븘 ?덈뒗 ?꾩썝."""
++    head = short_head()
++    boot = parse_boot_section1()
++    nxt = parse_next_block()
++    work = parse_workstate()
++
++    def _strip(ln: str) -> str:
++        s = ln.lstrip("- ").strip()
++        for pref in ("吏湲?", "吏곸쟾:", "?ㅼ쓬:"):
++            if s.startswith(pref):
++                return s[len(pref) :].strip()
++        return s
++
++    lines = [
++        "# FLOW_BRIEF ???몃?AI 留ㅽ꽩 ?먮쫫 ?붿빟 (?먮룞 쨌 R37)",
++        "",
++        f"- HEAD: `{head}` 쨌 WORK=`{work}`",
++        f"- 吏湲? {_strip(boot[0])}",
++        f"- 吏곸쟾: {_strip(boot[1])}",
++        f"- BOOT?ㅼ쓬: {_strip(boot[2])}",
++        f"- NEXT1: {nxt['id']} ??{nxt['todo']} (?뱀씤={nxt['need_approval']})",
++        f"- OPEN?섑뵆: {_findings_open_sample()}",
++        "- SSOT: ?섏튂=docs/benchmarks/*.json 쨌 寃고븿=FINDINGS 쨌 ?쇰꺼=WARRANT",
++        "- 湲덉?: ?숆껐?좏겙쨌kweon誘몄젒珥됀룹빻?씲텱B?꾩껜珥덇린?붋?~3援곌린濡씲룹콈?낃컙?듈돖臾몄꽌?뺤텞",
++        "- ?? **?숈깮, ROK21 RESTORE.md ?쎄퀬 ?쒖옉??** (FLOW_BRIEF??蹂댁“)",
++        "- 二쇱쓽: ???뚯씪 HEAD??**?앹꽦 ?쒖젏** git. push 吏곹썑 1而ㅻ컠 吏??媛????`git rev-parse` ?ы솗??",
++        "",
++    ]
++    return "\n".join(lines)
++
++
++def sync_flow_brief() -> bool:
++    """FLOW_BRIEF.md 媛깆떊. ?ㅽ뙣 ??False."""
++    try:
++        FLOW_BRIEF.write_text(build_flow_brief(), encoding="utf-8")
++        return True
++    except OSError:
++        return False
++
++
++def sync_all_resume_docs() -> dict[str, bool]:
++    """醫낅즺猷⑦떞: RESTORE 蹂듦?5以?+ FLOW_BRIEF."""
++    return {
++        "restore": sync_restore_header(),
++        "flow_brief": sync_flow_brief(),
++    }
+diff --git a/.cursor/rules/kweon-core.mdc b/.cursor/rules/kweon-core.mdc
+index 5c337bb..fc698ae 100644
+--- a/.cursor/rules/kweon-core.mdc
++++ b/.cursor/rules/kweon-core.mdc
+@@ -20,7 +20,12 @@ alwaysApply: true
+ ## 醫낅즺 ??NEXT_ACTIONS
+ - 留???醫낅즺 ??`NEXT_ACTIONS.md` ??`## NEXT (1嫄?` ??**?뺥솗??1嫄?*?쇰줈 媛깆떊
+ - `## WORKSTATE` 瑜?`IDLE` ?먮뒗 `RUNNING:<吏?쒖꽌ID>` 濡?留욎땄
+-- `python -c "from pathlib import Path; import sys; sys.path.insert(0,'.cursor/hooks'); from rok21_inject import sync_restore_header; sync_restore_header()"` 濡?RESTORE ?숈깮蹂듦?釉붾줉 ?숆린??(?좏깮쨌沅뚯옣)
++- `python -c "from pathlib import Path; import sys; sys.path.insert(0,'.cursor/hooks'); from rok21_inject import sync_all_resume_docs; print(sync_all_resume_docs())"` 濡?RESTORE 蹂듦?5以?+ **FLOW_BRIEF** ?숆린??(R37 쨌 ?꾩닔)
++
++## R37 (?몃?AI ?뺤텞?鍮?쨌 FLOW_BRIEF 留ㅽ꽩 push)
++- 留???**?섎? 而ㅻ컠 push 吏곹썑** `FLOW_BRIEF.md` 瑜?媛깆떊?섍퀬 **媛숈? 醫낅즺 猷⑦떞?먯꽌 push**?쒕떎.
++- ?숈깮(?몃?AI) 蹂듦? ?먮뒗 ?ъ쟾??`RESTORE.md` 1?쒖쐞. FLOW_BRIEF??**蹂댁“ ?꾩썝**(??5以??먮쫫).
++- HEAD ?쒓린??`git rev-parse` ?ㅼ륫. 臾몄꽌?숆린 而ㅻ컠? 1而ㅻ컠 吏?곕맆 ???덉쑝??push ??`ls-remote` ?議?
+ 
+ 
+ ## R34 (?덈?)
+@@ -44,8 +49,8 @@ alwaysApply: true
+ 1. 蹂닿퀬??-> `reports/YYYYMMDD_*.md` -> `My_Drive_Sync/而ㅼ꽌蹂닿퀬??`濡?蹂듭궗
+ 2. `STATUS_LATEST.md` 媛깆떊 (+ `.txt` ?숈씪 ?댁슜 ?숆린?? ??**蹂몃Ц ?뺤텞 湲덉?** (?쑣룰렐嫄걔룸떎?뚮떒怨??좎?)
+ 3. `BOOT.md` 1踰??꾩옱 ?ㅻ젅??**留?* 3以?媛깆떊 (?섎㉧吏 ?뱀뀡 ?곸꽭 ?좎?)
+-4. `RESTORE.md` ?뱀뀡 B???대쾲 ??**1??異붽?** (理쒕? 12??쨌 ?ㅻ옒???됰?????젣 쨌 **?꾨씫 ??遺덉셿??*)
+-5. `git add` -> commit -> `push origin main` (**ROK21留?*)
++4. `RESTORE.md` ?뱀뀡 B???대쾲 ??**1??異붽?** (理쒕? 12??쨌 ?ㅻ옒???됰?????젣 쨌 **?꾨씫 ??遺덉셿??*) + **FLOW_BRIEF.md 媛깆떊(R37)**
++5. `git add` -> commit -> `push origin main` (**ROK21留?*) ??push ??`sync_all_resume_docs` + ?꾩슂 ??HEAD ?숆린 ?꾩냽 而ㅻ컠
+ 
+ ## 梨꾪똿 vs 臾몄꽌
+ - ?뺤씠 ?뚭컙?듐? **洹???梨꾪똿 ?듬?留?* 吏㏐쾶.
+diff --git a/app/lotto/data_service.py b/app/lotto/data_service.py
+index 3a7c4ad..a3ff073 100644
+--- a/app/lotto/data_service.py
++++ b/app/lotto/data_service.py
+@@ -487,18 +487,17 @@ def collect_latest_forward(max_probe: int = 10) -> dict:
+         collected.append(int(draw["draw_no"]))
+         _refresh_scores_after_collect(int(draw["draw_no"]))
+ 
+-    # K-06/K-AE: lotto4 ??testlotto/hyodo ?ъ븘??(?ㅽ뙣?대룄 ?섏쭛 寃곌낵 ?좎?)
+-    fanout: dict = {"skipped": True, "note": "no collected"}
+-    if collected:
+-        try:
+-            from app.lotto.draw_fanout import fanout_after_collect
+-
+-            fanout = fanout_after_collect(collected)
+-            if not fanout.get("ok", True):
+-                logger.warning("draw fanout issues: %s", fanout.get("errors"))
+-        except Exception as e:  # noqa: BLE001
+-            logger.warning("draw fanout exception: %s", e)
+-            fanout = {"ok": False, "errors": [str(e)], "note": "swallowed"}
++    # K-06/K-AE/K-AF: ?섏쭛 0嫄댁씠?대룄 寃곕쾲 catch-up ?ъ븘??(?ㅽ뙣?대룄 ?섏쭛 寃곌낵 ?좎?)
++    fanout: dict = {"skipped": True, "note": "init"}
++    try:
++        from app.lotto.draw_fanout import fanout_after_collect
++
++        fanout = fanout_after_collect(collected)
++        if not fanout.get("ok", True):
++            logger.warning("draw fanout issues: %s", fanout.get("errors"))
++    except Exception as e:  # noqa: BLE001
++        logger.warning("draw fanout exception: %s", e)
++        fanout = {"ok": False, "errors": [str(e)], "note": "swallowed"}
+ 
+     return {
+         "ok": True,
+diff --git a/app/lotto/draw_fanout.py b/app/lotto/draw_fanout.py
+index 129fa91..09c5f4e 100644
+--- a/app/lotto/draw_fanout.py
++++ b/app/lotto/draw_fanout.py
+@@ -61,6 +61,13 @@ def _load_num_map(con: sqlite3.Connection) -> dict[int, tuple]:
+     return out
+ 
+ 
++def _max_count(con: sqlite3.Connection) -> tuple[int | None, int]:
++    row = con.execute(
++        "SELECT MAX(draw_no), COUNT(*) FROM lotto_draws"
++    ).fetchone()
++    return (row[0], int(row[1] or 0))
++
++
+ def check_overlap_mismatch(
+     src: dict[int, tuple], dst: dict[int, tuple]
+ ) -> list[int]:
+@@ -92,14 +99,16 @@ def fanout_from_lotto4(
+ ) -> dict[str, Any]:
+     """lotto4 ?됱쓣 testlotto쨌hyodo??INSERT OR IGNORE.
+ 
+-    ?????DB???숈씪 諛곗튂瑜?媛곴컖 ?몃옖??뀡?쇰줈 ?곸슜.
+-    ?쒖そ ?ㅽ뙣 ???묒そ rollback ??testlotto/hyodo MAX媛 ?쒕줈 媛덈씪吏吏 ?딆쓬.
++    INSERT???묒そ ?쇨큵(BEGIN ???ㅽ뻾). commit? DB蹂??쒖감.
++    ?쒖감 commit 以??꾪뻾 ?ㅽ뙣 ???대? commit???좏뻾 DB??rollback?쇰줈
++    ?섎룎由ъ? 紐삵븿(SQLite ?ㅼ쨷DB ?먯옄??遺덇?). ?붿뿬???ㅼ쓬 catch-up???섎졃.
+     lotto4???섏젙쨌濡ㅻ갚?섏? ?딆쓬 (K-AB STEP5).
+     """
+     result: dict[str, Any] = {
+         "enabled": fanout_enabled(),
+         "ok": True,
+         "skipped": False,
++        "early_gate": False,
+         "inserted_testlotto": [],
+         "inserted_hyodo": [],
+         "planned": [],
+@@ -124,7 +133,6 @@ def fanout_from_lotto4(
+     targets: list[tuple[str, Path, sqlite3.Connection]] = []
+     try:
+         src = _connect(p4)
+-        src_map = _load_num_map(src)
+         for path, label in ((pt, "testlotto"), (ph, "hyodo")):
+             if not path.exists():
+                 result["errors"].append(f"missing target {label}:{path}")
+@@ -132,6 +140,21 @@ def fanout_from_lotto4(
+                 return result
+             targets.append((label, path, _connect(path)))
+ 
++        # 鍮꾩슜 寃뚯씠?? MAX쨌COUNT ?쇱튂 + 媛뺤젣 draw_nos ?놁쑝硫??꾨웾 濡쒕뱶 ?앸왂
++        src_mc = _max_count(src)
++        tgt_mcs = {label: _max_count(con) for label, _path, con in targets}
++        force_nos = [int(x) for x in (draw_nos or [])]
++        if (
++            catch_up_missing
++            and not force_nos
++            and all(mc == src_mc for mc in tgt_mcs.values())
++        ):
++            result["early_gate"] = True
++            result["planned"] = []
++            result["note"] = "no-op early gate (MAX/COUNT match)"
++            return result
++
++        src_map = _load_num_map(src)
+         mism_all: dict[str, list[int]] = {}
+         for label, path, con in targets:
+             mism = check_overlap_mismatch(src_map, _load_num_map(con))
+@@ -168,14 +191,18 @@ def fanout_from_lotto4(
+ 
+         inserted: dict[str, list[int]] = {"testlotto": [], "hyodo": []}
+         befores: dict[str, set[int]] = {}
++        # ?뚮뱶諛뺤뒪 ?꾩슜: ROK21_FANOUT_TEST_FAIL_COMMIT=hyodo|testlotto
++        fail_label = os.environ.get("ROK21_FANOUT_TEST_FAIL_COMMIT", "").strip().lower()
+         try:
+             for label, path, con in targets:
+                 befores[label] = set(_load_num_map(con))
+                 con.execute("BEGIN")
+                 for row in rows:
+                     con.execute(sql, row)
+-            # ?????깃났 ?쒖뿉留?而ㅻ컠
++            # commit? DB蹂??쒖감 ???꾩쟾 ?먯옄??遺덇? (?붿뿬?꾪뿕)
+             for label, path, con in targets:
++                if fail_label and label == fail_label:
++                    raise RuntimeError(f"test inject fail commit:{label}")
+                 con.commit()
+                 after = set(_load_num_map(con))
+                 inserted[label] = sorted(after - befores[label])
+@@ -187,7 +214,10 @@ def fanout_from_lotto4(
+                     pass
+             result["ok"] = False
+             result["errors"].append(f"fanout txn failed: {e}")
+-            result["note"] = "?묒そ ???濡ㅻ갚(?몃옖??뀡). lotto4 誘몃?寃?
++            result["note"] = (
++                "?쒖감 commit ?붿뿬?꾪뿕: ?대? commit??DB??rollback 遺덇?. "
++                "誘퇭ommit DB留?rollback. lotto4 誘몃?寃?
++            )
+             logger.warning("fanout failed: %s", e)
+             return result
+ 

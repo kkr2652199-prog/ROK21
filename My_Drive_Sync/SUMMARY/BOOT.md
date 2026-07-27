@@ -5,22 +5,22 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-AE 룰반영(R35/R36·§6) · K-06팬아웃 PATCHED
-- 직전: K-AD 훅동적주입 · RESTORE복귀
-- 다음: 형—pair/zone·미소비키·hyodo후속 중 선택
+- 지금: K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF
+- 직전: K-AE 룰반영(R35/R36·§6) · K-06팬아웃 PATCHED
+- 다음: K-AG pair/30·zone 목표 재정의 (형 승인)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
 |------|-----|------|
-| K-06 | **PATCHED** | K-AE |
-| fanout verify | **PASS** | KAE JSON |
-| drift n_issues | **0** | 반영 직후 |
+| K-AF verify | **PASS** | KAF JSON |
+| no-op ms | **4.968** | KAF T5 |
+| K-06 잔여위험 | **순차commit** | FINDINGS K-06 |
 | draws MAX 3DB | **1234** | 운영 불변 |
 | kweon 동결 | **264de3c** | 실측 |
 
 ## 3) 열린 과제 -> FINDINGS.md
-K-AE·06·AD·AB…=**PATCHED**. K-AC OPEN(이력). K-M·N=**HOLD**.  
-수집팬아웃 자동화 완료. 예측력무관.
+K-AF·AE·06·AD·AB…=**PATCHED**. K-AC OPEN(이력). K-M·N=**HOLD**.  
+다음=K-AG. 예측력무관.
 
 ## 4) 주의 (붕괴 방지)
 - 이 레포=ROK21 (kweon 20260726 04:38 복사본). SSOT=ROK21 main

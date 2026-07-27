@@ -61,6 +61,13 @@ def _load_num_map(con: sqlite3.Connection) -> dict[int, tuple]:
     return out
 
 
+def _max_count(con: sqlite3.Connection) -> tuple[int | None, int]:
+    row = con.execute(
+        "SELECT MAX(draw_no), COUNT(*) FROM lotto_draws"
+    ).fetchone()
+    return (row[0], int(row[1] or 0))
+
+
 def check_overlap_mismatch(
     src: dict[int, tuple], dst: dict[int, tuple]
 ) -> list[int]:
@@ -92,14 +99,16 @@ def fanout_from_lotto4(
 ) -> dict[str, Any]:
     """lotto4 행을 testlotto·hyodo에 INSERT OR IGNORE.
 
-    대상 두 DB는 동일 배치를 각각 트랜잭션으로 적용.
-    한쪽 실패 시 양쪽 rollback → testlotto/hyodo MAX가 서로 갈라지지 않음.
+    INSERT는 양쪽 일괄(BEGIN 후 실행). commit은 DB별 순차.
+    순차 commit 중 후행 실패 시 이미 commit된 선행 DB는 rollback으로
+    되돌리지 못함(SQLite 다중DB 원자성 불가). 잔여는 다음 catch-up이 수렴.
     lotto4는 수정·롤백하지 않음 (K-AB STEP5).
     """
     result: dict[str, Any] = {
         "enabled": fanout_enabled(),
         "ok": True,
         "skipped": False,
+        "early_gate": False,
         "inserted_testlotto": [],
         "inserted_hyodo": [],
         "planned": [],
@@ -124,7 +133,6 @@ def fanout_from_lotto4(
     targets: list[tuple[str, Path, sqlite3.Connection]] = []
     try:
         src = _connect(p4)
-        src_map = _load_num_map(src)
         for path, label in ((pt, "testlotto"), (ph, "hyodo")):
             if not path.exists():
                 result["errors"].append(f"missing target {label}:{path}")
@@ -132,6 +140,21 @@ def fanout_from_lotto4(
                 return result
             targets.append((label, path, _connect(path)))
 
+        # 비용 게이트: MAX·COUNT 일치 + 강제 draw_nos 없으면 전량 로드 생략
+        src_mc = _max_count(src)
+        tgt_mcs = {label: _max_count(con) for label, _path, con in targets}
+        force_nos = [int(x) for x in (draw_nos or [])]
+        if (
+            catch_up_missing
+            and not force_nos
+            and all(mc == src_mc for mc in tgt_mcs.values())
+        ):
+            result["early_gate"] = True
+            result["planned"] = []
+            result["note"] = "no-op early gate (MAX/COUNT match)"
+            return result
+
+        src_map = _load_num_map(src)
         mism_all: dict[str, list[int]] = {}
         for label, path, con in targets:
             mism = check_overlap_mismatch(src_map, _load_num_map(con))
@@ -168,14 +191,18 @@ def fanout_from_lotto4(
 
         inserted: dict[str, list[int]] = {"testlotto": [], "hyodo": []}
         befores: dict[str, set[int]] = {}
+        # 샌드박스 전용: ROK21_FANOUT_TEST_FAIL_COMMIT=hyodo|testlotto
+        fail_label = os.environ.get("ROK21_FANOUT_TEST_FAIL_COMMIT", "").strip().lower()
         try:
             for label, path, con in targets:
                 befores[label] = set(_load_num_map(con))
                 con.execute("BEGIN")
                 for row in rows:
                     con.execute(sql, row)
-            # 둘 다 성공 시에만 커밋
+            # commit은 DB별 순차 — 완전 원자성 불가 (잔여위험)
             for label, path, con in targets:
+                if fail_label and label == fail_label:
+                    raise RuntimeError(f"test inject fail commit:{label}")
                 con.commit()
                 after = set(_load_num_map(con))
                 inserted[label] = sorted(after - befores[label])
@@ -187,7 +214,10 @@ def fanout_from_lotto4(
                     pass
             result["ok"] = False
             result["errors"].append(f"fanout txn failed: {e}")
-            result["note"] = "양쪽 대상 롤백(트랜잭션). lotto4 미변경"
+            result["note"] = (
+                "순차 commit 잔여위험: 이미 commit된 DB는 rollback 불가. "
+                "미commit DB만 rollback. lotto4 미변경"
+            )
             logger.warning("fanout failed: %s", e)
             return result
 

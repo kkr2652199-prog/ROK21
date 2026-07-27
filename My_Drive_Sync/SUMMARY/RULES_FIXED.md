@@ -246,6 +246,13 @@ R33 (복원 SSOT 확정, 2026-07-10):
 - 충돌 시 **원본이 이긴다.** 사본은 원본에 맞춰 고친다.
 - 드리프트 검사: `tools/_doc_drift_check.py` (자동수정 금지 · 보고만).
 
+## R37 (NEW 외부AI 압축대비 FLOW_BRIEF · 2026-07-27 K-AF)
+
+- 매 턴 종료 시 커서는 `My_Drive_Sync/SUMMARY/FLOW_BRIEF.md` 를 **반드시** 갱신하고 push한다.
+- FLOW_BRIEF = HEAD·지금·NEXT1·OPEN샘플·금지요약 (≤15줄). 동생 지시서 작성 전 RESTORE와 함께 읽힌다.
+- **목적:** 채팅 압축으로 외부AI가 프롬프트를 받아도 흐름을 못 잇는 경우, GitHub의 짧은 요약본으로 즉시 재정렬.
+- HEAD 드리프트: 문서동기 커밋은 직전 해시가 본문에 남을 수 있음 → push 후 `git rev-parse` / `ls-remote` 대조를 보고서에 명시 (K-AF 1-4).
+
 ---
 
 ## 📂 저장소·경로 지도 (혼동 방지, 20260711 박제)

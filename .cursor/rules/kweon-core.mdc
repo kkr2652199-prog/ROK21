@@ -20,7 +20,12 @@ alwaysApply: true
 ## 종료 시 NEXT_ACTIONS
 - 매 턴 종료 전 `NEXT_ACTIONS.md` 의 `## NEXT (1건)` 을 **정확히 1건**으로 갱신
 - `## WORKSTATE` 를 `IDLE` 또는 `RUNNING:<지시서ID>` 로 맞춤
-- `python -c "from pathlib import Path; import sys; sys.path.insert(0,'.cursor/hooks'); from rok21_inject import sync_restore_header; sync_restore_header()"` 로 RESTORE 동생복귀블록 동기화 (선택·권장)
+- `python -c "from pathlib import Path; import sys; sys.path.insert(0,'.cursor/hooks'); from rok21_inject import sync_all_resume_docs; print(sync_all_resume_docs())"` 로 RESTORE 복귀5줄 + **FLOW_BRIEF** 동기화 (R37 · 필수)
+
+## R37 (외부AI 압축대비 · FLOW_BRIEF 매턴 push)
+- 매 턴 **의미 커밋 push 직후** `FLOW_BRIEF.md` 를 갱신하고 **같은 종료 루틴에서 push**한다.
+- 동생(외부AI) 복귀 큐는 여전히 `RESTORE.md` 1순위. FLOW_BRIEF는 **보조 전원**(≤15줄 흐름).
+- HEAD 표기는 `git rev-parse` 실측. 문서동기 커밋은 1커밋 지연될 수 있으니 push 후 `ls-remote` 대조.
 
 
 ## R34 (절대)
@@ -44,8 +49,8 @@ alwaysApply: true
 1. 보고서 -> `reports/YYYYMMDD_*.md` -> `My_Drive_Sync/커서보고서/`로 복사
 2. `STATUS_LATEST.md` 갱신 (+ `.txt` 동일 내용 동기화) — **본문 압축 금지** (표·근거·다음단계 유지)
 3. `BOOT.md` 1번 현재 스레드 **만** 3줄 갱신 (나머지 섹션 상세 유지)
-4. `RESTORE.md` 섹션 B에 이번 턴 **1행 추가** (최대 12행 · 오래된 행부터 삭제 · **누락 시 불완전**)
-5. `git add` -> commit -> `push origin main` (**ROK21만**)
+4. `RESTORE.md` 섹션 B에 이번 턴 **1행 추가** (최대 12행 · 오래된 행부터 삭제 · **누락 시 불완전**) + **FLOW_BRIEF.md 갱신(R37)**
+5. `git add` -> commit -> `push origin main` (**ROK21만**) → push 후 `sync_all_resume_docs` + 필요 시 HEAD 동기 후속 커밋
 
 ## 채팅 vs 문서
 - 형이 「간략」= **그 턴 채팅 답변만** 짧게.

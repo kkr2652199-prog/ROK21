@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `137f4a3` · WORK=`IDLE`
-2. **지금:** K-AE 룰반영(R35/R36·§6) · K-06팬아웃 PATCHED
-3. **다음1건:** K-AE-FOLLOW — 형—다음 과제 선택 (pair/30·zone 재정의 / 미소비 learn키 / hyodo 예측후속 중 하나) (승인필요=예 · 선행=없음)
+1. **HEAD:** `3eda8b9` · WORK=`IDLE`
+2. **지금:** K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF
+3. **다음1건:** K-AG — pair/30·zone 목표 재정의 (K-Y 미소비 3키 연계) (승인필요=예 · 선행=K-AF PATCHED)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -25,7 +25,7 @@
 2. **3자 역할:** 형=결정 / 동생(Claude)=판단·지시서만 / 커서=실행·commit·push
 3. **확정 결론:** 적중축 **폐기**. EV 배선 유지(Y풀 순1.033). **K-09 CLOSED**(실질 누수 무해)·전제라벨 제거
 4. **물리 상수:** 1장 mean=**0.80** · best-of-15 천장=**2.27** (개선 목표 아님)
-5. **현재 초점:** K-AE=룰반영+K-06 영구팬아웃 **PATCHED**.
+5. **현재 초점:** K-AF=팬아웃잔여정합 **PATCHED** · 다음 K-AG.
 
 ---
 
@@ -33,6 +33,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-27 | K-AF 팬아웃잔여정합 | catch-up무조건·조기게이트·T1~7PASS·R37 | K-AF PATCHED | `(push후)` |
 | 2026-07-27 | K-AE 룰+K-06팬아웃 | R35/R36·§6반영 · draw_fanout · 샌드박스PASS | K-AE·06 PATCHED | 137f4a3 |
 | 2026-07-27 | K-AD 훅즉시복귀 | guard동적주입·NEXT1건·RESTORE동기 · 검증PASS | K-AD PATCHED | 40b651d |
 | 2026-07-27 | K-AC 압축대비 룰 | PART1답·RESTORE보정·drift0 · RULES초안승인대기 | K-AC OPEN | `2e38198` |
@@ -44,8 +45,6 @@
 | 2026-07-27 | K-W 정합성+명분라벨 | A/B/C거리·WARRANT·brain_warrant · 산출/dedup0 | K-W OPEN측정 · 라벨확정 | `5ebe898` |
 | 2026-07-27 | K-V dedup 구현·검증 | E[k]97.09→100 · unresolved0 · 이표본OK · +0.015s | K-V PATCHED | `ba98f34` |
 | 2026-07-27 | K-S선결+K-T/U/V 전제·포트 | as_of필수·CUTOFF기본ON·전제표·쌍null·k≈97 | K-S PATCHED · T/U/V OPEN | `fecb9a7` |
-| 2026-07-27 | K-O~S 볼단위전환+WF설계 | 데이터감사·χ²균등·±30%·층화대기·WF설계 · 코드0 | K-M/N HOLD · 볼층위 | `93218f8` |
-| 2026-07-27 | K-A~L부여+KB/C/D규명 | FINDINGS등재 · 표본비공유·best가중·fusion의도 | K-B SSOT=review JSON · 코드0 | `29d4594` |
 
 ---
 
@@ -84,7 +83,7 @@
 
 **HOLD (2):** K-M · K-N  
 
-**PATCHED (참고):** K-06 · K-07 · K-S · K-V · K-Z · K-AA · K-AB · K-AD · **K-AE**  
+**PATCHED (참고):** K-06 · K-07 · K-S · K-V · K-Z · K-AA · K-AB · K-AD · K-AE · **K-AF**  
 
 **CLOSED:** K-01 · K-03 · K-04 · K-09  
 
