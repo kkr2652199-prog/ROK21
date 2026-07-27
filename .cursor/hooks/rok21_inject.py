@@ -240,7 +240,7 @@ def read_baseline_pin() -> str:
     path = SUMMARY / "PINNED_BASELINE.md"
     try:
         text = path.read_text(encoding="utf-8")
-        m = re.search(r"BASELINE_PIN:\s*`([^`]+)`", text)
+        m = re.search(r"BASELINE_PIN[^`]*`([^`]+)`", text)
         if m:
             return m.group(1).strip()
     except OSError:

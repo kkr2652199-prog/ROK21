@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-27 | K-P2 기각뇌표시 | 탭배지·정책스트립·상세§2 · 산출0 | K-P2 PATCHED | `815a9ca` |
+| 2026-07-27 | K-P3 review끝수 | ending질량균등 · l1↓ · verify PASS | K-P3·KX PATCHED | `(push후)` |
+| 2026-07-27 | K-P2 기각뇌표시 | 탭배지·정책스트립 · 산출0 | K-P2 PATCHED | `815a9ca` |
 | 2026-07-27 | 핀 베이스라인 | K-Z~AG 고정 · KY/AC정합 · 재검증PASS | PIN 고정 | `431fe20` |
 | 2026-07-27 | K-AG pair/zone·3키 | null_q95÷32·LMH PMF·learn배선 · verify PASS | K-AG PATCHED | `640cb67` |
 | 2026-07-27 | K-AF 팬아웃잔여정합 | catch-up무조건·조기게이트·T1~7PASS·R37 | K-AF PATCHED | `e1e7a58` |
@@ -79,11 +80,11 @@
 
 ## E) 열린 결함 (FINDINGS.md 원본 · 여기 사본)
 
-**OPEN (28):** K-00 · K-02 · K-05 · K-08 · K-10 · K-11 · K-12 · K-A · K-B · K-C · K-D · K-E · K-F · K-G · K-H · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · K-W · K-X · **K-Y(이력)**  
+**OPEN (27):** K-00 · K-02 · K-05 · K-08 · K-10 · K-11 · K-12 · K-A · K-B · K-C · K-D · K-E · K-F · K-G · K-H · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · K-W · **K-Y(이력)**  
 
 **HOLD (2):** K-M · K-N  
 
-**PATCHED (참고):** K-06 · K-07 · K-S · K-V · K-Z · K-AA · K-AB · K-AC · K-AD · K-AE · K-AF · **K-AG**  
+**PATCHED (참고):** K-06 · K-07 · K-S · K-V · K-Z · K-AA · K-AB · K-AC · K-AD · K-AE · K-AF · **K-AG** · **K-X**  
 
 **CLOSED:** K-01 · K-03 · K-04 · K-09  
 

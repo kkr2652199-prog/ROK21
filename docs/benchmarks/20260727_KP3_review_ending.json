@@ -1,0 +1,52 @@
+{
+  "as_of": 1235,
+  "n_sets_mc": 2000,
+  "ending_mass_spread": {
+    "before": 0.13938823042554868,
+    "after": 4.163336342344337e-17
+  },
+  "l1_vs_ball_count": {
+    "before": 0.2985,
+    "after": 0.0979444444444444,
+    "kx_baseline_B": 0.1926666666666667
+  },
+  "max_abs_pearson_resid_vs_ball": {
+    "before": 26.17200953945519,
+    "after": 6.623828512776175
+  },
+  "ending_hist_mc": {
+    "before": [
+      811,
+      1267,
+      1025,
+      1707,
+      790,
+      2289,
+      738,
+      778,
+      1205,
+      1390
+    ],
+    "after": [
+      1210,
+      1221,
+      1207,
+      1248,
+      1168,
+      1235,
+      1187,
+      1130,
+      1283,
+      1111
+    ]
+  },
+  "gates": {
+    "ending_mass_flattened": true,
+    "l1_improved": true,
+    "resid_not_worse": true,
+    "verify_pass": true,
+    "random_choices_unchanged": true,
+    "dedup_enabled": true
+  },
+  "note": "1등확률↑ 아님 · 끝수 편향 완화만 · review 기각 명분 유지"
+}

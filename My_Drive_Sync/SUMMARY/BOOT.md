@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-P2 기각뇌 표시 · 탭 배지·정책 스트립
-- 직전: K-P1 warrant-dashboard · 명분 패널
-- 다음: K-PIN-FOLLOW — P3 K-X 또는 P4 hyodo (형 승인)
+- 지금: K-P3 review 끝수 완화 · ending질량균등
+- 직전: K-P2 기각뇌 표시 · K-P1 명분패널
+- 다음: K-PIN-FOLLOW — P4 hyodo (형 승인)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

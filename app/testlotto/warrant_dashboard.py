@@ -84,7 +84,10 @@ def _brain_display_hint(tag: str, label: str, kw_alignment: str | None, role: st
         "removal_allowed": False,
     }
     if tag == "review" and kw_alignment and "끝수" in str(kw_alignment):
-        hint["warning"] = "끝수 편향 경보(K-X). 교정은 형 승인 후(P3)."
+        if "완화" in str(kw_alignment) or "K-P3" in str(kw_alignment):
+            hint["note"] = "K-P3 ending질량균등 적용 · 1등확률 동일"
+        else:
+            hint["warning"] = "끝수 편향 경보(K-X). 교정은 형 승인 후(P3)."
     if tag == "miss_aux":
         hint["contrib_note"] = "순위 기여 ≈0 (K-Y) · 경고 신호용"
     if tag == "referee_aux":

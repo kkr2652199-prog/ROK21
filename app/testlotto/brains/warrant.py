@@ -26,10 +26,13 @@ BRAIN_WARRANT: dict[str, dict[str, Any]] = {
     },
     "review": {
         "label": "기각",
-        "evidence": "K-T 이월(lag1 대리) p=0.764 → 전제 기각; K-W 전반 C근접·끝수 지표는 A·C 양쪽 원격(편향경보)",
+        "evidence": (
+            "K-T 이월(lag1 대리) p=0.764 → 전제 기각; K-W C근접·끝수 편향경보; "
+            "K-P3 ending질량균등화(rate투영완화·random.choices동결)"
+        ),
         "p": 0.764,
-        "source_ids": ["K-T", "K-W"],
-        "kw_alignment": "무해_C근접_끝수편향경보",
+        "source_ids": ["K-T", "K-W", "K-X", "K-P3"],
+        "kw_alignment": "무해_C근접_끝수완화(K-P3)",
     },
     "miss_aux": {
         "label": "기각",
