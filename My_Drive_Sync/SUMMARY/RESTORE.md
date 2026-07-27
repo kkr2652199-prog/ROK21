@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e945b84` · WORK=`IDLE`
+1. **HEAD:** `e859404` · WORK=`IDLE`
 2. **지금:** K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234
 3. **다음1건:** K-AWAIT — 형 다음 본선 1건 지시 대기 (P·핀 스택 마감 완료) (승인필요=아니오 · 선행=K-PIN-CLOSE PASS · BASELINE_PIN `640cb67`)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

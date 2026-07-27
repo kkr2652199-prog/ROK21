@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e945b84` · WORK=`IDLE`
+- HEAD: `e859404` · WORK=`IDLE`
 - 지금: K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234
 - 직전: K-P4 LSTM샌드박스 · K-P3~P1 핀본선
 - BOOT다음: K-AWAIT — 형 다음 본선 1건 지시 대기
