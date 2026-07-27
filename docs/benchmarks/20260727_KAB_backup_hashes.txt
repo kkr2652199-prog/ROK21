@@ -1,0 +1,5 @@
+# K-AB backup D:\ROK21\data\_backup_20260727
+# created before INSERT
+lotto4	lotto4.db	17944576	154263480dd0b7558395ec48048372c3b57e9fbca4c2cb302a4bc2b940438d31
+testlotto	lotto_testlotto.db	38129664	88007e8ab9cdb0ac08305e40e7dede361d28bd99272ea69d1638da06b7e61358
+hyodo	lotto_hyodo.db	122880	eb72927af4d4210738e14def18f713409e41cb96cfe142cf090fbdcced97995b

@@ -1,0 +1,639 @@
+{
+  "meta": {
+    "read_only": false,
+    "halt_on_mismatch": false,
+    "disclaimer": "이 정합은 예측력과 무관하다. 분석 기반 데이터의 무결성 확보다.",
+    "corrected": true
+  },
+  "dbs": {
+    "lotto4": {
+      "exists": true,
+      "path": "D:\\ROK21\\data\\lotto4.db",
+      "size_bytes": 17944576,
+      "table": "lotto_draws",
+      "schema": [
+        {
+          "cid": 0,
+          "name": "draw_no",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "draw_date",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "num1",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "num2",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "num3",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "num4",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "num5",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "num6",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "bonus",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "total_sales",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "first_prize",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "first_winners",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt": "datetime('now','localtime')",
+          "pk": 0
+        }
+      ],
+      "indexes": [],
+      "min": 1,
+      "max": 1234,
+      "count": 1234,
+      "holes_internal": [],
+      "n_holes_internal": 0,
+      "col_names": [
+        "draw_no",
+        "draw_date",
+        "num1",
+        "num2",
+        "num3",
+        "num4",
+        "num5",
+        "num6",
+        "bonus",
+        "total_sales",
+        "first_prize",
+        "first_winners",
+        "created_at"
+      ]
+    },
+    "testlotto": {
+      "exists": true,
+      "path": "D:\\ROK21\\data\\lotto_testlotto.db",
+      "size_bytes": 38129664,
+      "table": "lotto_draws",
+      "schema": [
+        {
+          "cid": 0,
+          "name": "draw_no",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "draw_date",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "num1",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "num2",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "num3",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "num4",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "num5",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "num6",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "bonus",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "total_sales",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "first_prize",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "first_winners",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt": "datetime('now','localtime')",
+          "pk": 0
+        }
+      ],
+      "indexes": [],
+      "min": 1,
+      "max": 1234,
+      "count": 1234,
+      "holes_internal": [],
+      "n_holes_internal": 0,
+      "col_names": [
+        "draw_no",
+        "draw_date",
+        "num1",
+        "num2",
+        "num3",
+        "num4",
+        "num5",
+        "num6",
+        "bonus",
+        "total_sales",
+        "first_prize",
+        "first_winners",
+        "created_at"
+      ]
+    },
+    "hyodo": {
+      "exists": true,
+      "path": "D:\\ROK21\\data\\lotto_hyodo.db",
+      "size_bytes": 122880,
+      "table": "lotto_draws",
+      "schema": [
+        {
+          "cid": 0,
+          "name": "draw_no",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "draw_date",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "num1",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "num2",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "num3",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "num4",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "num5",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "num6",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "bonus",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "total_sales",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "first_prize",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "first_winners",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt": "0",
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt": "datetime('now','localtime')",
+          "pk": 0
+        }
+      ],
+      "indexes": [],
+      "min": 1,
+      "max": 1231,
+      "count": 1231,
+      "holes_internal": [],
+      "n_holes_internal": 0,
+      "col_names": [
+        "draw_no",
+        "draw_date",
+        "num1",
+        "num2",
+        "num3",
+        "num4",
+        "num5",
+        "num6",
+        "bonus",
+        "total_sales",
+        "first_prize",
+        "first_winners",
+        "created_at"
+      ]
+    }
+  },
+  "trailing": {
+    "lotto4": {
+      "max": 1234,
+      "global_max": 1234,
+      "trailing_missing": [],
+      "gap_kind": "complete"
+    },
+    "testlotto": {
+      "max": 1234,
+      "global_max": 1234,
+      "trailing_missing": [],
+      "gap_kind": "complete"
+    },
+    "hyodo": {
+      "max": 1231,
+      "global_max": 1234,
+      "trailing_missing": [
+        1232,
+        1233,
+        1234
+      ],
+      "gap_kind": "trailing_only"
+    }
+  },
+  "overlap_compare": [
+    {
+      "pair": "lotto4_vs_testlotto",
+      "n_common": 1234,
+      "common_min": 1,
+      "common_max": 1234,
+      "n_mismatch": 0,
+      "mismatches": [],
+      "only_in_first": [],
+      "only_in_second": [],
+      "n_only_first": 0,
+      "n_only_second": 0,
+      "only_in_first_head": [],
+      "only_in_second_head": [],
+      "only_in_first_all_if_le20": [],
+      "only_in_second_all_if_le20": []
+    },
+    {
+      "pair": "lotto4_vs_hyodo",
+      "n_common": 1231,
+      "common_min": 1,
+      "common_max": 1231,
+      "n_mismatch": 0,
+      "mismatches": [],
+      "only_in_first": [
+        1232,
+        1233,
+        1234
+      ],
+      "only_in_second": [],
+      "n_only_first": 3,
+      "n_only_second": 0,
+      "only_in_first_head": [
+        1232,
+        1233,
+        1234
+      ],
+      "only_in_second_head": [],
+      "only_in_first_all_if_le20": [
+        1232,
+        1233,
+        1234
+      ],
+      "only_in_second_all_if_le20": []
+    },
+    {
+      "pair": "testlotto_vs_hyodo",
+      "n_common": 1231,
+      "common_min": 1,
+      "common_max": 1231,
+      "n_mismatch": 0,
+      "mismatches": [],
+      "only_in_first": [
+        1232,
+        1233,
+        1234
+      ],
+      "only_in_second": [],
+      "n_only_first": 3,
+      "n_only_second": 0,
+      "only_in_first_head": [
+        1232,
+        1233,
+        1234
+      ],
+      "only_in_second_head": [],
+      "only_in_first_all_if_le20": [
+        1232,
+        1233,
+        1234
+      ],
+      "only_in_second_all_if_le20": []
+    }
+  ],
+  "overlap_only_full": {
+    "lotto4_vs_testlotto": {
+      "only_in_first": [],
+      "only_in_second": []
+    },
+    "lotto4_vs_hyodo": {
+      "only_in_first": [
+        1232,
+        1233,
+        1234
+      ],
+      "only_in_second": []
+    },
+    "testlotto_vs_hyodo": {
+      "only_in_first": [
+        1232,
+        1233,
+        1234
+      ],
+      "only_in_second": []
+    }
+  },
+  "schema_diff": {
+    "lotto4_vs_testlotto": {
+      "only_in_lotto4": [],
+      "only_in_testlotto": [],
+      "type_constraint_diff": []
+    },
+    "lotto4_vs_hyodo": {
+      "only_in_lotto4": [],
+      "only_in_hyodo": [],
+      "type_constraint_diff": []
+    }
+  },
+  "missing_vs_lotto4": {
+    "testlotto": [],
+    "hyodo": [
+      1232,
+      1233,
+      1234
+    ]
+  },
+  "step3_allowed": true,
+  "step3": {
+    "backup_dir": "D:\\ROK21\\data\\_backup_20260727",
+    "backup_hashes_file": "D:\\ROK21\\docs\\benchmarks\\20260727_KAB_backup_hashes.txt",
+    "backup_sha256": {
+      "lotto4": "154263480dd0b7558395ec48048372c3b57e9fbca4c2cb302a4bc2b940438d31",
+      "testlotto": "88007e8ab9cdb0ac08305e40e7dede361d28bd99272ea69d1638da06b7e61358",
+      "hyodo": "eb72927af4d4210738e14def18f713409e41cb96cfe142cf090fbdcced97995b"
+    },
+    "insert": {
+      "missing_planned": [
+        1232,
+        1233,
+        1234
+      ],
+      "inserted": [
+        1232,
+        1233,
+        1234
+      ],
+      "skipped_existing": [],
+      "prior_row_1231_unchanged": true
+    },
+    "post_stats": {
+      "lotto4": {
+        "min": 1,
+        "max": 1234,
+        "count": 1234,
+        "holes": []
+      },
+      "testlotto": {
+        "min": 1,
+        "max": 1234,
+        "count": 1234,
+        "holes": []
+      },
+      "hyodo": {
+        "min": 1,
+        "max": 1234,
+        "count": 1234,
+        "holes": []
+      }
+    },
+    "recompare": {
+      "lotto4_vs_testlotto": {
+        "n_common": 1234,
+        "n_mismatch": 0,
+        "mismatches": [],
+        "only_a": [],
+        "only_b": []
+      },
+      "lotto4_vs_hyodo": {
+        "n_common": 1234,
+        "n_mismatch": 0,
+        "mismatches": [],
+        "only_a": [],
+        "only_b": []
+      },
+      "testlotto_vs_hyodo": {
+        "n_common": 1234,
+        "n_mismatch": 0,
+        "mismatches": [],
+        "only_a": [],
+        "only_b": []
+      }
+    }
+  },
+  "step4_regression": {
+    "as_of": 1234,
+    "draws_before_max": 1233,
+    "as_of_ok": true,
+    "cutoff_default_on": true,
+    "E_k": 100.0,
+    "unresolved_total": 0,
+    "dedup_ok": true,
+    "dedup_seconds": 0.845570300003601,
+    "sha256_run1": "eb2e5e49092b9ae707196ccf22c93f732dec40af0497f9705cd73c9afb6a41ff",
+    "sha256_run2": "eb2e5e49092b9ae707196ccf22c93f732dec40af0497f9705cd73c9afb6a41ff",
+    "sha_ok": true,
+    "bench_window_n100": 100,
+    "bench_ok": true,
+    "hyodo_stats": {
+      "min": 1,
+      "max": 1234,
+      "count": 1234,
+      "holes": []
+    },
+    "hyodo_aligned": true,
+    "gate_pass": true
+  }
+}

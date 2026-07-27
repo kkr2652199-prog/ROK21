@@ -25,8 +25,8 @@
 | K-03 | CLOSED | app/lotto·lotto2 = 1~2군 레거시 잔존 | `app/lotto/`, `app/lotto2/` | main_v13 router 미등록 · init/scheduler만 공유 (STEP0 20260726) |
 | K-04 | CLOSED | .gitignore 신설 | 루트 `.gitignore` | 커밋 `0a1a55c` (20260726) |
 | K-05 | OPEN | public 레포·tracked *.db ~306MB | `data/*.db`, `data/combos/` | 24 files · 320,983,040 byte (20260726 실측) · 형 승인 전 untrack 금지 |
-| K-06 | OPEN | per-draw fan-out 미구현 | `app/lotto/draw_scheduler.py` | 스케줄러→`collect_latest_forward` lotto4.db만 · testlotto/hyodo 미연동 · draws gap **hyodo=1231** (testlotto/lotto4=1234, 20260727 실측) |
-| K-07 | OPEN | fetch-latest 수동복구·팬아웃 | `app/testlotto/routes.py`, `app/hyodo/routes.py` | **20260727:** testlotto 백업+fetch검증 완료(MAX=1234·1232~1234 공식MATCH·pred/review 있음). **잔여=hyodo만 1231**. hyodo 동기화는 형 승인 후 |
+| K-06 | OPEN | per-draw fan-out 미구현 | `app/lotto/draw_scheduler.py` | 스케줄러→lotto4만. **K-AB:** hyodo 1회 정합했으나 영구 팬아웃은 STEP5 안만(코드0). 재발 방지=K-06 구현 |
+| K-07 | PATCHED | fetch-latest 수동복구·갭해소 | `app/testlotto/routes.py`, `app/hyodo/routes.py` | testlotto=1234(선행) · **K-AB** lotto4→hyodo INSERT 1232–1234 · 3DB MAX=1234·mismatch0. 영구화는 K-06 |
 | K-08 | OPEN | 평가지표 정의(best vs mean) | 메타·다양성 WF · `reports/20260726_ROK21_지표재정의_검증.md` | best-of-15는 초기하 천장≈2.27(MC 재현). 실력 판별은 **mean**. STATUS/벤치에 mean 병기 필수. best 단독 목표 금지 · **K-O와 병행 재정의 중** |
 | K-09 | CLOSED | learn_state 컷오프 · 실질 누수 무해(당시 OFF 기본) | `learn_state_cutoff.py` · `reports/20260726_ROK21_K09컷오프_EV재검증.md` | 재구성(b). 200회 X−Y mean Δ CI에 0. **CLOSED**. **후속 K-S: 기본 ON·as_of 필수화로 선결 강화** |
 | K-10 | OPEN | tier1 완화 헤드룸≈0 | `filters.py` · EV보정·최종 보고서 | T1~T3 p10 실현배율 vs T0 ≤1.002. **헤드룸0 기록·코드 완화 보류** |
@@ -59,3 +59,4 @@
 | K-Y | OPEN | 보조4 감사: pattern/balance→전제실증·구현미검증 강등 · miss/referee 순위기여0 · pair/consec/odd_even 미소비 | `docs/benchmarks/20260727_KY_aux_audit.json` · KY 보고서 · WARRANT | fusion 미배선 재확인(K-D). live≠DB referee(K-J). balance 기본합150≠138. 코드0 |
 | K-Z | PATCHED | C(45,6) 이론값 확정 후 K-AA에서 코드 적용(AC=8·폴백합138·consec PMF) | `docs/benchmarks/20260727_KZ_theory_constants.json` · KZ/KAA 보고서 | A거리 미개선→K-AA에서 게이트↓관측 |
 | K-AA | PATCHED | 이론값 적용·구현검증·명분복귀: pattern/balance→실증 · warrant.py동기화 · E[k]=100·SHA일치 | `docs/benchmarks/20260727_KAA_apply_verify.json` · diff · KAA 보고서 | 판정축=조합론 참값. A거리 관측만. 1등확률↑아님. pair/30·zone목표 미변경 |
+| K-AB | PATCHED | 회차갭정합: hyodo 1232–1234를 lotto4에서 INSERT · 3DB MAX=1234·번호불일치0 · 회귀PASS | `docs/benchmarks/20260727_KAB_draw_gap.json` · backup_hashes · KAB 보고서 | 크롤링0·UPDATE0. K-06 영구팬아웃은 안만. 예측력무관·무결성 |
