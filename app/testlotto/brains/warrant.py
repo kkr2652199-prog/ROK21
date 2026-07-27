@@ -2,7 +2,7 @@
 """뇌 명분(warrant) 라벨 — 표시 전용. 산출·dedup 로직과 무관.
 
 SSOT 문서: My_Drive_Sync/SUMMARY/WARRANT.md
-UI 노출 금지. 예측 응답 out['brain_warrant'] 데이터만 적재.
+K-P1: API `/warrant-dashboard`·UI 패널로 노출 (산출 가중 변경 없음).
 """
 from __future__ import annotations
 

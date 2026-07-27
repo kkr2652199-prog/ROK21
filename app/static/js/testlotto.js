@@ -27,6 +27,119 @@ function testlottoGetBrainDescription(tag) {
   return _testlottoBrainDescriptions[tag] || '';
 }
 
+const _TL_WARRANT_LABEL_CLASS = {
+  '실증': 'tl-wlbl--proved',
+  '기각': 'tl-wlbl--rejected',
+  '미정의': 'tl-wlbl--undefined',
+  '전제실증·구현미검증': 'tl-wlbl--partial',
+};
+
+function _tlEscapeHtml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function _tlWarrantLabelClass(label) {
+  return _TL_WARRANT_LABEL_CLASS[label] || 'tl-wlbl--undefined';
+}
+
+function _tlFormatLearnKeyBar(key, value, cap) {
+  const v = Number(value) || 0;
+  const c = Number(cap) || 0.5;
+  const pct = c > 0 ? Math.min(100, Math.round((v / c) * 100)) : 0;
+  return (
+    '<div class="tl-wkey">' +
+    `<span class="tl-wkey__name">${_tlEscapeHtml(key)}</span>` +
+    `<span class="tl-wkey__val">${v.toFixed(2)} / ${c}</span>` +
+    `<span class="tl-wkey__bar" aria-hidden="true"><span style="width:${pct}%"></span></span>` +
+    '</div>'
+  );
+}
+
+function renderTestlottoWarrantPanelHtml(data, drawNo) {
+  const gates = data.gates || {};
+  const frozen = (data.frozen || []).join(' · ');
+  const brains = data.brains || [];
+  const predict = brains.filter((b) => b.role === 'predict');
+  const aux = brains.filter((b) => b.role === 'aux');
+
+  const brainCard = (b) => {
+    const lbl = b.warrant_label || '미정의';
+    const keys = (b.learn_keys || []).filter((k) => {
+      if (b.role === 'predict') return (Number(k.value) || 0) > 0.001;
+      return true;
+    });
+    const keyHtml = keys.length
+      ? keys.map((k) => {
+          if (k.per_predict_brain) {
+            const parts = Object.entries(k.per_predict_brain)
+              .map(([t, v]) => `${t}:${Number(v).toFixed(2)}`)
+              .join(' · ');
+            return (
+              '<div class="tl-wkey tl-wkey--aux">' +
+              `<span class="tl-wkey__name">${_tlEscapeHtml(k.key)}</span>` +
+              `<span class="tl-wkey__val">${_tlEscapeHtml(parts)}</span>` +
+              '</div>'
+            );
+          }
+          return _tlFormatLearnKeyBar(k.key, k.value, k.cap);
+        }).join('')
+      : '<span class="tl-wmuted">활성 학습키 없음</span>';
+    return (
+      '<article class="tl-wbrain">' +
+      `<header class="tl-wbrain__head">` +
+      `<strong>${_tlEscapeHtml(b.name)}</strong>` +
+      `<span class="tl-wlbl ${_tlWarrantLabelClass(lbl)}">${_tlEscapeHtml(lbl)}</span>` +
+      '</header>' +
+      `<p class="tl-wbrain__ev">${_tlEscapeHtml(b.warrant_evidence || '')}</p>` +
+      (b.kw_alignment ? `<p class="tl-wbrain__align">K-W: ${_tlEscapeHtml(b.kw_alignment)}</p>` : '') +
+      `<div class="tl-wbrain__keys">${keyHtml}</div>` +
+      '</article>'
+    );
+  };
+
+  const asOf = gates.learn_as_of != null ? gates.learn_as_of : '—';
+  return (
+    '<div class="tl-warrant-inner">' +
+    '<div class="tl-warrant-head">' +
+    '<h3 class="tl-warrant-title">뇌 명분 · 제약 (K-P1)</h3>' +
+    `<p class="tl-warrant-note">${_tlEscapeHtml(data.evaluation_axis || '')}</p>` +
+    '</div>' +
+    '<div class="tl-warrant-gates">' +
+    `<span>BASELINE_PIN <code>${_tlEscapeHtml(data.baseline_pin || '')}</code></span>` +
+    `<span>학습 as_of <strong>${asOf}</strong>${drawNo ? ` (회차 ${drawNo} 예측 기준)` : ''}</span>` +
+    `<span>CUTOFF ${gates.learn_cutoff ? 'ON' : 'OFF'}</span>` +
+    `<span>DEDUP ${gates.dedup ? 'ON' : 'OFF'}</span>` +
+    '</div>' +
+    '<p class="tl-warrant-frozen">동결: ' + _tlEscapeHtml(frozen) + '</p>' +
+    '<p class="tl-warrant-disclaimer">이 패널은 <b>설명·투명성</b>용입니다. 1등 확률을 높이지 않습니다. 기각 뇌는 제거하지 않습니다(WARRANT §2).</p>' +
+    '<div class="tl-warrant-section"><h4>예측 3뇌</h4><div class="tl-warrant-grid">' + predict.map(brainCard).join('') + '</div></div>' +
+    '<div class="tl-warrant-section"><h4>보조 4뇌</h4><div class="tl-warrant-grid">' + aux.map(brainCard).join('') + '</div></div>' +
+    '</div>'
+  );
+}
+
+async function loadTestlottoWarrantPanel(drawNo) {
+  const panel = document.getElementById('testlottoWarrantPanel');
+  if (!panel) return;
+  const d = parseInt(drawNo, 10);
+  const qs = Number.isFinite(d) && d > 0 ? `?as_of=${d}` : '';
+  try {
+    const r = await fetch(_testlottoResolveApiUrl('/api/testlotto/warrant-dashboard' + qs));
+    if (!r.ok) throw new Error(String(r.status));
+    const data = await r.json();
+    panel.hidden = false;
+    panel.innerHTML = renderTestlottoWarrantPanelHtml(data, d);
+  } catch (e) {
+    panel.hidden = true;
+    console.warn('warrant-dashboard:', e);
+  }
+}
+window.loadTestlottoWarrantPanel = loadTestlottoWarrantPanel;
+
 // ── 탭 전환 ──
 function switchTestlottoTab(tabName) {
   document.querySelectorAll('.lotto-tab-content').forEach((el) => { el.style.display = 'none'; });
@@ -178,6 +291,7 @@ function initTestlottoDrawSearch() {
       input.value = latest;
       sel.value = String(latest);
       testlottoLoadSavedPrediction(latest);
+      loadTestlottoWarrantPanel(latest);
     }
   });
 }
@@ -188,6 +302,7 @@ function testlottoSelectDraw(drawNo) {
   const input = document.getElementById('testlottoPredictDrawNo');
   if (input) input.value = String(no);
   testlottoLoadSavedPrediction(no, { softLoading: true });
+  loadTestlottoWarrantPanel(no);
 }
 
 /** 복습·학습 상세페이지 (새 탭) */
@@ -217,6 +332,7 @@ function testlottoNavDraw(delta) {
   if (input) input.value = String(nextNo);
   if (sel) sel.value = String(nextNo);
   testlottoLoadSavedPrediction(nextNo, { softLoading: true });
+  loadTestlottoWarrantPanel(nextNo);
 }
 
 function _detailResponseToPredictionRows(detail, drawNo) {
@@ -339,6 +455,7 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
     _testlottoPredRowsCache = (_testlottoPredRowsCache || []).filter((p) => parseInt(p.target_draw_no, 10) !== d);
     _testlottoPredRowsCache = rows.concat(_testlottoPredRowsCache || []);
     await renderPredictionsByBrain(d, rows);
+    loadTestlottoWarrantPanel(d);
   } catch (e) {
     if (seq !== _testlottoPredFetchSeq) {
       return;
@@ -1090,6 +1207,8 @@ async function testlottoPredict() {
         _testlottoDetailRows = rows;
 
         await renderPredictionsByBrain(drawNo, rows);
+
+        loadTestlottoWarrantPanel(drawNo);
 
         // 무거운 전체 목록 리로드는 백그라운드로
         loadTestlottoDrawList().then(() => {

@@ -958,3 +958,132 @@
   border-color: #ffd700;
   color: #ffd700;
 }
+
+/* K-P1: 명분·제약·학습키 패널 */
+.tl-warrant-panel {
+  margin: 12px 0 16px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 1px solid #3d4f7c;
+  border-radius: 10px;
+  color: #c8d0e8;
+  font-size: 13px;
+}
+.tl-warrant-title {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: #e8eeff;
+}
+.tl-warrant-note,
+.tl-warrant-disclaimer,
+.tl-warrant-frozen {
+  margin: 4px 0;
+  font-size: 12px;
+  color: #9aa8c8;
+  line-height: 1.45;
+}
+.tl-warrant-gates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 10px 0;
+  font-size: 12px;
+}
+.tl-warrant-gates code {
+  color: #f0c040;
+}
+.tl-warrant-section h4 {
+  margin: 14px 0 8px;
+  font-size: 0.85rem;
+  color: #8b9cf7;
+}
+.tl-warrant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.tl-wbrain {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.tl-wbrain__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.tl-wlbl {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tl-wlbl--proved {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.45);
+}
+.tl-wlbl--rejected {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+.tl-wlbl--undefined {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.35);
+}
+.tl-wlbl--partial {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+.tl-wbrain__ev,
+.tl-wbrain__align {
+  margin: 0 0 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #a8b4d0;
+}
+.tl-wbrain__keys {
+  margin-top: 6px;
+}
+.tl-wkey {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 2px 8px;
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+.tl-wkey__name {
+  color: #cbd5e1;
+}
+.tl-wkey__val {
+  color: #64748b;
+  font-variant-numeric: tabular-nums;
+}
+.tl-wkey__bar {
+  grid-column: 1 / -1;
+  height: 4px;
+  background: #1e293b;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.tl-wkey__bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 2px;
+}
+.tl-wkey--aux .tl-wkey__val {
+  grid-column: 1 / -1;
+  font-size: 10px;
+}
+.tl-wmuted {
+  color: #64748b;
+  font-size: 11px;
+}

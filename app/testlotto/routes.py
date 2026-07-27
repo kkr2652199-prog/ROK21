@@ -256,6 +256,14 @@ async def api_brain_status():
     return get_brain_status()
 
 
+@router.get("/warrant-dashboard")
+async def api_warrant_dashboard(as_of: int = 0):
+    """K-P1: 명분·제약·학습키 대시보드 (표시 전용 · READ-ONLY)."""
+    from app.testlotto.warrant_dashboard import build_warrant_dashboard
+
+    return build_warrant_dashboard(as_of if as_of > 0 else None)
+
+
 @router.get("/meta/status")
 async def api_meta_status():
     """PIN 메타선별기 게이트 — P1 pass 전에는 ui_enabled=false."""
