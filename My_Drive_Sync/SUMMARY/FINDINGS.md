@@ -56,3 +56,4 @@
 | K-V | PATCHED | 발권 dedup: E[k] 97.091→100.000 · unresolved0 · OFF/ON 이표본 왜곡없음 | `ticket_dedup.py` · coordinator 후처리 · `reports/20260727_KV_중복제거_구현검증.md` | `ROK21_DEDUP` 기본 ON. P배수≈1.030. 예측력↑ 아님. 절대이론 GOF는 뇌가중 산출물에서 OFF/ON 공통 기각 → 왜곡게이트=이표본 |
 | K-W | OPEN | 산출 정합성: 명분(당첨≈이론) vs 뇌 산출 거리 측정 · 명분 라벨 SSOT | `docs/benchmarks/20260727_KW_alignment.json` · `WARRANT.md` · KW 보고서 | stat→A근접 · markov/review→C근접 · review끝수 편향경보. 라벨=기각5/실증2/미정의1. 기각뇌 제거금지 |
 | K-X | OPEN | review 끝수편향 원인=`repeat_rate` 투영(5·8↑/7↓) · 예측폐루프·자기강화증폭 미입증 | `predict_review_king.py` · `repeat_rate_after_draw` · `docs/benchmarks/20260727_KX_review_ending.json` · KX 보고서 | early↔late KS p=0.66. ending_digit_boost는 review 미사용. 교정 구현 금지(형승인). P(1등) 관점 교정 불필요 가능 |
+| K-Y | OPEN | 보조4 감사: pattern/balance→전제실증·구현미검증 강등 · miss/referee 순위기여0 · pair/consec/odd_even 미소비 | `docs/benchmarks/20260727_KY_aux_audit.json` · KY 보고서 · WARRANT | fusion 미배선 재확인(K-D). live≠DB referee(K-J). balance 기본합150≠138. 코드0 |

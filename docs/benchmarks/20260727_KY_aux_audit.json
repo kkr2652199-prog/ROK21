@@ -1,0 +1,1458 @@
+{
+  "meta": {
+    "seed": 20260727,
+    "target": 1234,
+    "n_candidates": 60
+  },
+  "step1_alignment": {
+    "method_note": "aux는 세트 미생성. B=동일 후보풀에서 aux 적용 후 top15 (또는 단일 aux top15). 전/후 비교로 대체. K-W 거리척도 동일.",
+    "pre_vs_post_membership_delta": 0.75,
+    "full_aux_stack_top15": {
+      "vs_A": {
+        "sum_KS": 0.29616423554835225,
+        "odd_chi2_df": 1.9723437626981408,
+        "zone_chi2_df": 1.0851833097267984,
+        "consec_chi2_df": 0.7606562885893099,
+        "ending_chi2_df": 0.9892137520686861
+      },
+      "vs_C": {
+        "sum_KS": 0.4,
+        "odd_chi2_df": 3.4666666666666663,
+        "zone_chi2_df": 5.704761904761904,
+        "consec_chi2_df": 3.0555555555555554,
+        "ending_chi2_df": 1.0408310832863261
+      },
+      "interpret": {
+        "per_metric": {
+          "sum_KS": {
+            "d_A": 0.29616423554835225,
+            "d_C": 0.4,
+            "verdict": "closer_A"
+          },
+          "odd_chi2_df": {
+            "d_A": 1.9723437626981408,
+            "d_C": 3.4666666666666663,
+            "verdict": "closer_A"
+          },
+          "zone_chi2_df": {
+            "d_A": 1.0851833097267984,
+            "d_C": 5.704761904761904,
+            "verdict": "closer_A"
+          },
+          "consec_chi2_df": {
+            "d_A": 0.7606562885893099,
+            "d_C": 3.0555555555555554,
+            "verdict": "closer_A"
+          },
+          "ending_chi2_df": {
+            "d_A": 0.9892137520686861,
+            "d_C": 1.0408310832863261,
+            "verdict": "closer_A_tieish"
+          }
+        },
+        "votes": {
+          "A": 5,
+          "C": 0,
+          "far": 0
+        },
+        "overall": "정합_A근접"
+      },
+      "sum_mean": 133.8,
+      "pre_sum_mean": 128.8
+    },
+    "per_aux_only_top15": {
+      "miss_aux": {
+        "vs_A": {
+          "sum_KS": 0.2507293354943274,
+          "odd_chi2_df": 1.5447876204901971,
+          "zone_chi2_df": 0.6168850184592287,
+          "consec_chi2_df": 0.6629052263697804,
+          "ending_chi2_df": 0.5817317316452753
+        },
+        "vs_C": {
+          "sum_KS": 0.26666666666666666,
+          "odd_chi2_df": 0.9587301587301588,
+          "zone_chi2_df": 0.17142857142857143,
+          "consec_chi2_df": 0.0,
+          "ending_chi2_df": 0.8418741752075085
+        },
+        "interpret": {
+          "per_metric": {
+            "sum_KS": {
+              "d_A": 0.2507293354943274,
+              "d_C": 0.26666666666666666,
+              "verdict": "far_both"
+            },
+            "odd_chi2_df": {
+              "d_A": 1.5447876204901971,
+              "d_C": 0.9587301587301588,
+              "verdict": "closer_C"
+            },
+            "zone_chi2_df": {
+              "d_A": 0.6168850184592287,
+              "d_C": 0.17142857142857143,
+              "verdict": "closer_C"
+            },
+            "consec_chi2_df": {
+              "d_A": 0.6629052263697804,
+              "d_C": 0.0,
+              "verdict": "closer_C"
+            },
+            "ending_chi2_df": {
+              "d_A": 0.5817317316452753,
+              "d_C": 0.8418741752075085,
+              "verdict": "closer_A"
+            }
+          },
+          "votes": {
+            "A": 1,
+            "C": 3,
+            "far": 1
+          },
+          "overall": "무해_C근접"
+        },
+        "sum_mean": 128.8,
+        "referee_score_constant": false
+      },
+      "pattern_aux": {
+        "vs_A": {
+          "sum_KS": 0.19081577525661805,
+          "odd_chi2_df": 0.4455338670764595,
+          "zone_chi2_df": 0.49443561489440796,
+          "consec_chi2_df": 0.5764632280258238,
+          "ending_chi2_df": 0.48875260391433234
+        },
+        "vs_C": {
+          "sum_KS": 0.26666666666666666,
+          "odd_chi2_df": 1.4612794612794613,
+          "zone_chi2_df": 0.0,
+          "consec_chi2_df": 0.5333333333333333,
+          "ending_chi2_df": 0.47284988069301787
+        },
+        "interpret": {
+          "per_metric": {
+            "sum_KS": {
+              "d_A": 0.19081577525661805,
+              "d_C": 0.26666666666666666,
+              "verdict": "closer_A"
+            },
+            "odd_chi2_df": {
+              "d_A": 0.4455338670764595,
+              "d_C": 1.4612794612794613,
+              "verdict": "closer_A"
+            },
+            "zone_chi2_df": {
+              "d_A": 0.49443561489440796,
+              "d_C": 0.0,
+              "verdict": "closer_C"
+            },
+            "consec_chi2_df": {
+              "d_A": 0.5764632280258238,
+              "d_C": 0.5333333333333333,
+              "verdict": "closer_C_tieish"
+            },
+            "ending_chi2_df": {
+              "d_A": 0.48875260391433234,
+              "d_C": 0.47284988069301787,
+              "verdict": "closer_C_tieish"
+            }
+          },
+          "votes": {
+            "A": 2,
+            "C": 3,
+            "far": 0
+          },
+          "overall": "무해_C근접"
+        },
+        "sum_mean": 133.8,
+        "referee_score_constant": false
+      },
+      "balance_aux": {
+        "vs_A": {
+          "sum_KS": 0.3628309022150189,
+          "odd_chi2_df": 0.7866686571142029,
+          "zone_chi2_df": 2.4521944057106198,
+          "consec_chi2_df": 1.5847896874667609,
+          "ending_chi2_df": 0.8051297422323069
+        },
+        "vs_C": {
+          "sum_KS": 0.5333333333333333,
+          "odd_chi2_df": 1.61965811965812,
+          "zone_chi2_df": 19.547511312217196,
+          "consec_chi2_df": 1.9578947368421051,
+          "ending_chi2_df": 0.8512595591542961
+        },
+        "interpret": {
+          "per_metric": {
+            "sum_KS": {
+              "d_A": 0.3628309022150189,
+              "d_C": 0.5333333333333333,
+              "verdict": "closer_A"
+            },
+            "odd_chi2_df": {
+              "d_A": 0.7866686571142029,
+              "d_C": 1.61965811965812,
+              "verdict": "closer_A"
+            },
+            "zone_chi2_df": {
+              "d_A": 2.4521944057106198,
+              "d_C": 19.547511312217196,
+              "verdict": "closer_A"
+            },
+            "consec_chi2_df": {
+              "d_A": 1.5847896874667609,
+              "d_C": 1.9578947368421051,
+              "verdict": "closer_A"
+            },
+            "ending_chi2_df": {
+              "d_A": 0.8051297422323069,
+              "d_C": 0.8512595591542961,
+              "verdict": "closer_A_tieish"
+            }
+          },
+          "votes": {
+            "A": 5,
+            "C": 0,
+            "far": 0
+          },
+          "overall": "정합_A근접"
+        },
+        "sum_mean": 135.73333333333332,
+        "referee_score_constant": false
+      },
+      "referee_aux": {
+        "vs_A": {
+          "sum_KS": 0.2507293354943274,
+          "odd_chi2_df": 1.5447876204901971,
+          "zone_chi2_df": 0.6168850184592287,
+          "consec_chi2_df": 0.6629052263697804,
+          "ending_chi2_df": 0.5817317316452753
+        },
+        "vs_C": {
+          "sum_KS": 0.13333333333333333,
+          "odd_chi2_df": 1.7575757575757578,
+          "zone_chi2_df": 1.1,
+          "consec_chi2_df": 0.0,
+          "ending_chi2_df": 0.3555143729056772
+        },
+        "interpret": {
+          "per_metric": {
+            "sum_KS": {
+              "d_A": 0.2507293354943274,
+              "d_C": 0.13333333333333333,
+              "verdict": "closer_C"
+            },
+            "odd_chi2_df": {
+              "d_A": 1.5447876204901971,
+              "d_C": 1.7575757575757578,
+              "verdict": "closer_A"
+            },
+            "zone_chi2_df": {
+              "d_A": 0.6168850184592287,
+              "d_C": 1.1,
+              "verdict": "closer_A"
+            },
+            "consec_chi2_df": {
+              "d_A": 0.6629052263697804,
+              "d_C": 0.0,
+              "verdict": "closer_C"
+            },
+            "ending_chi2_df": {
+              "d_A": 0.5817317316452753,
+              "d_C": 0.3555143729056772,
+              "verdict": "closer_C"
+            }
+          },
+          "votes": {
+            "A": 2,
+            "C": 3,
+            "far": 0
+          },
+          "overall": "무해_C근접"
+        },
+        "sum_mean": 128.8,
+        "referee_score_constant": true
+      }
+    },
+    "pre_aux_top15": {
+      "vs_A": {
+        "sum_KS": 0.2507293354943274,
+        "odd_chi2_df": 1.5447876204901971,
+        "zone_chi2_df": 0.6168850184592287,
+        "consec_chi2_df": 0.6629052263697804,
+        "ending_chi2_df": 0.5817317316452753
+      },
+      "vs_C": {
+        "sum_KS": 0.3333333333333333,
+        "odd_chi2_df": 1.161904761904762,
+        "zone_chi2_df": 0.6666666666666666,
+        "consec_chi2_df": 3.2051282051282053,
+        "ending_chi2_df": 0.6259419592752927
+      },
+      "interpret": {
+        "per_metric": {
+          "sum_KS": {
+            "d_A": 0.2507293354943274,
+            "d_C": 0.3333333333333333,
+            "verdict": "closer_A"
+          },
+          "odd_chi2_df": {
+            "d_A": 1.5447876204901971,
+            "d_C": 1.161904761904762,
+            "verdict": "closer_C"
+          },
+          "zone_chi2_df": {
+            "d_A": 0.6168850184592287,
+            "d_C": 0.6666666666666666,
+            "verdict": "closer_A_tieish"
+          },
+          "consec_chi2_df": {
+            "d_A": 0.6629052263697804,
+            "d_C": 3.2051282051282053,
+            "verdict": "closer_A"
+          },
+          "ending_chi2_df": {
+            "d_A": 0.5817317316452753,
+            "d_C": 0.6259419592752927,
+            "verdict": "closer_A_tieish"
+          }
+        },
+        "votes": {
+          "A": 4,
+          "C": 1,
+          "far": 0
+        },
+        "overall": "정합_A근접"
+      }
+    }
+  },
+  "step2_impl": {
+    "pattern_aux": {
+      "uses_C45_6_pmf": false,
+      "ac_target": 7,
+      "consec_score_table": {
+        "0": 0.7,
+        "1": 0.7,
+        "2": 0.5,
+        "else": 0.3
+      },
+      "pair_norm_divisor": 30.0,
+      "pair_freq_source": "build_pair_freq(draws[-100:]) historical counts",
+      "verdict": "경험칙·상수 휴리스틱. 조합 이론분포 근사 코드 없음"
+    },
+    "balance_aux": {
+      "code_targets": {
+        "odd": 3.1125,
+        "sum": 138.0125,
+        "zone": 3.05
+      },
+      "theory_reference": {
+        "odd_mode": 3.0,
+        "sum_mean": 138.0,
+        "zone_ideal_spread": 0.0
+      },
+      "default_when_empty_draws": {
+        "odd": 3.0,
+        "sum": 150.0,
+        "zone": 2.0
+      },
+      "delta_sum_vs_theory": 0.012499999999988631,
+      "delta_odd_vs_mode3": 0.11249999999999982,
+      "note": "balance uses historical mean of last 80 draws, NOT C(45,6) theory constants"
+    },
+    "label_recommendation": {
+      "pattern_aux": "전제실증·구현미검증",
+      "balance_aux": "전제실증·구현미검증",
+      "reason": "K-T는 draws≈이론만 실증. pattern=상수/경험칙, balance sum target=138.01 ≠ 138"
+    }
+  },
+  "step3_wiring": {
+    "click_path": "engine.run_prediction → coordinator.run_coordinated_prediction → _apply_aux_scoring",
+    "AUX_MODULES_order": [
+      "app.testlotto.brains.aux_miss_detective",
+      "app.testlotto.brains.aux_pattern_spotlight",
+      "app.testlotto.brains.aux_balance_keeper",
+      "app.testlotto.brains.aux_referee"
+    ],
+    "each_called_in__apply_aux_scoring": true,
+    "referee_score_set_returns": 0.5,
+    "referee_weights_used_in_final_conf": true,
+    "fusion_in_click_path": false,
+    "fusion_import_location": "engine.py legacy/other paths; run_prediction does NOT call fusion"
+  },
+  "step3_referee_dual": {
+    "live": {
+      "stat": 0.3346654079295107,
+      "markov": 0.3314252264793495,
+      "review": 0.33390936559113976
+    },
+    "db_raw": {
+      "stat": 1.1687046226415094,
+      "markov": 1.1605711198738171,
+      "review": 1.1660679779701022
+    },
+    "db_predict_tags": {
+      "stat": 1.1687046226415094,
+      "markov": 1.1605711198738171,
+      "review": 1.1660679779701022
+    }
+  },
+  "step3_learn_state_keys": [
+    {
+      "key": "carry_over_boost",
+      "defined": true,
+      "updated_by_apply_feedback": true,
+      "consume_paths": [
+        "predict_stat_fairy",
+        "predict_review_king",
+        "predict_statistical"
+      ],
+      "consumed": true,
+      "status": "소비"
+    },
+    {
+      "key": "ending_digit_boost",
+      "defined": true,
+      "updated_by_apply_feedback": true,
+      "consume_paths": [
+        "predict_stat_fairy",
+        "predict_statistical"
+      ],
+      "consumed": true,
+      "status": "소비"
+    },
+    {
+      "key": "pair_boost",
+      "defined": true,
+      "updated_by_apply_feedback": true,
+      "consume_paths": [],
+      "consumed": false,
+      "status": "학습되나 미소비"
+    },
+    {
+      "key": "consecutive_boost",
+      "defined": true,
+      "updated_by_apply_feedback": true,
+      "consume_paths": [],
+      "consumed": false,
+      "status": "학습되나 미소비"
+    },
+    {
+      "key": "overdue_boost",
+      "defined": true,
+      "updated_by_apply_feedback": true,
+      "consume_paths": [
+        "predict_statistical"
+      ],
+      "consumed": true,
+      "status": "소비"
+    },
+    {
+      "key": "odd_even_balance",
+      "defined": true,
+      "updated_by_apply_feedback": true,
+      "consume_paths": [],
+      "consumed": false,
+      "status": "학습되나 미소비"
+    }
+  ],
+  "step4_ablation": {
+    "miss_aux": {
+      "membership_change_full_vs_without": 0.0,
+      "membership_change_only_vs_pre": 0.0,
+      "substantive": false,
+      "only_top15": [
+        [
+          4,
+          13,
+          15,
+          16,
+          22,
+          34
+        ],
+        [
+          9,
+          12,
+          30,
+          31,
+          38,
+          42
+        ],
+        [
+          3,
+          6,
+          16,
+          28,
+          39,
+          44
+        ],
+        [
+          6,
+          11,
+          14,
+          19,
+          22,
+          38
+        ],
+        [
+          10,
+          16,
+          17,
+          22,
+          31,
+          35
+        ],
+        [
+          1,
+          12,
+          15,
+          16,
+          24,
+          34
+        ],
+        [
+          10,
+          12,
+          21,
+          31,
+          33,
+          45
+        ],
+        [
+          5,
+          8,
+          12,
+          24,
+          32,
+          45
+        ],
+        [
+          6,
+          11,
+          18,
+          26,
+          31,
+          34
+        ],
+        [
+          4,
+          5,
+          16,
+          22,
+          29,
+          41
+        ],
+        [
+          14,
+          20,
+          25,
+          27,
+          37,
+          40
+        ],
+        [
+          7,
+          9,
+          13,
+          18,
+          26,
+          44
+        ],
+        [
+          3,
+          7,
+          8,
+          17,
+          36,
+          45
+        ],
+        [
+          10,
+          20,
+          24,
+          29,
+          30,
+          37
+        ],
+        [
+          6,
+          7,
+          15,
+          19,
+          32,
+          41
+        ]
+      ],
+      "without_top15": [
+        [
+          10,
+          13,
+          20,
+          28,
+          31,
+          33
+        ],
+        [
+          4,
+          12,
+          25,
+          30,
+          37,
+          41
+        ],
+        [
+          3,
+          6,
+          16,
+          28,
+          39,
+          44
+        ],
+        [
+          1,
+          13,
+          26,
+          27,
+          36,
+          40
+        ],
+        [
+          9,
+          10,
+          16,
+          24,
+          33,
+          41
+        ],
+        [
+          5,
+          13,
+          24,
+          26,
+          29,
+          42
+        ],
+        [
+          1,
+          9,
+          19,
+          24,
+          38,
+          40
+        ],
+        [
+          10,
+          16,
+          17,
+          22,
+          31,
+          35
+        ],
+        [
+          7,
+          9,
+          13,
+          18,
+          26,
+          44
+        ],
+        [
+          6,
+          12,
+          19,
+          25,
+          37,
+          40
+        ],
+        [
+          14,
+          20,
+          25,
+          27,
+          37,
+          40
+        ],
+        [
+          4,
+          13,
+          15,
+          16,
+          22,
+          34
+        ],
+        [
+          2,
+          5,
+          11,
+          30,
+          31,
+          40
+        ],
+        [
+          6,
+          11,
+          18,
+          26,
+          31,
+          34
+        ],
+        [
+          3,
+          19,
+          24,
+          29,
+          31,
+          36
+        ]
+      ]
+    },
+    "pattern_aux": {
+      "membership_change_full_vs_without": 0.42105263157894735,
+      "membership_change_only_vs_pre": 0.6363636363636364,
+      "substantive": true,
+      "only_top15": [
+        [
+          4,
+          13,
+          15,
+          16,
+          22,
+          34
+        ],
+        [
+          15,
+          24,
+          27,
+          31,
+          36,
+          42
+        ],
+        [
+          10,
+          20,
+          24,
+          29,
+          30,
+          37
+        ],
+        [
+          9,
+          10,
+          16,
+          24,
+          33,
+          41
+        ],
+        [
+          8,
+          18,
+          19,
+          28,
+          31,
+          38
+        ],
+        [
+          10,
+          13,
+          20,
+          28,
+          31,
+          33
+        ],
+        [
+          7,
+          9,
+          13,
+          20,
+          25,
+          27
+        ],
+        [
+          3,
+          19,
+          24,
+          29,
+          31,
+          36
+        ],
+        [
+          5,
+          13,
+          24,
+          26,
+          29,
+          42
+        ],
+        [
+          3,
+          6,
+          16,
+          28,
+          39,
+          44
+        ],
+        [
+          14,
+          20,
+          25,
+          27,
+          37,
+          40
+        ],
+        [
+          1,
+          12,
+          15,
+          16,
+          24,
+          34
+        ],
+        [
+          10,
+          12,
+          21,
+          31,
+          33,
+          45
+        ],
+        [
+          3,
+          7,
+          8,
+          17,
+          36,
+          45
+        ],
+        [
+          7,
+          9,
+          13,
+          18,
+          26,
+          44
+        ]
+      ],
+      "without_top15": [
+        [
+          10,
+          13,
+          20,
+          28,
+          31,
+          33
+        ],
+        [
+          4,
+          12,
+          25,
+          30,
+          37,
+          41
+        ],
+        [
+          3,
+          6,
+          16,
+          28,
+          39,
+          44
+        ],
+        [
+          1,
+          13,
+          26,
+          27,
+          36,
+          40
+        ],
+        [
+          1,
+          9,
+          19,
+          24,
+          38,
+          40
+        ],
+        [
+          10,
+          16,
+          17,
+          22,
+          31,
+          35
+        ],
+        [
+          9,
+          10,
+          16,
+          24,
+          33,
+          41
+        ],
+        [
+          6,
+          11,
+          18,
+          26,
+          31,
+          34
+        ],
+        [
+          5,
+          13,
+          24,
+          26,
+          29,
+          42
+        ],
+        [
+          3,
+          10,
+          19,
+          26,
+          31,
+          41
+        ],
+        [
+          2,
+          5,
+          11,
+          30,
+          31,
+          40
+        ],
+        [
+          5,
+          13,
+          16,
+          26,
+          38,
+          42
+        ],
+        [
+          4,
+          5,
+          16,
+          22,
+          29,
+          41
+        ],
+        [
+          7,
+          9,
+          13,
+          18,
+          26,
+          44
+        ],
+        [
+          1,
+          12,
+          14,
+          19,
+          29,
+          40
+        ]
+      ]
+    },
+    "balance_aux": {
+      "membership_change_full_vs_without": 0.6956521739130435,
+      "membership_change_only_vs_pre": 0.8888888888888888,
+      "substantive": true,
+      "only_top15": [
+        [
+          10,
+          13,
+          20,
+          28,
+          31,
+          33
+        ],
+        [
+          1,
+          13,
+          26,
+          27,
+          36,
+          40
+        ],
+        [
+          9,
+          10,
+          16,
+          24,
+          33,
+          41
+        ],
+        [
+          4,
+          12,
+          25,
+          30,
+          37,
+          41
+        ],
+        [
+          1,
+          9,
+          19,
+          24,
+          38,
+          40
+        ],
+        [
+          6,
+          12,
+          19,
+          25,
+          37,
+          40
+        ],
+        [
+          3,
+          6,
+          16,
+          28,
+          39,
+          44
+        ],
+        [
+          5,
+          13,
+          16,
+          26,
+          38,
+          42
+        ],
+        [
+          3,
+          10,
+          19,
+          26,
+          31,
+          41
+        ],
+        [
+          5,
+          13,
+          24,
+          26,
+          29,
+          42
+        ],
+        [
+          10,
+          16,
+          17,
+          22,
+          31,
+          35
+        ],
+        [
+          6,
+          11,
+          18,
+          26,
+          31,
+          34
+        ],
+        [
+          5,
+          7,
+          20,
+          27,
+          40,
+          43
+        ],
+        [
+          2,
+          15,
+          23,
+          25,
+          32,
+          37
+        ],
+        [
+          4,
+          9,
+          18,
+          24,
+          33,
+          40
+        ]
+      ],
+      "without_top15": [
+        [
+          4,
+          13,
+          15,
+          16,
+          22,
+          34
+        ],
+        [
+          3,
+          6,
+          16,
+          28,
+          39,
+          44
+        ],
+        [
+          1,
+          12,
+          15,
+          16,
+          24,
+          34
+        ],
+        [
+          10,
+          20,
+          24,
+          29,
+          30,
+          37
+        ],
+        [
+          10,
+          12,
+          21,
+          31,
+          33,
+          45
+        ],
+        [
+          10,
+          13,
+          20,
+          28,
+          31,
+          33
+        ],
+        [
+          9,
+          12,
+          30,
+          31,
+          38,
+          42
+        ],
+        [
+          14,
+          20,
+          25,
+          27,
+          37,
+          40
+        ],
+        [
+          7,
+          9,
+          13,
+          18,
+          26,
+          44
+        ],
+        [
+          3,
+          7,
+          8,
+          17,
+          36,
+          45
+        ],
+        [
+          6,
+          7,
+          15,
+          19,
+          32,
+          41
+        ],
+        [
+          4,
+          12,
+          25,
+          30,
+          37,
+          41
+        ],
+        [
+          15,
+          24,
+          27,
+          31,
+          36,
+          42
+        ],
+        [
+          6,
+          11,
+          14,
+          19,
+          22,
+          38
+        ],
+        [
+          3,
+          19,
+          24,
+          29,
+          31,
+          36
+        ]
+      ]
+    },
+    "referee_aux": {
+      "membership_change_full_vs_without": 0.0,
+      "membership_change_only_vs_pre": 0.0,
+      "substantive": false,
+      "only_top15": [
+        [
+          4,
+          13,
+          15,
+          16,
+          22,
+          34
+        ],
+        [
+          9,
+          12,
+          30,
+          31,
+          38,
+          42
+        ],
+        [
+          3,
+          6,
+          16,
+          28,
+          39,
+          44
+        ],
+        [
+          6,
+          11,
+          14,
+          19,
+          22,
+          38
+        ],
+        [
+          10,
+          16,
+          17,
+          22,
+          31,
+          35
+        ],
+        [
+          1,
+          12,
+          15,
+          16,
+          24,
+          34
+        ],
+        [
+          10,
+          12,
+          21,
+          31,
+          33,
+          45
+        ],
+        [
+          5,
+          8,
+          12,
+          24,
+          32,
+          45
+        ],
+        [
+          6,
+          11,
+          18,
+          26,
+          31,
+          34
+        ],
+        [
+          4,
+          5,
+          16,
+          22,
+          29,
+          41
+        ],
+        [
+          14,
+          20,
+          25,
+          27,
+          37,
+          40
+        ],
+        [
+          7,
+          9,
+          13,
+          18,
+          26,
+          44
+        ],
+        [
+          3,
+          7,
+          8,
+          17,
+          36,
+          45
+        ],
+        [
+          10,
+          20,
+          24,
+          29,
+          30,
+          37
+        ],
+        [
+          6,
+          7,
+          15,
+          19,
+          32,
+          41
+        ]
+      ],
+      "without_top15": [
+        [
+          10,
+          13,
+          20,
+          28,
+          31,
+          33
+        ],
+        [
+          4,
+          12,
+          25,
+          30,
+          37,
+          41
+        ],
+        [
+          3,
+          6,
+          16,
+          28,
+          39,
+          44
+        ],
+        [
+          1,
+          13,
+          26,
+          27,
+          36,
+          40
+        ],
+        [
+          9,
+          10,
+          16,
+          24,
+          33,
+          41
+        ],
+        [
+          5,
+          13,
+          24,
+          26,
+          29,
+          42
+        ],
+        [
+          1,
+          9,
+          19,
+          24,
+          38,
+          40
+        ],
+        [
+          10,
+          16,
+          17,
+          22,
+          31,
+          35
+        ],
+        [
+          7,
+          9,
+          13,
+          18,
+          26,
+          44
+        ],
+        [
+          6,
+          12,
+          19,
+          25,
+          37,
+          40
+        ],
+        [
+          14,
+          20,
+          25,
+          27,
+          37,
+          40
+        ],
+        [
+          4,
+          13,
+          15,
+          16,
+          22,
+          34
+        ],
+        [
+          2,
+          5,
+          11,
+          30,
+          31,
+          40
+        ],
+        [
+          6,
+          11,
+          18,
+          26,
+          31,
+          34
+        ],
+        [
+          3,
+          19,
+          24,
+          29,
+          31,
+          36
+        ]
+      ]
+    }
+  },
+  "step4_pre_post_delta": 0.75
+}

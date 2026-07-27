@@ -5,23 +5,23 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-X review끝수 원인=`repeat_rate`투영 · 자기강화증폭 미유의
-- 직전: K-W 정합성·WARRANT 명분라벨
-- 다음: 형—K-X교정 여부(기본불필요) · 제약/K-R/hyodo
+- 지금: K-Y 보조4감사 · pattern/balance 라벨 강등 · miss/referee기여0
+- 직전: K-X review끝수=`repeat_rate`투영
+- 다음: 형—warrant.py동기화 · 미소비키/무효aux · K-R/hyodo
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
 |------|-----|------|
-| review 끝5/8/7 슬롯 | **430 / 381 / 184** | K-X |
-| rate mean 끝8·5·7 | **0.183 / 0.176 / 0.111** | K-X |
-| early↔late 끝수 KS p | **0.660** | K-X |
-| 명분 실증/기각/미정의 | **2 / 5 / 1** | WARRANT |
+| pattern/balance 라벨 | **전제실증·구현미검증** | K-Y |
+| aux 제거 Δ (pat/bal/miss/ref) | **0.42 / 0.70 / 0 / 0** | K-Y |
+| 미소비 learn 키 | **3** (pair·consec·odd_even) | K-Y |
+| 명분 실증급 | **0** (강등 후) | WARRANT |
 | draws MAX | **1234** | DB |
 | kweon 동결 | **264de3c** | 실측 |
 
 ## 3) 열린 과제 -> FINDINGS.md
-K-X OPEN(원인특정·교정대기). K-W OPEN. K-V·S=**PATCHED**. K-M·N=**HOLD**.  
-명분=`WARRANT.md`. 기각뇌 제거금지.
+K-Y OPEN. K-X·W OPEN. K-V·S=**PATCHED**. K-M·N=**HOLD**.  
+명분=`WARRANT.md`(강등). 기각·무효aux 제거금지.
 
 ## 4) 주의 (붕괴 방지)
 - 이 레포=ROK21 (kweon 20260726 04:38 복사본). SSOT=ROK21 main
@@ -34,7 +34,7 @@ K-X OPEN(원인특정·교정대기). K-W OPEN. K-V·S=**PATCHED**. K-M·N=**HOL
 - 원본 kweon 미접촉. DB 전체초기화 비권고. 수집·크롤링은 형 승인 전 금지.
 
 ## 5) 더 필요하면
-1. `WARRANT.md` · `reports/20260727_KX_review끝수편향_원인규명.md`
-2. `docs/benchmarks/20260727_KX_review_ending.json`
-3. `FINDINGS.md` (K-X)
+1. `WARRANT.md` · `reports/20260727_KY_보조4뇌_정밀감사.md`
+2. `docs/benchmarks/20260727_KY_aux_audit.json`
+3. `FINDINGS.md` (K-Y)
 4. `RESTORE.md` · `STATUS_LATEST.md`
