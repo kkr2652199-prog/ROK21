@@ -5,7 +5,7 @@
     "disclaimer": "이 작업은 예측력과 무관하다. 압축으로 인한 방향 상실 방지다."
   },
   "findings_counts": {
-    "OPEN": 29,
+    "OPEN": 30,
     "CLOSED": 4,
     "PATCHED": 6,
     "HOLD": 2
@@ -20,6 +20,7 @@
     "K-11",
     "K-12",
     "K-A",
+    "K-AC",
     "K-B",
     "K-C",
     "K-D",
@@ -53,6 +54,7 @@
     "K-11",
     "K-12",
     "K-A",
+    "K-AC",
     "K-B",
     "K-C",
     "K-D",
@@ -79,7 +81,7 @@
     "K-N"
   ],
   "restore_b_rows": 12,
-  "boot_section3": "K-AB·07·AA·Z·V·S=**PATCHED**. K-06=**OPEN**(영구팬아웃). K-M·N=**HOLD**.  \n데이터정합 완료. 예측력무관.",
+  "boot_section3": "K-AC OPEN. K-AB·07·AA·Z·V·S=**PATCHED**. K-06 OPEN. K-M·N=**HOLD**.  \n문서SSOT=FINDINGS/WARRANT/benchmarks. 예측력무관.",
   "issues": [],
   "n_issues": 0
 }

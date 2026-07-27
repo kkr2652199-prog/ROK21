@@ -20,7 +20,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-27 | K-AC 압축대비 룰 | PART1답·RESTORE보정·drift0 · RULES초안승인대기 | K-AC OPEN | (push후) |
+| 2026-07-27 | K-AC 압축대비 룰 | PART1답·RESTORE보정·drift0 · RULES초안승인대기 | K-AC OPEN | `2e38198` |
 | 2026-07-27 | K-AB 회차갭정합 | hyodo INSERT 1232–1234 · mismatch0 · 회귀PASS | K-AB·07 PATCHED · K-06 OPEN | `e1a7cd2` |
 | 2026-07-27 | K-AA 이론값적용·명분복귀 | 폴백138·AC8·consecPMF·배선PASS·실증2 · warrant동기 | K-AA·Z PATCHED | `bb3fa91` |
 | 2026-07-27 | K-Z 이론값·상수대조 | 전수C45,6·AC8≠7·시뮬A거리↑ · 적용0 | K-Z→PATCHED(K-AA) | `3791727` |
@@ -66,7 +66,7 @@
 
 ## E) 열린 결함 (FINDINGS.md 원본 · 여기 사본)
 
-**OPEN (29):** K-00 · K-02 · K-05 · K-06 · K-08 · K-10 · K-11 · K-12 · K-A · K-B · K-C · K-D · K-E · K-F · K-G · K-H · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · K-W · K-X · K-Y  
+**OPEN (30):** K-00 · K-02 · K-05 · K-06 · K-08 · K-10 · K-11 · K-12 · K-A · K-B · K-C · K-D · K-E · K-F · K-G · K-H · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · K-W · K-X · K-Y · **K-AC**  
 
 **HOLD (2):** K-M · K-N  
 
