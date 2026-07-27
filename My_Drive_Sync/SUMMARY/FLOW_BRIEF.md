@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `1bd2c00` · WORK=`IDLE`
+- HEAD: `8f3be86` · WORK=`IDLE`
 - 지금: 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED
 - 직전: K-AG pair/zone·3키 배선 · K-AF 팬아웃
 - BOOT다음: K-PIN-FOLLOW — P1~P4 중 형 승인 1건
