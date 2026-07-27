@@ -12,7 +12,11 @@ def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
     try:
         from app.testlotto.feedback import get_feedback_summary
 
-        fb = get_feedback_summary(last_n=30)
+        # target 이전 회차만: as_of = target_draw_no - 1 (학습 as_of=target 과 정합)
+        as_of = int(target_draw_no) - 1
+        if draws:
+            as_of = int(draws[-1]["draw_no"])
+        fb = get_feedback_summary(last_n=30, as_of=as_of)
         traps = set(fb.get("frequent_traps") or [])
         hits_on_trap = sum(1 for n in nums if n in traps)
         penalty = min(0.5, hits_on_trap * 0.12)

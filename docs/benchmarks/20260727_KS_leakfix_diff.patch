@@ -1,0 +1,276 @@
+diff --git a/app/testlotto/brains/aux_miss_detective.py b/app/testlotto/brains/aux_miss_detective.py
+index 48219f6..245916e 100644
+--- a/app/testlotto/brains/aux_miss_detective.py
++++ b/app/testlotto/brains/aux_miss_detective.py
+@@ -12,7 +12,11 @@ def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
+     try:
+         from app.testlotto.feedback import get_feedback_summary
+ 
+-        fb = get_feedback_summary(last_n=30)
++        # target 이전 회차만: as_of = target_draw_no - 1 (학습 as_of=target 과 정합)
++        as_of = int(target_draw_no) - 1
++        if draws:
++            as_of = int(draws[-1]["draw_no"])
++        fb = get_feedback_summary(last_n=30, as_of=as_of)
+         traps = set(fb.get("frequent_traps") or [])
+         hits_on_trap = sum(1 for n in nums if n in traps)
+         penalty = min(0.5, hits_on_trap * 0.12)
+diff --git a/app/testlotto/brains/coordinator.py b/app/testlotto/brains/coordinator.py
+index 726f4f1..d0b13ed 100644
+--- a/app/testlotto/brains/coordinator.py
++++ b/app/testlotto/brains/coordinator.py
+@@ -67,9 +67,13 @@ def _apply_aux_scoring(candidates: list[dict], draws: list[dict], target_draw_no
+ 
+ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...] = ()) -> dict:
+     """3 미래예측 뇌 × 5세트 + 4 보조 뇌 채점."""
++    from app.testlotto.learn_state_cutoff import set_learn_as_of
++
+     init_lotto_db()
+     conn = get_lotto_db()
+     bf = brain_filter
++    # 학습/심판 가중: target 미만만 (CUTOFF 기본 ON)
++    set_learn_as_of(int(target_draw_no))
+ 
+     def run(tag: str) -> bool:
+         return (not bf) or (tag in bf)
+diff --git a/app/testlotto/feedback.py b/app/testlotto/feedback.py
+index 16e3a5f..88d4b33 100644
+--- a/app/testlotto/feedback.py
++++ b/app/testlotto/feedback.py
+@@ -149,17 +149,23 @@ def analyze_prediction_feedback(target_draw_no: int) -> dict | None:
+     return feedback
+ 
+ 
+-def get_feedback_summary(last_n: int = 20) -> dict:
++def get_feedback_summary(last_n: int = 20, *, as_of: int) -> dict:
+     """
+     최근 N개 회차의 피드백을 종합하여 두뇌별 성적과 패턴 반환.
+     _statistical_predict, _hybrid_predict에서 가중치 조정에 활용.
++
++    as_of (필수): 포함 상한 회차. WHERE draw_no <= as_of 만 조회 (미래참조 차단).
+     """
++    if as_of is None:
++        raise ValueError("get_feedback_summary: as_of is required (draw_no <= as_of)")
++    as_of_i = int(as_of)
+     conn = get_lotto_db()
+     rows = conn.execute(
+         """SELECT data_json FROM lotto_analysis
+            WHERE analysis_type = 'prediction_feedback'
++             AND draw_no <= ?
+            ORDER BY draw_no DESC LIMIT ?""",
+-        (last_n,),
++        (as_of_i, last_n),
+     ).fetchall()
+     conn.close()
+ 
+diff --git a/app/testlotto/learn_state.py b/app/testlotto/learn_state.py
+index b2d0e87..d7fc4b2 100644
+--- a/app/testlotto/learn_state.py
++++ b/app/testlotto/learn_state.py
+@@ -61,19 +61,24 @@ def _load_global_learn_state(brain_tag: str) -> dict[str, Any]:
+ 
+ 
+ def load_learn_state(brain_tag: str) -> dict[str, Any]:
+-    """ROK21_LEARN_CUTOFF=1 + as_of 컨텍스트 시 컷오프 재구성, 아니면 전역.
++    """컷오프 기본 ON: set_learn_as_of(N) 시 draw_no < N 피드백만 재구성.
+ 
+-    기본 OFF → 전역과 100% 동일. 예외 시 전역 폴백.
++    CUTOFF OFF(=0) 일 때만 전역 행. ON인데 as_of 없으면 ValueError (전역 폴백 금지).
+     """
+-    try:
+-        from app.testlotto.learn_state_cutoff import try_load_cutoff
++    from app.testlotto.learn_state_cutoff import (
++        cutoff_enabled,
++        get_learn_as_of,
++        rebuild_state_as_of,
++    )
+ 
+-        cut = try_load_cutoff(brain_tag)
+-        if cut is not None:
+-            return cut
+-    except Exception:
+-        pass
+-    return _load_global_learn_state(brain_tag)
++    if not cutoff_enabled():
++        return _load_global_learn_state(brain_tag)
++    as_of = get_learn_as_of()
++    if as_of is None:
++        raise ValueError(
++            "ROK21_LEARN_CUTOFF ON requires set_learn_as_of(as_of); global load blocked"
++        )
++    return rebuild_state_as_of(brain_tag, int(as_of))
+ 
+ 
+ def save_learn_state(brain_tag: str, state: dict[str, Any]) -> None:
+@@ -106,7 +111,10 @@ def get_all_learn_states() -> dict[str, dict[str, Any]]:
+ 
+ 
+ def get_referee_weights() -> dict[str, float]:
+-    """심판관: 최근 성적 기반 예측뇌 가중치."""
++    """심판관: 최근 성적 기반 예측뇌 가중치.
++
++    load_learn_state 와 동일 as_of 절단(CUTOFF ON + set_learn_as_of).
++    """
+     states = get_all_learn_states()
+     weights: dict[str, float] = {}
+     for tag in PREDICT_BRAIN_TAGS:
+diff --git a/app/testlotto/learn_state_cutoff.py b/app/testlotto/learn_state_cutoff.py
+index 77575cd..045ac5f 100644
+--- a/app/testlotto/learn_state_cutoff.py
++++ b/app/testlotto/learn_state_cutoff.py
+@@ -5,8 +5,8 @@
+ 순차 재생해 상태를 복원. 전역 testlotto_brain_learn_state 행은 읽기만
+ (플래그 OFF) 또는 폴백 시 사용. DELETE/스키마 변경 없음.
+ 
+-활성: ROK21_LEARN_CUTOFF=1 + set_learn_as_of(target)
+-기본 OFF → load_learn_state 가 전역 행과 동일.
++활성: ROK21_LEARN_CUTOFF 기본 ON + set_learn_as_of(target)
++명시 OFF(=0/false/off) 일 때만 전역 행 로드.
+ """
+ from __future__ import annotations
+ 
+@@ -30,7 +30,14 @@ _history_cache: dict[str, list[tuple[int, dict[str, Any]]]] | None = None
+ 
+ 
+ def cutoff_enabled() -> bool:
+-    return os.environ.get("ROK21_LEARN_CUTOFF", "").strip() == "1"
++    """기본 ON. 환경변수 미설정·빈문자도 ON. 명시 0/false/off 만 OFF."""
++    raw = os.environ.get("ROK21_LEARN_CUTOFF")
++    if raw is None or str(raw).strip() == "":
++        return True
++    v = str(raw).strip().lower()
++    if v in ("0", "false", "off", "no"):
++        return False
++    return v in ("1", "true", "on", "yes")
+ 
+ 
+ def set_learn_as_of(target_draw_no: int | None) -> None:
+diff --git a/app/testlotto/predict_llm.py b/app/testlotto/predict_llm.py
+index 2bbac67..5a34f49 100644
+--- a/app/testlotto/predict_llm.py
++++ b/app/testlotto/predict_llm.py
+@@ -116,7 +116,7 @@ def _llm_predict(draws: list[dict], target_draw_no: int, n_sets: int = 5) -> lis
+     try:
+         from app.testlotto.feedback import get_feedback_summary
+ 
+-        fb = get_feedback_summary(last_n=20)
++        fb = get_feedback_summary(last_n=20, as_of=int(last_draw_no))
+         if fb.get("has_feedback"):
+             trap_list = fb.get("frequent_traps", [])
+             hit_list = fb.get("frequent_hits", [])
+diff --git a/app/testlotto/predict_markov.py b/app/testlotto/predict_markov.py
+index 472b26e..f713864 100644
+--- a/app/testlotto/predict_markov.py
++++ b/app/testlotto/predict_markov.py
+@@ -76,11 +76,12 @@ def get_markov_prob_vector(draws: list[dict]) -> dict[int, float]:
+     visit_count = markov_random_walk(matrix, start_nums, steps=80)
+ 
+     # ── 피드백 학습 고리 (Layer 2-a) ──
+-    # 컨닝 방지: get_feedback_summary는 DB의 과거 피드백만 반환
++    # 컨닝 방지: as_of = 직전 회차 이하만
+     try:
+         from app.testlotto.feedback import get_feedback_summary
+ 
+-        fb = get_feedback_summary(last_n=20)
++        as_of = int(last_draw["draw_no"])
++        fb = get_feedback_summary(last_n=20, as_of=as_of)
+         if fb.get("has_feedback"):
+             for trap_n in fb.get("frequent_traps", []):
+                 if trap_n in visit_count:
+@@ -116,11 +117,12 @@ def _markov_predict(draws: list[dict], n_sets: int = 5) -> list[dict]:
+ 
+     visit_count = markov_random_walk(matrix, start_nums, steps=80)
+ 
+-    # ── 피드백 학습 고리 (Layer 2-a) ──
++    # ── 피드백 학습 고리 (Layer 2-a, as_of 절단) ──
+     try:
+         from app.testlotto.feedback import get_feedback_summary
+ 
+-        fb = get_feedback_summary(last_n=20)
++        as_of = int(last_draw["draw_no"])
++        fb = get_feedback_summary(last_n=20, as_of=as_of)
+         if fb.get("has_feedback"):
+             for trap_n in fb.get("frequent_traps", []):
+                 if trap_n in visit_count:
+diff --git a/app/testlotto/predict_statistical.py b/app/testlotto/predict_statistical.py
+index c58112a..f7d5e4d 100644
+--- a/app/testlotto/predict_statistical.py
++++ b/app/testlotto/predict_statistical.py
+@@ -67,11 +67,12 @@ def get_statistical_prob_vector(draws: list[dict]) -> dict[int, float]:
+     for n, bonus in pair_bonus_nums.items():
+         freq[n] *= 1 + min(bonus, 0.5)
+ 
+-    # 피드백 반영
++    # 피드백 반영 (as_of = draws 마지막 회차, 미래참조 차단)
+     try:
+         from app.testlotto.feedback import get_feedback_summary
+ 
+-        fb = get_feedback_summary(last_n=20)
++        as_of = int(draws[-1]["draw_no"]) if draws else None
++        fb = get_feedback_summary(last_n=20, as_of=as_of)
+         if fb.get("has_feedback"):
+             for trap_n in fb.get("frequent_traps", []):
+                 if trap_n in freq:
+@@ -157,11 +158,12 @@ def _statistical_predict(draws: list[dict], n_sets: int = 5) -> list[dict]:
+     total = sum(freq.values())
+     weights = {n: freq[n] / total for n in range(1, 46)}
+ 
+-    # ── 피드백 루프: 과거 적중/함정 패턴 반영 ──
++    # ── 피드백 루프: 과거 적중/함정 패턴 반영 (as_of 절단) ──
+     try:
+         from app.testlotto.feedback import get_feedback_summary
+ 
+-        fb = get_feedback_summary(last_n=20)
++        as_of = int(draws[-1]["draw_no"]) if draws else None
++        fb = get_feedback_summary(last_n=20, as_of=as_of)
+         if fb.get("has_feedback"):
+             # 함정 번호 가중치 20% 감소
+             for trap_n in fb.get("frequent_traps", []):
+diff --git a/app/testlotto/walkforward.py b/app/testlotto/walkforward.py
+index d7c3e5c..d8ea64e 100644
+--- a/app/testlotto/walkforward.py
++++ b/app/testlotto/walkforward.py
+@@ -65,6 +65,8 @@ def _score_sets(
+ 
+ def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str, Any]:
+     """한 회차 복습: 3예측뇌 각 5세트 → best 채점 → 오답분석 → 피드백."""
++    from app.testlotto.learn_state_cutoff import set_learn_as_of
++
+     draws = _get_draws_before(draw_no)
+     if not draws:
+         return {"draw_no": draw_no, "skipped": True, "reason": "이전 회차 없음"}
+@@ -73,6 +75,9 @@ def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str
+     if not actual:
+         return {"draw_no": draw_no, "skipped": True, "reason": "정답 미확정"}
+ 
++    # 예측 시점 학습: draw_no 미만만 (CUTOFF 기본 ON)
++    set_learn_as_of(int(draw_no))
++
+     actual_list = _actual_nums(actual)
+     actual_set = set(actual_list)
+     bonus = int(actual.get("bonus") or 0)
+diff --git a/tools/run_meta_hybrid_wf.py b/tools/run_meta_hybrid_wf.py
+index 3120cfd..95a3e34 100644
+--- a/tools/run_meta_hybrid_wf.py
++++ b/tools/run_meta_hybrid_wf.py
+@@ -46,7 +46,19 @@ def _load_traps() -> set[int]:
+     try:
+         from app.testlotto.feedback import get_feedback_summary
+ 
+-        return set(get_feedback_summary(last_n=30).get("frequent_traps") or [])
++        # as_of: DB 최신 draws 미만이 아닌, 호출 측이 넘긴 창의 마지막 회차를 쓰도록
++        # 도구 단독 호출 시 MAX(draw_no) 사용 (미래 회차 피드백 없음)
++        from app.testlotto.models import get_lotto_db
++
++        conn = get_lotto_db()
++        try:
++            mx = conn.execute("SELECT MAX(draw_no) FROM lotto_draws").fetchone()[0]
++        finally:
++            conn.close()
++        return set(
++            get_feedback_summary(last_n=30, as_of=int(mx or 0)).get("frequent_traps")
++            or []
++        )
+     except Exception:
+         return set()
+ 

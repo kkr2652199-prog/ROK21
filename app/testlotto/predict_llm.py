@@ -116,7 +116,7 @@ def _llm_predict(draws: list[dict], target_draw_no: int, n_sets: int = 5) -> lis
     try:
         from app.testlotto.feedback import get_feedback_summary
 
-        fb = get_feedback_summary(last_n=20)
+        fb = get_feedback_summary(last_n=20, as_of=int(last_draw_no))
         if fb.get("has_feedback"):
             trap_list = fb.get("frequent_traps", [])
             hit_list = fb.get("frequent_hits", [])

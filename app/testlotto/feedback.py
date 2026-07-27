@@ -149,17 +149,23 @@ def analyze_prediction_feedback(target_draw_no: int) -> dict | None:
     return feedback
 
 
-def get_feedback_summary(last_n: int = 20) -> dict:
+def get_feedback_summary(last_n: int = 20, *, as_of: int) -> dict:
     """
     최근 N개 회차의 피드백을 종합하여 두뇌별 성적과 패턴 반환.
     _statistical_predict, _hybrid_predict에서 가중치 조정에 활용.
+
+    as_of (필수): 포함 상한 회차. WHERE draw_no <= as_of 만 조회 (미래참조 차단).
     """
+    if as_of is None:
+        raise ValueError("get_feedback_summary: as_of is required (draw_no <= as_of)")
+    as_of_i = int(as_of)
     conn = get_lotto_db()
     rows = conn.execute(
         """SELECT data_json FROM lotto_analysis
            WHERE analysis_type = 'prediction_feedback'
+             AND draw_no <= ?
            ORDER BY draw_no DESC LIMIT ?""",
-        (last_n,),
+        (as_of_i, last_n),
     ).fetchall()
     conn.close()
 

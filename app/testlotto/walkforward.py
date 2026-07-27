@@ -65,6 +65,8 @@ def _score_sets(
 
 def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str, Any]:
     """한 회차 복습: 3예측뇌 각 5세트 → best 채점 → 오답분석 → 피드백."""
+    from app.testlotto.learn_state_cutoff import set_learn_as_of
+
     draws = _get_draws_before(draw_no)
     if not draws:
         return {"draw_no": draw_no, "skipped": True, "reason": "이전 회차 없음"}
@@ -72,6 +74,9 @@ def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str
     actual = _get_actual(draw_no)
     if not actual:
         return {"draw_no": draw_no, "skipped": True, "reason": "정답 미확정"}
+
+    # 예측 시점 학습: draw_no 미만만 (CUTOFF 기본 ON)
+    set_learn_as_of(int(draw_no))
 
     actual_list = _actual_nums(actual)
     actual_set = set(actual_list)

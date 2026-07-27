@@ -5,8 +5,8 @@
 순차 재생해 상태를 복원. 전역 testlotto_brain_learn_state 행은 읽기만
 (플래그 OFF) 또는 폴백 시 사용. DELETE/스키마 변경 없음.
 
-활성: ROK21_LEARN_CUTOFF=1 + set_learn_as_of(target)
-기본 OFF → load_learn_state 가 전역 행과 동일.
+활성: ROK21_LEARN_CUTOFF 기본 ON + set_learn_as_of(target)
+명시 OFF(=0/false/off) 일 때만 전역 행 로드.
 """
 from __future__ import annotations
 
@@ -30,7 +30,14 @@ _history_cache: dict[str, list[tuple[int, dict[str, Any]]]] | None = None
 
 
 def cutoff_enabled() -> bool:
-    return os.environ.get("ROK21_LEARN_CUTOFF", "").strip() == "1"
+    """기본 ON. 환경변수 미설정·빈문자도 ON. 명시 0/false/off 만 OFF."""
+    raw = os.environ.get("ROK21_LEARN_CUTOFF")
+    if raw is None or str(raw).strip() == "":
+        return True
+    v = str(raw).strip().lower()
+    if v in ("0", "false", "off", "no"):
+        return False
+    return v in ("1", "true", "on", "yes")
 
 
 def set_learn_as_of(target_draw_no: int | None) -> None:

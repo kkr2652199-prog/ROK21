@@ -76,11 +76,12 @@ def get_markov_prob_vector(draws: list[dict]) -> dict[int, float]:
     visit_count = markov_random_walk(matrix, start_nums, steps=80)
 
     # ── 피드백 학습 고리 (Layer 2-a) ──
-    # 컨닝 방지: get_feedback_summary는 DB의 과거 피드백만 반환
+    # 컨닝 방지: as_of = 직전 회차 이하만
     try:
         from app.testlotto.feedback import get_feedback_summary
 
-        fb = get_feedback_summary(last_n=20)
+        as_of = int(last_draw["draw_no"])
+        fb = get_feedback_summary(last_n=20, as_of=as_of)
         if fb.get("has_feedback"):
             for trap_n in fb.get("frequent_traps", []):
                 if trap_n in visit_count:
@@ -116,11 +117,12 @@ def _markov_predict(draws: list[dict], n_sets: int = 5) -> list[dict]:
 
     visit_count = markov_random_walk(matrix, start_nums, steps=80)
 
-    # ── 피드백 학습 고리 (Layer 2-a) ──
+    # ── 피드백 학습 고리 (Layer 2-a, as_of 절단) ──
     try:
         from app.testlotto.feedback import get_feedback_summary
 
-        fb = get_feedback_summary(last_n=20)
+        as_of = int(last_draw["draw_no"])
+        fb = get_feedback_summary(last_n=20, as_of=as_of)
         if fb.get("has_feedback"):
             for trap_n in fb.get("frequent_traps", []):
                 if trap_n in visit_count:

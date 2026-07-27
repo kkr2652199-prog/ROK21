@@ -67,9 +67,13 @@ def _apply_aux_scoring(candidates: list[dict], draws: list[dict], target_draw_no
 
 def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...] = ()) -> dict:
     """3 미래예측 뇌 × 5세트 + 4 보조 뇌 채점."""
+    from app.testlotto.learn_state_cutoff import set_learn_as_of
+
     init_lotto_db()
     conn = get_lotto_db()
     bf = brain_filter
+    # 학습/심판 가중: target 미만만 (CUTOFF 기본 ON)
+    set_learn_as_of(int(target_draw_no))
 
     def run(tag: str) -> bool:
         return (not bf) or (tag in bf)

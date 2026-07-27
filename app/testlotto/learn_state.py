@@ -61,19 +61,24 @@ def _load_global_learn_state(brain_tag: str) -> dict[str, Any]:
 
 
 def load_learn_state(brain_tag: str) -> dict[str, Any]:
-    """ROK21_LEARN_CUTOFF=1 + as_of 컨텍스트 시 컷오프 재구성, 아니면 전역.
+    """컷오프 기본 ON: set_learn_as_of(N) 시 draw_no < N 피드백만 재구성.
 
-    기본 OFF → 전역과 100% 동일. 예외 시 전역 폴백.
+    CUTOFF OFF(=0) 일 때만 전역 행. ON인데 as_of 없으면 ValueError (전역 폴백 금지).
     """
-    try:
-        from app.testlotto.learn_state_cutoff import try_load_cutoff
+    from app.testlotto.learn_state_cutoff import (
+        cutoff_enabled,
+        get_learn_as_of,
+        rebuild_state_as_of,
+    )
 
-        cut = try_load_cutoff(brain_tag)
-        if cut is not None:
-            return cut
-    except Exception:
-        pass
-    return _load_global_learn_state(brain_tag)
+    if not cutoff_enabled():
+        return _load_global_learn_state(brain_tag)
+    as_of = get_learn_as_of()
+    if as_of is None:
+        raise ValueError(
+            "ROK21_LEARN_CUTOFF ON requires set_learn_as_of(as_of); global load blocked"
+        )
+    return rebuild_state_as_of(brain_tag, int(as_of))
 
 
 def save_learn_state(brain_tag: str, state: dict[str, Any]) -> None:
@@ -106,7 +111,10 @@ def get_all_learn_states() -> dict[str, dict[str, Any]]:
 
 
 def get_referee_weights() -> dict[str, float]:
-    """심판관: 최근 성적 기반 예측뇌 가중치."""
+    """심판관: 최근 성적 기반 예측뇌 가중치.
+
+    load_learn_state 와 동일 as_of 절단(CUTOFF ON + set_learn_as_of).
+    """
     states = get_all_learn_states()
     weights: dict[str, float] = {}
     for tag in PREDICT_BRAIN_TAGS:

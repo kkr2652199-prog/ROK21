@@ -10,15 +10,15 @@
 2. **3자 역할:** 형=결정 / 동생(Claude)=판단·지시서만 / 커서=실행·commit·push
 3. **확정 결론:** 적중축 **폐기**. EV 배선 유지(Y풀 순1.033). **K-09 CLOSED**(실질 누수 무해)·전제라벨 제거
 4. **물리 상수:** 1장 mean=**0.80** · best-of-15 천장=**2.27** (개선 목표 아님)
-5. **현재 초점:** `ROK21_EV_RERANK` / `ROK21_LEARN_CUTOFF` 둘 다 기본 OFF · opt-in 운영
+5. **현재 초점:** `ROK21_LEARN_CUTOFF` **기본 ON**(as_of 필수). EV는 계속 opt-in OFF. 정당성=전제 실증(K-T)
 
 ---
 
 ## B) 턴 로그 (최신 ↑ · 최대 12행)
 
-| 2026-07-27 | K-B프로토콜+K-M/N분산 | BENCH_PROTOCOL·null비실력·가중(a)~(b)5% | K-M무의미·K-N분산 | `2b665a4` |
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-27 | K-S선결+K-T/U/V 전제·포트 | as_of필수·CUTOFF기본ON·전제표·쌍null·k≈97 | K-S PATCHED · T/U/V OPEN | (push후) |
 | 2026-07-27 | K-O~S 볼단위전환+WF설계 | 데이터감사·χ²균등·±30%·층화대기·WF설계 · 코드0 | K-M/N HOLD · 볼층위 | `93218f8` |
 | 2026-07-27 | K-B프로토콜+K-M/N분산 | BENCH_PROTOCOL·null비실력·가중(a)~(b)5% | K-M무의미·K-N분산 | (push후) |
 | 2026-07-27 | K-A~L부여+KB/C/D규명 | FINDINGS등재 · 표본비공유·best가중·fusion의도 | K-B SSOT=review JSON · 코드0 | `29d4594` |

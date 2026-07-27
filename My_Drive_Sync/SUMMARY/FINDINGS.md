@@ -3,6 +3,12 @@
 > memoy는 F-*, ROK21/kweon계는 **K-*** 로 구분. ID 재사용·재번호 금지.
 > 상태: OPEN -> VERIFYING -> PATCHED -> CLOSED · **HOLD**(원인확정·조치 대기)
 
+## 관점 전환 (20260727 · 전제 실증)
+
+확률이 조합불변이므로 ‘선택’ 비용 0 → 확률 외 목적함수 최적화는 자유롭다.  
+평가 질문: (구) 어느 뇌가 잘 맞히는가 → (신) 어느 뇌의 **전제**가 실재하는가.  
+**뇌 정당성 = 적중률이 아니라 전제의 실증 여부** (`BENCH_PROTOCOL` §정당성).
+
 ## 배경 확정 (20260727 · 볼단위 전환)
 
 1. **(K-O)** E[적중]=6×(6/45)=**0.8** 상수 → 세트 mean만으로 뇌 서열화 **불가**.
@@ -22,7 +28,7 @@
 | K-06 | OPEN | per-draw fan-out 미구현 | `app/lotto/draw_scheduler.py` | 스케줄러→`collect_latest_forward` lotto4.db만 · testlotto/hyodo 미연동 · draws gap **hyodo=1231** (testlotto/lotto4=1234, 20260727 실측) |
 | K-07 | OPEN | fetch-latest 수동복구·팬아웃 | `app/testlotto/routes.py`, `app/hyodo/routes.py` | **20260727:** testlotto 백업+fetch검증 완료(MAX=1234·1232~1234 공식MATCH·pred/review 있음). **잔여=hyodo만 1231**. hyodo 동기화는 형 승인 후 |
 | K-08 | OPEN | 평가지표 정의(best vs mean) | 메타·다양성 WF · `reports/20260726_ROK21_지표재정의_검증.md` | best-of-15는 초기하 천장≈2.27(MC 재현). 실력 판별은 **mean**. STATUS/벤치에 mean 병기 필수. best 단독 목표 금지 · **K-O와 병행 재정의 중** |
-| K-09 | CLOSED | learn_state 컷오프 · 실질 누수 무해 | `learn_state_cutoff.py` · `reports/20260726_ROK21_K09컷오프_EV재검증.md` | 재구성(b) 플래그 `ROK21_LEARN_CUTOFF=1`. 200회 X−Y mean Δ CI에 0. **CLOSED**. 전제 라벨 제거. 스키마 변경 없음 |
+| K-09 | CLOSED | learn_state 컷오프 · 실질 누수 무해(당시 OFF 기본) | `learn_state_cutoff.py` · `reports/20260726_ROK21_K09컷오프_EV재검증.md` | 재구성(b). 200회 X−Y mean Δ CI에 0. **CLOSED**. **후속 K-S: 기본 ON·as_of 필수화로 선결 강화** |
 | K-10 | OPEN | tier1 완화 헤드룸≈0 | `filters.py` · EV보정·최종 보고서 | T1~T3 p10 실현배율 vs T0 ≤1.002. **헤드룸0 기록·코드 완화 보류** |
 | K-11 | OPEN | 적중축 폐기 · EV배선 유지(Y풀 재검증) | `ev_rerank.py` · K09컷오프 보고서 | 적중폐기 박제. Y(컷오프) 풀 순효과 1.033 CI[1.019,1.048] **YES→배선 유지**. K-09 전제 라벨 **제거**. 기본 OFF opt-in |
 | K-12 | OPEN | RULES_FIXED 정합성 2건 (보고만) | `My_Drive_Sync/SUMMARY/RULES_FIXED.md` | (a) R33 복원 SSOT=kweon 기재 → ROK21 작업 오유도 → **RESTORE.md로 우회**. (b) R29 불일치 → **K-L로 승계**. **형만 수정 가능 · 동생/커서는 보고만** |
@@ -44,4 +50,7 @@
 | K-P | OPEN | 세트 5적중 기대≈3.5/대규모백테 → 학습신호 부재 | P₅≈2.87e-5 | 상위등수 최적화 축 폐기 후보 |
 | K-Q | OPEN | 볼빈도 균등부합 · 검출한계 ±~30% | `lotto_draws` 1–1234 | χ² p≈0.97 · FDR 0건 · 시간분할 공통상위 없음 |
 | K-R | OPEN | 볼세트/추첨기 식별자 결측 · 층화 대기 | DB 전테이블 | 스키마 설계만. 수집금지. 층화 n≈249 시 검출폭 ±66% |
-| K-S | OPEN | walk-forward 뼈대 설계(미구현) | `reports/20260727_KO_KS_볼단위전환_walkforward설계.md` | as_of컷오프·seed·null병기·K기록·볼지표. **구현=형승인 후** |
+| K-S | PATCHED | 미래참조 누수 선결 해소 · WF전체는 미구현 | `feedback.py` · `learn_state*.py` · coordinator/walkforward · `reports/20260727_KT_KV_전제검정_포트폴리오감사.md` | as_of 필수·CUTOFF **기본 ON**·격리 2회동일 증명. 번호산출·random.choices 미수정. WF뼈대 잔여=형승인 |
+| K-T | OPEN | 뇌 전제 검정: 의존/기하이탈 기각 · 형태·균형은 이론부합(제약명분) · referee 미정의 | `docs/benchmarks/20260727_KT_KV_results.json` · KT_KV 보고서 | markov lag1 χ² p=0.764 · miss χ² p=0.483 · pattern/balance 전부 p≥0.13 |
+| K-U | OPEN | 쌍층 표본: 분산=null · FDR0 · Bonf 검출폭 ±~79%RR | 동상 | 25914 슬롯 · E=26.18 · perm(C45,7)×10k p≈0.48 · 삼중 생략 |
+| K-V | OPEN | 포트폴리오: 회차내중복0 · 100장 E[k]≈97 · 중복제거≈1.03× | 동상 · review 1135–1234 | P(1등) 레버=유효조합수 k. 구현은 형승인 |

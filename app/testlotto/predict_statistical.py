@@ -67,11 +67,12 @@ def get_statistical_prob_vector(draws: list[dict]) -> dict[int, float]:
     for n, bonus in pair_bonus_nums.items():
         freq[n] *= 1 + min(bonus, 0.5)
 
-    # 피드백 반영
+    # 피드백 반영 (as_of = draws 마지막 회차, 미래참조 차단)
     try:
         from app.testlotto.feedback import get_feedback_summary
 
-        fb = get_feedback_summary(last_n=20)
+        as_of = int(draws[-1]["draw_no"]) if draws else None
+        fb = get_feedback_summary(last_n=20, as_of=as_of)
         if fb.get("has_feedback"):
             for trap_n in fb.get("frequent_traps", []):
                 if trap_n in freq:
@@ -157,11 +158,12 @@ def _statistical_predict(draws: list[dict], n_sets: int = 5) -> list[dict]:
     total = sum(freq.values())
     weights = {n: freq[n] / total for n in range(1, 46)}
 
-    # ── 피드백 루프: 과거 적중/함정 패턴 반영 ──
+    # ── 피드백 루프: 과거 적중/함정 패턴 반영 (as_of 절단) ──
     try:
         from app.testlotto.feedback import get_feedback_summary
 
-        fb = get_feedback_summary(last_n=20)
+        as_of = int(draws[-1]["draw_no"]) if draws else None
+        fb = get_feedback_summary(last_n=20, as_of=as_of)
         if fb.get("has_feedback"):
             # 함정 번호 가중치 20% 감소
             for trap_n in fb.get("frequent_traps", []):

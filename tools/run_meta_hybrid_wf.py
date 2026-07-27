@@ -46,7 +46,19 @@ def _load_traps() -> set[int]:
     try:
         from app.testlotto.feedback import get_feedback_summary
 
-        return set(get_feedback_summary(last_n=30).get("frequent_traps") or [])
+        # as_of: DB 최신 draws 미만이 아닌, 호출 측이 넘긴 창의 마지막 회차를 쓰도록
+        # 도구 단독 호출 시 MAX(draw_no) 사용 (미래 회차 피드백 없음)
+        from app.testlotto.models import get_lotto_db
+
+        conn = get_lotto_db()
+        try:
+            mx = conn.execute("SELECT MAX(draw_no) FROM lotto_draws").fetchone()[0]
+        finally:
+            conn.close()
+        return set(
+            get_feedback_summary(last_n=30, as_of=int(mx or 0)).get("frequent_traps")
+            or []
+        )
     except Exception:
         return set()
 
