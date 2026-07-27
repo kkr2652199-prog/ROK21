@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5b6c312` · WORK=`IDLE`
-2. **지금:** K-P2 기각뇌 표시 · 탭 배지·정책 스트립
-3. **다음1건:** K-PIN-FOLLOW — 형—본선 1개 선택 (**P3 K-X끝수** / **P4 hyodo후속**) — P1·P2 완료 (승인필요=예 (P3 코드교정 시 필수) · 선행=PINNED_BASELINE `640cb67` 고정 · K-P1/P2 UI)
+1. **HEAD:** `3dd043a` · WORK=`IDLE`
+2. **지금:** K-P3 review 끝수 완화 · ending질량균등
+3. **다음1건:** K-PIN-FOLLOW — 형—**P4 hyodo후속** 승인 시 실행 (LSTM·재학습 샌드박스) (승인필요=예 · 선행=PINNED_BASELINE `640cb67` · K-P1/P2/P3 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
