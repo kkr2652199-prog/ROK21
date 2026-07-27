@@ -1,4 +1,8 @@
-"""테스트로또 3+4 뇌 코디네이터 — 예측3뇌 생성 → 보조4뇌 채점 → DB저장."""
+"""테스트로또 3+4 뇌 코디네이터 — 예측3뇌 생성 → 보조4뇌 채점 → DB저장.
+
+K-D: 클릭/백테의 **실제 융합 경로**. `fusion._vector_fusion_predict` 미사용.
+AUX 점수는 `AUX_WEIGHTS`(균등 0.25×4) + referee brain 가중.
+"""
 
 from __future__ import annotations
 

@@ -35,7 +35,7 @@
 | K-A | OPEN | stat mean 0.760 < baseline 0.788/이론 0.80 | `brains/predict_stat_fairy.py:12` · `predict_statistical.py` | 최근100회(1135-1234)·500세트. **단 K-B 해소 전 패치 금지** · K-O 이후 mean 서열 해석 재검토 |
 | K-B | PATCHED | 성능 표본 2종 충돌 → **BENCH SSOT 고정·기계검증** | `BENCH_PROTOCOL.md` · `20260727_KB_bench_ssot.json` | review100완결 · pred갭1149–1179=31 · 세트동일0. 실력=review JSON mean · pred는 UI전용. mean단독서열 금지 |
 | K-C | OPEN | referee 가중이 성적 역행 | `learn_state.py:108` `get_referee_weights` | 최저성적 stat이 최고가중 0.3348. 식 `(1+avg×0.15)/Σ` 의 avg 출처 검증 필요 · **K-M과 연계** |
-| K-D | OPEN | 클릭 경로에 fusion 부재 | `fusion.py` 미호출 · `coordinator._apply_aux_scoring:47` | 실제 융합=AUX 하드코딩 [0.25]×4. 문서/기대 흐름 불일치 |
+| K-D | PATCHED | 클릭 경로 fusion 부재 → **의도 문서화·미호출 import 제거** | `engine.py` · `fusion.py` · `coordinator.py` · `20260728_KD_fusion_path.json` | run_prediction→coordinator only · AUX 0.25×4 · fusion 재배선금지 · 3+4유지 |
 | K-E | OPEN | seed 미고정 → 비재현 | `predict_statistical.py:234` · `predict_markov.py:57,59,150,156` · `predict_review_king.py:42` | 동일입력 2회 stat/markov/review 모두 False. **동결항목 — 형 승인 전 수정금지** · K-S 재현성 설계와 연계 |
 | K-F | OPEN | markov가 learn_state 미소비 | `brains/predict_flow_shaman.py:9` | boost 미적용. 3뇌 중 유일 |
 | K-G | OPEN | ending boost 휴면 | `learn_state.py:134-150` | `ending_digit_boost=0.0` · miss ending=0. 경로는 살아있으나 무효 |

@@ -1,0 +1,41 @@
+{
+  "task": "K-D",
+  "run_prediction_calls": [
+    "run_coordinated_prediction"
+  ],
+  "engine_fusion_imports": [],
+  "active_path": "engine.run_prediction → coordinator.run_coordinated_prediction",
+  "fusion_status": "present_file_unwired_from_click_path",
+  "registry": {
+    "predict": [
+      "stat",
+      "markov",
+      "review"
+    ],
+    "aux": [
+      "miss_aux",
+      "pattern_aux",
+      "balance_aux",
+      "referee_aux"
+    ],
+    "AUX_WEIGHTS": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ]
+  },
+  "checks": {
+    "run_prediction_calls_coordinator": true,
+    "run_prediction_no_vector_fusion": true,
+    "engine_no_fusion_import": true,
+    "engine_doc_mentions_KD": true,
+    "fusion_doc_mentions_unwired": true,
+    "coordinator_doc_mentions_KD": true,
+    "predict_3": true,
+    "aux_4": true,
+    "aux_weights_equal": true
+  },
+  "verify_pass": true,
+  "note": "재배선(fusion 연결) 금지 · 3+4 유지 · 예측력 무관 · 문서/기대흐름 정합"
+}

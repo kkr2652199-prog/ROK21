@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `2bc0f12` |
+| HEAD(실측) | `13bc0a8` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-H 미등록 AUX _unused 격리 PASS |
-| 직전 | K-B BENCH SSOT · K-W · P5 |
-| BOOT다음 | K-AWAIT — 형 다음 본선 1건 (1235·K-D 후보) |
+| 지금 | K-D fusion 클릭경로 정합 PASS (coordinator 전용) |
+| 직전 | K-H _unused · K-B BENCH · K-W |
+| BOOT다음 | K-AWAIT — 1235 발표 후 fetch·채점 루프 (MAX=1234) |
 | NEXT1 ID | **K-AWAIT** |
-| NEXT1 할일 | 형 다음 본선 1건 지시 대기 (후보: 1235루프 · K-D) |
+| NEXT1 할일 | 형 다음 본선 1건 — **1235 발표 후** fetch·채점 루프 (MAX=1234) |
 | 승인필요 | 아니오 |
-| 선행 | K-H·K-B PATCHED · PIN `640cb67` |
+| 선행 | K-D·K-H·K-B PATCHED · PIN `640cb67` |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=2bc0f12 · 지금=K-H 미등록 AUX _unused 격리 PASS · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=13bc0a8 · 지금=K-D fusion 클릭경로 정합 PASS (coordinator 전용) · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

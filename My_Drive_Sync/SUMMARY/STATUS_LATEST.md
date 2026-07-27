@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-28 KST  
-📌 사유: K-H 미등록 AUX `_unused` 격리
+📌 사유: K-D fusion 클릭경로 정합
 
 ---
 
@@ -11,6 +11,7 @@
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | BASELINE_PIN | **`640cb67`** |
+| 3DB MAX | **1234** (1235 미발표) |
 
 ---
 
@@ -18,15 +19,15 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-H** | gap/structure AUX → `_unused` | verify_pass · import0 · 3+4 |
-| K-B | BENCH SSOT · review100·pred갭31 | verify_pass |
-| K-W | post-KP3 ending χ²/df↓ | verify_pass |
-| K-P5 | hyodo LSTM·인프라 UI | verify_pass |
+| **K-D** | fusion 미배선 문서화 · dead import 제거 | verify_pass |
+| K-H | 미등록 AUX `_unused` | verify_pass |
+| K-B | BENCH SSOT | verify_pass |
+| K-W | post-KP3 ending↓ | verify_pass |
 
 ---
 
 ## 2) 다음 (형)
 
-`K-AWAIT` — 후보: **1235** 루프(MAX 아직 1234) · **K-D** 문서정합
+`K-AWAIT` — **1235** 발표 후 fetch·채점·feedback 루프
 
 근거: [`PINNED_BASELINE.md`](PINNED_BASELINE.md)

@@ -1,4 +1,11 @@
 """로또 하이브리드 퓨전 (앙상블 가중 투표) — app.testlotto 독립 패키지.
+
+**K-D (2026-07-28):** 이 모듈의 `_vector_fusion_predict` 는 테스트로또
+`engine.run_prediction` / 클릭 경로에 **미배선**(의도). 활성 경로는
+`brains.coordinator`(3예측+4보조). 본 파일은 1군 템플릿·실험 잔존·
+특수뇌/백필 참고용으로 유지. 재배선은 형 승인 전 금지.
+
+이력:
 2026-04-20: LSTM 두뇌 편입 (4두뇌 → 5두뇌). 가중치 lstm=2.0, total_weight 5.0 → 7.0.
 2026-04-20: LLM 세트 source 필드 인식 — fallback 세트 llm_vec 오염 차단
 2026-04-25 Layer 3: VECTOR_WEIGHTS를 testlotto_brain_weights DB에서 동적 로드.

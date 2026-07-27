@@ -1,4 +1,9 @@
 """로또 예측 오케스트레이터 — app.testlotto 독립 패키지.
+
+**활성 클릭/백테 경로 (K-D):** `run_prediction` → `brains.coordinator.run_coordinated_prediction`
+(3예측+4보조). `fusion._vector_fusion_predict` 는 **클릭 경로에 미배선**(의도적 설계·1군 템플릿 잔존).
+
+이력:
 2026-04-20: Layer 1 - 5두뇌 독립 저장 (stat/markov/llm/lstm/fusion), brain_tag 컬럼 활용
 2026-04-20: LLM 세트 source 기반 brain_tag 분기 (llm vs llm_fallback)
 2026-04-25 Layer 3: run_backtest 내 update_brain_weights 호출 추가.
@@ -6,6 +11,7 @@
 2026-04-25 Layer 5-B: run_backtest 결과에 rank_distribution + lottery_score 추가.
 2026-04-25 Layer 5-A: 하이에나 메타 두뇌 호출 추가 (fusion 직후, all_predictions.sort 직전).
 2026-04-20 Layer 5-A2: run_prediction/run_backtest brain_filter, 하이에나 입력 DB·신규 병합.
+2026-07-28 K-D: 클릭 경로=coordinator 고정 · fusion import 제거(미호출 잔존 정리).
 """
 import logging
 import random
@@ -14,12 +20,8 @@ from collections import Counter
 from app.testlotto.data_service import _get_draws_before
 from app.testlotto.feedback import _calculate_lottery_score
 from app.testlotto.filters import tier1_filter
-from app.testlotto.fusion import _vector_fusion_predict
 from app.testlotto.models import get_lotto_db, init_lotto_db
-from app.testlotto.predict_llm import _llm_predict
 from app.testlotto.predict_lstm import get_lstm_prob_vector
-from app.testlotto.predict_markov import _markov_predict
-from app.testlotto.predict_statistical import _statistical_predict
 
 from app.testlotto.brains.registry import DISPLAY_NAMES, METHOD_TO_TAG, PREDICT_BRAINS
 
@@ -270,7 +272,11 @@ def _build_cached_response(target_draw_no: int) -> dict:
 
 
 def run_prediction(target_draw_no: int, brain_filter: tuple[str, ...] = ()) -> dict:
-    """테스트로또 3+4 뇌 체계 예측 (컨닝 방지: target_draw_no 이전 데이터만)."""
+    """테스트로또 3+4 뇌 체계 예측 (컨닝 방지: target_draw_no 이전 데이터만).
+
+    K-D: fusion.py 벡터 퓨전은 호출하지 않는다. 실제 융합·재점수는
+    coordinator의 AUX 4뇌(균등 0.25) + referee 가중이다.
+    """
     from app.testlotto.brains.coordinator import run_coordinated_prediction
 
     return run_coordinated_prediction(target_draw_no, brain_filter)
