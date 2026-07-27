@@ -54,7 +54,7 @@
 | K-T | OPEN | 뇌 전제 검정: 의존/기하이탈 기각 · 형태·균형은 이론부합(제약명분) · referee 미정의 | `docs/benchmarks/20260727_KT_KV_results.json` · KT_KV 보고서 | markov lag1 χ² p=0.764 · miss χ² p=0.483 · pattern/balance 전부 p≥0.13 |
 | K-U | OPEN | 쌍층 표본: 분산=null · FDR0 · Bonf 검출폭 ±~79%RR | 동상 | 25914 슬롯 · E=26.18 · perm(C45,7)×10k p≈0.48 · 삼중 생략 |
 | K-V | PATCHED | 발권 dedup: E[k] 97.091→100.000 · unresolved0 · OFF/ON 이표본 왜곡없음 | `ticket_dedup.py` · coordinator 후처리 · `reports/20260727_KV_중복제거_구현검증.md` | `ROK21_DEDUP` 기본 ON. P배수≈1.030. 예측력↑ 아님. 절대이론 GOF는 뇌가중 산출물에서 OFF/ON 공통 기각 → 왜곡게이트=이표본 |
-| K-W | OPEN | 산출 정합성: 명분(당첨≈이론) vs 뇌 산출 거리 측정 · 명분 라벨 SSOT | `docs/benchmarks/20260727_KW_alignment.json` · `WARRANT.md` · KW 보고서 | stat→A근접 · markov/review→C근접 · review끝수 편향경보. 라벨=기각5/실증2/미정의1. 기각뇌 제거금지 |
+| K-W | PATCHED | 산출 정합성 측정+**post-KP3 재측정** · 명분 라벨 SSOT | `20260727_KW_alignment.json` · `20260727_KW_post_KP3.json` · WARRANT | 초기: review ending χ²/df vsA **13.37**→live **2.82** · vsC **8.54**→**2.32**. NameError(`rates`) 회귀수정. 기각명분 유지·제거금지 |
 | K-X | PATCHED | review 끝수편향: K-X 원인규명(rate투영) + **K-P3** ending질량균등화 | `predict_review_king.py` · `20260727_KP3_review_ending.json` | l1_ball 0.299→0.098 · verify_pass · random.choices 동결 · 기각명분 유지 |
 | K-Y | OPEN | 보조4 감사(이력): miss/referee 순위기여0 · fusion미배선(K-D) · live≠DB referee(K-J) | `docs/benchmarks/20260727_KY_aux_audit.json` · KY 보고서 | **후속:** K-AA pattern/balance→실증 · K-AG pair÷32·LMH·3키배선. 감사 시점(미소비)은 K-AG로 해소됨 |
 | K-Z | PATCHED | C(45,6) 이론값 확정 후 K-AA에서 코드 적용(AC=8·폴백합138·consec PMF) | `docs/benchmarks/20260727_KZ_theory_constants.json` · KZ/KAA 보고서 | A거리 미개선→K-AA에서 게이트↓관측 |

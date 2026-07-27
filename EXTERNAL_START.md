@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `fc61516` |
+| HEAD(실측) | `76dd0a3` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-P5 hyodo LSTM·인프라 UI · infra-dashboard PASS |
-| 직전 | K-PIN-CLOSE · K-P4 LSTM샌드박스 · P1~P3 |
-| BOOT다음 | K-AWAIT — 형 다음 본선 1건 지시 대기 |
+| 지금 | K-W post-KP3 재측정 PASS · rates NameError 수정 |
+| 직전 | K-P5 인프라UI · K-PIN-CLOSE · P1~P4 |
+| BOOT다음 | K-AWAIT — 형 다음 본선 1건 (K-B·1235 후보) |
 | NEXT1 ID | **K-AWAIT** |
-| NEXT1 할일 | 형 다음 본선 1건 지시 대기 (P·핀·P5 마감) |
+| NEXT1 할일 | 형 다음 본선 1건 지시 대기 (후보: K-B BENCH SSOT · 1235루프) |
 | 승인필요 | 아니오 |
-| 선행 | K-PIN-CLOSE · K-P5 PASS · BASELINE_PIN `640cb67` |
+| 선행 | K-W post-KP3 PASS · K-P5 · PIN `640cb67` |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=fc61516 · 지금=K-P5 hyodo LSTM·인프라 UI · infra-dashboard PASS · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=76dd0a3 · 지금=K-W post-KP3 재측정 PASS · rates NameError 수정 · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: fc61516_
+_generated: 76dd0a3_

@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-P5 hyodo LSTM·인프라 UI · infra-dashboard PASS
-- 직전: K-PIN-CLOSE · K-P4 LSTM샌드박스 · P1~P3
-- 다음: K-AWAIT — 형 다음 본선 1건 지시 대기
+- 지금: K-W post-KP3 재측정 PASS · rates NameError 수정
+- 직전: K-P5 인프라UI · K-PIN-CLOSE · P1~P4
+- 다음: K-AWAIT — 형 다음 본선 1건 (K-B·1235 후보)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -54,7 +54,7 @@
 |----|------|------|
 | stat | 정합_A근접 | K-W |
 | markov | 무해_C근접 | K-W |
-| review | C근접+끝수편향완화(K-P3) · 원인 K-X | K-W·K-P3 |
+| review | C근접+끝수완화(K-P3) · post측정 ending χ²/df↓ | K-W·K-P3 · `KW_post_KP3.json` |
 | miss_aux | 무해_C근접 · 순위기여 0% | K-Y |
 | pattern_aux | 무해_C근접 · 제거 시 Δ=0.42 · **구현검증 K-AA** | K-Y·K-AA |
 | balance_aux | 정합_A근접 · 제거 시 Δ=0.70 · **구현검증 K-AA** | K-Y·K-AA |

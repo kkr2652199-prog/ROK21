@@ -59,6 +59,7 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
 
     prev = draws[-1]
     prev_nums = sorted_nums(prev)
+    rates = repeat_rate_after_draw(draws)
     learn = load_learn_state("review")
     adj = learn.get("adjustments", {})
     carry_boost = 1.0 + float(adj.get("carry_over_boost", 0))

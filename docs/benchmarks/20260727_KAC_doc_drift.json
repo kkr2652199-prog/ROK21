@@ -5,9 +5,9 @@
     "disclaimer": "이 작업은 예측력과 무관하다. 압축으로 인한 방향 상실 방지다."
   },
   "findings_counts": {
-    "OPEN": 27,
+    "OPEN": 26,
     "CLOSED": 4,
-    "PATCHED": 13,
+    "PATCHED": 14,
     "HOLD": 2
   },
   "findings_open_hold": [
@@ -38,7 +38,6 @@
     "K-R",
     "K-T",
     "K-U",
-    "K-W",
     "K-Y"
   ],
   "restore_e_open": [
@@ -67,7 +66,6 @@
     "K-R",
     "K-T",
     "K-U",
-    "K-W",
     "K-Y"
   ],
   "restore_e_hold": [

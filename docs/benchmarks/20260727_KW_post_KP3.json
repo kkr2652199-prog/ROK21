@@ -1,0 +1,44 @@
+{
+  "task": "K-W-POST-KP3",
+  "as_of": 1235,
+  "n_sets": 500,
+  "seed": 20260727,
+  "baseline_kw_file": "20260727_KW_alignment.json",
+  "review_ending": {
+    "before_stored_review": {
+      "vs_A": 13.37132834650229,
+      "vs_C": 8.535059335792146
+    },
+    "after_live_KP3": {
+      "vs_A": 2.8179052158672815,
+      "vs_C": 2.320820090896865
+    },
+    "delta": {
+      "vs_A": -10.553423130635009,
+      "vs_C": -6.214239244895282
+    },
+    "hist_live_0to9": [
+      313,
+      299,
+      311,
+      299,
+      316,
+      286,
+      291,
+      300,
+      315,
+      270
+    ]
+  },
+  "checks": {
+    "predict_sets_ok": true,
+    "n_live_sets": true,
+    "ending_vs_A_improved": true,
+    "ending_vs_C_improved": true,
+    "ending_not_far_both": true,
+    "rates_nameerror_fixed": true
+  },
+  "verify_pass": true,
+  "note": "적중↑아님 · K-P3 ending질량균등 후 live review vs A/C · stored KW는 사전표본",
+  "kw_alignment_label_hint": "무해_C근접_끝수완화"
+}
