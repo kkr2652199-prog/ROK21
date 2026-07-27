@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""beforeSubmitPrompt: KWEON 컨텍스트 7줄 주입 (continue=true)."""
+"""beforeSubmitPrompt: ROK21 컨텍스트 7줄 주입 (continue=true)."""
 from __future__ import annotations
 
 import json
@@ -9,9 +9,9 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
-CONTEXT_LINES = """[ROK21] SSOT=ROK21 main / 4군·테스트로또·효도로또만
+CONTEXT_LINES = """[ROK21] SSOT=kkr2652199-prog/ROK21 main · D:\\ROK21 · 7021 / 4군·테스트로또·효도로또만
 [R34] 1~3군·memoy·My_Library 내용 ROK21 기록 금지
-[충돌방지] 원본 kweon(D:\\3kweon·6124) 미접촉 · 본복제 D:\\ROK21·7021
+[충돌방지] 원본 kweon(D:\\3kweon·6124·264de3c 동결) 미접촉 · 작업은 ROK21만
 [동결] random.choices = B단계 전 수정 금지
 [동결] 백테 컨닝 금지 (_get_draws_before: target 이전만)
 [시작] SUMMARY/BOOT.md + FINDINGS.md 확인

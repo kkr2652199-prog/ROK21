@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""stop: 미커밋·당일 보고서 미작성 시 followup_message만 (절대 exit 2 금지)."""
+"""stop: ROK21 SSOT — 미커밋·당일 보고서 미작성 시 followup_message만 (절대 exit 2 금지)."""
 from __future__ import annotations
 
 import json
@@ -13,7 +13,9 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[2]
+# 당일 보고서 검사 경로 (ROK21 SSOT)
 REPORT_DIRS = (ROOT / "My_Drive_Sync" / "커서보고서", ROOT / "reports")
+# 종료체크 dirty 스코프 — ROK21 작업 경로만 (kweon/memoy 제외)
 ROK21_SCOPE = ("My_Drive_Sync/SUMMARY", "My_Drive_Sync/커서보고서",
                "reports", ".cursor", "app")
 

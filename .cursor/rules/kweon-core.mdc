@@ -5,9 +5,9 @@ alwaysApply: true
 
 # ROK21 Core Rules (충돌 시 SUMMARY/RULES_FIXED.md 우선)
 
-> 이 레포는 **kweon 원본의 복사본**이다.
-> 원본: `kkr2652199-prog/kweon` · `D:\3kweon` · 포트 6124
-> 본 복사본: `kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 7021
+> **SSOT = `kkr2652199-prog/ROK21` · main · `D:\ROK21` · 포트 7021**
+> 이 레포는 2026-07-26 kweon에서 분기한 **작업 SSOT(복사본)** 이다.
+> 원본 kweon: `kkr2652199-prog/kweon` · `D:\3kweon` · 포트 6124 · **동결(쓰기·push·신규작업 금지)**
 
 ## 시작 시 (매 작업)
 1. `My_Drive_Sync/SUMMARY/RESTORE.md` 읽고 첫 응답에 확인 출력 (압축 복원 1순위)

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-27 KST  
-📌 사유: K-07 testlotto 복구검증 + 테스트로또 정밀정찰(READ-ONLY)
+📌 사유: SSOT=ROK21 확정 · 커밋 UTF-8 로컬설정 · FINDINGS K-08/K-09 경위 보고
 
 ---
 
@@ -9,66 +9,56 @@
 
 | 항목 | 값 |
 |------|-----|
+| **SSOT** | `kkr2652199-prog/ROK21` · main |
 | 로컬 | `D:\ROK21` · **7021** |
-| SSOT | `kkr2652199-prog/ROK21` |
-| 원본 | `D:\3kweon` 미접촉 |
+| kweon 동결 | `D:\3kweon` · HEAD **`264de3c`** · 미접촉 |
 | 복원 | `RESTORE.md` |
 
 ---
 
-## 1) K-07 (이번 턴)
+## 1) 인코딩
 
 | 항목 | 값 |
 |------|-----|
-| 백업 | `backups/20260726_K07복구전/lotto_testlotto.db` |
-| testlotto MAX | **1234** (이미 충족 · fetch→None=1235미발표) |
-| 1232~1234 공식대조 | **전부 MATCH** |
-| predictions 1232~1234 | 각 15행 (stat/markov/review) |
-| brain_review MAX | **1234** |
-| hyodo MAX | **1231** (미접촉 · OPEN 잔여) |
-| lotto4 | read-only · MAX 1234 |
+| i18n.commitEncoding | utf-8 |
+| i18n.logOutputEncoding | utf-8 |
+| core.quotepath | false |
+| chcp | 949 (콘솔) |
+| 깨짐 원인 | 메시지 주입 경로(PowerShell ascii 등) · rewrite 안 함 |
+| 신규 커밋 | Python UTF-8 `-F` 사용 |
 
 ---
 
-## 2) 정밀정찰 요약
+## 2) K-07 / FINDINGS 요지
 
 | 항목 | 값 |
 |------|-----|
-| 활성 | 3예측 + 4보조 (coordinator) |
-| 클릭 경로 fusion | **없음** |
-| AUX 가중 | 하드코딩 0.25×4 |
-| referee live | ≈0.335 / 0.332 / 0.334 |
-| seed | 미고정 · cache 없으면 비재현 |
-| 코드 패치 | **0건** |
-| 보고서 | `reports/20260727_테스트로또_정밀정찰.md` (종료체크 일자 교정) |
+| testlotto 1232 | 12,15,19,22,24,36 +3 |
+| testlotto 1233 | 2,7,20,25,37,40 +29 |
+| testlotto 1234 | 1,15,19,31,35,43 +27 |
+| hyodo | 1231 (OPEN 잔여) |
+| K-08 | OPEN · `3ec4794` 신설 (지표 best vs mean) |
+| K-09 | CLOSED · `5bf9839` OPEN → `2837d2e` CLOSED |
+| Y 1.033 | EV 순배율(컷오프 Y풀·창200·위약보정) CI[1.019,1.048] |
 
 ---
 
-## 3) EV / CUTOFF (이전 확정 유지)
+## 3) 동결·플래그
 
-| 플래그 | 기본 |
-|--------|------|
-| `ROK21_EV_RERANK` | OFF |
-| `ROK21_LEARN_CUTOFF` | OFF |
-| K-09 | **CLOSED** |
+- `random.choices` · `_get_draws_before` · boost  
+- `ROK21_EV_RERANK` / `ROK21_LEARN_CUTOFF` 기본 OFF  
 
 ---
 
-## 4) 동결
+## 4) 다음
 
-- `random.choices` · `_get_draws_before` · boost 상한
-
----
-
-## 5) 다음
-
-1. hyodo 1232~1234 동기화 (형 승인)
-2. 정찰 관찰목록 → 형·외부AI가 K-A~ 부여
-3. (선택) EV/CUTOFF opt-in 운영시험
+1. hyodo 1232~1234 (형 승인)  
+2. 정찰 관찰목록 → K-A~  
+3. (선택) EV/CUTOFF opt-in  
 
 ---
 
-## 6) 산출물
+## 5) 산출물
 
-`reports/20260727_테스트로또_정밀정찰.md`  
-`My_Drive_Sync/커서보고서/20260727_테스트로또_정밀정찰.md`
+`reports/20260727_ROK21_SSOT확정_인코딩수정.md`  
+`My_Drive_Sync/커서보고서/` 동일 복사

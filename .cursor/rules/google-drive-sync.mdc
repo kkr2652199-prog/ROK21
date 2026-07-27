@@ -18,16 +18,16 @@ alwaysApply: true
 | 저장소 | 로컬 경로 | 포트 | 관할 |
 |--------|-----------|------|------|
 | memoy | `D:\MONEY lol` | (별도) | 1·2·3군 앱 |
-| kweon (원본) | `D:\3kweon` | 6124 | 원본 — ROK21에서 미접촉 |
-| **ROK21 (본 복사본)** | `D:\ROK21` | **7021** | 4군 앱 + 효도로또(1.5군) |
+| kweon (동결 원본) | `D:\3kweon` | 6124 | **읽기만·쓰기/push/신규작업 금지** |
+| **ROK21 (SSOT)** | `D:\ROK21` | **7021** | 4군·테스트로또·효도로또 — **유일한 작업 SSOT** |
 
 ## 에이전트 행동
 
 - 기억 세이브·STATUS 갱신은 위 **동생기억** / **SUMMARY** 에 저장.
-- `d:\ROK21\reports\` 에 작성한 보고서는 갱신 후 **`커서보고서`** 에 복사(덮어쓰기)까지 마친 것으로 간주.
-- 복원 SSOT: GitHub kkr2652199-prog/ROK21 · main · `/My_Drive_Sync/SUMMARY/README_START.md` 먼저 읽기.
+- `D:\ROK21\reports\` 에 작성한 보고서는 갱신 후 **`커서보고서`** 에 복사(덮어쓰기)까지 마친 것으로 간주.
+- **복원 SSOT:** GitHub `kkr2652199-prog/ROK21` · main · `My_Drive_Sync/SUMMARY/RESTORE.md` → `BOOT.md`.
 - **원본 kweon (`D:\3kweon`, `kkr2652199-prog/kweon`) 에 쓰기·push 금지.**
 
 ## 4군 코드베이스
 
-- 소스·DB 작업 루트: `d:\ROK21` (My_Drive_Sync는 관리·기록용, 코드 원본과 혼동 금지).
+- 소스·DB 작업 루트: **`D:\ROK21`만** (My_Drive_Sync는 관리·기록용, 코드 원본과 혼동 금지).
