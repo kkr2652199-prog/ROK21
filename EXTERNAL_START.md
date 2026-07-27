@@ -9,11 +9,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `41d4823` |
+| HEAD(실측) | `d88a8ff` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-1235-PREP — 1235 루프·협업 핸드오프 준비 PASS (API 미발표) |
-| 직전 | K-D fusion · K-H · K-B · K-W |
+| 지금 | K-00 과거예측 숙제 확장 PASS (READ-ONLY · review SSOT) |
+| 직전 | K-1235-PREP · K-D · K-H · K-B |
 | BOOT다음 | K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` |
 | NEXT1 ID | **K-AWAIT** |
 | NEXT1 할일 | **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=41d4823 · 지금=K-1235-PREP — 1235 루프·협업 핸드오프 준비 PASS (API 미발표) · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=d88a8ff · 지금=K-00 과거예측 숙제 확장 PASS (READ-ONLY · review SSOT) · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 41d4823_
+_generated: d88a8ff_

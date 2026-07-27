@@ -7,7 +7,7 @@
 - 할일: **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`)
 - 선행조건: K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기
 - 승인필요: 아니오
-- 최종갱신: `600407d` (K-1235-PREP)
+- 최종갱신: `d88a8ff` (K-00 선행 · NEXT=K-AWAIT 유지)
 
 ## WORKSTATE
 IDLE
@@ -18,7 +18,8 @@ IDLE
 
 | 우선순위 | 작업 | 분류 | 상태 |
 |----------|------|------|------|
-| — | K-D fusion 클릭경로 정합 | 문서·위생 | **완료 K-D** |
+| — | K-00 과거예측 숙제 확장 | 숙제·명분 | **완료 K-00** |
+| — | K-1235-PREP 1235 루프 준비 | 선행 | **완료** |
 | — | K-H 미등록 AUX _unused 격리 | 위생 | **완료 K-H** |
 | — | K-B BENCH SSOT 고정·기계검증 | 프로토콜 | **완료 K-B** |
 | — | K-W post-KP3 재측정 | 관측 | **완료 K-W** |

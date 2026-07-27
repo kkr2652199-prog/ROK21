@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-28 KST  
-📌 사유: K-1235-PREP — 1235 루프·협업 핸드오프 준비
+📌 사유: K-00 과거예측 숙제 확장 (1235 API 대기 중 선행)
 
 ---
 
@@ -19,10 +19,9 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-1235-PREP** | 1235 루프 스크립트 · COLLAB_HANDOFF · readiness | verify_pass |
-| K-D | fusion 미배선 문서화 · dead import 제거 | verify_pass |
-| K-H | 미등록 AUX `_unused` | verify_pass |
-| K-B | BENCH SSOT | verify_pass |
+| **K-00** | 과거예측 숙제 확장 · review SSOT | verify_pass |
+| **K-1235-PREP** | 1235 루프·COLLAB_HANDOFF | verify_pass |
+| K-D | fusion 미배선 문서화 | verify_pass |
 
 ---
 

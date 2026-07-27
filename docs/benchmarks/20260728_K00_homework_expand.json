@@ -1,0 +1,326 @@
+{
+  "task": "K-00",
+  "purpose": "homework_expand_readonly",
+  "source_table": "testlotto_brain_review",
+  "draws_in_db": {
+    "max": 1234,
+    "count": 1234
+  },
+  "brain_review_rows": 3698,
+  "lotto_predictions": {
+    "distinct_targets": 122,
+    "rows_main_brains": 1830
+  },
+  "brain_review_full": {
+    "markov": {
+      "brain_tag": "markov",
+      "n": 1232,
+      "avg_m": 1.6193,
+      "ge3": 130,
+      "ge4": 8,
+      "ge5": 0,
+      "bonus_hits": 138
+    },
+    "review": {
+      "brain_tag": "review",
+      "n": 1233,
+      "avg_m": 1.6805,
+      "ge3": 131,
+      "ge4": 6,
+      "ge5": 0,
+      "bonus_hits": 118
+    },
+    "stat": {
+      "brain_tag": "stat",
+      "n": 1233,
+      "avg_m": 1.6999,
+      "ge3": 128,
+      "ge4": 9,
+      "ge5": 1,
+      "bonus_hits": 126
+    }
+  },
+  "match_hist_all_brains": {
+    "0": 84,
+    "1": 1478,
+    "2": 1747,
+    "3": 366,
+    "4": 22,
+    "5": 1
+  },
+  "window_1132_1234": {
+    "markov": {
+      "brain_tag": "markov",
+      "n": 103,
+      "avg_m": 1.6117,
+      "ge3": 12,
+      "ge4": 0,
+      "ge5": 0,
+      "bonus_hits": 15
+    },
+    "review": {
+      "brain_tag": "review",
+      "n": 103,
+      "avg_m": 1.7573,
+      "ge3": 17,
+      "ge4": 0,
+      "ge5": 0,
+      "bonus_hits": 8
+    },
+    "stat": {
+      "brain_tag": "stat",
+      "n": 103,
+      "avg_m": 1.6602,
+      "ge3": 10,
+      "ge4": 1,
+      "ge5": 0,
+      "bonus_hits": 18
+    }
+  },
+  "window_1232_1234": {
+    "markov": {
+      "brain_tag": "markov",
+      "n": 3,
+      "avg_m": 1.3333,
+      "ge3": 0,
+      "ge4": 0,
+      "ge5": 0,
+      "bonus_hits": 1
+    },
+    "review": {
+      "brain_tag": "review",
+      "n": 3,
+      "avg_m": 1.3333,
+      "ge3": 0,
+      "ge4": 0,
+      "ge5": 0,
+      "bonus_hits": 0
+    },
+    "stat": {
+      "brain_tag": "stat",
+      "n": 3,
+      "avg_m": 1.3333,
+      "ge3": 0,
+      "ge4": 0,
+      "ge5": 0,
+      "bonus_hits": 1
+    }
+  },
+  "pred_vs_review_gap": {
+    "review_draws": 1233,
+    "pred_scored_draws": 121,
+    "review_only_draws": 1112,
+    "review_only_sample_tail": [
+      1170,
+      1171,
+      1172,
+      1173,
+      1174,
+      1175,
+      1176,
+      1177,
+      1178,
+      1179
+    ]
+  },
+  "stage1_compare_1232_1234": [
+    {
+      "draw_no": 1232,
+      "brain_tag": "markov",
+      "review_best_match": 1,
+      "pred_avg_match": 0.2,
+      "pred_n": 5
+    },
+    {
+      "draw_no": 1232,
+      "brain_tag": "review",
+      "review_best_match": 1,
+      "pred_avg_match": 0.4,
+      "pred_n": 5
+    },
+    {
+      "draw_no": 1232,
+      "brain_tag": "stat",
+      "review_best_match": 1,
+      "pred_avg_match": 0.6,
+      "pred_n": 5
+    },
+    {
+      "draw_no": 1233,
+      "brain_tag": "markov",
+      "review_best_match": 1,
+      "pred_avg_match": 0.4,
+      "pred_n": 5
+    },
+    {
+      "draw_no": 1233,
+      "brain_tag": "review",
+      "review_best_match": 2,
+      "pred_avg_match": 1.4,
+      "pred_n": 5
+    },
+    {
+      "draw_no": 1233,
+      "brain_tag": "stat",
+      "review_best_match": 1,
+      "pred_avg_match": 1.0,
+      "pred_n": 5
+    },
+    {
+      "draw_no": 1234,
+      "brain_tag": "markov",
+      "review_best_match": 2,
+      "pred_avg_match": 0.8,
+      "pred_n": 5
+    },
+    {
+      "draw_no": 1234,
+      "brain_tag": "review",
+      "review_best_match": 1,
+      "pred_avg_match": 1.0,
+      "pred_n": 5
+    },
+    {
+      "draw_no": 1234,
+      "brain_tag": "stat",
+      "review_best_match": 2,
+      "pred_avg_match": 0.6,
+      "pred_n": 5
+    }
+  ],
+  "miss_patterns_from_review": {
+    "markov": {
+      "top_miss": [
+        {
+          "pattern": "ending_digit",
+          "count": 1195
+        },
+        {
+          "pattern": "odd_even",
+          "count": 352
+        },
+        {
+          "pattern": "consecutive",
+          "count": 297
+        }
+      ],
+      "ending_digit_count": 1195,
+      "total_tagged_misses": 2278
+    },
+    "review": {
+      "top_miss": [
+        {
+          "pattern": "ending_digit",
+          "count": 1197
+        },
+        {
+          "pattern": "odd_even",
+          "count": 364
+        },
+        {
+          "pattern": "consecutive",
+          "count": 300
+        }
+      ],
+      "ending_digit_count": 1197,
+      "total_tagged_misses": 2132
+    },
+    "stat": {
+      "top_miss": [
+        {
+          "pattern": "ending_digit",
+          "count": 1195
+        },
+        {
+          "pattern": "odd_even",
+          "count": 343
+        },
+        {
+          "pattern": "consecutive",
+          "count": 322
+        }
+      ],
+      "ending_digit_count": 1195,
+      "total_tagged_misses": 2295
+    }
+  },
+  "learn_state_miss_top": {
+    "markov": {
+      "top_miss": [
+        {
+          "pattern": "odd_even",
+          "count": 365
+        },
+        {
+          "pattern": "consecutive",
+          "count": 306
+        },
+        {
+          "pattern": "carry_over",
+          "count": 207
+        }
+      ],
+      "ending_digit_count": 0,
+      "review_count": 1268,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.6057
+    },
+    "review": {
+      "top_miss": [
+        {
+          "pattern": "odd_even",
+          "count": 378
+        },
+        {
+          "pattern": "consecutive",
+          "count": 304
+        },
+        {
+          "pattern": "overdue",
+          "count": 157
+        }
+      ],
+      "ending_digit_count": 0,
+      "review_count": 1271,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.6607
+    },
+    "stat": {
+      "top_miss": [
+        {
+          "pattern": "odd_even",
+          "count": 360
+        },
+        {
+          "pattern": "consecutive",
+          "count": 337
+        },
+        {
+          "pattern": "carry_over",
+          "count": 214
+        }
+      ],
+      "ending_digit_count": 0,
+      "review_count": 1272,
+      "last_draw_no": 1234,
+      "recent_avg_match": 1.687
+    }
+  },
+  "legacy_drift_notes": [],
+  "checks": {
+    "draws_max_1234": true,
+    "review_max_1234": true,
+    "three_brains_full": true,
+    "legacy_avg_drift_lt_0_02": true,
+    "ending_digit_top_miss_all": true,
+    "stage1_window_present": true
+  },
+  "verify_pass": true,
+  "homework_ssot_decision": "brain_review remains SSOT for 1~1234 homework; lotto_predictions sparse",
+  "next_homework": [
+    "1235 발표 후 brain_review 1235행 추가 (K-AWAIT execute)",
+    "ending_digit miss vs boost 루프 진단 (K-P 계열 후보)",
+    "ge4 희귀 케이스 구조 해부"
+  ],
+  "note": "READ-ONLY · no walkforward rerun · no DB write"
+}

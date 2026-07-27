@@ -25,21 +25,22 @@
 **실행 트리거 (형 1줄):**  
 「1235 루프 실행」→ 커서: `python tools/_kawait_1235_loop.py --execute`
 
-## 현재 스냅샷 (20260728)
+## 현재 스냅샷 (20260728 · K-00 후)
 
 | 항목 | 값 |
 |------|-----|
 | 3DB MAX | **1234** (1235 미발표) |
-| API 1235 | **없음** (probe 실측) |
-| 1235 예측(선행) | **15세트** 저장됨 (stage1 · prior=1234) |
-| stage1 산출 | atlas · baseline · summary **있음** |
+| API 1235 | **없음** (probe 재확인) |
+| 숙제 SSOT | `testlotto_brain_review` · 3698행 · verify_pass |
+| predictions 희소 | distinct **122** / review-only **1112** |
+| 1235 예측(선행) | **15세트** (stage1) |
 | 블로커 | 1235 당첨번호 공개 전 `--execute` 불가 |
 
 ## OPEN 후보 (형 선택 · 본선 아님)
 
 | ID | 요지 | 선행 |
 |----|------|------|
-| K-00 | 과거 예측 숙제 확장 (review 아카이브) | stage1 baseline |
+| K-00 | 과거 예측 숙제 확장 (review 아카이브) | **완료** |
 | K-02 | 외부 철학 벤치 추가 (명분=WARRANT) | docs/benchmarks README |
 | K-05 | 2단계 수학 이식 후보 스캔 (lotto4→testlotto) | K-AWAIT 이후 권장 |
 
@@ -61,4 +62,4 @@
 | 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |
 | 결함 | `My_Drive_Sync/SUMMARY/FINDINGS.md` |
 
-_갱신: K-1235-PREP · HEAD=`600407d`_
+_갱신: K-00 · HEAD=`d88a8ff`_
