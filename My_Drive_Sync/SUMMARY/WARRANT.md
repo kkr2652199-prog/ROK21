@@ -1,6 +1,7 @@
 # WARRANT.md — 뇌 명분 SSOT (ROK21)
 
 📅 제정: 2026-07-27 · 개정: 2026-07-27(K-Y) · SSOT=`kkr2652199-prog/ROK21`  
+📌 **K-Z(20260727):** 이론값 확정·대조만. **라벨 변경 없음.** 상수 교체 적용·구현검증 후에야 pattern/balance **실증** 복귀 가능.  
 📌 **이 파일이 뇌 명분(warrant)의 단일 출처다.** 성적·벤치 수치와 충돌 시 명분 라벨은 본 문서 우선.  
 📌 코드 미러: `app/testlotto/brains/warrant.py` (K-Y 강등 후 미러 동기화는 코드허용 턴) · `out["brain_warrant"]` UI 노출 금지
 

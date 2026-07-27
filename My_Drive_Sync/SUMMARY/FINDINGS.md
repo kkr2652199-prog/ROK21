@@ -57,3 +57,4 @@
 | K-W | OPEN | 산출 정합성: 명분(당첨≈이론) vs 뇌 산출 거리 측정 · 명분 라벨 SSOT | `docs/benchmarks/20260727_KW_alignment.json` · `WARRANT.md` · KW 보고서 | stat→A근접 · markov/review→C근접 · review끝수 편향경보. 라벨=기각5/실증2/미정의1. 기각뇌 제거금지 |
 | K-X | OPEN | review 끝수편향 원인=`repeat_rate` 투영(5·8↑/7↓) · 예측폐루프·자기강화증폭 미입증 | `predict_review_king.py` · `repeat_rate_after_draw` · `docs/benchmarks/20260727_KX_review_ending.json` · KX 보고서 | early↔late KS p=0.66. ending_digit_boost는 review 미사용. 교정 구현 금지(형승인). P(1등) 관점 교정 불필요 가능 |
 | K-Y | OPEN | 보조4 감사: pattern/balance→전제실증·구현미검증 강등 · miss/referee 순위기여0 · pair/consec/odd_even 미소비 | `docs/benchmarks/20260727_KY_aux_audit.json` · KY 보고서 · WARRANT | fusion 미배선 재확인(K-D). live≠DB referee(K-J). balance 기본합150≠138. 코드0 |
+| K-Z | OPEN | C(45,6) 이론값 확정·상수대조: AC최빈=8≠7 · 폴백합150≠138 · 교체시 A거리 미개선(0.835→0.947) · 적용금지 | `docs/benchmarks/20260727_KZ_theory_constants.json` · KZ 보고서 | 롤링합·홀은 이론 근접(유지가능). WARRANT라벨 변경없음 — 적용·구현검증 후 실증복귀 |
