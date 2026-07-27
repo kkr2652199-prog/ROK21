@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `600407d` · WORK=`IDLE`
+- HEAD: `41d4823` · WORK=`IDLE`
 - 지금: K-1235-PREP — 1235 루프·협업 핸드오프 준비 PASS (API 미발표)
 - 직전: K-D fusion · K-H · K-B · K-W
 - BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`

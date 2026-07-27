@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `600407d` · WORK=`IDLE`
+1. **HEAD:** `41d4823` · WORK=`IDLE`
 2. **지금:** K-1235-PREP — 1235 루프·협업 핸드오프 준비 PASS (API 미발표)
 3. **다음1건:** K-AWAIT — **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) (승인필요=아니오 · 선행=K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
