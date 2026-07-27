@@ -7,7 +7,7 @@
 - 할일: 형—RULES_FIXED R35·R36·CURSOR_RULES §6 초안 승인/반영 (그다음 K-06 팬아웃)
 - 선행조건: 없음
 - 승인필요: 예
-- 최종갱신: 969c8a1
+- 최종갱신: 40b651d
 
 ## WORKSTATE
 IDLE
