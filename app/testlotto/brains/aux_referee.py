@@ -13,12 +13,22 @@ def get_predict_brain_weights() -> dict[str, float]:
     return get_referee_weights()
 
 
-def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
+def score_set(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = None,
+) -> float:
     """보조 채점 파이프라인 호환용 — 중립 기본값."""
     return 0.5
 
 
-def describe(nums: list[int], draws: list[dict], target_draw_no: int) -> str:
+def describe(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = None,
+) -> str:
     w = get_predict_brain_weights()
     parts = [f"{k}:{v:.2f}" for k, v in sorted(w.items())]
     return f"심판관:가중치 {' '.join(parts)}"

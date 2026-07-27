@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-27 KST  
-📌 사유: K-AF 팬아웃 잔여 정합 + R37 FLOW_BRIEF
+📌 사유: K-AG pair/zone 재정의 + 미소비 3키 배선
 
 ---
 
@@ -11,32 +11,23 @@
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | kweon | `264de3c` 동결 |
-| 수집 | lotto4→testlotto/hyodo 팬아웃 · **수집0건에도 catch-up** |
+| 테스트로또 | 3예측+4보조 **유지** |
 
 ---
 
-## 1) K-AF 요지
+## 1) K-AG 요지
 
 | 항목 | 결과 |
 |------|------|
-| 1-1 순차commit | **사실(롤백불가)** · 잔여위험 명시 |
-| 1-2 catch-up | **미실행→무조건 호출로 교정** |
-| 1-3 실전발화 | **0회** (logs 없음) |
-| 1-4 HEAD드리프트 | **구조적 1커밋 지연** |
-| verify_pass | **true** (T1~T7) |
-| no-op | **4.968ms** · early_gate |
-| R37 | FLOW_BRIEF 매턴 push |
+| pair | ÷**32.0** (null_q95) |
+| zone | LMH 이론 PMF |
+| 3키 배선 | pair/consec/odd → aux |
+| verify_pass | **true** · E[k]=100 |
 
-> 이 작업은 예측력과 무관하다. 수집 파이프라인 무결성의 잔여 정합이다.
+> 1등 확률 상승 작업이 아니다. 명분·배선 정합 작업이다.
 
 ---
 
-## 2) OPEN / PATCHED
+## 2) 다음
 
-K-AF·K-AE·K-06 **PATCHED** · K-AC OPEN · K-M/N HOLD
-
----
-
-## 3) 다음 (형)
-
-`NEXT_ACTIONS` **K-AG** — pair/30·zone 목표 재정의 (K-Y 미소비 3키 연계)
+`K-AG-FOLLOW` — 형 선택 (기각뇌 / UI쓸모 / K-X / hyodo)

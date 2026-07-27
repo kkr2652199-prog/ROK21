@@ -8,15 +8,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `bfce804` |
+| HEAD(실측) | `f43ae9e` |
 | WORK | `IDLE` |
-| 지금 | K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF |
-| 직전 | K-AE 룰반영(R35/R36·§6) · K-06팬아웃 PATCHED |
-| BOOT다음 | K-AG pair/30·zone 목표 재정의 (형 승인) |
-| NEXT1 ID | **K-AG** |
-| NEXT1 할일 | pair/30·zone 목표 재정의 (K-Y 미소비 3키 연계) |
+| 지금 | K-AG pair/zone재정의 · 미소비3키 배선 PATCHED |
+| 직전 | K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF |
+| BOOT다음 | 형—기각뇌/UI쓸모/K-X/hyodo 중 선택 |
+| NEXT1 ID | **K-AG-FOLLOW** |
+| NEXT1 할일 | 형—다음 본선 선택 (기각뇌 처리 / UI쓸모 / K-X끝수 / hyodo후속) |
 | 승인필요 | 예 |
-| 선행 | K-AF PATCHED |
+| 선행 | K-AG PATCHED |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -30,7 +30,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=bfce804 · 지금=K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF · 다음=K-AG`
+1. 첫줄 `[복귀] HEAD=f43ae9e · 지금=K-AG pair/zone재정의 · 미소비3키 배선 PATCHED · 다음=K-AG-FOLLOW`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -44,4 +44,4 @@
 | 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: bfce804_
+_generated: f43ae9e_

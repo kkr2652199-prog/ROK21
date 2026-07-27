@@ -41,21 +41,21 @@ BRAIN_WARRANT: dict[str, dict[str, Any]] = {
     "pattern_aux": {
         "label": "실증",
         "evidence": (
-            "K-T 형태 이론부합 p≥0.13 ∧ K-AA 구현검증: ac_target=8(최빈)·"
-            "consec PMF단조점수·배선 PASS(composite 항등·ablation conf 변화)"
+            "K-T 형태 이론부합 p≥0.13 ∧ K-AA AC=8·consec PMF ∧ "
+            "K-AG pair_norm=null_q95(32)·pair_boost/consecutive_boost 소비"
         ),
         "p": 0.13,
-        "source_ids": ["K-T", "K-Z", "K-AA"],
+        "source_ids": ["K-T", "K-Z", "K-AA", "K-AG"],
         "kw_alignment": "무해_C근접",
     },
     "balance_aux": {
         "label": "실증",
         "evidence": (
-            "K-T 균형 이론부합 p≥0.13 ∧ K-AA 구현검증: 폴백합=138·"
-            "합거리 단조감소·LMH(2,2,2) 최고점(zone_score)"
+            "K-T 균형 이론부합 p≥0.13 ∧ K-AA 폴백합=138 ∧ "
+            "K-AG zone=LMH이론PMF(mode 2,2,2)·odd_even_balance 소비"
         ),
         "p": 0.13,
-        "source_ids": ["K-T", "K-Z", "K-AA"],
+        "source_ids": ["K-T", "K-Z", "K-AA", "K-AG"],
         "kw_alignment": "정합_A근접",
     },
     "referee_aux": {

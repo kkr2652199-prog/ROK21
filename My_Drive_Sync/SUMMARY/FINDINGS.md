@@ -64,3 +64,4 @@
 | K-AD | PATCHED | 압축즉시복귀: guard_boot 동적주입(HEAD·BOOT§1·NEXT1건) · NEXT_ACTIONS앵커 · RESTORE복귀5줄 동기 · drift0·회귀PASS | KAD 보고서 · `rok21_inject.py` · `20260727_KAD_hook_inject.json` | R28→1줄[복귀]. 젠스파크는 hooks없음→RESTORE큐. 예측력무관·운영인프라 |
 | K-AE | PATCHED | 룰 R35/R36·CURSOR §6 반영 + K-06 영구팬아웃 구현·샌드박스검증 | KAE 보고서 · fanout_verify.json · draw_fanout.py | 수집무결성. lotto4 실패롤백없음(K-AB). drafts 이력유지 |
 | K-AF | PATCHED | 팬아웃 잔여정합: 순차commit위험명시·catch-up무조건·조기게이트·T1~T7 PASS · R37 FLOW_BRIEF | KAF 보고서 · `20260727_KAF_fanout_followup.json` | 예측력무관·무결성. 실전발화0회(logs없음) |
+| K-AG | PATCHED | pair÷null_q95(32)·zone=LMH이론PMF · 미소비3키(pair/consec/odd) aux배선 · E[k]=100 | KAG 보고서 · `20260727_KAG_pair_zone_learnkeys.json` | 명분·배선정합. 1등↑아님. 구/30·spread대비 SHA변경은 재정의정상 |

@@ -30,9 +30,16 @@
 | **markov** | 회차 간 의존 존재 | K-T lag1 중복 χ² | 1233전이 | χ²=3.35 | **0.764** | **기각** | K-T · K-W |
 | **review** | 이월(재출현) 성향 | K-T lag1 대리 | 1233 | (동상) | **0.764** | **기각** | K-T · K-W · K-X |
 | **miss_aux** | 미출 간격이 기하 이탈 | K-T 간격 χ² | 7359 | χ²=19.6 | **0.483** | **기각** | K-T · K-Y |
-| **pattern_aux** | 형태에 구조(제약 명분) | K-T·K-Z·**K-AA** | 1234 / 단위검증 | AC=8·consec PMF·배선PASS | draws p≥0.13 | **실증** | K-T · K-Z · **K-AA** |
-| **balance_aux** | 홀짝·구간·합 균형 제약 | K-T·K-Z·**K-AA** | 1234 / 단위검증 | 폴백합138·합단조·LMH(2,2,2) | draws p≥0.13 | **실증** | K-T · K-Z · **K-AA** |
+| **pattern_aux** | 형태에 구조(제약 명분) | K-T·K-Z·K-AA·**K-AG** | 1234 / 단위검증 | AC=8·consec PMF·pair÷null_q95(32)·learn키배선 | draws p≥0.13 | **실증** | K-T · K-Z · K-AA · **K-AG** |
+| **balance_aux** | 홀짝·구간·합 균형 제약 | K-T·K-Z·K-AA·**K-AG** | 1234 / 단위검증 | 폴백합138·LMH이론PMF·odd_even배선 | draws p≥0.13 | **실증** | K-T · K-Z · K-AA · **K-AG** |
 | **referee_aux** | 성적 좋은 뇌에 가중 | 메타정책 · K-M/K-Y | — | score_set≡0.5 · 멤버십Δ=0 | — | **미정의** | K-T · K-M · K-Y |
+
+### K-AG 요약 (20260727)
+
+- pair: 구 `/30`(출처없음) → **null_q95=32.0** (`20260727_KAG_step0_measure.json`)
+- zone: 구 `zone_spread`·미사용 `tgt['zone']` 혼용 → **LMH C(45,6) 이론 PMF** (mode 2,2,2 → 0.7)
+- 미소비 3키 배선: pair_boost·consecutive_boost·odd_even_balance → 대응 성분 (`*(1+boost)`, 키=0 항등)
+- **1등 확률↑ 아님 · 명분·배선 정합**
 
 ### K-AA 복귀 요약 (20260727)
 

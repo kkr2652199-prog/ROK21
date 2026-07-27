@@ -9,7 +9,12 @@ from __future__ import annotations
 from app.testlotto.features.draw_features import combo_features
 
 
-def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
+def score_set(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = None,
+) -> float:
     """0~1. 과거 frequent_traps 번호 포함 시 감점."""
     feats = combo_features(nums, draws)
     penalty = 0.0
@@ -30,6 +35,11 @@ def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
     return max(0.1, min(1.0, base))
 
 
-def describe(nums: list[int], draws: list[dict], target_draw_no: int) -> str:
-    s = score_set(nums, draws, target_draw_no)
+def describe(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = None,
+) -> str:
+    s = score_set(nums, draws, target_draw_no, brain_tag=brain_tag)
     return f"오답탐정:{s:.2f}"

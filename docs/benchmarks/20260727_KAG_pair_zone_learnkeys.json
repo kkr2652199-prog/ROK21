@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "id": "K-AG",
+    "disclaimer": "1등 확률 상승 작업이 아니다. 명분·배선 정합 작업이다.",
+    "as_of": 1234
+  },
+  "step0_ref": {
+    "pair_divisor": 32.0,
+    "null_q95": 32.0,
+    "legacy_30_sat_null": 0.1074,
+    "zone_conflict_was": true,
+    "unused_were_unconsumed": true
+  },
+  "redef": {
+    "pair": "PAIR_NORM_DIVISOR=null_q95=32.0 (not win-advantage)",
+    "zone": "LMH theory PMF score; tgt['zone'] removed from scoring",
+    "unchanged": [
+      "AC_TARGET=8",
+      "_CONSEC_SCORE",
+      "sum fallback 138",
+      "odd hist mean"
+    ]
+  },
+  "wiring": {
+    "pair_boost": "pattern pair_term",
+    "consecutive_boost": "pattern consec_term / _CONSEC_SCORE",
+    "odd_even_balance": "balance odd_term",
+    "zero_key_identity": "brain_tag=None ≡ load_learn_state all boosts 0",
+    "note_vs_pre_kag_sha": "구 /30·zone_spread 대비 SHA 불일치는 재정의 정상. 항등 검증은 신규 baseline에서 키=0 기준."
+  },
+  "tests": {
+    "zero_key": {
+      "pass": true,
+      "detail": [
+        {
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "pat": [
+            0.40750000000000003,
+            0.40750000000000003
+          ],
+          "bal": [
+            0.427393820861678,
+            0.427393820861678
+          ],
+          "ok": true
+        },
+        {
+          "nums": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "pat": [
+            0.39499999999999996,
+            0.39499999999999996
+          ],
+          "bal": [
+            0.427393820861678,
+            0.427393820861678
+          ],
+          "ok": true
+        },
+        {
+          "nums": [
+            1,
+            15,
+            16,
+            30,
+            31,
+            45
+          ],
+          "pat": [
+            0.6388,
+            0.6388
+          ],
+          "bal": [
+            0.8063854166666666,
+            0.8063854166666666
+          ],
+          "ok": true
+        },
+        {
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            45
+          ],
+          "pat": [
+            0.4976,
+            0.4976
+          ],
+          "bal": [
+            0.34112772108843537,
+            0.34112772108843537
+          ],
+          "ok": true
+        },
+        {
+          "nums": [
+            10,
+            20,
+            21,
+            22,
+            30,
+            40
+          ],
+          "pat": [
+            0.5663,
+            0.5663
+          ],
+          "bal": [
+            0.5462846513605442,
+            0.5462846513605442
+          ],
+          "ok": true
+        }
+      ]
+    },
+    "sensitivity": {
+      "pass": true,
+      "by_key": {
+        "pair_boost": {
+          "aux_delta": 0.026249999999999996,
+          "changed": true
+        },
+        "consecutive_boost": {
+          "aux_delta": 0.007500000000000062,
+          "changed": true
+        },
+        "odd_even_balance": {
+          "aux_delta": 0.0032812500000000133,
+          "changed": true
+        }
+      },
+      "on_nums": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "isolation_3x3": {
+      "pass": true,
+      "table": {
+        "pair_boost": {
+          "pair_changed": true,
+          "consec_changed": false,
+          "odd_changed": false,
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "consecutive_boost": {
+          "pair_changed": false,
+          "consec_changed": true,
+          "odd_changed": false,
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "odd_even_balance": {
+          "pair_changed": false,
+          "consec_changed": false,
+          "odd_changed": true,
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      }
+    },
+    "zone_unit": {
+      "pass": true,
+      "score_222": 0.7,
+      "score_600": 0.30172940287226,
+      "mode_is_max": true,
+      "mode_p": 0.14212602485432888,
+      "expect_222_near_0_7": true
+    },
+    "leak_sha": {
+      "pass": true,
+      "h1": "2086fe8f5367bf6e133f57fef0f35a3bd76237f95d1e6a0996cfd695e126a869",
+      "h2": "2086fe8f5367bf6e133f57fef0f35a3bd76237f95d1e6a0996cfd695e126a869"
+    },
+    "regression": {
+      "E_k": 100.0,
+      "unresolved": 0,
+      "dedup_on": true,
+      "as_of_ok": true,
+      "sha_leak_ok": true,
+      "sha": "2086fe8f5367bf6e133f57fef0f35a3bd76237f95d1e6a0996cfd695e126a869",
+      "gate_pass": true
+    }
+  },
+  "verify_pass": true
+}

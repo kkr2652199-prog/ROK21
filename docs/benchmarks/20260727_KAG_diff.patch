@@ -1,0 +1,322 @@
+﻿diff --git a/app/testlotto/brains/aux_balance_keeper.py b/app/testlotto/brains/aux_balance_keeper.py
+index 8921824..f3456cf 100644
+--- a/app/testlotto/brains/aux_balance_keeper.py
++++ b/app/testlotto/brains/aux_balance_keeper.py
+@@ -1,12 +1,19 @@
+ """洹좏삎吏?댁씠 ???吏씲룰퀬?쨌援ш컙 ?좊┝ 諛⑹? (3?덉륫??寃곌낵 洹좏삎 議곗쑉).
+ 
+ [紐낅텇] ?ㅼ쬆 쨌 K-T ?吏씲룰뎄媛꽷룻빀 ?대줎遺??p??.13 쨌 K-Z/K-AA ?대갚??138(?대줎?됯퇏) 쨌 異쒖쿂 K-T쨌K-Z쨌K-AA
++[K-AG] zone = LMH C(45,6) ?대줎 PMF (援?zone_spread쨌tgt['zone'] ?쇱슜 ?쒓굅) 쨌 odd_even_balance ?뚮퉬
+ """
+ 
+ from __future__ import annotations
+ 
++from math import comb
++
+ from app.testlotto.features.draw_features import odd_even_ratio, sum_range
+ 
++_N_COMBOS = comb(45, 6)
++_LMH_MODE = (2, 2, 2)
++_LMH_MODE_P = (comb(15, 2) * comb(15, 2) * comb(15, 2)) / _N_COMBOS  # ??.142126
++
+ 
+ def _zone_counts(nums: list[int]) -> tuple[int, int, int]:
+     low = sum(1 for n in nums if 1 <= n <= 15)
+@@ -15,42 +22,78 @@ def _zone_counts(nums: list[int]) -> tuple[int, int, int]:
+     return low, mid, high
+ 
+ 
++def _lmh_p(low: int, mid: int, high: int) -> float:
++    if low + mid + high != 6 or min(low, mid, high) < 0:
++        return 0.0
++    if low > 15 or mid > 15 or high > 15:
++        return 0.0
++    return (comb(15, low) * comb(15, mid) * comb(15, high)) / _N_COMBOS
++
++
++def _zone_score_lmh(low: int, mid: int, high: int) -> float:
++    """K-Z/K-AG: score = 0.3 + 0.4*(p/p_mode), mode=(2,2,2)."""
++    p = _lmh_p(low, mid, high)
++    return 0.3 + 0.4 * (p / _LMH_MODE_P)
++
++
+ def _historical_targets(draws: list[dict]) -> dict[str, float]:
++    """?쨌?⑸쭔 ??궗 ?됯퇏. zone 紐⑺몴?ㅻ뒗 ???댁긽 ?곗? ?딆쓬(K-AG ?뺤쓽 異⑸룎 ?댁냼)."""
+     if not draws:
+-        # K-AA: 鍮?draws ?대갚 ??= C(45,6) ?대줎?됯퇏 138 (援?150 ?ㅻ쪟 援먯젙). odd=3쨌zone=2 ?좎?(zone 蹂대쪟).
+-        return {"odd": 3.0, "sum": 138.0, "zone": 2.0}
++        return {"odd": 3.0, "sum": 138.0}
+     odds, sums = [], []
+-    zones = []
+     for d in draws[-80:]:
+         nums = sorted([int(d[f"num{k}"]) for k in range(1, 7)])
+         o, _ = odd_even_ratio(nums)
+         odds.append(o)
+         sums.append(sum_range(nums))
+-        zones.append(max(_zone_counts(nums)))
+     return {
+         "odd": sum(odds) / len(odds),
+         "sum": sum(sums) / len(sums),
+-        "zone": sum(zones) / len(zones),
+     }
+ 
+ 
+-def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
++def _odd_even_boost(brain_tag: str | None) -> float:
++    if not brain_tag:
++        return 0.0
++    try:
++        from app.testlotto.learn_state import load_learn_state
++
++        adj = load_learn_state(brain_tag).get("adjustments") or {}
++    except (ValueError, Exception):
++        return 0.0
++    return float(adj.get("odd_even_balance", 0) or 0)
++
++
++def score_set(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> float:
+     tgt = _historical_targets(draws)
+     odd, even = odd_even_ratio(nums)
+     s = sum_range(nums)
+     low, mid, high = _zone_counts(nums)
+-    zone_spread = max(low, mid, high) - min(low, mid, high)
+ 
+     odd_score = 1.0 - min(1.0, abs(odd - tgt["odd"]) / 3)
+     sum_score = 1.0 - min(1.0, abs(s - tgt["sum"]) / 60)
+-    zone_score = 1.0 - min(1.0, zone_spread / 4)
+-    return max(0.1, min(1.0, 0.35 * odd_score + 0.35 * sum_score + 0.30 * zone_score))
++    zone_score = min(1.0, _zone_score_lmh(low, mid, high))
++
++    oe_b = _odd_even_boost(brain_tag)
++    odd_term = min(1.0, odd_score * (1.0 + oe_b))
++
++    return max(0.1, min(1.0, 0.35 * odd_term + 0.35 * sum_score + 0.30 * zone_score))
+ 
+ 
+-def describe(nums: list[int], draws: list[dict], target_draw_no: int) -> str:
++def describe(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> str:
+     odd, even = odd_even_ratio(nums)
+     low, mid, high = _zone_counts(nums)
+     return (
+         f"洹좏삎吏?댁씠:?{odd}吏?even} "
+-        f"援ш컙{low}-{mid}-{high} ?먯닔{score_set(nums, draws, target_draw_no):.2f}"
++        f"援ш컙{low}-{mid}-{high} ?먯닔{score_set(nums, draws, target_draw_no, brain_tag=brain_tag):.2f}"
+     )
+diff --git a/app/testlotto/brains/aux_miss_detective.py b/app/testlotto/brains/aux_miss_detective.py
+index 42ae181..39d5b9a 100644
+--- a/app/testlotto/brains/aux_miss_detective.py
++++ b/app/testlotto/brains/aux_miss_detective.py
+@@ -9,7 +9,12 @@ from __future__ import annotations
+ from app.testlotto.features.draw_features import combo_features
+ 
+ 
+-def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
++def score_set(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> float:
+     """0~1. 怨쇨굅 frequent_traps 踰덊샇 ?ы븿 ??媛먯젏."""
+     feats = combo_features(nums, draws)
+     penalty = 0.0
+@@ -30,6 +35,11 @@ def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
+     return max(0.1, min(1.0, base))
+ 
+ 
+-def describe(nums: list[int], draws: list[dict], target_draw_no: int) -> str:
+-    s = score_set(nums, draws, target_draw_no)
++def describe(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> str:
++    s = score_set(nums, draws, target_draw_no, brain_tag=brain_tag)
+     return f"?ㅻ떟?먯젙:{s:.2f}"
+diff --git a/app/testlotto/brains/aux_pattern_spotlight.py b/app/testlotto/brains/aux_pattern_spotlight.py
+index 0307c82..19711fd 100644
+--- a/app/testlotto/brains/aux_pattern_spotlight.py
++++ b/app/testlotto/brains/aux_pattern_spotlight.py
+@@ -1,6 +1,7 @@
+ """?⑦꽩?뗫낫湲????띿닔쨌?곗냽?샕텮C媛?(SELMA consecutive + pair 踰ㅼ튂留덊궧).
+ 
+ [紐낅텇] ?ㅼ쬆 쨌 K-T ?뺥깭吏???대줎遺??p??.13 쨌 K-Z/K-AA ?대줎?곸닔(AC理쒕퉰=8쨌consec PMF) 쨌 異쒖쿂 K-T쨌K-Z쨌K-AA
++[K-AG] pair ?뺢퇋??= window100 null_q95(32.0) 쨌 pair_boost/consecutive_boost ?뚮퉬
+ """
+ 
+ from __future__ import annotations
+@@ -20,20 +21,59 @@ _CONSEC_SCORE: dict[int, float] = {
+ 
+ AC_TARGET = 8  # C(45,6) AC 理쒕퉰 (K-Z)
+ 
++# K-AG STEP0: pair_score null(5000) q95 @ window=100, as_of=1234
++# docs/benchmarks/20260727_KAG_step0_measure.json ??pair.null_5000.q95
++# 怨좊퉰?꾩뙇=?뱀꺼?좊━ ?댁꽍 湲덉?(K-U FDR0). 援?/30 ? 異쒖쿂 ?녿뒗 ?곸닔.
++PAIR_NORM_DIVISOR = 32.0
+ 
+-def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
++
++def _learn_boosts(brain_tag: str | None) -> tuple[float, float]:
++    if not brain_tag:
++        return 0.0, 0.0
++    try:
++        from app.testlotto.learn_state import load_learn_state
++
++        adj = load_learn_state(brain_tag).get("adjustments") or {}
++    except (ValueError, Exception):
++        return 0.0, 0.0
++    return (
++        float(adj.get("pair_boost", 0) or 0),
++        float(adj.get("consecutive_boost", 0) or 0),
++    )
++
++
++def score_set(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> float:
+     feats = combo_features(nums, draws)
+     pair_freq = build_pair_freq(draws)
+     pairs = pair_set(nums)
+     pair_score = sum(pair_freq.get(p, 0) for p in pairs)
+-    pair_norm = min(1.0, pair_score / 30.0)
++    pair_norm = min(1.0, pair_score / PAIR_NORM_DIVISOR)
+     consec = feats["consecutive"]
+     ac = feats["ac"]
+     ac_score = 1.0 - min(1.0, abs(ac - AC_TARGET) / 10.0)
+     consec_score = _CONSEC_SCORE.get(int(consec), 0.3)
+-    return max(0.1, min(1.0, 0.4 * pair_norm + 0.35 * ac_score + 0.25 * consec_score))
++
++    pair_b, consec_b = _learn_boosts(brain_tag)
++    # ??0?대㈃ 湲곗〈怨???벑: *(1+0)
++    pair_term = min(1.0, pair_norm * (1.0 + pair_b))
++    consec_term = min(1.0, consec_score * (1.0 + consec_b))
++
++    return max(0.1, min(1.0, 0.4 * pair_term + 0.35 * ac_score + 0.25 * consec_term))
+ 
+ 
+-def describe(nums: list[int], draws: list[dict], target_draw_no: int) -> str:
++def describe(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> str:
+     feats = combo_features(nums, draws)
+-    return f"?⑦꽩?뗫낫湲?AC{feats['ac']} ?곗냽{feats['consecutive']} ?먯닔{score_set(nums, draws, target_draw_no):.2f}"
++    return (
++        f"?⑦꽩?뗫낫湲?AC{feats['ac']} ?곗냽{feats['consecutive']} "
++        f"?먯닔{score_set(nums, draws, target_draw_no, brain_tag=brain_tag):.2f}"
++    )
+diff --git a/app/testlotto/brains/aux_referee.py b/app/testlotto/brains/aux_referee.py
+index 6ebf882..e0bcc7f 100644
+--- a/app/testlotto/brains/aux_referee.py
++++ b/app/testlotto/brains/aux_referee.py
+@@ -13,12 +13,22 @@ def get_predict_brain_weights() -> dict[str, float]:
+     return get_referee_weights()
+ 
+ 
+-def score_set(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
++def score_set(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> float:
+     """蹂댁“ 梨꾩젏 ?뚯씠?꾨씪???명솚????以묐┰ 湲곕낯媛?"""
+     return 0.5
+ 
+ 
+-def describe(nums: list[int], draws: list[dict], target_draw_no: int) -> str:
++def describe(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> str:
+     w = get_predict_brain_weights()
+     parts = [f"{k}:{v:.2f}" for k, v in sorted(w.items())]
+     return f"?ы뙋愿:媛以묒튂 {' '.join(parts)}"
+diff --git a/app/testlotto/brains/coordinator.py b/app/testlotto/brains/coordinator.py
+index dd98167..cf186f6 100644
+--- a/app/testlotto/brains/coordinator.py
++++ b/app/testlotto/brains/coordinator.py
+@@ -37,10 +37,15 @@ def _delete_predictions_for_brain(conn, target_draw_no: int, brain_tag: str) ->
+     )
+ 
+ 
+-def _aux_composite_score(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
++def _aux_composite_score(
++    nums: list[int],
++    draws: list[dict],
++    target_draw_no: int,
++    brain_tag: str | None = None,
++) -> float:
+     total = 0.0
+     for mod, w in zip(AUX_MODULES, AUX_WEIGHTS):
+-        total += w * mod.score_set(nums, draws, target_draw_no)
++        total += w * mod.score_set(nums, draws, target_draw_no, brain_tag=brain_tag)
+     return total
+ 
+ 
+@@ -48,12 +53,13 @@ def _apply_aux_scoring(candidates: list[dict], draws: list[dict], target_draw_no
+     ref_weights = get_referee_weights()
+     out: list[dict] = []
+     for c in candidates:
+-        aux_score = _aux_composite_score(c["nums"], draws, target_draw_no)
++        tag = c.get("brain_tag", "") or None
++        aux_score = _aux_composite_score(c["nums"], draws, target_draw_no, brain_tag=tag)
+         base = float(c.get("confidence", 60))
+         brain_w = ref_weights.get(c.get("brain_tag", ""), 1.0 / 3)
+         final_conf = min(99.5, base * 0.5 * brain_w + aux_score * 40 + base * 0.1)
+         aux_notes = " | ".join(
+-            m.describe(c["nums"], draws, target_draw_no) for m in AUX_MODULES
++            m.describe(c["nums"], draws, target_draw_no, brain_tag=tag) for m in AUX_MODULES
+         )
+         out.append(
+             {
+diff --git a/app/testlotto/brains/warrant.py b/app/testlotto/brains/warrant.py
+index 6fd15eb..6595c21 100644
+--- a/app/testlotto/brains/warrant.py
++++ b/app/testlotto/brains/warrant.py
+@@ -41,21 +41,21 @@ BRAIN_WARRANT: dict[str, dict[str, Any]] = {
+     "pattern_aux": {
+         "label": "?ㅼ쬆",
+         "evidence": (
+-            "K-T ?뺥깭 ?대줎遺??p??.13 ??K-AA 援ы쁽寃利? ac_target=8(理쒕퉰)쨌"
+-            "consec PMF?⑥“?먯닔쨌諛곗꽑 PASS(composite ??벑쨌ablation conf 蹂??"
++            "K-T ?뺥깭 ?대줎遺??p??.13 ??K-AA AC=8쨌consec PMF ??"
++            "K-AG pair_norm=null_q95(32)쨌pair_boost/consecutive_boost ?뚮퉬"
+         ),
+         "p": 0.13,
+-        "source_ids": ["K-T", "K-Z", "K-AA"],
++        "source_ids": ["K-T", "K-Z", "K-AA", "K-AG"],
+         "kw_alignment": "臾댄빐_C洹쇱젒",
+     },
+     "balance_aux": {
+         "label": "?ㅼ쬆",
+         "evidence": (
+-            "K-T 洹좏삎 ?대줎遺??p??.13 ??K-AA 援ы쁽寃利? ?대갚??138쨌"
+-            "?⑷굅由??⑥“媛먯냼쨌LMH(2,2,2) 理쒓퀬??zone_score)"
++            "K-T 洹좏삎 ?대줎遺??p??.13 ??K-AA ?대갚??138 ??"
++            "K-AG zone=LMH?대줎PMF(mode 2,2,2)쨌odd_even_balance ?뚮퉬"
+         ),
+         "p": 0.13,
+-        "source_ids": ["K-T", "K-Z", "K-AA"],
++        "source_ids": ["K-T", "K-Z", "K-AA", "K-AG"],
+         "kw_alignment": "?뺥빀_A洹쇱젒",
+     },
+     "referee_aux": {

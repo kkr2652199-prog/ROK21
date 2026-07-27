@@ -37,10 +37,15 @@ def _delete_predictions_for_brain(conn, target_draw_no: int, brain_tag: str) -> 
     )
 
 
-def _aux_composite_score(nums: list[int], draws: list[dict], target_draw_no: int) -> float:
+def _aux_composite_score(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = None,
+) -> float:
     total = 0.0
     for mod, w in zip(AUX_MODULES, AUX_WEIGHTS):
-        total += w * mod.score_set(nums, draws, target_draw_no)
+        total += w * mod.score_set(nums, draws, target_draw_no, brain_tag=brain_tag)
     return total
 
 
@@ -48,12 +53,13 @@ def _apply_aux_scoring(candidates: list[dict], draws: list[dict], target_draw_no
     ref_weights = get_referee_weights()
     out: list[dict] = []
     for c in candidates:
-        aux_score = _aux_composite_score(c["nums"], draws, target_draw_no)
+        tag = c.get("brain_tag", "") or None
+        aux_score = _aux_composite_score(c["nums"], draws, target_draw_no, brain_tag=tag)
         base = float(c.get("confidence", 60))
         brain_w = ref_weights.get(c.get("brain_tag", ""), 1.0 / 3)
         final_conf = min(99.5, base * 0.5 * brain_w + aux_score * 40 + base * 0.1)
         aux_notes = " | ".join(
-            m.describe(c["nums"], draws, target_draw_no) for m in AUX_MODULES
+            m.describe(c["nums"], draws, target_draw_no, brain_tag=tag) for m in AUX_MODULES
         )
         out.append(
             {
