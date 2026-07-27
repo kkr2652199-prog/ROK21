@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a556a3f` · WORK=`IDLE`
+1. **HEAD:** `a1b7e87` · WORK=`IDLE`
 2. **지금:** K-D fusion 클릭경로 정합 PASS (coordinator 전용)
 3. **다음1건:** K-AWAIT — 형 다음 본선 1건 — **1235 발표 후** fetch·채점 루프 (MAX=1234) (승인필요=아니오 · 선행=K-D·K-H·K-B PATCHED · PIN `640cb67`)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

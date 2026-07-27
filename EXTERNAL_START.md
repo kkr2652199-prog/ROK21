@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `a556a3f` |
+| HEAD(실측) | `a1b7e87` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | K-D fusion 클릭경로 정합 PASS (coordinator 전용) |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=a556a3f · 지금=K-D fusion 클릭경로 정합 PASS (coordinator 전용) · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=a1b7e87 · 지금=K-D fusion 클릭경로 정합 PASS (coordinator 전용) · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: a556a3f_
+_generated: a1b7e87_

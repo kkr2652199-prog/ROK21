@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a556a3f` · WORK=`IDLE`
+- HEAD: `a1b7e87` · WORK=`IDLE`
 - 지금: K-D fusion 클릭경로 정합 PASS (coordinator 전용)
 - 직전: K-H _unused · K-B BENCH · K-W
 - BOOT다음: K-AWAIT — 1235 발표 후 fetch·채점 루프 (MAX=1234)
