@@ -1,27 +1,24 @@
 # WARRANT.md — 뇌 명분 SSOT (ROK21)
 
-📅 제정: 2026-07-27 · 개정: 2026-07-27(K-Y) · SSOT=`kkr2652199-prog/ROK21`  
-📌 **K-Z(20260727):** 이론값 확정·대조만. **라벨 변경 없음.** 상수 교체 적용·구현검증 후에야 pattern/balance **실증** 복귀 가능.  
+📅 제정: 2026-07-27 · 개정: 2026-07-27(**K-AA**) · SSOT=`kkr2652199-prog/ROK21`  
 📌 **이 파일이 뇌 명분(warrant)의 단일 출처다.** 성적·벤치 수치와 충돌 시 명분 라벨은 본 문서 우선.  
-📌 코드 미러: `app/testlotto/brains/warrant.py` (K-Y 강등 후 미러 동기화는 코드허용 턴) · `out["brain_warrant"]` UI 노출 금지
+📌 코드 미러: `app/testlotto/brains/warrant.py` (**K-AA 동기화**) · `out["brain_warrant"]` UI 노출 금지  
+📌 **(K-AA)** K-W A거리=관측지표(게이트 아님). 상수 채택=조합론 참값 일치 단일축.
 
 ---
 
-## 0) 해석 규칙 (K-W / K-Y)
+## 0) 해석 규칙 (K-W / K-Y / K-AA)
 
 | 판정 | 의미 |
 |------|------|
 | 뇌가 C(균등)에 가까움 | 명분은 없으나 **무해** |
-| 뇌가 A(당첨분포)에 가까움 | **정합** |
+| 뇌가 A(당첨분포)에 가까움 | **정합** (관측; 채택 게이트 아님) |
 | 뇌가 A·C 양쪽에서 멀다 | **편향 경보** |
 
 **라벨 계층:**  
-`실증` = 전제 실증 **그리고** 모듈이 그 전제를 구현함이 검증됨.  
-`전제실증·구현미검증` = draws/이론은 OK이나 모듈 구현이 이론 근사가 아님 (K-Y).  
+`실증` = 전제 실증 **그리고** 모듈이 그 전제를 구현함이 검증됨 (K-AA: pattern/balance).  
+`전제실증·구현미검증` = draws/이론은 OK이나 모듈 구현 미검증.  
 `기각` / `미정의` = 기존과 동일.
-
-거리: 합=KS · 홀짝/구간/연속/끝수=χ²/df.  
-aux는 세트 미생성 → 점수 적용 후 top15를 B로 사용 (K-Y).
 
 ---
 
@@ -33,28 +30,28 @@ aux는 세트 미생성 → 점수 적용 후 top15를 B로 사용 (K-Y).
 | **markov** | 회차 간 의존 존재 | K-T lag1 중복 χ² | 1233전이 | χ²=3.35 | **0.764** | **기각** | K-T · K-W |
 | **review** | 이월(재출현) 성향 | K-T lag1 대리 | 1233 | (동상) | **0.764** | **기각** | K-T · K-W · K-X |
 | **miss_aux** | 미출 간격이 기하 이탈 | K-T 간격 χ² | 7359 | χ²=19.6 | **0.483** | **기각** | K-T · K-Y |
-| **pattern_aux** | 형태에 구조(제약 명분) | K-T draws≈이론 · K-Y 구현추적 | 1234 / 코드 | AC목표=7 상수 등 | draws p≥0.13 | **전제실증·구현미검증** | K-T · **K-Y** |
-| **balance_aux** | 홀짝·구간·합 균형 제약 | K-T draws≈이론 · K-Y 구현추적 | 1234 / 코드 | 목표=최근80평균·기본합150 | draws p≥0.13 | **전제실증·구현미검증** | K-T · **K-Y** |
+| **pattern_aux** | 형태에 구조(제약 명분) | K-T·K-Z·**K-AA** | 1234 / 단위검증 | AC=8·consec PMF·배선PASS | draws p≥0.13 | **실증** | K-T · K-Z · **K-AA** |
+| **balance_aux** | 홀짝·구간·합 균형 제약 | K-T·K-Z·**K-AA** | 1234 / 단위검증 | 폴백합138·합단조·LMH(2,2,2) | draws p≥0.13 | **실증** | K-T · K-Z · **K-AA** |
 | **referee_aux** | 성적 좋은 뇌에 가중 | 메타정책 · K-M/K-Y | — | score_set≡0.5 · 멤버십Δ=0 | — | **미정의** | K-T · K-M · K-Y |
 
-### 강등 사유 (K-Y · 20260727)
+### K-AA 복귀 요약 (20260727)
 
-- **pattern_aux:** `ac_target=7`, consec 점수표, pair/30 — 경험칙·상수. C(45,6) 근사 코드 없음.  
-- **balance_aux:** `_historical_targets(draws[-80:])` 경험평균. 빈 데이터 기본 합 **150≠138**. 이론 PMF 미사용.
+- 폴백 합 **150→138** · `ac_target` **7→8** · consec **확률단조(0≠1)**  
+- 단위: AC8 피크 · 합138 단조 · LMH(2,2,2) 최고 · consec 배선 PASS  
+- 회귀: E[k]=100 · CUTOFF ON · SHA 일치 · 롤백 불필요  
+- **1등 확률↑ 아님 · A정합 개선 아님 · 명분만**
 
-### K-W / K-Y 산출 정합성 병기
+### K-W / K-Y 산출 정합성 병기 (관측)
 
 | 뇌 | 종합 | 비고 |
 |----|------|------|
 | stat | 정합_A근접 | K-W |
 | markov | 무해_C근접 | K-W |
-| review | C근접+끝수편향 · 원인 K-X(`repeat_rate`투영) | K-W·K-X |
-| miss_aux | 무해_C근접 · **순위기여 0%** | K-Y |
-| pattern_aux | 무해_C근접 · 제거 시 멤버십 Δ=0.42 | K-Y |
-| balance_aux | 정합_A근접 · 제거 시 Δ=0.70 | K-Y |
-| referee_aux | 무해_C근접 · **순위기여 0%** (상수점수) | K-Y |
-
-수치: `docs/benchmarks/20260727_KW_alignment.json` · `20260727_KY_aux_audit.json`
+| review | C근접+끝수편향 · 원인 K-X | K-W·K-X |
+| miss_aux | 무해_C근접 · 순위기여 0% | K-Y |
+| pattern_aux | 무해_C근접 · 제거 시 Δ=0.42 · **구현검증 K-AA** | K-Y·K-AA |
+| balance_aux | 정합_A근접 · 제거 시 Δ=0.70 · **구현검증 K-AA** | K-Y·K-AA |
+| referee_aux | 무해_C근접 · 순위기여 0% | K-Y |
 
 ---
 
@@ -67,5 +64,5 @@ aux는 세트 미생성 → 점수 적용 후 top15를 B로 사용 (K-Y).
 
 ## 3) 관련
 
-- `BENCH_PROTOCOL.md` · `FINDINGS.md` K-T·K-W·K-X·**K-Y**  
-- `reports/20260727_KY_보조4뇌_정밀감사.md`
+- `BENCH_PROTOCOL.md` · `FINDINGS.md` K-T·K-W·K-Y·**K-Z**·**K-AA**  
+- `reports/20260727_KAA_이론값적용_명분복귀.md`

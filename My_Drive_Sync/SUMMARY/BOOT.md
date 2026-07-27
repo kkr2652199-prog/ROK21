@@ -5,23 +5,23 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-Z 이론값확정 · AC최빈8≠7 · 교체시A거리↑ · 적용금지
-- 직전: K-Y 보조4감사 · pattern/balance 강등
-- 다음: 형—상수교체승인(폴백150·ac=8) · warrant.py · K-R/hyodo
+- 지금: K-AA 이론값적용 · pattern/balance 실증복귀 · warrant동기화
+- 직전: K-Z 이론값확정(AC최빈8·폴백150오차)
+- 다음: 형—pair/30·zone재정의 · 미소비키 · K-R/hyodo
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
 |------|-----|------|
-| 합 이론 mean/mode | **138** | K-Z 전수 |
-| AC 이론 최빈 | **8** (현행7) | K-Z |
-| 교체 top15 Δ / A거리 | **23.5%** / 0.835→**0.947** | K-Z 시뮬 |
-| pattern/balance 라벨 | **전제실증·구현미검증** | WARRANT |
+| ac_target / 폴백합 | **8** / **138** | K-AA |
+| consec 배선 | **PASS** | K-AA STEP2 |
+| pattern/balance 라벨 | **실증** | WARRANT·K-AA |
+| E[k] dedup / SHA | **100** / 일치 | K-AA STEP4 |
 | draws MAX | **1234** | DB |
 | kweon 동결 | **264de3c** | 실측 |
 
 ## 3) 열린 과제 -> FINDINGS.md
-K-Z·Y·X·W OPEN. K-V·S=**PATCHED**. K-M·N=**HOLD**.  
-명분=`WARRANT.md`(라벨변경없음·적용후실증복귀). 적용금지.
+K-AA·Z·V·S=**PATCHED**. K-Y·X·W OPEN(기록). K-M·N=**HOLD**.  
+명분=`WARRANT.md`(실증2). A거리=관측. pair/30·zone보류.
 
 ## 4) 주의 (붕괴 방지)
 - 이 레포=ROK21 (kweon 20260726 04:38 복사본). SSOT=ROK21 main
@@ -34,7 +34,7 @@ K-Z·Y·X·W OPEN. K-V·S=**PATCHED**. K-M·N=**HOLD**.
 - 원본 kweon 미접촉. DB 전체초기화 비권고. 수집·크롤링은 형 승인 전 금지.
 
 ## 5) 더 필요하면
-1. `reports/20260727_KZ_이론값확정_상수대조.md` · `docs/benchmarks/20260727_KZ_theory_constants.json`
-2. `WARRANT.md` (라벨유지 · 적용후실증)
-3. `FINDINGS.md` (K-Z)
+1. `reports/20260727_KAA_이론값적용_명분복귀.md` · `docs/benchmarks/20260727_KAA_apply_verify.json`
+2. `WARRANT.md` · `brains/warrant.py`
+3. `FINDINGS.md` (K-AA·K-Z PATCHED)
 4. `RESTORE.md` · `STATUS_LATEST.md`

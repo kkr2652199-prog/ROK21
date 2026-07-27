@@ -1,6 +1,6 @@
 """균형지킴이 — 홀짝·고저·구간 쏠림 방지 (3예측뇌 결과 균형 조율).
 
-[명분] 실증 · K-T 홀짝·구간·합 이론부합 p≥0.13 (균형 제약 명분) · 출처 K-T
+[명분] 실증 · K-T 홀짝·구간·합 이론부합 p≥0.13 · K-Z/K-AA 폴백합=138(이론평균) · 출처 K-T·K-Z·K-AA
 """
 
 from __future__ import annotations
@@ -17,7 +17,8 @@ def _zone_counts(nums: list[int]) -> tuple[int, int, int]:
 
 def _historical_targets(draws: list[dict]) -> dict[str, float]:
     if not draws:
-        return {"odd": 3.0, "sum": 150.0, "zone": 2.0}
+        # K-AA: 빈 draws 폴백 합 = C(45,6) 이론평균 138 (구 150 오류 교정). odd=3·zone=2 유지(zone 보류).
+        return {"odd": 3.0, "sum": 138.0, "zone": 2.0}
     odds, sums = [], []
     zones = []
     for d in draws[-80:]:

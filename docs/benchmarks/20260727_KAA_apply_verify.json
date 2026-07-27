@@ -1,0 +1,397 @@
+{
+  "meta": {
+    "seed": 20260727,
+    "as_of": 1234,
+    "disclaimer": "이 교체는 1등 확률을 올리지 않는다. 조합불변이다. 얻는 것은 '왜 이 번호인가'에 답할 수 있는 명분뿐이다. A 정합도 개선도 아니다.",
+    "judgment_axis": "조합론 참값 일치 단일축 (K-W A거리=관측)"
+  },
+  "constants_applied": {
+    "balance_fallback_sum": 138.0,
+    "ac_target": 8,
+    "consec_scores": {
+      "0": 0.7,
+      "1": 0.6428,
+      "2": 0.3952,
+      "3": 0.3103,
+      "4": 0.3004,
+      "5": 0.3
+    },
+    "untouched": [
+      "pair/30",
+      "zone_target_rolling",
+      "zone_fallback=2"
+    ]
+  },
+  "step2_wiring": {
+    "feature_consec_set0": 0,
+    "feature_consec_set2": 2,
+    "feature_ok": true,
+    "pattern_score_set0": 0.7516666666666667,
+    "pattern_score_set2": 0.7021333333333333,
+    "pattern_delta": 0.04953333333333343,
+    "composite_set0": 0.5846354166666667,
+    "composite_set2": 0.5430854166666667,
+    "composite_delta": 0.04155000000000009,
+    "expected_composite_delta": 0.041550000000000024,
+    "composite_identity_ok": true,
+    "pattern_share_of_comp_delta": 0.2980344965904532,
+    "pattern_weight_in_composite": 0.25,
+    "top15_consec_hist": {
+      "0": 9,
+      "1": 3,
+      "2": 3
+    },
+    "consec_ablation_membership_delta": 0.0,
+    "consec_ablation_conf_changed": true,
+    "candidate_consec_varied": true,
+    "wiring_ok": true,
+    "halt_note": null,
+    "path_trace": {
+      "score_set_pattern": "aux_pattern_spotlight.score_set uses _CONSEC_SCORE[consec]",
+      "composite": "_aux_composite_score = Σ w_i * mod.score_set · pattern w=0.25",
+      "apply": "_apply_aux_scoring → final_conf = base*0.5*bw + aux*40 + base*0.1",
+      "sort": "scored.sort by confidence (coordinator)",
+      "AUX_WEIGHTS": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "pattern_module": "app.testlotto.brains.aux_pattern_spotlight",
+      "pattern_index": 1,
+      "K-D_note": "AUX_WEIGHTS [0.25]*4 hardcode — fusion 미배선이나 pattern 항은 소거되지 않음(가중 0.25 유지)"
+    },
+    "verdict": "PASS"
+  },
+  "step3_unit_impl": {
+    "ac": {
+      "component_table": [
+        {
+          "ac": 0,
+          "ac_score": 0.19999999999999996
+        },
+        {
+          "ac": 1,
+          "ac_score": 0.30000000000000004
+        },
+        {
+          "ac": 2,
+          "ac_score": 0.4
+        },
+        {
+          "ac": 3,
+          "ac_score": 0.5
+        },
+        {
+          "ac": 4,
+          "ac_score": 0.6
+        },
+        {
+          "ac": 5,
+          "ac_score": 0.7
+        },
+        {
+          "ac": 6,
+          "ac_score": 0.8
+        },
+        {
+          "ac": 7,
+          "ac_score": 0.9
+        },
+        {
+          "ac": 8,
+          "ac_score": 1.0
+        },
+        {
+          "ac": 9,
+          "ac_score": 0.9
+        },
+        {
+          "ac": 10,
+          "ac_score": 0.8
+        }
+      ],
+      "pattern_probe_rows": [
+        {
+          "ac": 4,
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            10
+          ],
+          "pattern_score": 0.2851
+        },
+        {
+          "ac": 5,
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            12
+          ],
+          "pattern_score": 0.32257499999999995
+        },
+        {
+          "ac": 6,
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            7,
+            14
+          ],
+          "pattern_score": 0.357575
+        },
+        {
+          "ac": 7,
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            8,
+            16
+          ],
+          "pattern_score": 0.392575
+        },
+        {
+          "ac": 8,
+          "nums": [
+            1,
+            2,
+            3,
+            5,
+            10,
+            16
+          ],
+          "pattern_score": 0.4488
+        },
+        {
+          "ac": 9,
+          "nums": [
+            1,
+            2,
+            3,
+            6,
+            12,
+            19
+          ],
+          "pattern_score": 0.4138
+        },
+        {
+          "ac": 10,
+          "nums": [
+            1,
+            2,
+            4,
+            8,
+            13,
+            21
+          ],
+          "pattern_score": 0.4407
+        }
+      ],
+      "peak_component_at_8": true,
+      "component_monotone_away_from_8": true,
+      "pattern_peak_ac": 8,
+      "pass": true
+    },
+    "sum": {
+      "fallback_targets": {
+        "odd": 3.0,
+        "sum": 138.0,
+        "zone": 2.0
+      },
+      "fallback_ok": true,
+      "probe_rows": [
+        {
+          "target_probe": 138,
+          "actual_sum": 137,
+          "nums": [
+            1,
+            2,
+            16,
+            29,
+            44,
+            45
+          ],
+          "balance_score": 0.9941666666666666,
+          "dist_to_138": 1
+        },
+        {
+          "target_probe": 120,
+          "actual_sum": 119,
+          "nums": [
+            1,
+            2,
+            16,
+            17,
+            38,
+            45
+          ],
+          "balance_score": 0.8891666666666667,
+          "dist_to_138": 19
+        },
+        {
+          "target_probe": 160,
+          "actual_sum": 159,
+          "nums": [
+            1,
+            10,
+            29,
+            30,
+            44,
+            45
+          ],
+          "balance_score": 0.8775,
+          "dist_to_138": 21
+        },
+        {
+          "target_probe": 100,
+          "actual_sum": 99,
+          "nums": [
+            1,
+            2,
+            16,
+            17,
+            31,
+            32
+          ],
+          "balance_score": 0.7725,
+          "dist_to_138": 39
+        },
+        {
+          "target_probe": 180,
+          "actual_sum": 177,
+          "nums": [
+            14,
+            15,
+            29,
+            30,
+            44,
+            45
+          ],
+          "balance_score": 0.7725,
+          "dist_to_138": 39
+        }
+      ],
+      "monotone_vs_dist_to_138": true,
+      "peak_at_nearest_138": true,
+      "pass": true
+    },
+    "zone_lmh": {
+      "probe_rows": [
+        {
+          "lmh": [
+            2,
+            2,
+            2
+          ],
+          "nums": [
+            1,
+            2,
+            16,
+            29,
+            44,
+            45
+          ],
+          "sum": 137,
+          "balance_score": 0.9941666666666666,
+          "zone_score_component": 1.0,
+          "spread": 0
+        },
+        {
+          "lmh": [
+            3,
+            2,
+            1
+          ],
+          "nums": [
+            4,
+            14,
+            15,
+            29,
+            30,
+            45
+          ],
+          "sum": 137,
+          "balance_score": 0.8441666666666666,
+          "zone_score_component": 0.5,
+          "spread": 2
+        },
+        {
+          "lmh": [
+            3,
+            1,
+            2
+          ],
+          "nums": [
+            1,
+            2,
+            15,
+            30,
+            44,
+            45
+          ],
+          "sum": 137,
+          "balance_score": 0.8441666666666666,
+          "zone_score_component": 0.5,
+          "spread": 2
+        }
+      ],
+      "pass": true,
+      "note": "zone_score=1-spread/4 → spread0 only at (2,2,2) among partitions of 6"
+    },
+    "consec_table": {
+      "scores": {
+        "0": 0.7,
+        "1": 0.6428,
+        "2": 0.3952,
+        "3": 0.3103,
+        "4": 0.3004,
+        "5": 0.3
+      },
+      "monotone_decreasing": true,
+      "untied_0_gt_1": true,
+      "in_band_0_3_to_0_7": true,
+      "pass": true
+    },
+    "pattern_aux_impl_pass": true,
+    "balance_aux_impl_pass": true
+  },
+  "step4_regression": {
+    "dedup_enabled": true,
+    "n_sim": 20,
+    "E_k": 100.0,
+    "k_all_100": true,
+    "unresolved_total": 0,
+    "dedup_ok": true,
+    "dedup_batch_seconds": 0.7761222999979509,
+    "cutoff_default_on": true,
+    "sha256_run1": "91b75cc746fea996749757b753451753ec3f988be15b38fc7aef950da57a98ca",
+    "sha256_run2": "91b75cc746fea996749757b753451753ec3f988be15b38fc7aef950da57a98ca",
+    "sha_ok": true,
+    "scoring_seconds_run1": 0.390164199998253,
+    "scoring_seconds_run2": 0.5409900999984529,
+    "kw_distance_observation_only": {
+      "sum_KS": 0.2793625067531064,
+      "odd_chi2_df": 1.1694591254478317,
+      "zone_chi2_df": 1.042315929215116,
+      "consec_chi2_df": 0.7996402342272355,
+      "ending_chi2_df": 2.829599739873276,
+      "note": "관측만 — 게이트 아님 (K-AA STEP0)"
+    },
+    "gate_pass": true
+  },
+  "warrant_decision": {
+    "pattern_aux": "실증",
+    "balance_aux": "실증",
+    "rollback_required": false
+  }
+}

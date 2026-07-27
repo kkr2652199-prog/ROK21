@@ -14,6 +14,7 @@
 - **명분 SSOT:** `WARRANT.md` (뇌 7개 라벨·근거·p·출처ID). 코드 미러 `brains/warrant.py`.
 - **산출 정합성(K-W/K-Y):** 당첨 draws(A) vs 산출/점수후 top(B) vs 균등(C). A근접=정합 · C근접=무해 · 양쪽원격=편향경보.
 - **`실증` 라벨:** 전제 실증 ∧ 모듈 구현 검증. draws만 이론부합이면 `전제실증·구현미검증` (K-Y).
+- **(K-AA)** K-W A거리는 **게이트가 아니라 관측지표**. A(1234회)는 C와 통계적 구분 불가(K-Q·K-T·K-U)이므로 90슬롯 거리 변동은 노이즈; **상수 채택 기준 = 조합론 참값 일치 단일축**.
 
 ---
 
@@ -94,4 +95,4 @@
 
 ## 6) 관련 FINDINGS
 
-K-B · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED 선결) · K-T · K-U · K-V(PATCHED) · K-W · K-M/K-N(HOLD) · **WARRANT.md**
+K-B · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **WARRANT.md**

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import Any
 
-# label: 실증 | 기각 | 미정의
+# label: 실증 | 전제실증·구현미검증 | 기각 | 미정의
 BRAIN_WARRANT: dict[str, dict[str, Any]] = {
     "stat": {
         "label": "기각",
@@ -40,23 +40,29 @@ BRAIN_WARRANT: dict[str, dict[str, Any]] = {
     },
     "pattern_aux": {
         "label": "실증",
-        "evidence": "K-T 형태지표(합·연속 등) 이론부합 p≥0.13 → 조합론적 비균등 제약 명분",
+        "evidence": (
+            "K-T 형태 이론부합 p≥0.13 ∧ K-AA 구현검증: ac_target=8(최빈)·"
+            "consec PMF단조점수·배선 PASS(composite 항등·ablation conf 변화)"
+        ),
         "p": 0.13,
-        "source_ids": ["K-T"],
-        "kw_alignment": None,
+        "source_ids": ["K-T", "K-Z", "K-AA"],
+        "kw_alignment": "무해_C근접",
     },
     "balance_aux": {
         "label": "실증",
-        "evidence": "K-T 홀짝·구간·합 이론부합 p≥0.13 → 균형 제약 명분",
+        "evidence": (
+            "K-T 균형 이론부합 p≥0.13 ∧ K-AA 구현검증: 폴백합=138·"
+            "합거리 단조감소·LMH(2,2,2) 최고점(zone_score)"
+        ),
         "p": 0.13,
-        "source_ids": ["K-T"],
-        "kw_alignment": None,
+        "source_ids": ["K-T", "K-Z", "K-AA"],
+        "kw_alignment": "정합_A근접",
     },
     "referee_aux": {
         "label": "미정의",
-        "evidence": "추첨 생성 전제 아님(메타가중 정책). 전달효율은 K-M/K-N HOLD",
+        "evidence": "추첨 생성 전제 아님(메타가중 정책). 전달효율은 K-M/K-N HOLD · K-Y 기여0",
         "p": None,
-        "source_ids": ["K-T", "K-M", "K-N"],
+        "source_ids": ["K-T", "K-M", "K-N", "K-Y"],
         "kw_alignment": None,
     },
 }
