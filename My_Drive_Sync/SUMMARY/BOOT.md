@@ -5,20 +5,20 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-P4 hyodo LSTM 샌드박스 · ckpt격리·as_of검증 PASS
-- 직전: K-P3 review끝수 · K-P2 기각뇌 · K-P1 명분패널
-- 다음: K-PIN-CLOSE — drift·3DB 재스모크 (형 지시)
+- 지금: K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234
+- 직전: K-P4 LSTM샌드박스 · K-P3~P1 핀본선
+- 다음: K-AWAIT — 형 다음 본선 1건 지시 대기
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
 |------|-----|------|
 | BASELINE_PIN | **640cb67** | PINNED_BASELINE |
 | K-AG verify | **PASS** | KAG JSON |
-| 3DB MAX | **1234** | PIN_3db_smoke |
-| drift | **0** | 핀 직전 |
+| 3DB MAX | **1234** | PIN_3db_smoke · KPIN_CLOSE |
+| drift | **0** | KAC_doc_drift · KPIN_CLOSE |
 
 ## 3) 열린 과제 -> FINDINGS.md
-핀=K-Z~AG **고정**. OPEN 본선=P1~P4(형선택). K-M/N=**HOLD**.
+핀=K-Z~AG **고정**. P1~P4 **마감**(K-PIN-CLOSE PASS). K-M/N=**HOLD**. 형 다음 1건.
 
 ## 4) 주의 (붕괴 방지)
 - 이 레포=ROK21 (kweon 20260726 04:38 복사본). SSOT=ROK21 main

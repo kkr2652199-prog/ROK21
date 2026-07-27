@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `81551eb` |
+| HEAD(실측) | `799cf5b` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-P4 hyodo LSTM 샌드박스 · ckpt격리·as_of검증 PASS |
-| 직전 | K-P3 review끝수 · K-P2 기각뇌 · K-P1 명분패널 |
-| BOOT다음 | K-PIN-CLOSE — drift·3DB 재스모크 (형 지시) |
-| NEXT1 ID | **K-PIN-CLOSE** |
-| NEXT1 할일 | P1~P4 스택 마감 — drift·3DB 재스모크 (형 지시 시) |
-| 승인필요 | 예 |
-| 선행 | K-P1/P2/P3/P4 완료 · PINNED_BASELINE `640cb67` |
+| 지금 | K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234 |
+| 직전 | K-P4 LSTM샌드박스 · K-P3~P1 핀본선 |
+| BOOT다음 | K-AWAIT — 형 다음 본선 1건 지시 대기 |
+| NEXT1 ID | **K-AWAIT** |
+| NEXT1 할일 | 형 다음 본선 1건 지시 대기 (P·핀 스택 마감 완료) |
+| 승인필요 | 아니오 |
+| 선행 | K-PIN-CLOSE PASS · BASELINE_PIN `640cb67` |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=81551eb · 지금=K-P4 hyodo LSTM 샌드박스 · ckpt격리·as_of검증 PASS · 다음=K-PIN-CLOSE`
+1. 첫줄 `[복귀] HEAD=799cf5b · 지금=K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234 · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 81551eb_
+_generated: 799cf5b_

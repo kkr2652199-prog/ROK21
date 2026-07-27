@@ -36,14 +36,15 @@
 
 ---
 
-## 3) 핀 직전 검증 (2026-07-27 실측)
+## 3) 핀 직전 검증 (2026-07-27 실측 · K-PIN-CLOSE 갱신)
 
 | 게이트 | 결과 | 출처 |
 |--------|------|------|
+| K-PIN-CLOSE verify_pass | **true** | `20260727_KPIN_CLOSE.json` |
+| drift n_issues | **0** | `20260727_KAC_doc_drift.json` |
+| 3DB MAX | **1234/1234/1234** · mismatch **0** | `20260727_PIN_3db_smoke.json` |
 | K-AG verify_pass | **true** · E[k]=100 | `_kag_pair_zone_verify.py` |
 | K-AF verify_pass | **true** | `20260727_KAF_fanout_followup.json` |
-| drift n_issues | **0** | `_doc_drift_check.py` |
-| 3DB MAX | **1234/1234/1234** · mismatch **0** | `20260727_PIN_3db_smoke.json` |
 
 ---
 
@@ -56,7 +57,7 @@
 | **P3** | K-X review 끝수 — 형 승인 후 교정 (**완료 K-P3**) |
 | **P4** | hyodo 후속 — LSTM·재학습 (**완료 K-P4**) |
 
-NEXT: `K-PIN-CLOSE` — drift·3DB 재스모크 (형 지시 시).
+NEXT: `K-AWAIT` — 형 다음 본선 1건 지시 대기 (P·핀 스택 마감 완료).
 
 ---
 

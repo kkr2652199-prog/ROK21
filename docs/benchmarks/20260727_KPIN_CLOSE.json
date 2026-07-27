@@ -1,0 +1,52 @@
+{
+  "task": "K-PIN-CLOSE",
+  "baseline_pin": "640cb67",
+  "checks": {
+    "drift_n_issues_0": true,
+    "3db_pass": true,
+    "p_stack_gates": true
+  },
+  "drift": {
+    "n_issues": 0,
+    "restore_b_rows": 12
+  },
+  "3db": {
+    "pass": true,
+    "max": {
+      "lotto4": 1234,
+      "testlotto": 1234,
+      "hyodo": 1234
+    },
+    "mismatch_counts": {
+      "testlotto": 0,
+      "hyodo": 0
+    }
+  },
+  "stack_gates": {
+    "K-P1": {
+      "gate": "UI",
+      "verify_pass": true,
+      "note": "warrant-dashboard shipped"
+    },
+    "K-P2": {
+      "gate": "UI",
+      "verify_pass": true,
+      "note": "rejected_brain display"
+    },
+    "K-P3": {
+      "gate": "benchmark",
+      "verify_pass": true
+    },
+    "K-P4": {
+      "gate": "benchmark",
+      "verify_pass": true
+    },
+    "K-AG": {
+      "gate": "benchmark",
+      "verify_pass": true
+    }
+  },
+  "errors": [],
+  "verify_pass": true,
+  "note": "READ-ONLY · P1~P4 마감 게이트 · 예측력 무관"
+}
