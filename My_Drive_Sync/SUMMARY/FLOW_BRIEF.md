@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3dd043a` · WORK=`IDLE`
-- 지금: K-P3 review 끝수 완화 · ending질량균등
-- 직전: K-P2 기각뇌 표시 · K-P1 명분패널
-- BOOT다음: K-PIN-FOLLOW — P4 hyodo (형 승인)
-- NEXT1: K-PIN-FOLLOW — 형—**P4 hyodo후속** 승인 시 실행 (LSTM·재학습 샌드박스) (승인=예)
+- HEAD: `da68a99` · WORK=`IDLE`
+- 지금: K-P4 hyodo LSTM 샌드박스 · ckpt격리·as_of검증 PASS
+- 직전: K-P3 review끝수 · K-P2 기각뇌 · K-P1 명분패널
+- BOOT다음: K-PIN-CLOSE — drift·3DB 재스모크 (형 지시)
+- NEXT1: K-PIN-CLOSE — P1~P4 스택 마감 — drift·3DB 재스모크 (형 지시 시) (승인=예)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

@@ -5,9 +5,9 @@
     "disclaimer": "이 작업은 예측력과 무관하다. 압축으로 인한 방향 상실 방지다."
   },
   "findings_counts": {
-    "OPEN": 29,
+    "OPEN": 28,
     "CLOSED": 4,
-    "PATCHED": 10,
+    "PATCHED": 12,
     "HOLD": 2
   },
   "findings_open_hold": [
@@ -19,7 +19,6 @@
     "K-11",
     "K-12",
     "K-A",
-    "K-AC",
     "K-B",
     "K-C",
     "K-D",
@@ -52,7 +51,6 @@
     "K-11",
     "K-12",
     "K-A",
-    "K-AC",
     "K-B",
     "K-C",
     "K-D",
@@ -79,7 +77,7 @@
     "K-N"
   ],
   "restore_b_rows": 12,
-  "boot_section3": "K-AF·AE·06·AD·AB…=**PATCHED**. K-AC OPEN(이력). K-M·N=**HOLD**.  \n다음=K-AG. 예측력무관.",
+  "boot_section3": "핀=K-Z~AG **고정**. OPEN 본선=P1~P4(형선택). K-M/N=**HOLD**.",
   "issues": [],
   "n_issues": 0
 }

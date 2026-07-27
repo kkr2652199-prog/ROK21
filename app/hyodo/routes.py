@@ -255,6 +255,14 @@ async def api_brain_status():
 
     return get_brain_status()
 
+
+@router.get("/lstm/status")
+async def api_lstm_status():
+    """LSTM 런타임·체크포인트 READ-ONLY (샌드박스 플래그는 서버 env 기준)."""
+    from app.hyodo.predict_lstm import lstm_runtime_status
+
+    return lstm_runtime_status()
+
 @router.get("/brain/hall-of-fame")
 async def api_hall_of_fame():
     """적중 명예의 전당 — 가장 많이 맞춘 예측 TOP 10."""

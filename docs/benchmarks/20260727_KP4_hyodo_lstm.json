@@ -1,0 +1,75 @@
+{
+  "task": "K-P4",
+  "as_of": 1235,
+  "draw_count": 1234,
+  "seq_len": 50,
+  "sandbox_epochs": 8,
+  "sandbox_ckpt": "D:\\ROK21\\models\\_kp4_sandbox\\lstm_hyodo.pt",
+  "prod_ckpt": "D:\\ROK21\\models\\lstm_hyodo.pt",
+  "runtime_after_full": {
+    "torch_ok": true,
+    "sandbox": true,
+    "ckpt_path": "D:\\ROK21\\models\\_kp4_sandbox\\lstm_hyodo.pt",
+    "ckpt_exists": true,
+    "last_trained_len": 1234,
+    "device_used": "cuda",
+    "model_loaded": true
+  },
+  "pmf_full": {
+    "sum": 1.0,
+    "min": 0.015528237,
+    "max": 0.029060369,
+    "spread": 0.013532132,
+    "chi2_vs_uniform": 0.022665,
+    "top3": [
+      {
+        "num": 16,
+        "p": 0.02906
+      },
+      {
+        "num": 40,
+        "p": 0.027889
+      },
+      {
+        "num": 24,
+        "p": 0.027834
+      }
+    ]
+  },
+  "pmf_short_window": {
+    "draw_count": 130,
+    "sum": 1.0,
+    "min": 0.013748503,
+    "max": 0.03618164,
+    "spread": 0.022433136,
+    "chi2_vs_uniform": 0.053753,
+    "top3": [
+      {
+        "num": 21,
+        "p": 0.036182
+      },
+      {
+        "num": 14,
+        "p": 0.033237
+      },
+      {
+        "num": 30,
+        "p": 0.032694
+      }
+    ]
+  },
+  "checks": {
+    "enough_draws": true,
+    "torch_ok": true,
+    "sandbox_flag": true,
+    "sandbox_ckpt_written": true,
+    "pmf_sum_ok": true,
+    "pmf_non_uniform": true,
+    "trained_len_match": true,
+    "cutoff_changes_pmf": true,
+    "prod_ckpt_untouched": true
+  },
+  "errors": [],
+  "verify_pass": true,
+  "note": "적중↑ 목표 아님 · PMF·컷오프·ckpt 격리 검증만"
+}

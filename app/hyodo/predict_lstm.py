@@ -40,6 +40,7 @@ RETRAIN_INTERVAL = 50
 # 프로젝트 루트: .../My_Library (app/lotto/ 기준 3단계 상위)
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CKPT_PATH = _PROJECT_ROOT / "models" / "lstm_hyodo.pt"
+SANDBOX_CKPT_PATH = _PROJECT_ROOT / "models" / "_kp4_sandbox" / "lstm_hyodo.pt"
 _NUM_KEYS = list(range(1, 46))
 
 _MODEL: Any = None
@@ -47,6 +48,38 @@ _LAST_TRAINED_LEN: int = 0
 _DEVICE_USED: str = "cpu"
 
 _NUM_FIELD_KEYS: tuple[str, ...] = ("num1", "num2", "num3", "num4", "num5", "num6")
+
+
+def sandbox_enabled() -> bool:
+    raw = os.environ.get("ROK21_HYODO_LSTM_SANDBOX", "").strip().lower()
+    return raw in ("1", "true", "on", "yes")
+
+
+def resolve_ckpt_path() -> Path:
+    """프로덕션 lstm_hyodo.pt vs 샌드박스 체크포인트."""
+    return SANDBOX_CKPT_PATH if sandbox_enabled() else CKPT_PATH
+
+
+def reset_lstm_runtime() -> None:
+    """전역 캐시 초기화 (샌드박스 재학습 전)."""
+    global _MODEL, _LAST_TRAINED_LEN, _DEVICE_USED
+    _MODEL = None
+    _LAST_TRAINED_LEN = 0
+    _DEVICE_USED = "cpu"
+
+
+def lstm_runtime_status() -> dict[str, Any]:
+    """READ-ONLY 런타임·체크포인트 상태."""
+    ck = resolve_ckpt_path()
+    return {
+        "torch_ok": _TORCH_OK,
+        "sandbox": sandbox_enabled(),
+        "ckpt_path": str(ck),
+        "ckpt_exists": ck.is_file(),
+        "last_trained_len": _LAST_TRAINED_LEN,
+        "device_used": _DEVICE_USED,
+        "model_loaded": _MODEL is not None,
+    }
 
 
 def _uniform_pmf() -> dict[int, float]:
@@ -143,7 +176,8 @@ if _TORCH_OK:
         opt = torch.optim.Adam(model.parameters(), lr=1e-3)  # type: ignore[union-attr]
         crit = nn.BCELoss()  # type: ignore[union-attr]
         model.train()
-        for _ in range(EPOCHS):
+        epochs = int(os.environ.get("ROK21_LSTM_EPOCHS", str(EPOCHS)))
+        for _ in range(max(1, epochs)):
             for xb, yb in loader:
                 opt.zero_grad()
                 out = model(xb)
@@ -169,17 +203,19 @@ if _TORCH_OK:
         return m, "cpu"
 
     def _save_checkpoint(model: "LottoLSTM", trained_len: int) -> None:
-        os.makedirs(CKPT_PATH.parent, exist_ok=True)
+        path = resolve_ckpt_path()
+        os.makedirs(path.parent, exist_ok=True)
         torch.save(  # type: ignore[union-attr]
             {"model_state": model.state_dict(), "last_trained_on": trained_len},
-            CKPT_PATH,
+            path,
         )
 
     def _load_checkpoint() -> dict | None:
-        if not CKPT_PATH.is_file():
+        path = resolve_ckpt_path()
+        if not path.is_file():
             return None
         try:
-            return torch.load(CKPT_PATH, map_location="cpu", weights_only=False)  # type: ignore[union-attr]
+            return torch.load(path, map_location="cpu", weights_only=False)  # type: ignore[union-attr]
         except (OSError, RuntimeError, pickle.PickleError) as e:
             logger.warning("LSTM 체크포인트 로드 실패: %s", e, exc_info=True)
             return None

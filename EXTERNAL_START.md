@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `3dd043a` |
+| HEAD(실측) | `da68a99` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-P3 review 끝수 완화 · ending질량균등 |
-| 직전 | K-P2 기각뇌 표시 · K-P1 명분패널 |
-| BOOT다음 | K-PIN-FOLLOW — P4 hyodo (형 승인) |
-| NEXT1 ID | **K-PIN-FOLLOW** |
-| NEXT1 할일 | 형—**P4 hyodo후속** 승인 시 실행 (LSTM·재학습 샌드박스) |
+| 지금 | K-P4 hyodo LSTM 샌드박스 · ckpt격리·as_of검증 PASS |
+| 직전 | K-P3 review끝수 · K-P2 기각뇌 · K-P1 명분패널 |
+| BOOT다음 | K-PIN-CLOSE — drift·3DB 재스모크 (형 지시) |
+| NEXT1 ID | **K-PIN-CLOSE** |
+| NEXT1 할일 | P1~P4 스택 마감 — drift·3DB 재스모크 (형 지시 시) |
 | 승인필요 | 예 |
-| 선행 | PINNED_BASELINE `640cb67` · K-P1/P2/P3 완료 |
+| 선행 | K-P1/P2/P3/P4 완료 · PINNED_BASELINE `640cb67` |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=3dd043a · 지금=K-P3 review 끝수 완화 · ending질량균등 · 다음=K-PIN-FOLLOW`
+1. 첫줄 `[복귀] HEAD=da68a99 · 지금=K-P4 hyodo LSTM 샌드박스 · ckpt격리·as_of검증 PASS · 다음=K-PIN-CLOSE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 3dd043a_
+_generated: da68a99_
