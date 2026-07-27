@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `e859404` |
+| HEAD(실측) | `dc246f5` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234 |
-| 직전 | K-P4 LSTM샌드박스 · K-P3~P1 핀본선 |
+| 지금 | K-P5 hyodo LSTM·인프라 UI · infra-dashboard PASS |
+| 직전 | K-PIN-CLOSE · K-P4 LSTM샌드박스 · P1~P3 |
 | BOOT다음 | K-AWAIT — 형 다음 본선 1건 지시 대기 |
 | NEXT1 ID | **K-AWAIT** |
-| NEXT1 할일 | 형 다음 본선 1건 지시 대기 (P·핀 스택 마감 완료) |
+| NEXT1 할일 | 형 다음 본선 1건 지시 대기 (P·핀·P5 마감) |
 | 승인필요 | 아니오 |
-| 선행 | K-PIN-CLOSE PASS · BASELINE_PIN `640cb67` |
+| 선행 | K-PIN-CLOSE · K-P5 PASS · BASELINE_PIN `640cb67` |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=e859404 · 지금=K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234 · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=dc246f5 · 지금=K-P5 hyodo LSTM·인프라 UI · infra-dashboard PASS · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

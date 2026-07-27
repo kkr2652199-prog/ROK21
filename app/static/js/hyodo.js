@@ -39,6 +39,52 @@ function getBrainDescription(tag) {
   return BRAIN_DESCRIPTIONS[tag] || '';
 }
 
+function _hyEscapeHtml(s) {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+async function hyodoLoadInfraPanel() {
+  const el = document.getElementById('hyodoInfraPanel');
+  if (!el) return;
+  try {
+    const r = await fetch(_hyodoResolveApiUrl('/api/hyodo/infra-dashboard'));
+    if (!r.ok) throw new Error(String(r.status));
+    const data = await r.json();
+    const d = data.draws || {};
+    const lstm = data.lstm || {};
+    const cfg = data.lstm_config || {};
+    const kv = (k, v) =>
+      `<div class="hy-infra-kv"><strong>${_hyEscapeHtml(k)}</strong>${_hyEscapeHtml(v)}</div>`;
+    el.innerHTML =
+      '<div class="hy-infra-inner">' +
+      '<h3 class="hy-infra-title">LSTM · 인프라 (K-P5)</h3>' +
+      `<p class="hy-infra-note">${_hyEscapeHtml(data.evaluation_axis || '')}</p>` +
+      '<div class="hy-infra-grid">' +
+      kv('draws MAX', String(d.max ?? '?')) +
+      kv('draws COUNT', String(d.count ?? '?')) +
+      kv('BASELINE_PIN', data.baseline_pin || '') +
+      kv('torch', lstm.torch_ok ? 'OK' : 'OFF(균등PMF)') +
+      kv('LSTM device', lstm.device_used || '—') +
+      kv('ckpt', lstm.ckpt_exists ? '있음' : '없음') +
+      kv('sandbox', lstm.sandbox ? 'ON' : 'OFF') +
+      kv('trained_len', String(lstm.last_trained_len ?? 0)) +
+      kv('SEQ_LEN', String(cfg.seq_len ?? '')) +
+      kv('retrain Δ', String(cfg.retrain_interval ?? '')) +
+      '</div>' +
+      `<p class="hy-infra-note">${_hyEscapeHtml(data.cutoff_policy || '')}</p>` +
+      `<p class="hy-infra-frozen">동결: ${_hyEscapeHtml((data.frozen_tokens || []).join(' · '))}</p>` +
+      `<p class="hy-infra-note">${_hyEscapeHtml(data.disclaimer || '')}</p>` +
+      '</div>';
+    el.hidden = false;
+  } catch (e) {
+    console.warn('hyodo infra-dashboard:', e);
+  }
+}
+
 // ── 탭 전환 ──
 function switchHyodoTab(tabName) {
   document.querySelectorAll('.lotto-tab-content').forEach((el) => { el.style.display = 'none'; });

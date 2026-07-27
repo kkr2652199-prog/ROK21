@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>나의 지식 도서관 — 4군 AI 예측</title>
   <link rel="stylesheet" href="/static/css/lotto4.css?v=20260620c" />
-  <link rel="stylesheet" href="/static/css/hyodo.css?v=20260711" />
+  <link rel="stylesheet" href="/static/css/hyodo.css?v=20260727p5" />
   <link rel="stylesheet" href="/static/css/testlotto.css?v=20260727p2" />
 </head>
 <body>
@@ -304,6 +304,7 @@
           <div class="card">
             <h2>효도로또 (1.5군)</h2>
             <p class="stats-hint" role="note">순수 1군(6뇌) 복제본 · 독립 DB <code>lotto_hyodo.db</code> · 당첨보장 아님</p>
+            <div id="hyodoInfraPanel" class="hy-infra-panel" hidden aria-label="LSTM·인프라 상태"></div>
             <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
               <div class="lotto-draw-search">
                 <button type="button" class="btn btn-secondary lotto-nav-btn" onclick="hyodoNavDraw(-1)">◀</button>
@@ -583,7 +584,7 @@
     </div>
   </div>
 
-  <script src="/static/js/hyodo.js?v=20260711"></script>
+  <script src="/static/js/hyodo.js?v=20260727p5"></script>
   <script src="/static/js/testlotto.js?v=20260727p2"></script>
   <script src="/static/js/lotto4.js?v=20260620c"></script>
 </body>

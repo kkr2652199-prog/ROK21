@@ -263,6 +263,14 @@ async def api_lstm_status():
 
     return lstm_runtime_status()
 
+
+@router.get("/infra-dashboard")
+async def api_infra_dashboard():
+    """K-P5: LSTM·DB·핀·동결 토큰 READ-ONLY (표시 전용)."""
+    from app.hyodo.infra_dashboard import build_infra_dashboard
+
+    return build_infra_dashboard()
+
 @router.get("/brain/hall-of-fame")
 async def api_hall_of_fame():
     """적중 명예의 전당 — 가장 많이 맞춘 예측 TOP 10."""

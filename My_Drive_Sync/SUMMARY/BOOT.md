@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234
-- 직전: K-P4 LSTM샌드박스 · K-P3~P1 핀본선
+- 지금: K-P5 hyodo LSTM·인프라 UI · infra-dashboard PASS
+- 직전: K-PIN-CLOSE · K-P4 LSTM샌드박스 · P1~P3
 - 다음: K-AWAIT — 형 다음 본선 1건 지시 대기
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

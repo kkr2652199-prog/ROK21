@@ -2988,6 +2988,7 @@
         }
         if (v === 'hyodo' && typeof initHyodoDrawSearch === 'function') {
           initHyodoDrawSearch();
+          if (typeof hyodoLoadInfraPanel === 'function') hyodoLoadInfraPanel();
         }
         if (v === 'testlotto' && typeof initTestlottoDrawSearch === 'function') {
           initTestlottoDrawSearch();

@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e859404` · WORK=`IDLE`
-2. **지금:** K-PIN-CLOSE 마감검증 PASS · drift0·3DB1234
-3. **다음1건:** K-AWAIT — 형 다음 본선 1건 지시 대기 (P·핀 스택 마감 완료) (승인필요=아니오 · 선행=K-PIN-CLOSE PASS · BASELINE_PIN `640cb67`)
+1. **HEAD:** `dc246f5` · WORK=`IDLE`
+2. **지금:** K-P5 hyodo LSTM·인프라 UI · infra-dashboard PASS
+3. **다음1건:** K-AWAIT — 형 다음 본선 1건 지시 대기 (P·핀·P5 마감) (승인필요=아니오 · 선행=K-PIN-CLOSE · K-P5 PASS · BASELINE_PIN `640cb67`)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-27 | K-P5 hyodo 인프라UI | infra-dashboard·LSTM패널 · verify PASS | K-P5 PATCHED | `(커밋 전)` |
 | 2026-07-27 | K-PIN-CLOSE 마감 | drift0·3DB1234·P스택게이트 PASS | K-PIN-CLOSE | `e945b84` |
 | 2026-07-27 | K-P4 hyodo LSTM | 샌드박스 ckpt·as_of·PMF PASS · prod무침범 | K-P4 PATCHED | `e6356dc` |
 | 2026-07-27 | K-P3 review끝수 | ending질량균등 · l1↓ · verify PASS | K-P3·KX PATCHED | `da68a99` |
@@ -45,7 +46,6 @@
 | 2026-07-27 | K-AD 훅즉시복귀 | guard동적주입·NEXT1건·RESTORE동기 · 검증PASS | K-AD PATCHED | 40b651d |
 | 2026-07-27 | K-AC 압축대비 룰 | R35/R36/R37·§6반영 · drift0 | K-AC PATCHED | `2e38198` |
 | 2026-07-27 | K-AB 회차갭정합 | hyodo INSERT 1232–1234 · mismatch0 · 회귀PASS | K-AB·07 PATCHED | `e1a7cd2` |
-| 2026-07-27 | K-AA 이론값적용·명분복귀 | 폴백138·AC8·consecPMF·배선PASS·실증2 | K-AA·Z PATCHED | `bb3fa91` |
 
 ---
 

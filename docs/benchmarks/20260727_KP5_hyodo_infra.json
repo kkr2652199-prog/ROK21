@@ -1,0 +1,40 @@
+{
+  "task": "K-P5",
+  "baseline_pin": "640cb67",
+  "evaluation_axis": "적중↑ 폐기 · LSTM=다음회차 PMF 추정 · 1등확률 동일 주장 금지",
+  "draws": {
+    "min": 1,
+    "max": 1234,
+    "count": 1234
+  },
+  "lstm": {
+    "torch_ok": true,
+    "sandbox": false,
+    "ckpt_path": "D:\\ROK21\\models\\lstm_hyodo.pt",
+    "ckpt_exists": true,
+    "last_trained_len": 0,
+    "device_used": "cpu",
+    "model_loaded": false
+  },
+  "lstm_config": {
+    "seq_len": 50,
+    "retrain_interval": 50,
+    "sandbox_env": "ROK21_HYODO_LSTM_SANDBOX=1",
+    "sandbox_ckpt": "models/_kp4_sandbox/lstm_hyodo.pt",
+    "prod_ckpt": "models/lstm_hyodo.pt"
+  },
+  "cutoff_policy": "run_prediction(target): target 이전 draws만 (_get_draws_before)",
+  "frozen_tokens": [
+    "_get_draws_before (hyodo/data_service)",
+    "random.choices (testlotto 동결 — hyodo 미해당)",
+    "boost 상한 (testlotto learn_state)"
+  ],
+  "disclaimer": "이 패널은 투명성·운영 상태 표시용입니다. K-P4 샌드박스 검증과 별개로 서버 env에 따라 ckpt 경로가 달라질 수 있습니다.",
+  "checks": {
+    "has_draws_max": true,
+    "lstm_block": true,
+    "baseline_pin": true,
+    "frozen_list": true
+  },
+  "verify_pass": true
+}

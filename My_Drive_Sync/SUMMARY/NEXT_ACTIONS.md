@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT
-- 할일: 형 다음 본선 1건 지시 대기 (P·핀 스택 마감 완료)
-- 선행조건: K-PIN-CLOSE PASS · BASELINE_PIN `640cb67`
+- 할일: 형 다음 본선 1건 지시 대기 (P·핀·P5 마감)
+- 선행조건: K-PIN-CLOSE · K-P5 PASS · BASELINE_PIN `640cb67`
 - 승인필요: 아니오
-- 최종갱신: `e945b84`
+- 최종갱신: `(커밋 전)`
 
 ## WORKSTATE
 IDLE
@@ -18,7 +18,7 @@ IDLE
 
 | 우선순위 | 작업 | 분류 | 상태 |
 |----------|------|------|------|
-| — | K-PIN-CLOSE drift·3DB 마감 | 검증 | **완료 K-PIN-CLOSE** |
+| — | K-P5 hyodo LSTM·인프라 UI | UI | **완료 K-P5** |
 | — | K-P2 기각뇌 표시 정책 | UI | **완료 K-P2** |
 | — | K-P1 명분·제약·학습키 UI | UI | **완료 K-P1** |
 | — | 핀 베이스라인 K-Z~AG | 고정 | **완료 PIN** |
