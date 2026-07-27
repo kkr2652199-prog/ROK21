@@ -7,7 +7,7 @@
 - 할일: 형—본선 1개 선택 (P1 UI쓸모 / P2 기각뇌표시 / P3 K-X끝수 / P4 hyodo후속)
 - 선행조건: PINNED_BASELINE `640cb67` 고정
 - 승인필요: 예
-- 최종갱신: pending
+- 최종갱신: 1bd2c00
 
 ## WORKSTATE
 IDLE

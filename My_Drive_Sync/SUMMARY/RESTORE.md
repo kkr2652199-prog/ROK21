@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `640cb67` · WORK=`IDLE`
+1. **HEAD:** `1bd2c00` · WORK=`IDLE`
 2. **지금:** 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED
 3. **다음1건:** K-PIN-FOLLOW — 형—본선 1개 선택 (P1 UI쓸모 / P2 기각뇌표시 / P3 K-X끝수 / P4 hyodo후속) (승인필요=예 · 선행=PINNED_BASELINE `640cb67` 고정)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

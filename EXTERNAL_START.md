@@ -9,8 +9,8 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `640cb67` |
-| BASELINE_PIN | `640cb67` |
+| HEAD(실측) | `1bd2c00` |
+| BASELINE_PIN | `1bd2c00` |
 | WORK | `IDLE` |
 | 지금 | 핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED |
 | 직전 | K-AG pair/zone·3키 배선 · K-AF 팬아웃 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=640cb67 · 지금=핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED · 다음=K-PIN-FOLLOW`
+1. 첫줄 `[복귀] HEAD=1bd2c00 · 지금=핀 베이스라인 고정 · K-Z~AG 완료분 PATCHED · 다음=K-PIN-FOLLOW`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 640cb67_
+_generated: 1bd2c00_
