@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: testlotto 정밀정찰(K-A용) · R29불일치·stat mean0.76<0.80 · 코드0
-- 직전: SSOT=ROK21 확정 · UTF-8 커밋 검증
-- 다음: 외부AI가 결함목록에 K-A~ 부여 · hyodo동기화(형승인)
+- 지금: K-A~K-L 등재 · K-B/C/D 원인규명(표본비공유·best누적가중·fusion의도)
+- 직전: testlotto 정밀정찰 READ-ONLY
+- 다음: K-B SSOT선언 후 K-A · hyodo동기화(형승인)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
@@ -22,7 +22,8 @@
 | kweon 동결 HEAD | **264de3c** | `D:\3kweon` 실측 |
 
 ## 3) 열린 과제 -> FINDINGS.md
-K-00 · K-02 · K-05 · K-06 · K-07 · K-08 · K-10 · K-11 · K-12 = OPEN. **K-09 CLOSED.**
+K-00·02·05~08·10~12 OPEN. **K-09 CLOSED.**  
+K-A~K-L OPEN (K-12b→K-L). 우선: **K-B** → K-C/J → K-A.
 
 ## 4) 주의 (붕괴 방지)
 - 이 레포=ROK21 (kweon 20260726 04:38 복사본). SSOT=ROK21 main
