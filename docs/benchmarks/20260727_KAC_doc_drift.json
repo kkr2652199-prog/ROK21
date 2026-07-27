@@ -7,7 +7,7 @@
   "findings_counts": {
     "OPEN": 30,
     "CLOSED": 4,
-    "PATCHED": 6,
+    "PATCHED": 7,
     "HOLD": 2
   },
   "findings_open_hold": [
@@ -81,7 +81,7 @@
     "K-N"
   ],
   "restore_b_rows": 12,
-  "boot_section3": "K-AC OPEN. K-AB·07·AA·Z·V·S=**PATCHED**. K-06 OPEN. K-M·N=**HOLD**.  \n문서SSOT=FINDINGS/WARRANT/benchmarks. 예측력무관.",
+  "boot_section3": "K-AD·AC OPEN. K-AB·07·AA·Z·V·S=**PATCHED**. K-06 OPEN. K-M·N=**HOLD**.  \n훅이 HEAD·지금·NEXT 매턴 주입. 예측력무관.",
   "issues": [],
   "n_issues": 0
 }

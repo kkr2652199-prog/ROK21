@@ -1,5 +1,18 @@
 ﻿# RESTORE — ROK21 압축 복원 1순위 (이 파일 하나면 복원 완료)
 
+<!-- ROK21_RESUME_BLOCK -->
+## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
+
+1. **HEAD:** `969c8a1` · WORK=`IDLE`
+2. **지금:** K-AD 훅동적주입 · NEXT1건앵커 · 동생복귀5줄 동기화
+3. **다음1건:** K-AD-FOLLOW — 형—RULES_FIXED R35·R36·CURSOR_RULES §6 초안 승인/반영 (그다음 K-06 팬아웃) (승인필요=예 · 선행=없음)
+4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
+5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
+
+> 큐: **동생, ROK21 RESTORE.md 읽고 시작해.**
+<!-- /ROK21_RESUME_BLOCK -->
+
+
 > 새 세션 시작 큐 = **"동생, ROK21 RESTORE.md 읽고 시작해."**  
 > **수치 SSOT:** `docs/benchmarks/*.json` · **결함:** `FINDINGS.md` · **명분 라벨:** `WARRANT.md`  
 > BOOT/STATUS/RESTORE/RESUME_HERE 는 사본 — 충돌 시 위 원본이 이긴다.
@@ -12,7 +25,7 @@
 2. **3자 역할:** 형=결정 / 동생(Claude)=판단·지시서만 / 커서=실행·commit·push
 3. **확정 결론:** 적중축 **폐기**. EV 배선 유지(Y풀 순1.033). **K-09 CLOSED**(실질 누수 무해)·전제라벨 제거
 4. **물리 상수:** 1장 mean=**0.80** · best-of-15 천장=**2.27** (개선 목표 아님)
-5. **현재 초점:** K-AB=3DB draws MAX **1234** 정합 · K-06 영구팬아웃은 안만 · (K-AC=압축대비 룰 보강)
+5. **현재 초점:** K-AD=훅동적주입(HEAD·지금·NEXT) · 동생=`RESTORE.md` 큐.
 
 ---
 
@@ -20,6 +33,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-27 | K-AD 훅즉시복귀 | guard동적주입·NEXT1건·RESTORE동기 · 검증PASS | K-AD PATCHED | (push후) |
 | 2026-07-27 | K-AC 압축대비 룰 | PART1답·RESTORE보정·drift0 · RULES초안승인대기 | K-AC OPEN | `2e38198` |
 | 2026-07-27 | K-AB 회차갭정합 | hyodo INSERT 1232–1234 · mismatch0 · 회귀PASS | K-AB·07 PATCHED · K-06 OPEN | `e1a7cd2` |
 | 2026-07-27 | K-AA 이론값적용·명분복귀 | 폴백138·AC8·consecPMF·배선PASS·실증2 · warrant동기 | K-AA·Z PATCHED | `bb3fa91` |
@@ -31,7 +45,6 @@
 | 2026-07-27 | K-S선결+K-T/U/V 전제·포트 | as_of필수·CUTOFF기본ON·전제표·쌍null·k≈97 | K-S PATCHED · T/U/V OPEN | `fecb9a7` |
 | 2026-07-27 | K-O~S 볼단위전환+WF설계 | 데이터감사·χ²균등·±30%·층화대기·WF설계 · 코드0 | K-M/N HOLD · 볼층위 | `93218f8` |
 | 2026-07-27 | K-A~L부여+KB/C/D규명 | FINDINGS등재 · 표본비공유·best가중·fusion의도 | K-B SSOT=review JSON · 코드0 | `29d4594` |
-| 2026-07-27 | SSOT확정+인코딩수정 | UTF-8로컬확인 · 규칙/훅/BOOT §4 · FINDINGS경위 | SSOT=ROK21 · kweon 264de3c동결 | `152e1bc` |
 
 ---
 
@@ -70,7 +83,7 @@
 
 **HOLD (2):** K-M · K-N  
 
-**PATCHED (참고):** K-07 · K-S · K-V · K-Z · K-AA · K-AB  
+**PATCHED (참고):** K-07 · K-S · K-V · K-Z · K-AA · K-AB · **K-AD**  
 
 **CLOSED:** K-01 · K-03 · K-04 · K-09  
 

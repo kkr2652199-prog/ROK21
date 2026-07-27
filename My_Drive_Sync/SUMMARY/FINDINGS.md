@@ -61,3 +61,4 @@
 | K-AA | PATCHED | 이론값 적용·구현검증·명분복귀: pattern/balance→실증 · warrant.py동기화 · E[k]=100·SHA일치 | `docs/benchmarks/20260727_KAA_apply_verify.json` · diff · KAA 보고서 | 판정축=조합론 참값. A거리 관측만. 1등확률↑아님. pair/30·zone목표 미변경 |
 | K-AB | PATCHED | 회차갭정합: hyodo 1232–1234를 lotto4에서 INSERT · 3DB MAX=1234·번호불일치0 · 회귀PASS | `docs/benchmarks/20260727_KAB_draw_gap.json` · backup_hashes · KAB 보고서 | 크롤링0·UPDATE0. K-06 영구팬아웃은 안만. 예측력무관·무결성 |
 | K-AC | OPEN | 압축대비 룰: Q1~Q8답 · RESTORE드리프트보정 · drift n=0 · RULES/CURSOR 초안은 형승인대기 | KAC 보고서 · `tools/_doc_drift_check.py` · drafts/ | R28 미준수 자인. R33/R29 충돌 기록. 예측력무관·방향상실방지 |
+| K-AD | PATCHED | 압축즉시복귀: guard_boot 동적주입(HEAD·BOOT§1·NEXT1건) · NEXT_ACTIONS앵커 · RESTORE복귀5줄 동기 · drift0·회귀PASS | KAD 보고서 · `rok21_inject.py` · `20260727_KAD_hook_inject.json` | R28→1줄[복귀]. 젠스파크는 hooks없음→RESTORE큐. 예측력무관·운영인프라 |

@@ -1,31 +1,60 @@
 #!/usr/bin/env python3
-"""beforeSubmitPrompt: ROK21 컨텍스트 7줄 주입 (continue=true)."""
+"""beforeSubmitPrompt: ROK21 동적 컨텍스트 주입 (continue=true · 최대 15줄)."""
 from __future__ import annotations
 
 import json
 import sys
+from pathlib import Path
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
-CONTEXT_LINES = """[ROK21] SSOT=kkr2652199-prog/ROK21 main · D:\\ROK21 · 7021 / 4군·테스트로또·효도로또만
-[R34] 1~3군·memoy·My_Library 내용 ROK21 기록 금지
-[충돌방지] 원본 kweon(D:\\3kweon·6124·264de3c 동결) 미접촉 · 작업은 ROK21만
-[동결] random.choices = B단계 전 수정 금지
-[동결] 백테 컨닝 금지 (_get_draws_before: target 이전만)
-[시작] SUMMARY/BOOT.md + FINDINGS.md 확인
-[종료] 보고서+STATUS+BOOT 3줄+push(ROK21)"""
+# 동일 디렉터리 모듈
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+FALLBACK = """[ROK21] HEAD=unknown · SSOT=ROK21/7021 · kweon=264de3c동결
+[지금] 미확인
+[직전] 미확인
+[BOOT다음] 미확인
+[NEXT] 미확인
+[WORK] IDLE
+[경고] 동결: random.choices / _get_draws_before / boost상한
+[경고] 원본 kweon 쓰기·push 금지
+[경고] 수치 원본=docs/benchmarks/*.json
+[규칙] 수치를 기억으로 쓰지 마라. 근거파일 없으면 '미확인'으로 중단하고 물어라."""
 
 
 def main() -> None:
     try:
         json.load(sys.stdin)
-    except json.JSONDecodeError:
+    except Exception:
         pass
-    out = {"continue": True, "additional_context": CONTEXT_LINES}
-    sys.stdout.write(json.dumps(out, ensure_ascii=False))
-    sys.stderr.write(f"[guard_boot] {CONTEXT_LINES}\n")
+
+    ctx = FALLBACK
+    try:
+        from rok21_inject import build_inject_text
+
+        ctx = build_inject_text() or FALLBACK
+    except Exception as exc:
+        sys.stderr.write(f"[guard_boot] inject fallback: {exc}\n")
+        ctx = FALLBACK
+
+    # 줄 수 상한
+    lines = [ln for ln in ctx.splitlines() if ln.strip()]
+    if len(lines) > 15:
+        lines = lines[:15]
+        ctx = "\n".join(lines)
+
+    out = {"continue": True, "additional_context": ctx}
+    try:
+        sys.stdout.write(json.dumps(out, ensure_ascii=False))
+    except Exception:
+        sys.stdout.write('{"continue": true, "additional_context": "[ROK21] inject-error"}')
+    try:
+        sys.stderr.write(f"[guard_boot]\n{ctx}\n")
+    except Exception:
+        pass
 
 
 if __name__ == "__main__":

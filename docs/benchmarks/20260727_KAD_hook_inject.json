@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "disclaimer": "이 작업은 예측력과 무관하다. 압축 후 즉시 복귀를 위한 운영 인프라다.",
+    "head": "969c8a1"
+  },
+  "inject_text_full": "[ROK21] HEAD=969c8a1 · SSOT=ROK21/7021 · kweon=264de3c동결\n[지금] K-AD 훅동적주입 · NEXT1건앵커 · 동생복귀5줄 동기화\n[직전] K-AC 압축대비룰 · RESTORE drift0\n[BOOT다음] 형—R35/R36·§6승인 · K-06팬아웃\n[NEXT] K-AD-FOLLOW: 형—RULES_FIXED R35·R36·CURSOR_RULES §6 초안 승인/반영 (그다음 K-06 팬아웃)\n[WORK] IDLE\n[경고] 동결: random.choices / _get_draws_before / boost상한\n[경고] 원본 kweon(D:\\3kweon) 쓰기·push·신규작업 금지\n[경고] 수치 원본=docs/benchmarks/*.json (BOOT/STATUS는 사본)\n[규칙] 수치를 기억으로 쓰지 마라. 근거파일 없으면 '미확인'으로 중단하고 물어라.",
+  "inject_n_lines": 10,
+  "hook_normal": {
+    "continue": true,
+    "n_lines": 10,
+    "returncode": 0
+  },
+  "hook_broken_boot": {
+    "continue_true": true,
+    "detail": "BOOT §1 broken temporarily; hook must continue:true"
+  },
+  "drift": {
+    "exit_code": 0,
+    "n_issues": 0,
+    "stdout_tail": "n_issues 0\nWROTE D:\\ROK21\\docs\\benchmarks\\20260727_KAC_doc_drift.json\n"
+  },
+  "regression": {
+    "dedup_enabled": true,
+    "E_k": 100.0,
+    "unresolved_total": 0,
+    "k_all_100": true,
+    "sha_ok": true,
+    "sha256": "eb2e5e49092b9ae707196ccf22c93f732dec40af0497f9705cd73c9afb6a41ff",
+    "cutoff_on": true,
+    "gate_pass": true
+  }
+}

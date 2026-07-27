@@ -10,9 +10,18 @@ alwaysApply: true
 > 원본 kweon: `kkr2652199-prog/kweon` · `D:\3kweon` · 포트 6124 · **동결(쓰기·push·신규작업 금지)**
 
 ## 시작 시 (매 작업)
-1. `My_Drive_Sync/SUMMARY/RESTORE.md` 읽고 첫 응답에 확인 출력 (압축 복원 1순위)
-2. `BOOT.md` + `FINDINGS.md` 확인
-3. `RESUME_HERE.md` · `RULES_FIXED.md` · `CURSOR_RULES.md` 확인
+1. **세션 첫 응답 첫 줄에 반드시 출력 (R28 대체 · 1줄):**  
+   `[복귀] HEAD=<해시> · 지금=<BOOT §1 1행> · 다음=<NEXT_ACTIONS ID+할일>`  
+   이 줄 없이 작업 시작 금지. (값은 `guard_boot` 주입·BOOT·NEXT_ACTIONS에서)
+2. `My_Drive_Sync/SUMMARY/RESTORE.md` 확인 (압축 복원 1순위 · 동생 큐용)
+3. `BOOT.md` + `FINDINGS.md` 확인
+4. 필요 시 `RESUME_HERE.md` · `RULES_FIXED.md` · `CURSOR_RULES.md`
+
+## 종료 시 NEXT_ACTIONS
+- 매 턴 종료 전 `NEXT_ACTIONS.md` 의 `## NEXT (1건)` 을 **정확히 1건**으로 갱신
+- `## WORKSTATE` 를 `IDLE` 또는 `RUNNING:<지시서ID>` 로 맞춤
+- `python -c "from pathlib import Path; import sys; sys.path.insert(0,'.cursor/hooks'); from rok21_inject import sync_restore_header; sync_restore_header()"` 로 RESTORE 동생복귀블록 동기화 (선택·권장)
+
 
 ## R34 (절대)
 - **4군·테스트로또·효도로또** -> **ROK21 only** (`kkr2652199-prog/ROK21` · main · `D:\ROK21`)
