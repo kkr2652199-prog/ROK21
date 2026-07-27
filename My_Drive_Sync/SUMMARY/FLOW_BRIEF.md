@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d88a8ff` · WORK=`IDLE`
+- HEAD: `1609625` · WORK=`IDLE`
 - 지금: K-00 과거예측 숙제 확장 PASS (READ-ONLY · review SSOT)
 - 직전: K-1235-PREP · K-D · K-H · K-B
 - BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
