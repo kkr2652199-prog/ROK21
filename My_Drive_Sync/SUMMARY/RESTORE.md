@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f43ae9e` · WORK=`IDLE`
+1. **HEAD:** `d42ddcb` · WORK=`IDLE`
 2. **지금:** K-AG pair/zone재정의 · 미소비3키 배선 PATCHED
 3. **다음1건:** K-AG-FOLLOW — 형—다음 본선 선택 (기각뇌 처리 / UI쓸모 / K-X끝수 / hyodo후속) (승인필요=예 · 선행=K-AG PATCHED)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

@@ -7,7 +7,7 @@
 - 할일: 형—다음 본선 선택 (기각뇌 처리 / UI쓸모 / K-X끝수 / hyodo후속)
 - 선행조건: K-AG PATCHED
 - 승인필요: 예
-- 최종갱신: pending
+- 최종갱신: d42ddcb
 
 ## WORKSTATE
 IDLE

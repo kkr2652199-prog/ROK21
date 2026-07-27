@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f43ae9e` · WORK=`IDLE`
+- HEAD: `d42ddcb` · WORK=`IDLE`
 - 지금: K-AG pair/zone재정의 · 미소비3키 배선 PATCHED
 - 직전: K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF
 - BOOT다음: 형—기각뇌/UI쓸모/K-X/hyodo 중 선택

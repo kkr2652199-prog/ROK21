@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `f43ae9e` |
+| HEAD(실측) | `d42ddcb` |
 | WORK | `IDLE` |
 | 지금 | K-AG pair/zone재정의 · 미소비3키 배선 PATCHED |
 | 직전 | K-AF 팬아웃잔여정합 · catch-up무조건 · R37 FLOW_BRIEF |
@@ -30,7 +30,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=f43ae9e · 지금=K-AG pair/zone재정의 · 미소비3키 배선 PATCHED · 다음=K-AG-FOLLOW`
+1. 첫줄 `[복귀] HEAD=d42ddcb · 지금=K-AG pair/zone재정의 · 미소비3키 배선 PATCHED · 다음=K-AG-FOLLOW`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -44,4 +44,4 @@
 | 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: f43ae9e_
+_generated: d42ddcb_
