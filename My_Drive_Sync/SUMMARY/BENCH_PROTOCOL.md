@@ -95,4 +95,6 @@
 
 ## 6) 관련 FINDINGS
 
-K-B · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **WARRANT.md**
+K-B(**PATCHED**) · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W(**PATCHED**) · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **WARRANT.md**
+
+기계검증: `python tools/_kb_bench_ssot_verify.py` → `docs/benchmarks/20260727_KB_bench_ssot.json`

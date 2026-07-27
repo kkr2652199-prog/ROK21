@@ -1,0 +1,109 @@
+{
+  "task": "K-B",
+  "window": {
+    "start": 1135,
+    "end": 1234,
+    "n": 100
+  },
+  "ssot": {
+    "skill_mean_source": "testlotto_brain_review.predicted_sets_json",
+    "ops_ui_source": "lotto_predictions",
+    "ops_ui_skill_compare_forbidden": true,
+    "mean_alone_rank_forbidden": true,
+    "null_mean": 0.8,
+    "best_ceiling_approx": 2.27
+  },
+  "review_json_mean": {
+    "stat": {
+      "n_draws": 100,
+      "mean": 0.76,
+      "null_mean": 0.8,
+      "delta_vs_null": -0.04
+    },
+    "markov": {
+      "n_draws": 100,
+      "mean": 0.802,
+      "null_mean": 0.8,
+      "delta_vs_null": 0.002
+    },
+    "review": {
+      "n_draws": 100,
+      "mean": 0.852,
+      "null_mean": 0.8,
+      "delta_vs_null": 0.052
+    }
+  },
+  "predictions_mean_audit_only": {
+    "stat": {
+      "n_draws": 69,
+      "mean": 0.834783
+    },
+    "markov": {
+      "n_draws": 69,
+      "mean": 0.710145
+    },
+    "review": {
+      "n_draws": 69,
+      "mean": 0.828986
+    }
+  },
+  "set_overlap_check": {
+    "brain": "stat",
+    "checked_draws": 69,
+    "draws_with_any_identical_set": 0
+  },
+  "pred_gap": {
+    "expected": [
+      1149,
+      1150,
+      1151,
+      1152,
+      1153,
+      1154,
+      1155,
+      1156,
+      1157,
+      1158,
+      1159,
+      1160,
+      1161,
+      1162,
+      1163,
+      1164,
+      1165,
+      1166,
+      1167,
+      1168,
+      1169,
+      1170,
+      1171,
+      1172,
+      1173,
+      1174,
+      1175,
+      1176,
+      1177,
+      1178,
+      1179
+    ],
+    "missing_count": 31,
+    "missing_all_match": true
+  },
+  "review_mean_order_audit_not_winner": [
+    "review",
+    "markov",
+    "stat"
+  ],
+  "checks": {
+    "window_100": true,
+    "review_complete_100": true,
+    "pred_sparser_than_review": true,
+    "pred_gap_1149_1179": true,
+    "set_identity_near_zero": true,
+    "null_mean_is_0_8": true,
+    "protocol_forbids_mean_rank_winner": true,
+    "ssot_is_review_json": true
+  },
+  "verify_pass": true,
+  "note": "두 표 나란히 실력비교 금지 · mean 서열 단독 승자선언 금지(K-O)"
+}

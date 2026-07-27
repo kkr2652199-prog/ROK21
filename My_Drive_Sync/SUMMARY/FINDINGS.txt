@@ -33,7 +33,7 @@
 | K-11 | OPEN | 적중축 폐기 · EV배선 유지(Y풀 재검증) | `ev_rerank.py` · K09컷오프 보고서 | 적중폐기 박제. Y(컷오프) 풀 순효과 1.033 CI[1.019,1.048] **YES→배선 유지**. K-09 전제 라벨 **제거**. 기본 OFF opt-in |
 | K-12 | OPEN | RULES_FIXED 정합성 2건 (보고만) | `My_Drive_Sync/SUMMARY/RULES_FIXED.md` | (a) R33 복원 SSOT=kweon 기재 → ROK21 작업 오유도 → **RESTORE.md로 우회**. (b) R29 불일치 → **K-L로 승계**. **형만 수정 가능 · 동생/커서는 보고만** |
 | K-A | OPEN | stat mean 0.760 < baseline 0.788/이론 0.80 | `brains/predict_stat_fairy.py:12` · `predict_statistical.py` | 최근100회(1135-1234)·500세트. **단 K-B 해소 전 패치 금지** · K-O 이후 mean 서열 해석 재검토 |
-| K-B | OPEN | 성능 표본 2종 충돌 | `testlotto_brain_review` vs `lotto_predictions` | review100: stat0.760/markov0.802 ↔ pred69: stat0.835/markov0.710 **역전**. **BENCH_PROTOCOL로 SSOT 고정** |
+| K-B | PATCHED | 성능 표본 2종 충돌 → **BENCH SSOT 고정·기계검증** | `BENCH_PROTOCOL.md` · `20260727_KB_bench_ssot.json` | review100완결 · pred갭1149–1179=31 · 세트동일0. 실력=review JSON mean · pred는 UI전용. mean단독서열 금지 |
 | K-C | OPEN | referee 가중이 성적 역행 | `learn_state.py:108` `get_referee_weights` | 최저성적 stat이 최고가중 0.3348. 식 `(1+avg×0.15)/Σ` 의 avg 출처 검증 필요 · **K-M과 연계** |
 | K-D | OPEN | 클릭 경로에 fusion 부재 | `fusion.py` 미호출 · `coordinator._apply_aux_scoring:47` | 실제 융합=AUX 하드코딩 [0.25]×4. 문서/기대 흐름 불일치 |
 | K-E | OPEN | seed 미고정 → 비재현 | `predict_statistical.py:234` · `predict_markov.py:57,59,150,156` · `predict_review_king.py:42` | 동일입력 2회 stat/markov/review 모두 False. **동결항목 — 형 승인 전 수정금지** · K-S 재현성 설계와 연계 |
