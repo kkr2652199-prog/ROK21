@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5349b9c` · WORK=`IDLE`
+1. **HEAD:** `a5a0e4e` · WORK=`IDLE`
 2. **지금:** K-H 미등록 AUX _unused 격리 PASS
 3. **다음1건:** K-AWAIT — 형 다음 본선 1건 지시 대기 (후보: 1235루프 · K-D) (승인필요=아니오 · 선행=K-H·K-B PATCHED · PIN `640cb67`)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-28 | K-H 미등록AUX | _unused격리 · import0 · 3+4유지 · verify PASS | K-H PATCHED | `(커밋 전)` |
+| 2026-07-28 | K-H 미등록AUX | _unused격리 · import0 · 3+4유지 · verify PASS | K-H PATCHED | `a5a0e4e` |
 | 2026-07-28 | K-B BENCH SSOT | review100·pred갭31·세트동일0 · verify PASS | K-B PATCHED | `1d0be4f` |
 | 2026-07-27 | K-W post-KP3 | ending χ²/df↓ · rates NameError수정 · verify PASS | K-W PATCHED | `bb7b004` |
 | 2026-07-27 | K-P5 hyodo 인프라UI | infra-dashboard·LSTM패널 · verify PASS | K-P5 PATCHED | `6f0d0e0` |

@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5349b9c` · WORK=`IDLE`
+- HEAD: `a5a0e4e` · WORK=`IDLE`
 - 지금: K-H 미등록 AUX _unused 격리 PASS
 - 직전: K-B BENCH SSOT · K-W · P5
 - BOOT다음: K-AWAIT — 형 다음 본선 1건 (1235·K-D 후보)

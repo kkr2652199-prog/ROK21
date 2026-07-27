@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5349b9c` |
+| HEAD(실측) | `a5a0e4e` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | K-H 미등록 AUX _unused 격리 PASS |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5349b9c · 지금=K-H 미등록 AUX _unused 격리 PASS · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=a5a0e4e · 지금=K-H 미등록 AUX _unused 격리 PASS · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
