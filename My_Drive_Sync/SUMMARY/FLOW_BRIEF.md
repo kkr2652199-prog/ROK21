@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6f0d0e0` · WORK=`IDLE`
+- HEAD: `fc61516` · WORK=`IDLE`
 - 지금: K-P5 hyodo LSTM·인프라 UI · infra-dashboard PASS
 - 직전: K-PIN-CLOSE · K-P4 LSTM샌드박스 · P1~P3
 - BOOT다음: K-AWAIT — 형 다음 본선 1건 지시 대기
