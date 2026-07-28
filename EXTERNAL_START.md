@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `c54068a` |
+| HEAD(실측) | `a25c9b7` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=c54068a · 지금=K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보** · 다음=K-SETCOUNT-WIRE`
+1. 첫줄 `[복귀] HEAD=a25c9b7 · 지금=K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보** · 다음=K-SETCOUNT-WIRE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: c54068a_
+_generated: a25c9b7_

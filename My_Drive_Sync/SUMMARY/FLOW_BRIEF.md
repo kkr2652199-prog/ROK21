@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c54068a` · WORK=`IDLE`
+- HEAD: `a25c9b7` · WORK=`IDLE`
 - 지금: K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보**
 - 직전: COVER FAIL (ge3≤RR)
 - BOOT다음: K-SETCOUNT-WIRE — null/비용 검증 후 SETS 확장 여부

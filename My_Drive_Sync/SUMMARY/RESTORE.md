@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c54068a` · WORK=`IDLE`
+1. **HEAD:** `a25c9b7` · WORK=`IDLE`
 2. **지금:** K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보**
 3. **다음1건:** K-SETCOUNT-WIRE — SETCOUNT PASS(n=10·15 ge3>RR) · 배선 전 null/비용 대비 검증 후 SETS 확장 여부 결정 (승인필요=예 · 선행=K-SETCOUNT-SURVEY 완료 · recommended=K-SETCOUNT-WIRE · 승인필요)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-SETCOUNT-SURVEY | n15 ge3=0.3088≈null · markov solo PASS · NEXT=WIRE | SETCOUNT PASS | (미커밋) |
+| 2026-07-29 | K-SETCOUNT-SURVEY | n15 ge3=0.3088≈null · markov solo PASS · NEXT=WIRE | SETCOUNT PASS | `a25c9b7` |
 | 2026-07-29 | K-COVER·종료체크 | pool40 ge3=0.132<RR · NEXT=HOLD | COVER FAIL | `6339f12` |
 | 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | `ed4e702` |
 | 2026-07-29 | STRUCT·종료체크 | aux sp0.008·analog≪RR·가중Δ0 · NEXT=HOLD | STRUCT 관측종료 | `7606686` |
