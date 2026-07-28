@@ -1,0 +1,30 @@
+{
+  "task": "K-PIPE-A",
+  "fix": "walkforward review_single_draw uses apply_coordinator_scoring + clear_history_cache",
+  "checks": {
+    "draws_before_1234": true,
+    "stat_raw_sets": true,
+    "stat_scored_sets": true,
+    "nums_unchanged_after_aux": true,
+    "confidence_adjusted": true,
+    "reasoning_has_aux_marker": true,
+    "walkforward_imports_pipe": true
+  },
+  "samples": {
+    "stat_set1": {
+      "raw_conf": 95.6,
+      "scored_conf": 54.8,
+      "nums": [
+        1,
+        16,
+        21,
+        29,
+        36,
+        42
+      ],
+      "reasoning_prefix": "통계요정: 빈도가중+끝수[1, 2, 6, 9]+이월0개+미출30+없음 [학습조정 이월×1.20 끝수×1.30] [보조4뇌:0.73] 오답탐정:0.75 | 패턴돋보기:AC7 연속0 점수0.85 | 균형지킴이:홀3짝3 "
+    }
+  },
+  "verify_pass": true,
+  "note": "기존 brain_review 행은 재복습 전까지 구 reasoning 유지"
+}

@@ -6,7 +6,7 @@ import json
 import logging
 from typing import Any
 
-from app.testlotto.brains.coordinator import PREDICT_MODULES
+from app.testlotto.brains.coordinator import PREDICT_MODULES, apply_coordinator_scoring
 from app.testlotto.brains.registry import PREDICT_BRAINS, SETS_PER_PREDICT_BRAIN
 from app.testlotto.aux_analysis import build_brain_aux_json
 from app.testlotto.data_service import _get_draws_before
@@ -91,6 +91,8 @@ def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str
         if not sets:
             results.append({"brain_tag": tag, "skipped": True})
             continue
+        # K-PIPE-A: live coordinator와 동일 AUX·referee confidence (best는 tier 기준 유지)
+        sets = apply_coordinator_scoring(sets, draws, draw_no)
         scored_sets, best, best_set_no = _score_sets(sets, actual_set, actual_list, bonus)
         nums = best["nums"]
         matched = int(best["matched_count"])
@@ -210,6 +212,9 @@ def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str
             aux_analysis_json=build_brain_aux_json(item["nums"], draws, draw_no),
         )
 
+    from app.testlotto.learn_state_cutoff import clear_history_cache
+
+    clear_history_cache()
     return {"draw_no": draw_no, "reviews": results, "feature_stored": store_features}
 
 

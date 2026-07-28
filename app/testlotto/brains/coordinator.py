@@ -53,6 +53,13 @@ def _aux_composite_score(
     return total
 
 
+def apply_coordinator_scoring(
+    candidates: list[dict], draws: list[dict], target_draw_no: int
+) -> list[dict]:
+    """K-PIPE-A: walk-forward·live predict 공통 4보조+referee confidence (nums 불변)."""
+    return _apply_aux_scoring(candidates, draws, target_draw_no)
+
+
 def _apply_aux_scoring(candidates: list[dict], draws: list[dict], target_draw_no: int) -> list[dict]:
     ref_weights = get_referee_weights()
     out: list[dict] = []
