@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e2dddf1` · WORK=`IDLE`
+- HEAD: `8a8c711` · WORK=`IDLE`
 - 지금: HOLD맵 · 실레버공백 · 새벤치미실행 · **V2유지** · 형선택대기
 - 직전: GENMIX FAIL · AUX/GENDIV/슬롯재선택류 FAIL 누적
 - BOOT다음: K-ATTACK-HOLD — A=HOLD동결 / B=전략프레임 · 재탕금지
