@@ -8,11 +8,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `13a187e` |
+| HEAD(실측) | `440eb18` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-UI-PLAIN — 테스트로또·상세·analog 쉬운 말 UI |
-| 직전 | K-UI-TESTLOTTO · K-ANALOG-1 · K-PIPE-A |
+| 지금 | K-REBRAND — kweon/복제 흔적 ROK21 교체 (UI·tools·SSOT) |
+| 직전 | K-UI-PLAIN · K-UI-TESTLOTTO · K-ANALOG-1 |
 | BOOT다음 | K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` |
 | NEXT1 ID | **K-AWAIT** |
 | NEXT1 할일 | **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=13a187e · 지금=K-UI-PLAIN — 테스트로또·상세·analog 쉬운 말 UI · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=440eb18 · 지금=K-REBRAND — kweon/복제 흔적 ROK21 교체 (UI·tools·SSOT) · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
