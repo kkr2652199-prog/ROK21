@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-AUX-BLEND FAIL · NEXT=HOLD · V2 배선 유지 · WIRE금지 · AUX-BLEND재탕금지
+📌 사유: K-GENMIX FAIL · NEXT=HOLD · V2 배선 유지 · WIRE금지 · GENMIX재탕금지
 
 ---
 
@@ -10,9 +10,10 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| K-AUX-BLEND | **FAIL** · 전 blend/성분 상관 게이트 false · WIRE금지 |
+| K-GENMIX | **FAIL** · live best 0.1303 < pin 0.1447 · trunc fillable 티켓동일 · WIRE금지 |
 | WIRE-V2 | ENABLED=**True** (유지) |
-| GENDIV | FAIL (직전) |
+| AUX-BLEND | FAIL (직전) |
+| GENDIV | FAIL |
 | SUM-SELECT | FAIL |
 | BAND-SELECT | FAIL |
 | EV-POP | FAIL |
@@ -26,7 +27,8 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-AUX-BLEND** | 발권전 AUX_WEIGHTS·`aux_score*40` 점수↔적중 · **슬롯재선택 아님** | **FAIL** |
+| **K-GENMIX** | 뇌별 `predict_sets(n_sets)` 풀구성 · 발권 V2 set_no_asc 고정 | **FAIL** |
+| **K-AUX-BLEND** | 발권전 AUX_WEIGHTS·`aux_score*40` 점수↔적중 · **슬롯재선택 아님** | FAIL |
 | **K-GENDIV** | 생성15풀 Jaccard/union ↔ V2적중 (`diversify_pick` 레버) | FAIL |
 | **K-SUM-SELECT** | V2쿼터 고정·티켓 합(이론138) 슬롯 재선택 | FAIL |
 | **K-BAND-SELECT** | V2쿼터 고정·티켓 LMH 번호대역 슬롯 재선택 | FAIL |
@@ -38,46 +40,37 @@
 
 ---
 
-## 2) K-AUX-BLEND 핵심
+## 2) K-GENMIX 핵심
 
 | 항목 | 값 |
 |------|-----|
-| 풀 | testlotto_brain_review · draw 53~1234 · n=**1182** · pool=**17730** |
-| 발권 | V2 set_no_asc **고정** (대체점수 픽 없음) |
-| 코드앵커 | `coordinator.AUX_WEIGHTS=[0.25]*4` · `aux_score*40` |
-| live 상관 | r=**0.0134** · p=0.075 |
-| best blend | pattern_heavy r=**0.0152** · p=0.043 (|r|<0.03) |
-| V2티켓 live aux | r=**0.0272** · p=0.037 (|r|<0.03) |
-| miss/referee | **constant** (본 표본) |
-| Q4/Q5 live ge3 | **0.1780** / **0.1561** (비단조) |
+| 풀 | draw 53~1234 · n=**1182** |
+| 코드앵커 | `SETS_PER_PREDICT_BRAIN=5` (균등 · 뇌별 dict 없음) |
+| 발권 | V2 set_no_asc m3+s1+r1 **고정** |
+| Part A trunc fillable | identical=**1.0** · ge3=**0.1447** (구조적 null) |
+| Part B live baseline 5/5/5 | ge3=**0.1083** (≪ pin · live≠stored) |
+| best live | **m3/s5/r7** ge3=**0.1303** · Δlive=+0.022 · Δpin=**−0.0144** |
+| sanity nsets set1 diff | **1.0** (regen≠trunc) |
 | PASS | **FAIL** |
-| recommended_next | **없음** (HOLD·V2유지·AUX-BLEND재탕금지) |
+| recommended_next | **없음** (HOLD·V2유지·GENMIX재탕금지) |
 
-근거: docs/benchmarks/20260729_KAUX_BLEND_survey.json
-
-### 후보 기각 (선정 과정)
-
-| 후보 | 기각 |
-|------|------|
-| K-SETS-MIX15 | brain_review 뇌당5 · SETCOUNT/재생성 인접 · V2 trunc 시 티켓동일 |
-| K-AUX-THRESH | 슬롯재선택=금지 · BAND 기각 |
-| K-STATP | PATTERN2/STRUCT 인접 |
+근거: docs/benchmarks/20260729_KGENMIX_survey.json
 
 ### 재탕금지 (누적)
 
-SETPACK-TOP6 · MARKOV-TUNE · SETNO-HITMAP · EV-POP · BAND-SELECT · SUM-SELECT · conf-quota구WIRE · HISIM/STRUCT/COVER wheel · GATHER전면 · GENDIV · **AUX-BLEND**
+SETPACK-TOP6 · MARKOV-TUNE · SETNO-HITMAP · EV-POP · BAND-SELECT · SUM-SELECT · conf-quota구WIRE · HISIM/STRUCT/COVER wheel · GATHER전면 · GENDIV · AUX-BLEND · **GENMIX**
 
 ---
 
 ## 3) 다음
 
-K-ATTACK-HOLD — AUX-BLEND WIRE금지·재탕금지 · V2 유지 · 형·커서 다음 직교축 1건 재선정 (승인 필요) · **슬롯재선택·GENDIV·AUX점수 재탕 지양**
+K-ATTACK-HOLD — GENMIX WIRE금지·재탕금지 · V2 유지 · 형·커서 다음 직교축 1건 재선정 (승인 필요) · **슬롯재선택·GENDIV·AUX점수·GENMIX 재탕 지양**
 
 ---
 
 ## 4) 산출물
 
-- tools/_k_aux_blend_survey.py
-- docs/benchmarks/20260729_KAUX_BLEND_survey.json
-- reports/20260729_KAUX_BLEND.md
-- My_Drive_Sync/커서보고서/20260729_KAUX_BLEND.md
+- tools/_k_genmix_survey.py
+- docs/benchmarks/20260729_KGENMIX_survey.json
+- reports/20260729_KGENMIX.md
+- My_Drive_Sync/커서보고서/20260729_KGENMIX.md

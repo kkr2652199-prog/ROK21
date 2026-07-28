@@ -1,0 +1,378 @@
+{
+  "id": "K-GENMIX",
+  "ts": "2026-07-29T08:14:04",
+  "elapsed_sec": 102.1,
+  "db_code_write": false,
+  "axis": {
+    "id": "K-GENMIX",
+    "hypothesis": "뇌별 predict_sets(n_sets) 비율을 바꾸면 diversify_pick 산출이 달라지고 V2 set_no_asc(m3+s1+r1) 발권 후 best-of-5 ge3가 개선된다",
+    "orthogonal_to_v2": true,
+    "why_not_forbidden_rehash": "AUX가중·슬롯재픽(SUM/BAND/EV/SETNO/SETPACK)·GENDIV(Jaccard)·TUNE 미사용. 생성 n_sets(풀 구성)만 변경 · 발권 쿼터/set_no_asc 고정. SETCOUNT는 장수/null 분리·본축은 동일5장·뇌별비율."
+  },
+  "code_lever": {
+    "SETS_PER_PREDICT_BRAIN": 5,
+    "per_brain_gen_dict": null,
+    "note": "균등 정수 1개만 · 뇌별 생성개수 레버는 코드에 없음(관측=가상 n_sets)",
+    "issue_lever_unchanged": {
+      "MARKOV_WIRE_BRAIN_QUOTA": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "method": "set_no_asc"
+    }
+  },
+  "v2_pin": {
+    "ge3": 0.1447,
+    "mean": 1.7504,
+    "quota": {
+      "markov": 3,
+      "stat": 1,
+      "review": 1
+    }
+  },
+  "part_a_trunc": {
+    "n_draws": 1182,
+    "policies": {
+      "baseline_5_5_5": {
+        "gen": {
+          "markov": 5,
+          "stat": 5,
+          "review": 5
+        },
+        "pool_sum": 15,
+        "fillable": true,
+        "identical_to_baseline_rate": 1.0,
+        "identical_n": 1182,
+        "n": 1182,
+        "mean": 1.7504,
+        "ge3": 171,
+        "ge3_rate": 0.1447,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "delta_ge3_vs_v2pin": 0.0,
+        "p_vs_null": 0.000679
+      },
+      "trunc_m5_s5_r3": {
+        "gen": {
+          "markov": 5,
+          "stat": 5,
+          "review": 3
+        },
+        "pool_sum": 13,
+        "fillable": true,
+        "identical_to_baseline_rate": 1.0,
+        "identical_n": 1182,
+        "n": 1182,
+        "mean": 1.7504,
+        "ge3": 171,
+        "ge3_rate": 0.1447,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "delta_ge3_vs_v2pin": 0.0,
+        "p_vs_null": 0.000679
+      },
+      "trunc_m5_s3_r5": {
+        "gen": {
+          "markov": 5,
+          "stat": 3,
+          "review": 5
+        },
+        "pool_sum": 13,
+        "fillable": true,
+        "identical_to_baseline_rate": 1.0,
+        "identical_n": 1182,
+        "n": 1182,
+        "mean": 1.7504,
+        "ge3": 171,
+        "ge3_rate": 0.1447,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "delta_ge3_vs_v2pin": 0.0,
+        "p_vs_null": 0.000679
+      },
+      "trunc_m3_s5_r5": {
+        "gen": {
+          "markov": 3,
+          "stat": 5,
+          "review": 5
+        },
+        "pool_sum": 13,
+        "fillable": true,
+        "identical_to_baseline_rate": 1.0,
+        "identical_n": 1182,
+        "n": 1182,
+        "mean": 1.7504,
+        "ge3": 171,
+        "ge3_rate": 0.1447,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "delta_ge3_vs_v2pin": 0.0,
+        "p_vs_null": 0.000679
+      },
+      "trunc_m5_s1_r1": {
+        "gen": {
+          "markov": 5,
+          "stat": 1,
+          "review": 1
+        },
+        "pool_sum": 7,
+        "fillable": true,
+        "identical_to_baseline_rate": 1.0,
+        "identical_n": 1182,
+        "n": 1182,
+        "mean": 1.7504,
+        "ge3": 171,
+        "ge3_rate": 0.1447,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "delta_ge3_vs_v2pin": 0.0,
+        "p_vs_null": 0.000679
+      },
+      "starve_m2_s5_r5": {
+        "gen": {
+          "markov": 2,
+          "stat": 5,
+          "review": 5
+        },
+        "pool_sum": 12,
+        "fillable": false,
+        "identical_to_baseline_rate": 0.0,
+        "identical_n": 0,
+        "n": 1182,
+        "mean": 1.736,
+        "ge3": 159,
+        "ge3_rate": 0.1345,
+        "ge4": 8,
+        "ge4_rate": 0.0068,
+        "delta_ge3_vs_v2pin": -0.0102,
+        "p_vs_null": 0.015128
+      },
+      "starve_m5_s0_r5": {
+        "gen": {
+          "markov": 5,
+          "stat": 0,
+          "review": 5
+        },
+        "pool_sum": 10,
+        "fillable": false,
+        "identical_to_baseline_rate": 0.0,
+        "identical_n": 0,
+        "n": 1182,
+        "mean": 1.736,
+        "ge3": 174,
+        "ge3_rate": 0.1472,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "delta_ge3_vs_v2pin": 0.0025,
+        "p_vs_null": 0.000271
+      },
+      "starve_m5_s5_r0": {
+        "gen": {
+          "markov": 5,
+          "stat": 5,
+          "review": 0
+        },
+        "pool_sum": 10,
+        "fillable": false,
+        "identical_to_baseline_rate": 0.0,
+        "identical_n": 0,
+        "n": 1182,
+        "mean": 1.7521,
+        "ge3": 158,
+        "ge3_rate": 0.1337,
+        "ge4": 11,
+        "ge4_rate": 0.0093,
+        "delta_ge3_vs_v2pin": -0.011,
+        "p_vs_null": 0.018794
+      }
+    }
+  },
+  "part_b_live": {
+    "n_draws": 1182,
+    "gen_elapsed_sec": 95.7,
+    "sanity_nsets_set1_diff_rate": 1.0,
+    "sanity_n": 150,
+    "policies": {
+      "baseline_5_5_5": {
+        "gen": {
+          "markov": 5,
+          "stat": 5,
+          "review": 5
+        },
+        "pool_sum": 15,
+        "fillable": true,
+        "identical_to_live_baseline_rate": 1.0,
+        "n": 1182,
+        "mean": 1.7073,
+        "ge3": 128,
+        "ge3_rate": 0.1083,
+        "ge4": 8,
+        "ge4_rate": 0.0068,
+        "delta_ge3_vs_v2pin": -0.0364,
+        "delta_mean_vs_v2pin": -0.0431,
+        "p_vs_null": 0.733846,
+        "delta_ge3_vs_live_baseline": 0.0,
+        "delta_mean_vs_live_baseline": 0.0
+      },
+      "m7_s5_r3": {
+        "gen": {
+          "markov": 7,
+          "stat": 5,
+          "review": 3
+        },
+        "pool_sum": 15,
+        "fillable": true,
+        "identical_to_live_baseline_rate": 0.0,
+        "n": 1182,
+        "mean": 1.7318,
+        "ge3": 135,
+        "ge3_rate": 0.1142,
+        "ge4": 8,
+        "ge4_rate": 0.0068,
+        "delta_ge3_vs_v2pin": -0.0305,
+        "delta_mean_vs_v2pin": -0.0186,
+        "p_vs_null": 0.491394,
+        "delta_ge3_vs_live_baseline": 0.0059,
+        "delta_mean_vs_live_baseline": 0.0245
+      },
+      "m9_s3_r3": {
+        "gen": {
+          "markov": 9,
+          "stat": 3,
+          "review": 3
+        },
+        "pool_sum": 15,
+        "fillable": true,
+        "identical_to_live_baseline_rate": 0.0,
+        "n": 1182,
+        "mean": 1.7149,
+        "ge3": 130,
+        "ge3_rate": 0.11,
+        "ge4": 8,
+        "ge4_rate": 0.0068,
+        "delta_ge3_vs_v2pin": -0.0347,
+        "delta_mean_vs_v2pin": -0.0355,
+        "p_vs_null": 0.669622,
+        "delta_ge3_vs_live_baseline": 0.0017,
+        "delta_mean_vs_live_baseline": 0.0076
+      },
+      "m3_s7_r5": {
+        "gen": {
+          "markov": 3,
+          "stat": 7,
+          "review": 5
+        },
+        "pool_sum": 15,
+        "fillable": true,
+        "identical_to_live_baseline_rate": 0.0,
+        "n": 1182,
+        "mean": 1.7107,
+        "ge3": 141,
+        "ge3_rate": 0.1193,
+        "ge4": 9,
+        "ge4_rate": 0.0076,
+        "delta_ge3_vs_v2pin": -0.0254,
+        "delta_mean_vs_v2pin": -0.0397,
+        "p_vs_null": 0.285154,
+        "delta_ge3_vs_live_baseline": 0.011,
+        "delta_mean_vs_live_baseline": 0.0034
+      },
+      "m3_s5_r7": {
+        "gen": {
+          "markov": 3,
+          "stat": 5,
+          "review": 7
+        },
+        "pool_sum": 15,
+        "fillable": true,
+        "identical_to_live_baseline_rate": 0.0,
+        "n": 1182,
+        "mean": 1.7157,
+        "ge3": 154,
+        "ge3_rate": 0.1303,
+        "ge4": 10,
+        "ge4_rate": 0.0085,
+        "delta_ge3_vs_v2pin": -0.0144,
+        "delta_mean_vs_v2pin": -0.0347,
+        "p_vs_null": 0.041989,
+        "delta_ge3_vs_live_baseline": 0.022,
+        "delta_mean_vs_live_baseline": 0.0084
+      },
+      "m7_s4_r4": {
+        "gen": {
+          "markov": 7,
+          "stat": 4,
+          "review": 4
+        },
+        "pool_sum": 15,
+        "fillable": true,
+        "identical_to_live_baseline_rate": 0.0,
+        "n": 1182,
+        "mean": 1.72,
+        "ge3": 128,
+        "ge3_rate": 0.1083,
+        "ge4": 9,
+        "ge4_rate": 0.0076,
+        "delta_ge3_vs_v2pin": -0.0364,
+        "delta_mean_vs_v2pin": -0.0304,
+        "p_vs_null": 0.733846,
+        "delta_ge3_vs_live_baseline": 0.0,
+        "delta_mean_vs_live_baseline": 0.0127
+      },
+      "equal_3_3_3": {
+        "gen": {
+          "markov": 3,
+          "stat": 3,
+          "review": 3
+        },
+        "pool_sum": 9,
+        "fillable": true,
+        "identical_to_live_baseline_rate": 0.0,
+        "n": 1182,
+        "mean": 1.72,
+        "ge3": 147,
+        "ge3_rate": 0.1244,
+        "ge4": 9,
+        "ge4_rate": 0.0076,
+        "delta_ge3_vs_v2pin": -0.0203,
+        "delta_mean_vs_v2pin": -0.0304,
+        "p_vs_null": 0.13417,
+        "delta_ge3_vs_live_baseline": 0.0161,
+        "delta_mean_vs_live_baseline": 0.0127
+      }
+    }
+  },
+  "best_live": {
+    "name": "m3_s5_r7",
+    "gen": {
+      "markov": 3,
+      "stat": 5,
+      "review": 7
+    },
+    "pool_sum": 15,
+    "fillable": true,
+    "identical_to_live_baseline_rate": 0.0,
+    "n": 1182,
+    "mean": 1.7157,
+    "ge3": 154,
+    "ge3_rate": 0.1303,
+    "ge4": 10,
+    "ge4_rate": 0.0085,
+    "delta_ge3_vs_v2pin": -0.0144,
+    "delta_mean_vs_v2pin": -0.0347,
+    "p_vs_null": 0.041989,
+    "delta_ge3_vs_live_baseline": 0.022,
+    "delta_mean_vs_live_baseline": 0.0084
+  },
+  "gates": {
+    "live_baseline_near_v2pin": false,
+    "trunc_fillable_identical": true,
+    "best_vs_live_delta_ge3": 0.022,
+    "best_vs_pin_delta_ge3": -0.0144,
+    "delta_hit": 0.005,
+    "PASS": false
+  },
+  "recommended_next": null,
+  "note": "Part A: stored trunc는 fillable 시 티켓동일(구조적 null). Part B: live n_sets가 실레버(set1 불일치 확인). AUX/DB 미기록."
+}

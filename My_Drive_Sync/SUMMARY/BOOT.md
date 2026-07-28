@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: AUX-BLEND FAIL · |r|<0.03 · **HOLD** · V2유지
-- 직전: GENDIV FAIL / SUM FAIL / BAND FAIL / EV-POP FAIL / SETNO FAIL / SETPACK FAIL / TUNE FAIL
-- 다음: K-ATTACK-HOLD — AUX-BLEND·GENDIV재탕금지 · 슬롯재선택지양 · 다음 직교축
+- 지금: GENMIX FAIL · live0.1303<pin0.1447 · **HOLD** · V2유지
+- 직전: AUX-BLEND FAIL / GENDIV FAIL / SUM·BAND·EV·SETNO·SETPACK·TUNE FAIL
+- 다음: K-ATTACK-HOLD — GENMIX·AUX·GENDIV·슬롯재선택 재탕금지 · 다음 직교축
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
