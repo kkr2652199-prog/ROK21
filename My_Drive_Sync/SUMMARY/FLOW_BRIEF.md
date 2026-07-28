@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c661d08` · WORK=`IDLE`
+- HEAD: `678415f` · WORK=`IDLE`
 - 지금: K-STRUCT-SURVEY 관측종료 · aux/analog/가중 FAIL · **HOLD**
 - 직전: PROB-VECTOR 유효신호 0
 - BOOT다음: K-ATTACK-HOLD — 형·동생 새 축 재선정
