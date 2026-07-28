@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fce09f3` · WORK=`IDLE`
+- HEAD: `aa4d9a4` · WORK=`IDLE`
 - 지금: K-ATTACK-CONF-CAL 보류 · cal≈orig · ≪tier · **OPEN 다음**
 - 직전: K-REFEREE-WINDOW PASS (W=30)
 - BOOT다음: K-ATTACK-OPEN — 다음 공격 레버 1건 선정
