@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a5bf93d` · WORK=`IDLE`
+- HEAD: `b099037` · WORK=`IDLE`
 - 지금: K-PIPE-A — walk-forward·coordinator AUX scoring 통합 PASS
 - 직전: K-UI-SSOT · K-DETAIL-CUTOFF · K-00
 - BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
