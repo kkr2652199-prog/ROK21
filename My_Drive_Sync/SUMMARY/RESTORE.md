@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e49b573` · WORK=`IDLE`
+1. **HEAD:** `2f18f5f` · WORK=`IDLE`
 2. **지금:** K-PATTERN-1 — 4등 vs 대조군 예측 구조 분석 (구간·패턴AUX 신호)
 3. **다음1건:** K-TRUST-BENCH — RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) · K-PATTERN-1 구조신호 병기 (승인필요=아니오 · 선행=K-REVIEW-RUN PASS · K-PATTERN-1 JSON (`20260729_KPATTERN_tier4_vs_control.json`))
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
