@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | OPEN·종료체크 | A/B/C 전부FAIL · 추천없음 · NEXT=HOLD | OPEN DONE | (커밋중) |
+| 2026-07-29 | OPEN·종료체크 | A/B/C 전부FAIL · 추천없음 · NEXT=HOLD | OPEN DONE | `fa00fe9` |
 | 2026-07-29 | CONF-CAL·종료체크 | spearman약·cal≈orig·≪tier · NEXT=OPEN | CONF-CAL 보류 | `a0061e3` |
 | 2026-07-29 | REFEREE·종료체크 | W=30·max_gap0.1334 PASS · NEXT=CONF-CAL복귀 | REFEREE PASS | `a3d25fb` |
 | 2026-07-29 | NEXT교체·종료체크 | REFEREE-WINDOW · CONF-CAL ARCHIVE보류 | NEXT교체 | `d96759f` |
