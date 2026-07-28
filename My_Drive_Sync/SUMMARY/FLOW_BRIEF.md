@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `2f18f5f` · WORK=`IDLE`
+- HEAD: `bf39668` · WORK=`IDLE`
 - 지금: K-PATTERN-1 — 4등 vs 대조군 예측 구조 분석 (구간·패턴AUX 신호)
 - 직전: K-REVIEW-RUN PASS · K-REVIEW-TIER14
 - BOOT다음: K-TRUST-BENCH — random·3뇌 mean·≥3% · WFE JSON (READ-ONLY)
