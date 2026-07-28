@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-PROB-VECTOR 유효신호 0 · NEXT=HOLD
+📌 사유: K-STRUCT-SURVEY 관측종료 · NEXT=HOLD
 
 ---
 
@@ -10,8 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
-| BASELINE_PIN | **`640cb67`** |
-| PROB-VECTOR | 유효신호 **0** · STRENGTHEN 없음 |
+| STRUCT | aux/analog/가중 **전부 FAIL** · 추천없음 |
 
 ---
 
@@ -19,22 +18,21 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-PROB-VECTOR** | recency/gap/전이/pool/carry/ending | 전부 null급 |
-| **K-ATTACK-OPEN** | 3레버 서베이 | 추천없음 |
-| **K-REFEREE-WINDOW** | W=30 | PASS |
+| **K-STRUCT-SURVEY** | 4보조·analog·가중 | 관측종료 |
+| **K-PROB-VECTOR** | 확률벡터 신호 | 유효 0 |
+| **K-ATTACK-OPEN** | 3레버 | 추천없음 |
 
 ---
 
-## 2) PROB-VECTOR 핵심
+## 2) STRUCT 핵심
 
-| 신호 | 결과 |
+| 단계 | 결과 |
 |------|------|
-| recency best | sp 0.002 |
-| gap≥50 | **기대 미만** |
-| markov pool | null 보정 후 Δ−0.002 |
-| carry | +0.025 · p≈0.15 |
+| composite spearman | **0.008** |
+| analog best mean | 0.767 · vs RR −0.98 |
+| AUX 가중 Δ | **+0.0002** |
 
-근거: `docs/benchmarks/20260729_KPROBVEC_survey.json`
+근거: `docs/benchmarks/20260729_KSTRUCT_survey.json`
 
 ---
 
@@ -46,6 +44,6 @@
 
 ## 4) 산출물
 
-- `tools/_k_prob_vector_survey.py`
-- `docs/benchmarks/20260729_KPROBVEC_survey.json`
-- `reports/20260729_KPROB_VECTOR.md`
+- `tools/_k_struct_survey.py`
+- `docs/benchmarks/20260729_KSTRUCT_survey.json`
+- `reports/20260729_KSTRUCT_SURVEY.md`

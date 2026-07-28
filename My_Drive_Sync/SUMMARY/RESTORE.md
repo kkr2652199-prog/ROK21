@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `77c962a` · WORK=`IDLE`
-2. **지금:** K-PROB-VECTOR — 유효신호 0 · **HOLD 복귀**
-3. **다음1건:** K-ATTACK-HOLD — K-PROB-VECTOR 유효신호 0 · STRENGTHEN 미등록 · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-PROB-VECTOR 완료 · verdict=없음 · docs/benchmarks/20260729_KPROBVEC_survey.json)
+1. **HEAD:** `c661d08` · WORK=`IDLE`
+2. **지금:** K-STRUCT-SURVEY 관측종료 · aux/analog/가중 FAIL · **HOLD**
+3. **다음1건:** K-ATTACK-HOLD — STRUCT-SURVEY 관측종료(aux/analog/가중 전부 FAIL) · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-STRUCT-SURVEY 완료 · recommended=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | STRUCT·종료체크 | aux sp0.008·analog≪RR·가중Δ0 · NEXT=HOLD | STRUCT 관측종료 | (커밋중) |
 | 2026-07-29 | PROBVEC·종료체크 | 유효신호0 · STRENGTHEN없음 · NEXT=HOLD | PROBVEC DONE | `41c80b0` |
 | 2026-07-29 | OPEN·종료체크 | A/B/C 전부FAIL · 추천없음 · NEXT=HOLD | OPEN DONE | `fa00fe9` |
 | 2026-07-29 | CONF-CAL·종료체크 | spearman약·cal≈orig·≪tier · NEXT=OPEN | CONF-CAL 보류 | `a0061e3` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | GATHER-V2·종료체크 | V'=12·회수0·관측고정·hybrid힌트 · NEXT=SLICE | V2 DONE WIRE보류 | `05999a2` |
 | 2026-07-29 | GATHER-V1·종료체크 | oracle 찢김·v1회수0·천장 \|V\|≈25 · NEXT=V2 | V1 DONE WIRE보류 | `d00884c` |
 | 2026-07-29 | 핀 GO·종료체크 | POS·SCATTER·DESIGN·PILOT · 풀6=21 · v0회수0 · NEXT=V1 | ①~④ DONE | `8163d55` |
-| 2026-07-29 | PATTERN2+1등목표·종료체크 | 패턴가중기각 · COVER1 확률표 · ATTACK전선 | K-PATTERN-2+COVER1 | `291e340` |
 
 ---
 

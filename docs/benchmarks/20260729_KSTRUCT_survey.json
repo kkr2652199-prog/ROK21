@@ -1,0 +1,78 @@
+{
+  "id": "K-STRUCT-SURVEY",
+  "ts": "2026-07-29T03:32:38",
+  "elapsed_sec": 82.2,
+  "step1_aux_spearman": {
+    "aux_pattern": 0.0087,
+    "aux_balance": 0.0076,
+    "aux_miss": 0.0,
+    "aux_referee": -0.007,
+    "composite": 0.008,
+    "n_sets": 18435,
+    "note": "aux_referee=brain_w(get_referee_weights); score_set은 상수0.5"
+  },
+  "step2_analog": {
+    "M_freq": {
+      "n": 1135,
+      "mean": 0.7419,
+      "ge3": 24,
+      "ge3_rate": 0.0211
+    },
+    "M_weighted": {
+      "n": 1135,
+      "mean": 0.7656,
+      "ge3": 23,
+      "ge3_rate": 0.0203
+    },
+    "M_chain8": {
+      "n": 1135,
+      "mean": 0.7674,
+      "ge3": 24,
+      "ge3_rate": 0.0211
+    },
+    "analog_plus_aux_filter": {
+      "n": 1135,
+      "mean": 0.7436,
+      "ge3": 23,
+      "ge3_rate": 0.0203
+    },
+    "delta_vs_rr": -0.9754,
+    "delta_aux_vs_rr": -0.9992
+  },
+  "step3_aux_weight": {
+    "baseline": {
+      "n": 3687,
+      "mean": 0.8297,
+      "ge3": 97,
+      "ge3_rate": 0.0263
+    },
+    "combo_A": {
+      "n": 3687,
+      "mean": 0.8299,
+      "ge3": 97,
+      "ge3_rate": 0.0263
+    },
+    "combo_B": {
+      "n": 3687,
+      "mean": 0.8299,
+      "ge3": 97,
+      "ge3_rate": 0.0263
+    },
+    "combo_C": {
+      "n": 3687,
+      "mean": 0.8297,
+      "ge3": 97,
+      "ge3_rate": 0.0263
+    },
+    "best_combo": "combo_A",
+    "delta_best_vs_baseline": 0.0002
+  },
+  "gates": {
+    "step1_composite_gt_003": false,
+    "step2_delta_vs_rr_gt0": false,
+    "step3_best_not_baseline_delta_gt_001": false
+  },
+  "recommended_next": "없음",
+  "verdict": "관측종료",
+  "db_code_write": false
+}

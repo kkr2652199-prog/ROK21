@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-PROB-VECTOR — 유효신호 0 · **HOLD 복귀**
-- 직전: OPEN A/B/C FAIL · HOLD→PROB-VECTOR 교체 실행
+- 지금: K-STRUCT-SURVEY 관측종료 · aux/analog/가중 FAIL · **HOLD**
+- 직전: PROB-VECTOR 유효신호 0
 - 다음: K-ATTACK-HOLD — 형·동생 새 축 재선정
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
