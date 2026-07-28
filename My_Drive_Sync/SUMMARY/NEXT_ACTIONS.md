@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-ATTACK-HOLD
-- 할일: GENMIX FAIL(live best m3/s5/r7 ge3=0.1303 < pin 0.1447 · trunc fillable 티켓동일) · WIRE금지 · V2유지 · GENMIX·AUX-BLEND·GENDIV·슬롯재선택 재탕금지 · 형·커서 다음 직교축 1건 재선정
-- 완료조건: K-GENMIX 관측완료 · recommended=없음(HOLD·V2유지)
+- 할일: HOLD맵 완료(실레버공백·새벤치미실행) · V2 pin 유지 · 닫힌축재탕금지 · 형 전략선택 A=HOLD동결 / B=전제·목적프레임 1건 정의 후 승인
+- 완료조건: reports/20260729_KATTACK_HOLD_MAP.md · recommended=없음(HOLD·V2유지) · 승인필요=예
 - 승인필요: 예
-- 선행완료: 2026-07-29 (K-GENMIX FAIL)
+- 선행완료: 2026-07-29 (K-ATTACK-HOLD-MAP)
 
 ## WORKSTATE
 IDLE
@@ -17,5 +17,4 @@ IDLE
 ## 메모 (커서 아님 · guard 무시)
 
 - V2 pin ge3=0.1447 · mean=1.7504
-- SETS_PER_PREDICT_BRAIN=5 균등 유지
-- 근거: docs/benchmarks/20260729_KGENMIX_survey.json · reports/20260729_KGENMIX.md
+- 근거: reports/20260729_KATTACK_HOLD_MAP.md · docs/benchmarks/20260729_KMARKOV_WIRE_V2_verify.json

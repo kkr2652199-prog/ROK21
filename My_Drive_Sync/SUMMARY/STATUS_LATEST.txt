@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-GENMIX FAIL · NEXT=HOLD · V2 배선 유지 · WIRE금지 · GENMIX재탕금지
+📌 사유: K-ATTACK-HOLD-MAP · 실레버 공백 · 새벤치 미실행 · V2 유지 · 형 전략선택 대기
 
 ---
 
@@ -10,16 +10,10 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| K-GENMIX | **FAIL** · live best 0.1303 < pin 0.1447 · trunc fillable 티켓동일 · WIRE금지 |
-| WIRE-V2 | ENABLED=**True** (유지) |
-| AUX-BLEND | FAIL (직전) |
-| GENDIV | FAIL |
-| SUM-SELECT | FAIL |
-| BAND-SELECT | FAIL |
-| EV-POP | FAIL |
-| SETNO-HITMAP | FAIL |
-| SETPACK-TOP6 | FAIL |
-| TUNE | FAIL |
+| K-ATTACK-HOLD-MAP | **작성** · 닫힌축 전면매핑 · 실레버 없음 → 새벤치 **미실행** |
+| WIRE-V2 | ENABLED=**True** (유지) · ge3 pin **0.1447** |
+| 직전 GENMIX | FAIL · live0.1303&lt;pin |
+| 권고 | **HOLD 유지** · 승인필요=예 |
 
 ---
 
@@ -27,50 +21,41 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-GENMIX** | 뇌별 `predict_sets(n_sets)` 풀구성 · 발권 V2 set_no_asc 고정 | **FAIL** |
-| **K-AUX-BLEND** | 발권전 AUX_WEIGHTS·`aux_score*40` 점수↔적중 · **슬롯재선택 아님** | FAIL |
-| **K-GENDIV** | 생성15풀 Jaccard/union ↔ V2적중 (`diversify_pick` 레버) | FAIL |
-| **K-SUM-SELECT** | V2쿼터 고정·티켓 합(이론138) 슬롯 재선택 | FAIL |
-| **K-BAND-SELECT** | V2쿼터 고정·티켓 LMH 번호대역 슬롯 재선택 | FAIL |
-| **K-EV-POP** | V2쿼터 고정·저인기(EV) 슬롯 재선택 | FAIL |
-| **K-SETNO-HITMAP** | V2쿼터 고정·뇌내 set_no 재배치 | FAIL (의미임계) |
-| **K-SETPACK-TOP6** | 출현횟수 top6 → set1 재조립 | FAIL |
-| **K-MARKOV-TUNE** | decay/steps/top 27격자 | FAIL |
+| **K-ATTACK-HOLD-MAP** | 닫힌축표·코드레버인벤·V2최선근거·남은약후보 · 새벤치 없음 | **HOLD맵** |
+| **K-GENMIX** | 뇌별 predict_sets(n) | FAIL |
+| **K-AUX-BLEND** | AUX_WEIGHTS·\*40 | FAIL |
+| **K-GENDIV** | diversify/Jaccard | FAIL |
+| **K-SUM/BAND/EV/SETNO/SETPACK** | 슬롯재선택류 | FAIL |
+| **K-MARKOV-TUNE** | decay/steps/top | FAIL |
 | **K-MARKOV-WIRE-V2** | set_no 쿼터 | PASS |
 
 ---
 
-## 2) K-GENMIX 핵심
+## 2) HOLD맵 핵심
 
 | 항목 | 값 |
 |------|-----|
-| 풀 | draw 53~1234 · n=**1182** |
-| 코드앵커 | `SETS_PER_PREDICT_BRAIN=5` (균등 · 뇌별 dict 없음) |
-| 발권 | V2 set_no_asc m3+s1+r1 **고정** |
-| Part A trunc fillable | identical=**1.0** · ge3=**0.1447** (구조적 null) |
-| Part B live baseline 5/5/5 | ge3=**0.1083** (≪ pin · live≠stored) |
-| best live | **m3/s5/r7** ge3=**0.1303** · Δlive=+0.022 · Δpin=**−0.0144** |
-| sanity nsets set1 diff | **1.0** (regen≠trunc) |
-| PASS | **FAIL** |
-| recommended_next | **없음** (HOLD·V2유지·GENMIX재탕금지) |
+| 새 관측 | **미실행** (실레버 빈약/null) |
+| V2 pin | ge3=**0.1447** · mean=**1.7504** (`KMARKOV_WIRE_V2_verify`) |
+| 코드레버 | AUX·쿼터·n_sets·diversify·TUNE·슬롯픽·boost → **닫힘/null/동결** |
+| recommended_next | **없음** (HOLD) |
+| 형 선택지 | **A** HOLD유지 · **B** 전제/목적 전략전환(새프레임 1건) |
 
-근거: docs/benchmarks/20260729_KGENMIX_survey.json
+근거: `reports/20260729_KATTACK_HOLD_MAP.md`
 
 ### 재탕금지 (누적)
 
-SETPACK-TOP6 · MARKOV-TUNE · SETNO-HITMAP · EV-POP · BAND-SELECT · SUM-SELECT · conf-quota구WIRE · HISIM/STRUCT/COVER wheel · GATHER전면 · GENDIV · AUX-BLEND · **GENMIX**
+SETPACK-TOP6 · MARKOV-TUNE · SETNO-HITMAP · EV-POP · BAND-SELECT · SUM-SELECT · conf-quota구WIRE · HISIM/STRUCT/COVER wheel · GATHER전면 · GENDIV · AUX-BLEND · GENMIX · **슬롯재선택 일체**
 
 ---
 
 ## 3) 다음
 
-K-ATTACK-HOLD — GENMIX WIRE금지·재탕금지 · V2 유지 · 형·커서 다음 직교축 1건 재선정 (승인 필요) · **슬롯재선택·GENDIV·AUX점수·GENMIX 재탕 지양**
+K-ATTACK-HOLD — HOLD맵 완료 · V2 유지 · 형에게 A(HOLD동결) / B(전략프레임 전환) 선택 · 커서 단독 새벤치 금지
 
 ---
 
 ## 4) 산출물
 
-- tools/_k_genmix_survey.py
-- docs/benchmarks/20260729_KGENMIX_survey.json
-- reports/20260729_KGENMIX.md
-- My_Drive_Sync/커서보고서/20260729_KGENMIX.md
+- reports/20260729_KATTACK_HOLD_MAP.md
+- My_Drive_Sync/커서보고서/20260729_KATTACK_HOLD_MAP.md

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d8650db` · WORK=`IDLE`
-- 지금: GENMIX FAIL · live0.1303<pin0.1447 · **HOLD** · V2유지
-- 직전: AUX-BLEND FAIL / GENDIV FAIL / SUM·BAND·EV·SETNO·SETPACK·TUNE FAIL
-- BOOT다음: K-ATTACK-HOLD — GENMIX·AUX·GENDIV·슬롯재선택 재탕금지 · 다음 직교축
-- NEXT1: K-ATTACK-HOLD — GENMIX FAIL(live best m3/s5/r7 ge3=0.1303 < pin 0.1447 · trunc fillable 티켓동일) · WIRE금지 · V2유지 · GENMIX·AUX-BLEND·GENDIV·슬롯재선택 재탕금지 · 형·커서 다음 직교축 1건 재선정 (승인=예)
+- HEAD: `6f2e554` · WORK=`IDLE`
+- 지금: HOLD맵 · 실레버공백 · 새벤치미실행 · **V2유지** · 형선택대기
+- 직전: GENMIX FAIL · AUX/GENDIV/슬롯재선택류 FAIL 누적
+- BOOT다음: K-ATTACK-HOLD — A=HOLD동결 / B=전략프레임 · 재탕금지
+- NEXT1: K-ATTACK-HOLD — HOLD맵 완료(실레버공백·새벤치미실행) · V2 pin 유지 · 닫힌축재탕금지 · 형 전략선택 A=HOLD동결 / B=전제·목적프레임 1건 정의 후 승인 (승인=예)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

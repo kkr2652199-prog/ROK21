@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d8650db` |
+| HEAD(실측) | `6f2e554` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | GENMIX FAIL · live0.1303<pin0.1447 · **HOLD** · V2유지 |
-| 직전 | AUX-BLEND FAIL / GENDIV FAIL / SUM·BAND·EV·SETNO·SETPACK·TUNE FAIL |
-| BOOT다음 | K-ATTACK-HOLD — GENMIX·AUX·GENDIV·슬롯재선택 재탕금지 · 다음 직교축 |
+| 지금 | HOLD맵 · 실레버공백 · 새벤치미실행 · **V2유지** · 형선택대기 |
+| 직전 | GENMIX FAIL · AUX/GENDIV/슬롯재선택류 FAIL 누적 |
+| BOOT다음 | K-ATTACK-HOLD — A=HOLD동결 / B=전략프레임 · 재탕금지 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | GENMIX FAIL(live best m3/s5/r7 ge3=0.1303 < pin 0.1447 · trunc fillable 티켓동일) · WIRE금지 · V2유지 · GENMIX·AUX-BLEND·GENDIV·슬롯재선택 재탕금지 · 형·커서 다음 직교축 1건 재선정 |
+| NEXT1 할일 | HOLD맵 완료(실레버공백·새벤치미실행) · V2 pin 유지 · 닫힌축재탕금지 · 형 전략선택 A=HOLD동결 / B=전제·목적프레임 1건 정의 후 승인 |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d8650db · 지금=GENMIX FAIL · live0.1303<pin0.1447 · **HOLD** · V2유지 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=6f2e554 · 지금=HOLD맵 · 실레버공백 · 새벤치미실행 · **V2유지** · 형선택대기 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: d8650db_
+_generated: 6f2e554_

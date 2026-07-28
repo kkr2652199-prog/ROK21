@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d8650db` · WORK=`IDLE`
-2. **지금:** GENMIX FAIL · live0.1303<pin0.1447 · **HOLD** · V2유지
-3. **다음1건:** K-ATTACK-HOLD — GENMIX FAIL(live best m3/s5/r7 ge3=0.1303 < pin 0.1447 · trunc fillable 티켓동일) · WIRE금지 · V2유지 · GENMIX·AUX-BLEND·GENDIV·슬롯재선택 재탕금지 · 형·커서 다음 직교축 1건 재선정 (승인필요=예 · 선행=없음)
+1. **HEAD:** `6f2e554` · WORK=`IDLE`
+2. **지금:** HOLD맵 · 실레버공백 · 새벤치미실행 · **V2유지** · 형선택대기
+3. **다음1건:** K-ATTACK-HOLD — HOLD맵 완료(실레버공백·새벤치미실행) · V2 pin 유지 · 닫힌축재탕금지 · 형 전략선택 A=HOLD동결 / B=전제·목적프레임 1건 정의 후 승인 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | HOLD판단·팩트체크·push | HOLD맵 · 실레버공백 · 새벤치無 · V2유지 · 형A/B | HOLD맵 | `(push후)` |
 | 2026-07-29 | GENMIX·팩트체크·push | GENMIX FAIL · live0.1303<pin · trunc동일 · NEXT=HOLD | GENMIX FAIL | `d8650db` |
 | 2026-07-29 | AUX/생성레버·팩트체크·push | AUX-BLEND FAIL · live r=0.0134 · V2유지 · NEXT=HOLD | AUX-BLEND FAIL | `4ca44bf` |
 | 2026-07-29 | 새직교축·팩트체크·push | GENDIV FAIL · Q1 ge3 0.1224 · V2유지 · NEXT=HOLD | GENDIV FAIL | `18848dc` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | K-MARKOV-TUNE | best0.1404≤0.1447 · TUNE-WIRE금지 · NEXT=HOLD | TUNE FAIL | `2854663` |
 | 2026-07-29 | WIRE-V2·종료체크 | set_no=E ge3=0.1447 · ENABLED=True · NEXT=TUNE | WIRE-V2 PASS | `3b0f619` |
 | 2026-07-29 | WIRE·종료체크 | conf쿼터 FAIL · ENABLED=False · NEXT=HOLD | WIRE FAIL | `2422b4d` |
-| 2026-07-29 | NULL·종료체크 | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | `70ac1f6` |
 
 ---
 
