@@ -204,9 +204,11 @@ async function loadTestlottoWarrantPanel(drawNo) {
   try {
     const data = await ensureTestlottoWarrantLoaded(d);
     panel.hidden = false;
+    panel.classList.add('tl-warrant-panel');
     panel.innerHTML = renderTestlottoWarrantPanelHtml(data, d);
   } catch (e) {
     panel.hidden = true;
+    panel.innerHTML = '';
     console.warn('warrant-dashboard:', e);
   }
 }
@@ -471,12 +473,13 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
     await renderPredictionsByBrain(d, _testlottoDetailRows);
     return;
   }
-  const hasRichUi = !!container.querySelector('.lotto-brain-tabs, .lotto-result-header');
+  const hasRichUi = !!container.querySelector('.lotto-brain-tabs');
   const useSoftShell = !!(softLoading && hasRichUi);
   const seq = ++_testlottoPredFetchSeq;
   if (useSoftShell) {
     container.classList.add('testlotto-results-pending');
     container.setAttribute('aria-busy', 'true');
+    renderTestlottoDrawHero(d, _testlottoDetailRows);
   } else {
     container.classList.remove('testlotto-results-pending');
     container.removeAttribute('aria-busy');
@@ -508,7 +511,8 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
       _testlottoDetailRows = null;
       container.classList.remove('testlotto-results-pending');
       container.removeAttribute('aria-busy');
-      container.innerHTML = `<p style="color: #888;">${d}회차 저장된 예측 없음. \"두뇌 예측\" 버튼으로 실행하세요.</p>`;
+      await renderTestlottoDrawHero(d, null);
+      container.innerHTML = `<p class="testlotto-results-empty">${d}회차 저장된 예측 없음. &quot;두뇌 예측&quot; 버튼으로 실행하세요.</p>`;
       return;
     }
     _testlottoDetailDrawNo = d;
@@ -581,6 +585,77 @@ function testlottoHitSummaryHtml(rows) {
     return '<p class="lotto-hit-summary lotto-hit-summary--none">이 회차 1~5등 적중 세트 없음 · <button type="button" class="lotto-hit-summary__link" onclick="testlottoOpenTierWinsModal()">자세히</button></p>';
   }
   return `<p class="lotto-hit-summary">적중 요약: 1등 ${c[1]} · 2등 ${c[2]} · 3등 ${c[3]} · 4등 ${c[4]} · 5등 ${c[5]} · <button type="button" class="lotto-hit-summary__link" onclick="testlottoOpenTierWinsModal()">1~5등 목록</button></p>`;
+}
+
+function _testlottoBuildActualHtml(actuals, bonus) {
+  if (!actuals || !actuals.length) {
+    return '<div class="testlotto-hero-actual testlotto-hero-actual--pending"><span class="testlotto-hero-actual__label">당첨번호</span><span class="testlotto-hero-actual__pending">아직 추첨 전</span></div>';
+  }
+  const balls = actuals.map((n) => renderMiniBall(n, false, 'is-actual testlotto-hero-ball')).join('');
+  const bonusHtml =
+    bonus != null && bonus !== ''
+      ? `<span class="testlotto-hero-bonus">+ ${renderMiniBall(bonus, false, 'is-actual is-bonus testlotto-hero-ball')}</span>`
+      : '';
+  return (
+    `<div class="testlotto-hero-actual">` +
+    `<span class="testlotto-hero-actual__label">당첨번호</span>` +
+    `<span class="testlotto-hero-actual__balls">${balls}</span>` +
+    bonusHtml +
+    `</div>`
+  );
+}
+
+async function renderTestlottoDrawHero(drawNo, rows) {
+  const body = document.getElementById('testlottoDrawHeroBody');
+  if (!body) return;
+  const d = parseInt(drawNo, 10);
+  if (!Number.isFinite(d) || d < 1) return;
+
+  const date = _testlottoDrawDates[d] || '?';
+  const dow = lottoFormatDow(date);
+  const first = rows && rows.length ? rows[0] : null;
+  let actuals = null;
+  let bonus = null;
+
+  if (first && first.actual_1 != null) {
+    actuals = [
+      first.actual_1,
+      first.actual_2,
+      first.actual_3,
+      first.actual_4,
+      first.actual_5,
+      first.actual_6,
+    ];
+    bonus = first.actual_bonus;
+  } else {
+    try {
+      const r = await fetch(_testlottoResolveApiUrl(`/api/testlotto/detail/draw/${d}`));
+      if (r.ok) {
+        const detail = await r.json();
+        if (!detail.error) {
+          if (Array.isArray(detail.nums) && detail.nums.length) {
+            actuals = detail.nums;
+          } else if (detail.num1 != null) {
+            actuals = [detail.num1, detail.num2, detail.num3, detail.num4, detail.num5, detail.num6];
+          } else if (Array.isArray(detail.actual_nums) && detail.actual_nums.length) {
+            actuals = detail.actual_nums;
+          }
+          bonus = detail.bonus;
+        }
+      }
+    } catch (e) {
+      console.warn('draw hero detail:', e);
+    }
+  }
+
+  const hitSummaryHtml = rows && rows.length ? testlottoHitSummaryHtml(rows) : '';
+  body.innerHTML =
+    `<div class="testlotto-hero-title">` +
+    `<span class="testlotto-hero-draw">제 ${d}회</span>` +
+    `<span class="testlotto-hero-date">${date !== '?' ? `${date} ${dow}` : '추첨일 미확인'}</span>` +
+    `</div>` +
+    _testlottoBuildActualHtml(actuals, bonus) +
+    (hitSummaryHtml ? `<div class="testlotto-hero-hit">${hitSummaryHtml}</div>` : '');
 }
 
 function renderBrainSetCard(row, idx) {
@@ -673,26 +748,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
   }
   container.classList.remove('testlotto-results-pending');
   container.removeAttribute('aria-busy');
-  const date = _testlottoDrawDates[drawNo] || '?';
-  const dow = lottoFormatDow(date);
-  const first = rows[0] || {};
-  const hasActual = first.actual_1 != null;
-
-  let actualHtml = '';
-  if (hasActual) {
-    const balls = [first.actual_1, first.actual_2, first.actual_3, first.actual_4, first.actual_5, first.actual_6];
-    actualHtml = `
-      <div class="lotto-actual-row">
-        <span class="lotto-actual-label">실제 당첨번호:</span>
-        <span class="lotto-actual-balls">
-          ${balls.map((n) => renderMiniBall(n, false, 'is-actual')).join('')}
-        </span>
-        <span class="lotto-actual-bonus">+ 보너스 ${renderMiniBall(first.actual_bonus, false, 'is-actual is-bonus')}</span>
-      </div>
-    `;
-  } else {
-    actualHtml = '<div class="lotto-actual-row lotto-no-actual">아직 추첨 전입니다</div>';
-  }
+  await renderTestlottoDrawHero(drawNo, rows);
 
   const byBrain = {};
   rows.forEach((r) => {
@@ -713,13 +769,8 @@ async function renderPredictionsByBrain(drawNo, rows) {
   }
 
   if (eliteOn && brainListForTabs.length === 0) {
-    container.innerHTML = `
-      <div class="lotto-result-header">
-        <h3>${drawNo}회 (${date} ${dow})</h3>
-        ${actualHtml}
-      </div>
-      <p class="lotto-elite-empty">역대 (1등≥1·2등≥1·3등≥5 동시) 또는 3등만 15회 이상인 뇌가 없습니다. 필터를 끄면 전체를 볼 수 있습니다.</p>
-    `;
+    container.innerHTML =
+      '<p class="lotto-elite-empty">역대 (1등≥1·2등≥1·3등≥5 동시) 또는 3등만 15회 이상인 뇌가 없습니다. 필터를 끄면 전체를 볼 수 있습니다.</p>';
     return;
   }
 
@@ -763,15 +814,9 @@ async function renderPredictionsByBrain(drawNo, rows) {
     ? selectedRows.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
     : '<p style="color:#888; padding: 16px;">이 두뇌는 이 회차에 예측 데이터가 없습니다.</p>';
 
-  const hitSummaryHtml = testlottoHitSummaryHtml(rows);
   const policyStripHtml = testlottoBrainPolicyStripHtml(_testlottoCurrentBrainTab);
 
   container.innerHTML = `
-    <div class="lotto-result-header">
-      <h3>${drawNo}회 (${date} ${dow})</h3>
-      ${actualHtml}
-      ${hitSummaryHtml}
-    </div>
     <div class="lotto-brain-tabs">${tabsHtml}</div>
     ${policyStripHtml}
     <div class="lotto-brain-cards" id="hyodoBrainCards">${cardsHtml}</div>
