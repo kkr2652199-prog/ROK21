@@ -8,11 +8,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1609625` |
+| HEAD(실측) | `8c32f72` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-00 과거예측 숙제 확장 PASS (READ-ONLY · review SSOT) |
-| 직전 | K-1235-PREP · K-D · K-H · K-B |
+| 지금 | K-DETAIL-CUTOFF — detail/draw CUTOFF 회귀 수정 PASS |
+| 직전 | K-00 · K-1235-PREP · K-D |
 | BOOT다음 | K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` |
 | NEXT1 ID | **K-AWAIT** |
 | NEXT1 할일 | **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1609625 · 지금=K-00 과거예측 숙제 확장 PASS (READ-ONLY · review SSOT) · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=8c32f72 · 지금=K-DETAIL-CUTOFF — detail/draw CUTOFF 회귀 수정 PASS · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

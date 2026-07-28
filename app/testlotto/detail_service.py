@@ -235,11 +235,18 @@ def sync_brain_pages_from_reviews(start: int = 2, end: int = 1231) -> int:
 
 def get_draw_detail(draw_no: int) -> dict[str, Any]:
     """단일 회차 상세 — 정답·분석그릇·뇌별 복습."""
+    from app.testlotto.learn_state_cutoff import get_learn_as_of, set_learn_as_of
+
     conn = get_lotto_db()
+    learn_as_of_set = False
+    learn_prev: int | None = None
     try:
         draw = conn.execute("SELECT * FROM lotto_draws WHERE draw_no = ?", (draw_no,)).fetchone()
         if not draw:
             return {"error": f"{draw_no}회 당첨 데이터 없음"}
+        learn_prev = get_learn_as_of()
+        set_learn_as_of(int(draw_no))
+        learn_as_of_set = True
         draw_d = dict(draw)
         features = conn.execute(
             "SELECT * FROM testlotto_draw_features WHERE draw_no = ?", (draw_no,)
@@ -515,6 +522,8 @@ def get_draw_detail(draw_no: int) -> dict[str, Any]:
             },
         }
     finally:
+        if learn_as_of_set:
+            set_learn_as_of(learn_prev)
         conn.close()
 
 

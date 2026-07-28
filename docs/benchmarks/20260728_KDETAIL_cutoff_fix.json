@@ -1,0 +1,35 @@
+{
+  "task": "K-DETAIL-CUTOFF",
+  "fix": "get_draw_detail set_learn_as_of(draw_no) before aux/referee",
+  "checks": {
+    "detail_1234_200": true,
+    "detail_1234_has_actual": true,
+    "detail_1235_200": true,
+    "detail_1235_has_actual": true,
+    "predictions_1234_200": true
+  },
+  "samples": {
+    "1234": {
+      "draw_no": 1234,
+      "actual_nums": [
+        1,
+        15,
+        19,
+        31,
+        35,
+        43
+      ],
+      "brains_n": 3,
+      "aux_n": 4,
+      "error": null
+    },
+    "1235": {
+      "draw_no": null,
+      "actual_nums": null,
+      "brains_n": 0,
+      "aux_n": 0,
+      "error": "1235회 당첨 데이터 없음"
+    }
+  },
+  "verify_pass": true
+}

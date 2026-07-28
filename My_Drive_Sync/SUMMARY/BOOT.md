@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-00 과거예측 숙제 확장 PASS (READ-ONLY · review SSOT)
-- 직전: K-1235-PREP · K-D · K-H · K-B
+- 지금: K-DETAIL-CUTOFF — detail/draw CUTOFF 회귀 수정 PASS
+- 직전: K-00 · K-1235-PREP · K-D
 - 다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
