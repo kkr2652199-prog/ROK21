@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | 새직교축·팩트체크·push | GENDIV FAIL · Q1 ge3 0.1224 · V2유지 · NEXT=HOLD | GENDIV FAIL | `(push후)` |
+| 2026-07-29 | 새직교축·팩트체크·push | GENDIV FAIL · Q1 ge3 0.1224 · V2유지 · NEXT=HOLD | GENDIV FAIL | `18848dc` |
 | 2026-07-29 | 새직교축·팩트체크·push | SUM-SELECT FAIL · Δ-0.0043 · V2유지 · NEXT=HOLD | SUM FAIL | `f617c98` |
 | 2026-07-29 | 새직교축·팩트체크·push | BAND-SELECT FAIL · Δ-0.0060 · V2유지 · NEXT=HOLD | BAND FAIL | `9e67fbb` |
 | 2026-07-29 | 진행·팩트체크 | EV-POP FAIL · pop↓·ge3↓ · V2유지 · NEXT=HOLD | EV-POP FAIL | `b945197` |
