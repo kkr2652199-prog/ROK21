@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | 새직교축·팩트체크·push | GENDIV FAIL · Q1 ge3 0.1224 · V2유지 · NEXT=HOLD | GENDIV FAIL | `(push후)` |
 | 2026-07-29 | 새직교축·팩트체크·push | SUM-SELECT FAIL · Δ-0.0043 · V2유지 · NEXT=HOLD | SUM FAIL | `f617c98` |
 | 2026-07-29 | 새직교축·팩트체크·push | BAND-SELECT FAIL · Δ-0.0060 · V2유지 · NEXT=HOLD | BAND FAIL | `9e67fbb` |
 | 2026-07-29 | 진행·팩트체크 | EV-POP FAIL · pop↓·ge3↓ · V2유지 · NEXT=HOLD | EV-POP FAIL | `b945197` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | NULL·종료체크 | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | `70ac1f6` |
 | 2026-07-29 | SETCOUNT·종료체크 | n15≈null · NEXT=WIRE→NULL검증 | SETCOUNT PASS | `a25c9b7` |
 | 2026-07-29 | K-COVER·종료체크 | pool40 ge3=0.132<RR · NEXT=HOLD | COVER FAIL | `6339f12` |
-| 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | `ed4e702` |
 
 ---
 

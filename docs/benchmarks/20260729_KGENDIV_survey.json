@@ -1,0 +1,198 @@
+{
+  "id": "K-GENDIV",
+  "ts": "2026-07-29T07:58:19",
+  "elapsed_sec": 0.327,
+  "db_code_write": false,
+  "axis": {
+    "id": "K-GENDIV",
+    "hypothesis": "Fixed V2 set_no_asc pack: lower pairwise Jaccard / higher union of generate-15 or issued-5 → higher best-of-5 ge3 → justify raising set_diversity.jaccard_penalty or oversample_factor",
+    "orthogonal_to_v2": true,
+    "not_slot_reselect": true,
+    "why_not_slot_reselect": "발권은 V2 set_no_asc 고정·대체점수 픽 없음. 관측만=생성풀/발권팩 Jaccard·union ↔ 적중 (diversify_pick 레버 근거)",
+    "not_rehash_of": [
+      "SUM-SELECT",
+      "BAND-SELECT",
+      "EV-POP",
+      "SETNO-HITMAP",
+      "SETPACK-TOP6",
+      "MARKOV-TUNE",
+      "conf-quota",
+      "HISIM",
+      "STRUCT",
+      "COVER",
+      "GATHER"
+    ],
+    "code_anchor": "app/testlotto/set_diversity.py::diversify_pick(jaccard_penalty=0.85) · oversample_factor=max(n_sets*3, n_sets+5) · predict_{stat,flow_shaman,review_king}.predict_sets"
+  },
+  "protocol": {
+    "draw_range": [
+      53,
+      1234
+    ],
+    "quota": {
+      "markov": 3,
+      "stat": 1,
+      "review": 1
+    },
+    "issuance": "v2_set_no_asc_fixed",
+    "null_ge3": 0.1137,
+    "v2_ge3_pin": 0.1447,
+    "v2_mean_pin": 1.7504,
+    "corr_abs_min": 0.03,
+    "delta_ge3_min": 0.005,
+    "pass_rule": "PASS if (any diversity↔hit spearman gate) OR (Q1 lowest-jac ge3 > V2+0.005 & p_null<0.05)"
+  },
+  "v2_baseline": {
+    "n": 1182,
+    "mean": 1.7504,
+    "ge3": 171,
+    "ge3_rate": 0.1447,
+    "ge4": 12,
+    "ge4_rate": 0.0102,
+    "p_vs_null": 0.000679,
+    "pin_ge3": 0.1447,
+    "pin_mean": 1.7504
+  },
+  "descriptive": {
+    "mean_pool_jac": 0.0921,
+    "mean_v2_jac": 0.0884,
+    "mean_pool_union": 37.4569,
+    "mean_v2_union": 22.1743,
+    "mean_brain_jac": {
+      "stat": 0.0657,
+      "markov": 0.1212,
+      "review": 0.1159
+    }
+  },
+  "correlations": {
+    "v2_jac_vs_best": {
+      "spearman_r": -0.0135,
+      "spearman_p": 0.643619,
+      "expect_sign": "neg",
+      "pass_corr_gate": false
+    },
+    "pool_jac_vs_best": {
+      "spearman_r": -0.0005,
+      "spearman_p": 0.985471,
+      "expect_sign": "neg",
+      "pass_corr_gate": false
+    },
+    "v2_union_vs_best": {
+      "spearman_r": 0.0033,
+      "spearman_p": 0.908709,
+      "expect_sign": "pos",
+      "pass_corr_gate": false
+    },
+    "pool_union_vs_best": {
+      "spearman_r": 0.0026,
+      "spearman_p": 0.929657,
+      "expect_sign": "pos",
+      "pass_corr_gate": false
+    }
+  },
+  "brain_within5_jac_vs_brain_best": {
+    "stat": {
+      "spearman_r": -0.0566,
+      "spearman_p": 0.051823,
+      "mean_within5_jac": 0.0657,
+      "pass_neg_corr": false
+    },
+    "markov": {
+      "spearman_r": 0.0582,
+      "spearman_p": 0.045398,
+      "mean_within5_jac": 0.1212,
+      "pass_neg_corr": false
+    },
+    "review": {
+      "spearman_r": 0.0108,
+      "spearman_p": 0.710714,
+      "mean_within5_jac": 0.1159,
+      "pass_neg_corr": false
+    }
+  },
+  "v2_jac_quintiles": {
+    "Q1": {
+      "n": 237,
+      "mean": 1.7511,
+      "ge3": 29,
+      "ge3_rate": 0.1224,
+      "ge4": 1,
+      "ge4_rate": 0.0042,
+      "mean_v2_jac": 0.0548,
+      "p_vs_null": 0.366421,
+      "delta_ge3_vs_v2pin": -0.0223,
+      "delta_mean_vs_v2pin": 0.0007,
+      "note": "Q1=lowest Jaccard(most diverse) · Q5=highest"
+    },
+    "Q2": {
+      "n": 236,
+      "mean": 1.7797,
+      "ge3": 33,
+      "ge3_rate": 0.1398,
+      "ge4": 2,
+      "ge4_rate": 0.0085,
+      "mean_v2_jac": 0.0717,
+      "p_vs_null": 0.124109,
+      "delta_ge3_vs_v2pin": -0.0049,
+      "delta_mean_vs_v2pin": 0.0293,
+      "note": "Q1=lowest Jaccard(most diverse) · Q5=highest"
+    },
+    "Q3": {
+      "n": 237,
+      "mean": 1.73,
+      "ge3": 31,
+      "ge3_rate": 0.1308,
+      "ge4": 3,
+      "ge4_rate": 0.0127,
+      "mean_v2_jac": 0.0864,
+      "p_vs_null": 0.229771,
+      "delta_ge3_vs_v2pin": -0.0139,
+      "delta_mean_vs_v2pin": -0.0204,
+      "note": "Q1=lowest Jaccard(most diverse) · Q5=highest"
+    },
+    "Q4": {
+      "n": 236,
+      "mean": 1.7754,
+      "ge3": 41,
+      "ge3_rate": 0.1737,
+      "ge4": 4,
+      "ge4_rate": 0.0169,
+      "mean_v2_jac": 0.1013,
+      "p_vs_null": 0.003961,
+      "delta_ge3_vs_v2pin": 0.029,
+      "delta_mean_vs_v2pin": 0.025,
+      "note": "Q1=lowest Jaccard(most diverse) · Q5=highest"
+    },
+    "Q5": {
+      "n": 236,
+      "mean": 1.7161,
+      "ge3": 37,
+      "ge3_rate": 0.1568,
+      "ge4": 2,
+      "ge4_rate": 0.0085,
+      "mean_v2_jac": 0.1279,
+      "p_vs_null": 0.02763,
+      "delta_ge3_vs_v2pin": 0.0121,
+      "delta_mean_vs_v2pin": -0.0343,
+      "note": "Q1=lowest Jaccard(most diverse) · Q5=highest"
+    }
+  },
+  "nearest_signal": {
+    "best_corr": "v2_jac_vs_best",
+    "best_corr_r": -0.0135,
+    "q1_ge3": 0.1224,
+    "q1_delta": -0.0223,
+    "q1_vs_q5": -0.0344
+  },
+  "gates": {
+    "v2_baseline_ok": true,
+    "any_corr_pass": false,
+    "any_brain_jac_pass": false,
+    "q1_diverse_beats_v2": false,
+    "q1_ge3_minus_q5": -0.0344,
+    "PASS": false
+  },
+  "verdict": "FAIL",
+  "recommended_next": "없음(HOLD·V2유지·GENDIV재탕금지)",
+  "wire_forbidden_until_hyung_GO": true
+}
