@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-PATTERN-1 예측 구조 분석 · 구간·패턴AUX 신호 · `20260729_KPATTERN_tier4_vs_control.json`
+📌 사유: K-TRUST-BENCH+CREW · null≈0.8 · Jaccard0.11 · 3예측 유지 권고
 
 ---
 
@@ -19,6 +19,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-TRUST+CREW** | random null·사공점검 · 3예측 유지 | JSON · 보고서 |
 | **K-PATTERN-1** | 4등 vs 대조군 · 구간일치·패턴AUX · 외부자문 | JSON · 보고서 |
 | **K-REVIEW-TIER14** | 1~4등 브리핑 · 4등 31건 | 보고서 |
 | **K-REVIEW-RUN** | learn reset + WF 2~1234 · kweon 복제 제거 | verify_pass · pipe 3698/3698 |
@@ -48,9 +49,9 @@
 
 ## 3) 다음 (형)
 
-`K-TRUST-BENCH` — random·3뇌 mean·≥3%·WFE READ-ONLY  
-선행: K-REVIEW-RUN · K-PATTERN-1 (구간·패턴AUX 신호 병기)  
-근거: [`PINNED_TESTLOTTO_TUNING.md`](PINNED_TESTLOTTO_TUNING.md) · [`reports/20260729_KPATTERN1_예측패턴분석.md`](../../reports/20260729_KPATTERN1_예측패턴분석.md)
+`K-PATTERN-2` — 패턴AUX 분위수×matched (보조 유지 근거)  
+직전: K-TRUST+CREW → **3예측 유지 · 세트↑만으로 스킬↑ 금지**  
+근거: [`reports/20260729_KTRUST_CREW_사공점검.md`](../../reports/20260729_KTRUST_CREW_사공점검.md)
 
 ---
 

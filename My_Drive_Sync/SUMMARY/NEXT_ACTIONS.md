@@ -3,11 +3,11 @@
 > STEP1 `guard_boot` 는 **아래 `## NEXT (1건)` 블록만** 읽는다. 여러 건 나열 금지.
 
 ## NEXT (1건)
-- ID: K-TRUST-BENCH
-- 할일: RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) · K-PATTERN-1 구조신호 병기
-- 선행조건: K-REVIEW-RUN PASS · K-PATTERN-1 JSON (`20260729_KPATTERN_tier4_vs_control.json`)
+- ID: K-PATTERN-2
+- 할일: 패턴AUX 분위수×matched 전행 분포 → `docs/benchmarks/YYYYMMDD_KPATTERN2_aux_quartile.json` (READ-ONLY) · 보조 유지/축소 근거
+- 선행조건: K-TRUST-BENCH PASS · `20260729_KTRUST_bench.json` (3예측 유지 권고)
 - 승인필요: 아니오
-- 최종갱신: 2026-07-29 (K-PATTERN-1 · Pin-1)
+- 최종갱신: 2026-07-29 (K-TRUST+CREW)
 
 ## WORKSTATE
 IDLE

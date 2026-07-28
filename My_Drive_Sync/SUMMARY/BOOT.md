@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-PATTERN-1 — 4등 vs 대조군 예측 구조 분석 (구간·패턴AUX 신호)
-- 직전: K-REVIEW-RUN PASS · K-REVIEW-TIER14
-- 다음: K-TRUST-BENCH — random·3뇌 mean·≥3% · WFE JSON (READ-ONLY)
+- 지금: K-TRUST+CREW — null≈0.8 · 3뇌 Jaccard0.11 · 사공아님·역할분담 유지
+- 직전: K-PATTERN-1 · K-REVIEW-RUN
+- 다음: K-PATTERN-2 — 패턴AUX 분위수×matched 전행 (READ-ONLY)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

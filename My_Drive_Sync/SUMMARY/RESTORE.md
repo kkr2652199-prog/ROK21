@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `bf39668` · WORK=`IDLE`
-2. **지금:** K-PATTERN-1 — 4등 vs 대조군 예측 구조 분석 (구간·패턴AUX 신호)
-3. **다음1건:** K-TRUST-BENCH — RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) · K-PATTERN-1 구조신호 병기 (승인필요=아니오 · 선행=K-REVIEW-RUN PASS · K-PATTERN-1 JSON (`20260729_KPATTERN_tier4_vs_control.json`))
+1. **HEAD:** `9824b48` · WORK=`IDLE`
+2. **지금:** K-TRUST+CREW — null≈0.8 · 3뇌 Jaccard0.11 · 사공아님·역할분담 유지
+3. **다음1건:** K-PATTERN-2 — 패턴AUX 분위수×matched 전행 분포 → `docs/benchmarks/YYYYMMDD_KPATTERN2_aux_quartile.json` (READ-ONLY) · 보조 유지/축소 근거 (승인필요=아니오 · 선행=K-TRUST-BENCH PASS · `20260729_KTRUST_bench.json` (3예측 유지 권고))
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | TRUST·사공·역할분담·종료체크 | Jaccard0.11·pool15≈null · 3예측유지 · 보고서 | K-TRUST+CREW | (커밋중) |
 | 2026-07-29 | 패턴분석·외부AI자문·종료체크 | 4등vs대조 · 구간35%vs5% · 패턴AUX 0.91vs0.65 · 보고서 | K-PATTERN-1 | `1b3884a` |
 | 2026-07-29 | 1~4등 브리핑·종료체크 | tier14 31건(4등만) · `_brief_tier_hits.py` · 보고서 | K-REVIEW-TIER14 | `bf179f6` |
 | 2026-07-28 | K-REVIEW-RUN 종료체크 | WF 2~1234 재복습 53분 · verify_pass · pipe 3698/3698 · push | K-REVIEW-RUN PASS | `2d0becc` |

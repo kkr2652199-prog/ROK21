@@ -1,0 +1,306 @@
+{
+  "id": "K-TRUST-BENCH",
+  "also": "K-CREW",
+  "ts": "2026-07-29T00:28:35",
+  "window_full": [
+    2,
+    1234
+  ],
+  "trust": {
+    "windows": {
+      "full_2_1234": {
+        "range": [
+          2,
+          1234
+        ],
+        "brains": {
+          "review": {
+            "n": 1233,
+            "best_mean": 1.6975,
+            "ge3": 150,
+            "ge3_rate": 0.1217,
+            "ge4": 13,
+            "ge4_rate": 0.0105,
+            "ge5": 0,
+            "ge6": 0
+          },
+          "stat": {
+            "n": 1233,
+            "best_mean": 1.7186,
+            "ge3": 137,
+            "ge3_rate": 0.1111,
+            "ge4": 6,
+            "ge4_rate": 0.0049,
+            "ge5": 0,
+            "ge6": 0
+          },
+          "markov": {
+            "n": 1232,
+            "best_mean": 1.7167,
+            "ge3": 170,
+            "ge3_rate": 0.138,
+            "ge4": 12,
+            "ge4_rate": 0.0097,
+            "ge5": 0,
+            "ge6": 0
+          }
+        },
+        "null_1set_mean": 0.8,
+        "note": "brain best_mean = review best-set matched (not all-5-set mean)"
+      },
+      "recent_100": {
+        "range": [
+          1135,
+          1234
+        ],
+        "brains": {
+          "review": {
+            "n": 100,
+            "best_mean": 1.69,
+            "ge3": 12,
+            "ge3_rate": 0.12,
+            "ge4": 0,
+            "ge4_rate": 0.0,
+            "ge5": 0,
+            "ge6": 0
+          },
+          "stat": {
+            "n": 100,
+            "best_mean": 1.72,
+            "ge3": 12,
+            "ge3_rate": 0.12,
+            "ge4": 1,
+            "ge4_rate": 0.01,
+            "ge5": 0,
+            "ge6": 0
+          },
+          "markov": {
+            "n": 100,
+            "best_mean": 1.65,
+            "ge3": 14,
+            "ge3_rate": 0.14,
+            "ge4": 0,
+            "ge4_rate": 0.0,
+            "ge5": 0,
+            "ge6": 0
+          }
+        },
+        "null_1set_mean": 0.8,
+        "note": "brain best_mean = review best-set matched (not all-5-set mean)"
+      },
+      "recent_200": {
+        "range": [
+          1035,
+          1234
+        ],
+        "brains": {
+          "review": {
+            "n": 200,
+            "best_mean": 1.655,
+            "ge3": 18,
+            "ge3_rate": 0.09,
+            "ge4": 2,
+            "ge4_rate": 0.01,
+            "ge5": 0,
+            "ge6": 0
+          },
+          "stat": {
+            "n": 200,
+            "best_mean": 1.74,
+            "ge3": 24,
+            "ge3_rate": 0.12,
+            "ge4": 1,
+            "ge4_rate": 0.005,
+            "ge5": 0,
+            "ge6": 0
+          },
+          "markov": {
+            "n": 200,
+            "best_mean": 1.755,
+            "ge3": 30,
+            "ge3_rate": 0.15,
+            "ge4": 3,
+            "ge4_rate": 0.015,
+            "ge5": 0,
+            "ge6": 0
+          }
+        },
+        "null_1set_mean": 0.8,
+        "note": "brain best_mean = review best-set matched (not all-5-set mean)"
+      },
+      "mid_500": {
+        "range": [
+          735,
+          1234
+        ],
+        "brains": {
+          "review": {
+            "n": 500,
+            "best_mean": 1.702,
+            "ge3": 57,
+            "ge3_rate": 0.114,
+            "ge4": 6,
+            "ge4_rate": 0.012,
+            "ge5": 0,
+            "ge6": 0
+          },
+          "stat": {
+            "n": 500,
+            "best_mean": 1.718,
+            "ge3": 52,
+            "ge3_rate": 0.104,
+            "ge4": 2,
+            "ge4_rate": 0.004,
+            "ge5": 0,
+            "ge6": 0
+          },
+          "markov": {
+            "n": 500,
+            "best_mean": 1.7,
+            "ge3": 65,
+            "ge3_rate": 0.13,
+            "ge4": 4,
+            "ge4_rate": 0.008,
+            "ge5": 0,
+            "ge6": 0
+          }
+        },
+        "null_1set_mean": 0.8,
+        "note": "brain best_mean = review best-set matched (not all-5-set mean)"
+      }
+    },
+    "all5_set_means": {
+      "full_2_1234": {
+        "markov": {
+          "n": 1232,
+          "all5_mean": 0.8206,
+          "delta_vs_null08": 0.0206
+        },
+        "review": {
+          "n": 1233,
+          "all5_mean": 0.8071,
+          "delta_vs_null08": 0.0071
+        },
+        "stat": {
+          "n": 1233,
+          "all5_mean": 0.7945,
+          "delta_vs_null08": -0.0055
+        }
+      },
+      "recent_100": {
+        "markov": {
+          "n": 100,
+          "all5_mean": 0.818,
+          "delta_vs_null08": 0.018
+        },
+        "review": {
+          "n": 100,
+          "all5_mean": 0.782,
+          "delta_vs_null08": -0.018
+        },
+        "stat": {
+          "n": 100,
+          "all5_mean": 0.806,
+          "delta_vs_null08": 0.006
+        }
+      }
+    },
+    "null_mc": {
+      "best_of_1": {
+        "n_sets": 1,
+        "trials": 5000,
+        "best_mean": 0.7924,
+        "allset_mean": 0.7924,
+        "best_ge3_rate": 0.0234,
+        "best_ge4_rate": 0.0012
+      },
+      "best_of_5": {
+        "n_sets": 5,
+        "trials": 5000,
+        "best_mean": 1.7264,
+        "allset_mean": 0.7992,
+        "best_ge3_rate": 0.1164,
+        "best_ge4_rate": 0.007
+      },
+      "best_of_15": {
+        "n_sets": 15,
+        "trials": 5000,
+        "best_mean": 2.2832,
+        "allset_mean": 0.8044,
+        "best_ge3_rate": 0.3132,
+        "best_ge4_rate": 0.0188
+      },
+      "doc_ceiling_best15": 2.27
+    },
+    "protocol": "BENCH_PROTOCOL.md · null 0.8 · best15 ceiling 2.27"
+  },
+  "crew": {
+    "draws_with_3brains": 1232,
+    "pairwise_jaccard_bestset_mean": {
+      "markov|review": 0.1026,
+      "stat|markov": 0.114,
+      "stat|review": 0.1078
+    },
+    "pairwise_matched_pearson": {
+      "markov|review": 0.0141,
+      "stat|markov": 0.0887,
+      "stat|review": 0.1072
+    },
+    "per_draw_max_matched_mean": 2.2524,
+    "per_draw_mean_of_3_mean": 1.711,
+    "oracle_gain_max_minus_mean": 0.5414,
+    "draws_with_2plus_brains_ge3": 65,
+    "draws_with_2plus_brains_ge3_rate": 0.0528,
+    "same_draw_multi_brain_ge4": [],
+    "unique_nums_mean_one_brain_5sets": 21.42,
+    "unique_nums_mean_union_3x5": 37.32,
+    "pool15_best_mean": 2.2524,
+    "pool15_ge4_rate": 0.0252,
+    "single_brain_best_mean": {
+      "markov": 1.7167,
+      "review": 1.6981,
+      "stat": 1.7183
+    },
+    "aux_note": "AUX 4뇌는 nums를 바꾸지 않고 confidence/reasoning만 부여(K-PIPE). brain_review best 채점은 실당첨 대비 tier — AUX가 matched_count를 직접 만들지 않음. 라이브 발권 순서에만 AUX·referee 가중 영향."
+  },
+  "verdict": {
+    "question_a": "역할분담(3+4) 유지 vs 뇌 줄이고 세트 늘리기",
+    "evidence": {
+      "avg_pairwise_jaccard_bestset": 0.1081,
+      "avg_pairwise_matched_pearson": 0.07,
+      "union_unique_vs_single5": {
+        "union_3x5": 37.32,
+        "single_5": 21.42,
+        "extra_coverage": 15.9
+      },
+      "pool15_best_vs_null_mc": {
+        "observed_pool15_best_mean": 2.2524,
+        "null_mc_best15_mean": 2.2832,
+        "delta": -0.0308
+      },
+      "multi_brain_ge4_same_draw": 0
+    },
+    "interpretation": [
+      "best-set Jaccard≈0.1081: 뇌 간 번호 분리 양호 → 역할분담 공간 있음",
+      "matched Pearson≈0.07: 성적 상관 낮음 → 보완 가능성",
+      "3×5 합집합 고유번호가 단일5 대비 +15.9개 — 커버 이득 있음",
+      "pool15 best mean − null MC best15 = -0.0308 (null 근처·우위 주장 금지)"
+    ],
+    "recommendation": "역할분담 이득 관측: **3예측 유지**가 합리적. 세트만 늘리면(1뇌×15) 같은 생성기 복제라 다양성≠보장. 다음=생성 정책 다양화 검증."
+  },
+  "external_ai": {
+    "sources": [
+      "arXiv ensemble diversity bias-variance-diversity tradeoff",
+      "Metaculus AI crowd: accurate+diverse > more correlated copies",
+      "BENCH_PROTOCOL K-O: mean alone cannot rank brains",
+      "LottoWise: fair lottery no learnable next-ball"
+    ],
+    "consensus": [
+      "correlated ensemble members → diminishing returns (사공)",
+      "diversity without individual quality can hurt",
+      "for lottery, more tickets mainly buy best-of-N ceiling, not skill",
+      "ROK21: keep role labels if complementary; do not add brains for marketing"
+    ]
+  },
+  "pattern1_link": "docs/benchmarks/20260729_KPATTERN_tier4_vs_control.json"
+}
