@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | CONF-CAL·종료체크 | spearman약·cal≈orig·≪tier · NEXT=OPEN | CONF-CAL 보류 | (커밋중) |
+| 2026-07-29 | CONF-CAL·종료체크 | spearman약·cal≈orig·≪tier · NEXT=OPEN | CONF-CAL 보류 | `a0061e3` |
 | 2026-07-29 | REFEREE·종료체크 | W=30·max_gap0.1334 PASS · NEXT=CONF-CAL복귀 | REFEREE PASS | `a3d25fb` |
 | 2026-07-29 | NEXT교체·종료체크 | REFEREE-WINDOW · CONF-CAL ARCHIVE보류 | NEXT교체 | `d96759f` |
 | 2026-07-29 | BAYES·종료체크 | soft≈null·invcorr<RR·vs conf+0.025 · NEXT=CONF-CAL | BAYES DONE WIRE보류 | `c953d63` |
