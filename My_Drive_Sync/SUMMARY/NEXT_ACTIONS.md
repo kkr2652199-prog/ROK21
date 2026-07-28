@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-ATTACK-HOLD
-- 할일: EV-POP FAIL(hit/ev_preserve 모두false · 최근접 Δge3-0.0026) · WIRE금지 · V2유지 · EV-POP재탕금지 · 형·커서 다음 축 1건 재선정
-- 선행조건: K-EV-POP 관측완료 · recommended=없음(HOLD·V2유지)
+- 할일: BAND-SELECT FAIL(hit 전게이트false · 최근접 Δge3-0.0060) · WIRE금지 · V2유지 · BAND-SELECT재탕금지 · 형·커서 다음 축 1건 재선정
+- 선행조건: K-BAND-SELECT 관측완료 · recommended=없음(HOLD·V2유지)
 - 승인필요: 예
-- 최종갱신: 2026-07-29 (K-EV-POP FAIL)
+- 최종갱신: 2026-07-29 (K-BAND-SELECT FAIL)
 
 ## WORKSTATE
 IDLE
@@ -16,5 +16,6 @@ IDLE
 
 ## 참고 (커서 아님 · guard 미읽음)
 
-- V2 pin ge3=0.1447 · mean_pop=6.261 · 저인기 선택 시 pop↓·ge3↓ 동반
-- 근거: docs/benchmarks/20260729_KEV_pop.json · reports/20260729_KEV_POP.md
+- V2 pin ge3=0.1447 · mean=1.7504 · mean_lmh=0.5505
+- LMH 선택 시 ge3↓ (최근접 diverse Δ=-0.0060) · spearman(lmh,matched)=0.0114
+- 근거: docs/benchmarks/20260729_KBAND_select.json · reports/20260729_KBAND_SELECT.md
