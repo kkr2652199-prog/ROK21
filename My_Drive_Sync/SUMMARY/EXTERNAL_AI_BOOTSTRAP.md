@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `70ac1f6` |
+| HEAD(실측) | `53a074f` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-SETCOUNT-NULL PASS · E 5장 실력 · **MARKOV-WIRE** |
-| 직전 | SETCOUNT PASS(장수↑≈null) |
-| BOOT다음 | K-MARKOV-WIRE — markov×3 배합 5장 배선 설계 |
-| NEXT1 ID | **K-MARKOV-WIRE** |
-| NEXT1 할일 | NULL PASS · E(markov×3+stat×1+review×1) 5장 실력(p=0.0007) · 장수확장 기각 · 배선 설계 |
+| 지금 | K-MARKOV-WIRE FAIL · conf쿼터≪E · **ENABLED=False** |
+| 직전 | NULL PASS (E 5장 실력) |
+| BOOT다음 | K-ATTACK-HOLD — set_no쿼터 등 재논의 |
+| NEXT1 ID | **K-ATTACK-HOLD** |
+| NEXT1 할일 | MARKOV-WIRE FAIL(conf쿼터 ge3=0.121·p=0.227) · ENABLED=False 롤백 · 형·동생 재논의(set_no쿼터 등) |
 | 승인필요 | 예 |
-| 선행 | K-SETCOUNT-NULL 완료 · recommended=K-MARKOV-WIRE · 승인필요 |
+| 선행 | K-MARKOV-WIRE 완료 · recommended=없음 · 롤백적용 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=70ac1f6 · 지금=K-SETCOUNT-NULL PASS · E 5장 실력 · **MARKOV-WIRE** · 다음=K-MARKOV-WIRE`
+1. 첫줄 `[복귀] HEAD=53a074f · 지금=K-MARKOV-WIRE FAIL · conf쿼터≪E · **ENABLED=False** · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

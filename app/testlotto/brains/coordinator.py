@@ -33,6 +33,41 @@ AUX_MODULES = [
 AUX_WEIGHTS = [0.25, 0.25, 0.25, 0.25]
 PREDICT_TAGS = [b["tag"] for b in PREDICT_BRAINS]
 
+# K-MARKOV-WIRE: markov 배합 가중 (E_markov3mix2 실력 p=0.0007)
+# 생성은 SETS_PER_PREDICT_BRAIN×3=15 유지 · 발권 선택만 쿼터 적용
+MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {
+    "markov": 3,
+    "stat": 1,
+    "review": 1,
+}
+MARKOV_WIRE_ENABLED: bool = False  # K-MARKOV-WIRE verify FAIL · 기존 15세트 동작 복원
+
+
+def apply_markov_wire_quota(scored: list[dict]) -> list[dict]:
+    """confidence 내림차순 가정 · 뇌별 쿼터로 상위 합계(기본 5) 선택."""
+    if not MARKOV_WIRE_ENABLED or not scored:
+        return scored
+    quota = MARKOV_WIRE_BRAIN_QUOTA
+    target_n = sum(quota.values())
+    selected: list[dict] = []
+    counts: dict[str, int] = {t: 0 for t in quota}
+    for c in scored:
+        tag = str(c.get("brain_tag", "") or "")
+        cap = quota.get(tag, 0)
+        if cap > 0 and counts.get(tag, 0) < cap:
+            selected.append(c)
+            counts[tag] = counts.get(tag, 0) + 1
+        if sum(counts.values()) >= target_n:
+            break
+    if len(selected) < target_n:
+        used = {id(c) for c in selected}
+        for c in scored:
+            if id(c) not in used:
+                selected.append(c)
+            if len(selected) >= target_n:
+                break
+    return selected
+
 
 def _delete_predictions_for_brain(conn, target_draw_no: int, brain_tag: str) -> None:
     conn.execute(
@@ -155,6 +190,16 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
 
         scored, dedup_stats = dedup_ticket_list(scored, regenerate=_regen)
         scored.sort(key=lambda x: x["confidence"], reverse=True)
+
+    # K-MARKOV-WIRE: 생성 15 → 발권 쿼터(기본 markov3+stat1+review1)
+    scored = apply_markov_wire_quota(scored)
+    if MARKOV_WIRE_ENABLED:
+        dedup_stats = {
+            **dedup_stats,
+            "markov_wire": True,
+            "wire_quota": dict(MARKOV_WIRE_BRAIN_QUOTA),
+            "issued_sets": len(scored),
+        }
 
     actual_row = conn.execute(
         "SELECT * FROM lotto_draws WHERE draw_no = ?", (target_draw_no,)

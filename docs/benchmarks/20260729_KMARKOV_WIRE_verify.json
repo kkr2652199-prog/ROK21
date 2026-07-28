@@ -1,0 +1,34 @@
+{
+  "id": "K-MARKOV-WIRE-VERIFY",
+  "ts": "2026-07-29T04:29:39",
+  "elapsed_sec": 140.5,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "wire_enabled": true,
+  "wire_quota": {
+    "markov": 3,
+    "stat": 1,
+    "review": 1
+  },
+  "quota_fills_ge5": 1182,
+  "mean": 1.7157,
+  "ge3_rate": 0.121,
+  "ge4_rate": 0.0093,
+  "ge3_count": 143,
+  "null_ge3": 0.1137,
+  "delta_ge3": 0.0073,
+  "p_value": 0.227202,
+  "pass_ge3_min": 0.1362,
+  "pass": false,
+  "baseline_ref": {
+    "E_markov3mix2_ge3": 0.1447,
+    "D_markov5_ge3": 0.1362,
+    "RR_ge3": 0.1337,
+    "note": "E는 set_no 순서 고정 · WIRE는 confidence 쿼터(다를 수 있음)"
+  },
+  "note": "brain_review 15 → AUX rescore → MARKOV_WIRE quota → best-of-issued. 예측 재생성 없음. SETS_PER_PREDICT_BRAIN=5 생성 전제 유지. FAIL → MARKOV_WIRE_ENABLED=False 롤백 대상.",
+  "db_code_write": false
+}
