@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7e44091` · WORK=`IDLE`
+- HEAD: `c2c26a6` · WORK=`IDLE`
 - 지금: NEXT 교체 — **K-REFEREE-WINDOW** (합의) · CONF-CAL ARCHIVE 보류
 - 직전: K-ATTACK-BAYES soft≈null · invcorr<RR
 - BOOT다음: learn_state(+cutoff) 슬라이딩 윈도우 WINDOW=30
