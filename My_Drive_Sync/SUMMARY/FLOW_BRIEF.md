@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a8db88c` · WORK=`IDLE`
+- HEAD: `9e67fbb` · WORK=`IDLE`
 - 지금: BAND-SELECT FAIL · hit false · **HOLD** · V2유지
 - 직전: EV-POP FAIL / SETNO FAIL / SETPACK FAIL / TUNE FAIL / WIRE-V2 PASS
 - BOOT다음: K-ATTACK-HOLD — BAND-SELECT재탕금지 · 다음 축 재선정

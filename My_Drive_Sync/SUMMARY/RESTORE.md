@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a8db88c` · WORK=`IDLE`
+1. **HEAD:** `9e67fbb` · WORK=`IDLE`
 2. **지금:** BAND-SELECT FAIL · hit false · **HOLD** · V2유지
 3. **다음1건:** K-ATTACK-HOLD — BAND-SELECT FAIL(hit 전게이트false · 최근접 Δge3-0.0060) · WIRE금지 · V2유지 · BAND-SELECT재탕금지 · 형·커서 다음 축 1건 재선정 (승인필요=예 · 선행=K-BAND-SELECT 관측완료 · recommended=없음(HOLD·V2유지))
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | 새직교축·팩트체크·push | BAND-SELECT FAIL · Δ-0.0060 · V2유지 · NEXT=HOLD | BAND FAIL | (push후) |
+| 2026-07-29 | 새직교축·팩트체크·push | BAND-SELECT FAIL · Δ-0.0060 · V2유지 · NEXT=HOLD | BAND FAIL | `9e67fbb` |
 | 2026-07-29 | 진행·팩트체크 | EV-POP FAIL · pop↓·ge3↓ · V2유지 · NEXT=HOLD | EV-POP FAIL | `b945197` |
 | 2026-07-29 | 다음축선정·해줘 | SETNO-HITMAP Δ+0.0034 FAIL · V2유지 · NEXT=HOLD | SETNO FAIL | `8fcd2d9` |
 | 2026-07-29 | SETPACK·종료체크 | pool ge3 0.101<0.123 · set1↓ · NEXT=HOLD | SETPACK FAIL | `22ea625` |
