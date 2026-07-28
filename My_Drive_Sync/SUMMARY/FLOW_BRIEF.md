@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d568519` · WORK=`IDLE`
+- HEAD: `0f62374` · WORK=`IDLE`
 - 지금: GENDIV FAIL · corr/Q1 false · **HOLD** · V2유지
 - 직전: SUM FAIL / BAND FAIL / EV-POP FAIL / SETNO FAIL / SETPACK FAIL / TUNE FAIL / WIRE-V2 PASS
 - BOOT다음: K-ATTACK-HOLD — GENDIV재탕금지 · 슬롯재선택지양 · 다음 직교축
