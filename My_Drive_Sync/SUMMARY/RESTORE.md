@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7406242` · WORK=`IDLE`
-2. **지금:** K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD**
-3. **다음1건:** K-ATTACK-HOLD — COVER 관측종료(wheel/pool ge3≤RR·corr약) · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-COVER-SURVEY 완료 · recommended=없음 · WIRE금지)
+1. **HEAD:** `c54068a` · WORK=`IDLE`
+2. **지금:** K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보**
+3. **다음1건:** K-SETCOUNT-WIRE — SETCOUNT PASS(n=10·15 ge3>RR) · 배선 전 null/비용 대비 검증 후 SETS 확장 여부 결정 (승인필요=예 · 선행=K-SETCOUNT-SURVEY 완료 · recommended=K-SETCOUNT-WIRE · 승인필요)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-COVER-SURVEY | pool40 ge3=0.132<RR · mean↑ · corr0.025 · NEXT=HOLD | COVER FAIL | `6339f12` |
+| 2026-07-29 | K-SETCOUNT-SURVEY | n15 ge3=0.3088≈null · markov solo PASS · NEXT=WIRE | SETCOUNT PASS | (미커밋) |
+| 2026-07-29 | K-COVER·종료체크 | pool40 ge3=0.132<RR · NEXT=HOLD | COVER FAIL | `6339f12` |
 | 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | `ed4e702` |
 | 2026-07-29 | STRUCT·종료체크 | aux sp0.008·analog≪RR·가중Δ0 · NEXT=HOLD | STRUCT 관측종료 | `7606686` |
 | 2026-07-29 | PROBVEC·종료체크 | 유효신호0 · STRENGTHEN없음 · NEXT=HOLD | PROBVEC DONE | `41c80b0` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | BAYES·종료체크 | soft≈null·invcorr<RR·vs conf+0.025 · NEXT=CONF-CAL | BAYES DONE WIRE보류 | `c953d63` |
 | 2026-07-29 | JOIN프롬프트·종료체크 | EXTERNAL_AI_JOIN_PROMPT · 합류읽기순서 · NEXT=BAYES | DOCS | `1494595` |
 | 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | `0426e09` |
-| 2026-07-29 | GATHER-V2·종료체크 | V'=12·회수0·관측고정·hybrid힌트 · NEXT=SLICE | V2 DONE WIRE보류 | `05999a2` |
 
 ---
 

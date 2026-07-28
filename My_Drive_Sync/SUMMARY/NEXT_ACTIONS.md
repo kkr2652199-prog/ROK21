@@ -3,11 +3,11 @@
 > STEP1 `guard_boot` 는 **아래 `## NEXT (1건)` 블록만** 읽는다. 여러 건 나열 금지.
 
 ## NEXT (1건)
-- ID: K-ATTACK-HOLD
-- 할일: COVER 관측종료(wheel/pool ge3≤RR·corr약) · 형·동생 다음 공격 축 1건 재선정
-- 선행조건: K-COVER-SURVEY 완료 · recommended=없음 · WIRE금지
+- ID: K-SETCOUNT-WIRE
+- 할일: SETCOUNT PASS(n=10·15 ge3>RR) · 배선 전 null/비용 대비 검증 후 SETS 확장 여부 결정
+- 선행조건: K-SETCOUNT-SURVEY 완료 · recommended=K-SETCOUNT-WIRE · 승인필요
 - 승인필요: 예
-- 최종갱신: 2026-07-29 (K-COVER-SURVEY)
+- 최종갱신: 2026-07-29 (K-SETCOUNT-SURVEY)
 
 ## WORKSTATE
 IDLE
@@ -16,6 +16,6 @@ IDLE
 
 ## 참고 (앵커 아님 · guard 미읽음)
 
-- 직전: K-COVER-SURVEY FAIL · best_pool=40 ge3=0.132<0.1337 · mean>RR 추가표기
-- 근거: `docs/benchmarks/20260729_KCOVER_survey.json` · `reports/20260729_KCOVER_SURVEY.md`
-- HISIM/STRUCT/PROBVEC/OPEN 연속 관측종료 후 HOLD
+- n=15 ge3=0.3088 ≈ null best15 0.3132 · 발권수 효과 주의(K-08)
+- markov solo ge3=0.1362 · top1_3 ge3=0.1447 (부수 BRAIN-SOLO 후보)
+- 근거: `docs/benchmarks/20260729_KSETCOUNT_survey.json`

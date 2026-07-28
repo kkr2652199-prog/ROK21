@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7406242` |
+| HEAD(실측) | `c54068a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD** |
-| 직전 | HISIM 관측종료 (0.791≪RR) |
-| BOOT다음 | K-ATTACK-HOLD — 형·동생 새 축 재선정 |
-| NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | COVER 관측종료(wheel/pool ge3≤RR·corr약) · 형·동생 다음 공격 축 1건 재선정 |
+| 지금 | K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보** |
+| 직전 | COVER FAIL (ge3≤RR) |
+| BOOT다음 | K-SETCOUNT-WIRE — null/비용 검증 후 SETS 확장 여부 |
+| NEXT1 ID | **K-SETCOUNT-WIRE** |
+| NEXT1 할일 | SETCOUNT PASS(n=10·15 ge3>RR) · 배선 전 null/비용 대비 검증 후 SETS 확장 여부 결정 |
 | 승인필요 | 예 |
-| 선행 | K-COVER-SURVEY 완료 · recommended=없음 · WIRE금지 |
+| 선행 | K-SETCOUNT-SURVEY 완료 · recommended=K-SETCOUNT-WIRE · 승인필요 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7406242 · 지금=K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD** · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=c54068a · 지금=K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보** · 다음=K-SETCOUNT-WIRE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 7406242_
+_generated: c54068a_

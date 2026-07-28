@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7406242` · WORK=`IDLE`
-- 지금: K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD**
-- 직전: HISIM 관측종료 (0.791≪RR)
-- BOOT다음: K-ATTACK-HOLD — 형·동생 새 축 재선정
-- NEXT1: K-ATTACK-HOLD — COVER 관측종료(wheel/pool ge3≤RR·corr약) · 형·동생 다음 공격 축 1건 재선정 (승인=예)
+- HEAD: `c54068a` · WORK=`IDLE`
+- 지금: K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보**
+- 직전: COVER FAIL (ge3≤RR)
+- BOOT다음: K-SETCOUNT-WIRE — null/비용 검증 후 SETS 확장 여부
+- NEXT1: K-SETCOUNT-WIRE — SETCOUNT PASS(n=10·15 ge3>RR) · 배선 전 null/비용 대비 검증 후 SETS 확장 여부 결정 (승인=예)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

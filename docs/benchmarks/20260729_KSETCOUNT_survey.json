@@ -1,0 +1,127 @@
+{
+  "id": "K-SETCOUNT-SURVEY",
+  "ts": "2026-07-29T04:09:31",
+  "elapsed_sec": 4.3,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "pool_brains": [
+    "stat",
+    "markov",
+    "review"
+  ],
+  "wheel_fixed": {
+    "combo": "B",
+    "new_cov_w": 18.0,
+    "score_w": 1.0,
+    "avg_ov_w": 2.0,
+    "note": "COVER best · brain_review 15세트 후보에 wheel 적용(F1 재생성 없음)"
+  },
+  "baseline_rr": {
+    "mean": 1.7428,
+    "ge3_rate": 0.1337
+  },
+  "step1_setcount_grid": {
+    "5": {
+      "mean": 1.7521,
+      "ge3_rate": 0.1151,
+      "ge4_rate": 0.0085,
+      "union_size": 25.6311,
+      "n": 1182,
+      "skipped": false
+    },
+    "10": {
+      "mean": 2.1024,
+      "ge3_rate": 0.2284,
+      "ge4_rate": 0.0169,
+      "union_size": 35.7919,
+      "n": 1182,
+      "skipped": false
+    },
+    "15": {
+      "mean": 2.2487,
+      "ge3_rate": 0.3088,
+      "ge4_rate": 0.0245,
+      "union_size": 37.4569,
+      "n": 1182,
+      "skipped": false
+    },
+    "20": {
+      "mean": null,
+      "ge3_rate": null,
+      "ge4_rate": null,
+      "union_size": null,
+      "n": 0,
+      "note": "풀 부족(brain_review 최대 15세트) · 스킵",
+      "skipped": true
+    }
+  },
+  "step2_brain_solo": {
+    "stat": {
+      "mean": 1.7124,
+      "ge3_rate": 0.1091,
+      "ge4_rate": 0.0051,
+      "n": 1182
+    },
+    "markov": {
+      "mean": 1.7098,
+      "ge3_rate": 0.1362,
+      "ge4_rate": 0.0085,
+      "n": 1182
+    },
+    "review": {
+      "mean": 1.703,
+      "ge3_rate": 0.1227,
+      "ge4_rate": 0.011,
+      "n": 1182
+    },
+    "mixed_15": {
+      "mean": 2.2487,
+      "ge3_rate": 0.3088,
+      "ge4_rate": 0.0245,
+      "union_size": 37.4569,
+      "n": 1182
+    },
+    "best_solo_brain": "markov"
+  },
+  "step3_combo_grid": {
+    "combo_top1_5": {
+      "config": "markov×5",
+      "mean": 1.7098,
+      "ge3_rate": 0.1362,
+      "ge4_rate": 0.0085,
+      "n": 1182
+    },
+    "combo_top1_3": {
+      "config": "markov×3 + stat×1 + review×1",
+      "mean": 1.7504,
+      "ge3_rate": 0.1447,
+      "ge4_rate": 0.0102,
+      "n": 1182
+    },
+    "combo_balanced": {
+      "config": "3×5",
+      "mean": 2.2487,
+      "ge3_rate": 0.3088,
+      "ge4_rate": 0.0245,
+      "n": 1182
+    }
+  },
+  "gates": {
+    "any_ge3_gt_rr_1337": true,
+    "any_mean_gt_rr_1742": true,
+    "step1_ge3_pass": true,
+    "step2_solo_ge3_pass": true,
+    "step3_ge3_pass": true,
+    "best_n": 15,
+    "best_combo": "combo_balanced",
+    "best_overall": "n=15",
+    "best_overall_ge3": 0.3088,
+    "best_overall_mean": 2.2487
+  },
+  "recommended_next": "K-SETCOUNT-WIRE",
+  "verdict": "PASS→K-SETCOUNT-WIRE: best=n=15 ge3=0.3088 mean=2.2487. step1=True solo=True combo=True. 주의: best-of-N↑는 발권수 효과(K-08·null MC) 가능.",
+  "db_code_write": false
+}

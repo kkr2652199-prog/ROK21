@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD**
-- 직전: HISIM 관측종료 (0.791≪RR)
-- 다음: K-ATTACK-HOLD — 형·동생 새 축 재선정
+- 지금: K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보**
+- 직전: COVER FAIL (ge3≤RR)
+- 다음: K-SETCOUNT-WIRE — null/비용 검증 후 SETS 확장 여부
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
