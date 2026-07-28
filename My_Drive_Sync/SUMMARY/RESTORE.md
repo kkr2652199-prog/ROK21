@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e0323f3` · WORK=`IDLE`
+1. **HEAD:** `70ac1f6` · WORK=`IDLE`
 2. **지금:** K-SETCOUNT-NULL PASS · E 5장 실력 · **MARKOV-WIRE**
 3. **다음1건:** K-MARKOV-WIRE — NULL PASS · E(markov×3+stat×1+review×1) 5장 실력(p=0.0007) · 장수확장 기각 · 배선 설계 (승인필요=예 · 선행=K-SETCOUNT-NULL 완료 · recommended=K-MARKOV-WIRE · 승인필요)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-SETCOUNT-NULL | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | (미커밋) |
+| 2026-07-29 | K-SETCOUNT-NULL | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | `70ac1f6` |
 | 2026-07-29 | SETCOUNT·종료체크 | n15≈null · NEXT=WIRE→NULL검증 | SETCOUNT PASS | `a25c9b7` |
 | 2026-07-29 | K-COVER·종료체크 | pool40 ge3=0.132<RR · NEXT=HOLD | COVER FAIL | `6339f12` |
 | 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | `ed4e702` |

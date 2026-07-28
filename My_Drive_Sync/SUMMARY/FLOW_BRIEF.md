@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e0323f3` · WORK=`IDLE`
+- HEAD: `70ac1f6` · WORK=`IDLE`
 - 지금: K-SETCOUNT-NULL PASS · E 5장 실력 · **MARKOV-WIRE**
 - 직전: SETCOUNT PASS(장수↑≈null)
 - BOOT다음: K-MARKOV-WIRE — markov×3 배합 5장 배선 설계
