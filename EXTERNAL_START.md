@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `38a7ba3` |
+| HEAD(실측) | `82a0033` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | K-UI-SSOT — 메인 brain_review 우선·셀렉트 동기·상세 미래회차 PASS |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=38a7ba3 · 지금=K-UI-SSOT — 메인 brain_review 우선·셀렉트 동기·상세 미래회차 PASS · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=82a0033 · 지금=K-UI-SSOT — 메인 brain_review 우선·셀렉트 동기·상세 미래회차 PASS · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 38a7ba3_
+_generated: 82a0033_
