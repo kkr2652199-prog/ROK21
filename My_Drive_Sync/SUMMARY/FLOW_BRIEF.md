@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `431d971` · WORK=`IDLE`
+- HEAD: `14b0628` · WORK=`IDLE`
 - 지금: K-HISIM-SURVEY 관측종료 · best 0.791≪RR · **HOLD**
 - 직전: STRUCT aux/analog/가중 FAIL
 - BOOT다음: K-ATTACK-HOLD — 형·동생 새 축 재선정
