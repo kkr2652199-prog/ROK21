@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `aa69776` · WORK=`IDLE`
+1. **HEAD:** `6339f12` · WORK=`IDLE`
 2. **지금:** K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD**
 3. **다음1건:** K-ATTACK-HOLD — COVER 관측종료(wheel/pool ge3≤RR·corr약) · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-COVER-SURVEY 완료 · recommended=없음 · WIRE금지)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-COVER-SURVEY | pool40 ge3=0.132<RR · mean↑ · corr0.025 · NEXT=HOLD | COVER FAIL | (미커밋) |
+| 2026-07-29 | K-COVER-SURVEY | pool40 ge3=0.132<RR · mean↑ · corr0.025 · NEXT=HOLD | COVER FAIL | `6339f12` |
 | 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | `ed4e702` |
 | 2026-07-29 | STRUCT·종료체크 | aux sp0.008·analog≪RR·가중Δ0 · NEXT=HOLD | STRUCT 관측종료 | `7606686` |
 | 2026-07-29 | PROBVEC·종료체크 | 유효신호0 · STRENGTHEN없음 · NEXT=HOLD | PROBVEC DONE | `41c80b0` |
