@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `1693f81` · WORK=`IDLE`
+- HEAD: `b5ab7a2` · WORK=`IDLE`
 - 지금: 핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝**
 - 직전: 형 핀 GO · POS sticky≈null
 - BOOT다음: K-GATHER-V1 — oracle 분해 후 휴리스틱 교체 (WIRE 보류)

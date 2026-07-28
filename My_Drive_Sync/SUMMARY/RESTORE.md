@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `1693f81` · WORK=`IDLE`
+1. **HEAD:** `b5ab7a2` · WORK=`IDLE`
 2. **지금:** 핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝**
 3. **다음1건:** K-GATHER-V1 — union6 회차 oracle 분해 → 몰아주기 휴리스틱 교체 → PILOT 재실행 JSON (WIRE 전 성적 게이트) (승인필요=아니오 · **K-GATHER-WIRE만 형 GO** · 선행=①~④ 완료 · SCATTER 기회 확인 · v0 회수 0/21)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
