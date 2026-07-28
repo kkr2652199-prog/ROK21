@@ -1,0 +1,152 @@
+{
+  "id": "K-ATTACK-BAYES",
+  "ts": "2026-07-29T01:51:02",
+  "window": [
+    2,
+    1234
+  ],
+  "rolling_window": 50,
+  "brains": [
+    "stat",
+    "markov",
+    "review"
+  ],
+  "method": {
+    "vector": "45-dim count of nums across 5 predicted sets",
+    "corr": "pearson(vec_i, vec_j) per prior draw, avg over WINDOW",
+    "weight": "w_i ∝ 1/(avg_corr_i + eps), eps=1e-3",
+    "no_peek": "weights from draws in [d-WINDOW, d)",
+    "db_code_write": false
+  },
+  "n_complete_draws": 1232,
+  "n_eval": 1182,
+  "skipped_short_window": 50,
+  "corr_summary": {
+    "mean_avg_corr_per_brain": {
+      "stat": 0.1141,
+      "markov": 0.0852,
+      "review": 0.088
+    },
+    "mean_pairwise_over_window_draws": {
+      "stat_markov": 0.1113,
+      "stat_review": 0.1169,
+      "markov_review": 0.0592
+    }
+  },
+  "weight_summary": {
+    "mean_dyn_weight": {
+      "stat": 0.2719,
+      "markov": 0.3718,
+      "review": 0.3563
+    },
+    "baseline_weight": {
+      "stat": 0.3333,
+      "markov": 0.3333,
+      "review": 0.3333
+    }
+  },
+  "policies": {
+    "soft_equal": {
+      "n": 1182,
+      "mean": 1.7084,
+      "ge3": 14,
+      "ge3_rate": 0.0118,
+      "ge4": 0,
+      "ge4_rate": 0.0,
+      "ge5": 0,
+      "ge6": 0
+    },
+    "soft_invcorr": {
+      "n": 1182,
+      "mean": 1.7074,
+      "ge3": 11,
+      "ge3_rate": 0.0093,
+      "ge4": 0,
+      "ge4_rate": 0.0,
+      "ge5": 0,
+      "ge6": 0
+    },
+    "pick_round_robin": {
+      "n": 1182,
+      "mean": 1.7428,
+      "ge3": 158,
+      "ge3_rate": 0.1337,
+      "ge4": 11,
+      "ge4_rate": 0.0093,
+      "ge5": 0,
+      "ge6": 0
+    },
+    "pick_invcorr": {
+      "n": 1182,
+      "mean": 1.6963,
+      "ge3": 149,
+      "ge3_rate": 0.1261,
+      "ge4": 11,
+      "ge4_rate": 0.0093,
+      "ge5": 0,
+      "ge6": 0
+    },
+    "pick_max_conf": {
+      "n": 1182,
+      "mean": 1.6717,
+      "ge3": 129,
+      "ge3_rate": 0.1091,
+      "ge4": 6,
+      "ge4_rate": 0.0051,
+      "ge5": 0,
+      "ge6": 0
+    },
+    "pick_single_brain": {
+      "stat": {
+        "n": 1182,
+        "mean": 1.7124,
+        "ge3": 129,
+        "ge3_rate": 0.1091,
+        "ge4": 6,
+        "ge4_rate": 0.0051,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "markov": {
+        "n": 1182,
+        "mean": 1.7098,
+        "ge3": 161,
+        "ge3_rate": 0.1362,
+        "ge4": 10,
+        "ge4_rate": 0.0085,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "review": {
+        "n": 1182,
+        "mean": 1.703,
+        "ge3": 145,
+        "ge3_rate": 0.1227,
+        "ge4": 13,
+        "ge4_rate": 0.011,
+        "ge5": 0,
+        "ge6": 0
+      }
+    }
+  },
+  "delta_vs_baseline": {
+    "soft_invcorr_minus_soft_equal": {
+      "mean": -0.001,
+      "ge3_rate": -0.0025,
+      "ge4_rate": 0.0
+    },
+    "pick_invcorr_minus_round_robin": {
+      "mean": -0.0465,
+      "ge3_rate": -0.0076,
+      "ge4_rate": 0.0
+    },
+    "pick_invcorr_minus_pick_max_conf": {
+      "mean": 0.0246,
+      "ge3_rate": 0.017,
+      "ge4_rate": 0.0042
+    }
+  },
+  "verdict_hint": {
+    "note": "soft≈null이면 가중 혼합은 무력. pick delta>0이면 저상관 뇌 1장 선택이 RR/conf 대비 이득. 배선은 별도 GO."
+  }
+}

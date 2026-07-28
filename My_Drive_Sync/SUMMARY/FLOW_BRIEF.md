@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b17e107` · WORK=`IDLE`
-- 지금: K-ATTACK-SLICE 완료 · conf top2 천장 1.23 · **BAYES 다음**
-- 직전: EXTERNAL_AI_JOIN_PROMPT 신설 (합류 읽기순서)
-- BOOT다음: K-ATTACK-BAYES — 3뇌 동적가중 시뮬
-- NEXT1: K-ATTACK-BAYES — 3뇌 동적가중(상관↓·최근창) — conf/발권 정렬 개선 시뮬 JSON (READ-ONLY) · SLICE·GATHER 배선 보류 (승인=아니오)
+- HEAD: `c3602da` · WORK=`IDLE`
+- 지금: K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음**
+- 직전: SLICE 구간승격 실패 · JOIN 프롬프트
+- BOOT다음: K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬
+- NEXT1: K-ATTACK-CONF-CAL — 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류 (승인=아니오)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

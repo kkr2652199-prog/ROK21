@@ -3,11 +3,11 @@
 > STEP1 `guard_boot` 는 **아래 `## NEXT (1건)` 블록만** 읽는다. 여러 건 나열 금지.
 
 ## NEXT (1건)
-- ID: K-ATTACK-BAYES
-- 할일: 3뇌 동적가중(상관↓·최근창) — conf/발권 정렬 개선 시뮬 JSON (READ-ONLY) · SLICE·GATHER 배선 보류
-- 선행조건: K-ATTACK-SLICE 완료 · conf top2 oracle 1.23 힌트 · CREW Jaccard≈0.11
+- ID: K-ATTACK-CONF-CAL
+- 할일: 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류
+- 선행조건: K-ATTACK-BAYES 완료 · soft≈null · pick_invcorr < RR · max_conf 약함
 - 승인필요: 아니오
-- 최종갱신: 2026-07-29 (K-ATTACK-SLICE)
+- 최종갱신: 2026-07-29 (K-ATTACK-BAYES)
 
 ## WORKSTATE
 IDLE

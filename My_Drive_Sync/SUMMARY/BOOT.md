@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-ATTACK-SLICE 완료 · conf top2 천장 1.23 · **BAYES 다음**
-- 직전: EXTERNAL_AI_JOIN_PROMPT 신설 (합류 읽기순서)
-- 다음: K-ATTACK-BAYES — 3뇌 동적가중 시뮬
+- 지금: K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음**
+- 직전: SLICE 구간승격 실패 · JOIN 프롬프트
+- 다음: K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

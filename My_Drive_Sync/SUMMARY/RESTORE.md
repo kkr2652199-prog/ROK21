@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `b17e107` · WORK=`IDLE`
-2. **지금:** K-ATTACK-SLICE 완료 · conf top2 천장 1.23 · **BAYES 다음**
-3. **다음1건:** K-ATTACK-BAYES — 3뇌 동적가중(상관↓·최근창) — conf/발권 정렬 개선 시뮬 JSON (READ-ONLY) · SLICE·GATHER 배선 보류 (승인필요=아니오 · 선행=K-ATTACK-SLICE 완료 · conf top2 oracle 1.23 힌트 · CREW Jaccard≈0.11)
+1. **HEAD:** `c3602da` · WORK=`IDLE`
+2. **지금:** K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음**
+3. **다음1건:** K-ATTACK-CONF-CAL — 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류 (승인필요=아니오 · 선행=K-ATTACK-BAYES 완료 · soft≈null · pick_invcorr < RR · max_conf 약함)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | BAYES·종료체크 | soft≈null·invcorr<RR·vs conf+0.025 · NEXT=CONF-CAL | BAYES DONE WIRE보류 | (커밋중) |
 | 2026-07-29 | JOIN프롬프트·종료체크 | EXTERNAL_AI_JOIN_PROMPT · 합류읽기순서 · NEXT=BAYES | DOCS | `1494595` |
 | 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | `0426e09` |
 | 2026-07-29 | GATHER-V2·종료체크 | V'=12·회수0·관측고정·hybrid힌트 · NEXT=SLICE | V2 DONE WIRE보류 | `05999a2` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | 1~4등 브리핑·종료체크 | tier14 31건(4등만) · `_brief_tier_hits.py` · 보고서 | K-REVIEW-TIER14 | `bf179f6` |
 | 2026-07-28 | K-REVIEW-RUN 종료체크 | WF 2~1234 재복습 53분 · verify_pass · pipe 3698/3698 · push | K-REVIEW-RUN PASS | `2d0becc` |
 | 2026-07-28 | K-REBRAND 종료체크 | UI·tools kweon→ROK21 · verify7021 · push | K-REBRAND PATCHED | `440eb18` |
-| 2026-07-28 | K-UI-PLAIN 종료체크 | 메인·상세·analog API 쉬운 말 UI · push | K-UI-PLAIN PATCHED | `13a187e` |
 
 ---
 
