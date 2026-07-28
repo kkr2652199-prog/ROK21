@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `8c32f72` · WORK=`IDLE`
+- HEAD: `4ea75cc` · WORK=`IDLE`
 - 지금: K-DETAIL-CUTOFF — detail/draw CUTOFF 회귀 수정 PASS
 - 직전: K-00 · K-1235-PREP · K-D
 - BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
