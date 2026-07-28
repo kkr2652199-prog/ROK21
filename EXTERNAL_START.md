@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `14b0628` |
+| HEAD(실측) | `aa69776` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-HISIM-SURVEY 관측종료 · best 0.791≪RR · **HOLD** |
-| 직전 | STRUCT aux/analog/가중 FAIL |
+| 지금 | K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD** |
+| 직전 | HISIM 관측종료 (0.791≪RR) |
 | BOOT다음 | K-ATTACK-HOLD — 형·동생 새 축 재선정 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | HISIM 관측종료(구조우선 analog≈null·≪RR) · 형·동생 다음 공격 축 1건 재선정 |
+| NEXT1 할일 | COVER 관측종료(wheel/pool ge3≤RR·corr약) · 형·동생 다음 공격 축 1건 재선정 |
 | 승인필요 | 예 |
-| 선행 | K-HISIM-SURVEY 완료 · recommended=없음 |
+| 선행 | K-COVER-SURVEY 완료 · recommended=없음 · WIRE금지 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=14b0628 · 지금=K-HISIM-SURVEY 관측종료 · best 0.791≪RR · **HOLD** · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=aa69776 · 지금=K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD** · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 14b0628_
+_generated: aa69776_

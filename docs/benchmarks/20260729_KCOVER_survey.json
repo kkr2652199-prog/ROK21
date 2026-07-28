@@ -1,0 +1,116 @@
+{
+  "id": "K-COVER-SURVEY",
+  "ts": "2026-07-29T04:02:10",
+  "elapsed_sec": 507.9,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "pool_brains": [
+    "stat",
+    "markov",
+    "review"
+  ],
+  "source": "testlotto_brain_review predicted_sets_json",
+  "metric_note": "mean/ge3 = best-of-5 matched among wheel picks (vs RR best_set)",
+  "step1_baseline": {
+    "mean_union_size": 25.8519,
+    "mean_matched": 1.7614,
+    "mean_matched_allsets": 0.7888,
+    "ge3_rate": 0.1277,
+    "n": 1182,
+    "note": "best-of-5 among F1_V2_STRICT wheel picks · pool=brain_review 3×5"
+  },
+  "step2_wheel_grid": {
+    "A": {
+      "new_cov_w": 12.0,
+      "score_w": 1.0,
+      "avg_ov_w": 4.0,
+      "mean": 1.7614,
+      "ge3_rate": 0.1277,
+      "union_size": 25.8519,
+      "n": 1182
+    },
+    "B": {
+      "new_cov_w": 18.0,
+      "score_w": 1.0,
+      "avg_ov_w": 2.0,
+      "mean": 1.7623,
+      "ge3_rate": 0.1277,
+      "union_size": 25.8519,
+      "n": 1182
+    },
+    "C": {
+      "new_cov_w": 24.0,
+      "score_w": 0.5,
+      "avg_ov_w": 1.0,
+      "mean": 1.7623,
+      "ge3_rate": 0.1277,
+      "union_size": 25.8519,
+      "n": 1182
+    },
+    "D": {
+      "new_cov_w": 12.0,
+      "score_w": 1.0,
+      "avg_ov_w": 8.0,
+      "mean": 1.7614,
+      "ge3_rate": 0.1277,
+      "union_size": 25.8519,
+      "n": 1182
+    },
+    "E": {
+      "new_cov_w": 15.0,
+      "score_w": 1.0,
+      "avg_ov_w": 3.0,
+      "mean": 1.7614,
+      "ge3_rate": 0.1277,
+      "union_size": 25.8519,
+      "n": 1182
+    },
+    "best_combo": "B"
+  },
+  "step3_pool_grid": {
+    "15": {
+      "mean": 1.7699,
+      "ge3_rate": 0.1277,
+      "union_size": 25.1692,
+      "n": 1182
+    },
+    "25": {
+      "mean": 1.7623,
+      "ge3_rate": 0.1277,
+      "union_size": 25.8519,
+      "n": 1182
+    },
+    "40": {
+      "mean": 1.797,
+      "ge3_rate": 0.132,
+      "union_size": 26.3917,
+      "n": 1182
+    },
+    "60": {
+      "mean": 1.8037,
+      "ge3_rate": 0.1303,
+      "union_size": 26.8384,
+      "n": 1182
+    },
+    "best_pool": 40,
+    "fixed_combo": "B"
+  },
+  "step4_coverage_corr": {
+    "spearman_r": 0.0253,
+    "note": "union_size vs matched_count (best-of-5) · combo A pool 25",
+    "n": 1182
+  },
+  "gates": {
+    "any_combo_ge3_gt_rr": false,
+    "any_combo_mean_gt_rr": true,
+    "coverage_corr_gt0": false,
+    "rr_mean": 1.7428,
+    "rr_ge3": 0.1337
+  },
+  "recommended_next": "없음",
+  "verdict": "FAIL(관측종료): wheel/pool 격자 전부 ge3≤RR(0.1337). best_combo=B ge3=0.1277 mean=1.7623; best_pool=40 ge3=0.132 mean=1.797; spearman=0.0253≤0.03. mean>RR=True(추가표기) · WIRE 금지.",
+  "db_code_write": false
+}
