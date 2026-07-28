@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4ea75cc` · WORK=`IDLE`
-- 지금: K-DETAIL-CUTOFF — detail/draw CUTOFF 회귀 수정 PASS
-- 직전: K-00 · K-1235-PREP · K-D
+- HEAD: `38a7ba3` · WORK=`IDLE`
+- 지금: K-UI-SSOT — 메인 brain_review 우선·셀렉트 동기·상세 미래회차 PASS
+- 직전: K-DETAIL-CUTOFF · K-00 · K-1235-PREP
 - BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
 - NEXT1: K-AWAIT — **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) (승인=아니오)
 - OPEN샘플: K-00, K-02, K-05
