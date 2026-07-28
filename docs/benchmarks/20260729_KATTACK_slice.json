@@ -1,0 +1,302 @@
+{
+  "id": "K-ATTACK-SLICE",
+  "ts": "2026-07-29T01:34:38",
+  "window": [
+    2,
+    1234
+  ],
+  "pattern1_ref": {
+    "tier4_zone_match": 0.3548,
+    "control_zone_match": 0.05
+  },
+  "policies": {
+    "baseline": {
+      "all": {
+        "n": 3698,
+        "mean": 1.7109,
+        "ge3": 457,
+        "ge3_rate": 0.1236,
+        "ge4": 31,
+        "ge4_rate": 0.0084,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "by_brain": {
+        "markov": {
+          "n": 1232,
+          "mean": 1.7167,
+          "ge3": 170,
+          "ge3_rate": 0.138,
+          "ge4": 12,
+          "ge4_rate": 0.0097,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "review": {
+          "n": 1233,
+          "mean": 1.6975,
+          "ge3": 150,
+          "ge3_rate": 0.1217,
+          "ge4": 13,
+          "ge4_rate": 0.0105,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "stat": {
+          "n": 1233,
+          "mean": 1.7186,
+          "ge3": 137,
+          "ge3_rate": 0.1111,
+          "ge4": 6,
+          "ge4_rate": 0.0049,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "zone_match_rate_all": 0.0957
+    },
+    "oracle_zone": {
+      "all": {
+        "n": 3698,
+        "mean": 0.9262,
+        "ge3": 144,
+        "ge3_rate": 0.0389,
+        "ge4": 16,
+        "ge4_rate": 0.0043,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "by_brain": {
+        "markov": {
+          "n": 1232,
+          "mean": 0.9188,
+          "ge3": 50,
+          "ge3_rate": 0.0406,
+          "ge4": 6,
+          "ge4_rate": 0.0049,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "review": {
+          "n": 1233,
+          "mean": 0.9319,
+          "ge3": 55,
+          "ge3_rate": 0.0446,
+          "ge4": 7,
+          "ge4_rate": 0.0057,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "stat": {
+          "n": 1233,
+          "mean": 0.9278,
+          "ge3": 39,
+          "ge3_rate": 0.0316,
+          "ge4": 3,
+          "ge4_rate": 0.0024,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "zone_match_rate_all": 0.3283
+    },
+    "prev_zone": {
+      "all": {
+        "n": 3698,
+        "mean": 0.8094,
+        "ge3": 94,
+        "ge3_rate": 0.0254,
+        "ge4": 5,
+        "ge4_rate": 0.0014,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "by_brain": {
+        "markov": {
+          "n": 1232,
+          "mean": 0.8174,
+          "ge3": 27,
+          "ge3_rate": 0.0219,
+          "ge4": 2,
+          "ge4_rate": 0.0016,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "review": {
+          "n": 1233,
+          "mean": 0.8102,
+          "ge3": 42,
+          "ge3_rate": 0.0341,
+          "ge4": 2,
+          "ge4_rate": 0.0016,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "stat": {
+          "n": 1233,
+          "mean": 0.8005,
+          "ge3": 25,
+          "ge3_rate": 0.0203,
+          "ge4": 1,
+          "ge4_rate": 0.0008,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "zone_match_rate_all": 0.1041
+    },
+    "bal_222": {
+      "all": {
+        "n": 3698,
+        "mean": 0.821,
+        "ge3": 95,
+        "ge3_rate": 0.0257,
+        "ge4": 6,
+        "ge4_rate": 0.0016,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "by_brain": {
+        "markov": {
+          "n": 1232,
+          "mean": 0.8198,
+          "ge3": 33,
+          "ge3_rate": 0.0268,
+          "ge4": 2,
+          "ge4_rate": 0.0016,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "review": {
+          "n": 1233,
+          "mean": 0.8175,
+          "ge3": 34,
+          "ge3_rate": 0.0276,
+          "ge4": 2,
+          "ge4_rate": 0.0016,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "stat": {
+          "n": 1233,
+          "mean": 0.8256,
+          "ge3": 28,
+          "ge3_rate": 0.0227,
+          "ge4": 2,
+          "ge4_rate": 0.0016,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "zone_match_rate_all": 0.1198
+    },
+    "recent20_mode": {
+      "all": {
+        "n": 3698,
+        "mean": 0.818,
+        "ge3": 105,
+        "ge3_rate": 0.0284,
+        "ge4": 10,
+        "ge4_rate": 0.0027,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "by_brain": {
+        "markov": {
+          "n": 1232,
+          "mean": 0.8255,
+          "ge3": 31,
+          "ge3_rate": 0.0252,
+          "ge4": 2,
+          "ge4_rate": 0.0016,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "review": {
+          "n": 1233,
+          "mean": 0.8183,
+          "ge3": 41,
+          "ge3_rate": 0.0333,
+          "ge4": 5,
+          "ge4_rate": 0.0041,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "stat": {
+          "n": 1233,
+          "mean": 0.8102,
+          "ge3": 33,
+          "ge3_rate": 0.0268,
+          "ge4": 3,
+          "ge4_rate": 0.0024,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "zone_match_rate_all": 0.1152
+    }
+  },
+  "deltas_vs_baseline": {
+    "oracle_zone": {
+      "mean_delta": -0.7847,
+      "ge3_rate_delta": -0.0847,
+      "ge4_rate_delta": -0.0041
+    },
+    "prev_zone": {
+      "mean_delta": -0.9015,
+      "ge3_rate_delta": -0.0982,
+      "ge4_rate_delta": -0.007
+    },
+    "bal_222": {
+      "mean_delta": -0.8899,
+      "ge3_rate_delta": -0.0979,
+      "ge4_rate_delta": -0.0068
+    },
+    "recent20_mode": {
+      "mean_delta": -0.8929,
+      "ge3_rate_delta": -0.0952,
+      "ge4_rate_delta": -0.0057
+    }
+  },
+  "verdict": {
+    "oracle_ceiling_mean": 0.9262,
+    "best_blind_policy": "bal_222",
+    "best_blind_mean": 0.821,
+    "baseline_mean": 1.7109,
+    "promote_wire": false,
+    "live_conf_mean": 0.8264,
+    "live_conf_top2_222_mean": 0.8231
+  },
+  "hyung_idea_note": "뇌내 몰아주기=기회 실측·선별난제(관측고정). 구간 승격=PATTERN-1 신호의 사전 적용 시도.",
+  "ai_ideas_applied": [
+    "oracle zone ceiling vs blind policies",
+    "prev-draw LMH carry (structure Markov without claiming ball prediction)",
+    "2:2:2 balance warrant alignment",
+    "recent20 empirical mode"
+  ],
+  "next": "SLICE 관측유지 · NEXT=K-ATTACK-BAYES (3뇌 동적가중)",
+  "live_proxy": {
+    "conf_only": {
+      "n": 3698,
+      "mean": 0.8264,
+      "ge3_rate": 0.0279,
+      "ge4_rate": 0.0022
+    },
+    "conf_top2_then_222": {
+      "n": 3698,
+      "mean": 0.8231,
+      "ge3_rate": 0.0265,
+      "ge4_rate": 0.0019
+    },
+    "conf_top2_oracle": {
+      "n": 3698,
+      "mean": 1.2261,
+      "ge3_rate": 0.0554,
+      "ge4_rate": 0.0041
+    },
+    "delta_222_vs_conf": {
+      "mean": -0.0033,
+      "ge4": -0.0003
+    }
+  }
+}

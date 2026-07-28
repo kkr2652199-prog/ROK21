@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-GATHER-V1 · singleton 4.9/6 · v1회수0 · NEXT=V2(V축소)
+📌 사유: K-ATTACK-SLICE · 구간승격 보류 · NEXT=BAYES
 
 ---
 
@@ -11,8 +11,9 @@
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | BASELINE_PIN | **`640cb67`** |
-| 3DB MAX | **1234** (1235 미발표) |
-| GATHER | ①~④ DONE · V1 DONE · **WIRE 보류** · NEXT=V2 |
+| 3DB MAX | **1234** |
+| GATHER | 관측고정 (아이디어 OK · WIRE 보류) |
+| SLICE | 관측유지 · 배선 보류 |
 
 ---
 
@@ -20,30 +21,30 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-GATHER-V1** | oracle 분해 · 독립집합 파일럿 · 천장 | 회수0 · WIRE 보류 |
-| **K-POS~PILOT** | 자릿수·흩어짐·gather v0 | SCATTER PASS |
-| **K-PATTERN-2+COVER1** | 패턴가중기각 · 정직1등확률 | JSON |
+| **K-ATTACK-SLICE** | LMH 승격 정책 비교 · live conf proxy | 배선 보류 |
+| **K-GATHER-V2** | V축소 covering | 회수0 · 관측고정 |
+| **K-GATHER-V1** | oracle 찢김 | 회수0 |
 
 ---
 
-## 2) V1 핵심
+## 2) SLICE 핵심
 
 | 항목 | 값 |
 |------|-----|
-| 승자 단독출현 mean | **4.9/6** |
-| \|V\| mean (union6) | **24.7** |
-| v1 ge6 회수 | **0/21** |
+| conf_only mean | 0.826 |
+| conf top2→222 | 0.823 (무이득) |
+| conf top2 oracle | **1.226** (정렬 개선 여지) |
 
 ---
 
 ## 3) 다음
 
-`K-GATHER-V2` — V축소(단독·자리·구간·confidence) 후 covering PILOT  
-근거: `reports/20260729_KGATHER_V1.md`
+`K-ATTACK-BAYES` — 3뇌 동적가중  
+근거: `reports/20260729_KATTACK_SLICE.md`
 
 ---
 
 ## 4) 산출물
 
-- `docs/benchmarks/20260729_KGATHER_v1_*.json`
-- `reports/20260729_KGATHER_V1.md`
+- `docs/benchmarks/20260729_KATTACK_slice.json`
+- `reports/20260729_KATTACK_SLICE.md`

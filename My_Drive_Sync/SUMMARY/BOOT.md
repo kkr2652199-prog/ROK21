@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만
-- 직전: V1 oracle 찢김
-- 다음: K-ATTACK-SLICE — 구간일치 승격
+- 지금: K-ATTACK-SLICE — 구간단독승격 실패 · conf top2 천장 1.23 · **BAYES 다음**
+- 직전: GATHER 관측고정 (아이디어 유효·휴리스틱 미달)
+- 다음: K-ATTACK-BAYES — 3뇌 동적가중 시뮬
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

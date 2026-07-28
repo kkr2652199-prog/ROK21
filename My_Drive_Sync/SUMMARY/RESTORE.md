@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5284502` · WORK=`IDLE`
-2. **지금:** K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만
-3. **다음1건:** K-ATTACK-SLICE — PATTERN-1 구간(LMH) 일치 필터로 라이브/시뮬 세트 승격 · before/after JSON (READ-ONLY 우선) (승인필요=아니오 · 선행=GATHER v0~v2 WIRE 보류·관측고정 · 구간신호 35%vs5%)
+1. **HEAD:** `7a40872` · WORK=`IDLE`
+2. **지금:** K-ATTACK-SLICE — 구간단독승격 실패 · conf top2 천장 1.23 · **BAYES 다음**
+3. **다음1건:** K-ATTACK-BAYES — 3뇌 동적가중(상관↓·최근창) — conf/발권 정렬 개선 시뮬 JSON (READ-ONLY) · SLICE·GATHER 배선 보류 (승인필요=아니오 · 선행=K-ATTACK-SLICE 완료 · conf top2 oracle 1.23 힌트 · CREW Jaccard≈0.11)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | (커밋중) |
 | 2026-07-29 | GATHER-V2·종료체크 | V'=12·회수0·관측고정·hybrid힌트 · NEXT=SLICE | V2 DONE WIRE보류 | `05999a2` |
 | 2026-07-29 | GATHER-V1·종료체크 | oracle 찢김·v1회수0·천장 \|V\|≈25 · NEXT=V2 | V1 DONE WIRE보류 | `d00884c` |
 | 2026-07-29 | 핀 GO·종료체크 | POS·SCATTER·DESIGN·PILOT · 풀6=21 · v0회수0 · NEXT=V1 | ①~④ DONE | `8163d55` |

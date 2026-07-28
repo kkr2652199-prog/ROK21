@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5284502` |
+| HEAD(실측) | `7a40872` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만 |
-| 직전 | V1 oracle 찢김 |
-| BOOT다음 | K-ATTACK-SLICE — 구간일치 승격 |
-| NEXT1 ID | **K-ATTACK-SLICE** |
-| NEXT1 할일 | PATTERN-1 구간(LMH) 일치 필터로 라이브/시뮬 세트 승격 · before/after JSON (READ-ONLY 우선) |
+| 지금 | K-ATTACK-SLICE — 구간단독승격 실패 · conf top2 천장 1.23 · **BAYES 다음** |
+| 직전 | GATHER 관측고정 (아이디어 유효·휴리스틱 미달) |
+| BOOT다음 | K-ATTACK-BAYES — 3뇌 동적가중 시뮬 |
+| NEXT1 ID | **K-ATTACK-BAYES** |
+| NEXT1 할일 | 3뇌 동적가중(상관↓·최근창) — conf/발권 정렬 개선 시뮬 JSON (READ-ONLY) · SLICE·GATHER 배선 보류 |
 | 승인필요 | 아니오 |
-| 선행 | GATHER v0~v2 WIRE 보류·관측고정 · 구간신호 35%vs5% |
+| 선행 | K-ATTACK-SLICE 완료 · conf top2 oracle 1.23 힌트 · CREW Jaccard≈0.11 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5284502 · 지금=K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만 · 다음=K-ATTACK-SLICE`
+1. 첫줄 `[복귀] HEAD=7a40872 · 지금=K-ATTACK-SLICE — 구간단독승격 실패 · conf top2 천장 1.23 · **BAYES 다음** · 다음=K-ATTACK-BAYES`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 5284502_
+_generated: 7a40872_
