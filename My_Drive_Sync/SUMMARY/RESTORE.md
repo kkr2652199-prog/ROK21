@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c3602da` · WORK=`IDLE`
+1. **HEAD:** `3dc9f59` · WORK=`IDLE`
 2. **지금:** K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음**
 3. **다음1건:** K-ATTACK-CONF-CAL — 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류 (승인필요=아니오 · 선행=K-ATTACK-BAYES 완료 · soft≈null · pick_invcorr < RR · max_conf 약함)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

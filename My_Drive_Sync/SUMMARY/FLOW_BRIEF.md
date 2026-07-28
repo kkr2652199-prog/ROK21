@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c3602da` · WORK=`IDLE`
+- HEAD: `3dc9f59` · WORK=`IDLE`
 - 지금: K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음**
 - 직전: SLICE 구간승격 실패 · JOIN 프롬프트
 - BOOT다음: K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬
