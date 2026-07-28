@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | (커밋중) |
+| 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | `ed4e702` |
 | 2026-07-29 | STRUCT·종료체크 | aux sp0.008·analog≪RR·가중Δ0 · NEXT=HOLD | STRUCT 관측종료 | `7606686` |
 | 2026-07-29 | PROBVEC·종료체크 | 유효신호0 · STRENGTHEN없음 · NEXT=HOLD | PROBVEC DONE | `41c80b0` |
 | 2026-07-29 | OPEN·종료체크 | A/B/C 전부FAIL · 추천없음 · NEXT=HOLD | OPEN DONE | `fa00fe9` |
