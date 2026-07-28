@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `19a4935` · WORK=`IDLE`
-- 지금: K-ATTACK-SLICE — 구간단독승격 실패 · conf top2 천장 1.23 · **BAYES 다음**
-- 직전: GATHER 관측고정 (아이디어 유효·휴리스틱 미달)
+- HEAD: `b17e107` · WORK=`IDLE`
+- 지금: K-ATTACK-SLICE 완료 · conf top2 천장 1.23 · **BAYES 다음**
+- 직전: EXTERNAL_AI_JOIN_PROMPT 신설 (합류 읽기순서)
 - BOOT다음: K-ATTACK-BAYES — 3뇌 동적가중 시뮬
 - NEXT1: K-ATTACK-BAYES — 3뇌 동적가중(상관↓·최근창) — conf/발권 정렬 개선 시뮬 JSON (READ-ONLY) · SLICE·GATHER 배선 보류 (승인=아니오)
 - OPEN샘플: K-00, K-02, K-05
