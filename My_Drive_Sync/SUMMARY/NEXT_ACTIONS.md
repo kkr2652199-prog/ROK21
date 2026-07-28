@@ -3,11 +3,11 @@
 > STEP1 `guard_boot` 는 **아래 `## NEXT (1건)` 블록만** 읽는다. 여러 건 나열 금지.
 
 ## NEXT (1건)
-- ID: K-MARKOV-TUNE
-- 할일: WIRE-V2 PASS(set_no ge3=0.1447 p=0.0007) · markov 세부 파라미터/쿼터 미세조정 여부
-- 선행조건: K-MARKOV-WIRE-V2 완료 · ENABLED=True · 승인필요
+- ID: K-ATTACK-HOLD
+- 할일: TUNE FAIL(best ge3=0.1404≤wire 0.1447) · 현행 V2 배선 유지 · 형·동생 다음 축 재선정
+- 선행조건: K-MARKOV-TUNE 완료 · recommended=K-ATTACK-HOLD · TUNE-WIRE금지
 - 승인필요: 예
-- 최종갱신: 2026-07-29 (K-MARKOV-WIRE-V2 PASS)
+- 최종갱신: 2026-07-29 (K-MARKOV-TUNE FAIL)
 
 ## WORKSTATE
 IDLE
@@ -16,5 +16,5 @@ IDLE
 
 ## 참고 (앵커 아님 · guard 미읽음)
 
-- V1 conf FAIL · V2=E 재현 · 장수확장 금지(NULL)
-- 근거: `docs/benchmarks/20260729_KMARKOV_WIRE_V2_verify.json`
+- 27격자 전부 wire pin 미달 · ENABLED=True(V2) 유지
+- 근거: `docs/benchmarks/20260729_KMARKOV_TUNE_survey.json`

@@ -1,0 +1,408 @@
+{
+  "id": "K-MARKOV-TUNE",
+  "ts": "2026-07-29T04:55:02",
+  "elapsed_sec": 73.2,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "current_wire": {
+    "decay": 0.02,
+    "steps": 80,
+    "top_candidates": 25,
+    "ge3": 0.1447,
+    "mean": 1.7504,
+    "regen_same_params": {
+      "decay": 0.02,
+      "steps": 80,
+      "top_candidates": 25,
+      "mean": 1.7276,
+      "ge3_rate": 0.1193,
+      "ge4_rate": 0.0076,
+      "n": 1182,
+      "ge3_count": 141,
+      "rank": 17
+    },
+    "note": "wire ge3=brain_review E pin · regen은 시드고정 재생성(수치 다를 수 있음)"
+  },
+  "step1_grid": [
+    {
+      "decay": 0.01,
+      "steps": 50,
+      "top_candidates": 35,
+      "mean": 1.7386,
+      "ge3_rate": 0.1404,
+      "ge4_rate": 0.0068,
+      "n": 1182,
+      "ge3_count": 166,
+      "rank": 1
+    },
+    {
+      "decay": 0.02,
+      "steps": 120,
+      "top_candidates": 25,
+      "mean": 1.7318,
+      "ge3_rate": 0.132,
+      "ge4_rate": 0.0085,
+      "n": 1182,
+      "ge3_count": 156,
+      "rank": 2
+    },
+    {
+      "decay": 0.02,
+      "steps": 80,
+      "top_candidates": 20,
+      "mean": 1.7039,
+      "ge3_rate": 0.1286,
+      "ge4_rate": 0.0085,
+      "n": 1182,
+      "ge3_count": 152,
+      "rank": 3
+    },
+    {
+      "decay": 0.01,
+      "steps": 80,
+      "top_candidates": 35,
+      "mean": 1.736,
+      "ge3_rate": 0.1277,
+      "ge4_rate": 0.0068,
+      "n": 1182,
+      "ge3_count": 151,
+      "rank": 4
+    },
+    {
+      "decay": 0.01,
+      "steps": 120,
+      "top_candidates": 35,
+      "mean": 1.7284,
+      "ge3_rate": 0.1277,
+      "ge4_rate": 0.0059,
+      "n": 1182,
+      "ge3_count": 151,
+      "rank": 5
+    },
+    {
+      "decay": 0.05,
+      "steps": 120,
+      "top_candidates": 25,
+      "mean": 1.714,
+      "ge3_rate": 0.1277,
+      "ge4_rate": 0.0034,
+      "n": 1182,
+      "ge3_count": 151,
+      "rank": 6
+    },
+    {
+      "decay": 0.05,
+      "steps": 120,
+      "top_candidates": 20,
+      "mean": 1.7124,
+      "ge3_rate": 0.1269,
+      "ge4_rate": 0.0051,
+      "n": 1182,
+      "ge3_count": 150,
+      "rank": 7
+    },
+    {
+      "decay": 0.01,
+      "steps": 80,
+      "top_candidates": 20,
+      "mean": 1.6988,
+      "ge3_rate": 0.1261,
+      "ge4_rate": 0.0068,
+      "n": 1182,
+      "ge3_count": 149,
+      "rank": 8
+    },
+    {
+      "decay": 0.05,
+      "steps": 50,
+      "top_candidates": 20,
+      "mean": 1.6861,
+      "ge3_rate": 0.1261,
+      "ge4_rate": 0.0059,
+      "n": 1182,
+      "ge3_count": 149,
+      "rank": 9
+    },
+    {
+      "decay": 0.02,
+      "steps": 50,
+      "top_candidates": 35,
+      "mean": 1.7242,
+      "ge3_rate": 0.1244,
+      "ge4_rate": 0.0068,
+      "n": 1182,
+      "ge3_count": 147,
+      "rank": 10
+    },
+    {
+      "decay": 0.05,
+      "steps": 120,
+      "top_candidates": 35,
+      "mean": 1.7183,
+      "ge3_rate": 0.1244,
+      "ge4_rate": 0.0076,
+      "n": 1182,
+      "ge3_count": 147,
+      "rank": 11
+    },
+    {
+      "decay": 0.02,
+      "steps": 80,
+      "top_candidates": 35,
+      "mean": 1.7377,
+      "ge3_rate": 0.1235,
+      "ge4_rate": 0.0093,
+      "n": 1182,
+      "ge3_count": 146,
+      "rank": 12
+    },
+    {
+      "decay": 0.05,
+      "steps": 80,
+      "top_candidates": 25,
+      "mean": 1.7005,
+      "ge3_rate": 0.1235,
+      "ge4_rate": 0.0068,
+      "n": 1182,
+      "ge3_count": 146,
+      "rank": 13
+    },
+    {
+      "decay": 0.05,
+      "steps": 80,
+      "top_candidates": 20,
+      "mean": 1.6844,
+      "ge3_rate": 0.1235,
+      "ge4_rate": 0.0051,
+      "n": 1182,
+      "ge3_count": 146,
+      "rank": 14
+    },
+    {
+      "decay": 0.02,
+      "steps": 50,
+      "top_candidates": 25,
+      "mean": 1.6844,
+      "ge3_rate": 0.121,
+      "ge4_rate": 0.0076,
+      "n": 1182,
+      "ge3_count": 143,
+      "rank": 15
+    },
+    {
+      "decay": 0.02,
+      "steps": 120,
+      "top_candidates": 35,
+      "mean": 1.7343,
+      "ge3_rate": 0.1193,
+      "ge4_rate": 0.0085,
+      "n": 1182,
+      "ge3_count": 141,
+      "rank": 16
+    },
+    {
+      "decay": 0.02,
+      "steps": 80,
+      "top_candidates": 25,
+      "mean": 1.7276,
+      "ge3_rate": 0.1193,
+      "ge4_rate": 0.0076,
+      "n": 1182,
+      "ge3_count": 141,
+      "rank": 17
+    },
+    {
+      "decay": 0.05,
+      "steps": 80,
+      "top_candidates": 35,
+      "mean": 1.7191,
+      "ge3_rate": 0.1184,
+      "ge4_rate": 0.0085,
+      "n": 1182,
+      "ge3_count": 140,
+      "rank": 18
+    },
+    {
+      "decay": 0.01,
+      "steps": 120,
+      "top_candidates": 20,
+      "mean": 1.6904,
+      "ge3_rate": 0.1184,
+      "ge4_rate": 0.0059,
+      "n": 1182,
+      "ge3_count": 140,
+      "rank": 19
+    },
+    {
+      "decay": 0.05,
+      "steps": 50,
+      "top_candidates": 25,
+      "mean": 1.6887,
+      "ge3_rate": 0.1168,
+      "ge4_rate": 0.0042,
+      "n": 1182,
+      "ge3_count": 138,
+      "rank": 20
+    },
+    {
+      "decay": 0.05,
+      "steps": 50,
+      "top_candidates": 35,
+      "mean": 1.6963,
+      "ge3_rate": 0.1159,
+      "ge4_rate": 0.0076,
+      "n": 1182,
+      "ge3_count": 137,
+      "rank": 21
+    },
+    {
+      "decay": 0.01,
+      "steps": 50,
+      "top_candidates": 20,
+      "mean": 1.6574,
+      "ge3_rate": 0.1159,
+      "ge4_rate": 0.0068,
+      "n": 1182,
+      "ge3_count": 137,
+      "rank": 22
+    },
+    {
+      "decay": 0.01,
+      "steps": 50,
+      "top_candidates": 25,
+      "mean": 1.7107,
+      "ge3_rate": 0.1151,
+      "ge4_rate": 0.011,
+      "n": 1182,
+      "ge3_count": 136,
+      "rank": 23
+    },
+    {
+      "decay": 0.02,
+      "steps": 50,
+      "top_candidates": 20,
+      "mean": 1.6658,
+      "ge3_rate": 0.1151,
+      "ge4_rate": 0.0068,
+      "n": 1182,
+      "ge3_count": 136,
+      "rank": 24
+    },
+    {
+      "decay": 0.02,
+      "steps": 120,
+      "top_candidates": 20,
+      "mean": 1.6946,
+      "ge3_rate": 0.1117,
+      "ge4_rate": 0.0076,
+      "n": 1182,
+      "ge3_count": 132,
+      "rank": 25
+    },
+    {
+      "decay": 0.01,
+      "steps": 80,
+      "top_candidates": 25,
+      "mean": 1.6878,
+      "ge3_rate": 0.1083,
+      "ge4_rate": 0.0068,
+      "n": 1182,
+      "ge3_count": 128,
+      "rank": 26
+    },
+    {
+      "decay": 0.01,
+      "steps": 120,
+      "top_candidates": 25,
+      "mean": 1.6709,
+      "ge3_rate": 0.1041,
+      "ge4_rate": 0.0076,
+      "n": 1182,
+      "ge3_count": 123,
+      "rank": 27
+    }
+  ],
+  "step2_top5": [
+    {
+      "decay": 0.01,
+      "steps": 50,
+      "top_candidates": 35,
+      "mean": 1.7386,
+      "ge3_rate": 0.1404,
+      "ge4_rate": 0.0068,
+      "delta_ge3_vs_wire": -0.0043,
+      "p_value": 0.002767,
+      "verdict": "하락",
+      "n": 1182
+    },
+    {
+      "decay": 0.02,
+      "steps": 120,
+      "top_candidates": 25,
+      "mean": 1.7318,
+      "ge3_rate": 0.132,
+      "ge4_rate": 0.0085,
+      "delta_ge3_vs_wire": -0.0127,
+      "p_value": 0.028454,
+      "verdict": "하락",
+      "n": 1182
+    },
+    {
+      "decay": 0.02,
+      "steps": 80,
+      "top_candidates": 20,
+      "mean": 1.7039,
+      "ge3_rate": 0.1286,
+      "ge4_rate": 0.0085,
+      "delta_ge3_vs_wire": -0.0161,
+      "p_value": 0.060399,
+      "verdict": "하락",
+      "n": 1182
+    },
+    {
+      "decay": 0.01,
+      "steps": 80,
+      "top_candidates": 35,
+      "mean": 1.736,
+      "ge3_rate": 0.1277,
+      "ge4_rate": 0.0068,
+      "delta_ge3_vs_wire": -0.017,
+      "p_value": 0.071752,
+      "verdict": "하락",
+      "n": 1182
+    },
+    {
+      "decay": 0.01,
+      "steps": 120,
+      "top_candidates": 35,
+      "mean": 1.7284,
+      "ge3_rate": 0.1277,
+      "ge4_rate": 0.0059,
+      "delta_ge3_vs_wire": -0.017,
+      "p_value": 0.071752,
+      "verdict": "하락",
+      "n": 1182
+    }
+  ],
+  "best_combo": {
+    "decay": 0.01,
+    "steps": 50,
+    "top_candidates": 35,
+    "ge3_rate": 0.1404,
+    "mean": 1.7386,
+    "ge4_rate": 0.0068,
+    "p_value": 0.002767
+  },
+  "gates": {
+    "any_ge3_gt_wire_1447": false,
+    "best_ge3": 0.1404,
+    "best_p": 0.002767,
+    "pass": false
+  },
+  "recommended_next": "K-ATTACK-HOLD",
+  "verdict": "FAIL: best ge3=0.1404 ≤ wire 0.1447 (또는 p>=0.05). 현재 배선(0.02/80/25) 유지 · HOLD.",
+  "db_code_write": false
+}
