@@ -1,0 +1,813 @@
+{
+  "id": "K-SETNO-HITMAP",
+  "ts": "2026-07-29T07:38:32",
+  "elapsed_sec": 0.3,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "null_ge3": 0.1137,
+  "v2_pin": {
+    "source": "docs/benchmarks/20260729_KMARKOV_WIRE_V2_verify.json",
+    "ge3_rate": 0.1447,
+    "mean": 1.7504,
+    "quota": {
+      "markov": [
+        1,
+        2,
+        3
+      ],
+      "stat": [
+        1
+      ],
+      "review": [
+        1
+      ]
+    }
+  },
+  "hypothesis": "V2 뇌쿼터 고정 상태에서 뇌내 set_no 적중 분포가 비균등하면 동일 5장 비용으로 set_no 재배치가 ge3를 개선할 수 있다.",
+  "orthogonal_to_v2": true,
+  "hitmap_brain_setno": {
+    "markov|1": {
+      "n": 1182,
+      "mean": 0.8105,
+      "ge3": 40,
+      "ge3_rate": 0.0338,
+      "ge4": 1,
+      "ge4_rate": 0.0008
+    },
+    "markov|2": {
+      "n": 1182,
+      "mean": 0.7885,
+      "ge3": 36,
+      "ge3_rate": 0.0305,
+      "ge4": 2,
+      "ge4_rate": 0.0017
+    },
+    "markov|3": {
+      "n": 1182,
+      "mean": 0.8367,
+      "ge3": 43,
+      "ge3_rate": 0.0364,
+      "ge4": 6,
+      "ge4_rate": 0.0051
+    },
+    "markov|4": {
+      "n": 1182,
+      "mean": 0.7885,
+      "ge3": 26,
+      "ge3_rate": 0.022,
+      "ge4": 0,
+      "ge4_rate": 0.0
+    },
+    "markov|5": {
+      "n": 1182,
+      "mean": 0.8579,
+      "ge3": 36,
+      "ge3_rate": 0.0305,
+      "ge4": 1,
+      "ge4_rate": 0.0008
+    },
+    "review|1": {
+      "n": 1182,
+      "mean": 0.8376,
+      "ge3": 44,
+      "ge3_rate": 0.0372,
+      "ge4": 3,
+      "ge4_rate": 0.0025
+    },
+    "review|2": {
+      "n": 1182,
+      "mean": 0.7893,
+      "ge3": 30,
+      "ge3_rate": 0.0254,
+      "ge4": 5,
+      "ge4_rate": 0.0042
+    },
+    "review|3": {
+      "n": 1182,
+      "mean": 0.8105,
+      "ge3": 28,
+      "ge3_rate": 0.0237,
+      "ge4": 2,
+      "ge4_rate": 0.0017
+    },
+    "review|4": {
+      "n": 1182,
+      "mean": 0.8164,
+      "ge3": 29,
+      "ge3_rate": 0.0245,
+      "ge4": 2,
+      "ge4_rate": 0.0017
+    },
+    "review|5": {
+      "n": 1182,
+      "mean": 0.7851,
+      "ge3": 28,
+      "ge3_rate": 0.0237,
+      "ge4": 2,
+      "ge4_rate": 0.0017
+    },
+    "stat|1": {
+      "n": 1182,
+      "mean": 0.8147,
+      "ge3": 28,
+      "ge3_rate": 0.0237,
+      "ge4": 0,
+      "ge4_rate": 0.0
+    },
+    "stat|2": {
+      "n": 1182,
+      "mean": 0.8037,
+      "ge3": 25,
+      "ge3_rate": 0.0212,
+      "ge4": 1,
+      "ge4_rate": 0.0008
+    },
+    "stat|3": {
+      "n": 1182,
+      "mean": 0.7953,
+      "ge3": 31,
+      "ge3_rate": 0.0262,
+      "ge4": 4,
+      "ge4_rate": 0.0034
+    },
+    "stat|4": {
+      "n": 1182,
+      "mean": 0.7665,
+      "ge3": 23,
+      "ge3_rate": 0.0195,
+      "ge4": 0,
+      "ge4_rate": 0.0
+    },
+    "stat|5": {
+      "n": 1182,
+      "mean": 0.7766,
+      "ge3": 27,
+      "ge3_rate": 0.0228,
+      "ge4": 1,
+      "ge4_rate": 0.0008
+    }
+  },
+  "brain_setno_rank_by_ge3": {
+    "stat": [
+      {
+        "set_no": 3,
+        "n": 1182,
+        "mean": 0.7953,
+        "ge3": 31,
+        "ge3_rate": 0.0262,
+        "ge4": 4,
+        "ge4_rate": 0.0034
+      },
+      {
+        "set_no": 1,
+        "n": 1182,
+        "mean": 0.8147,
+        "ge3": 28,
+        "ge3_rate": 0.0237,
+        "ge4": 0,
+        "ge4_rate": 0.0
+      },
+      {
+        "set_no": 5,
+        "n": 1182,
+        "mean": 0.7766,
+        "ge3": 27,
+        "ge3_rate": 0.0228,
+        "ge4": 1,
+        "ge4_rate": 0.0008
+      },
+      {
+        "set_no": 2,
+        "n": 1182,
+        "mean": 0.8037,
+        "ge3": 25,
+        "ge3_rate": 0.0212,
+        "ge4": 1,
+        "ge4_rate": 0.0008
+      },
+      {
+        "set_no": 4,
+        "n": 1182,
+        "mean": 0.7665,
+        "ge3": 23,
+        "ge3_rate": 0.0195,
+        "ge4": 0,
+        "ge4_rate": 0.0
+      }
+    ],
+    "markov": [
+      {
+        "set_no": 3,
+        "n": 1182,
+        "mean": 0.8367,
+        "ge3": 43,
+        "ge3_rate": 0.0364,
+        "ge4": 6,
+        "ge4_rate": 0.0051
+      },
+      {
+        "set_no": 1,
+        "n": 1182,
+        "mean": 0.8105,
+        "ge3": 40,
+        "ge3_rate": 0.0338,
+        "ge4": 1,
+        "ge4_rate": 0.0008
+      },
+      {
+        "set_no": 5,
+        "n": 1182,
+        "mean": 0.8579,
+        "ge3": 36,
+        "ge3_rate": 0.0305,
+        "ge4": 1,
+        "ge4_rate": 0.0008
+      },
+      {
+        "set_no": 2,
+        "n": 1182,
+        "mean": 0.7885,
+        "ge3": 36,
+        "ge3_rate": 0.0305,
+        "ge4": 2,
+        "ge4_rate": 0.0017
+      },
+      {
+        "set_no": 4,
+        "n": 1182,
+        "mean": 0.7885,
+        "ge3": 26,
+        "ge3_rate": 0.022,
+        "ge4": 0,
+        "ge4_rate": 0.0
+      }
+    ],
+    "review": [
+      {
+        "set_no": 1,
+        "n": 1182,
+        "mean": 0.8376,
+        "ge3": 44,
+        "ge3_rate": 0.0372,
+        "ge4": 3,
+        "ge4_rate": 0.0025
+      },
+      {
+        "set_no": 2,
+        "n": 1182,
+        "mean": 0.7893,
+        "ge3": 30,
+        "ge3_rate": 0.0254,
+        "ge4": 5,
+        "ge4_rate": 0.0042
+      },
+      {
+        "set_no": 4,
+        "n": 1182,
+        "mean": 0.8164,
+        "ge3": 29,
+        "ge3_rate": 0.0245,
+        "ge4": 2,
+        "ge4_rate": 0.0017
+      },
+      {
+        "set_no": 3,
+        "n": 1182,
+        "mean": 0.8105,
+        "ge3": 28,
+        "ge3_rate": 0.0237,
+        "ge4": 2,
+        "ge4_rate": 0.0017
+      },
+      {
+        "set_no": 5,
+        "n": 1182,
+        "mean": 0.7851,
+        "ge3": 28,
+        "ge3_rate": 0.0237,
+        "ge4": 2,
+        "ge4_rate": 0.0017
+      }
+    ]
+  },
+  "named_policies": {
+    "v2_asc": {
+      "quota": {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": [
+          1
+        ],
+        "review": [
+          1
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7504,
+      "ge3": 171,
+      "ge3_rate": 0.1447,
+      "ge4": 12,
+      "ge4_rate": 0.0102,
+      "p_vs_null": 0.000679,
+      "delta_ge3_vs_v2pin": 0.0,
+      "delta_mean_vs_v2pin": 0.0,
+      "beats_v2_ge3": false,
+      "pass_vs_null": true
+    },
+    "markov_skip2": {
+      "quota": {
+        "markov": [
+          1,
+          3,
+          5
+        ],
+        "stat": [
+          1
+        ],
+        "review": [
+          1
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7394,
+      "ge3": 170,
+      "ge3_rate": 0.1438,
+      "ge4": 11,
+      "ge4_rate": 0.0093,
+      "p_vs_null": 0.00091,
+      "delta_ge3_vs_v2pin": -0.0009,
+      "delta_mean_vs_v2pin": -0.011,
+      "beats_v2_ge3": false,
+      "pass_vs_null": false
+    },
+    "markov_mid": {
+      "quota": {
+        "markov": [
+          2,
+          3,
+          4
+        ],
+        "stat": [
+          1
+        ],
+        "review": [
+          1
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7504,
+      "ge3": 163,
+      "ge3_rate": 0.1379,
+      "ge4": 11,
+      "ge4_rate": 0.0093,
+      "p_vs_null": 0.005955,
+      "delta_ge3_vs_v2pin": -0.0068,
+      "delta_mean_vs_v2pin": 0.0,
+      "beats_v2_ge3": false,
+      "pass_vs_null": false
+    },
+    "markov_hi": {
+      "quota": {
+        "markov": [
+          3,
+          4,
+          5
+        ],
+        "stat": [
+          1
+        ],
+        "review": [
+          1
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7563,
+      "ge3": 162,
+      "ge3_rate": 0.1371,
+      "ge4": 10,
+      "ge4_rate": 0.0085,
+      "p_vs_null": 0.007591,
+      "delta_ge3_vs_v2pin": -0.0076,
+      "delta_mean_vs_v2pin": 0.0059,
+      "beats_v2_ge3": false,
+      "pass_vs_null": false
+    },
+    "slot_stat2": {
+      "quota": {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": [
+          2
+        ],
+        "review": [
+          1
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7496,
+      "ge3": 170,
+      "ge3_rate": 0.1438,
+      "ge4": 13,
+      "ge4_rate": 0.011,
+      "p_vs_null": 0.00091,
+      "delta_ge3_vs_v2pin": -0.0009,
+      "delta_mean_vs_v2pin": -0.0008,
+      "beats_v2_ge3": false,
+      "pass_vs_null": false
+    },
+    "slot_stat3": {
+      "quota": {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": [
+          3
+        ],
+        "review": [
+          1
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7623,
+      "ge3": 175,
+      "ge3_rate": 0.1481,
+      "ge4": 16,
+      "ge4_rate": 0.0135,
+      "p_vs_null": 0.000197,
+      "delta_ge3_vs_v2pin": 0.0034,
+      "delta_mean_vs_v2pin": 0.0119,
+      "beats_v2_ge3": true,
+      "pass_vs_null": true
+    },
+    "slot_rev2": {
+      "quota": {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": [
+          1
+        ],
+        "review": [
+          2
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7572,
+      "ge3": 159,
+      "ge3_rate": 0.1345,
+      "ge4": 14,
+      "ge4_rate": 0.0118,
+      "p_vs_null": 0.015128,
+      "delta_ge3_vs_v2pin": -0.0102,
+      "delta_mean_vs_v2pin": 0.0068,
+      "beats_v2_ge3": false,
+      "pass_vs_null": false
+    },
+    "slot_both2": {
+      "quota": {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": [
+          2
+        ],
+        "review": [
+          2
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7504,
+      "ge3": 157,
+      "ge3_rate": 0.1328,
+      "ge4": 15,
+      "ge4_rate": 0.0127,
+      "p_vs_null": 0.0232,
+      "delta_ge3_vs_v2pin": -0.0119,
+      "delta_mean_vs_v2pin": 0.0,
+      "beats_v2_ge3": false,
+      "pass_vs_null": false
+    },
+    "slot_both3": {
+      "quota": {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": [
+          3
+        ],
+        "review": [
+          3
+        ]
+      },
+      "n": 1182,
+      "mean": 1.742,
+      "ge3": 159,
+      "ge3_rate": 0.1345,
+      "ge4": 15,
+      "ge4_rate": 0.0127,
+      "p_vs_null": 0.015128,
+      "delta_ge3_vs_v2pin": -0.0102,
+      "delta_mean_vs_v2pin": -0.0084,
+      "beats_v2_ge3": false,
+      "pass_vs_null": false
+    },
+    "mix_m135_s3_r3": {
+      "quota": {
+        "markov": [
+          1,
+          3,
+          5
+        ],
+        "stat": [
+          3
+        ],
+        "review": [
+          3
+        ]
+      },
+      "n": 1182,
+      "mean": 1.7301,
+      "ge3": 158,
+      "ge3_rate": 0.1337,
+      "ge4": 14,
+      "ge4_rate": 0.0118,
+      "p_vs_null": 0.018794,
+      "delta_ge3_vs_v2pin": -0.011,
+      "delta_mean_vs_v2pin": -0.0203,
+      "beats_v2_ge3": false,
+      "pass_vs_null": false
+    }
+  },
+  "grid_C53_markov_x_slot123": {
+    "n_configs": 90,
+    "top10": [
+      {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": 3,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.7623,
+        "ge3": 175,
+        "ge3_rate": 0.1481,
+        "ge4": 16,
+        "ge4_rate": 0.0135,
+        "p_vs_null": 0.000197,
+        "delta_ge3_vs_v2pin": 0.0034,
+        "delta_mean_vs_v2pin": 0.0119,
+        "beats_v2_ge3": true,
+        "pass_vs_null": true
+      },
+      {
+        "markov": [
+          1,
+          3,
+          5
+        ],
+        "stat": 3,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.747,
+        "ge3": 174,
+        "ge3_rate": 0.1472,
+        "ge4": 15,
+        "ge4_rate": 0.0127,
+        "p_vs_null": 0.000271,
+        "delta_ge3_vs_v2pin": 0.0025,
+        "delta_mean_vs_v2pin": -0.0034,
+        "beats_v2_ge3": true,
+        "pass_vs_null": true
+      },
+      {
+        "markov": [
+          2,
+          3,
+          5
+        ],
+        "stat": 3,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.764,
+        "ge3": 172,
+        "ge3_rate": 0.1455,
+        "ge4": 16,
+        "ge4_rate": 0.0135,
+        "p_vs_null": 0.000503,
+        "delta_ge3_vs_v2pin": 0.0008,
+        "delta_mean_vs_v2pin": 0.0136,
+        "beats_v2_ge3": true,
+        "pass_vs_null": true
+      },
+      {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": 1,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.7504,
+        "ge3": 171,
+        "ge3_rate": 0.1447,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "p_vs_null": 0.000679,
+        "delta_ge3_vs_v2pin": 0.0,
+        "delta_mean_vs_v2pin": 0.0,
+        "beats_v2_ge3": false,
+        "pass_vs_null": true
+      },
+      {
+        "markov": [
+          1,
+          2,
+          5
+        ],
+        "stat": 3,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.7428,
+        "ge3": 171,
+        "ge3_rate": 0.1447,
+        "ge4": 11,
+        "ge4_rate": 0.0093,
+        "p_vs_null": 0.000679,
+        "delta_ge3_vs_v2pin": 0.0,
+        "delta_mean_vs_v2pin": -0.0076,
+        "beats_v2_ge3": false,
+        "pass_vs_null": true
+      },
+      {
+        "markov": [
+          2,
+          3,
+          5
+        ],
+        "stat": 1,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.7513,
+        "ge3": 170,
+        "ge3_rate": 0.1438,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "p_vs_null": 0.00091,
+        "delta_ge3_vs_v2pin": -0.0009,
+        "delta_mean_vs_v2pin": 0.0009,
+        "beats_v2_ge3": false,
+        "pass_vs_null": false
+      },
+      {
+        "markov": [
+          1,
+          2,
+          3
+        ],
+        "stat": 2,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.7496,
+        "ge3": 170,
+        "ge3_rate": 0.1438,
+        "ge4": 13,
+        "ge4_rate": 0.011,
+        "p_vs_null": 0.00091,
+        "delta_ge3_vs_v2pin": -0.0009,
+        "delta_mean_vs_v2pin": -0.0008,
+        "beats_v2_ge3": false,
+        "pass_vs_null": false
+      },
+      {
+        "markov": [
+          1,
+          3,
+          5
+        ],
+        "stat": 1,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.7394,
+        "ge3": 170,
+        "ge3_rate": 0.1438,
+        "ge4": 11,
+        "ge4_rate": 0.0093,
+        "p_vs_null": 0.00091,
+        "delta_ge3_vs_v2pin": -0.0009,
+        "delta_mean_vs_v2pin": -0.011,
+        "beats_v2_ge3": false,
+        "pass_vs_null": false
+      },
+      {
+        "markov": [
+          1,
+          3,
+          5
+        ],
+        "stat": 2,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.7377,
+        "ge3": 169,
+        "ge3_rate": 0.143,
+        "ge4": 12,
+        "ge4_rate": 0.0102,
+        "p_vs_null": 0.001214,
+        "delta_ge3_vs_v2pin": -0.0017,
+        "delta_mean_vs_v2pin": -0.0127,
+        "beats_v2_ge3": false,
+        "pass_vs_null": false
+      },
+      {
+        "markov": [
+          2,
+          3,
+          5
+        ],
+        "stat": 2,
+        "review": 1,
+        "n": 1182,
+        "mean": 1.7445,
+        "ge3": 168,
+        "ge3_rate": 0.1421,
+        "ge4": 13,
+        "ge4_rate": 0.011,
+        "p_vs_null": 0.001607,
+        "delta_ge3_vs_v2pin": -0.0026,
+        "delta_mean_vs_v2pin": -0.0059,
+        "beats_v2_ge3": false,
+        "pass_vs_null": false
+      }
+    ],
+    "v2_row": {
+      "markov": [
+        1,
+        2,
+        3
+      ],
+      "stat": 1,
+      "review": 1,
+      "n": 1182,
+      "mean": 1.7504,
+      "ge3": 171,
+      "ge3_rate": 0.1447,
+      "ge4": 12,
+      "ge4_rate": 0.0102,
+      "p_vs_null": 0.000679,
+      "delta_ge3_vs_v2pin": 0.0,
+      "delta_mean_vs_v2pin": 0.0,
+      "beats_v2_ge3": false,
+      "pass_vs_null": true
+    },
+    "best": {
+      "markov": [
+        1,
+        2,
+        3
+      ],
+      "stat": 3,
+      "review": 1,
+      "n": 1182,
+      "mean": 1.7623,
+      "ge3": 175,
+      "ge3_rate": 0.1481,
+      "ge4": 16,
+      "ge4_rate": 0.0135,
+      "p_vs_null": 0.000197,
+      "delta_ge3_vs_v2pin": 0.0034,
+      "delta_mean_vs_v2pin": 0.0119,
+      "beats_v2_ge3": true,
+      "pass_vs_null": true
+    }
+  },
+  "gates": {
+    "any_beats_v2_ge3": true,
+    "best_pass_vs_null": true,
+    "best_delta_ge3_ge_0_005": false,
+    "PASS": false
+  },
+  "recommended_next": "없음(HOLD·V2유지)",
+  "recommended_quota": null,
+  "verdict": "FAIL·관측종료→V2유지",
+  "db_code_write": false,
+  "note": "matched_count는 brain_review JSON 저장값(재예측 없음). WIRE/coordinator 미수정. SETPACK(번호몰아주기)과 직교."
+}

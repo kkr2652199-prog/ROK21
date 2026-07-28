@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: SETPACK FAIL · pool ge3 0.101<0.123 · **HOLD**
-- 직전: TUNE FAIL / WIRE-V2 PASS
-- 다음: K-ATTACK-HOLD — V2 유지 · 다음 축 재선정
+- 지금: SETNO-HITMAP FAIL · Δge3+0.0034<0.005 · **HOLD** · V2유지
+- 직전: SETPACK FAIL / TUNE FAIL / WIRE-V2 PASS
+- 다음: K-ATTACK-HOLD — SETNO재탕금지 · 다음 축 재선정
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
