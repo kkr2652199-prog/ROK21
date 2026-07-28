@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1294ce3` |
+| HEAD(실측) | `1df2ee9` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류** |
-| 직전 | 핀①~④ · SCATTER 풀6=21 |
-| BOOT다음 | K-GATHER-V2 — V축소 후 covering PILOT |
-| NEXT1 ID | **K-GATHER-V2** |
-| NEXT1 할일 | V축소(단독출현·자리·구간·confidence) → covering 5장 PILOT · union6 게이트 (ge5≥1 또는 gather≥base) |
-| 승인필요 | 아니오 · WIRE만 형 GO |
-| 선행 | V1 oracle — singleton≈4.9 · \|V\|≈25 · v1 회수0 · WIRE 보류 |
+| 지금 | K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만 |
+| 직전 | V1 oracle 찢김 |
+| BOOT다음 | K-ATTACK-SLICE — 구간일치 승격 |
+| NEXT1 ID | **K-ATTACK-SLICE** |
+| NEXT1 할일 | PATTERN-1 구간(LMH) 일치 필터로 라이브/시뮬 세트 승격 · before/after JSON (READ-ONLY 우선) |
+| 승인필요 | 아니오 |
+| 선행 | GATHER v0~v2 WIRE 보류·관측고정 · 구간신호 35%vs5% |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1294ce3 · 지금=K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류** · 다음=K-GATHER-V2`
+1. 첫줄 `[복귀] HEAD=1df2ee9 · 지금=K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만 · 다음=K-ATTACK-SLICE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

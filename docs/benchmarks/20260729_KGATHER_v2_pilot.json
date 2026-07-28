@@ -1,0 +1,134 @@
+{
+  "id": "K-GATHER-V2",
+  "ts": "2026-07-29T01:28:11",
+  "algo": "shrink_excl_conf_zone + spread_covering5",
+  "ai_extras": [
+    "hybrid best(base,gather) as 10-set ceiling without WIRE",
+    "V shrink target 12 (ensemble literature: reduce candidate set before wheel)"
+  ],
+  "Vp_mean_all": 12.0,
+  "brains": {
+    "stat": {
+      "n": 1233,
+      "Vp_mean": 12.0,
+      "base_best_mean": 1.7186,
+      "gather_best_mean": 1.3998,
+      "delta_mean": -0.3187,
+      "base_ge4": 0.0049,
+      "gather_ge4": 0.0057,
+      "u6_n": 21,
+      "u6_gather_mean": 2.2381,
+      "u6_base_mean": 2.6667,
+      "recover_ge5": 0,
+      "recover_ge6": 0,
+      "improved_rate": 0.1849
+    },
+    "review": {
+      "n": 1233,
+      "Vp_mean": 12.0,
+      "base_best_mean": 1.6975,
+      "gather_best_mean": 1.395,
+      "delta_mean": -0.3025,
+      "base_ge4": 0.0105,
+      "gather_ge4": 0.0057,
+      "u6_n": 8,
+      "u6_gather_mean": 2.0,
+      "u6_base_mean": 3.125,
+      "recover_ge5": 0,
+      "recover_ge6": 0,
+      "improved_rate": 0.1695
+    },
+    "markov": {
+      "n": 1232,
+      "Vp_mean": 12.0,
+      "base_best_mean": 1.7167,
+      "gather_best_mean": 1.3506,
+      "delta_mean": -0.3661,
+      "base_ge4": 0.0097,
+      "gather_ge4": 0.0041,
+      "u6_n": 3,
+      "u6_gather_mean": 2.6667,
+      "u6_base_mean": 3.0,
+      "recover_ge5": 0,
+      "recover_ge6": 0,
+      "improved_rate": 0.151
+    }
+  },
+  "hybrid_10set_proxy": {
+    "stat": {
+      "best_of_base_or_gather_mean": 1.9221,
+      "ge4_rate": 0.0105
+    },
+    "review": {
+      "best_of_base_or_gather_mean": 1.8881,
+      "ge4_rate": 0.0162
+    },
+    "markov": {
+      "best_of_base_or_gather_mean": 1.8864,
+      "ge4_rate": 0.0138
+    }
+  },
+  "stat_u6_sample": [
+    {
+      "draw": 92,
+      "Vp": 12,
+      "act_in_Vp": 4,
+      "base": 2,
+      "gather": 3
+    },
+    {
+      "draw": 97,
+      "Vp": 12,
+      "act_in_Vp": 3,
+      "base": 3,
+      "gather": 2
+    },
+    {
+      "draw": 104,
+      "Vp": 12,
+      "act_in_Vp": 4,
+      "base": 3,
+      "gather": 2
+    },
+    {
+      "draw": 164,
+      "Vp": 12,
+      "act_in_Vp": 3,
+      "base": 4,
+      "gather": 2
+    },
+    {
+      "draw": 318,
+      "Vp": 12,
+      "act_in_Vp": 4,
+      "base": 3,
+      "gather": 3
+    },
+    {
+      "draw": 359,
+      "Vp": 12,
+      "act_in_Vp": 3,
+      "base": 4,
+      "gather": 3
+    },
+    {
+      "draw": 465,
+      "Vp": 12,
+      "act_in_Vp": 4,
+      "base": 2,
+      "gather": 3
+    },
+    {
+      "draw": 476,
+      "Vp": 12,
+      "act_in_Vp": 3,
+      "base": 3,
+      "gather": 2
+    }
+  ],
+  "gate": {
+    "recover_ge5_or_gather_ge_base_on_u6": false,
+    "recommend_wire": false
+  },
+  "next": "GATHER 관측고정 · NEXT=K-ATTACK-SLICE (구간승격)"
+}

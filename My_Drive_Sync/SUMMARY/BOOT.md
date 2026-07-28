@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류**
-- 직전: 핀①~④ · SCATTER 풀6=21
-- 다음: K-GATHER-V2 — V축소 후 covering PILOT
+- 지금: K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만
+- 직전: V1 oracle 찢김
+- 다음: K-ATTACK-SLICE — 구간일치 승격
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

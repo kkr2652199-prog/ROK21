@@ -3,11 +3,11 @@
 > STEP1 `guard_boot` 는 **아래 `## NEXT (1건)` 블록만** 읽는다. 여러 건 나열 금지.
 
 ## NEXT (1건)
-- ID: K-GATHER-V2
-- 할일: V축소(단독출현·자리·구간·confidence) → covering 5장 PILOT · union6 게이트 (ge5≥1 또는 gather≥base)
-- 선행조건: V1 oracle — singleton≈4.9 · \|V\|≈25 · v1 회수0 · WIRE 보류
-- 승인필요: 아니오 · WIRE만 형 GO
-- 최종갱신: 2026-07-29 (K-GATHER-V1)
+- ID: K-ATTACK-SLICE
+- 할일: PATTERN-1 구간(LMH) 일치 필터로 라이브/시뮬 세트 승격 · before/after JSON (READ-ONLY 우선)
+- 선행조건: GATHER v0~v2 WIRE 보류·관측고정 · 구간신호 35%vs5%
+- 승인필요: 아니오
+- 최종갱신: 2026-07-29 (K-GATHER-V2 FAIL→SLICE)
 
 ## WORKSTATE
 IDLE
