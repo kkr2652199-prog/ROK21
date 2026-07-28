@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `21a1de8` · WORK=`IDLE`
+- HEAD: `fc0fb79` · WORK=`IDLE`
 - 지금: K-REFEREE-WINDOW PASS · max_gap=0.1334 · **CONF-CAL 복귀**
 - 직전: NEXT 교체(합의) · learn_state+cutoff W=30
 - BOOT다음: K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬
