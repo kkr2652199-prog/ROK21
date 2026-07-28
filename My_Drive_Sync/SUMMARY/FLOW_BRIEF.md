@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c52b8c3` · WORK=`IDLE`
+- HEAD: `5284502` · WORK=`IDLE`
 - 지금: K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만
 - 직전: V1 oracle 찢김
 - BOOT다음: K-ATTACK-SLICE — 구간일치 승격
