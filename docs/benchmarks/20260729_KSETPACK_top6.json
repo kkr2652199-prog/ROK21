@@ -1,0 +1,276 @@
+{
+  "id": "K-SETPACK-TOP6",
+  "ts": "2026-07-29T07:17:42",
+  "elapsed_sec": 0.6,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "brains": [
+    "stat",
+    "markov",
+    "review"
+  ],
+  "source": "testlotto_brain_review predicted_sets_json",
+  "db_code_write": false,
+  "null_n5": {
+    "null_ge3": 0.1137,
+    "note": "5세트 best-of null"
+  },
+  "method": {
+    "primary_score": "appearance_count_across_5_sets",
+    "sensitivity_score": "confidence_sum_across_sets_containing_number",
+    "set1": "top6 by score desc, tie=number asc",
+    "set2_to_5": "existing set_no 2..5 minus set1 nums; refill preferring non-set1 by score desc; if short allow set1 by score asc",
+    "vs_gather": "GATHER=교차세트 스티치/독립집합으로 승자 모으기 시도; SETPACK=번호점수 top6만 set1에 몰아주기 (스티치 없음)"
+  },
+  "gates_definition": {
+    "pass_per_brain": "setpack best ge3_rate > baseline best ge3_rate AND binom_p(ge3,n,null_ge3=0.1137,greater)<0.05",
+    "pass_pool": "same on pooled 3-brain rows"
+  },
+  "primary_count": {
+    "per_brain": [
+      {
+        "brain": "stat",
+        "n_eval": 1182,
+        "n_skip_hint": 0,
+        "baseline_5": {
+          "best": {
+            "n": 1182,
+            "mean": 1.7124,
+            "ge3": 129,
+            "ge3_rate": 0.1091,
+            "ge4": 6,
+            "ge4_rate": 0.0051
+          },
+          "set1": {
+            "n": 1182,
+            "mean": 0.8147,
+            "ge3": 28,
+            "ge3_rate": 0.0237,
+            "ge4": 0,
+            "ge4_rate": 0.0
+          },
+          "binom_p_vs_null": 0.702489
+        },
+        "setpack_top6": {
+          "best": {
+            "n": 1182,
+            "mean": 1.6574,
+            "ge3": 128,
+            "ge3_rate": 0.1083,
+            "ge4": 14,
+            "ge4_rate": 0.0118
+          },
+          "set1": {
+            "n": 1182,
+            "mean": 0.7733,
+            "ge3": 29,
+            "ge3_rate": 0.0245,
+            "ge4": 3,
+            "ge4_rate": 0.0025
+          },
+          "binom_p_vs_null": 0.733846
+        },
+        "delta_vs_baseline": {
+          "best_mean": -0.055,
+          "best_ge3_rate": -0.0008,
+          "set1_mean": -0.0414,
+          "ge4_rate": 0.0067
+        },
+        "gates": {
+          "best_ge3_gt_baseline": false,
+          "binom_p_vs_null_lt_0_05": false,
+          "pass": false
+        }
+      },
+      {
+        "brain": "markov",
+        "n_eval": 1182,
+        "n_skip_hint": 0,
+        "baseline_5": {
+          "best": {
+            "n": 1182,
+            "mean": 1.7098,
+            "ge3": 161,
+            "ge3_rate": 0.1362,
+            "ge4": 10,
+            "ge4_rate": 0.0085
+          },
+          "set1": {
+            "n": 1182,
+            "mean": 0.8105,
+            "ge3": 40,
+            "ge3_rate": 0.0338,
+            "ge4": 1,
+            "ge4_rate": 0.0008
+          },
+          "binom_p_vs_null": 0.009614
+        },
+        "setpack_top6": {
+          "best": {
+            "n": 1182,
+            "mean": 1.5854,
+            "ge3": 118,
+            "ge3_rate": 0.0998,
+            "ge4": 7,
+            "ge4_rate": 0.0059
+          },
+          "set1": {
+            "n": 1182,
+            "mean": 0.8426,
+            "ge3": 33,
+            "ge3_rate": 0.0279,
+            "ge4": 4,
+            "ge4_rate": 0.0034
+          },
+          "binom_p_vs_null": 0.941286
+        },
+        "delta_vs_baseline": {
+          "best_mean": -0.1244,
+          "best_ge3_rate": -0.0364,
+          "set1_mean": 0.0321,
+          "ge4_rate": -0.0026
+        },
+        "gates": {
+          "best_ge3_gt_baseline": false,
+          "binom_p_vs_null_lt_0_05": false,
+          "pass": false
+        }
+      },
+      {
+        "brain": "review",
+        "n_eval": 1182,
+        "n_skip_hint": 0,
+        "baseline_5": {
+          "best": {
+            "n": 1182,
+            "mean": 1.703,
+            "ge3": 145,
+            "ge3_rate": 0.1227,
+            "ge4": 13,
+            "ge4_rate": 0.011
+          },
+          "set1": {
+            "n": 1182,
+            "mean": 0.8376,
+            "ge3": 44,
+            "ge3_rate": 0.0372,
+            "ge4": 3,
+            "ge4_rate": 0.0025
+          },
+          "binom_p_vs_null": 0.176742
+        },
+        "setpack_top6": {
+          "best": {
+            "n": 1182,
+            "mean": 1.5973,
+            "ge3": 112,
+            "ge3_rate": 0.0948,
+            "ge4": 4,
+            "ge4_rate": 0.0034
+          },
+          "set1": {
+            "n": 1182,
+            "mean": 0.8139,
+            "ge3": 28,
+            "ge3_rate": 0.0237,
+            "ge4": 1,
+            "ge4_rate": 0.0008
+          },
+          "binom_p_vs_null": 0.983885
+        },
+        "delta_vs_baseline": {
+          "best_mean": -0.1057,
+          "best_ge3_rate": -0.0279,
+          "set1_mean": -0.0237,
+          "ge4_rate": -0.0076
+        },
+        "gates": {
+          "best_ge3_gt_baseline": false,
+          "binom_p_vs_null_lt_0_05": false,
+          "pass": false
+        }
+      }
+    ],
+    "pool": {
+      "baseline_best": {
+        "n": 3546,
+        "mean": 1.7084,
+        "ge3": 435,
+        "ge3_rate": 0.1227,
+        "ge4": 29,
+        "ge4_rate": 0.0082,
+        "binom_p_vs_null": 0.049939
+      },
+      "setpack_best": {
+        "n": 3546,
+        "mean": 1.6134,
+        "ge3": 358,
+        "ge3_rate": 0.101,
+        "ge4": 25,
+        "ge4_rate": 0.0071,
+        "binom_p_vs_null": 0.992885
+      },
+      "baseline_set1": {
+        "n": 3546,
+        "mean": 0.8209,
+        "ge3": 112,
+        "ge3_rate": 0.0316,
+        "ge4": 4,
+        "ge4_rate": 0.0011,
+        "binom_p_vs_null": 1.0
+      },
+      "setpack_set1": {
+        "n": 3546,
+        "mean": 0.8099,
+        "ge3": 90,
+        "ge3_rate": 0.0254,
+        "ge4": 8,
+        "ge4_rate": 0.0023,
+        "binom_p_vs_null": 1.0
+      },
+      "delta_best_ge3": -0.0217,
+      "delta_best_mean": -0.095,
+      "delta_set1_mean": -0.011,
+      "gates": {
+        "best_ge3_gt_baseline": false,
+        "binom_p_vs_null_lt_0_05": false,
+        "pass": false
+      }
+    },
+    "any_brain_pass": false,
+    "all_brain_pass": false
+  },
+  "sensitivity_conf_sum": {
+    "per_brain": [
+      {
+        "brain": "stat",
+        "baseline_ge3": 0.1091,
+        "setpack_ge3": 0.11,
+        "setpack_set1_mean": 0.7792,
+        "binom_p_vs_null": 0.669622,
+        "pass": false
+      },
+      {
+        "brain": "markov",
+        "baseline_ge3": 0.1362,
+        "setpack_ge3": 0.0838,
+        "setpack_set1_mean": 0.8587,
+        "binom_p_vs_null": 0.999688,
+        "pass": false
+      },
+      {
+        "brain": "review",
+        "baseline_ge3": 0.1227,
+        "setpack_ge3": 0.1024,
+        "setpack_set1_mean": 0.8206,
+        "binom_p_vs_null": 0.899894,
+        "pass": false
+      }
+    ],
+    "any_brain_pass": false
+  },
+  "recommended_next": "없음",
+  "verdict": "FAIL: setpack best ge3가 현행5를 넘지 못하거나 null p≥0.05. pool pack ge3=0.101 base=0.1227 p_null=0.992885."
+}

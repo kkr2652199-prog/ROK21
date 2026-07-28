@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `2854663` |
+| HEAD(실측) | `751e0ed` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-MARKOV-TUNE FAIL · best0.1404≤wire · **HOLD** |
-| 직전 | WIRE-V2 PASS (set_no=E) |
-| BOOT다음 | K-ATTACK-HOLD — 현행 V2 유지 · 다음 축 재선정 |
+| 지금 | SETPACK FAIL · pool ge3 0.101<0.123 · **HOLD** |
+| 직전 | TUNE FAIL / WIRE-V2 PASS |
+| BOOT다음 | K-ATTACK-HOLD — V2 유지 · 다음 축 재선정 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | TUNE FAIL(best ge3=0.1404≤wire 0.1447) · 현행 V2 배선 유지 · 형·동생 다음 축 재선정 |
+| NEXT1 할일 | SETPACK-TOP6 FAIL(출현top6→set1이 ge3↓) · WIRE금지 · V2유지 · 형·커서 다음 축 1건 재선정 |
 | 승인필요 | 예 |
-| 선행 | K-MARKOV-TUNE 완료 · recommended=K-ATTACK-HOLD · TUNE-WIRE금지 |
+| 선행 | K-SETPACK-TOP6 완료 · recommended=없음 · SETPACK-WIRE금지 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=2854663 · 지금=K-MARKOV-TUNE FAIL · best0.1404≤wire · **HOLD** · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=751e0ed · 지금=SETPACK FAIL · pool ge3 0.101<0.123 · **HOLD** · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 2854663_
+_generated: 751e0ed_
