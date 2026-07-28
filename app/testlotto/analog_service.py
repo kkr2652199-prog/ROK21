@@ -25,8 +25,9 @@ NORM_SPEC: dict[str, float | int] = {
 }
 
 UI_DISCLAIMER = (
-    "역사 유사 장면 · 설명용 · 1등 확률을 높이지 않음 · "
-    "next_draw는 analog 회차의 실제 다음 추첨(관측)이며 미래 예측 보장 없음"
+    "과거에 비슷했던 회차를 찾아 보여 주는 참고용입니다. "
+    "로또 1등 확률을 높이지 않습니다. "
+    "「그다음 회차 번호」는 그때 실제로 추첨된 기록이며, 앞으로도 같을 거라는 뜻이 아닙니다."
 )
 
 
@@ -406,8 +407,8 @@ def _conditional_hint(top1: dict | None, chain8: float) -> dict:
     if not top1:
         return {
             "tier": "none",
-            "label": "유사 후보 없음",
-            "note": "과거 데이터에서 norm_spec 조건을 만족하는 analog가 없습니다.",
+            "label": "비슷한 과거 없음",
+            "note": "조건에 맞는 과거 회차를 찾지 못했습니다.",
         }
     ov = int(top1["overlap"])
     ps = float(top1["pattern_sim"])
@@ -417,32 +418,32 @@ def _conditional_hint(top1: dict | None, chain8: float) -> dict:
     if ps >= 0.95 and ov < 4:
         return {
             "tier": "weak",
-            "label": "패턴-only 주의",
-            "note": "pattern_sim≥0.95 단독 구간은 735회 벤치에서 평균 적중 열위(0.69 vs random 0.78). B-only 함정.",
+            "label": "패턴만 비슷 — 주의",
+            "note": "번호는 많이 겹치지 않고 모양만 비슷한 경우가 많아, 참고용으로만 보세요.",
         }
     if ov >= 4 and ps_bin == "0.85-0.90" and ch_hi:
         return {
             "tier": "context",
-            "label": "설명 강조 구간",
-            "note": "겹침4 + pattern 0.85–0.90 + chain8≥0.85: 735회에서 archive-next 관측이 random보다 나을 가능성(n=144). 예측·확률↑ 아님.",
+            "label": "설명용으로 유용할 수 있음",
+            "note": "번호·패턴·흐름이 모두 어느 정도 비슷한 경우입니다. 그래도 미래 번호 예측은 아닙니다.",
         }
     if ov >= 4:
         return {
             "tier": "neutral",
-            "label": "겹침4 유사",
-            "note": "TOP1 겹침4는 735회에서 analog 평균(0.816)이 random(0.799)에 근소 우위. 전체 예측 엔진으로는 미지지.",
+            "label": "번호 4개 이상 겹침",
+            "note": "과거에 꽤 비슷한 회차입니다. 「그다음 추첨 기록」은 참고만 하세요.",
         }
     return {
         "tier": "neutral",
-        "label": "일반 유사",
-        "note": "겹침3 이하 다수 구간은 random 대비 열위. analog+1은 관측·맥락 설명용.",
+        "label": "일반적인 유사",
+        "note": "과거 비슷 회차의 「그다음 추첨 번호」는 맥락 설명용입니다. 예측 프로그램으로 쓰기엔 근거가 약합니다.",
     }
 
 
 BENCH_VERDICT = {
-    "overall": "735회 walk-forward: analog 집계 6방법 모두 random(0.816) 평균 미달",
-    "match_dist": "0·1·2개 적중이 98%+ — 3개+만 보면 random과 구분 안 됨",
-    "use_case": "예측 엔진 No · 역사 유사 장면+analog+1 관측 설명 Yes",
+    "overall": "과거 735회 테스트: 이 방식만으로 번호 맞추기는 무작위와 비슷하거나 더 낮았습니다",
+    "match_dist": "대부분 0~2개만 맞음 — 3개 이상은 드뭅니다",
+    "use_case": "미래 번호 예측용 ❌ · 과거 비슷 상황 설명용 ✅",
     "source": "docs/benchmarks/20260728_KANALOG_multidim_500.json",
 }
 
@@ -511,7 +512,7 @@ def build_analog_report(draw_no: int) -> dict[str, Any]:
                     "found": nxt_row is not None,
                     "nums": draw_nums(nxt_row) if nxt_row else [],
                     "bonus": int(nxt_row.get("bonus") or 0) if nxt_row else None,
-                    "label": "해당 analog 회차의 실제 다음 추첨(관측)",
+                    "label": "그다음 회차 실제 당첨 번호 (기록)",
                 },
             }
         )

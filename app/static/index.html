@@ -6,7 +6,7 @@
   <title>나의 지식 도서관 — 4군 AI 예측</title>
   <link rel="stylesheet" href="/static/css/lotto4.css?v=20260620c" />
   <link rel="stylesheet" href="/static/css/hyodo.css?v=20260727p5" />
-  <link rel="stylesheet" href="/static/css/testlotto.css?v=20260728b" />
+  <link rel="stylesheet" href="/static/css/testlotto.css?v=20260728c" />
 </head>
 <body>
   <div class="app-shell">
@@ -340,7 +340,7 @@
           <div class="card testlotto-main-card">
             <div class="testlotto-page-head">
               <h2>테스트로또</h2>
-              <p class="stats-hint" role="note">3 미래예측뇌(통계요정·흐름술사·복습왕) + 4 보조뇌 채점 · DB <code>lotto_testlotto.db</code> · 실험 전용</p>
+              <p class="stats-hint" role="note">번호 6개를 맞추는 <strong>3가지 예측 프로그램</strong>과 <strong>4가지 보조 알림</strong>으로 실험합니다. (로또 당첨을 보장하지 않습니다)</p>
             </div>
 
             <!-- ① 회차·당첨 (최상단 — 스크롤해도 보이게) -->
@@ -361,10 +361,10 @@
               <button type="button" class="btn btn-primary" onclick="testlottoPredict()">🧠 두뇌 예측</button>
               <label class="lotto-elite-filter">
                 <input type="checkbox" id="testlottoEliteBrainToggle" onchange="testlottoOnEliteBrainToggle()" />
-                <span>고적중 뇌만</span>
+                <span>과거에 잘 맞춘 프로그램만 보기</span>
               </label>
-              <button type="button" class="btn btn-secondary" onclick="testlottoOpenTierWinsModal()" title="현재 선택 회차의 1~5등 적중 세트만 표시">📋 1~5등 적중</button>
-              <button type="button" class="btn btn-secondary" onclick="testlottoOpenDetailPage()" title="복습·채점·오답분석·학습 상세 (새 탭)">🔍 결과 상세</button>
+              <button type="button" class="btn btn-secondary" onclick="testlottoOpenTierWinsModal()" title="이 회차에서 1~5등에 해당하는 예측만 모아 봅니다">📋 1~5등 맞춘 번호</button>
+              <button type="button" class="btn btn-secondary" onclick="testlottoOpenDetailPage()" title="맞춘 개수·틀린 이유·학습 기록 (새 창)">🔍 자세히 분석</button>
               <button type="button" id="btn-kakao-copy-testlotto" class="testlotto-kakao-btn" onclick="void testlottoCopyKakaoText()">📋 카톡 복사</button>
               <div id="testlottoActionStatus" class="lotto-action-status" role="status" aria-live="polite"></div>
             </div>
@@ -378,8 +378,8 @@
 
             <!-- ④ 명분 패널 (기본 접힘 — 당첨 확인 가림 방지) -->
             <details class="testlotto-warrant-details" id="testlottoWarrantDetails">
-              <summary class="testlotto-warrant-details__summary">뇌 명분 · 제약 · 학습키 (펼치기)</summary>
-              <div id="testlottoWarrantPanel" class="tl-warrant-panel" hidden aria-label="뇌 명분·제약·학습키"></div>
+              <summary class="testlotto-warrant-details__summary">각 프로그램 설명·제한 사항 (펼치기 · 참고용)</summary>
+              <div id="testlottoWarrantPanel" class="tl-warrant-panel" hidden aria-label="프로그램 설명과 제한 사항"></div>
             </details>
           </div>
         </section>
@@ -595,7 +595,7 @@
   </div>
 
   <script src="/static/js/hyodo.js?v=20260727p5"></script>
-  <script src="/static/js/testlotto.js?v=20260728b"></script>
+  <script src="/static/js/testlotto.js?v=20260728c"></script>
   <script src="/static/js/lotto4.js?v=20260620c"></script>
 </body>
 </html>

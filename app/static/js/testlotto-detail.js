@@ -3,9 +3,9 @@
  */
 
 const BRAINS = [
-  { tag: 'stat', name: '통계요정', color: '#3b82f6', short_desc: '최근 빈도·끝수·이월수로 자주 나온 흐름을 잡는다' },
-  { tag: 'markov', name: '흐름술사', color: '#10b981', short_desc: '직전 회차와의 전이·궁합수 연결을 추적한다' },
-  { tag: 'review', name: '복습왕', color: '#f59e0b', short_desc: '과거 오답을 복습해 놓쳤던 구간을 보정한다' },
+  { tag: 'stat', name: '통계요정', color: '#3b82f6', short_desc: '자주 나온 번호·끝자리·이월 번호 위주' },
+  { tag: 'markov', name: '흐름술사', color: '#10b981', short_desc: '직전 회차와 연결·함께 나온 번호 위주' },
+  { tag: 'review', name: '복습왕', color: '#f59e0b', short_desc: '예전 오답을 다시 공부하는 방식' },
 ];
 
 const AUX_BRAINS_META = [
@@ -1124,7 +1124,7 @@ function _renderActual(detail) {
   if (!balls) return;
   const nums = detail.actual_nums || [];
   if (detail.future_only || nums.length < 6) {
-    balls.innerHTML = '<p class="tld-future-hint">아직 추첨 전 — 당첨번호·채점·오답노트는 발표 후 walk-forward 복습으로 기록됩니다.</p>';
+    balls.innerHTML = '<p class="tld-future-hint">아직 추첨 전입니다. 당첨 번호·맞춘 개수·오답 기록은 추첨 발표 후 자동으로 쌓입니다.</p>';
     return;
   }
   const main = nums.map((n) => _ballHtml(n, 'tld-ball--actual tld-ball--lg')).join('');
@@ -1141,15 +1141,15 @@ function _renderLearnFlowHint(brain, brainTag) {
   const adjCount = Object.values(adj).filter((v) => Number(v) > 0).length;
   const learnNote =
     brainTag === 'markov'
-      ? '흐름술사: 직전 회차 전이·동반쌍 위주 (learn_state 직접 반영은 Phase C 예정)'
-      : '통계요정·복습왕: 다음 회차 예측 시 learn_state 조정값 반영';
+      ? '흐름술사: 바로 직전 회차와 연결된 번호를 중점적으로 봅니다.'
+      : '통계요정·복습왕: 다음 예측 때 이번에 조정한 가중치를 반영합니다.';
   return `<div class="tld-learn-flow">
-    <h4 class="tld-learn-flow__title">이 회차 오답 → 다음 예측 학습 연결</h4>
+    <h4 class="tld-learn-flow__title">이번에 틀린 것 → 다음 예측에 반영</h4>
     <ul class="tld-learn-flow__list">
-      <li>walk-forward 복습: <strong>이전 회차만</strong> 참고해 예측 → 당첨 채점 → 오답노트·brain_review 저장</li>
-      <li>놓친 패턴: ${labels.join(' · ') || '특이 패턴 없음'} → 가중치 조정 <strong>${adjCount}건</strong> 누적</li>
+      <li>규칙: <strong>그 회차 이전 기록만</strong> 보고 예측 → 당첨 발표 후 맞춘 개수 기록 → 틀린 패턴 저장</li>
+      <li>놓친 패턴: ${labels.join(' · ') || '특별히 없음'} → 가중치 조정 <strong>${adjCount}건</strong></li>
       <li>${learnNote}</li>
-      <li>⑤ 뇌 학습 누적 · 구간별 흐름(↔)에서 전 회차 복습 기록 참고</li>
+      <li>⑤ 학습 누적 · ↔ 구간 보기에서 여러 회차 흐름을 볼 수 있습니다</li>
     </ul>
   </div>`;
 }
@@ -1259,6 +1259,13 @@ async function _loadLearnSummary(brainTag) {
   }
 }
 
+function _tldAnalogViaLabel(via) {
+  if (via === 'A+B') return '번호+패턴';
+  if (via === 'A') return '번호 위주';
+  if (via === 'B') return '패턴 위주';
+  return via || '';
+}
+
 function _renderAnalogPanel(report) {
   const el = document.getElementById('tldAnalogContent');
   if (!el) return;
@@ -1279,17 +1286,18 @@ function _renderAnalogPanel(report) {
       const nums = (c.nums || []).map((n) => _ballHtml(n, 'tld-ball--actual')).join('');
       const nxt = c.next_draw || {};
       const nxtNums = (nxt.nums || []).map((n) => _ballHtml(n, 'tld-ball--actual')).join('');
+      const viaLbl = _tldAnalogViaLabel(c.via);
       const viaCls = c.via === 'B' ? ' tld-analog-card__via--b' : '';
       return `<article class="tld-analog-card${i === 0 ? ' tld-analog-card--top' : ''}">
         <div class="tld-analog-card__head">
           <span class="tld-analog-card__rank">#${i + 1}</span>
           <span class="tld-analog-card__draw">${c.draw_no}회</span>
-          <span class="tld-analog-card__meta">겹침 ${c.overlap}/6 · score ${c.score} · pattern ${c.pattern_sim}</span>
-          <span class="tld-analog-card__via${viaCls}">${_tldEscape(c.via || '')}</span>
+          <span class="tld-analog-card__meta">같은 번호 ${c.overlap}개 · 유사도 ${Math.round(Number(c.score) * 100)}%</span>
+          ${viaLbl ? `<span class="tld-analog-card__via${viaCls}">${_tldEscape(viaLbl)}</span>` : ''}
         </div>
-        <div class="tld-analog-row"><span class="tld-analog-row__label">당첨(과거)</span>${nums}</div>
+        <div class="tld-analog-row"><span class="tld-analog-row__label">그때 당첨</span>${nums}</div>
         <div class="tld-analog-next">
-          <div class="tld-analog-next__label">${_tldEscape(nxt.label || '다음 추첨(관측)')} · ${nxt.draw_no || '—'}회</div>
+          <div class="tld-analog-next__label">${_tldEscape(nxt.label || '그다음 회차 실제 당첨')} · ${nxt.draw_no || '—'}회</div>
           <div class="tld-analog-row">${nxt.found ? nxtNums : '<span class="tld-muted">데이터 없음</span>'}</div>
         </div>
       </article>`;
@@ -1297,15 +1305,15 @@ function _renderAnalogPanel(report) {
     .join('');
   el.innerHTML =
     `<p class="tld-analog__disclaimer">${_tldEscape(report.ui_disclaimer || '')}</p>` +
-    `<p class="tld-analog__bench"><strong>벤치 결론:</strong> ${_tldEscape(bench.overall || '')} · ${_tldEscape(bench.use_case || '')}</p>` +
+    `<p class="tld-analog__bench"><strong>테스트 결과:</strong> ${_tldEscape(bench.overall || '')} · ${_tldEscape(bench.use_case || '')}</p>` +
     `<div class="tld-analog__hint">` +
     `<span class="tld-analog__hint-badge ${tierClass}">${_tldEscape(hint.label || '')}</span>` +
     `<span class="tld-analog__hint-note">${_tldEscape(hint.note || '')}</span>` +
     `</div>` +
     `<div class="tld-analog__stats">` +
-    `<span>후보 ${report.candidate_total || 0}건</span>` +
-    `<span>B-only ${((report.b_only_ratio || 0) * 100).toFixed(1)}%</span>` +
-    `<span>겹침2+ ${report.overlap2_plus_count || 0}건</span>` +
+    `<span>찾은 후보 ${report.candidate_total || 0}건</span>` +
+    `<span>패턴만 비슷 ${((report.b_only_ratio || 0) * 100).toFixed(1)}%</span>` +
+    `<span>번호 2개+ 겹침 ${report.overlap2_plus_count || 0}건</span>` +
     `</div>` +
     `<div class="tld-analog-list">${list || '<p class="tld-muted">유사 회차 없음</p>'}</div>`;
 }
@@ -1313,7 +1321,7 @@ function _renderAnalogPanel(report) {
 async function _loadAnalog(drawNo) {
   const el = document.getElementById('tldAnalogContent');
   if (!el) return;
-  el.innerHTML = '<p class="tld-muted">역사 유사 장면 불러오는 중…</p>';
+  el.innerHTML = '<p class="tld-muted">과거 비슷 회차 불러오는 중…</p>';
   try {
     const report = await _fetchJson(`/api/testlotto/analog/draw/${drawNo}`);
     _renderAnalogPanel(report);

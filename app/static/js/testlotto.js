@@ -14,10 +14,20 @@ const _testlottoBrainDisplayNames = {
 };
 
 const _testlottoBrainDescriptions = {
-  stat: '빈도·끝수·이월수 (미래예측)',
-  markov: '전이·동반출현 (미래예측)',
-  review: '전회차 복습 학습형 (미래예측)',
+  stat: '자주 나온 번호·끝자리·이월 번호 위주',
+  markov: '직전 회차와 함께 나온 번호 위주',
+  review: '예전에 틀렸던 패턴을 다시 공부하는 방식',
 };
+
+function _tlFriendlyWarrantLabel(label) {
+  const map = {
+    '실증': '효과 확인됨',
+    '기각': '효과 미확인',
+    '미정의': '아직 판정 전',
+    '전제실증·구현미검증': '일부만 확인됨',
+  };
+  return map[label] || label;
+}
 
 function testlottoGetBrainDisplayName(tag) {
   return _testlottoBrainDisplayNames[tag] || tag;
@@ -87,15 +97,15 @@ function renderTestlottoWarrantPanelHtml(data, drawNo) {
           }
           return _tlFormatLearnKeyBar(k.key, k.value, k.cap);
         }).join('')
-      : '<span class="tl-wmuted">활성 학습키 없음</span>';
+      : '<span class="tl-wmuted">지금 쓰는 가중치 없음</span>';
+    const lblPlain = _tlFriendlyWarrantLabel(lbl);
     return (
       '<article class="tl-wbrain">' +
       `<header class="tl-wbrain__head">` +
       `<strong>${_tlEscapeHtml(b.name)}</strong>` +
-      `<span class="tl-wlbl ${_tlWarrantLabelClass(lbl)}">${_tlEscapeHtml(lbl)}</span>` +
+      `<span class="tl-wlbl ${_tlWarrantLabelClass(lbl)}">${_tlEscapeHtml(lblPlain)}</span>` +
       '</header>' +
       `<p class="tl-wbrain__ev">${_tlEscapeHtml(b.warrant_evidence || '')}</p>` +
-      (b.kw_alignment ? `<p class="tl-wbrain__align">K-W: ${_tlEscapeHtml(b.kw_alignment)}</p>` : '') +
       `<div class="tl-wbrain__keys">${keyHtml}</div>` +
       '</article>'
     );
@@ -105,19 +115,18 @@ function renderTestlottoWarrantPanelHtml(data, drawNo) {
   return (
     '<div class="tl-warrant-inner">' +
     '<div class="tl-warrant-head">' +
-    '<h3 class="tl-warrant-title">뇌 명분 · 제약 (K-P1 · P2)</h3>' +
-    `<p class="tl-warrant-note">${_tlEscapeHtml(data.evaluation_axis || '')}</p>` +
+    '<h3 class="tl-warrant-title">프로그램 설명 · 제한 사항</h3>' +
+    `<p class="tl-warrant-note">${_tlEscapeHtml(data.evaluation_axis || '이 화면은 왜 이렇게 동작하는지 보여 주는 참고용입니다.')}</p>` +
     '</div>' +
     '<div class="tl-warrant-gates">' +
-    `<span>BASELINE_PIN <code>${_tlEscapeHtml(data.baseline_pin || '')}</code></span>` +
-    `<span>학습 as_of <strong>${asOf}</strong>${drawNo ? ` (회차 ${drawNo} 예측 기준)` : ''}</span>` +
-    `<span>CUTOFF ${gates.learn_cutoff ? 'ON' : 'OFF'}</span>` +
-    `<span>DEDUP ${gates.dedup ? 'ON' : 'OFF'}</span>` +
+    `<span>학습에 쓰는 과거 회차: <strong>${asOf}회까지</strong>${drawNo ? ` (지금 ${drawNo}회 보는 중)` : ''}</span>` +
+    `<span>미래 당첨 미리 보기 차단: <strong>${gates.learn_cutoff ? '켜짐' : '꺼짐'}</strong></span>` +
+    `<span>같은 조합 중복 정리: <strong>${gates.dedup ? '켜짐' : '꺼짐'}</strong></span>` +
     '</div>' +
-    '<p class="tl-warrant-frozen">동결: ' + _tlEscapeHtml(frozen) + '</p>' +
-    '<p class="tl-warrant-disclaimer">이 패널은 <b>설명·투명성</b>용입니다. 1등 확률을 높이지 않습니다. 기각 뇌는 제거하지 않습니다(WARRANT §2).</p>' +
-    '<div class="tl-warrant-section"><h4>예측 3뇌</h4><div class="tl-warrant-grid">' + predict.map(brainCard).join('') + '</div></div>' +
-    '<div class="tl-warrant-section"><h4>보조 4뇌</h4><div class="tl-warrant-grid">' + aux.map(brainCard).join('') + '</div></div>' +
+    (frozen ? '<p class="tl-warrant-frozen">수정 금지(고정) 기능: ' + _tlEscapeHtml(frozen) + '</p>' : '') +
+    '<p class="tl-warrant-disclaimer">※ <b>로또 1등 확률을 높여 주지 않습니다.</b> 성능이 낮다고 표시된 프로그램도 기록·비교를 위해 그대로 둡니다.</p>' +
+    '<div class="tl-warrant-section"><h4>번호 예측 3종</h4><div class="tl-warrant-grid">' + predict.map(brainCard).join('') + '</div></div>' +
+    '<div class="tl-warrant-section"><h4>보조 알림 4종 (맞춘 개수 채점 안 함)</h4><div class="tl-warrant-grid">' + aux.map(brainCard).join('') + '</div></div>' +
     '</div>'
   );
 }
@@ -162,10 +171,11 @@ function testlottoWarrantTabBadgeHtml(tag) {
   if (!meta) return '';
   const lbl = meta.warrant_label || '미정의';
   const hint = meta.display_hint || {};
-  const tabHint = hint.tab_hint || lbl;
+  const lblPlain = _tlFriendlyWarrantLabel(lbl);
+  const tabHint = hint.tab_hint || lblPlain;
   return (
     `<span class="lotto-warrant-tabline">` +
-    `<span class="tl-wlbl ${_tlWarrantLabelClass(lbl)} lotto-warrant-tabline__lbl">${_tlEscapeHtml(lbl)}</span>` +
+    `<span class="tl-wlbl ${_tlWarrantLabelClass(lbl)} lotto-warrant-tabline__lbl">${_tlEscapeHtml(lblPlain)}</span>` +
     `<span class="lotto-warrant-tabline__hint">${_tlEscapeHtml(tabHint)}</span>` +
     `</span>`
   );
@@ -185,14 +195,14 @@ function testlottoBrainPolicyStripHtml(tag) {
     extra += `<span class="lotto-brain-policy__note">${_tlEscapeHtml(hint.contrib_note)}</span>`;
   }
   if (meta.kw_alignment) {
-    extra += `<span class="lotto-brain-policy__kw">K-W: ${_tlEscapeHtml(meta.kw_alignment)}</span>`;
+    extra += `<span class="lotto-brain-policy__kw">과거 테스트 참고: ${_tlEscapeHtml(meta.kw_alignment)}</span>`;
   }
   return (
     `<div class="lotto-brain-policy ${cls}" role="note">` +
-    `<strong>${_tlEscapeHtml(hint.short || lbl)}</strong>` +
+    `<strong>${_tlEscapeHtml(hint.short || _tlFriendlyWarrantLabel(lbl))}</strong>` +
   `<span class="lotto-brain-policy__role">${_tlEscapeHtml(hint.role_line || '')}</span>` +
     extra +
-    `<span class="lotto-brain-policy__keep">제거·비활성 금지 (WARRANT §2)</span>` +
+    `<span class="lotto-brain-policy__keep">※ 성능이 낮아도 삭제하지 않습니다 (기록·비교용)</span>` +
     `</div>`
   );
 }
@@ -293,7 +303,7 @@ function lottoBrainTierNanoHtml(tag) {
   const n5 = Number(b.rank5 || 0);
   const txt = [n1, n2, n3, n4, n5].join('·');
   return (
-    '<span class="lotto-brain-nano" title="역대 적중: 1등·2등·3등·4등·5등(3개일치)">' +
+    '<span class="lotto-brain-nano" title="역대 1등·2등·3등·4등·5등(3개 맞춤) 횟수">' +
     txt +
     '</span>'
   );
@@ -580,11 +590,11 @@ function testlottoHitSummaryHtml(rows) {
   if (!total) {
     const pending = (rows || []).some((r) => r.matched_count != null && Number(r.matched_count) < 0);
     if (pending) {
-      return '<p class="lotto-hit-summary lotto-hit-summary--pending">미추첨 회차 — 당첨 채점 전</p>';
+      return '<p class="lotto-hit-summary lotto-hit-summary--pending">아직 추첨 전 — 당첨 번호가 나오면 여기서 맞춘 개수를 보여 줍니다</p>';
     }
-    return '<p class="lotto-hit-summary lotto-hit-summary--none">이 회차 1~5등 적중 세트 없음 · <button type="button" class="lotto-hit-summary__link" onclick="testlottoOpenTierWinsModal()">자세히</button></p>';
+    return '<p class="lotto-hit-summary lotto-hit-summary--none">이 회차는 1~5등에 해당하는 예측이 없습니다 · <button type="button" class="lotto-hit-summary__link" onclick="testlottoOpenTierWinsModal()">자세히</button></p>';
   }
-  return `<p class="lotto-hit-summary">적중 요약: 1등 ${c[1]} · 2등 ${c[2]} · 3등 ${c[3]} · 4등 ${c[4]} · 5등 ${c[5]} · <button type="button" class="lotto-hit-summary__link" onclick="testlottoOpenTierWinsModal()">1~5등 목록</button></p>`;
+  return `<p class="lotto-hit-summary">맞춘 결과: 1등 ${c[1]} · 2등 ${c[2]} · 3등 ${c[3]} · 4등 ${c[4]} · 5등 ${c[5]} · <button type="button" class="lotto-hit-summary__link" onclick="testlottoOpenTierWinsModal()">목록 보기</button></p>`;
 }
 
 function _testlottoBuildActualHtml(actuals, bonus) {
@@ -693,7 +703,7 @@ function renderBrainSetCard(row, idx) {
   if (srcMatch) {
     const src = srcMatch[1];
     const srcClass = src === 'V3' ? 'lotto-set-src-v3' : 'lotto-set-src-sel4';
-    const srcLabel = src === 'V3' ? 'v3 기여' : 'SEL4';
+    const srcLabel = src === 'V3' ? 'v3 방식' : 'SEL4';
     sourceBadge = `<span class="lotto-set-source ${srcClass}">${srcLabel}</span>`;
   }
 
@@ -770,7 +780,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
 
   if (eliteOn && brainListForTabs.length === 0) {
     container.innerHTML =
-      '<p class="lotto-elite-empty">역대 (1등≥1·2등≥1·3등≥5 동시) 또는 3등만 15회 이상인 뇌가 없습니다. 필터를 끄면 전체를 볼 수 있습니다.</p>';
+      '<p class="lotto-elite-empty">「과거에 잘 맞춘 프로그램만」 조건에 해당하는 항목이 없습니다. 체크를 해제하면 전체를 볼 수 있습니다.</p>';
     return;
   }
 
@@ -812,7 +822,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
   const selectedRows = byBrain[_testlottoCurrentBrainTab] || [];
   const cardsHtml = selectedRows.length
     ? selectedRows.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
-    : '<p style="color:#888; padding: 16px;">이 두뇌는 이 회차에 예측 데이터가 없습니다.</p>';
+    : '<p style="color:#888; padding: 16px;">이 프로그램은 이 회차 예측 기록이 없습니다.</p>';
 
   const policyStripHtml = testlottoBrainPolicyStripHtml(_testlottoCurrentBrainTab);
 

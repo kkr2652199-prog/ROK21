@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="/static/css/style.css" />
 
-  <link rel="stylesheet" href="/static/css/testlotto-detail.css?v=20260728a" />
+  <link rel="stylesheet" href="/static/css/testlotto-detail.css?v=20260728c" />
 
 </head>
 
@@ -28,7 +28,7 @@
 
         <h1>테스트로또 <span class="tld-accent">회차 정밀 분석</span></h1>
 
-        <p class="tld-header__desc">당첨·채점·등수·패턴·뇌별 학습을 한 페이지에서 기록합니다. 각 뇌가 이 페이지를 학습 재료로 사용합니다.</p>
+        <p class="tld-header__desc">당첨 번호 · 예측과 비교 · 등수 · 패턴 · 프로그램별 학습 기록을 한곳에서 봅니다.</p>
 
       </div>
 
@@ -52,7 +52,7 @@
 
           <button type="button" class="btn btn-secondary tld-nav-btn" id="tldNavPrev" title="이전 회차">◀</button>
 
-          <select id="tldDrawSelect" class="lotto-draw-select" title="회차 선택 (★5등+ = 현재 뇌 5등 이상 적중)"></select>
+          <select id="tldDrawSelect" class="lotto-draw-select" title="회차 선택 (★ = 5등 이상 맞춘 회차)"></select>
 
           <button type="button" class="btn btn-secondary tld-nav-btn" id="tldNavNext" title="다음 회차">▶</button>
 
@@ -100,9 +100,9 @@
 
           <div>
 
-            <h2 class="tld-section-title">당첨 확정</h2>
+            <h2 class="tld-section-title">이번 회차 당첨 번호</h2>
 
-            <p class="tld-section-desc">해당 회차 공식 당첨번호·추첨일·판매 규모</p>
+            <p class="tld-section-desc">공식 당첨 6개 + 보너스 · 추첨일 · 판매액</p>
 
           </div>
 
@@ -144,9 +144,9 @@
 
           <div>
 
-            <h2 class="tld-section-title" id="tldBrainTitle">오답노트</h2>
+            <h2 class="tld-section-title" id="tldBrainTitle">예측 vs 당첨 (오답노트)</h2>
 
-            <p class="tld-section-desc">왜 이 번호를 골랐는지 · 예측 vs 실제 · 오답이 다음 예측 학습으로 이어짐</p>
+            <p class="tld-section-desc">어떤 번호를 골랐는지 · 몇 개 맞았는지 · 틀린 이유를 다음 예측에 반영</p>
 
           </div>
 
@@ -176,7 +176,7 @@
 
         <div class="tld-aux-section" id="tldAuxSection">
 
-          <h4 class="tld-sub-title">보조 4뇌 · 신호/경고 <span class="tld-aux-note">적중률 채점 대상 아님</span></h4>
+          <h4 class="tld-sub-title">보조 알림 4종 <span class="tld-aux-note">(맞춘 개수 채점 안 함 · 참고만)</span></h4>
 
           <div id="tldAuxBrains" class="tld-aux-grid" aria-label="보조 4뇌 신호"></div>
 
@@ -249,7 +249,7 @@
 
               <h2 class="tld-section-title">뇌 학습 누적</h2>
 
-              <p class="tld-section-desc">복습 횟수·평균 적중·가중치·약점 패턴 — walk-forward 누적 학습 상태</p>
+              <p class="tld-section-desc">지금까지 몇 번 복습했는지 · 평균 맞춘 개수 · 가중치 · 자주 틀린 패턴</p>
 
             </div>
 
@@ -273,9 +273,9 @@
 
           <div>
 
-            <h2 class="tld-section-title">패턴·구조 분석</h2>
+            <h2 class="tld-section-title">번호·패턴 분석</h2>
 
-            <p class="tld-section-desc">1~45 출현 히트맵 · 급등·HOT/COLD · 6구간 · 오답노트 연동</p>
+            <p class="tld-section-desc">1~45번 출현 빈도 · 자주·드물게 나온 번호 · 구간별 분포</p>
 
           </div>
 
@@ -295,9 +295,9 @@
 
           <div>
 
-            <h2 class="tld-section-title">역사 유사 장면</h2>
+            <h2 class="tld-section-title">과거 비슷 회차</h2>
 
-            <p class="tld-section-desc">과거에 비슷했던 회차 · 그다음 실제 추첨(관측) · 예측·확률↑ 아님</p>
+            <p class="tld-section-desc">지금 회차와 닮았던 과거 · 그때 「다음 주」 실제 당첨 기록 (미래 예측 아님)</p>
 
           </div>
 
@@ -325,7 +325,7 @@
 
           <h2 class="tld-section-title" id="tldTimelineTitle">구간 진단 리포트</h2>
 
-          <p class="tld-section-desc">적중 추세(에쿼티 커브) · 뇌별 약점 top3 · 구간 한 줄 진단</p>
+          <p class="tld-section-desc">여러 회차를 묶어 · 맞춘 추이 · 약한 패턴 · 한 줄 요약</p>
 
         </div>
 
@@ -383,7 +383,7 @@
 
 
 
-  <script src="/static/js/testlotto-detail.js?v=20260728a"></script>
+  <script src="/static/js/testlotto-detail.js?v=20260728c"></script>
 
 </body>
 
