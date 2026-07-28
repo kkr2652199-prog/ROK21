@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-ATTACK-SLICE · 구간승격 보류 · NEXT=BAYES
+📌 사유: EXTERNAL_AI_JOIN_PROMPT · 합류읽기순서 · NEXT=BAYES
 
 ---
 
@@ -21,6 +21,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **EXTERNAL_AI_JOIN** | GitHub 합류 읽기순서 프롬프트 | DOCS |
 | **K-ATTACK-SLICE** | LMH 승격 정책 비교 · live conf proxy | 배선 보류 |
 | **K-GATHER-V2** | V축소 covering | 회수0 · 관측고정 |
 | **K-GATHER-V1** | oracle 찢김 | 회수0 |

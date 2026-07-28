@@ -2,6 +2,7 @@
 
 > **이 파일 하나면 흐름 복구.** GitHub 404 / 로컬 미접근이면 형이 이 파일 전체를 채팅에 붙여넣는다.
 > 상세 복사용 프롬프트: `My_Drive_Sync/SUMMARY/EXTERNAL_AI_BOOTSTRAP.md`
+> **GitHub 합류 상세(읽기순서):** `My_Drive_Sync/SUMMARY/EXTERNAL_AI_JOIN_PROMPT.md`
 > **핀 베이스라인:** `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md`
 > 동생 큐(권한 있을 때): `My_Drive_Sync/SUMMARY/RESTORE.md`
 

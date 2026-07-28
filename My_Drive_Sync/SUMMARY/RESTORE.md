@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | JOIN프롬프트·종료체크 | EXTERNAL_AI_JOIN_PROMPT · 합류읽기순서 · NEXT=BAYES | DOCS | (커밋중) |
 | 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | `0426e09` |
 | 2026-07-29 | GATHER-V2·종료체크 | V'=12·회수0·관측고정·hybrid힌트 · NEXT=SLICE | V2 DONE WIRE보류 | `05999a2` |
 | 2026-07-29 | GATHER-V1·종료체크 | oracle 찢김·v1회수0·천장 \|V\|≈25 · NEXT=V2 | V1 DONE WIRE보류 | `d00884c` |
@@ -45,16 +46,6 @@
 | 2026-07-28 | K-REVIEW-RUN 종료체크 | WF 2~1234 재복습 53분 · verify_pass · pipe 3698/3698 · push | K-REVIEW-RUN PASS | `2d0becc` |
 | 2026-07-28 | K-REBRAND 종료체크 | UI·tools kweon→ROK21 · verify7021 · push | K-REBRAND PATCHED | `440eb18` |
 | 2026-07-28 | K-UI-PLAIN 종료체크 | 메인·상세·analog API 쉬운 말 UI · push | K-UI-PLAIN PATCHED | `13a187e` |
-| 2026-07-28 | K-UI-TESTLOTTO 종료체크 | 메인 당첨 히어로 sticky · WARRANT 접기 · push | K-UI-TESTLOTTO PATCHED | `e635d70` |
-| 2026-07-28 | K-ANALOG-1 종료체크 | API `/analog/draw` · 상세⑥ · BT735·MULTIDIM · verify PASS | K-ANALOG-1 PATCHED | `7299711` |
-| 2026-07-28 | K-ANALOG-PREP | 2차회의·1234 probe386·gate PASS · K-ANALOG-1 Go | K-ANALOG PREP | `89bfc0b` |
-| 2026-07-28 | K-ANALOG OPEN | COLLAB_HANDOFF 등록 | OPEN | `549be79` |
-| 2026-07-28 | K-UI-SSOT 메인상세 | brain_review우선·select동기·1235상세폴백 · verify PASS | K-UI-SSOT PATCHED | `38a7ba3` |
-| 2026-07-28 | K-H 미등록AUX | _unused격리 · import0 · 3+4유지 · verify PASS | K-H PATCHED | `a5a0e4e` |
-| 2026-07-28 | K-B BENCH SSOT | review100·pred갭31·세트동일0 · verify PASS | K-B PATCHED | `1d0be4f` |
-| 2026-07-27 | K-W post-KP3 | ending χ²/df↓ · rates NameError수정 · verify PASS | K-W PATCHED | `bb7b004` |
-| 2026-07-27 | K-P5 hyodo 인프라UI | infra-dashboard·LSTM패널 · verify PASS | K-P5 PATCHED | `6f0d0e0` |
-| 2026-07-27 | K-PIN-CLOSE 마감 | drift0·3DB1234·P스택게이트 PASS | K-PIN-CLOSE | `e945b84` |
 
 ---
 

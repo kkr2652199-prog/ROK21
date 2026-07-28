@@ -57,3 +57,14 @@ GitHub·D:\ROK21 접근 불가면 fetch 시도하지 말고 붙여넣기만 읽�
 | 매턴 갱신 | 커서 종료루틴 `sync_all_resume_docs()` (R37) |
 
 커서에게 **"EXTERNAL_START 최신화"** 라고 하면 HEAD/NEXT 다시 박음.
+
+---
+
+## GitHub 열 수 있을 때
+
+날짜 무관 합류 = `My_Drive_Sync/SUMMARY/EXTERNAL_AI_JOIN_PROMPT.md`  
+형의 짧은 큐:
+
+```
+동생, JOIN_PROMPT대로 EXTERNAL_START→FLOW→NEXT→BOOT→RESTORE 읽고 [복귀] 후 다음1건만.
+```
