@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `30db0a8` · WORK=`IDLE`
+- HEAD: `9cb5e17` · WORK=`IDLE`
 - 지금: K-TRUST+CREW — null≈0.8 · 3뇌 Jaccard0.11 · 사공아님·역할분담 유지
 - 직전: K-PATTERN-1 · K-REVIEW-RUN
 - BOOT다음: K-PATTERN-2 — 패턴AUX 분위수×matched 전행 (READ-ONLY)
