@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a25c9b7` · WORK=`IDLE`
-2. **지금:** K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보**
-3. **다음1건:** K-SETCOUNT-WIRE — SETCOUNT PASS(n=10·15 ge3>RR) · 배선 전 null/비용 대비 검증 후 SETS 확장 여부 결정 (승인필요=예 · 선행=K-SETCOUNT-SURVEY 완료 · recommended=K-SETCOUNT-WIRE · 승인필요)
+1. **HEAD:** `e0323f3` · WORK=`IDLE`
+2. **지금:** K-SETCOUNT-NULL PASS · E 5장 실력 · **MARKOV-WIRE**
+3. **다음1건:** K-MARKOV-WIRE — NULL PASS · E(markov×3+stat×1+review×1) 5장 실력(p=0.0007) · 장수확장 기각 · 배선 설계 (승인필요=예 · 선행=K-SETCOUNT-NULL 완료 · recommended=K-MARKOV-WIRE · 승인필요)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-SETCOUNT-SURVEY | n15 ge3=0.3088≈null · markov solo PASS · NEXT=WIRE | SETCOUNT PASS | `a25c9b7` |
+| 2026-07-29 | K-SETCOUNT-NULL | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | (미커밋) |
+| 2026-07-29 | SETCOUNT·종료체크 | n15≈null · NEXT=WIRE→NULL검증 | SETCOUNT PASS | `a25c9b7` |
 | 2026-07-29 | K-COVER·종료체크 | pool40 ge3=0.132<RR · NEXT=HOLD | COVER FAIL | `6339f12` |
 | 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | `ed4e702` |
 | 2026-07-29 | STRUCT·종료체크 | aux sp0.008·analog≪RR·가중Δ0 · NEXT=HOLD | STRUCT 관측종료 | `7606686` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | NEXT교체·종료체크 | REFEREE-WINDOW · CONF-CAL ARCHIVE보류 | NEXT교체 | `d96759f` |
 | 2026-07-29 | BAYES·종료체크 | soft≈null·invcorr<RR·vs conf+0.025 · NEXT=CONF-CAL | BAYES DONE WIRE보류 | `c953d63` |
 | 2026-07-29 | JOIN프롬프트·종료체크 | EXTERNAL_AI_JOIN_PROMPT · 합류읽기순서 · NEXT=BAYES | DOCS | `1494595` |
-| 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | `0426e09` |
 
 ---
 

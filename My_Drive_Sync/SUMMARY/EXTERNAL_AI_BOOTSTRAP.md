@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `a25c9b7` |
+| HEAD(실측) | `e0323f3` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보** |
-| 직전 | COVER FAIL (ge3≤RR) |
-| BOOT다음 | K-SETCOUNT-WIRE — null/비용 검증 후 SETS 확장 여부 |
-| NEXT1 ID | **K-SETCOUNT-WIRE** |
-| NEXT1 할일 | SETCOUNT PASS(n=10·15 ge3>RR) · 배선 전 null/비용 대비 검증 후 SETS 확장 여부 결정 |
+| 지금 | K-SETCOUNT-NULL PASS · E 5장 실력 · **MARKOV-WIRE** |
+| 직전 | SETCOUNT PASS(장수↑≈null) |
+| BOOT다음 | K-MARKOV-WIRE — markov×3 배합 5장 배선 설계 |
+| NEXT1 ID | **K-MARKOV-WIRE** |
+| NEXT1 할일 | NULL PASS · E(markov×3+stat×1+review×1) 5장 실력(p=0.0007) · 장수확장 기각 · 배선 설계 |
 | 승인필요 | 예 |
-| 선행 | K-SETCOUNT-SURVEY 완료 · recommended=K-SETCOUNT-WIRE · 승인필요 |
+| 선행 | K-SETCOUNT-NULL 완료 · recommended=K-MARKOV-WIRE · 승인필요 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=a25c9b7 · 지금=K-SETCOUNT-SURVEY PASS · n15 ge3=0.3088 · **WIRE후보** · 다음=K-SETCOUNT-WIRE`
+1. 첫줄 `[복귀] HEAD=e0323f3 · 지금=K-SETCOUNT-NULL PASS · E 5장 실력 · **MARKOV-WIRE** · 다음=K-MARKOV-WIRE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

@@ -1,0 +1,174 @@
+{
+  "id": "K-SETCOUNT-NULL",
+  "ts": "2026-07-29T04:20:01",
+  "elapsed_sec": 106.5,
+  "n_eval": 1182,
+  "mc_trials": 10000,
+  "mc_sample_draws": 100,
+  "mc_seed": 42,
+  "mc_note": null,
+  "theory_ref": {
+    "single_E": 0.8,
+    "note": "1장 E[match]=6*(6/45)=0.8 · best-of-N은 null MC로 근사",
+    "ktrust_null_mc_ref": {
+      "best_of_5_mean": 1.7264,
+      "best_of_5_ge3": 0.1164,
+      "best_of_15_mean": 2.2832,
+      "best_of_15_ge3": 0.3132,
+      "source": "docs/benchmarks/20260729_KTRUST_bench.json"
+    }
+  },
+  "step1_null_mc": {
+    "n5": {
+      "null_mean": 1.7281,
+      "null_ge3": 0.1137,
+      "null_ge3_std": 0.031672,
+      "null_ge4": 0.007,
+      "null_mean_trial_std": 0.068419,
+      "n_sample_draws": 100,
+      "mc_trials": 10000
+    },
+    "n10": {
+      "null_mean": 2.0829,
+      "null_ge3": 0.2145,
+      "null_ge3_std": 0.041596,
+      "null_ge4": 0.014,
+      "null_mean_trial_std": 0.063764,
+      "n_sample_draws": 100,
+      "mc_trials": 10000
+    },
+    "n15": {
+      "null_mean": 2.269,
+      "null_ge3": 0.3034,
+      "null_ge3_std": 0.045801,
+      "null_ge4": 0.0208,
+      "null_mean_trial_std": 0.058839,
+      "n_sample_draws": 100,
+      "mc_trials": 10000
+    }
+  },
+  "step2_comparison": {
+    "A_n5_rr": {
+      "label": "A_n5_rr",
+      "n_tickets": 5,
+      "n": 1182,
+      "mean": 1.7428,
+      "ge3": 0.1337,
+      "ge4": null,
+      "null_mean": 1.7281,
+      "null_ge3": 0.1137,
+      "null_ge4": 0.007,
+      "delta_ge3": 0.02,
+      "delta_mean": 0.0147,
+      "z": 0.6315,
+      "z_rate_se": 2.166,
+      "p": 0.018794,
+      "verdict": "실력"
+    },
+    "B_n10_mixed": {
+      "label": "B_n10_mixed",
+      "n_tickets": 10,
+      "n": 1182,
+      "mean": 2.1024,
+      "ge3": 0.2284,
+      "ge4": null,
+      "null_mean": 2.0829,
+      "null_ge3": 0.2145,
+      "null_ge4": 0.014,
+      "delta_ge3": 0.0139,
+      "delta_mean": 0.0195,
+      "z": 0.3342,
+      "z_rate_se": 1.1642,
+      "p": 0.129395,
+      "verdict": "장수효과"
+    },
+    "C_n15_mixed": {
+      "label": "C_n15_mixed",
+      "n_tickets": 15,
+      "n": 1182,
+      "mean": 2.2487,
+      "ge3": 0.3088,
+      "ge4": null,
+      "null_mean": 2.269,
+      "null_ge3": 0.3034,
+      "null_ge4": 0.0208,
+      "delta_ge3": 0.0054,
+      "delta_mean": -0.0203,
+      "z": 0.1179,
+      "z_rate_se": 0.4038,
+      "p": 0.35359,
+      "verdict": "장수효과"
+    },
+    "D_markov5": {
+      "label": "D_markov5",
+      "n_tickets": 5,
+      "n": 1182,
+      "mean": 1.7098,
+      "ge3": 0.1362,
+      "ge4": null,
+      "null_mean": 1.7281,
+      "null_ge3": 0.1137,
+      "null_ge4": 0.007,
+      "delta_ge3": 0.0225,
+      "delta_mean": -0.0183,
+      "z": 0.7104,
+      "z_rate_se": 2.4368,
+      "p": 0.009614,
+      "verdict": "실력"
+    },
+    "E_markov3mix2": {
+      "label": "E_markov3mix2",
+      "n_tickets": 5,
+      "n": 1182,
+      "mean": 1.7504,
+      "ge3": 0.1447,
+      "ge4": null,
+      "null_mean": 1.7281,
+      "null_ge3": 0.1137,
+      "null_ge4": 0.007,
+      "delta_ge3": 0.031,
+      "delta_mean": 0.0223,
+      "z": 0.9788,
+      "z_rate_se": 3.3574,
+      "p": 0.000679,
+      "verdict": "실력"
+    },
+    "F_n5_stat": {
+      "label": "F_n5_stat",
+      "n_tickets": 5,
+      "n": 1182,
+      "mean": 1.7124,
+      "ge3": 0.1091,
+      "ge4": null,
+      "null_mean": 1.7281,
+      "null_ge3": 0.1137,
+      "null_ge4": 0.007,
+      "delta_ge3": -0.0046,
+      "delta_mean": -0.0157,
+      "z": -0.1452,
+      "z_rate_se": -0.4982,
+      "p": 0.702489,
+      "verdict": "장수효과"
+    }
+  },
+  "step3_wire_candidates": [
+    "A_n5_rr",
+    "D_markov5",
+    "E_markov3mix2"
+  ],
+  "gates": {
+    "any_5set_skill": true,
+    "any_10set_skill": false,
+    "any_15set_skill": false,
+    "best_5set_config": "E_markov3mix2",
+    "wire_5": [
+      "A_n5_rr",
+      "D_markov5",
+      "E_markov3mix2"
+    ],
+    "wire_10_15": []
+  },
+  "recommended_next": "K-MARKOV-WIRE",
+  "verdict": "PASS→K-MARKOV-WIRE: 5장 실력=['A_n5_rr', 'D_markov5', 'E_markov3mix2']. 10/15실력=[] (비용↑). best_5=E_markov3mix2.",
+  "db_code_write": false
+}
