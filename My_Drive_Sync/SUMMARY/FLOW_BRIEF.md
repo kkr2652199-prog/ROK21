@@ -1,9 +1,9 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b099037` · WORK=`IDLE`
-- 지금: K-PIPE-A — walk-forward·coordinator AUX scoring 통합 PASS
-- 직전: K-UI-SSOT · K-DETAIL-CUTOFF · K-00
-- BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
+- HEAD: `89bfc0b` · WORK=`IDLE`
+- 지금: K-ANALOG-PREP — 1234 유사회차 probe PASS · K-ANALOG-1 Go
+- 직전: K-PIPE-A · K-UI-SSOT · K-DETAIL-CUTOFF
+- BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` (K-ANALOG-1 병행)
 - NEXT1: K-AWAIT — **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) (승인=아니오)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT

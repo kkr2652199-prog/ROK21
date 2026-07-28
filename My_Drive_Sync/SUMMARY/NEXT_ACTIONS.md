@@ -7,7 +7,7 @@
 - 할일: **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`)
 - 선행조건: K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기
 - 승인필요: 아니오
-- 최종갱신: `a5bf93d` (K-PIPE-A · NEXT=K-AWAIT 유지)
+- 최종갱신: `89bfc0b` (K-ANALOG-PREP · NEXT=K-AWAIT 유지)
 
 ## WORKSTATE
 IDLE
