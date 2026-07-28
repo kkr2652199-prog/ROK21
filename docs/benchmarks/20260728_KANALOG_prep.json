@@ -1,0 +1,653 @@
+{
+  "task": "K-ANALOG-PREP",
+  "target_draw_no": 1234,
+  "target_nums": [
+    1,
+    15,
+    19,
+    31,
+    35,
+    43
+  ],
+  "target_bonus": 27,
+  "norm_spec": {
+    "sum_div": 270,
+    "odd_div": 6,
+    "lmh_div": 6,
+    "ac_div": 10,
+    "consec_div": 3,
+    "l1_dims": 7,
+    "score_w_jaccard": 0.55,
+    "score_w_pattern": 0.45,
+    "min_overlap": 2,
+    "pattern_sim_rescue": 0.85,
+    "top_k": 15,
+    "chain_window": 8
+  },
+  "candidate_total": 386,
+  "b_only_count": 174,
+  "b_only_ratio": 0.4508,
+  "overlap2_plus_count": 212,
+  "top_k": [
+    {
+      "draw_no": 793,
+      "draw_date": "2018-02-10",
+      "nums": [
+        10,
+        15,
+        21,
+        35,
+        38,
+        43
+      ],
+      "bonus": 31,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.9286,
+      "score": 0.6929,
+      "via": "A+B",
+      "chain_pre_draws": [
+        785,
+        786,
+        787,
+        788,
+        789,
+        790,
+        791,
+        792
+      ],
+      "next_draw": {
+        "draw_no": 794,
+        "found": true,
+        "nums": [
+          6,
+          7,
+          18,
+          19,
+          30,
+          38
+        ],
+        "bonus": 13
+      }
+    },
+    {
+      "draw_no": 315,
+      "draw_date": "2008-12-13",
+      "nums": [
+        1,
+        13,
+        33,
+        35,
+        43,
+        45
+      ],
+      "bonus": 23,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.9243,
+      "score": 0.691,
+      "via": "A+B",
+      "chain_pre_draws": [
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314
+      ],
+      "next_draw": {
+        "draw_no": 316,
+        "found": true,
+        "nums": [
+          10,
+          11,
+          21,
+          27,
+          31,
+          39
+        ],
+        "bonus": 43
+      }
+    },
+    {
+      "draw_no": 286,
+      "draw_date": "2008-05-24",
+      "nums": [
+        1,
+        15,
+        19,
+        40,
+        42,
+        44
+      ],
+      "bonus": 17,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.9196,
+      "score": 0.6888,
+      "via": "A+B",
+      "chain_pre_draws": [
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285
+      ],
+      "next_draw": {
+        "draw_no": 287,
+        "found": true,
+        "nums": [
+          6,
+          12,
+          24,
+          27,
+          35,
+          37
+        ],
+        "bonus": 41
+      }
+    },
+    {
+      "draw_no": 341,
+      "draw_date": "2009-06-13",
+      "nums": [
+        1,
+        8,
+        19,
+        34,
+        39,
+        43
+      ],
+      "bonus": 41,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.9095,
+      "score": 0.6843,
+      "via": "A+B",
+      "chain_pre_draws": [
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340
+      ],
+      "next_draw": {
+        "draw_no": 342,
+        "found": true,
+        "nums": [
+          1,
+          13,
+          14,
+          33,
+          34,
+          43
+        ],
+        "bonus": 25
+      }
+    },
+    {
+      "draw_no": 343,
+      "draw_date": "2009-06-27",
+      "nums": [
+        1,
+        10,
+        17,
+        29,
+        31,
+        43
+      ],
+      "bonus": 15,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.9074,
+      "score": 0.6833,
+      "via": "A+B",
+      "chain_pre_draws": [
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342
+      ],
+      "next_draw": {
+        "draw_no": 344,
+        "found": true,
+        "nums": [
+          1,
+          2,
+          15,
+          28,
+          34,
+          45
+        ],
+        "bonus": 38
+      }
+    },
+    {
+      "draw_no": 983,
+      "draw_date": "2021-10-02",
+      "nums": [
+        13,
+        23,
+        26,
+        31,
+        35,
+        43
+      ],
+      "bonus": 15,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.9,
+      "score": 0.68,
+      "via": "A+B",
+      "chain_pre_draws": [
+        975,
+        976,
+        977,
+        978,
+        979,
+        980,
+        981,
+        982
+      ],
+      "next_draw": {
+        "draw_no": 984,
+        "found": true,
+        "nums": [
+          3,
+          10,
+          23,
+          35,
+          36,
+          37
+        ],
+        "bonus": 18
+      }
+    },
+    {
+      "draw_no": 691,
+      "draw_date": "2016-02-27",
+      "nums": [
+        15,
+        27,
+        33,
+        35,
+        43,
+        45
+      ],
+      "bonus": 16,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.8952,
+      "score": 0.6779,
+      "via": "A+B",
+      "chain_pre_draws": [
+        683,
+        684,
+        685,
+        686,
+        687,
+        688,
+        689,
+        690
+      ],
+      "next_draw": {
+        "draw_no": 692,
+        "found": true,
+        "nums": [
+          3,
+          11,
+          14,
+          15,
+          32,
+          36
+        ],
+        "bonus": 44
+      }
+    },
+    {
+      "draw_no": 773,
+      "draw_date": "2017-09-23",
+      "nums": [
+        8,
+        12,
+        19,
+        21,
+        31,
+        35
+      ],
+      "bonus": 44,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.881,
+      "score": 0.6714,
+      "via": "A+B",
+      "chain_pre_draws": [
+        765,
+        766,
+        767,
+        768,
+        769,
+        770,
+        771,
+        772
+      ],
+      "next_draw": {
+        "draw_no": 774,
+        "found": true,
+        "nums": [
+          12,
+          15,
+          18,
+          28,
+          34,
+          42
+        ],
+        "bonus": 9
+      }
+    },
+    {
+      "draw_no": 931,
+      "draw_date": "2020-10-03",
+      "nums": [
+        14,
+        15,
+        23,
+        25,
+        35,
+        43
+      ],
+      "bonus": 32,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.8751,
+      "score": 0.6688,
+      "via": "A+B",
+      "chain_pre_draws": [
+        923,
+        924,
+        925,
+        926,
+        927,
+        928,
+        929,
+        930
+      ],
+      "next_draw": {
+        "draw_no": 932,
+        "found": true,
+        "nums": [
+          1,
+          6,
+          15,
+          36,
+          37,
+          38
+        ],
+        "bonus": 5
+      }
+    },
+    {
+      "draw_no": 558,
+      "draw_date": "2013-08-10",
+      "nums": [
+        12,
+        15,
+        19,
+        26,
+        40,
+        43
+      ],
+      "bonus": 29,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.8608,
+      "score": 0.6624,
+      "via": "A+B",
+      "chain_pre_draws": [
+        550,
+        551,
+        552,
+        553,
+        554,
+        555,
+        556,
+        557
+      ],
+      "next_draw": {
+        "draw_no": 559,
+        "found": true,
+        "nums": [
+          11,
+          12,
+          25,
+          32,
+          44,
+          45
+        ],
+        "bonus": 23
+      }
+    },
+    {
+      "draw_no": 395,
+      "draw_date": "2010-06-26",
+      "nums": [
+        11,
+        15,
+        20,
+        26,
+        31,
+        35
+      ],
+      "bonus": 7,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.8587,
+      "score": 0.6614,
+      "via": "A+B",
+      "chain_pre_draws": [
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394
+      ],
+      "next_draw": {
+        "draw_no": 396,
+        "found": true,
+        "nums": [
+          18,
+          20,
+          31,
+          34,
+          40,
+          45
+        ],
+        "bonus": 30
+      }
+    },
+    {
+      "draw_no": 433,
+      "draw_date": "2011-03-19",
+      "nums": [
+        19,
+        23,
+        29,
+        33,
+        35,
+        43
+      ],
+      "bonus": 27,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.8561,
+      "score": 0.6602,
+      "via": "A+B",
+      "chain_pre_draws": [
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432
+      ],
+      "next_draw": {
+        "draw_no": 434,
+        "found": true,
+        "nums": [
+          3,
+          13,
+          20,
+          24,
+          33,
+          37
+        ],
+        "bonus": 35
+      }
+    },
+    {
+      "draw_no": 508,
+      "draw_date": "2012-08-25",
+      "nums": [
+        5,
+        27,
+        31,
+        34,
+        35,
+        43
+      ],
+      "bonus": 37,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.8503,
+      "score": 0.6576,
+      "via": "A+B",
+      "chain_pre_draws": [
+        500,
+        501,
+        502,
+        503,
+        504,
+        505,
+        506,
+        507
+      ],
+      "next_draw": {
+        "draw_no": 509,
+        "found": true,
+        "nums": [
+          12,
+          25,
+          29,
+          35,
+          42,
+          43
+        ],
+        "bonus": 24
+      }
+    },
+    {
+      "draw_no": 387,
+      "draw_date": "2010-05-01",
+      "nums": [
+        1,
+        26,
+        31,
+        34,
+        40,
+        43
+      ],
+      "bonus": 20,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.8503,
+      "score": 0.6576,
+      "via": "A+B",
+      "chain_pre_draws": [
+        379,
+        380,
+        381,
+        382,
+        383,
+        384,
+        385,
+        386
+      ],
+      "next_draw": {
+        "draw_no": 388,
+        "found": true,
+        "nums": [
+          1,
+          8,
+          9,
+          17,
+          29,
+          32
+        ],
+        "bonus": 45
+      }
+    },
+    {
+      "draw_no": 874,
+      "draw_date": "2019-08-31",
+      "nums": [
+        1,
+        15,
+        19,
+        23,
+        28,
+        42
+      ],
+      "bonus": 32,
+      "overlap": 3,
+      "jaccard": 0.5,
+      "pattern_sim": 0.8487,
+      "score": 0.6569,
+      "via": "A",
+      "chain_pre_draws": [
+        866,
+        867,
+        868,
+        869,
+        870,
+        871,
+        872,
+        873
+      ],
+      "next_draw": {
+        "draw_no": 875,
+        "found": true,
+        "nums": [
+          19,
+          22,
+          30,
+          34,
+          39,
+          44
+        ],
+        "bonus": 36
+      }
+    }
+  ],
+  "ui_disclaimer": "역사 유사 장면 · 설명용 · 1등 확률을 높이지 않음 · next_draw는 해당 analog 회차의 실제 다음 추첨(관측)이며 1235 예측 아님",
+  "patch_gate": {
+    "conditional_go": true,
+    "reason": "후보 과다/과소 시 K/W 조정"
+  }
+}

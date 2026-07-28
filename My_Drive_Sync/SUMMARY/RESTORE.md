@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-28 | K-PIPE-A 심장통합 | WF apply_coordinator_scoring·cache clear · verify PASS | K-PIPE PATCHED | `a5bf93d` |
+| 2026-07-28 | K-ANALOG-PREP | 2차회의·1234 probe386·gate PASS · K-ANALOG-1 Go | K-ANALOG PREP | (commit) |
+| 2026-07-28 | K-ANALOG OPEN | COLLAB_HANDOFF 등록 | OPEN | `549be79` |
 | 2026-07-28 | K-UI-SSOT 메인상세 | brain_review우선·select동기·1235상세폴백 · verify PASS | K-UI-SSOT PATCHED | `38a7ba3` |
 | 2026-07-28 | K-H 미등록AUX | _unused격리 · import0 · 3+4유지 · verify PASS | K-H PATCHED | `a5a0e4e` |
 | 2026-07-28 | K-B BENCH SSOT | review100·pred갭31·세트동일0 · verify PASS | K-B PATCHED | `1d0be4f` |

@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-PIPE-A — walk-forward·coordinator AUX scoring 통합 PASS
-- 직전: K-UI-SSOT · K-DETAIL-CUTOFF · K-00
-- 다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
+- 지금: K-ANALOG-PREP — 1234 유사회차 probe PASS · K-ANALOG-1 Go
+- 직전: K-PIPE-A · K-UI-SSOT · K-DETAIL-CUTOFF
+- 다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` (K-ANALOG-1 병행)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
