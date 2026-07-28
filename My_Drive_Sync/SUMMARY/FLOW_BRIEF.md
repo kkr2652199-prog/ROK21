@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `189aa2d` · WORK=`IDLE`
+- HEAD: `615b35a` · WORK=`IDLE`
 - 지금: K-ATTACK-SLICE — 구간단독승격 실패 · conf top2 천장 1.23 · **BAYES 다음**
 - 직전: GATHER 관측고정 (아이디어 유효·휴리스틱 미달)
 - BOOT다음: K-ATTACK-BAYES — 3뇌 동적가중 시뮬
