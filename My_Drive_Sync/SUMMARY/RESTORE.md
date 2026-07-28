@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6ee6ee8` · WORK=`IDLE`
+1. **HEAD:** `d568519` · WORK=`IDLE`
 2. **지금:** GENDIV FAIL · corr/Q1 false · **HOLD** · V2유지
 3. **다음1건:** K-ATTACK-HOLD — GENDIV FAIL(corr|r|<0.03 · Q1 ge3 0.1224·Δ-0.0223 · Q1−Q5=-0.0344) · WIRE금지 · V2유지 · GENDIV재탕금지 · 슬롯재선택계열지양 · 형·커서 다음 직교축 1건 재선정 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
