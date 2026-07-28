@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-ATTACK-CONF-CAL 보류 · NEXT=OPEN
+📌 사유: K-ATTACK-OPEN 서베이 · 3레버 FAIL · NEXT=HOLD
 
 ---
 
@@ -11,8 +11,7 @@
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | BASELINE_PIN | **`640cb67`** |
-| REFEREE | W=30 PASS |
-| CONF-CAL | **보류** · max-conf≈null · ≪tier · WIRE 금지 |
+| OPEN | A/B/C **전부 관측종료** · recommended=**없음** |
 
 ---
 
@@ -20,32 +19,32 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-ATTACK-CONF-CAL** | isotonic conf 세트순위 | 보류 (Δ+0.002 · ≪tier) |
-| **K-REFEREE-WINDOW** | 슬라이딩 W=30 | PASS |
-| **K-ATTACK-BAYES** | inv-corr | soft null |
+| **K-ATTACK-OPEN** | analog·markov tune·conf rebuild 서베이 | 추천없음 |
+| **K-ATTACK-CONF-CAL** | conf 보정 | 보류 |
+| **K-REFEREE-WINDOW** | W=30 | PASS |
 
 ---
 
-## 2) CONF-CAL 핵심 (n_eval=1182)
+## 2) OPEN 핵심
 
-| 정책 | mean |
-|------|------|
-| max conf / conf_cal | 0.825 / **0.827** |
-| tier best_set | **1.708** |
-| RR+tier | **1.743** |
+| 레버 | 지표 | verdict |
+|------|------|---------|
+| A | spearman −0.0023 | 관측종료 |
+| B | best mean 0.8176 | 관측종료 |
+| C | sp≈0.024 · spread5 | 관측종료 |
 
-근거: `docs/benchmarks/20260729_KCONFCAL_results.json`
+근거: `docs/benchmarks/20260729_KOPEN_survey.json`
 
 ---
 
 ## 3) 다음
 
-`K-ATTACK-OPEN` — 다음 공격 레버 1건 선정 (승인 필요)
+`K-ATTACK-HOLD` — 다음 공격 축 재선정 (승인 필요)
 
 ---
 
 ## 4) 산출물
 
-- `tools/_k_attack_conf_cal.py`
-- `docs/benchmarks/20260729_KCONFCAL_results.json`
-- `reports/20260729_KATTACK_CONF_CAL.md`
+- `tools/_k_attack_open_survey.py`
+- `docs/benchmarks/20260729_KOPEN_survey.json`
+- `reports/20260729_KATTACK_OPEN.md`

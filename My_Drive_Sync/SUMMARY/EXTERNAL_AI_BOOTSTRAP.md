@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `aa4d9a4` |
+| HEAD(실측) | `f7c03e3` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-ATTACK-CONF-CAL 보류 · cal≈orig · ≪tier · **OPEN 다음** |
-| 직전 | K-REFEREE-WINDOW PASS (W=30) |
-| BOOT다음 | K-ATTACK-OPEN — 다음 공격 레버 1건 선정 |
-| NEXT1 ID | **K-ATTACK-OPEN** |
-| NEXT1 할일 | CONF-CAL 보류(Δ≈0·tier/RR 대패) · conf 세트순위 경로 관측종료 · 다음 공격 레버 1건 선정(READ-ONLY 우선 · WIRE 금지) |
-| 승인필요 | 예 (다음 레버 선정) |
-| 선행 | K-ATTACK-CONF-CAL 완료 · spearman 약함 · cal≪tier |
+| 지금 | K-ATTACK-OPEN — A/B/C 전부 FAIL · **추천없음** |
+| 직전 | CONF-CAL 보류 · conf 세트순위 관측종료 |
+| BOOT다음 | K-ATTACK-HOLD — 형·동생 다음 축 재선정 |
+| NEXT1 ID | **K-ATTACK-HOLD** |
+| NEXT1 할일 | OPEN 서베이 3레버(A analog·B markov tune·C conf rebuild) 전부 관측종료 · recommended=없음 · 형·동생 다음 공격 축 1건 재선정 |
+| 승인필요 | 예 |
+| 선행 | K-ATTACK-OPEN 완료 · docs/benchmarks/20260729_KOPEN_survey.json |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=aa4d9a4 · 지금=K-ATTACK-CONF-CAL 보류 · cal≈orig · ≪tier · **OPEN 다음** · 다음=K-ATTACK-OPEN`
+1. 첫줄 `[복귀] HEAD=f7c03e3 · 지금=K-ATTACK-OPEN — A/B/C 전부 FAIL · **추천없음** · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

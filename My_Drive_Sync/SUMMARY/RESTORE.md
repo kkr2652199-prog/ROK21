@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `aa4d9a4` · WORK=`IDLE`
-2. **지금:** K-ATTACK-CONF-CAL 보류 · cal≈orig · ≪tier · **OPEN 다음**
-3. **다음1건:** K-ATTACK-OPEN — CONF-CAL 보류(Δ≈0·tier/RR 대패) · conf 세트순위 경로 관측종료 · 다음 공격 레버 1건 선정(READ-ONLY 우선 · WIRE 금지) (승인필요=예 (다음 레버 선정) · 선행=K-ATTACK-CONF-CAL 완료 · spearman 약함 · cal≪tier)
+1. **HEAD:** `f7c03e3` · WORK=`IDLE`
+2. **지금:** K-ATTACK-OPEN — A/B/C 전부 FAIL · **추천없음**
+3. **다음1건:** K-ATTACK-HOLD — OPEN 서베이 3레버(A analog·B markov tune·C conf rebuild) 전부 관측종료 · recommended=없음 · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-ATTACK-OPEN 완료 · docs/benchmarks/20260729_KOPEN_survey.json)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | OPEN·종료체크 | A/B/C 전부FAIL · 추천없음 · NEXT=HOLD | OPEN DONE | (커밋중) |
 | 2026-07-29 | CONF-CAL·종료체크 | spearman약·cal≈orig·≪tier · NEXT=OPEN | CONF-CAL 보류 | `a0061e3` |
 | 2026-07-29 | REFEREE·종료체크 | W=30·max_gap0.1334 PASS · NEXT=CONF-CAL복귀 | REFEREE PASS | `a3d25fb` |
 | 2026-07-29 | NEXT교체·종료체크 | REFEREE-WINDOW · CONF-CAL ARCHIVE보류 | NEXT교체 | `d96759f` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | 핀 GO·종료체크 | POS·SCATTER·DESIGN·PILOT · 풀6=21 · v0회수0 · NEXT=V1 | ①~④ DONE | `8163d55` |
 | 2026-07-29 | PATTERN2+1등목표·종료체크 | 패턴가중기각 · COVER1 확률표 · ATTACK전선 | K-PATTERN-2+COVER1 | `291e340` |
 | 2026-07-29 | TRUST·사공·역할분담·종료체크 | Jaccard0.11·pool15≈null · 3예측유지 · 보고서 | K-TRUST+CREW | `9806878` |
-| 2026-07-29 | 패턴분석·외부AI자문·종료체크 | 4등vs대조 · 구간35%vs5% · 패턴AUX 0.91vs0.65 · 보고서 | K-PATTERN-1 | `1b3884a` |
 
 ---
 

@@ -1,0 +1,232 @@
+{
+  "id": "K-ATTACK-OPEN",
+  "ts": "2026-07-29T03:09:11",
+  "elapsed_sec": 149.6,
+  "lever_a_analog": {
+    "overlap_spearman_r": -0.0023,
+    "overlap_mean": 0.1442,
+    "n_pairs": 17745,
+    "pass": false,
+    "verdict": "관측종료"
+  },
+  "lever_b_markov_tune": {
+    "baseline_80_002": {
+      "steps": 80,
+      "decay": 0.02,
+      "mean": 0.7948,
+      "ge3_rate": 0.0186,
+      "n": 1184,
+      "delta_mean_vs_rr": -0.948,
+      "delta_ge3_vs_rr": -0.1151
+    },
+    "best_combo": {
+      "steps": 80,
+      "decay": 0.05
+    },
+    "best_mean": 0.8176,
+    "best_ge3_rate": 0.022,
+    "delta_vs_baseline": 0.0228,
+    "delta_vs_rr_mean": -0.9252,
+    "all_combos": [
+      {
+        "steps": 50,
+        "decay": 0.01,
+        "mean": 0.777,
+        "ge3_rate": 0.0279,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9658,
+        "delta_ge3_vs_rr": -0.1058
+      },
+      {
+        "steps": 50,
+        "decay": 0.02,
+        "mean": 0.8167,
+        "ge3_rate": 0.0245,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9261,
+        "delta_ge3_vs_rr": -0.1092
+      },
+      {
+        "steps": 50,
+        "decay": 0.05,
+        "mean": 0.7914,
+        "ge3_rate": 0.0228,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9514,
+        "delta_ge3_vs_rr": -0.1109
+      },
+      {
+        "steps": 80,
+        "decay": 0.01,
+        "mean": 0.8074,
+        "ge3_rate": 0.0262,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9354,
+        "delta_ge3_vs_rr": -0.1075
+      },
+      {
+        "steps": 80,
+        "decay": 0.02,
+        "mean": 0.7948,
+        "ge3_rate": 0.0186,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.948,
+        "delta_ge3_vs_rr": -0.1151
+      },
+      {
+        "steps": 80,
+        "decay": 0.05,
+        "mean": 0.8176,
+        "ge3_rate": 0.022,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9252,
+        "delta_ge3_vs_rr": -0.1117
+      },
+      {
+        "steps": 120,
+        "decay": 0.01,
+        "mean": 0.7838,
+        "ge3_rate": 0.0177,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.959,
+        "delta_ge3_vs_rr": -0.116
+      },
+      {
+        "steps": 120,
+        "decay": 0.02,
+        "mean": 0.8041,
+        "ge3_rate": 0.0211,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9387,
+        "delta_ge3_vs_rr": -0.1126
+      },
+      {
+        "steps": 120,
+        "decay": 0.05,
+        "mean": 0.7939,
+        "ge3_rate": 0.0245,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9489,
+        "delta_ge3_vs_rr": -0.1092
+      },
+      {
+        "steps": 200,
+        "decay": 0.01,
+        "mean": 0.788,
+        "ge3_rate": 0.0211,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9548,
+        "delta_ge3_vs_rr": -0.1126
+      },
+      {
+        "steps": 200,
+        "decay": 0.02,
+        "mean": 0.8133,
+        "ge3_rate": 0.0287,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9295,
+        "delta_ge3_vs_rr": -0.105
+      },
+      {
+        "steps": 200,
+        "decay": 0.05,
+        "mean": 0.7846,
+        "ge3_rate": 0.0236,
+        "n": 1184,
+        "delta_mean_vs_rr": -0.9582,
+        "delta_ge3_vs_rr": -0.1101
+      }
+    ],
+    "method": "deterministic_top6_visit · seeded walk (no set random.choices)",
+    "pass": false,
+    "verdict": "관측종료"
+  },
+  "lever_c_conf_rebuild": {
+    "bin_spread": 5,
+    "spearman_by_brain": {
+      "stat": 0.0241,
+      "markov": 0.0243,
+      "review": 0.0032
+    },
+    "spearman_r_ge2": false,
+    "per_brain": {
+      "stat": {
+        "spearman_r": 0.0241,
+        "bin_occupied": 2,
+        "bins_n": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4736,
+          1184,
+          0
+        ],
+        "n": 5920
+      },
+      "markov": {
+        "spearman_r": 0.0243,
+        "bin_occupied": 5,
+        "bins_n": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          939,
+          1122,
+          1412,
+          1268,
+          1179
+        ],
+        "n": 5920
+      },
+      "review": {
+        "spearman_r": 0.0032,
+        "bin_occupied": 5,
+        "bins_n": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          846,
+          1140,
+          1490,
+          1376,
+          1068
+        ],
+        "n": 5920
+      }
+    },
+    "within_new_conf": {
+      "n": 3552,
+      "mean": 0.8224,
+      "ge3": 98,
+      "ge3_rate": 0.0276
+    },
+    "within_orig_conf": {
+      "n": 3552,
+      "mean": 0.8252,
+      "ge3": 96,
+      "ge3_rate": 0.027
+    },
+    "delta_new_vs_orig_mean": -0.0028,
+    "cross_rr_style": {
+      "n": 1184,
+      "mean": 0.7838,
+      "ge3": 29,
+      "ge3_rate": 0.0245
+    },
+    "delta_vs_rr": -0.959,
+    "pass": false,
+    "verdict": "관측종료"
+  },
+  "recommended_next": "없음",
+  "recommended_id": "없음",
+  "selection_rule": "first PASS in order A→B→C",
+  "db_code_write": false
+}
