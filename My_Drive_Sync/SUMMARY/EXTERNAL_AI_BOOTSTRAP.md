@@ -8,11 +8,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `13e9c28` |
+| HEAD(실측) | `e635d70` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-ANALOG-1 — API+상세⑥·BT·MULTIDIM·verify PASS |
-| 직전 | K-ANALOG-PREP · K-PIPE-A · K-UI-SSOT |
+| 지금 | K-UI-TESTLOTTO — 메인 당첨 히어로·WARRANT 접기 |
+| 직전 | K-ANALOG-1 · K-ANALOG-PREP · K-PIPE-A |
 | BOOT다음 | K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` |
 | NEXT1 ID | **K-AWAIT** |
 | NEXT1 할일 | **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=13e9c28 · 지금=K-ANALOG-1 — API+상세⑥·BT·MULTIDIM·verify PASS · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=e635d70 · 지금=K-UI-TESTLOTTO — 메인 당첨 히어로·WARRANT 접기 · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

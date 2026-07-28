@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-28 KST  
-📌 사유: K-ANALOG-1 API+상세⑥·walk-forward·다차원벤치 · HEAD `7299711`
+📌 사유: K-UI-TESTLOTTO 메인 당첨 히어로 · HEAD `e635d70`
 
 ---
 
@@ -19,6 +19,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-UI-TESTLOTTO** | 메인 당첨 히어로·WARRANT 접기 | push |
 | **K-ANALOG-1** | analog API · 상세⑥ 역사유사 · BT735·MULTIDIM · verify PASS | verify_pass |
 | **K-ANALOG-PREP** | 1234 probe · 2차 협업회의 · conditional_go | verify_pass |
 | **K-PIPE-A** | WF·coordinator AUX scoring 통합 | verify_pass |

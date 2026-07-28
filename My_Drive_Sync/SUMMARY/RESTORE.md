@@ -3,8 +3,8 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `13e9c28` · WORK=`IDLE`
-2. **지금:** K-ANALOG-1 — API+상세⑥·BT·MULTIDIM·verify PASS
+1. **HEAD:** `e635d70` · WORK=`IDLE`
+2. **지금:** K-UI-TESTLOTTO — 메인 당첨 히어로·WARRANT 접기
 3. **다음1건:** K-AWAIT — **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) (승인필요=아니오 · 선행=K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-28 | K-UI-TESTLOTTO 종료체크 | 메인 당첨 히어로 sticky · WARRANT 접기 · push | K-UI-TESTLOTTO PATCHED | `e635d70` |
 | 2026-07-28 | K-ANALOG-1 종료체크 | API `/analog/draw` · 상세⑥ · BT735·MULTIDIM · verify PASS | K-ANALOG-1 PATCHED | `7299711` |
 | 2026-07-28 | K-ANALOG-PREP | 2차회의·1234 probe386·gate PASS · K-ANALOG-1 Go | K-ANALOG PREP | `89bfc0b` |
 | 2026-07-28 | K-ANALOG OPEN | COLLAB_HANDOFF 등록 | OPEN | `549be79` |
