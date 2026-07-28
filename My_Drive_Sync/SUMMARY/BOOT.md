@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: 핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝**
-- 직전: 형 핀 GO · POS sticky≈null
-- 다음: K-GATHER-V1 — oracle 분해 후 휴리스틱 교체 (WIRE 보류)
+- 지금: K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류**
+- 직전: 핀①~④ · SCATTER 풀6=21
+- 다음: K-GATHER-V2 — V축소 후 covering PILOT
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

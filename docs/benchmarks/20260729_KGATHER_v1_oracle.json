@@ -1,0 +1,1014 @@
+{
+  "id": "K-GATHER-V1-ORACLE",
+  "brain": "stat",
+  "summary": {
+    "n_union6_stat": 21,
+    "V_size_mean": 24.71,
+    "best_mean": 2.6667,
+    "pair_cover_rate_mean": 0.2476,
+    "singleton_winners_mean": 4.9,
+    "sets_touched_mean": 4.29,
+    "draws": [
+      92,
+      97,
+      104,
+      164,
+      318,
+      359,
+      465,
+      476,
+      502,
+      516,
+      696,
+      837,
+      842,
+      878,
+      891,
+      1007,
+      1022,
+      1048,
+      1064,
+      1090,
+      1208
+    ]
+  },
+  "cases": [
+    {
+      "draw": 92,
+      "actual": [
+        3,
+        14,
+        24,
+        33,
+        35,
+        36
+      ],
+      "V_size": 25,
+      "per_set_hits": [
+        2,
+        2,
+        2,
+        0,
+        0
+      ],
+      "best": 2,
+      "win_locations": {
+        "3": [
+          1
+        ],
+        "14": [
+          1
+        ],
+        "24": [
+          3
+        ],
+        "33": [
+          2
+        ],
+        "35": [
+          3
+        ],
+        "36": [
+          2
+        ]
+      },
+      "sets_touched_by_winners": 3,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 3,
+      "pair_cover_rate": 0.2,
+      "singleton_winners": 6
+    },
+    {
+      "draw": 97,
+      "actual": [
+        6,
+        7,
+        14,
+        15,
+        20,
+        36
+      ],
+      "V_size": 24,
+      "per_set_hits": [
+        0,
+        3,
+        0,
+        2,
+        2
+      ],
+      "best": 3,
+      "win_locations": {
+        "6": [
+          2,
+          4
+        ],
+        "7": [
+          5
+        ],
+        "14": [
+          5
+        ],
+        "15": [
+          2
+        ],
+        "20": [
+          4
+        ],
+        "36": [
+          2
+        ]
+      },
+      "sets_touched_by_winners": 3,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 5,
+      "pair_cover_rate": 0.3333,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 104,
+      "actual": [
+        17,
+        32,
+        33,
+        34,
+        42,
+        44
+      ],
+      "V_size": 23,
+      "per_set_hits": [
+        2,
+        2,
+        0,
+        3,
+        1
+      ],
+      "best": 3,
+      "win_locations": {
+        "17": [
+          1,
+          5
+        ],
+        "32": [
+          2,
+          4
+        ],
+        "33": [
+          4
+        ],
+        "34": [
+          2
+        ],
+        "42": [
+          4
+        ],
+        "44": [
+          1
+        ]
+      },
+      "sets_touched_by_winners": 4,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 5,
+      "pair_cover_rate": 0.3333,
+      "singleton_winners": 4
+    },
+    {
+      "draw": 164,
+      "actual": [
+        6,
+        9,
+        10,
+        11,
+        39,
+        41
+      ],
+      "V_size": 25,
+      "per_set_hits": [
+        1,
+        1,
+        4,
+        1,
+        0
+      ],
+      "best": 4,
+      "win_locations": {
+        "6": [
+          1
+        ],
+        "9": [
+          4
+        ],
+        "10": [
+          3
+        ],
+        "11": [
+          2,
+          3
+        ],
+        "39": [
+          3
+        ],
+        "41": [
+          3
+        ]
+      },
+      "sets_touched_by_winners": 4,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 6,
+      "pair_cover_rate": 0.4,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 318,
+      "actual": [
+        2,
+        17,
+        19,
+        20,
+        34,
+        45
+      ],
+      "V_size": 26,
+      "per_set_hits": [
+        3,
+        1,
+        3,
+        0,
+        0
+      ],
+      "best": 3,
+      "win_locations": {
+        "2": [
+          1
+        ],
+        "17": [
+          3
+        ],
+        "19": [
+          3
+        ],
+        "20": [
+          2
+        ],
+        "34": [
+          1
+        ],
+        "45": [
+          1,
+          3
+        ]
+      },
+      "sets_touched_by_winners": 3,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 6,
+      "pair_cover_rate": 0.4,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 359,
+      "actual": [
+        1,
+        10,
+        19,
+        20,
+        24,
+        40
+      ],
+      "V_size": 25,
+      "per_set_hits": [
+        0,
+        1,
+        0,
+        2,
+        4
+      ],
+      "best": 4,
+      "win_locations": {
+        "1": [
+          5
+        ],
+        "10": [
+          4
+        ],
+        "19": [
+          2,
+          5
+        ],
+        "20": [
+          4
+        ],
+        "24": [
+          5
+        ],
+        "40": [
+          5
+        ]
+      },
+      "sets_touched_by_winners": 3,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 7,
+      "pair_cover_rate": 0.4667,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 465,
+      "actual": [
+        1,
+        8,
+        11,
+        13,
+        22,
+        38
+      ],
+      "V_size": 24,
+      "per_set_hits": [
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "best": 2,
+      "win_locations": {
+        "1": [
+          1
+        ],
+        "8": [
+          2,
+          4
+        ],
+        "11": [
+          2
+        ],
+        "13": [
+          3
+        ],
+        "22": [
+          5
+        ],
+        "38": [
+          3
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 2,
+      "pair_cover_rate": 0.1333,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 476,
+      "actual": [
+        9,
+        12,
+        13,
+        15,
+        37,
+        38
+      ],
+      "V_size": 26,
+      "per_set_hits": [
+        2,
+        1,
+        2,
+        3,
+        1
+      ],
+      "best": 3,
+      "win_locations": {
+        "9": [
+          2,
+          4,
+          5
+        ],
+        "12": [
+          3
+        ],
+        "13": [
+          1,
+          4
+        ],
+        "15": [
+          3
+        ],
+        "37": [
+          4
+        ],
+        "38": [
+          1
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 5,
+      "pair_cover_rate": 0.3333,
+      "singleton_winners": 4
+    },
+    {
+      "draw": 502,
+      "actual": [
+        6,
+        22,
+        28,
+        32,
+        34,
+        40
+      ],
+      "V_size": 23,
+      "per_set_hits": [
+        2,
+        0,
+        3,
+        1,
+        1
+      ],
+      "best": 3,
+      "win_locations": {
+        "6": [
+          3
+        ],
+        "22": [
+          3,
+          4
+        ],
+        "28": [
+          5
+        ],
+        "32": [
+          3
+        ],
+        "34": [
+          1
+        ],
+        "40": [
+          1
+        ]
+      },
+      "sets_touched_by_winners": 4,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 4,
+      "pair_cover_rate": 0.2667,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 516,
+      "actual": [
+        2,
+        8,
+        23,
+        41,
+        43,
+        44
+      ],
+      "V_size": 25,
+      "per_set_hits": [
+        1,
+        3,
+        2,
+        0,
+        1
+      ],
+      "best": 3,
+      "win_locations": {
+        "2": [
+          2
+        ],
+        "8": [
+          1,
+          5
+        ],
+        "23": [
+          2
+        ],
+        "41": [
+          3
+        ],
+        "43": [
+          2
+        ],
+        "44": [
+          3
+        ]
+      },
+      "sets_touched_by_winners": 4,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 4,
+      "pair_cover_rate": 0.2667,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 696,
+      "actual": [
+        1,
+        7,
+        16,
+        18,
+        34,
+        38
+      ],
+      "V_size": 23,
+      "per_set_hits": [
+        3,
+        1,
+        1,
+        3,
+        2
+      ],
+      "best": 3,
+      "win_locations": {
+        "1": [
+          4
+        ],
+        "7": [
+          1,
+          5
+        ],
+        "16": [
+          1,
+          4
+        ],
+        "18": [
+          2
+        ],
+        "34": [
+          4
+        ],
+        "38": [
+          1,
+          3,
+          5
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 6,
+      "pair_cover_rate": 0.4,
+      "singleton_winners": 3
+    },
+    {
+      "draw": 837,
+      "actual": [
+        2,
+        25,
+        28,
+        30,
+        33,
+        45
+      ],
+      "V_size": 26,
+      "per_set_hits": [
+        0,
+        3,
+        1,
+        1,
+        1
+      ],
+      "best": 3,
+      "win_locations": {
+        "2": [
+          2
+        ],
+        "25": [
+          5
+        ],
+        "28": [
+          4
+        ],
+        "30": [
+          3
+        ],
+        "33": [
+          2
+        ],
+        "45": [
+          2
+        ]
+      },
+      "sets_touched_by_winners": 4,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 3,
+      "pair_cover_rate": 0.2,
+      "singleton_winners": 6
+    },
+    {
+      "draw": 842,
+      "actual": [
+        14,
+        26,
+        32,
+        36,
+        39,
+        42
+      ],
+      "V_size": 24,
+      "per_set_hits": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "best": 2,
+      "win_locations": {
+        "14": [
+          4
+        ],
+        "26": [
+          1
+        ],
+        "32": [
+          3
+        ],
+        "36": [
+          5
+        ],
+        "39": [
+          1
+        ],
+        "42": [
+          2
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 1,
+      "pair_cover_rate": 0.0667,
+      "singleton_winners": 6
+    },
+    {
+      "draw": 878,
+      "actual": [
+        2,
+        6,
+        11,
+        16,
+        25,
+        31
+      ],
+      "V_size": 23,
+      "per_set_hits": [
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "best": 2,
+      "win_locations": {
+        "2": [
+          4
+        ],
+        "6": [
+          1
+        ],
+        "11": [
+          3,
+          4
+        ],
+        "16": [
+          5
+        ],
+        "25": [
+          2
+        ],
+        "31": [
+          5
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 2,
+      "pair_cover_rate": 0.1333,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 891,
+      "actual": [
+        9,
+        13,
+        28,
+        31,
+        39,
+        41
+      ],
+      "V_size": 24,
+      "per_set_hits": [
+        1,
+        2,
+        3,
+        1,
+        2
+      ],
+      "best": 3,
+      "win_locations": {
+        "9": [
+          5
+        ],
+        "13": [
+          3,
+          5
+        ],
+        "28": [
+          2,
+          4
+        ],
+        "31": [
+          2,
+          3
+        ],
+        "39": [
+          1
+        ],
+        "41": [
+          3
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 5,
+      "pair_cover_rate": 0.3333,
+      "singleton_winners": 3
+    },
+    {
+      "draw": 1007,
+      "actual": [
+        8,
+        11,
+        16,
+        19,
+        21,
+        25
+      ],
+      "V_size": 27,
+      "per_set_hits": [
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "best": 2,
+      "win_locations": {
+        "8": [
+          4
+        ],
+        "11": [
+          5
+        ],
+        "16": [
+          2,
+          5
+        ],
+        "19": [
+          3
+        ],
+        "21": [
+          4
+        ],
+        "25": [
+          1
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 2,
+      "pair_cover_rate": 0.1333,
+      "singleton_winners": 5
+    },
+    {
+      "draw": 1022,
+      "actual": [
+        5,
+        6,
+        11,
+        29,
+        42,
+        45
+      ],
+      "V_size": 24,
+      "per_set_hits": [
+        2,
+        2,
+        1,
+        0,
+        1
+      ],
+      "best": 2,
+      "win_locations": {
+        "5": [
+          3
+        ],
+        "6": [
+          2
+        ],
+        "11": [
+          1
+        ],
+        "29": [
+          1
+        ],
+        "42": [
+          2
+        ],
+        "45": [
+          5
+        ]
+      },
+      "sets_touched_by_winners": 4,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 2,
+      "pair_cover_rate": 0.1333,
+      "singleton_winners": 6
+    },
+    {
+      "draw": 1048,
+      "actual": [
+        6,
+        12,
+        17,
+        21,
+        32,
+        39
+      ],
+      "V_size": 26,
+      "per_set_hits": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "best": 2,
+      "win_locations": {
+        "6": [
+          5
+        ],
+        "12": [
+          1
+        ],
+        "17": [
+          4
+        ],
+        "21": [
+          2
+        ],
+        "32": [
+          5
+        ],
+        "39": [
+          3
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 1,
+      "pair_cover_rate": 0.0667,
+      "singleton_winners": 6
+    },
+    {
+      "draw": 1064,
+      "actual": [
+        3,
+        6,
+        9,
+        18,
+        22,
+        35
+      ],
+      "V_size": 25,
+      "per_set_hits": [
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "best": 2,
+      "win_locations": {
+        "3": [
+          4
+        ],
+        "6": [
+          2
+        ],
+        "9": [
+          3
+        ],
+        "18": [
+          5
+        ],
+        "22": [
+          2,
+          4
+        ],
+        "35": [
+          1,
+          5
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 3,
+      "pair_cover_rate": 0.2,
+      "singleton_winners": 4
+    },
+    {
+      "draw": 1090,
+      "actual": [
+        12,
+        19,
+        21,
+        29,
+        40,
+        45
+      ],
+      "V_size": 26,
+      "per_set_hits": [
+        2,
+        0,
+        1,
+        1,
+        2
+      ],
+      "best": 2,
+      "win_locations": {
+        "12": [
+          5
+        ],
+        "19": [
+          4
+        ],
+        "21": [
+          3
+        ],
+        "29": [
+          1
+        ],
+        "40": [
+          5
+        ],
+        "45": [
+          1
+        ]
+      },
+      "sets_touched_by_winners": 4,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 2,
+      "pair_cover_rate": 0.1333,
+      "singleton_winners": 6
+    },
+    {
+      "draw": 1208,
+      "actual": [
+        6,
+        27,
+        30,
+        36,
+        38,
+        42
+      ],
+      "V_size": 25,
+      "per_set_hits": [
+        1,
+        2,
+        3,
+        1,
+        1
+      ],
+      "best": 3,
+      "win_locations": {
+        "6": [
+          3
+        ],
+        "27": [
+          1,
+          3
+        ],
+        "30": [
+          4
+        ],
+        "36": [
+          2
+        ],
+        "38": [
+          2,
+          5
+        ],
+        "42": [
+          3
+        ]
+      },
+      "sets_touched_by_winners": 5,
+      "winning_pairs_total": 15,
+      "winning_pairs_covered_in_some_base": 4,
+      "pair_cover_rate": 0.2667,
+      "singleton_winners": 4
+    }
+  ],
+  "design_hints": [
+    "V_size typically ~20 → C(V,6) huge; 5 tickets cannot guarantee 6-if-6",
+    "if pair_cover_rate high: stitch winning pairs across sets (graph matching)",
+    "if singleton_winners high: need cross-set assembly of isolates",
+    "v1 candidate: build graph of numbers co-appearing in same base set; find 6-cliques/dense subgraphs in complement (numbers that RARELY co-appear) — actually winners may rarely co-appear",
+    "v1-oracle-ceiling test: inject one gather set = actual when act⊂V (cheat ceiling) to separate 'algorithm fail' vs '5-ticket limit'"
+  ]
+}

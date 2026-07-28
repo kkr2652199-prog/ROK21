@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `e5c9b43` |
+| HEAD(실측) | `ff56d82` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | 핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝** |
-| 직전 | 형 핀 GO · POS sticky≈null |
-| BOOT다음 | K-GATHER-V1 — oracle 분해 후 휴리스틱 교체 (WIRE 보류) |
-| NEXT1 ID | **K-GATHER-V1** |
-| NEXT1 할일 | union6 회차 oracle 분해 → 몰아주기 휴리스틱 교체 → PILOT 재실행 JSON (WIRE 전 성적 게이트) |
-| 승인필요 | 아니오 · **K-GATHER-WIRE만 형 GO** |
-| 선행 | ①~④ 완료 · SCATTER 기회 확인 · v0 회수 0/21 |
+| 지금 | K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류** |
+| 직전 | 핀①~④ · SCATTER 풀6=21 |
+| BOOT다음 | K-GATHER-V2 — V축소 후 covering PILOT |
+| NEXT1 ID | **K-GATHER-V2** |
+| NEXT1 할일 | V축소(단독출현·자리·구간·confidence) → covering 5장 PILOT · union6 게이트 (ge5≥1 또는 gather≥base) |
+| 승인필요 | 아니오 · WIRE만 형 GO |
+| 선행 | V1 oracle — singleton≈4.9 · \|V\|≈25 · v1 회수0 · WIRE 보류 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=e5c9b43 · 지금=핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝** · 다음=K-GATHER-V1`
+1. 첫줄 `[복귀] HEAD=ff56d82 · 지금=K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류** · 다음=K-GATHER-V2`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: e5c9b43_
+_generated: ff56d82_

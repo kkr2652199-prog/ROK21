@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e5c9b43` · WORK=`IDLE`
-2. **지금:** 핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝**
-3. **다음1건:** K-GATHER-V1 — union6 회차 oracle 분해 → 몰아주기 휴리스틱 교체 → PILOT 재실행 JSON (WIRE 전 성적 게이트) (승인필요=아니오 · **K-GATHER-WIRE만 형 GO** · 선행=①~④ 완료 · SCATTER 기회 확인 · v0 회수 0/21)
+1. **HEAD:** `ff56d82` · WORK=`IDLE`
+2. **지금:** K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류**
+3. **다음1건:** K-GATHER-V2 — V축소(단독출현·자리·구간·confidence) → covering 5장 PILOT · union6 게이트 (ge5≥1 또는 gather≥base) (승인필요=아니오 · WIRE만 형 GO · 선행=V1 oracle — singleton≈4.9 · \|V\|≈25 · v1 회수0 · WIRE 보류)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | GATHER-V1·종료체크 | oracle 찢김·v1회수0·천장 \|V\|≈25 · NEXT=V2 | V1 DONE WIRE보류 | (커밋중) |
 | 2026-07-29 | 핀 GO·종료체크 | POS·SCATTER·DESIGN·PILOT · 풀6=21 · v0회수0 · NEXT=V1 | ①~④ DONE | `8163d55` |
 | 2026-07-29 | PATTERN2+1등목표·종료체크 | 패턴가중기각 · COVER1 확률표 · ATTACK전선 | K-PATTERN-2+COVER1 | `291e340` |
 | 2026-07-29 | TRUST·사공·역할분담·종료체크 | Jaccard0.11·pool15≈null · 3예측유지 · 보고서 | K-TRUST+CREW | `9806878` |

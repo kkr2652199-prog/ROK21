@@ -1,0 +1,134 @@
+{
+  "act_subset_E": 6,
+  "E_mean": 19.57,
+  "brute_or_oracle_rec5": 15,
+  "brute_or_oracle_rec6": 6,
+  "details": [
+    {
+      "draw": 92,
+      "E": 20,
+      "winners_in_E": 6,
+      "mode": "largeE"
+    },
+    {
+      "draw": 97,
+      "E": 18,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 104,
+      "E": 16,
+      "winners_in_E": 4,
+      "mode": "largeE"
+    },
+    {
+      "draw": 164,
+      "E": 20,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 318,
+      "E": 22,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 359,
+      "E": 20,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 465,
+      "E": 19,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 476,
+      "E": 23,
+      "winners_in_E": 4,
+      "mode": "largeE"
+    },
+    {
+      "draw": 502,
+      "E": 16,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 516,
+      "E": 20,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 696,
+      "E": 17,
+      "winners_in_E": 3,
+      "mode": "largeE"
+    },
+    {
+      "draw": 837,
+      "E": 22,
+      "winners_in_E": 6,
+      "mode": "largeE"
+    },
+    {
+      "draw": 842,
+      "E": 18,
+      "winners_in_E": 6,
+      "mode": "largeE"
+    },
+    {
+      "draw": 878,
+      "E": 16,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 891,
+      "E": 18,
+      "winners_in_E": 3,
+      "mode": "largeE"
+    },
+    {
+      "draw": 1007,
+      "E": 24,
+      "winners_in_E": 5,
+      "mode": "largeE"
+    },
+    {
+      "draw": 1022,
+      "E": 18,
+      "winners_in_E": 6,
+      "mode": "largeE"
+    },
+    {
+      "draw": 1048,
+      "E": 22,
+      "winners_in_E": 6,
+      "mode": "largeE"
+    },
+    {
+      "draw": 1064,
+      "E": 20,
+      "winners_in_E": 4,
+      "mode": "largeE"
+    },
+    {
+      "draw": 1090,
+      "E": 22,
+      "winners_in_E": 6,
+      "mode": "largeE"
+    },
+    {
+      "draw": 1208,
+      "E": 20,
+      "winners_in_E": 4,
+      "mode": "largeE"
+    }
+  ]
+}
