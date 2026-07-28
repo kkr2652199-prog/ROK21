@@ -1,0 +1,513 @@
+{
+  "id": "K-SUM-SELECT",
+  "ts": "2026-07-29T07:53:39",
+  "elapsed_sec": 0.253,
+  "db_code_write": false,
+  "axis": {
+    "id": "K-SUM-SELECT",
+    "hypothesis": "V2 m3+s1+r1 fixed; within-brain pick by ticket sum (theory mean 138 / extreme / diverse) instead of set_no asc → ge3 lift ≥ +0.005",
+    "orthogonal_to_v2": true,
+    "not_rehash_of": [
+      "BAND-SELECT",
+      "SETNO-HITMAP",
+      "EV-POP",
+      "COVER-wheel",
+      "SLICE-zone-match",
+      "SETPACK-TOP6",
+      "GATHER",
+      "MARKOV-TUNE",
+      "conf-quota",
+      "HISIM",
+      "STRUCT"
+    ],
+    "code_anchor": "aux_balance_keeper.sum_score · SUM_TARGET=138 (K-Z/K-AA) · sum_range in draw_features"
+  },
+  "protocol": {
+    "draw_range": [
+      53,
+      1234
+    ],
+    "quota": {
+      "markov": 3,
+      "stat": 1,
+      "review": 1
+    },
+    "null_ge3": 0.1137,
+    "v2_ge3_pin": 0.1447,
+    "v2_mean_pin": 1.7504,
+    "sum_target": 138.0,
+    "sum_scale": 60.0,
+    "pass_hit_WIRE": {
+      "ge3_gt_v2": true,
+      "delta_ge3_min": 0.005,
+      "binom_p_lt": 0.05
+    },
+    "pass_rule": "hit_WIRE only (ge3↑); no EV-preserve gate on this axis"
+  },
+  "v2_baseline": {
+    "policy": "v2_asc",
+    "mean": 1.7504,
+    "ge3_rate": 0.1447,
+    "ge3": 171,
+    "ge4_rate": 0.0102,
+    "p_vs_null": 0.000679,
+    "mean_sum_score": 0.7091,
+    "mean_sum": 137.1042,
+    "n": 1182
+  },
+  "policies": {
+    "v2_asc": {
+      "modes": {
+        "markov": "asc",
+        "stat": "asc",
+        "review": "asc"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7504,
+      "ge3": 171,
+      "ge3_rate": 0.1447,
+      "ge4": 12,
+      "ge4_rate": 0.0102,
+      "p_vs_null": 0.000679,
+      "delta_ge3_vs_v2pin": 0.0,
+      "delta_mean_vs_v2pin": 0.0,
+      "mean_sum_score": 0.7091,
+      "mean_sum": 137.1042,
+      "mean_sum_abs_from_138": 17.4704,
+      "spearman_sumscore_vs_matched": 0.023,
+      "spearman_p": 0.076509,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 120,
+          "n": 1895
+        },
+        {
+          "band": 140,
+          "n": 1718
+        },
+        {
+          "band": 100,
+          "n": 1235
+        },
+        {
+          "band": 160,
+          "n": 884
+        },
+        {
+          "band": 80,
+          "n": 96
+        }
+      ],
+      "beats_v2_ge3": false
+    },
+    "all_sum_near": {
+      "modes": {
+        "markov": "sum_near",
+        "stat": "sum_near",
+        "review": "sum_near"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.731,
+      "ge3": 151,
+      "ge3_rate": 0.1277,
+      "ge4": 11,
+      "ge4_rate": 0.0093,
+      "p_vs_null": 0.071752,
+      "delta_ge3_vs_v2pin": -0.017,
+      "delta_mean_vs_v2pin": -0.0194,
+      "mean_sum_score": 0.8584,
+      "mean_sum": 137.5183,
+      "mean_sum_abs_from_138": 8.497,
+      "spearman_sumscore_vs_matched": 0.0171,
+      "spearman_p": 0.189818,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 120,
+          "n": 3126
+        },
+        {
+          "band": 140,
+          "n": 2327
+        },
+        {
+          "band": 100,
+          "n": 316
+        },
+        {
+          "band": 160,
+          "n": 141
+        }
+      ],
+      "beats_v2_ge3": false
+    },
+    "all_sum_far": {
+      "modes": {
+        "markov": "sum_far",
+        "stat": "sum_far",
+        "review": "sum_far"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7174,
+      "ge3": 166,
+      "ge3_rate": 0.1404,
+      "ge4": 9,
+      "ge4_rate": 0.0076,
+      "p_vs_null": 0.002767,
+      "delta_ge3_vs_v2pin": -0.0043,
+      "delta_mean_vs_v2pin": -0.033,
+      "mean_sum_score": 0.538,
+      "mean_sum": 136.535,
+      "mean_sum_abs_from_138": 27.7892,
+      "spearman_sumscore_vs_matched": -0.0155,
+      "spearman_p": 0.233269,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 100,
+          "n": 2038
+        },
+        {
+          "band": 160,
+          "n": 1569
+        },
+        {
+          "band": 140,
+          "n": 867
+        },
+        {
+          "band": 120,
+          "n": 747
+        },
+        {
+          "band": 80,
+          "n": 365
+        }
+      ],
+      "beats_v2_ge3": false
+    },
+    "all_sum_high": {
+      "modes": {
+        "markov": "sum_high",
+        "stat": "sum_high",
+        "review": "sum_high"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7014,
+      "ge3": 153,
+      "ge3_rate": 0.1294,
+      "ge4": 6,
+      "ge4_rate": 0.0051,
+      "p_vs_null": 0.050521,
+      "delta_ge3_vs_v2pin": -0.0153,
+      "delta_mean_vs_v2pin": -0.049,
+      "mean_sum_score": 0.6709,
+      "mean_sum": 154.2394,
+      "mean_sum_abs_from_138": 19.8151,
+      "spearman_sumscore_vs_matched": 0.018,
+      "spearman_p": 0.165625,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 140,
+          "n": 2280
+        },
+        {
+          "band": 160,
+          "n": 2003
+        },
+        {
+          "band": 120,
+          "n": 1125
+        },
+        {
+          "band": 180,
+          "n": 298
+        },
+        {
+          "band": 100,
+          "n": 137
+        }
+      ],
+      "beats_v2_ge3": false
+    },
+    "all_sum_low": {
+      "modes": {
+        "markov": "sum_low",
+        "stat": "sum_low",
+        "review": "sum_low"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7521,
+      "ge3": 155,
+      "ge3_rate": 0.1311,
+      "ge4": 12,
+      "ge4_rate": 0.0102,
+      "p_vs_null": 0.034676,
+      "delta_ge3_vs_v2pin": -0.0136,
+      "delta_mean_vs_v2pin": 0.0017,
+      "mean_sum_score": 0.6557,
+      "mean_sum": 119.6621,
+      "mean_sum_abs_from_138": 20.6591,
+      "spearman_sumscore_vs_matched": 0.0213,
+      "spearman_p": 0.101647,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 100,
+          "n": 2599
+        },
+        {
+          "band": 120,
+          "n": 2154
+        },
+        {
+          "band": 140,
+          "n": 681
+        },
+        {
+          "band": 80,
+          "n": 436
+        },
+        {
+          "band": 160,
+          "n": 40
+        }
+      ],
+      "beats_v2_ge3": false
+    },
+    "all_sum_mid": {
+      "modes": {
+        "markov": "sum_mid",
+        "stat": "sum_mid",
+        "review": "sum_mid"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.698,
+      "ge3": 137,
+      "ge3_rate": 0.1159,
+      "ge4": 9,
+      "ge4_rate": 0.0076,
+      "p_vs_null": 0.419039,
+      "delta_ge3_vs_v2pin": -0.0288,
+      "delta_mean_vs_v2pin": -0.0524,
+      "mean_sum_score": 0.7171,
+      "mean_sum": 137.1228,
+      "mean_sum_abs_from_138": 16.9746,
+      "spearman_sumscore_vs_matched": 0.0084,
+      "spearman_p": 0.518191,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 140,
+          "n": 2056
+        },
+        {
+          "band": 120,
+          "n": 1831
+        },
+        {
+          "band": 100,
+          "n": 1226
+        },
+        {
+          "band": 160,
+          "n": 757
+        },
+        {
+          "band": 80,
+          "n": 26
+        }
+      ],
+      "beats_v2_ge3": false
+    },
+    "all_sum_diverse": {
+      "modes": {
+        "markov": "sum_diverse",
+        "stat": "sum_diverse",
+        "review": "sum_diverse"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7428,
+      "ge3": 155,
+      "ge3_rate": 0.1311,
+      "ge4": 14,
+      "ge4_rate": 0.0118,
+      "p_vs_null": 0.034676,
+      "delta_ge3_vs_v2pin": -0.0136,
+      "delta_mean_vs_v2pin": -0.0076,
+      "mean_sum_score": 0.8195,
+      "mean_sum": 137.1506,
+      "mean_sum_abs_from_138": 10.8288,
+      "spearman_sumscore_vs_matched": 0.015,
+      "spearman_p": 0.250451,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 120,
+          "n": 2601
+        },
+        {
+          "band": 140,
+          "n": 1977
+        },
+        {
+          "band": 100,
+          "n": 833
+        },
+        {
+          "band": 160,
+          "n": 499
+        }
+      ],
+      "beats_v2_ge3": false
+    },
+    "markov_asc_others_sum_near": {
+      "modes": {
+        "markov": "asc",
+        "stat": "sum_near",
+        "review": "sum_near"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7572,
+      "ge3": 161,
+      "ge3_rate": 0.1362,
+      "ge4": 15,
+      "ge4_rate": 0.0127,
+      "p_vs_null": 0.009614,
+      "delta_ge3_vs_v2pin": -0.0085,
+      "delta_mean_vs_v2pin": 0.0068,
+      "mean_sum_score": 0.7981,
+      "mean_sum": 137.0591,
+      "mean_sum_abs_from_138": 12.1156,
+      "spearman_sumscore_vs_matched": 0.0165,
+      "spearman_p": 0.204373,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 120,
+          "n": 2598
+        },
+        {
+          "band": 140,
+          "n": 1971
+        },
+        {
+          "band": 100,
+          "n": 823
+        },
+        {
+          "band": 160,
+          "n": 518
+        }
+      ],
+      "beats_v2_ge3": false
+    },
+    "markov_sum_near_others_asc": {
+      "modes": {
+        "markov": "sum_near",
+        "stat": "asc",
+        "review": "asc"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7318,
+      "ge3": 161,
+      "ge3_rate": 0.1362,
+      "ge4": 8,
+      "ge4_rate": 0.0068,
+      "p_vs_null": 0.009614,
+      "delta_ge3_vs_v2pin": -0.0085,
+      "delta_mean_vs_v2pin": -0.0186,
+      "mean_sum_score": 0.7694,
+      "mean_sum": 137.5635,
+      "mean_sum_abs_from_138": 13.8518,
+      "spearman_sumscore_vs_matched": 0.0297,
+      "spearman_p": 0.022389,
+      "n_issued_sets": 5910,
+      "top_sum_bands": [
+        {
+          "band": 120,
+          "n": 2423
+        },
+        {
+          "band": 140,
+          "n": 2074
+        },
+        {
+          "band": 100,
+          "n": 728
+        },
+        {
+          "band": 160,
+          "n": 507
+        },
+        {
+          "band": 80,
+          "n": 96
+        }
+      ],
+      "beats_v2_ge3": false
+    }
+  },
+  "gates": {
+    "hit_beats_v2_ge3": false,
+    "hit_delta_ge3_ge_0_005": false,
+    "hit_pass_vs_null": false,
+    "PASS": false,
+    "best_hit_policy": null,
+    "best_hit_ge3": null,
+    "best_hit_delta_ge3": null,
+    "nearest_policy": "all_sum_far",
+    "nearest_ge3": 0.1404,
+    "nearest_delta_ge3": -0.0043
+  },
+  "verdict": "FAIL_HOLD_V2",
+  "recommended_next": "없음(HOLD·V2유지·SUM-SELECT재탕금지)",
+  "note": "READ-ONLY brain_review nums+matched · sum=aux_balance_keeper식 (이론138·history미사용) · BAND/SLICE/COVER와 직교"
+}

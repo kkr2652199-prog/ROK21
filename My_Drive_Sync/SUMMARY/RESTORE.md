@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `be2a6e1` · WORK=`IDLE`
-2. **지금:** BAND-SELECT FAIL · hit false · **HOLD** · V2유지
-3. **다음1건:** K-ATTACK-HOLD — BAND-SELECT FAIL(hit 전게이트false · 최근접 Δge3-0.0060) · WIRE금지 · V2유지 · BAND-SELECT재탕금지 · 형·커서 다음 축 1건 재선정 (승인필요=예 · 선행=K-BAND-SELECT 관측완료 · recommended=없음(HOLD·V2유지))
+1. **HEAD:** `8b17153` · WORK=`IDLE`
+2. **지금:** SUM-SELECT FAIL · hit false · **HOLD** · V2유지
+3. **다음1건:** K-ATTACK-HOLD — SUM-SELECT FAIL(hit 전게이트false · 최근접 Δge3-0.0043) · WIRE금지 · V2유지 · SUM-SELECT재탕금지 · 형·커서 다음 축 1건 재선정 (승인필요=예 · 선행=K-SUM-SELECT 관측완료 · recommended=없음(HOLD·V2유지))
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | 새직교축·팩트체크·push | SUM-SELECT FAIL · Δ-0.0043 · V2유지 · NEXT=HOLD | SUM FAIL | `(push후)` |
 | 2026-07-29 | 새직교축·팩트체크·push | BAND-SELECT FAIL · Δ-0.0060 · V2유지 · NEXT=HOLD | BAND FAIL | `9e67fbb` |
 | 2026-07-29 | 진행·팩트체크 | EV-POP FAIL · pop↓·ge3↓ · V2유지 · NEXT=HOLD | EV-POP FAIL | `b945197` |
 | 2026-07-29 | 다음축선정·해줘 | SETNO-HITMAP Δ+0.0034 FAIL · V2유지 · NEXT=HOLD | SETNO FAIL | `8fcd2d9` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | SETCOUNT·종료체크 | n15≈null · NEXT=WIRE→NULL검증 | SETCOUNT PASS | `a25c9b7` |
 | 2026-07-29 | K-COVER·종료체크 | pool40 ge3=0.132<RR · NEXT=HOLD | COVER FAIL | `6339f12` |
 | 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | `ed4e702` |
-| 2026-07-29 | STRUCT·종료체크 | aux sp0.008·analog≪RR·가중Δ0 · NEXT=HOLD | STRUCT 관측종료 | `7606686` |
 
 ---
 

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `be2a6e1` · WORK=`IDLE`
-- 지금: BAND-SELECT FAIL · hit false · **HOLD** · V2유지
-- 직전: EV-POP FAIL / SETNO FAIL / SETPACK FAIL / TUNE FAIL / WIRE-V2 PASS
-- BOOT다음: K-ATTACK-HOLD — BAND-SELECT재탕금지 · 다음 축 재선정
-- NEXT1: K-ATTACK-HOLD — BAND-SELECT FAIL(hit 전게이트false · 최근접 Δge3-0.0060) · WIRE금지 · V2유지 · BAND-SELECT재탕금지 · 형·커서 다음 축 1건 재선정 (승인=예)
+- HEAD: `8b17153` · WORK=`IDLE`
+- 지금: SUM-SELECT FAIL · hit false · **HOLD** · V2유지
+- 직전: BAND FAIL / EV-POP FAIL / SETNO FAIL / SETPACK FAIL / TUNE FAIL / WIRE-V2 PASS
+- BOOT다음: K-ATTACK-HOLD — SUM-SELECT재탕금지 · 다음 축 재선정
+- NEXT1: K-ATTACK-HOLD — SUM-SELECT FAIL(hit 전게이트false · 최근접 Δge3-0.0043) · WIRE금지 · V2유지 · SUM-SELECT재탕금지 · 형·커서 다음 축 1건 재선정 (승인=예)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
