@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `751e0ed` · WORK=`IDLE`
+1. **HEAD:** `22ea625` · WORK=`IDLE`
 2. **지금:** SETPACK FAIL · pool ge3 0.101<0.123 · **HOLD**
 3. **다음1건:** K-ATTACK-HOLD — SETPACK-TOP6 FAIL(출현top6→set1이 ge3↓) · WIRE금지 · V2유지 · 형·커서 다음 축 1건 재선정 (승인필요=예 · 선행=K-SETPACK-TOP6 완료 · recommended=없음 · SETPACK-WIRE금지)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | SETPACK·종료체크 | pool ge3 0.101<0.123 · set1↓ · NEXT=HOLD | SETPACK FAIL | `PENDING` |
+| 2026-07-29 | SETPACK·종료체크 | pool ge3 0.101<0.123 · set1↓ · NEXT=HOLD | SETPACK FAIL | `22ea625` |
 | 2026-07-29 | K-MARKOV-TUNE | best0.1404≤0.1447 · TUNE-WIRE금지 · NEXT=HOLD | TUNE FAIL | `2854663` |
 | 2026-07-29 | WIRE-V2·종료체크 | set_no=E ge3=0.1447 · ENABLED=True · NEXT=TUNE | WIRE-V2 PASS | `3b0f619` |
 | 2026-07-29 | WIRE·종료체크 | conf쿼터 FAIL · ENABLED=False · NEXT=HOLD | WIRE FAIL | `2422b4d` |

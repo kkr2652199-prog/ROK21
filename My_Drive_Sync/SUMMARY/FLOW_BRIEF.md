@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `751e0ed` · WORK=`IDLE`
+- HEAD: `22ea625` · WORK=`IDLE`
 - 지금: SETPACK FAIL · pool ge3 0.101<0.123 · **HOLD**
 - 직전: TUNE FAIL / WIRE-V2 PASS
 - BOOT다음: K-ATTACK-HOLD — V2 유지 · 다음 축 재선정
