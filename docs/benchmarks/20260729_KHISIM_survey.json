@@ -1,0 +1,90 @@
+{
+  "id": "K-HISIM-SURVEY",
+  "ts": "2026-07-29T03:43:31",
+  "n_eval": 1182,
+  "elapsed_sec": 43.4,
+  "hisim_norm": {
+    "sum": 270,
+    "odd": 6,
+    "low": 6,
+    "mid": 6,
+    "hi": 6,
+    "ac": 10,
+    "consec": 3,
+    "pair_top3": 3,
+    "gap_mean": 200,
+    "gap_max": 1234,
+    "carry": 6,
+    "end_spread": 10,
+    "sum_hi": 1
+  },
+  "step3_comparison": {
+    "hisim_freq": {
+      "n": 1182,
+      "mean": 0.7876,
+      "ge3": 27,
+      "ge3_rate": 0.0228,
+      "delta_vs_rr": -0.9552
+    },
+    "hisim_weighted": {
+      "n": 1182,
+      "mean": 0.791,
+      "ge3": 28,
+      "ge3_rate": 0.0237,
+      "delta_vs_rr": -0.9518
+    },
+    "hisim_chain8": {
+      "n": 1182,
+      "mean": 0.7775,
+      "ge3": 26,
+      "ge3_rate": 0.022,
+      "delta_vs_rr": -0.9653
+    },
+    "orig_chain8": {
+      "n": 1182,
+      "mean": 0.7665,
+      "ge3": 27,
+      "ge3_rate": 0.0228,
+      "delta_vs_rr": -0.9763
+    },
+    "round_robin": {
+      "mean": 1.7428,
+      "ge3_rate": 0.1337,
+      "n": null,
+      "delta_vs_rr": 0.0
+    }
+  },
+  "step4_w_struct_grid": {
+    "0.60": {
+      "mean": 0.7623,
+      "ge3_rate": 0.0212,
+      "n": 1182
+    },
+    "0.70": {
+      "mean": 0.7716,
+      "ge3_rate": 0.0245,
+      "n": 1182
+    },
+    "0.80": {
+      "mean": 0.791,
+      "ge3_rate": 0.0237,
+      "n": 1182
+    },
+    "0.90": {
+      "mean": 0.7775,
+      "ge3_rate": 0.0254,
+      "n": 1182
+    },
+    "best_w": 0.8
+  },
+  "gates": {
+    "any_method_delta_gt0": false,
+    "best_mean_gt_rr_1742": false,
+    "best_ge3_gt_rr_1337": false,
+    "best_method": "hisim_weighted"
+  },
+  "recommended_next": "없음",
+  "verdict": "관측종료",
+  "db_code_write": false,
+  "note": "analog_service 미수정 · hisim만 신규 점수"
+}

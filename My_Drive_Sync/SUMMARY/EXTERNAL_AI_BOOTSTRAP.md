@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `678415f` |
+| HEAD(실측) | `431d971` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-STRUCT-SURVEY 관측종료 · aux/analog/가중 FAIL · **HOLD** |
-| 직전 | PROB-VECTOR 유효신호 0 |
+| 지금 | K-HISIM-SURVEY 관측종료 · best 0.791≪RR · **HOLD** |
+| 직전 | STRUCT aux/analog/가중 FAIL |
 | BOOT다음 | K-ATTACK-HOLD — 형·동생 새 축 재선정 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | STRUCT-SURVEY 관측종료(aux/analog/가중 전부 FAIL) · 형·동생 다음 공격 축 1건 재선정 |
+| NEXT1 할일 | HISIM 관측종료(구조우선 analog≈null·≪RR) · 형·동생 다음 공격 축 1건 재선정 |
 | 승인필요 | 예 |
-| 선행 | K-STRUCT-SURVEY 완료 · recommended=없음 |
+| 선행 | K-HISIM-SURVEY 완료 · recommended=없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=678415f · 지금=K-STRUCT-SURVEY 관측종료 · aux/analog/가중 FAIL · **HOLD** · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=431d971 · 지금=K-HISIM-SURVEY 관측종료 · best 0.791≪RR · **HOLD** · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `678415f` · WORK=`IDLE`
-2. **지금:** K-STRUCT-SURVEY 관측종료 · aux/analog/가중 FAIL · **HOLD**
-3. **다음1건:** K-ATTACK-HOLD — STRUCT-SURVEY 관측종료(aux/analog/가중 전부 FAIL) · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-STRUCT-SURVEY 완료 · recommended=없음)
+1. **HEAD:** `431d971` · WORK=`IDLE`
+2. **지금:** K-HISIM-SURVEY 관측종료 · best 0.791≪RR · **HOLD**
+3. **다음1건:** K-ATTACK-HOLD — HISIM 관측종료(구조우선 analog≈null·≪RR) · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-HISIM-SURVEY 완료 · recommended=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | HISIM·종료체크 | best0.791≪RR · w*=0.80 · NEXT=HOLD | HISIM 관측종료 | (커밋중) |
 | 2026-07-29 | STRUCT·종료체크 | aux sp0.008·analog≪RR·가중Δ0 · NEXT=HOLD | STRUCT 관측종료 | `7606686` |
 | 2026-07-29 | PROBVEC·종료체크 | 유효신호0 · STRENGTHEN없음 · NEXT=HOLD | PROBVEC DONE | `41c80b0` |
 | 2026-07-29 | OPEN·종료체크 | A/B/C 전부FAIL · 추천없음 · NEXT=HOLD | OPEN DONE | `fa00fe9` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | `0426e09` |
 | 2026-07-29 | GATHER-V2·종료체크 | V'=12·회수0·관측고정·hybrid힌트 · NEXT=SLICE | V2 DONE WIRE보류 | `05999a2` |
 | 2026-07-29 | GATHER-V1·종료체크 | oracle 찢김·v1회수0·천장 \|V\|≈25 · NEXT=V2 | V1 DONE WIRE보류 | `d00884c` |
-| 2026-07-29 | 핀 GO·종료체크 | POS·SCATTER·DESIGN·PILOT · 풀6=21 · v0회수0 · NEXT=V1 | ①~④ DONE | `8163d55` |
 
 ---
 
