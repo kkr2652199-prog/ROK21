@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7227b96` · WORK=`IDLE`
+1. **HEAD:** `3b0f619` · WORK=`IDLE`
 2. **지금:** K-MARKOV-WIRE-V2 PASS · set_no=E · **ENABLED=True**
 3. **다음1건:** K-MARKOV-TUNE — WIRE-V2 PASS(set_no ge3=0.1447 p=0.0007) · markov 세부 파라미터/쿼터 미세조정 여부 (승인필요=예 · 선행=K-MARKOV-WIRE-V2 완료 · ENABLED=True · 승인필요)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-MARKOV-WIRE-V2 | set_no=E ge3=0.1447 p=0.0007 · ENABLED=True · NEXT=TUNE | WIRE-V2 PASS | (미커밋) |
+| 2026-07-29 | K-MARKOV-WIRE-V2 | set_no=E ge3=0.1447 p=0.0007 · ENABLED=True · NEXT=TUNE | WIRE-V2 PASS | `3b0f619` |
 | 2026-07-29 | WIRE·종료체크 | conf쿼터 FAIL · ENABLED=False · NEXT=HOLD | WIRE FAIL | `2422b4d` |
 | 2026-07-29 | NULL·종료체크 | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | `70ac1f6` |
 | 2026-07-29 | SETCOUNT·종료체크 | n15≈null · NEXT=WIRE→NULL검증 | SETCOUNT PASS | `a25c9b7` |

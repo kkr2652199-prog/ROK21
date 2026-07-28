@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7227b96` · WORK=`IDLE`
+- HEAD: `3b0f619` · WORK=`IDLE`
 - 지금: K-MARKOV-WIRE-V2 PASS · set_no=E · **ENABLED=True**
 - 직전: WIRE-V1 FAIL (conf쿼터)
 - BOOT다음: K-MARKOV-TUNE — markov 세부 파라미터/쿼터 미세조정
