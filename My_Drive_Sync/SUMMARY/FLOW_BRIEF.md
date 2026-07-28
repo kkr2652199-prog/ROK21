@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `30d8803` · WORK=`IDLE`
+- HEAD: `2854663` · WORK=`IDLE`
 - 지금: K-MARKOV-TUNE FAIL · best0.1404≤wire · **HOLD**
 - 직전: WIRE-V2 PASS (set_no=E)
 - BOOT다음: K-ATTACK-HOLD — 현행 V2 유지 · 다음 축 재선정

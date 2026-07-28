@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `30d8803` · WORK=`IDLE`
+1. **HEAD:** `2854663` · WORK=`IDLE`
 2. **지금:** K-MARKOV-TUNE FAIL · best0.1404≤wire · **HOLD**
 3. **다음1건:** K-ATTACK-HOLD — TUNE FAIL(best ge3=0.1404≤wire 0.1447) · 현행 V2 배선 유지 · 형·동생 다음 축 재선정 (승인필요=예 · 선행=K-MARKOV-TUNE 완료 · recommended=K-ATTACK-HOLD · TUNE-WIRE금지)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-MARKOV-TUNE | best0.1404≤0.1447 · TUNE-WIRE금지 · NEXT=HOLD | TUNE FAIL | (미커밋) |
+| 2026-07-29 | K-MARKOV-TUNE | best0.1404≤0.1447 · TUNE-WIRE금지 · NEXT=HOLD | TUNE FAIL | `2854663` |
 | 2026-07-29 | WIRE-V2·종료체크 | set_no=E ge3=0.1447 · ENABLED=True · NEXT=TUNE | WIRE-V2 PASS | `3b0f619` |
 | 2026-07-29 | WIRE·종료체크 | conf쿼터 FAIL · ENABLED=False · NEXT=HOLD | WIRE FAIL | `2422b4d` |
 | 2026-07-29 | NULL·종료체크 | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | `70ac1f6` |
