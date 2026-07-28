@@ -1,0 +1,778 @@
+{
+  "task": "K-ANALOG-BT",
+  "scenario": "N-1 base → analog in 1..N-2 → analog+1 vote → predict N",
+  "range": {
+    "start": 500,
+    "end": 1234,
+    "n_draws": 735
+  },
+  "random_expect_mean": 0.8,
+  "methods": {
+    "M_freq": "단순 빈도(analog+1)",
+    "M_weighted": "유사도 가중 빈도",
+    "M_overlap3": "겹침3+ only",
+    "M_anchor_pair": "앵커·쌍 lift (AI)",
+    "M_positional": "자리별 archive (statlotto)",
+    "M_greedy_pair": "탐욕 쌍 연쇄 (AI)"
+  },
+  "methods_extra": {
+    "M_random": "균등 무작위 baseline"
+  },
+  "summary": {
+    "M_freq": {
+      "n": 735,
+      "mean_match": 0.7605,
+      "median_match": 1,
+      "tier3_plus_rate": 0.019,
+      "max_match": 4,
+      "match_dist": {
+        "0": 320,
+        "1": 286,
+        "2": 115,
+        "3": 13,
+        "4": 1
+      }
+    },
+    "M_weighted": {
+      "n": 735,
+      "mean_match": 0.7837,
+      "median_match": 1,
+      "tier3_plus_rate": 0.0177,
+      "max_match": 4,
+      "match_dist": {
+        "0": 310,
+        "1": 289,
+        "2": 123,
+        "3": 11,
+        "4": 2
+      }
+    },
+    "M_overlap3": {
+      "n": 735,
+      "mean_match": 0.781,
+      "median_match": 1,
+      "tier3_plus_rate": 0.0204,
+      "max_match": 4,
+      "match_dist": {
+        "0": 309,
+        "1": 294,
+        "2": 117,
+        "3": 14,
+        "4": 1
+      }
+    },
+    "M_anchor_pair": {
+      "n": 735,
+      "mean_match": 0.7837,
+      "median_match": 1,
+      "tier3_plus_rate": 0.019,
+      "max_match": 3,
+      "match_dist": {
+        "0": 302,
+        "1": 304,
+        "2": 115,
+        "3": 14
+      }
+    },
+    "M_positional": {
+      "n": 735,
+      "mean_match": 0.8027,
+      "median_match": 1,
+      "tier3_plus_rate": 0.0204,
+      "max_match": 3,
+      "match_dist": {
+        "0": 272,
+        "1": 351,
+        "2": 97,
+        "3": 15
+      }
+    },
+    "M_greedy_pair": {
+      "n": 735,
+      "mean_match": 0.7619,
+      "median_match": 1,
+      "tier3_plus_rate": 0.0218,
+      "max_match": 3,
+      "match_dist": {
+        "0": 307,
+        "1": 312,
+        "2": 100,
+        "3": 16
+      }
+    },
+    "M_random": {
+      "n": 735,
+      "mean_match": 0.8163,
+      "median_match": 1,
+      "tier3_plus_rate": 0.0204,
+      "max_match": 3,
+      "match_dist": {
+        "0": 280,
+        "1": 325,
+        "2": 115,
+        "3": 15
+      }
+    }
+  },
+  "best_by_mean": {
+    "method": "M_positional",
+    "mean_match": 0.8027
+  },
+  "vs_random": {
+    "M_freq": -0.0558,
+    "M_weighted": -0.0326,
+    "M_overlap3": -0.0353,
+    "M_anchor_pair": -0.0326,
+    "M_positional": -0.0136,
+    "M_greedy_pair": -0.0544
+  },
+  "spotlight_1234": {
+    "target": 1234,
+    "base": 1233,
+    "base_nums": [
+      2,
+      7,
+      20,
+      25,
+      37,
+      40
+    ],
+    "actual": [
+      1,
+      15,
+      19,
+      31,
+      35,
+      43
+    ],
+    "analog_n": 15,
+    "top1_draw": 214,
+    "top1_overlap": 4,
+    "methods": {
+      "M_freq": {
+        "pred": [
+          3,
+          5,
+          10,
+          11,
+          24,
+          43
+        ],
+        "matched": 1
+      },
+      "M_weighted": {
+        "pred": [
+          3,
+          5,
+          10,
+          11,
+          24,
+          43
+        ],
+        "matched": 1
+      },
+      "M_overlap3": {
+        "pred": [
+          3,
+          5,
+          10,
+          11,
+          24,
+          43
+        ],
+        "matched": 1
+      },
+      "M_anchor_pair": {
+        "pred": [
+          3,
+          5,
+          10,
+          11,
+          24,
+          43
+        ],
+        "matched": 1
+      },
+      "M_positional": {
+        "pred": [
+          5,
+          7,
+          8,
+          27,
+          30,
+          43
+        ],
+        "matched": 1
+      },
+      "M_greedy_pair": {
+        "pred": [
+          5,
+          7,
+          10,
+          28,
+          35,
+          39
+        ],
+        "matched": 1
+      },
+      "M_random": {
+        "pred": [
+          2,
+          7,
+          17,
+          22,
+          24,
+          38
+        ],
+        "matched": 0
+      }
+    }
+  },
+  "pattern_analysis": {
+    "top1_overlap_ge3": {
+      "M_freq": {
+        "n": 735,
+        "mean_match": 0.7605
+      },
+      "M_weighted": {
+        "n": 735,
+        "mean_match": 0.7837
+      },
+      "M_overlap3": {
+        "n": 735,
+        "mean_match": 0.781
+      },
+      "M_anchor_pair": {
+        "n": 735,
+        "mean_match": 0.7837
+      },
+      "M_positional": {
+        "n": 735,
+        "mean_match": 0.8027
+      },
+      "M_greedy_pair": {
+        "n": 735,
+        "mean_match": 0.7619
+      },
+      "M_random": {
+        "n": 735,
+        "mean_match": 0.8163
+      }
+    },
+    "M_weighted_beat_random_rate": 0.3116,
+    "M_weighted_tie_random_rate": 0.3361,
+    "top5_hits_M_weighted": [
+      {
+        "target": 696,
+        "base": 695,
+        "base_nums": [
+          4,
+          18,
+          26,
+          33,
+          34,
+          38
+        ],
+        "actual": [
+          1,
+          7,
+          16,
+          18,
+          34,
+          38
+        ],
+        "analog_n": 15,
+        "top1_draw": 340,
+        "top1_overlap": 4,
+        "methods": {
+          "M_freq": {
+            "pred": [
+              1,
+              7,
+              16,
+              18,
+              21,
+              29
+            ],
+            "matched": 4
+          },
+          "M_weighted": {
+            "pred": [
+              1,
+              7,
+              16,
+              18,
+              21,
+              29
+            ],
+            "matched": 4
+          },
+          "M_overlap3": {
+            "pred": [
+              1,
+              8,
+              16,
+              21,
+              39,
+              43
+            ],
+            "matched": 2
+          },
+          "M_anchor_pair": {
+            "pred": [
+              1,
+              7,
+              16,
+              21,
+              29,
+              39
+            ],
+            "matched": 3
+          },
+          "M_positional": {
+            "pred": [
+              1,
+              5,
+              17,
+              19,
+              39,
+              43
+            ],
+            "matched": 1
+          },
+          "M_greedy_pair": {
+            "pred": [
+              1,
+              10,
+              16,
+              19,
+              39,
+              43
+            ],
+            "matched": 2
+          },
+          "M_random": {
+            "pred": [
+              9,
+              14,
+              15,
+              19,
+              27,
+              31
+            ],
+            "matched": 0
+          }
+        }
+      },
+      {
+        "target": 1136,
+        "base": 1135,
+        "base_nums": [
+          1,
+          6,
+          13,
+          19,
+          21,
+          33
+        ],
+        "actual": [
+          21,
+          33,
+          35,
+          38,
+          42,
+          44
+        ],
+        "analog_n": 15,
+        "top1_draw": 698,
+        "top1_overlap": 3,
+        "methods": {
+          "M_freq": {
+            "pred": [
+              7,
+              15,
+              16,
+              21,
+              35,
+              38
+            ],
+            "matched": 3
+          },
+          "M_weighted": {
+            "pred": [
+              7,
+              16,
+              21,
+              35,
+              38,
+              44
+            ],
+            "matched": 4
+          },
+          "M_overlap3": {
+            "pred": [
+              7,
+              16,
+              21,
+              35,
+              38,
+              44
+            ],
+            "matched": 4
+          },
+          "M_anchor_pair": {
+            "pred": [
+              7,
+              15,
+              16,
+              35,
+              38,
+              44
+            ],
+            "matched": 3
+          },
+          "M_positional": {
+            "pred": [
+              11,
+              20,
+              25,
+              29,
+              35,
+              38
+            ],
+            "matched": 2
+          },
+          "M_greedy_pair": {
+            "pred": [
+              7,
+              11,
+              19,
+              25,
+              35,
+              44
+            ],
+            "matched": 2
+          },
+          "M_random": {
+            "pred": [
+              16,
+              29,
+              32,
+              33,
+              40,
+              43
+            ],
+            "matched": 1
+          }
+        }
+      },
+      {
+        "target": 656,
+        "base": 655,
+        "base_nums": [
+          7,
+          37,
+          38,
+          39,
+          40,
+          44
+        ],
+        "actual": [
+          3,
+          7,
+          14,
+          16,
+          31,
+          40
+        ],
+        "analog_n": 15,
+        "top1_draw": 16,
+        "top1_overlap": 4,
+        "methods": {
+          "M_freq": {
+            "pred": [
+              3,
+              7,
+              10,
+              11,
+              14,
+              37
+            ],
+            "matched": 3
+          },
+          "M_weighted": {
+            "pred": [
+              3,
+              7,
+              10,
+              11,
+              14,
+              37
+            ],
+            "matched": 3
+          },
+          "M_overlap3": {
+            "pred": [
+              3,
+              10,
+              11,
+              14,
+              18,
+              37
+            ],
+            "matched": 2
+          },
+          "M_anchor_pair": {
+            "pred": [
+              3,
+              10,
+              11,
+              14,
+              18,
+              23
+            ],
+            "matched": 2
+          },
+          "M_positional": {
+            "pred": [
+              10,
+              18,
+              23,
+              34,
+              37,
+              45
+            ],
+            "matched": 0
+          },
+          "M_greedy_pair": {
+            "pred": [
+              10,
+              11,
+              18,
+              23,
+              30,
+              38
+            ],
+            "matched": 0
+          },
+          "M_random": {
+            "pred": [
+              1,
+              2,
+              4,
+              16,
+              22,
+              40
+            ],
+            "matched": 2
+          }
+        }
+      },
+      {
+        "target": 786,
+        "base": 785,
+        "base_nums": [
+          4,
+          6,
+          15,
+          25,
+          26,
+          33
+        ],
+        "actual": [
+          12,
+          15,
+          16,
+          20,
+          24,
+          30
+        ],
+        "analog_n": 15,
+        "top1_draw": 566,
+        "top1_overlap": 4,
+        "methods": {
+          "M_freq": {
+            "pred": [
+              7,
+              11,
+              15,
+              16,
+              20,
+              44
+            ],
+            "matched": 3
+          },
+          "M_weighted": {
+            "pred": [
+              7,
+              11,
+              15,
+              16,
+              20,
+              44
+            ],
+            "matched": 3
+          },
+          "M_overlap3": {
+            "pred": [
+              7,
+              11,
+              15,
+              16,
+              20,
+              44
+            ],
+            "matched": 3
+          },
+          "M_anchor_pair": {
+            "pred": [
+              7,
+              11,
+              16,
+              20,
+              35,
+              44
+            ],
+            "matched": 2
+          },
+          "M_positional": {
+            "pred": [
+              1,
+              3,
+              11,
+              16,
+              32,
+              44
+            ],
+            "matched": 1
+          },
+          "M_greedy_pair": {
+            "pred": [
+              7,
+              15,
+              16,
+              18,
+              32,
+              41
+            ],
+            "matched": 2
+          },
+          "M_random": {
+            "pred": [
+              17,
+              25,
+              26,
+              29,
+              38,
+              39
+            ],
+            "matched": 0
+          }
+        }
+      },
+      {
+        "target": 806,
+        "base": 805,
+        "base_nums": [
+          3,
+          12,
+          13,
+          18,
+          31,
+          32
+        ],
+        "actual": [
+          14,
+          20,
+          23,
+          31,
+          37,
+          38
+        ],
+        "analog_n": 15,
+        "top1_draw": 748,
+        "top1_overlap": 4,
+        "methods": {
+          "M_freq": {
+            "pred": [
+              6,
+              14,
+              17,
+              31,
+              38,
+              40
+            ],
+            "matched": 3
+          },
+          "M_weighted": {
+            "pred": [
+              6,
+              14,
+              17,
+              31,
+              38,
+              40
+            ],
+            "matched": 3
+          },
+          "M_overlap3": {
+            "pred": [
+              6,
+              14,
+              17,
+              31,
+              38,
+              40
+            ],
+            "matched": 3
+          },
+          "M_anchor_pair": {
+            "pred": [
+              6,
+              14,
+              17,
+              35,
+              38,
+              40
+            ],
+            "matched": 2
+          },
+          "M_positional": {
+            "pred": [
+              6,
+              8,
+              17,
+              31,
+              38,
+              45
+            ],
+            "matched": 2
+          },
+          "M_greedy_pair": {
+            "pred": [
+              6,
+              17,
+              31,
+              35,
+              38,
+              40
+            ],
+            "matched": 2
+          },
+          "M_random": {
+            "pred": [
+              8,
+              30,
+              32,
+              33,
+              35,
+              39
+            ],
+            "matched": 0
+          }
+        }
+      }
+    ]
+  },
+  "disclaimer": "독립 시행 가정 하 적중↑ 기대 금지 · walk-forward 컨닝 없음(analog+1 < N)"
+}

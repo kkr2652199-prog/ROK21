@@ -1259,6 +1259,69 @@ async function _loadLearnSummary(brainTag) {
   }
 }
 
+function _renderAnalogPanel(report) {
+  const el = document.getElementById('tldAnalogContent');
+  if (!el) return;
+  if (report.error) {
+    el.innerHTML = `<p class="tld-muted">${_tldEscape(report.error)}</p>`;
+    return;
+  }
+  const hint = report.conditional_hint || {};
+  const bench = report.bench_verdict || {};
+  const tierClass =
+    hint.tier === 'context'
+      ? 'tld-analog__hint-badge--context'
+      : hint.tier === 'weak'
+        ? 'tld-analog__hint-badge--weak'
+        : 'tld-analog__hint-badge--neutral';
+  const list = (report.top_k || [])
+    .map((c, i) => {
+      const nums = (c.nums || []).map((n) => _ballHtml(n, 'tld-ball--actual')).join('');
+      const nxt = c.next_draw || {};
+      const nxtNums = (nxt.nums || []).map((n) => _ballHtml(n, 'tld-ball--actual')).join('');
+      const viaCls = c.via === 'B' ? ' tld-analog-card__via--b' : '';
+      return `<article class="tld-analog-card${i === 0 ? ' tld-analog-card--top' : ''}">
+        <div class="tld-analog-card__head">
+          <span class="tld-analog-card__rank">#${i + 1}</span>
+          <span class="tld-analog-card__draw">${c.draw_no}회</span>
+          <span class="tld-analog-card__meta">겹침 ${c.overlap}/6 · score ${c.score} · pattern ${c.pattern_sim}</span>
+          <span class="tld-analog-card__via${viaCls}">${_tldEscape(c.via || '')}</span>
+        </div>
+        <div class="tld-analog-row"><span class="tld-analog-row__label">당첨(과거)</span>${nums}</div>
+        <div class="tld-analog-next">
+          <div class="tld-analog-next__label">${_tldEscape(nxt.label || '다음 추첨(관측)')} · ${nxt.draw_no || '—'}회</div>
+          <div class="tld-analog-row">${nxt.found ? nxtNums : '<span class="tld-muted">데이터 없음</span>'}</div>
+        </div>
+      </article>`;
+    })
+    .join('');
+  el.innerHTML =
+    `<p class="tld-analog__disclaimer">${_tldEscape(report.ui_disclaimer || '')}</p>` +
+    `<p class="tld-analog__bench"><strong>벤치 결론:</strong> ${_tldEscape(bench.overall || '')} · ${_tldEscape(bench.use_case || '')}</p>` +
+    `<div class="tld-analog__hint">` +
+    `<span class="tld-analog__hint-badge ${tierClass}">${_tldEscape(hint.label || '')}</span>` +
+    `<span class="tld-analog__hint-note">${_tldEscape(hint.note || '')}</span>` +
+    `</div>` +
+    `<div class="tld-analog__stats">` +
+    `<span>후보 ${report.candidate_total || 0}건</span>` +
+    `<span>B-only ${((report.b_only_ratio || 0) * 100).toFixed(1)}%</span>` +
+    `<span>겹침2+ ${report.overlap2_plus_count || 0}건</span>` +
+    `</div>` +
+    `<div class="tld-analog-list">${list || '<p class="tld-muted">유사 회차 없음</p>'}</div>`;
+}
+
+async function _loadAnalog(drawNo) {
+  const el = document.getElementById('tldAnalogContent');
+  if (!el) return;
+  el.innerHTML = '<p class="tld-muted">역사 유사 장면 불러오는 중…</p>';
+  try {
+    const report = await _fetchJson(`/api/testlotto/analog/draw/${drawNo}`);
+    _renderAnalogPanel(report);
+  } catch (e) {
+    el.innerHTML = `<p class="tld-muted">${_tldEscape(e.message || '유사 회차 불러오기 실패')}</p>`;
+  }
+}
+
 async function _loadSingleDraw(drawNo) {
   const d = _asDrawNo(drawNo);
   if (!d) return;
@@ -1286,7 +1349,7 @@ async function _loadSingleDraw(drawNo) {
     _renderAuxBrains(detail);
     _renderPrizeTiers(detail);
     _renderAnalysisGrid(detail, _currentBrain);
-    await _loadLearnSummary(_currentBrain);
+    await Promise.all([_loadLearnSummary(_currentBrain), _loadAnalog(d)]);
     _syncDrawControls();
     _updateNavButtons();
     const bname = BRAIN_NAME[_currentBrain] || _currentBrain;

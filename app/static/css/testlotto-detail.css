@@ -2132,3 +2132,138 @@
   color: #64748b;
   font-size: 0.72rem;
 }
+
+/* ── K-ANALOG 역사 유사 장면 ── */
+.tld-analog__disclaimer {
+  margin: 0 0 0.85rem;
+  padding: 0.65rem 0.85rem;
+  background: #1e1e32;
+  border: 1px solid #3b3b55;
+  border-left: 3px solid #f59e0b;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+.tld-analog__bench {
+  margin: 0 0 0.75rem;
+  font-size: 0.76rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+.tld-analog__hint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+.tld-analog__hint-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #334155;
+}
+.tld-analog__hint-badge--context {
+  background: #1e3a5f;
+  color: #93c5fd;
+  border-color: #2563eb;
+}
+.tld-analog__hint-badge--weak {
+  background: #422006;
+  color: #fcd34d;
+  border-color: #b45309;
+}
+.tld-analog__hint-badge--neutral {
+  background: #1a1a2e;
+  color: #94a3b8;
+}
+.tld-analog__hint-note {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  flex: 1 1 16rem;
+}
+.tld-analog__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+.tld-analog__stats span {
+  background: #141428;
+  border: 1px solid #2a2a3e;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+.tld-analog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.tld-analog-card {
+  background: #10101c;
+  border: 1px solid #2a2a3e;
+  border-radius: 10px;
+  padding: 0.75rem 0.85rem;
+}
+.tld-analog-card--top {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+.tld-analog-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.85rem;
+}
+.tld-analog-card__rank {
+  font-weight: 700;
+  color: #64748b;
+  min-width: 1.5rem;
+}
+.tld-analog-card__draw {
+  font-weight: 700;
+  color: #e2e8f0;
+}
+.tld-analog-card__meta {
+  font-size: 0.74rem;
+  color: #64748b;
+}
+.tld-analog-card__via {
+  font-size: 0.68rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: #1a1a2e;
+  color: #94a3b8;
+}
+.tld-analog-card__via--b {
+  color: #fbbf24;
+}
+.tld-analog-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+}
+.tld-analog-row__label {
+  color: #64748b;
+  min-width: 5.5rem;
+}
+.tld-analog-next {
+  margin-top: 0.5rem;
+  padding-top: 0.45rem;
+  border-top: 1px dashed #2a2a3e;
+}
+.tld-analog-next__label {
+  font-size: 0.72rem;
+  color: #f59e0b;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}

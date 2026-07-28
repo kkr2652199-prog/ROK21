@@ -684,6 +684,14 @@ async def api_detail_draw(draw_no: int):
     return get_draw_detail(draw_no)
 
 
+@router.get("/analog/draw/{draw_no}")
+async def api_analog_draw(draw_no: int):
+    """K-ANALOG — 유사 과거 회차 + analog+1 관측 (READ-ONLY · 예측 아님)."""
+    from app.testlotto.analog_service import build_analog_report
+
+    return build_analog_report(draw_no)
+
+
 @router.get("/detail/draws-hit")
 async def api_detail_draws_hit(brain_tag: str = "stat", min_match: int = 3):
     """뇌별 최소 5등(3개) 이상 적중 복습 회차 목록."""
