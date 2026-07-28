@@ -1,6 +1,6 @@
 """ROK21 테스트로또 1단계 — 1232~1234 동기화·채점·아틀라스·1235 예측.
 
-원본 kweon 미접촉. random.choices / _get_draws_before 동결 유지.
+ROK21 전용. random.choices / _get_draws_before 동결 유지.
 """
 from __future__ import annotations
 

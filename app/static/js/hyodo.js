@@ -623,7 +623,7 @@ async function hyodoCopyKakaoText() {
   }
 
   const text = ''
-    + '🎱 나의 지식 도서관 AI 예측\n'
+    + '🎱 ROK21 AI 예측\n'
     + '━━━━━━━━━━━━━━━━━━\n'
     + `📌 ${drawNo}회 (${statusLabel})\n`
     + '━━━━━━━━━━━━━━━━━━\n'

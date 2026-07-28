@@ -13,4 +13,4 @@
 4. 필요 시 `FINDINGS.md` · `WARRANT.md` · `BOOT.md`
 
 ## 한 줄
-ROK21 = kweon 복사본 샌드박스 · 포트 7021 · 원본 kweon(`264de3c`) 동결.
+ROK21 = 독립 SSOT · 포트 7021 · GitHub `kkr2652199-prog/ROK21`.

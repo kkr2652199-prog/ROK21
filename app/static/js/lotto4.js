@@ -2912,7 +2912,7 @@
     });
     lines.push('');
     lines.push('━━━━━━━━━━━━━━');
-    lines.push('🤖 4군 v13 독립 엔진');
+    lines.push('🤖 ROK21 · 4군 AI 예측');
     return lines.join('\n');
   }
 

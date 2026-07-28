@@ -3,6 +3,8 @@
 import json
 import urllib.request
 
+ROK21_API = "http://127.0.0.1:7021"
+
 
 def detail_to_rows(detail: dict, draw_no: int) -> list[dict]:
     actual = detail.get("actual_nums") or []
@@ -30,7 +32,7 @@ def main() -> None:
     for draw in [500, 1200, 1231]:
         detail = json.loads(
             urllib.request.urlopen(
-                f"http://127.0.0.1:6124/api/testlotto/detail/draw/{draw}"
+                f"{ROK21_API}/api/testlotto/detail/draw/{draw}"
             ).read()
         )
         rows = detail_to_rows(detail, draw)
@@ -48,11 +50,11 @@ def main() -> None:
 
     # 1232 future — detail error, predictions fallback
     d1232 = json.loads(
-        urllib.request.urlopen("http://127.0.0.1:6124/api/testlotto/detail/draw/1232").read()
+        urllib.request.urlopen(f"{ROK21_API}/api/testlotto/detail/draw/1232").read()
     )
     p1232 = json.loads(
         urllib.request.urlopen(
-            "http://127.0.0.1:6124/api/testlotto/predictions/draw/1232"
+            f"{ROK21_API}/api/testlotto/predictions/draw/1232"
         ).read()
     )
     print("\n=== 1232회 (미래) ===")

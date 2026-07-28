@@ -1,7 +1,7 @@
 {
   "draw_count": 1228,
   "max_draw_no": 1228,
-  "analysis_db": "d:\\3kweon\\tools\\pair_periodicity_analysis.db",
+  "analysis_db": "d:\\ROK21\\tools\\pair_periodicity_analysis.db",
   "step_c2_periodicity": {
     "testable_pairs": 990,
     "significant_pairs_p05": 41,

@@ -1,6 +1,6 @@
 """ROK21 서버 진입점: sys.path 에 D:\\ROK21 루트만 추가 (외부 lotto 트리 미포함).
 
-원본 kweon(D:\\3kweon · 포트 6124)과 충돌 방지: 포트 7021 · 로컬 DB만 사용.
+포트 7021 · 로컬 DB만 사용.
 """
 
 from __future__ import annotations
@@ -13,7 +13,6 @@ ROOT = Path(__file__).resolve().parent
 os.chdir(ROOT)
 sys.path.insert(0, str(ROOT))
 
-# 원본 kweon=6124 — ROK21 복사본은 별도 포트
 HOST = "127.0.0.1"
 PORT = 7021
 
@@ -35,7 +34,7 @@ if __name__ == "__main__":
         "[ROK21] 서버 기동 중… (이 창을 닫지 마세요. 중지: Ctrl+C)\n"
         f"  브라우저: http://{host}:{port}/\n"
         f"  API 예시: http://{host}:{port}/api/lotto4/v13/brain/status\n"
-        "  (원본 kweon과 분리: 포트 7021 · 루트 D:\\ROK21)\n",
+        f"  루트: D:\\ROK21 · 포트 {port}\n",
         flush=True,
     )
     try:

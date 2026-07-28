@@ -5,10 +5,11 @@ import sqlite3
 import urllib.request
 
 DB = "data/lotto_testlotto.db"
+ROK21_API = "http://127.0.0.1:7021"
 
 
 def fetch_detail(draw: int) -> dict:
-    url = f"http://127.0.0.1:6124/api/testlotto/detail/draw/{draw}"
+    url = f"{ROK21_API}/api/testlotto/detail/draw/{draw}"
     with urllib.request.urlopen(url) as r:
         return json.loads(r.read())
 

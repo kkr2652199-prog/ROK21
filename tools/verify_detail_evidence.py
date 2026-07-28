@@ -4,10 +4,11 @@ import json
 import urllib.request
 
 DRAWS = [500, 1000, 1231]
+ROK21_API = "http://127.0.0.1:7021"
 
 
 def fetch(draw_no: int) -> dict:
-    url = f"http://127.0.0.1:6124/api/testlotto/detail/draw/{draw_no}"
+    url = f"{ROK21_API}/api/testlotto/detail/draw/{draw_no}"
     with urllib.request.urlopen(url) as r:
         return json.loads(r.read())
 
