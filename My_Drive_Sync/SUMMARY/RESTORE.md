@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | (커밋중) |
+| 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | `0426e09` |
 | 2026-07-29 | GATHER-V2·종료체크 | V'=12·회수0·관측고정·hybrid힌트 · NEXT=SLICE | V2 DONE WIRE보류 | `05999a2` |
 | 2026-07-29 | GATHER-V1·종료체크 | oracle 찢김·v1회수0·천장 \|V\|≈25 · NEXT=V2 | V1 DONE WIRE보류 | `d00884c` |
 | 2026-07-29 | 핀 GO·종료체크 | POS·SCATTER·DESIGN·PILOT · 풀6=21 · v0회수0 · NEXT=V1 | ①~④ DONE | `8163d55` |
