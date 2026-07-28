@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3567397` · WORK=`IDLE`
+- HEAD: `d8650db` · WORK=`IDLE`
 - 지금: GENMIX FAIL · live0.1303<pin0.1447 · **HOLD** · V2유지
 - 직전: AUX-BLEND FAIL / GENDIV FAIL / SUM·BAND·EV·SETNO·SETPACK·TUNE FAIL
 - BOOT다음: K-ATTACK-HOLD — GENMIX·AUX·GENDIV·슬롯재선택 재탕금지 · 다음 직교축

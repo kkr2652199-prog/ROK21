@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3567397` · WORK=`IDLE`
+1. **HEAD:** `d8650db` · WORK=`IDLE`
 2. **지금:** GENMIX FAIL · live0.1303<pin0.1447 · **HOLD** · V2유지
 3. **다음1건:** K-ATTACK-HOLD — GENMIX FAIL(live best m3/s5/r7 ge3=0.1303 < pin 0.1447 · trunc fillable 티켓동일) · WIRE금지 · V2유지 · GENMIX·AUX-BLEND·GENDIV·슬롯재선택 재탕금지 · 형·커서 다음 직교축 1건 재선정 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | GENMIX·팩트체크·push | GENMIX FAIL · live0.1303<pin · trunc동일 · NEXT=HOLD | GENMIX FAIL | `(push후)` |
+| 2026-07-29 | GENMIX·팩트체크·push | GENMIX FAIL · live0.1303<pin · trunc동일 · NEXT=HOLD | GENMIX FAIL | `d8650db` |
 | 2026-07-29 | AUX/생성레버·팩트체크·push | AUX-BLEND FAIL · live r=0.0134 · V2유지 · NEXT=HOLD | AUX-BLEND FAIL | `4ca44bf` |
 | 2026-07-29 | 새직교축·팩트체크·push | GENDIV FAIL · Q1 ge3 0.1224 · V2유지 · NEXT=HOLD | GENDIV FAIL | `18848dc` |
 | 2026-07-29 | 새직교축·팩트체크·push | SUM-SELECT FAIL · Δ-0.0043 · V2유지 · NEXT=HOLD | SUM FAIL | `f617c98` |
