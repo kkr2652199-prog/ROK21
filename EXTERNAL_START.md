@@ -9,12 +9,12 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `89bfc0b` |
+| HEAD(실측) | `7299711` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-ANALOG-PREP — 1234 유사회차 probe PASS · K-ANALOG-1 Go |
-| 직전 | K-PIPE-A · K-UI-SSOT · K-DETAIL-CUTOFF |
-| BOOT다음 | K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` (K-ANALOG-1 병행) |
+| 지금 | K-ANALOG-1 — API+상세⑥·BT·MULTIDIM·verify PASS |
+| 직전 | K-ANALOG-PREP · K-PIPE-A · K-UI-SSOT |
+| BOOT다음 | K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` |
 | NEXT1 ID | **K-AWAIT** |
 | NEXT1 할일 | **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) |
 | 승인필요 | 아니오 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=89bfc0b · 지금=K-ANALOG-PREP — 1234 유사회차 probe PASS · K-ANALOG-1 Go · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=7299711 · 지금=K-ANALOG-1 — API+상세⑥·BT·MULTIDIM·verify PASS · 다음=K-AWAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 89bfc0b_
+_generated: 7299711_
