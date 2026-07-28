@@ -3,8 +3,8 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `82a0033` · WORK=`IDLE`
-2. **지금:** K-UI-SSOT — 메인 brain_review 우선·셀렉트 동기·상세 미래회차 PASS
+1. **HEAD:** `a5bf93d` · WORK=`IDLE`
+2. **지금:** K-PIPE-A — walk-forward·coordinator AUX scoring 통합 PASS
 3. **다음1건:** K-AWAIT — **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) (승인필요=아니오 · 선행=K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
@@ -34,8 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-28 | K-PIPE-A 심장통합 | WF apply_coordinator_scoring·cache clear · verify PASS | K-PIPE PATCHED | `a5bf93d` |
 | 2026-07-28 | K-UI-SSOT 메인상세 | brain_review우선·select동기·1235상세폴백 · verify PASS | K-UI-SSOT PATCHED | `38a7ba3` |
-| 2026-07-28 | K-DETAIL-CUTOFF | detail/draw CUTOFF set_learn_as_of · 1234 UI복구 · verify PASS | K-DETAIL-CUTOFF PATCHED | `4ea75cc` |
 | 2026-07-28 | K-H 미등록AUX | _unused격리 · import0 · 3+4유지 · verify PASS | K-H PATCHED | `a5a0e4e` |
 | 2026-07-28 | K-B BENCH SSOT | review100·pred갭31·세트동일0 · verify PASS | K-B PATCHED | `1d0be4f` |
 | 2026-07-27 | K-W post-KP3 | ending χ²/df↓ · rates NameError수정 · verify PASS | K-W PATCHED | `bb7b004` |

@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-UI-SSOT — 메인 brain_review 우선·셀렉트 동기·상세 미래회차 PASS
-- 직전: K-DETAIL-CUTOFF · K-00 · K-1235-PREP
+- 지금: K-PIPE-A — walk-forward·coordinator AUX scoring 통합 PASS
+- 직전: K-UI-SSOT · K-DETAIL-CUTOFF · K-00
 - 다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

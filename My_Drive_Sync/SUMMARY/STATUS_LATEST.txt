@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-28 KST  
-📌 사유: K-UI-SSOT 메인 brain_review 우선·상세 미래회차 · HEAD `38a7ba3`
+📌 사유: K-PIPE-A walk-forward·coordinator 통합 · HEAD `a5bf93d`
 
 ---
 
@@ -19,7 +19,8 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-UI-SSOT** | 메인·상세 SSOT 정합 · select동기 · 1235상세 | verify_pass |
+| **K-PIPE-A** | WF·coordinator AUX scoring 통합 | verify_pass |
+| **K-UI-SSOT** | 메인·상세 SSOT 정합 | verify_pass |
 | **K-DETAIL-CUTOFF** | detail/draw CUTOFF 회귀 | verify_pass |
 | **K-00** | 과거예측 숙제 확장 · review SSOT | verify_pass |
 | **K-1235-PREP** | 1235 루프·COLLAB_HANDOFF | verify_pass |
