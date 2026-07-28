@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `b945197` · WORK=`IDLE`
+1. **HEAD:** `e2a3ca4` · WORK=`IDLE`
 2. **지금:** EV-POP FAIL · hit/ev_preserve false · **HOLD** · V2유지
 3. **다음1건:** K-ATTACK-HOLD — EV-POP FAIL(hit/ev_preserve 모두false · 최근접 Δge3-0.0026) · WIRE금지 · V2유지 · EV-POP재탕금지 · 형·커서 다음 축 1건 재선정 (승인필요=예 · 선행=K-EV-POP 관측완료 · recommended=없음(HOLD·V2유지))
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
