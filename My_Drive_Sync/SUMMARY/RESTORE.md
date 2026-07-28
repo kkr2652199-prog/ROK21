@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `782c9ab` · WORK=`IDLE`
+1. **HEAD:** `28b54f2` · WORK=`IDLE`
 2. **지금:** AUX-BLEND FAIL · |r|<0.03 · **HOLD** · V2유지
 3. **다음1건:** K-ATTACK-HOLD — AUX-BLEND FAIL(live r=0.0134 · best pattern_heavy r=0.0152 · V2티켓 r=0.0272 전부 |r|<0.03) · WIRE금지 · V2유지 · AUX-BLEND·GENDIV재탕금지 · 슬롯재선택계열지양 · 형·커서 다음 직교축 1건 재선정 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
