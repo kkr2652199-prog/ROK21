@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7ee3fa9` |
+| HEAD(실측) | `2d0becc` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7ee3fa9 · 지금=K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) · 다음=K-TRUST-BENCH`
+1. 첫줄 `[복귀] HEAD=2d0becc · 지금=K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) · 다음=K-TRUST-BENCH`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
