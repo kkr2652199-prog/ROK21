@@ -1,0 +1,517 @@
+{
+  "id": "K-AUX-BLEND",
+  "created_at": "2026-07-29T08:06:56",
+  "db_code_write": false,
+  "not_slot_reselect": true,
+  "not_gendiv_jaccard": true,
+  "v2_pin": {
+    "ge3": 0.1447,
+    "mean": 1.7504,
+    "quota": {
+      "markov": 3,
+      "stat": 1,
+      "review": 1
+    },
+    "mode": "set_no_asc"
+  },
+  "code_anchors": {
+    "AUX_WEIGHTS": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aux_score_scale": 40.0,
+    "file": "app/testlotto/brains/coordinator.py"
+  },
+  "protocol": {
+    "draw_range": [
+      53,
+      1234
+    ],
+    "n_draws": 1182,
+    "corr_hit": 0.03,
+    "alpha": 0.05,
+    "delta_ge3_hit": 0.005,
+    "null_ge3": 0.1137,
+    "PASS": "any blend/component spearman r>=0.03 & p<0.05 & r>0 (live or best blend). Q5는 보조관측."
+  },
+  "hypothesis": "발권전 AUX 합성점수(가중·*40)가 matched와 유의 양상관이면 AUX_WEIGHTS/scale이 실재 레버",
+  "blends": {
+    "live_025": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "warrant_emp": [
+      0.05,
+      0.4,
+      0.4,
+      0.15
+    ],
+    "pattern_heavy": [
+      0.1,
+      0.55,
+      0.25,
+      0.1
+    ],
+    "balance_heavy": [
+      0.1,
+      0.25,
+      0.55,
+      0.1
+    ],
+    "miss_off": [
+      0.0,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "equal_emp3": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ]
+  },
+  "v2_baseline_check": {
+    "n": 1182,
+    "mean": 1.7504,
+    "ge3": 171,
+    "ge3_rate": 0.1447,
+    "ge4": 12,
+    "ge4_rate": 0.0102,
+    "p_vs_null": 0.000679
+  },
+  "pool_n_sets": 17730,
+  "correlations": {
+    "components": {
+      "miss": {
+        "n": 17730,
+        "r": 0.0,
+        "p": 1.0,
+        "pass": false,
+        "constant": true
+      },
+      "pattern": {
+        "n": 17730,
+        "r": 0.0139,
+        "p": 0.063247,
+        "pass": false,
+        "constant": false
+      },
+      "balance": {
+        "n": 17730,
+        "r": 0.0085,
+        "p": 0.256699,
+        "pass": false,
+        "constant": false
+      },
+      "referee": {
+        "n": 17730,
+        "r": 0.0,
+        "p": 1.0,
+        "pass": false,
+        "constant": true
+      }
+    },
+    "blends": {
+      "live_025": {
+        "n": 17730,
+        "r": 0.0134,
+        "p": 0.074638,
+        "pass": false,
+        "constant": false
+      },
+      "warrant_emp": {
+        "n": 17730,
+        "r": 0.0134,
+        "p": 0.074639,
+        "pass": false,
+        "constant": false
+      },
+      "pattern_heavy": {
+        "n": 17730,
+        "r": 0.0152,
+        "p": 0.043146,
+        "pass": false,
+        "constant": false
+      },
+      "balance_heavy": {
+        "n": 17730,
+        "r": 0.0117,
+        "p": 0.120816,
+        "pass": false,
+        "constant": false
+      },
+      "miss_off": {
+        "n": 17730,
+        "r": 0.0134,
+        "p": 0.074641,
+        "pass": false,
+        "constant": false
+      },
+      "equal_emp3": {
+        "n": 17730,
+        "r": 0.0134,
+        "p": 0.07463,
+        "pass": false,
+        "constant": false
+      }
+    },
+    "live_composite": {
+      "n": 17730,
+      "r": 0.0134,
+      "p": 0.074638,
+      "pass": false,
+      "constant": false
+    },
+    "live_times_40": {
+      "n": 17730,
+      "r": 0.0134,
+      "p": 0.074638,
+      "pass": false,
+      "constant": false
+    },
+    "stored_confidence": {
+      "n": 17730,
+      "r": 0.0058,
+      "p": 0.439684,
+      "pass": false,
+      "constant": false
+    },
+    "v2_tickets_live_aux": {
+      "n": 5910,
+      "r": 0.0272,
+      "p": 0.036767,
+      "pass": false,
+      "constant": false
+    }
+  },
+  "v2_pack_aux_quintiles": {
+    "live_025": {
+      "n": 1182,
+      "quintiles": [
+        {
+          "Q": 1,
+          "n": 236,
+          "mean_aux": 0.7172,
+          "mean": 1.7458,
+          "ge3_rate": 0.1483,
+          "ge4_rate": 0.0085,
+          "delta_ge3_vs_v2": 0.0036
+        },
+        {
+          "Q": 2,
+          "n": 236,
+          "mean_aux": 0.7301,
+          "mean": 1.7203,
+          "ge3_rate": 0.1144,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": -0.0303
+        },
+        {
+          "Q": 3,
+          "n": 237,
+          "mean_aux": 0.7367,
+          "mean": 1.6793,
+          "ge3_rate": 0.1266,
+          "ge4_rate": 0.0169,
+          "delta_ge3_vs_v2": -0.0181
+        },
+        {
+          "Q": 4,
+          "n": 236,
+          "mean_aux": 0.7427,
+          "mean": 1.8263,
+          "ge3_rate": 0.178,
+          "ge4_rate": 0.0042,
+          "delta_ge3_vs_v2": 0.0333
+        },
+        {
+          "Q": 5,
+          "n": 237,
+          "mean_aux": 0.7516,
+          "mean": 1.7806,
+          "ge3_rate": 0.1561,
+          "ge4_rate": 0.0084,
+          "delta_ge3_vs_v2": 0.0114
+        }
+      ],
+      "Q5_minus_Q1_ge3": 0.0078,
+      "Q5_beats_v2": true
+    },
+    "warrant_emp": {
+      "n": 1182,
+      "quintiles": [
+        {
+          "Q": 1,
+          "n": 236,
+          "mean_aux": 0.76,
+          "mean": 1.7458,
+          "ge3_rate": 0.1483,
+          "ge4_rate": 0.0085,
+          "delta_ge3_vs_v2": 0.0036
+        },
+        {
+          "Q": 2,
+          "n": 236,
+          "mean_aux": 0.7806,
+          "mean": 1.7203,
+          "ge3_rate": 0.1144,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": -0.0303
+        },
+        {
+          "Q": 3,
+          "n": 237,
+          "mean_aux": 0.7913,
+          "mean": 1.6793,
+          "ge3_rate": 0.1266,
+          "ge4_rate": 0.0169,
+          "delta_ge3_vs_v2": -0.0181
+        },
+        {
+          "Q": 4,
+          "n": 236,
+          "mean_aux": 0.8009,
+          "mean": 1.8263,
+          "ge3_rate": 0.178,
+          "ge4_rate": 0.0042,
+          "delta_ge3_vs_v2": 0.0333
+        },
+        {
+          "Q": 5,
+          "n": 237,
+          "mean_aux": 0.8151,
+          "mean": 1.7806,
+          "ge3_rate": 0.1561,
+          "ge4_rate": 0.0084,
+          "delta_ge3_vs_v2": 0.0114
+        }
+      ],
+      "Q5_minus_Q1_ge3": 0.0078,
+      "Q5_beats_v2": true
+    },
+    "pattern_heavy": {
+      "n": 1182,
+      "quintiles": [
+        {
+          "Q": 1,
+          "n": 236,
+          "mean_aux": 0.8017,
+          "mean": 1.7415,
+          "ge3_rate": 0.1441,
+          "ge4_rate": 0.0085,
+          "delta_ge3_vs_v2": -0.0006
+        },
+        {
+          "Q": 2,
+          "n": 236,
+          "mean_aux": 0.8226,
+          "mean": 1.6992,
+          "ge3_rate": 0.1186,
+          "ge4_rate": 0.0085,
+          "delta_ge3_vs_v2": -0.0261
+        },
+        {
+          "Q": 3,
+          "n": 237,
+          "mean_aux": 0.8317,
+          "mean": 1.8101,
+          "ge3_rate": 0.1688,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": 0.0241
+        },
+        {
+          "Q": 4,
+          "n": 236,
+          "mean_aux": 0.8404,
+          "mean": 1.7415,
+          "ge3_rate": 0.1441,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": -0.0006
+        },
+        {
+          "Q": 5,
+          "n": 237,
+          "mean_aux": 0.8523,
+          "mean": 1.7595,
+          "ge3_rate": 0.1477,
+          "ge4_rate": 0.0084,
+          "delta_ge3_vs_v2": 0.003
+        }
+      ],
+      "Q5_minus_Q1_ge3": 0.0036,
+      "Q5_beats_v2": false
+    },
+    "balance_heavy": {
+      "n": 1182,
+      "quintiles": [
+        {
+          "Q": 1,
+          "n": 236,
+          "mean_aux": 0.7406,
+          "mean": 1.7754,
+          "ge3_rate": 0.1483,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": 0.0036
+        },
+        {
+          "Q": 2,
+          "n": 236,
+          "mean_aux": 0.7631,
+          "mean": 1.6949,
+          "ge3_rate": 0.1271,
+          "ge4_rate": 0.0085,
+          "delta_ge3_vs_v2": -0.0176
+        },
+        {
+          "Q": 3,
+          "n": 237,
+          "mean_aux": 0.7758,
+          "mean": 1.6751,
+          "ge3_rate": 0.1097,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": -0.035
+        },
+        {
+          "Q": 4,
+          "n": 236,
+          "mean_aux": 0.7873,
+          "mean": 1.7881,
+          "ge3_rate": 0.178,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": 0.0333
+        },
+        {
+          "Q": 5,
+          "n": 237,
+          "mean_aux": 0.8053,
+          "mean": 1.8186,
+          "ge3_rate": 0.1603,
+          "ge4_rate": 0.0042,
+          "delta_ge3_vs_v2": 0.0156
+        }
+      ],
+      "Q5_minus_Q1_ge3": 0.012,
+      "Q5_beats_v2": true
+    },
+    "miss_off": {
+      "n": 1182,
+      "quintiles": [
+        {
+          "Q": 1,
+          "n": 236,
+          "mean_aux": 0.7062,
+          "mean": 1.7458,
+          "ge3_rate": 0.1483,
+          "ge4_rate": 0.0085,
+          "delta_ge3_vs_v2": 0.0036
+        },
+        {
+          "Q": 2,
+          "n": 236,
+          "mean_aux": 0.7234,
+          "mean": 1.7203,
+          "ge3_rate": 0.1144,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": -0.0303
+        },
+        {
+          "Q": 3,
+          "n": 237,
+          "mean_aux": 0.7323,
+          "mean": 1.6793,
+          "ge3_rate": 0.1266,
+          "ge4_rate": 0.0169,
+          "delta_ge3_vs_v2": -0.0181
+        },
+        {
+          "Q": 4,
+          "n": 236,
+          "mean_aux": 0.7403,
+          "mean": 1.8263,
+          "ge3_rate": 0.178,
+          "ge4_rate": 0.0042,
+          "delta_ge3_vs_v2": 0.0333
+        },
+        {
+          "Q": 5,
+          "n": 237,
+          "mean_aux": 0.7522,
+          "mean": 1.7806,
+          "ge3_rate": 0.1561,
+          "ge4_rate": 0.0084,
+          "delta_ge3_vs_v2": 0.0114
+        }
+      ],
+      "Q5_minus_Q1_ge3": 0.0078,
+      "Q5_beats_v2": true
+    },
+    "equal_emp3": {
+      "n": 1182,
+      "quintiles": [
+        {
+          "Q": 1,
+          "n": 236,
+          "mean_aux": 0.8093,
+          "mean": 1.7458,
+          "ge3_rate": 0.1483,
+          "ge4_rate": 0.0085,
+          "delta_ge3_vs_v2": 0.0036
+        },
+        {
+          "Q": 2,
+          "n": 236,
+          "mean_aux": 0.8351,
+          "mean": 1.7203,
+          "ge3_rate": 0.1144,
+          "ge4_rate": 0.0127,
+          "delta_ge3_vs_v2": -0.0303
+        },
+        {
+          "Q": 3,
+          "n": 237,
+          "mean_aux": 0.8485,
+          "mean": 1.6793,
+          "ge3_rate": 0.1266,
+          "ge4_rate": 0.0169,
+          "delta_ge3_vs_v2": -0.0181
+        },
+        {
+          "Q": 4,
+          "n": 236,
+          "mean_aux": 0.8605,
+          "mean": 1.8263,
+          "ge3_rate": 0.178,
+          "ge4_rate": 0.0042,
+          "delta_ge3_vs_v2": 0.0333
+        },
+        {
+          "Q": 5,
+          "n": 237,
+          "mean_aux": 0.8782,
+          "mean": 1.7806,
+          "ge3_rate": 0.1561,
+          "ge4_rate": 0.0084,
+          "delta_ge3_vs_v2": 0.0114
+        }
+      ],
+      "Q5_minus_Q1_ge3": 0.0078,
+      "Q5_beats_v2": true
+    }
+  },
+  "gates": {
+    "any_positive_corr_pass": false,
+    "live_corr_pass": false,
+    "best_blend": "pattern_heavy",
+    "best_blend_corr_pass": false,
+    "any_Q5_high_aux_beats_v2": true,
+    "PASS_to_WIRE": false,
+    "note": "PASS=점수↔적중 상관 게이트. V2 set_no 발권은 관측 중 불변·슬롯재선택0. WIRE=AUX_WEIGHTS/scale 후보(형 GO 전 금지). V2경로에서 발권조합 자체는 set_no라 WEIGHTS만 바꿔도 티켓 불변 — conf경로·잔여채움에만 영향."
+  },
+  "recommended_next": null,
+  "elapsed_s": 59.097
+}
