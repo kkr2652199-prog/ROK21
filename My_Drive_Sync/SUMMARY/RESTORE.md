@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `440eb18` · WORK=`IDLE`
-2. **지금:** K-REBRAND — kweon/복제 흔적 ROK21 교체 (UI·tools·SSOT)
-3. **다음1건:** K-AWAIT — **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) (승인필요=아니오 · 선행=K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기)
+1. **HEAD:** `7ee3fa9` · WORK=`IDLE`
+2. **지금:** K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698)
+3. **다음1건:** K-TRUST-BENCH — RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) (승인필요=아니오 · 선행=K-REVIEW-RUN PASS · `20260728_KREVIEW_full_2_1234.json` verify_pass)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-28 | K-REVIEW-RUN 진행 | WF 2~1234 재복습 53분 · verify_pass · pipe 3698/3698 | K-REVIEW-RUN PASS | (미커밋) |
 | 2026-07-28 | K-REBRAND 종료체크 | UI·tools kweon→ROK21 · verify7021 · push | K-REBRAND PATCHED | `440eb18` |
 | 2026-07-28 | K-UI-PLAIN 종료체크 | 메인·상세·analog API 쉬운 말 UI · push | K-UI-PLAIN PATCHED | `13a187e` |
 | 2026-07-28 | K-UI-TESTLOTTO 종료체크 | 메인 당첨 히어로 sticky · WARRANT 접기 · push | K-UI-TESTLOTTO PATCHED | `e635d70` |

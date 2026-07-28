@@ -1,0 +1,111 @@
+{
+  "id": "K-REVIEW-RUN",
+  "ts": "2026-07-28T23:12:16",
+  "backup": "D:\\ROK21\\backups\\20260728_221852_KREVIEW전\\lotto_testlotto.db",
+  "window": [
+    2,
+    1234
+  ],
+  "before": {
+    "label": "before_run",
+    "draw_range": [
+      2,
+      1234
+    ],
+    "draws_max": 1234,
+    "brain_review_rows": 3698,
+    "brain_stats": {
+      "markov": {
+        "n": 1232,
+        "avg_m": 1.6193,
+        "ge3": 130
+      },
+      "review": {
+        "n": 1233,
+        "avg_m": 1.6813,
+        "ge3": 131
+      },
+      "stat": {
+        "n": 1233,
+        "avg_m": 1.6999,
+        "ge3": 128
+      }
+    },
+    "pipe_marker_rows": 3,
+    "learn_states": [
+      {
+        "brain_tag": "stat",
+        "last_draw_no": 1234,
+        "review_count": 1273
+      },
+      {
+        "brain_tag": "review",
+        "last_draw_no": 1234,
+        "review_count": 1272
+      },
+      {
+        "brain_tag": "markov",
+        "last_draw_no": 1234,
+        "review_count": 1269
+      }
+    ]
+  },
+  "after": {
+    "label": "after",
+    "draw_range": [
+      2,
+      1234
+    ],
+    "draws_max": 1234,
+    "brain_review_rows": 3698,
+    "brain_stats": {
+      "markov": {
+        "n": 1232,
+        "avg_m": 1.7167,
+        "ge3": 170
+      },
+      "review": {
+        "n": 1233,
+        "avg_m": 1.6975,
+        "ge3": 150
+      },
+      "stat": {
+        "n": 1233,
+        "avg_m": 1.7186,
+        "ge3": 137
+      }
+    },
+    "pipe_marker_rows": 3698,
+    "learn_states": [
+      {
+        "brain_tag": "stat",
+        "last_draw_no": 1234,
+        "review_count": 1233
+      },
+      {
+        "brain_tag": "review",
+        "last_draw_no": 1234,
+        "review_count": 1233
+      },
+      {
+        "brain_tag": "markov",
+        "last_draw_no": 1234,
+        "review_count": 1232
+      }
+    ]
+  },
+  "loop": {
+    "reviewed": 1233,
+    "skipped": 0,
+    "elapsed_sec": 3202.5
+  },
+  "checks": {
+    "pipe_markers_gt0": true,
+    "pipe_markers_ge_stat_n": true,
+    "review_rows_positive": true,
+    "avg_drift_within_015": true,
+    "drift_notes": [],
+    "verify_pass": true
+  },
+  "verify_pass": true
+}

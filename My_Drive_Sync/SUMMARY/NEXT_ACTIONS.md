@@ -3,11 +3,11 @@
 > STEP1 `guard_boot` 는 **아래 `## NEXT (1건)` 블록만** 읽는다. 여러 건 나열 금지.
 
 ## NEXT (1건)
-- ID: K-AWAIT
-- 할일: **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`)
-- 선행조건: K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기
+- ID: K-TRUST-BENCH
+- 할일: RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY)
+- 선행조건: K-REVIEW-RUN PASS · `20260728_KREVIEW_full_2_1234.json` verify_pass
 - 승인필요: 아니오
-- 최종갱신: `440eb18` (K-REBRAND · NEXT=K-AWAIT 유지)
+- 최종갱신: 2026-07-28 (K-REVIEW-RUN PASS · Pin-1)
 
 ## WORKSTATE
 IDLE

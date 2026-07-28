@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-REBRAND — kweon/복제 흔적 ROK21 교체 (UI·tools·SSOT)
-- 직전: K-UI-PLAIN · K-UI-TESTLOTTO · K-ANALOG-1
-- 다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
+- 지금: K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698)
+- 직전: K-REBRAND · K-UI-PLAIN · K-ANALOG-1
+- 다음: K-TRUST-BENCH — random·3뇌 mean·≥3% · WFE JSON (READ-ONLY)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

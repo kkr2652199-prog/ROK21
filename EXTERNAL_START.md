@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `440eb18` |
+| HEAD(실측) | `7ee3fa9` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-REBRAND — kweon/복제 흔적 ROK21 교체 (UI·tools·SSOT) |
-| 직전 | K-UI-PLAIN · K-UI-TESTLOTTO · K-ANALOG-1 |
-| BOOT다음 | K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute` |
-| NEXT1 ID | **K-AWAIT** |
-| NEXT1 할일 | **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) |
+| 지금 | K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) |
+| 직전 | K-REBRAND · K-UI-PLAIN · K-ANALOG-1 |
+| BOOT다음 | K-TRUST-BENCH — random·3뇌 mean·≥3% · WFE JSON (READ-ONLY) |
+| NEXT1 ID | **K-TRUST-BENCH** |
+| NEXT1 할일 | RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) |
 | 승인필요 | 아니오 |
-| 선행 | K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기 |
+| 선행 | K-REVIEW-RUN PASS · `20260728_KREVIEW_full_2_1234.json` verify_pass |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=440eb18 · 지금=K-REBRAND — kweon/복제 흔적 ROK21 교체 (UI·tools·SSOT) · 다음=K-AWAIT`
+1. 첫줄 `[복귀] HEAD=7ee3fa9 · 지금=K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) · 다음=K-TRUST-BENCH`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 440eb18_
+_generated: 7ee3fa9_

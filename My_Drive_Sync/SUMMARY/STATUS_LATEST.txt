@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-28 KST  
-📌 사유: K-REBRAND kweon→ROK21 UI·tools · HEAD `440eb18`
+📌 사유: K-REVIEW-RUN WF 2~1234 재복습 PASS · verify `20260728_KREVIEW_full_2_1234.json`
 
 ---
 
@@ -19,6 +19,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-REVIEW-RUN** | learn reset + WF 2~1234 · kweon 복제 제거 | verify_pass · pipe 3698/3698 |
 | **K-REBRAND** | UI·tools kweon/복제 흔적 → ROK21 · verify 7021 | push `440eb18` |
 | **K-UI-PLAIN** | 메인·상세·analog 초보자용 문구 | push |
 | **K-UI-TESTLOTTO** | 메인 당첨 히어로·WARRANT 접기 | push |
@@ -45,8 +46,9 @@
 
 ## 3) 다음 (형)
 
-`K-AWAIT` — **1235** 발표 후 `python tools/_kawait_1235_loop.py --execute`  
-근거: [`COLLAB_HANDOFF.md`](COLLAB_HANDOFF.md) · [`NEXT_ACTIONS.md`](NEXT_ACTIONS.md)
+`K-TRUST-BENCH` — RE-RUN 후 random·3뇌 mean·≥3%·WFE READ-ONLY 집계  
+선행: K-REVIEW-RUN PASS · 이후 K-AWAIT(1235)  
+근거: [`PINNED_TESTLOTTO_TUNING.md`](PINNED_TESTLOTTO_TUNING.md) · [`NEXT_ACTIONS.md`](NEXT_ACTIONS.md)
 
 ---
 
