@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0f201f7` · WORK=`IDLE`
+- HEAD: `77c962a` · WORK=`IDLE`
 - 지금: K-PROB-VECTOR — 유효신호 0 · **HOLD 복귀**
 - 직전: OPEN A/B/C FAIL · HOLD→PROB-VECTOR 교체 실행
 - BOOT다음: K-ATTACK-HOLD — 형·동생 새 축 재선정

@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0f201f7` · WORK=`IDLE`
+1. **HEAD:** `77c962a` · WORK=`IDLE`
 2. **지금:** K-PROB-VECTOR — 유효신호 0 · **HOLD 복귀**
 3. **다음1건:** K-ATTACK-HOLD — K-PROB-VECTOR 유효신호 0 · STRENGTHEN 미등록 · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-PROB-VECTOR 완료 · verdict=없음 · docs/benchmarks/20260729_KPROBVEC_survey.json)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
