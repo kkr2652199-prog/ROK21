@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `53a074f` · WORK=`IDLE`
+- HEAD: `2422b4d` · WORK=`IDLE`
 - 지금: K-MARKOV-WIRE FAIL · conf쿼터≪E · **ENABLED=False**
 - 직전: NULL PASS (E 5장 실력)
 - BOOT다음: K-ATTACK-HOLD — set_no쿼터 등 재논의

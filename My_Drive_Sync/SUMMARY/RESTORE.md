@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `53a074f` · WORK=`IDLE`
+1. **HEAD:** `2422b4d` · WORK=`IDLE`
 2. **지금:** K-MARKOV-WIRE FAIL · conf쿼터≪E · **ENABLED=False**
 3. **다음1건:** K-ATTACK-HOLD — MARKOV-WIRE FAIL(conf쿼터 ge3=0.121·p=0.227) · ENABLED=False 롤백 · 형·동생 재논의(set_no쿼터 등) (승인필요=예 · 선행=K-MARKOV-WIRE 완료 · recommended=없음 · 롤백적용)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-MARKOV-WIRE | conf쿼터 ge3=0.121 p=0.227 · ENABLED=False · NEXT=HOLD | WIRE FAIL | (미커밋) |
+| 2026-07-29 | K-MARKOV-WIRE | conf쿼터 ge3=0.121 p=0.227 · ENABLED=False · NEXT=HOLD | WIRE FAIL | `2422b4d` |
 | 2026-07-29 | NULL·종료체크 | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | `70ac1f6` |
 | 2026-07-29 | SETCOUNT·종료체크 | n15≈null · NEXT=WIRE→NULL검증 | SETCOUNT PASS | `a25c9b7` |
 | 2026-07-29 | K-COVER·종료체크 | pool40 ge3=0.132<RR · NEXT=HOLD | COVER FAIL | `6339f12` |
