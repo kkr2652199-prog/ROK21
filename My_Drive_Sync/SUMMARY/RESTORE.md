@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `9824b48` · WORK=`IDLE`
+1. **HEAD:** `30db0a8` · WORK=`IDLE`
 2. **지금:** K-TRUST+CREW — null≈0.8 · 3뇌 Jaccard0.11 · 사공아님·역할분담 유지
 3. **다음1건:** K-PATTERN-2 — 패턴AUX 분위수×matched 전행 분포 → `docs/benchmarks/YYYYMMDD_KPATTERN2_aux_quartile.json` (READ-ONLY) · 보조 유지/축소 근거 (승인필요=아니오 · 선행=K-TRUST-BENCH PASS · `20260729_KTRUST_bench.json` (3예측 유지 권고))
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
