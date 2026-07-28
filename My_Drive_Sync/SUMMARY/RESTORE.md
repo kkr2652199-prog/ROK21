@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `ff56d82` · WORK=`IDLE`
+1. **HEAD:** `14135bb` · WORK=`IDLE`
 2. **지금:** K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류**
 3. **다음1건:** K-GATHER-V2 — V축소(단독출현·자리·구간·confidence) → covering 5장 PILOT · union6 게이트 (ge5≥1 또는 gather≥base) (승인필요=아니오 · WIRE만 형 GO · 선행=V1 oracle — singleton≈4.9 · \|V\|≈25 · v1 회수0 · WIRE 보류)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

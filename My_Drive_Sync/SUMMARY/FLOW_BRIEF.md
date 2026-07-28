@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `ff56d82` · WORK=`IDLE`
+- HEAD: `14135bb` · WORK=`IDLE`
 - 지금: K-GATHER-V1 — oracle 찢김 확인 · v1 회수0 · **선별=난제 · WIRE 보류**
 - 직전: 핀①~④ · SCATTER 풀6=21
 - BOOT다음: K-GATHER-V2 — V축소 후 covering PILOT
