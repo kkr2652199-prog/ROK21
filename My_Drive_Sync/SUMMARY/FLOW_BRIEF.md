@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c524c01` · WORK=`IDLE`
+- HEAD: `b945197` · WORK=`IDLE`
 - 지금: EV-POP FAIL · hit/ev_preserve false · **HOLD** · V2유지
 - 직전: SETNO FAIL / SETPACK FAIL / TUNE FAIL / WIRE-V2 PASS
 - BOOT다음: K-ATTACK-HOLD — EV-POP재탕금지 · 다음 축 재선정
