@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c8f01cd` · WORK=`IDLE`
+- HEAD: `e807d33` · WORK=`IDLE`
 - 지금: K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON**
 - 직전: K-TRUST+CREW · K-PATTERN-1
 - BOOT다음: K-ATTACK-COVER-2 — covering/wheel constructive (ge3/4↑)

@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `c8f01cd` |
+| HEAD(실측) | `e807d33` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=c8f01cd · 지금=K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON** · 다음=K-ATTACK-COVER-2`
+1. 첫줄 `[복귀] HEAD=e807d33 · 지금=K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON** · 다음=K-ATTACK-COVER-2`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: c8f01cd_
+_generated: e807d33_
