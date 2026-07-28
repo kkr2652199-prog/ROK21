@@ -1,0 +1,214 @@
+{
+  "id": "K-EV-POP",
+  "ts": "2026-07-29T07:44:45",
+  "elapsed_sec": 0.9,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "null_ge3": 0.1137,
+  "v2_pin": {
+    "source": "docs/benchmarks/20260729_KMARKOV_WIRE_V2_verify.json",
+    "ge3_rate": 0.1447,
+    "mean": 1.7504,
+    "quota": {
+      "markov": 3,
+      "stat": 1,
+      "review": 1
+    }
+  },
+  "hypothesis": "V2 쿼터 고정 시 발권 슬롯을 저인기도(EV)로 고르면 ge3 개선 또는 ge3 유지+인기도 유의미 감소가 가능하다.",
+  "orthogonal_to_v2": true,
+  "popularity_model": "ev_brain.popularity_score 동일 휴리스틱 (birthday·7배수·직전/최근이월·연속·홀짝) · history=draw_no 미만 only (LAST_CUT 미사용·컨닝금지)",
+  "protocol": {
+    "hit_WIRE": {
+      "delta_ge3_min": 0.005,
+      "p_vs_null_max": 0.05,
+      "beats_v2": true
+    },
+    "ev_preserve_WIRE": {
+      "ge3_floor_delta_vs_v2_policy": -0.002,
+      "pop_drop_min_rel": 0.05,
+      "note": "적중↑ 아님 · 당첨 시 실수령(공유↓) 후보. hit_WIRE와 OR."
+    }
+  },
+  "policies": {
+    "v2_asc": {
+      "modes": {
+        "markov": "asc",
+        "stat": "asc",
+        "review": "asc"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7504,
+      "ge3": 171,
+      "ge3_rate": 0.1447,
+      "ge4": 12,
+      "ge4_rate": 0.0102,
+      "p_vs_null": 0.000679,
+      "delta_ge3_vs_v2pin": 0.0,
+      "delta_mean_vs_v2pin": 0.0,
+      "mean_pop": 6.261,
+      "mean_log_pop": 1.5644,
+      "spearman_pop_vs_matched": 0.0134,
+      "spearman_p": 0.303077,
+      "n_issued_sets": 5910,
+      "beats_v2_ge3": false
+    },
+    "all_low_pop": {
+      "modes": {
+        "markov": "low",
+        "stat": "low",
+        "review": "low"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7157,
+      "ge3": 161,
+      "ge3_rate": 0.1362,
+      "ge4": 6,
+      "ge4_rate": 0.0051,
+      "p_vs_null": 0.009614,
+      "delta_ge3_vs_v2pin": -0.0085,
+      "delta_mean_vs_v2pin": -0.0347,
+      "mean_pop": 3.1518,
+      "mean_log_pop": 1.0171,
+      "spearman_pop_vs_matched": 0.0065,
+      "spearman_p": 0.614671,
+      "n_issued_sets": 5910,
+      "beats_v2_ge3": false
+    },
+    "all_high_pop": {
+      "modes": {
+        "markov": "high",
+        "stat": "high",
+        "review": "high"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7234,
+      "ge3": 144,
+      "ge3_rate": 0.1218,
+      "ge4": 12,
+      "ge4_rate": 0.0102,
+      "p_vs_null": 0.200997,
+      "delta_ge3_vs_v2pin": -0.0229,
+      "delta_mean_vs_v2pin": -0.027,
+      "mean_pop": 9.8255,
+      "mean_log_pop": 2.0979,
+      "spearman_pop_vs_matched": -0.0059,
+      "spearman_p": 0.649183,
+      "n_issued_sets": 5910,
+      "beats_v2_ge3": false
+    },
+    "all_mid_pop": {
+      "modes": {
+        "markov": "mid",
+        "stat": "mid",
+        "review": "mid"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.6937,
+      "ge3": 134,
+      "ge3_rate": 0.1134,
+      "ge4": 8,
+      "ge4_rate": 0.0068,
+      "p_vs_null": 0.527947,
+      "delta_ge3_vs_v2pin": -0.0313,
+      "delta_mean_vs_v2pin": -0.0567,
+      "mean_pop": 5.309,
+      "mean_log_pop": 1.5567,
+      "spearman_pop_vs_matched": -0.007,
+      "spearman_p": 0.590985,
+      "n_issued_sets": 5910,
+      "beats_v2_ge3": false
+    },
+    "markov_asc_others_low": {
+      "modes": {
+        "markov": "asc",
+        "stat": "low",
+        "review": "low"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7487,
+      "ge3": 166,
+      "ge3_rate": 0.1404,
+      "ge4": 11,
+      "ge4_rate": 0.0093,
+      "p_vs_null": 0.002767,
+      "delta_ge3_vs_v2pin": -0.0043,
+      "delta_mean_vs_v2pin": -0.0017,
+      "mean_pop": 4.3075,
+      "mean_log_pop": 1.2248,
+      "spearman_pop_vs_matched": 0.0103,
+      "spearman_p": 0.426359,
+      "n_issued_sets": 5910,
+      "beats_v2_ge3": false
+    },
+    "markov_low_others_asc": {
+      "modes": {
+        "markov": "low",
+        "stat": "asc",
+        "review": "asc"
+      },
+      "quota": {
+        "markov": 3,
+        "stat": 1,
+        "review": 1
+      },
+      "n": 1182,
+      "mean": 1.7394,
+      "ge3": 168,
+      "ge3_rate": 0.1421,
+      "ge4": 7,
+      "ge4_rate": 0.0059,
+      "p_vs_null": 0.001607,
+      "delta_ge3_vs_v2pin": -0.0026,
+      "delta_mean_vs_v2pin": -0.011,
+      "mean_pop": 5.1053,
+      "mean_log_pop": 1.3566,
+      "spearman_pop_vs_matched": 0.0136,
+      "spearman_p": 0.295307,
+      "n_issued_sets": 5910,
+      "beats_v2_ge3": false
+    }
+  },
+  "best_hit_policy": null,
+  "best_ev_preserve_policy": null,
+  "gates": {
+    "hit_beats_v2_ge3": false,
+    "hit_delta_ge3_ge_0_005": false,
+    "hit_pass_vs_null": false,
+    "PASS_hit_WIRE": false,
+    "PASS_ev_preserve_WIRE": false,
+    "PASS": false
+  },
+  "recommended_next": "없음(HOLD·V2유지)",
+  "recommended": null,
+  "verdict": "FAIL·관측종료→V2유지·EV-POP재탕금지",
+  "db_code_write": false,
+  "note": "matched_count=brain_review JSON · 재예측 없음. SETNO(히트맵 set_no)·SETPACK(번호몰아)·COVER(휠)과 직교."
+}
