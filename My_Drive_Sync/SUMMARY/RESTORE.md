@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `df29290` · WORK=`IDLE`
+1. **HEAD:** `19a4935` · WORK=`IDLE`
 2. **지금:** K-ATTACK-SLICE — 구간단독승격 실패 · conf top2 천장 1.23 · **BAYES 다음**
 3. **다음1건:** K-ATTACK-BAYES — 3뇌 동적가중(상관↓·최근창) — conf/발권 정렬 개선 시뮬 JSON (READ-ONLY) · SLICE·GATHER 배선 보류 (승인필요=아니오 · 선행=K-ATTACK-SLICE 완료 · conf top2 oracle 1.23 힌트 · CREW Jaccard≈0.11)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
