@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음**
-- 직전: SLICE 구간승격 실패 · JOIN 프롬프트
-- 다음: K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬
+- 지금: NEXT 교체 — **K-REFEREE-WINDOW** (합의) · CONF-CAL ARCHIVE 보류
+- 직전: K-ATTACK-BAYES soft≈null · invcorr<RR
+- 다음: learn_state(+cutoff) 슬라이딩 윈도우 WINDOW=30
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

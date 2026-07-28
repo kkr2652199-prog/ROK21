@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3dc9f59` · WORK=`IDLE`
-- 지금: K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음**
-- 직전: SLICE 구간승격 실패 · JOIN 프롬프트
-- BOOT다음: K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬
-- NEXT1: K-ATTACK-CONF-CAL — 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류 (승인=아니오)
+- HEAD: `7e44091` · WORK=`IDLE`
+- 지금: NEXT 교체 — **K-REFEREE-WINDOW** (합의) · CONF-CAL ARCHIVE 보류
+- 직전: K-ATTACK-BAYES soft≈null · invcorr<RR
+- BOOT다음: learn_state(+cutoff) 슬라이딩 윈도우 WINDOW=30
+- NEXT1: K-REFEREE-WINDOW — learn_state.py + learn_state_cutoff.py 동시 패치 — recent_avg_match 누적평균 → 슬라이딩 윈도우(WINDOW=30) 교체. K-ATTACK-CONF-CAL 은 그 다음 NEXT로 ARCHIVE에 보류 등록. (승인=아니오)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

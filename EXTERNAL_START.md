@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `3dc9f59` |
+| HEAD(실측) | `7e44091` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음** |
-| 직전 | SLICE 구간승격 실패 · JOIN 프롬프트 |
-| BOOT다음 | K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬 |
-| NEXT1 ID | **K-ATTACK-CONF-CAL** |
-| NEXT1 할일 | 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류 |
+| 지금 | NEXT 교체 — **K-REFEREE-WINDOW** (합의) · CONF-CAL ARCHIVE 보류 |
+| 직전 | K-ATTACK-BAYES soft≈null · invcorr<RR |
+| BOOT다음 | learn_state(+cutoff) 슬라이딩 윈도우 WINDOW=30 |
+| NEXT1 ID | **K-REFEREE-WINDOW** |
+| NEXT1 할일 | learn_state.py + learn_state_cutoff.py 동시 패치 — recent_avg_match 누적평균 → 슬라이딩 윈도우(WINDOW=30) 교체. K-ATTACK-CONF-CAL 은 그 다음 NEXT로 ARCHIVE에 보류 등록. |
 | 승인필요 | 아니오 |
-| 선행 | K-ATTACK-BAYES 완료 · soft≈null · pick_invcorr < RR · max_conf 약함 |
+| 선행 | 동생·형 합의 완료 · CONF-CAL 보류 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=3dc9f59 · 지금=K-ATTACK-BAYES — soft≈null · invcorr<RR · **CONF-CAL 다음** · 다음=K-ATTACK-CONF-CAL`
+1. 첫줄 `[복귀] HEAD=7e44091 · 지금=NEXT 교체 — **K-REFEREE-WINDOW** (합의) · CONF-CAL ARCHIVE 보류 · 다음=K-REFEREE-WINDOW`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 3dc9f59_
+_generated: 7e44091_
