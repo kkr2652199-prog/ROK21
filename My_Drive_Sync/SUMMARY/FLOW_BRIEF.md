@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fc0fb79` · WORK=`IDLE`
-- 지금: K-REFEREE-WINDOW PASS · max_gap=0.1334 · **CONF-CAL 복귀**
-- 직전: NEXT 교체(합의) · learn_state+cutoff W=30
-- BOOT다음: K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬
-- NEXT1: K-ATTACK-CONF-CAL — 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류 (승인=아니오)
+- HEAD: `fce09f3` · WORK=`IDLE`
+- 지금: K-ATTACK-CONF-CAL 보류 · cal≈orig · ≪tier · **OPEN 다음**
+- 직전: K-REFEREE-WINDOW PASS (W=30)
+- BOOT다음: K-ATTACK-OPEN — 다음 공격 레버 1건 선정
+- NEXT1: K-ATTACK-OPEN — CONF-CAL 보류(Δ≈0·tier/RR 대패) · conf 세트순위 경로 관측종료 · 다음 공격 레버 1건 선정(READ-ONLY 우선 · WIRE 금지) (승인=예 (다음 레버 선정))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

@@ -1,0 +1,388 @@
+{
+  "id": "K-ATTACK-CONF-CAL",
+  "ts": "2026-07-29T02:49:48",
+  "n_eval": 1182,
+  "n_set_picks": 3546,
+  "method": {
+    "data": "testlotto_brain_review.predicted_sets_json",
+    "calibrator": "isotonic",
+    "fit": "walk-forward expanding · min_train_draws≈50",
+    "db_code_write": false,
+    "note": "within=뇌별 5세트 중 max conf/cal/tier. cross=3뇌 중 max score 1장. RR=뇌 cycle + best_set(tier)."
+  },
+  "calibration": {
+    "stat": {
+      "n_sets": 6160,
+      "spearman_r": 0.019,
+      "conf_mean": 54.73,
+      "match_mean": 0.7946,
+      "bins": [
+        {
+          "bin": "0-9",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "10-19",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "20-29",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "30-39",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "40-49",
+          "n": 24,
+          "mean_matched": 0.9583,
+          "mean_conf": 49.04
+        },
+        {
+          "bin": "50-59",
+          "n": 6136,
+          "mean_matched": 0.794,
+          "mean_conf": 54.75
+        },
+        {
+          "bin": "60-69",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "70-79",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "80-89",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "90-99",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        }
+      ]
+    },
+    "markov": {
+      "n_sets": 6160,
+      "spearman_r": 0.0121,
+      "conf_mean": 53.96,
+      "match_mean": 0.8206,
+      "bins": [
+        {
+          "bin": "0-9",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "10-19",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "20-29",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "30-39",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "40-49",
+          "n": 84,
+          "mean_matched": 0.9881,
+          "mean_conf": 48.67
+        },
+        {
+          "bin": "50-59",
+          "n": 6076,
+          "mean_matched": 0.8183,
+          "mean_conf": 54.03
+        },
+        {
+          "bin": "60-69",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "70-79",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "80-89",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "90-99",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        }
+      ]
+    },
+    "review": {
+      "n_sets": 6160,
+      "spearman_r": -0.0055,
+      "conf_mean": 49.24,
+      "match_mean": 0.8075,
+      "bins": [
+        {
+          "bin": "0-9",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "10-19",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "20-29",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "30-39",
+          "n": 1,
+          "mean_matched": 0.0,
+          "mean_conf": 38.5
+        },
+        {
+          "bin": "40-49",
+          "n": 3781,
+          "mean_matched": 0.8154,
+          "mean_conf": 47.9
+        },
+        {
+          "bin": "50-59",
+          "n": 2378,
+          "mean_matched": 0.7952,
+          "mean_conf": 51.38
+        },
+        {
+          "bin": "60-69",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "70-79",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "80-89",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        },
+        {
+          "bin": "90-99",
+          "n": 0,
+          "mean_matched": null,
+          "mean_conf": null
+        }
+      ]
+    }
+  },
+  "set_rank_comparison": {
+    "orig_conf": {
+      "n": 3546,
+      "mean": 0.8252,
+      "ge3": 96,
+      "ge3_rate": 0.0271,
+      "ge4": 8,
+      "ge4_rate": 0.0023
+    },
+    "conf_cal": {
+      "n": 3546,
+      "mean": 0.8274,
+      "ge3": 103,
+      "ge3_rate": 0.029,
+      "ge4": 7,
+      "ge4_rate": 0.002
+    },
+    "tier_best_set": {
+      "n": 3546,
+      "mean": 1.7084,
+      "ge3": 435,
+      "ge3_rate": 0.1227,
+      "ge4": 29,
+      "ge4_rate": 0.0082
+    },
+    "round_robin": {
+      "mean": 1.7428,
+      "ge3_rate": 0.1337,
+      "n": 1182
+    },
+    "round_robin_bayes_ref": {
+      "mean": 1.7428,
+      "ge3_rate": 0.1337,
+      "n": 1182,
+      "source": "K-ATTACK-BAYES"
+    },
+    "cross_brain_pick": {
+      "orig_conf": {
+        "n": 1182,
+        "mean": 0.8418,
+        "ge3": 28,
+        "ge3_rate": 0.0237,
+        "ge4": 1,
+        "ge4_rate": 0.0008
+      },
+      "conf_cal": {
+        "n": 1182,
+        "mean": 0.8342,
+        "ge3": 31,
+        "ge3_rate": 0.0262,
+        "ge4": 3,
+        "ge4_rate": 0.0025
+      }
+    },
+    "by_brain": {
+      "stat": {
+        "orig_conf": {
+          "n": 1182,
+          "mean": 0.8316,
+          "ge3": 26,
+          "ge3_rate": 0.022,
+          "ge4": 2,
+          "ge4_rate": 0.0017
+        },
+        "conf_cal": {
+          "n": 1182,
+          "mean": 0.8426,
+          "ge3": 28,
+          "ge3_rate": 0.0237,
+          "ge4": 1,
+          "ge4_rate": 0.0008
+        },
+        "tier_best_set": {
+          "n": 1182,
+          "mean": 1.7124,
+          "ge3": 129,
+          "ge3_rate": 0.1091,
+          "ge4": 6,
+          "ge4_rate": 0.0051
+        },
+        "delta_cal_minus_orig_mean": 0.011
+      },
+      "markov": {
+        "orig_conf": {
+          "n": 1182,
+          "mean": 0.819,
+          "ge3": 31,
+          "ge3_rate": 0.0262,
+          "ge4": 1,
+          "ge4_rate": 0.0008
+        },
+        "conf_cal": {
+          "n": 1182,
+          "mean": 0.8054,
+          "ge3": 34,
+          "ge3_rate": 0.0288,
+          "ge4": 2,
+          "ge4_rate": 0.0017
+        },
+        "tier_best_set": {
+          "n": 1182,
+          "mean": 1.7098,
+          "ge3": 161,
+          "ge3_rate": 0.1362,
+          "ge4": 10,
+          "ge4_rate": 0.0085
+        },
+        "delta_cal_minus_orig_mean": -0.0136
+      },
+      "review": {
+        "orig_conf": {
+          "n": 1182,
+          "mean": 0.8249,
+          "ge3": 39,
+          "ge3_rate": 0.033,
+          "ge4": 5,
+          "ge4_rate": 0.0042
+        },
+        "conf_cal": {
+          "n": 1182,
+          "mean": 0.8342,
+          "ge3": 41,
+          "ge3_rate": 0.0347,
+          "ge4": 4,
+          "ge4_rate": 0.0034
+        },
+        "tier_best_set": {
+          "n": 1182,
+          "mean": 1.703,
+          "ge3": 145,
+          "ge3_rate": 0.1227,
+          "ge4": 13,
+          "ge4_rate": 0.011
+        },
+        "delta_cal_minus_orig_mean": 0.0093
+      }
+    }
+  },
+  "delta": {
+    "conf_cal_vs_orig": {
+      "mean": 0.0022,
+      "ge3_rate": 0.0019
+    },
+    "conf_cal_vs_tier": {
+      "mean": -0.881,
+      "ge3_rate": -0.0937
+    },
+    "conf_cal_vs_rr": {
+      "mean": -0.9086,
+      "ge3_rate": -0.1075
+    },
+    "conf_cal_vs_rr_replay": {
+      "mean": -0.9086,
+      "ge3_rate": -0.1075
+    },
+    "cross_cal_vs_cross_orig": {
+      "mean": -0.0076,
+      "ge3_rate": 0.0025
+    }
+  },
+  "gates": {
+    "spearman_pos_ge2": true,
+    "conf_cal_vs_orig_mean_gt0": true,
+    "conf_cal_vs_rr_mean_gt0": false,
+    "cross_cal_vs_orig_mean_gt0": false,
+    "conf_cal_beats_tier_mean": false
+  },
+  "verdict": "보류",
+  "suggested_next": "K-ATTACK-NEXT-OPEN"
+}

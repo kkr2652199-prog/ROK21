@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `fc0fb79` |
+| HEAD(실측) | `fce09f3` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-REFEREE-WINDOW PASS · max_gap=0.1334 · **CONF-CAL 복귀** |
-| 직전 | NEXT 교체(합의) · learn_state+cutoff W=30 |
-| BOOT다음 | K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬 |
-| NEXT1 ID | **K-ATTACK-CONF-CAL** |
-| NEXT1 할일 | 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류 |
-| 승인필요 | 아니오 |
-| 선행 | K-REFEREE-WINDOW PASS · K-ATTACK-BAYES 완료 · max_conf 약함 |
+| 지금 | K-ATTACK-CONF-CAL 보류 · cal≈orig · ≪tier · **OPEN 다음** |
+| 직전 | K-REFEREE-WINDOW PASS (W=30) |
+| BOOT다음 | K-ATTACK-OPEN — 다음 공격 레버 1건 선정 |
+| NEXT1 ID | **K-ATTACK-OPEN** |
+| NEXT1 할일 | CONF-CAL 보류(Δ≈0·tier/RR 대패) · conf 세트순위 경로 관측종료 · 다음 공격 레버 1건 선정(READ-ONLY 우선 · WIRE 금지) |
+| 승인필요 | 예 (다음 레버 선정) |
+| 선행 | K-ATTACK-CONF-CAL 완료 · spearman 약함 · cal≪tier |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=fc0fb79 · 지금=K-REFEREE-WINDOW PASS · max_gap=0.1334 · **CONF-CAL 복귀** · 다음=K-ATTACK-CONF-CAL`
+1. 첫줄 `[복귀] HEAD=fce09f3 · 지금=K-ATTACK-CONF-CAL 보류 · cal≈orig · ≪tier · **OPEN 다음** · 다음=K-ATTACK-OPEN`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: fc0fb79_
+_generated: fce09f3_

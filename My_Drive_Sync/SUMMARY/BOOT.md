@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-REFEREE-WINDOW PASS · max_gap=0.1334 · **CONF-CAL 복귀**
-- 직전: NEXT 교체(합의) · learn_state+cutoff W=30
-- 다음: K-ATTACK-CONF-CAL — 뇌내 conf 보정 시뮬
+- 지금: K-ATTACK-CONF-CAL 보류 · cal≈orig · ≪tier · **OPEN 다음**
+- 직전: K-REFEREE-WINDOW PASS (W=30)
+- 다음: K-ATTACK-OPEN — 다음 공격 레버 1건 선정
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
