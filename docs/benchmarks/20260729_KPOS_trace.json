@@ -1,0 +1,1224 @@
+{
+  "id": "K-POS-TRACE",
+  "ts": "2026-07-29T01:13:48",
+  "definition": {
+    "position": "sorted ascending nums → seat 1..6",
+    "transition": "draw t seat k value → draw t+1 seat k value",
+    "bonus": "separate chain",
+    "note": "descriptive + null-check · not a jackpot claim"
+  },
+  "windows": {
+    "full_2_1234": {
+      "range": [
+        2,
+        1234
+      ],
+      "n_draws": 1233,
+      "n_transition_pairs": 1232,
+      "illegal_sorted_positions": 0,
+      "positions": [
+        {
+          "pos": 1,
+          "n_transitions": 1232,
+          "chi2_vs_theory_marginal": 24.89,
+          "chi2_bins_exp_ge5": 22,
+          "sticky_same_number_rate": 0.0771,
+          "top_transitions": [
+            {
+              "from": 1,
+              "to": 1,
+              "n": 24
+            },
+            {
+              "from": 2,
+              "to": 2,
+              "n": 20
+            },
+            {
+              "from": 1,
+              "to": 2,
+              "n": 19
+            },
+            {
+              "from": 4,
+              "to": 1,
+              "n": 19
+            },
+            {
+              "from": 3,
+              "to": 3,
+              "n": 18
+            },
+            {
+              "from": 1,
+              "to": 3,
+              "n": 18
+            },
+            {
+              "from": 1,
+              "to": 7,
+              "n": 16
+            },
+            {
+              "from": 3,
+              "to": 1,
+              "n": 16
+            }
+          ],
+          "next_mean": 6.74,
+          "theory_mean": 6.57
+        },
+        {
+          "pos": 2,
+          "n_transitions": 1232,
+          "chi2_vs_theory_marginal": 19.23,
+          "chi2_bins_exp_ge5": 29,
+          "sticky_same_number_rate": 0.0455,
+          "top_transitions": [
+            {
+              "from": 18,
+              "to": 9,
+              "n": 9
+            },
+            {
+              "from": 11,
+              "to": 10,
+              "n": 8
+            },
+            {
+              "from": 20,
+              "to": 18,
+              "n": 7
+            },
+            {
+              "from": 8,
+              "to": 8,
+              "n": 7
+            },
+            {
+              "from": 9,
+              "to": 11,
+              "n": 7
+            },
+            {
+              "from": 11,
+              "to": 11,
+              "n": 7
+            },
+            {
+              "from": 8,
+              "to": 14,
+              "n": 7
+            },
+            {
+              "from": 12,
+              "to": 7,
+              "n": 7
+            }
+          ],
+          "next_mean": 13.08,
+          "theory_mean": 13.14
+        },
+        {
+          "pos": 3,
+          "n_transitions": 1232,
+          "chi2_vs_theory_marginal": 32.25,
+          "chi2_bins_exp_ge5": 33,
+          "sticky_same_number_rate": 0.0357,
+          "top_transitions": [
+            {
+              "from": 16,
+              "to": 20,
+              "n": 7
+            },
+            {
+              "from": 28,
+              "to": 17,
+              "n": 7
+            },
+            {
+              "from": 21,
+              "to": 18,
+              "n": 7
+            },
+            {
+              "from": 16,
+              "to": 24,
+              "n": 6
+            },
+            {
+              "from": 17,
+              "to": 24,
+              "n": 6
+            },
+            {
+              "from": 19,
+              "to": 20,
+              "n": 6
+            },
+            {
+              "from": 23,
+              "to": 16,
+              "n": 6
+            },
+            {
+              "from": 15,
+              "to": 22,
+              "n": 6
+            }
+          ],
+          "next_mean": 19.91,
+          "theory_mean": 19.71
+        },
+        {
+          "pos": 4,
+          "n_transitions": 1232,
+          "chi2_vs_theory_marginal": 25.67,
+          "chi2_bins_exp_ge5": 33,
+          "sticky_same_number_rate": 0.0357,
+          "top_transitions": [
+            {
+              "from": 30,
+              "to": 27,
+              "n": 6
+            },
+            {
+              "from": 31,
+              "to": 34,
+              "n": 6
+            },
+            {
+              "from": 18,
+              "to": 23,
+              "n": 6
+            },
+            {
+              "from": 25,
+              "to": 21,
+              "n": 5
+            },
+            {
+              "from": 27,
+              "to": 25,
+              "n": 5
+            },
+            {
+              "from": 34,
+              "to": 17,
+              "n": 5
+            },
+            {
+              "from": 25,
+              "to": 33,
+              "n": 5
+            },
+            {
+              "from": 38,
+              "to": 30,
+              "n": 5
+            }
+          ],
+          "next_mean": 26.21,
+          "theory_mean": 26.29
+        },
+        {
+          "pos": 5,
+          "n_transitions": 1232,
+          "chi2_vs_theory_marginal": 23.25,
+          "chi2_bins_exp_ge5": 29,
+          "sticky_same_number_rate": 0.0398,
+          "top_transitions": [
+            {
+              "from": 37,
+              "to": 36,
+              "n": 11
+            },
+            {
+              "from": 39,
+              "to": 34,
+              "n": 10
+            },
+            {
+              "from": 37,
+              "to": 41,
+              "n": 10
+            },
+            {
+              "from": 38,
+              "to": 41,
+              "n": 8
+            },
+            {
+              "from": 26,
+              "to": 37,
+              "n": 7
+            },
+            {
+              "from": 41,
+              "to": 39,
+              "n": 7
+            },
+            {
+              "from": 40,
+              "to": 35,
+              "n": 7
+            },
+            {
+              "from": 34,
+              "to": 33,
+              "n": 7
+            }
+          ],
+          "next_mean": 32.85,
+          "theory_mean": 32.86
+        },
+        {
+          "pos": 6,
+          "n_transitions": 1232,
+          "chi2_vs_theory_marginal": 11.16,
+          "chi2_bins_exp_ge5": 22,
+          "sticky_same_number_rate": 0.0779,
+          "top_transitions": [
+            {
+              "from": 45,
+              "to": 45,
+              "n": 27
+            },
+            {
+              "from": 45,
+              "to": 42,
+              "n": 20
+            },
+            {
+              "from": 45,
+              "to": 44,
+              "n": 20
+            },
+            {
+              "from": 44,
+              "to": 44,
+              "n": 18
+            },
+            {
+              "from": 44,
+              "to": 45,
+              "n": 17
+            },
+            {
+              "from": 43,
+              "to": 43,
+              "n": 15
+            },
+            {
+              "from": 43,
+              "to": 45,
+              "n": 15
+            },
+            {
+              "from": 44,
+              "to": 40,
+              "n": 15
+            }
+          ],
+          "next_mean": 39.44,
+          "theory_mean": 39.43
+        }
+      ],
+      "sticky_null_mc": [
+        {
+          "pos": 1,
+          "null_sticky_rate_mc": 0.0753
+        },
+        {
+          "pos": 2,
+          "null_sticky_rate_mc": 0.0453
+        },
+        {
+          "pos": 3,
+          "null_sticky_rate_mc": 0.0323
+        },
+        {
+          "pos": 4,
+          "null_sticky_rate_mc": 0.034
+        },
+        {
+          "pos": 5,
+          "null_sticky_rate_mc": 0.0383
+        },
+        {
+          "pos": 6,
+          "null_sticky_rate_mc": 0.079
+        }
+      ],
+      "bonus": {
+        "n": 1232,
+        "top_transitions": [
+          {
+            "from": 16,
+            "to": 31,
+            "n": 4
+          },
+          {
+            "from": 1,
+            "to": 35,
+            "n": 4
+          },
+          {
+            "from": 35,
+            "to": 18,
+            "n": 4
+          },
+          {
+            "from": 38,
+            "to": 24,
+            "n": 4
+          },
+          {
+            "from": 34,
+            "to": 43,
+            "n": 4
+          },
+          {
+            "from": 12,
+            "to": 32,
+            "n": 4
+          },
+          {
+            "from": 41,
+            "to": 25,
+            "n": 4
+          },
+          {
+            "from": 13,
+            "to": 33,
+            "n": 3
+          }
+        ],
+        "sticky_rate": 0.0292
+      }
+    },
+    "recent_200": {
+      "range": [
+        1035,
+        1234
+      ],
+      "n_draws": 200,
+      "n_transition_pairs": 199,
+      "illegal_sorted_positions": 0,
+      "positions": [
+        {
+          "pos": 1,
+          "n_transitions": 199,
+          "chi2_vs_theory_marginal": 22.65,
+          "chi2_bins_exp_ge5": 12,
+          "sticky_same_number_rate": 0.0553,
+          "top_transitions": [
+            {
+              "from": 5,
+              "to": 3,
+              "n": 5
+            },
+            {
+              "from": 6,
+              "to": 7,
+              "n": 5
+            },
+            {
+              "from": 3,
+              "to": 3,
+              "n": 5
+            },
+            {
+              "from": 3,
+              "to": 8,
+              "n": 5
+            },
+            {
+              "from": 7,
+              "to": 2,
+              "n": 4
+            },
+            {
+              "from": 2,
+              "to": 6,
+              "n": 4
+            },
+            {
+              "from": 3,
+              "to": 6,
+              "n": 4
+            },
+            {
+              "from": 8,
+              "to": 1,
+              "n": 4
+            }
+          ],
+          "next_mean": 7.07,
+          "theory_mean": 6.57
+        },
+        {
+          "pos": 2,
+          "n_transitions": 199,
+          "chi2_vs_theory_marginal": 16.4,
+          "chi2_bins_exp_ge5": 19,
+          "sticky_same_number_rate": 0.0452,
+          "top_transitions": [
+            {
+              "from": 7,
+              "to": 14,
+              "n": 4
+            },
+            {
+              "from": 14,
+              "to": 5,
+              "n": 3
+            },
+            {
+              "from": 8,
+              "to": 16,
+              "n": 3
+            },
+            {
+              "from": 12,
+              "to": 7,
+              "n": 3
+            },
+            {
+              "from": 16,
+              "to": 12,
+              "n": 3
+            },
+            {
+              "from": 16,
+              "to": 4,
+              "n": 3
+            },
+            {
+              "from": 13,
+              "to": 15,
+              "n": 3
+            },
+            {
+              "from": 14,
+              "to": 16,
+              "n": 2
+            }
+          ],
+          "next_mean": 13.2,
+          "theory_mean": 13.14
+        },
+        {
+          "pos": 3,
+          "n_transitions": 199,
+          "chi2_vs_theory_marginal": 12.72,
+          "chi2_bins_exp_ge5": 20,
+          "sticky_same_number_rate": 0.0352,
+          "top_transitions": [
+            {
+              "from": 22,
+              "to": 15,
+              "n": 3
+            },
+            {
+              "from": 30,
+              "to": 26,
+              "n": 3
+            },
+            {
+              "from": 18,
+              "to": 14,
+              "n": 3
+            },
+            {
+              "from": 15,
+              "to": 25,
+              "n": 2
+            },
+            {
+              "from": 19,
+              "to": 19,
+              "n": 2
+            },
+            {
+              "from": 19,
+              "to": 18,
+              "n": 2
+            },
+            {
+              "from": 11,
+              "to": 18,
+              "n": 2
+            },
+            {
+              "from": 23,
+              "to": 16,
+              "n": 2
+            }
+          ],
+          "next_mean": 19.76,
+          "theory_mean": 19.71
+        },
+        {
+          "pos": 4,
+          "n_transitions": 199,
+          "chi2_vs_theory_marginal": 17.23,
+          "chi2_bins_exp_ge5": 20,
+          "sticky_same_number_rate": 0.0302,
+          "top_transitions": [
+            {
+              "from": 32,
+              "to": 27,
+              "n": 3
+            },
+            {
+              "from": 28,
+              "to": 28,
+              "n": 3
+            },
+            {
+              "from": 35,
+              "to": 32,
+              "n": 2
+            },
+            {
+              "from": 19,
+              "to": 29,
+              "n": 2
+            },
+            {
+              "from": 27,
+              "to": 30,
+              "n": 2
+            },
+            {
+              "from": 30,
+              "to": 28,
+              "n": 2
+            },
+            {
+              "from": 23,
+              "to": 26,
+              "n": 2
+            },
+            {
+              "from": 30,
+              "to": 27,
+              "n": 2
+            }
+          ],
+          "next_mean": 26.0,
+          "theory_mean": 26.29
+        },
+        {
+          "pos": 5,
+          "n_transitions": 199,
+          "chi2_vs_theory_marginal": 16.6,
+          "chi2_bins_exp_ge5": 19,
+          "sticky_same_number_rate": 0.0503,
+          "top_transitions": [
+            {
+              "from": 34,
+              "to": 30,
+              "n": 3
+            },
+            {
+              "from": 37,
+              "to": 41,
+              "n": 3
+            },
+            {
+              "from": 28,
+              "to": 33,
+              "n": 3
+            },
+            {
+              "from": 38,
+              "to": 38,
+              "n": 3
+            },
+            {
+              "from": 37,
+              "to": 36,
+              "n": 2
+            },
+            {
+              "from": 42,
+              "to": 32,
+              "n": 2
+            },
+            {
+              "from": 32,
+              "to": 21,
+              "n": 2
+            },
+            {
+              "from": 33,
+              "to": 35,
+              "n": 2
+            }
+          ],
+          "next_mean": 32.76,
+          "theory_mean": 32.86
+        },
+        {
+          "pos": 6,
+          "n_transitions": 199,
+          "chi2_vs_theory_marginal": 14.07,
+          "chi2_bins_exp_ge5": 12,
+          "sticky_same_number_rate": 0.1005,
+          "top_transitions": [
+            {
+              "from": 45,
+              "to": 45,
+              "n": 6
+            },
+            {
+              "from": 44,
+              "to": 38,
+              "n": 5
+            },
+            {
+              "from": 38,
+              "to": 45,
+              "n": 4
+            },
+            {
+              "from": 44,
+              "to": 44,
+              "n": 4
+            },
+            {
+              "from": 45,
+              "to": 42,
+              "n": 4
+            },
+            {
+              "from": 31,
+              "to": 36,
+              "n": 3
+            },
+            {
+              "from": 42,
+              "to": 38,
+              "n": 3
+            },
+            {
+              "from": 45,
+              "to": 43,
+              "n": 3
+            }
+          ],
+          "next_mean": 39.02,
+          "theory_mean": 39.43
+        }
+      ],
+      "sticky_null_mc": [
+        {
+          "pos": 1,
+          "null_sticky_rate_mc": 0.072
+        },
+        {
+          "pos": 2,
+          "null_sticky_rate_mc": 0.047
+        },
+        {
+          "pos": 3,
+          "null_sticky_rate_mc": 0.0335
+        },
+        {
+          "pos": 4,
+          "null_sticky_rate_mc": 0.0335
+        },
+        {
+          "pos": 5,
+          "null_sticky_rate_mc": 0.052
+        },
+        {
+          "pos": 6,
+          "null_sticky_rate_mc": 0.0795
+        }
+      ],
+      "bonus": {
+        "n": 199,
+        "top_transitions": [
+          {
+            "from": 28,
+            "to": 32,
+            "n": 2
+          },
+          {
+            "from": 31,
+            "to": 29,
+            "n": 2
+          },
+          {
+            "from": 2,
+            "to": 11,
+            "n": 2
+          },
+          {
+            "from": 29,
+            "to": 27,
+            "n": 2
+          },
+          {
+            "from": 27,
+            "to": 2,
+            "n": 2
+          },
+          {
+            "from": 26,
+            "to": 28,
+            "n": 2
+          },
+          {
+            "from": 22,
+            "to": 31,
+            "n": 2
+          },
+          {
+            "from": 2,
+            "to": 39,
+            "n": 1
+          }
+        ],
+        "sticky_rate": 0.0452
+      }
+    },
+    "recent_100": {
+      "range": [
+        1135,
+        1234
+      ],
+      "n_draws": 100,
+      "n_transition_pairs": 99,
+      "illegal_sorted_positions": 0,
+      "positions": [
+        {
+          "pos": 1,
+          "n_transitions": 99,
+          "chi2_vs_theory_marginal": 7.07,
+          "chi2_bins_exp_ge5": 8,
+          "sticky_same_number_rate": 0.0606,
+          "top_transitions": [
+            {
+              "from": 3,
+              "to": 8,
+              "n": 4
+            },
+            {
+              "from": 5,
+              "to": 3,
+              "n": 4
+            },
+            {
+              "from": 3,
+              "to": 7,
+              "n": 3
+            },
+            {
+              "from": 8,
+              "to": 1,
+              "n": 3
+            },
+            {
+              "from": 4,
+              "to": 14,
+              "n": 2
+            },
+            {
+              "from": 7,
+              "to": 2,
+              "n": 2
+            },
+            {
+              "from": 2,
+              "to": 6,
+              "n": 2
+            },
+            {
+              "from": 7,
+              "to": 3,
+              "n": 2
+            }
+          ],
+          "next_mean": 7.16,
+          "theory_mean": 6.57
+        },
+        {
+          "pos": 2,
+          "n_transitions": 99,
+          "chi2_vs_theory_marginal": 6.87,
+          "chi2_bins_exp_ge5": 7,
+          "sticky_same_number_rate": 0.0606,
+          "top_transitions": [
+            {
+              "from": 13,
+              "to": 15,
+              "n": 3
+            },
+            {
+              "from": 16,
+              "to": 12,
+              "n": 2
+            },
+            {
+              "from": 12,
+              "to": 10,
+              "n": 2
+            },
+            {
+              "from": 8,
+              "to": 16,
+              "n": 2
+            },
+            {
+              "from": 16,
+              "to": 4,
+              "n": 2
+            },
+            {
+              "from": 11,
+              "to": 11,
+              "n": 2
+            },
+            {
+              "from": 9,
+              "to": 13,
+              "n": 2
+            },
+            {
+              "from": 6,
+              "to": 16,
+              "n": 2
+            }
+          ],
+          "next_mean": 13.08,
+          "theory_mean": 13.14
+        },
+        {
+          "pos": 3,
+          "n_transitions": 99,
+          "chi2_vs_theory_marginal": 0.0,
+          "chi2_bins_exp_ge5": 0,
+          "sticky_same_number_rate": 0.0505,
+          "top_transitions": [
+            {
+              "from": 17,
+              "to": 24,
+              "n": 2
+            },
+            {
+              "from": 27,
+              "to": 25,
+              "n": 2
+            },
+            {
+              "from": 18,
+              "to": 14,
+              "n": 2
+            },
+            {
+              "from": 13,
+              "to": 35,
+              "n": 1
+            },
+            {
+              "from": 35,
+              "to": 12,
+              "n": 1
+            },
+            {
+              "from": 12,
+              "to": 19,
+              "n": 1
+            },
+            {
+              "from": 19,
+              "to": 15,
+              "n": 1
+            },
+            {
+              "from": 15,
+              "to": 22,
+              "n": 1
+            }
+          ],
+          "next_mean": 19.63,
+          "theory_mean": 19.71
+        },
+        {
+          "pos": 4,
+          "n_transitions": 99,
+          "chi2_vs_theory_marginal": 0.0,
+          "chi2_bins_exp_ge5": 0,
+          "sticky_same_number_rate": 0.0303,
+          "top_transitions": [
+            {
+              "from": 15,
+              "to": 20,
+              "n": 2
+            },
+            {
+              "from": 26,
+              "to": 27,
+              "n": 2
+            },
+            {
+              "from": 20,
+              "to": 32,
+              "n": 2
+            },
+            {
+              "from": 32,
+              "to": 28,
+              "n": 2
+            },
+            {
+              "from": 16,
+              "to": 27,
+              "n": 2
+            },
+            {
+              "from": 33,
+              "to": 29,
+              "n": 2
+            },
+            {
+              "from": 28,
+              "to": 28,
+              "n": 2
+            },
+            {
+              "from": 19,
+              "to": 38,
+              "n": 1
+            }
+          ],
+          "next_mean": 25.84,
+          "theory_mean": 26.29
+        },
+        {
+          "pos": 5,
+          "n_transitions": 99,
+          "chi2_vs_theory_marginal": 8.27,
+          "chi2_bins_exp_ge5": 7,
+          "sticky_same_number_rate": 0.0404,
+          "top_transitions": [
+            {
+              "from": 26,
+              "to": 37,
+              "n": 2
+            },
+            {
+              "from": 37,
+              "to": 28,
+              "n": 2
+            },
+            {
+              "from": 39,
+              "to": 34,
+              "n": 2
+            },
+            {
+              "from": 38,
+              "to": 38,
+              "n": 2
+            },
+            {
+              "from": 35,
+              "to": 37,
+              "n": 2
+            },
+            {
+              "from": 37,
+              "to": 35,
+              "n": 2
+            },
+            {
+              "from": 27,
+              "to": 38,
+              "n": 2
+            },
+            {
+              "from": 21,
+              "to": 42,
+              "n": 1
+            }
+          ],
+          "next_mean": 33.0,
+          "theory_mean": 32.86
+        },
+        {
+          "pos": 6,
+          "n_transitions": 99,
+          "chi2_vs_theory_marginal": 3.77,
+          "chi2_bins_exp_ge5": 8,
+          "sticky_same_number_rate": 0.0808,
+          "top_transitions": [
+            {
+              "from": 45,
+              "to": 42,
+              "n": 4
+            },
+            {
+              "from": 39,
+              "to": 45,
+              "n": 3
+            },
+            {
+              "from": 36,
+              "to": 45,
+              "n": 2
+            },
+            {
+              "from": 44,
+              "to": 38,
+              "n": 2
+            },
+            {
+              "from": 38,
+              "to": 45,
+              "n": 2
+            },
+            {
+              "from": 42,
+              "to": 42,
+              "n": 2
+            },
+            {
+              "from": 44,
+              "to": 44,
+              "n": 2
+            },
+            {
+              "from": 44,
+              "to": 41,
+              "n": 2
+            }
+          ],
+          "next_mean": 38.61,
+          "theory_mean": 39.43
+        }
+      ],
+      "sticky_null_mc": [
+        {
+          "pos": 1,
+          "null_sticky_rate_mc": 0.081
+        },
+        {
+          "pos": 2,
+          "null_sticky_rate_mc": 0.0415
+        },
+        {
+          "pos": 3,
+          "null_sticky_rate_mc": 0.0345
+        },
+        {
+          "pos": 4,
+          "null_sticky_rate_mc": 0.038
+        },
+        {
+          "pos": 5,
+          "null_sticky_rate_mc": 0.037
+        },
+        {
+          "pos": 6,
+          "null_sticky_rate_mc": 0.0885
+        }
+      ],
+      "bonus": {
+        "n": 99,
+        "top_transitions": [
+          {
+            "from": 22,
+            "to": 31,
+            "n": 2
+          },
+          {
+            "from": 4,
+            "to": 1,
+            "n": 1
+          },
+          {
+            "from": 1,
+            "to": 26,
+            "n": 1
+          },
+          {
+            "from": 26,
+            "to": 35,
+            "n": 1
+          },
+          {
+            "from": 35,
+            "to": 18,
+            "n": 1
+          },
+          {
+            "from": 18,
+            "to": 15,
+            "n": 1
+          },
+          {
+            "from": 15,
+            "to": 20,
+            "n": 1
+          },
+          {
+            "from": 20,
+            "to": 22,
+            "n": 1
+          }
+        ],
+        "sticky_rate": 0.0303
+      }
+    }
+  },
+  "sticky_vs_null_full": [
+    {
+      "pos": 1,
+      "obs_sticky": 0.0771,
+      "null_sticky": 0.0753,
+      "delta": 0.0018
+    },
+    {
+      "pos": 2,
+      "obs_sticky": 0.0455,
+      "null_sticky": 0.0453,
+      "delta": 0.0002
+    },
+    {
+      "pos": 3,
+      "obs_sticky": 0.0357,
+      "null_sticky": 0.0323,
+      "delta": 0.0034
+    },
+    {
+      "pos": 4,
+      "obs_sticky": 0.0357,
+      "null_sticky": 0.034,
+      "delta": 0.0017
+    },
+    {
+      "pos": 5,
+      "obs_sticky": 0.0398,
+      "null_sticky": 0.0383,
+      "delta": 0.0015
+    },
+    {
+      "pos": 6,
+      "obs_sticky": 0.0779,
+      "null_sticky": 0.079,
+      "delta": -0.0011
+    }
+  ],
+  "interpretation": [
+    "자리 허용범위(정렬) 위반 0이어야 정상",
+    "sticky≈null 이면 자리 고정 번호 관성 없음",
+    "chi2는 다음자리 주변분포 vs 순서통계 이론 — 크면 표본/편향 점검",
+    "몰아주기 입력: 자리별 허용구간 + (유의한 전이만) 가중 후보 — 전역 예측 레버 아님"
+  ],
+  "next": "K-SCATTER-1"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "K-GATHER-PILOT",
+  "ts": "2026-07-29T01:16:12",
+  "version": "gather_v0_greedy_rare_pairs",
+  "design_ref": "My_Drive_Sync/SUMMARY/K_GATHER_DESIGN.md",
+  "brains": {
+    "stat": {
+      "n": 1233,
+      "base_best_mean": 1.7186,
+      "gather_best_mean": 1.7153,
+      "delta_mean": -0.0032,
+      "base_ge4_rate": 0.0049,
+      "gather_ge4_rate": 0.0057,
+      "base_ge3_rate": 0.1111,
+      "gather_ge3_rate": 0.1095,
+      "gather_ge6_count": 0,
+      "union_ge6_count": 21,
+      "gather_recovered_ge6_from_union6": 0,
+      "recover_rate_when_union6": 0.0,
+      "mean_min_jaccard_vs_base": 0.0915,
+      "improved_rate": 0.249,
+      "worsened_rate": 0.2522
+    },
+    "review": {
+      "n": 1233,
+      "base_best_mean": 1.6975,
+      "gather_best_mean": 1.6521,
+      "delta_mean": -0.0454,
+      "base_ge4_rate": 0.0105,
+      "gather_ge4_rate": 0.0032,
+      "base_ge3_rate": 0.1217,
+      "gather_ge3_rate": 0.1071,
+      "gather_ge6_count": 0,
+      "union_ge6_count": 8,
+      "gather_recovered_ge6_from_union6": 0,
+      "recover_rate_when_union6": 0.0,
+      "mean_min_jaccard_vs_base": 0.0949,
+      "improved_rate": 0.2417,
+      "worsened_rate": 0.2636
+    },
+    "markov": {
+      "n": 1232,
+      "base_best_mean": 1.7167,
+      "gather_best_mean": 1.5942,
+      "delta_mean": -0.1226,
+      "base_ge4_rate": 0.0097,
+      "gather_ge4_rate": 0.0024,
+      "base_ge3_rate": 0.138,
+      "gather_ge3_rate": 0.0869,
+      "gather_ge6_count": 0,
+      "union_ge6_count": 3,
+      "gather_recovered_ge6_from_union6": 0,
+      "recover_rate_when_union6": 0.0,
+      "mean_min_jaccard_vs_base": 0.1025,
+      "improved_rate": 0.1972,
+      "worsened_rate": 0.3019
+    }
+  },
+  "verdict": {
+    "note": "v0 뼈대 시뮬 — WIRE 전 성적 게이트",
+    "ok_to_propose_wire": true
+  },
+  "next": "K-GATHER-WIRE — 형 GO 필요"
+}

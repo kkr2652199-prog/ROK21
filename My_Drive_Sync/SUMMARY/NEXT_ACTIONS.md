@@ -3,11 +3,11 @@
 > STEP1 `guard_boot` 는 **아래 `## NEXT (1건)` 블록만** 읽는다. 여러 건 나열 금지.
 
 ## NEXT (1건)
-- ID: K-ATTACK-COVER-2
-- 할일: constructive covering/wheel — ge3·ge4를 random15 대비 끌어올리는 장 설계 + 시뮬 JSON (1등 분모는 장수×회로 정직)
-- 선행조건: K-ATTACK-COVER 1차 (`20260729_KATTACK_cover.json`) · 목표=생애 1등≥1회
-- 승인필요: 아니오(시뮬) · 발권·구독상품화는 형 GO
-- 최종갱신: 2026-07-29 (PATTERN2+COVER1)
+- ID: K-GATHER-V1
+- 할일: union6 회차 oracle 분해 → 몰아주기 휴리스틱 교체 → PILOT 재실행 JSON (WIRE 전 성적 게이트)
+- 선행조건: ①~④ 완료 · SCATTER 기회 확인 · v0 회수 0/21
+- 승인필요: 아니오 · **K-GATHER-WIRE만 형 GO**
+- 최종갱신: 2026-07-29 (핀①~④ 완료)
 
 ## WORKSTATE
 IDLE

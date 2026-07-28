@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON**
-- 직전: K-TRUST+CREW · K-PATTERN-1
-- 다음: K-ATTACK-COVER-2 — covering/wheel constructive (ge3/4↑)
+- 지금: 핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝**
+- 직전: 형 핀 GO · POS sticky≈null
+- 다음: K-GATHER-V1 — oracle 분해 후 휴리스틱 교체 (WIRE 보류)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

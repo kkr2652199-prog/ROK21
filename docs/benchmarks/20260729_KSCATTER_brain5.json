@@ -1,0 +1,219 @@
+{
+  "id": "K-SCATTER-1",
+  "ts": "2026-07-29T01:14:11",
+  "definition": {
+    "scope": "per brain × 5 sets (NOT cross-brain 15)",
+    "union_hit": "distinct winning nums appearing in any of 5 sets",
+    "best": "max hit count in a single set",
+    "waste": "union_hit - best (≥1 ⇒ gather could help retrospectively)",
+    "gather_opportunity": "waste >= 1"
+  },
+  "by_brain": {
+    "markov": {
+      "n": 1232,
+      "best_mean": 1.7167,
+      "union_hit_mean": 2.6128,
+      "waste_mean": 0.8961,
+      "waste_ge1_rate": 0.6688,
+      "waste_ge2_rate": 0.2078,
+      "union_ge4_rate": 0.22,
+      "union_ge5_rate": 0.0511,
+      "union_ge6_rate": 0.0024,
+      "union_ge6_count": 3,
+      "best_ge4_rate": 0.0097,
+      "gather_opportunity_rate": 0.6688,
+      "bonus_in_5set_pool_rate": 0.4367,
+      "sets_with_hit_mean": 3.026
+    },
+    "review": {
+      "n": 1233,
+      "best_mean": 1.6975,
+      "union_hit_mean": 2.8029,
+      "waste_mean": 1.1054,
+      "waste_ge1_rate": 0.7291,
+      "waste_ge2_rate": 0.3131,
+      "union_ge4_rate": 0.2798,
+      "union_ge5_rate": 0.077,
+      "union_ge6_rate": 0.0065,
+      "union_ge6_count": 8,
+      "best_ge4_rate": 0.0105,
+      "gather_opportunity_rate": 0.7291,
+      "bonus_in_5set_pool_rate": 0.4623,
+      "sets_with_hit_mean": 3.024
+    },
+    "stat": {
+      "n": 1233,
+      "best_mean": 1.7186,
+      "union_hit_mean": 3.1582,
+      "waste_mean": 1.4396,
+      "waste_ge1_rate": 0.8427,
+      "waste_ge2_rate": 0.468,
+      "union_ge4_rate": 0.3958,
+      "union_ge5_rate": 0.129,
+      "union_ge6_rate": 0.017,
+      "union_ge6_count": 21,
+      "best_ge4_rate": 0.0049,
+      "gather_opportunity_rate": 0.8427,
+      "bonus_in_5set_pool_rate": 0.5134,
+      "sets_with_hit_mean": 2.984
+    }
+  },
+  "examples_high_waste": [
+    {
+      "brain": "stat",
+      "draw": 92,
+      "best": 2,
+      "union_hit": 6,
+      "waste": 4,
+      "sets_with_any_hit": 3,
+      "bonus_in_pool": true,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "stat",
+      "draw": 465,
+      "best": 2,
+      "union_hit": 6,
+      "waste": 4,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": false,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "stat",
+      "draw": 842,
+      "best": 2,
+      "union_hit": 6,
+      "waste": 4,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": true,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "stat",
+      "draw": 878,
+      "best": 2,
+      "union_hit": 6,
+      "waste": 4,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": false,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "stat",
+      "draw": 1007,
+      "best": 2,
+      "union_hit": 6,
+      "waste": 4,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": false,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "review",
+      "draw": 151,
+      "best": 2,
+      "union_hit": 6,
+      "waste": 4,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": false,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "review",
+      "draw": 552,
+      "best": 2,
+      "union_hit": 6,
+      "waste": 4,
+      "sets_with_any_hit": 4,
+      "bonus_in_pool": true,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "review",
+      "draw": 768,
+      "best": 1,
+      "union_hit": 5,
+      "waste": 4,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": true,
+      "stored_best_matched": 1
+    },
+    {
+      "brain": "review",
+      "draw": 138,
+      "best": 3,
+      "union_hit": 6,
+      "waste": 3,
+      "sets_with_any_hit": 4,
+      "bonus_in_pool": false,
+      "stored_best_matched": 3
+    },
+    {
+      "brain": "review",
+      "draw": 630,
+      "best": 3,
+      "union_hit": 6,
+      "waste": 3,
+      "sets_with_any_hit": 4,
+      "bonus_in_pool": false,
+      "stored_best_matched": 3
+    },
+    {
+      "brain": "markov",
+      "draw": 348,
+      "best": 2,
+      "union_hit": 6,
+      "waste": 4,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": true,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "markov",
+      "draw": 1081,
+      "best": 1,
+      "union_hit": 5,
+      "waste": 4,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": false,
+      "stored_best_matched": 1
+    },
+    {
+      "brain": "markov",
+      "draw": 38,
+      "best": 3,
+      "union_hit": 6,
+      "waste": 3,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": false,
+      "stored_best_matched": 3
+    },
+    {
+      "brain": "markov",
+      "draw": 34,
+      "best": 2,
+      "union_hit": 5,
+      "waste": 3,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": true,
+      "stored_best_matched": 2
+    },
+    {
+      "brain": "markov",
+      "draw": 150,
+      "best": 2,
+      "union_hit": 5,
+      "waste": 3,
+      "sets_with_any_hit": 5,
+      "bonus_in_pool": false,
+      "stored_best_matched": 2
+    }
+  ],
+  "interpretation": [
+    "gather_opportunity_rate 높으면 뇌내 몰아주기 사후 이득 공간 큼",
+    "union_ge6 > best_ge6 이면 '공은 풀에 있었는데 한 장에 못 모음'",
+    "사전 몰아주기는 V 선별이 핵심 — 본 지표는 동기(왜 +5세트) 제공"
+  ],
+  "next": "K-GATHER-DESIGN"
+}

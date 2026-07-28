@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `bf28867` |
+| HEAD(실측) | `1693f81` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON** |
-| 직전 | K-TRUST+CREW · K-PATTERN-1 |
-| BOOT다음 | K-ATTACK-COVER-2 — covering/wheel constructive (ge3/4↑) |
-| NEXT1 ID | **K-ATTACK-COVER-2** |
-| NEXT1 할일 | constructive covering/wheel — ge3·ge4를 random15 대비 끌어올리는 장 설계 + 시뮬 JSON (1등 분모는 장수×회로 정직) |
-| 승인필요 | 아니오(시뮬) · 발권·구독상품화는 형 GO |
-| 선행 | K-ATTACK-COVER 1차 (`20260729_KATTACK_cover.json`) · 목표=생애 1등≥1회 |
+| 지금 | 핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝** |
+| 직전 | 형 핀 GO · POS sticky≈null |
+| BOOT다음 | K-GATHER-V1 — oracle 분해 후 휴리스틱 교체 (WIRE 보류) |
+| NEXT1 ID | **K-GATHER-V1** |
+| NEXT1 할일 | union6 회차 oracle 분해 → 몰아주기 휴리스틱 교체 → PILOT 재실행 JSON (WIRE 전 성적 게이트) |
+| 승인필요 | 아니오 · **K-GATHER-WIRE만 형 GO** |
+| 선행 | ①~④ 완료 · SCATTER 기회 확인 · v0 회수 0/21 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=bf28867 · 지금=K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON** · 다음=K-ATTACK-COVER-2`
+1. 첫줄 `[복귀] HEAD=1693f81 · 지금=핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝** · 다음=K-GATHER-V1`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-PATTERN-2 패턴전역가중 기각 · 1등1회 **K-ATTACK** 전선 · NEXT=COVER
+📌 사유: 핀 GO → POS·SCATTER·DESIGN·PILOT · **stat 풀6공 21회** · v0회수0 · NEXT=V1
 
 ---
 
@@ -12,6 +12,7 @@
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | BASELINE_PIN | **`640cb67`** |
 | 3DB MAX | **1234** (1235 미발표) |
+| GATHER 핀 | `PINNED_GATHER_POS.md` · ①~④ DONE · ⑤ WIRE 대기 |
 
 ---
 
@@ -19,46 +20,37 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-PATTERN-2** | 패턴AUX 전행 분위수 · 전역가중 기각 · 공격전선 | JSON · 보고서 |
-| **K-TRUST+CREW** | random null·사공점검 · 3예측 유지 | JSON · 보고서 |
-| **K-PATTERN-1** | 4등 vs 대조군 · 구간일치·패턴AUX · 외부자문 | JSON · 보고서 |
-| **K-REVIEW-TIER14** | 1~4등 브리핑 · 4등 31건 | 보고서 |
-| **K-REVIEW-RUN** | learn reset + WF 2~1234 · kweon 복제 제거 | verify_pass · pipe 3698/3698 |
-| **K-REBRAND** | UI·tools kweon/복제 흔적 → ROK21 · verify 7021 | push `440eb18` |
-| **K-UI-PLAIN** | 메인·상세·analog 초보자용 문구 | push |
-| **K-UI-TESTLOTTO** | 메인 당첨 히어로·WARRANT 접기 | push |
-| **K-ANALOG-1** | analog API · 상세⑥ 역사유사 · BT735·MULTIDIM · verify PASS | verify_pass |
-| **K-ANALOG-PREP** | 1234 probe · 2차 협업회의 · conditional_go | verify_pass |
-| **K-PIPE-A** | WF·coordinator AUX scoring 통합 | verify_pass |
-| **K-UI-SSOT** | 메인·상세 SSOT 정합 | verify_pass |
-| **K-DETAIL-CUTOFF** | detail/draw CUTOFF 회귀 | verify_pass |
-| **K-1235-PREP** | 1235 루프·COLLAB_HANDOFF | verify_pass |
+| **K-POS~PILOT** | 자릿수·뇌내흩어짐·gather v0 | SCATTER PASS · PILOT→V1 |
+| **K-PATTERN-2+COVER1** | 패턴가중기각 · 정직1등확률 | JSON |
+| **K-TRUST+CREW** | null·사공점검 · 3예측 유지 | JSON |
+| **K-PATTERN-1** | 4등 vs 대조 · 구간·패턴AUX | JSON |
+| **K-REVIEW-RUN** | WF 2~1234 재복습 | verify_pass |
 
 ---
 
-## 2) K-ANALOG 벤치 (735회 · SSOT JSON)
+## 2) GATHER 핵심 수치
 
 | 항목 | 값 | 출처 |
 |------|-----|------|
-| random mean | 0.816 | `20260728_KANALOG_backtest.json` |
-| M_weighted mean | 0.784 | 동上 |
-| M_positional mean | 0.803 | 동上 |
-| verdict | **예측 엔진 No · 관측 설명 Yes** | `20260728_KANALOG_multidim_500.json` |
-| 조건부 slice | ov4+psim0.85-0.90+chain8 n=144 Δ≈+0.15 | MULTIDIM |
+| stat 풀에 6공 전부 | **21회** | KSCATTER |
+| gather 기회율 (stat) | **84.3%** | KSCATTER |
+| v0 6공 회수 | **0/21** | KGATHER_pilot |
+| POS sticky vs null | ≈0 | KPOS_trace |
 
 ---
 
-## 3) 다음 (형)
+## 3) 다음
 
-`K-ATTACK-COVER` — 커버링/휠·정직 1등 확률 · 15장 효율  
-목표: **프로젝트 생애 1등 ≥1회** (보장 마케팅 금지 · 과학 전선)  
-근거: [`reports/20260729_KPATTERN2_공격전선.md`](../../reports/20260729_KPATTERN2_공격전선.md)
+`K-GATHER-V1` — oracle 분해 → 휴리스틱 교체 → PILOT 재실행  
+**WIRE(10세트 배선)는 V1 통과 후 형 GO**  
+근거: `reports/20260729_KGATHER_핀1to4.md`
 
 ---
 
 ## 4) 산출물
 
-- API: `GET /api/testlotto/analog/draw/{n}`
-- verify: `python tools/_kanalog_verify.py 1234`
-- bench: `docs/benchmarks/20260728_KANALOG_*.json`
-- reports: `reports/20260728_KANALOG_backtest.md` · `reports/20260728_KANALOG_multidim.md`
+- `docs/benchmarks/20260729_KPOS_trace.json`
+- `docs/benchmarks/20260729_KSCATTER_brain5.json`
+- `docs/benchmarks/20260729_KGATHER_pilot.json`
+- `My_Drive_Sync/SUMMARY/K_GATHER_DESIGN.md`
+- `reports/20260729_KGATHER_핀1to4.md`

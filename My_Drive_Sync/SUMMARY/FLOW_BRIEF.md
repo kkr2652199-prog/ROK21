@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `bf28867` · WORK=`IDLE`
-- 지금: K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON**
-- 직전: K-TRUST+CREW · K-PATTERN-1
-- BOOT다음: K-ATTACK-COVER-2 — covering/wheel constructive (ge3/4↑)
-- NEXT1: K-ATTACK-COVER-2 — constructive covering/wheel — ge3·ge4를 random15 대비 끌어올리는 장 설계 + 시뮬 JSON (1등 분모는 장수×회로 정직) (승인=아니오(시뮬) · 발권·구독상품화는 형 GO)
+- HEAD: `1693f81` · WORK=`IDLE`
+- 지금: 핀①~④ 완료 — SCATTER 기회大 · gather v0 회수0 → **V1 튜닝**
+- 직전: 형 핀 GO · POS sticky≈null
+- BOOT다음: K-GATHER-V1 — oracle 분해 후 휴리스틱 교체 (WIRE 보류)
+- NEXT1: K-GATHER-V1 — union6 회차 oracle 분해 → 몰아주기 휴리스틱 교체 → PILOT 재실행 JSON (WIRE 전 성적 게이트) (승인=아니오 · **K-GATHER-WIRE만 형 GO**)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
