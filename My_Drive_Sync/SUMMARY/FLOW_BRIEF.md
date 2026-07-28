@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6ff5a48` · WORK=`IDLE`
+- HEAD: `40e0537` · WORK=`IDLE`
 - 지금: K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698)
 - 직전: K-REBRAND · K-UI-PLAIN · K-ANALOG-1
 - BOOT다음: K-TRUST-BENCH — random·3뇌 mean·≥3% · WFE JSON (READ-ONLY)

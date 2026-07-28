@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6ff5a48` |
+| HEAD(실측) | `40e0537` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6ff5a48 · 지금=K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) · 다음=K-TRUST-BENCH`
+1. 첫줄 `[복귀] HEAD=40e0537 · 지금=K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) · 다음=K-TRUST-BENCH`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 6ff5a48_
+_generated: 40e0537_
