@@ -40,33 +40,43 @@ MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {
     "stat": 1,
     "review": 1,
 }
-MARKOV_WIRE_ENABLED: bool = False  # K-MARKOV-WIRE verify FAIL · 기존 15세트 동작 복원
+MARKOV_WIRE_ENABLED: bool = True  # K-MARKOV-WIRE-V2: set_no 쿼터
 
 
-def apply_markov_wire_quota(scored: list[dict]) -> list[dict]:
-    """confidence 내림차순 가정 · 뇌별 쿼터로 상위 합계(기본 5) 선택."""
-    if not MARKOV_WIRE_ENABLED or not scored:
-        return scored
+def apply_markov_wire_quota(candidates: list[dict]) -> list[dict]:
+    """뇌별 set_no/pred_set_no 오름차순으로 쿼터만큼 선택 (confidence 정렬 없음)."""
+    if not MARKOV_WIRE_ENABLED or not candidates:
+        return candidates
+    from collections import defaultdict
+
     quota = MARKOV_WIRE_BRAIN_QUOTA
     target_n = sum(quota.values())
-    selected: list[dict] = []
-    counts: dict[str, int] = {t: 0 for t in quota}
-    for c in scored:
+    brain_buckets: dict[str, list[dict]] = defaultdict(list)
+    for c in candidates:
         tag = str(c.get("brain_tag", "") or "")
-        cap = quota.get(tag, 0)
-        if cap > 0 and counts.get(tag, 0) < cap:
-            selected.append(c)
-            counts[tag] = counts.get(tag, 0) + 1
-        if sum(counts.values()) >= target_n:
-            break
+        if tag in quota:
+            brain_buckets[tag].append(c)
+
+    selected: list[dict] = []
+    for tag, cap in quota.items():
+        bucket = sorted(
+            brain_buckets.get(tag) or [],
+            key=lambda x: int(x.get("pred_set_no") or x.get("set_no") or x.get("rank") or 0),
+        )
+        selected.extend(bucket[:cap])
+
     if len(selected) < target_n:
         used = {id(c) for c in selected}
-        for c in scored:
-            if id(c) not in used:
-                selected.append(c)
+        remainder = sorted(
+            [c for c in candidates if id(c) not in used],
+            key=lambda x: float(x.get("confidence") or 0),
+            reverse=True,
+        )
+        for c in remainder:
+            selected.append(c)
             if len(selected) >= target_n:
                 break
-    return selected
+    return selected[:target_n]
 
 
 def _delete_predictions_for_brain(conn, target_draw_no: int, brain_tag: str) -> None:
@@ -157,7 +167,9 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
         mod = PREDICT_MODULES[tag]
         _delete_predictions_for_brain(conn, target_draw_no, tag)
         sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
-        candidates.extend(sets)
+        for i, s in enumerate(sets):
+            sn = int(s.get("rank") or s.get("set_no") or s.get("pred_set_no") or (i + 1))
+            candidates.append({**s, "pred_set_no": sn, "set_no": sn})
         logger.info("[테스트로또] %s %d세트", brain["name"], len(sets))
 
     if not candidates:
@@ -191,12 +203,13 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
         scored, dedup_stats = dedup_ticket_list(scored, regenerate=_regen)
         scored.sort(key=lambda x: x["confidence"], reverse=True)
 
-    # K-MARKOV-WIRE: 생성 15 → 발권 쿼터(기본 markov3+stat1+review1)
+    # K-MARKOV-WIRE-V2: 생성 15 → set_no 쿼터 발권(markov3+stat1+review1)
     scored = apply_markov_wire_quota(scored)
     if MARKOV_WIRE_ENABLED:
         dedup_stats = {
             **dedup_stats,
             "markov_wire": True,
+            "markov_wire_method": "set_no_asc",
             "wire_quota": dict(MARKOV_WIRE_BRAIN_QUOTA),
             "issued_sets": len(scored),
         }

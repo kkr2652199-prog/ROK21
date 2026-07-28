@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-MARKOV-WIRE FAIL · conf쿼터≪E · **ENABLED=False**
-- 직전: NULL PASS (E 5장 실력)
-- 다음: K-ATTACK-HOLD — set_no쿼터 등 재논의
+- 지금: K-MARKOV-WIRE-V2 PASS · set_no=E · **ENABLED=True**
+- 직전: WIRE-V1 FAIL (conf쿼터)
+- 다음: K-MARKOV-TUNE — markov 세부 파라미터/쿼터 미세조정
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

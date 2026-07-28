@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-MARKOV-WIRE FAIL · ENABLED=False · NEXT=HOLD
+📌 사유: K-MARKOV-WIRE-V2 PASS · NEXT=K-MARKOV-TUNE
 
 ---
 
@@ -10,7 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
-| MARKOV-WIRE | **FAIL** · 플래그 OFF 롤백 |
+| MARKOV-WIRE-V2 | **PASS** · set_no 쿼터 ON |
 
 ---
 
@@ -18,35 +18,35 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-MARKOV-WIRE** | conf 쿼터 발권 | **FAIL** 롤백 |
-| **K-SETCOUNT-NULL** | null vs 실력 | PASS (E) |
-| **K-SETCOUNT-SURVEY** | 세트수 격자 | PASS→장수기각 |
+| **K-MARKOV-WIRE-V2** | set_no 쿼터 | **PASS** |
+| **K-MARKOV-WIRE** | conf 쿼터 | FAIL→롤백 |
+| **K-SETCOUNT-NULL** | 장수 vs 실력 | PASS(E) |
 
 ---
 
-## 2) WIRE 검증 핵심
+## 2) V2 핵심
 
 | 항목 | 값 |
 |------|-----|
-| mean / ge3 | 1.7157 / **0.1210** |
-| p vs null 0.1137 | **0.227** |
-| PASS (ge3≥0.1362 ∧ p<0.05) | **false** |
-| E set_no ge3 (참고) | 0.1447 |
-| MARKOV_WIRE_ENABLED | **False** |
+| method | set_no_asc |
+| mean / ge3 | **1.7504 / 0.1447** |
+| p vs null 0.1137 | **0.000679** |
+| vs V1 ge3 | 0.121 → **0.1447** |
+| MARKOV_WIRE_ENABLED | **True** |
 
-근거: `docs/benchmarks/20260729_KMARKOV_WIRE_verify.json`
+근거: `docs/benchmarks/20260729_KMARKOV_WIRE_V2_verify.json`
 
 ---
 
 ## 3) 다음
 
-`K-ATTACK-HOLD` — conf≠set_no 원인 · 재배선 축 재선정 (승인 필요)
+`K-MARKOV-TUNE` — 세부 파라미터/쿼터 미세조정 (승인 필요)
 
 ---
 
 ## 4) 산출물
 
-- `app/testlotto/brains/coordinator.py` (quota+ENABLED=False)
-- `tools/_k_markov_wire_verify.py`
-- `docs/benchmarks/20260729_KMARKOV_WIRE_verify.json`
-- `reports/20260729_KMARKOV_WIRE.md`
+- `app/testlotto/brains/coordinator.py` (set_no quota · ENABLED=True)
+- `tools/_k_markov_wire_v2_verify.py`
+- `docs/benchmarks/20260729_KMARKOV_WIRE_V2_verify.json`
+- `reports/20260729_KMARKOV_WIRE_V2.md`

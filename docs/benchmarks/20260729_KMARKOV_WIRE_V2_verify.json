@@ -1,0 +1,39 @@
+{
+  "id": "K-MARKOV-WIRE-V2-VERIFY",
+  "ts": "2026-07-29T04:37:49",
+  "elapsed_sec": 149.7,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "quota_method": "set_no_asc",
+  "wire_enabled": true,
+  "wire_quota": {
+    "markov": 3,
+    "stat": 1,
+    "review": 1
+  },
+  "mean": 1.7504,
+  "ge3_rate": 0.1447,
+  "ge4_rate": 0.0102,
+  "ge3_count": 171,
+  "null_ge3": 0.1137,
+  "delta_ge3": 0.031,
+  "p_value": 0.000679,
+  "pass_ge3_min": 0.1362,
+  "pass": true,
+  "v1_compare": {
+    "mean": 1.7157,
+    "ge3_rate": 0.121,
+    "p_value": 0.227202,
+    "pass": false
+  },
+  "baseline_ref": {
+    "E_markov3mix2_ge3": 0.1447,
+    "D_markov5_ge3": 0.1362,
+    "RR_ge3": 0.1337
+  },
+  "note": "set_no_asc quota = E_markov3mix2 재현 목표. AUX confidence 정렬 없음. 예측 재생성 없음.",
+  "db_code_write": false
+}

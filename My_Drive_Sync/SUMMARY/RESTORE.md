@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2422b4d` · WORK=`IDLE`
-2. **지금:** K-MARKOV-WIRE FAIL · conf쿼터≪E · **ENABLED=False**
-3. **다음1건:** K-ATTACK-HOLD — MARKOV-WIRE FAIL(conf쿼터 ge3=0.121·p=0.227) · ENABLED=False 롤백 · 형·동생 재논의(set_no쿼터 등) (승인필요=예 · 선행=K-MARKOV-WIRE 완료 · recommended=없음 · 롤백적용)
+1. **HEAD:** `7227b96` · WORK=`IDLE`
+2. **지금:** K-MARKOV-WIRE-V2 PASS · set_no=E · **ENABLED=True**
+3. **다음1건:** K-MARKOV-TUNE — WIRE-V2 PASS(set_no ge3=0.1447 p=0.0007) · markov 세부 파라미터/쿼터 미세조정 여부 (승인필요=예 · 선행=K-MARKOV-WIRE-V2 완료 · ENABLED=True · 승인필요)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-MARKOV-WIRE | conf쿼터 ge3=0.121 p=0.227 · ENABLED=False · NEXT=HOLD | WIRE FAIL | `2422b4d` |
+| 2026-07-29 | K-MARKOV-WIRE-V2 | set_no=E ge3=0.1447 p=0.0007 · ENABLED=True · NEXT=TUNE | WIRE-V2 PASS | (미커밋) |
+| 2026-07-29 | WIRE·종료체크 | conf쿼터 FAIL · ENABLED=False · NEXT=HOLD | WIRE FAIL | `2422b4d` |
 | 2026-07-29 | NULL·종료체크 | E p=0.0007실력 · 10/15장수효과 · NEXT=MARKOV-WIRE | NULL PASS | `70ac1f6` |
 | 2026-07-29 | SETCOUNT·종료체크 | n15≈null · NEXT=WIRE→NULL검증 | SETCOUNT PASS | `a25c9b7` |
 | 2026-07-29 | K-COVER·종료체크 | pool40 ge3=0.132<RR · NEXT=HOLD | COVER FAIL | `6339f12` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | CONF-CAL·종료체크 | spearman약·cal≈orig·≪tier · NEXT=OPEN | CONF-CAL 보류 | `a0061e3` |
 | 2026-07-29 | REFEREE·종료체크 | W=30·max_gap0.1334 PASS · NEXT=CONF-CAL복귀 | REFEREE PASS | `a3d25fb` |
 | 2026-07-29 | NEXT교체·종료체크 | REFEREE-WINDOW · CONF-CAL ARCHIVE보류 | NEXT교체 | `d96759f` |
-| 2026-07-29 | BAYES·종료체크 | soft≈null·invcorr<RR·vs conf+0.025 · NEXT=CONF-CAL | BAYES DONE WIRE보류 | `c953d63` |
 
 ---
 
