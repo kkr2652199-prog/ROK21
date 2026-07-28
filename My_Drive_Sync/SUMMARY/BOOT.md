@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698)
-- 직전: K-REBRAND · K-UI-PLAIN · K-ANALOG-1
+- 지금: K-PATTERN-1 — 4등 vs 대조군 예측 구조 분석 (구간·패턴AUX 신호)
+- 직전: K-REVIEW-RUN PASS · K-REVIEW-TIER14
 - 다음: K-TRUST-BENCH — random·3뇌 mean·≥3% · WFE JSON (READ-ONLY)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

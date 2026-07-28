@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-TRUST-BENCH
-- 할일: RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY)
-- 선행조건: K-REVIEW-RUN PASS · `20260728_KREVIEW_full_2_1234.json` verify_pass
+- 할일: RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) · K-PATTERN-1 구조신호 병기
+- 선행조건: K-REVIEW-RUN PASS · K-PATTERN-1 JSON (`20260729_KPATTERN_tier4_vs_control.json`)
 - 승인필요: 아니오
-- 최종갱신: 2026-07-28 (K-REVIEW-RUN PASS · Pin-1)
+- 최종갱신: 2026-07-29 (K-PATTERN-1 · Pin-1)
 
 ## WORKSTATE
 IDLE

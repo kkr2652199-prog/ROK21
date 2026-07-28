@@ -1,0 +1,1600 @@
+{
+  "id": "K-PATTERN-1",
+  "ts": "2026-07-29T00:19:43",
+  "window": [
+    2,
+    1234
+  ],
+  "definition": {
+    "tier4": "best-set matched_count==4",
+    "control": "stratified matched_count in {1,2}, up to 20 per (brain,matched)",
+    "note": "READ-ONLY · not a tuning claim · pattern description only"
+  },
+  "summary": {
+    "tier4_n": 31,
+    "control_n": 120,
+    "tier4_oe_structure_match_rate": 0.3548,
+    "control_oe_structure_match_rate": 0.275,
+    "tier4_zone_structure_match_rate": 0.3548,
+    "control_zone_structure_match_rate": 0.05
+  },
+  "tier4_group": {
+    "n": 31,
+    "set_no_hist": {
+      "3": 12,
+      "2": 7,
+      "1": 5,
+      "5": 4,
+      "4": 3
+    },
+    "pred_oe_top": [
+      [
+        "3:3",
+        14
+      ],
+      [
+        "4:2",
+        9
+      ],
+      [
+        "2:4",
+        5
+      ],
+      [
+        "5:1",
+        2
+      ],
+      [
+        "1:5",
+        1
+      ]
+    ],
+    "pred_zone_top": [
+      [
+        "2:3:1",
+        6
+      ],
+      [
+        "3:1:2",
+        5
+      ],
+      [
+        "1:3:2",
+        4
+      ],
+      [
+        "2:1:3",
+        3
+      ],
+      [
+        "1:2:3",
+        3
+      ]
+    ],
+    "actual_oe_top": [
+      [
+        "2:4",
+        10
+      ],
+      [
+        "3:3",
+        10
+      ],
+      [
+        "4:2",
+        10
+      ],
+      [
+        "5:1",
+        1
+      ]
+    ],
+    "pred_sum_mean": 134.1,
+    "pred_sum_min": 92,
+    "pred_sum_max": 173,
+    "carry_prev_mean": 1.484,
+    "consec_mean": 0.516,
+    "pipe_key_freq": {
+      "aux4_agg": 31,
+      "오답탐정": 31,
+      "패턴돋보기": 31,
+      "균형지킴이": 31
+    },
+    "aux_score_means": {
+      "aux4_agg": 0.7203,
+      "오답탐정": 0.75,
+      "패턴돋보기": 0.91,
+      "균형지킴이": 0.7248
+    },
+    "brains": {
+      "markov": 12,
+      "review": 13,
+      "stat": 6
+    }
+  },
+  "control_group": {
+    "n": 120,
+    "set_no_hist": {
+      "1": 48,
+      "2": 26,
+      "3": 20,
+      "5": 15,
+      "4": 11
+    },
+    "pred_oe_top": [
+      [
+        "3:3",
+        48
+      ],
+      [
+        "4:2",
+        33
+      ],
+      [
+        "2:4",
+        28
+      ],
+      [
+        "5:1",
+        9
+      ],
+      [
+        "1:5",
+        2
+      ]
+    ],
+    "pred_zone_top": [
+      [
+        "2:2:2",
+        24
+      ],
+      [
+        "1:3:2",
+        20
+      ],
+      [
+        "2:1:3",
+        19
+      ],
+      [
+        "1:2:3",
+        19
+      ],
+      [
+        "3:1:2",
+        6
+      ]
+    ],
+    "actual_oe_top": [
+      [
+        "4:2",
+        41
+      ],
+      [
+        "2:4",
+        34
+      ],
+      [
+        "3:3",
+        28
+      ],
+      [
+        "5:1",
+        14
+      ],
+      [
+        "1:5",
+        3
+      ]
+    ],
+    "pred_sum_mean": 149.39,
+    "pred_sum_min": 101,
+    "pred_sum_max": 201,
+    "carry_prev_mean": 1.525,
+    "consec_mean": 0.7,
+    "pipe_key_freq": {
+      "aux4_agg": 120,
+      "오답탐정": 120,
+      "패턴돋보기": 120,
+      "균형지킴이": 120
+    },
+    "aux_score_means": {
+      "aux4_agg": 0.6529,
+      "오답탐정": 0.75,
+      "패턴돋보기": 0.6457,
+      "균형지킴이": 0.7137
+    },
+    "brains": {
+      "stat": 40,
+      "review": 40,
+      "markov": 40
+    }
+  },
+  "tier4_by_brain": {
+    "markov": {
+      "n": 12,
+      "set_no_hist": {
+        "3": 6,
+        "1": 2,
+        "2": 2,
+        "4": 1,
+        "5": 1
+      },
+      "pred_oe_top": [
+        [
+          "3:3",
+          7
+        ],
+        [
+          "2:4",
+          3
+        ],
+        [
+          "4:2",
+          2
+        ]
+      ],
+      "pred_zone_top": [
+        [
+          "1:3:2",
+          2
+        ],
+        [
+          "3:1:2",
+          2
+        ],
+        [
+          "2:3:1",
+          2
+        ],
+        [
+          "1:4:1",
+          1
+        ],
+        [
+          "4:0:2",
+          1
+        ]
+      ],
+      "actual_oe_top": [
+        [
+          "3:3",
+          5
+        ],
+        [
+          "2:4",
+          4
+        ],
+        [
+          "4:2",
+          2
+        ],
+        [
+          "5:1",
+          1
+        ]
+      ],
+      "pred_sum_mean": 135.75,
+      "pred_sum_min": 100,
+      "pred_sum_max": 172,
+      "carry_prev_mean": 0.833,
+      "consec_mean": 0.583,
+      "pipe_key_freq": {
+        "aux4_agg": 12,
+        "오답탐정": 12,
+        "패턴돋보기": 12,
+        "균형지킴이": 12
+      },
+      "aux_score_means": {
+        "aux4_agg": 0.7083,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.8708,
+        "균형지킴이": 0.7142
+      },
+      "brains": {
+        "markov": 12
+      }
+    },
+    "review": {
+      "n": 13,
+      "set_no_hist": {
+        "2": 4,
+        "1": 3,
+        "3": 2,
+        "4": 2,
+        "5": 2
+      },
+      "pred_oe_top": [
+        [
+          "4:2",
+          5
+        ],
+        [
+          "3:3",
+          4
+        ],
+        [
+          "5:1",
+          2
+        ],
+        [
+          "1:5",
+          1
+        ],
+        [
+          "2:4",
+          1
+        ]
+      ],
+      "pred_zone_top": [
+        [
+          "2:1:3",
+          2
+        ],
+        [
+          "3:1:2",
+          2
+        ],
+        [
+          "1:2:3",
+          2
+        ],
+        [
+          "4:1:1",
+          1
+        ],
+        [
+          "0:4:2",
+          1
+        ]
+      ],
+      "actual_oe_top": [
+        [
+          "4:2",
+          6
+        ],
+        [
+          "2:4",
+          4
+        ],
+        [
+          "3:3",
+          3
+        ]
+      ],
+      "pred_sum_mean": 135.62,
+      "pred_sum_min": 92,
+      "pred_sum_max": 173,
+      "carry_prev_mean": 2.231,
+      "consec_mean": 0.462,
+      "pipe_key_freq": {
+        "aux4_agg": 13,
+        "오답탐정": 13,
+        "패턴돋보기": 13,
+        "균형지킴이": 13
+      },
+      "aux_score_means": {
+        "aux4_agg": 0.7185,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.9338,
+        "균형지킴이": 0.6962
+      },
+      "brains": {
+        "review": 13
+      }
+    },
+    "stat": {
+      "n": 6,
+      "set_no_hist": {
+        "3": 4,
+        "5": 1,
+        "2": 1
+      },
+      "pred_oe_top": [
+        [
+          "3:3",
+          3
+        ],
+        [
+          "4:2",
+          2
+        ],
+        [
+          "2:4",
+          1
+        ]
+      ],
+      "pred_zone_top": [
+        [
+          "2:3:1",
+          3
+        ],
+        [
+          "3:1:2",
+          1
+        ],
+        [
+          "1:3:2",
+          1
+        ],
+        [
+          "2:2:2",
+          1
+        ]
+      ],
+      "actual_oe_top": [
+        [
+          "3:3",
+          2
+        ],
+        [
+          "4:2",
+          2
+        ],
+        [
+          "2:4",
+          2
+        ]
+      ],
+      "pred_sum_mean": 127.5,
+      "pred_sum_min": 109,
+      "pred_sum_max": 136,
+      "carry_prev_mean": 1.167,
+      "consec_mean": 0.5,
+      "pipe_key_freq": {
+        "aux4_agg": 6,
+        "오답탐정": 6,
+        "패턴돋보기": 6,
+        "균형지킴이": 6
+      },
+      "aux_score_means": {
+        "aux4_agg": 0.7483,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.9367,
+        "균형지킴이": 0.8083
+      },
+      "brains": {
+        "stat": 6
+      }
+    }
+  },
+  "hit_ball_freq_top15": [
+    [
+      24,
+      7
+    ],
+    [
+      20,
+      7
+    ],
+    [
+      30,
+      6
+    ],
+    [
+      37,
+      6
+    ],
+    [
+      19,
+      6
+    ],
+    [
+      13,
+      6
+    ],
+    [
+      31,
+      5
+    ],
+    [
+      27,
+      5
+    ],
+    [
+      34,
+      5
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      16,
+      4
+    ],
+    [
+      15,
+      4
+    ],
+    [
+      39,
+      4
+    ],
+    [
+      14,
+      3
+    ],
+    [
+      4,
+      3
+    ]
+  ],
+  "miss_ball_freq_top15": [
+    [
+      5,
+      5
+    ],
+    [
+      43,
+      4
+    ],
+    [
+      10,
+      4
+    ],
+    [
+      25,
+      3
+    ],
+    [
+      16,
+      3
+    ],
+    [
+      21,
+      3
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      18,
+      2
+    ],
+    [
+      28,
+      2
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      40,
+      2
+    ],
+    [
+      14,
+      2
+    ],
+    [
+      26,
+      2
+    ],
+    [
+      34,
+      2
+    ]
+  ],
+  "set_diversity_tier4": {
+    "mean_unique_nums_in_5sets": 20.9,
+    "mean_n_ge3_among_5": 1.258,
+    "mean_n_ge4_among_5": 1.032,
+    "samples": [
+      {
+        "draw": 4,
+        "brain": "markov",
+        "per_set_match": [
+          4,
+          1,
+          0,
+          1,
+          2
+        ],
+        "best": 4,
+        "n_ge3": 1,
+        "n_ge4": 1,
+        "unique_nums_in_5sets": 21
+      },
+      {
+        "draw": 15,
+        "brain": "markov",
+        "per_set_match": [
+          1,
+          1,
+          1,
+          4,
+          0
+        ],
+        "best": 4,
+        "n_ge3": 1,
+        "n_ge4": 1,
+        "unique_nums_in_5sets": 21
+      },
+      {
+        "draw": 68,
+        "brain": "review",
+        "per_set_match": [
+          1,
+          0,
+          4,
+          1,
+          2
+        ],
+        "best": 4,
+        "n_ge3": 1,
+        "n_ge4": 1,
+        "unique_nums_in_5sets": 20
+      },
+      {
+        "draw": 144,
+        "brain": "stat",
+        "per_set_match": [
+          1,
+          0,
+          4,
+          1,
+          1
+        ],
+        "best": 4,
+        "n_ge3": 1,
+        "n_ge4": 1,
+        "unique_nums_in_5sets": 25
+      },
+      {
+        "draw": 164,
+        "brain": "stat",
+        "per_set_match": [
+          1,
+          1,
+          4,
+          1,
+          0
+        ],
+        "best": 4,
+        "n_ge3": 1,
+        "n_ge4": 1,
+        "unique_nums_in_5sets": 25
+      },
+      {
+        "draw": 167,
+        "brain": "review",
+        "per_set_match": [
+          2,
+          4,
+          3,
+          2,
+          0
+        ],
+        "best": 4,
+        "n_ge3": 2,
+        "n_ge4": 1,
+        "unique_nums_in_5sets": 21
+      },
+      {
+        "draw": 188,
+        "brain": "markov",
+        "per_set_match": [
+          1,
+          0,
+          4,
+          1,
+          0
+        ],
+        "best": 4,
+        "n_ge3": 1,
+        "n_ge4": 1,
+        "unique_nums_in_5sets": 17
+      },
+      {
+        "draw": 238,
+        "brain": "markov",
+        "per_set_match": [
+          0,
+          0,
+          4,
+          1,
+          0
+        ],
+        "best": 4,
+        "n_ge3": 1,
+        "n_ge4": 1,
+        "unique_nums_in_5sets": 19
+      }
+    ]
+  },
+  "tier4_cases": [
+    {
+      "draw": 4,
+      "brain": "markov",
+      "set_no": 1,
+      "hit": [
+        14,
+        30,
+        31,
+        42
+      ],
+      "miss": [
+        18,
+        25
+      ],
+      "pred_oe": "2:4",
+      "act_oe": "2:4",
+      "pred_zone": "1:3:2",
+      "act_zone": "1:2:3",
+      "pred_sum": 160,
+      "act_sum": 184,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.56,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.49,
+        "균형지킴이": 0.51
+      }
+    },
+    {
+      "draw": 15,
+      "brain": "markov",
+      "set_no": 4,
+      "hit": [
+        4,
+        16,
+        31,
+        37
+      ],
+      "miss": [
+        17,
+        25
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "3:3",
+      "pred_zone": "1:3:2",
+      "act_zone": "2:2:2",
+      "pred_sum": 130,
+      "act_sum": 121,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.62,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.56,
+        "균형지킴이": 0.65
+      }
+    },
+    {
+      "draw": 68,
+      "brain": "review",
+      "set_no": 3,
+      "hit": [
+        10,
+        15,
+        16,
+        39
+      ],
+      "miss": [
+        5,
+        7
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "2:4",
+      "pred_zone": "4:1:1",
+      "act_zone": "3:2:1",
+      "pred_sum": 92,
+      "act_sum": 118,
+      "carry_prev": 3,
+      "pipe": {
+        "aux4_agg": 0.63,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.75,
+        "균형지킴이": 0.53
+      }
+    },
+    {
+      "draw": 144,
+      "brain": "stat",
+      "set_no": 3,
+      "hit": [
+        4,
+        15,
+        26,
+        37
+      ],
+      "miss": [
+        16,
+        28
+      ],
+      "pred_oe": "2:4",
+      "act_oe": "3:3",
+      "pred_zone": "2:3:1",
+      "act_zone": "2:2:2",
+      "pred_sum": 126,
+      "act_sum": 135,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.74,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.92,
+        "균형지킴이": 0.8
+      }
+    },
+    {
+      "draw": 164,
+      "brain": "stat",
+      "set_no": 3,
+      "hit": [
+        10,
+        11,
+        39,
+        41
+      ],
+      "miss": [
+        8,
+        19
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "4:2",
+      "pred_zone": "3:1:2",
+      "act_zone": "4:0:2",
+      "pred_sum": 128,
+      "act_sum": 116,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.76,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.99,
+        "균형지킴이": 0.78
+      }
+    },
+    {
+      "draw": 167,
+      "brain": "review",
+      "set_no": 2,
+      "hit": [
+        24,
+        27,
+        28,
+        36
+      ],
+      "miss": [
+        18,
+        40
+      ],
+      "pred_oe": "1:5",
+      "act_oe": "2:4",
+      "pred_zone": "0:4:2",
+      "act_zone": "0:4:2",
+      "pred_sum": 173,
+      "act_sum": 184,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.66,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.96,
+        "균형지킴이": 0.44
+      }
+    },
+    {
+      "draw": 188,
+      "brain": "markov",
+      "set_no": 3,
+      "hit": [
+        19,
+        27,
+        30,
+        34
+      ],
+      "miss": [
+        14,
+        28
+      ],
+      "pred_oe": "2:4",
+      "act_oe": "3:3",
+      "pred_zone": "1:4:1",
+      "act_zone": "0:4:2",
+      "pred_sum": 152,
+      "act_sum": 165,
+      "carry_prev": 0,
+      "pipe": {
+        "aux4_agg": 0.73,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.92,
+        "균형지킴이": 0.74
+      }
+    },
+    {
+      "draw": 238,
+      "brain": "markov",
+      "set_no": 3,
+      "hit": [
+        2,
+        4,
+        15,
+        34
+      ],
+      "miss": [
+        21,
+        43
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "2:4",
+      "pred_zone": "3:1:2",
+      "act_zone": "3:1:2",
+      "pred_sum": 119,
+      "act_sum": 114,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.75,
+        "오답탐정": 0.75,
+        "패턴돋보기": 1.0,
+        "균형지킴이": 0.77
+      }
+    },
+    {
+      "draw": 288,
+      "brain": "review",
+      "set_no": 4,
+      "hit": [
+        1,
+        12,
+        35,
+        41
+      ],
+      "miss": [
+        26,
+        34
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "4:2",
+      "pred_zone": "2:1:3",
+      "act_zone": "2:2:2",
+      "pred_sum": 149,
+      "act_sum": 134,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.71,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.78,
+        "균형지킴이": 0.79
+      }
+    },
+    {
+      "draw": 289,
+      "brain": "markov",
+      "set_no": 5,
+      "hit": [
+        3,
+        14,
+        37,
+        38
+      ],
+      "miss": [
+        2,
+        6
+      ],
+      "pred_oe": "2:4",
+      "act_oe": "3:3",
+      "pred_zone": "4:0:2",
+      "act_zone": "2:0:4",
+      "pred_sum": 100,
+      "act_sum": 167,
+      "carry_prev": 0,
+      "pipe": {
+        "aux4_agg": 0.67,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.9,
+        "균형지킴이": 0.55
+      }
+    },
+    {
+      "draw": 318,
+      "brain": "markov",
+      "set_no": 3,
+      "hit": [
+        17,
+        20,
+        34,
+        45
+      ],
+      "miss": [
+        10,
+        13
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "3:3",
+      "pred_zone": "2:2:2",
+      "act_zone": "1:3:2",
+      "pred_sum": 139,
+      "act_sum": 137,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.77,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.94,
+        "균형지킴이": 0.9
+      }
+    },
+    {
+      "draw": 359,
+      "brain": "stat",
+      "set_no": 5,
+      "hit": [
+        1,
+        19,
+        24,
+        40
+      ],
+      "miss": [
+        16,
+        35
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "2:4",
+      "pred_zone": "1:3:2",
+      "act_zone": "2:3:1",
+      "pred_sum": 135,
+      "act_sum": 114,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.78,
+        "오답탐정": 0.75,
+        "패턴돋보기": 1.0,
+        "균형지킴이": 0.86
+      }
+    },
+    {
+      "draw": 386,
+      "brain": "review",
+      "set_no": 1,
+      "hit": [
+        7,
+        10,
+        19,
+        31
+      ],
+      "miss": [
+        14,
+        43
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "3:3",
+      "pred_zone": "3:1:2",
+      "act_zone": "3:1:2",
+      "pred_sum": 124,
+      "act_sum": 111,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.75,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.96,
+        "균형지킴이": 0.79
+      }
+    },
+    {
+      "draw": 415,
+      "brain": "markov",
+      "set_no": 3,
+      "hit": [
+        7,
+        17,
+        20,
+        30
+      ],
+      "miss": [
+        1,
+        42
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "2:4",
+      "pred_zone": "2:3:1",
+      "act_zone": "1:4:1",
+      "pred_sum": 117,
+      "act_sum": 140,
+      "carry_prev": 0,
+      "pipe": {
+        "aux4_agg": 0.75,
+        "오답탐정": 0.75,
+        "패턴돋보기": 1.0,
+        "균형지킴이": 0.76
+      }
+    },
+    {
+      "draw": 445,
+      "brain": "review",
+      "set_no": 2,
+      "hit": [
+        13,
+        20,
+        39,
+        45
+      ],
+      "miss": [
+        9,
+        34
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "4:2",
+      "pred_zone": "2:1:3",
+      "act_zone": "1:3:2",
+      "pred_sum": 160,
+      "act_sum": 168,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.74,
+        "오답탐정": 0.75,
+        "패턴돋보기": 1.0,
+        "균형지킴이": 0.72
+      }
+    },
+    {
+      "draw": 493,
+      "brain": "review",
+      "set_no": 2,
+      "hit": [
+        20,
+        22,
+        26,
+        37
+      ],
+      "miss": [
+        9,
+        10
+      ],
+      "pred_oe": "2:4",
+      "act_oe": "2:4",
+      "pred_zone": "2:3:1",
+      "act_zone": "0:3:3",
+      "pred_sum": 124,
+      "act_sum": 174,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.75,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.99,
+        "균형지킴이": 0.77
+      }
+    },
+    {
+      "draw": 498,
+      "brain": "markov",
+      "set_no": 2,
+      "hit": [
+        13,
+        14,
+        24,
+        39
+      ],
+      "miss": [
+        8,
+        43
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "3:3",
+      "pred_zone": "3:1:2",
+      "act_zone": "2:1:3",
+      "pred_sum": 141,
+      "act_sum": 163,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.76,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.92,
+        "균형지킴이": 0.86
+      }
+    },
+    {
+      "draw": 581,
+      "brain": "stat",
+      "set_no": 2,
+      "hit": [
+        3,
+        5,
+        20,
+        42
+      ],
+      "miss": [
+        21,
+        45
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "2:4",
+      "pred_zone": "2:2:2",
+      "act_zone": "3:1:2",
+      "pred_sum": 136,
+      "act_sum": 128,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.76,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.92,
+        "균형지킴이": 0.89
+      }
+    },
+    {
+      "draw": 638,
+      "brain": "review",
+      "set_no": 4,
+      "hit": [
+        7,
+        22,
+        24,
+        31
+      ],
+      "miss": [
+        29,
+        37
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "2:4",
+      "pred_zone": "1:3:2",
+      "act_zone": "1:3:2",
+      "pred_sum": 150,
+      "act_sum": 136,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.74,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.94,
+        "균형지킴이": 0.77
+      }
+    },
+    {
+      "draw": 736,
+      "brain": "review",
+      "set_no": 3,
+      "hit": [
+        11,
+        17,
+        21,
+        27
+      ],
+      "miss": [
+        5,
+        20
+      ],
+      "pred_oe": "5:1",
+      "act_oe": "4:2",
+      "pred_zone": "2:4:0",
+      "act_zone": "2:4:0",
+      "pred_sum": 101,
+      "act_sum": 96,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.66,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.92,
+        "균형지킴이": 0.48
+      }
+    },
+    {
+      "draw": 831,
+      "brain": "review",
+      "set_no": 5,
+      "hit": [
+        3,
+        16,
+        19,
+        31
+      ],
+      "miss": [
+        38,
+        43
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "4:2",
+      "pred_zone": "1:2:3",
+      "act_zone": "2:2:2",
+      "pred_sum": 150,
+      "act_sum": 118,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.75,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.97,
+        "균형지킴이": 0.79
+      }
+    },
+    {
+      "draw": 908,
+      "brain": "review",
+      "set_no": 1,
+      "hit": [
+        3,
+        16,
+        21,
+        44
+      ],
+      "miss": [
+        26,
+        29
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "3:3",
+      "pred_zone": "1:4:1",
+      "act_zone": "1:4:1",
+      "pred_sum": 139,
+      "act_sum": 129,
+      "carry_prev": 3,
+      "pipe": {
+        "aux4_agg": 0.73,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.91,
+        "균형지킴이": 0.78
+      }
+    },
+    {
+      "draw": 940,
+      "brain": "stat",
+      "set_no": 3,
+      "hit": [
+        3,
+        20,
+        22,
+        24
+      ],
+      "miss": [
+        9,
+        31
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "3:3",
+      "pred_zone": "2:3:1",
+      "act_zone": "2:3:1",
+      "pred_sum": 109,
+      "act_sum": 125,
+      "carry_prev": 0,
+      "pipe": {
+        "aux4_agg": 0.69,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.82,
+        "균형지킴이": 0.68
+      }
+    },
+    {
+      "draw": 995,
+      "brain": "markov",
+      "set_no": 3,
+      "hit": [
+        1,
+        13,
+        29,
+        38
+      ],
+      "miss": [
+        12,
+        16
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "4:2",
+      "pred_zone": "3:2:1",
+      "act_zone": "3:1:2",
+      "pred_sum": 109,
+      "act_sum": 124,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.72,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.92,
+        "균형지킴이": 0.7
+      }
+    },
+    {
+      "draw": 1029,
+      "brain": "review",
+      "set_no": 5,
+      "hit": [
+        12,
+        30,
+        37,
+        41
+      ],
+      "miss": [
+        5,
+        10
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "3:3",
+      "pred_zone": "3:1:2",
+      "act_zone": "1:1:4",
+      "pred_sum": 135,
+      "act_sum": 191,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.77,
+        "오답탐정": 0.75,
+        "패턴돋보기": 1.0,
+        "균형지킴이": 0.85
+      }
+    },
+    {
+      "draw": 1057,
+      "brain": "review",
+      "set_no": 2,
+      "hit": [
+        8,
+        13,
+        19,
+        45
+      ],
+      "miss": [
+        5,
+        21
+      ],
+      "pred_oe": "5:1",
+      "act_oe": "4:2",
+      "pred_zone": "3:2:1",
+      "act_zone": "2:2:2",
+      "pred_sum": 111,
+      "act_sum": 152,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.69,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.97,
+        "균형지킴이": 0.55
+      }
+    },
+    {
+      "draw": 1061,
+      "brain": "markov",
+      "set_no": 2,
+      "hit": [
+        24,
+        27,
+        35,
+        37
+      ],
+      "miss": [
+        5,
+        44
+      ],
+      "pred_oe": "4:2",
+      "act_oe": "4:2",
+      "pred_zone": "1:2:3",
+      "act_zone": "1:2:3",
+      "pred_sum": 172,
+      "act_sum": 172,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.72,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.93,
+        "균형지킴이": 0.68
+      }
+    },
+    {
+      "draw": 1111,
+      "brain": "markov",
+      "set_no": 3,
+      "hit": [
+        13,
+        30,
+        33,
+        43
+      ],
+      "miss": [
+        10,
+        40
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "5:1",
+      "pred_zone": "2:1:3",
+      "act_zone": "2:1:3",
+      "pred_sum": 169,
+      "act_sum": 167,
+      "carry_prev": 0,
+      "pipe": {
+        "aux4_agg": 0.71,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.9,
+        "균형지킴이": 0.7
+      }
+    },
+    {
+      "draw": 1123,
+      "brain": "review",
+      "set_no": 1,
+      "hit": [
+        19,
+        24,
+        34,
+        35
+      ],
+      "miss": [
+        6,
+        37
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "4:2",
+      "pred_zone": "1:2:3",
+      "act_zone": "1:3:2",
+      "pred_sum": 155,
+      "act_sum": 146,
+      "carry_prev": 3,
+      "pipe": {
+        "aux4_agg": 0.76,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.99,
+        "균형지킴이": 0.79
+      }
+    },
+    {
+      "draw": 1133,
+      "brain": "markov",
+      "set_no": 1,
+      "hit": [
+        13,
+        20,
+        28,
+        34
+      ],
+      "miss": [
+        1,
+        25
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "2:4",
+      "pred_zone": "2:3:1",
+      "act_zone": "2:3:1",
+      "pred_sum": 121,
+      "act_sum": 138,
+      "carry_prev": 2,
+      "pipe": {
+        "aux4_agg": 0.74,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.97,
+        "균형지킴이": 0.75
+      }
+    },
+    {
+      "draw": 1214,
+      "brain": "stat",
+      "set_no": 3,
+      "hit": [
+        15,
+        27,
+        30,
+        33
+      ],
+      "miss": [
+        6,
+        20
+      ],
+      "pred_oe": "3:3",
+      "act_oe": "4:2",
+      "pred_zone": "2:3:1",
+      "act_zone": "2:3:1",
+      "pred_sum": 131,
+      "act_sum": 134,
+      "carry_prev": 1,
+      "pipe": {
+        "aux4_agg": 0.76,
+        "오답탐정": 0.75,
+        "패턴돋보기": 0.97,
+        "균형지킴이": 0.84
+      }
+    }
+  ],
+  "external_ai_brief": {
+    "sources": [
+      "LottoWise ML lottery analysis",
+      "statlotto NN lottery",
+      "Walk-forward (Susan Potter)"
+    ],
+    "consensus": [
+      "fair lottery has no learnable next-ball function",
+      "use WF + random baseline; do not claim prediction edge from mean alone",
+      "useful ML = anomaly / aggregate structure / EV of shared jackpot — not jackpot forecast",
+      "pattern work should describe HOW brains choose (constraints), not WHETHER they beat random"
+    ],
+    "rok21_apply": [
+      "step1 = describe prediction microstructure on tier4 vs control",
+      "success = reproducible structural story + null-check, not more 1등",
+      "next tune only after K-TRUST-BENCH random baseline JSON"
+    ]
+  }
+}

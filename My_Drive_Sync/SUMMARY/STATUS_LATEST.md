@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-07-28 KST  
-📌 사유: K-REVIEW-RUN WF 2~1234 재복습 PASS · verify `20260728_KREVIEW_full_2_1234.json`
+📅 최종 갱신: 2026-07-29 KST  
+📌 사유: K-PATTERN-1 예측 구조 분석 · 구간·패턴AUX 신호 · `20260729_KPATTERN_tier4_vs_control.json`
 
 ---
 
@@ -19,6 +19,8 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-PATTERN-1** | 4등 vs 대조군 · 구간일치·패턴AUX · 외부자문 | JSON · 보고서 |
+| **K-REVIEW-TIER14** | 1~4등 브리핑 · 4등 31건 | 보고서 |
 | **K-REVIEW-RUN** | learn reset + WF 2~1234 · kweon 복제 제거 | verify_pass · pipe 3698/3698 |
 | **K-REBRAND** | UI·tools kweon/복제 흔적 → ROK21 · verify 7021 | push `440eb18` |
 | **K-UI-PLAIN** | 메인·상세·analog 초보자용 문구 | push |
@@ -46,9 +48,9 @@
 
 ## 3) 다음 (형)
 
-`K-TRUST-BENCH` — RE-RUN 후 random·3뇌 mean·≥3%·WFE READ-ONLY 집계  
-선행: K-REVIEW-RUN PASS · 이후 K-AWAIT(1235)  
-근거: [`PINNED_TESTLOTTO_TUNING.md`](PINNED_TESTLOTTO_TUNING.md) · [`NEXT_ACTIONS.md`](NEXT_ACTIONS.md)
+`K-TRUST-BENCH` — random·3뇌 mean·≥3%·WFE READ-ONLY  
+선행: K-REVIEW-RUN · K-PATTERN-1 (구간·패턴AUX 신호 병기)  
+근거: [`PINNED_TESTLOTTO_TUNING.md`](PINNED_TESTLOTTO_TUNING.md) · [`reports/20260729_KPATTERN1_예측패턴분석.md`](../../reports/20260729_KPATTERN1_예측패턴분석.md)
 
 ---
 

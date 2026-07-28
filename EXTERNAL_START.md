@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `40e0537` |
+| HEAD(실측) | `e49b573` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) |
-| 직전 | K-REBRAND · K-UI-PLAIN · K-ANALOG-1 |
+| 지금 | K-PATTERN-1 — 4등 vs 대조군 예측 구조 분석 (구간·패턴AUX 신호) |
+| 직전 | K-REVIEW-RUN PASS · K-REVIEW-TIER14 |
 | BOOT다음 | K-TRUST-BENCH — random·3뇌 mean·≥3% · WFE JSON (READ-ONLY) |
 | NEXT1 ID | **K-TRUST-BENCH** |
-| NEXT1 할일 | RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) |
+| NEXT1 할일 | RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) · K-PATTERN-1 구조신호 병기 |
 | 승인필요 | 아니오 |
-| 선행 | K-REVIEW-RUN PASS · `20260728_KREVIEW_full_2_1234.json` verify_pass |
+| 선행 | K-REVIEW-RUN PASS · K-PATTERN-1 JSON (`20260729_KPATTERN_tier4_vs_control.json`) |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=40e0537 · 지금=K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698) · 다음=K-TRUST-BENCH`
+1. 첫줄 `[복귀] HEAD=e49b573 · 지금=K-PATTERN-1 — 4등 vs 대조군 예측 구조 분석 (구간·패턴AUX 신호) · 다음=K-TRUST-BENCH`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 40e0537_
+_generated: e49b573_
