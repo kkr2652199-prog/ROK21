@@ -1,0 +1,156 @@
+{
+  "id": "K-PROB-VECTOR",
+  "ts": "2026-07-29T03:23:55",
+  "elapsed_sec": 26.3,
+  "stat": {
+    "recency_windows": [
+      {
+        "window": "all",
+        "overlap_mean": 0.1324,
+        "spearman_r": 0.0012,
+        "n_draws": 1224
+      },
+      {
+        "window": 50,
+        "overlap_mean": 0.1325,
+        "spearman_r": 0.0024,
+        "n_draws": 1224
+      },
+      {
+        "window": 100,
+        "overlap_mean": 0.1321,
+        "spearman_r": 0.0014,
+        "n_draws": 1224
+      },
+      {
+        "window": 200,
+        "overlap_mean": 0.1329,
+        "spearman_r": 0.0013,
+        "n_draws": 1224
+      }
+    ],
+    "recency_window_best": {
+      "window": 50,
+      "spearman_r": 0.0024,
+      "overlap_mean": 0.1325
+    },
+    "gap_boost_hit_rate": {
+      "ge30": 0.1278,
+      "ge50": 0.1064,
+      "expected": 0.1333,
+      "n_ge30": 837,
+      "n_ge50": 47,
+      "ztest_ge30": {
+        "z": -0.468,
+        "p_approx": 0.68,
+        "exceed": false
+      },
+      "ztest_ge50": {
+        "z": -0.544,
+        "p_approx": 0.7066,
+        "exceed": false
+      }
+    }
+  },
+  "markov": {
+    "transition_top_k": [
+      {
+        "k": 6,
+        "overlap_mean": 0.1333,
+        "spearman_r": -0.3886,
+        "n_draws": 1215
+      },
+      {
+        "k": 10,
+        "overlap_mean": 0.2173,
+        "spearman_r": -0.3886,
+        "n_draws": 1215
+      },
+      {
+        "k": 15,
+        "overlap_mean": 0.3344,
+        "spearman_r": -0.3886,
+        "n_draws": 1215
+      }
+    ],
+    "pool_vs_single": {
+      "pool_union_hit_rate": 0.4353,
+      "single_hit_rate": 0.1328,
+      "delta": 0.3025,
+      "mean_union_size": 19.7,
+      "null_pool_rate": 0.4377,
+      "delta_vs_null": -0.0024,
+      "n": 1215,
+      "note": "pool=brain_review 5세트 합집합 / single=visit top6 / null≈|U|/45"
+    }
+  },
+  "review": {
+    "carry_over": {
+      "actual_mean": 0.8248,
+      "expected": 0.8,
+      "delta": 0.0248,
+      "per_num_rate": 0.1375,
+      "ztest": {
+        "z": 1.047,
+        "p_approx": 0.1476,
+        "exceed": false
+      },
+      "valid": false,
+      "n": 1233
+    },
+    "ending_digit": {
+      "hit_rate": 0.1339,
+      "expected": 0.1333,
+      "delta": 0.0006,
+      "ending_set_overlap_mean": 0.495,
+      "ztest": {
+        "z": 0.28,
+        "p_approx": 0.3897,
+        "exceed": false
+      },
+      "n_trials": 27317,
+      "valid": false
+    }
+  },
+  "signal_ranking": [
+    {
+      "signal": "stat_recency",
+      "spearman_r": 0.0024,
+      "valid": false,
+      "note": "best_window=50"
+    },
+    {
+      "signal": "markov_transition",
+      "spearman_r": -0.3886,
+      "valid": false,
+      "note": "best_k=6 overlap=0.1333"
+    },
+    {
+      "signal": "stat_gap_boost",
+      "spearman_r": null,
+      "valid": false,
+      "note": "ge30=0.1278 ge50=0.1064 exp=0.1333"
+    },
+    {
+      "signal": "markov_pool",
+      "spearman_r": null,
+      "valid": false,
+      "note": "delta_vs_null=-0.0024 (vs single=0.3025)"
+    },
+    {
+      "signal": "review_carry",
+      "spearman_r": null,
+      "valid": false,
+      "note": "mean=0.8248 exp=0.8"
+    },
+    {
+      "signal": "review_ending",
+      "spearman_r": null,
+      "valid": false,
+      "note": "hit=0.1339"
+    }
+  ],
+  "recommended_strengthen": [],
+  "verdict": "없음",
+  "db_code_write": false
+}

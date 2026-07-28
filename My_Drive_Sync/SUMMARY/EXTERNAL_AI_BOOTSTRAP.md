@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `45e33e5` |
+| HEAD(실측) | `0f201f7` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-ATTACK-OPEN — A/B/C 전부 FAIL · **추천없음** |
-| 직전 | CONF-CAL 보류 · conf 세트순위 관측종료 |
-| BOOT다음 | K-ATTACK-HOLD — 형·동생 다음 축 재선정 |
+| 지금 | K-PROB-VECTOR — 유효신호 0 · **HOLD 복귀** |
+| 직전 | OPEN A/B/C FAIL · HOLD→PROB-VECTOR 교체 실행 |
+| BOOT다음 | K-ATTACK-HOLD — 형·동생 새 축 재선정 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | OPEN 서베이 3레버(A analog·B markov tune·C conf rebuild) 전부 관측종료 · recommended=없음 · 형·동생 다음 공격 축 1건 재선정 |
+| NEXT1 할일 | K-PROB-VECTOR 유효신호 0 · STRENGTHEN 미등록 · 형·동생 다음 공격 축 1건 재선정 |
 | 승인필요 | 예 |
-| 선행 | K-ATTACK-OPEN 완료 · docs/benchmarks/20260729_KOPEN_survey.json |
+| 선행 | K-PROB-VECTOR 완료 · verdict=없음 · docs/benchmarks/20260729_KPROBVEC_survey.json |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=45e33e5 · 지금=K-ATTACK-OPEN — A/B/C 전부 FAIL · **추천없음** · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=0f201f7 · 지금=K-PROB-VECTOR — 유효신호 0 · **HOLD 복귀** · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
