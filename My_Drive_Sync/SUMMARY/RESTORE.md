@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | 1~4등 브리핑·종료체크 | tier14 31건(4등만) · `_brief_tier_hits.py` · 보고서 | K-REVIEW-TIER14 | (커밋중) |
+| 2026-07-29 | 1~4등 브리핑·종료체크 | tier14 31건(4등만) · `_brief_tier_hits.py` · 보고서 | K-REVIEW-TIER14 | `bf179f6` |
 | 2026-07-28 | K-REVIEW-RUN 종료체크 | WF 2~1234 재복습 53분 · verify_pass · pipe 3698/3698 · push | K-REVIEW-RUN PASS | `2d0becc` |
 | 2026-07-28 | K-REBRAND 종료체크 | UI·tools kweon→ROK21 · verify7021 · push | K-REBRAND PATCHED | `440eb18` |
 | 2026-07-28 | K-UI-PLAIN 종료체크 | 메인·상세·analog API 쉬운 말 UI · push | K-UI-PLAIN PATCHED | `13a187e` |
