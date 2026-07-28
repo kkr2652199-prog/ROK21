@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f7c03e3` · WORK=`IDLE`
+1. **HEAD:** `45e33e5` · WORK=`IDLE`
 2. **지금:** K-ATTACK-OPEN — A/B/C 전부 FAIL · **추천없음**
 3. **다음1건:** K-ATTACK-HOLD — OPEN 서베이 3레버(A analog·B markov tune·C conf rebuild) 전부 관측종료 · recommended=없음 · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-ATTACK-OPEN 완료 · docs/benchmarks/20260729_KOPEN_survey.json)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

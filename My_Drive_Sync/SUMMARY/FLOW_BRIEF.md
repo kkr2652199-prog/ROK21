@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f7c03e3` · WORK=`IDLE`
+- HEAD: `45e33e5` · WORK=`IDLE`
 - 지금: K-ATTACK-OPEN — A/B/C 전부 FAIL · **추천없음**
 - 직전: CONF-CAL 보류 · conf 세트순위 관측종료
 - BOOT다음: K-ATTACK-HOLD — 형·동생 다음 축 재선정
