@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4f5845b` · WORK=`IDLE`
+- HEAD: `54a912b` · WORK=`IDLE`
 - 지금: SETNO-HITMAP FAIL · Δge3+0.0034<0.005 · **HOLD** · V2유지
 - 직전: SETPACK FAIL / TUNE FAIL / WIRE-V2 PASS
 - BOOT다음: K-ATTACK-HOLD — SETNO재탕금지 · 다음 축 재선정
