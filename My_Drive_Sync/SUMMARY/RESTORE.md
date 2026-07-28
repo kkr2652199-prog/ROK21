@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2d0becc` · WORK=`IDLE`
+1. **HEAD:** `6ff5a48` · WORK=`IDLE`
 2. **지금:** K-REVIEW-RUN — learn reset + WF 2~1234 재복습 **PASS** (verify · pipe 3698/3698)
 3. **다음1건:** K-TRUST-BENCH — RE-RUN 후 random mean·3뇌 mean·≥3%·WFE 창별 집계 → `docs/benchmarks/YYYYMMDD_KTRUST_bench.json` (READ-ONLY) (승인필요=아니오 · 선행=K-REVIEW-RUN PASS · `20260728_KREVIEW_full_2_1234.json` verify_pass)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
