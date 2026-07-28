@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c2c26a6` · WORK=`IDLE`
-2. **지금:** NEXT 교체 — **K-REFEREE-WINDOW** (합의) · CONF-CAL ARCHIVE 보류
-3. **다음1건:** K-REFEREE-WINDOW — learn_state.py + learn_state_cutoff.py 동시 패치 — recent_avg_match 누적평균 → 슬라이딩 윈도우(WINDOW=30) 교체. K-ATTACK-CONF-CAL 은 그 다음 NEXT로 ARCHIVE에 보류 등록. (승인필요=아니오 · 선행=동생·형 합의 완료 · CONF-CAL 보류)
+1. **HEAD:** `21a1de8` · WORK=`IDLE`
+2. **지금:** K-REFEREE-WINDOW PASS · max_gap=0.1334 · **CONF-CAL 복귀**
+3. **다음1건:** K-ATTACK-CONF-CAL — 뇌 내부 conf 보정·세트순위 시뮬 JSON (READ-ONLY) · 크로스뇌 inv-corr·GATHER/SLICE 배선 보류 (승인필요=아니오 · 선행=K-REFEREE-WINDOW PASS · K-ATTACK-BAYES 완료 · max_conf 약함)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | REFEREE·종료체크 | W=30·max_gap0.1334 PASS · NEXT=CONF-CAL복귀 | REFEREE PASS | (커밋중) |
 | 2026-07-29 | NEXT교체·종료체크 | REFEREE-WINDOW · CONF-CAL ARCHIVE보류 | NEXT교체 | `d96759f` |
 | 2026-07-29 | BAYES·종료체크 | soft≈null·invcorr<RR·vs conf+0.025 · NEXT=CONF-CAL | BAYES DONE WIRE보류 | `c953d63` |
 | 2026-07-29 | JOIN프롬프트·종료체크 | EXTERNAL_AI_JOIN_PROMPT · 합류읽기순서 · NEXT=BAYES | DOCS | `1494595` |
@@ -45,7 +46,6 @@
 | 2026-07-29 | TRUST·사공·역할분담·종료체크 | Jaccard0.11·pool15≈null · 3예측유지 · 보고서 | K-TRUST+CREW | `9806878` |
 | 2026-07-29 | 패턴분석·외부AI자문·종료체크 | 4등vs대조 · 구간35%vs5% · 패턴AUX 0.91vs0.65 · 보고서 | K-PATTERN-1 | `1b3884a` |
 | 2026-07-29 | 1~4등 브리핑·종료체크 | tier14 31건(4등만) · `_brief_tier_hits.py` · 보고서 | K-REVIEW-TIER14 | `bf179f6` |
-| 2026-07-28 | K-REVIEW-RUN 종료체크 | WF 2~1234 재복습 53분 · verify_pass · pipe 3698/3698 · push | K-REVIEW-RUN PASS | `2d0becc` |
 
 ---
 

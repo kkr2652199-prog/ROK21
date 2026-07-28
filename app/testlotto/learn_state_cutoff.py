@@ -20,6 +20,7 @@ from app.testlotto.learn_state import (
     BOOST_CAPS,
     DEFAULT_ADJUSTMENTS,
     PREDICT_BRAIN_TAGS,
+    REFEREE_WINDOW,
     _empty_state,
 )
 
@@ -88,14 +89,16 @@ def apply_feedback_pure(
             adj[bk] = min(float(cap), float(adj.get(bk, 0) or 0))
 
     rc = int(state.get("review_count", 0)) + 1
-    prev_avg = float(state.get("recent_avg_match", 0.0))
-    new_avg = (
-        ((prev_avg * (rc - 1)) + matched_count) / rc if rc > 0 else float(matched_count)
-    )
+    window: list[int] = list(state.get("recent_match_window") or [])
+    window.append(int(matched_count))
+    if len(window) > REFEREE_WINDOW:
+        window = window[-REFEREE_WINDOW:]
+    new_avg = sum(window) / len(window)
 
     state["review_count"] = rc
     state["last_draw_no"] = int(draw_no)
     state["recent_avg_match"] = round(new_avg, 4)
+    state["recent_match_window"] = window
     state["adjustments"] = adj
     state["miss_counts"] = miss_counts
     return state

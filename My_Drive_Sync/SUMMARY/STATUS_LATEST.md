@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-ATTACK-BAYES · inv-corr 무력 · NEXT=CONF-CAL
+📌 사유: K-REFEREE-WINDOW PASS · NEXT=CONF-CAL 복귀
 
 ---
 
@@ -12,9 +12,8 @@
 | SSOT | `kkr2652199-prog/ROK21` · **7021** |
 | BASELINE_PIN | **`640cb67`** |
 | 3DB MAX | **1234** |
-| GATHER | 관측고정 (아이디어 OK · WIRE 보류) |
-| SLICE | 관측유지 · 배선 보류 |
-| BAYES | soft≈null · pick_invcorr < RR · **배선 보류** |
+| REFEREE | **W=30 슬라이딩** · max_gap **0.1334** PASS |
+| GATHER/SLICE/BAYES | 배선 보류 유지 |
 
 ---
 
@@ -22,35 +21,33 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-ATTACK-BAYES** | 창50 inv-corr 동적가중 | soft null · vs RR 패배 |
-| **K-ATTACK-SLICE** | LMH 승격 정책 비교 · live conf proxy | 배선 보류 |
-| **K-GATHER-V2** | V축소 covering | 회수0 · 관측고정 |
-| **EXTERNAL_AI_JOIN** | GitHub 합류 읽기순서 프롬프트 | DOCS |
+| **K-REFEREE-WINDOW** | recent_avg_match 누적→창30 · cutoff 동시 | PASS |
+| **K-ATTACK-BAYES** | inv-corr 동적가중 | soft null · vs RR 패배 |
+| **K-ATTACK-SLICE** | LMH 승격 | 배선 보류 |
 
 ---
 
-## 2) BAYES 핵심 (n_eval=1182)
+## 2) REFEREE 핵심
 
-| 항목 | 값 |
-|------|-----|
-| soft Δmean | **−0.001** (null) |
-| pick_invcorr vs RR Δmean | **−0.047** |
-| pick_invcorr vs max_conf Δmean | +0.025 (conf 약함) |
-| mean pair corr | markov–review **0.059** |
+| 뇌 | 누적(구) | W=30 |
+|----|----------|------|
+| stat | 1.7186 | 1.6667 |
+| markov | 1.7167 | **1.5333** |
+| review | 1.6975 | 1.6667 |
 
-근거: `docs/benchmarks/20260729_KBAYES_dyn_weight.json`
+근거: `docs/benchmarks/20260729_KREFEREE_WINDOW.json`
 
 ---
 
 ## 3) 다음
 
-`K-ATTACK-CONF-CAL` — 뇌 **내부** conf 보정·세트순위 (READ-ONLY)  
-근거: `reports/20260729_KATTACK_BAYES.md`
+`K-ATTACK-CONF-CAL` — 뇌내 conf 보정·세트순위 (READ-ONLY)
 
 ---
 
 ## 4) 산출물
 
-- `docs/benchmarks/20260729_KBAYES_dyn_weight.json`
-- `reports/20260729_KATTACK_BAYES.md`
-- `tools/_k_attack_bayes.py`
+- `app/testlotto/learn_state.py` · `learn_state_cutoff.py`
+- `tools/_k_referee_window_verify.py`
+- `docs/benchmarks/20260729_KREFEREE_WINDOW.json`
+- `reports/20260729_KREFEREE_WINDOW.md`

@@ -31,6 +31,9 @@ BOOST_CAPS: dict[str, float] = {
     "odd_even_balance": 0.5,
 }
 
+# referee recent_avg_match 슬라이딩 윈도우 (누적평균 수렴≈0.80 방지)
+REFEREE_WINDOW: int = 30
+
 
 def _empty_state() -> dict[str, Any]:
     return {
@@ -39,6 +42,7 @@ def _empty_state() -> dict[str, Any]:
         "review_count": 0,
         "last_draw_no": 0,
         "recent_avg_match": 0.0,
+        "recent_match_window": [],
     }
 
 
@@ -163,12 +167,16 @@ def apply_feedback(
             adj[bk] = min(float(cap), float(adj.get(bk, 0) or 0))
 
     rc = int(state.get("review_count", 0)) + 1
-    prev_avg = float(state.get("recent_avg_match", 0.0))
-    new_avg = ((prev_avg * (rc - 1)) + matched_count) / rc if rc > 0 else float(matched_count)
+    window: list[int] = list(state.get("recent_match_window") or [])
+    window.append(int(matched_count))
+    if len(window) > REFEREE_WINDOW:
+        window = window[-REFEREE_WINDOW:]
+    new_avg = sum(window) / len(window)
 
     state["review_count"] = rc
     state["last_draw_no"] = draw_no
     state["recent_avg_match"] = round(new_avg, 4)
+    state["recent_match_window"] = window
     state["adjustments"] = adj
     state["miss_counts"] = miss_counts
 
