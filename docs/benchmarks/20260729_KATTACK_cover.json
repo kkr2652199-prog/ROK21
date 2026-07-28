@@ -1,0 +1,128 @@
+{
+  "id": "K-ATTACK-COVER",
+  "ts": "2026-07-29T00:38:31",
+  "constants": {
+    "C_45_6": 8145060,
+    "p_first_one_ticket": 1.2277380399898834e-07,
+    "note": "fair independent draws assumed"
+  },
+  "observed_rok21_3x5_pool": {
+    "draws": 1232,
+    "pool_best_mean": 2.2524,
+    "ge3_rate": 0.3117,
+    "ge4_rate": 0.0252,
+    "ge5_rate": 0.0,
+    "ge6_rate": 0.0,
+    "ge6_count": 0,
+    "unique_nums_mean": 37.32
+  },
+  "honest_first_prize_scenarios": [
+    {
+      "tickets_per_draw": 5,
+      "p_first_one_draw": 6.13869e-07,
+      "expected_draws_to_first": 1629012.4,
+      "p_first_in_100_draws": 6.139e-05,
+      "p_first_in_1233_draws": 0.00075661,
+      "p_first_in_520_draws_10y": 0.00031916
+    },
+    {
+      "tickets_per_draw": 15,
+      "p_first_one_draw": 1.841605e-06,
+      "expected_draws_to_first": 543004.5,
+      "p_first_in_100_draws": 0.00018414,
+      "p_first_in_1233_draws": 0.00226813,
+      "p_first_in_520_draws_10y": 0.00095718
+    },
+    {
+      "tickets_per_draw": 50,
+      "p_first_one_draw": 6.138672e-06,
+      "expected_draws_to_first": 162901.7,
+      "p_first_in_100_draws": 0.00061368,
+      "p_first_in_1233_draws": 0.00754043,
+      "p_first_in_520_draws_10y": 0.00318703
+    },
+    {
+      "tickets_per_draw": 100,
+      "p_first_one_draw": 1.2277306e-05,
+      "expected_draws_to_first": 81451.1,
+      "p_first_in_100_draws": 0.00122698,
+      "p_first_in_1233_draws": 0.01502401,
+      "p_first_in_520_draws_10y": 0.0063639
+    },
+    {
+      "tickets_per_draw": 500,
+      "p_first_one_draw": 6.1385022e-05,
+      "expected_draws_to_first": 16290.6,
+      "p_first_in_100_draws": 0.00611989,
+      "p_first_in_1233_draws": 0.07289649,
+      "p_first_in_520_draws_10y": 0.03141709
+    },
+    {
+      "tickets_per_draw": 1000,
+      "p_first_one_draw": 0.000122766275,
+      "expected_draws_to_first": 8145.6,
+      "p_first_in_100_draws": 0.01220232,
+      "p_first_in_1233_draws": 0.14047908,
+      "p_first_in_520_draws_10y": 0.06184714
+    },
+    {
+      "tickets_per_draw": 8145,
+      "p_first_one_draw": 0.000999492869,
+      "expected_draws_to_first": 1000.5,
+      "p_first_in_100_draws": 0.09516192,
+      "p_first_in_1233_draws": 0.70858036,
+      "p_first_in_520_draws_10y": 0.40547719
+    }
+  ],
+  "null_mc_cover_proxy": {
+    "random15_ge3": {
+      "n_sets": 15,
+      "k": 3,
+      "trials": 3000,
+      "rate_best_ge_k": 0.2957,
+      "best_mean": 2.2673
+    },
+    "random15_ge4": {
+      "n_sets": 15,
+      "k": 4,
+      "trials": 3000,
+      "rate_best_ge_k": 0.0237,
+      "best_mean": 2.2813
+    },
+    "random15_ge5": {
+      "n_sets": 15,
+      "k": 5,
+      "trials": 3000,
+      "rate_best_ge_k": 0.0003,
+      "best_mean": 2.2617
+    },
+    "random50_ge4": {
+      "n_sets": 50,
+      "k": 4,
+      "trials": 3000,
+      "rate_best_ge_k": 0.0657,
+      "best_mean": 2.7617
+    },
+    "random100_ge4": {
+      "n_sets": 100,
+      "k": 4,
+      "trials": 3000,
+      "rate_best_ge_k": 0.126,
+      "best_mean": 3.0417
+    },
+    "random100_ge5": {
+      "n_sets": 100,
+      "k": 5,
+      "trials": 3000,
+      "rate_best_ge_k": 0.0003,
+      "best_mean": 3.0437
+    }
+  },
+  "interpretation": [
+    "1등 확률은 장수·회차에 선형에 가깝게 쌓임 — '뇌 점수'로 분모를 줄이지 못함",
+    "관측 pool15 ge6_count는 JSON 참고 — 0이면 아직 1등 샘플 없음(기대도 극소)",
+    "다음 공학: covering design으로 ge3/ge4 rate를 null MC 대비 끌어올리기 (1등 경로=장수×시간 정직)",
+    "구독가치=정직확률 대시보드+커버링 엔진+WF 재현 — 예언 마케팅 금지"
+  ],
+  "next": "K-ATTACK-COVER-2 wheel/covering constructive OR K-ATTACK-SLICE zone filter"
+}

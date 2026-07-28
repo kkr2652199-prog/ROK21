@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: K-TRUST-BENCH+CREW · null≈0.8 · Jaccard0.11 · 3예측 유지 권고
+📌 사유: K-PATTERN-2 패턴전역가중 기각 · 1등1회 **K-ATTACK** 전선 · NEXT=COVER
 
 ---
 
@@ -19,6 +19,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-PATTERN-2** | 패턴AUX 전행 분위수 · 전역가중 기각 · 공격전선 | JSON · 보고서 |
 | **K-TRUST+CREW** | random null·사공점검 · 3예측 유지 | JSON · 보고서 |
 | **K-PATTERN-1** | 4등 vs 대조군 · 구간일치·패턴AUX · 외부자문 | JSON · 보고서 |
 | **K-REVIEW-TIER14** | 1~4등 브리핑 · 4등 31건 | 보고서 |
@@ -49,9 +50,9 @@
 
 ## 3) 다음 (형)
 
-`K-PATTERN-2` — 패턴AUX 분위수×matched (보조 유지 근거)  
-직전: K-TRUST+CREW → **3예측 유지 · 세트↑만으로 스킬↑ 금지**  
-근거: [`reports/20260729_KTRUST_CREW_사공점검.md`](../../reports/20260729_KTRUST_CREW_사공점검.md)
+`K-ATTACK-COVER` — 커버링/휠·정직 1등 확률 · 15장 효율  
+목표: **프로젝트 생애 1등 ≥1회** (보장 마케팅 금지 · 과학 전선)  
+근거: [`reports/20260729_KPATTERN2_공격전선.md`](../../reports/20260729_KPATTERN2_공격전선.md)
 
 ---
 

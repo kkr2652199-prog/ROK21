@@ -9,16 +9,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `9cb5e17` |
+| HEAD(실측) | `c8f01cd` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-TRUST+CREW — null≈0.8 · 3뇌 Jaccard0.11 · 사공아님·역할분담 유지 |
-| 직전 | K-PATTERN-1 · K-REVIEW-RUN |
-| BOOT다음 | K-PATTERN-2 — 패턴AUX 분위수×matched 전행 (READ-ONLY) |
-| NEXT1 ID | **K-PATTERN-2** |
-| NEXT1 할일 | 패턴AUX 분위수×matched 전행 분포 → `docs/benchmarks/YYYYMMDD_KPATTERN2_aux_quartile.json` (READ-ONLY) · 보조 유지/축소 근거 |
-| 승인필요 | 아니오 |
-| 선행 | K-TRUST-BENCH PASS · `20260729_KTRUST_bench.json` (3예측 유지 권고) |
+| 지금 | K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON** |
+| 직전 | K-TRUST+CREW · K-PATTERN-1 |
+| BOOT다음 | K-ATTACK-COVER-2 — covering/wheel constructive (ge3/4↑) |
+| NEXT1 ID | **K-ATTACK-COVER-2** |
+| NEXT1 할일 | constructive covering/wheel — ge3·ge4를 random15 대비 끌어올리는 장 설계 + 시뮬 JSON (1등 분모는 장수×회로 정직) |
+| 승인필요 | 아니오(시뮬) · 발권·구독상품화는 형 GO |
+| 선행 | K-ATTACK-COVER 1차 (`20260729_KATTACK_cover.json`) · 목표=생애 1등≥1회 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=9cb5e17 · 지금=K-TRUST+CREW — null≈0.8 · 3뇌 Jaccard0.11 · 사공아님·역할분담 유지 · 다음=K-PATTERN-2`
+1. 첫줄 `[복귀] HEAD=c8f01cd · 지금=K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON** · 다음=K-ATTACK-COVER-2`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 9cb5e17_
+_generated: c8f01cd_

@@ -1,0 +1,566 @@
+{
+  "id": "K-PATTERN-2",
+  "ts": "2026-07-29T00:36:47",
+  "window": [
+    2,
+    1234
+  ],
+  "definition": {
+    "pattern_score": "reasoning '패턴돋보기 … 점수X'",
+    "quartiles": "nearest-rank on score within unit",
+    "units": "best_set rows · all 5 sets with matched_count"
+  },
+  "analyses": {
+    "best_pattern": {
+      "unit": "best_set",
+      "score": "pattern",
+      "n": 3698,
+      "score_edges_q0_q25_q50_q75_q100": [
+        0.41,
+        0.91,
+        0.93,
+        0.97,
+        1.0
+      ],
+      "by_quartile": {
+        "Q1": {
+          "n": 947,
+          "matched_mean": 1.7677,
+          "ge3": 128,
+          "ge3_rate": 0.1352,
+          "ge4": 8,
+          "ge4_rate": 0.0084,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q2": {
+          "n": 910,
+          "matched_mean": 1.6846,
+          "ge3": 108,
+          "ge3_rate": 0.1187,
+          "ge4": 7,
+          "ge4_rate": 0.0077,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q3": {
+          "n": 965,
+          "matched_mean": 1.7047,
+          "ge3": 119,
+          "ge3_rate": 0.1233,
+          "ge4": 8,
+          "ge4_rate": 0.0083,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q4": {
+          "n": 876,
+          "matched_mean": 1.6838,
+          "ge3": 102,
+          "ge3_rate": 0.1164,
+          "ge4": 8,
+          "ge4_rate": 0.0091,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "lift": {
+        "matched_mean_Q4_minus_Q1": -0.0839,
+        "ge3_rate_Q4_minus_Q1": -0.0188,
+        "ge4_rate_Q4_minus_Q1": 0.0007
+      }
+    },
+    "best_balance": {
+      "unit": "best_set",
+      "score": "balance",
+      "n": 3698,
+      "score_edges_q0_q25_q50_q75_q100": [
+        0.27,
+        0.68,
+        0.76,
+        0.82,
+        0.91
+      ],
+      "by_quartile": {
+        "Q1": {
+          "n": 987,
+          "matched_mean": 1.7183,
+          "ge3": 136,
+          "ge3_rate": 0.1378,
+          "ge4": 9,
+          "ge4_rate": 0.0091,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q2": {
+          "n": 1028,
+          "matched_mean": 1.7228,
+          "ge3": 125,
+          "ge3_rate": 0.1216,
+          "ge4": 6,
+          "ge4_rate": 0.0058,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q3": {
+          "n": 823,
+          "matched_mean": 1.6537,
+          "ge3": 85,
+          "ge3_rate": 0.1033,
+          "ge4": 10,
+          "ge4_rate": 0.0122,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q4": {
+          "n": 860,
+          "matched_mean": 1.743,
+          "ge3": 111,
+          "ge3_rate": 0.1291,
+          "ge4": 6,
+          "ge4_rate": 0.007,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "lift": {
+        "matched_mean_Q4_minus_Q1": 0.0247,
+        "ge3_rate_Q4_minus_Q1": -0.0087,
+        "ge4_rate_Q4_minus_Q1": -0.0021
+      }
+    },
+    "best_aux4": {
+      "unit": "best_set",
+      "score": "aux4",
+      "n": 3698,
+      "score_edges_q0_q25_q50_q75_q100": [
+        0.52,
+        0.71,
+        0.73,
+        0.75,
+        0.79
+      ],
+      "by_quartile": {
+        "Q1": {
+          "n": 1024,
+          "matched_mean": 1.7539,
+          "ge3": 139,
+          "ge3_rate": 0.1357,
+          "ge4": 10,
+          "ge4_rate": 0.0098,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q2": {
+          "n": 860,
+          "matched_mean": 1.7291,
+          "ge3": 120,
+          "ge3_rate": 0.1395,
+          "ge4": 4,
+          "ge4_rate": 0.0047,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q3": {
+          "n": 978,
+          "matched_mean": 1.6524,
+          "ge3": 103,
+          "ge3_rate": 0.1053,
+          "ge4": 9,
+          "ge4_rate": 0.0092,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q4": {
+          "n": 836,
+          "matched_mean": 1.7081,
+          "ge3": 95,
+          "ge3_rate": 0.1136,
+          "ge4": 8,
+          "ge4_rate": 0.0096,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "lift": {
+        "matched_mean_Q4_minus_Q1": -0.0458,
+        "ge3_rate_Q4_minus_Q1": -0.0221,
+        "ge4_rate_Q4_minus_Q1": -0.0002
+      }
+    },
+    "allsets_pattern": {
+      "unit": "all_5_sets",
+      "score": "pattern",
+      "n": 18490,
+      "score_edges_q0_q25_q50_q75_q100": [
+        0.39,
+        0.9,
+        0.93,
+        0.97,
+        1.0
+      ],
+      "by_quartile": {
+        "Q1": {
+          "n": 4864,
+          "matched_mean": 0.8022,
+          "ge3": 128,
+          "ge3_rate": 0.0263,
+          "ge4": 7,
+          "ge4_rate": 0.0014,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q2": {
+          "n": 4666,
+          "matched_mean": 0.8041,
+          "ge3": 131,
+          "ge3_rate": 0.0281,
+          "ge4": 9,
+          "ge4_rate": 0.0019,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q3": {
+          "n": 4820,
+          "matched_mean": 0.805,
+          "ge3": 128,
+          "ge3_rate": 0.0266,
+          "ge4": 8,
+          "ge4_rate": 0.0017,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q4": {
+          "n": 4140,
+          "matched_mean": 0.82,
+          "ge3": 112,
+          "ge3_rate": 0.0271,
+          "ge4": 8,
+          "ge4_rate": 0.0019,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "lift": {
+        "matched_mean_Q4_minus_Q1": 0.0178,
+        "ge3_rate_Q4_minus_Q1": 0.0008,
+        "ge4_rate_Q4_minus_Q1": 0.0005
+      }
+    },
+    "allsets_balance": {
+      "unit": "all_5_sets",
+      "score": "balance",
+      "n": 18490,
+      "score_edges_q0_q25_q50_q75_q100": [
+        0.24,
+        0.68,
+        0.75,
+        0.82,
+        0.91
+      ],
+      "by_quartile": {
+        "Q1": {
+          "n": 4788,
+          "matched_mean": 0.831,
+          "ge3": 148,
+          "ge3_rate": 0.0309,
+          "ge4": 9,
+          "ge4_rate": 0.0019,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q2": {
+          "n": 4577,
+          "matched_mean": 0.7741,
+          "ge3": 120,
+          "ge3_rate": 0.0262,
+          "ge4": 6,
+          "ge4_rate": 0.0013,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q3": {
+          "n": 5122,
+          "matched_mean": 0.7868,
+          "ge3": 111,
+          "ge3_rate": 0.0217,
+          "ge4": 11,
+          "ge4_rate": 0.0021,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q4": {
+          "n": 4003,
+          "matched_mean": 0.8436,
+          "ge3": 120,
+          "ge3_rate": 0.03,
+          "ge4": 6,
+          "ge4_rate": 0.0015,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "lift": {
+        "matched_mean_Q4_minus_Q1": 0.0126,
+        "ge3_rate_Q4_minus_Q1": -0.0009,
+        "ge4_rate_Q4_minus_Q1": -0.0004
+      }
+    }
+  },
+  "by_brain_best_pattern": {
+    "stat": {
+      "unit": "best_stat",
+      "score": "pattern",
+      "n": 1233,
+      "score_edges_q0_q25_q50_q75_q100": [
+        0.47,
+        0.92,
+        0.94,
+        0.97,
+        1.0
+      ],
+      "by_quartile": {
+        "Q1": {
+          "n": 438,
+          "matched_mean": 1.742,
+          "ge3": 53,
+          "ge3_rate": 0.121,
+          "ge4": 3,
+          "ge4_rate": 0.0068,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q2": {
+          "n": 182,
+          "matched_mean": 1.6593,
+          "ge3": 16,
+          "ge3_rate": 0.0879,
+          "ge4": 0,
+          "ge4_rate": 0.0,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q3": {
+          "n": 314,
+          "matched_mean": 1.6529,
+          "ge3": 27,
+          "ge3_rate": 0.086,
+          "ge4": 1,
+          "ge4_rate": 0.0032,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q4": {
+          "n": 299,
+          "matched_mean": 1.7893,
+          "ge3": 41,
+          "ge3_rate": 0.1371,
+          "ge4": 2,
+          "ge4_rate": 0.0067,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "lift": {
+        "matched_mean_Q4_minus_Q1": 0.0473,
+        "ge3_rate_Q4_minus_Q1": 0.0161,
+        "ge4_rate_Q4_minus_Q1": -0.0001
+      }
+    },
+    "markov": {
+      "unit": "best_markov",
+      "score": "pattern",
+      "n": 1232,
+      "score_edges_q0_q25_q50_q75_q100": [
+        0.45,
+        0.92,
+        0.94,
+        0.97,
+        1.0
+      ],
+      "by_quartile": {
+        "Q1": {
+          "n": 442,
+          "matched_mean": 1.7624,
+          "ge3": 65,
+          "ge3_rate": 0.1471,
+          "ge4": 7,
+          "ge4_rate": 0.0158,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q2": {
+          "n": 176,
+          "matched_mean": 1.7386,
+          "ge3": 29,
+          "ge3_rate": 0.1648,
+          "ge4": 2,
+          "ge4_rate": 0.0114,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q3": {
+          "n": 311,
+          "matched_mean": 1.7363,
+          "ge3": 44,
+          "ge3_rate": 0.1415,
+          "ge4": 1,
+          "ge4_rate": 0.0032,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q4": {
+          "n": 303,
+          "matched_mean": 1.6172,
+          "ge3": 32,
+          "ge3_rate": 0.1056,
+          "ge4": 2,
+          "ge4_rate": 0.0066,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "lift": {
+        "matched_mean_Q4_minus_Q1": -0.1452,
+        "ge3_rate_Q4_minus_Q1": -0.0415,
+        "ge4_rate_Q4_minus_Q1": -0.0092
+      }
+    },
+    "review": {
+      "unit": "best_review",
+      "score": "pattern",
+      "n": 1233,
+      "score_edges_q0_q25_q50_q75_q100": [
+        0.41,
+        0.9,
+        0.93,
+        0.97,
+        1.0
+      ],
+      "by_quartile": {
+        "Q1": {
+          "n": 350,
+          "matched_mean": 1.7229,
+          "ge3": 39,
+          "ge3_rate": 0.1114,
+          "ge4": 2,
+          "ge4_rate": 0.0057,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q2": {
+          "n": 286,
+          "matched_mean": 1.6958,
+          "ge3": 36,
+          "ge3_rate": 0.1259,
+          "ge4": 2,
+          "ge4_rate": 0.007,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q3": {
+          "n": 323,
+          "matched_mean": 1.7183,
+          "ge3": 46,
+          "ge3_rate": 0.1424,
+          "ge4": 5,
+          "ge4_rate": 0.0155,
+          "ge5": 0,
+          "ge6": 0
+        },
+        "Q4": {
+          "n": 274,
+          "matched_mean": 1.6423,
+          "ge3": 29,
+          "ge3_rate": 0.1058,
+          "ge4": 4,
+          "ge4_rate": 0.0146,
+          "ge5": 0,
+          "ge6": 0
+        }
+      },
+      "lift": {
+        "matched_mean_Q4_minus_Q1": -0.0806,
+        "ge3_rate_Q4_minus_Q1": -0.0056,
+        "ge4_rate_Q4_minus_Q1": 0.0089
+      }
+    }
+  },
+  "aggressive_decile": {
+    "best_pattern_decile": {
+      "n_each": 369,
+      "bottom10": {
+        "n": 369,
+        "matched_mean": 1.8076,
+        "ge3": 51,
+        "ge3_rate": 0.1382,
+        "ge4": 5,
+        "ge4_rate": 0.0136,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "top10": {
+        "n": 369,
+        "matched_mean": 1.6314,
+        "ge3": 39,
+        "ge3_rate": 0.1057,
+        "ge4": 3,
+        "ge4_rate": 0.0081,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "matched_mean_lift": -0.1762,
+      "ge4_rate_lift": -0.0055,
+      "ge6_in_top10": 0,
+      "ge5_in_top10": 0
+    },
+    "allsets_pattern_decile": {
+      "n_each": 1849,
+      "bottom10": {
+        "n": 1849,
+        "matched_mean": 0.8264,
+        "ge3": 51,
+        "ge3_rate": 0.0276,
+        "ge4": 5,
+        "ge4_rate": 0.0027,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "top10": {
+        "n": 1849,
+        "matched_mean": 0.8242,
+        "ge3": 46,
+        "ge3_rate": 0.0249,
+        "ge4": 4,
+        "ge4_rate": 0.0022,
+        "ge5": 0,
+        "ge6": 0
+      },
+      "matched_mean_lift": -0.0022,
+      "ge4_rate_lift": -0.0005,
+      "ge6_in_top10": 0,
+      "ge5_in_top10": 0
+    }
+  },
+  "decision": {
+    "pattern_aux_keep": false,
+    "reason": "분위수 lift 약함 → K-PATTERN-1 신호는 조건부/샘플; 가중 성급 금지",
+    "next_attack_axes": [
+      "K-ATTACK-COVER: covering/wheel 수학 — N장으로 4·5등 보장 설계 (1등 확률은 티켓수로 정직 계산)",
+      "K-ATTACK-SLICE: 구간일치+패턴AUX 상위 교집합에서만 라이브 세트 승격",
+      "K-ATTACK-SEARCH: 뇌당 오버샘플(20~60)→AUX·covering 필터→top5 (K-Y 방식 확장)",
+      "K-ATTACK-BAYES: 3뇌 사후가중(성적상관↓ 이용) — 삭제가 아니라 동적 가중",
+      "K-ATTACK-EV: 공동당첨 최소화·인기조합 회피 (잭팟 EV) — 예측이 아닌 배당 최적화"
+    ],
+    "ambition": {
+      "goal": "프로젝트 생애 1등 ≥1회 (정직 확률·과학적 탐색)",
+      "not": "보장·마케팅 허위·null 무시",
+      "stance": "보수 기각이 아니라 공격적 가설검정 + 커버링·슬라이스·오버샘플"
+    }
+  },
+  "links": {
+    "pattern1": "docs/benchmarks/20260729_KPATTERN_tier4_vs_control.json",
+    "trust": "docs/benchmarks/20260729_KTRUST_bench.json",
+    "warrant": "My_Drive_Sync/SUMMARY/WARRANT.md"
+  }
+}

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `9cb5e17` · WORK=`IDLE`
-- 지금: K-TRUST+CREW — null≈0.8 · 3뇌 Jaccard0.11 · 사공아님·역할분담 유지
-- 직전: K-PATTERN-1 · K-REVIEW-RUN
-- BOOT다음: K-PATTERN-2 — 패턴AUX 분위수×matched 전행 (READ-ONLY)
-- NEXT1: K-PATTERN-2 — 패턴AUX 분위수×matched 전행 분포 → `docs/benchmarks/YYYYMMDD_KPATTERN2_aux_quartile.json` (READ-ONLY) · 보조 유지/축소 근거 (승인=아니오)
+- HEAD: `c8f01cd` · WORK=`IDLE`
+- 지금: K-PATTERN-2+COVER1 — 패턴가중기각 · 정직1등확률표 · **공격전선 ON**
+- 직전: K-TRUST+CREW · K-PATTERN-1
+- BOOT다음: K-ATTACK-COVER-2 — covering/wheel constructive (ge3/4↑)
+- NEXT1: K-ATTACK-COVER-2 — constructive covering/wheel — ge3·ge4를 random15 대비 끌어올리는 장 설계 + 시뮬 JSON (1등 분모는 장수×회로 정직) (승인=아니오(시뮬) · 발권·구독상품화는 형 GO)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

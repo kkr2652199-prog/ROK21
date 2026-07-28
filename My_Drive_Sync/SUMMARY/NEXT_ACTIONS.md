@@ -3,11 +3,11 @@
 > STEP1 `guard_boot` 는 **아래 `## NEXT (1건)` 블록만** 읽는다. 여러 건 나열 금지.
 
 ## NEXT (1건)
-- ID: K-PATTERN-2
-- 할일: 패턴AUX 분위수×matched 전행 분포 → `docs/benchmarks/YYYYMMDD_KPATTERN2_aux_quartile.json` (READ-ONLY) · 보조 유지/축소 근거
-- 선행조건: K-TRUST-BENCH PASS · `20260729_KTRUST_bench.json` (3예측 유지 권고)
-- 승인필요: 아니오
-- 최종갱신: 2026-07-29 (K-TRUST+CREW)
+- ID: K-ATTACK-COVER-2
+- 할일: constructive covering/wheel — ge3·ge4를 random15 대비 끌어올리는 장 설계 + 시뮬 JSON (1등 분모는 장수×회로 정직)
+- 선행조건: K-ATTACK-COVER 1차 (`20260729_KATTACK_cover.json`) · 목표=생애 1등≥1회
+- 승인필요: 아니오(시뮬) · 발권·구독상품화는 형 GO
+- 최종갱신: 2026-07-29 (PATTERN2+COVER1)
 
 ## WORKSTATE
 IDLE
