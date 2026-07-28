@@ -3,8 +3,8 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `13a187e` · WORK=`IDLE`
-2. **지금:** K-UI-PLAIN — 테스트로또·상세·analog 쉬운 말 UI
+1. **HEAD:** `440eb18` · WORK=`IDLE`
+2. **지금:** K-REBRAND — kweon/복제 흔적 ROK21 교체 (UI·tools·SSOT)
 3. **다음1건:** K-AWAIT — **1235 발표 후** `python tools/_kawait_1235_loop.py --execute` (준비완료 · `COLLAB_HANDOFF.md`) (승인필요=아니오 · 선행=K-1235-PREP PASS · 3DB MAX=1234 · API 1235 대기)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-28 | K-REBRAND 종료체크 | UI·tools kweon→ROK21 · verify7021 · push | K-REBRAND PATCHED | `440eb18` |
 | 2026-07-28 | K-UI-PLAIN 종료체크 | 메인·상세·analog API 쉬운 말 UI · push | K-UI-PLAIN PATCHED | `13a187e` |
 | 2026-07-28 | K-UI-TESTLOTTO 종료체크 | 메인 당첨 히어로 sticky · WARRANT 접기 · push | K-UI-TESTLOTTO PATCHED | `e635d70` |
 | 2026-07-28 | K-ANALOG-1 종료체크 | API `/analog/draw` · 상세⑥ · BT735·MULTIDIM · verify PASS | K-ANALOG-1 PATCHED | `7299711` |
@@ -45,12 +46,6 @@
 | 2026-07-27 | K-W post-KP3 | ending χ²/df↓ · rates NameError수정 · verify PASS | K-W PATCHED | `bb7b004` |
 | 2026-07-27 | K-P5 hyodo 인프라UI | infra-dashboard·LSTM패널 · verify PASS | K-P5 PATCHED | `6f0d0e0` |
 | 2026-07-27 | K-PIN-CLOSE 마감 | drift0·3DB1234·P스택게이트 PASS | K-PIN-CLOSE | `e945b84` |
-| 2026-07-27 | K-P4 hyodo LSTM | 샌드박스 ckpt·as_of·PMF PASS · prod무침범 | K-P4 PATCHED | `e6356dc` |
-| 2026-07-27 | K-P3 review끝수 | ending질량균등 · l1↓ · verify PASS | K-P3·KX PATCHED | `da68a99` |
-| 2026-07-27 | K-P2 기각뇌표시 | 탭배지·정책스트립 · 산출0 | K-P2 PATCHED | `815a9ca` |
-| 2026-07-27 | 핀 베이스라인 | K-Z~AG 고정 · KY/AC정합 · 재검증PASS | PIN 고정 | `431fe20` |
-| 2026-07-27 | K-AG pair/zone·3키 | null_q95÷32·LMH PMF·learn배선 · verify PASS | K-AG PATCHED | `640cb67` |
-| 2026-07-27 | K-AF 팬아웃잔여정합 | catch-up무조건·조기게이트·T1~7PASS·R37 | K-AF PATCHED | `e1e7a58` |
 
 ---
 

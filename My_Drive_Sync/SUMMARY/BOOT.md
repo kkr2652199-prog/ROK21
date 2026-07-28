@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: K-UI-PLAIN — 테스트로또·상세·analog 쉬운 말 UI
-- 직전: K-UI-TESTLOTTO · K-ANALOG-1 · K-PIPE-A
+- 지금: K-REBRAND — kweon/복제 흔적 ROK21 교체 (UI·tools·SSOT)
+- 직전: K-UI-PLAIN · K-UI-TESTLOTTO · K-ANALOG-1
 - 다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
