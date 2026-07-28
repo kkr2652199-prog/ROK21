@@ -41,6 +41,7 @@
 | ID | 요지 | 선행 |
 |----|------|------|
 | K-00 | 과거 예측 숙제 확장 (review 아카이브) | **완료** |
+| **K-ANALOG** | 유사 과거 회차·연쇄 분석 (ABC 하이브리드) | **PREP 핀** → `K_ANALOG_COLLAB.md` · 형 1줄 승인 |
 | K-02 | 외부 철학 벤치 추가 (명분=WARRANT) | docs/benchmarks README |
 | K-05 | 2단계 수학 이식 후보 스캔 (lotto4→testlotto) | K-AWAIT 이후 권장 |
 
