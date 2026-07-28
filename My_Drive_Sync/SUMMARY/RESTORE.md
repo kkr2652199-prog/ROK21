@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | BAYES·종료체크 | soft≈null·invcorr<RR·vs conf+0.025 · NEXT=CONF-CAL | BAYES DONE WIRE보류 | (커밋중) |
+| 2026-07-29 | BAYES·종료체크 | soft≈null·invcorr<RR·vs conf+0.025 · NEXT=CONF-CAL | BAYES DONE WIRE보류 | `c953d63` |
 | 2026-07-29 | JOIN프롬프트·종료체크 | EXTERNAL_AI_JOIN_PROMPT · 합류읽기순서 · NEXT=BAYES | DOCS | `1494595` |
 | 2026-07-29 | SLICE·종료체크 | 구간승격실패·conf top2천장1.23 · NEXT=BAYES | SLICE DONE | `0426e09` |
 | 2026-07-29 | GATHER-V2·종료체크 | V'=12·회수0·관측고정·hybrid힌트 · NEXT=SLICE | V2 DONE WIRE보류 | `05999a2` |
