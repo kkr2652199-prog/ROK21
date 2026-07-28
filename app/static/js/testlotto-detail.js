@@ -306,19 +306,90 @@ async function _fetchJson(url) {
 }
 
 async function _loadDrawList() {
-  const data = await _fetchJson('/api/testlotto/draws?limit=10000');
-  const rows = data.draws || [];
+  const drawSet = new Set();
   _drawDates = {};
-  rows.forEach((d) => {
-    const n = parseInt(d.draw_no, 10);
-    if (n > 0) {
-      _drawDates[n] = d.draw_date || '';
-    }
-  });
-  _drawList = Object.keys(_drawDates)
-    .map(Number)
+  try {
+    const data = await _fetchJson('/api/testlotto/draws?limit=10000');
+    (data.draws || []).forEach((d) => {
+      const n = parseInt(d.draw_no, 10);
+      if (n > 0) {
+        drawSet.add(n);
+        _drawDates[n] = d.draw_date || '';
+      }
+    });
+  } catch (e) {
+    console.warn('회차(draws) 목록', e);
+  }
+  try {
+    const pred = await _fetchJson('/api/testlotto/predictions?limit=20000');
+    (pred.predictions || []).forEach((p) => {
+      const n = parseInt(p.target_draw_no, 10);
+      if (n > 0) drawSet.add(n);
+    });
+  } catch (e) {
+    console.warn('회차(predictions) 목록', e);
+  }
+  _drawList = Array.from(drawSet)
+    .filter((n) => Number.isFinite(n) && n > 0)
     .sort((a, b) => b - a);
   _renderDrawSelect();
+}
+
+/** 미래 회차: detail API 없을 때 lotto_predictions → 상세 렌더용 stub */
+function _predictionsToDetailStub(drawNo, predictions) {
+  const byBrain = {};
+  predictions.forEach((r) => {
+    const tag = String(r.brain_tag || '').toLowerCase();
+    if (!tag || tag === 'miss_analysis' || tag === 'snake') return;
+    if (!byBrain[tag]) byBrain[tag] = [];
+    byBrain[tag].push(r);
+  });
+  const brains = Object.entries(byBrain).map(([tag, rows]) => {
+    const predicted_sets = rows.map((r, i) => ({
+      set_no: i + 1,
+      nums: [r.num1, r.num2, r.num3, r.num4, r.num5, r.num6],
+      matched_count: r.matched_count != null ? Number(r.matched_count) : -1,
+      confidence: r.confidence,
+    }));
+    const scored = predicted_sets.filter((s) => s.matched_count >= 0);
+    const bestMc = scored.length ? Math.max(...scored.map((s) => s.matched_count)) : 0;
+    const bestSet = predicted_sets.find((s) => s.matched_count === bestMc) || predicted_sets[0];
+    return {
+      brain_tag: tag,
+      brain_name: BRAIN_NAME[tag] || tag,
+      predicted_sets,
+      best_set_no: bestSet?.set_no || 1,
+      matched_count: bestMc,
+      tier_rank: 0,
+      tier_label: '추첨 전',
+      has_review: true,
+      narrative: '',
+      missed_patterns: [],
+      missed_pattern_labels: [],
+      feedback: {},
+    };
+  });
+  const brain_verdicts = brains.map((b) => ({
+    brain_tag: b.brain_tag,
+    brain_name: b.brain_name,
+    short_desc: _brainShortDesc(b.brain_tag, { draw_no: drawNo }),
+    tier_rank: 0,
+    tier_label: '추첨 전',
+    matched_count: b.matched_count,
+    best_set_no: b.best_set_no,
+    has_review: true,
+  }));
+  return {
+    draw_no: drawNo,
+    draw_date: _drawDates[drawNo] || '',
+    actual_nums: [],
+    bonus: null,
+    brains,
+    brain_verdicts,
+    future_only: true,
+    prize_tiers: [],
+    features: {},
+  };
 }
 
 function _formatDrawDateShort(dateStr) {
@@ -711,10 +782,14 @@ function _renderDrawHeader(detail) {
   const sub = document.getElementById('tldDrawSub');
   if (title) title.textContent = `제 ${detail.draw_no}회 로또 6/45`;
   if (sub) {
-    const sales = detail.total_sales
-      ? `총 판매액 ${_formatWon(detail.total_sales)}`
-      : '총 판매액 미확인';
-    sub.textContent = `추첨일 ${_formatDrawDate(detail.draw_date)} · ${sales}`;
+    if (detail.future_only) {
+      sub.textContent = '추첨 전 · 저장된 stage1 예측(lotto_predictions)만 표시';
+    } else {
+      const sales = detail.total_sales
+        ? `총 판매액 ${_formatWon(detail.total_sales)}`
+        : '총 판매액 미확인';
+      sub.textContent = `추첨일 ${_formatDrawDate(detail.draw_date)} · ${sales}`;
+    }
   }
   _renderKpiStrip(detail);
 }
@@ -1048,6 +1123,10 @@ function _renderActual(detail) {
   const balls = document.getElementById('tldActualBalls');
   if (!balls) return;
   const nums = detail.actual_nums || [];
+  if (detail.future_only || nums.length < 6) {
+    balls.innerHTML = '<p class="tld-future-hint">아직 추첨 전 — 당첨번호·채점·오답노트는 발표 후 walk-forward 복습으로 기록됩니다.</p>';
+    return;
+  }
   const main = nums.map((n) => _ballHtml(n, 'tld-ball--actual tld-ball--lg')).join('');
   const bonus = detail.bonus
     ? `<span class="tld-bonus-wrap">${_ballHtml(detail.bonus, 'tld-ball--bonus tld-ball--lg')}<span class="tld-bonus-tag">보너스</span></span>`
@@ -1190,7 +1269,12 @@ async function _loadSingleDraw(drawNo) {
     let detail = _detailCache[d];
     if (!detail) {
       detail = await _fetchJson(`/api/testlotto/detail/draw/${d}`);
-      if (detail.error) throw new Error(detail.error);
+      if (detail.error) {
+        const predData = await _fetchJson(`/api/testlotto/predictions/draw/${d}`);
+        const preds = predData.predictions || [];
+        if (!preds.length) throw new Error(detail.error);
+        detail = _predictionsToDetailStub(d, preds);
+      }
       _detailCache[d] = detail;
     }
     document.title = `테스트로또 · 제 ${d}회 정밀 분석`;

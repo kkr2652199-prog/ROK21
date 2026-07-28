@@ -1,0 +1,49 @@
+{
+  "task": "K-UI-SSOT",
+  "fix": "main brain_review priority; select sync; detail future draw fallback",
+  "checks": {
+    "detail_1234_200": true,
+    "legacy_1234_200": true,
+    "predictions_list_200": true,
+    "draws_list_200": true,
+    "detail_1234_has_stat_sets": true,
+    "legacy_1234_has_stat_sets": true,
+    "detail_legacy_stat_differ_1234": true,
+    "merged_list_has_1234": true,
+    "predictions_only_1235": true,
+    "merged_list_has_1235": true,
+    "legacy_1235_has_rows": true,
+    "detail_1235_error_body": true
+  },
+  "samples": {
+    "1234": {
+      "detail_stat_set1": [
+        3,
+        6,
+        7,
+        30,
+        36,
+        45
+      ],
+      "legacy_stat_set1": [
+        6,
+        13,
+        18,
+        27,
+        28,
+        33
+      ],
+      "detail_stat_matched": 2
+    },
+    "draw_lists": {
+      "draws_max": 1234,
+      "predictions_max": 1235,
+      "merged_max": 1235
+    },
+    "1235": {
+      "detail_error": "1235회 당첨 데이터 없음",
+      "legacy_n": 15
+    }
+  },
+  "verify_pass": true
+}

@@ -372,7 +372,9 @@ function testlottoSelectDraw(drawNo) {
   const no = parseInt(drawNo, 10);
   if (!no) return;
   const input = document.getElementById('testlottoPredictDrawNo');
+  const sel = document.getElementById('testlottoDrawSelect');
   if (input) input.value = String(no);
+  if (sel) sel.value = String(no);
   testlottoLoadSavedPrediction(no, { softLoading: true });
   loadTestlottoWarrantPanel(no);
 }
@@ -486,21 +488,9 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
 
     const detailResult = await _fetchPredictionRowsFromDetail(d);
     if (detailResult.rows.length) {
-      const actual = detailResult.detail && detailResult.detail.actual_nums;
-      const hasActual = Array.isArray(actual) && actual.length >= 6;
-      if (hasActual) {
-        const legacy = await _fetchPredictionRowsLegacy(d);
-        if (legacy.rows.length) {
-          rows = legacy.rows;
-          dataSource = legacy.source;
-        } else {
-          rows = detailResult.rows;
-          dataSource = detailResult.source;
-        }
-      } else {
-        rows = detailResult.rows;
-        dataSource = detailResult.source;
-      }
+      // K-00 SSOT: brain_review(detail) 우선 — lotto_predictions는 detail 없을 때만
+      rows = detailResult.rows;
+      dataSource = detailResult.source;
     } else if (detailResult.detail && detailResult.detail.error) {
       // 미래 회차(당첨번호 없음): lotto_predictions 폴백
       const legacy = await _fetchPredictionRowsLegacy(d);
