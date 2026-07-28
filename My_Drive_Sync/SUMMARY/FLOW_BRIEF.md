@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `78a30de` · WORK=`IDLE`
+- HEAD: `4ca44bf` · WORK=`IDLE`
 - 지금: AUX-BLEND FAIL · |r|<0.03 · **HOLD** · V2유지
 - 직전: GENDIV FAIL / SUM FAIL / BAND FAIL / EV-POP FAIL / SETNO FAIL / SETPACK FAIL / TUNE FAIL
 - BOOT다음: K-ATTACK-HOLD — AUX-BLEND·GENDIV재탕금지 · 슬롯재선택지양 · 다음 직교축
