@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7299711` · WORK=`IDLE`
+- HEAD: `13e9c28` · WORK=`IDLE`
 - 지금: K-ANALOG-1 — API+상세⑥·BT·MULTIDIM·verify PASS
 - 직전: K-ANALOG-PREP · K-PIPE-A · K-UI-SSOT
 - BOOT다음: K-AWAIT — 1235 발표 후 `_kawait_1235_loop.py --execute`
