@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1df2ee9` |
+| HEAD(실측) | `c52b8c3` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1df2ee9 · 지금=K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만 · 다음=K-ATTACK-SLICE`
+1. 첫줄 `[복귀] HEAD=c52b8c3 · 지금=K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만 · 다음=K-ATTACK-SLICE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

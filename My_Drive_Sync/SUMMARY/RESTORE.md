@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `1df2ee9` · WORK=`IDLE`
+1. **HEAD:** `c52b8c3` · WORK=`IDLE`
 2. **지금:** K-GATHER-V2 — V' =12 · 회수0 · **GATHER 관측고정** · hybrid 힌트만
 3. **다음1건:** K-ATTACK-SLICE — PATTERN-1 구간(LMH) 일치 필터로 라이브/시뮬 세트 승격 · before/after JSON (READ-ONLY 우선) (승인필요=아니오 · 선행=GATHER v0~v2 WIRE 보류·관측고정 · 구간신호 35%vs5%)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
