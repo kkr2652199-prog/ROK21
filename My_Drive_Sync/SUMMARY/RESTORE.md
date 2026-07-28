@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6339f12` · WORK=`IDLE`
+1. **HEAD:** `7be9dad` · WORK=`IDLE`
 2. **지금:** K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD**
 3. **다음1건:** K-ATTACK-HOLD — COVER 관측종료(wheel/pool ge3≤RR·corr약) · 형·동생 다음 공격 축 1건 재선정 (승인필요=예 · 선행=K-COVER-SURVEY 완료 · recommended=없음 · WIRE금지)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

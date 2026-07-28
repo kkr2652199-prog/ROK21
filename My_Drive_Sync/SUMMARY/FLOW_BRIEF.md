@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6339f12` · WORK=`IDLE`
+- HEAD: `7be9dad` · WORK=`IDLE`
 - 지금: K-COVER-SURVEY FAIL · ge3≤RR · mean↑만 · **HOLD**
 - 직전: HISIM 관측종료 (0.791≪RR)
 - BOOT다음: K-ATTACK-HOLD — 형·동생 새 축 재선정
