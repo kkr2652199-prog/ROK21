@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `f897089` |
+| HEAD(실측) | `67a7b24` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=f897089 · 지금=**K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달 · 다음=K-WINDOW-SIGNAL-01`
+1. 첫줄 `[복귀] HEAD=67a7b24 · 지금=**K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달 · 다음=K-WINDOW-SIGNAL-01`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: f897089_
+_generated: 67a7b24_
