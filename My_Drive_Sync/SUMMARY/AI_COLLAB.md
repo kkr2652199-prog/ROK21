@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-07-29 21:50 KST)
-- **HEAD**: `pending` (K-BENCH-05·03 커밋 예정)
+- **HEAD**: `fa5db9c`
 - **현재 배선**: WIRE-V2 (ge3=0.1447) — pin 유지
 - **K-BENCH-05·03**: baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·템플릿 **완료**
 - **다음**: K-ATTACK-HOLD · 형 GO 후 K-BENCH-02 confidence survey
