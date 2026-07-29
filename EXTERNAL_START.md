@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `c0f7a3f` |
+| HEAD(실측) | `d641717` |
 | BASELINE_PIN | `640cb67` |
-| WORK | `IDLE` |
-| 지금 | **K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달 |
-| 직전 | K-BENCH-01-WIRE FAIL tier 롤백 · AUX_SIGNAL_PIVOT E1~E3 제안 |
-| BOOT다음 | K-ATTACK-HOLD — V2 pin 유지 · E2/E3 survey는 형 GO |
+| WORK | `RUNNING:K-WINDOW-SIGNAL-01` |
+| 지금 | **K-WINDOW-SIGNAL-01 running** ~900/1182 · 신호셋트 아키텍처 3자 합의 문서화 |
+| 직전 | K-AUX-SIGNAL-01 FAIL ge3=0.1303 · 1군 벤치 인벤토리 · AUX_SIGNAL_PIVOT |
+| BOOT다음 | K-WINDOW 완료→K-SIGNAL-SELECT-01 overlap survey (coordinator 무수정) |
 | NEXT1 ID | **K-WINDOW-SIGNAL-01** |
-| NEXT1 할일 | `tools/_k_window_signal_survey.py` 실행 → `docs/benchmarks/*KWINDOW*` + `reports/*KWINDOW*` · pin ge3=0.1447 대비 · stored/live 갭(Δ0.0229) 연계 |
+| NEXT1 할일 | survey 완료 대기(kill 금지) → JSON+보고서 확정 → K-SIGNAL-SELECT-01 overlap 선별 survey 설계 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=c0f7a3f · 지금=**K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달 · 다음=K-WINDOW-SIGNAL-01`
+1. 첫줄 `[복귀] HEAD=d641717 · 지금=**K-WINDOW-SIGNAL-01 running** ~900/1182 · 신호셋트 아키텍처 3자 합의 문서화 · 다음=K-WINDOW-SIGNAL-01`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: c0f7a3f_
+_generated: d641717_
