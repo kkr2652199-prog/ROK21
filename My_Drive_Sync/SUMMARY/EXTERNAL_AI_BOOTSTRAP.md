@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d6f6750` |
+| HEAD(실측) | `75be8e9` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **4보조·피드백 READ-ONLY 검토 완료** — AUX=15장 채점·set_no_asc면 컷 없음 · 피드백 뼈대만 · GenSpark 형6문 답변 일치 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d6f6750 · 지금=**4보조·피드백 READ-ONLY 검토 완료** — AUX=15장 채점·set_no_asc면 컷 없음 · 피드백 뼈대만 · GenSpark 형6문 답변 일치 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=75be8e9 · 지금=**4보조·피드백 READ-ONLY 검토 완료** — AUX=15장 채점·set_no_asc면 컷 없음 · 피드백 뼈대만 · GenSpark 형6문 답변 일치 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
