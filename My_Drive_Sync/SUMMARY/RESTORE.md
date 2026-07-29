@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `9113465` · WORK=`IDLE`
-2. **지금:** REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600
-3. **다음1건:** K-ATTACK-HOLD — REVIEW-TUNE-SURVEY FAIL(15조합 best ge3=0.1117·Δ-0.033·p=0.600284) · 오늘 탐색 전축 소진 · 형 결정 대기 (승인필요=예 · 선행=없음)
+1. **HEAD:** `b2ee789` · WORK=`IDLE`
+2. **지금:** K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109(>0.05) · 체계적 패턴 없음
+3. **다음1건:** K-ATTACK-HOLD — POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 

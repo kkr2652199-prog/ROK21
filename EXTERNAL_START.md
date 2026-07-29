@@ -9,10 +9,10 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `pending` |
+| HEAD(실측) | `b2ee789` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109(>0.05) |
+| 지금 | K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109(>0.05) · 체계적 패턴 없음 |
 | 직전 | REVIEW-TUNE-SURVEY FAIL · 15조합 best ge3=0.1117 |
 | BOOT다음 | K-ATTACK-HOLD — POSTHOC 무신호 · V2 pin 유지 · 형 결정 대기 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=9113465 · 지금=REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=b2ee789 · 지금=K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109(>0.05) · 체계적 패턴 없음 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -42,10 +42,9 @@
 | 복귀5줄 | `My_Drive_Sync/SUMMARY/RESTORE.md` |
 | NEXT 1건 | `My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md` |
 | 매턴요약 | `My_Drive_Sync/SUMMARY/FLOW_BRIEF.md` |
-| AI협업룰+대화 | `My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 | 결함 | `My_Drive_Sync/SUMMARY/FINDINGS.md` |
 | 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 9113465_
+_generated: b2ee789_
