@@ -1,8 +1,8 @@
 {
   "id": "K-REFEREE-WINDOW",
-  "ts": "2026-07-29T02:33:06",
+  "ts": "2026-07-29T02:47:34",
   "window_size": 30,
-  "method": "feedback_replay_pure_then_save",
+  "method": "feedback_replay_from_brain_review",
   "draw_range": [
     2,
     1234
@@ -26,19 +26,19 @@
   "global_detail": {
     "stat": {
       "recent_avg_match": 1.6667,
-      "review_count": 1233,
+      "review_count": 2067,
       "window_len": 30,
       "last_draw_no": 1234
     },
     "markov": {
       "recent_avg_match": 1.5333,
-      "review_count": 1232,
+      "review_count": 2065,
       "window_len": 30,
       "last_draw_no": 1234
     },
     "review": {
       "recent_avg_match": 1.6667,
-      "review_count": 1233,
+      "review_count": 839,
       "window_len": 30,
       "last_draw_no": 1234
     }
@@ -69,7 +69,7 @@
   "cutoff_matches_global": true,
   "max_gap": 0.1334,
   "pass": true,
-  "replay_elapsed_sec": 3.49,
+  "replay_elapsed_sec": 1240.68,
   "full_wf": null,
-  "note": "누적평균이면 셋 다 ≈0.80 · 패치 후 뇌간 격차 ≥0.01 이상. 기본=matched 재생(공식). --full-wf=예측 SSOT 재기록."
+  "note": "누적평균이면 셋 다 ≈0.80 · 패치 후 뇌간 격차 ≥0.01 이상. 기본 검증=matched 재생(공식 SSOT). --full-wf 는 예측 SSOT 재기록."
 }

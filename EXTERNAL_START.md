@@ -1,21 +1,50 @@
-# EXTERNAL_START — ROK21 진입점
+# EXTERNAL_START — 외부 에이전트 작업 흐름 진입점
 
-📅 2026-07-29 KST · HEAD=`(push후갱신)` · SSOT=`kkr2652199-prog/ROK21` · main · 포트 7021
+> **이 파일 하나면 흐름 복구.** GitHub 404 / 로컬 미접근이면 형이 이 파일 전체를 채팅에 붙여넣는다.
+> 상세 복사용 프롬프트: `My_Drive_Sync/SUMMARY/EXTERNAL_AI_BOOTSTRAP.md`
+> **핀 베이스라인:** `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md`
+> 동생 큐(권한 있을 때): `My_Drive_Sync/SUMMARY/RESTORE.md`
 
-## 현재
+## LIVE 작업 흐름 (자동 동기 · 외부AI 1순위)
 
-K-REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=0.1117 · Δ-0.033 · p=0.600 · NEXT=**K-ATTACK-HOLD** (오늘 탐색 전축 소진)
+| 키 | 값 |
+|----|-----|
+| HEAD(실측) | `9113465` |
+| BASELINE_PIN | `640cb67` |
+| WORK | `IDLE` |
+| 지금 | REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600 |
+| 직전 | AUX-WEIGHT-SURVEY FAIL · 13조합 동일 |
+| BOOT다음 | K-ATTACK-HOLD — 오늘 탐색 전축 소진 · 형 결정 대기 |
+| NEXT1 ID | **K-ATTACK-HOLD** |
+| NEXT1 할일 | REVIEW-TUNE-SURVEY FAIL(15조합 best ge3=0.1117·Δ-0.033·p=0.600284) · 오늘 탐색 전축 소진 · 형 결정 대기 |
+| 승인필요 | 예 |
+| 선행 | 없음 |
+| OPEN샘플 | K-00, K-02, K-05 |
 
-## 복원 순서
+### 역할
+- 형=결정 · 동생(너)=판단·짧은 지시서 · 커서=실행·commit·push
+- 너는 D:\ROK21 / 비공개 GitHub를 못 열 수 있다 → **이 LIVE 블록이 SSOT**
+- 404 = 권한 없음(경로 오류 아님). D:\3kweon·memoy·1~3군 미접촉
 
-1. `BOOT.md` → 현재 스레드·컨텍스트
-2. `FINDINGS.md` → 누적 발견
-3. `NEXT_ACTIONS.md` → 다음 1건
-4. `RESTORE.md` → 섹션 B 이력
-5. `STATUS_LATEST.md` → 수치 팩트체크
+### 본선 vs 인프라
+- 테스트로또 **3예측+4보조 유지** (구조 해체 없음)
+- K-AB~AF = 수집/문서/훅(예측력 무관) · 인프라 지시 남발 금지
+- 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
-## 절대금지
+### 네가 할 일
+1. 첫줄 `[복귀] HEAD=9113465 · 지금=REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600 · 다음=K-ATTACK-HOLD`
+2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
+3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
-- `predict_review_king.py` 원본 수정
-- kweon(`D:\3kweon`) 쓰기/push
-- `force push` · DB스키마 변경
+## 파일 지도 (권한 있을 때만)
+| 용도 | 경로 |
+|------|------|
+| 복귀5줄 | `My_Drive_Sync/SUMMARY/RESTORE.md` |
+| NEXT 1건 | `My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md` |
+| 매턴요약 | `My_Drive_Sync/SUMMARY/FLOW_BRIEF.md` |
+| 결함 | `My_Drive_Sync/SUMMARY/FINDINGS.md` |
+| 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |
+| 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
+| 수치 | `docs/benchmarks/*.json` |
+
+_generated: 9113465_

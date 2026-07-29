@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7fda365` |
+| HEAD(실측) | `9113465` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | AUX-WEIGHT-SURVEY **FAIL** · 13조합 ge3=**0.1100** 동일 · pin불일치 |
-| 직전 | STAT-WIRE FAIL · 롤백완료 |
-| BOOT다음 | K-ATTACK-HOLD — AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기 |
+| 지금 | REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600 |
+| 직전 | AUX-WEIGHT-SURVEY FAIL · 13조합 동일 |
+| BOOT다음 | K-ATTACK-HOLD — 오늘 탐색 전축 소진 · 형 결정 대기 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | AUX-WEIGHT-SURVEY FAIL(13조합 ge3=0.1100 동일·Δ-0.0347·p=0.669622) · V2 set_no 경로 AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기 |
+| NEXT1 할일 | REVIEW-TUNE-SURVEY FAIL(15조합 best ge3=0.1117·Δ-0.033·p=0.600284) · 오늘 탐색 전축 소진 · 형 결정 대기 |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7fda365 · 지금=AUX-WEIGHT-SURVEY **FAIL** · 13조합 ge3=**0.1100** 동일 · pin불일치 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=9113465 · 지금=REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
