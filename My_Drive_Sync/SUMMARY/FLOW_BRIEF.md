@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6e7ba2a` · WORK=`IDLE`
+- HEAD: `3807454` · WORK=`IDLE`
 - 지금: **K-MONEY1-LESSONS** — 1군→ROK21 교훈(배울·갖춘·금지) · FINDINGS·보고서 완료
 - 직전: K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109
 - BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · 형 결정 대기

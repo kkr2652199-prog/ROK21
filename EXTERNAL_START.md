@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6e7ba2a` |
+| HEAD(실측) | `3807454` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-MONEY1-LESSONS** — 1군→ROK21 교훈(배울·갖춘·금지) · FINDINGS·보고서 완료 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6e7ba2a · 지금=**K-MONEY1-LESSONS** — 1군→ROK21 교훈(배울·갖춘·금지) · FINDINGS·보고서 완료 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=3807454 · 지금=**K-MONEY1-LESSONS** — 1군→ROK21 교훈(배울·갖춘·금지) · FINDINGS·보고서 완료 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 6e7ba2a_
+_generated: 3807454_

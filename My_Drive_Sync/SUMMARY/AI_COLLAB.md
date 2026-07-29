@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-07-29 19:35 KST)
-- **HEAD**: (push 후 갱신)
+- **HEAD**: `3807454`
 - **현재 배선**: WIRE-V2 (ge3=0.1447, p=0.0007) — 오늘 실질 최고점
 - **POSTHOC**: 50시드×50회 best ge3=0.18 p=0.109 → **무신호** · V2 pin 유지
 - **1군 교훈**: `20260729_MONEY1GUN_ROK21_LESSONS.md` + FINDINGS **K-MONEY1-LESSONS** 완료
