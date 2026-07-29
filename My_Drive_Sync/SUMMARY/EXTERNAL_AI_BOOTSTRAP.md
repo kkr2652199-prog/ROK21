@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `c2a4ad1` |
+| HEAD(실측) | `6a6a855` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BENCH-01 postmortem SIGNAL_FOUND** — 쿼터갭 43.6%·markov 15중 best 52.5% · AUX↔hit 무상관 · ge3=0.11 |
-| 직전 | 4보조·피드백 READ-ONLY — set_no_asc 컷 없음 · K-BENCH-02 FAIL |
-| BOOT다음 | K-BENCH-01-WIRE — 형 GO 후 피드백축 검토 (coordinator 수정 별도 GO) |
-| NEXT1 ID | **K-BENCH-01-WIRE** |
-| NEXT1 할일 | K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭 43.6%·markov best 52.5% · 형 GO 후 피드백축 WIRE 검토 (coordinator 수정은 별도 GO) |
+| 지금 | **K-BENCH-01-WIRE FAIL** — tier 피드백 ge3=0.1142·롤백 · **AUX 신호전환 제안** 문서화 |
+| 직전 | K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭43.6%·markov52.5% · AUX↔hit 무상관 |
+| BOOT다음 | K-AUX-SIGNAL-01 survey (READ-ONLY) — 4보조 채점→신호전달 · coordinator 별도 GO |
+| NEXT1 ID | **K-AUX-SIGNAL-01** |
+| NEXT1 할일 | 4보조 역할 전환 survey (READ-ONLY) — 채점→신호벡터 힌트 시뮬 · `reports/20260729_AUX_SIGNAL_PIVOT.md` E1 참고 · coordinator 변경은 별도 GO |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=c2a4ad1 · 지금=**K-BENCH-01 postmortem SIGNAL_FOUND** — 쿼터갭 43.6%·markov 15중 best 52.5% · AUX↔hit 무상관 · ge3=0.11 · 다음=K-BENCH-01-WIRE`
+1. 첫줄 `[복귀] HEAD=6a6a855 · 지금=**K-BENCH-01-WIRE FAIL** — tier 피드백 ge3=0.1142·롤백 · **AUX 신호전환 제안** 문서화 · 다음=K-AUX-SIGNAL-01`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
