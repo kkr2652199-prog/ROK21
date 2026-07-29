@@ -1,0 +1,3312 @@
+{
+  "id": "K-WINDOW-SIGNAL-01",
+  "ts": "2026-07-30T00:06:10",
+  "elapsed_sec": 7094.1,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "wire_pin_ge3": 0.1447,
+  "wire_pin_mean": 1.7504,
+  "null_ge3": 0.1137,
+  "mc_seed": 42,
+  "alphas": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "window_weeks": [
+    "4",
+    "8",
+    "12",
+    "52",
+    "all"
+  ],
+  "signal_types": [
+    "odd_even",
+    "zone_mix",
+    "sum_band",
+    "miss_pattern"
+  ],
+  "sets_per_predict_brain": 5,
+  "pipeline": "live_predict + window_hint_inject(random.choices wrapper) + set_no_asc quota",
+  "baseline": {
+    "variant_id": "baseline",
+    "window_weeks": null,
+    "window_label": "all",
+    "signal_type": "none",
+    "alpha": 0.0,
+    "label": "wall_none@α=0.0",
+    "mean": 1.7318,
+    "ge3_rate": 0.1108,
+    "ge4_rate": 0.0102,
+    "ge3_count": 131,
+    "delta_ge3_vs_pin": -0.0339,
+    "delta_ge3_vs_null": -0.0029,
+    "p_value": 0.635469,
+    "verdict": "FAIL",
+    "tier_selected_5": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 12,
+      "r5": 132,
+      "n_sets": 5910
+    },
+    "uses_aux_scoring": true,
+    "tier_by_brain": {
+      "markov": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 8,
+        "r5": 83,
+        "n_sets": 3546
+      },
+      "stat": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 2,
+        "r5": 27,
+        "n_sets": 1182
+      },
+      "review": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 2,
+        "r5": 22,
+        "n_sets": 1182
+      }
+    }
+  },
+  "variants": [
+    {
+      "variant_id": "w4_zone_mix",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "zone_mix",
+      "alpha": 0.1,
+      "label": "w4_zone_mix@α=0.1",
+      "mean": 1.7453,
+      "ge3_rate": 0.1328,
+      "ge4_rate": 0.0059,
+      "ge3_count": 157,
+      "delta_ge3_vs_pin": -0.0119,
+      "delta_ge3_vs_null": 0.0191,
+      "p_value": 0.0232,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 6,
+        "r5": 162,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 3,
+          "r5": 96,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 35,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 31,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_sum_band",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "sum_band",
+      "alpha": 0.2,
+      "label": "w4_sum_band@α=0.2",
+      "mean": 1.72,
+      "ge3_rate": 0.1311,
+      "ge4_rate": 0.0068,
+      "ge3_count": 155,
+      "delta_ge3_vs_pin": -0.0136,
+      "delta_ge3_vs_null": 0.0174,
+      "p_value": 0.034676,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 8,
+        "r5": 152,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 86,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 32,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 34,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_miss_pattern",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "miss_pattern",
+      "alpha": 0.2,
+      "label": "w8_miss_pattern@α=0.2",
+      "mean": 1.7081,
+      "ge3_rate": 0.1303,
+      "ge4_rate": 0.011,
+      "ge3_count": 154,
+      "delta_ge3_vs_pin": -0.0144,
+      "delta_ge3_vs_null": 0.0166,
+      "p_value": 0.041989,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 13,
+        "r5": 148,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 11,
+          "r5": 88,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 33,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_miss_pattern",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "miss_pattern",
+      "alpha": 0.05,
+      "label": "w4_miss_pattern@α=0.05",
+      "mean": 1.7335,
+      "ge3_rate": 0.1269,
+      "ge4_rate": 0.0102,
+      "ge3_count": 150,
+      "delta_ge3_vs_pin": -0.0178,
+      "delta_ge3_vs_null": 0.0132,
+      "p_value": 0.0847,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 142,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 9,
+          "r5": 80,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 34,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 28,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_odd_even",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "odd_even",
+      "alpha": 0.05,
+      "label": "w12_odd_even@α=0.05",
+      "mean": 1.7487,
+      "ge3_rate": 0.1261,
+      "ge4_rate": 0.0085,
+      "ge3_count": 149,
+      "delta_ge3_vs_pin": -0.0186,
+      "delta_ge3_vs_null": 0.0124,
+      "p_value": 0.099356,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 148,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 87,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 34,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_zone_mix",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "zone_mix",
+      "alpha": 0.05,
+      "label": "w12_zone_mix@α=0.05",
+      "mean": 1.7217,
+      "ge3_rate": 0.1261,
+      "ge4_rate": 0.0102,
+      "ge3_count": 149,
+      "delta_ge3_vs_pin": -0.0186,
+      "delta_ge3_vs_null": 0.0124,
+      "p_value": 0.099356,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 146,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 86,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 31,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 29,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_odd_even",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "odd_even",
+      "alpha": 0.05,
+      "label": "wall_odd_even@α=0.05",
+      "mean": 1.7183,
+      "ge3_rate": 0.1261,
+      "ge4_rate": 0.0135,
+      "ge3_count": 149,
+      "delta_ge3_vs_pin": -0.0186,
+      "delta_ge3_vs_null": 0.0124,
+      "p_value": 0.099356,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 16,
+        "r5": 139,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 7,
+          "r5": 89,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 25,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 25,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_sum_band",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "sum_band",
+      "alpha": 0.05,
+      "label": "w4_sum_band@α=0.05",
+      "mean": 1.7411,
+      "ge3_rate": 0.1252,
+      "ge4_rate": 0.0068,
+      "ge3_count": 148,
+      "delta_ge3_vs_pin": -0.0195,
+      "delta_ge3_vs_null": 0.0115,
+      "p_value": 0.115819,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 8,
+        "r5": 147,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 89,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 30,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 28,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_odd_even",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "odd_even",
+      "alpha": 0.1,
+      "label": "w4_odd_even@α=0.1",
+      "mean": 1.7377,
+      "ge3_rate": 0.1244,
+      "ge4_rate": 0.0102,
+      "ge3_count": 147,
+      "delta_ge3_vs_pin": -0.0203,
+      "delta_ge3_vs_null": 0.0107,
+      "p_value": 0.13417,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 148,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 9,
+          "r5": 92,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 27,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 29,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_zone_mix",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "zone_mix",
+      "alpha": 0.1,
+      "label": "w52_zone_mix@α=0.1",
+      "mean": 1.7014,
+      "ge3_rate": 0.1227,
+      "ge4_rate": 0.0051,
+      "ge3_count": 145,
+      "delta_ge3_vs_pin": -0.022,
+      "delta_ge3_vs_null": 0.009,
+      "p_value": 0.176742,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 5,
+        "r5": 150,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 88,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 27,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 0,
+          "r5": 35,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_zone_mix",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "zone_mix",
+      "alpha": 0.1,
+      "label": "wall_zone_mix@α=0.1",
+      "mean": 1.7284,
+      "ge3_rate": 0.1218,
+      "ge4_rate": 0.0059,
+      "ge3_count": 144,
+      "delta_ge3_vs_pin": -0.0229,
+      "delta_ge3_vs_null": 0.0081,
+      "p_value": 0.200997,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 7,
+        "r5": 145,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 96,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 22,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_sum_band",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "sum_band",
+      "alpha": 0.2,
+      "label": "w8_sum_band@α=0.2",
+      "mean": 1.7343,
+      "ge3_rate": 0.1201,
+      "ge4_rate": 0.0059,
+      "ge3_count": 142,
+      "delta_ge3_vs_pin": -0.0246,
+      "delta_ge3_vs_null": 0.0064,
+      "p_value": 0.255289,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 7,
+        "r5": 150,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 91,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 32,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_zone_mix",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "zone_mix",
+      "alpha": 0.05,
+      "label": "w8_zone_mix@α=0.05",
+      "mean": 1.7259,
+      "ge3_rate": 0.1193,
+      "ge4_rate": 0.0118,
+      "ge3_count": 141,
+      "delta_ge3_vs_pin": -0.0254,
+      "delta_ge3_vs_null": 0.0056,
+      "p_value": 0.285154,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 2,
+        "r4": 12,
+        "r5": 138,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 6,
+          "r5": 81,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 3,
+          "r5": 30,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 3,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_miss_pattern",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "miss_pattern",
+      "alpha": 0.1,
+      "label": "w52_miss_pattern@α=0.1",
+      "mean": 1.7124,
+      "ge3_rate": 0.1193,
+      "ge4_rate": 0.0085,
+      "ge3_count": 141,
+      "delta_ge3_vs_pin": -0.0254,
+      "delta_ge3_vs_null": 0.0056,
+      "p_value": 0.285154,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 9,
+        "r5": 136,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 5,
+          "r5": 80,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 25,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 31,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_sum_band",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "sum_band",
+      "alpha": 0.05,
+      "label": "w52_sum_band@α=0.05",
+      "mean": 1.7217,
+      "ge3_rate": 0.1184,
+      "ge4_rate": 0.0085,
+      "ge3_count": 140,
+      "delta_ge3_vs_pin": -0.0263,
+      "delta_ge3_vs_null": 0.0047,
+      "p_value": 0.316656,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 138,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 92,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 19,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_sum_band",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "sum_band",
+      "alpha": 0.1,
+      "label": "w52_sum_band@α=0.1",
+      "mean": 1.7098,
+      "ge3_rate": 0.1184,
+      "ge4_rate": 0.0051,
+      "ge3_count": 140,
+      "delta_ge3_vs_pin": -0.0263,
+      "delta_ge3_vs_null": 0.0047,
+      "p_value": 0.316656,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 135,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 88,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 25,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 22,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_miss_pattern",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "miss_pattern",
+      "alpha": 0.05,
+      "label": "w8_miss_pattern@α=0.05",
+      "mean": 1.7318,
+      "ge3_rate": 0.1176,
+      "ge4_rate": 0.0085,
+      "ge3_count": 139,
+      "delta_ge3_vs_pin": -0.0271,
+      "delta_ge3_vs_null": 0.0039,
+      "p_value": 0.349617,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 133,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 7,
+          "r5": 72,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 35,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 26,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_odd_even",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "odd_even",
+      "alpha": 0.1,
+      "label": "w12_odd_even@α=0.1",
+      "mean": 1.7318,
+      "ge3_rate": 0.1176,
+      "ge4_rate": 0.0076,
+      "ge3_count": 139,
+      "delta_ge3_vs_pin": -0.0271,
+      "delta_ge3_vs_null": 0.0039,
+      "p_value": 0.349617,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 9,
+        "r5": 140,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 82,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 29,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 29,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_zone_mix",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "zone_mix",
+      "alpha": 0.2,
+      "label": "w52_zone_mix@α=0.2",
+      "mean": 1.7098,
+      "ge3_rate": 0.1176,
+      "ge4_rate": 0.0085,
+      "ge3_count": 139,
+      "delta_ge3_vs_pin": -0.0271,
+      "delta_ge3_vs_null": 0.0039,
+      "p_value": 0.349617,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 139,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 7,
+          "r5": 88,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 29,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 22,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_zone_mix",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "zone_mix",
+      "alpha": 0.2,
+      "label": "wall_zone_mix@α=0.2",
+      "mean": 1.7343,
+      "ge3_rate": 0.1159,
+      "ge4_rate": 0.0135,
+      "ge3_count": 137,
+      "delta_ge3_vs_pin": -0.0288,
+      "delta_ge3_vs_null": 0.0022,
+      "p_value": 0.419039,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 15,
+        "r5": 130,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 10,
+          "r5": 83,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 20,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 3,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_odd_even",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "odd_even",
+      "alpha": 0.1,
+      "label": "w52_odd_even@α=0.1",
+      "mean": 1.7183,
+      "ge3_rate": 0.1159,
+      "ge4_rate": 0.0068,
+      "ge3_count": 137,
+      "delta_ge3_vs_pin": -0.0288,
+      "delta_ge3_vs_null": 0.0022,
+      "p_value": 0.419039,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 8,
+        "r5": 136,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 74,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 27,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 35,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_sum_band",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "sum_band",
+      "alpha": 0.2,
+      "label": "wall_sum_band@α=0.2",
+      "mean": 1.7115,
+      "ge3_rate": 0.1159,
+      "ge4_rate": 0.0051,
+      "ge3_count": 137,
+      "delta_ge3_vs_pin": -0.0288,
+      "delta_ge3_vs_null": 0.0022,
+      "p_value": 0.419039,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 136,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 88,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 14,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 34,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_sum_band",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "sum_band",
+      "alpha": 0.05,
+      "label": "w12_sum_band@α=0.05",
+      "mean": 1.6963,
+      "ge3_rate": 0.1159,
+      "ge4_rate": 0.0085,
+      "ge3_count": 137,
+      "delta_ge3_vs_pin": -0.0288,
+      "delta_ge3_vs_null": 0.0022,
+      "p_value": 0.419039,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 135,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 8,
+          "r5": 80,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 22,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 33,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_zone_mix",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "zone_mix",
+      "alpha": 0.1,
+      "label": "w8_zone_mix@α=0.1",
+      "mean": 1.736,
+      "ge3_rate": 0.1151,
+      "ge4_rate": 0.0085,
+      "ge3_count": 136,
+      "delta_ge3_vs_pin": -0.0296,
+      "delta_ge3_vs_null": 0.0014,
+      "p_value": 0.454991,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 9,
+        "r5": 133,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 5,
+          "r5": 80,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 24,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 29,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_zone_mix",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "zone_mix",
+      "alpha": 0.2,
+      "label": "w4_zone_mix@α=0.2",
+      "mean": 1.7225,
+      "ge3_rate": 0.1151,
+      "ge4_rate": 0.0093,
+      "ge3_count": 136,
+      "delta_ge3_vs_pin": -0.0296,
+      "delta_ge3_vs_null": 0.0014,
+      "p_value": 0.454991,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 11,
+        "r5": 135,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 6,
+          "r5": 85,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 24,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 26,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_miss_pattern",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "miss_pattern",
+      "alpha": 0.05,
+      "label": "w52_miss_pattern@α=0.05",
+      "mean": 1.7183,
+      "ge3_rate": 0.1151,
+      "ge4_rate": 0.0093,
+      "ge3_count": 136,
+      "delta_ge3_vs_pin": -0.0296,
+      "delta_ge3_vs_null": 0.0014,
+      "p_value": 0.454991,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 10,
+        "r5": 131,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 8,
+          "r5": 79,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 22,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 30,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_odd_even",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "odd_even",
+      "alpha": 0.05,
+      "label": "w52_odd_even@α=0.05",
+      "mean": 1.725,
+      "ge3_rate": 0.1142,
+      "ge4_rate": 0.0051,
+      "ge3_count": 135,
+      "delta_ge3_vs_pin": -0.0305,
+      "delta_ge3_vs_null": 0.0005,
+      "p_value": 0.491394,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 144,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 84,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 30,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 30,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_sum_band",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "sum_band",
+      "alpha": 0.2,
+      "label": "w12_sum_band@α=0.2",
+      "mean": 1.7217,
+      "ge3_rate": 0.1142,
+      "ge4_rate": 0.0085,
+      "ge3_count": 135,
+      "delta_ge3_vs_pin": -0.0305,
+      "delta_ge3_vs_null": 0.0005,
+      "p_value": 0.491394,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 130,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 7,
+          "r5": 72,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 25,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 33,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_miss_pattern",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "miss_pattern",
+      "alpha": 0.1,
+      "label": "w4_miss_pattern@α=0.1",
+      "mean": 1.714,
+      "ge3_rate": 0.1142,
+      "ge4_rate": 0.0059,
+      "ge3_count": 135,
+      "delta_ge3_vs_pin": -0.0305,
+      "delta_ge3_vs_null": 0.0005,
+      "p_value": 0.491394,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 7,
+        "r5": 136,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 73,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 36,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_odd_even",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "odd_even",
+      "alpha": 0.05,
+      "label": "w4_odd_even@α=0.05",
+      "mean": 1.7242,
+      "ge3_rate": 0.1134,
+      "ge4_rate": 0.0093,
+      "ge3_count": 134,
+      "delta_ge3_vs_pin": -0.0313,
+      "delta_ge3_vs_null": -0.0003,
+      "p_value": 0.527947,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 135,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 6,
+          "r5": 86,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 22,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_sum_band",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "sum_band",
+      "alpha": 0.2,
+      "label": "w52_sum_band@α=0.2",
+      "mean": 1.6946,
+      "ge3_rate": 0.1134,
+      "ge4_rate": 0.0059,
+      "ge3_count": 134,
+      "delta_ge3_vs_pin": -0.0313,
+      "delta_ge3_vs_null": -0.0003,
+      "p_value": 0.527947,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 7,
+        "r5": 133,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 67,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 39,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_sum_band",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "sum_band",
+      "alpha": 0.1,
+      "label": "w4_sum_band@α=0.1",
+      "mean": 1.7437,
+      "ge3_rate": 0.1125,
+      "ge4_rate": 0.0068,
+      "ge3_count": 133,
+      "delta_ge3_vs_pin": -0.0322,
+      "delta_ge3_vs_null": -0.0012,
+      "p_value": 0.564346,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 8,
+        "r5": 134,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 85,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 23,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 26,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_zone_mix",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "zone_mix",
+      "alpha": 0.2,
+      "label": "w8_zone_mix@α=0.2",
+      "mean": 1.7284,
+      "ge3_rate": 0.1125,
+      "ge4_rate": 0.0076,
+      "ge3_count": 133,
+      "delta_ge3_vs_pin": -0.0322,
+      "delta_ge3_vs_null": -0.0012,
+      "p_value": 0.564346,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 9,
+        "r5": 135,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 72,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 36,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_odd_even",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "odd_even",
+      "alpha": 0.2,
+      "label": "w52_odd_even@α=0.2",
+      "mean": 1.7259,
+      "ge3_rate": 0.1125,
+      "ge4_rate": 0.0085,
+      "ge3_count": 133,
+      "delta_ge3_vs_pin": -0.0322,
+      "delta_ge3_vs_null": -0.0012,
+      "p_value": 0.564346,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 126,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 74,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 21,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 31,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_odd_even",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "odd_even",
+      "alpha": 0.1,
+      "label": "w8_odd_even@α=0.1",
+      "mean": 1.7225,
+      "ge3_rate": 0.1125,
+      "ge4_rate": 0.0102,
+      "ge3_count": 133,
+      "delta_ge3_vs_pin": -0.0322,
+      "delta_ge3_vs_null": -0.0012,
+      "p_value": 0.564346,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 131,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 7,
+          "r5": 78,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 25,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 28,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_odd_even",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "odd_even",
+      "alpha": 0.05,
+      "label": "w8_odd_even@α=0.05",
+      "mean": 1.7157,
+      "ge3_rate": 0.1125,
+      "ge4_rate": 0.0085,
+      "ge3_count": 133,
+      "delta_ge3_vs_pin": -0.0322,
+      "delta_ge3_vs_null": -0.0012,
+      "p_value": 0.564346,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 11,
+        "r5": 131,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 9,
+          "r5": 89,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 19,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 23,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_miss_pattern",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "miss_pattern",
+      "alpha": 0.2,
+      "label": "w12_miss_pattern@α=0.2",
+      "mean": 1.681,
+      "ge3_rate": 0.1125,
+      "ge4_rate": 0.0085,
+      "ge3_count": 133,
+      "delta_ge3_vs_pin": -0.0322,
+      "delta_ge3_vs_null": -0.0012,
+      "p_value": 0.564346,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 11,
+        "r5": 133,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 88,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 21,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 24,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_odd_even",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "odd_even",
+      "alpha": 0.2,
+      "label": "w8_odd_even@α=0.2",
+      "mean": 1.7124,
+      "ge3_rate": 0.1117,
+      "ge4_rate": 0.0076,
+      "ge3_count": 132,
+      "delta_ge3_vs_pin": -0.033,
+      "delta_ge3_vs_null": -0.002,
+      "p_value": 0.600284,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 9,
+        "r5": 126,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 76,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 24,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 26,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_miss_pattern",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "miss_pattern",
+      "alpha": 0.2,
+      "label": "w52_miss_pattern@α=0.2",
+      "mean": 1.6988,
+      "ge3_rate": 0.1117,
+      "ge4_rate": 0.0085,
+      "ge3_count": 132,
+      "delta_ge3_vs_pin": -0.033,
+      "delta_ge3_vs_null": -0.002,
+      "p_value": 0.600284,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 132,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 79,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 29,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 24,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "baseline",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "none",
+      "alpha": 0.0,
+      "label": "wall_none@α=0.0",
+      "mean": 1.7318,
+      "ge3_rate": 0.1108,
+      "ge4_rate": 0.0102,
+      "ge3_count": 131,
+      "delta_ge3_vs_pin": -0.0339,
+      "delta_ge3_vs_null": -0.0029,
+      "p_value": 0.635469,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 132,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": true,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 8,
+          "r5": 83,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 27,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 22,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_odd_even",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "odd_even",
+      "alpha": 0.1,
+      "label": "wall_odd_even@α=0.1",
+      "mean": 1.7242,
+      "ge3_rate": 0.1108,
+      "ge4_rate": 0.0093,
+      "ge3_count": 131,
+      "delta_ge3_vs_pin": -0.0339,
+      "delta_ge3_vs_null": -0.0029,
+      "p_value": 0.635469,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 11,
+        "r5": 129,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 7,
+          "r5": 71,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 26,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 32,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w52_zone_mix",
+      "window_weeks": 52,
+      "window_label": "52",
+      "signal_type": "zone_mix",
+      "alpha": 0.05,
+      "label": "w52_zone_mix@α=0.05",
+      "mean": 1.6937,
+      "ge3_rate": 0.1108,
+      "ge4_rate": 0.0093,
+      "ge3_count": 131,
+      "delta_ge3_vs_pin": -0.0339,
+      "delta_ge3_vs_null": -0.0029,
+      "p_value": 0.635469,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 129,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 6,
+          "r5": 82,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 29,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 18,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_miss_pattern",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "miss_pattern",
+      "alpha": 0.1,
+      "label": "w8_miss_pattern@α=0.1",
+      "mean": 1.731,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0068,
+      "ge3_count": 130,
+      "delta_ge3_vs_pin": -0.0347,
+      "delta_ge3_vs_null": -0.0037,
+      "p_value": 0.669622,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 8,
+        "r5": 131,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 74,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 23,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 34,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_zone_mix",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "zone_mix",
+      "alpha": 0.1,
+      "label": "w12_zone_mix@α=0.1",
+      "mean": 1.7217,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0051,
+      "ge3_count": 130,
+      "delta_ge3_vs_pin": -0.0347,
+      "delta_ge3_vs_null": -0.0037,
+      "p_value": 0.669622,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 132,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 82,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 22,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 28,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_miss_pattern",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "miss_pattern",
+      "alpha": 0.1,
+      "label": "w12_miss_pattern@α=0.1",
+      "mean": 1.6971,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0076,
+      "ge3_count": 130,
+      "delta_ge3_vs_pin": -0.0347,
+      "delta_ge3_vs_null": -0.0037,
+      "p_value": 0.669622,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 9,
+        "r5": 128,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 81,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 27,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 20,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_zone_mix",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "zone_mix",
+      "alpha": 0.05,
+      "label": "wall_zone_mix@α=0.05",
+      "mean": 1.714,
+      "ge3_rate": 0.1091,
+      "ge4_rate": 0.0051,
+      "ge3_count": 129,
+      "delta_ge3_vs_pin": -0.0356,
+      "delta_ge3_vs_null": -0.0046,
+      "p_value": 0.702489,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 127,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 71,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 24,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 32,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_miss_pattern",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "miss_pattern",
+      "alpha": 0.2,
+      "label": "w4_miss_pattern@α=0.2",
+      "mean": 1.6912,
+      "ge3_rate": 0.1091,
+      "ge4_rate": 0.0093,
+      "ge3_count": 129,
+      "delta_ge3_vs_pin": -0.0356,
+      "delta_ge3_vs_null": -0.0046,
+      "p_value": 0.702489,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 11,
+        "r5": 128,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 85,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 27,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 16,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_miss_pattern",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "miss_pattern",
+      "alpha": 0.1,
+      "label": "wall_miss_pattern@α=0.1",
+      "mean": 1.6819,
+      "ge3_rate": 0.1091,
+      "ge4_rate": 0.0051,
+      "ge3_count": 129,
+      "delta_ge3_vs_pin": -0.0356,
+      "delta_ge3_vs_null": -0.0046,
+      "p_value": 0.702489,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 5,
+        "r5": 132,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 74,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 18,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 1,
+          "r5": 40,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_miss_pattern",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "miss_pattern",
+      "alpha": 0.05,
+      "label": "w12_miss_pattern@α=0.05",
+      "mean": 1.709,
+      "ge3_rate": 0.1083,
+      "ge4_rate": 0.0051,
+      "ge3_count": 128,
+      "delta_ge3_vs_pin": -0.0364,
+      "delta_ge3_vs_null": -0.0054,
+      "p_value": 0.733846,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 130,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 73,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 26,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 31,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_sum_band",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "sum_band",
+      "alpha": 0.1,
+      "label": "w8_sum_band@α=0.1",
+      "mean": 1.6794,
+      "ge3_rate": 0.1083,
+      "ge4_rate": 0.0059,
+      "ge3_count": 128,
+      "delta_ge3_vs_pin": -0.0364,
+      "delta_ge3_vs_null": -0.0054,
+      "p_value": 0.733846,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 7,
+        "r5": 125,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 65,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 23,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 37,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_odd_even",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "odd_even",
+      "alpha": 0.2,
+      "label": "w4_odd_even@α=0.2",
+      "mean": 1.6726,
+      "ge3_rate": 0.1083,
+      "ge4_rate": 0.0085,
+      "ge3_count": 128,
+      "delta_ge3_vs_pin": -0.0364,
+      "delta_ge3_vs_null": -0.0054,
+      "p_value": 0.733846,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 125,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 80,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 20,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 25,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_odd_even",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "odd_even",
+      "alpha": 0.2,
+      "label": "w12_odd_even@α=0.2",
+      "mean": 1.7124,
+      "ge3_rate": 0.1058,
+      "ge4_rate": 0.0102,
+      "ge3_count": 125,
+      "delta_ge3_vs_pin": -0.0389,
+      "delta_ge3_vs_null": -0.0079,
+      "p_value": 0.817137,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 121,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 73,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 16,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 6,
+          "r5": 32,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_sum_band",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "sum_band",
+      "alpha": 0.05,
+      "label": "wall_sum_band@α=0.05",
+      "mean": 1.6743,
+      "ge3_rate": 0.1049,
+      "ge4_rate": 0.0085,
+      "ge3_count": 124,
+      "delta_ge3_vs_pin": -0.0398,
+      "delta_ge3_vs_null": -0.0088,
+      "p_value": 0.840929,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 10,
+        "r5": 121,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 72,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 24,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 25,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_zone_mix",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "zone_mix",
+      "alpha": 0.2,
+      "label": "w12_zone_mix@α=0.2",
+      "mean": 1.7132,
+      "ge3_rate": 0.1041,
+      "ge4_rate": 0.0051,
+      "ge3_count": 123,
+      "delta_ge3_vs_pin": -0.0406,
+      "delta_ge3_vs_null": -0.0096,
+      "p_value": 0.862645,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 125,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 68,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 31,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 26,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_odd_even",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "odd_even",
+      "alpha": 0.2,
+      "label": "wall_odd_even@α=0.2",
+      "mean": 1.72,
+      "ge3_rate": 0.1015,
+      "ge4_rate": 0.0068,
+      "ge3_count": 120,
+      "delta_ge3_vs_pin": -0.0432,
+      "delta_ge3_vs_null": -0.0122,
+      "p_value": 0.915531,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 7,
+        "r5": 121,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 77,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 1,
+          "r5": 24,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 20,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_miss_pattern",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "miss_pattern",
+      "alpha": 0.05,
+      "label": "wall_miss_pattern@α=0.05",
+      "mean": 1.7174,
+      "ge3_rate": 0.1015,
+      "ge4_rate": 0.0085,
+      "ge3_count": 120,
+      "delta_ge3_vs_pin": -0.0432,
+      "delta_ge3_vs_null": -0.0122,
+      "p_value": 0.915531,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 11,
+        "r5": 120,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 67,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 27,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 26,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w8_sum_band",
+      "window_weeks": 8,
+      "window_label": "8",
+      "signal_type": "sum_band",
+      "alpha": 0.05,
+      "label": "w8_sum_band@α=0.05",
+      "mean": 1.7259,
+      "ge3_rate": 0.1007,
+      "ge4_rate": 0.0076,
+      "ge3_count": 119,
+      "delta_ge3_vs_pin": -0.044,
+      "delta_ge3_vs_null": -0.013,
+      "p_value": 0.92929,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 9,
+        "r5": 115,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 5,
+          "r5": 62,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 28,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 25,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_miss_pattern",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "miss_pattern",
+      "alpha": 0.2,
+      "label": "wall_miss_pattern@α=0.2",
+      "mean": 1.7157,
+      "ge3_rate": 0.099,
+      "ge4_rate": 0.0034,
+      "ge3_count": 117,
+      "delta_ge3_vs_pin": -0.0457,
+      "delta_ge3_vs_null": -0.0147,
+      "p_value": 0.951647,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 4,
+        "r5": 118,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 3,
+          "r5": 62,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 31,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 25,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w4_zone_mix",
+      "window_weeks": 4,
+      "window_label": "4",
+      "signal_type": "zone_mix",
+      "alpha": 0.05,
+      "label": "w4_zone_mix@α=0.05",
+      "mean": 1.6997,
+      "ge3_rate": 0.0981,
+      "ge4_rate": 0.0042,
+      "ge3_count": 116,
+      "delta_ge3_vs_pin": -0.0466,
+      "delta_ge3_vs_null": -0.0156,
+      "p_value": 0.960511,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 5,
+        "r5": 119,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 4,
+          "r5": 76,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 16,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 27,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "w12_sum_band",
+      "window_weeks": 12,
+      "window_label": "12",
+      "signal_type": "sum_band",
+      "alpha": 0.1,
+      "label": "w12_sum_band@α=0.1",
+      "mean": 1.6954,
+      "ge3_rate": 0.0973,
+      "ge4_rate": 0.0102,
+      "ge3_count": 115,
+      "delta_ge3_vs_pin": -0.0474,
+      "delta_ge3_vs_null": -0.0164,
+      "p_value": 0.968023,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 12,
+        "r5": 118,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 8,
+          "r5": 74,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 27,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 2,
+          "r5": 17,
+          "n_sets": 1182
+        }
+      }
+    },
+    {
+      "variant_id": "wall_sum_band",
+      "window_weeks": null,
+      "window_label": "all",
+      "signal_type": "sum_band",
+      "alpha": 0.1,
+      "label": "wall_sum_band@α=0.1",
+      "mean": 1.6717,
+      "ge3_rate": 0.0948,
+      "ge4_rate": 0.0059,
+      "ge3_count": 112,
+      "delta_ge3_vs_pin": -0.0499,
+      "delta_ge3_vs_null": -0.0189,
+      "p_value": 0.983885,
+      "verdict": "FAIL",
+      "tier_selected_5": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 6,
+        "r5": 115,
+        "n_sets": 5910
+      },
+      "uses_aux_scoring": false,
+      "tier_by_brain": {
+        "markov": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 4,
+          "r5": 77,
+          "n_sets": 3546
+        },
+        "stat": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 18,
+          "n_sets": 1182
+        },
+        "review": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 20,
+          "n_sets": 1182
+        }
+      }
+    }
+  ],
+  "best_variant": {
+    "variant_id": "w4_zone_mix",
+    "window_weeks": 4,
+    "window_label": "4",
+    "signal_type": "zone_mix",
+    "alpha": 0.1,
+    "label": "w4_zone_mix@α=0.1",
+    "mean": 1.7453,
+    "ge3_rate": 0.1328,
+    "ge4_rate": 0.0059,
+    "ge3_count": 157,
+    "delta_ge3_vs_pin": -0.0119,
+    "delta_ge3_vs_null": 0.0191,
+    "p_value": 0.0232,
+    "verdict": "FAIL",
+    "tier_selected_5": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 1,
+      "r4": 6,
+      "r5": 162,
+      "n_sets": 5910
+    },
+    "uses_aux_scoring": false,
+    "tier_by_brain": {
+      "markov": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 3,
+        "r5": 96,
+        "n_sets": 3546
+      },
+      "stat": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 2,
+        "r5": 35,
+        "n_sets": 1182
+      },
+      "review": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 1,
+        "r5": 31,
+        "n_sets": 1182
+      }
+    }
+  },
+  "best_signal_variant": {
+    "variant_id": "w4_zone_mix",
+    "window_weeks": 4,
+    "window_label": "4",
+    "signal_type": "zone_mix",
+    "alpha": 0.1,
+    "label": "w4_zone_mix@α=0.1",
+    "mean": 1.7453,
+    "ge3_rate": 0.1328,
+    "ge4_rate": 0.0059,
+    "ge3_count": 157,
+    "delta_ge3_vs_pin": -0.0119,
+    "delta_ge3_vs_null": 0.0191,
+    "p_value": 0.0232,
+    "verdict": "FAIL",
+    "tier_selected_5": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 1,
+      "r4": 6,
+      "r5": 162,
+      "n_sets": 5910
+    },
+    "uses_aux_scoring": false,
+    "tier_by_brain": {
+      "markov": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 3,
+        "r5": 96,
+        "n_sets": 3546
+      },
+      "stat": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 2,
+        "r5": 35,
+        "n_sets": 1182
+      },
+      "review": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 1,
+        "r5": 31,
+        "n_sets": 1182
+      }
+    }
+  },
+  "gates": {
+    "pass": false,
+    "criterion": "any signal variant ge3>0.1447 and p<0.05",
+    "best_signal_ge3": 0.1328,
+    "best_signal_p": 0.0232
+  },
+  "recommended_next": "K-ATTACK-HOLD",
+  "verdict": "FAIL: best signal w4_zone_mix@α=0.1 ge3=0.1328 ≤ pin or p≥0.05 → HOLD / E3",
+  "db_code_write": false,
+  "coordinator_modified": false,
+  "predict_modules_modified": false,
+  "inject_method": "survey random.choices wrapper (stack-filtered predict path only)"
+}

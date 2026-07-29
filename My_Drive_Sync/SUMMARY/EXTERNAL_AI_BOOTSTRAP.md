@@ -8,15 +8,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d641717` |
+| HEAD(실측) | `48c2505` |
 | BASELINE_PIN | `640cb67` |
-| WORK | `RUNNING:K-WINDOW-SIGNAL-01` |
-| 지금 | **K-WINDOW-SIGNAL-01 running** ~900/1182 · 신호셋트 아키텍처 3자 합의 문서화 |
-| 직전 | K-AUX-SIGNAL-01 FAIL ge3=0.1303 · 1군 벤치 인벤토리 · AUX_SIGNAL_PIVOT |
-| BOOT다음 | K-WINDOW 완료→K-SIGNAL-SELECT-01 overlap survey (coordinator 무수정) |
-| NEXT1 ID | **K-WINDOW-SIGNAL-01** |
-| NEXT1 할일 | survey 완료 대기(kill 금지) → JSON+보고서 확정 → K-SIGNAL-SELECT-01 overlap 선별 survey 설계 |
-| 승인필요 | 미확인 |
+| WORK | `IDLE` |
+| 지금 | **K-WINDOW-SIGNAL-01 FAIL** — best w4_zone_mix@α=0.1 ge3=0.1328 p=0.023 · pin 미달 |
+| 직전 | K-AUX-SIGNAL-01 FAIL · E2 POSTMORTEM-SIGNAL-02 bin lift 미약 |
+| BOOT다음 | K-ATTACK-HOLD — V2 pin 유지 · E3 PATTERN-HINT-03은 형 GO |
+| NEXT1 ID | **K-ATTACK-HOLD** |
+| NEXT1 할일 | V2 pin ge3=0.1447 유지 · E3 PATTERN-HINT-03 survey는 형 GO 후 · coordinator/AUX/window hint 배선 금지 |
+| 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d641717 · 지금=**K-WINDOW-SIGNAL-01 running** ~900/1182 · 신호셋트 아키텍처 3자 합의 문서화 · 다음=K-WINDOW-SIGNAL-01`
+1. 첫줄 `[복귀] HEAD=48c2505 · 지금=**K-WINDOW-SIGNAL-01 FAIL** — best w4_zone_mix@α=0.1 ge3=0.1328 p=0.023 · pin 미달 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

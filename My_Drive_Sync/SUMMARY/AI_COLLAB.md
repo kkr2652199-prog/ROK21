@@ -24,20 +24,19 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-29 23:45 KST)
-- **HEAD**: `bcaf29b` (push 후 갱신)
-- **K-WINDOW-SIGNAL-01**: **running** ~900/1182 (kill 금지) · pin ge3=0.1447 대비
-- **형 신호셋트 아키텍처**: 5→10세트→신호셋트5 · Tier0~4 프레임 · `reports/20260729_SIGNAL_SET_ARCHITECTURE.md`
-- **3자 합의**: 10세트=조건부찬성 · 신호셋트=**통합5** · 선별=(b)overlap→(a)bin→(c)Jaccard · coordinator wire=형 GO 전 금지
+### 최신 상태 (2026-07-30 00:10 KST)
+- **HEAD**: pending commit
+- **K-WINDOW-SIGNAL-01**: **FAIL** — best w4_zone_mix@α=0.1 ge3=0.1328 p=0.023 · pin 미달 · n=1182 seed=42
+- **K-POSTMORTEM-SIGNAL-02 (E2)**: **DONE** — ge3+ bin lift 미약 · odd=2 +0.031만 유의미
+- **현재 배선**: WIRE-V2 pin ge3=0.1447 유지 · hint inject E1+window 모두 pin 미달
+- **다음 GO 후보**: E3 PATTERN-HINT-03 (형 승인 필요)
 
 ### 논의 이력 (최신순)
-1. **[23:45] 신호셋트 아키텍처 3라운드** — GenSpark: 「조건부 찬성」「통합5」「QUICK_GATE tail-200 p<0.15」「QUICK_GATE는 SIGNAL-SELECT 후」→ 구현순서 §6 확정 · GenSpark browser 3-turn
-2. **[23:10] 1군 벤치·이식 인벤토리** — deterministic_sets/honesty/fusion/QUICK_GATE P0~P3 · `_k_window_signal_survey.py` --n-eval 패치 필요 · `reports/20260729_MONEY1GUN_BENCH_INVENTORY.md`
-2. **[22:51] 1군 vs ROK21 testlotto READ-ONLY 비교** — 6뇌+fusion vs 3+4 coordinator · `reports/20260729_MONEY1GUN_VS_ROK21.md`
-2. **[22:10] 커서×젠스파크 브라우저 협의** — E1 null 대비 유의(p=0.042) but pin 미달 · stored 0.1447 vs live 0.1218 갭 핵심 · 우선순위 **window_signal→E2→E3** · 형 GO 1건=`K-WINDOW-SIGNAL-01 survey`
-2. **[22:00]** K-AUX-SIGNAL-01 FAIL — hint inject survey n=1182 · best ge3=0.1303 · `20260729_KAUX_SIGNAL_SURVEY.md`
-3. **[21:35]** 동행복권 로또6/45 공식 페이지 감사 — `20260729_DHLOTTERY_LOTTO_AUDIT.md`
-4. **[21:00]** K-BENCH-01 postmortem SIGNAL_FOUND — `20260729_KBENCH_POSTMORTEM.md`
+1. **[00:10] K-WINDOW-SIGNAL-01 완료** — 61 variants · best w4_zone_mix ge3=0.1328 · E2 bin lift 미약 · `20260729_KWINDOW_SIGNAL_SURVEY.md`
+2. **[23:45] 신호셋트 아키텍처 3라운드** — GenSpark: 「조건부 찬성」「통합5」「QUICK_GATE tail-200 p<0.15」→ 구현순서 §6 확정
+3. **[22:10] 커서×젠스파크 브라우저 협의** — E1 null 대비 유의 but pin 미달 · 우선순위 window→E2→E3
+4. **[22:00]** K-AUX-SIGNAL-01 FAIL — best ge3=0.1303 · `20260729_KAUX_SIGNAL_SURVEY.md`
+5. **[21:00]** K-BENCH-01 postmortem SIGNAL_FOUND — `20260729_KBENCH_POSTMORTEM.md`
 
 ## 4. 파일 지도 (젠스파크용 GitHub raw URL)
 

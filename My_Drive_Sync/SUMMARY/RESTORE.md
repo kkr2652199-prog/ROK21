@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d641717` · WORK=`RUNNING:K-WINDOW-SIGNAL-01`
-2. **지금:** **K-WINDOW-SIGNAL-01 running** ~900/1182 · 신호셋트 아키텍처 3자 합의 문서화
-3. **다음1건:** K-WINDOW-SIGNAL-01 — survey 완료 대기(kill 금지) → JSON+보고서 확정 → K-SIGNAL-SELECT-01 overlap 선별 survey 설계 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `48c2505` · WORK=`IDLE`
+2. **지금:** **K-WINDOW-SIGNAL-01 FAIL** — best w4_zone_mix@α=0.1 ge3=0.1328 p=0.023 · pin 미달
+3. **다음1건:** K-ATTACK-HOLD — V2 pin ge3=0.1447 유지 · E3 PATTERN-HINT-03 survey는 형 GO 후 · coordinator/AUX/window hint 배선 금지 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-30 | K-WINDOW-SIGNAL-01 GO·E2 | window hint 61variants n=1182 · best ge3=0.1328 · E2 bin lift | **FAIL** | pending |
 | 2026-07-29 | 신호셋트 아키텍처·GenSpark 3turn | Tier0~4·통합5·구현순서7단계 · KWINDOW running 900/1182 | ARCH OK | pending |
 | 2026-07-29 | K-AUX-SIGNAL-01 GO | hint inject live WF n=1182 · 5 variants×α · best ge3=0.1303 | **FAIL** | `579495e` |
 | 2026-07-29 | DHLOTTERY 로또 감사 | lt645 result/stats/판매점 READ-ONLY · K-AUX-SIGNAL 3아이디어 · 보고서 | AUDIT OK | `394e790` |

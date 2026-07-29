@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-07-29 23:45 KST  
-📌 사유: **신호셋트 아키텍처 3자 합의** · K-WINDOW-SIGNAL-01 running
+📅 최종 갱신: 2026-07-30 KST  
+📌 사유: **K-WINDOW-SIGNAL-01 survey 완료 FAIL** · E2 POSTMORTEM-SIGNAL-02 완료
 
 ---
 
@@ -10,12 +10,12 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| K-WINDOW-SIGNAL-01 | **RUNNING** ~900/1182 · kill 금지 · pin ge3=0.1447 대비 |
-| 신호셋트 아키텍처 | **3자 합의** — 10세트 조건부찬성 · 통합5 · Tier0~4 · `20260729_SIGNAL_SET_ARCHITECTURE.md` |
-| K-AUX-SIGNAL-01 | **FAIL** — best miss_pattern@α=0.2 ge3=**0.1303** p=0.042 · pin 0.1447 미달 |
+| K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 · pin 미달 |
+| K-POSTMORTEM-SIGNAL-02 | **DONE** — ge3+ bin lift 미약 · odd=2 +0.031 |
+| K-AUX-SIGNAL-01 | **FAIL** — best miss_pattern@α=0.2 ge3=**0.1303** p=0.042 |
 | K-BENCH-01 | **SIGNAL_FOUND** — 쿼터갭 43.6% · markov 52.5% · AUX↔hit 무상관 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | K-WINDOW 완료→**K-SIGNAL-SELECT-01** · coordinator wire=형 GO 전 금지 |
+| 권고 | **K-ATTACK-HOLD** · V2 pin 유지 · E3 PATTERN-HINT-03은 형 GO |
 
 ---
 
@@ -23,6 +23,8 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-WINDOW-SIGNAL-01** | DHLOTTERY 4/8/12/52/all×4signal hint inject · 61 variants · n=1182 seed=42 | **FAIL** · best ge3=0.1328 |
+| **K-POSTMORTEM-SIGNAL-02** | ge3+ draw_features bin stratification · READ-ONLY | **DONE** · lift 미약 |
 | **K-AUX-SIGNAL-01** | 4보조 hint inject live WF · 5 variants×α · n=1182 seed=42 | **FAIL** · best ge3=0.1303 |
 | **DHLOTTERY-AUDIT** | 동행복권 lt645 추첨·통계·판매점 READ-ONLY · K-AUX 3아이디어 | **AUDIT OK** |
 | **K-BENCH-01** | postmortem WF n=1182 · tier·쿼터갭·AUX상관 · seed=42 | **SIGNAL_FOUND** |
@@ -67,6 +69,40 @@
 | coordinator | **미수정** · K-BENCH-02-WIRE **불필요** |
 
 근거: `docs/benchmarks/20260729_KBENCH_CONFIDENCE_survey.json`
+
+---
+
+## 3c) K-WINDOW-SIGNAL-01 핵심
+
+| variant | window | signal | α | ge3_rate | mean | Δ vs pin | p (null) | verdict |
+|---------|--------|--------|--:|---------:|-----:|---------:|---------:|---------|
+| **w4_zone_mix** | 4주 | zone_mix | 0.1 | **0.1328** | 1.7453 | −0.0119 | **0.0232** | FAIL (pin 미달) |
+| w4_sum_band | 4주 | sum_band | 0.2 | 0.1311 | 1.72 | −0.0136 | 0.035 | FAIL |
+| w8_miss_pattern | 8주 | miss_pattern | 0.2 | 0.1303 | 1.7081 | −0.0144 | 0.042 | FAIL |
+| baseline (AUX score) | — | — | 0 | 0.1108 | 1.7318 | −0.0339 | 0.635 | FAIL |
+
+| 항목 | 값 |
+|------|-----|
+| n_eval | **1182** · seed=42 · elapsed 7094s |
+| variants | 61 (5 windows × 4 signals × 3 α + baseline) |
+| PASS gate | ge3 > 0.1447 AND p < 0.05 → **FAIL** |
+| coordinator | **미수정** · K-WINDOW-SIGNAL-WIRE **보류** |
+
+근거: `docs/benchmarks/20260729_KWINDOW_SIGNAL_survey.json`
+
+---
+
+## 3d) K-POSTMORTEM-SIGNAL-02 핵심
+
+| axis | best bin | ge3_rate | lift vs overall(0.11) |
+|------|----------|---------:|----------------------:|
+| odd_count | odd=2 | 0.1412 | +0.0312 |
+| ac | ac>=9 | 0.1206 | +0.0106 |
+| sum_band | mid(120-155) | 0.1137 | +0.0037 |
+
+판정: bin lift **미약** — E3 hint 설계 시 단일 bin 의존 비권장.
+
+근거: `docs/benchmarks/20260729_KPOSTMORTEM_SIGNAL02.json`
 
 ---
 
@@ -118,19 +154,18 @@
 ## 5) 다음
 
 **K-ATTACK-HOLD** — V2 pin ge3=0.1447 유지.  
-K-AUX-SIGNAL-01 FAIL → E2 POSTMORTEM-SIGNAL-02 또는 E3 PATTERN-HINT-03 survey는 **형 GO** 후.  
+K-WINDOW-SIGNAL-01 FAIL → E3 PATTERN-HINT-03 survey는 **형 GO** 후.  
 coordinator·aux_*.py·predict_* **수정 금지**.
 
 ---
 
 ## 6) 산출물
 
-- `tools/_k_bench_postmortem.py`
-- `docs/benchmarks/20260729_KBENCH_POSTMORTEM.json`
-- `reports/20260729_KBENCH_POSTMORTEM.md`
-- `reports/20260729_4AUX_FEEDBACK_REVIEW.md`
-- `docs/benchmarks/20260729_KAUX_SIGNAL_survey.json`
-- `reports/20260729_KAUX_SIGNAL_SURVEY.md`
+- `tools/_k_window_signal_survey.py`
+- `docs/benchmarks/20260729_KWINDOW_SIGNAL_survey.json`
+- `reports/20260729_KWINDOW_SIGNAL_SURVEY.md`
+- `docs/benchmarks/20260729_KPOSTMORTEM_SIGNAL02.json`
+- `reports/20260729_KPOSTMORTEM_SIGNAL02.md`
 
 ## 팩트체크
 
