@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-07-29 20:45 KST)
-- **HEAD**: `88a6bd9` (push 후 갱신)
+- **HEAD**: `7a0a368`
 - **현재 배선**: WIRE-V2 (ge3=0.1447, p=0.0007) — pin 유지
 - **POSTHOC**: 50시드×50회 best ge3=0.18 p=0.109 → **무신호**
 - **1군 심화**: `20260729_BENCH_DEEP_IDEAS.md` — postmortem/pattern_store/lead1 wheel/UI · K-BENCH-01~05 초안

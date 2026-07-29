@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `e7dd9c3` |
+| HEAD(실측) | `7a0a368` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-BENCH-DEEP** — 1군 postmortem/pattern_store/lead1/UI 심화 · K-BENCH-01~05 아이디어 · GenSpark 자문 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=e7dd9c3 · 지금=**K-BENCH-DEEP** — 1군 postmortem/pattern_store/lead1/UI 심화 · K-BENCH-01~05 아이디어 · GenSpark 자문 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=7a0a368 · 지금=**K-BENCH-DEEP** — 1군 postmortem/pattern_store/lead1/UI 심화 · K-BENCH-01~05 아이디어 · GenSpark 자문 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: e7dd9c3_
+_generated: 7a0a368_

@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e7dd9c3` · WORK=`IDLE`
+1. **HEAD:** `7a0a368` · WORK=`IDLE`
 2. **지금:** **K-BENCH-DEEP** — 1군 postmortem/pattern_store/lead1/UI 심화 · K-BENCH-01~05 아이디어 · GenSpark 자문
 3. **다음1건:** K-ATTACK-HOLD — POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

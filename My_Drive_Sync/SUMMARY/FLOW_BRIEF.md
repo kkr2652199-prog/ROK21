@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e7dd9c3` · WORK=`IDLE`
+- HEAD: `7a0a368` · WORK=`IDLE`
 - 지금: **K-BENCH-DEEP** — 1군 postmortem/pattern_store/lead1/UI 심화 · K-BENCH-01~05 아이디어 · GenSpark 자문
 - 직전: K-MONEY1-LESSONS — 1군→ROK21 교훈 · POSTHOC 무신호 ge3=**0.18** p=0.109
 - BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · GenSpark·형 결정 대기
