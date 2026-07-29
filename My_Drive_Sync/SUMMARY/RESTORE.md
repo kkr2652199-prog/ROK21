@@ -45,7 +45,7 @@
 | 2026-07-29 | 진행·팩트체크 | EV-POP FAIL · pop↓·ge3↓ · V2유지 · NEXT=HOLD | EV-POP FAIL | `b945197` |
 | 2026-07-29 | 다음축선정·해줘 | SETNO-HITMAP Δ+0.0034 FAIL · V2유지 · NEXT=HOLD | SETNO FAIL | `8fcd2d9` |
 | 2026-07-29 | SETPACK·종료체크 | pool ge3 0.101<0.123 · set1↓ · NEXT=HOLD | SETPACK FAIL | `22ea625` |
-| 2026-07-29 | K-REVIEW-TUNE-SURVEY | 15조합(carry/decay/window) best ge3=0.1117 Δ-0.033 p=0.600 FAIL · predict_review_king 미수정 | TUNE-SURVEY FAIL | `9113465` |
+| 2026-07-29 | K-POSTHOC-ANALYSIS | 50시드×50회 best ge3=0.18 p=0.109 · 무신호 · V2 pin유지 | POSTHOC 무신호 | `pending` |
 
 ---
 

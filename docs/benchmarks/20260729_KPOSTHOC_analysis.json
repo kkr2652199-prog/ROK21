@@ -1,0 +1,348 @@
+{
+  "id": "K-POSTHOC-ANALYSIS",
+  "ts": "2026-07-29T19:28:40",
+  "elapsed_sec": 513.5,
+  "n_seeds": 50,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "n_eval_per_seed": 50,
+  "wire_pin_ge3": 0.1447,
+  "null_ge3": 0.1137,
+  "overall": {
+    "mean_ge3_rate": 0.1052,
+    "std_ge3_rate": 0.0417,
+    "median_ge3_rate": 0.12,
+    "min_ge3_rate": 0.02,
+    "max_ge3_rate": 0.18
+  },
+  "best_seed": {
+    "seed": 44,
+    "n": 50,
+    "ge3_count": 9,
+    "ge3_rate": 0.18,
+    "mean": 1.86,
+    "p_value": 0.108945
+  },
+  "top_10pct_seeds": [
+    44,
+    35,
+    48,
+    7,
+    33
+  ],
+  "top_10pct_ge3_rates": [
+    0.18,
+    0.18,
+    0.18,
+    0.18,
+    0.16
+  ],
+  "bot_10pct_seeds": [
+    39,
+    26,
+    22,
+    37,
+    6
+  ],
+  "bot_10pct_ge3_rates": [
+    0.04,
+    0.04,
+    0.04,
+    0.02,
+    0.02
+  ],
+  "top_analysis": {
+    "label": "top_10pct",
+    "n_seeds": 5,
+    "brain_ge3_selected": {
+      "markov": 0.044,
+      "stat": 0.044,
+      "review": 0.02
+    },
+    "brain_mean_selected": {
+      "markov": 0.848,
+      "stat": 0.912,
+      "review": 0.696
+    },
+    "selected_ge3_rate": 0.0392,
+    "nonsel_ge3_rate": 0.0268,
+    "hit_draw_sum_mean": 131.2,
+    "hit_draw_odd_ratio_mean": 0.588,
+    "hit_draw_consec_rate": 0.49,
+    "hit_draw_ac_mean": 8.41
+  },
+  "bot_analysis": {
+    "label": "bot_10pct",
+    "n_seeds": 5,
+    "brain_ge3_selected": {
+      "markov": 0.0067,
+      "stat": 0.004,
+      "review": 0.012
+    },
+    "brain_mean_selected": {
+      "markov": 0.7933,
+      "stat": 0.804,
+      "review": 0.748
+    },
+    "selected_ge3_rate": 0.0072,
+    "nonsel_ge3_rate": 0.0256,
+    "hit_draw_sum_mean": 117.2,
+    "hit_draw_odd_ratio_mean": 0.611,
+    "hit_draw_consec_rate": 0.556,
+    "hit_draw_ac_mean": 8.44
+  },
+  "all_analysis": {
+    "label": "all_200",
+    "n_seeds": 50,
+    "brain_ge3_selected": {
+      "markov": 0.0227,
+      "stat": 0.0268,
+      "review": 0.0172
+    },
+    "brain_mean_selected": {
+      "markov": 0.8127,
+      "stat": 0.8368,
+      "review": 0.7304
+    },
+    "selected_ge3_rate": 0.0224,
+    "nonsel_ge3_rate": 0.0239,
+    "hit_draw_sum_mean": 132.6,
+    "hit_draw_odd_ratio_mean": 0.571,
+    "hit_draw_consec_rate": 0.464,
+    "hit_draw_ac_mean": 8.41
+  },
+  "top_vs_bot_diff": {
+    "brain_ge3_selected": {
+      "markov": 0.0373,
+      "review": 0.008,
+      "stat": 0.04
+    },
+    "brain_mean_selected": {
+      "markov": 0.0547,
+      "review": -0.052,
+      "stat": 0.108
+    },
+    "selected_ge3_rate": 0.032,
+    "nonsel_ge3_rate": 0.0012,
+    "hit_draw_sum_mean": 14.0,
+    "hit_draw_odd_ratio_mean": -0.023,
+    "hit_draw_consec_rate": -0.066,
+    "hit_draw_ac_mean": -0.03
+  },
+  "seed_ranking": [
+    {
+      "seed": 44,
+      "n": 50,
+      "ge3_count": 9,
+      "ge3_rate": 0.18,
+      "mean": 1.86
+    },
+    {
+      "seed": 35,
+      "n": 50,
+      "ge3_count": 9,
+      "ge3_rate": 0.18,
+      "mean": 1.84
+    },
+    {
+      "seed": 48,
+      "n": 50,
+      "ge3_count": 9,
+      "ge3_rate": 0.18,
+      "mean": 1.78
+    },
+    {
+      "seed": 7,
+      "n": 50,
+      "ge3_count": 9,
+      "ge3_rate": 0.18,
+      "mean": 1.64
+    },
+    {
+      "seed": 33,
+      "n": 50,
+      "ge3_count": 8,
+      "ge3_rate": 0.16,
+      "mean": 1.88
+    },
+    {
+      "seed": 11,
+      "n": 50,
+      "ge3_count": 8,
+      "ge3_rate": 0.16,
+      "mean": 1.86
+    },
+    {
+      "seed": 14,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.84
+    },
+    {
+      "seed": 47,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.8
+    },
+    {
+      "seed": 1,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.78
+    },
+    {
+      "seed": 12,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.78
+    },
+    {
+      "seed": 3,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.76
+    },
+    {
+      "seed": 21,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.76
+    },
+    {
+      "seed": 4,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.72
+    },
+    {
+      "seed": 10,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.7
+    },
+    {
+      "seed": 41,
+      "n": 50,
+      "ge3_count": 7,
+      "ge3_rate": 0.14,
+      "mean": 1.68
+    },
+    {
+      "seed": 17,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.8
+    },
+    {
+      "seed": 19,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.8
+    },
+    {
+      "seed": 31,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.76
+    },
+    {
+      "seed": 27,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.72
+    },
+    {
+      "seed": 29,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.72
+    },
+    {
+      "seed": 20,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.68
+    },
+    {
+      "seed": 23,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.68
+    },
+    {
+      "seed": 34,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.68
+    },
+    {
+      "seed": 0,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.66
+    },
+    {
+      "seed": 28,
+      "n": 50,
+      "ge3_count": 6,
+      "ge3_rate": 0.12,
+      "mean": 1.66
+    },
+    {
+      "seed": 38,
+      "n": 50,
+      "ge3_count": 5,
+      "ge3_rate": 0.1,
+      "mean": 1.7
+    },
+    {
+      "seed": 13,
+      "n": 50,
+      "ge3_count": 5,
+      "ge3_rate": 0.1,
+      "mean": 1.68
+    },
+    {
+      "seed": 30,
+      "n": 50,
+      "ge3_count": 5,
+      "ge3_rate": 0.1,
+      "mean": 1.66
+    },
+    {
+      "seed": 25,
+      "n": 50,
+      "ge3_count": 5,
+      "ge3_rate": 0.1,
+      "mean": 1.64
+    },
+    {
+      "seed": 43,
+      "n": 50,
+      "ge3_count": 5,
+      "ge3_rate": 0.1,
+      "mean": 1.62
+    }
+  ],
+  "signal_detected": false,
+  "signal_summary": "best p=0.109(>0.05) / 뇌별 차이=시드 분산 / 활용가능 체계적 신호 없음"
+}

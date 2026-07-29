@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-ATTACK-HOLD
-- 할일: REVIEW-TUNE-SURVEY FAIL(15조합 best ge3=0.1117·Δ-0.033·p=0.600284) · 오늘 탐색 전축 소진 · 형 결정 대기
+- 할일: POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기
 - 완료조건: 형이 다음 1축 지정 또는 HOLD 유지 확인
 - 승인필요: 예
-- 선행완료: 2026-07-29 (K-REVIEW-TUNE-SURVEY FAIL)
+- 선행완료: 2026-07-29 (K-POSTHOC-ANALYSIS 무신호)
 
 ## WORKSTATE
 IDLE

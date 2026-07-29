@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `9113465` |
+| HEAD(실측) | `pending` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600 |
-| 직전 | AUX-WEIGHT-SURVEY FAIL · 13조합 동일 |
-| BOOT다음 | K-ATTACK-HOLD — 오늘 탐색 전축 소진 · 형 결정 대기 |
+| 지금 | K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109(>0.05) |
+| 직전 | REVIEW-TUNE-SURVEY FAIL · 15조합 best ge3=0.1117 |
+| BOOT다음 | K-ATTACK-HOLD — POSTHOC 무신호 · V2 pin 유지 · 형 결정 대기 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | REVIEW-TUNE-SURVEY FAIL(15조합 best ge3=0.1117·Δ-0.033·p=0.600284) · 오늘 탐색 전축 소진 · 형 결정 대기 |
+| NEXT1 할일 | POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기 |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -42,6 +42,7 @@
 | 복귀5줄 | `My_Drive_Sync/SUMMARY/RESTORE.md` |
 | NEXT 1건 | `My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md` |
 | 매턴요약 | `My_Drive_Sync/SUMMARY/FLOW_BRIEF.md` |
+| AI협업룰+대화 | `My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 | 결함 | `My_Drive_Sync/SUMMARY/FINDINGS.md` |
 | 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |

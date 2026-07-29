@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600
-- 직전: AUX-WEIGHT-SURVEY FAIL · 13조합 동일
-- 다음: K-ATTACK-HOLD — 오늘 탐색 전축 소진 · 형 결정 대기
+- 지금: K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109(>0.05) · 체계적 패턴 없음
+- 직전: REVIEW-TUNE-SURVEY FAIL · 15조합 best ge3=0.1117
+- 다음: K-ATTACK-HOLD — POSTHOC 무신호 · V2 pin 유지 · 형 결정 대기
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
