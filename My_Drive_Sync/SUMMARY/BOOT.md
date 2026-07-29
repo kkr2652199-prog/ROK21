@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: STAT-WIRE **FAIL** · ge3=**0.1176** · Δ-0.0271 · **롤백완료**
-- 직전: STAT-TUNE PASS · WIRE승인대기
-- 다음: K-ATTACK-HOLD — 다음 공격축 형 결정 대기
+- 지금: AUX-WEIGHT-SURVEY **FAIL** · 13조합 ge3=**0.1100** 동일 · pin불일치
+- 직전: STAT-WIRE FAIL · 롤백완료
+- 다음: K-ATTACK-HOLD — AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

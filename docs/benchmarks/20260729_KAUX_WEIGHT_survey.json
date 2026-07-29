@@ -1,0 +1,323 @@
+{
+  "id": "K-AUX-WEIGHT-SURVEY",
+  "ts": "2026-07-29T16:41:27",
+  "elapsed_sec": 848.3,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "wire_pin_ge3": 0.1447,
+  "wire_pin_mean": 1.7504,
+  "null_ge3": 0.1137,
+  "mc_seed": 42,
+  "sets_per_predict_brain": 5,
+  "pipeline": "live_predict_sets + _aux_score_with_weights + apply_markov_wire_quota",
+  "baseline_live": {
+    "weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "ge3_rate": 0.11,
+    "mean": 1.7191,
+    "ge4_rate": 0.0059,
+    "ge3_count": 130,
+    "delta_ge3_vs_pin": -0.0347,
+    "pin_match": false
+  },
+  "step2_grid": [
+    {
+      "combo_id": "A",
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "B",
+      "weights": [
+        0.4,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "C",
+      "weights": [
+        0.2,
+        0.4,
+        0.2,
+        0.2
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "D",
+      "weights": [
+        0.2,
+        0.2,
+        0.4,
+        0.2
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "E",
+      "weights": [
+        0.2,
+        0.2,
+        0.2,
+        0.4
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "F",
+      "weights": [
+        0.1,
+        0.4,
+        0.4,
+        0.1
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "G",
+      "weights": [
+        0.1,
+        0.3,
+        0.3,
+        0.3
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "H",
+      "weights": [
+        0.4,
+        0.3,
+        0.2,
+        0.1
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "I",
+      "weights": [
+        0.1,
+        0.2,
+        0.4,
+        0.3
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "J",
+      "weights": [
+        0.3,
+        0.3,
+        0.3,
+        0.1
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "K",
+      "weights": [
+        0.0,
+        0.4,
+        0.4,
+        0.2
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "L",
+      "weights": [
+        0.4,
+        0.4,
+        0.1,
+        0.1
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    },
+    {
+      "combo_id": "M",
+      "weights": [
+        0.1,
+        0.1,
+        0.4,
+        0.4
+      ],
+      "n": 1182,
+      "mean": 1.7191,
+      "ge3_rate": 0.11,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130
+    }
+  ],
+  "step3_top5": [
+    {
+      "combo_id": "A",
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "ge3_rate": 0.11,
+      "mean": 1.7191,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130,
+      "delta_ge3": -0.0347,
+      "p_value": 0.669622,
+      "verdict": "FAIL"
+    },
+    {
+      "combo_id": "B",
+      "weights": [
+        0.4,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "ge3_rate": 0.11,
+      "mean": 1.7191,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130,
+      "delta_ge3": -0.0347,
+      "p_value": 0.669622,
+      "verdict": "FAIL"
+    },
+    {
+      "combo_id": "C",
+      "weights": [
+        0.2,
+        0.4,
+        0.2,
+        0.2
+      ],
+      "ge3_rate": 0.11,
+      "mean": 1.7191,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130,
+      "delta_ge3": -0.0347,
+      "p_value": 0.669622,
+      "verdict": "FAIL"
+    },
+    {
+      "combo_id": "D",
+      "weights": [
+        0.2,
+        0.2,
+        0.4,
+        0.2
+      ],
+      "ge3_rate": 0.11,
+      "mean": 1.7191,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130,
+      "delta_ge3": -0.0347,
+      "p_value": 0.669622,
+      "verdict": "FAIL"
+    },
+    {
+      "combo_id": "E",
+      "weights": [
+        0.2,
+        0.2,
+        0.2,
+        0.4
+      ],
+      "ge3_rate": 0.11,
+      "mean": 1.7191,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130,
+      "delta_ge3": -0.0347,
+      "p_value": 0.669622,
+      "verdict": "FAIL"
+    }
+  ],
+  "best_combo": {
+    "combo_id": "A",
+    "weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "ge3_rate": 0.11,
+    "mean": 1.7191,
+    "ge4_rate": 0.0059,
+    "ge3_count": 130,
+    "delta_ge3": -0.0347,
+    "p_value": 0.669622,
+    "verdict": "FAIL"
+  },
+  "gates": {
+    "any_ge3_gt_pin": false,
+    "best_ge3": 0.11,
+    "best_p": 0.669622,
+    "pass": false
+  },
+  "recommended_next": "K-ATTACK-HOLD",
+  "verdict": "FAIL: best A ge3=0.11 ≤ pin 0.1447 (또는 p≥0.05). → K-ATTACK-HOLD.",
+  "db_code_write": false,
+  "code_touched": false,
+  "coordinator_modified": false
+}

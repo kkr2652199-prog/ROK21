@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `bfa7222` |
+| HEAD(실측) | `76a0d46` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | STAT-WIRE **FAIL** · ge3=**0.1176** · Δ-0.0271 · **롤백완료** |
-| 직전 | STAT-TUNE PASS · WIRE승인대기 |
-| BOOT다음 | K-ATTACK-HOLD — 다음 공격축 형 결정 대기 |
+| 지금 | AUX-WEIGHT-SURVEY **FAIL** · 13조합 ge3=**0.1100** 동일 · pin불일치 |
+| 직전 | STAT-WIRE FAIL · 롤백완료 |
+| BOOT다음 | K-ATTACK-HOLD — AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | STAT-WIRE FAIL(ge3=0.1176·Δ-0.0271·p=0.349617) · 롤백완료 · 다음 공격축 형 결정 대기 |
+| NEXT1 할일 | AUX-WEIGHT-SURVEY FAIL(13조합 ge3=0.1100 동일·Δ-0.0347·p=0.669622) · V2 set_no 경로 AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기 |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=bfa7222 · 지금=STAT-WIRE **FAIL** · ge3=**0.1176** · Δ-0.0271 · **롤백완료** · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=76a0d46 · 지금=AUX-WEIGHT-SURVEY **FAIL** · 13조합 ge3=**0.1100** 동일 · pin불일치 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: bfa7222_
+_generated: 76a0d46_

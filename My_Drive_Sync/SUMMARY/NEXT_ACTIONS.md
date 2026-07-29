@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-ATTACK-HOLD
-- 할일: STAT-WIRE FAIL(ge3=0.1176·Δ-0.0271·p=0.349617) · 롤백완료 · 다음 공격축 형 결정 대기
+- 할일: AUX-WEIGHT-SURVEY FAIL(13조합 ge3=0.1100 동일·Δ-0.0347·p=0.669622) · V2 set_no 경로 AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기
 - 완료조건: 형이 다음 1축 지정 또는 HOLD 유지 확인
 - 승인필요: 예
-- 선행완료: 2026-07-29 (K-STAT-TUNE-WIRE FAIL·롤백)
+- 선행완료: 2026-07-29 (K-AUX-WEIGHT-SURVEY FAIL)
 
 ## WORKSTATE
 IDLE
@@ -16,7 +16,7 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- V2 pin ge3=0.1447 · mean=1.7504
-- STAT-TUNE survey best ge3=0.1523 (stored markov/review + stat)
-- STAT-WIRE live verify ge3=0.1176 (3뇌 live) → FAIL
-- 근거: docs/benchmarks/20260729_KSTAT_WIRE_verify.json
+- V2 pin ge3=0.1447 · mean=1.7504 (stored)
+- AUX-WEIGHT live baseline ge3=0.1100 · 13조합 전부 동일 (set_no 쿼터)
+- STAT-WIRE live ge3=0.1176 (롤백완료)
+- 근거: docs/benchmarks/20260729_KAUX_WEIGHT_survey.json
