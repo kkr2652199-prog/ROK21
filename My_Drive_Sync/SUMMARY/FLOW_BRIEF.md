@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d6cc055` · WORK=`IDLE`
+- HEAD: `6d63a8f` · WORK=`IDLE`
 - 지금: **K-BENCH-02 완료 FAIL** — confidence/AUX 5축 live · baseline ge3=0.1100 최고 · pin 미달
 - 직전: K-BENCH-05·03 — baseline행·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE
 - BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 지정 대기 (K-BENCH-01 또는 HOLD)
