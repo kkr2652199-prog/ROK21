@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fa5db9c` · WORK=`IDLE`
+- HEAD: `d5d6bc6` · WORK=`IDLE`
 - 지금: **K-BENCH-05·03 완료** — baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE
 - 직전: K-BENCH-DEEP — 1군 postmortem/pattern_store 심화 · GenSpark GO
 - BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · 형 GO 후 K-BENCH-02 confidence survey
