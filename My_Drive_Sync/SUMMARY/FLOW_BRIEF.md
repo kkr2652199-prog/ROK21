@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `64fbbd2` · WORK=`IDLE`
+- HEAD: `7fda365` · WORK=`IDLE`
 - 지금: AUX-WEIGHT-SURVEY **FAIL** · 13조합 ge3=**0.1100** 동일 · pin불일치
 - 직전: STAT-WIRE FAIL · 롤백완료
 - BOOT다음: K-ATTACK-HOLD — AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기
