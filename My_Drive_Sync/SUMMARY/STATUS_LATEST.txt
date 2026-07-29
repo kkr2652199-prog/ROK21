@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: **4AUX_FEEDBACK_REVIEW** — 형 6문 코드 READ-ONLY+GenSpark 교차 · NEXT=K-ATTACK-HOLD 유지
+📌 사유: **K-BENCH-01 postmortem SIGNAL_FOUND** — 쿼터갭·뇌지배 신호 · NEXT=K-BENCH-01-WIRE
 
 ---
 
@@ -10,11 +10,12 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| K-BENCH-01 | **SIGNAL_FOUND** — 쿼터갭 43.6% · markov 15중 best 52.5% · AUX↔hit 무상관 |
 | K-BENCH-02 | **FAIL** — confidence/AUX 정렬 4축 ge3 0.0990~0.1024 · baseline 0.1100 최고 |
 | K-BENCH-05 | **PATCHED** — E[match]=0.8 · ge3 null=0.1137 · SUMMARY baseline 행 필수 |
 | K-POSTHOC-ANALYSIS | **무신호** · 50시드×50회 · best ge3=0.18 p=0.109 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-ATTACK-HOLD** · V2 pin 유지 · K-BENCH-02-WIRE 불필요 |
+| 권고 | **K-BENCH-01-WIRE** (형 GO) · V2 pin 유지 · coordinator 수정 별도 GO |
 
 ---
 
@@ -22,15 +23,31 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-BENCH-01** | postmortem WF n=1182 · tier·쿼터갭·AUX상관 · seed=42 | **SIGNAL_FOUND** |
 | **4AUX_FEEDBACK_REVIEW** | 4보조=채점·set_no_asc면 컷없음·피드백 부분구현 · GenSpark 일치 | **REVIEW OK** |
 | **K-BENCH-02** | confidence/AUX 5축 live WF · set_no_asc vs confidence/quota | **FAIL** · baseline 최고 |
 | K-BENCH-05·03 | BENCH_PROTOCOL §6·§7 · BENCH_REPORT_TEMPLATE | **PROTOCOL OK** |
-| K-AUX-WEIGHT-SURVEY | 13조합 live · set_no 쿼터 | **FAIL** · 티켓불변 |
 | K-POSTHOC-ANALYSIS | 50시드×50회 역추적 | **무신호** |
 
 ---
 
-## 2) K-BENCH-02 핵심
+## 2) K-BENCH-01 핵심
+
+| 지표 | 값 | 비고 |
+|------|-----|------|
+| n_eval | **1182** | draw 53~1234 · seed=42 |
+| ge3_rate (selected best-of-5) | **0.11** | mean=1.7191 · pin 미달(진단) |
+| 쿼터 갭 | **43.6%** (516/1182) | 15중 best > 선택5 best · avg gap=1.188 |
+| markov 15중 best | **52.5%** | stat 29.9% · review 17.5% |
+| AUX↔hit spearman | **~0** | miss/referee constant · pattern/balance 무상관 |
+| tier (selected 5) | r4=7 · r5=132 | ge3=139/5910 sets |
+| verdict | **SIGNAL_FOUND** | ge3 PASS/FAIL 아님 |
+
+근거: `docs/benchmarks/20260729_KBENCH_POSTMORTEM.json`
+
+---
+
+## 3) K-BENCH-02 핵심
 
 | variant | ge3_rate | mean | Δ vs pin | p (null) | verdict |
 |---------|----------|------|----------|----------|---------|
@@ -78,24 +95,25 @@
 
 ## 5) 다음
 
-K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 지정 (K-BENCH-01 postmortem 또는 HOLD).  
-GenSpark 권장 최소: K-BENCH-01 → hit-draw 특성 → (GO) 등수 피드백 태그.
+K-BENCH-01-WIRE — postmortem SIGNAL_FOUND · 쿼터갭·markov 지배 신호 · 형 GO 후 피드백축 WIRE 검토.  
+K-BENCH-02 baseline(set_no_asc) 여전히 confidence/AUX 정렬보다 우수 → coordinator 수정 별도 GO.
 
 ---
 
 ## 6) 산출물
 
+- `tools/_k_bench_postmortem.py`
+- `docs/benchmarks/20260729_KBENCH_POSTMORTEM.json`
+- `reports/20260729_KBENCH_POSTMORTEM.md`
 - `reports/20260729_4AUX_FEEDBACK_REVIEW.md`
-- `tools/_k_bench_confidence_survey.py`
 - `docs/benchmarks/20260729_KBENCH_CONFIDENCE_survey.json`
-- `reports/20260729_KBENCH_CONFIDENCE_SURVEY.md`
 
 ## 팩트체크
 
 | 항목 | JSON | 보고서 | STATUS |
 |------|------|--------|--------|
 | n_eval | 1182 | 1182 | 1182 |
-| baseline ge3 | 0.11 | 0.1100 | 0.1100 |
-| best variant | baseline_set_no_asc | baseline_set_no_asc | baseline_set_no_asc |
-| gates.pass | false | false | false |
-| recommended_next | K-ATTACK-HOLD | K-ATTACK-HOLD | K-ATTACK-HOLD |
+| ge3_rate | 0.11 | 0.11 | 0.11 |
+| quota_missed_rate | 0.4365 | 0.4365 | 0.4365 |
+| verdict | SIGNAL_FOUND | SIGNAL_FOUND | SIGNAL_FOUND |
+| recommended_next | K-BENCH-01-WIRE | K-BENCH-01-WIRE | K-BENCH-01-WIRE |

@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | K-BENCH-01 GO | postmortem WF n=1182 · 쿼터갭43.6%·markov52.5% · AUX무상관 | BENCH01 SIGNAL | `pending` |
 | 2026-07-29 | GenSpark+4보조·피드백 논의 | READ-ONLY 코드확인·형가설 판정·보고서·GenSpark 6문답 교차 | REVIEW OK | `pending` |
 | 2026-07-29 | K-BENCH-02 GO | confidence 5축 live · baseline ge3=0.1100 최고 · AUX/conf 하회 | BENCH02 FAIL | `pending` |
 | 2026-07-29 | K-BENCH-05·03 GO | baseline행·WF/tier 분리 · BENCH_REPORT_TEMPLATE · 보고서예시2 | PROTOCOL OK | `pending` |
@@ -44,10 +45,6 @@
 | 2026-07-29 | GENMIX·팩트체크·push | GENMIX FAIL · live0.1303<pin · trunc동일 · NEXT=HOLD | GENMIX FAIL | `d8650db` |
 | 2026-07-29 | AUX/생성레버·팩트체크·push | AUX-BLEND FAIL · live r=0.0134 · V2유지 · NEXT=HOLD | AUX-BLEND FAIL | `4ca44bf` |
 | 2026-07-29 | 새직교축·팩트체크·push | GENDIV FAIL · Q1 ge3 0.1224 · V2유지 · NEXT=HOLD | GENDIV FAIL | `18848dc` |
-| 2026-07-29 | 새직교축·팩트체크·push | SUM-SELECT FAIL · Δ-0.0043 · V2유지 · NEXT=HOLD | SUM FAIL | `f617c98` |
-| 2026-07-29 | 새직교축·팩트체크·push | BAND-SELECT FAIL · Δ-0.0060 · V2유지 · NEXT=HOLD | BAND FAIL | `9e67fbb` |
-| 2026-07-29 | 진행·팩트체크 | EV-POP FAIL · pop↓·ge3↓ · V2유지 · NEXT=HOLD | EV-POP FAIL | `b945197` |
-| 2026-07-29 | 다음축선정·해줘 | SETNO-HITMAP Δ+0.0034 FAIL · V2유지 · NEXT=HOLD | SETNO FAIL | `8fcd2d9` |
 | 2026-07-29 | K-POSTHOC-ANALYSIS | 50시드×50회 best ge3=0.18 p=0.109 · 무신호 · V2 pin유지 | POSTHOC 무신호 | `pending` |
 
 ---
