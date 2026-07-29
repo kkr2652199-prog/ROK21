@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달
-- 직전: K-BENCH-01-WIRE FAIL tier 롤백 · AUX_SIGNAL_PIVOT E1~E3 제안
-- 다음: K-ATTACK-HOLD — V2 pin 유지 · E2/E3 survey는 형 GO
+- 지금: **K-WINDOW-SIGNAL-01 running** ~900/1182 · 신호셋트 아키텍처 3자 합의 문서화
+- 직전: K-AUX-SIGNAL-01 FAIL ge3=0.1303 · 1군 벤치 인벤토리 · AUX_SIGNAL_PIVOT
+- 다음: K-WINDOW 완료→K-SIGNAL-SELECT-01 overlap survey (coordinator 무수정)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

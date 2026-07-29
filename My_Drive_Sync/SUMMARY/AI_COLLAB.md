@@ -24,14 +24,15 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-29 22:10 KST)
-- **HEAD**: `89e4ec8`
-- **현재 배선**: WIRE-V2 (ge3=0.1447 stored) — pin 유지 · live baseline ge3=0.1218
-- **K-AUX-SIGNAL-01 (E1)**: **FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 미달
-- **커서×젠스파크 합의**: E1 FAIL≠피벗 포기 · stored/live 갭(Δ0.0229)이 병목 · **다음 GO 후보=K-WINDOW-SIGNAL-01 survey**
+### 최신 상태 (2026-07-29 23:45 KST)
+- **HEAD**: `bcaf29b` (push 후 갱신)
+- **K-WINDOW-SIGNAL-01**: **running** ~900/1182 (kill 금지) · pin ge3=0.1447 대비
+- **형 신호셋트 아키텍처**: 5→10세트→신호셋트5 · Tier0~4 프레임 · `reports/20260729_SIGNAL_SET_ARCHITECTURE.md`
+- **3자 합의**: 10세트=조건부찬성 · 신호셋트=**통합5** · 선별=(b)overlap→(a)bin→(c)Jaccard · coordinator wire=형 GO 전 금지
 
 ### 논의 이력 (최신순)
-1. **[23:10] 1군 벤치·이식 인벤토리** — deterministic_sets/honesty/fusion/QUICK_GATE P0~P3 · `_k_window_signal_survey.py` --n-eval 패치 필요 · `reports/20260729_MONEY1GUN_BENCH_INVENTORY.md`
+1. **[23:45] 신호셋트 아키텍처 3라운드** — GenSpark: 「조건부 찬성」「통합5」「QUICK_GATE tail-200 p<0.15」「QUICK_GATE는 SIGNAL-SELECT 후」→ 구현순서 §6 확정 · GenSpark browser 3-turn
+2. **[23:10] 1군 벤치·이식 인벤토리** — deterministic_sets/honesty/fusion/QUICK_GATE P0~P3 · `_k_window_signal_survey.py` --n-eval 패치 필요 · `reports/20260729_MONEY1GUN_BENCH_INVENTORY.md`
 2. **[22:51] 1군 vs ROK21 testlotto READ-ONLY 비교** — 6뇌+fusion vs 3+4 coordinator · `reports/20260729_MONEY1GUN_VS_ROK21.md`
 2. **[22:10] 커서×젠스파크 브라우저 협의** — E1 null 대비 유의(p=0.042) but pin 미달 · stored 0.1447 vs live 0.1218 갭 핵심 · 우선순위 **window_signal→E2→E3** · 형 GO 1건=`K-WINDOW-SIGNAL-01 survey`
 2. **[22:00]** K-AUX-SIGNAL-01 FAIL — hint inject survey n=1182 · best ge3=0.1303 · `20260729_KAUX_SIGNAL_SURVEY.md`

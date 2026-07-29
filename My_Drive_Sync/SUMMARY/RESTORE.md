@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | 신호셋트 아키텍처·GenSpark 3turn | Tier0~4·통합5·구현순서7단계 · KWINDOW running 900/1182 | ARCH OK | pending |
 | 2026-07-29 | K-AUX-SIGNAL-01 GO | hint inject live WF n=1182 · 5 variants×α · best ge3=0.1303 | **FAIL** | `579495e` |
 | 2026-07-29 | DHLOTTERY 로또 감사 | lt645 result/stats/판매점 READ-ONLY · K-AUX-SIGNAL 3아이디어 · 보고서 | AUDIT OK | `394e790` |
 | **K-BENCH-01-WIRE** | tier 피드백 live WF ge3=0.1142 · 롤백 · AUX_SIGNAL_PIVOT | WIRE FAIL | `pending` |

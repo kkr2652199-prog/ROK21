@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-07-29 KST  
-📌 사유: **K-AUX-SIGNAL-01 survey 완료 FAIL**
+📅 최종 갱신: 2026-07-29 23:45 KST  
+📌 사유: **신호셋트 아키텍처 3자 합의** · K-WINDOW-SIGNAL-01 running
 
 ---
 
@@ -10,13 +10,12 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| K-BENCH-01-WIRE | **FAIL** ge3=**0.1142** p=0.49 · tier 피드백 **롤백** |
+| K-WINDOW-SIGNAL-01 | **RUNNING** ~900/1182 · kill 금지 · pin ge3=0.1447 대비 |
+| 신호셋트 아키텍처 | **3자 합의** — 10세트 조건부찬성 · 통합5 · Tier0~4 · `20260729_SIGNAL_SET_ARCHITECTURE.md` |
 | K-AUX-SIGNAL-01 | **FAIL** — best miss_pattern@α=0.2 ge3=**0.1303** p=0.042 · pin 0.1447 미달 |
-| K-AUX-SIGNAL | **OPEN** — E1 FAIL · E2/E3 후보 · WIRE 보류 |
 | K-BENCH-01 | **SIGNAL_FOUND** — 쿼터갭 43.6% · markov 52.5% · AUX↔hit 무상관 |
-| K-BENCH-02 | **FAIL** — confidence/AUX 정렬 4축 ge3 0.0990~0.1024 · baseline 0.1100 최고 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-ATTACK-HOLD** · V2 pin 유지 · E2/E3 survey는 형 GO |
+| 권고 | K-WINDOW 완료→**K-SIGNAL-SELECT-01** · coordinator wire=형 GO 전 금지 |
 
 ---
 

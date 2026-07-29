@@ -4,13 +4,13 @@
 
 ## NEXT (1건)
 - ID: K-WINDOW-SIGNAL-01
-- 할일: `tools/_k_window_signal_survey.py` 실행 → `docs/benchmarks/*KWINDOW*` + `reports/*KWINDOW*` · pin ge3=0.1447 대비 · stored/live 갭(Δ0.0229) 연계
-- 완료조건: 형 GO 또는 survey JSON+보고서 확정
+- 할일: survey 완료 대기(kill 금지) → JSON+보고서 확정 → K-SIGNAL-SELECT-01 overlap 선별 survey 설계
+- 완료조건: KWINDOW JSON+보고서 · pin ge3=0.1447 대비 · `20260729_SIGNAL_SET_ARCHITECTURE.md` §6 순서
 - 형승인: —
-- 갱신일: 2026-07-29 (E2 K-POSTMORTEM-SIGNAL-02 완료 · 1군 vs ROK21 READ-ONLY 비교 · KWINDOW JSON 미생성)
+- 갱신일: 2026-07-29 (신호셋트 3자 합의 · GenSpark browser 3-turn)
 
 ## WORKSTATE
-IDLE
+RUNNING:K-WINDOW-SIGNAL-01
 
 ---
 
