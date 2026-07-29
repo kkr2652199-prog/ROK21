@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0556cc7` · WORK=`IDLE`
+1. **HEAD:** `62a7fe1` · WORK=`IDLE`
 2. **지금:** **K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달
-3. **다음1건:** K-ATTACK-HOLD — V2 pin ge3=0.1447 유지 · E2 POSTMORTEM-SIGNAL-02 또는 E3 PATTERN-HINT-03 survey는 형 GO 후 · coordinator/AUX 배선 금지 (승인필요=예 · 선행=없음)
+3. **다음1건:** K-WINDOW-SIGNAL-01 — `tools/_k_window_signal_survey.py` 실행 → `docs/benchmarks/*KWINDOW*` + `reports/*KWINDOW*` · pin ge3=0.1447 대비 · stored/live 갭(Δ0.0229) 연계 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
