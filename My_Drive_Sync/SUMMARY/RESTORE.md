@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| **K-BENCH-01-WIRE** | tier 피드백 live WF ge3=0.1142 · 롤백 · AUX_SIGNAL_PIVOT | WIRE FAIL | `pending` |
 | 2026-07-29 | K-BENCH-01 GO | postmortem WF n=1182 · 쿼터갭43.6%·markov52.5% · AUX무상관 | BENCH01 SIGNAL | `pending` |
 | 2026-07-29 | GenSpark+4보조·피드백 논의 | READ-ONLY 코드확인·형가설 판정·보고서·GenSpark 6문답 교차 | REVIEW OK | `pending` |
 | 2026-07-29 | K-BENCH-02 GO | confidence 5축 live · baseline ge3=0.1100 최고 · AUX/conf 하회 | BENCH02 FAIL | `pending` |

@@ -67,4 +67,6 @@
 | K-AG | PATCHED | pair÷null_q95(32)·zone=LMH이론PMF · 미소비3키(pair/consec/odd) aux배선 · E[k]=100 | KAG 보고서 · `20260727_KAG_pair_zone_learnkeys.json` | 명분·배선정합. 1등↑아님. 구/30·spread대비 SHA변경은 재정의정상 |
 | K-MONEY1-LESSONS | OPEN | 1군→ROK21 교훈: **배울점** draws컷오ff·생성/채점분리·stat/markov≈0.8 · **갖춘점** WIRE-V2·BENCH·as_of·fusion미배선 · **금지** fusion전역가중·feedback무관·캐시·hyena2차·lstm stored | `reports/20260729_MONEY1GUN_ROK21_LESSONS.md` · 1군 `lotto.db` ro | 1131~1231 3등15(0/0/15) · 전체10/3/171 · stat/markov 0건. 예측코드 미수정 |
 | K-BENCH-DEEP | OPEN | 1군 심화→ROK21 적용 아이디어 **K-BENCH-01~05** · **01 SIGNAL_FOUND·05·03 PATCHED** · 02 FAIL | `reports/20260729_BENCH_DEEP_IDEAS.md` · `20260729_KBENCH_POSTMORTEM.json` | 쿼터갭43.6%·markov52.5% · AUX무상관 · coordinator 동결 |
-| K-BENCH-01 | OPEN | postmortem WF n=1182 · 쿼터갭43.6%·markov best 52.5% · AUX↔hit 무상관 · **SIGNAL_FOUND** | `tools/_k_bench_postmortem.py` · `20260729_KBENCH_POSTMORTEM.json` | 진단 survey · ge3 PASS/FAIL 아님 · WIRE=형 GO |
+| K-BENCH-01 | CLOSED | postmortem WF n=1182 · SIGNAL_FOUND · WIRE 후속 완료 | `20260729_KBENCH_POSTMORTEM.json` | 진단 survey · WIRE=별도 |
+| K-BENCH-01-WIRE | CLOSED | tier 피드백 배선 live WF ge3=**0.1142** p=0.49 · pin 0.1447 미달 → **롤백** | `20260729_KBENCH01_WIRE_verify.json` | learn_state tier 원복 · coordinator 미수정 |
+| K-AUX-SIGNAL | OPEN | 4보조 채점→**신호전달** 역할 전환 제안 · E1~E3 survey 후보 | `reports/20260729_AUX_SIGNAL_PIVOT.md` | AUX↔hit 무상관 · 형 GO 대기 |

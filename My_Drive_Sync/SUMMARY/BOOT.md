@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BENCH-01 postmortem SIGNAL_FOUND** — 쿼터갭 43.6%·markov 15중 best 52.5% · AUX↔hit 무상관 · ge3=0.11
-- 직전: 4보조·피드백 READ-ONLY — set_no_asc 컷 없음 · K-BENCH-02 FAIL
-- 다음: K-BENCH-01-WIRE — 형 GO 후 피드백축 검토 (coordinator 수정 별도 GO)
+- 지금: **K-BENCH-01-WIRE FAIL** — tier 피드백 ge3=0.1142·롤백 · **AUX 신호전환 제안** 문서화
+- 직전: K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭43.6%·markov52.5% · AUX↔hit 무상관
+- 다음: K-AUX-SIGNAL-01 survey (READ-ONLY) — 4보조 채점→신호전달 · coordinator 별도 GO
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -3,11 +3,11 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BENCH-01-WIRE
-- 할일: K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭 43.6%·markov best 52.5% · 형 GO 후 피드백축 WIRE 검토 (coordinator 수정은 별도 GO)
-- 완료조건: 형이 WIRE 축 지정 또는 HOLD 유지 확인
+- ID: K-AUX-SIGNAL-01
+- 할일: 4보조 역할 전환 survey (READ-ONLY) — 채점→신호벡터 힌트 시뮬 · `reports/20260729_AUX_SIGNAL_PIVOT.md` E1 참고 · coordinator 변경은 별도 GO
+- 완료조건: survey JSON+보고서 · ge3 vs pin 0.1447 비교
 - 승인필요: 예
-- 선행완료: 2026-07-29 (K-BENCH-01 — postmortem WF n=1182 · SIGNAL_FOUND · AUX↔hit 무상관)
+- 선행완료: 2026-07-29 (K-BENCH-01-WIRE FAIL ge3=0.1142·tier 롤백 · AUX_SIGNAL_PIVOT 문서)
 
 ## WORKSTATE
 IDLE

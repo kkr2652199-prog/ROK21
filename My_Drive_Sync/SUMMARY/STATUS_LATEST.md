@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: **K-BENCH-01 postmortem SIGNAL_FOUND** — 쿼터갭·뇌지배 신호 · NEXT=K-BENCH-01-WIRE
+📌 사유: **K-BENCH-01-WIRE FAIL·롤백** · **AUX 신호전환 제안** · NEXT=K-AUX-SIGNAL-01
 
 ---
 
@@ -10,12 +10,12 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| K-BENCH-01 | **SIGNAL_FOUND** — 쿼터갭 43.6% · markov 15중 best 52.5% · AUX↔hit 무상관 |
+| K-BENCH-01-WIRE | **FAIL** ge3=**0.1142** p=0.49 · tier 피드백 **롤백** |
+| K-AUX-SIGNAL | **OPEN** — 4보조 채점→신호전달 제안 · `20260729_AUX_SIGNAL_PIVOT.md` |
+| K-BENCH-01 | **SIGNAL_FOUND** — 쿼터갭 43.6% · markov 52.5% · AUX↔hit 무상관 |
 | K-BENCH-02 | **FAIL** — confidence/AUX 정렬 4축 ge3 0.0990~0.1024 · baseline 0.1100 최고 |
-| K-BENCH-05 | **PATCHED** — E[match]=0.8 · ge3 null=0.1137 · SUMMARY baseline 행 필수 |
-| K-POSTHOC-ANALYSIS | **무신호** · 50시드×50회 · best ge3=0.18 p=0.109 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-BENCH-01-WIRE** (형 GO) · V2 pin 유지 · coordinator 수정 별도 GO |
+| 권고 | **K-AUX-SIGNAL-01** survey (READ-ONLY) · V2 pin 유지 · coordinator 별도 GO |
 
 ---
 
