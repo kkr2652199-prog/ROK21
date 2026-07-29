@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `76a0d46` · WORK=`IDLE`
+1. **HEAD:** `64fbbd2` · WORK=`IDLE`
 2. **지금:** AUX-WEIGHT-SURVEY **FAIL** · 13조합 ge3=**0.1100** 동일 · pin불일치
 3. **다음1건:** K-ATTACK-HOLD — AUX-WEIGHT-SURVEY FAIL(13조합 ge3=0.1100 동일·Δ-0.0347·p=0.669622) · V2 set_no 경로 AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-29 | K-AUX-WEIGHT-SURVEY | 13조합 ge3=0.1100 동일 · pin불일치 · NEXT=HOLD | AUX-WEIGHT FAIL | `pending` |
+| 2026-07-29 | K-AUX-WEIGHT-SURVEY | 13조합 ge3=0.1100 동일 · pin불일치 · NEXT=HOLD | AUX-WEIGHT FAIL | `64fbbd2` |
 | 2026-07-29 | K-STAT-TUNE-WIRE·GO | ge3=0.1176 p=0.35 · 롤백 gap30/hot5 · NEXT=HOLD | WIRE FAIL | `bfa7222` |
 | 2026-07-29 | K-STAT-TUNE·종료체크 | best0.1523>0.1447 p=3.6e-05 · NEXT=WIRE | TUNE PASS | `688805c` |
 | 2026-07-29 | HOLD판단·팩트체크·push | HOLD맵 · 실레버공백 · 새벤치無 · V2유지 · 형A/B | HOLD맵 | `9d29038` |
