@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `394e790` |
+| HEAD(실측) | `7f4eae2` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **DHLOTTERY 로또 감사 완료** — lt645/stats·result·판매점 READ-ONLY · `20260729_DHLOTTERY_LOTTO_AUDIT.md` |
-| 직전 | K-BENCH-01-WIRE FAIL — tier 피드백 ge3=0.1142·AUX 신호전환 제안 문서화 |
-| BOOT다음 | K-AUX-SIGNAL-01 survey (READ-ONLY) — 공식 기간필터·gap 신호 E1·3 반영 · coordinator 별도 GO |
-| NEXT1 ID | **K-AUX-SIGNAL-01** |
-| NEXT1 할일 | 4보조 역할 전환 survey (READ-ONLY) — 채점→신호벡터 힌트 시뮬 · `reports/20260729_AUX_SIGNAL_PIVOT.md` E1 참고 · coordinator 변경은 별도 GO |
+| 지금 | **K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달 |
+| 직전 | K-BENCH-01-WIRE FAIL tier 롤백 · AUX_SIGNAL_PIVOT E1~E3 제안 |
+| BOOT다음 | K-ATTACK-HOLD — V2 pin 유지 · E2/E3 survey는 형 GO |
+| NEXT1 ID | **K-ATTACK-HOLD** |
+| NEXT1 할일 | V2 pin ge3=0.1447 유지 · E2 POSTMORTEM-SIGNAL-02 또는 E3 PATTERN-HINT-03 survey는 형 GO 후 · coordinator/AUX 배선 금지 |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=394e790 · 지금=**DHLOTTERY 로또 감사 완료** — lt645/stats·result·판매점 READ-ONLY · `20260729_DHLOTTERY_LOTTO_AUDIT.md` · 다음=K-AUX-SIGNAL-01`
+1. 첫줄 `[복귀] HEAD=7f4eae2 · 지금=**K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

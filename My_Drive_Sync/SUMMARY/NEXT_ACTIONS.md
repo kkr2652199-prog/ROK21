@@ -3,11 +3,11 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-AUX-SIGNAL-01
-- 할일: 4보조 역할 전환 survey (READ-ONLY) — 채점→신호벡터 힌트 시뮬 · `reports/20260729_AUX_SIGNAL_PIVOT.md` E1 참고 · coordinator 변경은 별도 GO
-- 완료조건: survey JSON+보고서 · ge3 vs pin 0.1447 비교
+- ID: K-ATTACK-HOLD
+- 할일: V2 pin ge3=0.1447 유지 · E2 POSTMORTEM-SIGNAL-02 또는 E3 PATTERN-HINT-03 survey는 형 GO 후 · coordinator/AUX 배선 금지
+- 완료조건: 형 지정 축 대기 또는 E2/E3 GO
 - 승인필요: 예
-- 선행완료: 2026-07-29 (K-BENCH-01-WIRE FAIL ge3=0.1142·tier 롤백 · AUX_SIGNAL_PIVOT 문서)
+- 선행완료: 2026-07-29 (K-AUX-SIGNAL-01 FAIL — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 미달)
 
 ## WORKSTATE
 IDLE

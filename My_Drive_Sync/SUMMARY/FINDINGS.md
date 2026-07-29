@@ -69,4 +69,5 @@
 | K-BENCH-DEEP | OPEN | 1군 심화→ROK21 적용 아이디어 **K-BENCH-01~05** · **01 SIGNAL_FOUND·05·03 PATCHED** · 02 FAIL | `reports/20260729_BENCH_DEEP_IDEAS.md` · `20260729_KBENCH_POSTMORTEM.json` | 쿼터갭43.6%·markov52.5% · AUX무상관 · coordinator 동결 |
 | K-BENCH-01 | CLOSED | postmortem WF n=1182 · SIGNAL_FOUND · WIRE 후속 완료 | `20260729_KBENCH_POSTMORTEM.json` | 진단 survey · WIRE=별도 |
 | K-BENCH-01-WIRE | CLOSED | tier 피드백 배선 live WF ge3=**0.1142** p=0.49 · pin 0.1447 미달 → **롤백** | `20260729_KBENCH01_WIRE_verify.json` | learn_state tier 원복 · coordinator 미수정 |
-| K-AUX-SIGNAL | OPEN | 4보조 채점→**신호전달** 역할 전환 제안 · E1~E3 survey 후보 | `reports/20260729_AUX_SIGNAL_PIVOT.md` | AUX↔hit 무상관 · 형 GO 대기 |
+| K-AUX-SIGNAL | OPEN | 4보조 채점→**신호전달** 역할 전환 · E1 survey **FAIL** · E2/E3 후보 | `20260729_KAUX_SIGNAL_survey.json` | best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달 · WIRE 보류 |
+| K-AUX-SIGNAL-01 | CLOSED | E1 live WF n=1182 · 5 variants×α grid · hint inject wrapper | `20260729_KAUX_SIGNAL_survey.json` | FAIL · coordinator 미수정 · → K-ATTACK-HOLD or E2/E3 |
