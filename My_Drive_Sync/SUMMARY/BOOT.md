@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BENCH-01-WIRE FAIL** — tier 피드백 ge3=0.1142·롤백 · **AUX 신호전환 제안** 문서화
-- 직전: K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭43.6%·markov52.5% · AUX↔hit 무상관
-- 다음: K-AUX-SIGNAL-01 survey (READ-ONLY) — 4보조 채점→신호전달 · coordinator 별도 GO
+- 지금: **DHLOTTERY 로또 감사 완료** — lt645/stats·result·판매점 READ-ONLY · `20260729_DHLOTTERY_LOTTO_AUDIT.md`
+- 직전: K-BENCH-01-WIRE FAIL — tier 피드백 ge3=0.1142·AUX 신호전환 제안 문서화
+- 다음: K-AUX-SIGNAL-01 survey (READ-ONLY) — 공식 기간필터·gap 신호 E1·3 반영 · coordinator 별도 GO
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

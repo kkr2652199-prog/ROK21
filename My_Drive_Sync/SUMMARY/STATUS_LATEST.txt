@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: **K-BENCH-01-WIRE FAIL·롤백** · **AUX 신호전환 제안** · NEXT=K-AUX-SIGNAL-01
+📌 사유: **DHLOTTERY 로또 감사** · K-AUX-SIGNAL-01 survey 대기
 
 ---
 
@@ -23,6 +23,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **DHLOTTERY-AUDIT** | 동행복권 lt645 추첨·통계·판매점 READ-ONLY · K-AUX 3아이디어 | **AUDIT OK** |
 | **K-BENCH-01** | postmortem WF n=1182 · tier·쿼터갭·AUX상관 · seed=42 | **SIGNAL_FOUND** |
 | **4AUX_FEEDBACK_REVIEW** | 4보조=채점·set_no_asc면 컷없음·피드백 부분구현 · GenSpark 일치 | **REVIEW OK** |
 | **K-BENCH-02** | confidence/AUX 5축 live WF · set_no_asc vs confidence/quota | **FAIL** · baseline 최고 |

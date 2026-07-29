@@ -31,7 +31,8 @@
 - **다음**: K-BENCH-01-WIRE — 형 GO 후 피드백축 WIRE 검토
 
 ### 논의 이력 (최신순)
-1. **[21:00]** K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭·markov지배 · `20260729_KBENCH_POSTMORTEM.md`
+1. **[21:35]** 동행복권 로또6/45 공식 페이지 감사 — lt645/stats·동반출현·기간필터 · 홀짝/합계 공식UI없음 · `20260729_DHLOTTERY_LOTTO_AUDIT.md`
+2. **[21:00]** K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭·markov지배 · `20260729_KBENCH_POSTMORTEM.md`
 2. **[20:45]** 형 6문(4보조·피드백) — 커서 READ-ONLY + GenSpark 답변 일치 · `20260729_4AUX_FEEDBACK_REVIEW.md`
 3. **[22:00]** K-BENCH-02 완료 FAIL — set_no_asc가 confidence/AUX 정렬보다 우수 · coordinator 수정 금지
 2. **[21:50]** 형 GO — K-BENCH-05·03 즉시: BENCH_PROTOCOL §6·§7 · BENCH_REPORT_TEMPLATE · 02·01은 GO 후
