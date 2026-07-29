@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BENCH-05·03 완료** — baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE
-- 직전: K-BENCH-DEEP — 1군 postmortem/pattern_store 심화 · GenSpark GO
-- 다음: K-ATTACK-HOLD — V2 pin 유지 · 형 GO 후 K-BENCH-02 confidence survey
+- 지금: **K-BENCH-02 완료 FAIL** — confidence/AUX 5축 live · baseline ge3=0.1100 최고 · pin 미달
+- 직전: K-BENCH-05·03 — baseline행·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE
+- 다음: K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 지정 대기 (K-BENCH-01 또는 HOLD)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

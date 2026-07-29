@@ -24,14 +24,15 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-29 21:50 KST)
-- **HEAD**: `fa5db9c`
+### 최신 상태 (2026-07-29 22:00 KST)
+- **HEAD**: `pending` (K-BENCH-02 push 예정)
 - **현재 배선**: WIRE-V2 (ge3=0.1447) — pin 유지
-- **K-BENCH-05·03**: baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·템플릿 **완료**
-- **다음**: K-ATTACK-HOLD · 형 GO 후 K-BENCH-02 confidence survey
+- **K-BENCH-02**: confidence/AUX 5축 live survey **FAIL** — baseline ge3=0.1100 최고 · confidence/AUX 4축 하회
+- **다음**: K-ATTACK-HOLD · 형 다음 1축 지정 (K-BENCH-01 postmortem 또는 HOLD)
 
 ### 논의 이력 (최신순)
-1. **[21:50]** 형 GO — K-BENCH-05·03 즉시: BENCH_PROTOCOL §6·§7 · BENCH_REPORT_TEMPLATE · 02·01은 GO 후
+1. **[22:00]** K-BENCH-02 완료 FAIL — set_no_asc가 confidence/AUX 정렬보다 우수 · coordinator 수정 금지
+2. **[21:50]** 형 GO — K-BENCH-05·03 즉시: BENCH_PROTOCOL §6·§7 · BENCH_REPORT_TEMPLATE · 02·01은 GO 후
 2. **[19:35]** 1군(MONEY lol)→ROK21 교훈 정리 완료 — 배울점/갖춘점/금지점 · 1131~1231 3등15건 표
 2. **[18:26]** 형 아이디어: 랜덤 시드별 백테스트 → 좋은 결과 역추적 → 신호 좁히기. 커서+젠스파크 동의
 3. **[18:14]** 젠스파크 K-LIVE-GRID 지시서 초안 작성. markov override 검토 요청

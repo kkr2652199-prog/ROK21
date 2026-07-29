@@ -1,0 +1,328 @@
+{
+  "id": "K-BENCH-02-CONFIDENCE-SURVEY",
+  "ts": "2026-07-29T19:57:41",
+  "elapsed_sec": 122.1,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "wire_pin_ge3": 0.1447,
+  "wire_pin_mean": 1.7504,
+  "null_ge3": 0.1137,
+  "mc_seed": 42,
+  "sets_per_predict_brain": 5,
+  "pipeline": "live_predict_sets + _apply_aux_scoring + variant_select",
+  "variants": [
+    {
+      "id": "baseline_set_no_asc",
+      "description": "V2 set_no 오름차순 쿼터 (markov3+stat1+review1)"
+    },
+    {
+      "id": "confidence_desc",
+      "description": "15세트 풀 confidence 내림차순 top 5"
+    },
+    {
+      "id": "aux_total_desc",
+      "description": "15세트 풀 AUX 합산(raw) 내림차순 top 5"
+    },
+    {
+      "id": "confidence_quota",
+      "description": "뇌별 quota 유지 · 뇌 내 confidence 최고"
+    },
+    {
+      "id": "aux_quota",
+      "description": "뇌별 quota 유지 · 뇌 내 AUX 최고"
+    }
+  ],
+  "baseline": {
+    "variant_id": "baseline_set_no_asc",
+    "ge3_rate": 0.11,
+    "mean": 1.7191,
+    "ge4_rate": 0.0059,
+    "ge3_count": 130,
+    "delta_ge3_vs_pin": -0.0347,
+    "delta_ge3_vs_null": -0.0037,
+    "p_value_vs_null": 0.669622,
+    "p_value_vs_pin": 0.99981,
+    "verdict": "FAIL"
+  },
+  "results": [
+    {
+      "variant_id": "baseline_set_no_asc",
+      "ge3_rate": 0.11,
+      "mean": 1.7191,
+      "ge4_rate": 0.0059,
+      "ge3_count": 130,
+      "delta_ge3_vs_pin": -0.0347,
+      "delta_ge3_vs_null": -0.0037,
+      "p_value_vs_null": 0.669622,
+      "p_value_vs_pin": 0.99981,
+      "verdict": "FAIL"
+    },
+    {
+      "variant_id": "confidence_desc",
+      "ge3_rate": 0.1024,
+      "mean": 1.6997,
+      "ge4_rate": 0.0017,
+      "ge3_count": 121,
+      "delta_ge3_vs_pin": -0.0423,
+      "delta_ge3_vs_null": -0.0113,
+      "p_value_vs_null": 0.899894,
+      "p_value_vs_pin": 0.999994,
+      "verdict": "FAIL"
+    },
+    {
+      "variant_id": "aux_quota",
+      "ge3_rate": 0.1007,
+      "mean": 1.6878,
+      "ge4_rate": 0.0017,
+      "ge3_count": 119,
+      "delta_ge3_vs_pin": -0.044,
+      "delta_ge3_vs_null": -0.013,
+      "p_value_vs_null": 0.92929,
+      "p_value_vs_pin": 0.999997,
+      "verdict": "FAIL"
+    },
+    {
+      "variant_id": "confidence_quota",
+      "ge3_rate": 0.0998,
+      "mean": 1.676,
+      "ge4_rate": 0.0008,
+      "ge3_count": 118,
+      "delta_ge3_vs_pin": -0.0449,
+      "delta_ge3_vs_null": -0.0139,
+      "p_value_vs_null": 0.941286,
+      "p_value_vs_pin": 0.999998,
+      "verdict": "FAIL"
+    },
+    {
+      "variant_id": "aux_total_desc",
+      "ge3_rate": 0.099,
+      "mean": 1.6853,
+      "ge4_rate": 0.0025,
+      "ge3_count": 117,
+      "delta_ge3_vs_pin": -0.0457,
+      "delta_ge3_vs_null": -0.0147,
+      "p_value_vs_null": 0.951647,
+      "p_value_vs_pin": 0.999999,
+      "verdict": "FAIL"
+    }
+  ],
+  "tier_pivots": {
+    "baseline_set_no_asc": [
+      {
+        "brain": "markov",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 5,
+        "r5": 75,
+        "ge3": 80,
+        "ge3_rate": 0.0226,
+        "n_sets": 3546
+      },
+      {
+        "brain": "stat",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 2,
+        "r5": 28,
+        "ge3": 30,
+        "ge3_rate": 0.0254,
+        "n_sets": 1182
+      },
+      {
+        "brain": "review",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 0,
+        "r5": 29,
+        "ge3": 29,
+        "ge3_rate": 0.0245,
+        "n_sets": 1182
+      }
+    ],
+    "confidence_desc": [
+      {
+        "brain": "markov",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 1,
+        "r5": 42,
+        "ge3": 43,
+        "ge3_rate": 0.0211,
+        "n_sets": 2038
+      },
+      {
+        "brain": "stat",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 1,
+        "r5": 86,
+        "ge3": 87,
+        "ge3_rate": 0.0228,
+        "n_sets": 3820
+      },
+      {
+        "brain": "review",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 0,
+        "r5": 0,
+        "ge3": 0,
+        "ge3_rate": 0.0,
+        "n_sets": 52
+      }
+    ],
+    "aux_total_desc": [
+      {
+        "brain": "markov",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 1,
+        "r5": 45,
+        "ge3": 46,
+        "ge3_rate": 0.02,
+        "n_sets": 2305
+      },
+      {
+        "brain": "stat",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 1,
+        "r5": 47,
+        "ge3": 48,
+        "ge3_rate": 0.0211,
+        "n_sets": 2277
+      },
+      {
+        "brain": "review",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 0,
+        "r5": 31,
+        "ge3": 32,
+        "ge3_rate": 0.0241,
+        "n_sets": 1328
+      }
+    ],
+    "confidence_quota": [
+      {
+        "brain": "markov",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 1,
+        "r5": 68,
+        "ge3": 69,
+        "ge3_rate": 0.0195,
+        "n_sets": 3546
+      },
+      {
+        "brain": "stat",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 0,
+        "r5": 26,
+        "ge3": 26,
+        "ge3_rate": 0.022,
+        "n_sets": 1182
+      },
+      {
+        "brain": "review",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 0,
+        "r5": 32,
+        "ge3": 32,
+        "ge3_rate": 0.0271,
+        "n_sets": 1182
+      }
+    ],
+    "aux_quota": [
+      {
+        "brain": "markov",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 2,
+        "r5": 70,
+        "ge3": 72,
+        "ge3_rate": 0.0203,
+        "n_sets": 3546
+      },
+      {
+        "brain": "stat",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 0,
+        "r5": 27,
+        "ge3": 27,
+        "ge3_rate": 0.0228,
+        "n_sets": 1182
+      },
+      {
+        "brain": "review",
+        "pipeline": "WF live",
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 0,
+        "r5": 24,
+        "ge3": 24,
+        "ge3_rate": 0.0203,
+        "n_sets": 1182
+      }
+    ]
+  },
+  "best_variant": {
+    "variant_id": "baseline_set_no_asc",
+    "ge3_rate": 0.11,
+    "mean": 1.7191,
+    "ge4_rate": 0.0059,
+    "ge3_count": 130,
+    "delta_ge3_vs_pin": -0.0347,
+    "delta_ge3_vs_null": -0.0037,
+    "p_value_vs_null": 0.669622,
+    "p_value_vs_pin": 0.99981,
+    "verdict": "FAIL"
+  },
+  "gates": {
+    "any_ge3_gt_pin": false,
+    "any_pass": false,
+    "best_ge3": 0.11,
+    "best_p_vs_null": 0.669622,
+    "pass": false
+  },
+  "recommended_next": "K-ATTACK-HOLD",
+  "verdict": "FAIL: best baseline_set_no_asc ge3=0.11 ≤ pin 0.1447 (또는 p≥0.05). → K-ATTACK-HOLD.",
+  "db_code_write": false,
+  "code_touched": false,
+  "coordinator_modified": false
+}

@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d5d6bc6` |
+| HEAD(실측) | `d6cc055` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BENCH-05·03 완료** — baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE |
-| 직전 | K-BENCH-DEEP — 1군 postmortem/pattern_store 심화 · GenSpark GO |
-| BOOT다음 | K-ATTACK-HOLD — V2 pin 유지 · 형 GO 후 K-BENCH-02 confidence survey |
+| 지금 | **K-BENCH-02 완료 FAIL** — confidence/AUX 5축 live · baseline ge3=0.1100 최고 · pin 미달 |
+| 직전 | K-BENCH-05·03 — baseline행·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE |
+| BOOT다음 | K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 지정 대기 (K-BENCH-01 또는 HOLD) |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기 (또는 형 GO 후 K-BENCH-02 confidence survey) |
+| NEXT1 할일 | K-BENCH-02 FAIL(confidence/AUX 정렬 전축 ge3≤0.1100·baseline 최고) · V2 pin 유지 · 형 다음 1축 지정 대기 (K-BENCH-01 postmortem 또는 HOLD) |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d5d6bc6 · 지금=**K-BENCH-05·03 완료** — baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=d6cc055 · 지금=**K-BENCH-02 완료 FAIL** — confidence/AUX 5축 live · baseline ge3=0.1100 최고 · pin 미달 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

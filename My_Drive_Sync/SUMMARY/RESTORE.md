@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d5d6bc6` · WORK=`IDLE`
-2. **지금:** **K-BENCH-05·03 완료** — baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE
-3. **다음1건:** K-ATTACK-HOLD — POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기 (또는 형 GO 후 K-BENCH-02 confidence survey) (승인필요=예 · 선행=없음)
+1. **HEAD:** `d6cc055` · WORK=`IDLE`
+2. **지금:** **K-BENCH-02 완료 FAIL** — confidence/AUX 5축 live · baseline ge3=0.1100 최고 · pin 미달
+3. **다음1건:** K-ATTACK-HOLD — K-BENCH-02 FAIL(confidence/AUX 정렬 전축 ge3≤0.1100·baseline 최고) · V2 pin 유지 · 형 다음 1축 지정 대기 (K-BENCH-01 postmortem 또는 HOLD) (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-29 | K-BENCH-02 GO | confidence 5축 live · baseline ge3=0.1100 최고 · AUX/conf 하회 | BENCH02 FAIL | `pending` |
 | 2026-07-29 | K-BENCH-05·03 GO | baseline행·WF/tier 분리 · BENCH_REPORT_TEMPLATE · 보고서예시2 | PROTOCOL OK | `pending` |
 | 2026-07-29 | 1군→ROK21 교훈 정리 | 배울·갖춘·금지 3섹션 · 1131~1231 3등15 · K-MONEY1-LESSONS | LESSONS OK | `pending` |
 | 2026-07-29 | K-STAT-TUNE-WIRE·GO | ge3=0.1176 p=0.35 · 롤백 gap30/hot5 · NEXT=HOLD | WIRE FAIL | `bfa7222` |
