@@ -9,12 +9,12 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6a6a855` |
+| HEAD(실측) | `394e790` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BENCH-01-WIRE FAIL** — tier 피드백 ge3=0.1142·롤백 · **AUX 신호전환 제안** 문서화 |
-| 직전 | K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭43.6%·markov52.5% · AUX↔hit 무상관 |
-| BOOT다음 | K-AUX-SIGNAL-01 survey (READ-ONLY) — 4보조 채점→신호전달 · coordinator 별도 GO |
+| 지금 | **DHLOTTERY 로또 감사 완료** — lt645/stats·result·판매점 READ-ONLY · `20260729_DHLOTTERY_LOTTO_AUDIT.md` |
+| 직전 | K-BENCH-01-WIRE FAIL — tier 피드백 ge3=0.1142·AUX 신호전환 제안 문서화 |
+| BOOT다음 | K-AUX-SIGNAL-01 survey (READ-ONLY) — 공식 기간필터·gap 신호 E1·3 반영 · coordinator 별도 GO |
 | NEXT1 ID | **K-AUX-SIGNAL-01** |
 | NEXT1 할일 | 4보조 역할 전환 survey (READ-ONLY) — 채점→신호벡터 힌트 시뮬 · `reports/20260729_AUX_SIGNAL_PIVOT.md` E1 참고 · coordinator 변경은 별도 GO |
 | 승인필요 | 예 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6a6a855 · 지금=**K-BENCH-01-WIRE FAIL** — tier 피드백 ge3=0.1142·롤백 · **AUX 신호전환 제안** 문서화 · 다음=K-AUX-SIGNAL-01`
+1. 첫줄 `[복귀] HEAD=394e790 · 지금=**DHLOTTERY 로또 감사 완료** — lt645/stats·result·판매점 READ-ONLY · `20260729_DHLOTTERY_LOTTO_AUDIT.md` · 다음=K-AUX-SIGNAL-01`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 6a6a855_
+_generated: 394e790_
