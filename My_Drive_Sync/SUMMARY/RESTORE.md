@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f588c01` · WORK=`IDLE`
+1. **HEAD:** `4de97b4` · WORK=`IDLE`
 2. **지금:** **K-WINDOW-SIGNAL-01 FAIL** — best w4_zone_mix@α=0.1 ge3=0.1328 p=0.023 · pin 미달
 3. **다음1건:** K-ATTACK-HOLD — V2 pin ge3=0.1447 유지 · E3 PATTERN-HINT-03 survey는 형 GO 후 · coordinator/AUX/window hint 배선 금지 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

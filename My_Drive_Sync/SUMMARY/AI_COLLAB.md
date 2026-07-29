@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-07-30 00:10 KST)
-- **HEAD**: pending commit
+- **HEAD**: `4de97b4`
 - **K-WINDOW-SIGNAL-01**: **FAIL** — best w4_zone_mix@α=0.1 ge3=0.1328 p=0.023 · pin 미달 · n=1182 seed=42
 - **K-POSTMORTEM-SIGNAL-02 (E2)**: **DONE** — ge3+ bin lift 미약 · odd=2 +0.031만 유의미
 - **현재 배선**: WIRE-V2 pin ge3=0.1447 유지 · hint inject E1+window 모두 pin 미달

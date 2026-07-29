@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f588c01` · WORK=`IDLE`
+- HEAD: `4de97b4` · WORK=`IDLE`
 - 지금: **K-WINDOW-SIGNAL-01 FAIL** — best w4_zone_mix@α=0.1 ge3=0.1328 p=0.023 · pin 미달
 - 직전: K-AUX-SIGNAL-01 FAIL · E2 POSTMORTEM-SIGNAL-02 bin lift 미약
 - BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · E3 PATTERN-HINT-03은 형 GO
