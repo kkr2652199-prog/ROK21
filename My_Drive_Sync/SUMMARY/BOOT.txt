@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: STAT-TUNE **PASS** · best ge3=**0.1523** · Δ+0.0076 · **WIRE승인대기**
-- 직전: HOLD맵 · 실레버공백 · V2유지
-- 다음: K-STAT-TUNE-WIRE — 형 GO 시 0.02/20/10 배선 · 승인전금지
+- 지금: STAT-WIRE **FAIL** · ge3=**0.1176** · Δ-0.0271 · **롤백완료**
+- 직전: STAT-TUNE PASS · WIRE승인대기
+- 다음: K-ATTACK-HOLD — 다음 공격축 형 결정 대기
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
@@ -35,4 +35,3 @@
 2. `reports/20260727_KAF_팬아웃잔여정합.md`
 3. `RULES_FIXED.md` R35·R36·R37 · `CURSOR_RULES.md` §6
 4. `NEXT_ACTIONS.md` · `FINDINGS.md` · `FLOW_BRIEF.md`
-

@@ -1,0 +1,28 @@
+{
+  "id": "K-STAT-TUNE-WIRE",
+  "ts": "2026-07-29T15:58:52",
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "wire_pin_ge3": 0.1447,
+  "null_ge3": 0.1137,
+  "params_wired": {
+    "recency_decay": 0.02,
+    "gap_threshold": 20,
+    "hot_window": 10,
+    "top_pairs": 30,
+    "pair_bonus_cap": 0.5
+  },
+  "result": {
+    "ge3_rate": 0.1176,
+    "ge4_rate": 0.0085,
+    "ge3_count": 139,
+    "p_value": 0.349617
+  },
+  "delta_ge3_vs_pin": -0.0271,
+  "verdict": "FAIL",
+  "pass": false,
+  "recommended_next": "ROLLBACK"
+}
