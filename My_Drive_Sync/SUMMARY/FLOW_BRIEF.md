@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `432b84c` · WORK=`IDLE`
+- HEAD: `bfa7222` · WORK=`IDLE`
 - 지금: STAT-WIRE **FAIL** · ge3=**0.1176** · Δ-0.0271 · **롤백완료**
 - 직전: STAT-TUNE PASS · WIRE승인대기
 - BOOT다음: K-ATTACK-HOLD — 다음 공격축 형 결정 대기
