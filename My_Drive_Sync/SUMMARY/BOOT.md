@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BENCH-DEEP** — 1군 postmortem/pattern_store/lead1/UI 심화 · K-BENCH-01~05 아이디어 · GenSpark 자문
-- 직전: K-MONEY1-LESSONS — 1군→ROK21 교훈 · POSTHOC 무신호 ge3=**0.18** p=0.109
-- 다음: K-ATTACK-HOLD — V2 pin 유지 · GenSpark·형 결정 대기
+- 지금: **K-BENCH-05·03 완료** — baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE
+- 직전: K-BENCH-DEEP — 1군 postmortem/pattern_store 심화 · GenSpark GO
+- 다음: K-ATTACK-HOLD — V2 pin 유지 · 형 GO 후 K-BENCH-02 confidence survey
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

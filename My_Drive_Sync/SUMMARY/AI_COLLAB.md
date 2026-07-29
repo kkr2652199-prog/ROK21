@@ -24,15 +24,14 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-29 20:45 KST)
-- **HEAD**: `7a0a368`
-- **현재 배선**: WIRE-V2 (ge3=0.1447, p=0.0007) — pin 유지
-- **POSTHOC**: 50시드×50회 best ge3=0.18 p=0.109 → **무신호**
-- **1군 심화**: `20260729_BENCH_DEEP_IDEAS.md` — postmortem/pattern_store/lead1 wheel/UI · K-BENCH-01~05 초안
-- **다음**: K-ATTACK-HOLD — GenSpark 자문 대기 · 형 GO 전 확정 금지
+### 최신 상태 (2026-07-29 21:50 KST)
+- **HEAD**: `pending` (K-BENCH-05·03 커밋 예정)
+- **현재 배선**: WIRE-V2 (ge3=0.1447) — pin 유지
+- **K-BENCH-05·03**: baseline행(0.8/0.1137)·WF/tier 분리 프로토콜·템플릿 **완료**
+- **다음**: K-ATTACK-HOLD · 형 GO 후 K-BENCH-02 confidence survey
 
 ### 논의 이력 (최신순)
-1. **[20:45]** 1군 벤치 심화 READ-ONLY + ROK21 적용 아이디어 5건 + 젠스파크 자문 요청(가져갈/버릴/우선순위)
+1. **[21:50]** 형 GO — K-BENCH-05·03 즉시: BENCH_PROTOCOL §6·§7 · BENCH_REPORT_TEMPLATE · 02·01은 GO 후
 2. **[19:35]** 1군(MONEY lol)→ROK21 교훈 정리 완료 — 배울점/갖춘점/금지점 · 1131~1231 3등15건 표
 2. **[18:26]** 형 아이디어: 랜덤 시드별 백테스트 → 좋은 결과 역추적 → 신호 좁히기. 커서+젠스파크 동의
 3. **[18:14]** 젠스파크 K-LIVE-GRID 지시서 초안 작성. markov override 검토 요청

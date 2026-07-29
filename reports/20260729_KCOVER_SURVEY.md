@@ -8,6 +8,15 @@ F1_V2_STRICT `_wheel_pick` 계수·`WHEEL_POOL` 격자 전부 **ge3 ≤ RR(0.133
 mean은 RR(1.7428)을 소폭 상회(추가 표기). spearman(union, best) **0.0253 ≤ 0.03**.  
 → **WIRE 금지** · `recommended_next=없음` · NEXT=`K-ATTACK-HOLD`.
 
+## SUMMARY (K-BENCH-05 baseline 행)
+
+| label | pipeline | mean | ge3_rate | pin | Δge3 vs null | p (vs null) | 비고 |
+|-------|----------|------|----------|-----|--------------|-------------|------|
+| **theory_baseline** | — | **0.8000** | **0.1137** | — | — | — | E[match]=6×6/45 |
+| RR (best-of-5) | WF live | 1.7428 | 0.1337 | — | +0.0200 | — | n_eval=1182 |
+| combo A baseline | WF live | 1.7614 | 0.1277 | — | +0.0140 | — | pool=25 |
+| best pool=40 | WF live | 1.7970 | 0.1320 | — | +0.0183 | — | ge3<RR |
+
 ## 전제
 
 | 항목 | 값 |

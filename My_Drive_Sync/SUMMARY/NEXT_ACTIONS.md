@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-ATTACK-HOLD
-- 할일: POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기
+- 할일: POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기 (또는 형 GO 후 K-BENCH-02 confidence survey)
 - 완료조건: 형이 다음 1축 지정 또는 HOLD 유지 확인
 - 승인필요: 예
-- 선행완료: 2026-07-29 (K-MONEY1-LESSONS · 1군→ROK21 교훈)
+- 선행완료: 2026-07-29 (K-BENCH-05·03 — baseline행·WF/tier 분리 프로토콜·템플릿)
 
 ## WORKSTATE
 IDLE
@@ -17,6 +17,8 @@ IDLE
 ## 메모 (커서 아님 · guard 무시)
 
 - V2 pin ge3=0.1447 · mean=1.7504 (stored)
+- **K-BENCH-05·03 완료** — BENCH_PROTOCOL §6 baseline행 · §7 WF/tier 분리 · BENCH_REPORT_TEMPLATE.md
+- K-BENCH-02·01 — 형 GO 후 survey 대기
 - REVIEW-TUNE best ge3=0.1117 (carry=2.2·decay=0.8·window=0)
 - AUX-WEIGHT live baseline ge3=0.1100 · 13조합 동일
 - 근거: docs/benchmarks/20260729_KREVIEW_TUNE_survey.json

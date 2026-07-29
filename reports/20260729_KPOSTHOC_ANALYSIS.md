@@ -12,6 +12,15 @@
 | 쿼터 | markov×3 + stat×1 + review×1 |
 | pipeline | live predict_sets → apply_coordinator_scoring → apply_markov_wire_quota |
 
+## SUMMARY (K-BENCH-05 baseline 행)
+
+| label | pipeline | mean | ge3_rate | pin | Δge3 vs null | p (vs null) | 비고 |
+|-------|----------|------|----------|-----|--------------|-------------|------|
+| **theory_baseline** | — | **0.8000** | **0.1137** | — | — | — | E[match]=6×6/45 |
+| WIRE-V2 pin | stored | — | 0.1447 | ✓ | +0.0310 | — | PINNED |
+| overall (50 seeds) | WF live | — | 0.1052 | — | −0.0085 | — | std=0.0417 |
+| best seed #44 | WF live | — | 0.1800 | — | +0.0663 | 0.109 | 무신호 |
+
 ## 시드별 ge3 분포
 | 지표 | 값 |
 |------|-----|

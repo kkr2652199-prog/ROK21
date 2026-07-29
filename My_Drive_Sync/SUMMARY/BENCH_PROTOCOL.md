@@ -1,6 +1,6 @@
 # BENCH_PROTOCOL — 테스트로또 성적 비교 프로토콜 (K-B 고정)
 
-📅 제정: 2026-07-27 · 개정: 2026-07-27(전제실증·볼단위) · SSOT=`kkr2652199-prog/ROK21`  
+📅 제정: 2026-07-27 · 개정: 2026-07-29(K-BENCH-05·03 baseline·tier·pipeline) · SSOT=`kkr2652199-prog/ROK21`  
 📌 충돌 시 이 문서가 성적 수치의 우선순위.
 
 ---
@@ -23,6 +23,7 @@
 | 명제 | 수치 | 함의 |
 |------|------|------|
 | E[세트 적중] | **0.8** = 6×(6/45) | 세트 **mean만으로 뇌 서열화 불가** (K-O) |
+| P(≥3 적중) ge3_rate | ≈ **0.1137** | 이론 null-check · survey `NULL_GE3` SSOT · **K-BENCH-05** |
 | P(정확히 5개) | ≈ **2.873×10⁻⁵** | 1245×100세트 기대 5적중 ≈ **3.58≈3.5건** (K-P) |
 | 세트 상위등수 | 기대 건수 ≪ 잡음 | **학습신호 부재** → 최적화 축으로 부적합 |
 | 볼 표본(실측) | draws **1234** · 본+보너스 슬롯 **8638** | 세트단위 대비 수량 우위 → **검정 층위=볼** |
@@ -82,6 +83,51 @@
 
 ---
 
+## 6) 이론 baseline 표 행 (K-BENCH-05 · 필수)
+
+모든 벤치 리포트·survey 마크다운의 **SUMMARY 표**(또는 동등한 1행 요약 표)에는 아래 **baseline 행을 반드시 포함**한다. 템플릿=`reports/BENCH_REPORT_TEMPLATE.md`.
+
+| label | mean | ge3_rate | pin | Δge3 | p | 비고 |
+|-------|------|----------|-----|------|---|------|
+| **theory_baseline** | **0.8000** | **0.1137** | — | — | — | E[match]=6×6/45 · ge3=null |
+| (후보) | … | … | (있으면) | vs baseline/pin | binom | pipeline·집계 명시 |
+
+- **mean baseline:** random 6/45 기대 적중수 **E[match] ≈ 0.8** (= 6×6/45). K-O와 동일.
+- **ge3 baseline:** P(본번호 교집합 ≥3) 이론값 ≈ **0.1137** — survey 스크립트 `NULL_GE3`·JSON `null_ge3`와 동일 SSOT.
+- **pin 행:** WIRE-V2 등 고정 기준선이 있으면 별도 행(예: ge3=0.1447). baseline과 pin **둘 다** 병기.
+- **Δ·p:** 후보는 baseline(또는 pin) 대비 Δge3·이항검정 p를 같은 표에 기록. baseline 없는 표 **출력 금지**.
+
+---
+
+## 7) 파이프라인 분리·등수(tier) 집계 (K-BENCH-03 · 필수)
+
+### 7.1 WF live vs stored/pred UI — 혼용 금지
+
+| pipeline | 소스 | 용도 | 벤치 표기 |
+|----------|------|------|-----------|
+| **WF live** | `predict_sets` → coordinator → (wire) · as_of 컷오프 | survey·WF 백테 | `pipeline=WF live` |
+| **stored / pred UI** | `lotto_predictions` · review100 JSON | UI·캐시·BENCH §1 SSOT | `pipeline=stored` 또는 `review100` |
+
+- **같은 표에 WF live 수치와 stored/pred UI 수치를 나란히 두지 말 것** (§5 표본 혼합 금지).
+- 분리 방법: **표 2개** 또는 동일 표에 **`pipeline` 컬럼** 필수.
+- stored만 쓰는 UI 지표(dashboard-summary·tier-wins API)를 WF 실력으로 해석 **금지** (BENCH §2 · 1149–1179 갭).
+
+### 7.2 등수(tier) 분리 — `routes.py` `_prediction_rank_tier` 동일
+
+본번호 `matched_count`·`bonus_matched`로 1~5등 판정 (코드 SSOT: `app/testlotto/routes.py`):
+
+| tier | rank | 조건 | 라벨 |
+|------|------|------|------|
+| 1등 | 1 | matched_count == 6 | 1등 |
+| 2등 | 2 | matched_count == 5 **and** bonus_matched == 1 | 2등 |
+| 3등 | 3 | matched_count == 5 (보너스 없음) | 3등 |
+| 4등 | 4 | matched_count == 4 | 4등 |
+| 5등 | 5 | matched_count == 3 | 5등 |
+| 미당첨 | 0 | 그 외 | (집계 제외) |
+
+- 벤치 리포트에 **ge3_rate(≥3)** 만 단독 제시 시 **tier 피벗 표를 함께** 둘 것 — UI tier-wins 착시 방지.
+- tier 표 컬럼 예: `pipeline` · `brain` · `r1`~`r5` · `ge3` · `n_sets` · `window`.
+
 ---
 
 ## 발권) 회차 내 조합 유일 (K-V)
@@ -93,8 +139,8 @@
 
 ---
 
-## 6) 관련 FINDINGS
+## 8) 관련 FINDINGS
 
-K-B(**PATCHED**) · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W(**PATCHED**) · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **WARRANT.md**
+K-B(**PATCHED**) · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W(**PATCHED**) · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **K-BENCH-05(PATCHED)** · **K-BENCH-03(PATCHED)** · **WARRANT.md**
 
 기계검증: `python tools/_kb_bench_ssot_verify.py` → `docs/benchmarks/20260727_KB_bench_ssot.json`
