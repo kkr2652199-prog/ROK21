@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-07-29 22:00 KST)
-- **HEAD**: pending commit (K-AUX-SIGNAL-01)
+- **HEAD**: `58a0633` (K-AUX-SIGNAL-01 survey + R37 sync)
 - **현재 배선**: WIRE-V2 (ge3=0.1447) — pin 유지
 - **K-AUX-SIGNAL-01**: **FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 미달 · WIRE 보류
 - **다음**: K-ATTACK-HOLD — E2/E3 survey는 형 GO
