@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `8eadc6a` |
+| HEAD(실측) | `c2a4ad1` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **4보조·피드백 READ-ONLY 검토 완료** — AUX=15장 채점·set_no_asc면 컷 없음 · 피드백 뼈대만 · GenSpark 형6문 답변 일치 |
-| 직전 | K-BENCH-02 FAIL — confidence/AUX < set_no_asc baseline ge3=0.1100 · pin 미달 |
-| BOOT다음 | K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 (K-BENCH-01 또는 HOLD) |
-| NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | K-BENCH-02 FAIL(confidence/AUX 정렬 전축 ge3≤0.1100·baseline 최고) · V2 pin 유지 · 형 다음 1축 지정 대기 (K-BENCH-01 postmortem 또는 HOLD) |
+| 지금 | **K-BENCH-01 postmortem SIGNAL_FOUND** — 쿼터갭 43.6%·markov 15중 best 52.5% · AUX↔hit 무상관 · ge3=0.11 |
+| 직전 | 4보조·피드백 READ-ONLY — set_no_asc 컷 없음 · K-BENCH-02 FAIL |
+| BOOT다음 | K-BENCH-01-WIRE — 형 GO 후 피드백축 검토 (coordinator 수정 별도 GO) |
+| NEXT1 ID | **K-BENCH-01-WIRE** |
+| NEXT1 할일 | K-BENCH-01 postmortem SIGNAL_FOUND — 쿼터갭 43.6%·markov best 52.5% · 형 GO 후 피드백축 WIRE 검토 (coordinator 수정은 별도 GO) |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=8eadc6a · 지금=**4보조·피드백 READ-ONLY 검토 완료** — AUX=15장 채점·set_no_asc면 컷 없음 · 피드백 뼈대만 · GenSpark 형6문 답변 일치 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=c2a4ad1 · 지금=**K-BENCH-01 postmortem SIGNAL_FOUND** — 쿼터갭 43.6%·markov 15중 best 52.5% · AUX↔hit 무상관 · ge3=0.11 · 다음=K-BENCH-01-WIRE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
