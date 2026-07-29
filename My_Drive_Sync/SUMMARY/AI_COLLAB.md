@@ -31,7 +31,8 @@
 - **커서×젠스파크 합의**: E1 FAIL≠피벗 포기 · stored/live 갭(Δ0.0229)이 병목 · **다음 GO 후보=K-WINDOW-SIGNAL-01 survey**
 
 ### 논의 이력 (최신순)
-1. **[22:10] 커서×젠스파크 브라우저 협의** — E1 null 대비 유의(p=0.042) but pin 미달 · stored 0.1447 vs live 0.1218 갭 핵심 · 우선순위 **window_signal→E2→E3** · 형 GO 1건=`K-WINDOW-SIGNAL-01 survey`
+1. **[22:51] 1군 vs ROK21 testlotto READ-ONLY 비교** — 6뇌+fusion vs 3+4 coordinator · `reports/20260729_MONEY1GUN_VS_ROK21.md`
+2. **[22:10] 커서×젠스파크 브라우저 협의** — E1 null 대비 유의(p=0.042) but pin 미달 · stored 0.1447 vs live 0.1218 갭 핵심 · 우선순위 **window_signal→E2→E3** · 형 GO 1건=`K-WINDOW-SIGNAL-01 survey`
 2. **[22:00]** K-AUX-SIGNAL-01 FAIL — hint inject survey n=1182 · best ge3=0.1303 · `20260729_KAUX_SIGNAL_SURVEY.md`
 3. **[21:35]** 동행복권 로또6/45 공식 페이지 감사 — `20260729_DHLOTTERY_LOTTO_AUDIT.md`
 4. **[21:00]** K-BENCH-01 postmortem SIGNAL_FOUND — `20260729_KBENCH_POSTMORTEM.md`

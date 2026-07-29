@@ -1,0 +1,163 @@
+{
+  "id": "K-POSTMORTEM-SIGNAL-02",
+  "ts": "2026-07-29T22:08:08",
+  "source": "20260729_KBENCH_POSTMORTEM.json",
+  "n_eval": 1182,
+  "ge3_plus_n": 130,
+  "overall_ge3_rate": 0.11,
+  "strata": {
+    "sum_band": [
+      {
+        "bin": "mid(120-155)",
+        "total": 510,
+        "ge3_plus": 58,
+        "ge3_rate": 0.1137,
+        "pct_of_all": 0.4315
+      },
+      {
+        "bin": "low(<120)",
+        "total": 325,
+        "ge3_plus": 35,
+        "ge3_rate": 0.1077,
+        "pct_of_all": 0.275
+      },
+      {
+        "bin": "high(>155)",
+        "total": 347,
+        "ge3_plus": 37,
+        "ge3_rate": 0.1066,
+        "pct_of_all": 0.2936
+      }
+    ],
+    "odd_count": [
+      {
+        "bin": "odd=2",
+        "total": 262,
+        "ge3_plus": 37,
+        "ge3_rate": 0.1412,
+        "pct_of_all": 0.2217
+      },
+      {
+        "bin": "odd=3",
+        "total": 419,
+        "ge3_plus": 48,
+        "ge3_rate": 0.1146,
+        "pct_of_all": 0.3545
+      },
+      {
+        "bin": "odd=6",
+        "total": 19,
+        "ge3_plus": 2,
+        "ge3_rate": 0.1053,
+        "pct_of_all": 0.0161
+      },
+      {
+        "bin": "odd=5",
+        "total": 93,
+        "ge3_plus": 9,
+        "ge3_rate": 0.0968,
+        "pct_of_all": 0.0787
+      },
+      {
+        "bin": "odd=1",
+        "total": 79,
+        "ge3_plus": 7,
+        "ge3_rate": 0.0886,
+        "pct_of_all": 0.0668
+      },
+      {
+        "bin": "odd=4",
+        "total": 310,
+        "ge3_plus": 27,
+        "ge3_rate": 0.0871,
+        "pct_of_all": 0.2623
+      }
+    ],
+    "ac": [
+      {
+        "bin": "ac>=9",
+        "total": 423,
+        "ge3_plus": 51,
+        "ge3_rate": 0.1206,
+        "pct_of_all": 0.3579
+      },
+      {
+        "bin": "ac<=6",
+        "total": 182,
+        "ge3_plus": 21,
+        "ge3_rate": 0.1154,
+        "pct_of_all": 0.154
+      },
+      {
+        "bin": "ac7-8",
+        "total": 577,
+        "ge3_plus": 58,
+        "ge3_rate": 0.1005,
+        "pct_of_all": 0.4882
+      }
+    ],
+    "consecutive": [
+      {
+        "bin": "cons=1",
+        "total": 465,
+        "ge3_plus": 53,
+        "ge3_rate": 0.114,
+        "pct_of_all": 0.3934
+      },
+      {
+        "bin": "cons=0",
+        "total": 574,
+        "ge3_plus": 63,
+        "ge3_rate": 0.1098,
+        "pct_of_all": 0.4856
+      },
+      {
+        "bin": "cons>=2",
+        "total": 143,
+        "ge3_plus": 14,
+        "ge3_rate": 0.0979,
+        "pct_of_all": 0.121
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "axis": "sum_band",
+      "best_bin": "mid(120-155)",
+      "best_ge3_rate": 0.1137,
+      "best_n": 510,
+      "lift_vs_overall": 0.0037,
+      "worst_bin": "high(>155)",
+      "worst_ge3_rate": 0.1066
+    },
+    {
+      "axis": "odd_count",
+      "best_bin": "odd=2",
+      "best_ge3_rate": 0.1412,
+      "best_n": 262,
+      "lift_vs_overall": 0.0312,
+      "worst_bin": "odd=4",
+      "worst_ge3_rate": 0.0871
+    },
+    {
+      "axis": "ac",
+      "best_bin": "ac>=9",
+      "best_ge3_rate": 0.1206,
+      "best_n": 423,
+      "lift_vs_overall": 0.0106,
+      "worst_bin": "ac7-8",
+      "worst_ge3_rate": 0.1005
+    },
+    {
+      "axis": "consecutive",
+      "best_bin": "cons=1",
+      "best_ge3_rate": 0.114,
+      "best_n": 465,
+      "lift_vs_overall": 0.004,
+      "worst_bin": "cons>=2",
+      "worst_ge3_rate": 0.0979
+    }
+  ],
+  "db_code_write": false,
+  "coordinator_modified": false
+}
