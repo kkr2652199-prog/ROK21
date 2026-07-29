@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `1aa8f62` · WORK=`IDLE`
+- HEAD: `f897089` · WORK=`IDLE`
 - 지금: **K-AUX-SIGNAL-01 FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 0.1447 미달
 - 직전: K-BENCH-01-WIRE FAIL tier 롤백 · AUX_SIGNAL_PIVOT E1~E3 제안
 - BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · E2/E3 survey는 형 GO
