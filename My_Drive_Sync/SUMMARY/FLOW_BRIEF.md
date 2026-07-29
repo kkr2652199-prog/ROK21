@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `688805c` · WORK=`IDLE`
+- HEAD: `512d318` · WORK=`IDLE`
 - 지금: STAT-TUNE **PASS** · best ge3=**0.1523** · Δ+0.0076 · **WIRE승인대기**
 - 직전: HOLD맵 · 실레버공백 · V2유지
 - BOOT다음: K-STAT-TUNE-WIRE — 형 GO 시 0.02/20/10 배선 · 승인전금지

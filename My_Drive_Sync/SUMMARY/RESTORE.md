@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `688805c` · WORK=`IDLE`
+1. **HEAD:** `512d318` · WORK=`IDLE`
 2. **지금:** STAT-TUNE **PASS** · best ge3=**0.1523** · Δ+0.0076 · **WIRE승인대기**
 3. **다음1건:** K-STAT-TUNE-WIRE — STAT-TUNE PASS(best ge3=0.1523·Δ+0.0076·p=3.6e-05) · 형 승인 후 predict_statistical 리터럴(0.02/gap20/hot10·pairs30/cap0.5) 배선·verify · 승인 전 코드수정금지 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
