@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-29 KST  
-📌 사유: **K-BENCH-02** — confidence/AUX 5축 live survey FAIL · baseline ge3=0.1100 최고 · NEXT=K-ATTACK-HOLD
+📌 사유: **4AUX_FEEDBACK_REVIEW** — 형 6문 코드 READ-ONLY+GenSpark 교차 · NEXT=K-ATTACK-HOLD 유지
 
 ---
 
@@ -22,6 +22,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **4AUX_FEEDBACK_REVIEW** | 4보조=채점·set_no_asc면 컷없음·피드백 부분구현 · GenSpark 일치 | **REVIEW OK** |
 | **K-BENCH-02** | confidence/AUX 5축 live WF · set_no_asc vs confidence/quota | **FAIL** · baseline 최고 |
 | K-BENCH-05·03 | BENCH_PROTOCOL §6·§7 · BENCH_REPORT_TEMPLATE | **PROTOCOL OK** |
 | K-AUX-WEIGHT-SURVEY | 13조합 live · set_no 쿼터 | **FAIL** · 티켓불변 |
@@ -61,14 +62,30 @@
 
 ---
 
-## 4) 다음
+## 4) 4보조·피드백 (형 가설 판정 · READ-ONLY)
 
-K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 지정 (K-BENCH-01 postmortem 또는 HOLD).
+| 질문 | 판정 |
+|------|------|
+| 4보조=검증된 심사? | **아님** (미입증·기각 명분) |
+| DB 분업 분석? | **아님** — 15장 채점 |
+| AUX 컷으로 신호 유실? | **현 배선(set_no_asc)에선 컷 없음** · confidence 정렬은 BENCH-02에서 더 나쁨 |
+| 당첨/미당첨→피드백 축적 | **뼈대 있음·등수별 부족** · markov는 learn_state 미사용 |
+| 형 vs 보수 | 형 감각 맞음 · AI측 “증명 전 배선 금지”로 보수 — **둘 다 맞음** |
+
+근거: `reports/20260729_4AUX_FEEDBACK_REVIEW.md` · GenSpark 형6문 답변
 
 ---
 
-## 5) 산출물
+## 5) 다음
 
+K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 지정 (K-BENCH-01 postmortem 또는 HOLD).  
+GenSpark 권장 최소: K-BENCH-01 → hit-draw 특성 → (GO) 등수 피드백 태그.
+
+---
+
+## 6) 산출물
+
+- `reports/20260729_4AUX_FEEDBACK_REVIEW.md`
 - `tools/_k_bench_confidence_survey.py`
 - `docs/benchmarks/20260729_KBENCH_CONFIDENCE_survey.json`
 - `reports/20260729_KBENCH_CONFIDENCE_SURVEY.md`

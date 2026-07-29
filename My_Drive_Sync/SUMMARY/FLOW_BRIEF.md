@@ -1,9 +1,9 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6d63a8f` · WORK=`IDLE`
-- 지금: **K-BENCH-02 완료 FAIL** — confidence/AUX 5축 live · baseline ge3=0.1100 최고 · pin 미달
-- 직전: K-BENCH-05·03 — baseline행·WF/tier 분리 프로토콜·BENCH_REPORT_TEMPLATE
-- BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 지정 대기 (K-BENCH-01 또는 HOLD)
+- HEAD: `d6f6750` · WORK=`IDLE`
+- 지금: **4보조·피드백 READ-ONLY 검토 완료** — AUX=15장 채점·set_no_asc면 컷 없음 · 피드백 뼈대만 · GenSpark 형6문 답변 일치
+- 직전: K-BENCH-02 FAIL — confidence/AUX < set_no_asc baseline ge3=0.1100 · pin 미달
+- BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 (K-BENCH-01 또는 HOLD)
 - NEXT1: K-ATTACK-HOLD — K-BENCH-02 FAIL(confidence/AUX 정렬 전축 ge3≤0.1100·baseline 최고) · V2 pin 유지 · 형 다음 1축 지정 대기 (K-BENCH-01 postmortem 또는 HOLD) (승인=예)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT

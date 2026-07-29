@@ -24,14 +24,15 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-29 22:00 KST)
-- **HEAD**: `pending` (K-BENCH-02 push 예정)
+### 최신 상태 (2026-07-29 20:45 KST)
+- **HEAD**: `d6f6750` (로컬 실측) · docs sync 지연 가능
 - **현재 배선**: WIRE-V2 (ge3=0.1447) — pin 유지
-- **K-BENCH-02**: confidence/AUX 5축 live survey **FAIL** — baseline ge3=0.1100 최고 · confidence/AUX 4축 하회
+- **4보조 검토**: 채점만·set_no_asc면 컷 없음 · 피드백 뼈대만 · 형 감각 맞음 / AI측 보수
 - **다음**: K-ATTACK-HOLD · 형 다음 1축 지정 (K-BENCH-01 postmortem 또는 HOLD)
 
 ### 논의 이력 (최신순)
-1. **[22:00]** K-BENCH-02 완료 FAIL — set_no_asc가 confidence/AUX 정렬보다 우수 · coordinator 수정 금지
+1. **[20:45]** 형 6문(4보조·피드백) — 커서 READ-ONLY + GenSpark 답변 일치 · `20260729_4AUX_FEEDBACK_REVIEW.md`
+2. **[22:00]** K-BENCH-02 완료 FAIL — set_no_asc가 confidence/AUX 정렬보다 우수 · coordinator 수정 금지
 2. **[21:50]** 형 GO — K-BENCH-05·03 즉시: BENCH_PROTOCOL §6·§7 · BENCH_REPORT_TEMPLATE · 02·01은 GO 후
 2. **[19:35]** 1군(MONEY lol)→ROK21 교훈 정리 완료 — 배울점/갖춘점/금지점 · 1131~1231 3등15건 표
 2. **[18:26]** 형 아이디어: 랜덤 시드별 백테스트 → 좋은 결과 역추적 → 신호 좁히기. 커서+젠스파크 동의
