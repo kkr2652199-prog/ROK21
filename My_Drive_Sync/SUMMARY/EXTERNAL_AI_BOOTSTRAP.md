@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `4a5ee0a` |
+| HEAD(실측) | `158a2d1` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | HOLD맵 · 실레버공백 · 새벤치미실행 · **V2유지** · 형선택대기 |
-| 직전 | GENMIX FAIL · AUX/GENDIV/슬롯재선택류 FAIL 누적 |
-| BOOT다음 | K-ATTACK-HOLD — A=HOLD동결 / B=전략프레임 · 재탕금지 |
-| NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | HOLD맵 완료(실레버공백·새벤치미실행) · V2 pin 유지 · 닫힌축재탕금지 · 형 전략선택 A=HOLD동결 / B=전제·목적프레임 1건 정의 후 승인 |
+| 지금 | STAT-TUNE **PASS** · best ge3=**0.1523** · Δ+0.0076 · **WIRE승인대기** |
+| 직전 | HOLD맵 · 실레버공백 · V2유지 |
+| BOOT다음 | K-STAT-TUNE-WIRE — 형 GO 시 0.02/20/10 배선 · 승인전금지 |
+| NEXT1 ID | **K-STAT-TUNE-WIRE** |
+| NEXT1 할일 | STAT-TUNE PASS(best ge3=0.1523·Δ+0.0076·p=3.6e-05) · 형 승인 후 predict_statistical 리터럴(0.02/gap20/hot10·pairs30/cap0.5) 배선·verify · 승인 전 코드수정금지 |
 | 승인필요 | 예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=4a5ee0a · 지금=HOLD맵 · 실레버공백 · 새벤치미실행 · **V2유지** · 형선택대기 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=158a2d1 · 지금=STAT-TUNE **PASS** · best ge3=**0.1523** · Δ+0.0076 · **WIRE승인대기** · 다음=K-STAT-TUNE-WIRE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
