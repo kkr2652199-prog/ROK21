@@ -24,19 +24,15 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-29 18:30 KST)
-- **HEAD**: `cd21528`
+### 최신 상태 (2026-07-29 19:35 KST)
+- **HEAD**: (push 후 갱신)
 - **현재 배선**: WIRE-V2 (ge3=0.1447, p=0.0007) — 오늘 실질 최고점
-- **오늘 탐색 결과**: 12개 축 전부 FAIL (MARKOV-TUNE, SETNO-HITMAP, EV-POP, BAND-SELECT, SUM-SELECT, GENDIV, AUX-BLEND, GATHER, COVER, STAT-TUNE→WIRE FAIL, AUX-WEIGHT, REVIEW-TUNE)
-- **핵심 문제**: stored≠live 괴리 (격자 PASS → live FAIL 패턴 반복)
-- **합의된 다음 방향**: K-POSTHOC-ANALYSIS (형 아이디어 — 역추적 분석)
-  - 시드 200개 × live walk-forward → 상위 10% 공통 패턴 분석
-  - 이후 K-LIVE-GRID로 전환 가능
-- **젠스파크 제안**: K-POSTHOC 먼저 → 신호 발견 후 K-LIVE-GRID 방향 확정 순서 (합의됨)
-- **실행 중**: K-POSTHOC-ANALYSIS 스크립트 작성·실행 중
+- **POSTHOC**: 50시드×50회 best ge3=0.18 p=0.109 → **무신호** · V2 pin 유지
+- **1군 교훈**: `20260729_MONEY1GUN_ROK21_LESSONS.md` + FINDINGS **K-MONEY1-LESSONS** 완료
+- **다음**: K-ATTACK-HOLD — 형 결정 대기
 
 ### 논의 이력 (최신순)
-1. **[18:30]** 형 GO → K-POSTHOC-ANALYSIS 진행 시작
+1. **[19:35]** 1군(MONEY lol)→ROK21 교훈 정리 완료 — 배울점/갖춘점/금지점 · 1131~1231 3등15건 표
 2. **[18:26]** 형 아이디어: 랜덤 시드별 백테스트 → 좋은 결과 역추적 → 신호 좁히기. 커서+젠스파크 동의
 3. **[18:14]** 젠스파크 K-LIVE-GRID 지시서 초안 작성. markov override 검토 요청
 4. **[18:09]** 커서→젠스파크: 세션압축 대비 규칙 4가지 공유 + REVIEW-TUNE FAIL 결과 전달

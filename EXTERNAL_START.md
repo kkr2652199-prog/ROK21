@@ -9,12 +9,12 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `b2ee789` |
+| HEAD(실측) | `6e7ba2a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109(>0.05) · 체계적 패턴 없음 |
-| 직전 | REVIEW-TUNE-SURVEY FAIL · 15조합 best ge3=0.1117 |
-| BOOT다음 | K-ATTACK-HOLD — POSTHOC 무신호 · V2 pin 유지 · 형 결정 대기 |
+| 지금 | **K-MONEY1-LESSONS** — 1군→ROK21 교훈(배울·갖춘·금지) · FINDINGS·보고서 완료 |
+| 직전 | K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109 |
+| BOOT다음 | K-ATTACK-HOLD — V2 pin 유지 · 형 결정 대기 |
 | NEXT1 ID | **K-ATTACK-HOLD** |
 | NEXT1 할일 | POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기 |
 | 승인필요 | 예 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=b2ee789 · 지금=K-POSTHOC-ANALYSIS **무신호** · 50시드×50회 best ge3=**0.18** · p=0.109(>0.05) · 체계적 패턴 없음 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=6e7ba2a · 지금=**K-MONEY1-LESSONS** — 1군→ROK21 교훈(배울·갖춘·금지) · FINDINGS·보고서 완료 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: b2ee789_
+_generated: 6e7ba2a_

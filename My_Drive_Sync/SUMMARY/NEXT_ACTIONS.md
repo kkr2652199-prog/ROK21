@@ -7,7 +7,7 @@
 - 할일: POSTHOC 무신호(50시드×50회 best ge3=0.18·p=0.109) · V2 pin 유지 · 형 결정 대기
 - 완료조건: 형이 다음 1축 지정 또는 HOLD 유지 확인
 - 승인필요: 예
-- 선행완료: 2026-07-29 (K-POSTHOC-ANALYSIS 무신호)
+- 선행완료: 2026-07-29 (K-MONEY1-LESSONS · 1군→ROK21 교훈)
 
 ## WORKSTATE
 IDLE
