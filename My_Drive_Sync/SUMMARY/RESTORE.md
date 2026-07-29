@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7fda365` · WORK=`IDLE`
-2. **지금:** AUX-WEIGHT-SURVEY **FAIL** · 13조합 ge3=**0.1100** 동일 · pin불일치
-3. **다음1건:** K-ATTACK-HOLD — AUX-WEIGHT-SURVEY FAIL(13조합 ge3=0.1100 동일·Δ-0.0347·p=0.669622) · V2 set_no 경로 AUX_WEIGHTS 실레버 아님 · 다음 공격축 형 결정 대기 (승인필요=예 · 선행=없음)
+1. **HEAD:** `(push후갱신)` · WORK=`IDLE`
+2. **지금:** REVIEW-TUNE-SURVEY **FAIL** · 15조합 best ge3=**0.1117** · Δ-0.033 · p=0.600
+3. **다음1건:** K-ATTACK-HOLD — REVIEW-TUNE-SURVEY FAIL(15조합 best ge3=0.1117·Δ-0.033·p=0.600284) · 오늘 탐색 전축 소진 · 형 결정 대기 (승인필요=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -45,7 +45,7 @@
 | 2026-07-29 | 진행·팩트체크 | EV-POP FAIL · pop↓·ge3↓ · V2유지 · NEXT=HOLD | EV-POP FAIL | `b945197` |
 | 2026-07-29 | 다음축선정·해줘 | SETNO-HITMAP Δ+0.0034 FAIL · V2유지 · NEXT=HOLD | SETNO FAIL | `8fcd2d9` |
 | 2026-07-29 | SETPACK·종료체크 | pool ge3 0.101<0.123 · set1↓ · NEXT=HOLD | SETPACK FAIL | `22ea625` |
-| 2026-07-29 | K-REVIEW-TUNE-SURVEY | 커서 지시서(READ-ONLY, 코드수정금지·override 설계) 복사용 텍스트 제공 | TUNE-SURVEY 준비 | `7fda365` |
+| 2026-07-29 | K-REVIEW-TUNE-SURVEY | 15조합(carry/decay/window) best ge3=0.1117 Δ-0.033 p=0.600 FAIL · predict_review_king 미수정 | TUNE-SURVEY FAIL | `(push후갱신)` |
 
 ---
 
