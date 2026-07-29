@@ -24,16 +24,17 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-29 22:00 KST)
-- **HEAD**: `58a0633` (K-AUX-SIGNAL-01 survey + R37 sync)
-- **현재 배선**: WIRE-V2 (ge3=0.1447) — pin 유지
-- **K-AUX-SIGNAL-01**: **FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 미달 · WIRE 보류
-- **다음**: K-ATTACK-HOLD — E2/E3 survey는 형 GO
+### 최신 상태 (2026-07-29 22:10 KST)
+- **HEAD**: `89e4ec8`
+- **현재 배선**: WIRE-V2 (ge3=0.1447 stored) — pin 유지 · live baseline ge3=0.1218
+- **K-AUX-SIGNAL-01 (E1)**: **FAIL** — best miss_pattern@α=0.2 ge3=0.1303 p=0.042 · pin 미달
+- **커서×젠스파크 합의**: E1 FAIL≠피벗 포기 · stored/live 갭(Δ0.0229)이 병목 · **다음 GO 후보=K-WINDOW-SIGNAL-01 survey**
 
 ### 논의 이력 (최신순)
-1. **[22:00]** K-AUX-SIGNAL-01 FAIL — hint inject survey n=1182 · best ge3=0.1303 · `20260729_KAUX_SIGNAL_SURVEY.md`
-2. **[21:35]** 동행복권 로또6/45 공식 페이지 감사 — `20260729_DHLOTTERY_LOTTO_AUDIT.md`
-3. **[21:00]** K-BENCH-01 postmortem SIGNAL_FOUND — `20260729_KBENCH_POSTMORTEM.md`
+1. **[22:10] 커서×젠스파크 브라우저 협의** — E1 null 대비 유의(p=0.042) but pin 미달 · stored 0.1447 vs live 0.1218 갭 핵심 · 우선순위 **window_signal→E2→E3** · 형 GO 1건=`K-WINDOW-SIGNAL-01 survey`
+2. **[22:00]** K-AUX-SIGNAL-01 FAIL — hint inject survey n=1182 · best ge3=0.1303 · `20260729_KAUX_SIGNAL_SURVEY.md`
+3. **[21:35]** 동행복권 로또6/45 공식 페이지 감사 — `20260729_DHLOTTERY_LOTTO_AUDIT.md`
+4. **[21:00]** K-BENCH-01 postmortem SIGNAL_FOUND — `20260729_KBENCH_POSTMORTEM.md`
 
 ## 4. 파일 지도 (젠스파크용 GitHub raw URL)
 
