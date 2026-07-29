@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `75be8e9` · WORK=`IDLE`
+- HEAD: `8eadc6a` · WORK=`IDLE`
 - 지금: **4보조·피드백 READ-ONLY 검토 완료** — AUX=15장 채점·set_no_asc면 컷 없음 · 피드백 뼈대만 · GenSpark 형6문 답변 일치
 - 직전: K-BENCH-02 FAIL — confidence/AUX < set_no_asc baseline ge3=0.1100 · pin 미달
 - BOOT다음: K-ATTACK-HOLD — V2 pin 유지 · 형 다음 1축 (K-BENCH-01 또는 HOLD)
