@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `89bda76` |
+| HEAD(실측) | `b956fb0` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **TESTLOTTO 7021 브라우저 QA PASS** — 10+5·백테2건·회차별200 · 버그5(수정2) |
-| 직전 | TESTLOTTO UI+DB · K-SIGNAL-REPACK-01 · SELECT-01 QUICK PASS |
+| 지금 | **TESTLOTTO UI/UX 리프레시** — B-04 스피너·스켈레톤 · sticky탭·카드여백 · chevron 접이식 |
+| 직전 | TESTLOTTO 7021 브라우저 QA PASS · 10+5·백테2건 |
 | BOOT다음 | K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`** |
 | NEXT1 ID | **K-SIGNAL-SELECT-FULL** |
-| NEXT1 할일 | **7021 UI QA PASS(20260730)** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
+| NEXT1 할일 | **TESTLOTTO UI/UX DONE(20260730)** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
 | 승인필요 | full 실행=아니(QUICK PASS 후 자동) · wire=예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=89bda76 · 지금=**TESTLOTTO 7021 브라우저 QA PASS** — 10+5·백테2건·회차별200 · 버그5(수정2) · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=b956fb0 · 지금=**TESTLOTTO UI/UX 리프레시** — B-04 스피너·스켈레톤 · sticky탭·카드여백 · chevron 접이식 · 다음=K-SIGNAL-SELECT-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 89bda76_
+_generated: b956fb0_
