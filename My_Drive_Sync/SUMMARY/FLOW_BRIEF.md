@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e385290` · WORK=`IDLE`
+- HEAD: `37e53f8` · WORK=`IDLE`
 - 지금: **보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기
 - 직전: K-SIGNAL-REPACK-01 DONE · top5 ge3=0.085 · 5장 공정 FAIL
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 · **전체 큐=`TEST_PRIORITY.md`**

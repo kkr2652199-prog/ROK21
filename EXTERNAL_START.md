@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `e385290` |
+| HEAD(실측) | `37e53f8` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=e385290 · 지금=**보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기 · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=37e53f8 · 지금=**보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기 · 다음=K-SIGNAL-SELECT-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: e385290_
+_generated: 37e53f8_
