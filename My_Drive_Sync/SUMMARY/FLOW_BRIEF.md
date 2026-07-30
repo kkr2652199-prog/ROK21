@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `bd4f2ca` · WORK=`IDLE`
+- HEAD: `15a0bb9` · WORK=`IDLE`
 - 지금: **TESTLOTTO 7021 브라우저 QA PASS** — 10+5·백테2건·회차별200 · 버그5(수정2)
 - 직전: TESTLOTTO UI+DB · K-SIGNAL-REPACK-01 · SELECT-01 QUICK PASS
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
