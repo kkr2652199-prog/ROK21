@@ -11,6 +11,7 @@ from app.testlotto.survey_labels import (
     eval_mode_label_ko,
     strategy_label_ko,
     survey_label_ko,
+    tier_rank_label,
 )
 
 
@@ -106,6 +107,73 @@ def delete_runs_for_survey_strategy(
         "DELETE FROM testlotto_backtest_runs WHERE survey_id=? AND strategy_id=?",
         (survey_id, strategy_id),
     )
+
+
+def is_draw_backtested(draw_no: int) -> bool:
+    """회차별 백테스트 draw_results 가 1건이라도 있으면 True."""
+    init_testlotto_db()
+    conn = get_lotto_db()
+    try:
+        row = conn.execute(
+            "SELECT 1 FROM testlotto_backtest_draw_results WHERE draw_no=? LIMIT 1",
+            (draw_no,),
+        ).fetchone()
+        return row is not None
+    finally:
+        conn.close()
+
+
+def get_backtest_summaries_for_draw(draw_no: int) -> list[dict[str, Any]]:
+    """회차별 전략·run 백테스트 요약 (pool 캐시 miss 시 UI 폴백)."""
+    init_testlotto_db()
+    conn = get_lotto_db()
+    try:
+        rows = conn.execute(
+            """
+            SELECT r.run_id, r.survey_id, r.strategy_id, r.strategy_label_ko,
+                   d.best_hits, d.best_tier
+            FROM testlotto_backtest_draw_results d
+            JOIN testlotto_backtest_runs r ON r.run_id = d.run_id
+            WHERE d.draw_no = ?
+            ORDER BY r.run_id DESC
+            """,
+            (draw_no,),
+        ).fetchall()
+        out: list[dict[str, Any]] = []
+        for row in rows:
+            d = dict(row)
+            out.append(
+                {
+                    "run_id": d["run_id"],
+                    "survey_id": d["survey_id"],
+                    "survey_label_ko": d.get("survey_label_ko") or survey_label_ko(d["survey_id"]),
+                    "strategy_id": d["strategy_id"],
+                    "strategy_label_ko": d.get("strategy_label_ko") or strategy_label_ko(d["strategy_id"]),
+                    "best_hits": d["best_hits"],
+                    "best_tier": d.get("best_tier") or 0,
+                    "best_tier_label": tier_rank_label(int(d.get("best_tier") or 0)),
+                }
+            )
+        return out
+    finally:
+        conn.close()
+
+
+def list_backtest_draw_ranges() -> list[dict[str, Any]]:
+    """등록된 백테스트 run 의 draw_start~draw_end 목록."""
+    init_testlotto_db()
+    conn = get_lotto_db()
+    try:
+        rows = conn.execute(
+            """
+            SELECT run_id, survey_id, strategy_id, draw_start, draw_end
+            FROM testlotto_backtest_runs
+            ORDER BY run_id
+            """
+        ).fetchall()
+        return [dict(r) for r in rows]
+    finally:
+        conn.close()
 
 
 def list_backtest_runs(limit: int = 50) -> list[dict[str, Any]]:

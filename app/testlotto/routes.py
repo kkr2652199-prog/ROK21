@@ -235,26 +235,22 @@ async def api_predict_pool_view(
     refresh: bool = False,
     compute: bool = False,
 ):
-    """10세트 pool + 5 몰아주기 (뇌별). 기본=DB 캐시만 · compute/refresh 시에만 WF 계산."""
+    """10세트 pool + 5 몰아주기 (뇌별). 기본=DB 캐시 · 백테스트 회차는 cache miss 시 자동 WF."""
     import time
 
-    from app.testlotto.pool_view_cache import get_cached_pool_view, get_or_build_pool_view
+    from app.testlotto.pool_view_cache import get_or_build_pool_view, resolve_pool_view_for_ui
 
-    if refresh or compute:
-        return get_or_build_pool_view(target_draw_no, force_refresh=refresh)
+    if refresh:
+        return get_or_build_pool_view(target_draw_no, force_refresh=True)
+
+    if compute:
+        return get_or_build_pool_view(target_draw_no, force_refresh=False)
 
     t0 = time.perf_counter()
-    cached = get_cached_pool_view(target_draw_no)
-    if cached:
-        cached["cache_ms"] = round((time.perf_counter() - t0) * 1000, 1)
-        return cached
-
-    return {
-        "ok": False,
-        "cache_miss": True,
-        "target_draw_no": target_draw_no,
-        "message": "캐시 없음 — 예측 버튼을 눌러 계산하세요",
-    }
+    out = resolve_pool_view_for_ui(target_draw_no)
+    if out.get("cache_ms") is None:
+        out["cache_ms"] = round((time.perf_counter() - t0) * 1000, 1)
+    return out
 
 
 @router.delete("/predict/pool-view/cache/{draw_no}")

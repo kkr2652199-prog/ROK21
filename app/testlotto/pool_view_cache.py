@@ -70,6 +70,55 @@ def get_cached_pool_view(draw_no: int) -> dict[str, Any] | None:
     }
 
 
+def payload_from_wf_parts(
+    draw_no: int,
+    pool_by_brain: dict[str, list[dict]],
+    repacked: list[dict],
+    *,
+    seed: int = MC_SEED,
+) -> dict[str, Any]:
+    """build_pool_and_repack과 동일 pool-view dict (백테스트 WF 중 캐시 저장용)."""
+    from app.testlotto.signal_pool import POOL_SETS_PER_BRAIN, REPACK_SETS_PER_BRAIN
+
+    by_brain_pool: dict[str, list[dict]] = {}
+    for tag in BRAIN_TAGS:
+        sets = sorted(pool_by_brain.get(tag, []), key=lambda x: int(x.get("pred_set_no") or x.get("set_no") or 1))
+        by_brain_pool[tag] = [
+            {
+                "set_no": int(c.get("pred_set_no") or c.get("set_no") or 1),
+                "nums": [int(x) for x in c["nums"]],
+                "brain_tag": tag,
+                "kind": "pool",
+            }
+            for c in sets
+        ]
+
+    by_brain_repack: dict[str, list[dict]] = {t: [] for t in BRAIN_TAGS}
+    for c in repacked:
+        tag = str(c["brain_tag"])
+        if tag not in BRAIN_TAGS:
+            continue
+        by_brain_repack.setdefault(tag, []).append(
+            {
+                "set_no": int(c.get("repack_rank") or c.get("set_no") or 1),
+                "nums": [int(x) for x in c["nums"]],
+                "brain_tag": tag,
+                "kind": "repack",
+            }
+        )
+
+    return {
+        "ok": True,
+        "target_draw_no": draw_no,
+        "no_peek": True,
+        "pool_sets_per_brain": POOL_SETS_PER_BRAIN,
+        "repack_sets_per_brain": REPACK_SETS_PER_BRAIN,
+        "seed": seed,
+        "pool_by_brain": by_brain_pool,
+        "repack_by_brain": by_brain_repack,
+    }
+
+
 def save_pool_view_cache(draw_no: int, payload: dict[str, Any]) -> None:
     """build_pool_and_repack 결과를 뇌별 행으로 저장."""
     init_testlotto_db()
@@ -130,6 +179,47 @@ def get_or_build_pool_view(
     out["cache_ms"] = round((time.perf_counter() - t0) * 1000, 1)
     out["compute_ms"] = out["cache_ms"]
     return out
+
+
+def resolve_pool_view_for_ui(
+    target_draw_no: int,
+    *,
+    force_refresh: bool = False,
+    allow_compute: bool = False,
+) -> dict[str, Any]:
+    """UI GET용 — 캐시 hit · 백테스트 회차 자동 WF · 그 외 cache_miss."""
+    from app.testlotto.backtest_store import get_backtest_summaries_for_draw, is_draw_backtested
+
+    t0 = time.perf_counter()
+    if not force_refresh:
+        cached = get_cached_pool_view(target_draw_no)
+        if cached:
+            cached["cache_ms"] = round((time.perf_counter() - t0) * 1000, 1)
+            return cached
+
+    if force_refresh or allow_compute or is_draw_backtested(target_draw_no):
+        out = get_or_build_pool_view(target_draw_no, force_refresh=force_refresh)
+        if out.get("ok"):
+            return out
+        if is_draw_backtested(target_draw_no):
+            summaries = get_backtest_summaries_for_draw(target_draw_no)
+            if summaries:
+                return {
+                    "ok": False,
+                    "backtest_only": True,
+                    "target_draw_no": target_draw_no,
+                    "backtest_summaries": summaries,
+                    "message": "pool 캐시 없음 · 백테스트 요약만 표시",
+                    "cache_ms": round((time.perf_counter() - t0) * 1000, 1),
+                }
+        return out
+
+    return {
+        "ok": False,
+        "cache_miss": True,
+        "target_draw_no": target_draw_no,
+        "message": "캐시 없음 — 예측 버튼을 눌러 계산하세요",
+    }
 
 
 def prewarm_pool_view_cache(

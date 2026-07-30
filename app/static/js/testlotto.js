@@ -1093,6 +1093,9 @@ function _testlottoRenderSetSubTabsHtml(activeKind) {
 
 function _testlottoRenderBrainCardsHtml(tag, poolView, drawNo, actualRef, subTab) {
   if (!poolView || !poolView.ok || !poolView.pool_by_brain) {
+    if (poolView && poolView.backtest_summaries && poolView.backtest_summaries.length) {
+      return _testlottoRenderBacktestFallbackHtml(drawNo, poolView.backtest_summaries);
+    }
     return '<p style="color:#888;padding:8px;">pool 데이터 없음</p>';
   }
   const kind = subTab === 'repack' ? 'repack' : 'pool';
@@ -1164,10 +1167,29 @@ async function _fetchPoolView(drawNo, options) {
   const data = await pr.json();
   if (data && data.ok) {
     _testlottoPoolViewMemCache.set(drawNo, data);
-  } else if (cacheOnly && data && data.cache_miss) {
+  } else if (cacheOnly && data && data.cache_miss && !data.backtest_only) {
     return data;
   }
   return data;
+}
+
+function _testlottoRenderBacktestFallbackHtml(drawNo, summaries) {
+  if (!summaries || !summaries.length) {
+    return '<p style="color:#888;padding:8px;">pool 데이터 없음</p>';
+  }
+  let html =
+    `<p class="testlotto-backtest-fallback-note">${drawNo}회차 · 백테스트 기록 있음 · pool 캐시 로드 중…</p>` +
+    '<table class="testlotto-backtest-table testlotto-backtest-table--draws"><thead><tr>' +
+    '<th>전략</th><th>최고 적중</th><th>등수</th></tr></thead><tbody>';
+  summaries.forEach((s) => {
+    html += '<tr>';
+    html += '<td>' + _tlEscapeHtml(s.strategy_label_ko || testlottoStrategyLabelKo(s.strategy_id)) + '</td>';
+    html += '<td>' + (s.best_hits != null ? s.best_hits + '개' : '—') + '</td>';
+    html += '<td>' + _tlEscapeHtml(s.best_tier_label || '—') + '</td>';
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  return html;
 }
 
 async function renderPredictionsByBrain(drawNo, rows, options) {
@@ -1770,7 +1792,15 @@ async function lottoFetchLatest() {
   }
 }
 
-// ── pool-view 예측 (클릭 시에만 계산) ──
+// PIN: single 3뇌 predict button — no 두뇌 duplicate (index.html SSOT · testlottoRunPoolPredict only)
+function initTestlottoActionsBarPin() {
+  const bar = document.querySelector('#view-testlotto .testlotto-actions-bar');
+  if (!bar) return;
+  bar.querySelectorAll('button[onclick*="testlottoPredict"]').forEach((btn) => btn.remove());
+}
+window.initTestlottoActionsBarPin = initTestlottoActionsBarPin;
+
+// ── pool-view 예측 (클릭 시에만 계산 · 비백테스트 회차) ──
 async function testlottoRunPoolPredict() {
   const input = document.getElementById('testlottoPredictDrawNo');
   const drawNo = parseInt(input?.value, 10);
@@ -1804,92 +1834,10 @@ async function testlottoRunPoolPredict() {
 }
 window.testlottoRunPoolPredict = testlottoRunPoolPredict;
 
-// ── 두뇌 예측 (engine POST · coordinator) ──
+// ── 레거시 두뇌 예측 (coordinator POST) — PIN: 사용 금지 · 3뇌 pool만 ──
 async function testlottoPredict() {
-  const input = document.getElementById('testlottoPredictDrawNo');
-  const drawNo = parseInt(input.value, 10);
-  if (!drawNo || drawNo < 1) {
-    alert('회차 번호를 입력하세요.');
-    return;
-  }
-  const status = document.getElementById('testlottoActionStatus');
-  lottoSetActionStatusText(status, '두뇌 풀가동 중... (약 30초~1분)', '#f0c040');
-
-  try {
-    const res = await fetch(_testlottoResolveApiUrl(`/api/testlotto/predict/${drawNo}`), { method: 'POST' });
-    const data = await res.json();
-
-    if (data.error) {
-      lottoSetActionStatusText(status, data.error, '#f87171');
-      return;
-    }
-
-    lottoSetActionStatusText(status, `${drawNo}회차 예측 완료!`, '#4ade80');
-    // 업그레이드 UI(회차 드롭다운)가 있으면 6두뇌 탭 렌더만 사용(깜빡임 방지)
-    const sel = document.getElementById('testlottoDrawSelect');
-    if (!sel) {
-      renderPredictions(data);
-    }
-    try {
-      // 업그레이드 UI에서는 캐시를 기다리지 말고, 응답(data)로 즉시 렌더한다.
-      if (sel) {
-        const actuals = Array.isArray(data.actual_numbers) ? data.actual_numbers : null;
-        const bonus = (data.actual_bonus != null) ? data.actual_bonus : null;
-        const rows = (data.all_predictions || []).map((p) => {
-          const nums = p.nums || [];
-          const base = {
-            target_draw_no: drawNo,
-            method: p.method,
-            brain_tag: p.brain_tag,
-            confidence: p.confidence,
-            reasoning: p.reasoning,
-            matched_count: p.matched_count,
-            bonus_matched: p.bonus_matched,
-            num1: nums[0],
-            num2: nums[1],
-            num3: nums[2],
-            num4: nums[3],
-            num5: nums[4],
-            num6: nums[5],
-          };
-          if (actuals && actuals.length === 6) {
-            base.actual_1 = actuals[0];
-            base.actual_2 = actuals[1];
-            base.actual_3 = actuals[2];
-            base.actual_4 = actuals[3];
-            base.actual_5 = actuals[4];
-            base.actual_6 = actuals[5];
-            base.actual_bonus = bonus;
-          }
-          return base;
-        });
-
-        // 캐시에도 해당 회차를 즉시 반영(다음 렌더/탭 전환 일관성)
-        _testlottoPredRowsCache = (_testlottoPredRowsCache || []).filter((p) => parseInt(p.target_draw_no, 10) !== drawNo);
-        _testlottoPredRowsCache = rows.concat(_testlottoPredRowsCache);
-        _testlottoDetailDrawNo = drawNo;
-        _testlottoDetailRows = rows;
-
-        await renderPredictionsByBrain(drawNo, rows, { skipPoolFetch: true });
-
-        loadTestlottoWarrantPanel(drawNo);
-
-        // 무거운 전체 목록 리로드는 백그라운드로
-        loadTestlottoDrawList().then(() => {
-          sel.value = String(drawNo);
-        }).catch(() => {});
-      } else {
-        // 기존 UI는 원래 흐름 유지
-        await loadTestlottoDrawList();
-        await testlottoLoadSavedPrediction(drawNo);
-      }
-    } catch (e2) {
-      // 무시 (기존 렌더는 이미 완료)
-    }
-    loadBrainStatus();
-  } catch (e) {
-    lottoSetActionStatusText(status, '예측 실패: ' + e.message, '#f87171');
-  }
+  console.warn('testlottoPredict() deprecated — use testlottoRunPoolPredict()');
+  return testlottoRunPoolPredict();
 }
 
 /** 예측 세트 1개 카드 (Top5 / 최다 적중 공용) */
@@ -2496,6 +2444,7 @@ async function testlottoShowBacktestDetail(runId) {
 
 // ── 초기화 ──
 document.addEventListener('DOMContentLoaded', () => {
+  initTestlottoActionsBarPin();
   const btDetails = document.getElementById('testlottoBacktestDetails');
   if (btDetails) {
     btDetails.addEventListener('toggle', () => {

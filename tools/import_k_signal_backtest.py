@@ -36,6 +36,7 @@ def _run_repack_per_draw(
 
     from app.testlotto.backtest_store import delete_runs_for_survey_strategy, insert_backtest_run, insert_draw_results
     from app.testlotto.models import get_lotto_db, init_lotto_db
+    from app.testlotto.pool_view_cache import get_cached_pool_view, payload_from_wf_parts, save_pool_view_cache
     from app.testlotto.signal_pool import (
         RollingSignalLearner,
         _build_hint,
@@ -86,6 +87,12 @@ def _run_repack_per_draw(
         pool_br = _pool_by_brain(pool)
         hint = _build_hint(draws, draw_no)
         repacked = repack_by_brain(pool_br, hint, num_ema, pos_ema)
+
+        if not get_cached_pool_view(draw_no):
+            save_pool_view_cache(
+                draw_no,
+                payload_from_wf_parts(draw_no, pool_br, repacked, seed=MC_SEED),
+            )
 
         best = _best_match(repacked, actual)
         best_tr, _ = _best_tier(repacked, actual_list, bonus)
@@ -160,6 +167,7 @@ def _run_select_per_draw(
 
     from app.testlotto.backtest_store import delete_runs_for_survey_strategy, insert_backtest_run, insert_draw_results
     from app.testlotto.models import get_lotto_db, init_lotto_db
+    from app.testlotto.pool_view_cache import get_cached_pool_view, payload_from_wf_parts, save_pool_view_cache
     from app.testlotto.data_service import _get_draws_before
     from app.testlotto.learn_state_cutoff import set_learn_as_of
     from app.testlotto.tier_utils import score_predicted_set
@@ -206,6 +214,13 @@ def _run_select_per_draw(
         draws = _get_draws_before(draw_no)
         if not draws:
             continue
+
+        if not get_cached_pool_view(draw_no):
+            from app.testlotto.signal_pool import build_pool_and_repack
+
+            built = build_pool_and_repack(draw_no, seed=MC_SEED)
+            if built.get("ok"):
+                save_pool_view_cache(draw_no, built)
 
         random.seed(MC_SEED)
         pool = _expand_pool(draws, draw_no)
