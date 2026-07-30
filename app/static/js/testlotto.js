@@ -682,9 +682,10 @@ function testlottoSwitchBrainTab(brainTag) {
 function testlottoSwitchSetSubTab(kind) {
   _testlottoSetSubTab = kind === 'repack' ? 'repack' : 'pool';
   const drawNo = parseInt(document.getElementById('testlottoPredictDrawNo').value, 10);
-  if (drawNo && _testlottoDetailRows) {
-    renderPredictionsByBrain(drawNo, _testlottoDetailRows, { skipPoolFetch: true });
-  }
+  if (!drawNo) return;
+  const poolView = _testlottoPoolViewMemCache.get(drawNo) || null;
+  const rows = _testlottoDetailRows || _testlottoStubRowsForDraw(drawNo, _testlottoCurrentActualRef);
+  renderPredictionsByBrain(drawNo, rows, { poolView, skipPoolFetch: true });
 }
 
 function testlottoToggleBrainAccordion(tag, open) {
@@ -1216,10 +1217,8 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
   const skipPoolFetch = !!opts.skipPoolFetch;
   const shouldCompute = !!opts.compute;
 
-  let poolView = opts.poolView || null;
-  if (!poolView && !skipPoolFetch) {
-    poolView = _testlottoPoolViewMemCache.get(drawNo) || null;
-  }
+  // skipPoolFetch여도 mem cache는 사용 (서브탭·뇌 전환 시 poolView 유실 방지)
+  let poolView = opts.poolView || _testlottoPoolViewMemCache.get(drawNo) || null;
   if (!poolView && shouldCompute) {
     testlottoShowResultsLoading(container, true);
     try {
