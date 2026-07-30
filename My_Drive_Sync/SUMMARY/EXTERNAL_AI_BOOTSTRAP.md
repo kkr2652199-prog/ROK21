@@ -8,11 +8,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5ccc951` |
+| HEAD(실측) | `fc98920` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-SIGNAL-SELECT-01 QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200 |
-| 직전 | K-QUICK-GATE-01 DONE · K-WINDOW-SIGNAL-01 FAIL |
+| 지금 | **K-SIGNAL-REPACK-01 DONE** — top5 ge3=0.085 · combined=0.145 · 5장 공정 FAIL |
+| 직전 | K-SIGNAL-SELECT-01 QUICK PASS · combined ge3=0.145 |
 | BOOT다음 | K-SIGNAL-SELECT-FULL — full 1182 · **전체 큐=`TEST_PRIORITY.md`** |
 | NEXT1 ID | **K-SIGNAL-SELECT-FULL** |
 | NEXT1 할일 | QUICK PASS(combined ge3=0.145) → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5ccc951 · 지금=**K-SIGNAL-SELECT-01 QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200 · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=fc98920 · 지금=**K-SIGNAL-REPACK-01 DONE** — top5 ge3=0.085 · combined=0.145 · 5장 공정 FAIL · 다음=K-SIGNAL-SELECT-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
