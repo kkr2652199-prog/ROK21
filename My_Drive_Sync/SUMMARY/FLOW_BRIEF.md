@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `023c17f` · WORK=`IDLE`
-- 지금: **TESTLOTTO UI/UX 리프레시** — B-04 스피너·스켈레톤 · sticky탭·카드여백 · chevron 접이식
-- 직전: TESTLOTTO 7021 브라우저 QA PASS · 10+5·백테2건
+- HEAD: `ca11c6b` · WORK=`IDLE`
+- 지금: **TESTLOTTO 로딩 제거+레이아웃** — pool-view SQLite 캐시 · accordion · pool/repack 서브탭
+- 직전: UI/UX 리프레시 · 브라우저 QA PASS
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
 - NEXT1: K-SIGNAL-SELECT-FULL — **TESTLOTTO UI/UX DONE(20260730)** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 (승인=full 실행=아니(QUICK PASS 후 자동) · wire=예)
 - OPEN샘플: K-00, K-02, K-05
