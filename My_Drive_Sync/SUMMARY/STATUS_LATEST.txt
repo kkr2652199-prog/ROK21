@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-30 KST  
-📌 사유: **K-SIGNAL-SELECT-01 QUICK PASS** · combined ge3=0.145 · K-QUICK-GATE-01 foundation
+📌 사유: **K-SIGNAL-REPACK-01 DONE** · 5장 공정 FAIL · K-SIGNAL-SELECT-FULL 다음
 
 ---
 
@@ -10,11 +10,12 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| K-SIGNAL-REPACK-01 | **DONE** — top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |
 | K-SIGNAL-SELECT-01 | **QUICK PASS** — combined ge3=**0.145** p=0.102 · tail n=200 |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
 | K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-SIGNAL-SELECT-FULL** (1182) · **전체 큐=`TEST_PRIORITY.md`** · wire는 형 GO 전 금지 |
+| 권고 | **K-SIGNAL-SELECT-FULL** (1182) · repack wire 불필 · **전체 큐=`TEST_PRIORITY.md`** |
 
 ---
 
@@ -22,6 +23,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-SIGNAL-REPACK-01** | 10pool→번호 repack→5×3뇌=15세트 · signal/hint/random vs set_no_asc·combined · QUICK n=200 | **5장 FAIL** · top5 ge3=0.085 < combined 0.145 |
 | **K-SIGNAL-SELECT-01** | 10pool/brain×3뇌 → 통합5 선별 · overlap/bin/jaccard/combined · QUICK n=200 | **QUICK PASS** · combined ge3=0.145 |
 | **K-QUICK-GATE-01** | BENCH §9 · tail-200 · bench_quick_gate.py · window survey `--n-eval` | **DONE** |
 | **K-WINDOW-SIGNAL-01** | DHLOTTERY 4/8/12/52/all×4signal hint inject · 61 variants · n=1182 seed=42 | **FAIL** · best ge3=0.1328 |

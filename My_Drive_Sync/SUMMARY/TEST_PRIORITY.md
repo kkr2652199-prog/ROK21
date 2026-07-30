@@ -29,6 +29,20 @@
 
 ## P0 — 지금 당장 (앱 반영 직전)
 
+### 0. K-SIGNAL-REPACK-01 ✅ (완료 · 5장 공정 FAIL)
+
+| 항목 | 내용 |
+|------|------|
+| **순위** | **P0** (완료) |
+| **ID** | `K-SIGNAL-REPACK-01` |
+| **한글 제목** | 번호 **몰아주기(repack)** — 10pool→5신호세트×3뇌 |
+| **숙제 한 줄** | pool 번호를 신호 점수로 재조립(통째 5장 고르기와 다름) · set_no_asc·combined 대비 ge3 |
+| **결과 (QUICK n=200)** | best_of_15: signal_repack ge3=**0.275** · **top5_from_15(공정): ge3=0.085** < combined **0.145** |
+| **판정** | 15장 artifact PASS · **5장 공정 비교 FAIL** → wire 불필 · SELECT-FULL 우선 |
+| **근거** | `reports/20260730_KSIGNAL_REPACK_SURVEY.md` · JSON `20260730_KSIGNAL_REPACK_survey.json` |
+
+---
+
 ### 1. K-SIGNAL-SELECT-FULL
 
 | 항목 | 내용 |
@@ -215,6 +229,7 @@
 
 | 순위 | ID | 한글 제목 | 상태 |
 |:----:|-----|-----------|------|
+| P0 | K-SIGNAL-REPACK-01 | 번호 몰아주기 repack QUICK | **완료·5장 FAIL** |
 | P0 | K-SIGNAL-SELECT-FULL | 전체1182 + 1~5등 표 | 대기 |
 | P0 | K-SIGNAL-SELECT-WIRE | 앱 반영 (형 GO) | HOLD |
 | P1 | K-10SET-SURVEY | 10장 pool QUICK200 | 대기 |

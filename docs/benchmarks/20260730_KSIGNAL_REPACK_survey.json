@@ -1,0 +1,301 @@
+{
+  "id": "K-SIGNAL-REPACK-01",
+  "ts": "2026-07-30T12:40:32",
+  "elapsed_sec": 27.7,
+  "n_eval": 200,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "eval_window": {
+    "n_eval_target": 200,
+    "sample_mode": "tail",
+    "quick_gate": true
+  },
+  "gate_mode": "quick",
+  "wire_pin_ge3": 0.1447,
+  "wire_pin_mean": 1.7504,
+  "null_ge3": 0.1137,
+  "mc_seed": 42,
+  "pool_sets_per_brain": 10,
+  "repack_sets_per_brain": 5,
+  "total_repack_sets": 15,
+  "window_hint": {
+    "weeks": 4,
+    "signal": "zone_mix",
+    "alpha_ref": 0.1
+  },
+  "strategies": [
+    {
+      "strategy_id": "random_repack",
+      "label": "random_repack",
+      "eval_mode": "best_of_15",
+      "repack_sets_per_brain": 5,
+      "n": 200,
+      "mean": 2.33,
+      "ge3_rate": 0.325,
+      "ge3_count": 65,
+      "delta_ge3_vs_null": 0.2113,
+      "delta_ge3_vs_pin": 0.1803,
+      "p_value": 0.0,
+      "verdict": "PASS",
+      "ge4_rate": 0.03,
+      "ge4_count": 6,
+      "tiers": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 67
+      }
+    },
+    {
+      "strategy_id": "signal_repack",
+      "label": "signal_repack",
+      "eval_mode": "best_of_15",
+      "repack_sets_per_brain": 5,
+      "n": 200,
+      "mean": 2.245,
+      "ge3_rate": 0.275,
+      "ge3_count": 55,
+      "delta_ge3_vs_null": 0.1613,
+      "delta_ge3_vs_pin": 0.1303,
+      "p_value": 0.0,
+      "verdict": "PASS",
+      "ge4_rate": 0.025,
+      "ge4_count": 5,
+      "tiers": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 1,
+        "r4": 4,
+        "r5": 63
+      }
+    },
+    {
+      "strategy_id": "k_signal_select_combined",
+      "label": "k_signal_select_combined",
+      "eval_mode": "best_of_5_from_30",
+      "repack_sets_per_brain": null,
+      "n": 200,
+      "mean": 1.715,
+      "ge3_rate": 0.145,
+      "ge3_count": 29,
+      "delta_ge3_vs_null": 0.0313,
+      "delta_ge3_vs_pin": 0.0003,
+      "p_value": 0.102441,
+      "verdict": "PASS",
+      "ge4_rate": 0.005,
+      "ge4_count": 1,
+      "tiers": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 1,
+        "r5": 28
+      }
+    },
+    {
+      "strategy_id": "hint_only_repack",
+      "label": "hint_only_repack",
+      "eval_mode": "best_of_15",
+      "repack_sets_per_brain": 5,
+      "n": 200,
+      "mean": 1.82,
+      "ge3_rate": 0.115,
+      "ge3_count": 23,
+      "delta_ge3_vs_null": 0.0013,
+      "delta_ge3_vs_pin": -0.0297,
+      "p_value": 0.509824,
+      "verdict": "FAIL",
+      "ge4_rate": 0.01,
+      "ge4_count": 2,
+      "tiers": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 6,
+        "r5": 66
+      }
+    },
+    {
+      "strategy_id": "set_no_asc",
+      "label": "set_no_asc",
+      "eval_mode": "best_of_5",
+      "repack_sets_per_brain": null,
+      "n": 200,
+      "mean": 1.68,
+      "ge3_rate": 0.08,
+      "ge3_count": 16,
+      "delta_ge3_vs_null": -0.0337,
+      "delta_ge3_vs_pin": -0.0647,
+      "p_value": 0.952412,
+      "verdict": "FAIL",
+      "ge4_rate": 0.01,
+      "ge4_count": 2,
+      "tiers": {
+        "r1": 0,
+        "r2": 0,
+        "r3": 0,
+        "r4": 2,
+        "r5": 14
+      }
+    }
+  ],
+  "baseline_control": {
+    "strategy_id": "set_no_asc",
+    "label": "set_no_asc",
+    "eval_mode": "best_of_5",
+    "repack_sets_per_brain": null,
+    "n": 200,
+    "mean": 1.68,
+    "ge3_rate": 0.08,
+    "ge3_count": 16,
+    "delta_ge3_vs_null": -0.0337,
+    "delta_ge3_vs_pin": -0.0647,
+    "p_value": 0.952412,
+    "verdict": "FAIL",
+    "ge4_rate": 0.01,
+    "ge4_count": 2,
+    "tiers": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 2,
+      "r5": 14
+    }
+  },
+  "best_strategy": {
+    "strategy_id": "random_repack",
+    "label": "random_repack",
+    "eval_mode": "best_of_15",
+    "repack_sets_per_brain": 5,
+    "n": 200,
+    "mean": 2.33,
+    "ge3_rate": 0.325,
+    "ge3_count": 65,
+    "delta_ge3_vs_null": 0.2113,
+    "delta_ge3_vs_pin": 0.1803,
+    "p_value": 0.0,
+    "verdict": "PASS",
+    "ge4_rate": 0.03,
+    "ge4_count": 6,
+    "tiers": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 6,
+      "r5": 67
+    }
+  },
+  "best_repack_strategy": {
+    "strategy_id": "random_repack",
+    "label": "random_repack",
+    "eval_mode": "best_of_15",
+    "repack_sets_per_brain": 5,
+    "n": 200,
+    "mean": 2.33,
+    "ge3_rate": 0.325,
+    "ge3_count": 65,
+    "delta_ge3_vs_null": 0.2113,
+    "delta_ge3_vs_pin": 0.1803,
+    "p_value": 0.0,
+    "verdict": "PASS",
+    "ge4_rate": 0.03,
+    "ge4_count": 6,
+    "tiers": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 6,
+      "r5": 67
+    }
+  },
+  "k_signal_select_combined_ref": {
+    "strategy_id": "k_signal_select_combined",
+    "label": "k_signal_select_combined",
+    "eval_mode": "best_of_5_from_30",
+    "repack_sets_per_brain": null,
+    "n": 200,
+    "mean": 1.715,
+    "ge3_rate": 0.145,
+    "ge3_count": 29,
+    "delta_ge3_vs_null": 0.0313,
+    "delta_ge3_vs_pin": 0.0003,
+    "p_value": 0.102441,
+    "verdict": "PASS",
+    "ge4_rate": 0.005,
+    "ge4_count": 1,
+    "tiers": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 1,
+      "r5": 28
+    }
+  },
+  "eval_modes": {
+    "primary": "best_of_15 — 3뇌×5 repack 세트 중 최대 적중",
+    "secondary_top5": "top5_from_15 — 뇌별1번+잔여2장 → 5장 best"
+  },
+  "repack_weights": {
+    "hint": 0.4,
+    "freq": 0.25,
+    "learn": 0.35,
+    "ema": 0.15
+  },
+  "top5_eval": {
+    "signal_repack": {
+      "ge3_rate": 0.085,
+      "mean": 1.525
+    },
+    "hint_only_repack": {
+      "ge3_rate": 0.04,
+      "mean": 1.225
+    }
+  },
+  "db_reset": {
+    "table": "lotto_predictions",
+    "draw_range": [
+      1035,
+      1234
+    ],
+    "deleted_rows": 1260,
+    "remaining_in_range": 0,
+    "learn_state_reset": false,
+    "note": "eval 구간 cached prediction만 삭제 · live WF 생성 · learn_state/coordinator 미건드림"
+  },
+  "gates": {
+    "quick": {
+      "n_eval": 200,
+      "draw_range": [
+        1035,
+        1234
+      ],
+      "sample_mode": "tail",
+      "seed": 42,
+      "pass": "ge3>null(0.1137) AND p<0.15",
+      "promising": "ge3>null+0.01 OR top variant clear"
+    },
+    "full": {
+      "n_eval": 1182,
+      "draw_range": [
+        53,
+        1234
+      ],
+      "sample_mode": "full",
+      "seed": 42,
+      "pass": "ge3>pin(0.1447) AND p<0.05"
+    }
+  },
+  "pass_gate": true,
+  "gates_eval": {
+    "pass": true,
+    "criterion": "any repack ge3>null AND p<0.15"
+  },
+  "recommended_next": "K-SIGNAL-SELECT-FULL (repack top5 ge3=0.085 < combined 0.145 — 5장 공정 FAIL)",
+  "verdict": "QUICK PASS(15장) / 실질 FAIL(5장): signal_repack top5 ge3=0.085 vs combined 0.145",
+  "db_code_write": true,
+  "db_code_write_scope": "lotto_predictions eval range DELETE only",
+  "coordinator_modified": false
+}
