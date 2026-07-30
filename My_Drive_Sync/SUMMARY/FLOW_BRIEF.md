@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a3debe2` · WORK=`IDLE`
+- HEAD: `5b0b412` · WORK=`IDLE`
 - 지금: **TESTLOTTO tier/hit 버그fix** — pool-view SSOT 채점 · hero·모달·카드 일치 · 1235 미추첨 처리
 - 직전: UI/UX+pool-view 캐시 DONE · accordion · ~4ms hit
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
