@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `4d21f26` |
+| HEAD(실측) | `0777168` |
 | BASELINE_PIN | `640cb67` |
-| WORK | `RUNNING:K-SIGNAL-SELECT-FULL` |
-| 지금 | **TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA |
-| 직전 | backtest pool PIN — eval reset cache auto-WF · PATCH_PINS · 1136/1234 |
-| BOOT다음 | K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`** |
-| NEXT1 ID | **K-SIGNAL-SELECT-FULL** |
-| NEXT1 할일 | **실행 중** — full n=1182 walk-forward · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
+| WORK | `IDLE` |
+| 지금 | **K-SIGNAL-SELECT-FULL 완료** — n=1182 · combined ge3=0.1218 · **FAIL** · wire HOLD |
+| 직전 | K-EXCLUDE-HIST-01 · LEAKAGE_POLICY · TESTLOTTO pool/repack UI |
+| BOOT다음 | K-EXCLUDE-SURVEY — 배제 ON/OFF · **전체 큐=`TEST_PRIORITY.md`** |
+| NEXT1 ID | **K-EXCLUDE-SURVEY** |
+| NEXT1 할일 | combined + 배제 ON/OFF · λ sweep · as_of WF · wire는 형 GO 전 금지 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=4d21f26 · 지금=**TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=0777168 · 지금=**K-SIGNAL-SELECT-FULL 완료** — n=1182 · combined ge3=0.1218 · **FAIL** · wire HOLD · 다음=K-EXCLUDE-SURVEY`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
