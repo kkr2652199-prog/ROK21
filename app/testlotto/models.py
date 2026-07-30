@@ -197,6 +197,53 @@ def init_testlotto_db():
         CREATE INDEX IF NOT EXISTS idx_win_stores_draw ON testlotto_draw_win_stores(draw_no);
         CREATE UNIQUE INDEX IF NOT EXISTS idx_win_stores_unique
             ON testlotto_draw_win_stores(draw_no, tier_rank, store_name, address);
+
+        -- K-SIGNAL 백테스트 실행 메타 (walk-forward · 컨닝 없음)
+        CREATE TABLE IF NOT EXISTS testlotto_backtest_runs (
+            run_id             INTEGER PRIMARY KEY AUTOINCREMENT,
+            survey_id          TEXT NOT NULL,
+            survey_label_ko    TEXT NOT NULL,
+            strategy_id        TEXT NOT NULL,
+            strategy_label_ko  TEXT NOT NULL DEFAULT '',
+            gate_mode          TEXT NOT NULL DEFAULT 'quick',
+            eval_mode          TEXT DEFAULT '',
+            n_draws            INTEGER NOT NULL DEFAULT 0,
+            seed               INTEGER NOT NULL DEFAULT 42,
+            draw_start         INTEGER NOT NULL,
+            draw_end           INTEGER NOT NULL,
+            ge3_rate           REAL DEFAULT 0,
+            mean_hits          REAL DEFAULT 0,
+            ge3_count          INTEGER DEFAULT 0,
+            tier_r1            INTEGER DEFAULT 0,
+            tier_r2            INTEGER DEFAULT 0,
+            tier_r3            INTEGER DEFAULT 0,
+            tier_r4            INTEGER DEFAULT 0,
+            tier_r5            INTEGER DEFAULT 0,
+            p_value            REAL,
+            verdict            TEXT DEFAULT '',
+            delta_ge3_vs_pin   REAL,
+            source_json        TEXT,
+            note               TEXT DEFAULT '',
+            created_at         TEXT DEFAULT (datetime('now','localtime'))
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_backtest_runs_survey
+            ON testlotto_backtest_runs(survey_id, strategy_id);
+
+        -- 회차별 best 세트 적중 (run × draw)
+        CREATE TABLE IF NOT EXISTS testlotto_backtest_draw_results (
+            id                 INTEGER PRIMARY KEY AUTOINCREMENT,
+            run_id             INTEGER NOT NULL,
+            draw_no            INTEGER NOT NULL,
+            best_hits          INTEGER NOT NULL DEFAULT 0,
+            best_tier          INTEGER NOT NULL DEFAULT 0,
+            FOREIGN KEY (run_id) REFERENCES testlotto_backtest_runs(run_id)
+        );
+
+        CREATE UNIQUE INDEX IF NOT EXISTS idx_backtest_draw_unique
+            ON testlotto_backtest_draw_results(run_id, draw_no);
+        CREATE INDEX IF NOT EXISTS idx_backtest_draw_no
+            ON testlotto_backtest_draw_results(draw_no);
     """
     )
     existing_cols = [r[1] for r in conn.execute("PRAGMA table_info(lotto_predictions)").fetchall()]

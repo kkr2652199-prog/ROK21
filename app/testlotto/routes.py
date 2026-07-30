@@ -229,6 +229,36 @@ async def api_consecutive():
 # ═══════════════════════════════════════════
 # 주의: /predict/backtest 는 /predict/{target_draw_no} 보다 먼저 등록해야 "backtest"가 회차로 파싱되지 않음.
 
+@router.get("/predict/pool-view/{target_draw_no}")
+async def api_predict_pool_view(target_draw_no: int):
+    """10세트 pool + 5 몰아주기 세트 (뇌별) — walk-forward only, coordinator 미배선."""
+    from app.testlotto.signal_pool import build_pool_and_repack
+
+    return build_pool_and_repack(target_draw_no)
+
+
+@router.get("/backtest/runs")
+async def api_backtest_runs(limit: int = 50):
+    """K-SIGNAL 백테스트 실행 목록 (한국어 라벨 포함)."""
+    from app.testlotto.backtest_store import list_backtest_runs
+
+    return {"runs": list_backtest_runs(limit=limit)}
+
+
+@router.get("/backtest/runs/{run_id}")
+async def api_backtest_run_detail(run_id: int, draw_limit: int = 200, draw_offset: int = 0):
+    """백테스트 1건 상세 + 회차별 적중."""
+    from app.testlotto.backtest_store import get_backtest_run
+    from app.testlotto.survey_labels import tier_rank_label
+
+    row = get_backtest_run(run_id, draw_limit=draw_limit, draw_offset=draw_offset)
+    if not row:
+        return {"error": f"run_id={run_id} 없음"}
+    for d in row.get("draws") or []:
+        d["best_tier_label"] = tier_rank_label(d.get("best_tier") or 0)
+    return row
+
+
 @router.post("/predict/backtest")
 async def api_backtest(start_draw: int = 1100, end_draw: int = 0):
     """과거 회차 범위를 역산 예측하여 적중률을 계산한다.

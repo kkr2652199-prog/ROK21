@@ -52,9 +52,10 @@
 | seed | **난수 시드** | 재현용 (예: 42) |
 | n_eval | **평가 회차 수** | 200 또는 1182 |
 | verdict | **판정** | |
-| coordinator | **조율기** | 3뇌 세트 합성 — 수정 금지(지시 없을 때) |
-
-> 전체 표는 `reports/BENCH_REPORT_TEMPLATE.md` §「용어表」와 동기 유지.
+| K-SIGNAL-SELECT-FULL | **신호 선별 전체 검증(1182회)** | tail n=1182 · seed=42 |
+| K-SIGNAL-SELECT-01 | **신호 선별 빠른 검증(200회)** | tail n=200 · seed=42 |
+| K-SIGNAL-REPACK-01 | **번호 몰아주기 빠른 검증(200회)** | tail n=200 · seed=42 |
+| K-SIGNAL-REPACK-FULL | **번호 몰아주기 전체 검증(1182회)** | (예정) |
 
 ---
 
