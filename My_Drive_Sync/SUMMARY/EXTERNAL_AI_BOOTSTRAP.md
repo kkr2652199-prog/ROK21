@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7be9541` |
+| HEAD(실측) | `7feb148` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기 |
-| 직전 | K-SIGNAL-REPACK-01 DONE · top5 ge3=0.085 · 5장 공정 FAIL |
-| BOOT다음 | K-SIGNAL-SELECT-FULL — full 1182 · **전체 큐=`TEST_PRIORITY.md`** |
+| 지금 | **TESTLOTTO UI+DB** — 10+5 pool · 백테스트 DB 2건 · 한국어 라벨 |
+| 직전 | K-SIGNAL-REPACK-01 · SELECT-01 QUICK PASS · REPORT_STYLE |
+| BOOT다음 | K-SIGNAL-SELECT-FULL — 형 7021 육안 확인 → full 1182 · **전체 큐=`TEST_PRIORITY.md`** |
 | NEXT1 ID | **K-SIGNAL-SELECT-FULL** |
-| NEXT1 할일 | QUICK PASS(combined ge3=0.145) → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
+| NEXT1 할일 | **형 7021 UI·백테스트 DB 육안 확인** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
 | 승인필요 | full 실행=아니(QUICK PASS 후 자동) · wire=예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7be9541 · 지금=**보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기 · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=7feb148 · 지금=**TESTLOTTO UI+DB** — 10+5 pool · 백테스트 DB 2건 · 한국어 라벨 · 다음=K-SIGNAL-SELECT-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
