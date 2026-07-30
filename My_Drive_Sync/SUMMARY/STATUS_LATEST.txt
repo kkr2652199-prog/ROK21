@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-30 KST  
-📌 사유: **TESTLOTTO backtest pool PIN** — eval reset 후 pool 캐시 자동복구 · PATCH_PINS · 1136/1234 브라우저 QA
+📌 사유: **TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA
 
 ---
 
@@ -25,6 +25,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **TESTLOTTO UI accordion** | all 모드 탭바 제거 · 3뇌 아코디언 단일 · policy/warrant 예측영역 숨김 · pool/repack 조건부 | **UI OK** · 1136 |
 | **TESTLOTTO backtest pool PIN** | eval reset 후 cache miss → backtest draw auto-WF · import/backfill · 1136/1234/1030 QA | **PIN OK** |
 | **K-SIGNAL-BACKTEST-TAIL100** | tail-100 WF · combined+repack · eval구간 pred/cache reset · backtest 4건 DB | repack **ge3=0.23 PASS** · combined ge3=0.15 FAIL |
 | **TESTLOTTO click-predict** | startup prewarm 제거 · cache-only GET · 「3뇌 예측」 단일 · 회차전환 auto WF 금지 | **QA PASS** 1214/1232/1235 |
