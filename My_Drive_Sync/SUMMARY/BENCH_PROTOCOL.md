@@ -139,8 +139,29 @@
 
 ---
 
+## 9) QUICK_GATE — 탐색용 축소 eval (K-QUICK-GATE-01)
+
+full 1182( draw 53~1234 ) 전 구간은 **확정 PASS 후** 또는 형 GO 후에만. 탐색·선별 축 비교는 QUICK 먼저.
+
+| 항목 | QUICK | FULL |
+|------|-------|------|
+| n_eval | **200** (고정) | **1182** |
+| draw_range | **tail-last-200** · draw **1035~1234** | draw **53~1234** |
+| sample_mode | `tail` (표본 혼용 금지 · BENCH §5) | `full` |
+| seed | **42** (고정 · `MC_SEED`) | 42 |
+| pipeline | WF live (§7) · coordinator 미수정 | 동일 |
+| PASS (탐색) | ge3 **> NULL_GE3 (0.1137)** AND **p < 0.15** (vs null) | ge3 **> pin (0.1447)** AND **p < 0.05** |
+| promising | ge3 > null+0.01 **OR** baseline 대비 top variant Δge3 명확 | pin + p<0.05 |
+| FAIL | full skip (variant 폐기) | wire/HOLD |
+
+**CLI:** survey `--n-eval 200` (기본 QUICK) · `--full` → 1182. 공통 헬퍼=`tools/bench_quick_gate.py`.
+
+**금지:** QUICK PASS만으로 coordinator wire 금지 · full 또는 형 GO 필수.
+
+---
+
 ## 8) 관련 FINDINGS
 
-K-B(**PATCHED**) · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W(**PATCHED**) · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **K-BENCH-05(PATCHED)** · **K-BENCH-03(PATCHED)** · **WARRANT.md**
+K-B(**PATCHED**) · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W(**PATCHED**) · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **K-BENCH-05(PATCHED)** · **K-BENCH-03(PATCHED)** · **K-QUICK-GATE-01(PATCHED)** · **WARRANT.md**
 
 기계검증: `python tools/_kb_bench_ssot_verify.py` → `docs/benchmarks/20260727_KB_bench_ssot.json`

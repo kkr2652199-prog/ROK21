@@ -49,12 +49,21 @@ from app.testlotto.models import get_lotto_db, init_lotto_db  # noqa: E402
 OUT_JSON = ROOT / "docs" / "benchmarks" / "20260729_KWINDOW_SIGNAL_survey.json"
 OUT_MD = ROOT / "reports" / "20260729_KWINDOW_SIGNAL_SURVEY.md"
 
-DRAW_START = 53
-DRAW_END = 1234
+from tools.bench_quick_gate import (  # noqa: E402
+    DRAW_END as QG_DRAW_END,
+    DRAW_START as QG_DRAW_START,
+    FULL_N_EVAL,
+    MC_SEED as QG_MC_SEED,
+    filter_draw_rows,
+    resolve_eval_window,
+)
+
+DRAW_START = QG_DRAW_START
+DRAW_END = QG_DRAW_END
 WIRE_PIN_GE3 = 0.1447
 WIRE_PIN_MEAN = 1.7504
 NULL_GE3 = 0.1137
-MC_SEED = 42
+MC_SEED = QG_MC_SEED
 ALPHAS = [0.05, 0.10, 0.20]
 
 # DHLOTTERY 당첨번호 통계 기간 필터 (주=회차, 주 1회 추첨)
@@ -367,7 +376,9 @@ def enrich_variant(
     }
 
 
-def run_walkforward_variants() -> tuple[int, list[dict[str, Any]]]:
+def run_walkforward_variants(eval_window=None) -> tuple[int, list[dict[str, Any]]]:
+    if eval_window is None:
+        eval_window = resolve_eval_window(FULL_N_EVAL, sample_mode="full")
     init_lotto_db()
     conn = get_lotto_db()
     rows = conn.execute(
@@ -375,6 +386,7 @@ def run_walkforward_variants() -> tuple[int, list[dict[str, Any]]]:
         (DRAW_START, DRAW_END),
     ).fetchall()
     conn.close()
+    rows = filter_draw_rows(rows, eval_window)
 
     variant_specs: list[tuple[str, int | None, str, float, bool]] = [
         ("baseline", None, "none", 0.0, True),
@@ -580,15 +592,27 @@ def _write_report(out: dict[str, Any]) -> None:
 
 
 def main() -> None:
+    import argparse
+
+    ap = argparse.ArgumentParser(description="K-WINDOW-SIGNAL-01 survey")
+    ap.add_argument("--n-eval", type=int, default=FULL_N_EVAL, help="eval draws (200=QUICK tail)")
+    ap.add_argument("--full", action="store_true", help="full 1182 eval")
+    args = ap.parse_args()
+
+    n_eval_arg = FULL_N_EVAL if args.full else args.n_eval
+    eval_window = resolve_eval_window(
+        n_eval_arg, sample_mode="full" if args.full or n_eval_arg >= FULL_N_EVAL else "tail"
+    )
+
     t0 = time.time()
     n_variants = 1 + len(WINDOW_WEEKS) * len(SIGNAL_TYPES) * len(ALPHAS)
     print(
-        f"K-WINDOW-SIGNAL-01 live WF draws {DRAW_START}~{DRAW_END} "
-        f"variants={n_variants} seed={MC_SEED}",
+        f"K-WINDOW-SIGNAL-01 live WF draws {eval_window.draw_start}~{eval_window.draw_end} "
+        f"n_target={eval_window.n_eval_target} variants={n_variants} seed={MC_SEED}",
         flush=True,
     )
 
-    n_eval, results = run_walkforward_variants()
+    n_eval, results = run_walkforward_variants(eval_window)
     _clear_signal_patch()
 
     baseline = next(r for r in results if r["variant_id"] == "baseline")
@@ -615,7 +639,12 @@ def main() -> None:
         "ts": datetime.now().isoformat(timespec="seconds"),
         "elapsed_sec": round(time.time() - t0, 1),
         "n_eval": n_eval,
-        "draw_range": [DRAW_START, DRAW_END],
+        "draw_range": [eval_window.draw_start, eval_window.draw_end],
+        "eval_window": {
+            "n_eval_target": eval_window.n_eval_target,
+            "sample_mode": eval_window.sample_mode,
+            "quick_gate": eval_window.quick_gate,
+        },
         "wire_pin_ge3": WIRE_PIN_GE3,
         "wire_pin_mean": WIRE_PIN_MEAN,
         "null_ge3": NULL_GE3,

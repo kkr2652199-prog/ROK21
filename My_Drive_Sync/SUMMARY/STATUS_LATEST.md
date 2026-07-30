@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-30 KST  
-📌 사유: **K-WINDOW-SIGNAL-01 survey 완료 FAIL** · E2 POSTMORTEM-SIGNAL-02 완료
+📌 사유: **K-SIGNAL-SELECT-01 QUICK PASS** · combined ge3=0.145 · K-QUICK-GATE-01 foundation
 
 ---
 
@@ -10,12 +10,11 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 · pin 미달 |
-| K-POSTMORTEM-SIGNAL-02 | **DONE** — ge3+ bin lift 미약 · odd=2 +0.031 |
-| K-AUX-SIGNAL-01 | **FAIL** — best miss_pattern@α=0.2 ge3=**0.1303** p=0.042 |
-| K-BENCH-01 | **SIGNAL_FOUND** — 쿼터갭 43.6% · markov 52.5% · AUX↔hit 무상관 |
+| K-SIGNAL-SELECT-01 | **QUICK PASS** — combined ge3=**0.145** p=0.102 · tail n=200 |
+| K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
+| K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-ATTACK-HOLD** · V2 pin 유지 · E3 PATTERN-HINT-03은 형 GO |
+| 권고 | **K-SIGNAL-SELECT-FULL** (1182) · wire는 형 GO 전 금지 |
 
 ---
 
@@ -23,6 +22,8 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-SIGNAL-SELECT-01** | 10pool/brain×3뇌 → 통합5 선별 · overlap/bin/jaccard/combined · QUICK n=200 | **QUICK PASS** · combined ge3=0.145 |
+| **K-QUICK-GATE-01** | BENCH §9 · tail-200 · bench_quick_gate.py · window survey `--n-eval` | **DONE** |
 | **K-WINDOW-SIGNAL-01** | DHLOTTERY 4/8/12/52/all×4signal hint inject · 61 variants · n=1182 seed=42 | **FAIL** · best ge3=0.1328 |
 | **K-POSTMORTEM-SIGNAL-02** | ge3+ draw_features bin stratification · READ-ONLY | **DONE** · lift 미약 |
 | **K-AUX-SIGNAL-01** | 4보조 hint inject live WF · 5 variants×α · n=1182 seed=42 | **FAIL** · best ge3=0.1303 |
@@ -69,6 +70,28 @@
 | coordinator | **미수정** · K-BENCH-02-WIRE **불필요** |
 
 근거: `docs/benchmarks/20260729_KBENCH_CONFIDENCE_survey.json`
+
+---
+
+## 3e) K-SIGNAL-SELECT-01 핵심 (QUICK tail-200)
+
+| selector | ge3_rate | mean | Δ vs pin | Δ vs null | p (null) | verdict |
+|----------|----------|------|----------|-----------|----------|---------|
+| **combined** | **0.145** | 1.715 | +0.0003 | +0.0313 | **0.102** | **QUICK PASS** |
+| bin_match | 0.115 | 1.68 | −0.0297 | +0.0013 | 0.510 | FAIL |
+| jaccard_div | 0.115 | 1.595 | −0.0297 | +0.0013 | 0.510 | FAIL |
+| set_no_asc (control) | 0.08 | 1.68 | −0.0647 | −0.0337 | 0.952 | FAIL |
+| window_overlap | 0.08 | 1.64 | −0.0647 | −0.0337 | 0.952 | FAIL |
+
+| 항목 | 값 |
+|------|-----|
+| n_eval | **200** (draw 1035~1234) · seed=42 · elapsed 18s |
+| pool | 3뇌×10 (survey 2-pass) → 통합 5 신호셋트 |
+| window hint | w4_zone_mix (K-WINDOW best) |
+| QUICK gate | ge3>null AND p<0.15 → **PASS** (combined) |
+| coordinator | **미수정** · wire **형 GO 전 금지** |
+
+근거: `docs/benchmarks/20260730_KSIGNAL_SELECT_survey.json`
 
 ---
 
@@ -153,19 +176,18 @@
 
 ## 5) 다음
 
-**K-ATTACK-HOLD** — V2 pin ge3=0.1447 유지.  
-K-WINDOW-SIGNAL-01 FAIL → E3 PATTERN-HINT-03 survey는 **형 GO** 후.  
-coordinator·aux_*.py·predict_* **수정 금지**.
+**K-SIGNAL-SELECT-FULL** — QUICK PASS(combined ge3=0.145) → full n=1182 확인 · wire는 형 GO 전 금지.  
+V2 pin ge3=0.1447 유지 · coordinator·predict_* **수정 금지**.
 
 ---
 
 ## 6) 산출물
 
-- `tools/_k_window_signal_survey.py`
-- `docs/benchmarks/20260729_KWINDOW_SIGNAL_survey.json`
-- `reports/20260729_KWINDOW_SIGNAL_SURVEY.md`
-- `docs/benchmarks/20260729_KPOSTMORTEM_SIGNAL02.json`
-- `reports/20260729_KPOSTMORTEM_SIGNAL02.md`
+- `tools/bench_quick_gate.py` · `tools/_k_signal_select_survey.py`
+- `docs/benchmarks/20260730_KSIGNAL_SELECT_survey.json`
+- `reports/20260730_KSIGNAL_SELECT_SURVEY.md`
+- `My_Drive_Sync/SUMMARY/BENCH_PROTOCOL.md` §9 QUICK_GATE
+- `tools/_k_window_signal_survey.py` (`--n-eval`)
 
 ## 팩트체크
 
