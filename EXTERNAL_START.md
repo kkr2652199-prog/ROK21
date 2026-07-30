@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `b5c3b1e` |
+| HEAD(실측) | `dc62eec` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=b5c3b1e · 지금=**TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=dc62eec · 지금=**TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA · 다음=K-SIGNAL-SELECT-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: b5c3b1e_
+_generated: dc62eec_
