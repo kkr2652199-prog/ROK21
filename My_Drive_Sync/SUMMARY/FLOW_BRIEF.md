@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b956fb0` · WORK=`IDLE`
+- HEAD: `023c17f` · WORK=`IDLE`
 - 지금: **TESTLOTTO UI/UX 리프레시** — B-04 스피너·스켈레톤 · sticky탭·카드여백 · chevron 접이식
 - 직전: TESTLOTTO 7021 브라우저 QA PASS · 10+5·백테2건
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**

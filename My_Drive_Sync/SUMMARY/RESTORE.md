@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `b956fb0` · WORK=`IDLE`
+1. **HEAD:** `023c17f` · WORK=`IDLE`
 2. **지금:** **TESTLOTTO UI/UX 리프레시** — B-04 스피너·스켈레톤 · sticky탭·카드여백 · chevron 접이식
 3. **다음1건:** K-SIGNAL-SELECT-FULL — **TESTLOTTO UI/UX DONE(20260730)** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 (승인필요=full 실행=아니(QUICK PASS 후 자동) · wire=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
