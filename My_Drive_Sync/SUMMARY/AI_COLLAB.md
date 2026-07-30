@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-07-30 13:30 KST)
-- **HEAD**: `b956fb0`
+- **HEAD**: `548c877`
 - **TESTLOTTO UI/UX**: **DONE** — B-04 스피너·스켈레톤 · sticky탭·카드여백 · chevron · `reports/20260730_TESTLOTTO_UIUX_REFRESH.md`
 - **K-SIGNAL-SELECT-01**: **QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200
 - **다음**: K-SIGNAL-SELECT-FULL (1182) · repack wire 불필
