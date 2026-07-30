@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-30 | 7021 테스트로또 브라우저 QA | MCP 6항목 PASS · 버그5(이모지·K-SIGNAL summary 수정2) · pool-view 12~31s | **QA PASS** | pending |
 | 2026-07-30 | TESTLOTTO UI+DB·10+5·한글 | backtest_runs 2건·pool-view API·7021 UI · REPORT_STYLE 과제表 | **UI OK** | pending |
 | 2026-07-30 | 보고서 한국어·3등 긍정 | REPORT_STYLE·BENCH_TEMPLATE 용어表 · REPACK 보고서 한글화 · r3=1 복습 | **DOC OK** | pending |
 | 2026-07-30 | 형 몰아주기(repack) GO | signal repack survey n=200 · top5 ge3=0.085 · combined=0.145 · DB reset 1260행 | **5장 FAIL** | pending |

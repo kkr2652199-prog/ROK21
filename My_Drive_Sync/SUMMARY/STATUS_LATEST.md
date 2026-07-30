@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-30 KST  
-📌 사유: **TESTLOTTO UI+DB 패치** · 10+5 pool · 백테스트 DB · K-SIGNAL-SELECT-FULL 다음
+📌 사유: **TESTLOTTO 7021 브라우저 QA PASS** · 버그5(수정2) · K-SIGNAL-SELECT-FULL 다음
 
 ---
 
@@ -10,7 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **TESTLOTTO UI+DB** | **DONE** — 7021 테스트로또 탭 · 10장 pool+5장 몰아주기 · `testlotto_backtest_runs` 2건(200회×2) |
+| **TESTLOTTO UI+DB** | **DONE** — 7021 테스트로또 탭 · 10+5 pool · backtest 2건 · **브라우저 QA PASS** (`20260730_TESTLOTTO_BROWSER_QA.md`) |
 | K-SIGNAL-REPACK-01 | **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |
 | K-SIGNAL-SELECT-01 | **QUICK PASS** — combined ge3=**0.145** p=0.102 · tail n=200 |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |

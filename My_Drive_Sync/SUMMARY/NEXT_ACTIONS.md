@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-SIGNAL-SELECT-FULL
-- 할일: **형 7021 UI·백테스트 DB 육안 확인** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지
+- 할일: **7021 UI QA PASS(20260730)** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지
 - 완료조건: `20260730_KSIGNAL_SELECT_survey.json` full 섹션 또는 full-only JSON · ge3 vs pin 판정 · per-draw DB 적재(선택)
 - 승인필요: full 실행=아니(QUICK PASS 후 자동) · wire=예
-- 선행완료: 2026-07-30 TESTLOTTO UI+DB — 10+5 pool · backtest_runs 2건 · `reports/20260730_TESTLOTTO_BACKTEST_UI.md`
+- 선행완료: `reports/20260730_TESTLOTTO_BROWSER_QA.md` — PASS · 버그5(수정2) · pool-view 12~31s UX 이슈
 
 ## WORKSTATE
 IDLE

@@ -901,7 +901,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
               ${disabled ? 'disabled' : ''}>
         <span class="lotto-brain-tab-head">
           <span class="lotto-brain-icon">${b.icon}</span>
-          <span class="lotto-brain-name">${testlottoGetBrainDisplayName(b.tag)}</span>
+          <span class="lotto-brain-name">${b.name}</span>
           <span class="lotto-brain-cnt">${poolCnt || 0}</span>
         </span>
         ${warrantLine}
