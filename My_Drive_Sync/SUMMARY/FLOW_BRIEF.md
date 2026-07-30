@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `ca11c6b` · WORK=`IDLE`
+- HEAD: `675139e` · WORK=`IDLE`
 - 지금: **TESTLOTTO 로딩 제거+레이아웃** — pool-view SQLite 캐시 · accordion · pool/repack 서브탭
 - 직전: UI/UX 리프레시 · 브라우저 QA PASS
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
