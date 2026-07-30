@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `190ce4d` · WORK=`IDLE`
-- 지금: **K-SIGNAL-REPACK-01 DONE** — top5 ge3=0.085 · combined=0.145 · 5장 공정 FAIL
-- 직전: K-SIGNAL-SELECT-01 QUICK PASS · combined ge3=0.145
+- HEAD: `2b3eebc` · WORK=`IDLE`
+- 지금: **보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기
+- 직전: K-SIGNAL-REPACK-01 DONE · top5 ge3=0.085 · 5장 공정 FAIL
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 · **전체 큐=`TEST_PRIORITY.md`**
 - NEXT1: K-SIGNAL-SELECT-FULL — QUICK PASS(combined ge3=0.145) → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 (승인=full 실행=아니(QUICK PASS 후 자동) · wire=예)
 - OPEN샘플: K-00, K-02, K-05
