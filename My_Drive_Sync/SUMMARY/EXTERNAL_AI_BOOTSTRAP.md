@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `15a0bb9` |
+| HEAD(실측) | `89bda76` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **TESTLOTTO 7021 브라우저 QA PASS** — 10+5·백테2건·회차별200 · 버그5(수정2) |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=15a0bb9 · 지금=**TESTLOTTO 7021 브라우저 QA PASS** — 10+5·백테2건·회차별200 · 버그5(수정2) · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=89bda76 · 지금=**TESTLOTTO 7021 브라우저 QA PASS** — 10+5·백테2건·회차별200 · 버그5(수정2) · 다음=K-SIGNAL-SELECT-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
