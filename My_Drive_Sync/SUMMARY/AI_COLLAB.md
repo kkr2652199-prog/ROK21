@@ -24,8 +24,9 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-30 12:05 KST)
+### 최신 상태 (2026-07-30 12:15 KST)
 - **HEAD**: pending commit
+- **보고서 형식**: `BENCH_REPORT_TEMPLATE.md` → **숙제 제출형 6섹션**(숙제·한일·풀이·O/X·복습·근거) · 예시=`20260730_KSIGNAL_SELECT_SURVEY.md`
 - **K-SIGNAL-SELECT-01**: **QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200 · set_no_asc=0.08
 - **K-QUICK-GATE-01**: **DONE** — BENCH §9 · bench_quick_gate.py
 - **현재 배선**: WIRE-V2 pin ge3=0.1447 유지 · wire는 형 GO 전 금지
