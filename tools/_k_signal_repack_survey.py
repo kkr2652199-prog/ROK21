@@ -254,8 +254,17 @@ def _best_tier(
     return best_tr, tier_acc
 
 
-def _reset_predictions_for_eval(draw_start: int, draw_end: int) -> dict[str, Any]:
-    """eval 구간 lotto_predictions 삭제 — cached 예측 간섭 방지."""
+def _reset_predictions_for_eval(
+    draw_start: int,
+    draw_end: int,
+    *,
+    clear_pool_view_cache: bool = False,
+) -> dict[str, Any]:
+    """eval 구간 lotto_predictions 삭제 — cached 예측 간섭 방지.
+
+    backtest 테이블(testlotto_backtest_*)는 건드리지 않음.
+    clear_pool_view_cache=True 시 eval 구간 pool-view 캐시만 삭제(전체 테이블 X).
+    """
     init_lotto_db()
     conn = get_lotto_db()
     try:
@@ -272,17 +281,41 @@ def _reset_predictions_for_eval(draw_start: int, draw_end: int) -> dict[str, Any
             "SELECT COUNT(*) AS c FROM lotto_predictions WHERE target_draw_no BETWEEN ? AND ?",
             (draw_start, draw_end),
         ).fetchone()["c"]
+        pool_deleted = 0
+        if clear_pool_view_cache:
+            cur = conn.execute(
+                "DELETE FROM testlotto_pool_view_cache WHERE draw_no BETWEEN ? AND ?",
+                (draw_start, draw_end),
+            )
+            pool_deleted = int(cur.rowcount or 0)
+            conn.commit()
     finally:
         conn.close()
     clear_history_cache()
-    return {
-        "table": "lotto_predictions",
-        "draw_range": [draw_start, draw_end],
-        "deleted_rows": int(before),
-        "remaining_in_range": int(after),
+    out: dict[str, Any] = {
+        "deleted": {
+            "lotto_predictions": {
+                "draw_range": [draw_start, draw_end],
+                "deleted_rows": int(before),
+                "remaining_in_range": int(after),
+            },
+        },
+        "kept": [
+            "testlotto_backtest_runs",
+            "testlotto_backtest_draw_results",
+        ],
         "learn_state_reset": False,
-        "note": "eval 구간 cached prediction만 삭제 · live WF 생성 · learn_state/coordinator 미건드림",
+        "note": "eval 구간 cached prediction만 삭제 · live WF · backtest 기록 유지",
     }
+    if clear_pool_view_cache:
+        out["deleted"]["testlotto_pool_view_cache"] = {
+            "draw_range": [draw_start, draw_end],
+            "deleted_rows": pool_deleted,
+        }
+        out["kept"].append("testlotto_pool_view_cache(범위外)")
+    else:
+        out["kept"].append("testlotto_pool_view_cache(전체)")
+    return out
 
 
 def run_survey(eval_window) -> tuple[int, dict[str, Any], dict[str, Any]]:

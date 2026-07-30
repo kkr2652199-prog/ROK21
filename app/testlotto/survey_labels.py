@@ -8,6 +8,7 @@ SURVEY_ID_KO: dict[str, str] = {
     "K-SIGNAL-SELECT-01": "신호 선별 빠른 검증(200회)",
     "K-SIGNAL-REPACK-01": "번호 몰아주기 빠른 검증(200회)",
     "K-SIGNAL-REPACK-FULL": "번호 몰아주기 전체 검증(1182회)",
+    "K-SIGNAL-BACKTEST-TAIL100": "신호 백테스트 최근100회",
 }
 
 # ── 지표·약어 (REPORT_STYLE §2) ──

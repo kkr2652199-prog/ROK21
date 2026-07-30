@@ -1,0 +1,104 @@
+{
+  "id": "K-SIGNAL-BACKTEST-TAIL100",
+  "ts": "2026-07-30T14:24:05",
+  "n_eval": 100,
+  "draw_range": [
+    1135,
+    1234
+  ],
+  "eval_window": {
+    "n_eval_target": 100,
+    "sample_mode": "tail",
+    "quick_gate": true
+  },
+  "gate_mode": "tail100",
+  "mc_seed": 42,
+  "null_ge3": 0.1137,
+  "wire_pin_ge3": 0.1447,
+  "wire_pin_mean": 1.7504,
+  "db_reset": {
+    "deleted": {
+      "lotto_predictions": {
+        "draw_range": [
+          1135,
+          1234
+        ],
+        "deleted_rows": 15,
+        "remaining_in_range": 0
+      },
+      "testlotto_pool_view_cache": {
+        "draw_range": [
+          1135,
+          1234
+        ],
+        "deleted_rows": 51
+      }
+    },
+    "kept": [
+      "testlotto_backtest_runs",
+      "testlotto_backtest_draw_results",
+      "testlotto_pool_view_cache(범위外)"
+    ],
+    "learn_state_reset": false,
+    "note": "eval 구간 cached prediction만 삭제 · live WF · backtest 기록 유지"
+  },
+  "runs": [
+    {
+      "run_id": 3,
+      "survey_id": "K-SIGNAL-BACKTEST-TAIL100",
+      "strategy_id": "signal_repack",
+      "n": 100,
+      "draw_range": [
+        1135,
+        1234
+      ],
+      "metrics": {
+        "n": 100,
+        "mean": 2.15,
+        "ge3_rate": 0.23,
+        "ge3_count": 23,
+        "delta_ge3_vs_null": 0.1163,
+        "delta_ge3_vs_pin": 0.0853,
+        "p_value": 0.000729,
+        "verdict": "PASS",
+        "tiers": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 1,
+          "r5": 22
+        }
+      },
+      "per_draw_count": 100
+    },
+    {
+      "run_id": 4,
+      "survey_id": "K-SIGNAL-BACKTEST-TAIL100",
+      "strategy_id": "combined",
+      "n": 100,
+      "draw_range": [
+        1135,
+        1234
+      ],
+      "metrics": {
+        "n": 100,
+        "mean": 1.61,
+        "ge3_rate": 0.15,
+        "ge3_count": 15,
+        "delta_ge3_vs_null": 0.0363,
+        "delta_ge3_vs_pin": 0.0053,
+        "p_value": 0.161241,
+        "verdict": "FAIL",
+        "tiers": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 0,
+          "r4": 0,
+          "r5": 15
+        }
+      },
+      "per_draw_count": 100
+    }
+  ],
+  "elapsed_sec": 13.3
+}

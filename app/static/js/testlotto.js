@@ -648,7 +648,7 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
       container.classList.remove('testlotto-results-pending');
       container.removeAttribute('aria-busy');
       await renderTestlottoDrawHero(d, null);
-      container.innerHTML = `<p class="testlotto-results-empty">${d}회차 저장된 예측 없음. &quot;두뇌 예측&quot; 버튼으로 실행하세요.</p>`;
+      container.innerHTML = `<p class="testlotto-results-empty">${d}회차 저장된 예측 없음. 「3뇌 예측」 버튼으로 실행하세요.</p>`;
       return;
     }
     _testlottoDetailDrawNo = d;
@@ -1356,7 +1356,7 @@ async function testlottoCopyKakaoText() {
   const rows = _testlottoDetailRows;
   const drawNo = _testlottoDetailDrawNo;
   if (!rows || !rows.length || !drawNo) {
-    alert('먼저 회차를 선택한 뒤 "두뇌 예측"을 눌러 예측을 불러오세요.');
+    alert('먼저 회차를 선택한 뒤 「3뇌 예측」을 눌러 예측을 불러오세요.');
     return;
   }
 

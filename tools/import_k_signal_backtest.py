@@ -25,7 +25,13 @@ REPACK_JSON = ROOT / "docs" / "benchmarks" / "20260730_KSIGNAL_REPACK_survey.jso
 SELECT_JSON = ROOT / "docs" / "benchmarks" / "20260730_KSIGNAL_SELECT_survey.json"
 
 
-def _run_repack_per_draw(eval_window) -> dict:
+def _run_repack_per_draw(
+    eval_window,
+    *,
+    survey_id: str = "K-SIGNAL-REPACK-01",
+    gate_mode: str = "quick",
+    source_json: str | None = None,
+) -> dict:
     import random
 
     from app.testlotto.backtest_store import delete_runs_for_survey_strategy, insert_backtest_run, insert_draw_results
@@ -43,7 +49,8 @@ def _run_repack_per_draw(eval_window) -> dict:
     from tools._k_signal_repack_survey import _best_match, _best_tier, _reset_predictions_for_eval
 
     strategy_id = "signal_repack"
-    survey_id = "K-SIGNAL-REPACK-01"
+    if source_json is None:
+        source_json = str(REPACK_JSON.as_posix())
 
     init_lotto_db()
     conn = get_lotto_db()
@@ -53,9 +60,6 @@ def _run_repack_per_draw(eval_window) -> dict:
     ).fetchall()
     conn.close()
     rows = filter_draw_rows(rows, eval_window)
-
-    _reset_predictions_for_eval(eval_window.draw_start, eval_window.draw_end)
-    clear_history_cache()
 
     learner = RollingSignalLearner()
     per_draw: list[dict] = []
@@ -112,7 +116,7 @@ def _run_repack_per_draw(eval_window) -> dict:
             conn,
             survey_id=survey_id,
             strategy_id=strategy_id,
-            gate_mode="quick",
+            gate_mode=gate_mode,
             eval_mode="best_of_15",
             n_draws=n,
             seed=MC_SEED,
@@ -122,7 +126,7 @@ def _run_repack_per_draw(eval_window) -> dict:
             mean_hits=round(mean_h, 4),
             ge3_count=ge3_c,
             tiers=tier_acc,
-            source_json=str(REPACK_JSON.as_posix()),
+            source_json=source_json,
             note="WF live per-draw · signal_repack · no future leak",
         )
         insert_draw_results(conn, run_id, per_draw)
@@ -130,10 +134,28 @@ def _run_repack_per_draw(eval_window) -> dict:
     finally:
         conn.close()
 
-    return {"run_id": run_id, "survey_id": survey_id, "strategy_id": strategy_id, "n": n}
+    from tools.bench_quick_gate import enrich_metrics
+
+    metrics = enrich_metrics(ge3_c, n, mean_h, gate_mode=gate_mode if gate_mode != "tail100" else "quick")
+    metrics["tiers"] = tier_acc
+    return {
+        "run_id": run_id,
+        "survey_id": survey_id,
+        "strategy_id": strategy_id,
+        "n": n,
+        "draw_range": [eval_window.draw_start, eval_window.draw_end],
+        "metrics": metrics,
+        "per_draw_count": len(per_draw),
+    }
 
 
-def _run_select_per_draw(eval_window) -> dict:
+def _run_select_per_draw(
+    eval_window,
+    *,
+    survey_id: str = "K-SIGNAL-SELECT-01",
+    gate_mode: str = "quick",
+    source_json: str | None = None,
+) -> dict:
     import random
 
     from app.testlotto.backtest_store import delete_runs_for_survey_strategy, insert_backtest_run, insert_draw_results
@@ -155,7 +177,8 @@ def _run_select_per_draw(eval_window) -> dict:
     )
 
     strategy_id = "combined"
-    survey_id = "K-SIGNAL-SELECT-01"
+    if source_json is None:
+        source_json = str(SELECT_JSON.as_posix())
 
     init_lotto_db()
     conn = get_lotto_db()
@@ -230,7 +253,7 @@ def _run_select_per_draw(eval_window) -> dict:
             conn,
             survey_id=survey_id,
             strategy_id=strategy_id,
-            gate_mode="quick",
+            gate_mode=gate_mode,
             eval_mode="best_of_5_from_30",
             n_draws=n,
             seed=MC_SEED,
@@ -240,7 +263,7 @@ def _run_select_per_draw(eval_window) -> dict:
             mean_hits=round(mean_h, 4),
             ge3_count=ge3_c,
             tiers=tier_acc,
-            source_json=str(SELECT_JSON.as_posix()),
+            source_json=source_json,
             note="WF live per-draw · combined selector · no future leak",
         )
         insert_draw_results(conn, run_id, per_draw)
@@ -248,7 +271,19 @@ def _run_select_per_draw(eval_window) -> dict:
     finally:
         conn.close()
 
-    return {"run_id": run_id, "survey_id": survey_id, "strategy_id": strategy_id, "n": n}
+    from tools.bench_quick_gate import enrich_metrics
+
+    metrics = enrich_metrics(ge3_c, n, mean_h, gate_mode=gate_mode if gate_mode != "tail100" else "quick")
+    metrics["tiers"] = tier_acc
+    return {
+        "run_id": run_id,
+        "survey_id": survey_id,
+        "strategy_id": strategy_id,
+        "n": n,
+        "draw_range": [eval_window.draw_start, eval_window.draw_end],
+        "metrics": metrics,
+        "per_draw_count": len(per_draw),
+    }
 
 
 def main() -> None:
@@ -257,9 +292,14 @@ def main() -> None:
     ap.add_argument("--n-eval", type=int, default=QUICK_N_EVAL)
     args = ap.parse_args()
 
+    from tools._k_signal_repack_survey import _reset_predictions_for_eval  # noqa: E402
+
     eval_window = resolve_eval_window(args.n_eval, sample_mode="tail")
     t0 = time.time()
     out: dict = {"eval_window": [eval_window.draw_start, eval_window.draw_end], "runs": []}
+
+    if args.which in ("repack", "both"):
+        _reset_predictions_for_eval(eval_window.draw_start, eval_window.draw_end)
 
     if args.which in ("repack", "both"):
         print("K-SIGNAL-REPACK-01 signal_repack WF import...", flush=True)
