@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `9731584` · WORK=`RUNNING:K-SIGNAL-SELECT-FULL`
+- HEAD: `4d21f26` · WORK=`RUNNING:K-SIGNAL-SELECT-FULL`
 - 지금: **TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA
 - 직전: backtest pool PIN — eval reset cache auto-WF · PATCH_PINS · 1136/1234
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
