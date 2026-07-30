@@ -1715,6 +1715,29 @@ details[open] > summary .testlotto-details-chevron {
   color: #94a3b8;
 }
 
+.testlotto-predict-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 12rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  border: 1px dashed rgba(100, 116, 139, 0.45);
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.35);
+}
+.testlotto-predict-empty__msg {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+.testlotto-predict-empty__btn {
+  min-width: 10rem;
+}
+
 @media (max-width: 640px) {
   .testlotto-main-card {
     padding: 1rem;

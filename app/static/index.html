@@ -6,7 +6,7 @@
   <title>ROK21 — 4군 AI 예측</title>
   <link rel="stylesheet" href="/static/css/lotto4.css?v=20260620c" />
   <link rel="stylesheet" href="/static/css/hyodo.css?v=20260727p5" />
-  <link rel="stylesheet" href="/static/css/testlotto.css?v=20260730c" />
+  <link rel="stylesheet" href="/static/css/testlotto.css?v=20260730e" />
 </head>
 <body>
   <div class="app-shell">
@@ -358,7 +358,8 @@
             <!-- ② 예측·도구 -->
             <div class="testlotto-actions-bar">
               <input type="number" id="testlottoPredictDrawNo" placeholder="회차 직접 입력" min="1" class="testlotto-draw-input" />
-              <button type="button" class="btn btn-primary" onclick="testlottoPredict()">🧠 두뇌 예측</button>
+              <button type="button" class="btn btn-primary" onclick="testlottoRunPoolPredict()">🎯 3뇌 예측</button>
+              <button type="button" class="btn btn-secondary" onclick="testlottoPredict()">🧠 두뇌 예측</button>
               <label class="lotto-elite-filter">
                 <input type="checkbox" id="testlottoEliteBrainToggle" onchange="testlottoOnEliteBrainToggle()" />
                 <span>과거에 잘 맞춘 프로그램만 보기</span>
@@ -372,7 +373,7 @@
             <!-- ③ 뇌별 예측 세트 (10장 pool + 5장 몰아주기) -->
             <div class="lotto-tab-content testlotto-predictions-wrap" id="testlotto-tab-predictions">
               <div id="testlottoPredictionResults" class="testlotto-pred-results" aria-live="polite">
-                <p class="testlotto-hero-placeholder">회차 번호를 입력하고 &quot;두뇌 예측&quot;을 클릭하세요.</p>
+                <p class="testlotto-hero-placeholder">회차를 선택하면 당첨번호가 표시됩니다. pool 10+5는 「3뇌 예측」 클릭 시에만 계산됩니다.</p>
               </div>
             </div>
 
@@ -609,7 +610,7 @@
   </div>
 
   <script src="/static/js/hyodo.js?v=20260727p5"></script>
-  <script src="/static/js/testlotto.js?v=20260730d"></script>
+  <script src="/static/js/testlotto.js?v=20260730e"></script>
   <script src="/static/js/lotto4.js?v=20260620c"></script>
 </body>
 </html>

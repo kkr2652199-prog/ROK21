@@ -230,11 +230,49 @@ async def api_consecutive():
 # 주의: /predict/backtest 는 /predict/{target_draw_no} 보다 먼저 등록해야 "backtest"가 회차로 파싱되지 않음.
 
 @router.get("/predict/pool-view/{target_draw_no}")
-async def api_predict_pool_view(target_draw_no: int, refresh: bool = False):
-    """10세트 pool + 5 몰아주기 세트 (뇌별) — walk-forward only, coordinator 미배선."""
-    from app.testlotto.pool_view_cache import get_or_build_pool_view
+async def api_predict_pool_view(
+    target_draw_no: int,
+    refresh: bool = False,
+    compute: bool = False,
+):
+    """10세트 pool + 5 몰아주기 (뇌별). 기본=DB 캐시만 · compute/refresh 시에만 WF 계산."""
+    import time
 
-    return get_or_build_pool_view(target_draw_no, force_refresh=refresh)
+    from app.testlotto.pool_view_cache import get_cached_pool_view, get_or_build_pool_view
+
+    if refresh or compute:
+        return get_or_build_pool_view(target_draw_no, force_refresh=refresh)
+
+    t0 = time.perf_counter()
+    cached = get_cached_pool_view(target_draw_no)
+    if cached:
+        cached["cache_ms"] = round((time.perf_counter() - t0) * 1000, 1)
+        return cached
+
+    return {
+        "ok": False,
+        "cache_miss": True,
+        "target_draw_no": target_draw_no,
+        "message": "캐시 없음 — 예측 버튼을 눌러 계산하세요",
+    }
+
+
+@router.delete("/predict/pool-view/cache/{draw_no}")
+async def api_clear_pool_view_cache_draw(draw_no: int):
+    """관리용 — 특정 회차 pool-view 캐시 삭제 (명시적 reset 전까지 일반 브라우즈에서 미노출)."""
+    from app.testlotto.pool_view_cache import clear_pool_view_cache
+
+    deleted = clear_pool_view_cache(draw_no)
+    return {"ok": True, "draw_no": draw_no, "deleted_rows": deleted}
+
+
+@router.delete("/predict/pool-view/cache")
+async def api_clear_pool_view_cache_all():
+    """관리용 — pool-view 캐시 전체 삭제."""
+    from app.testlotto.pool_view_cache import clear_pool_view_cache
+
+    deleted = clear_pool_view_cache(0)
+    return {"ok": True, "deleted_rows": deleted}
 
 
 @router.get("/backtest/runs")

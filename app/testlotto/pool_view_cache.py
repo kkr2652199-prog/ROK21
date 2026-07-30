@@ -177,6 +177,24 @@ def latest_draw_no(conn: sqlite3.Connection | None = None) -> int:
             conn.close()
 
 
+def clear_pool_view_cache(draw_no: int = 0) -> int:
+    """pool-view 캐시 삭제. draw_no>0 이면 해당 회차만, 0 이면 전체."""
+    init_testlotto_db()
+    conn = get_lotto_db()
+    try:
+        if draw_no > 0:
+            cur = conn.execute(
+                "DELETE FROM testlotto_pool_view_cache WHERE draw_no = ?",
+                (draw_no,),
+            )
+        else:
+            cur = conn.execute("DELETE FROM testlotto_pool_view_cache")
+        conn.commit()
+        return int(cur.rowcount or 0)
+    finally:
+        conn.close()
+
+
 def prewarm_visible_range(*, window: int = 30) -> dict[str, Any]:
     """최신 회차 기준 ±window 프리워arm."""
     init_testlotto_db()

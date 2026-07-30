@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **TESTLOTTO tier/hit 버그fix** — pool-view SSOT 채점 · hero·모달·카드 일치 · 1235 미추첨 처리
-- 직전: UI/UX+pool-view 캐시 DONE · accordion · ~4ms hit
+- 지금: **TESTLOTTO 클릭 예측** — 재시동 prewarm 제거 · cache-only 기본 · 「3뇌 예측」 클릭 시에만 compute
+- 직전: tier-match fix DONE · pool-view SSOT 채점 · 1214 hero 5등4
 - 다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

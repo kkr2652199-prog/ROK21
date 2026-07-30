@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-30 | TESTLOTTO 클릭 예측·재시작 로딩 금지 | prewarm 제거 · cache-only API · 「3뇌 예측」 · 1214 tier·1232 miss QA | **CLICK OK** | pending |
 | 2026-07-30 | TESTLOTTO 4·5등 적중 표시 버그 | pool-view SSOT 채점 · hero·모달·카드 일치 · 1214/1234/1200/1235 QA | **FIX OK** | pending |
 | 2026-07-30 | TESTLOTTO 로딩+15세트 UI | pool-view SQLite 캐시 hit ~4ms · accordion · sub-tabs · B-03 해결 | **LOAD OK** | pending |
 | 2026-07-30 | TESTLOTTO UI/UX만 | B-04 스피너·스켈레톤 · CSS spacing · chevron · GenSpark UI 라운드 | **UI OK** | pending |

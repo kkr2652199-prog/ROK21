@@ -403,8 +403,7 @@ function initTestlottoDrawSearch() {
     if (input && !input.value) {
       input.value = latest;
       sel.value = String(latest);
-      testlottoLoadSavedPrediction(latest);
-      loadTestlottoWarrantPanel(latest);
+      testlottoShowDrawContext(latest);
     }
   });
 }
@@ -416,7 +415,7 @@ function testlottoSelectDraw(drawNo) {
   const sel = document.getElementById('testlottoDrawSelect');
   if (input) input.value = String(no);
   if (sel) sel.value = String(no);
-  testlottoLoadSavedPrediction(no, { softLoading: true });
+  testlottoShowDrawContext(no);
   loadTestlottoWarrantPanel(no);
 }
 
@@ -446,7 +445,7 @@ function testlottoNavDraw(delta) {
   const nextNo = _testlottoDrawList[nextIdx];
   if (input) input.value = String(nextNo);
   if (sel) sel.value = String(nextNo);
-  testlottoLoadSavedPrediction(nextNo, { softLoading: true });
+  testlottoShowDrawContext(nextNo);
   loadTestlottoWarrantPanel(nextNo);
 }
 
@@ -499,6 +498,80 @@ async function _fetchPredictionRowsLegacy(drawNo) {
   const rows = (data && data.predictions) ? data.predictions : [];
   return { rows, source: 'lotto_predictions' };
 }
+
+function _testlottoStubRowsForDraw(drawNo, actualRef) {
+  const d = parseInt(drawNo, 10);
+  const ref = actualRef || _testlottoCurrentActualRef;
+  const row = { target_draw_no: d, brain_tag: 'stat', matched_count: -1 };
+  if (ref && ref.actual_1 != null) {
+    row.actual_1 = ref.actual_1;
+    row.actual_2 = ref.actual_2;
+    row.actual_3 = ref.actual_3;
+    row.actual_4 = ref.actual_4;
+    row.actual_5 = ref.actual_5;
+    row.actual_6 = ref.actual_6;
+    row.actual_bonus = ref.actual_bonus;
+  }
+  return [row];
+}
+
+/** 회차 전환 — hero + DB 캐시 hit 즉시 표시 · miss 시 빈 상태(계산 안 함) */
+async function testlottoShowDrawContext(drawNo) {
+  const d = parseInt(drawNo, 10);
+  const container = document.getElementById('testlottoPredictionResults');
+  if (!container || !Number.isFinite(d) || d < 1) {
+    return;
+  }
+  const seq = ++_testlottoPredFetchSeq;
+  container.classList.remove('testlotto-results-pending');
+  container.removeAttribute('aria-busy');
+
+  const actualRef = await _testlottoResolveActualRef(d, null);
+  if (seq !== _testlottoPredFetchSeq) {
+    return;
+  }
+  _testlottoCurrentActualRef = actualRef;
+  _testlottoDetailDrawNo = d;
+  _testlottoDetailRows = _testlottoStubRowsForDraw(d, actualRef);
+
+  let poolView = _testlottoPoolViewMemCache.get(d) || null;
+  if (!poolView || !poolView.ok) {
+    try {
+      const fetched = await _fetchPoolView(d, { cacheOnly: true });
+      if (fetched && fetched.ok) {
+        poolView = fetched;
+      } else {
+        poolView = null;
+      }
+    } catch (e) {
+      console.warn('pool-view cache lookup:', e);
+      poolView = null;
+    }
+  }
+
+  if (seq !== _testlottoPredFetchSeq) {
+    return;
+  }
+
+  if (poolView && poolView.ok) {
+    await renderPredictionsByBrain(d, _testlottoDetailRows, { poolView, skipPoolFetch: true });
+    loadTestlottoWarrantPanel(d);
+    return;
+  }
+
+  const isFuture = !actualRef || actualRef.actual_1 == null;
+  const emptyMsg = isFuture
+    ? '추첨 전 · 예측하려면 「3뇌 예측」 버튼을 클릭하세요'
+    : '예측 버튼을 눌러주세요 · 「3뇌 예측」으로 pool 10+5 세트를 계산합니다';
+  await renderTestlottoDrawHero(d, null, actualRef);
+  container.innerHTML =
+    '<div class="testlotto-predict-empty">' +
+    `<p class="testlotto-predict-empty__msg">${emptyMsg}</p>` +
+    '<button type="button" class="btn btn-primary testlotto-predict-empty__btn" onclick="testlottoRunPoolPredict()">🎯 3뇌 예측</button>' +
+    '</div>';
+  loadTestlottoWarrantPanel(d);
+}
+window.testlottoShowDrawContext = testlottoShowDrawContext;
 
 async function testlottoLoadSavedPrediction(drawNo, options) {
   const d = parseInt(drawNo, 10);
@@ -598,8 +671,11 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
 function testlottoSwitchBrainTab(brainTag) {
   _testlottoCurrentBrainTab = String(brainTag || '').toLowerCase();
   const drawNo = parseInt(document.getElementById('testlottoPredictDrawNo').value, 10);
-  if (drawNo) {
-    testlottoLoadSavedPrediction(drawNo, { fromTab: true });
+  if (drawNo && _testlottoDetailRows) {
+    const poolView = _testlottoPoolViewMemCache.get(drawNo);
+    if (poolView && poolView.ok) {
+      renderPredictionsByBrain(drawNo, _testlottoDetailRows, { poolView, skipPoolFetch: true });
+    }
   }
 }
 
@@ -952,7 +1028,11 @@ async function testlottoOnEliteBrainToggle() {
   const d = _testlottoDetailDrawNo;
   const rows = _testlottoDetailRows;
   if (d && rows && rows.length) {
-    await renderPredictionsByBrain(d, rows);
+    const poolView = _testlottoPoolViewMemCache.get(d);
+    await renderPredictionsByBrain(d, rows, {
+      poolView: poolView && poolView.ok ? poolView : null,
+      skipPoolFetch: true,
+    });
   }
 }
 
@@ -1054,16 +1134,38 @@ function _testlottoRenderAllBrainsAccordion(poolView, drawNo, actualRef, brainLi
 }
 
 async function _fetchPoolView(drawNo, options) {
-  const mem = _testlottoPoolViewMemCache.get(drawNo);
-  if (mem && !(options && options.forceRefresh)) {
-    return { ...mem, from_mem: true };
+  const opts = options || {};
+  const forceRefresh = !!opts.forceRefresh;
+  const compute = !!opts.compute;
+  const cacheOnly = !!opts.cacheOnly || (!compute && !forceRefresh);
+
+  if (!forceRefresh) {
+    const mem = _testlottoPoolViewMemCache.get(drawNo);
+    if (mem && mem.ok) {
+      return { ...mem, from_mem: true };
+    }
   }
-  const url = _testlottoResolveApiUrl('/api/testlotto/predict/pool-view/' + drawNo);
+
+  let url = _testlottoResolveApiUrl('/api/testlotto/predict/pool-view/' + drawNo);
+  const params = [];
+  if (forceRefresh) {
+    params.push('refresh=1');
+  } else if (compute) {
+    params.push('compute=1');
+  }
+  if (params.length) {
+    url += '?' + params.join('&');
+  }
+
   const pr = await fetch(url);
-  if (!pr.ok) throw new Error(String(pr.status));
+  if (!pr.ok) {
+    throw new Error(String(pr.status));
+  }
   const data = await pr.json();
   if (data && data.ok) {
     _testlottoPoolViewMemCache.set(drawNo, data);
+  } else if (cacheOnly && data && data.cache_miss) {
+    return data;
   }
   return data;
 }
@@ -1072,12 +1174,24 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
   const container = document.getElementById('testlottoPredictionResults');
   if (!container) return;
 
-  const skipPoolFetch = !!(options && options.skipPoolFetch);
-  const memHit = _testlottoPoolViewMemCache.has(drawNo);
-  if (!skipPoolFetch && !memHit) {
+  const opts = options || {};
+  const skipPoolFetch = !!opts.skipPoolFetch;
+  const shouldCompute = !!opts.compute;
+
+  let poolView = opts.poolView || null;
+  if (!poolView && !skipPoolFetch) {
+    poolView = _testlottoPoolViewMemCache.get(drawNo) || null;
+  }
+  if (!poolView && shouldCompute) {
     testlottoShowResultsLoading(container, true);
-  } else if (!skipPoolFetch) {
-    testlottoShowResultsLoading(container, false);
+    try {
+      poolView = await _fetchPoolView(drawNo, { compute: true });
+      if (poolView && !poolView.ok) {
+        poolView = null;
+      }
+    } catch (e) {
+      console.warn('pool-view compute:', e);
+    }
   }
 
   await ensureLottoBrainPowerLoaded();
@@ -1085,14 +1199,6 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
     await ensureTestlottoWarrantLoaded(drawNo);
   } catch (e) {
     console.warn('warrant cache:', e);
-  }
-  let poolView = skipPoolFetch ? _testlottoPoolViewMemCache.get(drawNo) : null;
-  if (!poolView) {
-    try {
-      poolView = await _fetchPoolView(drawNo);
-    } catch (e) {
-      console.warn('pool-view:', e);
-    }
   }
 
   const actualRef = await _testlottoResolveActualRef(drawNo, rows);
@@ -1200,8 +1306,10 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
   }
 
   const cacheNote = poolView && (poolView.cached || poolView.from_mem)
-    ? `<p class="testlotto-cache-note" role="status">캐시에서 불러옴${poolView.cache_ms != null ? ` · ${poolView.cache_ms}ms` : ''}</p>`
-    : (poolView && poolView.compute_ms ? `<p class="testlotto-cache-note testlotto-cache-note--fresh">처음 계산 완료 · ${poolView.compute_ms}ms</p>` : '');
+    ? `<p class="testlotto-cache-note" role="status">DB 캐시 · 저장됨${poolView.computed_at ? ` · ${poolView.computed_at}` : ''}${poolView.cache_ms != null ? ` · ${poolView.cache_ms}ms` : ''}</p>`
+    : (poolView && poolView.compute_ms
+      ? `<p class="testlotto-cache-note testlotto-cache-note--fresh">처음 계산 완료 · ${poolView.compute_ms}ms · DB 저장됨</p>`
+      : '');
 
   container.innerHTML = `
     <div class="lotto-brain-tabs">${tabsHtml}${allTabHtml}</div>
@@ -1489,7 +1597,7 @@ async function lottoTierWinsModalNav(delta) {
   const nextNo = _testlottoDrawList[nextIdx];
   if (input) input.value = String(nextNo);
   if (sel) sel.value = String(nextNo);
-  await testlottoLoadSavedPrediction(nextNo, { softLoading: true });
+  await testlottoShowDrawContext(nextNo);
   await lottoRefreshTierWinsModalContent();
 }
 
@@ -1507,7 +1615,7 @@ async function lottoTierWinsModalGoDraw() {
     const opt = sel.querySelector(`option[value="${d}"]`);
     if (opt) sel.value = String(d);
   }
-  await testlottoLoadSavedPrediction(d, { softLoading: true });
+  await testlottoShowDrawContext(d);
   await lottoRefreshTierWinsModalContent();
 }
 
@@ -1662,7 +1770,41 @@ async function lottoFetchLatest() {
   }
 }
 
-// ── 두뇌 예측 ──
+// ── pool-view 예측 (클릭 시에만 계산) ──
+async function testlottoRunPoolPredict() {
+  const input = document.getElementById('testlottoPredictDrawNo');
+  const drawNo = parseInt(input?.value, 10);
+  if (!drawNo || drawNo < 1) {
+    alert('회차 번호를 선택하세요.');
+    return;
+  }
+  const status = document.getElementById('testlottoActionStatus');
+  const container = document.getElementById('testlottoPredictionResults');
+  lottoSetActionStatusText(status, '3뇌 pool 계산 중… (최초 1회만 수십 초)', '#f0c040');
+  testlottoShowResultsLoading(container, true);
+
+  try {
+    const poolView = await _fetchPoolView(drawNo, { compute: true });
+    if (!poolView || !poolView.ok) {
+      lottoSetActionStatusText(status, (poolView && poolView.message) || 'pool 계산 실패', '#f87171');
+      await testlottoShowDrawContext(drawNo);
+      return;
+    }
+    const actualRef = await _testlottoResolveActualRef(drawNo, null);
+    _testlottoCurrentActualRef = actualRef;
+    _testlottoDetailDrawNo = drawNo;
+    _testlottoDetailRows = _testlottoStubRowsForDraw(drawNo, actualRef);
+    lottoSetActionStatusText(status, `${drawNo}회차 3뇌 예측 완료 · DB 저장됨`, '#4ade80');
+    await renderPredictionsByBrain(drawNo, _testlottoDetailRows, { poolView, skipPoolFetch: true });
+    loadTestlottoWarrantPanel(drawNo);
+  } catch (e) {
+    lottoSetActionStatusText(status, '예측 실패: ' + e.message, '#f87171');
+    await testlottoShowDrawContext(drawNo);
+  }
+}
+window.testlottoRunPoolPredict = testlottoRunPoolPredict;
+
+// ── 두뇌 예측 (engine POST · coordinator) ──
 async function testlottoPredict() {
   const input = document.getElementById('testlottoPredictDrawNo');
   const drawNo = parseInt(input.value, 10);
@@ -1728,7 +1870,7 @@ async function testlottoPredict() {
         _testlottoDetailDrawNo = drawNo;
         _testlottoDetailRows = rows;
 
-        await renderPredictionsByBrain(drawNo, rows);
+        await renderPredictionsByBrain(drawNo, rows, { skipPoolFetch: true });
 
         loadTestlottoWarrantPanel(drawNo);
 

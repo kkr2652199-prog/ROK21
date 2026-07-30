@@ -78,18 +78,3 @@ async def startup():
 
     start_draw_collect_scheduler()
 
-    import asyncio
-    import logging
-
-    _log = logging.getLogger(__name__)
-
-    async def _prewarm_testlotto_pool_view():
-        try:
-            from app.testlotto.pool_view_cache import prewarm_visible_range
-
-            summary = await asyncio.to_thread(prewarm_visible_range, window=40)
-            _log.info("testlotto pool-view prewarm: %s", summary)
-        except Exception as exc:  # noqa: BLE001 — startup must not fail
-            _log.warning("testlotto pool-view prewarm skipped: %s", exc)
-
-    asyncio.create_task(_prewarm_testlotto_pool_view())
