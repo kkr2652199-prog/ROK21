@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-SIGNAL-REPACK-01 DONE** — top5 ge3=0.085 · combined=0.145 · 5장 공정 FAIL
-- 직전: K-SIGNAL-SELECT-01 QUICK PASS · combined ge3=0.145
+- 지금: **보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기
+- 직전: K-SIGNAL-REPACK-01 DONE · top5 ge3=0.085 · 5장 공정 FAIL
 - 다음: K-SIGNAL-SELECT-FULL — full 1182 · **전체 큐=`TEST_PRIORITY.md`**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

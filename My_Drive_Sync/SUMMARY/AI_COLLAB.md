@@ -26,7 +26,7 @@
 
 ### 최신 상태 (2026-07-30 12:45 KST)
 - **HEAD**: `190ce4d`
-- **K-SIGNAL-REPACK-01**: **DONE** — 형 몰아주기(repack) · best_of_15 signal ge3=0.275 · **top5 공정 ge3=0.085** · combined=0.145 · **5장 FAIL**
+- **K-SIGNAL-REPACK-01**: **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=0.085 · combined=0.145 · **5장 FAIL** · 보고서 한글화
 - **K-SIGNAL-SELECT-01**: **QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200
 - **다음**: K-SIGNAL-SELECT-FULL · repack wire 불필 · **작업 큐=`TEST_PRIORITY.md`**
 - **GenSpark (2026-07-30)**: genspark.ai 접속 OK · 로그인/채팅 UI 미확인 → 형에게 전달할 refinement 질문 초안:
@@ -50,3 +50,11 @@
 | NEXT 1건 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md` |
 | 수치 SSOT | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/` |
 | 보고서 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/` |
+| 보고서 언어 규칙 | `My_Drive_Sync/SUMMARY/REPORT_STYLE.md` |
+
+## 5. 언어 규칙 (Cursor × 형 · 2026-07-30)
+
+- **형이 읽는 모든 보고서·STATUS·UI 문구 = 한국어** (초보 친화). 코드·JSON 필드명만 영어.
+- 영어 약어는 **한국어(괄호)** — 예: ge3(3개 이상 적중률) · repack(몰아주기) · p(유의확률).
+- 용어表 SSOT: `REPORT_STYLE.md` · `reports/BENCH_REPORT_TEMPLATE.md` §용어表.
+- 형의 **긍정 결과**(예: REPACK 3등 1회)는 복습·STATUS에 반드시 명시.

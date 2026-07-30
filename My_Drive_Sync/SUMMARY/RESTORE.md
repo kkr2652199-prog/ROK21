@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-30 | 보고서 한국어·3등 긍정 | REPORT_STYLE·BENCH_TEMPLATE 용어表 · REPACK 보고서 한글화 · r3=1 복습 | **DOC OK** | pending |
 | 2026-07-30 | 형 몰아주기(repack) GO | signal repack survey n=200 · top5 ge3=0.085 · combined=0.145 · DB reset 1260행 | **5장 FAIL** | pending |
 | 2026-07-30 | TEST_PRIORITY 큐·숙제형 문서 | P0~P3 11건·용어表·BOOT/STATUS/AI_COLLAB 링크 | **DOC OK** | pending |
 | 2026-07-30 | K-QUICK-GATE+SIGNAL-SELECT GO | BENCH§9·bench_quick_gate·combined QUICK ge3=0.145 n=200 | **QUICK PASS** | pending |
