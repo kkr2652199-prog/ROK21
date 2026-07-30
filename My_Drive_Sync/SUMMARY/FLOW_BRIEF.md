@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7b8591f` · WORK=`IDLE`
+- HEAD: `0a3b289` · WORK=`IDLE`
 - 지금: **TESTLOTTO UI+DB** — 10+5 pool · 백테스트 DB 2건 · 한국어 라벨
 - 직전: K-SIGNAL-REPACK-01 · SELECT-01 QUICK PASS · REPORT_STYLE
 - BOOT다음: K-SIGNAL-SELECT-FULL — 형 7021 육안 확인 → full 1182 · **전체 큐=`TEST_PRIORITY.md`**
