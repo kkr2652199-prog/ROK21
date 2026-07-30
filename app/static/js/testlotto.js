@@ -275,6 +275,8 @@ let _testlottoPredFetchSeq = 0;
 let _testlottoCurrentBrainTab = 'all';
 let _testlottoSetSubTab = 'pool';
 let _testlottoPoolViewMemCache = new Map();
+/** pool-view 채점용 당첨번호 (회차 전환 시 renderPredictionsByBrain에서 갱신) */
+let _testlottoCurrentActualRef = null;
 let _testlottoBrainAccordionOpen = { stat: true, markov: false, review: false };
 
 /** 역대 1·2·3등 조건 필터용 brain_tag 집합(null=미로드). */
@@ -516,7 +518,7 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
   if (useSoftShell) {
     container.classList.add('testlotto-results-pending');
     container.setAttribute('aria-busy', 'true');
-    renderTestlottoDrawHero(d, _testlottoDetailRows);
+    renderTestlottoDrawHero(d, null, _testlottoCurrentActualRef);
   } else {
     container.classList.remove('testlotto-results-pending');
     container.removeAttribute('aria-busy');
@@ -644,6 +646,116 @@ function testlottoTierRank(row) {
   return 0;
 }
 
+function _testlottoRescoreRow(row, actualRef) {
+  const out = { ...row };
+  if (!actualRef || actualRef.actual_1 == null) {
+    out.matched_count = -1;
+    out.bonus_matched = 0;
+    return out;
+  }
+  const rescored = _poolSetToRow(
+    {
+      nums: [row.num1, row.num2, row.num3, row.num4, row.num5, row.num6],
+      brain_tag: row.brain_tag,
+      kind: row.reasoning && String(row.reasoning).indexOf('몰아주기') >= 0 ? 'repack' : 'pool',
+    },
+    parseInt(row.target_draw_no, 10) || parseInt(actualRef.target_draw_no, 10),
+    actualRef,
+  );
+  out.matched_count = rescored.matched_count;
+  out.bonus_matched = rescored.bonus_matched;
+  out.actual_1 = rescored.actual_1;
+  out.actual_2 = rescored.actual_2;
+  out.actual_3 = rescored.actual_3;
+  out.actual_4 = rescored.actual_4;
+  out.actual_5 = rescored.actual_5;
+  out.actual_6 = rescored.actual_6;
+  out.actual_bonus = rescored.actual_bonus;
+  return out;
+}
+
+async function _testlottoResolveActualRef(drawNo, rows) {
+  const d = parseInt(drawNo, 10);
+  if (!Number.isFinite(d) || d < 1) return null;
+  const candidate = (rows || []).find(
+    (r) => parseInt(r.target_draw_no, 10) === d && r.actual_1 != null && r.actual_6 != null,
+  );
+  if (candidate) {
+    return {
+      target_draw_no: d,
+      actual_1: candidate.actual_1,
+      actual_2: candidate.actual_2,
+      actual_3: candidate.actual_3,
+      actual_4: candidate.actual_4,
+      actual_5: candidate.actual_5,
+      actual_6: candidate.actual_6,
+      actual_bonus: candidate.actual_bonus,
+    };
+  }
+  try {
+    const r = await fetch(_testlottoResolveApiUrl('/api/testlotto/draws/' + d));
+    if (r.ok) {
+      const drawRow = await r.json();
+      if (drawRow && !drawRow.error && drawRow.num1 != null) {
+        return {
+          target_draw_no: d,
+          actual_1: drawRow.num1,
+          actual_2: drawRow.num2,
+          actual_3: drawRow.num3,
+          actual_4: drawRow.num4,
+          actual_5: drawRow.num5,
+          actual_6: drawRow.num6,
+          actual_bonus: drawRow.bonus,
+        };
+      }
+    }
+  } catch (e) {
+    console.warn('resolve actual ref:', e);
+  }
+  return null;
+}
+
+function _testlottoPoolViewScoreRows(poolView, drawNo, actualRef, kinds) {
+  if (!poolView || !poolView.ok || !actualRef || actualRef.actual_1 == null) return [];
+  const kindList = kinds || ['pool', 'repack'];
+  const out = [];
+  kindList.forEach((kind) => {
+    const byBrain = kind === 'repack' ? poolView.repack_by_brain : poolView.pool_by_brain;
+    if (!byBrain) return;
+    Object.keys(byBrain).forEach((tag) => {
+      (byBrain[tag] || []).forEach((s) => {
+        out.push(_poolSetToRow(
+          { ...s, brain_tag: s.brain_tag || tag, kind: kind === 'repack' ? 'repack' : 'pool' },
+          drawNo,
+          actualRef,
+        ));
+      });
+    });
+  });
+  return out;
+}
+
+function _testlottoHitSummarySourceRows(drawNo, rows, poolView, actualRef) {
+  if (poolView && poolView.ok && actualRef) {
+    return _testlottoPoolViewScoreRows(poolView, drawNo, actualRef, ['pool', 'repack']);
+  }
+  if (!actualRef) return [];
+  return (rows || []).map((r) => _testlottoRescoreRow(r, actualRef));
+}
+
+function _testlottoTierWinsItemsFromRows(scoreRows) {
+  return (scoreRows || [])
+    .map((r) => ({
+      rank: testlottoTierRank(r),
+      brain_tag: r.brain_tag,
+      nums: [r.num1, r.num2, r.num3, r.num4, r.num5, r.num6],
+      matched_count: Number(r.matched_count),
+      bonus_matched: r.bonus_matched,
+    }))
+    .filter((it) => it.rank >= 1 && it.rank <= 5)
+    .sort((a, b) => a.rank - b.rank || String(a.brain_tag || '').localeCompare(String(b.brain_tag || '')));
+}
+
 function testlottoHitSummaryHtml(rows) {
   const c = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
   (rows || []).forEach((r) => {
@@ -679,7 +791,7 @@ function _testlottoBuildActualHtml(actuals, bonus) {
   );
 }
 
-async function renderTestlottoDrawHero(drawNo, rows) {
+async function renderTestlottoDrawHero(drawNo, summaryRows, actualRef) {
   const body = document.getElementById('testlottoDrawHeroBody');
   if (!body) return;
   const d = parseInt(drawNo, 10);
@@ -687,20 +799,20 @@ async function renderTestlottoDrawHero(drawNo, rows) {
 
   const date = _testlottoDrawDates[d] || '?';
   const dow = lottoFormatDow(date);
-  const first = rows && rows.length ? rows[0] : null;
+  const ref = actualRef || _testlottoCurrentActualRef;
   let actuals = null;
   let bonus = null;
 
-  if (first && first.actual_1 != null) {
+  if (ref && ref.actual_1 != null) {
     actuals = [
-      first.actual_1,
-      first.actual_2,
-      first.actual_3,
-      first.actual_4,
-      first.actual_5,
-      first.actual_6,
+      ref.actual_1,
+      ref.actual_2,
+      ref.actual_3,
+      ref.actual_4,
+      ref.actual_5,
+      ref.actual_6,
     ];
-    bonus = first.actual_bonus;
+    bonus = ref.actual_bonus;
   } else {
     try {
       const r = await fetch(_testlottoResolveApiUrl(`/api/testlotto/detail/draw/${d}`));
@@ -722,7 +834,7 @@ async function renderTestlottoDrawHero(drawNo, rows) {
     }
   }
 
-  const hitSummaryHtml = rows && rows.length ? testlottoHitSummaryHtml(rows) : '';
+  const hitSummaryHtml = summaryRows && summaryRows.length ? testlottoHitSummaryHtml(summaryRows) : '';
   body.innerHTML =
     `<div class="testlotto-hero-title">` +
     `<span class="testlotto-hero-draw">제 ${d}회</span>` +
@@ -767,13 +879,13 @@ function _poolSetToRow(setObj, drawNo, actualRow) {
 
 function renderBrainSetCard(row, idx) {
   const nums = [row.num1, row.num2, row.num3, row.num4, row.num5, row.num6].map((n) => parseInt(n, 10));
-  const matched = row.matched_count;
-  const bonus = row.bonus_matched;
+  const matched = row.matched_count != null ? Number(row.matched_count) : -1;
+  const bonusHit = row.bonus_matched === 1 || Number(row.bonus_matched) === 1;
 
   let rank = '';
   let rankClass = 'rank-none';
   if (matched === 6) { rank = '🏆 1등!'; rankClass = 'rank-1'; }
-  else if (matched === 5 && bonus === 1) { rank = '🥈 2등'; rankClass = 'rank-2'; }
+  else if (matched === 5 && bonusHit) { rank = '🥈 2등'; rankClass = 'rank-2'; }
   else if (matched === 5) { rank = '🥉 3등'; rankClass = 'rank-3'; }
   else if (matched === 4) { rank = '4등'; rankClass = 'rank-4'; }
   else if (matched === 3) { rank = '5등'; rankClass = 'rank-5'; }
@@ -974,8 +1086,6 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
   } catch (e) {
     console.warn('warrant cache:', e);
   }
-  await renderTestlottoDrawHero(drawNo, rows);
-
   let poolView = skipPoolFetch ? _testlottoPoolViewMemCache.get(drawNo) : null;
   if (!poolView) {
     try {
@@ -985,7 +1095,10 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
     }
   }
 
-  const actualRef = (rows && rows.length) ? rows[0] : null;
+  const actualRef = await _testlottoResolveActualRef(drawNo, rows);
+  _testlottoCurrentActualRef = actualRef;
+  const summaryRows = _testlottoHitSummarySourceRows(drawNo, rows, poolView, actualRef);
+  await renderTestlottoDrawHero(drawNo, summaryRows, actualRef);
   const byBrain = {};
   rows.forEach((r) => {
     const tag = String(r.brain_tag || 'legacy').toLowerCase();
@@ -1271,13 +1384,14 @@ function lottoRenderTierWinsModalContent(data) {
   });
 
   const rankTitles = { 1: '1등', 2: '2등', 3: '3등', 4: '4등', 5: '5등' };
+  const actualSet = new Set((data.actual_numbers || []).map((n) => parseInt(n, 10)));
   let html = actualLine + '<div class="lotto-tier-wins-sections">';
   for (let r = 1; r <= 5; r++) {
     const list = byRank[r];
     if (!list.length) continue;
     html += `<section class="lotto-tier-wins-rank"><h3 class="${lottoTierWinsRankTitleClass(r)}">${rankTitles[r]}</h3><ul class="lotto-tier-wins-list">`;
     list.forEach((it) => {
-      const nums = (it.nums || []).map((n) => renderMiniBall(n, false)).join('');
+      const nums = (it.nums || []).map((n) => renderMiniBall(n, actualSet.has(parseInt(n, 10)))).join('');
       const tag = String(it.brain_tag || '').toLowerCase();
       const brain = testlottoGetBrainDisplayName(tag);
       html += `<li class="lotto-tier-wins-item"><span class="lotto-tier-wins-brain">${brain}</span><span class="lotto-tier-wins-balls-row">${nums}</span></li>`;
@@ -1303,9 +1417,26 @@ async function lottoRefreshTierWinsModalContent() {
   body.innerHTML = '<p class="lotto-tier-wins-loading">불러오는 중…</p>';
   if (title) title.textContent = `${d}회차 · 불러오는 중…`;
   try {
-    const r = await fetch(_testlottoResolveApiUrl(`/api/testlotto/predictions/draw/${d}/tier-wins`));
-    if (!r.ok) throw new Error(String(r.status));
-    const data = await r.json();
+    let data = null;
+    const poolView = _testlottoPoolViewMemCache.get(d);
+    const actualRef = _testlottoCurrentActualRef || await _testlottoResolveActualRef(d, _testlottoDetailRows);
+    if (poolView && poolView.ok && actualRef && actualRef.actual_1 != null) {
+      const scoreRows = _testlottoPoolViewScoreRows(poolView, d, actualRef, ['pool', 'repack']);
+      data = {
+        draw_no: d,
+        draw_date: _testlottoDrawDates[d] || null,
+        actual_numbers: [
+          actualRef.actual_1, actualRef.actual_2, actualRef.actual_3,
+          actualRef.actual_4, actualRef.actual_5, actualRef.actual_6,
+        ].map((n) => parseInt(n, 10)),
+        bonus: actualRef.actual_bonus != null ? parseInt(actualRef.actual_bonus, 10) : null,
+        items: _testlottoTierWinsItemsFromRows(scoreRows),
+      };
+    } else {
+      const r = await fetch(_testlottoResolveApiUrl(`/api/testlotto/predictions/draw/${d}/tier-wins`));
+      if (!r.ok) throw new Error(String(r.status));
+      data = await r.json();
+    }
     lottoRenderTierWinsModalContent(data);
     const dn = data && data.draw_no != null ? parseInt(data.draw_no, 10) : d;
     if (jump && Number.isFinite(dn)) jump.value = String(dn);

@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-30 | TESTLOTTO 4·5등 적중 표시 버그 | pool-view SSOT 채점 · hero·모달·카드 일치 · 1214/1234/1200/1235 QA | **FIX OK** | pending |
 | 2026-07-30 | TESTLOTTO 로딩+15세트 UI | pool-view SQLite 캐시 hit ~4ms · accordion · sub-tabs · B-03 해결 | **LOAD OK** | pending |
 | 2026-07-30 | TESTLOTTO UI/UX만 | B-04 스피너·스켈레톤 · CSS spacing · chevron · GenSpark UI 라운드 | **UI OK** | pending |
 | 2026-07-30 | 7021 테스트로또 브라우저 QA | MCP 6항목 PASS · 버그5(이모지·K-SIGNAL summary 수정2) · pool-view 12~31s | **QA PASS** | pending |

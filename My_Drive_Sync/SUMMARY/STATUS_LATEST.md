@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-30 KST  
-📌 사유: **TESTLOTTO pool-view 캐시+레이아웃 DONE** · B-03 로딩 해결 · K-SIGNAL-SELECT-FULL 다음
+📌 사유: **TESTLOTTO tier-match fix** · pool-view SSOT 채점 · hero·카드·모달 일치 · K-SIGNAL-SELECT-FULL 다음
 
 ---
 
@@ -10,7 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **TESTLOTTO UI+DB** | **DONE** — 7021 테스트로또 탭 · 10+5 pool · backtest 2건 · **pool-view 캐시 ~4ms** · **accordion UI** |
+| **TESTLOTTO UI+DB** | **DONE** — 7021 테스트로또 탭 · 10+5 pool · backtest 2건 · **pool-view 캐시 ~4ms** · **tier-match fix(20260730d)** |
 | K-SIGNAL-REPACK-01 | **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |
 | K-SIGNAL-SELECT-01 | **QUICK PASS** — combined ge3=**0.145** p=0.102 · tail n=200 |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
@@ -24,6 +24,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **TESTLOTTO tier-match** | hero·모달·pool 카드 SSOT 통일 · detail/lotto_predictions 이중집계 제거 · 1235 미추첨 | **QA PASS** 1214/1234/1200/1235 |
 | **TESTLOTTO NO-LOADING** | SQLite pool-view 캐시 · startup prewarm · accordion+sub-tabs · 12~31s→~4ms | **LOAD OK** · WF SSOT 유지 |
 | **TESTLOTTO UI/UX** | B-04 로딩·스켈레톤 · sticky탭·카드여백 · chevron · GenSpark UI 라운드 | **UI OK** · 기능무변경 |
 | **TESTLOTTO UI+DB** | 10+5 pool API · backtest_runs/draw_results · 7021 한국어 UI · import_k_signal_backtest | **DONE** · WF only |
