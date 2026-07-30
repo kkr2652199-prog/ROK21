@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `61e1023` |
+| HEAD(실측) | `3661cdd` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **TESTLOTTO 클릭 예측** — 재시동 prewarm 제거 · cache-only 기본 · 「3뇌 예측」 클릭 시에만 compute |
-| 직전 | tier-match fix DONE · pool-view SSOT 채점 · 1214 hero 5등4 |
+| 지금 | **tail-100 백테스트** — repack ge3=0.23(23/100) · combined ge3=0.15(15/100) · run_id 3·4 · UI 「3뇌 예측」 단일 |
+| 직전 | TESTLOTTO click-predict DONE · cache-only · tier-match fix |
 | BOOT다음 | K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`** |
 | NEXT1 ID | **K-SIGNAL-SELECT-FULL** |
-| NEXT1 할일 | **TESTLOTTO click-predict DONE(20260730e)** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
+| NEXT1 할일 | **tail-100 BACKTEST DONE(20260730f)** — repack ge3=0.23 · combined ge3=0.15 · run_id 3·4 · full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
 | 승인필요 | full 실행=아니(QUICK PASS 후 자동) · wire=예 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=61e1023 · 지금=**TESTLOTTO 클릭 예측** — 재시동 prewarm 제거 · cache-only 기본 · 「3뇌 예측」 클릭 시에만 compute · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=3661cdd · 지금=**tail-100 백테스트** — repack ge3=0.23(23/100) · combined ge3=0.15(15/100) · run_id 3·4 · UI 「3뇌 예측」 단일 · 다음=K-SIGNAL-SELECT-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 61e1023_
+_generated: 3661cdd_
