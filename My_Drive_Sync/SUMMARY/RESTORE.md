@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3661cdd` · WORK=`IDLE`
+1. **HEAD:** `e9c15e8` · WORK=`IDLE`
 2. **지금:** **tail-100 백테스트** — repack ge3=0.23(23/100) · combined ge3=0.15(15/100) · run_id 3·4 · UI 「3뇌 예측」 단일
 3. **다음1건:** K-SIGNAL-SELECT-FULL — **tail-100 BACKTEST DONE(20260730f)** — repack ge3=0.23 · combined ge3=0.15 · run_id 3·4 · full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 (승인필요=full 실행=아니(QUICK PASS 후 자동) · wire=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
