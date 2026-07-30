@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fc98920` · WORK=`IDLE`
+- HEAD: `190ce4d` · WORK=`IDLE`
 - 지금: **K-SIGNAL-REPACK-01 DONE** — top5 ge3=0.085 · combined=0.145 · 5장 공정 FAIL
 - 직전: K-SIGNAL-SELECT-01 QUICK PASS · combined ge3=0.145
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 · **전체 큐=`TEST_PRIORITY.md`**

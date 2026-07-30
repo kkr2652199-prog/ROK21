@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-07-30 12:45 KST)
-- **HEAD**: (push 후 갱신)
+- **HEAD**: `190ce4d`
 - **K-SIGNAL-REPACK-01**: **DONE** — 형 몰아주기(repack) · best_of_15 signal ge3=0.275 · **top5 공정 ge3=0.085** · combined=0.145 · **5장 FAIL**
 - **K-SIGNAL-SELECT-01**: **QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200
 - **다음**: K-SIGNAL-SELECT-FULL · repack wire 불필 · **작업 큐=`TEST_PRIORITY.md`**
