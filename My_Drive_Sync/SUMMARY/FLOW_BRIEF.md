@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `61a6421` · WORK=`IDLE`
+- HEAD: `1e8010d` · WORK=`IDLE`
 - 지금: **TESTLOTTO backtest pool PIN** — eval reset 후 pool 캐시 자동복구 · PATCH_PINS · 1136/1234 QA
 - 직전: tail-100 백테스트 repack ge3=0.23 · combined ge3=0.15 · run_id 3·4
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
