@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e71dcad` · WORK=`IDLE`
+- HEAD: `61e1023` · WORK=`IDLE`
 - 지금: **TESTLOTTO 클릭 예측** — 재시동 prewarm 제거 · cache-only 기본 · 「3뇌 예측」 클릭 시에만 compute
 - 직전: tier-match fix DONE · pool-view SSOT 채점 · 1214 hero 5등4
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
