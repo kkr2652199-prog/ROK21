@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a335ce1` · WORK=`IDLE`
+- HEAD: `00bcd86` · WORK=`IDLE`
 - 지금: **K-SIGNAL-SELECT-01 QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200
 - 직전: K-QUICK-GATE-01 DONE · K-WINDOW-SIGNAL-01 FAIL
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 확인 · wire는 형 GO 전 금지
