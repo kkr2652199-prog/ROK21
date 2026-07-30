@@ -4,13 +4,12 @@
 
 ## NEXT (1건)
 - ID: K-SIGNAL-SELECT-FULL
-- 할일: full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지
-- 완료조건: `20260730_KSIGNAL_SELECT_survey.json` full 섹션 또는 full-only JSON · ge3 vs pin 판정 · per-draw DB 적재(선택)
-- 승인필요: full 실행=아니(QUICK PASS 후 자동) · wire=예
-- 선행완료: `reports/20260730_TESTLOTTO_BACKTEST_DATA_PIN.md` · PATCH_PINS · pool auto-WF · backfill script
+- 할일: **실행 중** — full n=1182 walk-forward · pin+p<0.05 확인 · wire는 형 GO 전 금지
+- 완료조건: `20260730_KSIGNAL_SELECT_survey_full.json` · ge3 vs pin 판정
+- 선행완료: K-EXCLUDE-HIST-01 · LEAKAGE_POLICY.md
 
 ## WORKSTATE
-IDLE
+RUNNING:K-SIGNAL-SELECT-FULL
 
 ---
 

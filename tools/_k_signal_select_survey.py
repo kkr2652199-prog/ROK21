@@ -55,7 +55,9 @@ from app.testlotto.learn_state_cutoff import set_learn_as_of  # noqa: E402
 from app.testlotto.models import get_lotto_db, init_lotto_db  # noqa: E402
 
 OUT_JSON = ROOT / "docs" / "benchmarks" / "20260730_KSIGNAL_SELECT_survey.json"
+OUT_JSON_FULL = ROOT / "docs" / "benchmarks" / "20260730_KSIGNAL_SELECT_survey_full.json"
 OUT_MD = ROOT / "reports" / "20260730_KSIGNAL_SELECT_SURVEY.md"
+OUT_MD_FULL = ROOT / "reports" / "20260730_KSIGNAL_SELECT_SURVEY_FULL.md"
 
 POOL_SETS_PER_BRAIN = 10
 SELECT_N = 5
@@ -290,16 +292,17 @@ def _summarize_selector(
     }
 
 
-def _write_report(out: dict[str, Any]) -> None:
+def _write_report(out: dict[str, Any], md_path: Path | None = None, gate_mode: str = "quick") -> None:
     results = out["selectors"]
     best = out["best_selector"]
     baseline = out["baseline_control"]
     n = out["n_eval"]
-    gate_mode = out["gate_mode"]
+    gate_mode = out.get("gate_mode", gate_mode)
     pass_gate = out.get("pass_gate") or out.get("gates_eval", {}).get("pass", False)
-
+    survey_id = out.get("id", "K-SIGNAL-SELECT-01")
+    title = "전체 검증(1182회)" if gate_mode == "full" else "빠른 검증"
     lines: list[str] = []
-    lines.append("# K-SIGNAL-SELECT-01 — 신호셋트 선별 축 survey (READ-ONLY live WF)")
+    lines.append(f"# {survey_id} — 신호셋트 선별 축 survey ({title} · READ-ONLY live WF)")
     lines.append(
         f"\n날짜 {out['ts'][:10]} · elapsed {out['elapsed_sec']}s · "
         f"**{'PASS' if pass_gate else 'FAIL'}** · seed={MC_SEED} · n={n} · gate={gate_mode}"
@@ -357,12 +360,14 @@ def _write_report(out: dict[str, Any]) -> None:
     lines.append(f"| coordinator_modified | False | False |")
 
     text = "\n".join(lines) + "\n"
-    OUT_MD.parent.mkdir(parents=True, exist_ok=True)
-    OUT_MD.write_text(text, encoding="utf-8")
-    drive = ROOT / "My_Drive_Sync" / "커서보고서" / "20260730_KSIGNAL_SELECT_SURVEY.md"
+    target_md = md_path or OUT_MD
+    target_md.parent.mkdir(parents=True, exist_ok=True)
+    target_md.write_text(text, encoding="utf-8")
+    drive_name = target_md.name
+    drive = ROOT / "My_Drive_Sync" / "커서보고서" / drive_name
     drive.parent.mkdir(parents=True, exist_ok=True)
     drive.write_text(text, encoding="utf-8")
-    print(f"wrote {OUT_MD}", flush=True)
+    print(f"wrote {target_md}", flush=True)
 
 
 def main() -> None:
@@ -426,7 +431,7 @@ def main() -> None:
         )
 
     out: dict[str, Any] = {
-        "id": "K-SIGNAL-SELECT-01",
+        "id": "K-SIGNAL-SELECT-FULL" if gate_mode == "full" else "K-SIGNAL-SELECT-01",
         "ts": datetime.now().isoformat(timespec="seconds"),
         "elapsed_sec": round(time.time() - t0, 1),
         "n_eval": n_eval,
@@ -457,10 +462,13 @@ def main() -> None:
         "coordinator_modified": False,
     }
 
-    OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
-    OUT_JSON.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"wrote {OUT_JSON}", flush=True)
-    _write_report(out)
+    out_json = OUT_JSON_FULL if gate_mode == "full" else OUT_JSON
+    out_md = OUT_MD_FULL if gate_mode == "full" else OUT_MD
+
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_json.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"wrote {out_json}", flush=True)
+    _write_report(out, out_md, gate_mode)
     print(f"verdict={verdict}", flush=True)
     print(f"done in {time.time() - t0:.0f}s", flush=True)
 
