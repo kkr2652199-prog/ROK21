@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `9a99cb1` · WORK=`IDLE`
+- HEAD: `f149d16` · WORK=`IDLE`
 - 지금: **tail-100 백테스트** — repack ge3=0.23(23/100) · combined ge3=0.15(15/100) · run_id 3·4 · UI 「3뇌 예측」 단일
 - 직전: TESTLOTTO click-predict DONE · cache-only · tier-match fix
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
