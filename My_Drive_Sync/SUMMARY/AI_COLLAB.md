@@ -24,20 +24,21 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-07-30 13:30 KST)
-- **HEAD**: `548c877`
-- **TESTLOTTO UI/UX**: **DONE** — B-04 스피너·스켈레톤 · sticky탭·카드여백 · chevron · `reports/20260730_TESTLOTTO_UIUX_REFRESH.md`
+### 최신 상태 (2026-07-30 13:45 KST)
+- **HEAD**: push 후 실측
+- **TESTLOTTO 로딩+레이아웃**: **DONE** — SQLite `testlotto_pool_view_cache` · hit **~4ms** · accordion+sub-tabs · `reports/20260730_TESTLOTTO_NO_LOADING_LAYOUT.md`
 - **K-SIGNAL-SELECT-01**: **QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200
 - **다음**: K-SIGNAL-SELECT-FULL (1182) · repack wire 불필
-- **GenSpark UI 라운드 (20260730)** — genspark.ai 랜딩 OK · 채팅 미로그인 · 추론 아이디어 4건:
-  1. 회차 히어로=KPI(당첨6+1·ge3 배지·pool/repack 적중 요약)
-  2. 10+5=2단 아코디언(pool 접힘·repack 5장 히어로·신호 점수 바)
-  3. 백테스트=ge3 스파크라인·combined vs repack 색 분리·회차별 드로어
-  4. pool-view 대기=progress bar + 경과초 (백엔드 캐시 없이 UX만)
+- **GenSpark UI 라운드 (20260730 적용)**:
+  1. 회차 드롭다운 — 기존 `#testlottoDrawSelect` 유지
+  2. 10+5 — **서브탭**(pool|repack) + **3뇌 아코디언** 「전체 보기」
+  3. pool-view — **SQLite 캐시 + startup prewarm** (12~31s → 캐시 hit ~4ms)
+  4. 백테스트=ge3 스파크라인·combined vs repack 색 분리·회차별 드로어 (미구현·차기)
 - **GenSpark 전략 (기존)**: repack artifact vs 5장 공정 — 「장수 줄이면서 신호 유지 repack 변형?」
 
 ### 논의 이력 (최신순)
-1. **[13:25] TESTLOTTO UI/UX 리프레시** — B-04 로딩 · CSS grid/spacing · GenSpark UI 라운드 · `20260730_TESTLOTTO_UIUX_REFRESH.md`
+1. **[13:45] TESTLOTTO 로딩 제거+15세트 UI** — pool-view SQLite 캐시 · accordion · sub-tabs · `20260730_TESTLOTTO_NO_LOADING_LAYOUT.md`
+2. **[13:25] TESTLOTTO UI/UX 리프레시** — B-04 로딩 · CSS grid/spacing · GenSpark UI 라운드 · `20260730_TESTLOTTO_UIUX_REFRESH.md`
 2. **[12:40] K-SIGNAL-REPACK-01 (형 몰아주기)** — 번호 repack survey · DB reset 1260행 · `20260730_KSIGNAL_REPACK_SURVEY.md`
 2. **[12:05] K-SIGNAL-SELECT-01 QUICK** — combined PASS ge3=0.145 · overlap 단독 FAIL · `20260730_KSIGNAL_SELECT_SURVEY.md`
 2. **[00:10] K-WINDOW-SIGNAL-01 완료** — best w4_zone_mix ge3=0.1328 · E2 bin lift 미약

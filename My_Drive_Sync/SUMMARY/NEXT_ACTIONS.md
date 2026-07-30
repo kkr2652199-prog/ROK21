@@ -7,7 +7,7 @@
 - 할일: **TESTLOTTO UI/UX DONE(20260730)** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지
 - 완료조건: `20260730_KSIGNAL_SELECT_survey.json` full 섹션 또는 full-only JSON · ge3 vs pin 판정 · per-draw DB 적재(선택)
 - 승인필요: full 실행=아니(QUICK PASS 후 자동) · wire=예
-- 선행완료: `reports/20260730_TESTLOTTO_UIUX_REFRESH.md` · QA PASS · B-04 로딩 UX 수정 · pool-view 12~31s(로딩표시만)
+- 선행완료: `reports/20260730_TESTLOTTO_NO_LOADING_LAYOUT.md` · pool-view 캐시 hit ~4ms · accordion UI · QA PASS
 
 ## WORKSTATE
 IDLE

@@ -230,11 +230,11 @@ async def api_consecutive():
 # 주의: /predict/backtest 는 /predict/{target_draw_no} 보다 먼저 등록해야 "backtest"가 회차로 파싱되지 않음.
 
 @router.get("/predict/pool-view/{target_draw_no}")
-async def api_predict_pool_view(target_draw_no: int):
+async def api_predict_pool_view(target_draw_no: int, refresh: bool = False):
     """10세트 pool + 5 몰아주기 세트 (뇌별) — walk-forward only, coordinator 미배선."""
-    from app.testlotto.signal_pool import build_pool_and_repack
+    from app.testlotto.pool_view_cache import get_or_build_pool_view
 
-    return build_pool_and_repack(target_draw_no)
+    return get_or_build_pool_view(target_draw_no, force_refresh=refresh)
 
 
 @router.get("/backtest/runs")

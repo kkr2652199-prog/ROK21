@@ -1608,6 +1608,113 @@ details[open] > summary .testlotto-details-chevron {
   border-width: 2px;
 }
 
+/* pool/repack 서브탭 · 전체 보기 아코디언 · 캐시 표시 */
+.testlotto-set-subtabs {
+  display: flex;
+  gap: 6px;
+  margin: 0.75rem 0 1rem;
+  flex-wrap: wrap;
+}
+.testlotto-set-subtab {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border, #334155);
+  border-radius: 999px;
+  background: rgba(30, 41, 59, 0.6);
+  color: #cbd5e1;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.testlotto-set-subtab:hover {
+  border-color: #6366f1;
+}
+.testlotto-set-subtab.active {
+  background: rgba(99, 102, 241, 0.25);
+  border-color: #818cf8;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.lotto-brain-tab--all {
+  margin-left: auto;
+  border-style: dashed;
+}
+
+.testlotto-brain-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+.testlotto-brain-accordion {
+  border: 1px solid var(--border, #334155);
+  border-radius: 12px;
+  background: rgba(22, 33, 62, 0.45);
+  overflow: hidden;
+}
+.testlotto-brain-accordion__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: var(--text-bright, #e2e8f0);
+}
+.testlotto-brain-accordion__head::-webkit-details-marker {
+  display: none;
+}
+.testlotto-brain-accordion__chevron {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid #94a3b8;
+  border-bottom: 2px solid #94a3b8;
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+.testlotto-brain-accordion[open] .testlotto-brain-accordion__chevron {
+  transform: rotate(45deg);
+}
+.testlotto-brain-accordion__icon {
+  font-size: 1.1rem;
+}
+.testlotto-brain-accordion__name {
+  flex: 0 1 auto;
+}
+.testlotto-brain-accordion__tier {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.testlotto-brain-accordion__warrant {
+  margin-left: auto;
+  font-size: 0.75rem;
+}
+.testlotto-brain-accordion__body {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+}
+.testlotto-brain-accordion__body .lotto-brain-policy {
+  margin-top: 0.75rem;
+}
+.testlotto-brain-accordion__cards {
+  margin-top: 0.25rem;
+}
+
+.testlotto-cache-note {
+  margin: 0.35rem 0 0.5rem;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: right;
+}
+.testlotto-cache-note--fresh {
+  color: #94a3b8;
+}
+
 @media (max-width: 640px) {
   .testlotto-main-card {
     padding: 1rem;

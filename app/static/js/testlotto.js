@@ -272,7 +272,10 @@ let _testlottoDetailDrawNo = null;
 let _testlottoDetailRows = null;
 let _testlottoPredDataSource = 'brain_review';
 let _testlottoPredFetchSeq = 0;
-let _testlottoCurrentBrainTab = 'stat';
+let _testlottoCurrentBrainTab = 'all';
+let _testlottoSetSubTab = 'pool';
+let _testlottoPoolViewMemCache = new Map();
+let _testlottoBrainAccordionOpen = { stat: true, markov: false, review: false };
 
 /** 역대 1·2·3등 조건 필터용 brain_tag 집합(null=미로드). */
 let _testlottoBrainEliteTagSet = null;
@@ -598,6 +601,19 @@ function testlottoSwitchBrainTab(brainTag) {
   }
 }
 
+function testlottoSwitchSetSubTab(kind) {
+  _testlottoSetSubTab = kind === 'repack' ? 'repack' : 'pool';
+  const drawNo = parseInt(document.getElementById('testlottoPredictDrawNo').value, 10);
+  if (drawNo && _testlottoDetailRows) {
+    renderPredictionsByBrain(drawNo, _testlottoDetailRows, { skipPoolFetch: true });
+  }
+}
+
+function testlottoToggleBrainAccordion(tag, open) {
+  const t = String(tag || '').toLowerCase();
+  _testlottoBrainAccordionOpen[t] = !!open;
+}
+
 function lottoMiniBallBg(num) {
   const n = parseInt(num, 10);
   if (!n) return '#555';
@@ -828,8 +844,11 @@ async function testlottoOnEliteBrainToggle() {
   }
 }
 
-/** B-04: pool-view fetch 중 이전 카드 숨김 · 스켈레톤 표시 */
-function testlottoLoadingSkeletonHtml(cardCount = 6) {
+/** B-04: pool-view fetch 중 스켈레톤 — firstCompute=true 일 때만 장시간 안내 */
+function testlottoLoadingSkeletonHtml(cardCount = 6, firstCompute = false) {
+  const msg = firstCompute
+    ? '처음 pool 계산 중… (최초 1회만 수십 초 걸릴 수 있습니다)'
+    : '불러오는 중…';
   const cards = Array.from({ length: cardCount }, () =>
     '<div class="testlotto-skeleton-card" aria-hidden="true">' +
     '<div class="testlotto-skeleton-line testlotto-skeleton-line--short"></div>' +
@@ -838,22 +857,22 @@ function testlottoLoadingSkeletonHtml(cardCount = 6) {
   return (
     '<div class="testlotto-loading-inner">' +
     '<div class="testlotto-loading-spinner" role="presentation"></div>' +
-    '<p class="testlotto-loading-msg" role="status">실시간 pool 계산 중… (최대 30초)</p>' +
+    `<p class="testlotto-loading-msg" role="status">${msg}</p>` +
     `<div class="testlotto-skeleton-grid">${cards}</div></div>`
   );
 }
 
-function testlottoShowResultsLoading(container) {
+function testlottoShowResultsLoading(container, firstCompute = false) {
   if (!container) return;
   container.setAttribute('aria-busy', 'true');
   container.classList.add('testlotto-results-pending');
-  const cardsEl = container.querySelector('#hyodoBrainCards');
+  const cardsEl = container.querySelector('#hyodoBrainCards, #testlottoBrainAccordions, .testlotto-brain-accordions');
   if (cardsEl) {
-    cardsEl.innerHTML = testlottoLoadingSkeletonHtml();
+    cardsEl.innerHTML = testlottoLoadingSkeletonHtml(6, firstCompute);
     return;
   }
   if (!container.querySelector('.testlotto-loading-inner')) {
-    container.innerHTML = testlottoLoadingSkeletonHtml(4);
+    container.innerHTML = testlottoLoadingSkeletonHtml(4, firstCompute);
   }
 }
 
@@ -863,10 +882,92 @@ function testlottoClearResultsLoading(container) {
   container.removeAttribute('aria-busy');
 }
 
-async function renderPredictionsByBrain(drawNo, rows) {
+function _testlottoBrainTierSummaryText(tag) {
+  const m = _testlottoBrainPowerByTag || {};
+  const b = m[String(tag).toLowerCase()] || {};
+  return [b.rank1 || 0, b.rank2 || 0, b.rank3 || 0, b.rank4 || 0, b.rank5 || 0].join('·');
+}
+
+function _testlottoRenderSetSubTabsHtml(activeKind) {
+  const poolActive = activeKind !== 'repack' ? 'active' : '';
+  const repackActive = activeKind === 'repack' ? 'active' : '';
+  return (
+    '<div class="testlotto-set-subtabs" role="tablist" aria-label="세트 종류">' +
+    `<button type="button" class="testlotto-set-subtab ${poolActive}" role="tab" aria-selected="${activeKind !== 'repack'}" onclick="testlottoSwitchSetSubTab('pool')">10장 pool</button>` +
+    `<button type="button" class="testlotto-set-subtab ${repackActive}" role="tab" aria-selected="${activeKind === 'repack'}" onclick="testlottoSwitchSetSubTab('repack')">몰아주기 5장</button>` +
+    '</div>'
+  );
+}
+
+function _testlottoRenderBrainCardsHtml(tag, poolView, drawNo, actualRef, subTab) {
+  if (!poolView || !poolView.ok || !poolView.pool_by_brain) {
+    return '<p style="color:#888;padding:8px;">pool 데이터 없음</p>';
+  }
+  const kind = subTab === 'repack' ? 'repack' : 'pool';
+  const src = kind === 'repack'
+    ? (poolView.repack_by_brain[tag] || [])
+    : (poolView.pool_by_brain[tag] || []);
+  const rows = src.map((s) => _poolSetToRow(s, drawNo, actualRef));
+  if (!rows.length) {
+    return kind === 'repack'
+      ? '<p style="color:#888;padding:8px;">몰아주기 세트 없음</p>'
+      : '<p style="color:#888;padding:8px;">pool 없음</p>';
+  }
+  return rows.map((r, i) => renderBrainSetCard(r, i + 1)).join('');
+}
+
+function _testlottoRenderAllBrainsAccordion(poolView, drawNo, actualRef, brainListForTabs, subTab) {
+  return brainListForTabs.map((b) => {
+    const open = !!_testlottoBrainAccordionOpen[b.tag];
+    const tierTxt = _testlottoBrainTierSummaryText(b.tag);
+    const warrantLine = testlottoWarrantTabBadgeHtml(b.tag);
+    const cards = _testlottoRenderBrainCardsHtml(b.tag, poolView, drawNo, actualRef, subTab);
+    const policy = testlottoBrainPolicyStripHtml(b.tag);
+    return (
+      `<details class="testlotto-brain-accordion" data-brain="${b.tag}" ${open ? 'open' : ''} ontoggle="testlottoToggleBrainAccordion('${b.tag}', this.open)">` +
+      '<summary class="testlotto-brain-accordion__head">' +
+      `<span class="testlotto-brain-accordion__chevron" aria-hidden="true"></span>` +
+      `<span class="testlotto-brain-accordion__icon">${b.icon}</span>` +
+      `<span class="testlotto-brain-accordion__name">${b.name}</span>` +
+      `<span class="testlotto-brain-accordion__tier" title="역대 1~5등 횟수">${tierTxt}</span>` +
+      (warrantLine ? `<span class="testlotto-brain-accordion__warrant">${warrantLine}</span>` : '') +
+      '</summary>' +
+      `<div class="testlotto-brain-accordion__body">` +
+      policy +
+      _testlottoRenderSetSubTabsHtml(subTab) +
+      `<div class="lotto-brain-cards testlotto-brain-accordion__cards">${cards}</div>` +
+      '</div></details>'
+    );
+  }).join('');
+}
+
+async function _fetchPoolView(drawNo, options) {
+  const mem = _testlottoPoolViewMemCache.get(drawNo);
+  if (mem && !(options && options.forceRefresh)) {
+    return { ...mem, from_mem: true };
+  }
+  const url = _testlottoResolveApiUrl('/api/testlotto/predict/pool-view/' + drawNo);
+  const pr = await fetch(url);
+  if (!pr.ok) throw new Error(String(pr.status));
+  const data = await pr.json();
+  if (data && data.ok) {
+    _testlottoPoolViewMemCache.set(drawNo, data);
+  }
+  return data;
+}
+
+async function renderPredictionsByBrain(drawNo, rows, options) {
   const container = document.getElementById('testlottoPredictionResults');
   if (!container) return;
-  testlottoShowResultsLoading(container);
+
+  const skipPoolFetch = !!(options && options.skipPoolFetch);
+  const memHit = _testlottoPoolViewMemCache.has(drawNo);
+  if (!skipPoolFetch && !memHit) {
+    testlottoShowResultsLoading(container, true);
+  } else if (!skipPoolFetch) {
+    testlottoShowResultsLoading(container, false);
+  }
+
   await ensureLottoBrainPowerLoaded();
   try {
     await ensureTestlottoWarrantLoaded(drawNo);
@@ -875,12 +976,13 @@ async function renderPredictionsByBrain(drawNo, rows) {
   }
   await renderTestlottoDrawHero(drawNo, rows);
 
-  let poolView = null;
-  try {
-    const pr = await fetch(_testlottoResolveApiUrl('/api/testlotto/predict/pool-view/' + drawNo));
-    if (pr.ok) poolView = await pr.json();
-  } catch (e) {
-    console.warn('pool-view:', e);
+  let poolView = skipPoolFetch ? _testlottoPoolViewMemCache.get(drawNo) : null;
+  if (!poolView) {
+    try {
+      poolView = await _fetchPoolView(drawNo);
+    } catch (e) {
+      console.warn('pool-view:', e);
+    }
   }
 
   const actualRef = (rows && rows.length) ? rows[0] : null;
@@ -910,15 +1012,15 @@ async function renderPredictionsByBrain(drawNo, rows) {
   }
 
   if (!_testlottoCurrentBrainTab || _testlottoCurrentBrainTab === 'legacy') {
-    _testlottoCurrentBrainTab = 'stat';
+    _testlottoCurrentBrainTab = 'all';
   }
   const allowedTags = new Set(brainListForTabs.map((b) => b.tag));
-  if (eliteOn && allowedTags.size && !allowedTags.has(_testlottoCurrentBrainTab)) {
+  if (_testlottoCurrentBrainTab !== 'all' && eliteOn && allowedTags.size && !allowedTags.has(_testlottoCurrentBrainTab)) {
     _testlottoCurrentBrainTab = brainListForTabs[0].tag;
   }
-  if (!byBrain[_testlottoCurrentBrainTab] && !(poolView && poolView.pool_by_brain)) {
+  if (_testlottoCurrentBrainTab !== 'all' && !byBrain[_testlottoCurrentBrainTab] && !(poolView && poolView.pool_by_brain)) {
     const firstTag = Object.keys(byBrain)[0];
-    _testlottoCurrentBrainTab = firstTag || (brainListForTabs[0] && brainListForTabs[0].tag) || 'stat';
+    _testlottoCurrentBrainTab = firstTag || 'all';
   }
 
   const tabsHtml = brainListForTabs.map((b) => {
@@ -928,53 +1030,70 @@ async function renderPredictionsByBrain(drawNo, rows) {
     const disabled = poolCnt === 0 ? 'disabled' : '';
     const nano = lottoBrainTierNanoHtml(b.tag);
     const warrantLine = testlottoWarrantTabBadgeHtml(b.tag);
-    return `
-      <button class="lotto-brain-tab ${active} ${disabled}"
-              data-brain="${b.tag}"
-              style="--brain-color: ${b.color};"
-              onclick="testlottoSwitchBrainTab('${b.tag}')"
-              ${disabled ? 'disabled' : ''}>
-        <span class="lotto-brain-tab-head">
-          <span class="lotto-brain-icon">${b.icon}</span>
-          <span class="lotto-brain-name">${b.name}</span>
-          <span class="lotto-brain-cnt">${poolCnt || 0}</span>
-        </span>
-        ${warrantLine}
-        ${nano}
-      </button>
-    `;
+    return (
+      `<button class="lotto-brain-tab ${active} ${disabled}"` +
+      ` data-brain="${b.tag}" style="--brain-color: ${b.color};"` +
+      ` onclick="testlottoSwitchBrainTab('${b.tag}')" ${disabled ? 'disabled' : ''}>` +
+      `<span class="lotto-brain-tab-head">` +
+      `<span class="lotto-brain-icon">${b.icon}</span>` +
+      `<span class="lotto-brain-name">${b.name}</span>` +
+      `<span class="lotto-brain-cnt">${poolCnt || 0}</span>` +
+      '</span>' +
+      warrantLine +
+      nano +
+      '</button>'
+    );
   }).join('');
 
-  const tag = _testlottoCurrentBrainTab;
-  let cardsHtml = '';
+  const allActive = _testlottoCurrentBrainTab === 'all' ? 'active' : '';
+  const allTabHtml =
+    `<button class="lotto-brain-tab lotto-brain-tab--all ${allActive}" data-brain="all"` +
+    ` onclick="testlottoSwitchBrainTab('all')">` +
+    '<span class="lotto-brain-tab-head">' +
+    '<span class="lotto-brain-icon">📋</span>' +
+    '<span class="lotto-brain-name">전체 보기</span>' +
+    '</span></button>';
 
-  if (poolView && poolView.ok && poolView.pool_by_brain) {
-    const poolSets = (poolView.pool_by_brain[tag] || []).map((s) => _poolSetToRow(s, drawNo, actualRef));
-    const repackSets = (poolView.repack_by_brain[tag] || []).map((s) => _poolSetToRow(s, drawNo, actualRef));
-    cardsHtml += '<h4 class="testlotto-set-section-title">① 10장 pool (1~10번)</h4>';
-    cardsHtml += poolSets.length
-      ? poolSets.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
-      : '<p style="color:#888;padding:8px;">pool 없음</p>';
-    cardsHtml += '<h4 class="testlotto-set-section-title">② 신호 몰아주기 5장 (1~5번)</h4>';
-    cardsHtml += repackSets.length
-      ? repackSets.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
-      : '<p style="color:#888;padding:8px;">몰아주기 세트 없음</p>';
-    if (poolView.no_peek) {
-      cardsHtml += '<p class="testlotto-no-peek-note">※ 미래 회차 미열람(walk-forward) · coordinator 미배선 · 표시 전용</p>';
+  let bodyHtml = '';
+  const subTab = _testlottoSetSubTab;
+
+  if (_testlottoCurrentBrainTab === 'all') {
+    bodyHtml =
+      `<div class="testlotto-brain-accordions" id="testlottoBrainAccordions">` +
+      _testlottoRenderAllBrainsAccordion(poolView, drawNo, actualRef, brainListForTabs, subTab) +
+      '</div>';
+    if (poolView && poolView.no_peek) {
+      bodyHtml += '<p class="testlotto-no-peek-note">※ 미래 회차 미열람(walk-forward) · coordinator 미배선 · 표시 전용</p>';
     }
   } else {
-    const selectedRows = byBrain[tag] || [];
-    cardsHtml = selectedRows.length
-      ? selectedRows.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
-      : '<p style="color:#888; padding: 16px;">이 프로그램은 이 회차 예측 기록이 없습니다.</p>';
+    const tag = _testlottoCurrentBrainTab;
+    let cardsHtml = '';
+    if (poolView && poolView.ok && poolView.pool_by_brain) {
+      cardsHtml = _testlottoRenderBrainCardsHtml(tag, poolView, drawNo, actualRef, subTab);
+      if (poolView.no_peek) {
+        cardsHtml += '<p class="testlotto-no-peek-note">※ 미래 회차 미열람(walk-forward) · coordinator 미배선 · 표시 전용</p>';
+      }
+    } else {
+      const selectedRows = byBrain[tag] || [];
+      cardsHtml = selectedRows.length
+        ? selectedRows.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
+        : '<p style="color:#888; padding: 16px;">이 프로그램은 이 회차 예측 기록이 없습니다.</p>';
+    }
+    const policyStripHtml = testlottoBrainPolicyStripHtml(tag);
+    bodyHtml =
+      policyStripHtml +
+      _testlottoRenderSetSubTabsHtml(subTab) +
+      `<div class="lotto-brain-cards" id="hyodoBrainCards">${cardsHtml}</div>`;
   }
 
-  const policyStripHtml = testlottoBrainPolicyStripHtml(_testlottoCurrentBrainTab);
+  const cacheNote = poolView && (poolView.cached || poolView.from_mem)
+    ? `<p class="testlotto-cache-note" role="status">캐시에서 불러옴${poolView.cache_ms != null ? ` · ${poolView.cache_ms}ms` : ''}</p>`
+    : (poolView && poolView.compute_ms ? `<p class="testlotto-cache-note testlotto-cache-note--fresh">처음 계산 완료 · ${poolView.compute_ms}ms</p>` : '');
 
   container.innerHTML = `
-    <div class="lotto-brain-tabs">${tabsHtml}</div>
-    ${policyStripHtml}
-    <div class="lotto-brain-cards" id="hyodoBrainCards">${cardsHtml}</div>
+    <div class="lotto-brain-tabs">${tabsHtml}${allTabHtml}</div>
+    ${cacheNote}
+    ${bodyHtml}
   `;
   testlottoClearResultsLoading(container);
 }

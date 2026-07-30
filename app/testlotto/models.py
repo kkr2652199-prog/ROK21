@@ -244,6 +244,21 @@ def init_testlotto_db():
             ON testlotto_backtest_draw_results(run_id, draw_no);
         CREATE INDEX IF NOT EXISTS idx_backtest_draw_no
             ON testlotto_backtest_draw_results(draw_no);
+
+        -- pool-view 10+5 캐시 (회차×뇌 · WF 계산 1회 저장)
+        CREATE TABLE IF NOT EXISTS testlotto_pool_view_cache (
+            draw_no            INTEGER NOT NULL,
+            brain              TEXT NOT NULL,
+            pool_json          TEXT NOT NULL,
+            repack_json        TEXT NOT NULL,
+            seed               INTEGER NOT NULL DEFAULT 42,
+            schema_version     INTEGER NOT NULL DEFAULT 1,
+            computed_at        TEXT DEFAULT (datetime('now','localtime')),
+            PRIMARY KEY (draw_no, brain)
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_pool_view_cache_draw
+            ON testlotto_pool_view_cache(draw_no);
     """
     )
     existing_cols = [r[1] for r in conn.execute("PRAGMA table_info(lotto_predictions)").fetchall()]
