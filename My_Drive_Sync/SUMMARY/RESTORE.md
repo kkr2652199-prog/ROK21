@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-07-30 | TEST_PRIORITY 큐·숙제형 문서 | P0~P3 11건·용어表·BOOT/STATUS/AI_COLLAB 링크 | **DOC OK** | pending |
 | 2026-07-30 | K-QUICK-GATE+SIGNAL-SELECT GO | BENCH§9·bench_quick_gate·combined QUICK ge3=0.145 n=200 | **QUICK PASS** | pending |
 | 2026-07-30 | K-WINDOW-SIGNAL-01 GO·E2 | window hint 61variants n=1182 · best ge3=0.1328 · E2 bin lift | **FAIL** | pending |
 | 2026-07-29 | 신호셋트 아키텍처·GenSpark 3turn | Tier0~4·통합5·구현순서7단계 · KWINDOW running 900/1182 | ARCH OK | pending |

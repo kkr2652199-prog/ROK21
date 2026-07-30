@@ -30,7 +30,7 @@
 - **K-SIGNAL-SELECT-01**: **QUICK PASS** — combined ge3=0.145 p=0.102 · tail n=200 · set_no_asc=0.08
 - **K-QUICK-GATE-01**: **DONE** — BENCH §9 · bench_quick_gate.py
 - **현재 배선**: WIRE-V2 pin ge3=0.1447 유지 · wire는 형 GO 전 금지
-- **다음**: K-SIGNAL-SELECT-FULL (full 1182)
+- **다음**: K-SIGNAL-SELECT-FULL (full 1182) · **작업 큐=`TEST_PRIORITY.md`**
 
 ### 논의 이력 (최신순)
 1. **[12:05] K-SIGNAL-SELECT-01 QUICK** — combined PASS ge3=0.145 · overlap 단독 FAIL · `20260730_KSIGNAL_SELECT_SURVEY.md`

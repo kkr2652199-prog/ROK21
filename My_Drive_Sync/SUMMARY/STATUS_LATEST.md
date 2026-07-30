@@ -14,7 +14,7 @@
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
 | K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-SIGNAL-SELECT-FULL** (1182) · wire는 형 GO 전 금지 |
+| 권고 | **K-SIGNAL-SELECT-FULL** (1182) · **전체 큐=`TEST_PRIORITY.md`** · wire는 형 GO 전 금지 |
 
 ---
 
