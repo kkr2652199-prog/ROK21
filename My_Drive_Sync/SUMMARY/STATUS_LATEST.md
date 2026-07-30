@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-30 KST  
-📌 사유: **tail-100 BACKTEST** · repack ge3=0.23 · combined ge3=0.15 · UI 「3뇌 예측」 단일 · K-SIGNAL-SELECT-FULL 다음
+📌 사유: **TESTLOTTO backtest pool PIN** — eval reset 후 pool 캐시 자동복구 · PATCH_PINS · 1136/1234 브라우저 QA
 
 ---
 
@@ -11,7 +11,7 @@
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **K-SIGNAL-BACKTEST-TAIL100** | **DONE** — tail n=100 seed=42 · repack ge3=**0.23**(23) run_id=**3** · combined ge3=**0.15**(15) run_id=**4** · 기존 backtest 2건 유지 |
-| **TESTLOTTO UI+DB** | **DONE** — 「🎯 3뇌 예측」**단일 버튼** · 두뇌 예측 UI 제거 · pool-view SSOT |
+| **TESTLOTTO UI+DB** | **DONE** — 「🎯 3뇌 예측」단일 · backtest 회차 pool auto-WF · `PATCH_PINS.md` |
 | K-SIGNAL-REPACK-01 | **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |
 | K-SIGNAL-SELECT-01 | **QUICK PASS** — combined ge3=**0.145** p=0.102 · tail n=200 |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
@@ -25,6 +25,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **TESTLOTTO backtest pool PIN** | eval reset 후 cache miss → backtest draw auto-WF · import/backfill · 1136/1234/1030 QA | **PIN OK** |
 | **K-SIGNAL-BACKTEST-TAIL100** | tail-100 WF · combined+repack · eval구간 pred/cache reset · backtest 4건 DB | repack **ge3=0.23 PASS** · combined ge3=0.15 FAIL |
 | **TESTLOTTO click-predict** | startup prewarm 제거 · cache-only GET · 「3뇌 예측」 단일 · 회차전환 auto WF 금지 | **QA PASS** 1214/1232/1235 |
 | **TESTLOTTO tier-match** | hero·모달·pool 카드 SSOT 통일 · detail/lotto_predictions 이중집계 제거 · 1235 미추첨 | **QA PASS** 1214/1234/1200/1235 |

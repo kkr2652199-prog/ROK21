@@ -64,6 +64,7 @@
 - [ ] 표 헤더·섹션 제목 한국어
 - [ ] 영어 약어 첫 등장 시 괄호 설명
 - [ ] `My_Drive_Sync/커서보고서/` 동일 파일 복사
+- [ ] testlotto 패치 시 **`PATCH_PINS.md` 5항** spot check
 - [ ] 형의 **긍정 결과**(예: 3등 1회)는 복습·STATUS에 명시
 
 *코드 수정·coordinator wire = 형 GO 전 금지.*

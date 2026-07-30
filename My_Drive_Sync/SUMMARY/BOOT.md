@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **tail-100 백테스트** — repack ge3=0.23(23/100) · combined ge3=0.15(15/100) · run_id 3·4 · UI 「3뇌 예측」 단일
-- 직전: TESTLOTTO click-predict DONE · cache-only · tier-match fix
+- 지금: **TESTLOTTO backtest pool PIN** — eval reset 후 pool 캐시 자동복구 · PATCH_PINS · 1136/1234 QA
+- 직전: tail-100 백테스트 repack ge3=0.23 · combined ge3=0.15 · run_id 3·4
 - 다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
