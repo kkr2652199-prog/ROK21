@@ -19,6 +19,30 @@ const _testlottoBrainDescriptions = {
   review: '예전에 틀렸던 패턴을 다시 공부하는 방식',
 };
 
+/** REPORT_STYLE.md SSOT — 형이 읽는 과제·전략 한국어 */
+const _testlottoSurveyLabelKo = {
+  'K-SIGNAL-SELECT-FULL': '신호 선별 전체 검증(1182회)',
+  'K-SIGNAL-SELECT-01': '신호 선별 빠른 검증(200회)',
+  'K-SIGNAL-REPACK-01': '번호 몰아주기 빠른 검증(200회)',
+  'K-SIGNAL-REPACK-FULL': '번호 몰아주기 전체 검증(1182회)',
+};
+
+const _testlottoStrategyLabelKo = {
+  signal_repack: '신호 몰아주기',
+  combined: '통합 선별',
+  set_no_asc: '세트번호 오름차순',
+  random_repack: '무작위 몰아주기',
+  hint_only_repack: '힌트만 몰아주기',
+};
+
+function testlottoSurveyLabelKo(id) {
+  return _testlottoSurveyLabelKo[id] || id;
+}
+
+function testlottoStrategyLabelKo(id) {
+  return _testlottoStrategyLabelKo[id] || id;
+}
+
 function _tlFriendlyWarrantLabel(label) {
   const map = {
     '실증': '효과 확인됨',
@@ -517,6 +541,30 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
       return;
     }
     if (!rows.length) {
+      // pool-view만으로도 10+5 표시 가능 (미래 회차·저장 없음)
+      try {
+        const dr = await fetch(_testlottoResolveApiUrl('/api/testlotto/draws/' + d));
+        const drawRow = dr.ok ? await dr.json() : null;
+        if (drawRow && !drawRow.error) {
+          rows = [{
+            target_draw_no: d,
+            brain_tag: 'stat',
+            actual_1: drawRow.num1, actual_2: drawRow.num2, actual_3: drawRow.num3,
+            actual_4: drawRow.num4, actual_5: drawRow.num5, actual_6: drawRow.num6,
+            actual_bonus: drawRow.bonus,
+            matched_count: -1,
+          }];
+        } else {
+          rows = [{ target_draw_no: d, brain_tag: 'stat', matched_count: -1 }];
+        }
+        _testlottoDetailDrawNo = d;
+        _testlottoDetailRows = rows;
+        await renderPredictionsByBrain(d, rows);
+        loadTestlottoWarrantPanel(d);
+        return;
+      } catch (_e) {
+        /* fall through */
+      }
       _testlottoDetailDrawNo = null;
       _testlottoDetailRows = null;
       container.classList.remove('testlotto-results-pending');
@@ -668,6 +716,39 @@ async function renderTestlottoDrawHero(drawNo, rows) {
     (hitSummaryHtml ? `<div class="testlotto-hero-hit">${hitSummaryHtml}</div>` : '');
 }
 
+function _poolSetToRow(setObj, drawNo, actualRow) {
+  const nums = setObj.nums || [];
+  const actuals = actualRow ? [
+    actualRow.actual_1, actualRow.actual_2, actualRow.actual_3,
+    actualRow.actual_4, actualRow.actual_5, actualRow.actual_6,
+  ].filter((x) => x != null).map((n) => parseInt(n, 10)) : [];
+  const bonus = actualRow && actualRow.actual_bonus != null ? parseInt(actualRow.actual_bonus, 10) : null;
+  let matched = -1;
+  let bonusMatched = 0;
+  if (actuals.length === 6) {
+    const predSet = new Set(nums.map((n) => parseInt(n, 10)));
+    matched = actuals.filter((n) => predSet.has(n)).length;
+    if (bonus != null && predSet.has(bonus)) bonusMatched = 1;
+  }
+  return {
+    target_draw_no: drawNo,
+    brain_tag: setObj.brain_tag,
+    num1: nums[0], num2: nums[1], num3: nums[2],
+    num4: nums[3], num5: nums[4], num6: nums[5],
+    matched_count: matched,
+    bonus_matched: bonusMatched,
+    confidence: null,
+    reasoning: setObj.kind === 'repack' ? '신호 몰아주기' : '10장 pool',
+    actual_1: actualRow ? actualRow.actual_1 : null,
+    actual_2: actualRow ? actualRow.actual_2 : null,
+    actual_3: actualRow ? actualRow.actual_3 : null,
+    actual_4: actualRow ? actualRow.actual_4 : null,
+    actual_5: actualRow ? actualRow.actual_5 : null,
+    actual_6: actualRow ? actualRow.actual_6 : null,
+    actual_bonus: actualRow ? actualRow.actual_bonus : null,
+  };
+}
+
 function renderBrainSetCard(row, idx) {
   const nums = [row.num1, row.num2, row.num3, row.num4, row.num5, row.num6].map((n) => parseInt(n, 10));
   const matched = row.matched_count;
@@ -760,6 +841,15 @@ async function renderPredictionsByBrain(drawNo, rows) {
   container.removeAttribute('aria-busy');
   await renderTestlottoDrawHero(drawNo, rows);
 
+  let poolView = null;
+  try {
+    const pr = await fetch(_testlottoResolveApiUrl('/api/testlotto/predict/pool-view/' + drawNo));
+    if (pr.ok) poolView = await pr.json();
+  } catch (e) {
+    console.warn('pool-view:', e);
+  }
+
+  const actualRef = (rows && rows.length) ? rows[0] : null;
   const byBrain = {};
   rows.forEach((r) => {
     const tag = String(r.brain_tag || 'legacy').toLowerCase();
@@ -791,15 +881,16 @@ async function renderPredictionsByBrain(drawNo, rows) {
   if (eliteOn && allowedTags.size && !allowedTags.has(_testlottoCurrentBrainTab)) {
     _testlottoCurrentBrainTab = brainListForTabs[0].tag;
   }
-  if (!byBrain[_testlottoCurrentBrainTab]) {
+  if (!byBrain[_testlottoCurrentBrainTab] && !(poolView && poolView.pool_by_brain)) {
     const firstTag = Object.keys(byBrain)[0];
     _testlottoCurrentBrainTab = firstTag || (brainListForTabs[0] && brainListForTabs[0].tag) || 'stat';
   }
 
   const tabsHtml = brainListForTabs.map((b) => {
-    const cnt = (byBrain[b.tag] || []).length;
+    const poolCnt = poolView && poolView.pool_by_brain && poolView.pool_by_brain[b.tag]
+      ? poolView.pool_by_brain[b.tag].length : (byBrain[b.tag] || []).length;
     const active = b.tag === _testlottoCurrentBrainTab ? 'active' : '';
-    const disabled = cnt === 0 ? 'disabled' : '';
+    const disabled = poolCnt === 0 ? 'disabled' : '';
     const nano = lottoBrainTierNanoHtml(b.tag);
     const warrantLine = testlottoWarrantTabBadgeHtml(b.tag);
     return `
@@ -811,7 +902,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
         <span class="lotto-brain-tab-head">
           <span class="lotto-brain-icon">${b.icon}</span>
           <span class="lotto-brain-name">${testlottoGetBrainDisplayName(b.tag)}</span>
-          <span class="lotto-brain-cnt">${cnt}</span>
+          <span class="lotto-brain-cnt">${poolCnt || 0}</span>
         </span>
         ${warrantLine}
         ${nano}
@@ -819,10 +910,29 @@ async function renderPredictionsByBrain(drawNo, rows) {
     `;
   }).join('');
 
-  const selectedRows = byBrain[_testlottoCurrentBrainTab] || [];
-  const cardsHtml = selectedRows.length
-    ? selectedRows.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
-    : '<p style="color:#888; padding: 16px;">이 프로그램은 이 회차 예측 기록이 없습니다.</p>';
+  const tag = _testlottoCurrentBrainTab;
+  let cardsHtml = '';
+
+  if (poolView && poolView.ok && poolView.pool_by_brain) {
+    const poolSets = (poolView.pool_by_brain[tag] || []).map((s) => _poolSetToRow(s, drawNo, actualRef));
+    const repackSets = (poolView.repack_by_brain[tag] || []).map((s) => _poolSetToRow(s, drawNo, actualRef));
+    cardsHtml += '<h4 class="testlotto-set-section-title">① 10장 pool (1~10번)</h4>';
+    cardsHtml += poolSets.length
+      ? poolSets.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
+      : '<p style="color:#888;padding:8px;">pool 없음</p>';
+    cardsHtml += '<h4 class="testlotto-set-section-title">② 신호 몰아주기 5장 (1~5번)</h4>';
+    cardsHtml += repackSets.length
+      ? repackSets.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
+      : '<p style="color:#888;padding:8px;">몰아주기 세트 없음</p>';
+    if (poolView.no_peek) {
+      cardsHtml += '<p class="testlotto-no-peek-note">※ 미래 회차 미열람(walk-forward) · coordinator 미배선 · 표시 전용</p>';
+    }
+  } else {
+    const selectedRows = byBrain[tag] || [];
+    cardsHtml = selectedRows.length
+      ? selectedRows.map((r, i) => renderBrainSetCard(r, i + 1)).join('')
+      : '<p style="color:#888; padding: 16px;">이 프로그램은 이 회차 예측 기록이 없습니다.</p>';
+  }
 
   const policyStripHtml = testlottoBrainPolicyStripHtml(_testlottoCurrentBrainTab);
 
@@ -1887,8 +1997,83 @@ async function loadDraws() {
   }
 }
 
+// ── K-SIGNAL 백테스트 기록 (DB) ──
+async function loadTestlottoBacktestRuns() {
+  const panel = document.getElementById('testlottoBacktestPanel');
+  if (!panel) return;
+  panel.innerHTML = '<p class="testlotto-hero-placeholder">백테스트 목록 불러오는 중…</p>';
+  try {
+    const r = await fetch(_testlottoResolveApiUrl('/api/testlotto/backtest/runs?limit=20'));
+    const data = await r.json();
+    renderTestlottoBacktestList(data.runs || []);
+  } catch (e) {
+    panel.innerHTML = '<p style="color:#f88;">백테스트 로드 실패: ' + _tlEscapeHtml(e.message) + '</p>';
+  }
+}
+
+function renderTestlottoBacktestList(runs) {
+  const panel = document.getElementById('testlottoBacktestPanel');
+  if (!panel) return;
+  if (!runs.length) {
+    panel.innerHTML = '<p class="testlotto-hero-placeholder">아직 DB에 백테스트 기록이 없습니다. <code>tools/import_k_signal_backtest.py</code> 실행 후 새로고침하세요.</p>';
+    return;
+  }
+  let html = '<table class="testlotto-backtest-table"><thead><tr>';
+  html += '<th>과제</th><th>전략</th><th>3개 이상 적중률</th><th>평균 적중</th><th>회차</th><th>판정</th><th></th>';
+  html += '</tr></thead><tbody>';
+  runs.forEach((run) => {
+    const ge3 = run.ge3_rate != null ? (run.ge3_rate * 100).toFixed(1) + '%' : '—';
+    const mean = run.mean_hits != null ? Number(run.mean_hits).toFixed(2) : '—';
+    const dr = run.draw_range || [];
+    html += '<tr>';
+    html += '<td><strong>' + _tlEscapeHtml(run.survey_label_ko || testlottoSurveyLabelKo(run.survey_id)) + '</strong></td>';
+    html += '<td>' + _tlEscapeHtml(run.strategy_label_ko || testlottoStrategyLabelKo(run.strategy_id)) + '</td>';
+    html += '<td>' + ge3 + '</td><td>' + mean + '</td>';
+    html += '<td>' + _tlEscapeHtml(String(dr[0] || '') + '~' + String(dr[1] || '')) + ' (' + (run.n_draws || '') + '회)</td>';
+    html += '<td>' + _tlEscapeHtml(run.verdict || run.gate_mode_ko || '') + '</td>';
+    html += '<td><button type="button" class="btn btn-secondary btn-sm" onclick="testlottoShowBacktestDetail(' + run.run_id + ')">회차별</button></td>';
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  html += '<div id="testlottoBacktestDetail" class="testlotto-backtest-detail" hidden></div>';
+  panel.innerHTML = html;
+}
+
+async function testlottoShowBacktestDetail(runId) {
+  const box = document.getElementById('testlottoBacktestDetail');
+  if (!box) return;
+  box.hidden = false;
+  box.innerHTML = '<p>회차별 결과 불러오는 중…</p>';
+  try {
+    const r = await fetch(_testlottoResolveApiUrl('/api/testlotto/backtest/runs/' + runId + '?draw_limit=200'));
+    const data = await r.json();
+    if (data.error) {
+      box.innerHTML = '<p style="color:#f88;">' + _tlEscapeHtml(data.error) + '</p>';
+      return;
+    }
+    let html = '<h4>' + _tlEscapeHtml(data.survey_label_ko) + ' · ' + _tlEscapeHtml(data.strategy_label_ko) + '</h4>';
+    html += '<p class="testlotto-no-peek-note">seed=' + data.seed + ' · walk-forward only · 미래 회차 미열람</p>';
+    html += '<table class="testlotto-backtest-table testlotto-backtest-table--draws"><thead><tr>';
+    html += '<th>회차</th><th>최고 적중</th><th>등수</th></tr></thead><tbody>';
+    (data.draws || []).forEach((d) => {
+      html += '<tr><td>' + d.draw_no + '회</td><td>' + d.best_hits + '개</td><td>' + _tlEscapeHtml(d.best_tier_label || '') + '</td></tr>';
+    });
+    html += '</tbody></table>';
+    box.innerHTML = html;
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } catch (e) {
+    box.innerHTML = '<p style="color:#f88;">' + _tlEscapeHtml(e.message) + '</p>';
+  }
+}
+
 // ── 초기화 ──
 document.addEventListener('DOMContentLoaded', () => {
+  const btDetails = document.getElementById('testlottoBacktestDetails');
+  if (btDetails) {
+    btDetails.addEventListener('toggle', () => {
+      if (btDetails.open) loadTestlottoBacktestRuns();
+    });
+  }
   const lottoTab = document.querySelector('[data-tab="lotto"]');
   if (lottoTab) {
     lottoTab.addEventListener('click', () => {
