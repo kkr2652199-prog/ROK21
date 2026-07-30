@@ -1,0 +1,190 @@
+{
+  "id": "K-SIGNAL-SELECT-FULL",
+  "ts": "2026-07-30T16:12:18",
+  "elapsed_sec": 86.7,
+  "n_eval": 1182,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "eval_window": {
+    "n_eval_target": 1182,
+    "sample_mode": "full",
+    "quick_gate": false
+  },
+  "gate_mode": "full",
+  "wire_pin_ge3": 0.1447,
+  "wire_pin_mean": 1.7504,
+  "null_ge3": 0.1137,
+  "mc_seed": 42,
+  "pool_sets_per_brain": 10,
+  "selected_n": 5,
+  "window_hint": {
+    "weeks": 4,
+    "signal": "zone_mix",
+    "alpha_ref": 0.1
+  },
+  "selectors": [
+    {
+      "selector_id": "combined",
+      "label": "combined",
+      "pool_sets_per_brain": 10,
+      "selected_n": 5,
+      "n": 1182,
+      "mean": 1.7377,
+      "ge3_rate": 0.1218,
+      "ge3_count": 144,
+      "delta_ge3_vs_null": 0.0081,
+      "delta_ge3_vs_pin": -0.0229,
+      "p_value": 0.200997,
+      "verdict": "FAIL",
+      "ge4_rate": 0.0051,
+      "ge4_count": 6
+    },
+    {
+      "selector_id": "set_no_asc",
+      "label": "set_no_asc",
+      "pool_sets_per_brain": 10,
+      "selected_n": 5,
+      "n": 1182,
+      "mean": 1.7005,
+      "ge3_rate": 0.1091,
+      "ge3_count": 129,
+      "delta_ge3_vs_null": -0.0046,
+      "delta_ge3_vs_pin": -0.0356,
+      "p_value": 0.702489,
+      "verdict": "FAIL",
+      "ge4_rate": 0.0085,
+      "ge4_count": 10
+    },
+    {
+      "selector_id": "bin_match",
+      "label": "bin_match",
+      "pool_sets_per_brain": 10,
+      "selected_n": 5,
+      "n": 1182,
+      "mean": 1.7098,
+      "ge3_rate": 0.1058,
+      "ge3_count": 125,
+      "delta_ge3_vs_null": -0.0079,
+      "delta_ge3_vs_pin": -0.0389,
+      "p_value": 0.817137,
+      "verdict": "FAIL",
+      "ge4_rate": 0.0102,
+      "ge4_count": 12
+    },
+    {
+      "selector_id": "window_overlap",
+      "label": "window_overlap",
+      "pool_sets_per_brain": 10,
+      "selected_n": 5,
+      "n": 1182,
+      "mean": 1.681,
+      "ge3_rate": 0.1041,
+      "ge3_count": 123,
+      "delta_ge3_vs_null": -0.0096,
+      "delta_ge3_vs_pin": -0.0406,
+      "p_value": 0.862645,
+      "verdict": "FAIL",
+      "ge4_rate": 0.0034,
+      "ge4_count": 4
+    },
+    {
+      "selector_id": "jaccard_div",
+      "label": "jaccard_div",
+      "pool_sets_per_brain": 10,
+      "selected_n": 5,
+      "n": 1182,
+      "mean": 1.6041,
+      "ge3_rate": 0.1024,
+      "ge3_count": 121,
+      "delta_ge3_vs_null": -0.0113,
+      "delta_ge3_vs_pin": -0.0423,
+      "p_value": 0.899894,
+      "verdict": "FAIL",
+      "ge4_rate": 0.0102,
+      "ge4_count": 12
+    }
+  ],
+  "baseline_control": {
+    "selector_id": "set_no_asc",
+    "label": "set_no_asc",
+    "pool_sets_per_brain": 10,
+    "selected_n": 5,
+    "n": 1182,
+    "mean": 1.7005,
+    "ge3_rate": 0.1091,
+    "ge3_count": 129,
+    "delta_ge3_vs_null": -0.0046,
+    "delta_ge3_vs_pin": -0.0356,
+    "p_value": 0.702489,
+    "verdict": "FAIL",
+    "ge4_rate": 0.0085,
+    "ge4_count": 10
+  },
+  "best_selector": {
+    "selector_id": "combined",
+    "label": "combined",
+    "pool_sets_per_brain": 10,
+    "selected_n": 5,
+    "n": 1182,
+    "mean": 1.7377,
+    "ge3_rate": 0.1218,
+    "ge3_count": 144,
+    "delta_ge3_vs_null": 0.0081,
+    "delta_ge3_vs_pin": -0.0229,
+    "p_value": 0.200997,
+    "verdict": "FAIL",
+    "ge4_rate": 0.0051,
+    "ge4_count": 6
+  },
+  "best_signal_selector": {
+    "selector_id": "combined",
+    "label": "combined",
+    "pool_sets_per_brain": 10,
+    "selected_n": 5,
+    "n": 1182,
+    "mean": 1.7377,
+    "ge3_rate": 0.1218,
+    "ge3_count": 144,
+    "delta_ge3_vs_null": 0.0081,
+    "delta_ge3_vs_pin": -0.0229,
+    "p_value": 0.200997,
+    "verdict": "FAIL",
+    "ge4_rate": 0.0051,
+    "ge4_count": 6
+  },
+  "gates": {
+    "quick": {
+      "n_eval": 200,
+      "draw_range": [
+        1035,
+        1234
+      ],
+      "sample_mode": "tail",
+      "seed": 42,
+      "pass": "ge3>null(0.1137) AND p<0.15",
+      "promising": "ge3>null+0.01 OR top variant clear"
+    },
+    "full": {
+      "n_eval": 1182,
+      "draw_range": [
+        53,
+        1234
+      ],
+      "sample_mode": "full",
+      "seed": 42,
+      "pass": "ge3>pin(0.1447) AND p<0.05"
+    }
+  },
+  "pass_gate": false,
+  "gates_eval": {
+    "pass": false,
+    "criterion": "any selector ge3>0.1447 and p<0.05",
+    "promising": true
+  },
+  "recommended_next": "K-ATTACK-HOLD",
+  "verdict": "FAIL: best combined ge3=0.1218 p=0.200997 → HOLD",
+  "db_code_write": false,
+  "coordinator_modified": false
+}

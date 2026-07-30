@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA
-- 직전: backtest pool PIN — eval reset cache auto-WF · PATCH_PINS · 1136/1234
-- 다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
+- 지금: **K-SIGNAL-SELECT-FULL 완료** — n=1182 · combined ge3=0.1218 · **FAIL** · wire HOLD
+- 직전: K-EXCLUDE-HIST-01 · LEAKAGE_POLICY · TESTLOTTO pool/repack UI
+- 다음: K-EXCLUDE-SURVEY — 배제 ON/OFF · **전체 큐=`TEST_PRIORITY.md`**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
