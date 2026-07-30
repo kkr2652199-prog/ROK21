@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `1e8010d` · WORK=`IDLE`
-- 지금: **TESTLOTTO backtest pool PIN** — eval reset 후 pool 캐시 자동복구 · PATCH_PINS · 1136/1234 QA
-- 직전: tail-100 백테스트 repack ge3=0.23 · combined ge3=0.15 · run_id 3·4
+- HEAD: `b5c3b1e` · WORK=`IDLE`
+- 지금: **TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA
+- 직전: backtest pool PIN — eval reset cache auto-WF · PATCH_PINS · 1136/1234
 - BOOT다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
 - NEXT1: K-SIGNAL-SELECT-FULL — full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 (승인=full 실행=아니(QUICK PASS 후 자동) · wire=예)
 - OPEN샘플: K-00, K-02, K-05

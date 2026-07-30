@@ -8,11 +8,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1e8010d` |
+| HEAD(실측) | `b5c3b1e` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **TESTLOTTO backtest pool PIN** — eval reset 후 pool 캐시 자동복구 · PATCH_PINS · 1136/1234 QA |
-| 직전 | tail-100 백테스트 repack ge3=0.23 · combined ge3=0.15 · run_id 3·4 |
+| 지금 | **TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA |
+| 직전 | backtest pool PIN — eval reset cache auto-WF · PATCH_PINS · 1136/1234 |
 | BOOT다음 | K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`** |
 | NEXT1 ID | **K-SIGNAL-SELECT-FULL** |
 | NEXT1 할일 | full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1e8010d · 지금=**TESTLOTTO backtest pool PIN** — eval reset 후 pool 캐시 자동복구 · PATCH_PINS · 1136/1234 QA · 다음=K-SIGNAL-SELECT-FULL`
+1. 첫줄 `[복귀] HEAD=b5c3b1e · 지금=**TESTLOTTO 예측결과 UI** — all 모드 아코디언 단일 · warrant/policy 예측영역 제거 · 1136 QA · 다음=K-SIGNAL-SELECT-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
