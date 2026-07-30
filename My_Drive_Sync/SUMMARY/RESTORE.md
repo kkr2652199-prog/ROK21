@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5d565dc` · WORK=`IDLE`
-2. **지금:** **tail-100 백테스트** — repack ge3=0.23(23/100) · combined ge3=0.15(15/100) · run_id 3·4 · UI 「3뇌 예측」 단일
-3. **다음1건:** K-SIGNAL-SELECT-FULL — **tail-100 BACKTEST DONE(20260730f)** — repack ge3=0.23 · combined ge3=0.15 · run_id 3·4 · full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 (승인필요=full 실행=아니(QUICK PASS 후 자동) · wire=예 · 선행=없음)
+1. **HEAD:** `61a6421` · WORK=`IDLE`
+2. **지금:** **TESTLOTTO backtest pool PIN** — eval reset 후 pool 캐시 자동복구 · PATCH_PINS · 1136/1234 QA
+3. **다음1건:** K-SIGNAL-SELECT-FULL — full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 (승인필요=full 실행=아니(QUICK PASS 후 자동) · wire=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
