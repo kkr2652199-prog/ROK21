@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-30 KST  
-📌 사유: **TESTLOTTO UI+DB 패치** · 10+5 pool · 백테스트 DB · K-SIGNAL-SELECT-FULL 다음
+📌 사유: **TESTLOTTO UI/UX 리프레시 DONE** · B-04 로딩 UX · K-SIGNAL-SELECT-FULL 다음
 
 ---
 
@@ -10,7 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **TESTLOTTO UI+DB** | **DONE** — 7021 테스트로또 탭 · 10장 pool+5장 몰아주기 · `testlotto_backtest_runs` 2건(200회×2) |
+| **TESTLOTTO UI+DB** | **DONE** — 7021 테스트로또 탭 · 10+5 pool · backtest 2건 · **브라우저 QA PASS** · **UI/UX 리프레시**(B-04 스피너·스켈레톤) |
 | K-SIGNAL-REPACK-01 | **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |
 | K-SIGNAL-SELECT-01 | **QUICK PASS** — combined ge3=**0.145** p=0.102 · tail n=200 |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
@@ -24,6 +24,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **TESTLOTTO UI/UX** | B-04 로딩·스켈레톤 · sticky탭·카드여백 · chevron · GenSpark UI 라운드 | **UI OK** · 기능무변경 |
 | **TESTLOTTO UI+DB** | 10+5 pool API · backtest_runs/draw_results · 7021 한국어 UI · import_k_signal_backtest | **DONE** · WF only |
 | **K-SIGNAL-REPACK-01** | 10pool→번호 몰아주기→5×3뇌=15장 · QUICK n=200 | **5장 FAIL** · r3=1 |
 | **K-SIGNAL-SELECT-01** | 10pool/brain×3뇌 → 통합5 선별 · overlap/bin/jaccard/combined · QUICK n=200 | **QUICK PASS** · combined ge3=0.145 |

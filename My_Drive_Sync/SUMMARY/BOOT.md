@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **TESTLOTTO 7021 브라우저 QA PASS** — 10+5·백테2건·회차별200 · 버그5(수정2)
-- 직전: TESTLOTTO UI+DB · K-SIGNAL-REPACK-01 · SELECT-01 QUICK PASS
+- 지금: **TESTLOTTO UI/UX 리프레시** — B-04 스피너·스켈레톤 · sticky탭·카드여백 · chevron 접이식
+- 직전: TESTLOTTO 7021 브라우저 QA PASS · 10+5·백테2건
 - 다음: K-SIGNAL-SELECT-FULL — full 1182 walk-forward · **전체 큐=`TEST_PRIORITY.md`**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

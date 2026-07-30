@@ -6,7 +6,7 @@
   <title>ROK21 — 4군 AI 예측</title>
   <link rel="stylesheet" href="/static/css/lotto4.css?v=20260620c" />
   <link rel="stylesheet" href="/static/css/hyodo.css?v=20260727p5" />
-  <link rel="stylesheet" href="/static/css/testlotto.css?v=20260730a" />
+  <link rel="stylesheet" href="/static/css/testlotto.css?v=20260730b" />
 </head>
 <body>
   <div class="app-shell">
@@ -370,15 +370,18 @@
             </div>
 
             <!-- ③ 뇌별 예측 세트 (10장 pool + 5장 몰아주기) -->
-            <div class="lotto-tab-content" id="testlotto-tab-predictions">
-              <div id="testlottoPredictionResults" class="testlotto-pred-results">
+            <div class="lotto-tab-content testlotto-predictions-wrap" id="testlotto-tab-predictions">
+              <div id="testlottoPredictionResults" class="testlotto-pred-results" aria-live="polite">
                 <p class="testlotto-hero-placeholder">회차 번호를 입력하고 &quot;두뇌 예측&quot;을 클릭하세요.</p>
               </div>
             </div>
 
-            <!-- ③-2 K-SIGNAL 백테스트 기록 -->
+            <!-- ③-2 신호 백테스트 기록 -->
             <details class="testlotto-backtest-details" id="testlottoBacktestDetails">
-              <summary class="testlotto-backtest-details__summary">신호 백테스트 기록 (200회 · 펼치기)</summary>
+              <summary class="testlotto-backtest-details__summary">
+                <span class="testlotto-details-chevron" aria-hidden="true"></span>
+                신호 백테스트 기록 <span class="testlotto-details-hint">(200회 · 펼치기)</span>
+              </summary>
               <div id="testlottoBacktestPanel" class="testlotto-backtest-panel" aria-live="polite">
                 <p class="testlotto-hero-placeholder">펼치면 DB에 저장된 빠른 검증 결과를 불러옵니다.</p>
               </div>
@@ -386,7 +389,10 @@
 
             <!-- ④ 명분 패널 (기본 접힘 — 당첨 확인 가림 방지) -->
             <details class="testlotto-warrant-details" id="testlottoWarrantDetails">
-              <summary class="testlotto-warrant-details__summary">각 프로그램 설명·제한 사항 (펼치기 · 참고용)</summary>
+              <summary class="testlotto-warrant-details__summary">
+                <span class="testlotto-details-chevron" aria-hidden="true"></span>
+                각 프로그램 설명·제한 사항 <span class="testlotto-details-hint">(펼치기 · 참고용)</span>
+              </summary>
               <div id="testlottoWarrantPanel" class="tl-warrant-panel" hidden aria-label="프로그램 설명과 제한 사항"></div>
             </details>
           </div>
@@ -603,7 +609,7 @@
   </div>
 
   <script src="/static/js/hyodo.js?v=20260727p5"></script>
-  <script src="/static/js/testlotto.js?v=20260730a"></script>
+  <script src="/static/js/testlotto.js?v=20260730b"></script>
   <script src="/static/js/lotto4.js?v=20260620c"></script>
 </body>
 </html>

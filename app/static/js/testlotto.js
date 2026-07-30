@@ -517,7 +517,7 @@ async function testlottoLoadSavedPrediction(drawNo, options) {
   } else {
     container.classList.remove('testlotto-results-pending');
     container.removeAttribute('aria-busy');
-    container.innerHTML = '<p style="color: #888;">로딩 중...</p>';
+    container.innerHTML = testlottoLoadingSkeletonHtml(4);
   }
   try {
     let rows = [];
@@ -828,17 +828,51 @@ async function testlottoOnEliteBrainToggle() {
   }
 }
 
+/** B-04: pool-view fetch 중 이전 카드 숨김 · 스켈레톤 표시 */
+function testlottoLoadingSkeletonHtml(cardCount = 6) {
+  const cards = Array.from({ length: cardCount }, () =>
+    '<div class="testlotto-skeleton-card" aria-hidden="true">' +
+    '<div class="testlotto-skeleton-line testlotto-skeleton-line--short"></div>' +
+    '<div class="testlotto-skeleton-balls"></div></div>'
+  ).join('');
+  return (
+    '<div class="testlotto-loading-inner">' +
+    '<div class="testlotto-loading-spinner" role="presentation"></div>' +
+    '<p class="testlotto-loading-msg" role="status">실시간 pool 계산 중… (최대 30초)</p>' +
+    `<div class="testlotto-skeleton-grid">${cards}</div></div>`
+  );
+}
+
+function testlottoShowResultsLoading(container) {
+  if (!container) return;
+  container.setAttribute('aria-busy', 'true');
+  container.classList.add('testlotto-results-pending');
+  const cardsEl = container.querySelector('#hyodoBrainCards');
+  if (cardsEl) {
+    cardsEl.innerHTML = testlottoLoadingSkeletonHtml();
+    return;
+  }
+  if (!container.querySelector('.testlotto-loading-inner')) {
+    container.innerHTML = testlottoLoadingSkeletonHtml(4);
+  }
+}
+
+function testlottoClearResultsLoading(container) {
+  if (!container) return;
+  container.classList.remove('testlotto-results-pending');
+  container.removeAttribute('aria-busy');
+}
+
 async function renderPredictionsByBrain(drawNo, rows) {
   const container = document.getElementById('testlottoPredictionResults');
   if (!container) return;
+  testlottoShowResultsLoading(container);
   await ensureLottoBrainPowerLoaded();
   try {
     await ensureTestlottoWarrantLoaded(drawNo);
   } catch (e) {
     console.warn('warrant cache:', e);
   }
-  container.classList.remove('testlotto-results-pending');
-  container.removeAttribute('aria-busy');
   await renderTestlottoDrawHero(drawNo, rows);
 
   let poolView = null;
@@ -871,6 +905,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
   if (eliteOn && brainListForTabs.length === 0) {
     container.innerHTML =
       '<p class="lotto-elite-empty">「과거에 잘 맞춘 프로그램만」 조건에 해당하는 항목이 없습니다. 체크를 해제하면 전체를 볼 수 있습니다.</p>';
+    testlottoClearResultsLoading(container);
     return;
   }
 
@@ -941,6 +976,7 @@ async function renderPredictionsByBrain(drawNo, rows) {
     ${policyStripHtml}
     <div class="lotto-brain-cards" id="hyodoBrainCards">${cardsHtml}</div>
   `;
+  testlottoClearResultsLoading(container);
 }
 
 /** 세트 순번(#1~#5) → 카톡용 이모지 */
