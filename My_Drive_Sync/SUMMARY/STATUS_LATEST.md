@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-07-30 KST  
-📌 사유: **K-SIGNAL-REPACK-01 DONE** · 5장 공정 FAIL · K-SIGNAL-SELECT-FULL 다음
+📌 사유: **TESTLOTTO UI+DB 패치** · 10+5 pool · 백테스트 DB · K-SIGNAL-SELECT-FULL 다음
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **TESTLOTTO UI+DB** | **DONE** — 7021 테스트로또 탭 · 10장 pool+5장 몰아주기 · `testlotto_backtest_runs` 2건(200회×2) |
 | K-SIGNAL-REPACK-01 | **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |
 | K-SIGNAL-SELECT-01 | **QUICK PASS** — combined ge3=**0.145** p=0.102 · tail n=200 |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
@@ -23,7 +24,8 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
-| **K-SIGNAL-REPACK-01** | 10pool→번호 몰아주기→5×3뇌=15장 · signal/hint/random vs 세트번호순·통합선별 · QUICK n=200 | **5장 FAIL** · top5 ge3=0.085 < combined 0.145 · **신호 몰아주기 3등 1회(긍정)** |
+| **TESTLOTTO UI+DB** | 10+5 pool API · backtest_runs/draw_results · 7021 한국어 UI · import_k_signal_backtest | **DONE** · WF only |
+| **K-SIGNAL-REPACK-01** | 10pool→번호 몰아주기→5×3뇌=15장 · QUICK n=200 | **5장 FAIL** · r3=1 |
 | **K-SIGNAL-SELECT-01** | 10pool/brain×3뇌 → 통합5 선별 · overlap/bin/jaccard/combined · QUICK n=200 | **QUICK PASS** · combined ge3=0.145 |
 | **K-QUICK-GATE-01** | BENCH §9 · tail-200 · bench_quick_gate.py · window survey `--n-eval` | **DONE** |
 | **K-WINDOW-SIGNAL-01** | DHLOTTERY 4/8/12/52/all×4signal hint inject · 61 variants · n=1182 seed=42 | **FAIL** · best ge3=0.1328 |

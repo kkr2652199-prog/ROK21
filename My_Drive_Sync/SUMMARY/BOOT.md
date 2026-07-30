@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **보고서 한국어 규칙** · REPACK **3등 1회** 긍정 반영 · SELECT-FULL 대기
-- 직전: K-SIGNAL-REPACK-01 DONE · top5 ge3=0.085 · 5장 공정 FAIL
-- 다음: K-SIGNAL-SELECT-FULL — full 1182 · **전체 큐=`TEST_PRIORITY.md`**
+- 지금: **TESTLOTTO UI+DB** — 10+5 pool · 백테스트 DB 2건 · 한국어 라벨
+- 직전: K-SIGNAL-REPACK-01 · SELECT-01 QUICK PASS · REPORT_STYLE
+- 다음: K-SIGNAL-SELECT-FULL — 형 7021 육안 확인 → full 1182 · **전체 큐=`TEST_PRIORITY.md`**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
