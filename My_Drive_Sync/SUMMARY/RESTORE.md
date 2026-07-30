@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `915420e` · WORK=`IDLE`
+1. **HEAD:** `7460b9f` · WORK=`IDLE`
 2. **지금:** **TESTLOTTO UI+DB** — 10+5 pool · 백테스트 DB 2건 · 한국어 라벨
 3. **다음1건:** K-SIGNAL-SELECT-FULL — **형 7021 UI·백테스트 DB 육안 확인** → full n=1182 walk-forward 재실행 · pin+p<0.05 확인 · wire는 형 GO 전 금지 (승인필요=full 실행=아니(QUICK PASS 후 자동) · wire=예 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
