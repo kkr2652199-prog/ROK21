@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1bd771d` |
+| HEAD(실측) | `289f4b1` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-AUX-DIAG** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight** |
-| 직전 | K-FUSION-QUOTA-FIX ge3=0.0800 · quota 20/60/20 · FAIL (>0.09) |
-| BOOT다음 | aux 회복 방향(spotlight/balance) 결정 · **형 GO 대기** |
-| NEXT1 ID | **K-AUX-DIAG-DONE** |
-| NEXT1 할일 | aux ablation 완료 · worst **pattern_spotlight** · balance_keeper markov 억제 · ge3 전 시나리오 **0.0800** · 회복 방향 결정 · **형 GO 대기** |
+| 지금 | **K-QUOTA-MARKOV80-REV2** — floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL** · **롤백 25/60/15** |
+| 직전 | K-AUX-DIAG · spotlight/balance · ge3 aux ablation 0.0800 불변 |
+| BOOT다음 | ge3 0.09+ 추가 경로(aux/wire/gate) · **형 GO 대기** |
+| NEXT1 ID | **K-QUOTA-MARKOV80-DONE** |
+| NEXT1 할일 | markov floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · **롤백 25/60/15 완료** · 0.09+ 추가 경로 결정 · **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1bd771d · 지금=**K-AUX-DIAG** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight** · 다음=K-AUX-DIAG-DONE`
+1. 첫줄 `[복귀] HEAD=289f4b1 · 지금=**K-QUOTA-MARKOV80-REV2** — floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL** · **롤백 25/60/15** · 다음=K-QUOTA-MARKOV80-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

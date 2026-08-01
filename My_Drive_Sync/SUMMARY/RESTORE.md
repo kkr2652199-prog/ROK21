@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e5e4180` · WORK=`IDLE`
+1. **HEAD:** `289f4b1` · WORK=`IDLE`
 2. **지금:** **K-QUOTA-MARKOV80-REV2** — floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL** · **롤백 25/60/15**
 3. **다음1건:** K-QUOTA-MARKOV80-DONE — markov floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · **롤백 25/60/15 완료** · 0.09+ 추가 경로 결정 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
