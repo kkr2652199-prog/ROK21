@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4d5df6a` · WORK=`IDLE`
+- HEAD: `339fc67` · WORK=`IDLE`
 - 지금: **K-BRAIN-SIGNAL-B1-BACKTEST-100** — ge3=**0.0600** · virtual=**100%** · **FAIL** (B1도 무개선)
 - 직전: K-BRAIN-SIGNAL-B1 — virtual draws · smoke **PASS**
 - BOOT다음: **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM 또는 롤백 · **형 GO 대기**
