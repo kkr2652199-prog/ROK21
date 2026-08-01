@@ -15,6 +15,7 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
+- **K-BRAIN-SIGNAL-A1** — 설계 검토 완료(2026-08-01) · Q1~Q4 커서 답변 · **형 GO + K-HIGHWAY 결정 후** 착수
 - **K-10SET-DET-LAB-FULL** — pool10 ge3=**0.1218** p=0.201 · QUICK 0.145→FULL collapse · **FAIL**
 - **K-10SET-DET-LAB-COMBO QUICK** — pool10 ge3=0.145 · det_topk FAIL
 - V2 pin ge3=0.1447 · wire HOLD

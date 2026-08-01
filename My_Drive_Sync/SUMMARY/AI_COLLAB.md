@@ -66,6 +66,7 @@ run_coordinated_prediction 진입
 ### 병렬 트랙 (별도 · PHASE1과 독립)
 | ID | 판정 | 비고 |
 |----|------|------|
+| **K-BRAIN-SIGNAL** | **설계 검토 완료** | Q1~Q4 답변(2026-08-01) · 형 GO 후 A1 착수 |
 | K-NEW-ENGINE-STAT-A1 | **PASS** (delta=0) | ENGINE_V2=False 유지 · solo ge3=0.1350 |
 | K-BRAIN-TUNE-SURVEY | **HOLD** | best_combo 0.1032 · auto-apply 금지 |
 | K-BRAIN-LOGIC-UPGRADE | **설계 검토만** | 젠스파크 4방향 · 커서 Q1~Q5 답변 · 형 GO 전 구현 금지 |
