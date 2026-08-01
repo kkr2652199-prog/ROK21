@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6502a1b` · WORK=`IDLE`
+1. **HEAD:** `fedf174` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-SIGNAL-B1** — virtual draws weights 주입 · smoke 10/10 · **PASS**
 3. **다음1건:** K-BRAIN-SIGNAL-B1-BACKTEST-100 — B1 virtual draws stack walk-forward n=100 · ge3 vs 0.0600 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
