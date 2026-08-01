@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2216cf1` · WORK=`IDLE`
+1. **HEAD:** `e68abca` · WORK=`IDLE`
 2. **지금:** **K-HIGHWAY-BACKTEST-100** — overall ge3=**0.0600** · baseline 0.1015 대비 −0.0415 · **FAIL**
 3. **다음1건:** K-HIGHWAY-PHASE1-HOLD — BACKTEST-100 **FAIL** ge3=0.0600 · baseline −0.0415 · **형 GO 대기** (롤백/HOLD/튜닝) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-BRAIN-SIGNAL-A1 GO | pattern_signal.py 신규 · coordinator conf blend 85/15 · smoke 1225~1234 OK · engine 미변경 | **PASS** | uncommitted |
 | 2026-08-01 | K-HIGHWAY-BACKTEST-100 GO | n=100 draw1135~1234 · overall ge3=0.0600 · baseline −0.0415 · learn adj 누적 OK | **FAIL** | pending |
 | 2026-08-01 | K-HIGHWAY-QUOTA GO | dynamic_brain_quota · referee 가중 5장 · min1/뇌 · PHASE1 COMPLETE | **OK** | pending |
 | 2026-08-01 | K-HIGHWAY-REFEREE GO | aux_referee score_set → get_referee_weights 반영 · brain_tag None→0.5 · import OK | **OK** | pending |
