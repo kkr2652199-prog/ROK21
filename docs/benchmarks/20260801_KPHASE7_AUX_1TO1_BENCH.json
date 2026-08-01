@@ -1,0 +1,38 @@
+{
+  "id": "K-PHASE7-AUX-1TO1-BENCH",
+  "ts": "2026-08-01T05:48:34+00:00",
+  "seed": 42,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "path": "coordinator_full (3brain pool + aux scoring + wire quota)",
+  "hint_weight": 0.15,
+  "learn_wired": true,
+  "v2_pin_ge3": 0.1447,
+  "phase6_baseline_ge3": 0.125,
+  "metrics_a": {
+    "aux_1to1_enabled": false,
+    "hint_weight": 0.15,
+    "learn_wired": true,
+    "n_eval": 200,
+    "ge3_count": 25,
+    "ge3_rate": 0.125,
+    "mean_match": 1.695
+  },
+  "metrics_b": {
+    "aux_1to1_enabled": true,
+    "hint_weight": 0.15,
+    "learn_wired": true,
+    "n_eval": 200,
+    "ge3_count": 25,
+    "ge3_rate": 0.125,
+    "mean_match": 1.695
+  },
+  "ge3_diff": 0.0,
+  "mean_diff": 0.0,
+  "pass_criterion": "ge3_B >= ge3_A",
+  "final_aux_1to1_enabled": true,
+  "verdict": "PASS",
+  "pass": true
+}

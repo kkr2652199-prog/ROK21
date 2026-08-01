@@ -10,9 +10,13 @@ import logging
 
 from app.testlotto.brains import aux_balance_keeper, aux_miss_detective, aux_pattern_spotlight, aux_referee
 from app.testlotto.brains import predict_flow_shaman, predict_review_king, predict_stat_fairy  # deprecated — PHASE4
+from app.testlotto.brains.stat_brain import aux as stat_brain_aux
 from app.testlotto.brains.stat_brain import predict as stat_brain_predict
+from app.testlotto.brains.markov_brain import aux as markov_brain_aux
 from app.testlotto.brains.markov_brain import predict as markov_brain_predict
+from app.testlotto.brains.review_brain import aux as review_brain_aux
 from app.testlotto.brains.review_brain import predict as review_brain_predict
+from app.testlotto.brains.shared import referee as shared_referee
 from app.testlotto.brains.registry import AUX_BRAINS, PREDICT_BRAINS, SETS_PER_PREDICT_BRAIN
 from app.testlotto.data_service import _get_draws_before
 from app.testlotto.learn_state import get_referee_weights
@@ -35,6 +39,15 @@ AUX_MODULES = [
 
 AUX_WEIGHTS = [0.25, 0.25, 0.25, 0.25]
 PREDICT_TAGS = [b["tag"] for b in PREDICT_BRAINS]
+
+# K-BRAIN-PACKAGE-PHASE7: 뇌별 전용 aux 1:1 (False=4×0.25 전역 baseline)
+AUX_1TO1_ENABLED: bool = True
+
+BRAIN_DEDICATED_AUX = {
+    "stat": stat_brain_aux,
+    "markov": markov_brain_aux,
+    "review": review_brain_aux,
+}
 
 # K-MARKOV-WIRE: markov 배합 가중 (E_markov3mix2 실력 p=0.0007)
 # 생성은 SETS_PER_PREDICT_BRAIN×3=15 유지 · 발권 선택만 쿼터 적용
@@ -95,10 +108,41 @@ def _aux_composite_score(
     target_draw_no: int,
     brain_tag: str | None = None,
 ) -> float:
+    if AUX_1TO1_ENABLED and brain_tag:
+        dedicated = BRAIN_DEDICATED_AUX.get(brain_tag)
+        if dedicated is not None:
+            return dedicated.score_set(
+                nums, draws, target_draw_no, brain_tag=brain_tag
+            )
     total = 0.0
     for mod, w in zip(AUX_MODULES, AUX_WEIGHTS):
         total += w * mod.score_set(nums, draws, target_draw_no, brain_tag=brain_tag)
     return total
+
+
+def _aux_notes(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None,
+) -> str:
+    if AUX_1TO1_ENABLED and brain_tag:
+        dedicated = BRAIN_DEDICATED_AUX.get(brain_tag)
+        if dedicated is not None:
+            return " | ".join(
+                [
+                    dedicated.describe(
+                        nums, draws, target_draw_no, brain_tag=brain_tag
+                    ),
+                    shared_referee.describe(
+                        nums, draws, target_draw_no, brain_tag=brain_tag
+                    ),
+                ]
+            )
+    return " | ".join(
+        m.describe(nums, draws, target_draw_no, brain_tag=brain_tag)
+        for m in AUX_MODULES
+    )
 
 
 def apply_coordinator_scoring(
@@ -117,9 +161,7 @@ def _apply_aux_scoring(candidates: list[dict], draws: list[dict], target_draw_no
         base = float(c.get("confidence", 60))
         brain_w = ref_weights.get(c.get("brain_tag", ""), 1.0 / 3)
         final_conf = min(99.5, base * 0.5 * brain_w + aux_score * 40 + base * 0.1)
-        aux_notes = " | ".join(
-            m.describe(c["nums"], draws, target_draw_no, brain_tag=tag) for m in AUX_MODULES
-        )
+        aux_notes = _aux_notes(c["nums"], draws, target_draw_no, tag)
         out.append(
             {
                 **c,

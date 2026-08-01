@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `313d9df` |
+| HEAD(실측) | `f8e529d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BRAIN-PACKAGE-PHASE6** — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True |
-| 직전 | K-BRAIN-PACKAGE-PHASE5 — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15 |
-| BOOT다음 | **K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 |
-| NEXT1 ID | **K-BRAIN-PACKAGE-PHASE7** |
-| NEXT1 할일 | shared/referee + coordinator aux 1:1 (C proposal PHASE4 next step) |
+| 지금 | **K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True |
+| 직전 | K-BRAIN-PACKAGE-PHASE6 — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True |
+| BOOT다음 | **K-BRAIN-PACKAGE-COMPLETE** — C package core done · 형 지시 대기 wire/repack |
+| NEXT1 ID | **K-BRAIN-PACKAGE-COMPLETE** |
+| NEXT1 할일 | C package core done — 3뇌 패키지+hint+learn+aux1:1 · 형 지시 대기 wire/repack |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=313d9df · 지금=**K-BRAIN-PACKAGE-PHASE6** — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True · 다음=K-BRAIN-PACKAGE-PHASE7`
+1. 첫줄 `[복귀] HEAD=f8e529d · 지금=**K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True · 다음=K-BRAIN-PACKAGE-COMPLETE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 313d9df_
+_generated: f8e529d_
