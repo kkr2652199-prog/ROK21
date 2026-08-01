@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fedf174` · WORK=`IDLE`
+- HEAD: `37098ab` · WORK=`IDLE`
 - 지금: **K-BRAIN-SIGNAL-B1** — virtual draws weights 주입 · smoke 10/10 · **PASS**
 - 직전: K-BRAIN-SIGNAL-BACKTEST-100 — ge3=0.0600 · confidence blend **FAIL**
 - BOOT다음: **K-BRAIN-SIGNAL-B1-BACKTEST-100** — **형 GO 대기**
