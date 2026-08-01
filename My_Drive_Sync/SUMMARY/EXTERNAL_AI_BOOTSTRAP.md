@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `b5fca46` |
+| HEAD(실측) | `675d619` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-ATTACK-HOLD 확정** — survey 전 축 HOLD · V2 pin ge3=0.1447 유지 · coordinator 미배선 |
-| 직전 | K-COMBO-V2 FAIL · COMBO-V1 hollow PASS · SELECT-FULL FAIL |
-| BOOT다음 | 형 GO 또는 **K-10SET-SURVEY** · **전체 큐=`TEST_PRIORITY.md`** |
-| NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | **확정** — survey 전 축 HOLD · V2 pin 유지 · 형 GO 전 wire·survey 중단 |
+| 지금 | **K-10SET-DET-LAB-COMBO QUICK PASS** — pool10_combined ge3=0.145 · det_topk FAIL |
+| 직전 | K-ATTACK-HOLD · COMBO-V2 · SELECT-FULL |
+| BOOT다음 | **K-10SET-DET-LAB-FULL** — n=1182 · **전체 큐=`TEST_PRIORITY.md`** |
+| NEXT1 ID | **K-10SET-DET-LAB-FULL** |
+| NEXT1 할일 | K-10SET-DET-LAB-COMBO QUICK PASS → full n=1182 · pool10_combined vs det · wire는 형 GO 전 금지 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=b5fca46 · 지금=**K-ATTACK-HOLD 확정** — survey 전 축 HOLD · V2 pin ge3=0.1447 유지 · coordinator 미배선 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=675d619 · 지금=**K-10SET-DET-LAB-COMBO QUICK PASS** — pool10_combined ge3=0.145 · det_topk FAIL · 다음=K-10SET-DET-LAB-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
