@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-FUSION-QUOTA-FIX GO | DEFAULT 25/60/15 · smoke 1230~1234 5/5 · n=100 ge3=0.0800 quota 20/60/20 · +0.02 vs 0.06 | **FAIL** (>0.09) | pending |
 | 2026-08-01 | K-ENGINE-PHASE1-HOLD GO STEP1~2 | window100 롤백(full draws) · smoke 1230~1234 5/5 · fusion diag ge3=0.0900 quota=0.40 aux=0.67 | **AUX_PATH_BOTTLENECK** | pending |
 | 2026-08-01 | K-ENGINE-PHASE1 GO STEP1~3 | B1 coordinator rollback · markov window=100 · solo n=200 ge3=0.0850 · smoke 1230~1234 5/5 | **FAIL** (window100) | pending |
 | 2026-08-01 | K-BRAIN-SIGNAL-A1 GO | pattern_signal.py 신규 · coordinator conf blend 85/15 · smoke 1225~1234 OK · engine 미변경 | **PASS** | uncommitted |
@@ -45,13 +46,6 @@
 | 2026-08-01 | K-BRAIN-TUNE-SURVEY GO | P0 aux_hint_top5=0.1091 · P1 lb120=0.1058 · P2 hint0=0.1058 · best_combo=0.1032 · APPLY HOLD | **SURVEY OK** | pending |
 | 2026-08-01 | K-BACKTEST-FULL-C GO | C package FULL n=1182 ge3=0.1015(QUICK 0.125 collapse) · by_brain stat=0.1125 · live_baseline 0.1218 미달 | **FAIL** | pending |
 | 2026-08-01 | K-WIRE-SELECT-FULL-SURVEY GO | conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · quota_gap=43.1% · wire_go=wait | **SURVEY OK** | pending |
-| 2026-08-01 | K-QUOTA-GAP-SURVEY GO | set_no_asc ge3=0.125 · conf_global_top5=0.135 · aux_hint=0.130 · quota_gap=43.0% · coordinator 미변경 | **SURVEY OK** | pending |
-| 2026-08-01 | K-BRAIN-PACKAGE-COMPLETE GO | C package core Phase0~7 consolidated · ge3=0.125 n=200 · wire/repack 미변경 | **COMPLETE OK** | pending |
-| 2026-08-01 | K-BRAIN-PACKAGE-PHASE7 GO | shared/referee · coordinator aux 1:1 · FULL ge3 0.125=0.125 PASS · AUX_1TO1=True | **PHASE7 PASS** | pending |
-| 2026-08-01 | K-BRAIN-PACKAGE-PHASE6 GO | markov learn apply_learn_boost · engine 배선 · FULL ge3 0.125=0.125 PASS · LEARN_WIRED=True | **PHASE6 PASS** | pending |
-| 2026-08-01 | K-BRAIN-PACKAGE-PHASE5 GO | shared/aux_hint · 3뇌 hint re-rank · FULL ge3 0.115→0.125 PASS · hint_weight=0.15 | **PHASE5 PASS** | pending |
-| 2026-08-01 | K-BRAIN-PACKAGE-PHASE4 GO | coordinator PREDICT_MODULES→3뇌 패키지 · predict_sets 어댑터 · 동치 PASS 3/3 n=200 | **PHASE4 PASS** | pending |
-| 2026-08-01 | K-BRAIN-PACKAGE-PHASE3 GO | review_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE3 PASS** | `2beb17c` |
 
 ---
 

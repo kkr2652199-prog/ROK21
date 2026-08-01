@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-ENGINE-PHASE1-HOLD-DONE
-- 할일: fusion bottleneck **AUX_PATH_BOTTLENECK** 판정 · diag ge3=0.0900 · quota 0.40/aux 0.67 · 회복 방향 결정 · **형 GO 대기**
-- 완료조건: quota/aux 튜닝 또는 fusion path 변경 지시서 + 형 GO
-- 선행완료: K-ENGINE-PHASE1-HOLD STEP1 window100 롤백 + STEP2 fusion diag
+- ID: K-FUSION-QUOTA-FIX-DONE
+- 할일: fusion ge3 **0.0800** (<0.09 gate) · quota shift 40/40/20→**20/60/20** 적용 완료 · aux path 등 추가 회복 검토 · **형 GO 대기**
+- 완료조건: fused ge3 > 0.0900 또는 aux/fusion path 변경 지시서 + 형 GO
+- 선행완료: K-FUSION-QUOTA-FIX DEFAULT_QUOTA_WEIGHTS + n=100 bench FAIL
 
 ## WORKSTATE
 IDLE

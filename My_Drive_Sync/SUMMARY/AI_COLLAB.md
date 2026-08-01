@@ -24,10 +24,29 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 21:15 KST)
+### 최신 상태 (2026-08-01 21:45 KST)
 - **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-ENGINE-PHASE1-HOLD DONE** — window100 롤백 OK · fusion diag ge3=**0.0900** · **AUX_PATH_BOTTLENECK**
-- **다음(공식)**: fusion 회복 방향(quota/aux 튜닝) · **형 GO 대기**
+- **지금(판정)**: **K-FUSION-QUOTA-FIX DONE** — DEFAULT 25/60/15 · n=100 ge3=**0.0800** · quota **20/60/20** · **FAIL** (>0.09)
+- **다음(공식)**: fusion ge3 0.08→0.09+ 추가 회복(aux path 등) · **형 GO 대기**
+
+### K-FUSION-QUOTA-FIX (형 GO · FAIL · no auto-tune)
+근거: `docs/benchmarks/20260801_KQUOTA_FIX_N100.json`
+
+| 항목 | 내용 | 판정 |
+|------|------|------|
+| coordinator | `DEFAULT_QUOTA_WEIGHTS` stat25/markov60/review15 · `_get_quota_weights` · total-slot largest remainder | **OK** |
+| smoke | draw 1230~1234 · 5장 · quota 1/3/1 | **PASS** |
+| n=100 walk-forward | draw 1135~1234 · full coordinator | **FAIL** ge3=**0.0800** |
+
+| 지표 | before (40/40/20) | after |
+|------|-------------------|-------|
+| overall ge3 | 0.0600 | **0.0800** (+0.0200) |
+| mean_match | 1.63 | **1.63** |
+| quota avg | stat 40% · markov 40% · review 20% | stat **20%** · markov **60%** · review **20%** |
+| by_period ge3 | early 0.04 · mid 0.04 · late 0.08 | early **0.08** · mid **0.04** · late **0.10** |
+| gate | — | ge3 **>** 0.0900 → **FAIL** |
+
+**결론:** markov 쿼터 60%로 ge3 +0.02 개선 · 0.09 gate 미달 · auto-tune 없음 · **형 GO 대기**
 
 ### K-ENGINE-PHASE1-HOLD (형 GO · STEP1~2 · fusion diag)
 근거: `docs/benchmarks/20260801_KFUSION_BOTTLE_DIAG.json`
@@ -145,7 +164,7 @@ run_coordinated_prediction 진입
 | vs K-BACKTEST-FULL-C baseline | **−0.0415** (0.1015) |
 | by_brain solo ge3 | stat 0.09 · markov **0.13** · review 0.11 |
 | by_period ge3 | early 0.04 · mid 0.04 · late 0.08 |
-| dynamic quota avg | stat 40% · markov 40% · review 20% |
+| dynamic quota avg | stat 40% · markov 40% · review 20% → **K-QUOTA-FIX 후 20/60/20** |
 | learn 루프 | **동작 확인** — draw1234 rc=99 · carry/ending adj cap 도달 |
 
 **형 결정 대기:** PHASE1 **HOLD** vs **롤백**(고정 쿼터 markov3/stat1/review1) vs **튜닝**
@@ -165,6 +184,7 @@ run_coordinated_prediction 진입
 ### 벤치 수치 SSOT (주요 · `docs/benchmarks/*.json`)
 | ID | n | ge3 | 판정 |
 |----|---|-----|------|
+| K-FUSION-QUOTA-FIX | 100 | **0.0800** | **FAIL** (>0.09) |
 | K-BRAIN-SIGNAL-BACKTEST-100 (방향1 conf) | 100 | **0.0600** | **FAIL** |
 | K-HIGHWAY-BACKTEST-100 | 100 | **0.0600** | **FAIL** |
 | K-BACKTEST-FULL-C | 1182 | 0.1015 | FAIL (<0.1218) |
@@ -173,7 +193,8 @@ run_coordinated_prediction 진입
 | K-BRAIN-PACKAGE QUICK | 200 | 0.125 | PASS |
 
 ### 논의 이력 (최신순)
-1. **[19:10] K-BRAIN-SIGNAL-B1 PASS** — virtual draws weights · smoke 10/10 · B1-BACKTEST **형 GO 대기**
+1. **[21:45] K-FUSION-QUOTA-FIX FAIL** — quota 20/60/20 · ge3=0.0800 (+0.02 vs 0.06) · gate 0.09 미달
+2. **[19:10] K-BRAIN-SIGNAL-B1 PASS** — virtual draws weights · smoke 10/10 · B1-BACKTEST **형 GO 대기**
 2. **[18:55] K-BRAIN-SIGNAL-BACKTEST-100 FAIL** — 방향1 conf blend · ge3=0.0600 · signal_active 100%
 3. **[18:00] K-BRAIN-SIGNAL-A1 PASS** — pattern_signal + coordinator conf blend
 4. **[17:50] K-HIGHWAY-BACKTEST-100 FAIL** — ge3=0.0600 · PHASE1 FEEDBACK+REFEREE+QUOTA

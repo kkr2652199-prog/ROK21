@@ -1,0 +1,137 @@
+{
+  "id": "K-FUSION-QUOTA-FIX",
+  "ts": "2026-08-01T12:47:17+00:00",
+  "seed": 42,
+  "draw_range": [
+    1135,
+    1234
+  ],
+  "n_eval": 100,
+  "pipeline": "run_coordinated_prediction (DEFAULT_QUOTA_WEIGHTS stat25/markov60/review15 + dynamic)",
+  "quota_defaults": {
+    "stat": 0.25,
+    "markov": 0.6,
+    "review": 0.15
+  },
+  "references": {
+    "fused_before": {
+      "id": "K-HIGHWAY-BACKTEST-100",
+      "ge3_rate": 0.06
+    },
+    "pass_threshold": 0.09
+  },
+  "overall": {
+    "n": 100,
+    "mean": 1.66,
+    "ge3_rate": 0.08,
+    "ge3_count": 8,
+    "delta_ge3_vs_null": -0.0337,
+    "delta_ge3_vs_pin": -0.0647,
+    "p_value": 0.893548,
+    "verdict": "FAIL",
+    "mean_match": 1.66,
+    "n_eval": 100
+  },
+  "by_brain": {
+    "stat": {
+      "n": 100,
+      "mean": 1.71,
+      "ge3_rate": 0.09,
+      "ge3_count": 9,
+      "delta_ge3_vs_null": -0.0237,
+      "delta_ge3_vs_pin": -0.0547,
+      "p_value": 0.815343,
+      "verdict": "FAIL",
+      "mean_match": 1.71,
+      "n_eval": 100
+    },
+    "markov": {
+      "n": 100,
+      "mean": 1.65,
+      "ge3_rate": 0.13,
+      "ge3_count": 13,
+      "delta_ge3_vs_null": 0.0163,
+      "delta_ge3_vs_pin": -0.0147,
+      "p_value": 0.347841,
+      "verdict": "FAIL",
+      "mean_match": 1.65,
+      "n_eval": 100
+    },
+    "review": {
+      "n": 100,
+      "mean": 1.65,
+      "ge3_rate": 0.11,
+      "ge3_count": 11,
+      "delta_ge3_vs_null": -0.0037,
+      "delta_ge3_vs_pin": -0.0347,
+      "p_value": 0.593066,
+      "verdict": "FAIL",
+      "mean_match": 1.65,
+      "n_eval": 100
+    }
+  },
+  "by_period": {
+    "early": {
+      "n": 25,
+      "mean": 1.76,
+      "ge3_rate": 0.08,
+      "ge3_count": 2,
+      "delta_ge3_vs_null": -0.0337,
+      "delta_ge3_vs_pin": -0.0647,
+      "p_value": 0.794171,
+      "verdict": "FAIL",
+      "mean_match": 1.76,
+      "n_eval": 25
+    },
+    "mid": {
+      "n": 25,
+      "mean": 1.68,
+      "ge3_rate": 0.04,
+      "ge3_count": 1,
+      "delta_ge3_vs_null": -0.0737,
+      "delta_ge3_vs_pin": -0.1047,
+      "p_value": 0.951076,
+      "verdict": "FAIL",
+      "mean_match": 1.68,
+      "n_eval": 25
+    },
+    "late": {
+      "n": 50,
+      "mean": 1.6,
+      "ge3_rate": 0.1,
+      "ge3_count": 5,
+      "delta_ge3_vs_null": -0.0137,
+      "delta_ge3_vs_pin": -0.0447,
+      "p_value": 0.685658,
+      "verdict": "FAIL",
+      "mean_match": 1.6,
+      "n_eval": 50
+    }
+  },
+  "quota_stats": {
+    "counts": {
+      "stat": 100,
+      "markov": 300,
+      "review": 100
+    },
+    "avg_pct": {
+      "stat": 20.0,
+      "markov": 60.0,
+      "review": 20.0
+    },
+    "prev_avg_pct": {
+      "stat": 40.0,
+      "markov": 40.0,
+      "review": 20.0
+    }
+  },
+  "comparison": {
+    "delta_ge3_vs_fused_ref": 0.02
+  },
+  "verdict": "FAIL",
+  "pass": false,
+  "next_on_fail": "no auto-tune — **형 GO 대기**",
+  "gate": {
+    "null_ge3": 0.1137
+  }
+}

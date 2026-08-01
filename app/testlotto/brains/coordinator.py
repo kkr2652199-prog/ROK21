@@ -50,10 +50,24 @@ BRAIN_DEDICATED_AUX = {
 
 # K-HIGHWAY-QUOTA: referee 가중 동적 5장 배분 · MARKOV_WIRE_ENABLED=False → conf top5
 MARKOV_WIRE_ENABLED: bool = True
+# K-FUSION-QUOTA-FIX: default quota base (was equal referee → avg 40/40/20 slots)
+DEFAULT_QUOTA_WEIGHTS: dict[str, float] = {"stat": 0.25, "markov": 0.60, "review": 0.15}
 # 벤치 pin 참조용 (production은 dynamic_brain_quota 사용)
 MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {"markov": 3, "stat": 1, "review": 1}
 # 벤치 전용: 고정 쿼터 override (None=production dynamic). 진단 후 반드시 None 복원.
 BENCH_FIXED_QUOTA: dict[str, int] | None = None
+
+
+def _get_quota_weights() -> dict[str, float]:
+    """Referee learn 가중 × DEFAULT_QUOTA_WEIGHTS · dynamic 구조 유지."""
+    ref = get_referee_weights()
+    combined = {
+        t: float(ref.get(t, DEFAULT_QUOTA_WEIGHTS.get(t, 1.0 / 3)))
+        * DEFAULT_QUOTA_WEIGHTS.get(t, 1.0 / 3)
+        for t in PREDICT_TAGS
+    }
+    total = sum(combined.values()) or 1.0
+    return {k: v / total for k, v in combined.items()}
 
 
 def _compute_dynamic_quota(
@@ -61,7 +75,7 @@ def _compute_dynamic_quota(
     total: int = 5,
     min_each: int = 1,
 ) -> dict[str, int]:
-    """referee 가중 비례 배분 · 뇌별 min_each · 합계 total (largest remainder)."""
+    """referee 가중 비례 배분 · 뇌별 min_each · 합계 total (largest remainder on total)."""
     tags_list = list(PREDICT_TAGS)
     n = len(tags_list)
     floor_min = min_each * n
@@ -69,20 +83,28 @@ def _compute_dynamic_quota(
         each = max(1, total // n)
         return {t: each for t in tags_list}
 
-    remaining = total - floor_min
-    wsum = sum(float(referee_weights.get(t, 1.0 / n)) for t in tags_list) or 1.0
-    raw_extra = {
-        t: remaining * float(referee_weights.get(t, 1.0 / n)) / wsum for t in tags_list
-    }
-    floor_extra = {t: int(raw_extra[t]) for t in tags_list}
-    deficit = remaining - sum(floor_extra.values())
+    def _w(tag: str) -> float:
+        return float(referee_weights.get(tag, DEFAULT_QUOTA_WEIGHTS.get(tag, 1.0 / n)))
+
+    wsum = sum(_w(t) for t in tags_list) or 1.0
+    raw = {t: total * _w(t) / wsum for t in tags_list}
+    floor_slots = {t: max(min_each, int(raw[t])) for t in tags_list}
+
+    while sum(floor_slots.values()) > total:
+        trim_candidates = [t for t in tags_list if floor_slots[t] > min_each]
+        if not trim_candidates:
+            break
+        drop = max(trim_candidates, key=lambda t: floor_slots[t] - raw[t])
+        floor_slots[drop] -= 1
+
+    deficit = total - sum(floor_slots.values())
     if deficit > 0:
         order = sorted(
-            tags_list, key=lambda t: raw_extra[t] - floor_extra[t], reverse=True
+            tags_list, key=lambda t: raw[t] - int(raw[t]), reverse=True
         )
         for i in range(deficit):
-            floor_extra[order[i % len(order)]] += 1
-    return {t: min_each + floor_extra[t] for t in tags_list}
+            floor_slots[order[i % len(order)]] += 1
+    return floor_slots
 
 
 def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
@@ -103,7 +125,7 @@ def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
     quota = (
         dict(BENCH_FIXED_QUOTA)
         if BENCH_FIXED_QUOTA is not None
-        else _compute_dynamic_quota(get_referee_weights(), total=target_n)
+        else _compute_dynamic_quota(_get_quota_weights(), total=target_n)
     )
     brain_buckets: dict[str, list[dict]] = defaultdict(list)
     for c in candidates:
@@ -418,7 +440,7 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
         scored.sort(key=lambda x: x["confidence"], reverse=True)
 
     # K-HIGHWAY-QUOTA: 생성 15 → referee 동적 쿼터 5장 (set_no_asc)
-    wire_quota = _compute_dynamic_quota(get_referee_weights()) if MARKOV_WIRE_ENABLED else {}
+    wire_quota = _compute_dynamic_quota(_get_quota_weights()) if MARKOV_WIRE_ENABLED else {}
     scored = dynamic_brain_quota(scored)
     if MARKOV_WIRE_ENABLED:
         dedup_stats = {
