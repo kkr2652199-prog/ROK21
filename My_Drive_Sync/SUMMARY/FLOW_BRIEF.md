@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6d78f7a` · WORK=`IDLE`
-- 지금: **K-NEW-ENGINE-STAT-A1** — stat solo baseline ge3=**0.1350** · v2=**0.1350** · delta=0 · **PASS** · ENGINE_V2=False 유지
-- 직전: K-BRAIN-TUNE-SURVEY — P0 aux_hint_top5=0.1091 · best_combo ge3=0.1032 · **HOLD**
-- BOOT다음: **K-NEW-ENGINE-MARKOV-A1** — markov engine 개선 · **형 GO 대기**
-- NEXT1: K-NEW-ENGINE-MARKOV-A1 — markov_brain engine 개선 (STAT-A1 패턴) · build_weights 변경 · bench A/B · 형 GO 시 (승인=미확인)
+- HEAD: `ba21125` · WORK=`IDLE`
+- 지금: **K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK**
+- 직전: K-NEW-ENGINE-STAT-A1 — stat solo ge3=0.1350 · v2=0.1350 · **PASS** · ENGINE_V2=False
+- BOOT다음: **K-HIGHWAY-REFEREE** — referee 가중 · **형 GO 대기**
+- NEXT1: K-HIGHWAY-REFEREE — coordinator referee 가중 자동 갱신 · **형 GO 대기** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

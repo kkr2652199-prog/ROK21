@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6d78f7a` |
+| HEAD(실측) | `ba21125` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-NEW-ENGINE-STAT-A1** — stat solo baseline ge3=**0.1350** · v2=**0.1350** · delta=0 · **PASS** · ENGINE_V2=False 유지 |
-| 직전 | K-BRAIN-TUNE-SURVEY — P0 aux_hint_top5=0.1091 · best_combo ge3=0.1032 · **HOLD** |
-| BOOT다음 | **K-NEW-ENGINE-MARKOV-A1** — markov engine 개선 · **형 GO 대기** |
-| NEXT1 ID | **K-NEW-ENGINE-MARKOV-A1** |
-| NEXT1 할일 | markov_brain engine 개선 (STAT-A1 패턴) · build_weights 변경 · bench A/B · 형 GO 시 |
+| 지금 | **K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK** |
+| 직전 | K-NEW-ENGINE-STAT-A1 — stat solo ge3=0.1350 · v2=0.1350 · **PASS** · ENGINE_V2=False |
+| BOOT다음 | **K-HIGHWAY-REFEREE** — referee 가중 · **형 GO 대기** |
+| NEXT1 ID | **K-HIGHWAY-REFEREE** |
+| NEXT1 할일 | coordinator referee 가중 자동 갱신 · **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6d78f7a · 지금=**K-NEW-ENGINE-STAT-A1** — stat solo baseline ge3=**0.1350** · v2=**0.1350** · delta=0 · **PASS** · ENGINE_V2=False 유지 · 다음=K-NEW-ENGINE-MARKOV-A1`
+1. 첫줄 `[복귀] HEAD=ba21125 · 지금=**K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK** · 다음=K-HIGHWAY-REFEREE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
