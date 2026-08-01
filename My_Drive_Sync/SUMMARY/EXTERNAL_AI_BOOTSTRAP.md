@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `525d736` |
+| HEAD(실측) | `734f8fe` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-ARCHITECTURE-REVIEW** — 학습 부분작동 · 3뇌 Jaccard≈0.09 · pin=FULL1182 artifact |
-| 직전 | K-10SET-DET-LAB-FULL FAIL · K-ATTACK-HOLD |
-| BOOT다음 | **K-ATTACK-HOLD** — wire·survey HOLD · V2 pin 유지 · **형 GO 대기** |
+| 지금 | **K-MARKOV-LEARN-SURVEY** — wired ge3=**0.105** FAIL · stored old ge3=0.165 · 코드 롤백 |
+| 직전 | K-ARCHITECTURE-REVIEW · 형 GO K-F |
+| BOOT다음 | **K-ATTACK-HOLD** — survey FAIL · V2 pin 유지 · wire HOLD |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | **확정** — 10SET FULL FAIL · survey 중단 · V2 pin 유지 · 형 GO 대기 |
+| NEXT1 할일 | **확정** — K-MARKOV-LEARN-SURVEY FAIL(wired ge3=0.105) · 코드 롤백 · V2 pin 유지 · survey HOLD |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=525d736 · 지금=**K-ARCHITECTURE-REVIEW** — 학습 부분작동 · 3뇌 Jaccard≈0.09 · pin=FULL1182 artifact · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=734f8fe · 지금=**K-MARKOV-LEARN-SURVEY** — wired ge3=**0.105** FAIL · stored old ge3=0.165 · 코드 롤백 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

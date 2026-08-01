@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-ATTACK-HOLD
-- 할일: **확정** — 10SET FULL FAIL · survey 중단 · V2 pin 유지 · 형 GO 대기
-- 완료조건: STATUS·TEST_PRIORITY 반영 ✅ · coordinator 미배선 ✅
-- 선행완료: K-10SET-DET-LAB-FULL **FAIL** (pool10 ge3=0.1218 · SELECT-FULL 동일)
+- 할일: **확정** — K-MARKOV-LEARN-SURVEY FAIL(wired ge3=0.105) · 코드 롤백 · V2 pin 유지 · survey HOLD
+- 완료조건: bench JSON·보고서·롤백 ✅
+- 선행완료: K-MARKOV-LEARN-SURVEY **FAIL** (wired ge3=0.105 p=0.683 · stored old=0.165)
 
 ## WORKSTATE
 IDLE

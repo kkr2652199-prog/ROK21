@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-ARCHITECTURE-REVIEW** — 학습 부분작동 · 3뇌 Jaccard≈0.09 · pin=FULL1182 artifact
-- 직전: K-10SET-DET-LAB-FULL FAIL · K-ATTACK-HOLD
-- 다음: **K-ATTACK-HOLD** — wire·survey HOLD · V2 pin 유지 · **형 GO 대기**
+- 지금: **K-MARKOV-LEARN-SURVEY** — wired ge3=**0.105** FAIL · stored old ge3=0.165 · 코드 롤백
+- 직전: K-ARCHITECTURE-REVIEW · 형 GO K-F
+- 다음: **K-ATTACK-HOLD** — survey FAIL · V2 pin 유지 · wire HOLD
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

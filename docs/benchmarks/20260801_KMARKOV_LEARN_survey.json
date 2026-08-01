@@ -1,0 +1,87 @@
+{
+  "id": "K-MARKOV-LEARN-SURVEY",
+  "ts": "2026-08-01T11:43:28",
+  "elapsed_sec": 55.7,
+  "n_eval": 200,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "seed": 42,
+  "gate_mode": "quick",
+  "null_ge3": 0.1137,
+  "wire_pin_ge3": 0.1447,
+  "wire_pin_mean": 1.7504,
+  "live_baseline_ge3": 0.1218,
+  "pass_ge3_min": 0.1218,
+  "pass_p_max": 0.15,
+  "strategies": {
+    "baseline_markov_old": {
+      "n": 200,
+      "mean": 1.845,
+      "ge3_rate": 0.165,
+      "ge3_count": 33,
+      "delta_ge3_vs_null": 0.0513,
+      "delta_ge3_vs_pin": 0.0203,
+      "p_value": 0.018508,
+      "verdict": "PASS",
+      "delta_ge3_vs_live_baseline": 0.0432,
+      "ge4_rate": 0.02,
+      "ge4_count": 4,
+      "pipeline": "stored brain_review + wire quota"
+    },
+    "markov_learn_wired": {
+      "n": 200,
+      "mean": 1.715,
+      "ge3_rate": 0.105,
+      "ge3_count": 21,
+      "delta_ge3_vs_null": -0.0087,
+      "delta_ge3_vs_pin": -0.0397,
+      "p_value": 0.683286,
+      "verdict": "FAIL",
+      "delta_ge3_vs_live_baseline": -0.0168,
+      "ge4_rate": 0.005,
+      "ge4_count": 1,
+      "pipeline": "live WF 3뇌 + markov learn_state wired"
+    }
+  },
+  "before_after": {
+    "baseline_markov_old_ge3": 0.165,
+    "markov_learn_wired_ge3": 0.105,
+    "delta_ge3": -0.06
+  },
+  "gates": {
+    "quick_pass": false,
+    "criterion": "markov_learn_wired ge3 > 0.1218 AND p < 0.15",
+    "criteria_doc": {
+      "quick": {
+        "n_eval": 200,
+        "draw_range": [
+          1035,
+          1234
+        ],
+        "sample_mode": "tail",
+        "seed": 42,
+        "pass": "ge3>null(0.1137) AND p<0.15",
+        "promising": "ge3>null+0.01 OR top variant clear"
+      },
+      "full": {
+        "n_eval": 1182,
+        "draw_range": [
+          53,
+          1234
+        ],
+        "sample_mode": "full",
+        "seed": 42,
+        "pass": "ge3>pin(0.1447) AND p<0.05"
+      }
+    }
+  },
+  "pass_gate": false,
+  "verdict": "FAIL",
+  "recommended_next": "K-ATTACK-HOLD",
+  "db_code_write": false,
+  "coordinator_modified": false,
+  "predict_flow_shaman_modified": true,
+  "predict_markov_hook": "visit_post_process"
+}
