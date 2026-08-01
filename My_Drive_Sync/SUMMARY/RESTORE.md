@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8525b15` · WORK=`IDLE`
+1. **HEAD:** `ab940a7` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-TUNE-SURVEY** — P0 aux_hint_top5=0.1091 · best_combo ge3=**0.1032** · live_baseline 0.1218 미달 · **HOLD**
 3. **다음1건:** K-BRAIN-TUNE-APPLY — survey HOLD 권고 · 형 GO 시 wire/hint/lb A/B apply · auto-apply 금지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
