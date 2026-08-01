@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-01 17:50 KST)
-- **HEAD(실측)**: `903b926` · SSOT=`kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021** (서버 재기동됨)
+- **HEAD(실측)**: `57485db` · SSOT=`kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021** (서버 재기동됨)
 - **지금(판정)**: **K-HIGHWAY-BACKTEST-100 FAIL** — overall ge3=**0.0600** · baseline 0.1015 대비 **−0.0415**
 - **다음(공식)**: **K-HIGHWAY-PHASE1-HOLD** — 롤백/HOLD/튜닝 **형 GO 대기**
 - **WORKSTATE**: IDLE
@@ -112,7 +112,7 @@ run_coordinated_prediction 진입
 
 ■ SSOT
 - Repo: kkr2652199-prog/ROK21 · main · D:\ROK21 · 포트 7021
-- HEAD: 903b926
+- HEAD: 57485db
 - NEXT: K-HIGHWAY-PHASE1-HOLD — BACKTEST-100 FAIL · 롤백/HOLD/튜닝 **형 GO 대기**
 - 읽을 파일: EXTERNAL_START.md · NEXT_ACTIONS.md · AI_COLLAB.md §3·§6
 - 보고서: reports/20260801_KHIGHWAY_*.md · 20260801_KHIGHWAY_BACKTEST_100.md
