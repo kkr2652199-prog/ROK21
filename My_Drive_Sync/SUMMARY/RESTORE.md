@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3ca16e2` · WORK=`IDLE`
+1. **HEAD:** `d9dbdf4` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-PACKAGE-PHASE0** — 3뇌+shared 스켈레톤 19파일 · 기존 predict/coordinator 미변경
 3. **다음1건:** K-BRAIN-PACKAGE-PHASE1 — stat_brain 구현 — predict_statistical·predict_stat_fairy → stat_brain/engine·learn·aux·predict 이전 · **동치 n=200** (draw 1035~1234 · ge3·mean·nums 허용오차 0) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

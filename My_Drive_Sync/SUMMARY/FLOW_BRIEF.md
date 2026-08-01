@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3ca16e2` · WORK=`IDLE`
+- HEAD: `d9dbdf4` · WORK=`IDLE`
 - 지금: **K-BRAIN-PACKAGE-PHASE0** — 3뇌+shared 스켈레톤 19파일 · 기존 predict/coordinator 미변경
 - 직전: K-BRAIN-PACKAGE-C 설계 · K-ATTACK-HOLD survey FAIL
 - BOOT다음: **K-BRAIN-PACKAGE-PHASE1** — stat_brain 구현 · 동치 n=200
