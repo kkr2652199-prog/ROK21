@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `a9b42b4` |
+| HEAD(실측) | `5e6736d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK** |
-| 직전 | K-NEW-ENGINE-STAT-A1 — stat solo ge3=0.1350 · v2=0.1350 · **PASS** · ENGINE_V2=False |
-| BOOT다음 | **K-HIGHWAY-REFEREE** — referee 가중 · **형 GO 대기** |
-| NEXT1 ID | **K-HIGHWAY-REFEREE** |
-| NEXT1 할일 | coordinator referee 가중 자동 갱신 · **형 GO 대기** |
+| 지금 | **K-HIGHWAY-REFEREE** — aux_referee score_set referee 가중 · 검증 OK · **OK** |
+| 직전 | K-HIGHWAY-FEEDBACK — `_auto_feedback` · 3뇌 apply_feedback · **OK** |
+| BOOT다음 | **K-HIGHWAY-QUOTA** — quota/wire · **형 GO 대기** |
+| NEXT1 ID | **K-HIGHWAY-QUOTA** |
+| NEXT1 할일 | coordinator quota/wire 개선 · **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=a9b42b4 · 지금=**K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK** · 다음=K-HIGHWAY-REFEREE`
+1. 첫줄 `[복귀] HEAD=5e6736d · 지금=**K-HIGHWAY-REFEREE** — aux_referee score_set referee 가중 · 검증 OK · **OK** · 다음=K-HIGHWAY-QUOTA`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: a9b42b4_
+_generated: 5e6736d_
