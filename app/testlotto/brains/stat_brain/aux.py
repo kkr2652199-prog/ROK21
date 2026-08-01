@@ -1,5 +1,29 @@
-"""stat_brain.aux — balance 전용 보조 (Phase1 이전).
+"""stat_brain.aux — balance 전용 보조."""
 
-aux_balance_keeper 역할: 빈도·분포·홀짝·구간 사후 채점·hint.
-coordinator 전역 4×0.25 대신 stat_brain post_score에 1:1 페어링 예정.
-"""
+from __future__ import annotations
+
+from app.testlotto.brains import aux_balance_keeper
+
+
+def score_set(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = "stat",
+) -> float:
+    """aux_balance_keeper.score_set 래핑."""
+    return aux_balance_keeper.score_set(
+        nums, draws, target_draw_no, brain_tag=brain_tag
+    )
+
+
+def describe(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = "stat",
+) -> str:
+    """aux_balance_keeper.describe 래핑."""
+    return aux_balance_keeper.describe(
+        nums, draws, target_draw_no, brain_tag=brain_tag
+    )

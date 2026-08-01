@@ -1,3 +1,4 @@
+# DEPRECATED: stat_brain.predict.run() 사용 — K-BRAIN-PACKAGE-PHASE1 동치 PASS 후 유지(삭제 금지).
 """통계요정 — 빈도·끝수·이월수 (SELMA hot/cold + 이월수 벤치마킹).
 
 [명분] 기각 · K-Q 볼균등 p=0.965 (빈도 전제 미입증) · 출처 K-Q/K-W

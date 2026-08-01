@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `47fdc38` · WORK=`IDLE`
-2. **지금:** **K-BRAIN-PACKAGE-PHASE0** — 3뇌+shared 스켈레톤 19파일 · 기존 predict/coordinator 미변경
-3. **다음1건:** K-BRAIN-PACKAGE-PHASE1 — stat_brain 구현 — predict_statistical·predict_stat_fairy → stat_brain/engine·learn·aux·predict 이전 · **동치 n=200** (draw 1035~1234 · ge3·mean·nums 허용오차 0) (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `fe3a817` · WORK=`IDLE`
+2. **지금:** **K-BRAIN-PACKAGE-PHASE1** — stat_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100%
+3. **다음1건:** K-BRAIN-PACKAGE-PHASE2 — markov_brain 구현 — predict_markov·predict_flow_shaman → markov_brain/engine·learn·aux·predict 이전 · **동치 n=200** (draw 1035~1234 · ge3·mean·nums 허용오차 0) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-BRAIN-PACKAGE-PHASE1 GO | stat_brain engine/learn/aux/predict + shared db_facts/diversity · 동치 PASS n=200 nums 200/200 | **PHASE1 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE0 GO | stat/markov/review_brain+shared 스켈레톤 19파일 · 기존 미변경 · ge3벤치 생략 | **PHASE0 OK** | `d9dbdf4` |
 | 2026-08-01 | K-BRAIN-PACKAGE-C 설계 | 3뇌 A/B/C · 뇌+전용보조 패키지 · GO조건 | **DOC OK** | pending |
 | 2026-08-01 | 세션 논의 정리·push | tier·3+4·pool·뇌패키지·백테·RESUME_HERE · ARCHITECTURE_NOTES | **DOC OK** | pending |

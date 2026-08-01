@@ -1,3 +1,4 @@
+# DEPRECATED: stat_brain.engine 사용 — K-BRAIN-PACKAGE-PHASE1 동치 PASS 후 유지(삭제 금지).
 """로또 통계 두뇌 예측 — app.testlotto 독립 패키지."""
 import logging
 import random
