@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5d41a9c` · WORK=`IDLE`
+- HEAD: `2860f31` · WORK=`IDLE`
 - 지금: **K-BRAIN-PACKAGE-PHASE4** — coordinator 3뇌 패키지 배선 · 동치 PASS n=200 3/3
 - 직전: K-BRAIN-PACKAGE-PHASE3 — review_brain 동치 PASS n=200
 - BOOT다음: **K-BRAIN-PACKAGE-PHASE5** — (형 지시 대기)
