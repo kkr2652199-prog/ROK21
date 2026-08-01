@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `74aab4f` · WORK=`IDLE`
+- HEAD: `fb0589b` · WORK=`IDLE`
 - 지금: **K-HIGHWAY-BACKTEST-100** — overall ge3=**0.0600** · baseline 0.1015 대비 −0.0415 · **FAIL**
 - 직전: K-HIGHWAY-PHASE1 — FEEDBACK+REFEREE+QUOTA · learn adj 누적 확인
 - BOOT다음: **형 GO 대기** — PHASE1 HOLD/롤백/튜닝 결정
