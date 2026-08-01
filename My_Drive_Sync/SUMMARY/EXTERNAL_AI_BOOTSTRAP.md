@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `8a11b91` |
+| HEAD(실측) | `5cf9d43` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BRAIN-PACKAGE-COMPLETE** — C package core Phase0~7 DONE · ge3=0.125 · consolidated PASS |
-| 직전 | K-BRAIN-PACKAGE-PHASE7 — aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True |
-| BOOT다음 | **K-QUOTA-GAP-SURVEY** — set_no_asc vs conf top-k vs aux_hint wire 대안 READ-ONLY |
-| NEXT1 ID | **K-QUOTA-GAP-SURVEY** |
-| NEXT1 할일 | set_no_asc vs conf top-k vs aux_hint wire 대안 READ-ONLY survey (coordinator wire 미변경) |
+| 지금 | **K-QUOTA-GAP-SURVEY** — conf_global_top5 ge3=0.135 · aux_hint_quota=0.130 · quota_gap=43.0% · coordinator 미변경 |
+| 직전 | K-BRAIN-PACKAGE-COMPLETE — C package Phase0~7 DONE · set_no_asc ge3=0.125 · consolidated PASS |
+| BOOT다음 | **K-WIRE-SELECT-GO-WAIT** — 형 GO for conf_global_top5 or aux_hint_quota wire A/B (auto-wire 금지) |
+| NEXT1 ID | **K-WIRE-SELECT-GO-WAIT** |
+| NEXT1 할일 | conf_global_top5(+0.01) 또는 aux_hint_quota(+0.005) wire A/B — 형 GO 전 coordinator 미패치 · FULL n=1182 재검증 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=8a11b91 · 지금=**K-BRAIN-PACKAGE-COMPLETE** — C package core Phase0~7 DONE · ge3=0.125 · consolidated PASS · 다음=K-QUOTA-GAP-SURVEY`
+1. 첫줄 `[복귀] HEAD=5cf9d43 · 지금=**K-QUOTA-GAP-SURVEY** — conf_global_top5 ge3=0.135 · aux_hint_quota=0.130 · quota_gap=43.0% · coordinator 미변경 · 다음=K-WIRE-SELECT-GO-WAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

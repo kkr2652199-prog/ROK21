@@ -1,0 +1,99 @@
+{
+  "id": "K-QUOTA-GAP-SURVEY",
+  "ts": "2026-08-01T05:58:57+00:00",
+  "seed": 42,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "path": "coordinator_full (C package · 3brain pool + aux scoring + wire alt)",
+  "production_stack": {
+    "hint_weight": 0.15,
+    "learn_wired": true,
+    "aux_1to1_enabled": true,
+    "wire_baseline": "set_no_asc",
+    "quota": {
+      "markov": 3,
+      "stat": 1,
+      "review": 1
+    }
+  },
+  "strategies": {
+    "set_no_asc": {
+      "ge3_rate": 0.125,
+      "ge3_count": 25,
+      "mean_match": 1.695,
+      "n_eval": 200
+    },
+    "conf_quota": {
+      "ge3_rate": 0.125,
+      "ge3_count": 25,
+      "mean_match": 1.68,
+      "n_eval": 200
+    },
+    "conf_global_top5": {
+      "ge3_rate": 0.135,
+      "ge3_count": 27,
+      "mean_match": 1.645,
+      "n_eval": 200
+    },
+    "aux_hint_quota": {
+      "ge3_rate": 0.13,
+      "ge3_count": 26,
+      "mean_match": 1.71,
+      "n_eval": 200
+    },
+    "oracle_best15": {
+      "ge3_rate": 0.29,
+      "ge3_count": 58,
+      "mean_match": 2.22,
+      "n_eval": 200
+    }
+  },
+  "quota_gap": {
+    "draws_oracle_gt_set_no_asc": 86,
+    "quota_gap_rate": 0.43,
+    "baseline_strategy": "set_no_asc",
+    "ref_arch_note_rate": 0.436,
+    "ref_note": "architecture note ~43.6% from K-BENCH-01 n=1182"
+  },
+  "comparison": {
+    "set_no_asc": {
+      "delta_ge3_vs_set_no_asc": 0.0,
+      "delta_ge3_vs_v2_pin": -0.0197
+    },
+    "conf_quota": {
+      "delta_ge3_vs_set_no_asc": 0.0,
+      "delta_ge3_vs_v2_pin": -0.0197
+    },
+    "conf_global_top5": {
+      "delta_ge3_vs_set_no_asc": 0.01,
+      "delta_ge3_vs_v2_pin": -0.0097
+    },
+    "aux_hint_quota": {
+      "delta_ge3_vs_set_no_asc": 0.005,
+      "delta_ge3_vs_v2_pin": -0.0147
+    },
+    "oracle_best15": {
+      "delta_ge3_vs_set_no_asc": 0.165,
+      "oracle_ceiling_uplift": 0.165
+    }
+  },
+  "references": {
+    "v2_pin_ge3": 0.1447,
+    "c_package_complete_ge3": 0.125,
+    "arch_note_quota_gap_rate": 0.436
+  },
+  "verdict": {
+    "baseline_ge3": 0.125,
+    "beats_set_no_asc": [
+      "conf_global_top5",
+      "aux_hint_quota"
+    ],
+    "recommendation": "K-WIRE-SELECT-GO-WAIT",
+    "wire_change": "GO-WAIT",
+    "note": "conf_global_top5, aux_hint_quota beat set_no_asc on ge3 — 형 GO for wire change before patch",
+    "auto_wire": false
+  },
+  "note": "READ-ONLY · coordinator.py unchanged · no auto-wire"
+}

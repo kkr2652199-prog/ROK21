@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-QUOTA-GAP-SURVEY
-- 할일: set_no_asc vs conf top-k vs aux_hint wire 대안 READ-ONLY survey (coordinator wire 미변경)
-- 완료조건: 미확인
-- 선행완료: K-BRAIN-PACKAGE-COMPLETE **OK** (C package core Phase0~7 · ge3=0.125 · consolidated PASS)
+- ID: K-WIRE-SELECT-GO-WAIT
+- 할일: conf_global_top5(+0.01) 또는 aux_hint_quota(+0.005) wire A/B — 형 GO 전 coordinator 미패치 · FULL n=1182 재검증
+- 완료조건: 형 GO + wire patch + FULL backtest PASS
+- 선행완료: K-QUOTA-GAP-SURVEY **OK** (conf_global_top5 ge3=0.135 · aux_hint=0.130 · set_no_asc=0.125 · quota_gap=43.0%)
 
 ## WORKSTATE
 IDLE

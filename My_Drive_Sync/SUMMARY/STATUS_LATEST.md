@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-01 KST  
-📌 사유: **K-BRAIN-PACKAGE-COMPLETE OK** — C package core Phase0~7 DONE · consolidated ge3=0.125 · wire/repack 미변경
+📌 사유: **K-QUOTA-GAP-SURVEY OK** — conf_global_top5 ge3=0.135 · aux_hint=0.130 · set_no_asc=0.125 · quota_gap=43.0% · wire GO-WAIT
 
 ---
 
@@ -20,6 +20,7 @@
 | **K-SIGNAL-SELECT-FULL** | **FAIL** — combined ge3=**0.1218** p=0.201 · n=1182 · wire HOLD |
 | **K-MARKOV-LEARN-SURVEY** | **FAIL** — wired ge3=**0.105** p=0.683 · stored old=**0.165** · K-F 롤백 |
 | **세션 정리 20260801** | tier·3+4·pool·뇌패키지 — ARCHITECTURE_NOTES | **DOC** |
+| **K-QUOTA-GAP-SURVEY** | set_no_asc vs conf/aux_hint wire alt · quota_gap=43.0% · conf_global_top5 ge3=**0.135** | **SURVEY OK** · wire GO-WAIT |
 | **K-BRAIN-PACKAGE-COMPLETE** | C package core Phase0~7 consolidated · ge3=0.125 n=200 | **PASS** · wire/repack 미변경 |
 | **K-BRAIN-PACKAGE-PHASE7** | shared/referee + coordinator aux 1:1 · FULL ge3 A/B | **PASS** · 0.125≥0.125 · AUX_1TO1=True |
 | **K-BRAIN-PACKAGE-PHASE6** | markov learn apply_learn_boost · engine 배선 · FULL ge3 A/B | **PASS** · 0.125≥0.125 · LEARN_WIRED=True |
@@ -33,7 +34,7 @@
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
 | K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-ATTACK-HOLD** — K-F wired FAIL · wire·survey HOLD · V2 pin 유지 · **전체 큐=`TEST_PRIORITY.md`** |
+| 권고 | **K-WIRE-SELECT-GO-WAIT** — conf_global_top5·aux_hint_quota baseline 상회 · 형 GO 전 미패치 · V2 pin 미회복 |
 
 ---
 
@@ -41,6 +42,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-QUOTA-GAP-SURVEY** | set_no_asc vs conf/aux_hint wire alt · quota_gap 43.0% · oracle ge3=0.290 | **SURVEY OK** · conf_global_top5 0.135 · wire GO-WAIT |
 | **K-BRAIN-PACKAGE-COMPLETE** | C package core Phase0~7 · consolidated bench · ge3=0.125 | **PASS** · wire/repack HOLD |
 | **K-BRAIN-PACKAGE-PHASE7** | shared/referee · coordinator aux 1:1 · FULL ge3 A/B | **PASS** · 0.125≥0.125 |
 | **K-BRAIN-PACKAGE-PHASE6** | markov learn apply_learn_boost · engine 배선 · FULL ge3 A/B | **PASS** · 0.125≥0.125 |
