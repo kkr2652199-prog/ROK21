@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `481fe61` · WORK=`IDLE`
+1. **HEAD:** `de0f1f4` · WORK=`IDLE`
 2. **지금:** **세션 정리 push** — tier·3+4·pool·뇌패키지 논의 → `20260801_ROK21_SESSION_ARCHITECTURE_NOTES.md`
 3. **다음1건:** K-ATTACK-HOLD — **확정** — K-MARKOV-LEARN-SURVEY FAIL(wired ge3=0.105) · 코드 롤백 · V2 pin 유지 · survey HOLD (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-BRAIN-PACKAGE-C 설계 | 3뇌 A/B/C · 뇌+전용보조 패키지 · GO조건 | **DOC OK** | pending |
 | 2026-08-01 | 세션 논의 정리·push | tier·3+4·pool·뇌패키지·백테·RESUME_HERE · ARCHITECTURE_NOTES | **DOC OK** | pending |
 | 2026-08-01 | K-MARKOV-LEARN-SURVEY GO | wired ge3=0.105 p=0.683 · stored old=0.165 · predict 롤백 | **LEARN FAIL** | `91e1cda` |
 | 2026-08-01 | K-ARCHITECTURE-REVIEW READ-ONLY | 학습 markov미소비·ending 0.3·referee σ≈0.003 · Jaccard≈0.09 · pin FULL1182 | **REVIEW OK** | pending |

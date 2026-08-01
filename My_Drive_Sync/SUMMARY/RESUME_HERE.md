@@ -13,12 +13,14 @@
 
 ## 다음 한 걸음 (형 GO 전)
 - **K-ATTACK-HOLD** — predict/coordinator/wire 패치 금지
-- GO 후 후보: K-POOL87 · K-AUX-ROUTING · K-BACKTEST-FULL · K-BRAIN-PACKAGE(동치)
+- GO 후: **K-BRAIN-PACKAGE-C** (뇌+전용보조) · K-POOL87 · K-BACKTEST-FULL
+- 설계: `reports/20260801_KBRAIN_PACKAGE_C_PROPOSAL.md`
 
 ## 읽기 순서
 1. `EXTERNAL_START.md` · `RESTORE.md` · `NEXT_ACTIONS.md`
-2. `reports/20260801_ROK21_SESSION_ARCHITECTURE_NOTES.md` ← **본 세션 정리**
-3. `reports/20260801_K_ARCHITECTURE_REVIEW.md`
+2. `reports/20260801_ROK21_SESSION_ARCHITECTURE_NOTES.md`
+3. `reports/20260801_KBRAIN_PACKAGE_C_PROPOSAL.md` ← **뇌 A/B/C · C안**
+4. `reports/20260801_K_ARCHITECTURE_REVIEW.md`
 4. `reports/20260801_KMARKOV_LEARN_SURVEY.md`
 
 ## 커서 첫 줄 (R28)

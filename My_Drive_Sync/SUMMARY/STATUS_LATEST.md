@@ -19,7 +19,8 @@
 | **K-EXCLUDE-SURVEY** | **FAIL** — QUICK n=200 · λ sweep · best exclude ge3=**0.145**=baseline |
 | **K-SIGNAL-SELECT-FULL** | **FAIL** — combined ge3=**0.1218** p=0.201 · n=1182 · wire HOLD |
 | **K-MARKOV-LEARN-SURVEY** | **FAIL** — wired ge3=**0.105** p=0.683 · stored old=**0.165** · K-F 롤백 |
-| **세션 정리 20260801** | tier·3+4·pool8→7·뇌패키지·백테·해외YT — `20260801_ROK21_SESSION_ARCHITECTURE_NOTES.md` | **DOC** |
+| **세션 정리 20260801** | tier·3+4·pool·뇌패키지 — ARCHITECTURE_NOTES | **DOC** |
+| **K-BRAIN-PACKAGE-C** | 3뇌 A/B/C · 뇌+전용보조 패키지 설계 — HOLD | **DOC** |
 | **K-EXCLUDE-HIST-01** | **DONE** — 1~1234 패턴 catalog · 2연속+ 51.7% · LEAKAGE_POLICY |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
 | K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
