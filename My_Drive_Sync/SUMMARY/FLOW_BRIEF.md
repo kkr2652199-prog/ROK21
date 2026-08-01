@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7ca8c93` · WORK=`IDLE`
+- HEAD: `6d78f7a` · WORK=`IDLE`
 - 지금: **K-NEW-ENGINE-STAT-A1** — stat solo baseline ge3=**0.1350** · v2=**0.1350** · delta=0 · **PASS** · ENGINE_V2=False 유지
 - 직전: K-BRAIN-TUNE-SURVEY — P0 aux_hint_top5=0.1091 · best_combo ge3=0.1032 · **HOLD**
 - BOOT다음: **K-NEW-ENGINE-MARKOV-A1** — markov engine 개선 · **형 GO 대기**
