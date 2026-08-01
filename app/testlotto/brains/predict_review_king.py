@@ -1,3 +1,4 @@
+# DEPRECATED: review_brain.predict.run() 사용 — K-BRAIN-PACKAGE-PHASE3 동치 PASS 후 유지(삭제 금지).
 """복습왕 — 전회차 복습 학습형 (walk-forward 반복률, LotteryML lag 벤치마킹).
 
 [명분] 기각 · K-T 이월성향(lag1 대리) p=0.764 · 출처 K-T/K-W

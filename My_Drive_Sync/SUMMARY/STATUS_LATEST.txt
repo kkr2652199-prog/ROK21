@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-01 KST  
-📌 사유: **K-BRAIN-PACKAGE-PHASE2 PASS** — markov_brain 동치 n=200 · ge3/mean diff=0 · nums 200/200
+📌 사유: **K-BRAIN-PACKAGE-PHASE3 PASS** — review_brain 동치 n=200 · ge3/mean diff=0 · nums 200/200
 
 ---
 
@@ -20,6 +20,7 @@
 | **K-SIGNAL-SELECT-FULL** | **FAIL** — combined ge3=**0.1218** p=0.201 · n=1182 · wire HOLD |
 | **K-MARKOV-LEARN-SURVEY** | **FAIL** — wired ge3=**0.105** p=0.683 · stored old=**0.165** · K-F 롤백 |
 | **세션 정리 20260801** | tier·3+4·pool·뇌패키지 — ARCHITECTURE_NOTES | **DOC** |
+| **K-BRAIN-PACKAGE-PHASE3** | review_brain 구현 · predict_review_king 동치 n=200 | **PASS** · nums 200/200 |
 | **K-BRAIN-PACKAGE-PHASE2** | markov_brain 구현 · predict_flow_shaman 동치 n=200 | **PASS** · nums 200/200 |
 | **K-BRAIN-PACKAGE-PHASE1** | stat_brain 구현 · predict_stat_fairy 동치 n=200 | **PASS** · nums 200/200 |
 | **K-BRAIN-PACKAGE-C** | 3뇌 A/B/C · 뇌+전용보조 패키지 설계 — HOLD | **DOC** |
