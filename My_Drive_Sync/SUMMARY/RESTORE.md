@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f1ae730` · WORK=`IDLE`
-2. **지금:** **K-ENGINE-PHASE1-HOLD** — window100 롤백 OK · fusion diag ge3=**0.0900** · **AUX_PATH_BOTTLENECK**
-3. **다음1건:** K-ENGINE-PHASE1-HOLD-DONE — fusion bottleneck **AUX_PATH_BOTTLENECK** 판정 · diag ge3=0.0900 · quota 0.40/aux 0.67 · 회복 방향 결정 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `bc8c32e` · WORK=`IDLE`
+2. **지금:** **K-FUSION-QUOTA-FIX** — DEFAULT 25/60/15 · n=100 ge3=**0.0800** · quota **20/60/20** · **FAIL** (>0.09)
+3. **다음1건:** K-FUSION-QUOTA-FIX-DONE — fusion ge3 **0.0800** (<0.09 gate) · quota shift 40/40/20→**20/60/20** 적용 완료 · aux path 등 추가 회복 검토 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
