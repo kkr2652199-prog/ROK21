@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `734f8fe` · WORK=`IDLE`
+1. **HEAD:** `91e1cda` · WORK=`IDLE`
 2. **지금:** **K-MARKOV-LEARN-SURVEY** — wired ge3=**0.105** FAIL · stored old ge3=0.165 · 코드 롤백
 3. **다음1건:** K-ATTACK-HOLD — **확정** — K-MARKOV-LEARN-SURVEY FAIL(wired ge3=0.105) · 코드 롤백 · V2 pin 유지 · survey HOLD (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-01 | K-MARKOV-LEARN-SURVEY GO | wired ge3=0.105 p=0.683 · stored old=0.165 · predict 롤백 | **LEARN FAIL** | pending |
+| 2026-08-01 | K-MARKOV-LEARN-SURVEY GO | wired ge3=0.105 p=0.683 · stored old=0.165 · predict 롤백 | **LEARN FAIL** | `91e1cda` |
 | 2026-08-01 | K-ARCHITECTURE-REVIEW READ-ONLY | 학습 markov미소비·ending 0.3·referee σ≈0.003 · Jaccard≈0.09 · pin FULL1182 | **REVIEW OK** | pending |
 | 2026-08-01 | K-ATTACK-HOLD 문서 마감 | STATUS·TEST_PRIORITY·HEAD sync · coordinator 미배선 확인 · survey HOLD 확정 | **HOLD OK** | pending |
 | 2026-08-01 | K-EXCLUDE-SURVEY GO | QUICK n=200 λ sweep · best exclude ge3=0.145=baseline · λ0.25=0.135 · kill≤11% | **EXCLUDE FAIL** | pending |
