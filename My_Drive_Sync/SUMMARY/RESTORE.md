@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `1478e0c` · WORK=`IDLE`
-2. **지금:** **K-COMBO-SIGNAL-01 QUICK PASS** — baseline ge3=0.145 · signal_AB=0% (AND 미발화)
-3. **다음1건:** K-COMBO-SIGNAL-FULL — K-COMBO-SIGNAL-01 QUICK **PASS** → full n=1182 검증 · signal_A 0% 재검토 · wire는 형 GO 전 금지 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `2a4435c` · WORK=`IDLE`
+2. **지금:** **K-COMBO-V2 QUICK FAIL** — combo_v2 ge3=0.125 · baseline=0.145 · B3_cov=100%
+3. **다음1건:** K-ATTACK-HOLD — COMBO-V1/V2 wire HOLD · baseline 미개선 · 형 GO 또는 10SET·배제 재설계 전까지 survey 중단 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
