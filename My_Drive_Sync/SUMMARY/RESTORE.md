@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `9bfb280` · WORK=`IDLE`
-2. **지금:** **K-BRAIN-SIGNAL-B1** — virtual draws weights 주입 · smoke 10/10 · **PASS**
-3. **다음1건:** K-BRAIN-SIGNAL-B1-BACKTEST-100 — B1 virtual draws stack walk-forward n=100 · ge3 vs 0.0600 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `bf0f118` · WORK=`IDLE`
+2. **지금:** **K-BRAIN-SIGNAL-B1-BACKTEST-100** — ge3=**0.0600** · virtual=**100%** · **FAIL** (B1도 무개선)
+3. **다음1건:** K-BRAIN-SIGNAL-TUNE — B1-BACKTEST-100 **FAIL** ge3=0.0600(=방향1·highway 동일) · _MIN_MAX_SIM 0.90→0.85 또는 B1 롤백 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 

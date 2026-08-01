@@ -1,0 +1,133 @@
+{
+  "id": "K-BRAIN-SIGNAL-B1-BACKTEST-100",
+  "ts": "2026-08-01T10:16:32+00:00",
+  "seed": 42,
+  "draw_range": [
+    1135,
+    1234
+  ],
+  "n_eval": 100,
+  "pipeline": "run_coordinated_prediction (B1 virtual draws + PHASE1 · code frozen)",
+  "baseline_ref": {
+    "direction1_fail": {
+      "id": "K-BRAIN-SIGNAL-BACKTEST-100",
+      "ge3_rate": 0.06
+    },
+    "highway_fail": {
+      "id": "K-HIGHWAY-BACKTEST-100",
+      "ge3_rate": 0.06
+    },
+    "full_c": {
+      "id": "K-BACKTEST-FULL-C",
+      "ge3_rate": 0.1015
+    }
+  },
+  "overall": {
+    "n": 100,
+    "mean": 1.63,
+    "ge3_rate": 0.06,
+    "ge3_count": 6,
+    "delta_ge3_vs_null": -0.0537,
+    "delta_ge3_vs_pin": -0.0847,
+    "p_value": 0.976428,
+    "verdict": "FAIL",
+    "mean_match": 1.63,
+    "n_eval": 100
+  },
+  "by_brain": {
+    "stat": {
+      "n": 100,
+      "mean": 1.71,
+      "ge3_rate": 0.09,
+      "ge3_count": 9,
+      "delta_ge3_vs_null": -0.0237,
+      "delta_ge3_vs_pin": -0.0547,
+      "p_value": 0.815343,
+      "verdict": "FAIL",
+      "mean_match": 1.71,
+      "n_eval": 100
+    },
+    "markov": {
+      "n": 100,
+      "mean": 1.65,
+      "ge3_rate": 0.13,
+      "ge3_count": 13,
+      "delta_ge3_vs_null": 0.0163,
+      "delta_ge3_vs_pin": -0.0147,
+      "p_value": 0.347841,
+      "verdict": "FAIL",
+      "mean_match": 1.65,
+      "n_eval": 100
+    },
+    "review": {
+      "n": 100,
+      "mean": 1.65,
+      "ge3_rate": 0.11,
+      "ge3_count": 11,
+      "delta_ge3_vs_null": -0.0037,
+      "delta_ge3_vs_pin": -0.0347,
+      "p_value": 0.593066,
+      "verdict": "FAIL",
+      "mean_match": 1.65,
+      "n_eval": 100
+    }
+  },
+  "by_period": {
+    "early": {
+      "n": 25,
+      "mean": 1.72,
+      "ge3_rate": 0.04,
+      "ge3_count": 1,
+      "delta_ge3_vs_null": -0.0737,
+      "delta_ge3_vs_pin": -0.1047,
+      "p_value": 0.951076,
+      "verdict": "FAIL",
+      "mean_match": 1.72,
+      "n_eval": 25
+    },
+    "mid": {
+      "n": 25,
+      "mean": 1.6,
+      "ge3_rate": 0.04,
+      "ge3_count": 1,
+      "delta_ge3_vs_null": -0.0737,
+      "delta_ge3_vs_pin": -0.1047,
+      "p_value": 0.951076,
+      "verdict": "FAIL",
+      "mean_match": 1.6,
+      "n_eval": 25
+    },
+    "late": {
+      "n": 50,
+      "mean": 1.6,
+      "ge3_rate": 0.08,
+      "ge3_count": 4,
+      "delta_ge3_vs_null": -0.0337,
+      "delta_ge3_vs_pin": -0.0647,
+      "p_value": 0.834955,
+      "verdict": "FAIL",
+      "mean_match": 1.6,
+      "n_eval": 50
+    }
+  },
+  "by_period_note": "draw-range SSOT: early 1135-1159 · mid 1160-1184 · late 1185-1234 (n=25 each)",
+  "signal_stats": {
+    "virtual_draws_active_count": 100,
+    "total": 100,
+    "virtual_active_rate_pct": 100.0
+  },
+  "comparison": {
+    "delta_ge3_vs_direction1": 0.0,
+    "delta_ge3_vs_baseline": -0.0415
+  },
+  "ui_state": {
+    "db_reset": true,
+    "predictions_kept": true,
+    "total_prediction_rows": 505,
+    "next_draw_ui": 1235,
+    "next_draw_prediction_rows": 5
+  },
+  "verdict": "FAIL",
+  "pass": false,
+  "next_on_fail": "K-BRAIN-SIGNAL-TUNE (_MIN_MAX_SIM) or B1 rollback — **형 GO 대기**"
+}

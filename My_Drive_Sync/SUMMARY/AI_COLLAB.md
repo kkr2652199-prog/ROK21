@@ -24,13 +24,25 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 19:10 KST)
-- **HEAD(실측)**: `38ebe73` · SSOT=`kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021**
-- **지금(판정)**: **K-BRAIN-SIGNAL-B1 PASS** — virtual draws weights 주입 · smoke 10/10
-- **다음(공식)**: **K-BRAIN-SIGNAL-B1-BACKTEST-100** — n=100 walk-forward · **형 GO 대기**
-- **WORKSTATE**: IDLE
+### 최신 상태 (2026-08-01 19:20 KST)
+- **HEAD(실측)**: `bf0f118` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-BRAIN-SIGNAL-B1-BACKTEST-100 FAIL** — ge3=**0.0600** · virtual=**100%** · delta=0
+- **다음(공식)**: **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM / 롤백 · **형 GO 대기**
 
-### K-BRAIN-SIGNAL-B1 (형 GO · 방향2 weights blend · PASS)
+### K-BRAIN-SIGNAL-B1-BACKTEST-100 (형 GO · FAIL)
+근거: `docs/benchmarks/20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.json`
+
+| 지표 | 값 |
+|------|-----|
+| overall ge3 | **0.0600** (6/100) — 방향1·highway **동일** |
+| virtual_active_rate | **100%** |
+| delta vs 0.0600 | **+0.0000** |
+| by_brain solo | stat 0.09 · markov 0.13 · review 0.11 |
+| by_period | early 0.04 · mid 0.04 · late 0.08 |
+
+**결론:** B1 virtual draws도 ge3 개선 없음 → TUNE(_MIN_MAX_SIM) 또는 B1 롤백 검토
+
+### K-BRAIN-SIGNAL-B1 (형 GO · PASS)
 | 항목 | 내용 | 판정 |
 |------|------|------|
 | make_signal_draws | signal top6 → virtual draws×3 | **OK** |
@@ -103,7 +115,7 @@ run_coordinated_prediction 진입
 ### 병렬 트랙 (별도 · PHASE1과 독립)
 | ID | 판정 | 비고 |
 |----|------|------|
-| **K-BRAIN-SIGNAL** | **B1 PASS** | virtual draws weights · B1-BACKTEST **형 GO 대기** |
+| **K-BRAIN-SIGNAL** | **B1-BACKTEST FAIL** | ge3=0.0600 · virtual 100% · TUNE/롤백 **형 GO 대기** |
 | K-NEW-ENGINE-STAT-A1 | **PASS** (delta=0) | ENGINE_V2=False 유지 · solo ge3=0.1350 |
 | K-BRAIN-TUNE-SURVEY | **HOLD** | best_combo 0.1032 · auto-apply 금지 |
 | K-BRAIN-LOGIC-UPGRADE | **설계 검토만** | 젠스파크 4방향 · 커서 Q1~Q5 답변 · 형 GO 전 구현 금지 |
