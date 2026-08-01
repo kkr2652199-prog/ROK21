@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6c15dbd` |
+| HEAD(실측) | `6502a1b` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BRAIN-SIGNAL-BACKTEST-100** — ge3=**0.0600** · signal_active=**100%** · **FAIL** (=highway 동일) |
-| 직전 | K-BRAIN-SIGNAL-A1 — pattern_signal + coordinator blend · **PASS** |
-| BOOT다음 | **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM 조정 · **형 GO 대기** |
-| NEXT1 ID | **K-BRAIN-SIGNAL-TUNE** |
-| NEXT1 할일 | BACKTEST-100 **FAIL** ge3=0.0600(=highway 동일) · signal_active 100% · _MIN_MAX_SIM 0.90→0.85 재검증 · **형 GO 대기** |
+| 지금 | **K-BRAIN-SIGNAL-B1** — virtual draws weights 주입 · smoke 10/10 · **PASS** |
+| 직전 | K-BRAIN-SIGNAL-BACKTEST-100 — ge3=0.0600 · confidence blend **FAIL** |
+| BOOT다음 | **K-BRAIN-SIGNAL-B1-BACKTEST-100** — **형 GO 대기** |
+| NEXT1 ID | **K-BRAIN-SIGNAL-B1-BACKTEST-100** |
+| NEXT1 할일 | B1 virtual draws stack walk-forward n=100 · ge3 vs 0.0600 · **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6c15dbd · 지금=**K-BRAIN-SIGNAL-BACKTEST-100** — ge3=**0.0600** · signal_active=**100%** · **FAIL** (=highway 동일) · 다음=K-BRAIN-SIGNAL-TUNE`
+1. 첫줄 `[복귀] HEAD=6502a1b · 지금=**K-BRAIN-SIGNAL-B1** — virtual draws weights 주입 · smoke 10/10 · **PASS** · 다음=K-BRAIN-SIGNAL-B1-BACKTEST-100`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

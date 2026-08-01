@@ -16,7 +16,7 @@ from app.testlotto.brains.markov_brain import predict as markov_brain_predict
 from app.testlotto.brains.review_brain import aux as review_brain_aux
 from app.testlotto.brains.review_brain import predict as review_brain_predict
 from app.testlotto.brains.shared import referee as shared_referee
-from app.testlotto.brains.shared.pattern_signal import get_pattern_signal
+from app.testlotto.brains.shared.pattern_signal import get_pattern_signal, make_signal_draws
 from app.testlotto.brains.registry import AUX_BRAINS, PREDICT_BRAINS, SETS_PER_PREDICT_BRAIN
 from app.testlotto.data_service import _get_draws_before
 from app.testlotto.learn_state import get_referee_weights
@@ -366,16 +366,11 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
         return {"error": f"이전 당첨 데이터가 없습니다. {target_draw_no}회차 이전 회차를 먼저 수집하세요."}
 
     _pattern_signal = get_pattern_signal(draws)
-    _signal_uniform = 1.0 / 45.0
-    _signal_skip_max = _signal_uniform * 1.5
-    _signal_active = max(_pattern_signal.values()) >= _signal_skip_max
-
-    def _blend_pattern_confidence(confidence: float, nums: list[int]) -> float:
-        if not _signal_active:
-            return confidence
-        avg_sig = sum(_pattern_signal.get(int(n), _signal_uniform) for n in nums) / len(nums)
-        signal_score = (avg_sig / _signal_uniform) * 10.0
-        return min(99.5, 0.85 * confidence + 0.15 * signal_score)
+    _signal_virtual_draws = make_signal_draws(
+        _pattern_signal,
+        base_draw_no=int(draws[-1]["draw_no"]) if draws else 0,
+    )
+    draws_with_signal = _signal_virtual_draws + draws if _signal_virtual_draws else draws
 
     candidates: list[dict] = []
     for brain in PREDICT_BRAINS:
@@ -384,13 +379,12 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
             continue
         mod = PREDICT_MODULES[tag]
         _delete_predictions_for_brain(conn, target_draw_no, tag)
-        sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
+        sets = mod.predict_sets(draws_with_signal, SETS_PER_PREDICT_BRAIN)
         for i, s in enumerate(sets):
             sn = int(s.get("rank") or s.get("set_no") or s.get("pred_set_no") or (i + 1))
             conf = float(s.get("confidence", 60))
-            blended_conf = round(_blend_pattern_confidence(conf, s["nums"]), 1)
             candidates.append(
-                {**s, "confidence": blended_conf, "pred_set_no": sn, "set_no": sn}
+                {**s, "confidence": conf, "pred_set_no": sn, "set_no": sn}
             )
         logger.info("[테스트로또] %s %d세트", brain["name"], len(sets))
 
@@ -417,7 +411,7 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
             if mod is None:
                 return None
             # 같은 뇌·같은 draws 조건으로 1세트 재요청
-            raw = mod.predict_sets(draws, 1)
+            raw = mod.predict_sets(draws_with_signal, 1)
             if not raw:
                 return None
             return _apply_aux_scoring(raw, draws, target_draw_no)[0]

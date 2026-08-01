@@ -24,11 +24,27 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 18:55 KST)
-- **HEAD(실측)**: `4d7fa2a` · SSOT=`kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021**
-- **지금(판정)**: **K-BRAIN-SIGNAL-BACKTEST-100 FAIL** — ge3=**0.0600** · signal_active=**100%** · UI **1235회차** 5장
-- **다음(공식)**: **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM 0.90→0.85 · **형 GO 대기**
+### 최신 상태 (2026-08-01 19:10 KST)
+- **HEAD(실측)**: `6502a1b` · SSOT=`kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021**
+- **지금(판정)**: **K-BRAIN-SIGNAL-B1 PASS** — virtual draws weights 주입 · smoke 10/10 virtual active
+- **다음(공식)**: **K-BRAIN-SIGNAL-B1-BACKTEST-100** — **형 GO 대기**
 - **WORKSTATE**: IDLE
+
+### K-BRAIN-SIGNAL-B1 (형 GO · 방향2 weights blend · PASS)
+| 항목 | 내용 | 판정 |
+|------|------|------|
+| make_signal_draws | signal top6 → virtual draws×3 | **OK** |
+| coordinator | draws_with_signal → predict_sets · conf blend **제거** | **OK** |
+| smoke | 1225~1234 · virtual_active 10/10 | **PASS** |
+
+**live stack (B1):**
+```
+run_coordinated_prediction
+  → get_pattern_signal(draws)
+  → make_signal_draws → draws_with_signal = virtual + draws
+  → predict_sets(draws_with_signal)  ← engine weights에 signal 반영
+  → aux 1:1 → dynamic_brain_quota → DB
+```
 
 ### K-BRAIN-SIGNAL-BACKTEST-100 (형 GO · FAIL)
 근거: `docs/benchmarks/20260801_KBRAIN_SIGNAL_BACKTEST_100.json`
@@ -98,7 +114,7 @@ run_coordinated_prediction 진입
 ### 병렬 트랙 (별도 · PHASE1과 독립)
 | ID | 판정 | 비고 |
 |----|------|------|
-| **K-BRAIN-SIGNAL** | **BACKTEST FAIL** | A1 PASS · ge3=0.0600 · signal_active 100% · TUNE **형 GO 대기** |
+| **K-BRAIN-SIGNAL** | **B1 PASS** | virtual draws weights · B1-BACKTEST **형 GO 대기** |
 | K-NEW-ENGINE-STAT-A1 | **PASS** (delta=0) | ENGINE_V2=False 유지 · solo ge3=0.1350 |
 | K-BRAIN-TUNE-SURVEY | **HOLD** | best_combo 0.1032 · auto-apply 금지 |
 | K-BRAIN-LOGIC-UPGRADE | **설계 검토만** | 젠스파크 4방향 · 커서 Q1~Q5 답변 · 형 GO 전 구현 금지 |

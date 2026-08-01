@@ -113,3 +113,30 @@ def get_pattern_signal(draws: list[dict], k: int = 10) -> dict[int, float]:
     if total <= 0.0:
         return _uniform_signal()
     return {n: v / total for n, v in result.items()}
+
+
+def make_signal_draws(
+    signal: dict[int, float],
+    base_draw_no: int,
+    n_virtual: int = 3,
+) -> list[dict]:
+    """Convert signal weights to virtual draw rows for engine weight injection."""
+    if max(signal.values()) < _UNIFORM * 1.5:
+        return []
+    sorted_nums = sorted(signal.items(), key=lambda x: -x[1])
+    top6 = [n for n, _ in sorted_nums[:6]]
+    top6.sort()
+    virtual_draws: list[dict] = []
+    for i in range(n_virtual):
+        virtual_draws.append(
+            {
+                "draw_no": base_draw_no - 1000 - i,
+                "num1": top6[0],
+                "num2": top6[1],
+                "num3": top6[2],
+                "num4": top6[3],
+                "num5": top6[4],
+                "num6": top6[5],
+            }
+        )
+    return virtual_draws
