@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d3f1019` |
+| HEAD(실측) | `1478e0c` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-EXCLUDE-SURVEY QUICK FAIL** — λ sweep n=200 · best exclude ge3=0.145=baseline · λ0.25 하락 |
-| 직전 | K-SIGNAL-SELECT-FULL · K-EXCLUDE-HIST-01 · LEAKAGE_POLICY |
-| BOOT다음 | **K-ATTACK-HOLD** — SELECT/EXCLUDE wire HOLD · **전체 큐=`TEST_PRIORITY.md`** |
-| NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | SELECT/EXCLUDE wire HOLD 유지 · 형 GO 또는 새 축(10SET·패턴튜닝) 전까지 survey 중단 |
+| 지금 | **K-COMBO-SIGNAL-01 QUICK PASS** — baseline ge3=0.145 · signal_AB=0% (AND 미발화) |
+| 직전 | K-EXCLUDE-SURVEY FAIL · SELECT-FULL FAIL · LEAKAGE_POLICY |
+| BOOT다음 | **K-COMBO-SIGNAL-FULL** — n=1182 · signal_A 재검토 · **전체 큐=`TEST_PRIORITY.md`** |
+| NEXT1 ID | **K-COMBO-SIGNAL-FULL** |
+| NEXT1 할일 | K-COMBO-SIGNAL-01 QUICK **PASS** → full n=1182 검증 · signal_A 0% 재검토 · wire는 형 GO 전 금지 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d3f1019 · 지금=**K-EXCLUDE-SURVEY QUICK FAIL** — λ sweep n=200 · best exclude ge3=0.145=baseline · λ0.25 하락 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=1478e0c · 지금=**K-COMBO-SIGNAL-01 QUICK PASS** — baseline ge3=0.145 · signal_AB=0% (AND 미발화) · 다음=K-COMBO-SIGNAL-FULL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: d3f1019_
+_generated: 1478e0c_
