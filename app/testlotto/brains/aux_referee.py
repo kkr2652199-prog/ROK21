@@ -19,8 +19,15 @@ def score_set(
     target_draw_no: int,
     brain_tag: str | None = None,
 ) -> float:
-    """보조 채점 파이프라인 호환용 — 중립 기본값."""
-    return 0.5
+    """K-HIGHWAY-REFEREE: brain_tag별 recent_avg_match 기반 심판 가중 → 0~1 점수."""
+    try:
+        if not brain_tag:
+            return 0.5
+        referee_weights = get_referee_weights()
+        normalized_weight = referee_weights.get(brain_tag, 1.0 / 3.0)
+        return min(1.0, max(0.0, 0.5 + (normalized_weight - 1.0 / 3.0) * 1.5))
+    except Exception:
+        return 0.5
 
 
 def describe(

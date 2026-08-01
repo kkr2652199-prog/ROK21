@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-HIGHWAY-REFEREE
-- 할일: coordinator referee 가중 자동 갱신 · **형 GO 대기**
+- ID: K-HIGHWAY-QUOTA
+- 할일: coordinator quota/wire 개선 · **형 GO 대기**
 - 완료조건: 형 GO + K-HIGHWAY-PHASE1 연속 PASS
-- 선행완료: K-HIGHWAY-FEEDBACK **OK** — `_auto_feedback` · `_detect_missed_patterns` · deprecated import 삭제
+- 선행완료: K-HIGHWAY-REFEREE **OK** — aux_referee score_set referee 가중 반영 · import/검증 OK
 
 ## WORKSTATE
 IDLE
