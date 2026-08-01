@@ -1,0 +1,131 @@
+{
+  "id": "K-COMBO-V2",
+  "ts": "2026-08-01T10:31:55",
+  "elapsed_sec": 18.9,
+  "n_eval": 200,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "seed": 42,
+  "gate_mode": "quick",
+  "wire_pin_ge3": 0.1447,
+  "null_ge3": 0.1137,
+  "exclude_params": {
+    "B1_top_bottom": 3,
+    "B1_min_candidates": 35,
+    "B2_max_exclude": 6,
+    "B3_window": 10,
+    "B3_overlap_min": 1,
+    "weight_exclude": 0.1,
+    "weight_boost": 1.5
+  },
+  "avg_excluded_per_draw": 6.09,
+  "avg_boosted_per_draw": 6.96,
+  "signal_B3_coverage": 1.0,
+  "over_exclude_fail": false,
+  "baseline_combined_ge3": 0.145,
+  "strategies": {
+    "baseline_combined": {
+      "n": 200,
+      "mean": 1.715,
+      "ge3_rate": 0.145,
+      "ge3_count": 29,
+      "delta_ge3_vs_null": 0.0313,
+      "delta_ge3_vs_pin": 0.0003,
+      "p_value": 0.102441,
+      "verdict": "PASS",
+      "ge4_rate": 0.005,
+      "ge4_count": 1,
+      "delta_vs_baseline_ge3": 0.0,
+      "avg_excluded": 6.09,
+      "avg_boosted": 6.96,
+      "signal_B3_coverage": 1.0,
+      "quick_pass_vs_baseline": false
+    },
+    "exclude_only": {
+      "n": 200,
+      "mean": 1.695,
+      "ge3_rate": 0.145,
+      "ge3_count": 29,
+      "delta_ge3_vs_null": 0.0313,
+      "delta_ge3_vs_pin": 0.0003,
+      "p_value": 0.102441,
+      "verdict": "PASS",
+      "ge4_rate": 0.0,
+      "ge4_count": 0,
+      "delta_vs_baseline_ge3": 0.0,
+      "avg_excluded": 6.09,
+      "avg_boosted": 6.96,
+      "signal_B3_coverage": 1.0,
+      "quick_pass_vs_baseline": false
+    },
+    "signal_only": {
+      "n": 200,
+      "mean": 1.705,
+      "ge3_rate": 0.14,
+      "ge3_count": 28,
+      "delta_ge3_vs_null": 0.0263,
+      "delta_ge3_vs_pin": -0.0047,
+      "p_value": 0.144964,
+      "verdict": "PASS",
+      "ge4_rate": 0.005,
+      "ge4_count": 1,
+      "delta_vs_baseline_ge3": -0.005,
+      "avg_excluded": 6.09,
+      "avg_boosted": 6.96,
+      "signal_B3_coverage": 1.0,
+      "quick_pass_vs_baseline": false
+    },
+    "combo_v2": {
+      "n": 200,
+      "mean": 1.695,
+      "ge3_rate": 0.125,
+      "ge3_count": 25,
+      "delta_ge3_vs_null": 0.0113,
+      "delta_ge3_vs_pin": -0.0197,
+      "p_value": 0.338657,
+      "verdict": "FAIL",
+      "ge4_rate": 0.005,
+      "ge4_count": 1,
+      "delta_vs_baseline_ge3": -0.02,
+      "avg_excluded": 6.09,
+      "avg_boosted": 6.96,
+      "signal_B3_coverage": 1.0,
+      "quick_pass_vs_baseline": false
+    }
+  },
+  "best_strategy": "baseline_combined",
+  "gates": {
+    "quick_pass": false,
+    "quick_criteria": "best ge3 > baseline AND p<0.15 AND avg_excluded<=8",
+    "criteria_doc": {
+      "quick": {
+        "n_eval": 200,
+        "draw_range": [
+          1035,
+          1234
+        ],
+        "sample_mode": "tail",
+        "seed": 42,
+        "pass": "ge3>null(0.1137) AND p<0.15",
+        "promising": "ge3>null+0.01 OR top variant clear"
+      },
+      "full": {
+        "n_eval": 1182,
+        "draw_range": [
+          53,
+          1234
+        ],
+        "sample_mode": "full",
+        "seed": 42,
+        "pass": "ge3>pin(0.1447) AND p<0.05"
+      }
+    }
+  },
+  "pass_gate": false,
+  "verdict": "FAIL",
+  "recommended_next": "K-ATTACK-HOLD",
+  "db_code_write": false,
+  "coordinator_modified": false
+}
