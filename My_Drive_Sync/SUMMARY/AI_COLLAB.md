@@ -153,85 +153,49 @@ run_coordinated_prediction 진입
 | 보고서 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/` |
 | 보고서 언어 규칙 | `My_Drive_Sync/SUMMARY/REPORT_STYLE.md` |
 
-## 6. 압축 복구 패킷 — 외부 AI(젠스파크)에 붙여넣기용 (2026-08-01 19:10)
+## 6. 압축 복구 패킷 — 외부 AI(젠스파크)에 붙여넣기용 (2026-08-01 20:10)
 
 > 형이 젠스파크 세션 압축 후 **아래 블록 전체**를 채팅에 붙여넣으면 맥락 복구.
 
 ```
-[ROK21 압축복구 · 2026-08-01 · K-BRAIN-SIGNAL-B1까지]
+[ROK21 압축복구 · 2026-08-01 · B1-BACKTEST-100 완료]
 
 ■ SSOT
 - Repo: kkr2652199-prog/ROK21 · main · D:\ROK21 · 포트 7021
-- HEAD: 38ebe73
-- NEXT: K-BRAIN-SIGNAL-B1-BACKTEST-100 — B1 stack n=100 · **형 GO 대기**
-- 읽을 파일: EXTERNAL_START.md · NEXT_ACTIONS.md · AI_COLLAB.md §3·§6
-- 보고서(필수):
-  reports/20260801_KBRAIN_SIGNAL_B1.md
-  reports/20260801_KBRAIN_SIGNAL_BACKTEST_100.md
-  reports/20260801_KBRAIN_SIGNAL_A1.md
-  reports/20260801_KHIGHWAY_BACKTEST_100.md
-- 수치 JSON: docs/benchmarks/20260801_KBRAIN_SIGNAL_BACKTEST_100.json
+- HEAD: 4d5df6a (최신: git rev-parse --short HEAD)
+- NEXT: K-BRAIN-SIGNAL-TUNE — _MIN_MAX_SIM 또는 B1 롤백 · **형 GO 대기**
+- JSON: docs/benchmarks/20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.json
+- 보고서: reports/20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.md
 
-■ 형의 핵심 의도 (K-BRAIN-SIGNAL)
-"현재 상황과 비슷한 과거 회차 → 다음 회차 번호 분포를 예측 신호로 활용"
-→ 기존 3뇌는 유사 패턴 탐색 없음 → adj(carry/ending)만으로 ge3 개선 실패
+■ B1-BACKTEST-100 결과 (커서 실행 완료 · 수정본 지시서 준수)
+| 지표 | 값 |
+| overall ge3 | **0.0600** (6/100) · **FAIL** |
+| virtual_active_rate | **100%** |
+| vs 0.0600 | **+0.0000** (dir1·highway 동일) |
+| by_brain solo | stat 0.09 · markov 0.13 · review 0.11 |
+| by_period draw SSOT | early1135-1159 0.04 · mid1160-1184 0.04 · late1185-1234 0.08 |
+| mean_match | 1.63 |
 
-■ SIGNAL 타임라인 (형 GO)
+■ SIGNAL 타임라인
+[A1+BACKTEST] conf blend → FAIL ge3=0.0600
+[B1+BACKTEST] virtual draws → FAIL ge3=0.0600 · virtual 100%
+→ signal 레이어 2종 모두 ge3 무개선
 
-[설계] K-BRAIN-SIGNAL Q1~Q4 — pattern_signal.py 신규 · coordinator hook
-[A1 PASS] get_pattern_signal · confidence 0.85/0.15 blend
-[BACKTEST-100 FAIL · 방향1] ge3=0.0600 · signal_active=100% · highway와 동일
-  → 원인: signal이 confidence(점수)만 바꿈 · 번호 선택 무영향
-[B1 PASS · 방향2] make_signal_draws → virtual draws×3 → draws_with_signal
-  → predict_sets(draws_with_signal) · engine weights에 signal 주입
-  → conf blend **완전 제거** · smoke virtual 10/10
+■ live stack (B1)
+_auto_feedback → get_pattern_signal → make_signal_draws
+→ predict_sets(draws_with_signal) → aux(실draws) → dynamic_quota
 
-■ 현재 live stack (B1 · HEAD fedf174+)
-run_coordinated_prediction(N):
-  _auto_feedback(N)                    ← K-HIGHWAY-FEEDBACK
-  → get_pattern_signal(draws)
-  → make_signal_draws → draws_with_signal = virtual + draws
-  → predict_sets(draws_with_signal)  ← B1 weights 주입
-  → aux 1:1 scoring
-  → dynamic_brain_quota 5장          ← K-HIGHWAY-QUOTA
-  → DB 저장
+■ 다음 (TUNE 자동 착수 금지)
+K-BRAIN-SIGNAL-TUNE: _MIN_MAX_SIM 0.90→0.85 또는 B1 롤백 · 별도 GO
 
-■ 벤치 수치 SSOT (기억 금지 · JSON만)
-| ID | ge3 | signal_active | 판정 |
-| K-BRAIN-SIGNAL-BACKTEST-100 (방향1) | 0.0600 | 100% | FAIL |
-| K-HIGHWAY-BACKTEST-100 (PHASE1) | 0.0600 | — | FAIL |
-| K-BACKTEST-FULL-C baseline | 0.1015 | — | FAIL |
+■ 절대 금지
+random.choices · _get_draws_before · BOOST_CAPS · engine.py
+aux에 virtual 혼입 · FAIL→TUNE 자동 · FINDINGS 무단 갱신
 
-방향1 FAIL 상세: by_brain stat0.09 markov0.13 review0.11 · by_period early0.04 mid0.04 late0.08
-
-■ 병렬 대기 (형 GO 필요)
-A) K-BRAIN-SIGNAL-B1-BACKTEST-100 — B1 stack n=100 (다음 STEP)
-B) K-HIGHWAY-PHASE1-HOLD — 롤백/HOLD/튜닝 (별도 트랙)
-C) K-BRAIN-SIGNAL-TUNE — _MIN_MAX_SIM 0.90→0.85 (B1-BACKTEST 후)
-
-■ STEP 로드맵 (젠스파크 제안용)
-STEP1 B1-BACKTEST-100 ← **지금 여기 · 형 GO 대기**
-  PASS → STEP2 파라미터 튜닝 (_MIN_MAX_SIM·k)
-  FAIL → _MIN_MAX_SIM 0.90→0.85 재검증
-→ STEP3 markov start_nums 다각화
-→ STEP4 warm-up quota
-→ STEP5 FULL n=1182
-
-■ 절대 금지 (동결·규칙)
-- random.choices · _get_draws_before · BOOST_CAPS 수정
-- stat/markov/review engine.py 직접 수정 (B1은 coordinator+pattern_signal만)
-- kweon(D:\3kweon) 쓰기·push
-- 형 GO 없이 B1-BACKTEST·TUNE 자동 착수
-- 수치=docs/benchmarks/*.json만
-
-■ UI
-http://127.0.0.1:7021/ 테스트로또 · draw 1235 예측 5장 (이전 BACKTEST reset 후)
-
-■ 젠스파크가 지금 할 일
-1. reports/20260801_KBRAIN_SIGNAL_B1.md + BACKTEST JSON 팩트체크
-2. B1-BACKTEST-100 지시서 초안 (PASS/FAIL 기준 · ge3 vs 0.0600)
-3. 방향1 FAIL→B1 전환 근거를 형에게 3줄 요약
-4. 형 GO 없이 코드·백테 실행 금지
+■ 젠스파크 할 일
+1. JSON·보고서 팩트체크 (기억 금지)
+2. TUNE vs 롤백 vs STEP3 **1개 추천** + 근거
+3. GO 없이 코드·백테 금지
 ```
 
 ---
