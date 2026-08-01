@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2860f31` · WORK=`IDLE`
-2. **지금:** **K-BRAIN-PACKAGE-PHASE4** — coordinator 3뇌 패키지 배선 · 동치 PASS n=200 3/3
-3. **다음1건:** K-BRAIN-PACKAGE-PHASE5 — (형 지시 대기) (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `0ab1b8e` · WORK=`IDLE`
+2. **지금:** **K-BRAIN-PACKAGE-PHASE5** — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15
+3. **다음1건:** K-BRAIN-PACKAGE-PHASE6 — markov learn_state 실제 소비 배선 (형 GO 대기) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
