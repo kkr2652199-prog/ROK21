@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4d7fa2a` · WORK=`IDLE`
+1. **HEAD:** `83378a5` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-SIGNAL-BACKTEST-100** — ge3=**0.0600** · signal_active=**100%** · **FAIL** (=highway 동일)
 3. **다음1건:** K-BRAIN-SIGNAL-TUNE — BACKTEST-100 **FAIL** ge3=0.0600(=highway 동일) · signal_active 100% · _MIN_MAX_SIM 0.90→0.85 재검증 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4d7fa2a` · WORK=`IDLE`
+- HEAD: `83378a5` · WORK=`IDLE`
 - 지금: **K-BRAIN-SIGNAL-BACKTEST-100** — ge3=**0.0600** · signal_active=**100%** · **FAIL** (=highway 동일)
 - 직전: K-BRAIN-SIGNAL-A1 — pattern_signal + coordinator blend · **PASS**
 - BOOT다음: **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM 조정 · **형 GO 대기**
