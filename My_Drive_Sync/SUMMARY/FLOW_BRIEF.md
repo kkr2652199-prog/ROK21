@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0777168` · WORK=`IDLE`
+- HEAD: `000846b` · WORK=`IDLE`
 - 지금: **K-SIGNAL-SELECT-FULL 완료** — n=1182 · combined ge3=0.1218 · **FAIL** · wire HOLD
 - 직전: K-EXCLUDE-HIST-01 · LEAKAGE_POLICY · TESTLOTTO pool/repack UI
 - BOOT다음: K-EXCLUDE-SURVEY — 배제 ON/OFF · **전체 큐=`TEST_PRIORITY.md`**

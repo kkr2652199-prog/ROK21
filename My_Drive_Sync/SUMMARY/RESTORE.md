@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0777168` · WORK=`IDLE`
+1. **HEAD:** `000846b` · WORK=`IDLE`
 2. **지금:** **K-SIGNAL-SELECT-FULL 완료** — n=1182 · combined ge3=0.1218 · **FAIL** · wire HOLD
 3. **다음1건:** K-EXCLUDE-SURVEY — combined + 배제 ON/OFF · λ sweep · as_of WF · wire는 형 GO 전 금지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
