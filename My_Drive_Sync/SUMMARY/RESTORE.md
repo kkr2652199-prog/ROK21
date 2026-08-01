@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `9778d80` · WORK=`IDLE`
+1. **HEAD:** `8a11b91` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-PACKAGE-COMPLETE** — C package core Phase0~7 DONE · ge3=0.125 · consolidated PASS
 3. **다음1건:** K-QUOTA-GAP-SURVEY — set_no_asc vs conf top-k vs aux_hint wire 대안 READ-ONLY survey (coordinator wire 미변경) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
