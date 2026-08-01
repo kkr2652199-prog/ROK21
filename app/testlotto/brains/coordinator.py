@@ -9,7 +9,6 @@ from __future__ import annotations
 import logging
 
 from app.testlotto.brains import aux_balance_keeper, aux_miss_detective, aux_pattern_spotlight, aux_referee
-from app.testlotto.brains import predict_flow_shaman, predict_review_king, predict_stat_fairy  # deprecated — PHASE4
 from app.testlotto.brains.stat_brain import aux as stat_brain_aux
 from app.testlotto.brains.stat_brain import predict as stat_brain_predict
 from app.testlotto.brains.markov_brain import aux as markov_brain_aux
@@ -95,6 +94,128 @@ def apply_markov_wire_quota(candidates: list[dict]) -> list[dict]:
     return selected[:target_n]
 
 
+def _detect_missed_patterns(
+    pred_nums: list[int],
+    actual_nums: list[int],
+    draws_before: list[dict] | None = None,
+) -> list[str]:
+    """K-HIGHWAY-FEEDBACK: 예측 vs 정답 오답 패턴 태그 (apply_feedback 호환)."""
+    from app.testlotto.features.draw_features import build_number_gaps, sorted_nums
+
+    pred_set = set(int(n) for n in pred_nums)
+    actual_set = set(int(n) for n in actual_nums)
+    missed: list[str] = []
+
+    if draws_before:
+        prev = draws_before[-1]
+        prev_nums = set(sorted_nums(prev))
+        actual_carry = prev_nums & actual_set
+        if actual_carry and not (actual_carry & pred_set):
+            missed.append("carry_over")
+
+        gaps = build_number_gaps(draws_before)
+        actual_overdue = [n for n in actual_set if gaps.get(n, 0) >= 30]
+        if actual_overdue and not any(n in pred_set for n in actual_overdue):
+            missed.append("overdue")
+
+    actual_endings = {n % 10 for n in actual_set}
+    pred_endings = {n % 10 for n in pred_set}
+    if len(actual_endings.symmetric_difference(pred_endings)) >= 3:
+        missed.append("ending_digit")
+
+    return missed
+
+
+def _prediction_row_nums(row: dict) -> list[int]:
+    return [
+        int(row["num1"]),
+        int(row["num2"]),
+        int(row["num3"]),
+        int(row["num4"]),
+        int(row["num5"]),
+        int(row["num6"]),
+    ]
+
+
+def _auto_feedback(target_draw_no: int, conn) -> None:
+    """직전 회차 예측·정답으로 learn_state 피드백 (중복 apply 방지)."""
+    from app.testlotto.learn_state import _load_global_learn_state, apply_feedback
+
+    prev_draw_no = int(target_draw_no) - 1
+    if prev_draw_no < 1:
+        return
+
+    actual_row = conn.execute(
+        "SELECT * FROM lotto_draws WHERE draw_no = ?", (prev_draw_no,)
+    ).fetchone()
+    if not actual_row:
+        return
+
+    actual = dict(actual_row)
+    actual_nums = [
+        actual["num1"],
+        actual["num2"],
+        actual["num3"],
+        actual["num4"],
+        actual["num5"],
+        actual["num6"],
+    ]
+    actual_set = set(actual_nums)
+
+    pred_rows = conn.execute(
+        "SELECT * FROM lotto_predictions WHERE target_draw_no = ?",
+        (prev_draw_no,),
+    ).fetchall()
+    if not pred_rows:
+        return
+
+    draws_before = _get_draws_before(prev_draw_no)
+
+    by_brain: dict[str, list[dict]] = {}
+    for row in pred_rows:
+        tag = str(dict(row).get("brain_tag") or "")
+        if tag not in PREDICT_TAGS:
+            continue
+        by_brain.setdefault(tag, []).append(dict(row))
+
+    for tag in PREDICT_TAGS:
+        rows = by_brain.get(tag)
+        if not rows:
+            continue
+
+        state = _load_global_learn_state(tag)
+        if int(state.get("last_draw_no", 0) or 0) >= prev_draw_no:
+            logger.debug(
+                "[K-HIGHWAY-FEEDBACK] skip %s draw=%d (last_draw_no=%s)",
+                tag,
+                prev_draw_no,
+                state.get("last_draw_no"),
+            )
+            continue
+
+        best_row = max(
+            rows,
+            key=lambda r: (
+                int(r.get("matched_count") if r.get("matched_count") is not None else -1),
+                float(r.get("confidence") or 0),
+            ),
+        )
+        pred_nums = _prediction_row_nums(best_row)
+        matched_count = len(set(pred_nums) & actual_set)
+        if int(best_row.get("matched_count") or -1) >= 0:
+            matched_count = int(best_row["matched_count"])
+
+        missed = _detect_missed_patterns(pred_nums, actual_nums, draws_before)
+        apply_feedback(tag, prev_draw_no, matched_count, missed)
+        logger.info(
+            "[K-HIGHWAY-FEEDBACK] %s draw=%d matched=%d missed=%s",
+            tag,
+            prev_draw_no,
+            matched_count,
+            missed,
+        )
+
+
 def _delete_predictions_for_brain(conn, target_draw_no: int, brain_tag: str) -> None:
     conn.execute(
         "DELETE FROM lotto_predictions WHERE target_draw_no = ? AND brain_tag = ?",
@@ -178,6 +299,7 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
 
     init_lotto_db()
     conn = get_lotto_db()
+    _auto_feedback(target_draw_no, conn)
     bf = brain_filter
     # 학습/심판 가중: target 미만만 (CUTOFF 기본 ON)
     set_learn_as_of(int(target_draw_no))

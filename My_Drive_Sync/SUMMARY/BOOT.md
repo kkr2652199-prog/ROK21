@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-NEW-ENGINE-STAT-A1** — stat solo baseline ge3=**0.1350** · v2=**0.1350** · delta=0 · **PASS** · ENGINE_V2=False 유지
-- 직전: K-BRAIN-TUNE-SURVEY — P0 aux_hint_top5=0.1091 · best_combo ge3=0.1032 · **HOLD**
-- 다음: **K-NEW-ENGINE-MARKOV-A1** — markov engine 개선 · **형 GO 대기**
+- 지금: **K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK**
+- 직전: K-NEW-ENGINE-STAT-A1 — stat solo ge3=0.1350 · v2=0.1350 · **PASS** · ENGINE_V2=False
+- 다음: **K-HIGHWAY-REFEREE** — referee 가중 · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

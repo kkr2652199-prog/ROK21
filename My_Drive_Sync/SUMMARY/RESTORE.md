@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-HIGHWAY-FEEDBACK GO | coordinator _auto_feedback · _detect_missed_patterns · deprecated import 삭제 · import OK | **OK** | pending |
 | 2026-08-01 | K-NEW-ENGINE-STAT-A1 GO | stat engine v2 dual-window+cycle gap · solo n=200 baseline/v2 ge3=0.1350 delta=0 · ENGINE_V2=False | **PASS** | pending |
 | 2026-08-01 | K-BRAIN-TUNE-SURVEY GO | P0 aux_hint_top5=0.1091 · P1 lb120=0.1058 · P2 hint0=0.1058 · best_combo=0.1032 · APPLY HOLD | **SURVEY OK** | pending |
 | 2026-08-01 | K-BACKTEST-FULL-C GO | C package FULL n=1182 ge3=0.1015(QUICK 0.125 collapse) · by_brain stat=0.1125 · live_baseline 0.1218 미달 | **FAIL** | pending |
