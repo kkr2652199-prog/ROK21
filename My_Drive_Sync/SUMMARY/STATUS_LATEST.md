@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-01 KST  
-📌 사유: **K-SIGNAL-SELECT-FULL FAIL** — combined ge3=0.1218 · wire HOLD · NEXT=K-EXCLUDE-SURVEY
+📌 사유: **K-EXCLUDE-SURVEY QUICK FAIL** — λ sweep · best exclude ge3=0.145=baseline · wire HOLD
 
 ---
 
@@ -14,12 +14,13 @@
 | **TESTLOTTO UI+DB** | **DONE** — 「🎯 3뇌 예측」단일 · backtest 회차 pool auto-WF · `PATCH_PINS.md` |
 | K-SIGNAL-REPACK-01 | **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |
 | K-SIGNAL-SELECT-01 | **QUICK PASS** — combined ge3=**0.145** p=0.102 · tail n=200 |
+| **K-EXCLUDE-SURVEY** | **FAIL** — QUICK n=200 · λ sweep · best exclude ge3=**0.145**=baseline · λ0.25=**0.135** · kill≤11% |
 | **K-SIGNAL-SELECT-FULL** | **FAIL** — combined ge3=**0.1218** p=0.201 · n=1182 · wire HOLD |
 | **K-EXCLUDE-HIST-01** | **DONE** — 1~1234 패턴 catalog · 2연속+ 51.7% · LEAKAGE_POLICY |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
 | K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-EXCLUDE-SURVEY** · SELECT-WIRE HOLD · **전체 큐=`TEST_PRIORITY.md`** |
+| 권고 | **K-ATTACK-HOLD** · SELECT/EXCLUDE wire HOLD · **전체 큐=`TEST_PRIORITY.md`** |
 
 ---
 
@@ -27,6 +28,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-EXCLUDE-SURVEY** | combined+배제 λ sweep · WF as_of catalog · 3패턴 · QUICK n=200 | **FAIL** · ge3=0.145=baseline |
 | **K-SIGNAL-SELECT-FULL** | 10pool 선별 combined · live WF n=1182 · pin+p 게이트 | **FAIL** · ge3=0.1218 |
 | **K-EXCLUDE-HIST-01** | 1~1234 당첨 패턴 catalog · 배제 준비 · as_of WF 정책 | **DONE** |
 | **TESTLOTTO UI accordion** | all 모드 탭바 제거 · 3뇌 아코디언 단일 · policy/warrant 예측영역 숨김 · pool/repack 조건부 | **UI OK** · 1136 |
