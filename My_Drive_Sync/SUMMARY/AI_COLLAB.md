@@ -24,10 +24,22 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 22:35 KST)
-- **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+### 최신 상태 (2026-08-01 22:45 KST)
+- **HEAD(실측)**: `5bba9f3` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-AUX-DIAG DONE** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight**
-- **다음(공식)**: aux ablation 기반 회복 방향(pattern_spotlight/balance_keeper) · **형 GO 대기**
+- **다음(공식)**: aux 회복(spotlight/balance) 또는 fusion path 변경 · **형 GO 대기**
+
+### 현재 live stack (2026-08-01 · B1 rollback 후)
+```
+run_coordinated_prediction
+  → _auto_feedback(prev) → apply_feedback → learn_state
+  → 3뇌 predict_sets(draws)          ← B1 virtual draws **제거됨**
+  → aux 1:1 scoring (AUX_1TO1_ENABLED)
+  → dynamic_brain_quota (DEFAULT 25/60/15 → 슬롯 ~1/3/1)
+  → DB 저장
+```
+- `pattern_signal.py` **파일 보존** · coordinator에서 signal wiring **없음**
+- markov engine: **full draws** (window100 롤백 완료)
 
 ### K-AUX-DIAG (형 GO · per-aux ablation · no auto next)
 근거: `docs/benchmarks/20260801_KAUX_DIAG.json`
@@ -200,22 +212,32 @@ run_coordinated_prediction 진입
 ### 벤치 수치 SSOT (주요 · `docs/benchmarks/*.json`)
 | ID | n | ge3 | 판정 |
 |----|---|-----|------|
+| **K-AUX-DIAG** | 100 | **0.0800** (전 시나리오 동일) | **DONE** |
 | K-FUSION-QUOTA-FIX | 100 | **0.0800** | **FAIL** (>0.09) |
-| K-BRAIN-SIGNAL-BACKTEST-100 (방향1 conf) | 100 | **0.0600** | **FAIL** |
+| K-FUSION-BOTTLE-DIAG | 100 | **0.0900** (markov100%) | diag |
+| K-MARKOV-WINDOW100-SOLO | 200 | **0.0850** | **FAIL** |
 | K-HIGHWAY-BACKTEST-100 | 100 | **0.0600** | **FAIL** |
+| solo markov (highway by_brain) | — | **0.1300** | ref |
 | K-BACKTEST-FULL-C | 1182 | 0.1015 | FAIL (<0.1218) |
-| K-BRAIN-TUNE-SURVEY | 1182 | best 0.1032 | HOLD |
-| K-NEW-ENGINE-STAT-A1 | 200 | 0.1350 (v2=0.1350) | PASS |
-| K-BRAIN-PACKAGE QUICK | 200 | 0.125 | PASS |
+| K-NEW-ENGINE-STAT-A1 | 200 | 0.1350 (v2=0.1350) | PASS (delta=0) |
+
+### fusion ge3 격차 분해 (확정 · 2026-08-01)
+| 단계 | ge3 | vs 이전 | 원인 |
+|------|-----|---------|------|
+| full coordinator (highway) | 0.0600 | — | quota 40/40/20 + aux |
+| quota fix 20/60/20 | **0.0800** | +0.02 | markov quota ↑ |
+| markov 100% fixed (diag) | 0.0900 | +0.01 | quota 희석 제거 |
+| solo markov | 0.1300 | +0.04 | aux/coordinator path 손실 |
+| aux ablation | **0.0800** (변화 없음) | 0 | quota 5장 선택이 ge3 지배 |
 
 ### 논의 이력 (최신순)
-1. **[21:45] K-FUSION-QUOTA-FIX FAIL** — quota 20/60/20 · ge3=0.0800 (+0.02 vs 0.06) · gate 0.09 미달
-2. **[19:10] K-BRAIN-SIGNAL-B1 PASS** — virtual draws weights · smoke 10/10 · B1-BACKTEST **형 GO 대기**
-2. **[18:55] K-BRAIN-SIGNAL-BACKTEST-100 FAIL** — 방향1 conf blend · ge3=0.0600 · signal_active 100%
-3. **[18:00] K-BRAIN-SIGNAL-A1 PASS** — pattern_signal + coordinator conf blend
-4. **[17:50] K-HIGHWAY-BACKTEST-100 FAIL** — ge3=0.0600 · PHASE1 FEEDBACK+REFEREE+QUOTA
-5. **[16:30] K-BRAIN-LOGIC-UPGRADE** · K-BRAIN-SIGNAL Q1~Q4 설계 검토
-6. **[16:10] K-CLEANUP 거부** · C package Phase0~7
+1. **[22:35] K-AUX-DIAG DONE** — 6시나리오 · ge3 전부 0.0800 · spotlight OFF→surv 0 · balance OFF→surv 0.948
+2. **[21:45] K-FUSION-QUOTA-FIX FAIL** — quota 20/60/20 · ge3=0.0800 (+0.02 vs 0.06)
+3. **[21:10] K-ENGINE-PHASE1-HOLD** — window100 롤백 · fusion diag AUX_PATH_BOTTLENECK ge3=0.09
+4. **[20:30] K-ENGINE-PHASE1** — B1 rollback · window100 solo FAIL ge3=0.0850
+5. **[19:30] K-ENGINE-UPGRADE 브리핑** — PHASE1~3 의견 · markov window100만 GO 가치
+6. **[18:55] K-BRAIN-SIGNAL** — A1/B1 BACKTEST FAIL ge3=0.0600 · B1 rollback됨
+7. **[17:50] K-HIGHWAY-BACKTEST-100 FAIL** — ge3=0.0600 · PHASE1 코드 반영
 
 ## 4. 파일 지도 (젠스파크용 GitHub raw URL)
 
@@ -228,49 +250,65 @@ run_coordinated_prediction 진입
 | 보고서 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/` |
 | 보고서 언어 규칙 | `My_Drive_Sync/SUMMARY/REPORT_STYLE.md` |
 
-## 6. 압축 복구 패킷 — 외부 AI(젠스파크)에 붙여넣기용 (2026-08-01 20:10)
+## 6. 압축 복구 패킷 — 외부 AI(젠스파크)에 붙여넣기용 (2026-08-01 22:45)
 
 > 형이 젠스파크 세션 압축 후 **아래 블록 전체**를 채팅에 붙여넣으면 맥락 복구.
 
 ```
-[ROK21 압축복구 · 2026-08-01 · B1-BACKTEST-100 완료]
+[ROK21 압축복구 · 2026-08-01 · K-AUX-DIAG 완료]
 
 ■ SSOT
 - Repo: kkr2652199-prog/ROK21 · main · D:\ROK21 · 포트 7021
-- HEAD: 4d5df6a (최신: git rev-parse --short HEAD)
-- NEXT: K-BRAIN-SIGNAL-TUNE — _MIN_MAX_SIM 또는 B1 롤백 · **형 GO 대기**
-- JSON: docs/benchmarks/20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.json
-- 보고서: reports/20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.md
+- HEAD: 5bba9f3
+- NEXT: K-AUX-DIAG-DONE — aux 회복 방향 결정 · **형 GO 대기**
+- 진입: EXTERNAL_START.md → AI_COLLAB.md §3·§6
 
-■ B1-BACKTEST-100 결과 (커서 실행 완료 · 수정본 지시서 준수)
-| 지표 | 값 |
-| overall ge3 | **0.0600** (6/100) · **FAIL** |
-| virtual_active_rate | **100%** |
-| vs 0.0600 | **+0.0000** (dir1·highway 동일) |
-| by_brain solo | stat 0.09 · markov 0.13 · review 0.11 |
-| by_period draw SSOT | early1135-1159 0.04 · mid1160-1184 0.04 · late1185-1234 0.08 |
-| mean_match | 1.63 |
+■ 오늘 fusion 회복 타임라인 (ge3 중심)
+| 단계 | ge3 | 비고 |
+| highway PHASE1 | 0.0600 | quota 40/40/20 |
+| quota fix 20/60/20 | 0.0800 | +0.02 · FAIL gate>0.09 |
+| fusion diag markov100% | 0.0900 | quota 희석 제거 |
+| solo markov ref | 0.1300 | by_brain |
+| aux ablation (전 시나리오) | 0.0800 | aux OFF해도 ge3 불변 |
 
-■ SIGNAL 타임라인
-[A1+BACKTEST] conf blend → FAIL ge3=0.0600
-[B1+BACKTEST] virtual draws → FAIL ge3=0.0600 · virtual 100%
-→ signal 레이어 2종 모두 ge3 무개선
+■ K-AUX-DIAG (최신 · 형 GO 완료)
+JSON: docs/benchmarks/20260801_KAUX_DIAG.json
+보고서: reports/20260801_KAUX_DIAG.md
 
-■ live stack (B1)
-_auto_feedback → get_pattern_signal → make_signal_draws
-→ predict_sets(draws_with_signal) → aux(실draws) → dynamic_quota
+| scenario | ge3 | markov survival |
+| baseline | 0.0800 | 0.6680 |
+| spotlight OFF | 0.0800 | **0.0000** ← markov top5 생존 필수 |
+| balance OFF | 0.0800 | **0.9480** ← balance가 markov ranking 억제 |
+| miss/referee OFF | 0.0800 | 0.6680 (무영향) |
+| all aux OFF | 0.0800 | 0.0280 |
 
-■ 다음 (TUNE 자동 착수 금지)
-K-BRAIN-SIGNAL-TUNE: _MIN_MAX_SIM 0.90→0.85 또는 B1 롤백 · 별도 GO
+**해석:** ge3는 quota 5장 선택이 지배(aux ablation만으론 ge3 안 변함)
+**markov 탈락:** pattern_spotlight 필수 · balance_keeper가 markov 불리
+
+■ K-ENGINE-PHASE1 요약 (완료)
+- B1 coordinator rollback OK (signal wiring 제거 · pattern_signal.py 보존)
+- markov window100 solo FAIL ge3=0.0850 → **롤백(full draws)**
+- fusion diag: AUX_PATH_BOTTLENECK · quota+aux 혼합
+
+■ 현재 live stack
+_auto_feedback → 3뇌 predict_sets(draws) → aux 1:1 → dynamic_quota(25/60/15→~1/3/1) → DB
+(B1 virtual draws **없음**)
+
+■ 다음 후보 (형 GO 전 · 자동 착수 금지)
+1. balance_keeper markov 가중 완화 (survival 0.668→0.948 가능성)
+2. aux scoring 공식 조정 (ge3 0.08→0.09+ 목표)
+3. quota 추가 튜닝 (markov 60%→?)
+4. K-ENGINE PHASE2~3 (learn→engine · auto_tune) — fusion ge3 선행
 
 ■ 절대 금지
 random.choices · _get_draws_before · BOOST_CAPS · engine.py
-aux에 virtual 혼입 · FAIL→TUNE 자동 · FINDINGS 무단 갱신
+aux/coordinator 로직 영구 변경(GO 없이) · FINDINGS 무단 갱신 · FAIL→auto-tune
 
 ■ 젠스파크 할 일
-1. JSON·보고서 팩트체크 (기억 금지)
-2. TUNE vs 롤백 vs STEP3 **1개 추천** + 근거
+1. 위 JSON 3종 팩트체크 (KAUX_DIAG · KQUOTA_FIX · KFUSION_BOTTLE_DIAG)
+2. 회복 방향 **1개 추천** + 근거 (balance 완화 vs aux formula vs quota)
 3. GO 없이 코드·백테 금지
+4. 첫줄: [복귀] HEAD=5bba9f3 · 지금=K-AUX-DIAG-DONE · 다음=aux 회복 형 GO 대기
 ```
 
 ---
