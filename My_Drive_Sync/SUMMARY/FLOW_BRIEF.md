@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `ba21125` · WORK=`IDLE`
+- HEAD: `a9b42b4` · WORK=`IDLE`
 - 지금: **K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK**
 - 직전: K-NEW-ENGINE-STAT-A1 — stat solo ge3=0.1350 · v2=0.1350 · **PASS** · ENGINE_V2=False
 - BOOT다음: **K-HIGHWAY-REFEREE** — referee 가중 · **형 GO 대기**

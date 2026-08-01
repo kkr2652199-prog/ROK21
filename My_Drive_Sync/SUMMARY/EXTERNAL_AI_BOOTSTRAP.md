@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `ba21125` |
+| HEAD(실측) | `a9b42b4` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=ba21125 · 지금=**K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK** · 다음=K-HIGHWAY-REFEREE`
+1. 첫줄 `[복귀] HEAD=a9b42b4 · 지금=**K-HIGHWAY-FEEDBACK** — `_auto_feedback` · 3뇌 apply_feedback · import OK · **OK** · 다음=K-HIGHWAY-REFEREE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
