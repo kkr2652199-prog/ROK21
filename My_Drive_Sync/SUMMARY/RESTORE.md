@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-07-30 | TESTLOTTO 예측결과 UI 중복 | all 모드 탭 제거·아코디언 단일 · policy/warrant 예측영역 숨김 · 1136 QA | **UI OK** | pending |
+| 2026-08-01 | 종료체크·SELECT-FULL 마감 | full n=1182 combined ge3=0.1218 FAIL · EXCLUDE-HIST·LEAKAGE · 20260801 세션보고서 | **FULL FAIL** | pending |
 | 2026-07-30 | TESTLOTTO backtest pool PIN | eval reset cache miss → backtest auto-WF · PATCH_PINS · backfill · 1136/1234 QA | **PIN OK** | pending |
 | 2026-07-30 | tail-100 백테스트·UI 단일버튼 | repack ge3=0.23 combined=0.15 · run_id 3·4 · 「3뇌 예측」만 · pred/cache eval reset | **T100 OK** | pending |
 | 2026-07-30 | TESTLOTTO 클릭 예측·재시작 로딩 금지 | prewarm 제거 · cache-only API · 「3뇌 예측」 · 1214 tier·1232 miss QA | **CLICK OK** | pending |
