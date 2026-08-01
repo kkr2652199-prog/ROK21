@@ -1,0 +1,41 @@
+{
+  "id": "K-NEW-ENGINE-STAT-A1",
+  "ts": "2026-08-01T07:36:46+00:00",
+  "seed": 42,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "path": "stat_brain.predict.run solo (n_sets=5)",
+  "baseline": {
+    "engine_v2": false,
+    "n_eval": 200,
+    "ge3_count": 27,
+    "ge3_rate": 0.135,
+    "mean_match": 1.805,
+    "p_vs_null": 0.198612,
+    "null_ge3": 0.1137
+  },
+  "v2": {
+    "engine_v2": true,
+    "n_eval": 200,
+    "ge3_count": 27,
+    "ge3_rate": 0.135,
+    "mean_match": 1.775,
+    "p_vs_null": 0.198612,
+    "null_ge3": 0.1137
+  },
+  "comparison": {
+    "delta_ge3": 0.0,
+    "baseline_solo_ref": 0.1125,
+    "gate_a_v2_ge3_gte_baseline": true,
+    "gate_b_delta_ge3_gte_0.01_and_p_lt_0.15": false
+  },
+  "gate": {
+    "rule": "v2 ge3 >= baseline_solo OR (delta >= +0.01 AND p_vs_null < 0.15)",
+    "delta_min": 0.01,
+    "p_max": 0.15
+  },
+  "verdict": "PASS",
+  "pass": true
+}

@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `2d9c7fa` |
+| HEAD(실측) | `7ca8c93` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BRAIN-TUNE-SURVEY** — P0 aux_hint_top5=0.1091 · best_combo ge3=**0.1032** · live_baseline 0.1218 미달 · **HOLD** |
-| 직전 | K-BACKTEST-FULL-C — C package FULL ge3=0.1015 · QUICK collapse −0.0235 · **FAIL** |
-| BOOT다음 | **K-BRAIN-TUNE-APPLY** — survey HOLD 권고 · tune apply · **형 GO 대기** |
-| NEXT1 ID | **K-BRAIN-TUNE-APPLY** |
-| NEXT1 할일 | survey HOLD 권고 · 형 GO 시 wire/hint/lb A/B apply · auto-apply 금지 |
+| 지금 | **K-NEW-ENGINE-STAT-A1** — stat solo baseline ge3=**0.1350** · v2=**0.1350** · delta=0 · **PASS** · ENGINE_V2=False 유지 |
+| 직전 | K-BRAIN-TUNE-SURVEY — P0 aux_hint_top5=0.1091 · best_combo ge3=0.1032 · **HOLD** |
+| BOOT다음 | **K-NEW-ENGINE-MARKOV-A1** — markov engine 개선 · **형 GO 대기** |
+| NEXT1 ID | **K-NEW-ENGINE-MARKOV-A1** |
+| NEXT1 할일 | markov_brain engine 개선 (STAT-A1 패턴) · build_weights 변경 · bench A/B · 형 GO 시 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=2d9c7fa · 지금=**K-BRAIN-TUNE-SURVEY** — P0 aux_hint_top5=0.1091 · best_combo ge3=**0.1032** · live_baseline 0.1218 미달 · **HOLD** · 다음=K-BRAIN-TUNE-APPLY`
+1. 첫줄 `[복귀] HEAD=7ca8c93 · 지금=**K-NEW-ENGINE-STAT-A1** — stat solo baseline ge3=**0.1350** · v2=**0.1350** · delta=0 · **PASS** · ENGINE_V2=False 유지 · 다음=K-NEW-ENGINE-MARKOV-A1`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 2d9c7fa_
+_generated: 7ca8c93_

@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BRAIN-TUNE-APPLY
-- 할일: survey HOLD 권고 · 형 GO 시 wire/hint/lb A/B apply · auto-apply 금지
-- 완료조건: 형 GO + APPLY PASS 또는 HOLD 확정
-- 선행완료: K-BRAIN-TUNE-SURVEY **SURVEY OK** (best_combo ge3=0.1032 · live_baseline 0.1218 미달 · HOLD)
+- ID: K-NEW-ENGINE-MARKOV-A1
+- 할일: markov_brain engine 개선 (STAT-A1 패턴) · build_weights 변경 · bench A/B · 형 GO 시
+- 완료조건: bench PASS 또는 HOLD 확정 + ENGINE_V2 default 안전
+- 선행완료: K-NEW-ENGINE-STAT-A1 **PASS** (baseline ge3=0.1350 · v2=0.1350 · delta=0 · ENGINE_V2=False 유지)
 
 ## WORKSTATE
 IDLE

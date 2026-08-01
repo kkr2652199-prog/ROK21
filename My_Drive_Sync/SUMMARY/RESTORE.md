@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2d9c7fa` · WORK=`IDLE`
-2. **지금:** **K-BRAIN-TUNE-SURVEY** — P0 aux_hint_top5=0.1091 · best_combo ge3=**0.1032** · live_baseline 0.1218 미달 · **HOLD**
-3. **다음1건:** K-BRAIN-TUNE-APPLY — survey HOLD 권고 · 형 GO 시 wire/hint/lb A/B apply · auto-apply 금지 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `7ca8c93` · WORK=`IDLE`
+2. **지금:** **K-NEW-ENGINE-STAT-A1** — stat solo baseline ge3=**0.1350** · v2=**0.1350** · delta=0 · **PASS** · ENGINE_V2=False 유지
+3. **다음1건:** K-NEW-ENGINE-MARKOV-A1 — markov_brain engine 개선 (STAT-A1 패턴) · build_weights 변경 · bench A/B · 형 GO 시 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-NEW-ENGINE-STAT-A1 GO | stat engine v2 dual-window+cycle gap · solo n=200 baseline/v2 ge3=0.1350 delta=0 · ENGINE_V2=False | **PASS** | pending |
 | 2026-08-01 | K-BRAIN-TUNE-SURVEY GO | P0 aux_hint_top5=0.1091 · P1 lb120=0.1058 · P2 hint0=0.1058 · best_combo=0.1032 · APPLY HOLD | **SURVEY OK** | pending |
 | 2026-08-01 | K-BACKTEST-FULL-C GO | C package FULL n=1182 ge3=0.1015(QUICK 0.125 collapse) · by_brain stat=0.1125 · live_baseline 0.1218 미달 | **FAIL** | pending |
 | 2026-08-01 | K-WIRE-SELECT-FULL-SURVEY GO | conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · quota_gap=43.1% · wire_go=wait | **SURVEY OK** | pending |
@@ -45,44 +46,6 @@
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE4 GO | coordinator PREDICT_MODULES→3뇌 패키지 · predict_sets 어댑터 · 동치 PASS 3/3 n=200 | **PHASE4 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE3 GO | review_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE3 PASS** | `2beb17c` |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE2 GO | markov_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE2 PASS** | pending |
-| 2026-08-01 | K-BRAIN-PACKAGE-PHASE1 GO | stat_brain engine/learn/aux/predict + shared db_facts/diversity · 동치 PASS n=200 nums 200/200 | **PHASE1 PASS** | pending |
-| 2026-08-01 | K-BRAIN-PACKAGE-PHASE0 GO | stat/markov/review_brain+shared 스켈레톤 19파일 · 기존 미변경 · ge3벤치 생략 | **PHASE0 OK** | `d9dbdf4` |
-| 2026-08-01 | K-BRAIN-PACKAGE-C 설계 | 3뇌 A/B/C · 뇌+전용보조 패키지 · GO조건 | **DOC OK** | pending |
-| 2026-08-01 | 세션 논의 정리·push | tier·3+4·pool·뇌패키지·백테·RESUME_HERE · ARCHITECTURE_NOTES | **DOC OK** | pending |
-| 2026-08-01 | K-MARKOV-LEARN-SURVEY GO | wired ge3=0.105 p=0.683 · stored old=0.165 · predict 롤백 | **LEARN FAIL** | `91e1cda` |
-| 2026-08-01 | K-ARCHITECTURE-REVIEW READ-ONLY | 학습 markov미소비·ending 0.3·referee σ≈0.003 · Jaccard≈0.09 · pin FULL1182 | **REVIEW OK** | pending |
-| 2026-08-01 | K-ATTACK-HOLD 문서 마감 | STATUS·TEST_PRIORITY·HEAD sync · coordinator 미배선 확인 · survey HOLD 확정 | **HOLD OK** | pending |
-| 2026-08-01 | K-EXCLUDE-SURVEY GO | QUICK n=200 λ sweep · best exclude ge3=0.145=baseline · λ0.25=0.135 · kill≤11% | **EXCLUDE FAIL** | pending |
-| 2026-08-01 | 종료체크·SELECT-FULL 마감 | full n=1182 combined ge3=0.1218 FAIL · EXCLUDE-HIST·LEAKAGE · 20260801 세션보고서 | **FULL FAIL** | pending |
-| 2026-07-30 | TESTLOTTO backtest pool PIN | eval reset cache miss → backtest auto-WF · PATCH_PINS · backfill · 1136/1234 QA | **PIN OK** | pending |
-| 2026-07-30 | tail-100 백테스트·UI 단일버튼 | repack ge3=0.23 combined=0.15 · run_id 3·4 · 「3뇌 예측」만 · pred/cache eval reset | **T100 OK** | pending |
-| 2026-07-30 | TESTLOTTO 클릭 예측·재시작 로딩 금지 | prewarm 제거 · cache-only API · 「3뇌 예측」 · 1214 tier·1232 miss QA | **CLICK OK** | pending |
-| 2026-07-30 | TESTLOTTO 4·5등 적중 표시 버그 | pool-view SSOT 채점 · hero·모달·카드 일치 · 1214/1234/1200/1235 QA | **FIX OK** | pending |
-| 2026-07-30 | TESTLOTTO 로딩+15세트 UI | pool-view SQLite 캐시 hit ~4ms · accordion · sub-tabs · B-03 해결 | **LOAD OK** | pending |
-| 2026-07-30 | TESTLOTTO UI/UX만 | B-04 스피너·스켈레톤 · CSS spacing · chevron · GenSpark UI 라운드 | **UI OK** | pending |
-| 2026-07-30 | 7021 테스트로또 브라우저 QA | MCP 6항목 PASS · 버그5(이모지·K-SIGNAL summary 수정2) · pool-view 12~31s | **QA PASS** | pending |
-| 2026-07-30 | TESTLOTTO UI+DB·10+5·한글 | backtest_runs 2건·pool-view API·7021 UI · REPORT_STYLE 과제表 | **UI OK** | pending |
-| 2026-07-30 | 보고서 한국어·3등 긍정 | REPORT_STYLE·BENCH_TEMPLATE 용어表 · REPACK 보고서 한글화 · r3=1 복습 | **DOC OK** | pending |
-| 2026-07-30 | 형 몰아주기(repack) GO | signal repack survey n=200 · top5 ge3=0.085 · combined=0.145 · DB reset 1260행 | **5장 FAIL** | pending |
-| 2026-07-30 | TEST_PRIORITY 큐·숙제형 문서 | P0~P3 11건·용어表·BOOT/STATUS/AI_COLLAB 링크 | **DOC OK** | pending |
-| 2026-07-30 | K-QUICK-GATE+SIGNAL-SELECT GO | BENCH§9·bench_quick_gate·combined QUICK ge3=0.145 n=200 | **QUICK PASS** | pending |
-| 2026-07-30 | K-WINDOW-SIGNAL-01 GO·E2 | window hint 61variants n=1182 · best ge3=0.1328 · E2 bin lift | **FAIL** | pending |
-| 2026-07-29 | 신호셋트 아키텍처·GenSpark 3turn | Tier0~4·통합5·구현순서7단계 · KWINDOW running 900/1182 | ARCH OK | pending |
-| 2026-07-29 | K-AUX-SIGNAL-01 GO | hint inject live WF n=1182 · 5 variants×α · best ge3=0.1303 | **FAIL** | `579495e` |
-| 2026-07-29 | DHLOTTERY 로또 감사 | lt645 result/stats/판매점 READ-ONLY · K-AUX-SIGNAL 3아이디어 · 보고서 | AUDIT OK | `394e790` |
-| **K-BENCH-01-WIRE** | tier 피드백 live WF ge3=0.1142 · 롤백 · AUX_SIGNAL_PIVOT | WIRE FAIL | `pending` |
-| 2026-07-29 | K-BENCH-01 GO | postmortem WF n=1182 · 쿼터갭43.6%·markov52.5% · AUX무상관 | BENCH01 SIGNAL | `pending` |
-| 2026-07-29 | GenSpark+4보조·피드백 논의 | READ-ONLY 코드확인·형가설 판정·보고서·GenSpark 6문답 교차 | REVIEW OK | `pending` |
-| 2026-07-29 | K-BENCH-02 GO | confidence 5축 live · baseline ge3=0.1100 최고 · AUX/conf 하회 | BENCH02 FAIL | `pending` |
-| 2026-07-29 | K-BENCH-05·03 GO | baseline행·WF/tier 분리 · BENCH_REPORT_TEMPLATE · 보고서예시2 | PROTOCOL OK | `pending` |
-| 2026-07-29 | 1군→ROK21 교훈 정리 | 배울·갖춘·금지 3섹션 · 1131~1231 3등15 · K-MONEY1-LESSONS | LESSONS OK | `pending` |
-| 2026-07-29 | K-STAT-TUNE-WIRE·GO | ge3=0.1176 p=0.35 · 롤백 gap30/hot5 · NEXT=HOLD | WIRE FAIL | `bfa7222` |
-| 2026-07-29 | K-STAT-TUNE·종료체크 | best0.1523>0.1447 p=3.6e-05 · NEXT=WIRE | TUNE PASS | `688805c` |
-| 2026-07-29 | HOLD판단·팩트체크·push | HOLD맵 · 실레버공백 · 새벤치無 · V2유지 · 형A/B | HOLD맵 | `9d29038` |
-| 2026-07-29 | GENMIX·팩트체크·push | GENMIX FAIL · live0.1303<pin · trunc동일 · NEXT=HOLD | GENMIX FAIL | `d8650db` |
-| 2026-07-29 | AUX/생성레버·팩트체크·push | AUX-BLEND FAIL · live r=0.0134 · V2유지 · NEXT=HOLD | AUX-BLEND FAIL | `4ca44bf` |
-| 2026-07-29 | 새직교축·팩트체크·push | GENDIV FAIL · Q1 ge3 0.1224 · V2유지 · NEXT=HOLD | GENDIV FAIL | `18848dc` |
-| 2026-07-29 | K-POSTHOC-ANALYSIS | 50시드×50회 best ge3=0.18 p=0.109 · 무신호 · V2 pin유지 | POSTHOC 무신호 | `pending` |
 
 ---
 

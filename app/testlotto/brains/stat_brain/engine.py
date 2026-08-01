@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import random
 from math import exp
 
@@ -11,6 +12,111 @@ from app.testlotto.brains.stat_brain import learn
 from app.testlotto.filters import tier1_filter
 
 logger = logging.getLogger(__name__)
+
+# K-NEW-ENGINE-STAT-A1: dual-window + cycle gap (default off until bench PASS)
+ENGINE_V2 = False
+
+
+def _use_engine_v2() -> bool:
+    env = os.environ.get("K_STAT_ENGINE_V2", "").strip().lower()
+    if env in ("1", "true", "yes"):
+        return True
+    return ENGINE_V2
+
+
+def _last_seen_map(draws: list[dict]) -> dict[int, int]:
+    last_seen: dict[int, int] = {}
+    for d in draws:
+        for k in ["num1", "num2", "num3", "num4", "num5", "num6"]:
+            last_seen[d[k]] = d["draw_no"]
+    for n in range(1, 46):
+        if n not in last_seen:
+            last_seen[n] = 0
+    return last_seen
+
+
+def _window_freq_norm(draws_slice: list[dict], decay: float) -> dict[int, float]:
+    """Slice-only recency weights, normalized to sum=1."""
+    freq: dict[int, float] = {n: 0.0 for n in range(1, 46)}
+    total = len(draws_slice)
+    for idx, d in enumerate(draws_slice):
+        age = total - 1 - idx
+        w = exp(-decay * age)
+        for k in ["num1", "num2", "num3", "num4", "num5", "num6"]:
+            freq[d[k]] += w
+    for n in range(1, 46):
+        if freq[n] == 0.0:
+            freq[n] = 0.1
+    total_sum = sum(freq.values())
+    return {n: freq[n] / total_sum for n in range(1, 46)}
+
+
+def _avg_cycle_map(draws: list[dict]) -> dict[int, float]:
+    """Per-number mean gap (draw_no) between appearances; default 10 if rare."""
+    appearances: dict[int, list[int]] = {n: [] for n in range(1, 46)}
+    for d in draws:
+        dn = int(d["draw_no"])
+        for k in ["num1", "num2", "num3", "num4", "num5", "num6"]:
+            appearances[int(d[k])].append(dn)
+    avg_cycle: dict[int, float] = {}
+    for n in range(1, 46):
+        app = appearances[n]
+        if len(app) < 2:
+            avg_cycle[n] = 10.0
+        else:
+            gaps = [app[i + 1] - app[i] for i in range(len(app) - 1)]
+            avg_cycle[n] = sum(gaps) / len(gaps)
+    return avg_cycle
+
+
+def _apply_cycle_gap_boost(freq: dict[int, float], draws: list[dict]) -> None:
+    gap_map = db_facts.get_gap_map(draws)
+    avg_cycle = _avg_cycle_map(draws)
+    for n in range(1, 46):
+        gap = gap_map[n]
+        avg = avg_cycle[n]
+        if gap >= avg * 1.5:
+            freq[n] *= 1.25
+        elif gap >= avg * 1.2:
+            freq[n] *= 1.15
+
+
+def _build_freq_v1(draws: list[dict], last_seen: dict[int, int]) -> dict[int, float]:
+    freq: dict[int, float] = {}
+    total_draws = len(draws)
+    for idx, d in enumerate(draws):
+        recency_weight = exp(-0.02 * (total_draws - 1 - idx))
+        for k in ["num1", "num2", "num3", "num4", "num5", "num6"]:
+            n = d[k]
+            freq[n] = freq.get(n, 0.0) + recency_weight
+            last_seen[n] = d["draw_no"]
+    for n in range(1, 46):
+        if n not in freq:
+            freq[n] = 0.1
+    gap_map = db_facts.get_gap_map(draws)
+    for n in range(1, 46):
+        gap = gap_map[n]
+        if gap >= 50:
+            freq[n] *= 1.3
+        elif gap >= 30:
+            freq[n] *= 1.15
+    return freq
+
+
+def _build_freq_v2(draws: list[dict]) -> dict[int, float]:
+    long_norm = _window_freq_norm(draws, 0.005)
+    if len(draws) >= 52:
+        short_draws = draws[-52:]
+    else:
+        short_draws = draws
+        logger.debug(
+            "stat engine v2: short window uses all %d draws (<52)",
+            len(draws),
+        )
+    short_norm = _window_freq_norm(short_draws, 0.05)
+    freq = {n: 0.4 * long_norm[n] + 0.6 * short_norm[n] for n in range(1, 46)}
+    _apply_cycle_gap_boost(freq, draws)
+    return freq
 
 
 def build_weights(draws: list[dict]) -> tuple[
@@ -25,31 +131,13 @@ def build_weights(draws: list[dict]) -> tuple[
         empty_w = {n: 1.0 / 45 for n in range(1, 46)}
         return empty_w, {}, {}, {}, 0
 
-    freq: dict[int, float] = {}
-    last_seen: dict[int, int] = {}
-    total_draws = len(draws)
+    last_seen = _last_seen_map(draws)
+    latest_draw_no = int(draws[-1]["draw_no"])
 
-    for idx, d in enumerate(draws):
-        recency_weight = exp(-0.02 * (total_draws - 1 - idx))
-        for k in ["num1", "num2", "num3", "num4", "num5", "num6"]:
-            n = d[k]
-            freq[n] = freq.get(n, 0.0) + recency_weight
-            last_seen[n] = d["draw_no"]
-
-    for n in range(1, 46):
-        if n not in freq:
-            freq[n] = 0.1
-        if n not in last_seen:
-            last_seen[n] = 0
-
-    latest_draw_no = draws[-1]["draw_no"] if draws else 0
-    gap_map = db_facts.get_gap_map(draws)
-    for n in range(1, 46):
-        gap = gap_map[n]
-        if gap >= 50:
-            freq[n] *= 1.3
-        elif gap >= 30:
-            freq[n] *= 1.15
+    if _use_engine_v2():
+        freq = _build_freq_v2(draws)
+    else:
+        freq = _build_freq_v1(draws, last_seen)
 
     recent_5 = draws[-5:] if len(draws) >= 5 else draws
     hot_count: dict[int, int] = {}
