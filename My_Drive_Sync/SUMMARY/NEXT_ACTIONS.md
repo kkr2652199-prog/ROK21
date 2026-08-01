@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-WIRE-SELECT-GO-WAIT
-- 할일: FULL FAIL·collapse(0.135→0.1117) — wire **HOLD 권고** · 형 명시 GO 시 conf_global_top5 wire A/B · coordinator 미패치
-- 완료조건: 형 GO + wire patch + FULL backtest PASS
-- 선행완료: K-WIRE-SELECT-FULL-SURVEY **OK** (conf_global_top5 FULL ge3=0.1117 p=0.600 · set_no_asc=0.1015 · quota_gap=43.1% · wire_go=wait)
+- ID: K-BRAIN-TUNE-SURVEY
+- 할일: hint/learn/window/selection READ-ONLY sweep · FULL n=1182 · **형 GO 대기**
+- 완료조건: 형 GO + survey PASS + tune 후보 1건 이상 promising
+- 선행완료: K-BACKTEST-FULL-C **FAIL** (C package FULL ge3=0.1015 · QUICK 0.125 collapse −0.0235 · live_baseline 0.1218 미달)
 
 ## WORKSTATE
 IDLE

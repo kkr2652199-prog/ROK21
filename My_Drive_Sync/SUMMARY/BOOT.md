@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD**
-- 직전: K-QUOTA-GAP-SURVEY — conf_global_top5 QUICK ge3=0.135 · aux_hint=0.130 · quota_gap=43.0%
-- 다음: **K-WIRE-SELECT-GO-WAIT** — FULL FAIL·collapse · wire HOLD 권고 · 형 GO 시에만 A/B (coordinator 미패치)
+- 지금: **K-BACKTEST-FULL-C** — C package FULL ge3=**0.1015**(QUICK 0.125 collapse −0.0235) · live_baseline 0.1218 미달 · **FAIL**
+- 직전: K-WIRE-SELECT-FULL-SURVEY — conf_global_top5 FULL ge3=0.1117 · set_no_asc=0.1015 · wire GO=wait/HOLD
+- 다음: **K-BRAIN-TUNE-SURVEY** — hint/learn/window/selection READ-ONLY sweep · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

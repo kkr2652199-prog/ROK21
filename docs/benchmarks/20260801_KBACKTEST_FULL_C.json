@@ -1,0 +1,155 @@
+{
+  "id": "K-BACKTEST-FULL-C",
+  "ts": "2026-08-01T06:22:58+00:00",
+  "seed": 42,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "look_back": 52,
+  "n_eval": 1182,
+  "path": "coordinator_full (3brain pool + aux scoring + wire quota → best of 5)",
+  "production_stack": {
+    "hint_weight": 0.15,
+    "learn_wired": true,
+    "aux_1to1_enabled": true,
+    "wire": "set_no_asc"
+  },
+  "gate": {
+    "n_eval": 1182,
+    "draw_range": [
+      53,
+      1234
+    ],
+    "sample_mode": "full",
+    "seed": 42,
+    "pass": "ge3>pin(0.1447) AND p<0.05"
+  },
+  "overall": {
+    "n": 1182,
+    "mean": 1.692,
+    "ge3_rate": 0.1015,
+    "ge3_count": 120,
+    "delta_ge3_vs_null": -0.0122,
+    "delta_ge3_vs_pin": -0.0432,
+    "p_value": 0.915531,
+    "verdict": "FAIL",
+    "mean_match": 1.692047,
+    "n_eval": 1182
+  },
+  "by_brain": {
+    "stat": {
+      "n": 1182,
+      "mean": 1.7538,
+      "ge3_rate": 0.1125,
+      "ge3_count": 133,
+      "delta_ge3_vs_null": -0.0012,
+      "delta_ge3_vs_pin": -0.0322,
+      "p_value": 0.564346,
+      "verdict": "FAIL",
+      "mean_match": 1.753807,
+      "n_eval": 1182
+    },
+    "markov": {
+      "n": 1182,
+      "mean": 1.6328,
+      "ge3_rate": 0.1074,
+      "ge3_count": 127,
+      "delta_ge3_vs_null": -0.0063,
+      "delta_ge3_vs_pin": -0.0373,
+      "p_value": 0.763502,
+      "verdict": "FAIL",
+      "mean_match": 1.632826,
+      "n_eval": 1182
+    },
+    "review": {
+      "n": 1182,
+      "mean": 1.6836,
+      "ge3_rate": 0.1066,
+      "ge3_count": 126,
+      "delta_ge3_vs_null": -0.0071,
+      "delta_ge3_vs_pin": -0.0381,
+      "p_value": 0.791304,
+      "verdict": "FAIL",
+      "mean_match": 1.683587,
+      "n_eval": 1182
+    }
+  },
+  "by_period": {
+    "early": {
+      "draw_range": [
+        53,
+        447
+      ],
+      "n": 395,
+      "mean": 1.6101,
+      "ge3_rate": 0.0759,
+      "ge3_count": 30,
+      "delta_ge3_vs_null": -0.0378,
+      "delta_ge3_vs_pin": -0.0688,
+      "p_value": 0.99484,
+      "verdict": "FAIL",
+      "mean_match": 1.610127,
+      "n_eval": 395
+    },
+    "mid": {
+      "draw_range": [
+        448,
+        841
+      ],
+      "n": 394,
+      "mean": 1.7487,
+      "ge3_rate": 0.1091,
+      "ge3_count": 43,
+      "delta_ge3_vs_null": -0.0046,
+      "delta_ge3_vs_pin": -0.0356,
+      "p_value": 0.635596,
+      "verdict": "FAIL",
+      "mean_match": 1.748731,
+      "n_eval": 394
+    },
+    "late": {
+      "draw_range": [
+        842,
+        1234
+      ],
+      "n": 393,
+      "mean": 1.7176,
+      "ge3_rate": 0.1196,
+      "ge3_count": 47,
+      "delta_ge3_vs_null": 0.0059,
+      "delta_ge3_vs_pin": -0.0251,
+      "p_value": 0.379339,
+      "verdict": "FAIL",
+      "mean_match": 1.717557,
+      "n_eval": 393
+    }
+  },
+  "references": {
+    "quick_ge3": 0.125,
+    "v2_pin_ge3": 0.1447,
+    "live_baseline_ge3": 0.1218,
+    "null_ge3": 0.1137,
+    "source_files": {
+      "quick_ge3": "docs/benchmarks/20260801_KBRAIN_PACKAGE_COMPLETE.json",
+      "v2_pin_ge3": "STATUS_LATEST.md WIRE-V2 pin",
+      "live_baseline_ge3": "K-10SET-DET-LAB-FULL pool10 ge3=0.1218"
+    }
+  },
+  "comparison": {
+    "ge3_vs_quick": -0.0235,
+    "ge3_vs_live_baseline": -0.0203,
+    "ge3_vs_v2_pin": -0.0432,
+    "ge3_vs_null": -0.0122
+  },
+  "verdict": "FAIL",
+  "pass": false,
+  "pass_criteria": {
+    "live_baseline_ge3": 0.1218,
+    "strong_pass_ge3": 0.1447,
+    "overall_ge3": 0.1015,
+    "meets_live_baseline": false,
+    "meets_strong_pass": false
+  },
+  "note": "READ-ONLY FULL n=1182 walk-forward · C package production stack · no app/DB changes"
+}

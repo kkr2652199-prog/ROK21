@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-BACKTEST-FULL-C GO | C package FULL n=1182 ge3=0.1015(QUICK 0.125 collapse) · by_brain stat=0.1125 · live_baseline 0.1218 미달 | **FAIL** | pending |
 | 2026-08-01 | K-WIRE-SELECT-FULL-SURVEY GO | conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · quota_gap=43.1% · wire_go=wait | **SURVEY OK** | pending |
 | 2026-08-01 | K-QUOTA-GAP-SURVEY GO | set_no_asc ge3=0.125 · conf_global_top5=0.135 · aux_hint=0.130 · quota_gap=43.0% · coordinator 미변경 | **SURVEY OK** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-COMPLETE GO | C package core Phase0~7 consolidated · ge3=0.125 n=200 · wire/repack 미변경 | **COMPLETE OK** | pending |
