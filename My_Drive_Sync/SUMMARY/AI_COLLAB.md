@@ -24,12 +24,44 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 17:50 KST)
-- **HEAD(실측)**: `57485db` · SSOT=`kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021** (서버 재기동됨)
-- **지금(판정)**: **K-HIGHWAY-BACKTEST-100 FAIL** — overall ge3=**0.0600** · baseline 0.1015 대비 **−0.0415**
-- **다음(공식)**: **K-HIGHWAY-PHASE1-HOLD** — 롤백/HOLD/튜닝 **형 GO 대기**
+### 최신 상태 (2026-08-01 18:55 KST)
+- **HEAD(실측)**: `4d7fa2a` · SSOT=`kkr2652199-prog/ROK21` · `D:\ROK21` · 포트 **7021**
+- **지금(판정)**: **K-BRAIN-SIGNAL-BACKTEST-100 FAIL** — ge3=**0.0600** · signal_active=**100%** · UI **1235회차** 5장
+- **다음(공식)**: **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM 0.90→0.85 · **형 GO 대기**
 - **WORKSTATE**: IDLE
-- **서버**: `python run_v13.py` · http://127.0.0.1:7021/ · 테스트로또 탭에서 확인
+
+### K-BRAIN-SIGNAL-BACKTEST-100 (형 GO · FAIL)
+근거: `docs/benchmarks/20260801_KBRAIN_SIGNAL_BACKTEST_100.json`
+
+| 지표 | 값 |
+|------|-----|
+| overall ge3 | **0.0600** (6/100) — highway와 **동일** |
+| signal_active_rate | **100%** (100/100) |
+| vs highway 0.0600 | **+0.0000** |
+| vs baseline 0.1015 | **−0.0415** |
+| by_brain solo | stat 0.09 · markov 0.13 · review 0.11 |
+| by_period | early 0.04 · mid 0.04 · late 0.08 |
+| DB | reset 후 **505행** 유지 · draw **1235** UI 5장 |
+
+**판정:** FAIL (ge3 ≤ 0.0600) · signal 레이어는 **전 회차 active** → ge3 개선 없음 → TUNE(_MIN_MAX_SIM) 검토
+
+### K-BRAIN-SIGNAL-A1 (형 GO · PASS)
+| 항목 | 내용 | 판정 |
+|------|------|------|
+| pattern_signal.py | 9-dim cosine top-k analog signal | **OK** |
+| coordinator blend | 85% brain conf + 15% signal avg · uniform skip | **OK** |
+| engine 동결 | stat/markov/review engine.py 미변경 | **OK** |
+| smoke | draw 1225~1234 ×10 no error | **PASS** |
+
+**현재 live stack (A1 반영):**
+```
+run_coordinated_prediction 진입
+  → _auto_feedback(prev) → apply_feedback
+  → get_pattern_signal(draws)  ← A1
+  → 3뇌 predict 15장 → pattern conf blend  ← A1
+  → aux 1:1 scoring → dynamic_brain_quota 5장
+  → DB 저장
+```
 
 ### K-HIGHWAY-PHASE1 (형 GO · 코드 반영 완료 · 백테 FAIL)
 | ID | 파일 | 내용 | 판정 |
@@ -66,7 +98,7 @@ run_coordinated_prediction 진입
 ### 병렬 트랙 (별도 · PHASE1과 독립)
 | ID | 판정 | 비고 |
 |----|------|------|
-| **K-BRAIN-SIGNAL** | **설계 검토 완료** | Q1~Q4 답변(2026-08-01) · 형 GO 후 A1 착수 |
+| **K-BRAIN-SIGNAL** | **BACKTEST FAIL** | A1 PASS · ge3=0.0600 · signal_active 100% · TUNE **형 GO 대기** |
 | K-NEW-ENGINE-STAT-A1 | **PASS** (delta=0) | ENGINE_V2=False 유지 · solo ge3=0.1350 |
 | K-BRAIN-TUNE-SURVEY | **HOLD** | best_combo 0.1032 · auto-apply 금지 |
 | K-BRAIN-LOGIC-UPGRADE | **설계 검토만** | 젠스파크 4방향 · 커서 Q1~Q5 답변 · 형 GO 전 구현 금지 |

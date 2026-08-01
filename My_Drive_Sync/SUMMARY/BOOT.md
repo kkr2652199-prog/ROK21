@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-HIGHWAY-BACKTEST-100** — overall ge3=**0.0600** · baseline 0.1015 대비 −0.0415 · **FAIL**
-- 직전: K-HIGHWAY-PHASE1 — FEEDBACK+REFEREE+QUOTA · learn adj 누적 확인
-- 다음: **형 GO 대기** — PHASE1 HOLD/롤백/튜닝 결정
+- 지금: **K-BRAIN-SIGNAL-BACKTEST-100** — ge3=**0.0600** · signal_active=**100%** · **FAIL** (=highway 동일)
+- 직전: K-BRAIN-SIGNAL-A1 — pattern_signal + coordinator blend · **PASS**
+- 다음: **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM 조정 · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
