@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b50a3f2` · WORK=`IDLE`
+- HEAD: `d3f1019` · WORK=`IDLE`
 - 지금: **K-EXCLUDE-SURVEY QUICK FAIL** — λ sweep n=200 · best exclude ge3=0.145=baseline · λ0.25 하락
 - 직전: K-SIGNAL-SELECT-FULL · K-EXCLUDE-HIST-01 · LEAKAGE_POLICY
 - BOOT다음: **K-ATTACK-HOLD** — SELECT/EXCLUDE wire HOLD · **전체 큐=`TEST_PRIORITY.md`**
