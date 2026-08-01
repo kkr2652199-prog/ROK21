@@ -24,12 +24,29 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 22:45 KST)
-- **HEAD(실측)**: `5bba9f3` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-AUX-DIAG DONE** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight**
-- **다음(공식)**: aux 회복(spotlight/balance) 또는 fusion path 변경 · **형 GO 대기**
+### 최신 상태 (2026-08-01 23:15 KST)
+- **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-QUOTA-MARKOV80-REV2 FAIL** — floor 4/5 ge3=**0.0900** (gate >0.09 · **1bp 미달**) · **롤백 25/60/15**
+- **다음(공식)**: ge3 0.09+ 추가 경로(aux/scoring/wire) · **형 GO 대기**
 
-### 현재 live stack (2026-08-01 · B1 rollback 후)
+### K-QUOTA-MARKOV80-REV2 (형 GO · FAIL · rollback)
+근거: `docs/benchmarks/20260801_KQUOTA_MARKOV80_N100.json`
+
+| 항목 | 값 |
+|------|-----|
+| DEFAULT | stat 10% · markov 80% · review 10% |
+| floor | markov **4/5** · stat 1 · review 0 |
+| smoke 1230~1234 | **PASS** (markov 4/5 ×5) |
+| n=100 ge3 | **0.0900** (9/100) |
+| vs quota60 0.0800 | **+0.0100** |
+| vs fused diag markov100% 0.0900 | **동일** |
+| gate | ge3 **>** 0.0900 → **FAIL** (0.0900 = tie) |
+| quota avg | stat **20%** · markov **80%** · review **0%** |
+| rollback | DEFAULT **25/60/15** + floor 로직 **제거** |
+
+**결론:** floor 4/5는 quota60 +0.01 · fusion diag 재현 · gate strict **1bp 부족** · production **롤백 완료**
+
+### 현재 live stack (2026-08-01 · B1 rollback · quota 25/60/15)
 ```
 run_coordinated_prediction
   → _auto_feedback(prev) → apply_feedback → learn_state

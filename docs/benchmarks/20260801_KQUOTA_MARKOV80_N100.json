@@ -1,0 +1,139 @@
+{
+  "id": "K-QUOTA-MARKOV80-REV2",
+  "ts": "2026-08-01T14:16:27+00:00",
+  "seed": 42,
+  "draw_range": [
+    1135,
+    1234
+  ],
+  "n_eval": 100,
+  "pipeline": "run_coordinated_prediction · markov floor 4/5 · DEFAULT 80/10/10",
+  "quota_defaults": {
+    "stat": 0.1,
+    "markov": 0.8,
+    "review": 0.1
+  },
+  "references": {
+    "fused_highway": {
+      "ge3_rate": 0.06
+    },
+    "quota60_fix": {
+      "ge3_rate": 0.08
+    },
+    "pass_threshold": 0.09
+  },
+  "overall": {
+    "n": 100,
+    "mean": 1.73,
+    "ge3_rate": 0.09,
+    "ge3_count": 9,
+    "delta_ge3_vs_null": -0.0237,
+    "delta_ge3_vs_pin": -0.0547,
+    "p_value": 0.815343,
+    "verdict": "FAIL",
+    "mean_match": 1.73,
+    "n_eval": 100
+  },
+  "by_brain": {
+    "stat": {
+      "n": 100,
+      "mean": 1.71,
+      "ge3_rate": 0.09,
+      "ge3_count": 9,
+      "delta_ge3_vs_null": -0.0237,
+      "delta_ge3_vs_pin": -0.0547,
+      "p_value": 0.815343,
+      "verdict": "FAIL",
+      "mean_match": 1.71,
+      "n_eval": 100
+    },
+    "markov": {
+      "n": 100,
+      "mean": 1.65,
+      "ge3_rate": 0.13,
+      "ge3_count": 13,
+      "delta_ge3_vs_null": 0.0163,
+      "delta_ge3_vs_pin": -0.0147,
+      "p_value": 0.347841,
+      "verdict": "FAIL",
+      "mean_match": 1.65,
+      "n_eval": 100
+    },
+    "review": {
+      "n": 100,
+      "mean": 1.65,
+      "ge3_rate": 0.11,
+      "ge3_count": 11,
+      "delta_ge3_vs_null": -0.0037,
+      "delta_ge3_vs_pin": -0.0347,
+      "p_value": 0.593066,
+      "verdict": "FAIL",
+      "mean_match": 1.65,
+      "n_eval": 100
+    }
+  },
+  "by_period": {
+    "early": {
+      "n": 25,
+      "mean": 1.64,
+      "ge3_rate": 0.04,
+      "ge3_count": 1,
+      "delta_ge3_vs_null": -0.0737,
+      "delta_ge3_vs_pin": -0.1047,
+      "p_value": 0.951076,
+      "verdict": "FAIL",
+      "mean_match": 1.64,
+      "n_eval": 25
+    },
+    "mid": {
+      "n": 25,
+      "mean": 1.8,
+      "ge3_rate": 0.08,
+      "ge3_count": 2,
+      "delta_ge3_vs_null": -0.0337,
+      "delta_ge3_vs_pin": -0.0647,
+      "p_value": 0.794171,
+      "verdict": "FAIL",
+      "mean_match": 1.8,
+      "n_eval": 25
+    },
+    "late": {
+      "n": 50,
+      "mean": 1.74,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_null": 0.0063,
+      "delta_ge3_vs_pin": -0.0247,
+      "p_value": 0.509453,
+      "verdict": "FAIL",
+      "mean_match": 1.74,
+      "n_eval": 50
+    }
+  },
+  "quota_stats": {
+    "counts": {
+      "markov": 400,
+      "stat": 100
+    },
+    "avg_pct": {
+      "stat": 20.0,
+      "markov": 80.0,
+      "review": 0.0
+    },
+    "prev_avg_pct": {
+      "stat": 20.0,
+      "markov": 60.0,
+      "review": 20.0
+    }
+  },
+  "comparison": {
+    "delta_ge3_vs_fused_ref": 0.03,
+    "delta_ge3_vs_quota60": 0.01
+  },
+  "verdict": "FAIL",
+  "pass": false,
+  "next_on_fail": "rollback DEFAULT 25/60/15 + floor logic · **형 GO 대기**",
+  "gate": {
+    "null_ge3": 0.1137
+  }
+}
