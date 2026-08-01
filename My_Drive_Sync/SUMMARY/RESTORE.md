@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5cf9d43` · WORK=`IDLE`
+1. **HEAD:** `bd2c67d` · WORK=`IDLE`
 2. **지금:** **K-QUOTA-GAP-SURVEY** — conf_global_top5 ge3=0.135 · aux_hint_quota=0.130 · quota_gap=43.0% · coordinator 미변경
 3. **다음1건:** K-WIRE-SELECT-GO-WAIT — conf_global_top5(+0.01) 또는 aux_hint_quota(+0.005) wire A/B — 형 GO 전 coordinator 미패치 · FULL n=1182 재검증 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

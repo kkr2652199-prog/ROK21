@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5cf9d43` · WORK=`IDLE`
+- HEAD: `bd2c67d` · WORK=`IDLE`
 - 지금: **K-QUOTA-GAP-SURVEY** — conf_global_top5 ge3=0.135 · aux_hint_quota=0.130 · quota_gap=43.0% · coordinator 미변경
 - 직전: K-BRAIN-PACKAGE-COMPLETE — C package Phase0~7 DONE · set_no_asc ge3=0.125 · consolidated PASS
 - BOOT다음: **K-WIRE-SELECT-GO-WAIT** — 형 GO for conf_global_top5 or aux_hint_quota wire A/B (auto-wire 금지)
