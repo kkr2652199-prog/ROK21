@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `000846b` · WORK=`IDLE`
-2. **지금:** **K-SIGNAL-SELECT-FULL 완료** — n=1182 · combined ge3=0.1218 · **FAIL** · wire HOLD
-3. **다음1건:** K-EXCLUDE-SURVEY — combined + 배제 ON/OFF · λ sweep · as_of WF · wire는 형 GO 전 금지 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `b50a3f2` · WORK=`IDLE`
+2. **지금:** **K-EXCLUDE-SURVEY QUICK FAIL** — λ sweep n=200 · best exclude ge3=0.145=baseline · λ0.25 하락
+3. **다음1건:** K-ATTACK-HOLD — SELECT/EXCLUDE wire HOLD 유지 · 형 GO 또는 새 축(10SET·패턴튜닝) 전까지 survey 중단 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
