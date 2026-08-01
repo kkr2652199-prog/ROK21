@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `1936187` · WORK=`IDLE`
+1. **HEAD:** `d1c1db8` · WORK=`IDLE`
 2. **지금:** **K-BACKTEST-FULL-C** — C package FULL ge3=**0.1015**(QUICK 0.125 collapse −0.0235) · live_baseline 0.1218 미달 · **FAIL**
 3. **다음1건:** K-BRAIN-TUNE-SURVEY — hint/learn/window/selection READ-ONLY sweep · FULL n=1182 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

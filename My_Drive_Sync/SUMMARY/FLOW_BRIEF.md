@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `1936187` · WORK=`IDLE`
+- HEAD: `d1c1db8` · WORK=`IDLE`
 - 지금: **K-BACKTEST-FULL-C** — C package FULL ge3=**0.1015**(QUICK 0.125 collapse −0.0235) · live_baseline 0.1218 미달 · **FAIL**
 - 직전: K-WIRE-SELECT-FULL-SURVEY — conf_global_top5 FULL ge3=0.1117 · set_no_asc=0.1015 · wire GO=wait/HOLD
 - BOOT다음: **K-BRAIN-TUNE-SURVEY** — hint/learn/window/selection READ-ONLY sweep · **형 GO 대기**
