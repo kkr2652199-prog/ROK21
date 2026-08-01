@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0ab1b8e` · WORK=`IDLE`
+1. **HEAD:** `7068530` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-PACKAGE-PHASE5** — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15
 3. **다음1건:** K-BRAIN-PACKAGE-PHASE6 — markov learn_state 실제 소비 배선 (형 GO 대기) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
