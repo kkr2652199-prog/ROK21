@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7e6d119` · WORK=`IDLE`
+- HEAD: `450becc` · WORK=`IDLE`
 - 지금: **K-HIGHWAY-PHASE1 COMPLETE** — FEEDBACK+REFEREE+QUOTA · dynamic_brain_quota · **OK**
 - 직전: K-HIGHWAY-REFEREE — aux_referee score_set · **OK**
 - BOOT다음: **형 GO 대기** — K-NEW-ENGINE-MARKOV-A1 등 별도 트랙

@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7e6d119` · WORK=`IDLE`
+1. **HEAD:** `450becc` · WORK=`IDLE`
 2. **지금:** **K-HIGHWAY-PHASE1 COMPLETE** — FEEDBACK+REFEREE+QUOTA · dynamic_brain_quota · **OK**
 3. **다음1건:** K-HIGHWAY-PHASE1-HOLD — PHASE1 COMPLETE · FEEDBACK+REFEREE+QUOTA 완료 · 다음 트랙 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

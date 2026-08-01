@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7e6d119` |
+| HEAD(실측) | `450becc` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-HIGHWAY-PHASE1 COMPLETE** — FEEDBACK+REFEREE+QUOTA · dynamic_brain_quota · **OK** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7e6d119 · 지금=**K-HIGHWAY-PHASE1 COMPLETE** — FEEDBACK+REFEREE+QUOTA · dynamic_brain_quota · **OK** · 다음=K-HIGHWAY-PHASE1-HOLD`
+1. 첫줄 `[복귀] HEAD=450becc · 지금=**K-HIGHWAY-PHASE1 COMPLETE** — FEEDBACK+REFEREE+QUOTA · dynamic_brain_quota · **OK** · 다음=K-HIGHWAY-PHASE1-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 7e6d119_
+_generated: 450becc_
