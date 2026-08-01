@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-10SET-DET-LAB-FULL FAIL** — pool10 ge3=0.1218 · QUICK→FULL collapse (SELECT-FULL 동일)
-- 직전: K-10SET-DET-LAB-COMBO QUICK · K-ATTACK-HOLD
-- 다음: **K-ATTACK-HOLD** — wire·survey HOLD · **전체 큐=`TEST_PRIORITY.md`**
+- 지금: **K-ARCHITECTURE-REVIEW** — 학습 부분작동 · 3뇌 Jaccard≈0.09 · pin=FULL1182 artifact
+- 직전: K-10SET-DET-LAB-FULL FAIL · K-ATTACK-HOLD
+- 다음: **K-ATTACK-HOLD** — wire·survey HOLD · V2 pin 유지 · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

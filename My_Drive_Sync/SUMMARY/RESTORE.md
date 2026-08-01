@@ -3,8 +3,8 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f53b590` · WORK=`IDLE`
-2. **지금:** **K-10SET-DET-LAB-FULL FAIL** — pool10 ge3=0.1218 · QUICK→FULL collapse (SELECT-FULL 동일)
+1. **HEAD:** `ccc9868` · WORK=`IDLE`
+2. **지금:** **K-ARCHITECTURE-REVIEW** — 학습 부분작동 · 3뇌 Jaccard≈0.09 · pin=FULL1182 artifact
 3. **다음1건:** K-ATTACK-HOLD — **확정** — 10SET FULL FAIL · survey 중단 · V2 pin 유지 · 형 GO 대기 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-ARCHITECTURE-REVIEW READ-ONLY | 학습 markov미소비·ending 0.3·referee σ≈0.003 · Jaccard≈0.09 · pin FULL1182 | **REVIEW OK** | pending |
 | 2026-08-01 | K-ATTACK-HOLD 문서 마감 | STATUS·TEST_PRIORITY·HEAD sync · coordinator 미배선 확인 · survey HOLD 확정 | **HOLD OK** | pending |
 | 2026-08-01 | K-EXCLUDE-SURVEY GO | QUICK n=200 λ sweep · best exclude ge3=0.145=baseline · λ0.25=0.135 · kill≤11% | **EXCLUDE FAIL** | pending |
 | 2026-08-01 | 종료체크·SELECT-FULL 마감 | full n=1182 combined ge3=0.1218 FAIL · EXCLUDE-HIST·LEAKAGE · 20260801 세션보고서 | **FULL FAIL** | pending |
