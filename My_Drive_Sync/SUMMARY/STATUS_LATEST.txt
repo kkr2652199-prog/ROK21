@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-01 KST  
-📌 사유: **K-BRAIN-PACKAGE-PHASE4 PASS** — coordinator 3뇌 패키지 배선 · 동치 n=200 3/3 · ge3/mean diff=0 · nums 600/600
+📌 사유: **K-BRAIN-PACKAGE-PHASE5 PASS** — aux 1:1 hint 주입 · ge3 0.125≥0.115 · hint_weight=0.15 · coordinator FULL path n=200
 
 ---
 
@@ -20,6 +20,7 @@
 | **K-SIGNAL-SELECT-FULL** | **FAIL** — combined ge3=**0.1218** p=0.201 · n=1182 · wire HOLD |
 | **K-MARKOV-LEARN-SURVEY** | **FAIL** — wired ge3=**0.105** p=0.683 · stored old=**0.165** · K-F 롤백 |
 | **세션 정리 20260801** | tier·3+4·pool·뇌패키지 — ARCHITECTURE_NOTES | **DOC** |
+| **K-BRAIN-PACKAGE-PHASE5** | aux 1:1 hint re-rank · coordinator FULL n=200 · ge3 0.115→0.125 | **PASS** · hint_weight=0.15 |
 | **K-BRAIN-PACKAGE-PHASE4** | coordinator 3뇌 패키지 배선 · deprecated→brain 동치 n=200 | **PASS** · 3/3 · nums 600/600 |
 | **K-BRAIN-PACKAGE-PHASE3** | review_brain 구현 · predict_review_king 동치 n=200 | **PASS** · nums 200/200 |
 | **K-BRAIN-PACKAGE-PHASE2** | markov_brain 구현 · predict_flow_shaman 동치 n=200 | **PASS** · nums 200/200 |
@@ -37,6 +38,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-BRAIN-PACKAGE-PHASE5** | shared/aux_hint rerank · stat/markov/review hint · FULL ge3 A/B | **PASS** · 0.125≥0.115 |
 | **K-BRAIN-PACKAGE-PHASE4** | coordinator PREDICT_MODULES→3뇌 패키지 · predict_sets 어댑터 · 동치 n=200 | **PASS** · 3/3 |
 | **20260801 세션 정리** | ge3≠3등 · 3뇌/4보조/repack · 뇌코드 규모 · 8→7·패키지 제안 | **DOC** |
 | **K-MARKOV-LEARN-SURVEY** | markov learn_state 배선 QUICK · stored vs live wired | **FAIL** · wired ge3=0.105 · 롤백 |

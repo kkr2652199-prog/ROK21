@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BRAIN-PACKAGE-PHASE5
-- 할일: (형 지시 대기)
+- ID: K-BRAIN-PACKAGE-PHASE6
+- 할일: markov learn_state 실제 소비 배선 (형 GO 대기)
 - 완료조건: 미확인
-- 선행완료: K-BRAIN-PACKAGE-PHASE4 **OK** (coordinator 3뇌 배선 · 동치 PASS 3/3 · ge3/mean diff=0 · nums 600/600)
+- 선행완료: K-BRAIN-PACKAGE-PHASE5 **OK** (aux hint PASS · ge3 0.125≥0.115 · hint_weight=0.15)
 
 ## WORKSTATE
 IDLE

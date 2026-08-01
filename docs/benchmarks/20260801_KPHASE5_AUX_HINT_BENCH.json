@@ -1,0 +1,32 @@
+{
+  "id": "K-PHASE5-AUX-HINT-BENCH",
+  "ts": "2026-08-01T05:30:48+00:00",
+  "seed": 42,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "path": "coordinator_full (3brain pool + aux scoring + wire quota)",
+  "v2_pin_ge3": 0.1447,
+  "metrics_a": {
+    "hint_weight": 0.0,
+    "n_eval": 200,
+    "ge3_count": 23,
+    "ge3_rate": 0.115,
+    "mean_match": 1.75
+  },
+  "metrics_b": {
+    "hint_weight": 0.15,
+    "n_eval": 200,
+    "ge3_count": 25,
+    "ge3_rate": 0.125,
+    "mean_match": 1.77
+  },
+  "ge3_diff": 0.01,
+  "mean_diff": 0.02,
+  "pass_criterion": "ge3_B >= ge3_A",
+  "retry": null,
+  "final_hint_weight": 0.15,
+  "verdict": "PASS",
+  "pass": true
+}

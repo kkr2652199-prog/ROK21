@@ -2,15 +2,23 @@
 
 from __future__ import annotations
 
+from app.testlotto.brains import aux_balance_keeper
 from app.testlotto.brains.shared import diversity
+from app.testlotto.brains.shared.aux_hint import rerank_by_aux
 from app.testlotto.brains.stat_brain import engine, learn
 from app.testlotto.features.draw_features import build_number_gaps, carry_over_from_prev
+
+HINT_WEIGHT = 0.15  # PHASE5 · bench can monkeypatch to 0 / 0.10
 
 
 def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
     """predict_stat_fairy.predict_sets 와 동치 — engine.generate + diversity.pick."""
     raw_n = diversity.factor(n_sets)
     base = engine.generate(draws, raw_n)
+    target_draw_no = int(draws[-1]["draw_no"]) + 1 if draws else 0
+    base = rerank_by_aux(
+        base, draws, target_draw_no, aux_balance_keeper, "stat", hint_weight=HINT_WEIGHT
+    )
     prev = draws[-1] if draws else None
     gaps = build_number_gaps(draws)
     learn_data = learn.get_adjustments()

@@ -2,9 +2,13 @@
 
 from __future__ import annotations
 
+from app.testlotto.brains import aux_miss_detective
 from app.testlotto.brains.review_brain import engine, learn
 from app.testlotto.brains.shared import diversity
+from app.testlotto.brains.shared.aux_hint import rerank_by_aux
 from app.testlotto.features.draw_features import repeat_rate_after_draw, sorted_nums
+
+HINT_WEIGHT = 0.15  # PHASE5 · bench can monkeypatch to 0 / 0.10
 
 
 def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
@@ -21,6 +25,10 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
 
     raw_n = diversity.factor(n_sets)
     base = engine.generate(draws, raw_n, adj=adj)
+    target_draw_no = int(draws[-1]["draw_no"]) + 1 if draws else 0
+    base = rerank_by_aux(
+        base, draws, target_draw_no, aux_miss_detective, "review", hint_weight=HINT_WEIGHT
+    )
 
     out: list[dict] = []
     for i, r in enumerate(base):

@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-BRAIN-PACKAGE-PHASE5 GO | shared/aux_hint · 3뇌 hint re-rank · FULL ge3 0.115→0.125 PASS · hint_weight=0.15 | **PHASE5 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE4 GO | coordinator PREDICT_MODULES→3뇌 패키지 · predict_sets 어댑터 · 동치 PASS 3/3 n=200 | **PHASE4 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE3 GO | review_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE3 PASS** | `2beb17c` |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE2 GO | markov_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE2 PASS** | pending |
