@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `b9fda9c` |
+| HEAD(실측) | `78114b0` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=b9fda9c · 지금=**K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True · 다음=K-BRAIN-PACKAGE-COMPLETE`
+1. 첫줄 `[복귀] HEAD=78114b0 · 지금=**K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True · 다음=K-BRAIN-PACKAGE-COMPLETE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

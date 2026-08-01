@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b9fda9c` · WORK=`IDLE`
+- HEAD: `78114b0` · WORK=`IDLE`
 - 지금: **K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True
 - 직전: K-BRAIN-PACKAGE-PHASE6 — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True
 - BOOT다음: **K-BRAIN-PACKAGE-COMPLETE** — C package core done · 형 지시 대기 wire/repack
