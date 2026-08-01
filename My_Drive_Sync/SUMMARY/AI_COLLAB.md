@@ -24,12 +24,31 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 19:20 KST)
-- **HEAD(실측)**: `bf0f118` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-BRAIN-SIGNAL-B1-BACKTEST-100 FAIL** — ge3=**0.0600** · virtual=**100%** · delta=0
-- **다음(공식)**: **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM / 롤백 · **형 GO 대기**
+### 최신 상태 (2026-08-01 21:05 KST)
+- **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-ENGINE-PHASE1 FAIL** — markov window100 solo ge3=**0.0850** (17/200) · B1 rollback **완료**
+- **다음(공식)**: **K-ENGINE-PHASE1-HOLD** — window100 롤백 vs fusion 회복 백테 · **형 GO 대기**
 
-### K-BRAIN-SIGNAL-B1-BACKTEST-100 (형 GO · FAIL)
+### K-ENGINE-PHASE1 (형 GO · STEP1~3 · window100 FAIL)
+근거: `docs/benchmarks/20260801_KMARKOV_WINDOW100_SOLO_N200.json`
+
+| STEP | 내용 | 판정 |
+|------|------|------|
+| 1 B1 rollback | coordinator signal import/block 제거 · predict_sets(draws) 복원 · smoke 1230~1234 5/5 | **OK** |
+| 2 markov window=100 | build_transition_matrix draws[-100:] · smoke 1230~1234 5/5 | **OK** |
+| 3 solo bench n=200 | draw 1035~1234 walk-forward · vs K-HIGHWAY solo 0.1300 | **FAIL** ge3=**0.0850** |
+
+| 지표 | 값 |
+|------|-----|
+| solo ge3_rate | **0.0850** (17/200) |
+| mean_match | **1.6150** |
+| vs ref 0.1300 | **−0.0450** |
+| by_period ge3 | early **0.1194** · mid **0.0896** · late **0.0455** |
+| gate | ge3 > 0.1300 → **FAIL** (auto-tune 없음) |
+
+**결론:** B1 rollback 완료 · markov window100은 solo ge3 **하락** → 유지/롤백·fusion 회복 백테 **형 GO 대기**
+
+### K-BRAIN-SIGNAL-B1-BACKTEST-100 (형 GO · FAIL · B1 rollback으로 superseded)
 근거: `docs/benchmarks/20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.json`
 
 | 지표 | 값 |

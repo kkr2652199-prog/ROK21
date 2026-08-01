@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8f845ab` · WORK=`IDLE`
+1. **HEAD:** `cf82516` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-SIGNAL-B1-BACKTEST-100** — ge3=**0.0600** · virtual=**100%** · **FAIL** (B1도 무개선)
 3. **다음1건:** K-BRAIN-SIGNAL-TUNE — B1-BACKTEST-100 **FAIL** ge3=0.0600(=방향1·highway 동일) · _MIN_MAX_SIM 0.90→0.85 또는 B1 롤백 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-ENGINE-PHASE1 GO STEP1~3 | B1 coordinator rollback · markov window=100 · solo n=200 ge3=0.0850 · smoke 1230~1234 5/5 | **FAIL** (window100) | pending |
 | 2026-08-01 | K-BRAIN-SIGNAL-A1 GO | pattern_signal.py 신규 · coordinator conf blend 85/15 · smoke 1225~1234 OK · engine 미변경 | **PASS** | uncommitted |
 | 2026-08-01 | K-HIGHWAY-BACKTEST-100 GO | n=100 draw1135~1234 · overall ge3=0.0600 · baseline −0.0415 · learn adj 누적 OK | **FAIL** | pending |
 | 2026-08-01 | K-HIGHWAY-QUOTA GO | dynamic_brain_quota · referee 가중 5장 · min1/뇌 · PHASE1 COMPLETE | **OK** | pending |
@@ -50,7 +51,6 @@
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE5 GO | shared/aux_hint · 3뇌 hint re-rank · FULL ge3 0.115→0.125 PASS · hint_weight=0.15 | **PHASE5 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE4 GO | coordinator PREDICT_MODULES→3뇌 패키지 · predict_sets 어댑터 · 동치 PASS 3/3 n=200 | **PHASE4 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE3 GO | review_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE3 PASS** | `2beb17c` |
-| 2026-08-01 | K-BRAIN-PACKAGE-PHASE2 GO | markov_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE2 PASS** | pending |
 
 ---
 

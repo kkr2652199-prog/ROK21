@@ -19,6 +19,8 @@ def build_transition_matrix(draws: list[dict], decay: float = 0.02) -> dict:
 
     전이행렬[a][b] = "a가 나온 회차 다음에 b가 나올 가중 횟수"
     """
+    draws = draws[-100:] if len(draws) >= 100 else draws
+
     matrix = {}
     for i in range(1, 46):
         matrix[i] = {}

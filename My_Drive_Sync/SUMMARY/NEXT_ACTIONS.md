@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BRAIN-SIGNAL-TUNE
-- 할일: B1-BACKTEST-100 **FAIL** ge3=0.0600(=방향1·highway 동일) · _MIN_MAX_SIM 0.90→0.85 또는 B1 롤백 · **형 GO 대기**
-- 완료조건: 형 GO + 튜닝/롤백 결정·실행·재백테
-- 선행완료: K-BRAIN-SIGNAL-B1-BACKTEST-100 **FAIL** (ge3=0.0600 · virtual_active=100% · delta=0)
+- ID: K-ENGINE-PHASE1-HOLD
+- 할일: markov window100 solo **FAIL** ge3=0.0850(≤0.1300) · B1 rollback 완료 · window100 롤백 vs fusion 회복 백테 · **형 GO 대기**
+- 완료조건: 형 GO + window100 유지/롤백 결정 + fusion ge3 재측정
+- 선행완료: K-ENGINE-PHASE1 STEP1~3 (B1 rollback · window100 · solo n=200 FAIL)
 
 ## WORKSTATE
 IDLE

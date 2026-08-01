@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BRAIN-SIGNAL-B1-BACKTEST-100** — ge3=**0.0600** · virtual=**100%** · **FAIL** (B1도 무개선)
-- 직전: K-BRAIN-SIGNAL-B1 — virtual draws · smoke **PASS**
-- 다음: **K-BRAIN-SIGNAL-TUNE** — _MIN_MAX_SIM 또는 롤백 · **형 GO 대기**
+- 지금: **K-ENGINE-PHASE1** — B1 rollback OK · markov window100 solo ge3=**0.0850** · **FAIL** (≤0.1300)
+- 직전: K-BRAIN-SIGNAL-B1-BACKTEST-100 — ge3=0.0600 · virtual 100% · FAIL
+- 다음: **K-ENGINE-PHASE1-HOLD** — window100 롤백 vs fusion 회복 백테 · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
