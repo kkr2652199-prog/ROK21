@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-01 KST  
-📌 사유: **K-BACKTEST-FULL-C FAIL** — C package FULL ge3=0.1015(QUICK 0.125 collapse −0.0235) · live_baseline 0.1218 미달 · K-BRAIN-TUNE-SURVEY 대기
+📌 사유: **K-BRAIN-TUNE-SURVEY SURVEY OK** — P0 aux_hint_top5=0.1091 · best_combo ge3=0.1032 · live_baseline 0.1218 미달 · APPLY **HOLD**
 
 ---
 
@@ -20,6 +20,7 @@
 | **K-SIGNAL-SELECT-FULL** | **FAIL** — combined ge3=**0.1218** p=0.201 · n=1182 · wire HOLD |
 | **K-MARKOV-LEARN-SURVEY** | **FAIL** — wired ge3=**0.105** p=0.683 · stored old=**0.165** · K-F 롤백 |
 | **세션 정리 20260801** | tier·3+4·pool·뇌패키지 — ARCHITECTURE_NOTES | **DOC** |
+| **K-BRAIN-TUNE-SURVEY** | P0/P1/P2 FULL n=1182 sweep · aux_hint_top5=0.1091 · best_combo=0.1032 · APPLY HOLD | **SURVEY OK** · live_baseline 미달 |
 | **K-BACKTEST-FULL-C** | C package production stack FULL n=1182 · ge3=**0.1015** · QUICK 0.125 collapse | **FAIL** · live_baseline 0.1218 미달 |
 | **K-WIRE-SELECT-FULL-SURVEY** | wire strategy FULL n=1182 · conf_global_top5 ge3=**0.1117** p=0.600 · QUICK collapse | **SURVEY OK** · wire HOLD |
 | **K-QUOTA-GAP-SURVEY** | set_no_asc vs conf/aux_hint wire alt · quota_gap=43.0% · conf_global_top5 ge3=**0.135** | **SURVEY OK** · wire GO-WAIT |
@@ -36,7 +37,7 @@
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
 | K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-BRAIN-TUNE-SURVEY 대기** — C package FULL FAIL(0.1015) · wire HOLD · 형 GO 시 tune survey |
+| 권고 | **K-BRAIN-TUNE-APPLY 형 GO 대기** — survey HOLD (best_combo 0.1032) · wire/hint/lb 유지 권고 |
 
 ---
 
@@ -44,6 +45,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-BRAIN-TUNE-SURVEY** | P0 wire · P1 look_back · P2 hint_weight FULL n=1182 · best_combo | **SURVEY OK** · ge3=0.1032 · HOLD |
 | **K-BACKTEST-FULL-C** | C package production stack FULL n=1182 · by_brain · by_period · QUICK vs FULL | **FAIL** · ge3=0.1015 · collapse −0.0235 |
 | **K-WIRE-SELECT-FULL-SURVEY** | wire strategy FULL n=1182 · QUICK vs FULL compare · quota_gap 43.1% | **SURVEY OK** · conf_global_top5 0.1117 · wire HOLD |
 | **K-QUOTA-GAP-SURVEY** | set_no_asc vs conf/aux_hint wire alt · quota_gap 43.0% · oracle ge3=0.290 | **SURVEY OK** · conf_global_top5 0.135 · wire GO-WAIT |
