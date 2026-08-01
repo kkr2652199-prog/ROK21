@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4a4dc23` · WORK=`IDLE`
+- HEAD: `44b3f53` · WORK=`IDLE`
 - 지금: **K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD**
 - 직전: K-QUOTA-GAP-SURVEY — conf_global_top5 QUICK ge3=0.135 · aux_hint=0.130 · quota_gap=43.0%
 - BOOT다음: **K-WIRE-SELECT-GO-WAIT** — FULL FAIL·collapse · wire HOLD 권고 · 형 GO 시에만 A/B (coordinator 미패치)

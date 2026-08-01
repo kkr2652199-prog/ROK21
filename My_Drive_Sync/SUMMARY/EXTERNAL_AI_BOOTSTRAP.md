@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `4a4dc23` |
+| HEAD(실측) | `44b3f53` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=4a4dc23 · 지금=**K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD** · 다음=K-WIRE-SELECT-GO-WAIT`
+1. 첫줄 `[복귀] HEAD=44b3f53 · 지금=**K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD** · 다음=K-WIRE-SELECT-GO-WAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
