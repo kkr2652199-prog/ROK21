@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `ff6bd5a` · WORK=`IDLE`
-- 지금: **K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD**
-- 직전: K-QUOTA-GAP-SURVEY — conf_global_top5 QUICK ge3=0.135 · aux_hint=0.130 · quota_gap=43.0%
-- BOOT다음: **K-WIRE-SELECT-GO-WAIT** — FULL FAIL·collapse · wire HOLD 권고 · 형 GO 시에만 A/B (coordinator 미패치)
-- NEXT1: K-WIRE-SELECT-GO-WAIT — FULL FAIL·collapse(0.135→0.1117) — wire **HOLD 권고** · 형 명시 GO 시 conf_global_top5 wire A/B · coordinator 미패치 (승인=미확인)
+- HEAD: `1936187` · WORK=`IDLE`
+- 지금: **K-BACKTEST-FULL-C** — C package FULL ge3=**0.1015**(QUICK 0.125 collapse −0.0235) · live_baseline 0.1218 미달 · **FAIL**
+- 직전: K-WIRE-SELECT-FULL-SURVEY — conf_global_top5 FULL ge3=0.1117 · set_no_asc=0.1015 · wire GO=wait/HOLD
+- BOOT다음: **K-BRAIN-TUNE-SURVEY** — hint/learn/window/selection READ-ONLY sweep · **형 GO 대기**
+- NEXT1: K-BRAIN-TUNE-SURVEY — hint/learn/window/selection READ-ONLY sweep · FULL n=1182 · **형 GO 대기** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
