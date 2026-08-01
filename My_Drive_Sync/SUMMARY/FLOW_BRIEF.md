@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5bba9f3` · WORK=`IDLE`
+- HEAD: `1bd771d` · WORK=`IDLE`
 - 지금: **K-AUX-DIAG** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight**
 - 직전: K-FUSION-QUOTA-FIX ge3=0.0800 · quota 20/60/20 · FAIL (>0.09)
 - BOOT다음: aux 회복 방향(spotlight/balance) 결정 · **형 GO 대기**
