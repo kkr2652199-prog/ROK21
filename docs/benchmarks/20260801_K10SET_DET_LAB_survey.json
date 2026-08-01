@@ -1,0 +1,115 @@
+{
+  "id": "K-10SET-DET-LAB-COMBO",
+  "ts": "2026-08-01T11:05:27",
+  "elapsed_sec": 63.6,
+  "n_eval": 200,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "seed": 42,
+  "gate_mode": "quick",
+  "wire_pin_ge3": 0.1447,
+  "null_ge3": 0.1137,
+  "exclude_params": {
+    "det_pool_size": 18,
+    "sets_per_brain_5": 5,
+    "sets_per_brain_10": 10,
+    "lab_source": "1군 deterministic_sets.py (READ-ONLY logic copy in survey)"
+  },
+  "strategies": {
+    "baseline_combined": {
+      "n": 200,
+      "mean": 1.7,
+      "ge3_rate": 0.115,
+      "ge3_count": 23,
+      "delta_ge3_vs_null": 0.0013,
+      "delta_ge3_vs_pin": -0.0297,
+      "p_value": 0.509824,
+      "verdict": "FAIL",
+      "ge4_rate": 0.0,
+      "ge4_count": 0,
+      "pool_sets_per_brain": 5,
+      "selector": "combined",
+      "quick_pass_pin": false
+    },
+    "pool10_combined": {
+      "n": 200,
+      "mean": 1.715,
+      "ge3_rate": 0.145,
+      "ge3_count": 29,
+      "delta_ge3_vs_null": 0.0313,
+      "delta_ge3_vs_pin": 0.0003,
+      "p_value": 0.102441,
+      "verdict": "PASS",
+      "ge4_rate": 0.005,
+      "ge4_count": 1,
+      "pool_sets_per_brain": 10,
+      "selector": "combined",
+      "quick_pass_pin": true
+    },
+    "pool5_det_topk": {
+      "n": 200,
+      "mean": 1.69,
+      "ge3_rate": 0.095,
+      "ge3_count": 19,
+      "delta_ge3_vs_null": -0.0187,
+      "delta_ge3_vs_pin": -0.0497,
+      "p_value": 0.826954,
+      "verdict": "FAIL",
+      "ge4_rate": 0.005,
+      "ge4_count": 1,
+      "pool_sets_per_brain": 5,
+      "selector": "det_topk",
+      "quick_pass_pin": false
+    },
+    "pool10_det_topk": {
+      "n": 200,
+      "mean": 1.7,
+      "ge3_rate": 0.105,
+      "ge3_count": 21,
+      "delta_ge3_vs_null": -0.0087,
+      "delta_ge3_vs_pin": -0.0397,
+      "p_value": 0.683286,
+      "verdict": "FAIL",
+      "ge4_rate": 0.01,
+      "ge4_count": 2,
+      "pool_sets_per_brain": 10,
+      "selector": "det_topk",
+      "quick_pass_pin": false
+    }
+  },
+  "best_strategy": "pool10_combined",
+  "gates": {
+    "quick_pass": true,
+    "quick_criteria": "ge3 > 0.1447 AND p < 0.15",
+    "criteria_doc": {
+      "quick": {
+        "n_eval": 200,
+        "draw_range": [
+          1035,
+          1234
+        ],
+        "sample_mode": "tail",
+        "seed": 42,
+        "pass": "ge3>null(0.1137) AND p<0.15",
+        "promising": "ge3>null+0.01 OR top variant clear"
+      },
+      "full": {
+        "n_eval": 1182,
+        "draw_range": [
+          53,
+          1234
+        ],
+        "sample_mode": "full",
+        "seed": 42,
+        "pass": "ge3>pin(0.1447) AND p<0.05"
+      }
+    }
+  },
+  "pass_gate": true,
+  "verdict": "PASS",
+  "recommended_next": "K-10SET-DET-LAB-FULL",
+  "db_code_write": false,
+  "coordinator_modified": false
+}

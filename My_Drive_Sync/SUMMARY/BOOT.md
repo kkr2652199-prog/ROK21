@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-ATTACK-HOLD 확정** — survey 전 축 HOLD · V2 pin ge3=0.1447 유지 · coordinator 미배선
-- 직전: K-COMBO-V2 FAIL · COMBO-V1 hollow PASS · SELECT-FULL FAIL
-- 다음: 형 GO 또는 **K-10SET-SURVEY** · **전체 큐=`TEST_PRIORITY.md`**
+- 지금: **K-10SET-DET-LAB-COMBO QUICK PASS** — pool10_combined ge3=0.145 · det_topk FAIL
+- 직전: K-ATTACK-HOLD · COMBO-V2 · SELECT-FULL
+- 다음: **K-10SET-DET-LAB-FULL** — n=1182 · **전체 큐=`TEST_PRIORITY.md`**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
