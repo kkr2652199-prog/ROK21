@@ -1,0 +1,204 @@
+{
+  "id": "K-AUX-DIAG",
+  "ts": "2026-08-01T13:30:51+00:00",
+  "seed": 42,
+  "draw_range": [
+    1135,
+    1234
+  ],
+  "mode": "production AUX_1TO1 + dynamic quota 25/60/15 · bench-only aux ablation",
+  "reference_baseline_ge3": 0.08,
+  "scenarios": [
+    {
+      "scenario_id": "baseline",
+      "label": "all aux ON",
+      "disabled_aux": [],
+      "overall": {
+        "n": 100,
+        "mean": 1.66,
+        "ge3_rate": 0.08,
+        "ge3_count": 8,
+        "delta_ge3_vs_null": -0.0337,
+        "delta_ge3_vs_pin": -0.0647,
+        "p_value": 0.893548,
+        "verdict": "FAIL",
+        "mean_match": 1.66,
+        "n_eval": 100
+      },
+      "ge3_rate": 0.08,
+      "markov_survival_rate_avg": 0.668,
+      "n_eval": 100,
+      "ge3_delta_vs_baseline": 0.0,
+      "survival_delta_vs_baseline": 0.0
+    },
+    {
+      "scenario_id": "aux_miss_off",
+      "label": "miss_detective weight=0",
+      "disabled_aux": [
+        "miss"
+      ],
+      "overall": {
+        "n": 100,
+        "mean": 1.66,
+        "ge3_rate": 0.08,
+        "ge3_count": 8,
+        "delta_ge3_vs_null": -0.0337,
+        "delta_ge3_vs_pin": -0.0647,
+        "p_value": 0.893548,
+        "verdict": "FAIL",
+        "mean_match": 1.66,
+        "n_eval": 100
+      },
+      "ge3_rate": 0.08,
+      "markov_survival_rate_avg": 0.668,
+      "n_eval": 100,
+      "ge3_delta_vs_baseline": 0.0,
+      "survival_delta_vs_baseline": 0.0
+    },
+    {
+      "scenario_id": "aux_spotlight_off",
+      "label": "pattern_spotlight weight=0",
+      "disabled_aux": [
+        "spotlight"
+      ],
+      "overall": {
+        "n": 100,
+        "mean": 1.66,
+        "ge3_rate": 0.08,
+        "ge3_count": 8,
+        "delta_ge3_vs_null": -0.0337,
+        "delta_ge3_vs_pin": -0.0647,
+        "p_value": 0.893548,
+        "verdict": "FAIL",
+        "mean_match": 1.66,
+        "n_eval": 100
+      },
+      "ge3_rate": 0.08,
+      "markov_survival_rate_avg": 0.0,
+      "n_eval": 100,
+      "ge3_delta_vs_baseline": 0.0,
+      "survival_delta_vs_baseline": -0.668
+    },
+    {
+      "scenario_id": "aux_balance_off",
+      "label": "balance_keeper weight=0",
+      "disabled_aux": [
+        "balance"
+      ],
+      "overall": {
+        "n": 100,
+        "mean": 1.66,
+        "ge3_rate": 0.08,
+        "ge3_count": 8,
+        "delta_ge3_vs_null": -0.0337,
+        "delta_ge3_vs_pin": -0.0647,
+        "p_value": 0.893548,
+        "verdict": "FAIL",
+        "mean_match": 1.66,
+        "n_eval": 100
+      },
+      "ge3_rate": 0.08,
+      "markov_survival_rate_avg": 0.948,
+      "n_eval": 100,
+      "ge3_delta_vs_baseline": 0.0,
+      "survival_delta_vs_baseline": 0.28
+    },
+    {
+      "scenario_id": "aux_referee_off",
+      "label": "referee weight=0",
+      "disabled_aux": [
+        "referee"
+      ],
+      "overall": {
+        "n": 100,
+        "mean": 1.66,
+        "ge3_rate": 0.08,
+        "ge3_count": 8,
+        "delta_ge3_vs_null": -0.0337,
+        "delta_ge3_vs_pin": -0.0647,
+        "p_value": 0.893548,
+        "verdict": "FAIL",
+        "mean_match": 1.66,
+        "n_eval": 100
+      },
+      "ge3_rate": 0.08,
+      "markov_survival_rate_avg": 0.668,
+      "n_eval": 100,
+      "ge3_delta_vs_baseline": 0.0,
+      "survival_delta_vs_baseline": 0.0
+    },
+    {
+      "scenario_id": "all_aux_off",
+      "label": "all 4 aux OFF (quota only)",
+      "disabled_aux": [
+        "miss",
+        "spotlight",
+        "balance",
+        "referee"
+      ],
+      "overall": {
+        "n": 100,
+        "mean": 1.66,
+        "ge3_rate": 0.08,
+        "ge3_count": 8,
+        "delta_ge3_vs_null": -0.0337,
+        "delta_ge3_vs_pin": -0.0647,
+        "p_value": 0.893548,
+        "verdict": "FAIL",
+        "mean_match": 1.66,
+        "n_eval": 100
+      },
+      "ge3_rate": 0.08,
+      "markov_survival_rate_avg": 0.028,
+      "n_eval": 100,
+      "ge3_delta_vs_baseline": 0.0,
+      "survival_delta_vs_baseline": -0.64
+    }
+  ],
+  "dropout_ranking": [
+    {
+      "aux": "pattern_spotlight",
+      "scenario_id": "aux_spotlight_off",
+      "ge3_when_off": 0.08,
+      "ge3_delta_vs_baseline": 0.0,
+      "markov_survival_when_off": 0.0,
+      "survival_delta_vs_baseline": -0.668,
+      "dropout_contribution": 0.668,
+      "rank": 1
+    },
+    {
+      "aux": "miss_detective",
+      "scenario_id": "aux_miss_off",
+      "ge3_when_off": 0.08,
+      "ge3_delta_vs_baseline": 0.0,
+      "markov_survival_when_off": 0.668,
+      "survival_delta_vs_baseline": 0.0,
+      "dropout_contribution": 0.0,
+      "rank": 2
+    },
+    {
+      "aux": "referee",
+      "scenario_id": "aux_referee_off",
+      "ge3_when_off": 0.08,
+      "ge3_delta_vs_baseline": 0.0,
+      "markov_survival_when_off": 0.668,
+      "survival_delta_vs_baseline": 0.0,
+      "dropout_contribution": 0.0,
+      "rank": 3
+    },
+    {
+      "aux": "balance_keeper",
+      "scenario_id": "aux_balance_off",
+      "ge3_when_off": 0.08,
+      "ge3_delta_vs_baseline": 0.0,
+      "markov_survival_when_off": 0.948,
+      "survival_delta_vs_baseline": 0.28,
+      "dropout_contribution": -0.28,
+      "rank": 4
+    }
+  ],
+  "worst_aux": "pattern_spotlight",
+  "gate": {
+    "null_ge3": 0.1137
+  }
+}

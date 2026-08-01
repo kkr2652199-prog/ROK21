@@ -24,10 +24,26 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 21:45 KST)
+### 최신 상태 (2026-08-01 22:35 KST)
 - **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-FUSION-QUOTA-FIX DONE** — DEFAULT 25/60/15 · n=100 ge3=**0.0800** · quota **20/60/20** · **FAIL** (>0.09)
-- **다음(공식)**: fusion ge3 0.08→0.09+ 추가 회복(aux path 등) · **형 GO 대기**
+- **지금(판정)**: **K-AUX-DIAG DONE** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight**
+- **다음(공식)**: aux ablation 기반 회복 방향(pattern_spotlight/balance_keeper) · **형 GO 대기**
+
+### K-AUX-DIAG (형 GO · per-aux ablation · no auto next)
+근거: `docs/benchmarks/20260801_KAUX_DIAG.json`
+
+| scenario | ge3 | markov survival | survival Δ |
+|----------|-----|-----------------|------------|
+| baseline (all ON) | **0.0800** | **0.6680** | — |
+| miss OFF | 0.0800 | 0.6680 | 0 |
+| **spotlight OFF** | 0.0800 | **0.0000** | **−0.6680** |
+| balance OFF | 0.0800 | **0.9480** | **+0.2800** |
+| referee OFF | 0.0800 | 0.6680 | 0 |
+| all aux OFF | 0.0800 | 0.0280 | −0.6400 |
+
+**dropout ranking:** 1) **pattern_spotlight** (markov top5 생존 필수) · 2~3) miss/referee 무영향 · 4) **balance_keeper** (OFF 시 survival↑ = markov에 불리)
+
+**결론:** ge3는 모든 시나리오 **0.0800 동일**(quota 5장 선택이 ge3 지배) · markov 탈락 1순위 **pattern_spotlight OFF→survival 0** · balance_keeper는 markov ranking 억제 · **형 GO 대기**
 
 ### K-FUSION-QUOTA-FIX (형 GO · FAIL · no auto-tune)
 근거: `docs/benchmarks/20260801_KQUOTA_FIX_N100.json`

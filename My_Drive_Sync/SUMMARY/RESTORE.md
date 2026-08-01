@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `bc8c32e` · WORK=`IDLE`
-2. **지금:** **K-FUSION-QUOTA-FIX** — DEFAULT 25/60/15 · n=100 ge3=**0.0800** · quota **20/60/20** · **FAIL** (>0.09)
-3. **다음1건:** K-FUSION-QUOTA-FIX-DONE — fusion ge3 **0.0800** (<0.09 gate) · quota shift 40/40/20→**20/60/20** 적용 완료 · aux path 등 추가 회복 검토 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `cf20643` · WORK=`IDLE`
+2. **지금:** **K-AUX-DIAG** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight**
+3. **다음1건:** K-AUX-DIAG-DONE — aux ablation 완료 · worst **pattern_spotlight** · balance_keeper markov 억제 · ge3 전 시나리오 **0.0800** · 회복 방향 결정 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-AUX-DIAG GO | 6시나리오 ablation n=100 · ge3 전부 0.0800 · surv baseline 0.668 · spotlight OFF→0 · balance OFF→0.948 | **DONE** | pending |
 | 2026-08-01 | K-FUSION-QUOTA-FIX GO | DEFAULT 25/60/15 · smoke 1230~1234 5/5 · n=100 ge3=0.0800 quota 20/60/20 · +0.02 vs 0.06 | **FAIL** (>0.09) | pending |
 | 2026-08-01 | K-ENGINE-PHASE1-HOLD GO STEP1~2 | window100 롤백(full draws) · smoke 1230~1234 5/5 · fusion diag ge3=0.0900 quota=0.40 aux=0.67 | **AUX_PATH_BOTTLENECK** | pending |
 | 2026-08-01 | K-ENGINE-PHASE1 GO STEP1~3 | B1 coordinator rollback · markov window=100 · solo n=200 ge3=0.0850 · smoke 1230~1234 5/5 | **FAIL** (window100) | pending |

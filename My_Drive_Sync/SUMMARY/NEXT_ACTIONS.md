@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-FUSION-QUOTA-FIX-DONE
-- 할일: fusion ge3 **0.0800** (<0.09 gate) · quota shift 40/40/20→**20/60/20** 적용 완료 · aux path 등 추가 회복 검토 · **형 GO 대기**
-- 완료조건: fused ge3 > 0.0900 또는 aux/fusion path 변경 지시서 + 형 GO
-- 선행완료: K-FUSION-QUOTA-FIX DEFAULT_QUOTA_WEIGHTS + n=100 bench FAIL
+- ID: K-AUX-DIAG-DONE
+- 할일: aux ablation 완료 · worst **pattern_spotlight** · balance_keeper markov 억제 · ge3 전 시나리오 **0.0800** · 회복 방향 결정 · **형 GO 대기**
+- 완료조건: spotlight/balance 튜닝 또는 aux path 변경 지시서 + 형 GO
+- 선행완료: K-AUX-DIAG 6시나리오 ablation (1135~1234 n=100)
 
 ## WORKSTATE
 IDLE
@@ -15,7 +15,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- **K-BRAIN-SIGNAL-B1-BACKTEST-100** — **FAIL** (2026-08-01) · ge3=0.0600 · virtual 100% · B1 weights도 ge3 무개선
-- **K-BRAIN-SIGNAL-B1** — PASS · smoke 10/10
-- **K-BRAIN-SIGNAL-BACKTEST-100** — FAIL · 방향1 conf blend
-- **K-HIGHWAY-PHASE1-HOLD** — 별도 트랙 · 형 GO 대기
+- **K-AUX-DIAG** — baseline ge3=0.0800 · survival 0.668 · spotlight OFF→surv 0 · balance OFF→surv 0.948
+- **K-FUSION-QUOTA-FIX** — ge3=0.0800 · quota 20/60/20 · FAIL (>0.09)
+- **K-ENGINE-PHASE1-HOLD** — fusion diag AUX_PATH_BOTTLENECK · ge3=0.0900

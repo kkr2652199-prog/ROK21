@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-FUSION-QUOTA-FIX** — DEFAULT 25/60/15 · n=100 ge3=**0.0800** · quota **20/60/20** · **FAIL** (>0.09)
-- 직전: K-ENGINE-PHASE1-HOLD fusion diag ge3=0.0900 · AUX_PATH_BOTTLENECK · quota 40/40/20
-- 다음: fusion ge3 0.08→0.09+ 추가 회복(aux path 등) · **형 GO 대기**
+- 지금: **K-AUX-DIAG** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight**
+- 직전: K-FUSION-QUOTA-FIX ge3=0.0800 · quota 20/60/20 · FAIL (>0.09)
+- 다음: aux 회복 방향(spotlight/balance) 결정 · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
