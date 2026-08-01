@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `fe3a817` |
+| HEAD(실측) | `6c6a893` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-BRAIN-PACKAGE-PHASE1** — stat_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100% |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=fe3a817 · 지금=**K-BRAIN-PACKAGE-PHASE1** — stat_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100% · 다음=K-BRAIN-PACKAGE-PHASE2`
+1. 첫줄 `[복귀] HEAD=6c6a893 · 지금=**K-BRAIN-PACKAGE-PHASE1** — stat_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100% · 다음=K-BRAIN-PACKAGE-PHASE2`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: fe3a817_
+_generated: 6c6a893_

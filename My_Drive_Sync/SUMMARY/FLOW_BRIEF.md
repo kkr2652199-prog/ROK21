@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fe3a817` · WORK=`IDLE`
+- HEAD: `6c6a893` · WORK=`IDLE`
 - 지금: **K-BRAIN-PACKAGE-PHASE1** — stat_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100%
 - 직전: K-BRAIN-PACKAGE-PHASE0 — 3뇌+shared 스켈레톤 19파일
 - BOOT다음: **K-BRAIN-PACKAGE-PHASE2** — markov_brain 구현 · 동치 n=200
