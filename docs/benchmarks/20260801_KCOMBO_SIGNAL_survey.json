@@ -1,0 +1,220 @@
+{
+  "id": "K-COMBO-SIGNAL-01",
+  "ts": "2026-08-01T10:20:44",
+  "elapsed_sec": 18.6,
+  "n_eval": 200,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "seed": 42,
+  "gate_mode": "quick",
+  "wire_pin_ge3": 0.1447,
+  "wire_pin_mean": 1.7504,
+  "null_ge3": 0.1137,
+  "signal_A_params": {
+    "alpha": 0.2,
+    "miss_window": 20,
+    "overlap_min": 2,
+    "brains": [
+      "stat",
+      "review"
+    ]
+  },
+  "signal_B_params": {
+    "window_weeks": 4,
+    "signal": "w4_zone_mix",
+    "zone_delta_max": 1.0
+  },
+  "signal_summary": {
+    "signal_A_rate": 0.0,
+    "signal_B_rate": 0.3,
+    "signal_AB_rate": 0.0,
+    "signal_AB_count": 0
+  },
+  "strategies": {
+    "baseline_combined": {
+      "n": 200,
+      "mean": 1.715,
+      "ge3_rate": 0.145,
+      "ge3_count": 29,
+      "delta_ge3_vs_null": 0.0313,
+      "delta_ge3_vs_pin": 0.0003,
+      "p_value": 0.102441,
+      "verdict": "PASS",
+      "ge4_rate": 0.005,
+      "ge4_count": 1,
+      "signal_AB_coverage": 0.0,
+      "signal_AB_true_count": 0,
+      "signal_AB_hit_rate": null,
+      "quick_pass_ge3_pin": true,
+      "quick_pass_gate": true
+    },
+    "signal_AB_filter": {
+      "n": 200,
+      "mean": 1.68,
+      "ge3_rate": 0.08,
+      "ge3_count": 16,
+      "delta_ge3_vs_null": -0.0337,
+      "delta_ge3_vs_pin": -0.0647,
+      "p_value": 0.952412,
+      "verdict": "FAIL",
+      "ge4_rate": 0.01,
+      "ge4_count": 2,
+      "signal_AB_coverage": 0.0,
+      "signal_AB_true_count": 0,
+      "signal_AB_hit_rate": null,
+      "quick_pass_ge3_pin": false,
+      "quick_pass_gate": false
+    },
+    "signal_AB_boost": {
+      "n": 200,
+      "mean": 1.765,
+      "ge3_rate": 0.115,
+      "ge3_count": 23,
+      "delta_ge3_vs_null": 0.0013,
+      "delta_ge3_vs_pin": -0.0297,
+      "p_value": 0.509824,
+      "verdict": "FAIL",
+      "ge4_rate": 0.01,
+      "ge4_count": 2,
+      "signal_AB_coverage": 0.0,
+      "signal_AB_true_count": 0,
+      "signal_AB_hit_rate": null,
+      "quick_pass_ge3_pin": false,
+      "quick_pass_gate": false
+    }
+  },
+  "best_strategy": "baseline_combined",
+  "gates": {
+    "quick_pass": true,
+    "quick_criteria": {
+      "quick": {
+        "n_eval": 200,
+        "draw_range": [
+          1035,
+          1234
+        ],
+        "sample_mode": "tail",
+        "seed": 42,
+        "pass": "ge3>null(0.1137) AND p<0.15",
+        "promising": "ge3>null+0.01 OR top variant clear"
+      },
+      "full": {
+        "n_eval": 1182,
+        "draw_range": [
+          53,
+          1234
+        ],
+        "sample_mode": "full",
+        "seed": 42,
+        "pass": "ge3>pin(0.1447) AND p<0.05"
+      }
+    },
+    "full_pass_ref": "ge3>0.1447 AND p<0.05",
+    "full_pass": false
+  },
+  "pass_gate": true,
+  "verdict": "PASS",
+  "recommended_next": "K-COMBO-SIGNAL-FULL",
+  "db_code_write": false,
+  "coordinator_modified": false,
+  "per_draw_sample": [
+    {
+      "draw_no": 1035,
+      "signal_A": false,
+      "signal_B": false,
+      "signal_AB": false,
+      "zone_hint": [
+        2.0,
+        1.0,
+        3.0
+      ],
+      "zone_delta": 1.6
+    },
+    {
+      "draw_no": 1036,
+      "signal_A": false,
+      "signal_B": false,
+      "signal_AB": false,
+      "zone_hint": [
+        2.0,
+        0.75,
+        3.25
+      ],
+      "zone_delta": 2.25
+    },
+    {
+      "draw_no": 1037,
+      "signal_A": false,
+      "signal_B": false,
+      "signal_AB": false,
+      "zone_hint": [
+        1.75,
+        0.75,
+        3.5
+      ],
+      "zone_delta": 1.65
+    },
+    {
+      "draw_no": 1038,
+      "signal_A": false,
+      "signal_B": false,
+      "signal_AB": false,
+      "zone_hint": [
+        1.75,
+        1.0,
+        3.25
+      ],
+      "zone_delta": 1.6
+    },
+    {
+      "draw_no": 1039,
+      "signal_A": false,
+      "signal_B": false,
+      "signal_AB": false,
+      "zone_hint": [
+        2.0,
+        1.5,
+        2.5
+      ],
+      "zone_delta": 1.3
+    },
+    {
+      "draw_no": 1232,
+      "signal_A": false,
+      "signal_B": true,
+      "signal_AB": false,
+      "zone_hint": [
+        2.0,
+        1.75,
+        2.25
+      ],
+      "zone_delta": 0.85
+    },
+    {
+      "draw_no": 1233,
+      "signal_A": false,
+      "signal_B": false,
+      "signal_AB": false,
+      "zone_hint": [
+        2.5,
+        1.75,
+        1.75
+      ],
+      "zone_delta": 1.5
+    },
+    {
+      "draw_no": 1234,
+      "signal_A": false,
+      "signal_B": true,
+      "signal_AB": false,
+      "zone_hint": [
+        2.5,
+        2.0,
+        1.5
+      ],
+      "zone_delta": 0.7
+    }
+  ]
+}

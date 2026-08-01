@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-EXCLUDE-SURVEY QUICK FAIL** — λ sweep n=200 · best exclude ge3=0.145=baseline · λ0.25 하락
-- 직전: K-SIGNAL-SELECT-FULL · K-EXCLUDE-HIST-01 · LEAKAGE_POLICY
-- 다음: **K-ATTACK-HOLD** — SELECT/EXCLUDE wire HOLD · **전체 큐=`TEST_PRIORITY.md`**
+- 지금: **K-COMBO-SIGNAL-01 QUICK PASS** — baseline ge3=0.145 · signal_AB=0% (AND 미발화)
+- 직전: K-EXCLUDE-SURVEY FAIL · SELECT-FULL FAIL · LEAKAGE_POLICY
+- 다음: **K-COMBO-SIGNAL-FULL** — n=1182 · signal_A 재검토 · **전체 큐=`TEST_PRIORITY.md`**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
