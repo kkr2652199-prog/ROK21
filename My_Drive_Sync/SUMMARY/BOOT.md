@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BRAIN-PACKAGE-PHASE5** — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15
-- 직전: K-BRAIN-PACKAGE-PHASE4 — coordinator 3뇌 패키지 배선 · 동치 PASS n=200 3/3
-- 다음: **K-BRAIN-PACKAGE-PHASE6** — markov learn_state 배선 (형 GO 대기)
+- 지금: **K-BRAIN-PACKAGE-PHASE6** — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True
+- 직전: K-BRAIN-PACKAGE-PHASE5 — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15
+- 다음: **K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

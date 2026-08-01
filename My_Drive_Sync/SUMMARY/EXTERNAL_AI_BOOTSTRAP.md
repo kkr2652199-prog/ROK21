@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7068530` |
+| HEAD(실측) | `bac0d45` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BRAIN-PACKAGE-PHASE5** — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15 |
-| 직전 | K-BRAIN-PACKAGE-PHASE4 — coordinator 3뇌 패키지 배선 · 동치 PASS n=200 3/3 |
-| BOOT다음 | **K-BRAIN-PACKAGE-PHASE6** — markov learn_state 배선 (형 GO 대기) |
-| NEXT1 ID | **K-BRAIN-PACKAGE-PHASE6** |
-| NEXT1 할일 | markov learn_state 실제 소비 배선 (형 GO 대기) |
+| 지금 | **K-BRAIN-PACKAGE-PHASE6** — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True |
+| 직전 | K-BRAIN-PACKAGE-PHASE5 — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15 |
+| BOOT다음 | **K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 |
+| NEXT1 ID | **K-BRAIN-PACKAGE-PHASE7** |
+| NEXT1 할일 | shared/referee + coordinator aux 1:1 (C proposal PHASE4 next step) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7068530 · 지금=**K-BRAIN-PACKAGE-PHASE5** — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15 · 다음=K-BRAIN-PACKAGE-PHASE6`
+1. 첫줄 `[복귀] HEAD=bac0d45 · 지금=**K-BRAIN-PACKAGE-PHASE6** — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True · 다음=K-BRAIN-PACKAGE-PHASE7`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

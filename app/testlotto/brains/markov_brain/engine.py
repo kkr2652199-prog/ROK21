@@ -6,6 +6,8 @@ import logging
 import random
 from math import exp
 
+from app.testlotto.brains.markov_brain import learn
+
 logger = logging.getLogger(__name__)
 
 
@@ -132,6 +134,9 @@ def generate(draws: list[dict], n_sets: int = 5) -> list[dict]:
                     visit_count[hit_n] *= 1.15
     except Exception as e:  # noqa: BLE001
         logger.debug("마르코프 피드백 반영 스킵 (_markov_predict): %s", e)
+
+    if learn.LEARN_WIRED:
+        visit_count = learn.apply_learn_boost(visit_count, draws)
 
     top_candidates = sorted(visit_count.items(), key=lambda x: x[1], reverse=True)[:25]
     candidate_nums = [n for n, _ in top_candidates]

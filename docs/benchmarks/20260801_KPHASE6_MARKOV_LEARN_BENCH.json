@@ -1,0 +1,36 @@
+{
+  "id": "K-PHASE6-MARKOV-LEARN-BENCH",
+  "ts": "2026-08-01T05:42:41+00:00",
+  "seed": 42,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "path": "coordinator_full (3brain pool + aux scoring + wire quota)",
+  "hint_weight": 0.15,
+  "v2_pin_ge3": 0.1447,
+  "phase5_baseline_ge3": 0.115,
+  "phase5_hint_ge3": 0.125,
+  "metrics_a": {
+    "learn_wired": false,
+    "hint_weight": 0.15,
+    "n_eval": 200,
+    "ge3_count": 25,
+    "ge3_rate": 0.125,
+    "mean_match": 1.77
+  },
+  "metrics_b": {
+    "learn_wired": true,
+    "hint_weight": 0.15,
+    "n_eval": 200,
+    "ge3_count": 25,
+    "ge3_rate": 0.125,
+    "mean_match": 1.695
+  },
+  "ge3_diff": 0.0,
+  "mean_diff": -0.075,
+  "pass_criterion": "ge3_B >= ge3_A",
+  "final_learn_wired": true,
+  "verdict": "PASS",
+  "pass": true
+}

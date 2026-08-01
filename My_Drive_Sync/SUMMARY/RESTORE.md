@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7068530` · WORK=`IDLE`
-2. **지금:** **K-BRAIN-PACKAGE-PHASE5** — aux 1:1 hint 주입 · ge3 PASS 0.125≥0.115 · hint_weight=0.15
-3. **다음1건:** K-BRAIN-PACKAGE-PHASE6 — markov learn_state 실제 소비 배선 (형 GO 대기) (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `bac0d45` · WORK=`IDLE`
+2. **지금:** **K-BRAIN-PACKAGE-PHASE6** — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True
+3. **다음1건:** K-BRAIN-PACKAGE-PHASE7 — shared/referee + coordinator aux 1:1 (C proposal PHASE4 next step) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-BRAIN-PACKAGE-PHASE6 GO | markov learn apply_learn_boost · engine 배선 · FULL ge3 0.125=0.125 PASS · LEARN_WIRED=True | **PHASE6 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE5 GO | shared/aux_hint · 3뇌 hint re-rank · FULL ge3 0.115→0.125 PASS · hint_weight=0.15 | **PHASE5 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE4 GO | coordinator PREDICT_MODULES→3뇌 패키지 · predict_sets 어댑터 · 동치 PASS 3/3 n=200 | **PHASE4 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE3 GO | review_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE3 PASS** | `2beb17c` |
