@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-HIGHWAY-PHASE1-HOLD
-- 할일: PHASE1 COMPLETE · FEEDBACK+REFEREE+QUOTA 완료 · 다음 트랙 **형 GO 대기**
-- 완료조건: 형 GO + 후속 지시 (K-NEW-ENGINE-* 등)
-- 선행완료: K-HIGHWAY-QUOTA **OK** · **K-HIGHWAY-PHASE1 COMPLETE**
+- 할일: BACKTEST-100 **FAIL** ge3=0.0600 · baseline −0.0415 · **형 GO 대기** (롤백/HOLD/튜닝)
+- 완료조건: 형 GO + 후속 지시
+- 선행완료: K-HIGHWAY-BACKTEST-100 **FAIL** (overall ge3=0.0600 · n=100 · learn 루프 동작 확인)
 
 ## WORKSTATE
 IDLE

@@ -1,0 +1,335 @@
+{
+  "id": "K-HIGHWAY-BACKTEST-100",
+  "ts": "2026-08-01T08:31:34+00:00",
+  "seed": 42,
+  "draw_range": [
+    1135,
+    1234
+  ],
+  "n_eval": 100,
+  "pipeline": "run_coordinated_prediction (_auto_feedback + dynamic_brain_quota + PHASE1)",
+  "baseline_ref": {
+    "id": "K-BACKTEST-FULL-C",
+    "ge3_rate": 0.1015
+  },
+  "overall": {
+    "n": 100,
+    "mean": 1.63,
+    "ge3_rate": 0.06,
+    "ge3_count": 6,
+    "delta_ge3_vs_null": -0.0537,
+    "delta_ge3_vs_pin": -0.0847,
+    "p_value": 0.976428,
+    "verdict": "FAIL",
+    "mean_match": 1.63,
+    "n_eval": 100
+  },
+  "by_brain": {
+    "stat": {
+      "n": 100,
+      "mean": 1.71,
+      "ge3_rate": 0.09,
+      "ge3_count": 9,
+      "delta_ge3_vs_null": -0.0237,
+      "delta_ge3_vs_pin": -0.0547,
+      "p_value": 0.815343,
+      "verdict": "FAIL",
+      "mean_match": 1.71,
+      "n_eval": 100
+    },
+    "markov": {
+      "n": 100,
+      "mean": 1.65,
+      "ge3_rate": 0.13,
+      "ge3_count": 13,
+      "delta_ge3_vs_null": 0.0163,
+      "delta_ge3_vs_pin": -0.0147,
+      "p_value": 0.347841,
+      "verdict": "FAIL",
+      "mean_match": 1.65,
+      "n_eval": 100
+    },
+    "review": {
+      "n": 100,
+      "mean": 1.65,
+      "ge3_rate": 0.11,
+      "ge3_count": 11,
+      "delta_ge3_vs_null": -0.0037,
+      "delta_ge3_vs_pin": -0.0347,
+      "p_value": 0.593066,
+      "verdict": "FAIL",
+      "mean_match": 1.65,
+      "n_eval": 100
+    }
+  },
+  "by_period": {
+    "early": {
+      "n": 25,
+      "mean": 1.72,
+      "ge3_rate": 0.04,
+      "ge3_count": 1,
+      "delta_ge3_vs_null": -0.0737,
+      "delta_ge3_vs_pin": -0.1047,
+      "p_value": 0.951076,
+      "verdict": "FAIL",
+      "mean_match": 1.72,
+      "n_eval": 25
+    },
+    "mid": {
+      "n": 25,
+      "mean": 1.6,
+      "ge3_rate": 0.04,
+      "ge3_count": 1,
+      "delta_ge3_vs_null": -0.0737,
+      "delta_ge3_vs_pin": -0.1047,
+      "p_value": 0.951076,
+      "verdict": "FAIL",
+      "mean_match": 1.6,
+      "n_eval": 25
+    },
+    "late": {
+      "n": 50,
+      "mean": 1.6,
+      "ge3_rate": 0.08,
+      "ge3_count": 4,
+      "delta_ge3_vs_null": -0.0337,
+      "delta_ge3_vs_pin": -0.0647,
+      "p_value": 0.834955,
+      "verdict": "FAIL",
+      "mean_match": 1.6,
+      "n_eval": 50
+    }
+  },
+  "comparison": {
+    "delta_ge3_vs_baseline": -0.0415,
+    "baseline_ge3": 0.1015
+  },
+  "quota_stats": {
+    "counts": {
+      "stat": 200,
+      "markov": 200,
+      "review": 100
+    },
+    "avg_pct": {
+      "stat": 40.0,
+      "markov": 40.0,
+      "review": 20.0
+    }
+  },
+  "learn_state_trace": {
+    "1135": {
+      "stat": {
+        "review_count": 0,
+        "last_draw_no": 0,
+        "recent_avg_match": 0.0,
+        "adjustments": {
+          "carry_over_boost": 0.0,
+          "ending_digit_boost": 0.0,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {}
+      },
+      "markov": {
+        "review_count": 0,
+        "last_draw_no": 0,
+        "recent_avg_match": 0.0,
+        "adjustments": {
+          "carry_over_boost": 0.0,
+          "ending_digit_boost": 0.0,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {}
+      },
+      "review": {
+        "review_count": 0,
+        "last_draw_no": 0,
+        "recent_avg_match": 0.0,
+        "adjustments": {
+          "carry_over_boost": 0.0,
+          "ending_digit_boost": 0.0,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {}
+      }
+    },
+    "1159": {
+      "stat": {
+        "review_count": 24,
+        "last_draw_no": 1158,
+        "recent_avg_match": 1.3333,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "carry_over": 9,
+          "ending_digit": 21,
+          "overdue": 1
+        }
+      },
+      "markov": {
+        "review_count": 24,
+        "last_draw_no": 1158,
+        "recent_avg_match": 1.25,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "ending_digit": 23,
+          "carry_over": 10,
+          "overdue": 2
+        }
+      },
+      "review": {
+        "review_count": 24,
+        "last_draw_no": 1158,
+        "recent_avg_match": 0.7917,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "ending_digit": 22,
+          "carry_over": 7,
+          "overdue": 1
+        }
+      }
+    },
+    "1184": {
+      "stat": {
+        "review_count": 49,
+        "last_draw_no": 1183,
+        "recent_avg_match": 1.1,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "carry_over": 21,
+          "ending_digit": 44,
+          "overdue": 2
+        }
+      },
+      "markov": {
+        "review_count": 49,
+        "last_draw_no": 1183,
+        "recent_avg_match": 1.3333,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.05,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "ending_digit": 45,
+          "carry_over": 23,
+          "overdue": 3
+        }
+      },
+      "review": {
+        "review_count": 49,
+        "last_draw_no": 1183,
+        "recent_avg_match": 0.7667,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "ending_digit": 46,
+          "carry_over": 18,
+          "overdue": 1
+        }
+      }
+    },
+    "1234": {
+      "stat": {
+        "review_count": 99,
+        "last_draw_no": 1233,
+        "recent_avg_match": 1.2,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.1,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "carry_over": 43,
+          "ending_digit": 89,
+          "overdue": 4
+        }
+      },
+      "markov": {
+        "review_count": 99,
+        "last_draw_no": 1233,
+        "recent_avg_match": 1.2,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.15000000000000002,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "ending_digit": 92,
+          "carry_over": 51,
+          "overdue": 5
+        }
+      },
+      "review": {
+        "review_count": 99,
+        "last_draw_no": 1233,
+        "recent_avg_match": 0.8333,
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.0,
+          "consecutive_boost": 0.0,
+          "overdue_boost": 0.0,
+          "odd_even_balance": 0.0
+        },
+        "miss_counts": {
+          "ending_digit": 93,
+          "carry_over": 34,
+          "overdue": 2
+        }
+      }
+    }
+  },
+  "verdict": "FAIL",
+  "pass": false
+}
