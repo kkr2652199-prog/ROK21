@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3b36ad6` · WORK=`IDLE`
+1. **HEAD:** `f1ae730` · WORK=`IDLE`
 2. **지금:** **K-ENGINE-PHASE1-HOLD** — window100 롤백 OK · fusion diag ge3=**0.0900** · **AUX_PATH_BOTTLENECK**
 3. **다음1건:** K-ENGINE-PHASE1-HOLD-DONE — fusion bottleneck **AUX_PATH_BOTTLENECK** 판정 · diag ge3=0.0900 · quota 0.40/aux 0.67 · 회복 방향 결정 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
