@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `bc8c32e` |
+| HEAD(실측) | `3ed00e0` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-FUSION-QUOTA-FIX** — DEFAULT 25/60/15 · n=100 ge3=**0.0800** · quota **20/60/20** · **FAIL** (>0.09) |
-| 직전 | K-ENGINE-PHASE1-HOLD fusion diag ge3=0.0900 · AUX_PATH_BOTTLENECK · quota 40/40/20 |
-| BOOT다음 | fusion ge3 0.08→0.09+ 추가 회복(aux path 등) · **형 GO 대기** |
-| NEXT1 ID | **K-FUSION-QUOTA-FIX-DONE** |
-| NEXT1 할일 | fusion ge3 **0.0800** (<0.09 gate) · quota shift 40/40/20→**20/60/20** 적용 완료 · aux path 등 추가 회복 검토 · **형 GO 대기** |
+| 지금 | **K-AUX-DIAG** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight** |
+| 직전 | K-FUSION-QUOTA-FIX ge3=0.0800 · quota 20/60/20 · FAIL (>0.09) |
+| BOOT다음 | aux 회복 방향(spotlight/balance) 결정 · **형 GO 대기** |
+| NEXT1 ID | **K-AUX-DIAG-DONE** |
+| NEXT1 할일 | aux ablation 완료 · worst **pattern_spotlight** · balance_keeper markov 억제 · ge3 전 시나리오 **0.0800** · 회복 방향 결정 · **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=bc8c32e · 지금=**K-FUSION-QUOTA-FIX** — DEFAULT 25/60/15 · n=100 ge3=**0.0800** · quota **20/60/20** · **FAIL** (>0.09) · 다음=K-FUSION-QUOTA-FIX-DONE`
+1. 첫줄 `[복귀] HEAD=3ed00e0 · 지금=**K-AUX-DIAG** — baseline ge3=**0.0800** · markov survival **0.668** · worst aux **pattern_spotlight** · 다음=K-AUX-DIAG-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
