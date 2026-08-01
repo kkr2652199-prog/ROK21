@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5e6736d` · WORK=`IDLE`
+- HEAD: `6112b5a` · WORK=`IDLE`
 - 지금: **K-HIGHWAY-REFEREE** — aux_referee score_set referee 가중 · 검증 OK · **OK**
 - 직전: K-HIGHWAY-FEEDBACK — `_auto_feedback` · 3뇌 apply_feedback · **OK**
 - BOOT다음: **K-HIGHWAY-QUOTA** — quota/wire · **형 GO 대기**

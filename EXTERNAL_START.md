@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5e6736d` |
+| HEAD(실측) | `6112b5a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-HIGHWAY-REFEREE** — aux_referee score_set referee 가중 · 검증 OK · **OK** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5e6736d · 지금=**K-HIGHWAY-REFEREE** — aux_referee score_set referee 가중 · 검증 OK · **OK** · 다음=K-HIGHWAY-QUOTA`
+1. 첫줄 `[복귀] HEAD=6112b5a · 지금=**K-HIGHWAY-REFEREE** — aux_referee score_set referee 가중 · 검증 OK · **OK** · 다음=K-HIGHWAY-QUOTA`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 5e6736d_
+_generated: 6112b5a_
