@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `ccc9868` · WORK=`IDLE`
+1. **HEAD:** `525d736` · WORK=`IDLE`
 2. **지금:** **K-ARCHITECTURE-REVIEW** — 학습 부분작동 · 3뇌 Jaccard≈0.09 · pin=FULL1182 artifact
 3. **다음1건:** K-ATTACK-HOLD — **확정** — 10SET FULL FAIL · survey 중단 · V2 pin 유지 · 형 GO 대기 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

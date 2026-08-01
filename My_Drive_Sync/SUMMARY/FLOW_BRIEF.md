@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `ccc9868` · WORK=`IDLE`
+- HEAD: `525d736` · WORK=`IDLE`
 - 지금: **K-ARCHITECTURE-REVIEW** — 학습 부분작동 · 3뇌 Jaccard≈0.09 · pin=FULL1182 artifact
 - 직전: K-10SET-DET-LAB-FULL FAIL · K-ATTACK-HOLD
 - BOOT다음: **K-ATTACK-HOLD** — wire·survey HOLD · V2 pin 유지 · **형 GO 대기**
