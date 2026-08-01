@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-BRAIN-PACKAGE-PHASE2 GO | markov_brain engine/learn/aux/predict · 동치 PASS n=200 nums 200/200 · deprecated 1줄 | **PHASE2 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE1 GO | stat_brain engine/learn/aux/predict + shared db_facts/diversity · 동치 PASS n=200 nums 200/200 | **PHASE1 PASS** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE0 GO | stat/markov/review_brain+shared 스켈레톤 19파일 · 기존 미변경 · ge3벤치 생략 | **PHASE0 OK** | `d9dbdf4` |
 | 2026-08-01 | K-BRAIN-PACKAGE-C 설계 | 3뇌 A/B/C · 뇌+전용보조 패키지 · GO조건 | **DOC OK** | pending |

@@ -1,3 +1,4 @@
+# DEPRECATED: markov_brain.predict.run() 사용 — K-BRAIN-PACKAGE-PHASE2 동치 PASS 후 유지(삭제 금지).
 """흐름술사 — 마르코프 전이 + 동반출현 (lottery_predictor STRAT05 벤치마킹).
 
 [명분] 기각 · K-T lag1 중복 χ² p=0.764 (회차의존 전제 기각) · 출처 K-T/K-W

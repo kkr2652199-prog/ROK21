@@ -1,3 +1,4 @@
+# DEPRECATED: markov_brain.engine 사용 — K-BRAIN-PACKAGE-PHASE2 동치 PASS 후 유지(삭제 금지).
 """로또 마르코프 체인 예측 — app.testlotto 독립 패키지.
 2026-04-20: Layer 2-a — 피드백 학습 고리 주입 (frequent_traps ×0.8, frequent_hits ×1.15). 컨닝 방지: get_feedback_summary로 과거 피드백만 참조.
 """

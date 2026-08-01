@@ -1,0 +1,31 @@
+{
+  "id": "K-MARKOV-BRAIN-EQUIV",
+  "ts": "2026-08-01T04:58:15+00:00",
+  "seed": 42,
+  "n_eval": 200,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "n_sets": 5,
+  "path_a": "app.testlotto.brains.predict_flow_shaman.predict_sets",
+  "path_b": "app.testlotto.brains.markov_brain.predict.run",
+  "metrics": {
+    "a_ge3_rate": 0.08,
+    "b_ge3_rate": 0.08,
+    "ge3_diff": 0.0,
+    "a_mean_match": 1.645,
+    "b_mean_match": 1.645,
+    "mean_diff": 0.0,
+    "nums_match_rate": 1.0,
+    "nums_match_count": 200
+  },
+  "thresholds": {
+    "ge3_diff_max": 0.002,
+    "mean_diff_max": 0.01,
+    "nums_match_min": 1.0
+  },
+  "mismatch_samples": [],
+  "verdict": "PASS",
+  "pass": true
+}

@@ -1,5 +1,29 @@
-"""markov_brain.aux — pattern 전용 보조 (Phase1 이전).
+"""markov_brain.aux — pattern 전용 보조."""
 
-aux_pattern_spotlight 역할: pair·연속·AC·전이 패턴 사후 채점·hint.
-coordinator 전역 aux 대신 markov_brain post_score에 1:1 페어링 예정.
-"""
+from __future__ import annotations
+
+from app.testlotto.brains import aux_pattern_spotlight
+
+
+def score_set(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = "markov",
+) -> float:
+    """aux_pattern_spotlight.score_set 래핑."""
+    return aux_pattern_spotlight.score_set(
+        nums, draws, target_draw_no, brain_tag=brain_tag
+    )
+
+
+def describe(
+    nums: list[int],
+    draws: list[dict],
+    target_draw_no: int,
+    brain_tag: str | None = "markov",
+) -> str:
+    """aux_pattern_spotlight.describe 래핑."""
+    return aux_pattern_spotlight.describe(
+        nums, draws, target_draw_no, brain_tag=brain_tag
+    )
