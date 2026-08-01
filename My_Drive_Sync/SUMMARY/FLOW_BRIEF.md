@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `675d619` · WORK=`IDLE`
-- 지금: **K-10SET-DET-LAB-COMBO QUICK PASS** — pool10_combined ge3=0.145 · det_topk FAIL
-- 직전: K-ATTACK-HOLD · COMBO-V2 · SELECT-FULL
-- BOOT다음: **K-10SET-DET-LAB-FULL** — n=1182 · **전체 큐=`TEST_PRIORITY.md`**
-- NEXT1: K-10SET-DET-LAB-FULL — K-10SET-DET-LAB-COMBO QUICK PASS → full n=1182 · pool10_combined vs det · wire는 형 GO 전 금지 (승인=미확인)
+- HEAD: `f53b590` · WORK=`IDLE`
+- 지금: **K-10SET-DET-LAB-FULL FAIL** — pool10 ge3=0.1218 · QUICK→FULL collapse (SELECT-FULL 동일)
+- 직전: K-10SET-DET-LAB-COMBO QUICK · K-ATTACK-HOLD
+- BOOT다음: **K-ATTACK-HOLD** — wire·survey HOLD · **전체 큐=`TEST_PRIORITY.md`**
+- NEXT1: K-ATTACK-HOLD — **확정** — 10SET FULL FAIL · survey 중단 · V2 pin 유지 · 형 GO 대기 (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

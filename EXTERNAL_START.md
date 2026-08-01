@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `675d619` |
+| HEAD(실측) | `f53b590` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-10SET-DET-LAB-COMBO QUICK PASS** — pool10_combined ge3=0.145 · det_topk FAIL |
-| 직전 | K-ATTACK-HOLD · COMBO-V2 · SELECT-FULL |
-| BOOT다음 | **K-10SET-DET-LAB-FULL** — n=1182 · **전체 큐=`TEST_PRIORITY.md`** |
-| NEXT1 ID | **K-10SET-DET-LAB-FULL** |
-| NEXT1 할일 | K-10SET-DET-LAB-COMBO QUICK PASS → full n=1182 · pool10_combined vs det · wire는 형 GO 전 금지 |
+| 지금 | **K-10SET-DET-LAB-FULL FAIL** — pool10 ge3=0.1218 · QUICK→FULL collapse (SELECT-FULL 동일) |
+| 직전 | K-10SET-DET-LAB-COMBO QUICK · K-ATTACK-HOLD |
+| BOOT다음 | **K-ATTACK-HOLD** — wire·survey HOLD · **전체 큐=`TEST_PRIORITY.md`** |
+| NEXT1 ID | **K-ATTACK-HOLD** |
+| NEXT1 할일 | **확정** — 10SET FULL FAIL · survey 중단 · V2 pin 유지 · 형 GO 대기 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=675d619 · 지금=**K-10SET-DET-LAB-COMBO QUICK PASS** — pool10_combined ge3=0.145 · det_topk FAIL · 다음=K-10SET-DET-LAB-FULL`
+1. 첫줄 `[복귀] HEAD=f53b590 · 지금=**K-10SET-DET-LAB-FULL FAIL** — pool10 ge3=0.1218 · QUICK→FULL collapse (SELECT-FULL 동일) · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 675d619_
+_generated: f53b590_
