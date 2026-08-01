@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6f54da5` · WORK=`IDLE`
+1. **HEAD:** `b5fca46` · WORK=`IDLE`
 2. **지금:** **K-ATTACK-HOLD 확정** — survey 전 축 HOLD · V2 pin ge3=0.1447 유지 · coordinator 미배선
 3. **다음1건:** K-ATTACK-HOLD — **확정** — survey 전 축 HOLD · V2 pin 유지 · 형 GO 전 wire·survey 중단 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

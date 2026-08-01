@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6f54da5` · WORK=`IDLE`
+- HEAD: `b5fca46` · WORK=`IDLE`
 - 지금: **K-ATTACK-HOLD 확정** — survey 전 축 HOLD · V2 pin ge3=0.1447 유지 · coordinator 미배선
 - 직전: K-COMBO-V2 FAIL · COMBO-V1 hollow PASS · SELECT-FULL FAIL
 - BOOT다음: 형 GO 또는 **K-10SET-SURVEY** · **전체 큐=`TEST_PRIORITY.md`**
