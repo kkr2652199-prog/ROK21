@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-HIGHWAY-REFEREE** — aux_referee score_set referee 가중 · 검증 OK · **OK**
-- 직전: K-HIGHWAY-FEEDBACK — `_auto_feedback` · 3뇌 apply_feedback · **OK**
-- 다음: **K-HIGHWAY-QUOTA** — quota/wire · **형 GO 대기**
+- 지금: **K-HIGHWAY-PHASE1 COMPLETE** — FEEDBACK+REFEREE+QUOTA · dynamic_brain_quota · **OK**
+- 직전: K-HIGHWAY-REFEREE — aux_referee score_set · **OK**
+- 다음: **형 GO 대기** — K-NEW-ENGINE-MARKOV-A1 등 별도 트랙
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

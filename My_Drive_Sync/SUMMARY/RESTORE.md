@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-HIGHWAY-QUOTA GO | dynamic_brain_quota · referee 가중 5장 · min1/뇌 · PHASE1 COMPLETE | **OK** | pending |
 | 2026-08-01 | K-HIGHWAY-REFEREE GO | aux_referee score_set → get_referee_weights 반영 · brain_tag None→0.5 · import OK | **OK** | pending |
 | 2026-08-01 | K-HIGHWAY-FEEDBACK GO | coordinator _auto_feedback · _detect_missed_patterns · deprecated import 삭제 · import OK | **OK** | pending |
 | 2026-08-01 | K-NEW-ENGINE-STAT-A1 GO | stat engine v2 dual-window+cycle gap · solo n=200 baseline/v2 ge3=0.1350 delta=0 · ENGINE_V2=False | **PASS** | pending |

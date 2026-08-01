@@ -48,24 +48,57 @@ BRAIN_DEDICATED_AUX = {
     "review": review_brain_aux,
 }
 
-# K-MARKOV-WIRE: markov 배합 가중 (E_markov3mix2 실력 p=0.0007)
-# 생성은 SETS_PER_PREDICT_BRAIN×3=15 유지 · 발권 선택만 쿼터 적용
-MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {
-    "markov": 3,
-    "stat": 1,
-    "review": 1,
-}
-MARKOV_WIRE_ENABLED: bool = True  # K-MARKOV-WIRE-V2: set_no 쿼터
+# K-HIGHWAY-QUOTA: referee 가중 동적 5장 배분 · MARKOV_WIRE_ENABLED=False → conf top5
+MARKOV_WIRE_ENABLED: bool = True
+# 벤치 pin 참조용 (production은 dynamic_brain_quota 사용)
+MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {"markov": 3, "stat": 1, "review": 1}
 
 
-def apply_markov_wire_quota(candidates: list[dict]) -> list[dict]:
-    """뇌별 set_no/pred_set_no 오름차순으로 쿼터만큼 선택 (confidence 정렬 없음)."""
-    if not MARKOV_WIRE_ENABLED or not candidates:
+def _compute_dynamic_quota(
+    referee_weights: dict[str, float],
+    total: int = 5,
+    min_each: int = 1,
+) -> dict[str, int]:
+    """referee 가중 비례 배분 · 뇌별 min_each · 합계 total (largest remainder)."""
+    tags_list = list(PREDICT_TAGS)
+    n = len(tags_list)
+    floor_min = min_each * n
+    if total < floor_min:
+        each = max(1, total // n)
+        return {t: each for t in tags_list}
+
+    remaining = total - floor_min
+    wsum = sum(float(referee_weights.get(t, 1.0 / n)) for t in tags_list) or 1.0
+    raw_extra = {
+        t: remaining * float(referee_weights.get(t, 1.0 / n)) / wsum for t in tags_list
+    }
+    floor_extra = {t: int(raw_extra[t]) for t in tags_list}
+    deficit = remaining - sum(floor_extra.values())
+    if deficit > 0:
+        order = sorted(
+            tags_list, key=lambda t: raw_extra[t] - floor_extra[t], reverse=True
+        )
+        for i in range(deficit):
+            floor_extra[order[i % len(order)]] += 1
+    return {t: min_each + floor_extra[t] for t in tags_list}
+
+
+def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
+    """K-HIGHWAY-QUOTA: referee 가중 동적 쿼터 · set_no_asc · 최소 1장/뇌."""
+    target_n = 5
+    if not candidates:
         return candidates
+
+    if not MARKOV_WIRE_ENABLED:
+        return sorted(
+            candidates,
+            key=lambda x: float(x.get("confidence") or 0),
+            reverse=True,
+        )[:target_n]
+
     from collections import defaultdict
 
-    quota = MARKOV_WIRE_BRAIN_QUOTA
-    target_n = sum(quota.values())
+    quota = _compute_dynamic_quota(get_referee_weights(), total=target_n)
     brain_buckets: dict[str, list[dict]] = defaultdict(list)
     for c in candidates:
         tag = str(c.get("brain_tag", "") or "")
@@ -92,6 +125,11 @@ def apply_markov_wire_quota(candidates: list[dict]) -> list[dict]:
             if len(selected) >= target_n:
                 break
     return selected[:target_n]
+
+
+def apply_markov_wire_quota(candidates: list[dict]) -> list[dict]:
+    """벤치 도구 호환 alias → dynamic_brain_quota."""
+    return dynamic_brain_quota(candidates)
 
 
 def _detect_missed_patterns(
@@ -370,14 +408,15 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
         scored, dedup_stats = dedup_ticket_list(scored, regenerate=_regen)
         scored.sort(key=lambda x: x["confidence"], reverse=True)
 
-    # K-MARKOV-WIRE-V2: 생성 15 → set_no 쿼터 발권(markov3+stat1+review1)
-    scored = apply_markov_wire_quota(scored)
+    # K-HIGHWAY-QUOTA: 생성 15 → referee 동적 쿼터 5장 (set_no_asc)
+    wire_quota = _compute_dynamic_quota(get_referee_weights()) if MARKOV_WIRE_ENABLED else {}
+    scored = dynamic_brain_quota(scored)
     if MARKOV_WIRE_ENABLED:
         dedup_stats = {
             **dedup_stats,
             "markov_wire": True,
-            "markov_wire_method": "set_no_asc",
-            "wire_quota": dict(MARKOV_WIRE_BRAIN_QUOTA),
+            "markov_wire_method": "dynamic_referee_quota",
+            "wire_quota": dict(wire_quota),
             "issued_sets": len(scored),
         }
 
