@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `82b9356` |
+| HEAD(실측) | `3b36ad6` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-ENGINE-PHASE1** — B1 rollback OK · markov window100 solo ge3=**0.0850** · **FAIL** (≤0.1300) |
-| 직전 | K-BRAIN-SIGNAL-B1-BACKTEST-100 — ge3=0.0600 · virtual 100% · FAIL |
-| BOOT다음 | **K-ENGINE-PHASE1-HOLD** — window100 롤백 vs fusion 회복 백테 · **형 GO 대기** |
-| NEXT1 ID | **K-ENGINE-PHASE1-HOLD** |
-| NEXT1 할일 | markov window100 solo **FAIL** ge3=0.0850(≤0.1300) · B1 rollback 완료 · window100 롤백 vs fusion 회복 백테 · **형 GO 대기** |
+| 지금 | **K-ENGINE-PHASE1-HOLD** — window100 롤백 OK · fusion diag ge3=**0.0900** · **AUX_PATH_BOTTLENECK** |
+| 직전 | K-ENGINE-PHASE1 window100 solo ge3=0.0850 FAIL · B1 rollback 완료 |
+| BOOT다음 | fusion 회복 방향 결정 · quota/aux 튜닝 검토 · **형 GO 대기** |
+| NEXT1 ID | **K-ENGINE-PHASE1-HOLD-DONE** |
+| NEXT1 할일 | fusion bottleneck **AUX_PATH_BOTTLENECK** 판정 · diag ge3=0.0900 · quota 0.40/aux 0.67 · 회복 방향 결정 · **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=82b9356 · 지금=**K-ENGINE-PHASE1** — B1 rollback OK · markov window100 solo ge3=**0.0850** · **FAIL** (≤0.1300) · 다음=K-ENGINE-PHASE1-HOLD`
+1. 첫줄 `[복귀] HEAD=3b36ad6 · 지금=**K-ENGINE-PHASE1-HOLD** — window100 롤백 OK · fusion diag ge3=**0.0900** · **AUX_PATH_BOTTLENECK** · 다음=K-ENGINE-PHASE1-HOLD-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

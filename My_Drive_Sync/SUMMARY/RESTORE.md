@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `82b9356` · WORK=`IDLE`
-2. **지금:** **K-ENGINE-PHASE1** — B1 rollback OK · markov window100 solo ge3=**0.0850** · **FAIL** (≤0.1300)
-3. **다음1건:** K-ENGINE-PHASE1-HOLD — markov window100 solo **FAIL** ge3=0.0850(≤0.1300) · B1 rollback 완료 · window100 롤백 vs fusion 회복 백테 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `3b36ad6` · WORK=`IDLE`
+2. **지금:** **K-ENGINE-PHASE1-HOLD** — window100 롤백 OK · fusion diag ge3=**0.0900** · **AUX_PATH_BOTTLENECK**
+3. **다음1건:** K-ENGINE-PHASE1-HOLD-DONE — fusion bottleneck **AUX_PATH_BOTTLENECK** 판정 · diag ge3=0.0900 · quota 0.40/aux 0.67 · 회복 방향 결정 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-ENGINE-PHASE1-HOLD GO STEP1~2 | window100 롤백(full draws) · smoke 1230~1234 5/5 · fusion diag ge3=0.0900 quota=0.40 aux=0.67 | **AUX_PATH_BOTTLENECK** | pending |
 | 2026-08-01 | K-ENGINE-PHASE1 GO STEP1~3 | B1 coordinator rollback · markov window=100 · solo n=200 ge3=0.0850 · smoke 1230~1234 5/5 | **FAIL** (window100) | pending |
 | 2026-08-01 | K-BRAIN-SIGNAL-A1 GO | pattern_signal.py 신규 · coordinator conf blend 85/15 · smoke 1225~1234 OK · engine 미변경 | **PASS** | uncommitted |
 | 2026-08-01 | K-HIGHWAY-BACKTEST-100 GO | n=100 draw1135~1234 · overall ge3=0.0600 · baseline −0.0415 · learn adj 누적 OK | **FAIL** | pending |

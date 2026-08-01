@@ -24,10 +24,29 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-01 21:05 KST)
+### 최신 상태 (2026-08-01 21:15 KST)
 - **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-ENGINE-PHASE1 FAIL** — markov window100 solo ge3=**0.0850** (17/200) · B1 rollback **완료**
-- **다음(공식)**: **K-ENGINE-PHASE1-HOLD** — window100 롤백 vs fusion 회복 백테 · **형 GO 대기**
+- **지금(판정)**: **K-ENGINE-PHASE1-HOLD DONE** — window100 롤백 OK · fusion diag ge3=**0.0900** · **AUX_PATH_BOTTLENECK**
+- **다음(공식)**: fusion 회복 방향(quota/aux 튜닝) · **형 GO 대기**
+
+### K-ENGINE-PHASE1-HOLD (형 GO · STEP1~2 · fusion diag)
+근거: `docs/benchmarks/20260801_KFUSION_BOTTLE_DIAG.json`
+
+| STEP | 내용 | 판정 |
+|------|------|------|
+| 1 window100 롤백 | build_transition_matrix full draws 복원 · smoke 1230~1234 5/5 | **OK** |
+| 2 fusion diag n=100 | BENCH_FIXED_QUOTA markov=5 · draw 1135~1234 | **AUX_PATH_BOTTLENECK** |
+
+| 지표 | 값 |
+|------|-----|
+| diag ge3_rate (markov 100%) | **0.0900** (9/100) |
+| vs fused ref 0.0600 | **+0.0300** |
+| vs solo markov ref 0.1300 | **−0.0400** |
+| prod markov quota rate avg | **0.4000** (2/5 slots) |
+| aux survival rate avg | **0.6680** (markov in global top5) |
+| bottleneck | **aux_or_coordinator_path** (quota also contributes 0.06→0.09) |
+
+**결론:** window100 롤백 완료 · solo 0.13 vs fused 0.06 격차는 quota(40%) + aux/coordinator path 혼합 · 회복 튜닝 **형 GO 대기**
 
 ### K-ENGINE-PHASE1 (형 GO · STEP1~3 · window100 FAIL)
 근거: `docs/benchmarks/20260801_KMARKOV_WINDOW100_SOLO_N200.json`

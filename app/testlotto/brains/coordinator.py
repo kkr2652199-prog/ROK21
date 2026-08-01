@@ -52,6 +52,8 @@ BRAIN_DEDICATED_AUX = {
 MARKOV_WIRE_ENABLED: bool = True
 # 벤치 pin 참조용 (production은 dynamic_brain_quota 사용)
 MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {"markov": 3, "stat": 1, "review": 1}
+# 벤치 전용: 고정 쿼터 override (None=production dynamic). 진단 후 반드시 None 복원.
+BENCH_FIXED_QUOTA: dict[str, int] | None = None
 
 
 def _compute_dynamic_quota(
@@ -98,7 +100,11 @@ def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
 
     from collections import defaultdict
 
-    quota = _compute_dynamic_quota(get_referee_weights(), total=target_n)
+    quota = (
+        dict(BENCH_FIXED_QUOTA)
+        if BENCH_FIXED_QUOTA is not None
+        else _compute_dynamic_quota(get_referee_weights(), total=target_n)
+    )
     brain_buckets: dict[str, list[dict]] = defaultdict(list)
     for c in candidates:
         tag = str(c.get("brain_tag", "") or "")

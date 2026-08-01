@@ -1,0 +1,126 @@
+{
+  "id": "K-FUSION-BOTTLE-DIAG",
+  "ts": "2026-08-01T12:11:29+00:00",
+  "seed": 42,
+  "draw_range": [
+    1135,
+    1234
+  ],
+  "n_eval": 100,
+  "mode": "BENCH_FIXED_QUOTA markov=5 stat=0 review=0 (dynamic_brain_quota bypass · diagnostic)",
+  "markov_window": "full draws (window100 rolled back)",
+  "references": {
+    "fused_coordinator": {
+      "id": "K-BRAIN-SIGNAL-B1-BACKTEST-100",
+      "ge3_rate": 0.06
+    },
+    "solo_markov": {
+      "id": "K-HIGHWAY solo markov",
+      "ge3_rate": 0.13
+    }
+  },
+  "overall": {
+    "n": 100,
+    "mean": 1.71,
+    "ge3_rate": 0.09,
+    "ge3_count": 9,
+    "delta_ge3_vs_null": -0.0237,
+    "delta_ge3_vs_pin": -0.0547,
+    "p_value": 0.815343,
+    "verdict": "FAIL",
+    "mean_match": 1.71,
+    "n_eval": 100
+  },
+  "diagnostics": {
+    "markov_quota_actual_rate_avg": 0.4,
+    "aux_survival_rate_avg": 0.668,
+    "fixed_quota_markov_rate": 1.0,
+    "prod_dynamic_quota_markov_slots_avg": 2.0
+  },
+  "interpretation": {
+    "verdict": "AUX_PATH_BOTTLENECK",
+    "primary_bottleneck": "aux_or_coordinator_path",
+    "detail": "diag ge3=0.0900 closer to fused ref 0.06 — aux/coordinator path degrades markov",
+    "aux_note": "MIXED aux survival — partial aux ranking loss",
+    "quota_note": "LOW production markov allocation (~0.40/5) — quota dilution significant",
+    "delta_vs_fused": 0.03,
+    "delta_vs_solo_markov": -0.04
+  },
+  "per_draw_sample": [
+    {
+      "draw_no": 1135,
+      "best_match": 2,
+      "markov_issued": 5,
+      "aux_survival_rate": 0.8,
+      "markov_quota_actual_rate": 0.4,
+      "prod_quota_markov_slots": 2,
+      "markov_in_global_top5": 4
+    },
+    {
+      "draw_no": 1136,
+      "best_match": 1,
+      "markov_issued": 5,
+      "aux_survival_rate": 0.8,
+      "markov_quota_actual_rate": 0.4,
+      "prod_quota_markov_slots": 2,
+      "markov_in_global_top5": 4
+    },
+    {
+      "draw_no": 1137,
+      "best_match": 2,
+      "markov_issued": 5,
+      "aux_survival_rate": 0.8,
+      "markov_quota_actual_rate": 0.4,
+      "prod_quota_markov_slots": 2,
+      "markov_in_global_top5": 4
+    },
+    {
+      "draw_no": 1138,
+      "best_match": 1,
+      "markov_issued": 5,
+      "aux_survival_rate": 0.8,
+      "markov_quota_actual_rate": 0.4,
+      "prod_quota_markov_slots": 2,
+      "markov_in_global_top5": 4
+    },
+    {
+      "draw_no": 1139,
+      "best_match": 3,
+      "markov_issued": 5,
+      "aux_survival_rate": 0.8,
+      "markov_quota_actual_rate": 0.4,
+      "prod_quota_markov_slots": 2,
+      "markov_in_global_top5": 4
+    },
+    {
+      "draw_no": 1232,
+      "best_match": 2,
+      "markov_issued": 5,
+      "aux_survival_rate": 0.6,
+      "markov_quota_actual_rate": 0.4,
+      "prod_quota_markov_slots": 2,
+      "markov_in_global_top5": 3
+    },
+    {
+      "draw_no": 1233,
+      "best_match": 1,
+      "markov_issued": 5,
+      "aux_survival_rate": 0.8,
+      "markov_quota_actual_rate": 0.4,
+      "prod_quota_markov_slots": 2,
+      "markov_in_global_top5": 4
+    },
+    {
+      "draw_no": 1234,
+      "best_match": 1,
+      "markov_issued": 5,
+      "aux_survival_rate": 0.4,
+      "markov_quota_actual_rate": 0.4,
+      "prod_quota_markov_slots": 2,
+      "markov_in_global_top5": 2
+    }
+  ],
+  "gate": {
+    "null_ge3": 0.1137
+  }
+}
