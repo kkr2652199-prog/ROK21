@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-ATTACK-HOLD
-- 할일: **확정** — K-MARKOV-LEARN-SURVEY FAIL(wired ge3=0.105) · 코드 롤백 · V2 pin 유지 · survey HOLD
-- 완료조건: bench JSON·보고서·롤백 ✅
-- 선행완료: K-MARKOV-LEARN-SURVEY **FAIL** (wired ge3=0.105 p=0.683 · stored old=0.165)
+- ID: K-BRAIN-PACKAGE-PHASE1
+- 할일: stat_brain 구현 — predict_statistical·predict_stat_fairy → stat_brain/engine·learn·aux·predict 이전 · **동치 n=200** (draw 1035~1234 · ge3·mean·nums 허용오차 0)
+- 완료조건: stat_brain.run() wired · 동치 PASS · 보고서
+- 선행완료: K-BRAIN-PACKAGE-PHASE0 **OK** (19파일 스켈레톤 · 기존 미변경)
 
 ## WORKSTATE
 IDLE

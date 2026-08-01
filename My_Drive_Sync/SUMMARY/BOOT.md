@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **세션 정리 push** — tier·3+4·pool·뇌패키지 논의 → `20260801_ROK21_SESSION_ARCHITECTURE_NOTES.md`
-- 직전: K-MARKOV-LEARN FAIL · K-ARCHITECTURE-REVIEW
-- 다음: **K-ATTACK-HOLD** — wire·survey HOLD · V2 pin · 형 GO 대기
+- 지금: **K-BRAIN-PACKAGE-PHASE0** — 3뇌+shared 스켈레톤 19파일 · 기존 predict/coordinator 미변경
+- 직전: K-BRAIN-PACKAGE-C 설계 · K-ATTACK-HOLD survey FAIL
+- 다음: **K-BRAIN-PACKAGE-PHASE1** — stat_brain 구현 · 동치 n=200
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
