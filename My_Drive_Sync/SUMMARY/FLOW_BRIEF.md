@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `04a90fd` · WORK=`IDLE`
+- HEAD: `481fe61` · WORK=`IDLE`
 - 지금: **세션 정리 push** — tier·3+4·pool·뇌패키지 논의 → `20260801_ROK21_SESSION_ARCHITECTURE_NOTES.md`
 - 직전: K-MARKOV-LEARN FAIL · K-ARCHITECTURE-REVIEW
 - BOOT다음: **K-ATTACK-HOLD** — wire·survey HOLD · V2 pin · 형 GO 대기

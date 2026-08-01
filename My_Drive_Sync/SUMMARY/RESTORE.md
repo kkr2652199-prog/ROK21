@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `04a90fd` · WORK=`IDLE`
+1. **HEAD:** `481fe61` · WORK=`IDLE`
 2. **지금:** **세션 정리 push** — tier·3+4·pool·뇌패키지 논의 → `20260801_ROK21_SESSION_ARCHITECTURE_NOTES.md`
 3. **다음1건:** K-ATTACK-HOLD — **확정** — K-MARKOV-LEARN-SURVEY FAIL(wired ge3=0.105) · 코드 롤백 · V2 pin 유지 · survey HOLD (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
