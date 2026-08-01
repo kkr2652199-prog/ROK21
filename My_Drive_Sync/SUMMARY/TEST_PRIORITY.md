@@ -230,8 +230,9 @@
 | 순위 | ID | 한글 제목 | 상태 |
 |:----:|-----|-----------|------|
 | P0 | K-SIGNAL-REPACK-01 | 번호 몰아주기 repack QUICK | **완료·5장 FAIL** |
-| P0 | K-SIGNAL-SELECT-FULL | 전체1182 + 1~5등 표 | 대기 |
-| P0 | K-SIGNAL-SELECT-WIRE | 앱 반영 (형 GO) | HOLD |
+| P0 | K-SIGNAL-SELECT-FULL | 전체1182 + 1~5등 표 | **완료·FAIL** |
+| P0 | K-SIGNAL-SELECT-WIRE | 앱 반영 (형 GO) | **HOLD** |
+| P0 | K-COMBO-SIGNAL/V2 | AND·steering survey | **완료·FAIL·HOLD** |
 | P1 | K-10SET-SURVEY | 10장 pool QUICK200 | 대기 |
 | P1 | K-DET-LAB-01 | 1군 결정론 top-k lab | 대기 |
 | P1 | K-QUICK-GATE | QUICK 도구 | **완료** |
@@ -246,7 +247,7 @@
 
 ## 운영 규칙
 
-1. **NEXT_ACTIONS** = 큐 맨 앞 1건만 (지금: K-SIGNAL-SELECT-FULL).
+1. **NEXT_ACTIONS** = 큐 맨 앞 1건만 (지금: **K-ATTACK-HOLD** · survey 중단).
 2. **PASS/FAIL** 숫자는 `docs/benchmarks/*.json` 이 원본 — 이 파일은 **순위·금지·쉬운 말**만.
 3. **wire** = 형 GO 필수. survey PASS만으로 자동 wire **금지**.
 4. 보고서는 `BENCH_REPORT_TEMPLATE.md` **숙제 6섹션** 형식 (예: `20260730_KSIGNAL_SELECT_SURVEY.md`).

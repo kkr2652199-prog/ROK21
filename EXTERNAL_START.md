@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `2a4435c` |
+| HEAD(실측) | `6f54da5` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-COMBO-V2 QUICK FAIL** — combo_v2 ge3=0.125 · baseline=0.145 · B3_cov=100% |
-| 직전 | K-COMBO-SIGNAL-01 · K-EXCLUDE-SURVEY · SELECT-FULL |
-| BOOT다음 | **K-ATTACK-HOLD** — wire HOLD · **전체 큐=`TEST_PRIORITY.md`** |
+| 지금 | **K-ATTACK-HOLD 확정** — survey 전 축 HOLD · V2 pin ge3=0.1447 유지 · coordinator 미배선 |
+| 직전 | K-COMBO-V2 FAIL · COMBO-V1 hollow PASS · SELECT-FULL FAIL |
+| BOOT다음 | 형 GO 또는 **K-10SET-SURVEY** · **전체 큐=`TEST_PRIORITY.md`** |
 | NEXT1 ID | **K-ATTACK-HOLD** |
-| NEXT1 할일 | COMBO-V1/V2 wire HOLD · baseline 미개선 · 형 GO 또는 10SET·배제 재설계 전까지 survey 중단 |
+| NEXT1 할일 | **확정** — survey 전 축 HOLD · V2 pin 유지 · 형 GO 전 wire·survey 중단 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=2a4435c · 지금=**K-COMBO-V2 QUICK FAIL** — combo_v2 ge3=0.125 · baseline=0.145 · B3_cov=100% · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=6f54da5 · 지금=**K-ATTACK-HOLD 확정** — survey 전 축 HOLD · V2 pin ge3=0.1447 유지 · coordinator 미배선 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 2a4435c_
+_generated: 6f54da5_
