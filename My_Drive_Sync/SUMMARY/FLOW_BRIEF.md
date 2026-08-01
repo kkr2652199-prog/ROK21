@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `006c3d6` · WORK=`IDLE`
+- HEAD: `53c20b8` · WORK=`IDLE`
 - 지금: **K-BRAIN-TUNE-SURVEY** — P0 aux_hint_top5=0.1091 · best_combo ge3=**0.1032** · live_baseline 0.1218 미달 · **HOLD**
 - 직전: K-BACKTEST-FULL-C — C package FULL ge3=0.1015 · QUICK collapse −0.0235 · **FAIL**
 - BOOT다음: **K-BRAIN-TUNE-APPLY** — survey HOLD 권고 · tune apply · **형 GO 대기**
