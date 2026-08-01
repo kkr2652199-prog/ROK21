@@ -1,0 +1,699 @@
+{
+  "id": "K-BRAIN-TUNE-SURVEY",
+  "ts": "2026-08-01T06:59:35+00:00",
+  "seed": 42,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "n_eval_target": 1182,
+  "path": "coordinator_full (3brain pool + aux scoring + in-tool wire/params)",
+  "production_stack": {
+    "hint_weight_default": 0.15,
+    "look_back_default": 52,
+    "learn_wired": true,
+    "aux_1to1_enabled": true,
+    "wire_baseline": "set_no_asc"
+  },
+  "gate": {
+    "n_eval": 1182,
+    "draw_range": [
+      53,
+      1234
+    ],
+    "sample_mode": "full",
+    "seed": 42,
+    "pass": "ge3>pin(0.1447) AND p<0.05"
+  },
+  "references": {
+    "baseline_ge3": 0.1015,
+    "live_baseline_ge3": 0.1218,
+    "v2_pin_ge3": 0.1447,
+    "null_ge3": 0.1137,
+    "pass_target_ge3": 0.1218
+  },
+  "P0_wire_sweep": {
+    "look_back": 52,
+    "hint_weight": 0.15,
+    "strategies": {
+      "set_no_asc": {
+        "n": 1182,
+        "mean": 1.6853,
+        "ge3_rate": 0.1041,
+        "ge3_count": 123,
+        "delta_ge3_vs_null": -0.0096,
+        "delta_ge3_vs_pin": -0.0406,
+        "p_value": 0.862645,
+        "verdict": "FAIL",
+        "mean_match": 1.685279,
+        "n_eval": 1182
+      },
+      "conf_top5": {
+        "n": 1182,
+        "mean": 1.6684,
+        "ge3_rate": 0.1083,
+        "ge3_count": 128,
+        "delta_ge3_vs_null": -0.0054,
+        "delta_ge3_vs_pin": -0.0364,
+        "p_value": 0.733846,
+        "verdict": "FAIL",
+        "mean_match": 1.668359,
+        "n_eval": 1182
+      },
+      "aux_hint_top5": {
+        "n": 1182,
+        "mean": 1.6768,
+        "ge3_rate": 0.1091,
+        "ge3_count": 129,
+        "delta_ge3_vs_null": -0.0046,
+        "delta_ge3_vs_pin": -0.0356,
+        "p_value": 0.702489,
+        "verdict": "FAIL",
+        "mean_match": 1.676819,
+        "n_eval": 1182
+      },
+      "conf_quota": {
+        "n": 1182,
+        "mean": 1.6548,
+        "ge3_rate": 0.1049,
+        "ge3_count": 124,
+        "delta_ge3_vs_null": -0.0088,
+        "delta_ge3_vs_pin": -0.0398,
+        "p_value": 0.840929,
+        "verdict": "FAIL",
+        "mean_match": 1.654822,
+        "n_eval": 1182
+      }
+    },
+    "best": {
+      "id": "aux_hint_top5",
+      "n": 1182,
+      "mean": 1.6768,
+      "ge3_rate": 0.1091,
+      "ge3_count": 129,
+      "delta_ge3_vs_null": -0.0046,
+      "delta_ge3_vs_pin": -0.0356,
+      "p_value": 0.702489,
+      "verdict": "FAIL",
+      "mean_match": 1.676819,
+      "n_eval": 1182
+    }
+  },
+  "P1_look_back_sweep": {
+    "wire": "set_no_asc",
+    "hint_weight": 0.15,
+    "values": [
+      30,
+      52,
+      80,
+      120,
+      200
+    ],
+    "results": {
+      "30": {
+        "wire": "set_no_asc",
+        "look_back": 30,
+        "hint_weight": 0.15,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6404,
+          "ge3_rate": 0.0888,
+          "ge3_count": 105,
+          "delta_ge3_vs_null": -0.0249,
+          "delta_ge3_vs_pin": -0.0559,
+          "p_value": 0.997635,
+          "verdict": "FAIL",
+          "mean_match": 1.64044,
+          "n_eval": 1182
+        },
+        "n_eval": 1182,
+        "by_period": {
+          "early": {
+            "draw_range": [
+              53,
+              447
+            ],
+            "n": 395,
+            "mean": 1.6759,
+            "ge3_rate": 0.0886,
+            "ge3_count": 35,
+            "delta_ge3_vs_null": -0.0251,
+            "delta_ge3_vs_pin": -0.0561,
+            "p_value": 0.954548,
+            "verdict": "FAIL",
+            "mean_match": 1.675949,
+            "n_eval": 395
+          },
+          "mid": {
+            "draw_range": [
+              448,
+              841
+            ],
+            "n": 394,
+            "mean": 1.6345,
+            "ge3_rate": 0.0914,
+            "ge3_count": 36,
+            "delta_ge3_vs_null": -0.0223,
+            "delta_ge3_vs_pin": -0.0533,
+            "p_value": 0.933594,
+            "verdict": "FAIL",
+            "mean_match": 1.634518,
+            "n_eval": 394
+          },
+          "late": {
+            "draw_range": [
+              842,
+              1234
+            ],
+            "n": 393,
+            "mean": 1.6107,
+            "ge3_rate": 0.0865,
+            "ge3_count": 34,
+            "delta_ge3_vs_null": -0.0272,
+            "delta_ge3_vs_pin": -0.0582,
+            "p_value": 0.966244,
+            "verdict": "FAIL",
+            "mean_match": 1.610687,
+            "n_eval": 393
+          }
+        }
+      },
+      "52": {
+        "wire": "set_no_asc",
+        "look_back": 52,
+        "hint_weight": 0.15,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6853,
+          "ge3_rate": 0.1041,
+          "ge3_count": 123,
+          "delta_ge3_vs_null": -0.0096,
+          "delta_ge3_vs_pin": -0.0406,
+          "p_value": 0.862645,
+          "verdict": "FAIL",
+          "mean_match": 1.685279,
+          "n_eval": 1182
+        },
+        "n_eval": 1182,
+        "by_period": {
+          "early": {
+            "draw_range": [
+              53,
+              447
+            ],
+            "n": 395,
+            "mean": 1.6734,
+            "ge3_rate": 0.0987,
+            "ge3_count": 39,
+            "delta_ge3_vs_null": -0.015,
+            "delta_ge3_vs_pin": -0.046,
+            "p_value": 0.845559,
+            "verdict": "FAIL",
+            "mean_match": 1.673418,
+            "n_eval": 395
+          },
+          "mid": {
+            "draw_range": [
+              448,
+              841
+            ],
+            "n": 394,
+            "mean": 1.7437,
+            "ge3_rate": 0.1168,
+            "ge3_count": 46,
+            "delta_ge3_vs_null": 0.0031,
+            "delta_ge3_vs_pin": -0.0279,
+            "p_value": 0.447645,
+            "verdict": "FAIL",
+            "mean_match": 1.743655,
+            "n_eval": 394
+          },
+          "late": {
+            "draw_range": [
+              842,
+              1234
+            ],
+            "n": 393,
+            "mean": 1.6387,
+            "ge3_rate": 0.0967,
+            "ge3_count": 38,
+            "delta_ge3_vs_null": -0.017,
+            "delta_ge3_vs_pin": -0.048,
+            "p_value": 0.87472,
+            "verdict": "FAIL",
+            "mean_match": 1.638677,
+            "n_eval": 393
+          }
+        }
+      },
+      "80": {
+        "wire": "set_no_asc",
+        "look_back": 80,
+        "hint_weight": 0.15,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6142,
+          "ge3_rate": 0.0905,
+          "ge3_count": 107,
+          "delta_ge3_vs_null": -0.0232,
+          "delta_ge3_vs_pin": -0.0542,
+          "p_value": 0.99571,
+          "verdict": "FAIL",
+          "mean_match": 1.614213,
+          "n_eval": 1182
+        },
+        "n_eval": 1182,
+        "by_period": {
+          "early": {
+            "draw_range": [
+              53,
+              447
+            ],
+            "n": 395,
+            "mean": 1.5038,
+            "ge3_rate": 0.0911,
+            "ge3_count": 36,
+            "delta_ge3_vs_null": -0.0226,
+            "delta_ge3_vs_pin": -0.0536,
+            "p_value": 0.935787,
+            "verdict": "FAIL",
+            "mean_match": 1.503797,
+            "n_eval": 395
+          },
+          "mid": {
+            "draw_range": [
+              448,
+              841
+            ],
+            "n": 394,
+            "mean": 1.6878,
+            "ge3_rate": 0.0914,
+            "ge3_count": 36,
+            "delta_ge3_vs_null": -0.0223,
+            "delta_ge3_vs_pin": -0.0533,
+            "p_value": 0.933594,
+            "verdict": "FAIL",
+            "mean_match": 1.687817,
+            "n_eval": 394
+          },
+          "late": {
+            "draw_range": [
+              842,
+              1234
+            ],
+            "n": 393,
+            "mean": 1.6514,
+            "ge3_rate": 0.0891,
+            "ge3_count": 35,
+            "delta_ge3_vs_null": -0.0246,
+            "delta_ge3_vs_pin": -0.0556,
+            "p_value": 0.951172,
+            "verdict": "FAIL",
+            "mean_match": 1.651399,
+            "n_eval": 393
+          }
+        }
+      },
+      "120": {
+        "wire": "set_no_asc",
+        "look_back": 120,
+        "hint_weight": 0.15,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6041,
+          "ge3_rate": 0.1058,
+          "ge3_count": 125,
+          "delta_ge3_vs_null": -0.0079,
+          "delta_ge3_vs_pin": -0.0389,
+          "p_value": 0.817137,
+          "verdict": "FAIL",
+          "mean_match": 1.604061,
+          "n_eval": 1182
+        },
+        "n_eval": 1182,
+        "by_period": {
+          "early": {
+            "draw_range": [
+              53,
+              447
+            ],
+            "n": 395,
+            "mean": 1.3949,
+            "ge3_rate": 0.0886,
+            "ge3_count": 35,
+            "delta_ge3_vs_null": -0.0251,
+            "delta_ge3_vs_pin": -0.0561,
+            "p_value": 0.954548,
+            "verdict": "FAIL",
+            "mean_match": 1.394937,
+            "n_eval": 395
+          },
+          "mid": {
+            "draw_range": [
+              448,
+              841
+            ],
+            "n": 394,
+            "mean": 1.7462,
+            "ge3_rate": 0.1168,
+            "ge3_count": 46,
+            "delta_ge3_vs_null": 0.0031,
+            "delta_ge3_vs_pin": -0.0279,
+            "p_value": 0.447645,
+            "verdict": "FAIL",
+            "mean_match": 1.746193,
+            "n_eval": 394
+          },
+          "late": {
+            "draw_range": [
+              842,
+              1234
+            ],
+            "n": 393,
+            "mean": 1.6718,
+            "ge3_rate": 0.112,
+            "ge3_count": 44,
+            "delta_ge3_vs_null": -0.0017,
+            "delta_ge3_vs_pin": -0.0327,
+            "p_value": 0.566806,
+            "verdict": "FAIL",
+            "mean_match": 1.671756,
+            "n_eval": 393
+          }
+        }
+      },
+      "200": {
+        "wire": "set_no_asc",
+        "look_back": 200,
+        "hint_weight": 0.15,
+        "overall": {
+          "n": 1182,
+          "mean": 1.5355,
+          "ge3_rate": 0.1015,
+          "ge3_count": 120,
+          "delta_ge3_vs_null": -0.0122,
+          "delta_ge3_vs_pin": -0.0432,
+          "p_value": 0.915531,
+          "verdict": "FAIL",
+          "mean_match": 1.535533,
+          "n_eval": 1182
+        },
+        "n_eval": 1182,
+        "by_period": {
+          "early": {
+            "draw_range": [
+              53,
+              447
+            ],
+            "n": 395,
+            "mean": 1.0506,
+            "ge3_rate": 0.0658,
+            "ge3_count": 26,
+            "delta_ge3_vs_null": -0.0479,
+            "delta_ge3_vs_pin": -0.0789,
+            "p_value": 0.999509,
+            "verdict": "FAIL",
+            "mean_match": 1.050633,
+            "n_eval": 395
+          },
+          "mid": {
+            "draw_range": [
+              448,
+              841
+            ],
+            "n": 394,
+            "mean": 1.8249,
+            "ge3_rate": 0.1294,
+            "ge3_count": 51,
+            "delta_ge3_vs_null": 0.0157,
+            "delta_ge3_vs_pin": -0.0153,
+            "p_value": 0.181668,
+            "verdict": "FAIL",
+            "mean_match": 1.824873,
+            "n_eval": 394
+          },
+          "late": {
+            "draw_range": [
+              842,
+              1234
+            ],
+            "n": 393,
+            "mean": 1.7328,
+            "ge3_rate": 0.1094,
+            "ge3_count": 43,
+            "delta_ge3_vs_null": -0.0043,
+            "delta_ge3_vs_pin": -0.0353,
+            "p_value": 0.628858,
+            "verdict": "FAIL",
+            "mean_match": 1.732824,
+            "n_eval": 393
+          }
+        }
+      }
+    },
+    "best": {
+      "look_back": 120,
+      "n": 1182,
+      "mean": 1.6041,
+      "ge3_rate": 0.1058,
+      "ge3_count": 125,
+      "delta_ge3_vs_null": -0.0079,
+      "delta_ge3_vs_pin": -0.0389,
+      "p_value": 0.817137,
+      "verdict": "FAIL",
+      "mean_match": 1.604061,
+      "n_eval": 1182
+    }
+  },
+  "P2_hint_weight_sweep": {
+    "wire": "set_no_asc",
+    "look_back": 52,
+    "values": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3
+    ],
+    "results": {
+      "0.0": {
+        "wire": "set_no_asc",
+        "look_back": 52,
+        "hint_weight": 0.0,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6751,
+          "ge3_rate": 0.1058,
+          "ge3_count": 125,
+          "delta_ge3_vs_null": -0.0079,
+          "delta_ge3_vs_pin": -0.0389,
+          "p_value": 0.817137,
+          "verdict": "FAIL",
+          "mean_match": 1.675127,
+          "n_eval": 1182
+        },
+        "n_eval": 1182
+      },
+      "0.05": {
+        "wire": "set_no_asc",
+        "look_back": 52,
+        "hint_weight": 0.05,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6743,
+          "ge3_rate": 0.1041,
+          "ge3_count": 123,
+          "delta_ge3_vs_null": -0.0096,
+          "delta_ge3_vs_pin": -0.0406,
+          "p_value": 0.862645,
+          "verdict": "FAIL",
+          "mean_match": 1.674281,
+          "n_eval": 1182
+        },
+        "n_eval": 1182
+      },
+      "0.1": {
+        "wire": "set_no_asc",
+        "look_back": 52,
+        "hint_weight": 0.1,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6819,
+          "ge3_rate": 0.1041,
+          "ge3_count": 123,
+          "delta_ge3_vs_null": -0.0096,
+          "delta_ge3_vs_pin": -0.0406,
+          "p_value": 0.862645,
+          "verdict": "FAIL",
+          "mean_match": 1.681895,
+          "n_eval": 1182
+        },
+        "n_eval": 1182
+      },
+      "0.15": {
+        "wire": "set_no_asc",
+        "look_back": 52,
+        "hint_weight": 0.15,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6853,
+          "ge3_rate": 0.1041,
+          "ge3_count": 123,
+          "delta_ge3_vs_null": -0.0096,
+          "delta_ge3_vs_pin": -0.0406,
+          "p_value": 0.862645,
+          "verdict": "FAIL",
+          "mean_match": 1.685279,
+          "n_eval": 1182
+        },
+        "n_eval": 1182
+      },
+      "0.2": {
+        "wire": "set_no_asc",
+        "look_back": 52,
+        "hint_weight": 0.2,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6836,
+          "ge3_rate": 0.1049,
+          "ge3_count": 124,
+          "delta_ge3_vs_null": -0.0088,
+          "delta_ge3_vs_pin": -0.0398,
+          "p_value": 0.840929,
+          "verdict": "FAIL",
+          "mean_match": 1.683587,
+          "n_eval": 1182
+        },
+        "n_eval": 1182
+      },
+      "0.3": {
+        "wire": "set_no_asc",
+        "look_back": 52,
+        "hint_weight": 0.3,
+        "overall": {
+          "n": 1182,
+          "mean": 1.6853,
+          "ge3_rate": 0.1049,
+          "ge3_count": 124,
+          "delta_ge3_vs_null": -0.0088,
+          "delta_ge3_vs_pin": -0.0398,
+          "p_value": 0.840929,
+          "verdict": "FAIL",
+          "mean_match": 1.685279,
+          "n_eval": 1182
+        },
+        "n_eval": 1182
+      }
+    },
+    "best": {
+      "hint_weight": 0.0,
+      "n": 1182,
+      "mean": 1.6751,
+      "ge3_rate": 0.1058,
+      "ge3_count": 125,
+      "delta_ge3_vs_null": -0.0079,
+      "delta_ge3_vs_pin": -0.0389,
+      "p_value": 0.817137,
+      "verdict": "FAIL",
+      "mean_match": 1.675127,
+      "n_eval": 1182
+    }
+  },
+  "best_combo": {
+    "wire": "aux_hint_top5",
+    "look_back": 120,
+    "hint_weight": 0.0,
+    "overall": {
+      "n": 1182,
+      "mean": 1.5635,
+      "ge3_rate": 0.1032,
+      "ge3_count": 122,
+      "delta_ge3_vs_null": -0.0105,
+      "delta_ge3_vs_pin": -0.0415,
+      "p_value": 0.882288,
+      "verdict": "FAIL",
+      "mean_match": 1.563452,
+      "n_eval": 1182
+    },
+    "n_eval": 1182,
+    "by_period": {
+      "early": {
+        "draw_range": [
+          53,
+          447
+        ],
+        "n": 395,
+        "mean": 1.3747,
+        "ge3_rate": 0.0937,
+        "ge3_count": 37,
+        "delta_ge3_vs_null": -0.02,
+        "delta_ge3_vs_pin": -0.051,
+        "p_value": 0.911721,
+        "verdict": "FAIL",
+        "mean_match": 1.374684,
+        "n_eval": 395
+      },
+      "mid": {
+        "draw_range": [
+          448,
+          841
+        ],
+        "n": 394,
+        "mean": 1.6904,
+        "ge3_rate": 0.1244,
+        "ge3_count": 49,
+        "delta_ge3_vs_null": 0.0107,
+        "delta_ge3_vs_pin": -0.0203,
+        "p_value": 0.273965,
+        "verdict": "FAIL",
+        "mean_match": 1.690355,
+        "n_eval": 394
+      },
+      "late": {
+        "draw_range": [
+          842,
+          1234
+        ],
+        "n": 393,
+        "mean": 1.626,
+        "ge3_rate": 0.0916,
+        "ge3_count": 36,
+        "delta_ge3_vs_null": -0.0221,
+        "delta_ge3_vs_pin": -0.0531,
+        "p_value": 0.931339,
+        "verdict": "FAIL",
+        "mean_match": 1.625954,
+        "n_eval": 393
+      }
+    },
+    "선정_근거": {
+      "P0_best_wire": {
+        "id": "aux_hint_top5",
+        "ge3_rate": 0.1091
+      },
+      "P1_best_look_back": {
+        "id": "120",
+        "ge3_rate": 0.1058
+      },
+      "P2_best_hint_weight": {
+        "id": "0.0",
+        "ge3_rate": 0.1058
+      },
+      "method": "single-axis best ge3_rate per sweep (tie-break: lower p_value)"
+    }
+  },
+  "apply_recommendation": {
+    "action": "HOLD",
+    "note": "best_combo does not beat baseline meaningfully — HOLD production stack",
+    "baseline_ge3": 0.1015,
+    "live_baseline_ge3": 0.1218,
+    "best_combo_ge3": 0.1032,
+    "delta_vs_baseline": 0.0017,
+    "delta_vs_live": -0.0186,
+    "meets_live_baseline": false,
+    "p_lt_0_05": false,
+    "auto_apply": false
+  },
+  "note": "READ-ONLY FULL sweep · coordinator unchanged · no auto-apply · no DB write"
+}

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d1c1db8` · WORK=`IDLE`
-- 지금: **K-BACKTEST-FULL-C** — C package FULL ge3=**0.1015**(QUICK 0.125 collapse −0.0235) · live_baseline 0.1218 미달 · **FAIL**
-- 직전: K-WIRE-SELECT-FULL-SURVEY — conf_global_top5 FULL ge3=0.1117 · set_no_asc=0.1015 · wire GO=wait/HOLD
-- BOOT다음: **K-BRAIN-TUNE-SURVEY** — hint/learn/window/selection READ-ONLY sweep · **형 GO 대기**
-- NEXT1: K-BRAIN-TUNE-SURVEY — hint/learn/window/selection READ-ONLY sweep · FULL n=1182 · **형 GO 대기** (승인=미확인)
+- HEAD: `911542a` · WORK=`IDLE`
+- 지금: **K-BRAIN-TUNE-SURVEY** — P0 aux_hint_top5=0.1091 · best_combo ge3=**0.1032** · live_baseline 0.1218 미달 · **HOLD**
+- 직전: K-BACKTEST-FULL-C — C package FULL ge3=0.1015 · QUICK collapse −0.0235 · **FAIL**
+- BOOT다음: **K-BRAIN-TUNE-APPLY** — survey HOLD 권고 · tune apply · **형 GO 대기**
+- NEXT1: K-BRAIN-TUNE-APPLY — survey HOLD 권고 · 형 GO 시 wire/hint/lb A/B apply · auto-apply 금지 (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
