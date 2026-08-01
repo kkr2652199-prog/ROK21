@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d81a90b` |
+| HEAD(실측) | `2beb17c` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BRAIN-PACKAGE-PHASE2** — markov_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100% |
-| 직전 | K-BRAIN-PACKAGE-PHASE1 — stat_brain 동치 PASS n=200 |
-| BOOT다음 | **K-BRAIN-PACKAGE-PHASE3** — review_brain 구현 · 동치 n=200 |
-| NEXT1 ID | **K-BRAIN-PACKAGE-PHASE3** |
-| NEXT1 할일 | review_brain 구현 — predict_review_king → review_brain/engine·learn·aux·predict 이전 · **동치 n=200** (draw 1035~1234 · ge3·mean·nums 허용오차 0) |
+| 지금 | **K-BRAIN-PACKAGE-PHASE3** — review_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100% |
+| 직전 | K-BRAIN-PACKAGE-PHASE2 — markov_brain 동치 PASS n=200 |
+| BOOT다음 | **K-BRAIN-PACKAGE-PHASE4** — coordinator 3뇌 패키지 배선 · 동치 n=200 |
+| NEXT1 ID | **K-BRAIN-PACKAGE-PHASE4** |
+| NEXT1 할일 | coordinator → stat/markov/review_brain.predict.run 배선 · **동치 n=200** (draw 1035~1234 · ge3·mean·nums 허용오차 0) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d81a90b · 지금=**K-BRAIN-PACKAGE-PHASE2** — markov_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100% · 다음=K-BRAIN-PACKAGE-PHASE3`
+1. 첫줄 `[복귀] HEAD=2beb17c · 지금=**K-BRAIN-PACKAGE-PHASE3** — review_brain 구현 · 동치 PASS n=200 ge3/mean/nums 100% · 다음=K-BRAIN-PACKAGE-PHASE4`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: d81a90b_
+_generated: 2beb17c_
