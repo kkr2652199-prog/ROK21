@@ -9,7 +9,10 @@ from __future__ import annotations
 import logging
 
 from app.testlotto.brains import aux_balance_keeper, aux_miss_detective, aux_pattern_spotlight, aux_referee
-from app.testlotto.brains import predict_flow_shaman, predict_review_king, predict_stat_fairy
+from app.testlotto.brains import predict_flow_shaman, predict_review_king, predict_stat_fairy  # deprecated — PHASE4
+from app.testlotto.brains.stat_brain import predict as stat_brain_predict
+from app.testlotto.brains.markov_brain import predict as markov_brain_predict
+from app.testlotto.brains.review_brain import predict as review_brain_predict
 from app.testlotto.brains.registry import AUX_BRAINS, PREDICT_BRAINS, SETS_PER_PREDICT_BRAIN
 from app.testlotto.data_service import _get_draws_before
 from app.testlotto.learn_state import get_referee_weights
@@ -18,9 +21,9 @@ from app.testlotto.models import get_lotto_db, init_lotto_db
 logger = logging.getLogger(__name__)
 
 PREDICT_MODULES = {
-    "stat": predict_stat_fairy,
-    "markov": predict_flow_shaman,
-    "review": predict_review_king,
+    "stat": stat_brain_predict,
+    "markov": markov_brain_predict,
+    "review": review_brain_predict,
 }
 
 AUX_MODULES = [

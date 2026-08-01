@@ -1,0 +1,74 @@
+{
+  "id": "K-COORDINATOR-PHASE4-EQUIV",
+  "ts": "2026-08-01T05:21:06+00:00",
+  "seed": 42,
+  "n_eval": 200,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "n_sets": 5,
+  "thresholds": {
+    "ge3_diff_max": 0.002,
+    "mean_diff_max": 0.01,
+    "nums_match_min": 1.0
+  },
+  "brains": [
+    {
+      "brain": "stat",
+      "path_a": "app.testlotto.brains.predict_stat_fairy.predict_sets",
+      "path_b": "app.testlotto.brains.stat_brain.predict.run",
+      "metrics": {
+        "a_ge3_rate": 0.15,
+        "b_ge3_rate": 0.15,
+        "ge3_diff": 0.0,
+        "a_mean_match": 1.81,
+        "b_mean_match": 1.81,
+        "mean_diff": 0.0,
+        "nums_match_rate": 1.0,
+        "nums_match_count": 200
+      },
+      "mismatch_samples": [],
+      "verdict": "PASS",
+      "pass": true
+    },
+    {
+      "brain": "markov",
+      "path_a": "app.testlotto.brains.predict_flow_shaman.predict_sets",
+      "path_b": "app.testlotto.brains.markov_brain.predict.run",
+      "metrics": {
+        "a_ge3_rate": 0.08,
+        "b_ge3_rate": 0.08,
+        "ge3_diff": 0.0,
+        "a_mean_match": 1.645,
+        "b_mean_match": 1.645,
+        "mean_diff": 0.0,
+        "nums_match_rate": 1.0,
+        "nums_match_count": 200
+      },
+      "mismatch_samples": [],
+      "verdict": "PASS",
+      "pass": true
+    },
+    {
+      "brain": "review",
+      "path_a": "app.testlotto.brains.predict_review_king.predict_sets",
+      "path_b": "app.testlotto.brains.review_brain.predict.run",
+      "metrics": {
+        "a_ge3_rate": 0.1,
+        "b_ge3_rate": 0.1,
+        "ge3_diff": 0.0,
+        "a_mean_match": 1.655,
+        "b_mean_match": 1.655,
+        "mean_diff": 0.0,
+        "nums_match_rate": 1.0,
+        "nums_match_count": 200
+      },
+      "mismatch_samples": [],
+      "verdict": "PASS",
+      "pass": true
+    }
+  ],
+  "verdict": "PASS",
+  "pass": true
+}

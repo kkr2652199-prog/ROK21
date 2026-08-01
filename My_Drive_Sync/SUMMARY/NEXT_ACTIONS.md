@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BRAIN-PACKAGE-PHASE4
-- 할일: coordinator → stat/markov/review_brain.predict.run 배선 · **동치 n=200** (draw 1035~1234 · ge3·mean·nums 허용오차 0)
-- 완료조건: coordinator wired · 3뇌 패키지 경로 · 동치 PASS · 보고서
-- 선행완료: K-BRAIN-PACKAGE-PHASE3 **OK** (review_brain 동치 PASS · ge3/mean diff=0 · nums 200/200)
+- ID: K-BRAIN-PACKAGE-PHASE5
+- 할일: (형 지시 대기)
+- 완료조건: 미확인
+- 선행완료: K-BRAIN-PACKAGE-PHASE4 **OK** (coordinator 3뇌 배선 · 동치 PASS 3/3 · ge3/mean diff=0 · nums 600/600)
 
 ## WORKSTATE
 IDLE

@@ -46,3 +46,6 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
             }
         )
     return diversity.pick(tagged, n_sets)
+
+
+predict_sets = run  # coordinator 호환 어댑터 (PHASE4)
