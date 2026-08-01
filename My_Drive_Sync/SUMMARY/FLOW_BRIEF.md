@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `78114b0` · WORK=`IDLE`
-- 지금: **K-BRAIN-PACKAGE-PHASE7** — shared/referee + coordinator aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True
-- 직전: K-BRAIN-PACKAGE-PHASE6 — markov learn_state 배선 · ge3 PASS 0.125≥0.125 · LEARN_WIRED=True
-- BOOT다음: **K-BRAIN-PACKAGE-COMPLETE** — C package core done · 형 지시 대기 wire/repack
-- NEXT1: K-BRAIN-PACKAGE-COMPLETE — C package core done — 3뇌 패키지+hint+learn+aux1:1 · 형 지시 대기 wire/repack (승인=미확인)
+- HEAD: `9778d80` · WORK=`IDLE`
+- 지금: **K-BRAIN-PACKAGE-COMPLETE** — C package core Phase0~7 DONE · ge3=0.125 · consolidated PASS
+- 직전: K-BRAIN-PACKAGE-PHASE7 — aux 1:1 · ge3 PASS 0.125≥0.125 · AUX_1TO1=True
+- BOOT다음: **K-QUOTA-GAP-SURVEY** — set_no_asc vs conf top-k vs aux_hint wire 대안 READ-ONLY
+- NEXT1: K-QUOTA-GAP-SURVEY — set_no_asc vs conf top-k vs aux_hint wire 대안 READ-ONLY survey (coordinator wire 미변경) (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

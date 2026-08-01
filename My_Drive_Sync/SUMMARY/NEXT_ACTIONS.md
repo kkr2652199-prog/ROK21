@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BRAIN-PACKAGE-COMPLETE
-- 할일: C package core done — 3뇌 패키지+hint+learn+aux1:1 · 형 지시 대기 wire/repack
+- ID: K-QUOTA-GAP-SURVEY
+- 할일: set_no_asc vs conf top-k vs aux_hint wire 대안 READ-ONLY survey (coordinator wire 미변경)
 - 완료조건: 미확인
-- 선행완료: K-BRAIN-PACKAGE-PHASE7 **OK** (aux 1:1 PASS · ge3 0.125≥0.125 · AUX_1TO1=True)
+- 선행완료: K-BRAIN-PACKAGE-COMPLETE **OK** (C package core Phase0~7 · ge3=0.125 · consolidated PASS)
 
 ## WORKSTATE
 IDLE

@@ -1,0 +1,44 @@
+{
+  "id": "K-BRAIN-PACKAGE-COMPLETE",
+  "ts": "2026-08-01T05:53:59+00:00",
+  "seed": 42,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "path": "coordinator_full (3brain pool + aux scoring + wire quota)",
+  "production_stack": {
+    "hint_weight": 0.15,
+    "learn_wired": true,
+    "aux_1to1_enabled": true,
+    "wire": "set_no_asc"
+  },
+  "metrics": {
+    "hint_weight": 0.15,
+    "learn_wired": true,
+    "aux_1to1_enabled": true,
+    "wire": "set_no_asc (MARKOV_WIRE unchanged)",
+    "n_eval": 200,
+    "ge3_count": 25,
+    "ge3_rate": 0.125,
+    "mean_match": 1.695
+  },
+  "references": {
+    "v2_pin_ge3": 0.1447,
+    "phase4_baseline_ge3": 0.115,
+    "phase5_final_ge3": 0.125,
+    "source_files": {
+      "v2_pin": "STATUS_LATEST.md WIRE-V2 pin",
+      "phase4_baseline": "docs/benchmarks/20260801_KPHASE5_AUX_HINT_BENCH.json metrics_a",
+      "phase5_final": "docs/benchmarks/20260801_KPHASE5_AUX_HINT_BENCH.json metrics_b"
+    }
+  },
+  "comparison": {
+    "ge3_vs_v2_pin": -0.0197,
+    "ge3_vs_phase5_final": 0.0,
+    "ge3_uplift_from_phase4": 0.01
+  },
+  "verdict": "PASS",
+  "pass": true,
+  "note": "C package core Phase0~7 consolidated — no wire/repack changes"
+}
