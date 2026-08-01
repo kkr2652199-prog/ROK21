@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-WIRE-SELECT-GO-WAIT
-- 할일: conf_global_top5(+0.01) 또는 aux_hint_quota(+0.005) wire A/B — 형 GO 전 coordinator 미패치 · FULL n=1182 재검증
+- 할일: FULL FAIL·collapse(0.135→0.1117) — wire **HOLD 권고** · 형 명시 GO 시 conf_global_top5 wire A/B · coordinator 미패치
 - 완료조건: 형 GO + wire patch + FULL backtest PASS
-- 선행완료: K-QUOTA-GAP-SURVEY **OK** (conf_global_top5 ge3=0.135 · aux_hint=0.130 · set_no_asc=0.125 · quota_gap=43.0%)
+- 선행완료: K-WIRE-SELECT-FULL-SURVEY **OK** (conf_global_top5 FULL ge3=0.1117 p=0.600 · set_no_asc=0.1015 · quota_gap=43.1% · wire_go=wait)
 
 ## WORKSTATE
 IDLE

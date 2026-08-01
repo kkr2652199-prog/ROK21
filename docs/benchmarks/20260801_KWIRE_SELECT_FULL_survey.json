@@ -1,0 +1,188 @@
+{
+  "id": "K-WIRE-SELECT-FULL-SURVEY",
+  "ts": "2026-08-01T06:06:49+00:00",
+  "seed": 42,
+  "draw_range": [
+    53,
+    1234
+  ],
+  "n_eval": 1182,
+  "path": "coordinator_full (C package · 3brain pool + aux scoring + wire alt)",
+  "production_stack": {
+    "hint_weight": 0.15,
+    "learn_wired": true,
+    "aux_1to1_enabled": true,
+    "wire_baseline": "set_no_asc",
+    "quota": {
+      "markov": 3,
+      "stat": 1,
+      "review": 1
+    }
+  },
+  "gate": {
+    "n_eval": 1182,
+    "draw_range": [
+      53,
+      1234
+    ],
+    "sample_mode": "full",
+    "seed": 42,
+    "pass": "ge3>pin(0.1447) AND p<0.05"
+  },
+  "strategies": {
+    "set_no_asc": {
+      "n": 1182,
+      "mean": 1.692,
+      "ge3_rate": 0.1015,
+      "ge3_count": 120,
+      "delta_ge3_vs_null": -0.0122,
+      "delta_ge3_vs_pin": -0.0432,
+      "p_value": 0.915531,
+      "verdict": "FAIL",
+      "mean_match": 1.692047,
+      "n_eval": 1182
+    },
+    "conf_quota": {
+      "n": 1182,
+      "mean": 1.6768,
+      "ge3_rate": 0.1117,
+      "ge3_count": 132,
+      "delta_ge3_vs_null": -0.002,
+      "delta_ge3_vs_pin": -0.033,
+      "p_value": 0.600284,
+      "verdict": "FAIL",
+      "mean_match": 1.676819,
+      "n_eval": 1182
+    },
+    "conf_global_top5": {
+      "n": 1182,
+      "mean": 1.6447,
+      "ge3_rate": 0.1117,
+      "ge3_count": 132,
+      "delta_ge3_vs_null": -0.002,
+      "delta_ge3_vs_pin": -0.033,
+      "p_value": 0.600284,
+      "verdict": "FAIL",
+      "mean_match": 1.64467,
+      "n_eval": 1182
+    },
+    "aux_hint_quota": {
+      "n": 1182,
+      "mean": 1.6802,
+      "ge3_rate": 0.1134,
+      "ge3_count": 134,
+      "delta_ge3_vs_null": -0.0003,
+      "delta_ge3_vs_pin": -0.0313,
+      "p_value": 0.527947,
+      "verdict": "FAIL",
+      "mean_match": 1.680203,
+      "n_eval": 1182
+    },
+    "oracle_best15": {
+      "n": 1182,
+      "mean": 2.2166,
+      "ge3_rate": 0.2809,
+      "ge3_count": 332,
+      "delta_ge3_vs_null": 0.1672,
+      "delta_ge3_vs_pin": 0.1362,
+      "p_value": 0.0,
+      "verdict": "PASS",
+      "mean_match": 2.216582,
+      "n_eval": 1182
+    }
+  },
+  "quota_gap": {
+    "draws_oracle_gt_set_no_asc": 510,
+    "quota_gap_rate": 0.431472,
+    "baseline_strategy": "set_no_asc",
+    "ref_arch_note_rate": 0.436,
+    "ref_note": "architecture note ~43.6% from K-BENCH-01 n=1182"
+  },
+  "quick_vs_full": {
+    "set_no_asc": {
+      "quick_ge3": 0.125,
+      "full_ge3": 0.1015,
+      "delta_full_minus_quick": -0.0235,
+      "collapse": true
+    },
+    "conf_quota": {
+      "quick_ge3": 0.125,
+      "full_ge3": 0.1117,
+      "delta_full_minus_quick": -0.0133,
+      "collapse": true
+    },
+    "conf_global_top5": {
+      "quick_ge3": 0.135,
+      "full_ge3": 0.1117,
+      "delta_full_minus_quick": -0.0233,
+      "collapse": true
+    },
+    "aux_hint_quota": {
+      "quick_ge3": 0.13,
+      "full_ge3": 0.1134,
+      "delta_full_minus_quick": -0.0166,
+      "collapse": true
+    },
+    "oracle_best15": {
+      "quick_ge3": 0.29,
+      "full_ge3": 0.2809,
+      "delta_full_minus_quick": -0.0091,
+      "collapse": true
+    }
+  },
+  "comparison": {
+    "set_no_asc": {
+      "delta_ge3_vs_set_no_asc": 0.0,
+      "delta_ge3_vs_v2_pin": -0.0432,
+      "delta_ge3_vs_null": -0.0122
+    },
+    "conf_quota": {
+      "delta_ge3_vs_set_no_asc": 0.0102,
+      "delta_ge3_vs_v2_pin": -0.033,
+      "delta_ge3_vs_null": -0.002
+    },
+    "conf_global_top5": {
+      "delta_ge3_vs_set_no_asc": 0.0102,
+      "delta_ge3_vs_v2_pin": -0.033,
+      "delta_ge3_vs_null": -0.002
+    },
+    "aux_hint_quota": {
+      "delta_ge3_vs_set_no_asc": 0.0119,
+      "delta_ge3_vs_v2_pin": -0.0313,
+      "delta_ge3_vs_null": -0.0003
+    },
+    "oracle_best15": {
+      "delta_ge3_vs_set_no_asc": 0.1794,
+      "oracle_ceiling_uplift": 0.1794
+    }
+  },
+  "references": {
+    "v2_pin_ge3": 0.1447,
+    "live_baseline_ge3": 0.1218,
+    "quick_survey_id": "K-QUOTA-GAP-SURVEY",
+    "arch_note_quota_gap_rate": 0.436
+  },
+  "verdict": {
+    "baseline_ge3": 0.1015,
+    "conf_global_top5_ge3": 0.1117,
+    "conf_global_top5_p": 0.600284,
+    "beats_set_no_asc": [
+      "conf_quota",
+      "conf_global_top5",
+      "aux_hint_quota"
+    ],
+    "pass_criteria": {
+      "conf_global_top5_gt_set_no_asc": true,
+      "conf_global_top5_gt_live_baseline_0.1218": false,
+      "conf_global_top5_p_lt_0.05": false,
+      "aux_hint_beats_baseline": true,
+      "aux_hint_p_lt_0.05": false,
+      "wire_pass": false
+    },
+    "wire_go": "wait",
+    "recommendation": "K-WIRE-SELECT-GO-WAIT",
+    "note": "Candidate beats set_no_asc on FULL but FAILS p<0.05 or collapse vs QUICK — HOLD wire",
+    "auto_wire": false
+  },
+  "note": "READ-ONLY · coordinator.py unchanged · no auto-wire"
+}

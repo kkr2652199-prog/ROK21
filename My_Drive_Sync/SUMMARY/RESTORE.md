@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `bd2c67d` · WORK=`IDLE`
-2. **지금:** **K-QUOTA-GAP-SURVEY** — conf_global_top5 ge3=0.135 · aux_hint_quota=0.130 · quota_gap=43.0% · coordinator 미변경
-3. **다음1건:** K-WIRE-SELECT-GO-WAIT — conf_global_top5(+0.01) 또는 aux_hint_quota(+0.005) wire A/B — 형 GO 전 coordinator 미패치 · FULL n=1182 재검증 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `4a4dc23` · WORK=`IDLE`
+2. **지금:** **K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD**
+3. **다음1건:** K-WIRE-SELECT-GO-WAIT — FULL FAIL·collapse(0.135→0.1117) — wire **HOLD 권고** · 형 명시 GO 시 conf_global_top5 wire A/B · coordinator 미패치 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-01 | K-WIRE-SELECT-FULL-SURVEY GO | conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · quota_gap=43.1% · wire_go=wait | **SURVEY OK** | pending |
 | 2026-08-01 | K-QUOTA-GAP-SURVEY GO | set_no_asc ge3=0.125 · conf_global_top5=0.135 · aux_hint=0.130 · quota_gap=43.0% · coordinator 미변경 | **SURVEY OK** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-COMPLETE GO | C package core Phase0~7 consolidated · ge3=0.125 n=200 · wire/repack 미변경 | **COMPLETE OK** | pending |
 | 2026-08-01 | K-BRAIN-PACKAGE-PHASE7 GO | shared/referee · coordinator aux 1:1 · FULL ge3 0.125=0.125 PASS · AUX_1TO1=True | **PHASE7 PASS** | pending |

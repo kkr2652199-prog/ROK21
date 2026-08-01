@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `bd2c67d` |
+| HEAD(실측) | `4a4dc23` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-QUOTA-GAP-SURVEY** — conf_global_top5 ge3=0.135 · aux_hint_quota=0.130 · quota_gap=43.0% · coordinator 미변경 |
-| 직전 | K-BRAIN-PACKAGE-COMPLETE — C package Phase0~7 DONE · set_no_asc ge3=0.125 · consolidated PASS |
-| BOOT다음 | **K-WIRE-SELECT-GO-WAIT** — 형 GO for conf_global_top5 or aux_hint_quota wire A/B (auto-wire 금지) |
+| 지금 | **K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD** |
+| 직전 | K-QUOTA-GAP-SURVEY — conf_global_top5 QUICK ge3=0.135 · aux_hint=0.130 · quota_gap=43.0% |
+| BOOT다음 | **K-WIRE-SELECT-GO-WAIT** — FULL FAIL·collapse · wire HOLD 권고 · 형 GO 시에만 A/B (coordinator 미패치) |
 | NEXT1 ID | **K-WIRE-SELECT-GO-WAIT** |
-| NEXT1 할일 | conf_global_top5(+0.01) 또는 aux_hint_quota(+0.005) wire A/B — 형 GO 전 coordinator 미패치 · FULL n=1182 재검증 |
+| NEXT1 할일 | FULL FAIL·collapse(0.135→0.1117) — wire **HOLD 권고** · 형 명시 GO 시 conf_global_top5 wire A/B · coordinator 미패치 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=bd2c67d · 지금=**K-QUOTA-GAP-SURVEY** — conf_global_top5 ge3=0.135 · aux_hint_quota=0.130 · quota_gap=43.0% · coordinator 미변경 · 다음=K-WIRE-SELECT-GO-WAIT`
+1. 첫줄 `[복귀] HEAD=4a4dc23 · 지금=**K-WIRE-SELECT-FULL-SURVEY** — conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · wire GO=**wait/HOLD** · 다음=K-WIRE-SELECT-GO-WAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: bd2c67d_
+_generated: 4a4dc23_
