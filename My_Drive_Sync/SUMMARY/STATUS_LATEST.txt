@@ -19,6 +19,7 @@
 | **K-EXCLUDE-SURVEY** | **FAIL** — QUICK n=200 · λ sweep · best exclude ge3=**0.145**=baseline |
 | **K-SIGNAL-SELECT-FULL** | **FAIL** — combined ge3=**0.1218** p=0.201 · n=1182 · wire HOLD |
 | **K-MARKOV-LEARN-SURVEY** | **FAIL** — wired ge3=**0.105** p=0.683 · stored old=**0.165** · K-F 롤백 |
+| **세션 정리 20260801** | tier·3+4·pool8→7·뇌패키지·백테·해외YT — `20260801_ROK21_SESSION_ARCHITECTURE_NOTES.md` | **DOC** |
 | **K-EXCLUDE-HIST-01** | **DONE** — 1~1234 패턴 catalog · 2연속+ 51.7% · LEAKAGE_POLICY |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
 | K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
@@ -31,6 +32,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **20260801 세션 정리** | ge3≠3등 · 3뇌/4보조/repack · 뇌코드 규모 · 8→7·패키지 제안 | **DOC** |
 | **K-MARKOV-LEARN-SURVEY** | markov learn_state 배선 QUICK · stored vs live wired | **FAIL** · wired ge3=0.105 · 롤백 |
 | **K-EXCLUDE-SURVEY** | combined+배제 λ sweep · WF as_of catalog · 3패턴 · QUICK n=200 | **FAIL** · ge3=0.145=baseline |
 | **K-SIGNAL-SELECT-FULL** | 10pool 선별 combined · live WF n=1182 · pin+p 게이트 | **FAIL** · ge3=0.1218 |
