@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `91e1cda` |
+| HEAD(실측) | `a0f3fef` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-MARKOV-LEARN-SURVEY** — wired ge3=**0.105** FAIL · stored old ge3=0.165 · 코드 롤백 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=91e1cda · 지금=**K-MARKOV-LEARN-SURVEY** — wired ge3=**0.105** FAIL · stored old ge3=0.165 · 코드 롤백 · 다음=K-ATTACK-HOLD`
+1. 첫줄 `[복귀] HEAD=a0f3fef · 지금=**K-MARKOV-LEARN-SURVEY** — wired ge3=**0.105** FAIL · stored old ge3=0.165 · 코드 롤백 · 다음=K-ATTACK-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

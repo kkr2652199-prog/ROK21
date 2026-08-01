@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `91e1cda` · WORK=`IDLE`
+- HEAD: `a0f3fef` · WORK=`IDLE`
 - 지금: **K-MARKOV-LEARN-SURVEY** — wired ge3=**0.105** FAIL · stored old ge3=0.165 · 코드 롤백
 - 직전: K-ARCHITECTURE-REVIEW · 형 GO K-F
 - BOOT다음: **K-ATTACK-HOLD** — survey FAIL · V2 pin 유지 · wire HOLD

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-01 KST  
-📌 사유: **K-ATTACK-HOLD 확정** — survey 전 축 HOLD · V2 pin 유지 · coordinator 미배선 확인
+📌 사유: **K-MARKOV-LEARN-SURVEY FAIL** — wired ge3=0.105 · K-F 롤백 · K-ATTACK-HOLD 유지
 
 ---
 
@@ -18,11 +18,12 @@
 | **K-COMBO-SIGNAL-01** | hollow PASS — AB=0% · baseline only |
 | **K-EXCLUDE-SURVEY** | **FAIL** — QUICK n=200 · λ sweep · best exclude ge3=**0.145**=baseline |
 | **K-SIGNAL-SELECT-FULL** | **FAIL** — combined ge3=**0.1218** p=0.201 · n=1182 · wire HOLD |
+| **K-MARKOV-LEARN-SURVEY** | **FAIL** — wired ge3=**0.105** p=0.683 · stored old=**0.165** · K-F 롤백 |
 | **K-EXCLUDE-HIST-01** | **DONE** — 1~1234 패턴 catalog · 2연속+ 51.7% · LEAKAGE_POLICY |
 | K-QUICK-GATE-01 | **DONE** — BENCH §9 · bench_quick_gate.py · `--n-eval` |
 | K-WINDOW-SIGNAL-01 | **FAIL** — best w4_zone_mix@α=0.1 ge3=**0.1328** p=0.023 |
 | WIRE-V2 pin | ge3=**0.1447** · mean=**1.7504** (stored) |
-| 권고 | **K-ATTACK-HOLD** — wire·survey HOLD · 형 GO 시 K-10SET-SURVEY · **전체 큐=`TEST_PRIORITY.md`** |
+| 권고 | **K-ATTACK-HOLD** — K-F wired FAIL · wire·survey HOLD · V2 pin 유지 · **전체 큐=`TEST_PRIORITY.md`** |
 
 ---
 
@@ -30,6 +31,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-MARKOV-LEARN-SURVEY** | markov learn_state 배선 QUICK · stored vs live wired | **FAIL** · wired ge3=0.105 · 롤백 |
 | **K-EXCLUDE-SURVEY** | combined+배제 λ sweep · WF as_of catalog · 3패턴 · QUICK n=200 | **FAIL** · ge3=0.145=baseline |
 | **K-SIGNAL-SELECT-FULL** | 10pool 선별 combined · live WF n=1182 · pin+p 게이트 | **FAIL** · ge3=0.1218 |
 | **K-EXCLUDE-HIST-01** | 1~1234 당첨 패턴 catalog · 배제 준비 · as_of WF 정책 | **DONE** |
