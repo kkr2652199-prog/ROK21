@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `289f4b1` · WORK=`IDLE`
-- 지금: **K-QUOTA-MARKOV80-REV2** — floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL** · **롤백 25/60/15**
-- 직전: K-AUX-DIAG · spotlight/balance · ge3 aux ablation 0.0800 불변
-- BOOT다음: ge3 0.09+ 추가 경로(aux/wire/gate) · **형 GO 대기**
-- NEXT1: K-QUOTA-MARKOV80-DONE — markov floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · **롤백 25/60/15 완료** · 0.09+ 추가 경로 결정 · **형 GO 대기** (승인=미확인)
+- HEAD: `39f0ce8` · WORK=`IDLE`
+- 지금: **K-FUSION-DYNAMIC-V2** — solo×ref quota ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · 고정 DEFAULT 폐기
+- 직전: K-QUOTA-MARKOV80-REV2 · floor 4/5 ge3=0.09 tie · 롤백 25/60/15
+- BOOT다음: 0.09+ 경로(aux/wire/gate) · **형 GO 대기**
+- NEXT1: K-FUSION-DYNAMIC-V2-DONE — solo×ref quota ge3=**0.0900** · gate >0.09 **FAIL**(1bp tie) · live=SOLO_GE3_PRIORS+dominance1.15 · 0.09+ 경로(aux/wire/gate) · **형 GO 대기** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

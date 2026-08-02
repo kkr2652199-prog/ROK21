@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-QUOTA-MARKOV80-DONE
-- 할일: markov floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · **롤백 25/60/15 완료** · 0.09+ 추가 경로 결정 · **형 GO 대기**
+- ID: K-FUSION-DYNAMIC-V2-DONE
+- 할일: solo×ref quota ge3=**0.0900** · gate >0.09 **FAIL**(1bp tie) · live=SOLO_GE3_PRIORS+dominance1.15 · 0.09+ 경로(aux/wire/gate) · **형 GO 대기**
 - 완료조건: gate 재정의 또는 aux/wire 튜닝 지시서 + 형 GO
-- 선행완료: K-QUOTA-MARKOV80-REV2 smoke PASS · n=100 FAIL · rollback
+- 선행완료: referee-only 0.06 FAIL → solo prior +0.03 · markov80 floor 동일 0.09
 
 ## WORKSTATE
 IDLE
@@ -15,6 +15,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- **K-QUOTA-MARKOV80** — ge3=0.0900 quota 80/20/0 · vs quota60 +0.01 · rolled back
+- **K-FUSION-DYNAMIC-V2** — SOLO_GE3_PRIORS(K-HIGHWAY) × referee · plan 4/0/1 · vs fixed 25/60/15 +0.01
+- **K-QUOTA-MARKOV80** — ge3=0.0900 · rolled back (V2 solo prior가 동일 수치 대체)
 - **K-AUX-DIAG** — spotlight 필수 · balance markov 억제 · ge3 aux ablation 무변
-- **K-FUSION-QUOTA-FIX** — ge3=0.0800 · 20/60/20 live (rollback 후)

@@ -50,8 +50,13 @@ BRAIN_DEDICATED_AUX = {
 
 # K-HIGHWAY-QUOTA: referee 가중 동적 5장 배분 · MARKOV_WIRE_ENABLED=False → conf top5
 MARKOV_WIRE_ENABLED: bool = True
-# K-FUSION-QUOTA-FIX: default quota base (was equal referee → avg 40/40/20 slots)
+# K-FUSION-QUOTA-FIX: legacy pin (fallback only — 벤치 pin·롤백 참조)
 DEFAULT_QUOTA_WEIGHTS: dict[str, float] = {"stat": 0.25, "markov": 0.60, "review": 0.15}
+# K-FUSION-DYNAMIC-V2: 3뇌 solo ge3 — K-HIGHWAY-BACKTEST-100 by_brain (1135~1234)
+SOLO_GE3_PRIORS: dict[str, float] = {"stat": 0.09, "markov": 0.13, "review": 0.11}
+QUOTA_ADAPTIVE_MIN_EACH: int = 0
+# solo prior 기준 markov 1위(0.39) vs review 2위(0.33) ≈ 1.18 → 1.15로 4/5 floor 허용
+QUOTA_DOMINANCE_FLOOR: float = 1.15
 # 벤치 pin 참조용 (production은 dynamic_brain_quota 사용)
 MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {"markov": 3, "stat": 1, "review": 1}
 # 벤치 전용: 고정 쿼터 override (None=production dynamic). 진단 후 반드시 None 복원.
@@ -59,32 +64,58 @@ BENCH_FIXED_QUOTA: dict[str, int] | None = None
 
 
 def _get_quota_weights() -> dict[str, float]:
-    """Referee learn 가중 × DEFAULT_QUOTA_WEIGHTS · dynamic 구조 유지."""
+    """K-FUSION-DYNAMIC-V2: referee × solo_ge3_prior (고정 DEFAULT 미사용).
+
+    3뇌 교체 후 solo 성적(K-HIGHWAY by_brain)을 prior로 · walk-forward referee가 미세조정.
+    """
     ref = get_referee_weights()
     combined = {
-        t: float(ref.get(t, DEFAULT_QUOTA_WEIGHTS.get(t, 1.0 / 3)))
-        * DEFAULT_QUOTA_WEIGHTS.get(t, 1.0 / 3)
+        t: float(ref.get(t, 1.0 / len(PREDICT_TAGS)))
+        * float(SOLO_GE3_PRIORS.get(t, 1.0 / len(PREDICT_TAGS)))
         for t in PREDICT_TAGS
     }
     total = sum(combined.values()) or 1.0
+    if total <= 0:
+        return {t: SOLO_GE3_PRIORS.get(t, 1.0 / len(PREDICT_TAGS)) for t in PREDICT_TAGS}
     return {k: v / total for k, v in combined.items()}
 
 
 def _compute_dynamic_quota(
     referee_weights: dict[str, float],
     total: int = 5,
-    min_each: int = 1,
+    min_each: int | None = None,
 ) -> dict[str, int]:
-    """referee 가중 비례 배분 · 뇌별 min_each · 합계 total (largest remainder on total)."""
+    """referee 가중 비례 배분 · adaptive min_each · dominance floor."""
+    if min_each is None:
+        min_each = QUOTA_ADAPTIVE_MIN_EACH
+
     tags_list = list(PREDICT_TAGS)
     n = len(tags_list)
+
+    def _w(tag: str) -> float:
+        return float(referee_weights.get(tag, 1.0 / n))
+
+    # K-FUSION-DYNAMIC-V2: 성적 1위 뇌가 압도적이면 floor (total-1)/1 (예: 4/5)
+    ranked = sorted(tags_list, key=_w, reverse=True)
+    top, second = ranked[0], ranked[1]
+    w_top, w_second = _w(top), _w(second)
+    if (
+        total >= 4
+        and w_top >= 0.38
+        and w_second > 0
+        and w_top >= QUOTA_DOMINANCE_FLOOR * w_second
+    ):
+        others = [t for t in tags_list if t != top]
+        winner = max(others, key=_w)
+        quota: dict[str, int] = {t: 0 for t in tags_list}
+        quota[top] = total - 1
+        quota[winner] = 1
+        return quota
+
     floor_min = min_each * n
     if total < floor_min:
         each = max(1, total // n)
         return {t: each for t in tags_list}
-
-    def _w(tag: str) -> float:
-        return float(referee_weights.get(tag, DEFAULT_QUOTA_WEIGHTS.get(tag, 1.0 / n)))
 
     wsum = sum(_w(t) for t in tags_list) or 1.0
     raw = {t: total * _w(t) / wsum for t in tags_list}
@@ -108,7 +139,7 @@ def _compute_dynamic_quota(
 
 
 def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
-    """K-HIGHWAY-QUOTA: referee 가중 동적 쿼터 · set_no_asc · 최소 1장/뇌."""
+    """K-HIGHWAY-QUOTA: referee 동적 쿼터 · set_no_asc · adaptive min (0 허용)."""
     target_n = 5
     if not candidates:
         return candidates

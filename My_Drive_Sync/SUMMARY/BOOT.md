@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-QUOTA-MARKOV80-REV2** — floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL** · **롤백 25/60/15**
-- 직전: K-AUX-DIAG · spotlight/balance · ge3 aux ablation 0.0800 불변
-- 다음: ge3 0.09+ 추가 경로(aux/wire/gate) · **형 GO 대기**
+- 지금: **K-FUSION-DYNAMIC-V2** — solo×ref quota ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · 고정 DEFAULT 폐기
+- 직전: K-QUOTA-MARKOV80-REV2 · floor 4/5 ge3=0.09 tie · 롤백 25/60/15
+- 다음: 0.09+ 경로(aux/wire/gate) · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `289f4b1` |
+| HEAD(실측) | `39f0ce8` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-QUOTA-MARKOV80-REV2** — floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL** · **롤백 25/60/15** |
-| 직전 | K-AUX-DIAG · spotlight/balance · ge3 aux ablation 0.0800 불변 |
-| BOOT다음 | ge3 0.09+ 추가 경로(aux/wire/gate) · **형 GO 대기** |
-| NEXT1 ID | **K-QUOTA-MARKOV80-DONE** |
-| NEXT1 할일 | markov floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · **롤백 25/60/15 완료** · 0.09+ 추가 경로 결정 · **형 GO 대기** |
+| 지금 | **K-FUSION-DYNAMIC-V2** — solo×ref quota ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · 고정 DEFAULT 폐기 |
+| 직전 | K-QUOTA-MARKOV80-REV2 · floor 4/5 ge3=0.09 tie · 롤백 25/60/15 |
+| BOOT다음 | 0.09+ 경로(aux/wire/gate) · **형 GO 대기** |
+| NEXT1 ID | **K-FUSION-DYNAMIC-V2-DONE** |
+| NEXT1 할일 | solo×ref quota ge3=**0.0900** · gate >0.09 **FAIL**(1bp tie) · live=SOLO_GE3_PRIORS+dominance1.15 · 0.09+ 경로(aux/wire/gate) · **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=289f4b1 · 지금=**K-QUOTA-MARKOV80-REV2** — floor 4/5 ge3=**0.0900** · gate >0.09 **FAIL** · **롤백 25/60/15** · 다음=K-QUOTA-MARKOV80-DONE`
+1. 첫줄 `[복귀] HEAD=39f0ce8 · 지금=**K-FUSION-DYNAMIC-V2** — solo×ref quota ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · 고정 DEFAULT 폐기 · 다음=K-FUSION-DYNAMIC-V2-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
