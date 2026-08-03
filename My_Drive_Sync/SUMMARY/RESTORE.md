@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `df025ac` · WORK=`IDLE`
+1. **HEAD:** `37e945b` · WORK=`IDLE`
 2. **지금:** **K-UI-BT-PRELOAD** — 200회 draw-index 프리로드·즉시적용 · JS `20260803b` · **live**
 3. **다음1건:** K-UI-BT-PRELOAD-DONE — 200회 백테 draw-index 프리로드·즉시적용 live · Ctrl+F5 후 확인 · 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-03 | 200회DB즉시적용·버그확인 GO | draw-index 프리로드 · init수정 · JS 20260803b · 서버재기동 | **DONE** | pending |
+| 2026-08-03 | 200회DB즉시적용·버그확인 GO | draw-index 프리로드 · init수정 · JS 20260803b · 서버재기동 | **DONE** | 37e945b |
 | 2026-08-03 | 백테DB→즉시반응 GO | K-UI-BT-INSTANT · GET 자동WF 제거 · backtest_only 즉시 · 1100≈86ms | **DONE** | 6536464 |
 | 2026-08-03 | 재검증 진행 GO | 리셋 WF · QUICK200 ge3=0.1350 · FULL ge3=0.1184 · patch PASS · pin FAIL | **REVAL** | 144461e |
 | 2026-08-03 | 제자리분석→패치 GO | K-FUTURE-WIRE · 독립뇌 RNG+aux_hint · smoke PASS · n=100 ge3=0.1500 | **PASS** | ae582fb |
@@ -46,7 +46,6 @@
 | 2026-08-01 | K-FUSION-QUOTA-FIX GO | DEFAULT 25/60/15 · smoke 5/5 · n=100 ge3=0.0800 quota 20/60/20 · +0.02 vs 0.06 | **FAIL** (>0.09) | bc8c32e |
 | 2026-08-01 | K-ENGINE-PHASE1-HOLD GO | window100 롤백 · fusion diag ge3=0.0900 quota=0.40 aux=0.67 | **AUX_PATH_BOTTLENECK** | f1ae730 |
 | 2026-08-01 | K-ENGINE-PHASE1 GO | B1 rollback · window100 solo FAIL ge3=0.0850 · window 롤백 | **FAIL** | 82b9356 |
-| 2026-08-01 | K-BRAIN-SIGNAL-A1 GO | pattern_signal.py 신규 · coordinator conf blend 85/15 · smoke 1225~1234 OK · engine 미변경 | **PASS** | uncommitted |
 
 ---
 
