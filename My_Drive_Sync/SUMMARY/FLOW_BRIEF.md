@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `63ae865` · WORK=`IDLE`
+- HEAD: `8b20473` · WORK=`IDLE`
 - 지금: **K-FUSION-DYNAMIC-V2** — solo×ref quota ge3=**0.0900** · gate >0.09 **FAIL**(1bp) · 고정 DEFAULT 폐기
 - 직전: K-QUOTA-MARKOV80-REV2 · floor 4/5 ge3=0.09 tie · 롤백 25/60/15
 - BOOT다음: 0.09+ 경로(aux/wire/gate) · **형 GO 대기**
