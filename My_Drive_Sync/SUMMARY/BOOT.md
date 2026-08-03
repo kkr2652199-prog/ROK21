@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE**
-- 직전: K-DB-RESET-BT200 · tail-200 WF · pool 201
-- 다음: eval_mode null 병기·pin갭 등 **형 GO 대기**
+- 지금: **K-BENCH-NULL-BY-EVAL** — eval_mode별 null 병기 · enrich_metrics · TAIL100 정정 · **live**
+- 직전: K-BT-PRECISION-BENCH 정밀분석
+- 다음: pin갭(FULL0.1184→0.1447) **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

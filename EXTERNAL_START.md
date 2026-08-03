@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `dabd848` |
+| HEAD(실측) | `c1ba20c` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE** |
-| 직전 | K-DB-RESET-BT200 · tail-200 WF · pool 201 |
-| BOOT다음 | eval_mode null 병기·pin갭 등 **형 GO 대기** |
-| NEXT1 ID | **K-BT-PRECISION-BENCH-DONE** |
-| NEXT1 할일 | 정밀분석 보고·canvas 완료 · P0(eval_mode null병기)/pin갭 등 **형 GO 대기** |
+| 지금 | **K-BENCH-NULL-BY-EVAL** — eval_mode별 null 병기 · enrich_metrics · TAIL100 정정 · **live** |
+| 직전 | K-BT-PRECISION-BENCH 정밀분석 |
+| BOOT다음 | pin갭(FULL0.1184→0.1447) **형 GO 대기** |
+| NEXT1 ID | **K-BENCH-NULL-BY-EVAL-DONE** |
+| NEXT1 할일 | eval_mode null 병기 live · signal_repack FAIL(vs 0.3036) · pin갭 다음축 **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=dabd848 · 지금=**K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE** · 다음=K-BT-PRECISION-BENCH-DONE`
+1. 첫줄 `[복귀] HEAD=c1ba20c · 지금=**K-BENCH-NULL-BY-EVAL** — eval_mode별 null 병기 · enrich_metrics · TAIL100 정정 · **live** · 다음=K-BENCH-NULL-BY-EVAL-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: dabd848_
+_generated: c1ba20c_

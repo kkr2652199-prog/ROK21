@@ -22,11 +22,26 @@
 
 | 명제 | 수치 | 함의 |
 |------|------|------|
-| E[세트 적중] | **0.8** = 6×(6/45) | 세트 **mean만으로 뇌 서열화 불가** (K-O) |
-| P(≥3 적중) ge3_rate | ≈ **0.1137** | 이론 null-check · survey `NULL_GE3` SSOT · **K-BENCH-05** |
-| P(정확히 5개) | ≈ **2.873×10⁻⁵** | 1245×100세트 기대 5적중 ≈ **3.58≈3.5건** (K-P) |
+| E[세트 적중] (단일 티켓) | **0.8** = 6×(6/45) | 세트 **mean만으로 뇌 서열화 불가** (K-O) |
+| P(≥3) 단일 티켓 | ≈ **0.0238** | Hypergeometric 6/45 |
+| P(max≥3) best-of-5 | ≈ **0.1137** | survey 기본 `NULL_GE3` · **K-BENCH-05** · **기본 gate null** |
+| P(max≥3) best-of-15 | ≈ **0.3036** | `eval_mode=best_of_15` 전용 null · 0.1137과 **혼용 금지** |
+| E[max] best-of-5 / 15 | ≈ **1.7289** / **2.2692** | best mean 인용 시 천장 병기 (§4) |
+| P(정확히 5개) 단일 | ≈ **2.873×10⁻⁵** | 1245×100세트 기대 5적중 ≈ **3.58≈3.5건** (K-P) |
 | 세트 상위등수 | 기대 건수 ≪ 잡음 | **학습신호 부재** → 최적화 축으로 부적합 |
 | 볼 표본(실측) | draws **1234** · 본+보너스 슬롯 **8638** | 세트단위 대비 수량 우위 → **검정 층위=볼** |
+
+### 0.1) eval_mode ↔ null 매칭 (K-BENCH-NULL-BY-EVAL · 필수)
+
+| eval_mode | m | null_ge3 | null_mean | 비고 |
+|-----------|---|----------|-----------|------|
+| `single` / `single_ticket` | 1 | **0.0238** | **0.8000** | 장당 |
+| `best_of_5` · `best_of_5_from_30` · `top5_from_15` | 5 | **0.1137** | **1.7289** | 기본 `NULL_GE3` · pin(0.1447) 비교 가능 |
+| `best_of_15` | 15 | **0.3036** | **2.2692** | 15장 max · **문서 null 0.1137 비교 = 허위 PASS** |
+
+- 코드 SSOT: `tools/bench_quick_gate.py` → `null_for_eval_mode` · `enrich_metrics(..., eval_mode=)`
+- 벤치 표·JSON에 **`eval_mode` + `null_ge3`(모드 정합)** 병기 필수. 모드 다른 두 행을 같은 null로 판정 **금지**.
+- FULL pin(0.1447)은 **best_of_5 계열** 비교용. best_of_15에 pin 적용 금지.
 
 따라서: mean/best는 **null-check 전용 또는 폐기 후보**. 신규 후보는 번호 로그우도·calibration·Brier·볼빈도 적합(형 승인 후, K-S).
 
@@ -87,15 +102,17 @@
 
 모든 벤치 리포트·survey 마크다운의 **SUMMARY 표**(또는 동등한 1행 요약 표)에는 아래 **baseline 행을 반드시 포함**한다. 템플릿=`reports/BENCH_REPORT_TEMPLATE.md`.
 
-| label | mean | ge3_rate | pin | Δge3 | p | 비고 |
-|-------|------|----------|-----|------|---|------|
-| **theory_baseline** | **0.8000** | **0.1137** | — | — | — | E[match]=6×6/45 · ge3=null |
-| (후보) | … | … | (있으면) | vs baseline/pin | binom | pipeline·집계 명시 |
+| label | eval_mode | mean | ge3_rate | pin | Δge3 | p | 비고 |
+|-------|-----------|------|----------|-----|------|---|------|
+| **theory_baseline (best-of-5)** | best_of_5 | **1.7289** | **0.1137** | — | — | — | 기본 gate null |
+| **theory_baseline (single)** | single | **0.8000** | **0.0238** | — | — | — | 장당 참고 |
+| **theory_baseline (best-of-15)** | best_of_15 | **2.2692** | **0.3036** | — | — | — | 15장 max 전용 |
+| (후보) | (필수) | … | … | (best5만) | vs **모드 null**/pin | binom | pipeline·집계 명시 |
 
-- **mean baseline:** random 6/45 기대 적중수 **E[match] ≈ 0.8** (= 6×6/45). K-O와 동일.
-- **ge3 baseline:** P(본번호 교집합 ≥3) 이론값 ≈ **0.1137** — survey 스크립트 `NULL_GE3`·JSON `null_ge3`와 동일 SSOT.
-- **pin 행:** WIRE-V2 등 고정 기준선이 있으면 별도 행(예: ge3=0.1447). baseline과 pin **둘 다** 병기.
-- **Δ·p:** 후보는 baseline(또는 pin) 대비 Δge3·이항검정 p를 같은 표에 기록. baseline 없는 표 **출력 금지**.
+- **mean baseline:** 단일 티켓 E[match]≈**0.8** · best-of-N은 §0.1 `null_mean`.
+- **ge3 baseline:** **eval_mode 정합 null** (§0.1). 기본 `NULL_GE3=0.1137`는 best-of-5만.
+- **pin 행:** WIRE-V2(ge3=0.1447)는 best_of_5 계열만. baseline·pin·eval_mode **셋 다** 병기.
+- **Δ·p:** 후보의 `null_ge3`는 자기 `eval_mode`로 계산. 모드 불일치 Δ **출력 금지**.
 
 ---
 
@@ -150,7 +167,7 @@ full 1182( draw 53~1234 ) 전 구간은 **확정 PASS 후** 또는 형 GO 후에
 | sample_mode | `tail` (표본 혼용 금지 · BENCH §5) | `full` |
 | seed | **42** (고정 · `MC_SEED`) | 42 |
 | pipeline | WF live (§7) · coordinator 미수정 | 동일 |
-| PASS (탐색) | ge3 **> NULL_GE3 (0.1137)** AND **p < 0.15** (vs null) | ge3 **> pin (0.1447)** AND **p < 0.05** |
+| PASS (탐색) | ge3 **> null(eval_mode)** AND **p < 0.15** (기본 best5→0.1137) | ge3 **> pin (0.1447)** AND **p < 0.05** (best5 계열) |
 | promising | ge3 > null+0.01 **OR** baseline 대비 top variant Δge3 명확 | pin + p<0.05 |
 | FAIL | full skip (variant 폐기) | wire/HOLD |
 
@@ -162,6 +179,6 @@ full 1182( draw 53~1234 ) 전 구간은 **확정 PASS 후** 또는 형 GO 후에
 
 ## 8) 관련 FINDINGS
 
-K-B(**PATCHED**) · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W(**PATCHED**) · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **K-BENCH-05(PATCHED)** · **K-BENCH-03(PATCHED)** · **K-QUICK-GATE-01(PATCHED)** · **WARRANT.md**
+K-B(**PATCHED**) · K-08 · K-O · K-P · K-Q · K-R · K-S(PATCHED) · K-T · K-U · K-V(PATCHED) · K-W(**PATCHED**) · K-Y · K-Z(PATCHED) · **K-AA(PATCHED)** · K-M/K-N(HOLD) · **K-BENCH-05(PATCHED)** · **K-BENCH-03(PATCHED)** · **K-QUICK-GATE-01(PATCHED)** · **K-BENCH-NULL-BY-EVAL(PATCHED)** · **WARRANT.md**
 
 기계검증: `python tools/_kb_bench_ssot_verify.py` → `docs/benchmarks/20260727_KB_bench_ssot.json`

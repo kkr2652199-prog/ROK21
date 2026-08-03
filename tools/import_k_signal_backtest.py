@@ -114,6 +114,18 @@ def _run_repack_per_draw(
     n = len(hits_list)
     ge3_c = sum(1 for x in hits_list if x >= 3)
     mean_h = sum(hits_list) / n if n else 0.0
+    eval_mode = "best_of_15"
+
+    from tools.bench_quick_gate import enrich_metrics
+
+    metrics = enrich_metrics(
+        ge3_c,
+        n,
+        mean_h,
+        gate_mode=gate_mode if gate_mode != "tail100" else "quick",
+        eval_mode=eval_mode,
+    )
+    metrics["tiers"] = tier_acc
 
     init_lotto_db()
     conn = get_lotto_db()
@@ -124,33 +136,33 @@ def _run_repack_per_draw(
             survey_id=survey_id,
             strategy_id=strategy_id,
             gate_mode=gate_mode,
-            eval_mode="best_of_15",
+            eval_mode=eval_mode,
             n_draws=n,
             seed=MC_SEED,
             draw_start=eval_window.draw_start,
             draw_end=eval_window.draw_end,
-            ge3_rate=round(ge3_c / n, 4) if n else 0.0,
-            mean_hits=round(mean_h, 4),
+            ge3_rate=float(metrics["ge3_rate"]),
+            mean_hits=float(metrics["mean"]),
             ge3_count=ge3_c,
             tiers=tier_acc,
+            p_value=float(metrics["p_value"]),
+            verdict=str(metrics["verdict"]),
+            delta_ge3_vs_pin=float(metrics["delta_ge3_vs_pin"]),
             source_json=source_json,
-            note="WF live per-draw · signal_repack · no future leak",
+            note="WF live per-draw · signal_repack · no future leak · null=best_of_15",
         )
         insert_draw_results(conn, run_id, per_draw)
         conn.commit()
     finally:
         conn.close()
 
-    from tools.bench_quick_gate import enrich_metrics
-
-    metrics = enrich_metrics(ge3_c, n, mean_h, gate_mode=gate_mode if gate_mode != "tail100" else "quick")
-    metrics["tiers"] = tier_acc
     return {
         "run_id": run_id,
         "survey_id": survey_id,
         "strategy_id": strategy_id,
         "n": n,
         "draw_range": [eval_window.draw_start, eval_window.draw_end],
+        "eval_mode": eval_mode,
         "metrics": metrics,
         "per_draw_count": len(per_draw),
     }
@@ -259,6 +271,18 @@ def _run_select_per_draw(
     n = len(hits_list)
     ge3_c = sum(1 for x in hits_list if x >= 3)
     mean_h = sum(hits_list) / n if n else 0.0
+    eval_mode = "best_of_5_from_30"
+
+    from tools.bench_quick_gate import enrich_metrics
+
+    metrics = enrich_metrics(
+        ge3_c,
+        n,
+        mean_h,
+        gate_mode=gate_mode if gate_mode != "tail100" else "quick",
+        eval_mode=eval_mode,
+    )
+    metrics["tiers"] = tier_acc
 
     init_lotto_db()
     conn = get_lotto_db()
@@ -269,33 +293,33 @@ def _run_select_per_draw(
             survey_id=survey_id,
             strategy_id=strategy_id,
             gate_mode=gate_mode,
-            eval_mode="best_of_5_from_30",
+            eval_mode=eval_mode,
             n_draws=n,
             seed=MC_SEED,
             draw_start=eval_window.draw_start,
             draw_end=eval_window.draw_end,
-            ge3_rate=round(ge3_c / n, 4) if n else 0.0,
-            mean_hits=round(mean_h, 4),
+            ge3_rate=float(metrics["ge3_rate"]),
+            mean_hits=float(metrics["mean"]),
             ge3_count=ge3_c,
             tiers=tier_acc,
+            p_value=float(metrics["p_value"]),
+            verdict=str(metrics["verdict"]),
+            delta_ge3_vs_pin=float(metrics["delta_ge3_vs_pin"]),
             source_json=source_json,
-            note="WF live per-draw · combined selector · no future leak",
+            note="WF live per-draw · combined selector · no future leak · null=best_of_5",
         )
         insert_draw_results(conn, run_id, per_draw)
         conn.commit()
     finally:
         conn.close()
 
-    from tools.bench_quick_gate import enrich_metrics
-
-    metrics = enrich_metrics(ge3_c, n, mean_h, gate_mode=gate_mode if gate_mode != "tail100" else "quick")
-    metrics["tiers"] = tier_acc
     return {
         "run_id": run_id,
         "survey_id": survey_id,
         "strategy_id": strategy_id,
         "n": n,
         "draw_range": [eval_window.draw_start, eval_window.draw_end],
+        "eval_mode": eval_mode,
         "metrics": metrics,
         "per_draw_count": len(per_draw),
     }

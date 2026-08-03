@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `dabd848` · WORK=`IDLE`
-2. **지금:** **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE**
-3. **다음1건:** K-BT-PRECISION-BENCH-DONE — 정밀분석 보고·canvas 완료 · P0(eval_mode null병기)/pin갭 등 **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `c1ba20c` · WORK=`IDLE`
+2. **지금:** **K-BENCH-NULL-BY-EVAL** — eval_mode별 null 병기 · enrich_metrics · TAIL100 정정 · **live**
+3. **다음1건:** K-BENCH-NULL-BY-EVAL-DONE — eval_mode null 병기 live · signal_repack FAIL(vs 0.3036) · pin갭 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-03 | 다음 진행(P0) | K-BENCH-NULL-BY-EVAL · eval_mode null · repack FAIL 정정 | **DONE** | pending |
 | 2026-08-03 | 종료체크 commit+push | TAIL100보고서·KSIGNAL JSON n=200 동기 · DB리셋보고서 | **DONE** | dabd848 |
 | 2026-08-03 | 백테 정밀분석·외부벤치 | WIRE붕괴·best15 null재정합 · 문헌대조 · canvas/보고서 | **ANAL** | 9341da3 |
 | 2026-08-03 | 모든DB초기화·백테재실행 | testlotto reset · tail-200 WF · pool 201 · 1210·1235 API OK | **OK** | (미커밋) |

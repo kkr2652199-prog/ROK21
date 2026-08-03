@@ -2,10 +2,7 @@
   "id": "K-SIGNAL-BACKTEST-TAIL100",
   "ts": "2026-08-03T12:43:04",
   "n_eval": 200,
-  "draw_range": [
-    1035,
-    1234
-  ],
+  "draw_range": [1035, 1234],
   "eval_window": {
     "n_eval_target": 200,
     "sample_mode": "tail",
@@ -13,24 +10,22 @@
   },
   "gate_mode": "tail100",
   "mc_seed": 42,
-  "null_ge3": 0.1137,
+  "null_ge3_default_best_of_5": 0.1137,
+  "null_ge3_best_of_15": 0.3036,
+  "null_mean_best_of_5": 1.7289,
+  "null_mean_best_of_15": 2.2692,
   "wire_pin_ge3": 0.1447,
   "wire_pin_mean": 1.7504,
+  "note": "K-BENCH-NULL-BY-EVAL: per-run null_ge3 must match eval_mode; do not compare best_of_15 to 0.1137",
   "db_reset": {
     "deleted": {
       "lotto_predictions": {
-        "draw_range": [
-          1035,
-          1234
-        ],
+        "draw_range": [1035, 1234],
         "deleted_rows": 0,
         "remaining_in_range": 0
       },
       "testlotto_pool_view_cache": {
-        "draw_range": [
-          1035,
-          1234
-        ],
+        "draw_range": [1035, 1234],
         "deleted_rows": 0
       }
     },
@@ -47,20 +42,21 @@
       "run_id": 5,
       "survey_id": "K-SIGNAL-BACKTEST-TAIL100",
       "strategy_id": "signal_repack",
+      "eval_mode": "best_of_15",
       "n": 200,
-      "draw_range": [
-        1035,
-        1234
-      ],
+      "draw_range": [1035, 1234],
       "metrics": {
         "n": 200,
         "mean": 2.25,
         "ge3_rate": 0.275,
         "ge3_count": 55,
-        "delta_ge3_vs_null": 0.1613,
+        "eval_mode": "best_of_15",
+        "null_ge3": 0.3036,
+        "null_mean": 2.2692,
+        "delta_ge3_vs_null": -0.0286,
         "delta_ge3_vs_pin": 0.1303,
-        "p_value": 0.0,
-        "verdict": "PASS",
+        "p_value": 0.830398,
+        "verdict": "FAIL",
         "tiers": {
           "r1": 0,
           "r2": 0,
@@ -75,16 +71,17 @@
       "run_id": 7,
       "survey_id": "K-SIGNAL-BACKTEST-TAIL100",
       "strategy_id": "combined",
+      "eval_mode": "best_of_5_from_30",
       "n": 200,
-      "draw_range": [
-        1035,
-        1234
-      ],
+      "draw_range": [1035, 1234],
       "metrics": {
         "n": 200,
         "mean": 1.73,
         "ge3_rate": 0.145,
         "ge3_count": 29,
+        "eval_mode": "best_of_5_from_30",
+        "null_ge3": 0.1137,
+        "null_mean": 1.7289,
         "delta_ge3_vs_null": 0.0313,
         "delta_ge3_vs_pin": 0.0003,
         "p_value": 0.102441,
