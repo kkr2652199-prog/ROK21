@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-03 10:20 KST)
-- **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **HEAD(실측)**: `ae582fb` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-FUTURE-WIRE PASS** — 독립뇌 RNG+aux_hint ge3=**0.1500** (vs V2 +0.06) · **live**
 - **다음(공식)**: FULL 재검증/다음축 · **형 GO 대기**
 

@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `bafb688` · WORK=`IDLE`
+- HEAD: `ae582fb` · WORK=`IDLE`
 - 지금: **K-FUTURE-WIRE** — 독립뇌 RNG+aux_hint ge3=**0.1500** PASS(+0.06) · **live**
 - 직전: K-FUSION-INNOVATION · ge3=0.09 FAIL · 롤백 · V2 유지분 흡수
 - BOOT다음: FULL 재검증/다음축 · **형 GO 대기**
