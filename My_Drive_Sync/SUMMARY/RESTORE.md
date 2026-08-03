@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `dcc20b3` · WORK=`IDLE`
+1. **HEAD:** `7c1b4c3` · WORK=`IDLE`
 2. **지금:** **K-FUSION-INNOVATION** — conf bucket+AUX reweight ge3=**0.0900** · gate FAIL · **INNOVATION 롤백** · V2 live
 3. **다음1건:** K-FUSION-INNOVATION-DONE — conf bucket+AUX reweight ge3=**0.0900** · vs V2 **+0.0000** · gate FAIL · **INNOVATION 롤백 완료** · V2 live · 0.09+ 경로 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

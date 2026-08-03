@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `dcc20b3` · WORK=`IDLE`
+- HEAD: `7c1b4c3` · WORK=`IDLE`
 - 지금: **K-FUSION-INNOVATION** — conf bucket+AUX reweight ge3=**0.0900** · gate FAIL · **INNOVATION 롤백** · V2 live
 - 직전: K-FUSION-DYNAMIC-V2 · solo×ref ge3=0.09 tie · SOLO_GE3_PRIORS live
 - BOOT다음: 0.09+ 추가 경로 · **형 GO 대기**
