@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `9712ea8` |
+| HEAD(실측) | `f99dfa4` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-UI-BT-PRELOAD** — actuals+pool-index batch · JS `20260803c` · **live** |
-| 직전 | draw-index 프리로드 · per-draw fetch 제거 |
-| BOOT다음 | Ctrl+F5 확인 · 다음축 **형 GO 대기** |
-| NEXT1 ID | **K-UI-BT-PRELOAD-DONE** |
-| NEXT1 할일 | actuals+pool-index batch push 완료 · Ctrl+F5 후 백테 200회 즉시전환 확인 · 다음축 **형 GO 대기** |
+| 지금 | **K-UI-ELITE-TOGGLE-FIX** — elite tags 빈배열 시 UI 붕괴 방지 · JS `20260803d` · **local** |
+| 직전 | K-UI-BT-PRELOAD actuals+pool-index batch · per-draw fetch 제거 |
+| BOOT다음 | Ctrl+F5 QA · 형 GO 시 commit+push · fusion 다음축 **형 GO 대기** |
+| NEXT1 ID | **K-UI-ELITE-TOGGLE-FIX** |
+| NEXT1 할일 | elite toggle 빈 tags 시 화면 유지·자동해제 · JS `20260803d` · Ctrl+F5 QA · 형 GO 시 commit+push |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=9712ea8 · 지금=**K-UI-BT-PRELOAD** — actuals+pool-index batch · JS `20260803c` · **live** · 다음=K-UI-BT-PRELOAD-DONE`
+1. 첫줄 `[복귀] HEAD=f99dfa4 · 지금=**K-UI-ELITE-TOGGLE-FIX** — elite tags 빈배열 시 UI 붕괴 방지 · JS `20260803d` · **local** · 다음=K-UI-ELITE-TOGGLE-FIX`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

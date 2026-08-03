@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-UI-BT-PRELOAD-DONE
-- 할일: actuals+pool-index batch push 완료 · Ctrl+F5 후 백테 200회 즉시전환 확인 · 다음축 **형 GO 대기**
+- ID: K-UI-ELITE-TOGGLE-FIX
+- 할일: elite toggle 빈 tags 시 화면 유지·자동해제 · JS `20260803d` · Ctrl+F5 QA · 형 GO 시 commit+push
 - 완료조건: 브라우저 QA OK + 형 GO
-- 선행완료: commit `710d5a3` · JS `20260803c`
+- 선행완료: uncommitted local · HEAD `f99dfa4`
 
 ## WORKSTATE
 IDLE

@@ -1195,15 +1195,28 @@ async function ensureBrainEliteTagsLoaded() {
 async function testlottoOnEliteBrainToggle() {
   _testlottoBrainEliteTagSet = null;
   const d = _testlottoDetailDrawNo;
-  const rows = _testlottoDetailRows;
-  if (d && rows && rows.length) {
-    const poolView = _testlottoPoolViewMemCache.get(d);
-    await renderPredictionsByBrain(d, rows, {
-      poolView: poolView && poolView.ok ? poolView : null,
-      skipPoolFetch: true,
-    });
+  if (!d) return;
+
+  const eliteCb = document.getElementById('testlottoEliteBrainToggle');
+  const statusEl = document.getElementById('testlottoActionStatus');
+
+  if (eliteCb && eliteCb.checked) {
+    const ok = await ensureBrainEliteTagsLoaded();
+    if (ok && _testlottoBrainEliteTagSet && _testlottoBrainEliteTagSet.size === 0) {
+      eliteCb.checked = false;
+      if (statusEl) {
+        statusEl.textContent = '고적중 조건 해당 뇌 없음 — 전체 표시 유지';
+        setTimeout(() => {
+          if (statusEl.textContent.includes('고적중 조건')) statusEl.textContent = '';
+        }, 4000);
+      }
+      return;
+    }
   }
+
+  await testlottoShowDrawContext(d);
 }
+window.testlottoOnEliteBrainToggle = testlottoOnEliteBrainToggle;
 
 /** B-04: pool-view fetch 중 스켈레톤 — firstCompute=true 일 때만 장시간 안내 */
 function testlottoLoadingSkeletonHtml(cardCount = 6, firstCompute = false) {
@@ -1418,7 +1431,7 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
   });
 
   const eliteCb = document.getElementById('testlottoEliteBrainToggle');
-  const eliteOn = !!(eliteCb && eliteCb.checked);
+  let eliteOn = !!(eliteCb && eliteCb.checked);
 
   let brainListForTabs = TESTLOTTO_BRAIN_LIST;
   if (eliteOn) {
@@ -1429,10 +1442,16 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
   }
 
   if (eliteOn && brainListForTabs.length === 0) {
-    container.innerHTML =
-      '<p class="lotto-elite-empty">「과거에 잘 맞춘 프로그램만」 조건에 해당하는 항목이 없습니다. 체크를 해제하면 전체를 볼 수 있습니다.</p>';
-    testlottoClearResultsLoading(container);
-    return;
+    if (eliteCb) eliteCb.checked = false;
+    const statusEl = document.getElementById('testlottoActionStatus');
+    if (statusEl) {
+      statusEl.textContent = '고적중 조건 해당 뇌 없음 — 전체 표시';
+      setTimeout(() => {
+        if (statusEl.textContent.includes('고적중 조건')) statusEl.textContent = '';
+      }, 4000);
+    }
+    brainListForTabs = TESTLOTTO_BRAIN_LIST;
+    eliteOn = false;
   }
 
   if (!_testlottoCurrentBrainTab || _testlottoCurrentBrainTab === 'legacy') {
