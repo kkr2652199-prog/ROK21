@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-03 11:30 KST)
-- **HEAD(실측)**: pending · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **HEAD(실측)**: `144461e` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-FUTURE-WIRE-REVAL** — QUICK ge3=**0.1350** · FULL ge3=**0.1184** · patch>0.09 PASS · pin FULL FAIL
 - **다음(공식)**: 다음축 · **형 GO 대기**
 

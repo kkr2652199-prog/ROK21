@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `84d9b70` · WORK=`IDLE`
+- HEAD: `144461e` · WORK=`IDLE`
 - 지금: **K-FUTURE-WIRE-REVAL** — QUICK**0.1350** · FULL**0.1184** · patch PASS · pin FAIL · **live**
 - 직전: K-FUTURE-WIRE n100 ge3=0.1500 PASS · 독립뇌 RNG+aux_hint
 - BOOT다음: 다음축( pin갭/페이지리셋 등) · **형 GO 대기**
