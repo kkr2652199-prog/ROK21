@@ -37,10 +37,13 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 f" 끝수×{ending_boost:.2f} 미출×{overdue_boost:.2f}]"
             )
         reasoning = f"흐름술사: 마르코프전이+동반쌍점수{hot_pairs}{learn_note}"
+        native_conf = float(r.get("confidence", 68))
         out.append(
             {
                 "nums": sorted(nums),
-                "confidence": float(r.get("confidence", 68)),
+                "confidence": native_conf,
+                "native_confidence": native_conf,
+                "aux_hint_score": float(r.get("aux_hint_score", 0.5)),
                 "reasoning": reasoning,
                 "method": "흐름술사",
                 "brain_tag": "markov",

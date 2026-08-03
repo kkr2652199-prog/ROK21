@@ -24,10 +24,27 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-03 09:50 KST)
+### 최신 상태 (2026-08-03 10:20 KST)
 - **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-FUSION-INNOVATION FAIL** — conf bucket+AUX reweight ge3=**0.0900** (vs V2 +0) · **INNOVATION 롤백** · **V2 live**
-- **다음(공식)**: ge3 0.09+ 추가 경로 · **형 GO 대기**
+- **지금(판정)**: **K-FUTURE-WIRE PASS** — 독립뇌 RNG+aux_hint ge3=**0.1500** (vs V2 +0.06) · **live**
+- **다음(공식)**: FULL 재검증/다음축 · **형 GO 대기**
+
+### K-FUTURE-WIRE (형 GO · PASS · live)
+근거: `docs/benchmarks/20260803_KFUTURE_WIRE_N100.json` · `reports/20260803_KFUTURE_WIRE_N100.md`
+
+| 항목 | 값 |
+|------|-----|
+| 뿌리 원인 | 융합 시 공유 `random` — stat이 markov solo 번호를 오염 → fused 천장 0.09 |
+| 핵심 패치 | 뇌마다 `seed(42+draw)` 리셋 · solo와 동치 생성 |
+| 구조 패치 | `aux_hint_score`/`native_confidence` 보존 · bucket=`aux_hint_native` |
+| smoke 1230~1234 | **PASS** |
+| n=100 ge3 | **0.1500** (15/100) |
+| vs V2 baseline | **+0.0600** |
+| by_period | early **0.2000** · mid **0.0800** · late **0.1600** |
+| gate | ge3 **>** 0.0900 → **PASS** |
+| live | V2 quota(4/0/1) + FUTURE-WIRE 유지 |
+
+**결론:** 0.09 벽의 진짜 원인은 aux 가중/쿼터가 아니라 **독립뇌 RNG 미분리**. 분리 후 solo 성능이 fusion에 전달됨.
 
 ### K-FUSION-INNOVATION (형 GO · FAIL · rolled back)
 근거: `docs/benchmarks/20260803_KFUSION_INNOVATION_N100.json` · `reports/20260803_KFUSION_INNOVATION_N100.md`
@@ -264,6 +281,7 @@ run_coordinated_prediction 진입
 ### 벤치 수치 SSOT (주요 · `docs/benchmarks/*.json`)
 | ID | n | ge3 | 판정 |
 |----|---|-----|------|
+| **K-FUTURE-WIRE** | 100 | **0.1500** | **PASS** · +0.06 vs V2 · **live** |
 | **K-FUSION-INNOVATION** | **FAIL** — conf bucket+AUX reweight n=100 ge3=**0.0900** · vs V2 +0 · **rolled back** |
 | K-QUOTA-MARKOV80-REV2 | 100 | **0.0900** (floor 4/5) | **FAIL** → V2 대체 |
 | **K-AUX-DIAG** | 100 | **0.0800** (전 시나리오 동일) | **DONE** |

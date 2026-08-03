@@ -47,6 +47,8 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
             {
                 "nums": sorted(nums),
                 "confidence": conf,
+                "native_confidence": conf,
+                "aux_hint_score": float(r.get("aux_hint_score", 0.5)),
                 "reasoning": reasoning,
                 "method": "통계요정",
                 "brain_tag": "stat",

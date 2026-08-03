@@ -35,10 +35,13 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
         pick = sorted(r["nums"])
         repeat_hits = [n for n in pick if n in prev_nums]
         conf = 60 + len(repeat_hits) * 5 + sum(rates.get(n, 0) for n in repeat_hits) * 20
+        native_conf = min(95, conf)
         out.append(
             {
                 "nums": pick,
-                "confidence": min(95, conf),
+                "confidence": native_conf,
+                "native_confidence": native_conf,
+                "aux_hint_score": float(r.get("aux_hint_score", 0.5)),
                 "reasoning": (
                     f"복습왕: {prev['draw_no']}회 복습 "
                     f"이월후보{repeat_hits} 반복률가중·끝수질량균등(K-P3)"

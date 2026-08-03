@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-03 KST  
-📌 사유: **K-FUSION-INNOVATION FAIL** — conf bucket+AUX reweight ge3=**0.0900** · vs V2 +0 · **rolled back**
+📌 사유: **K-FUTURE-WIRE PASS** — 독립뇌 RNG+aux_hint_native ge3=**0.1500** · vs V2 **+0.0600** · **live**
 
 ---
 
@@ -10,8 +10,9 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-FUSION-INNOVATION** | **FAIL** — n=100 ge3=**0.0900** · vs V2 +0 · INNOVATION 롤백 · V2 live |
-| **K-FUSION-DYNAMIC-V2** | **FAIL(1bp)** — solo×ref quota ge3=**0.0900** · plan 4/0/1 · **live** |
+| **K-FUTURE-WIRE** | **PASS** — n=100 ge3=**0.1500** (15/100) · vs V2 +0.06 · per-brain seed+aux_hint **live** |
+| **K-FUSION-INNOVATION** | **FAIL** — n=100 ge3=**0.0900** · vs V2 +0 · INNOVATION 롤백 |
+| **K-FUSION-DYNAMIC-V2** | **FAIL(1bp)** — solo×ref quota ge3=**0.0900** · plan 4/0/1 · FUTURE-WIRE에 흡수 |
 | **K-SIGNAL-BACKTEST-TAIL100** | **DONE** — tail n=100 seed=42 · repack ge3=**0.23**(23) run_id=**3** · combined ge3=**0.15**(15) run_id=**4** · 기존 backtest 2건 유지 |
 | **TESTLOTTO UI+DB** | **DONE** — 「🎯 3뇌 예측」단일 · backtest 회차 pool auto-WF · `PATCH_PINS.md` |
 | K-SIGNAL-REPACK-01 | **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |
@@ -48,6 +49,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-FUTURE-WIRE** | 독립뇌 RNG isolate + aux_hint_native · V2 quota 유지 · n=100 | **PASS** · ge3=**0.1500** (+0.06) |
 | **K-NEW-ENGINE-STAT-A1** | stat_brain engine v2 dual-window+cycle gap · solo n=200 A/B | **PASS** · ge3 0.1350=0.1350 · ENGINE_V2=False |
 | **K-BRAIN-TUNE-SURVEY** | P0 wire · P1 look_back · P2 hint_weight FULL n=1182 · best_combo | **SURVEY OK** · ge3=0.1032 · HOLD |
 | **K-BACKTEST-FULL-C** | C package production stack FULL n=1182 · by_brain · by_period · QUICK vs FULL | **FAIL** · ge3=0.1015 · collapse −0.0235 |

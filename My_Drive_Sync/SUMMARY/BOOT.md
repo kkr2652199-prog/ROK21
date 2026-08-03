@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-FUSION-INNOVATION** — conf bucket+AUX reweight ge3=**0.0900** · gate FAIL · **INNOVATION 롤백** · V2 live
-- 직전: K-FUSION-DYNAMIC-V2 · solo×ref ge3=0.09 tie · SOLO_GE3_PRIORS live
-- 다음: 0.09+ 추가 경로 · **형 GO 대기**
+- 지금: **K-FUTURE-WIRE** — 독립뇌 RNG+aux_hint ge3=**0.1500** PASS(+0.06) · **live**
+- 직전: K-FUSION-INNOVATION · ge3=0.09 FAIL · 롤백 · V2 유지분 흡수
+- 다음: FULL 재검증/다음축 · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

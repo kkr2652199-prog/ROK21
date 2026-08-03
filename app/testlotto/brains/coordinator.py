@@ -1,12 +1,15 @@
-"""테스트로또 3+4 뇌 코디네이터 — 예측3뇌 생성 → 보조4뇌 채점 → DB저장.
+"""테스트로또 3+4 뇌 코디네이터 — 독립 예측3뇌 → 전용aux hint → 발권 → DB저장.
 
 K-D: 클릭/백테의 **실제 융합 경로**. `fusion._vector_fusion_predict` 미사용.
-AUX 점수는 `AUX_WEIGHTS`(균등 0.25×4) + referee brain 가중.
+K-FUTURE-WIRE: 각 독립뇌가 다음회(미래) 후보를 만들고, 뇌내 발권은
+`aux_hint_score`(+ native_confidence)로 고른다. set_no_asc(과거 순서) 폐기.
+표시용 AUX confidence 재작성은 유지하되 발권 키와 분리.
 """
 
 from __future__ import annotations
 
 import logging
+import random
 
 from app.testlotto.brains import aux_balance_keeper, aux_miss_detective, aux_pattern_spotlight, aux_referee
 from app.testlotto.brains.stat_brain import aux as stat_brain_aux
@@ -57,6 +60,15 @@ SOLO_GE3_PRIORS: dict[str, float] = {"stat": 0.09, "markov": 0.13, "review": 0.1
 QUOTA_ADAPTIVE_MIN_EACH: int = 0
 # solo prior 기준 markov 1위(0.39) vs review 2위(0.33) ≈ 1.18 → 1.15로 4/5 floor 허용
 QUOTA_DOMINANCE_FLOOR: float = 1.15
+# K-FUTURE-WIRE: 뇌 버킷 내 선별 — aux_hint_native | set_no_asc(legacy)
+BUCKET_SELECT_MODE: str = "aux_hint_native"
+# 독립뇌 RNG — 벤치 MC_SEED(42)와 동일 · 뇌마다 시드 리셋 → solo와 동치
+BRAIN_RNG_SEED_BASE: int = 42
+
+
+def _seed_independent_brain(target_draw_no: int) -> None:
+    """각 예측뇌 generate 직전 시드 — 선행 뇌 RNG 오염 제거(미래예측 독립성)."""
+    random.seed(BRAIN_RNG_SEED_BASE + int(target_draw_no))
 # 벤치 pin 참조용 (production은 dynamic_brain_quota 사용)
 MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {"markov": 3, "stat": 1, "review": 1}
 # 벤치 전용: 고정 쿼터 override (None=production dynamic). 진단 후 반드시 None 복원.
@@ -138,8 +150,54 @@ def _compute_dynamic_quota(
     return floor_slots
 
 
+def _sort_brain_bucket(bucket: list[dict]) -> list[dict]:
+    """뇌 버킷 내 선별 — aux_hint_native(미래신호) 또는 set_no_asc(legacy)."""
+    if BUCKET_SELECT_MODE == "aux_hint_native":
+        return sorted(
+            bucket,
+            key=lambda x: (
+                float(x.get("aux_hint_score") or 0.0),
+                float(x.get("native_confidence") or x.get("confidence") or 0.0),
+            ),
+            reverse=True,
+        )
+    return sorted(
+        bucket,
+        key=lambda x: int(
+            x.get("pred_set_no") or x.get("set_no") or x.get("rank") or 0
+        ),
+    )
+
+
+def _ensure_brain_future_signals(
+    candidates: list[dict], draws: list[dict], target_draw_no: int
+) -> list[dict]:
+    """독립뇌 미래예측 신호 보강 — native_confidence · aux_hint_score."""
+    out: list[dict] = []
+    for c in candidates:
+        row = dict(c)
+        if "native_confidence" not in row:
+            row["native_confidence"] = float(row.get("confidence") or 60)
+        if "aux_hint_score" not in row:
+            tag = str(row.get("brain_tag") or "")
+            dedicated = BRAIN_DEDICATED_AUX.get(tag)
+            if dedicated is not None:
+                try:
+                    row["aux_hint_score"] = float(
+                        dedicated.score_set(
+                            row["nums"], draws, target_draw_no, brain_tag=tag or None
+                        )
+                    )
+                except Exception:
+                    row["aux_hint_score"] = 0.5
+            else:
+                row["aux_hint_score"] = 0.5
+        out.append(row)
+    return out
+
+
 def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
-    """K-HIGHWAY-QUOTA: referee 동적 쿼터 · set_no_asc · adaptive min (0 허용)."""
+    """K-FUTURE-WIRE: referee 동적 쿼터 · 뇌내 aux_hint_native 선별."""
     target_n = 5
     if not candidates:
         return candidates
@@ -147,7 +205,10 @@ def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
     if not MARKOV_WIRE_ENABLED:
         return sorted(
             candidates,
-            key=lambda x: float(x.get("confidence") or 0),
+            key=lambda x: (
+                float(x.get("aux_hint_score") or 0),
+                float(x.get("native_confidence") or x.get("confidence") or 0),
+            ),
             reverse=True,
         )[:target_n]
 
@@ -166,17 +227,17 @@ def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
 
     selected: list[dict] = []
     for tag, cap in quota.items():
-        bucket = sorted(
-            brain_buckets.get(tag) or [],
-            key=lambda x: int(x.get("pred_set_no") or x.get("set_no") or x.get("rank") or 0),
-        )
+        bucket = _sort_brain_bucket(brain_buckets.get(tag) or [])
         selected.extend(bucket[:cap])
 
     if len(selected) < target_n:
         used = {id(c) for c in selected}
         remainder = sorted(
             [c for c in candidates if id(c) not in used],
-            key=lambda x: float(x.get("confidence") or 0),
+            key=lambda x: (
+                float(x.get("aux_hint_score") or 0),
+                float(x.get("native_confidence") or x.get("confidence") or 0),
+            ),
             reverse=True,
         )
         for c in remainder:
@@ -371,18 +432,21 @@ def apply_coordinator_scoring(
 
 
 def _apply_aux_scoring(candidates: list[dict], draws: list[dict], target_draw_no: int) -> list[dict]:
+    """표시용 confidence 재작성 · 발권 키(native/aux_hint)는 보존."""
+    candidates = _ensure_brain_future_signals(candidates, draws, target_draw_no)
     ref_weights = get_referee_weights()
     out: list[dict] = []
     for c in candidates:
         tag = c.get("brain_tag", "") or None
         aux_score = _aux_composite_score(c["nums"], draws, target_draw_no, brain_tag=tag)
-        base = float(c.get("confidence", 60))
+        native = float(c.get("native_confidence") or c.get("confidence") or 60)
         brain_w = ref_weights.get(c.get("brain_tag", ""), 1.0 / 3)
-        final_conf = min(99.5, base * 0.5 * brain_w + aux_score * 40 + base * 0.1)
+        final_conf = min(99.5, native * 0.5 * brain_w + aux_score * 40 + native * 0.1)
         aux_notes = _aux_notes(c["nums"], draws, target_draw_no, tag)
         out.append(
             {
                 **c,
+                "native_confidence": native,
                 "confidence": round(final_conf, 1),
                 "reasoning": f"{c.get('reasoning', '')} [보조4뇌:{aux_score:.2f}] {aux_notes}",
             }
@@ -430,6 +494,8 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
             continue
         mod = PREDICT_MODULES[tag]
         _delete_predictions_for_brain(conn, target_draw_no, tag)
+        # 독립뇌: 뇌마다 동일 회차 시드로 재시작 (stat RNG가 markov를 오염시키던 구조 제거)
+        _seed_independent_brain(target_draw_no)
         sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
         for i, s in enumerate(sets):
             sn = int(s.get("rank") or s.get("set_no") or s.get("pred_set_no") or (i + 1))
@@ -461,7 +527,8 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
             mod = PREDICT_MODULES.get(brain_tag)
             if mod is None:
                 return None
-            # 같은 뇌·같은 draws 조건으로 1세트 재요청
+            # 같은 뇌·같은 draws · 독립 시드로 1세트 재요청
+            _seed_independent_brain(target_draw_no)
             raw = mod.predict_sets(draws, 1)
             if not raw:
                 return None
@@ -470,7 +537,7 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
         scored, dedup_stats = dedup_ticket_list(scored, regenerate=_regen)
         scored.sort(key=lambda x: x["confidence"], reverse=True)
 
-    # K-HIGHWAY-QUOTA: 생성 15 → referee 동적 쿼터 5장 (set_no_asc)
+    # K-FUTURE-WIRE: 생성 15 → solo×ref 쿼터 5장 (뇌내 aux_hint_native)
     wire_quota = _compute_dynamic_quota(_get_quota_weights()) if MARKOV_WIRE_ENABLED else {}
     scored = dynamic_brain_quota(scored)
     if MARKOV_WIRE_ENABLED:
@@ -478,6 +545,7 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
             **dedup_stats,
             "markov_wire": True,
             "markov_wire_method": "dynamic_referee_quota",
+            "bucket_select_mode": BUCKET_SELECT_MODE,
             "wire_quota": dict(wire_quota),
             "issued_sets": len(scored),
         }

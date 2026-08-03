@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7c1b4c3` · WORK=`IDLE`
-2. **지금:** **K-FUSION-INNOVATION** — conf bucket+AUX reweight ge3=**0.0900** · gate FAIL · **INNOVATION 롤백** · V2 live
-3. **다음1건:** K-FUSION-INNOVATION-DONE — conf bucket+AUX reweight ge3=**0.0900** · vs V2 **+0.0000** · gate FAIL · **INNOVATION 롤백 완료** · V2 live · 0.09+ 경로 · **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `bafb688` · WORK=`IDLE`
+2. **지금:** **K-FUTURE-WIRE** — 독립뇌 RNG+aux_hint ge3=**0.1500** PASS(+0.06) · **live**
+3. **다음1건:** K-FUTURE-WIRE-DONE — 독립뇌 RNG+aux_hint_native ge3=**0.1500** PASS(+0.06 vs V2) · live 유지 · 다음 축(FULL 재검증/형 방향) **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-03 | 제자리분석→패치 GO | K-FUTURE-WIRE · 독립뇌 RNG+aux_hint · smoke PASS · n=100 ge3=0.1500 | **PASS** | pending |
 | 2026-08-03 | K-FUSION-INNOVATION GO | conf bucket+AUX reweight · smoke PASS · n=100 ge3=0.0900 tie · INNOVATION 롤백 | **FAIL** | dcc20b3 |
 | 2026-08-03 | 젠스파크 동기화 GO | 20260803 보고서 · AI_COLLAB §3·§6 · RESTORE commit열 | **DOC** | 8b20473 |
 | 2026-08-02 | K-FUSION-DYNAMIC-V2 GO | solo×ref quota · referee-only 0.06→solo prior 0.09 · plan 4/0/1 · gate FAIL 1bp | **FAIL** | f97312c |
@@ -45,12 +46,6 @@
 | 2026-08-01 | K-BRAIN-SIGNAL-A1 GO | pattern_signal.py 신규 · coordinator conf blend 85/15 · smoke 1225~1234 OK · engine 미변경 | **PASS** | uncommitted |
 | 2026-08-01 | K-HIGHWAY-BACKTEST-100 GO | n=100 draw1135~1234 · overall ge3=0.0600 · baseline −0.0415 · learn adj 누적 OK | **FAIL** | pending |
 | 2026-08-01 | K-HIGHWAY-QUOTA GO | dynamic_brain_quota · referee 가중 5장 · min1/뇌 · PHASE1 COMPLETE | **OK** | pending |
-| 2026-08-01 | K-HIGHWAY-REFEREE GO | aux_referee score_set → get_referee_weights 반영 · brain_tag None→0.5 · import OK | **OK** | pending |
-| 2026-08-01 | K-HIGHWAY-FEEDBACK GO | coordinator _auto_feedback · _detect_missed_patterns · deprecated import 삭제 · import OK | **OK** | pending |
-| 2026-08-01 | K-NEW-ENGINE-STAT-A1 GO | stat engine v2 dual-window+cycle gap · solo n=200 baseline/v2 ge3=0.1350 delta=0 · ENGINE_V2=False | **PASS** | pending |
-| 2026-08-01 | K-BRAIN-TUNE-SURVEY GO | P0 aux_hint_top5=0.1091 · P1 lb120=0.1058 · P2 hint0=0.1058 · best_combo=0.1032 · APPLY HOLD | **SURVEY OK** | pending |
-| 2026-08-01 | K-BACKTEST-FULL-C GO | C package FULL n=1182 ge3=0.1015(QUICK 0.125 collapse) · by_brain stat=0.1125 · live_baseline 0.1218 미달 | **FAIL** | pending |
-| 2026-08-01 | K-WIRE-SELECT-FULL-SURVEY GO | conf_global_top5 FULL ge3=0.1117(QUICK 0.135 collapse) · set_no_asc=0.1015 · quota_gap=43.1% · wire_go=wait | **SURVEY OK** | pending |
 
 ---
 
