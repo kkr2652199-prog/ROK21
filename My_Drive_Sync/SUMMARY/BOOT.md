@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-RARE-BUNDLE** — 814만 극소 번들 catalog 213 · ultra 183 · API live
-- 직전: K-BENCH-NULL-BY-EVAL eval_mode null 병기 · TAIL100 정정
-- 다음: pin갭 **형 GO 대기**
+- 지금: **K-RARE-APPLY-ANAL** — 극소번들 수학검증 · wire HOLD · 1D/2D/3D안 · **DONE**
+- 직전: K-RARE-BUNDLE catalog 213 · ultra 183 API
+- 다음: A1 UI고지 또는 pin갭 **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

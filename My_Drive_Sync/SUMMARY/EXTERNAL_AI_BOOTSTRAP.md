@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `796c92c` |
+| HEAD(실측) | `522a9a8` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-RARE-BUNDLE** — 814만 극소 번들 catalog 213 · ultra 183 · API live |
-| 직전 | K-BENCH-NULL-BY-EVAL eval_mode null 병기 · TAIL100 정정 |
-| BOOT다음 | pin갭 **형 GO 대기** |
-| NEXT1 ID | **K-RARE-BUNDLE-DONE** |
-| NEXT1 할일 | 극소 번들 API·DB live · pin갭 **형 GO 대기** |
+| 지금 | **K-RARE-APPLY-ANAL** — 극소번들 수학검증 · wire HOLD · 1D/2D/3D안 · **DONE** |
+| 직전 | K-RARE-BUNDLE catalog 213 · ultra 183 API |
+| BOOT다음 | A1 UI고지 또는 pin갭 **형 GO 대기** |
+| NEXT1 ID | **K-RARE-APPLY-ANAL-DONE** |
+| NEXT1 할일 | 극소번들 wire HOLD 확정 · 다음 A1(UI고지) 또는 pin갭 **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=796c92c · 지금=**K-RARE-BUNDLE** — 814만 극소 번들 catalog 213 · ultra 183 · API live · 다음=K-RARE-BUNDLE-DONE`
+1. 첫줄 `[복귀] HEAD=522a9a8 · 지금=**K-RARE-APPLY-ANAL** — 극소번들 수학검증 · wire HOLD · 1D/2D/3D안 · **DONE** · 다음=K-RARE-APPLY-ANAL-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
