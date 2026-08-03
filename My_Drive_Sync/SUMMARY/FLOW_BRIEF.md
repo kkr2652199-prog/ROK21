@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `eb38327` · WORK=`IDLE`
+- HEAD: `2eeafb9` · WORK=`IDLE`
 - 지금: **K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live**
 - 직전: draw-index 프리로드·즉시적용
 - BOOT다음: Ctrl+F5 확인 · 다음축 **형 GO 대기**

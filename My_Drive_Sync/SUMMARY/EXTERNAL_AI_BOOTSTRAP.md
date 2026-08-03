@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `eb38327` |
+| HEAD(실측) | `2eeafb9` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=eb38327 · 지금=**K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live** · 다음=K-UI-BT-PRELOAD-DONE`
+1. 첫줄 `[복귀] HEAD=2eeafb9 · 지금=**K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live** · 다음=K-UI-BT-PRELOAD-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
