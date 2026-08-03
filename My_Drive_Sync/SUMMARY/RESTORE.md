@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `726d7be` · WORK=`IDLE`
+1. **HEAD:** `a15672a` · WORK=`IDLE`
 2. **지금:** **K-RARE-APPLY-ANAL** — 극소번들 수학검증 · wire HOLD · 1D/2D/3D안 · **DONE**
 3. **다음1건:** K-RARE-APPLY-ANAL-DONE — 극소번들 wire HOLD 확정 · 다음 A1(UI고지) 또는 pin갭 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
