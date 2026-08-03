@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `31f07ef` · WORK=`IDLE`
+- HEAD: `c680a1b` · WORK=`IDLE`
 - 지금: **K-UI-ELITE-TOGGLE-FIX** — elite tags 빈배열 UI 붕괴 방지 · JS `20260803d` · **live**
 - 직전: K-UI-BT-PRELOAD actuals+pool-index batch · per-draw fetch 제거
 - BOOT다음: Ctrl+F5 QA · fusion 다음축 **형 GO 대기**

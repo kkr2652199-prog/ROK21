@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `31f07ef` · WORK=`IDLE`
+1. **HEAD:** `c680a1b` · WORK=`IDLE`
 2. **지금:** **K-UI-ELITE-TOGGLE-FIX** — elite tags 빈배열 UI 붕괴 방지 · JS `20260803d` · **live**
 3. **다음1건:** K-UI-ELITE-TOGGLE-FIX-DONE — push 완료 · Ctrl+F5 QA · fusion 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
