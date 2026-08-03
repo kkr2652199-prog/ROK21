@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-UI-BT-PRELOAD-DONE
-- 할일: 200회 백테 draw-index 프리로드·즉시적용 live · Ctrl+F5 후 확인 · 다음축 **형 GO 대기**
+- 할일: 서버 재기동 완료 · Ctrl+F5 후 즉시적용 확인 · 다음축 **형 GO 대기**
 - 완료조건: 형 GO
-- 선행완료: /backtest/draw-index · JS 20260803b · 서버 재기동
+- 선행완료: 7021 재기동 · draw-index n=200 · JS 20260803b
 
 ## WORKSTATE
 IDLE
