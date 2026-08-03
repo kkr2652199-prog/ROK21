@@ -208,12 +208,36 @@ def build_backtest_draw_index() -> dict[str, Any]:
                 }
             )
         draw_nos = sorted((int(k) for k in by_draw.keys()), reverse=True)
+        actuals: dict[str, dict[str, Any]] = {}
+        if draw_nos:
+            placeholders = ",".join("?" for _ in draw_nos)
+            actual_rows = conn.execute(
+                f"""
+                SELECT draw_no, num1, num2, num3, num4, num5, num6, bonus
+                FROM lotto_draws
+                WHERE draw_no IN ({placeholders})
+                """,
+                draw_nos,
+            ).fetchall()
+            for ar in actual_rows:
+                a = dict(ar)
+                key = str(int(a["draw_no"]))
+                actuals[key] = {
+                    "num1": a.get("num1"),
+                    "num2": a.get("num2"),
+                    "num3": a.get("num3"),
+                    "num4": a.get("num4"),
+                    "num5": a.get("num5"),
+                    "num6": a.get("num6"),
+                    "bonus": a.get("bonus"),
+                }
         return {
             "ok": True,
             "n_draws": len(by_draw),
             "n_rows": len(rows),
             "draw_range": [draw_nos[-1], draw_nos[0]] if draw_nos else [],
             "by_draw": by_draw,
+            "actuals": actuals,
         }
     finally:
         conn.close()

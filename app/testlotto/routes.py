@@ -285,10 +285,18 @@ async def api_backtest_runs(limit: int = 50):
 
 @router.get("/backtest/draw-index")
 async def api_backtest_draw_index():
-    """회차별 백테 요약 전체 — 탭 진입 시 프리로드(로딩 없이 즉시 적용)."""
+    """회차별 백테 요약+당첨번호 전체 — 탭 진입 시 프리로드(로딩 없이 즉시 적용)."""
     from app.testlotto.backtest_store import build_backtest_draw_index
 
     return build_backtest_draw_index()
+
+
+@router.get("/backtest/pool-index")
+async def api_backtest_pool_index():
+    """백테 회차 pool-view 캐시 일괄 — 회차 전환 시 per-draw fetch 제거."""
+    from app.testlotto.pool_view_cache import build_pool_view_index
+
+    return build_pool_view_index()
 
 
 @router.get("/backtest/runs/{run_id}")

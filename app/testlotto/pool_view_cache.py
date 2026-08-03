@@ -20,6 +20,37 @@ def _row_to_brain_payload(pool_json: str, repack_json: str) -> tuple[list[dict],
     return pool, repack
 
 
+def _rows_to_pool_payload(draw_no: int, rows: list[dict[str, Any]]) -> dict[str, Any] | None:
+    if len(rows) != len(BRAIN_TAGS):
+        return None
+    pool_by_brain: dict[str, list[dict]] = {}
+    repack_by_brain: dict[str, list[dict]] = {}
+    computed_at = None
+    seed = MC_SEED
+    for row in rows:
+        tag = str(row["brain"])
+        if tag not in BRAIN_TAGS:
+            return None
+        if int(row.get("seed") or MC_SEED) != MC_SEED:
+            return None
+        pool, repack = _row_to_brain_payload(row["pool_json"], row["repack_json"])
+        pool_by_brain[tag] = pool
+        repack_by_brain[tag] = repack
+        computed_at = row.get("computed_at") or computed_at
+    return {
+        "ok": True,
+        "target_draw_no": draw_no,
+        "no_peek": True,
+        "pool_sets_per_brain": 10,
+        "repack_sets_per_brain": 5,
+        "seed": seed,
+        "pool_by_brain": pool_by_brain,
+        "repack_by_brain": repack_by_brain,
+        "cached": True,
+        "computed_at": computed_at,
+    }
+
+
 def get_cached_pool_view(draw_no: int) -> dict[str, Any] | None:
     """캐시 hit 시 pool-view 응답 dict, miss 시 None."""
     init_testlotto_db()
@@ -36,37 +67,42 @@ def get_cached_pool_view(draw_no: int) -> dict[str, Any] | None:
         ).fetchall()
     finally:
         conn.close()
+    return _rows_to_pool_payload(draw_no, [dict(r) for r in rows])
 
-    if len(rows) != len(BRAIN_TAGS):
-        return None
 
-    pool_by_brain: dict[str, list[dict]] = {}
-    repack_by_brain: dict[str, list[dict]] = {}
-    computed_at = None
-    seed = MC_SEED
+def build_pool_view_index() -> dict[str, Any]:
+    """백테 회차 pool-view 캐시 일괄 — UI 프리로드(회차별 fetch 제거)."""
+    init_testlotto_db()
+    conn = get_lotto_db()
+    try:
+        rows = conn.execute(
+            """
+            SELECT c.draw_no, c.brain, c.pool_json, c.repack_json, c.computed_at, c.seed
+            FROM testlotto_pool_view_cache c
+            WHERE c.draw_no IN (SELECT DISTINCT draw_no FROM testlotto_backtest_draw_results)
+            ORDER BY c.draw_no, c.brain
+            """
+        ).fetchall()
+    finally:
+        conn.close()
+
+    grouped: dict[int, list[dict[str, Any]]] = {}
     for row in rows:
-        row = dict(row)
-        tag = str(row["brain"])
-        if tag not in BRAIN_TAGS:
-            return None
-        if int(row.get("seed") or MC_SEED) != MC_SEED:
-            return None
-        pool, repack = _row_to_brain_payload(row["pool_json"], row["repack_json"])
-        pool_by_brain[tag] = pool
-        repack_by_brain[tag] = repack
-        computed_at = row.get("computed_at") or computed_at
+        d = dict(row)
+        grouped.setdefault(int(d["draw_no"]), []).append(d)
 
+    by_draw: dict[str, dict[str, Any]] = {}
+    for dno, brain_rows in grouped.items():
+        payload = _rows_to_pool_payload(dno, brain_rows)
+        if payload:
+            by_draw[str(dno)] = payload
+
+    draw_nos = sorted((int(k) for k in by_draw.keys()))
     return {
         "ok": True,
-        "target_draw_no": draw_no,
-        "no_peek": True,
-        "pool_sets_per_brain": 10,
-        "repack_sets_per_brain": 5,
-        "seed": seed,
-        "pool_by_brain": pool_by_brain,
-        "repack_by_brain": repack_by_brain,
-        "cached": True,
-        "computed_at": computed_at,
+        "n_draws": len(by_draw),
+        "draw_range": [draw_nos[0], draw_nos[-1]] if draw_nos else [],
+        "by_draw": by_draw,
     }
 
 

@@ -277,7 +277,10 @@ let _testlottoSetSubTab = 'pool';
 let _testlottoPoolViewMemCache = new Map();
 /** 백테 DB 프리로드 — draw_no → summaries[] (로딩 없이 즉시 표시) */
 let _testlottoBtByDraw = new Map();
+/** draw-index 당첨번호 — 회차별 /draws/{n} fetch 제거 */
+let _testlottoActualByDraw = new Map();
 let _testlottoBtIndexPromise = null;
+let _testlottoBtPreloadDone = false;
 /** pool-view 채점용 당첨번호 (회차 전환 시 renderPredictionsByBrain에서 갱신) */
 let _testlottoCurrentActualRef = null;
 let _testlottoBrainAccordionOpen = { stat: true, markov: false, review: false };
@@ -395,42 +398,93 @@ async function loadTestlottoDrawList() {
   }
 }
 
+function _testlottoHydrateDrawIndex(data) {
+  if (!data || !data.by_draw) return;
+  Object.keys(data.by_draw).forEach((k) => {
+    const dno = parseInt(k, 10);
+    const summaries = data.by_draw[k] || [];
+    _testlottoBtByDraw.set(dno, summaries);
+    const mem = _testlottoPoolViewMemCache.get(dno);
+    if (!mem || !mem.ok) {
+      _testlottoPoolViewMemCache.set(dno, {
+        ok: false,
+        backtest_only: true,
+        target_draw_no: dno,
+        backtest_summaries: summaries,
+        cache_ms: 0,
+        from_bt_index: true,
+      });
+    }
+  });
+  if (data.actuals) {
+    Object.keys(data.actuals).forEach((k) => {
+      const a = data.actuals[k];
+      const dno = parseInt(k, 10);
+      _testlottoActualByDraw.set(dno, {
+        target_draw_no: dno,
+        actual_1: a.num1,
+        actual_2: a.num2,
+        actual_3: a.num3,
+        actual_4: a.num4,
+        actual_5: a.num5,
+        actual_6: a.num6,
+        actual_bonus: a.bonus,
+      });
+    });
+  }
+}
+
+function _testlottoHydratePoolIndex(poolData) {
+  if (!poolData || !poolData.by_draw) return;
+  Object.keys(poolData.by_draw).forEach((k) => {
+    const dno = parseInt(k, 10);
+    const pv = poolData.by_draw[k];
+    if (pv && pv.ok) {
+      _testlottoPoolViewMemCache.set(dno, { ...pv, from_pool_index: true });
+    }
+  });
+}
+
 function preloadTestlottoBacktestIndex() {
-  if (_testlottoBtByDraw.size > 0) {
+  if (_testlottoBtPreloadDone) {
     return Promise.resolve(_testlottoBtByDraw);
   }
   if (_testlottoBtIndexPromise) {
     return _testlottoBtIndexPromise;
   }
-  _testlottoBtIndexPromise = fetch(_testlottoResolveApiUrl('/api/testlotto/backtest/draw-index'))
-    .then((r) => (r.ok ? r.json() : null))
-    .then((data) => {
-      if (!data || !data.by_draw) return _testlottoBtByDraw;
-      Object.keys(data.by_draw).forEach((k) => {
-        const summaries = data.by_draw[k] || [];
-        _testlottoBtByDraw.set(parseInt(k, 10), summaries);
-        // pool mem에도 backtest_only 심어 회차 전환 시 네트워크 0
-        _testlottoPoolViewMemCache.set(parseInt(k, 10), {
-          ok: false,
-          backtest_only: true,
-          target_draw_no: parseInt(k, 10),
-          backtest_summaries: summaries,
-          cache_ms: 0,
-          from_bt_index: true,
-        });
-      });
+  const drawUrl = _testlottoResolveApiUrl('/api/testlotto/backtest/draw-index');
+  const poolUrl = _testlottoResolveApiUrl('/api/testlotto/backtest/pool-index');
+  _testlottoBtIndexPromise = Promise.all([
+    fetch(drawUrl).then((r) => (r.ok ? r.json() : null)),
+    fetch(poolUrl).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  ])
+    .then(([data, poolData]) => {
+      _testlottoHydrateDrawIndex(data);
+      _testlottoHydratePoolIndex(poolData);
+      _testlottoBtPreloadDone = true;
       const hint = document.querySelector('#testlottoBacktestDetails .testlotto-details-hint');
-      if (hint && data.n_draws) {
-        hint.textContent = `(${data.n_draws}회 · DB 즉시 적용)`;
+      if (hint && data && data.n_draws) {
+        const poolN = poolData && poolData.n_draws ? poolData.n_draws : 0;
+        hint.textContent = poolN
+          ? `(${data.n_draws}회 · pool ${poolN} · DB 즉시)`
+          : `(${data.n_draws}회 · DB 즉시 적용)`;
       }
       return _testlottoBtByDraw;
     })
     .catch((e) => {
-      console.warn('backtest draw-index:', e);
+      console.warn('backtest preload:', e);
       _testlottoBtIndexPromise = null;
       return _testlottoBtByDraw;
     });
   return _testlottoBtIndexPromise;
+}
+
+function _testlottoGetActualRefSync(drawNo) {
+  const d = parseInt(drawNo, 10);
+  if (!Number.isFinite(d) || d < 1) return null;
+  const cached = _testlottoActualByDraw.get(d);
+  if (cached && cached.actual_1 != null) return cached;
+  return null;
 }
 
 function initTestlottoDrawSearch() {
@@ -472,8 +526,9 @@ function testlottoSelectDraw(drawNo) {
   const sel = document.getElementById('testlottoDrawSelect');
   if (input) input.value = String(no);
   if (sel) sel.value = String(no);
-  testlottoShowDrawContext(no);
-  loadTestlottoWarrantPanel(no);
+  preloadTestlottoBacktestIndex().then(() => {
+    testlottoShowDrawContext(no);
+  });
 }
 
 /** 복습·학습 상세페이지 (새 탭) */
@@ -502,8 +557,9 @@ function testlottoNavDraw(delta) {
   const nextNo = _testlottoDrawList[nextIdx];
   if (input) input.value = String(nextNo);
   if (sel) sel.value = String(nextNo);
-  testlottoShowDrawContext(nextNo);
-  loadTestlottoWarrantPanel(nextNo);
+  preloadTestlottoBacktestIndex().then(() => {
+    testlottoShowDrawContext(nextNo);
+  });
 }
 
 function _detailResponseToPredictionRows(detail, drawNo) {
@@ -598,33 +654,32 @@ async function testlottoShowDrawContext(drawNo) {
   container.classList.remove('testlotto-results-pending');
   container.removeAttribute('aria-busy');
 
-  // 프리로드된 200회 백테 — 네트워크 대기 없이 먼저 그림
+  // 프리로드된 백테 — 당첨번호·pool mem 즉시 · per-draw fetch 없음
   const localSummaries = _testlottoBtByDraw.get(d);
-  const actualRefPromise = _testlottoResolveActualRef(d, null);
+  const poolViewCached = _testlottoPoolViewMemCache.get(d) || null;
 
   if (localSummaries && localSummaries.length) {
-    const actualRefEarly = await actualRefPromise;
+    const actualRef = _testlottoGetActualRefSync(d) || await _testlottoResolveActualRef(d, null);
     if (seq !== _testlottoPredFetchSeq) return;
-    _testlottoCurrentActualRef = actualRefEarly;
+    _testlottoCurrentActualRef = actualRef;
     _testlottoDetailDrawNo = d;
-    _testlottoDetailRows = _testlottoStubRowsForDraw(d, actualRefEarly);
-    await _testlottoRenderBacktestInstant(d, actualRefEarly, localSummaries, '프리로드');
+    _testlottoDetailRows = _testlottoStubRowsForDraw(d, actualRef);
+
+    if (poolViewCached && poolViewCached.ok) {
+      await renderPredictionsByBrain(d, _testlottoDetailRows, {
+        poolView: poolViewCached,
+        skipPoolFetch: true,
+      });
+      loadTestlottoWarrantPanel(d);
+      return;
+    }
+
+    await _testlottoRenderBacktestInstant(d, actualRef, localSummaries, '프리로드');
     loadTestlottoWarrantPanel(d);
-    // 백그라운드: pool 캐시 있으면 풀 UI로 업그레이드 (스피너 없음)
-    _fetchPoolView(d, { cacheOnly: true })
-      .then((fetched) => {
-        if (seq !== _testlottoPredFetchSeq) return;
-        if (fetched && fetched.ok) {
-          renderPredictionsByBrain(d, _testlottoDetailRows, {
-            poolView: fetched,
-            skipPoolFetch: true,
-          });
-        }
-      })
-      .catch(() => {});
     return;
   }
 
+  const actualRefPromise = _testlottoResolveActualRef(d, null);
   const actualRef = await actualRefPromise;
   if (seq !== _testlottoPredFetchSeq) {
     return;
@@ -865,6 +920,8 @@ function _testlottoRescoreRow(row, actualRef) {
 async function _testlottoResolveActualRef(drawNo, rows) {
   const d = parseInt(drawNo, 10);
   if (!Number.isFinite(d) || d < 1) return null;
+  const synced = _testlottoGetActualRefSync(d);
+  if (synced) return synced;
   const candidate = (rows || []).find(
     (r) => parseInt(r.target_draw_no, 10) === d && r.actual_1 != null && r.actual_6 != null,
   );
@@ -2563,6 +2620,7 @@ async function testlottoShowBacktestDetail(runId) {
 
 // ── 초기화 ──
 document.addEventListener('DOMContentLoaded', () => {
+  preloadTestlottoBacktestIndex();
   initTestlottoActionsBarPin();
   const btDetails = document.getElementById('testlottoBacktestDetails');
   if (btDetails) {
