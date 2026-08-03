@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `e74d299` |
+| HEAD(실측) | `eb38327` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=e74d299 · 지금=**K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live** · 다음=K-UI-BT-PRELOAD-DONE`
+1. 첫줄 `[복귀] HEAD=eb38327 · 지금=**K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live** · 다음=K-UI-BT-PRELOAD-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: e74d299_
+_generated: eb38327_
