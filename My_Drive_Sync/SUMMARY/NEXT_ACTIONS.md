@@ -4,15 +4,16 @@
 
 ## NEXT (1건)
 - ID: K-UI-BT-PRELOAD-DONE
-- 할일: 서버 재기동 완료 · Ctrl+F5 후 즉시적용 확인 · 다음축 **형 GO 대기**
-- 완료조건: 형 GO
-- 선행완료: 7021 재기동 · draw-index n=200 · JS 20260803b
+- 할일: actuals+pool-index batch push 완료 · Ctrl+F5 후 백테 200회 즉시전환 확인 · 다음축 **형 GO 대기**
+- 완료조건: 브라우저 QA OK + 형 GO
+- 선행완료: commit `710d5a3` · JS `20260803c`
 
 ## WORKSTATE
 IDLE
 
 ---
 
-## 메모
-- 1035~1234: 프리로드 후 회차 전환 로딩 없음
-- pool 상세는 「3뇌 예측」만
+## 메모 (커서 아님 · guard 무시)
+
+- **K-UI-BT-PRELOAD** — draw-index actuals 200 · pool-index 13 · per-draw fetch 제거
+- **K-FUSION-INNOVATION** — ge3=0.09 tie · rolled back · V2 live

@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live**
-- 직전: draw-index 프리로드·즉시적용
+- 지금: **K-UI-BT-PRELOAD** — actuals+pool-index batch · JS `20260803c` · **live**
+- 직전: draw-index 프리로드 · per-draw fetch 제거
 - 다음: Ctrl+F5 확인 · 다음축 **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
