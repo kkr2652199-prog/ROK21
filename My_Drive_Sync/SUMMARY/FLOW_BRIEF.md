@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e6df388` · WORK=`IDLE`
+- HEAD: `379367f` · WORK=`IDLE`
 - 지금: **K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **live**
 - 직전: K-UI-ELITE-TOGGLE-FIX elite tags 빈배열 UI 붕괴 방지
 - BOOT다음: Ctrl+F5 QA(1210·1235) · fusion 다음축 **형 GO 대기**
