@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4becae8` · WORK=`IDLE`
-2. **지금:** **K-BENCH-NULL-BY-EVAL** — eval_mode별 null 병기 · enrich_metrics · TAIL100 정정 · **live**
-3. **다음1건:** K-BENCH-NULL-BY-EVAL-DONE — eval_mode null 병기 live · signal_repack FAIL(vs 0.3036) · pin갭 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `796c92c` · WORK=`IDLE`
+2. **지금:** **K-RARE-BUNDLE** — 814만 극소 번들 catalog 213 · ultra 183 · API live
+3. **다음1건:** K-RARE-BUNDLE-DONE — 극소 번들 API·DB live · pin갭 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
