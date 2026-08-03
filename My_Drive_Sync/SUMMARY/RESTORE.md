@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `ae582fb` · WORK=`IDLE`
+1. **HEAD:** `7025db1` · WORK=`IDLE`
 2. **지금:** **K-FUTURE-WIRE** — 독립뇌 RNG+aux_hint ge3=**0.1500** PASS(+0.06) · **live**
 3. **다음1건:** K-FUTURE-WIRE-DONE — 독립뇌 RNG+aux_hint_native ge3=**0.1500** PASS(+0.06 vs V2) · live 유지 · 다음 축(FULL 재검증/형 방향) **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
