@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `59cb765` · WORK=`IDLE`
+- HEAD: `89f871e` · WORK=`IDLE`
 - 지금: **K-RARE-NESTED** — 극소의극소·역이용·뇌이식 설계 · 돌파=목적재정의 · **DONE**
 - 직전: K-RARE-APPLY-ANAL wire HOLD
 - BOOT다음: B1 feature로그 / B2 mild-consec / pin갭 **형 GO**
