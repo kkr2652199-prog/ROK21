@@ -404,17 +404,7 @@ function _testlottoHydrateDrawIndex(data) {
     const dno = parseInt(k, 10);
     const summaries = data.by_draw[k] || [];
     _testlottoBtByDraw.set(dno, summaries);
-    const mem = _testlottoPoolViewMemCache.get(dno);
-    if (!mem || !mem.ok) {
-      _testlottoPoolViewMemCache.set(dno, {
-        ok: false,
-        backtest_only: true,
-        target_draw_no: dno,
-        backtest_summaries: summaries,
-        cache_ms: 0,
-        from_bt_index: true,
-      });
-    }
+    // pool mem cache는 ok pool만 — backtest_only stub 넣으면 pool-index·API ok hit 차단됨
   });
   if (data.actuals) {
     Object.keys(data.actuals).forEach((k) => {
@@ -628,22 +618,58 @@ function _testlottoStubRowsForDraw(drawNo, actualRef) {
   return [row];
 }
 
-function _testlottoRenderBacktestInstant(d, actualRef, summaries, noteExtra) {
-  const container = document.getElementById('testlottoPredictionResults');
-  if (!container) return;
-  const extra = noteExtra ? ` · ${noteExtra}` : '';
-  return renderTestlottoDrawHero(d, null, actualRef).then(() => {
-    container.innerHTML =
-      `<p class="testlotto-cache-note" role="status">백테스트 DB 저장됨 · 즉시 적용${extra}</p>` +
-      _testlottoRenderBacktestFallbackHtml(d, summaries || []) +
-      '<div class="testlotto-predict-empty">' +
-      '<p class="testlotto-predict-empty__msg">pool 10+5 상세는 「3뇌 예측」으로 계산합니다</p>' +
-      '<button type="button" class="btn btn-primary testlotto-predict-empty__btn" onclick="testlottoRunPoolPredict()">🎯 3뇌 예측</button>' +
-      '</div>';
-  });
+function _testlottoBuildBacktestPoolView(d, summaries, noteExtra) {
+  const list = summaries || _testlottoBtByDraw.get(d) || [];
+  if (!list.length) return null;
+  return {
+    ok: false,
+    backtest_only: true,
+    target_draw_no: d,
+    backtest_summaries: list,
+    cache_ms: 0,
+    note_extra: noteExtra || '',
+  };
 }
 
-/** 회차 전환 — hero + DB 캐시/백테 요약 즉시 표시 · 무거운 계산은 버튼만 */
+/** backtest_only — accordion·hero 포함 전체 UI (구 minimal table 경로 대체) */
+async function _testlottoRenderBacktestInstant(d, actualRef, summaries, noteExtra) {
+  const poolView = _testlottoBuildBacktestPoolView(d, summaries, noteExtra);
+  if (!poolView) return;
+  _testlottoDetailDrawNo = d;
+  _testlottoDetailRows = _testlottoStubRowsForDraw(d, actualRef);
+  return renderPredictionsByBrain(d, _testlottoDetailRows, { poolView, skipPoolFetch: true });
+}
+
+function _testlottoBacktestCacheNoteHtml(drawNo, poolView) {
+  if (!poolView || !poolView.backtest_only) return '';
+  const extra = poolView.note_extra ? ` · ${poolView.note_extra}` : '';
+  const ms = poolView.cache_ms != null ? ` · ${poolView.cache_ms}ms` : '';
+  return (
+    `<p class="testlotto-cache-note" role="status">백테스트 DB 저장됨 · 즉시 적용${extra}${ms}</p>` +
+    _testlottoRenderBacktestFallbackHtml(drawNo, poolView.backtest_summaries || [])
+  );
+}
+
+async function _testlottoResolvePoolViewForDraw(d) {
+  const mem = _testlottoPoolViewMemCache.get(d);
+  if (mem && mem.ok) {
+    return mem;
+  }
+  try {
+    const fetched = await _fetchPoolView(d, { cacheOnly: true });
+    if (fetched && fetched.ok) {
+      return fetched;
+    }
+    if (fetched && fetched.backtest_only) {
+      return fetched;
+    }
+  } catch (e) {
+    console.warn('pool-view cache lookup:', e);
+  }
+  return _testlottoBuildBacktestPoolView(d);
+}
+
+/** 회차 전환 — hero + pool/백테 구조 UI 즉시 · 무거운 WF는 「3뇌 예측」만 */
 async function testlottoShowDrawContext(drawNo) {
   const d = parseInt(drawNo, 10);
   const container = document.getElementById('testlottoPredictionResults');
@@ -654,33 +680,7 @@ async function testlottoShowDrawContext(drawNo) {
   container.classList.remove('testlotto-results-pending');
   container.removeAttribute('aria-busy');
 
-  // 프리로드된 백테 — 당첨번호·pool mem 즉시 · per-draw fetch 없음
-  const localSummaries = _testlottoBtByDraw.get(d);
-  const poolViewCached = _testlottoPoolViewMemCache.get(d) || null;
-
-  if (localSummaries && localSummaries.length) {
-    const actualRef = _testlottoGetActualRefSync(d) || await _testlottoResolveActualRef(d, null);
-    if (seq !== _testlottoPredFetchSeq) return;
-    _testlottoCurrentActualRef = actualRef;
-    _testlottoDetailDrawNo = d;
-    _testlottoDetailRows = _testlottoStubRowsForDraw(d, actualRef);
-
-    if (poolViewCached && poolViewCached.ok) {
-      await renderPredictionsByBrain(d, _testlottoDetailRows, {
-        poolView: poolViewCached,
-        skipPoolFetch: true,
-      });
-      loadTestlottoWarrantPanel(d);
-      return;
-    }
-
-    await _testlottoRenderBacktestInstant(d, actualRef, localSummaries, '프리로드');
-    loadTestlottoWarrantPanel(d);
-    return;
-  }
-
-  const actualRefPromise = _testlottoResolveActualRef(d, null);
-  const actualRef = await actualRefPromise;
+  const actualRef = _testlottoGetActualRefSync(d) || await _testlottoResolveActualRef(d, null);
   if (seq !== _testlottoPredFetchSeq) {
     return;
   }
@@ -688,39 +688,13 @@ async function testlottoShowDrawContext(drawNo) {
   _testlottoDetailDrawNo = d;
   _testlottoDetailRows = _testlottoStubRowsForDraw(d, actualRef);
 
-  let poolView = _testlottoPoolViewMemCache.get(d) || null;
-  if (!poolView || !(poolView.ok || poolView.backtest_only)) {
-    try {
-      const fetched = await _fetchPoolView(d, { cacheOnly: true });
-      if (fetched && (fetched.ok || fetched.backtest_only)) {
-        poolView = fetched;
-      } else {
-        poolView = null;
-      }
-    } catch (e) {
-      console.warn('pool-view cache lookup:', e);
-      poolView = null;
-    }
-  }
-
+  const poolView = await _testlottoResolvePoolViewForDraw(d);
   if (seq !== _testlottoPredFetchSeq) {
     return;
   }
 
-  if (poolView && poolView.ok) {
+  if (poolView && (poolView.ok || poolView.backtest_only)) {
     await renderPredictionsByBrain(d, _testlottoDetailRows, { poolView, skipPoolFetch: true });
-    loadTestlottoWarrantPanel(d);
-    return;
-  }
-
-  // 백테 DB 저장분 — 즉시 요약 표시 (자동 WF 없음)
-  if (poolView && poolView.backtest_only) {
-    await _testlottoRenderBacktestInstant(
-      d,
-      actualRef,
-      poolView.backtest_summaries || [],
-      poolView.cache_ms != null ? `${poolView.cache_ms}ms` : '',
-    );
     loadTestlottoWarrantPanel(d);
     return;
   }
@@ -1210,6 +1184,7 @@ async function testlottoOnEliteBrainToggle() {
           if (statusEl.textContent.includes('고적중 조건')) statusEl.textContent = '';
         }, 4000);
       }
+      await testlottoShowDrawContext(d);
       return;
     }
   }
@@ -1291,6 +1266,14 @@ function _testlottoRenderSetSubTabsHtml(activeKind, poolView) {
 
 function _testlottoRenderBrainCardsHtml(tag, poolView, drawNo, actualRef, subTab) {
   if (!poolView || !poolView.ok || !poolView.pool_by_brain) {
+    if (poolView && poolView.backtest_only) {
+      return (
+        '<div class="testlotto-predict-empty testlotto-predict-empty--inline">' +
+        '<p class="testlotto-predict-empty__msg">pool 10+5 상세는 「3뇌 예측」으로 계산합니다</p>' +
+        '<button type="button" class="btn btn-primary testlotto-predict-empty__btn" onclick="testlottoRunPoolPredict()">🎯 3뇌 예측</button>' +
+        '</div>'
+      );
+    }
     if (poolView && poolView.backtest_summaries && poolView.backtest_summaries.length) {
       return _testlottoRenderBacktestFallbackHtml(drawNo, poolView.backtest_summaries);
     }
@@ -1342,7 +1325,7 @@ async function _fetchPoolView(drawNo, options) {
 
   if (!forceRefresh) {
     const mem = _testlottoPoolViewMemCache.get(drawNo);
-    if (mem && (mem.ok || mem.backtest_only)) {
+    if (mem && mem.ok) {
       return { ...mem, from_mem: true };
     }
   }
@@ -1363,7 +1346,7 @@ async function _fetchPoolView(drawNo, options) {
     throw new Error(String(pr.status));
   }
   const data = await pr.json();
-  if (data && (data.ok || data.backtest_only)) {
+  if (data && data.ok) {
     _testlottoPoolViewMemCache.set(drawNo, data);
   } else if (cacheOnly && data && data.cache_miss && !data.backtest_only) {
     return data;
@@ -1522,11 +1505,13 @@ async function renderPredictionsByBrain(drawNo, rows, options) {
       `<div class="lotto-brain-cards" id="hyodoBrainCards">${cardsHtml}</div>`;
   }
 
-  const cacheNote = poolView && (poolView.cached || poolView.from_mem)
+  const cacheNote = poolView && poolView.ok && (poolView.cached || poolView.from_mem || poolView.from_pool_index)
     ? `<p class="testlotto-cache-note" role="status">DB 캐시 · 저장됨${poolView.computed_at ? ` · ${poolView.computed_at}` : ''}${poolView.cache_ms != null ? ` · ${poolView.cache_ms}ms` : ''}</p>`
-    : (poolView && poolView.compute_ms
+    : (poolView && poolView.ok && poolView.compute_ms
       ? `<p class="testlotto-cache-note testlotto-cache-note--fresh">처음 계산 완료 · ${poolView.compute_ms}ms · DB 저장됨</p>`
-      : '');
+      : (poolView && poolView.backtest_only
+        ? _testlottoBacktestCacheNoteHtml(drawNo, poolView)
+        : ''));
 
   container.innerHTML = `${cacheNote}${bodyHtml}`;
   testlottoClearResultsLoading(container);

@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-UI-ELITE-TOGGLE-FIX** — elite tags 빈배열 UI 붕괴 방지 · JS `20260803d` · **live**
-- 직전: K-UI-BT-PRELOAD actuals+pool-index batch · per-draw fetch 제거
-- 다음: Ctrl+F5 QA · fusion 다음축 **형 GO 대기**
+- 지금: **K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **local**
+- 직전: K-UI-ELITE-TOGGLE-FIX elite tags 빈배열 UI 붕괴 방지
+- 다음: Ctrl+F5 QA(1210·1235) · 형 GO 시 commit+push
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

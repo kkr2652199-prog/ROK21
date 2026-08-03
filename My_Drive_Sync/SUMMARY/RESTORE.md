@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f124045` · WORK=`IDLE`
-2. **지금:** **K-UI-ELITE-TOGGLE-FIX** — elite tags 빈배열 UI 붕괴 방지 · JS `20260803d` · **live**
-3. **다음1건:** K-UI-ELITE-TOGGLE-FIX-DONE — push 완료 · Ctrl+F5 QA · fusion 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `eef6fe2` · WORK=`IDLE`
+2. **지금:** **K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **local**
+3. **다음1건:** K-UI-BT-STRUCT-FIX — backtest-only 회차(1210 등) 3뇌 accordion UI 통일 · JS `20260803e` · Ctrl+F5 QA · 형 GO 시 commit+push (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-03 | elite toggle UI붕괴 수정 | tags=[] 시 wipe 방지·자동해제 · toggle→ShowDrawContext · JS 20260803d | **FIX** | 31f07ef |
+| 2026-08-03 | backtest 회차 UI붕괴 수정 | draw-index stub 제거 · accordion 통일 · JS 20260803e · 1210 QA OK | **FIX** | local |
 | 2026-08-03 | 종료체크 commit+push | actuals+pool-index batch · JS 20260803c · draw switch 0-fetch | **DONE** | 710d5a3 |
 | 2026-08-03 | 서버 종료후 재가동 | 7021 kill→run_v13 · home=200 · draw-index n=200 | **OK** | cc05d38 |
 | 2026-08-03 | 200회DB즉시적용·버그확인 GO | draw-index 프리로드 · init수정 · JS 20260803b · 서버재기동 | **DONE** | 37e945b |

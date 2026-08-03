@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `f124045` |
+| HEAD(실측) | `eef6fe2` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-UI-ELITE-TOGGLE-FIX** — elite tags 빈배열 UI 붕괴 방지 · JS `20260803d` · **live** |
-| 직전 | K-UI-BT-PRELOAD actuals+pool-index batch · per-draw fetch 제거 |
-| BOOT다음 | Ctrl+F5 QA · fusion 다음축 **형 GO 대기** |
-| NEXT1 ID | **K-UI-ELITE-TOGGLE-FIX-DONE** |
-| NEXT1 할일 | push 완료 · Ctrl+F5 QA · fusion 다음축 **형 GO 대기** |
+| 지금 | **K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **local** |
+| 직전 | K-UI-ELITE-TOGGLE-FIX elite tags 빈배열 UI 붕괴 방지 |
+| BOOT다음 | Ctrl+F5 QA(1210·1235) · 형 GO 시 commit+push |
+| NEXT1 ID | **K-UI-BT-STRUCT-FIX** |
+| NEXT1 할일 | backtest-only 회차(1210 등) 3뇌 accordion UI 통일 · JS `20260803e` · Ctrl+F5 QA · 형 GO 시 commit+push |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=f124045 · 지금=**K-UI-ELITE-TOGGLE-FIX** — elite tags 빈배열 UI 붕괴 방지 · JS `20260803d` · **live** · 다음=K-UI-ELITE-TOGGLE-FIX-DONE`
+1. 첫줄 `[복귀] HEAD=eef6fe2 · 지금=**K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **local** · 다음=K-UI-BT-STRUCT-FIX`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: f124045_
+_generated: eef6fe2_
