@@ -1,13 +1,13 @@
 {
   "id": "K-SIGNAL-BACKTEST-TAIL100",
-  "ts": "2026-07-30T14:24:05",
-  "n_eval": 100,
+  "ts": "2026-08-03T12:43:04",
+  "n_eval": 200,
   "draw_range": [
-    1135,
+    1035,
     1234
   ],
   "eval_window": {
-    "n_eval_target": 100,
+    "n_eval_target": 200,
     "sample_mode": "tail",
     "quick_gate": true
   },
@@ -20,18 +20,18 @@
     "deleted": {
       "lotto_predictions": {
         "draw_range": [
-          1135,
+          1035,
           1234
         ],
-        "deleted_rows": 15,
+        "deleted_rows": 0,
         "remaining_in_range": 0
       },
       "testlotto_pool_view_cache": {
         "draw_range": [
-          1135,
+          1035,
           1234
         ],
-        "deleted_rows": 51
+        "deleted_rows": 0
       }
     },
     "kept": [
@@ -44,61 +44,61 @@
   },
   "runs": [
     {
-      "run_id": 3,
+      "run_id": 5,
       "survey_id": "K-SIGNAL-BACKTEST-TAIL100",
       "strategy_id": "signal_repack",
-      "n": 100,
+      "n": 200,
       "draw_range": [
-        1135,
+        1035,
         1234
       ],
       "metrics": {
-        "n": 100,
-        "mean": 2.15,
-        "ge3_rate": 0.23,
-        "ge3_count": 23,
-        "delta_ge3_vs_null": 0.1163,
-        "delta_ge3_vs_pin": 0.0853,
-        "p_value": 0.000729,
+        "n": 200,
+        "mean": 2.25,
+        "ge3_rate": 0.275,
+        "ge3_count": 55,
+        "delta_ge3_vs_null": 0.1613,
+        "delta_ge3_vs_pin": 0.1303,
+        "p_value": 0.0,
+        "verdict": "PASS",
+        "tiers": {
+          "r1": 0,
+          "r2": 0,
+          "r3": 1,
+          "r4": 7,
+          "r5": 47
+        }
+      },
+      "per_draw_count": 200
+    },
+    {
+      "run_id": 7,
+      "survey_id": "K-SIGNAL-BACKTEST-TAIL100",
+      "strategy_id": "combined",
+      "n": 200,
+      "draw_range": [
+        1035,
+        1234
+      ],
+      "metrics": {
+        "n": 200,
+        "mean": 1.73,
+        "ge3_rate": 0.145,
+        "ge3_count": 29,
+        "delta_ge3_vs_null": 0.0313,
+        "delta_ge3_vs_pin": 0.0003,
+        "p_value": 0.102441,
         "verdict": "PASS",
         "tiers": {
           "r1": 0,
           "r2": 0,
           "r3": 0,
-          "r4": 1,
-          "r5": 22
-        }
-      },
-      "per_draw_count": 100
-    },
-    {
-      "run_id": 4,
-      "survey_id": "K-SIGNAL-BACKTEST-TAIL100",
-      "strategy_id": "combined",
-      "n": 100,
-      "draw_range": [
-        1135,
-        1234
-      ],
-      "metrics": {
-        "n": 100,
-        "mean": 1.61,
-        "ge3_rate": 0.15,
-        "ge3_count": 15,
-        "delta_ge3_vs_null": 0.0363,
-        "delta_ge3_vs_pin": 0.0053,
-        "p_value": 0.161241,
-        "verdict": "FAIL",
-        "tiers": {
-          "r1": 0,
-          "r2": 0,
-          "r3": 0,
           "r4": 0,
-          "r5": 15
+          "r5": 29
         }
       },
-      "per_draw_count": 100
+      "per_draw_count": 200
     }
   ],
-  "elapsed_sec": 13.3
+  "elapsed_sec": 65.2
 }

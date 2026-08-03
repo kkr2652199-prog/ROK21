@@ -1,6 +1,6 @@
 # K-SIGNAL-BACKTEST-TAIL100 — 최근 100회 walk-forward 백테스트
 
-날짜 2026-07-30 · gate=**tail100** · seed=**42**
+날짜 2026-08-03 · gate=**tail100** · seed=**42**
 
 ---
 
@@ -22,18 +22,18 @@
   "deleted": {
     "lotto_predictions": {
       "draw_range": [
-        1135,
+        1035,
         1234
       ],
-      "deleted_rows": 15,
+      "deleted_rows": 0,
       "remaining_in_range": 0
     },
     "testlotto_pool_view_cache": {
       "draw_range": [
-        1135,
+        1035,
         1234
       ],
-      "deleted_rows": 51
+      "deleted_rows": 0
     }
   },
   "kept": [
@@ -49,14 +49,14 @@
 | 유지 | 삭제(범위内) |
 |------|-------------|
 | testlotto_backtest_runs · draw_results(기존 run) | lotto_predictions eval구간 |
-| pool_view_cache(범위外) | pool_view_cache 1135~1234 |
+| pool_view_cache(범위外) | pool_view_cache 1035~1234 |
 
 ### 실행 파라미터
 
 | key | value |
 |-----|-------|
 | n_eval | 100 |
-| draw_range | 1135–1234 |
+| draw_range | 1035–1234 |
 | sample_mode | tail |
 | seed | 42 |
 | strategies | combined · signal_repack |
@@ -69,13 +69,13 @@
 |-------|----------|-----:|---------:|--------:|-----:|--:|---------|-------:|
 | theory_baseline | — | 0.8000 | 0.1137 | — | — | — | null | — |
 | WIRE-V2 pin | stored | 1.7504 | 0.1447 | — | — | — | pin | — |
-| **signal_repack** | WF live | 2.1500 | 0.2300 | 23 | +0.0853 | 0.000729 | PASS | 3 |
-| **combined** | WF live | 1.6100 | 0.1500 | 15 | +0.0053 | 0.161241 | FAIL | 4 |
+| **signal_repack** | WF live | 2.2500 | 0.2750 | 55 | +0.1303 | 0.000000 | PASS | 5 |
+| **combined** | WF live | 1.7300 | 0.1450 | 29 | +0.0003 | 0.102441 | PASS | 7 |
 
 ### tier 피벗 (run별)
 
-- **signal_repack** (run_id=3): 1등=0 · 2등=0 · 3등=0 · 4등=1 · 5등=22
-- **combined** (run_id=4): 1등=0 · 2등=0 · 3등=0 · 4등=0 · 5등=15
+- **signal_repack** (run_id=5): 1등=0 · 2등=0 · 3등=1 · 4등=7 · 5등=47
+- **combined** (run_id=7): 1등=0 · 2등=0 · 3등=0 · 4등=0 · 5등=29
 
 ## 4. ✅ 맞은 것 / ❌ 틀린 것
 
