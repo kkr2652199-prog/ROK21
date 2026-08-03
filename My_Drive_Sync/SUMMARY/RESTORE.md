@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `cc05d38` · WORK=`IDLE`
+1. **HEAD:** `e74d299` · WORK=`IDLE`
 2. **지금:** **K-UI-BT-PRELOAD** — 서버 종료후 재기동 완료 · JS `20260803b` · **live**
 3. **다음1건:** K-UI-BT-PRELOAD-DONE — 서버 재기동 완료 · Ctrl+F5 후 즉시적용 확인 · 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
