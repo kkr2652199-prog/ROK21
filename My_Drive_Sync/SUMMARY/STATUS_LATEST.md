@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-03 KST  
-📌 사유: **K-UI-BT-PRELOAD** — 200회 백테 draw-index 프리로드 · 회차전환 로딩 없이 즉시 적용
+📌 사유: **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · Hypergeometric null 재정합 · 외부문헌 대조
 
 ---
 
@@ -10,6 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-BT-PRECISION-BENCH** | **DONE** — WIRE n100→FULL 붕괴 · signal_repack은 best_of_15(null≈0.304) · combined 0.145≈경계 · `reports/20260803_BT200_PRECISION_BENCHMARK.md` · canvas |
+| **K-DB-RESET-BT200** | **DONE** — lotto_testlotto 런타임 reset · WF 1035~1234 · pool 201 · 1210·1235 cached 10+5 |
 | **K-UI-BT-PRELOAD** | **DONE** — `/backtest/draw-index` n=200 · JS `20260803b` · 탭진입 즉시적용 |
 | **K-UI-BT-INSTANT** | **DONE** — pool GET=캐시/backtest_only 즉시 · compute만 WF · revalidate pool보존 |
 | **K-FUTURE-WIRE-REVAL** | QUICK**0.1350**(27/200) · FULL**0.1184**(140/1182) · patch PASS · enrich/pin **FAIL** · collapse n100→FULL −0.0316 |

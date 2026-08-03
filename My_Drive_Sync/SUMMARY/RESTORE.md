@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `1be0117` · WORK=`IDLE`
-2. **지금:** **K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **live**
-3. **다음1건:** K-UI-BT-STRUCT-FIX-DONE — push 완료 · Ctrl+F5 QA(1210·1235) · fusion 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `fa9c2aa` · WORK=`IDLE`
+2. **지금:** **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE**
+3. **다음1건:** K-BT-PRECISION-BENCH-DONE — 정밀분석 보고·canvas 완료 · P0(eval_mode null병기)/pin갭 등 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-03 | 백테 정밀분석·외부벤치 | WIRE붕괴·best15 null재정합 · 문헌대조 · canvas/보고서 | **ANAL** | pending |
+| 2026-08-03 | 모든DB초기화·백테재실행 | testlotto reset · tail-200 WF · pool 201 · 1210·1235 API OK | **OK** | (미커밋) |
 | 2026-08-03 | backtest 회차 UI붕괴 수정 | draw-index stub 제거 · accordion 통일 · JS 20260803e · 1210 QA OK | **FIX** | e6df388 |
 | 2026-08-03 | 종료체크 commit+push | actuals+pool-index batch · JS 20260803c · draw switch 0-fetch | **DONE** | 710d5a3 |
 | 2026-08-03 | 서버 종료후 재가동 | 7021 kill→run_v13 · home=200 · draw-index n=200 | **OK** | cc05d38 |
@@ -44,9 +46,6 @@
 | 2026-08-03 | K-FUSION-INNOVATION GO | conf bucket+AUX reweight · smoke PASS · n=100 ge3=0.0900 tie · INNOVATION 롤백 | **FAIL** | dcc20b3 |
 | 2026-08-03 | 젠스파크 동기화 GO | 20260803 보고서 · AI_COLLAB §3·§6 · RESTORE commit열 | **DOC** | 8b20473 |
 | 2026-08-02 | K-FUSION-DYNAMIC-V2 GO | solo×ref quota · referee-only 0.06→solo prior 0.09 · plan 4/0/1 · gate FAIL 1bp | **FAIL** | f97312c |
-| 2026-08-01 | K-QUOTA-MARKOV80-REV2 GO | floor 4/5 · smoke PASS · n=100 ge3=0.0900 quota 80/20/0 · gate FAIL · rollback | **FAIL** | 289f4b1 |
-| 2026-08-01 | K-FUSION-QUOTA-FIX GO | DEFAULT 25/60/15 · smoke 5/5 · n=100 ge3=0.0800 quota 20/60/20 · +0.02 vs 0.06 | **FAIL** (>0.09) | bc8c32e |
-| 2026-08-01 | K-ENGINE-PHASE1-HOLD GO | window100 롤백 · fusion diag ge3=0.0900 quota=0.40 aux=0.67 | **AUX_PATH_BOTTLENECK** | f1ae730 |
 
 ---
 

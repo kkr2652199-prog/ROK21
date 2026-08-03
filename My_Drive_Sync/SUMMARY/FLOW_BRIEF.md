@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `1be0117` · WORK=`IDLE`
-- 지금: **K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **live**
-- 직전: K-UI-ELITE-TOGGLE-FIX elite tags 빈배열 UI 붕괴 방지
-- BOOT다음: Ctrl+F5 QA(1210·1235) · fusion 다음축 **형 GO 대기**
-- NEXT1: K-UI-BT-STRUCT-FIX-DONE — push 완료 · Ctrl+F5 QA(1210·1235) · fusion 다음축 **형 GO 대기** (승인=미확인)
+- HEAD: `fa9c2aa` · WORK=`IDLE`
+- 지금: **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE**
+- 직전: K-DB-RESET-BT200 · tail-200 WF · pool 201
+- BOOT다음: eval_mode null 병기·pin갭 등 **형 GO 대기**
+- NEXT1: K-BT-PRECISION-BENCH-DONE — 정밀분석 보고·canvas 완료 · P0(eval_mode null병기)/pin갭 등 **형 GO 대기** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

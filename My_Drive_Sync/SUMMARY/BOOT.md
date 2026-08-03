@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **live**
-- 직전: K-UI-ELITE-TOGGLE-FIX elite tags 빈배열 UI 붕괴 방지
-- 다음: Ctrl+F5 QA(1210·1235) · fusion 다음축 **형 GO 대기**
+- 지금: **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE**
+- 직전: K-DB-RESET-BT200 · tail-200 WF · pool 201
+- 다음: eval_mode null 병기·pin갭 등 **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

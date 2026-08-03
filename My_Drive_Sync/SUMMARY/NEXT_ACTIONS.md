@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-UI-BT-STRUCT-FIX-DONE
-- 할일: push 완료 · Ctrl+F5 QA(1210·1235) · fusion 다음축 **형 GO 대기**
-- 완료조건: 1210·1235 브라우저 QA OK
-- 선행완료: commit `e6df388` · JS `20260803e`
+- ID: K-BT-PRECISION-BENCH-DONE
+- 할일: 정밀분석 보고·canvas 완료 · P0(eval_mode null병기)/pin갭 등 **형 GO 대기**
+- 완료조건: 형 GO
+- 선행완료: reports/20260803_BT200_PRECISION_BENCHMARK.md · canvas bt200-precision-benchmark
 
 ## WORKSTATE
 IDLE

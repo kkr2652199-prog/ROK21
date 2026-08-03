@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1be0117` |
+| HEAD(실측) | `fa9c2aa` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **live** |
-| 직전 | K-UI-ELITE-TOGGLE-FIX elite tags 빈배열 UI 붕괴 방지 |
-| BOOT다음 | Ctrl+F5 QA(1210·1235) · fusion 다음축 **형 GO 대기** |
-| NEXT1 ID | **K-UI-BT-STRUCT-FIX-DONE** |
-| NEXT1 할일 | push 완료 · Ctrl+F5 QA(1210·1235) · fusion 다음축 **형 GO 대기** |
+| 지금 | **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE** |
+| 직전 | K-DB-RESET-BT200 · tail-200 WF · pool 201 |
+| BOOT다음 | eval_mode null 병기·pin갭 등 **형 GO 대기** |
+| NEXT1 ID | **K-BT-PRECISION-BENCH-DONE** |
+| NEXT1 할일 | 정밀분석 보고·canvas 완료 · P0(eval_mode null병기)/pin갭 등 **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1be0117 · 지금=**K-UI-BT-STRUCT-FIX** — backtest 회차 accordion UI 통일 · JS `20260803e` · **live** · 다음=K-UI-BT-STRUCT-FIX-DONE`
+1. 첫줄 `[복귀] HEAD=fa9c2aa · 지금=**K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE** · 다음=K-BT-PRECISION-BENCH-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 1be0117_
+_generated: fa9c2aa_
