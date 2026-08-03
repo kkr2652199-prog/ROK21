@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `710d5a3` · WORK=`IDLE`
+1. **HEAD:** `9712ea8` · WORK=`IDLE`
 2. **지금:** **K-UI-BT-PRELOAD** — actuals+pool-index batch · JS `20260803c` · **live**
-3. **다음1건:** K-UI-BT-PRELOAD-DONE — 서버 재기동 완료 · Ctrl+F5 후 즉시적용 확인 · 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
+3. **다음1건:** K-UI-BT-PRELOAD-DONE — actuals+pool-index batch push 완료 · Ctrl+F5 후 백테 200회 즉시전환 확인 · 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
