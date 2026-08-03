@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `bc801e4` · WORK=`IDLE`
+- HEAD: `6536464` · WORK=`IDLE`
 - 지금: **K-UI-BT-INSTANT** — 백테 DB 저장→페이지 즉시 반응 · 자동WF 제거 · **live**
 - 직전: K-FUTURE-WIRE-REVAL QUICK0.135 · FULL0.1184 · patch PASS · pin FAIL
 - BOOT다음: 다음축(pin갭 등) · **형 GO 대기**
