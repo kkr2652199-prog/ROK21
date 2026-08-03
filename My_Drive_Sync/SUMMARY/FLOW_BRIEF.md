@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6536464` · WORK=`IDLE`
-- 지금: **K-UI-BT-INSTANT** — 백테 DB 저장→페이지 즉시 반응 · 자동WF 제거 · **live**
-- 직전: K-FUTURE-WIRE-REVAL QUICK0.135 · FULL0.1184 · patch PASS · pin FAIL
+- HEAD: `df025ac` · WORK=`IDLE`
+- 지금: **K-UI-BT-PRELOAD** — 200회 draw-index 프리로드·즉시적용 · JS `20260803b` · **live**
+- 직전: K-UI-BT-INSTANT · GET 자동WF 제거
 - BOOT다음: 다음축(pin갭 등) · **형 GO 대기**
-- NEXT1: K-UI-BT-INSTANT-DONE — 백테 DB→페이지 즉시 반응 live · QUICK/FULL reval 유지 · 다음축(pin갭 등) **형 GO 대기** (승인=미확인)
+- NEXT1: K-UI-BT-PRELOAD-DONE — 200회 백테 draw-index 프리로드·즉시적용 live · Ctrl+F5 후 확인 · 다음축 **형 GO 대기** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

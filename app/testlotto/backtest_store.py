@@ -176,6 +176,49 @@ def list_backtest_draw_ranges() -> list[dict[str, Any]]:
         conn.close()
 
 
+def build_backtest_draw_index() -> dict[str, Any]:
+    """회차별 백테 요약 전체 — UI 프리로드(로딩 없이 즉시 표시)."""
+    init_testlotto_db()
+    conn = get_lotto_db()
+    try:
+        rows = conn.execute(
+            """
+            SELECT d.draw_no, r.run_id, r.survey_id, r.strategy_id, r.strategy_label_ko,
+                   d.best_hits, d.best_tier
+            FROM testlotto_backtest_draw_results d
+            JOIN testlotto_backtest_runs r ON r.run_id = d.run_id
+            ORDER BY d.draw_no ASC, r.run_id DESC
+            """
+        ).fetchall()
+        by_draw: dict[str, list[dict[str, Any]]] = {}
+        for row in rows:
+            d = dict(row)
+            key = str(int(d["draw_no"]))
+            by_draw.setdefault(key, []).append(
+                {
+                    "run_id": d["run_id"],
+                    "survey_id": d["survey_id"],
+                    "survey_label_ko": survey_label_ko(d["survey_id"]),
+                    "strategy_id": d["strategy_id"],
+                    "strategy_label_ko": d.get("strategy_label_ko")
+                    or strategy_label_ko(d["strategy_id"]),
+                    "best_hits": d["best_hits"],
+                    "best_tier": d.get("best_tier") or 0,
+                    "best_tier_label": tier_rank_label(int(d.get("best_tier") or 0)),
+                }
+            )
+        draw_nos = sorted((int(k) for k in by_draw.keys()), reverse=True)
+        return {
+            "ok": True,
+            "n_draws": len(by_draw),
+            "n_rows": len(rows),
+            "draw_range": [draw_nos[-1], draw_nos[0]] if draw_nos else [],
+            "by_draw": by_draw,
+        }
+    finally:
+        conn.close()
+
+
 def list_backtest_runs(limit: int = 50) -> list[dict[str, Any]]:
     init_testlotto_db()
     conn = get_lotto_db()

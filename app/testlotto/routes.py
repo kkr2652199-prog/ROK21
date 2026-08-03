@@ -283,6 +283,14 @@ async def api_backtest_runs(limit: int = 50):
     return {"runs": list_backtest_runs(limit=limit)}
 
 
+@router.get("/backtest/draw-index")
+async def api_backtest_draw_index():
+    """회차별 백테 요약 전체 — 탭 진입 시 프리로드(로딩 없이 즉시 적용)."""
+    from app.testlotto.backtest_store import build_backtest_draw_index
+
+    return build_backtest_draw_index()
+
+
 @router.get("/backtest/runs/{run_id}")
 async def api_backtest_run_detail(run_id: int, draw_limit: int = 200, draw_offset: int = 0):
     """백테스트 1건 상세 + 회차별 적중."""

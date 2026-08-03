@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-03 KST  
-📌 사유: **K-UI-BT-INSTANT** — 백테 DB→페이지 즉시 반응 · GET 자동WF 제거 · 1100≈86ms
+📌 사유: **K-UI-BT-PRELOAD** — 200회 백테 draw-index 프리로드 · 회차전환 로딩 없이 즉시 적용
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-UI-BT-PRELOAD** | **DONE** — `/backtest/draw-index` n=200 · JS `20260803b` · 탭진입 즉시적용 |
 | **K-UI-BT-INSTANT** | **DONE** — pool GET=캐시/backtest_only 즉시 · compute만 WF · revalidate pool보존 |
 | **K-FUTURE-WIRE-REVAL** | QUICK**0.1350**(27/200) · FULL**0.1184**(140/1182) · patch PASS · enrich/pin **FAIL** · collapse n100→FULL −0.0316 |
 | **K-FUTURE-WIRE** | **PASS** — n=100 ge3=**0.1500** (15/100) · vs V2 +0.06 · per-brain seed+aux_hint **live** |
@@ -51,6 +52,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-UI-BT-PRELOAD** | 200회 draw-index 프리로드 · init 재진입 갱신 · JS 20260803b | **DONE** · index≈119ms |
 | **K-UI-BT-INSTANT** | 백테 저장분 페이지 즉시 표시 · GET 자동WF 금지 · JS backtest_only | **DONE** · 1100≈86ms |
 | **K-FUTURE-WIRE-REVAL** | 리셋 WF · QUICK200 + FULL1182 · draws 유지·pred/learn 재기입 | patch **PASS** · pin FULL **FAIL** · ge3 0.135/0.1184 |
 | **K-FUTURE-WIRE** | 독립뇌 RNG isolate + aux_hint_native · V2 quota 유지 · n=100 | **PASS** · ge3=**0.1500** (+0.06) |

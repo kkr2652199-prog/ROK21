@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-UI-BT-INSTANT** — 백테 DB 저장→페이지 즉시 반응 · 자동WF 제거 · **live**
-- 직전: K-FUTURE-WIRE-REVAL QUICK0.135 · FULL0.1184 · patch PASS · pin FAIL
+- 지금: **K-UI-BT-PRELOAD** — 200회 draw-index 프리로드·즉시적용 · JS `20260803b` · **live**
+- 직전: K-UI-BT-INSTANT · GET 자동WF 제거
 - 다음: 다음축(pin갭 등) · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
