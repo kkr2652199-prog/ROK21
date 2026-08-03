@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `fa9c2aa` · WORK=`IDLE`
+1. **HEAD:** `9341da3` · WORK=`IDLE`
 2. **지금:** **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE**
 3. **다음1건:** K-BT-PRECISION-BENCH-DONE — 정밀분석 보고·canvas 완료 · P0(eval_mode null병기)/pin갭 등 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-03 | 백테 정밀분석·외부벤치 | WIRE붕괴·best15 null재정합 · 문헌대조 · canvas/보고서 | **ANAL** | pending |
+| 2026-08-03 | 백테 정밀분석·외부벤치 | WIRE붕괴·best15 null재정합 · 문헌대조 · canvas/보고서 | **ANAL** | 9341da3 |
 | 2026-08-03 | 모든DB초기화·백테재실행 | testlotto reset · tail-200 WF · pool 201 · 1210·1235 API OK | **OK** | (미커밋) |
 | 2026-08-03 | backtest 회차 UI붕괴 수정 | draw-index stub 제거 · accordion 통일 · JS 20260803e · 1210 QA OK | **FIX** | e6df388 |
 | 2026-08-03 | 종료체크 commit+push | actuals+pool-index batch · JS 20260803c · draw switch 0-fetch | **DONE** | 710d5a3 |
