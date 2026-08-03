@@ -33,6 +33,11 @@ def combo_to_no(nums: list[int] | tuple[int, ...]) -> int:
     return no
 
 
+def combo_to_rank(nums: list[int] | tuple[int, ...]) -> int:
+    """combo_to_no alias (draw_analysis 호환)."""
+    return combo_to_no(nums)
+
+
 def no_to_combo(no: int) -> tuple[int, ...]:
     """순위 No → 6번호 (오름차순)."""
     n = int(no)

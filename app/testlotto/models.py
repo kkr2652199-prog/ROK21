@@ -259,6 +259,38 @@ def init_testlotto_db():
 
         CREATE INDEX IF NOT EXISTS idx_pool_view_cache_draw
             ON testlotto_pool_view_cache(draw_no);
+
+        -- 814만 극소 확률 번들 catalog (이론 패턴 + 역사 적중)
+        CREATE TABLE IF NOT EXISTS testlotto_rare_bundle_catalog (
+            id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+            pattern_key         TEXT NOT NULL,
+            pattern_label       TEXT NOT NULL,
+            nums_json           TEXT NOT NULL,
+            combo_rank_814      INTEGER NOT NULL,
+            theoretical_count   INTEGER,
+            theoretical_prob    REAL,
+            rarity_score        REAL NOT NULL DEFAULT 0,
+            historical_draw_no  INTEGER,
+            is_ultra_rare       INTEGER NOT NULL DEFAULT 0,
+            refs_json           TEXT,
+            notes               TEXT,
+            created_at          TEXT DEFAULT (datetime('now','localtime'))
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_rare_bundle_pattern ON testlotto_rare_bundle_catalog(pattern_key);
+        CREATE INDEX IF NOT EXISTS idx_rare_bundle_ultra ON testlotto_rare_bundle_catalog(is_ultra_rare);
+        CREATE INDEX IF NOT EXISTS idx_rare_bundle_rank ON testlotto_rare_bundle_catalog(combo_rank_814);
+
+        CREATE TABLE IF NOT EXISTS testlotto_rare_bundle_hits (
+            draw_no             INTEGER PRIMARY KEY,
+            draw_date           TEXT,
+            nums_json           TEXT NOT NULL,
+            combo_rank_814      INTEGER NOT NULL,
+            pattern_keys_json   TEXT NOT NULL,
+            max_consecutive_run INTEGER NOT NULL DEFAULT 1,
+            is_ultra_rare_hit   INTEGER NOT NULL DEFAULT 0,
+            updated_at          TEXT DEFAULT (datetime('now','localtime'))
+        );
     """
     )
     existing_cols = [r[1] for r in conn.execute("PRAGMA table_info(lotto_predictions)").fetchall()]

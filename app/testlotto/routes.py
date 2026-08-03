@@ -224,6 +224,54 @@ async def api_consecutive():
     return analyze_consecutive()
 
 
+@router.get("/rare-bundles/summary")
+async def api_rare_bundles_summary():
+    """814만 극소 번들 catalog 요약."""
+    from app.testlotto.rare_bundle_store import get_pattern_summary
+
+    return {"ok": True, **get_pattern_summary()}
+
+
+@router.get("/rare-bundles/ultra")
+async def api_rare_bundles_ultra(limit: int = 50):
+    """극소스의 극소 번들 catalog (DB)."""
+    from app.testlotto.rare_bundle_store import get_ultra_rare_catalog
+
+    rows = get_ultra_rare_catalog(min(limit, 200))
+    return {"ok": True, "n": len(rows), "items": rows}
+
+
+@router.get("/rare-bundles/hits")
+async def api_rare_bundles_hits(ultra_only: bool = False, limit: int = 100):
+    """당첨번호 중 극소 패턴 적중 회차."""
+    from app.testlotto.models import get_lotto_db, init_testlotto_db
+
+    init_testlotto_db()
+    conn = get_lotto_db()
+    if ultra_only:
+        rows = conn.execute(
+            """
+            SELECT * FROM testlotto_rare_bundle_hits
+            WHERE is_ultra_rare_hit=1
+            ORDER BY max_consecutive_run DESC, draw_no DESC
+            LIMIT ?
+            """,
+            (min(limit, 500),),
+        ).fetchall()
+    else:
+        rows = conn.execute(
+            """
+            SELECT * FROM testlotto_rare_bundle_hits
+            WHERE pattern_keys_json != '[]'
+            ORDER BY draw_no DESC
+            LIMIT ?
+            """,
+            (min(limit, 500),),
+        ).fetchall()
+    conn.close()
+    return {"ok": True, "n": len(rows), "items": [dict(r) for r in rows]}
+
+
 # ═══════════════════════════════════════════
 # 두뇌 예측 + 엘리트 시스템
 # ═══════════════════════════════════════════

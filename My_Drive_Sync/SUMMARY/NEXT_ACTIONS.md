@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BENCH-NULL-BY-EVAL-DONE
-- 할일: eval_mode null 병기 live · signal_repack FAIL(vs 0.3036) · pin갭 다음축 **형 GO 대기**
-- 완료조건: 형 GO
-- 선행완료: bench_quick_gate.null_for_eval_mode · BENCH_PROTOCOL §0.1 · TAIL100 정정
+- ID: K-RARE-BUNDLE-DONE
+- 할일: 극소 번들 API·DB live · pin갭 **형 GO 대기**
+- 완료조건: catalog 213 · ultra 183 DB · `/rare-bundles/*` API
+- 선행완료: K-RARE-BUNDLE-01 · arXiv refs · push
 
 ## WORKSTATE
 IDLE
