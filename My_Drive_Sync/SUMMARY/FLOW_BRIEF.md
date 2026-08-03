@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `37e945b` · WORK=`IDLE`
+- HEAD: `bc34585` · WORK=`IDLE`
 - 지금: **K-UI-BT-PRELOAD** — 200회 draw-index 프리로드·즉시적용 · JS `20260803b` · **live**
 - 직전: K-UI-BT-INSTANT · GET 자동WF 제거
 - BOOT다음: 다음축(pin갭 등) · **형 GO 대기**
