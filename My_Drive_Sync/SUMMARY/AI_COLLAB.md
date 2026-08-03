@@ -24,10 +24,25 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-03 10:20 KST)
-- **HEAD(실측)**: `ae582fb` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-FUTURE-WIRE PASS** — 독립뇌 RNG+aux_hint ge3=**0.1500** (vs V2 +0.06) · **live**
-- **다음(공식)**: FULL 재검증/다음축 · **형 GO 대기**
+### 최신 상태 (2026-08-03 11:30 KST)
+- **HEAD(실측)**: pending · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-FUTURE-WIRE-REVAL** — QUICK ge3=**0.1350** · FULL ge3=**0.1184** · patch>0.09 PASS · pin FULL FAIL
+- **다음(공식)**: 다음축 · **형 GO 대기**
+
+### K-FUTURE-WIRE-REVAL (형 GO · 리셋 WF 재검증)
+근거: `docs/benchmarks/20260803_KFUTURE_WIRE_QUICK200.json` · `..._FULL.json`
+
+| 항목 | QUICK200 | FULL1182 |
+|------|----------|----------|
+| draw | 1035~1234 | 53~1234 |
+| ge3 | **0.1350** (27/200) | **0.1184** (140/1182) |
+| vs n100 0.15 | −0.0150 | −0.0316 |
+| vs pin 0.1447 | −0.0097 | −0.0263 |
+| patch gate (>0.09) | **PASS** | **PASS** |
+| enrich gate | FAIL (p=0.199) | FAIL (pin·p) |
+| reset | pred/learn/review/weights/cache 삭제·재기입 · draws 유지 | 동일 |
+
+**결론:** n100 이득은 유지되나 구간 확대 시 collapse. C-package FULL 0.1015 대비 +0.0169. pin 회복이 다음 후보.
 
 ### K-FUTURE-WIRE (형 GO · PASS · live)
 근거: `docs/benchmarks/20260803_KFUTURE_WIRE_N100.json` · `reports/20260803_KFUTURE_WIRE_N100.md`
@@ -281,6 +296,8 @@ run_coordinated_prediction 진입
 ### 벤치 수치 SSOT (주요 · `docs/benchmarks/*.json`)
 | ID | n | ge3 | 판정 |
 |----|---|-----|------|
+| **K-FUTURE-WIRE-FULL** | 1182 | **0.1184** | patch PASS · pin FAIL · vs C-FULL +0.0169 |
+| **K-FUTURE-WIRE-QUICK200** | 200 | **0.1350** | patch PASS · enrich FAIL |
 | **K-FUTURE-WIRE** | 100 | **0.1500** | **PASS** · +0.06 vs V2 · **live** |
 | **K-FUSION-INNOVATION** | **FAIL** — conf bucket+AUX reweight n=100 ge3=**0.0900** · vs V2 +0 · **rolled back** |
 | K-QUOTA-MARKOV80-REV2 | 100 | **0.0900** (floor 4/5) | **FAIL** → V2 대체 |

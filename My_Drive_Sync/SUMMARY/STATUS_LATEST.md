@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-03 KST  
-📌 사유: **K-FUTURE-WIRE PASS** — 독립뇌 RNG+aux_hint_native ge3=**0.1500** · vs V2 **+0.0600** · **live**
+📌 사유: **K-FUTURE-WIRE-REVAL** — QUICK ge3=**0.1350** · FULL ge3=**0.1184** · patch>0.09 PASS · pin FULL FAIL
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-FUTURE-WIRE-REVAL** | QUICK**0.1350**(27/200) · FULL**0.1184**(140/1182) · patch PASS · enrich/pin **FAIL** · collapse n100→FULL −0.0316 |
 | **K-FUTURE-WIRE** | **PASS** — n=100 ge3=**0.1500** (15/100) · vs V2 +0.06 · per-brain seed+aux_hint **live** |
 | **K-FUSION-INNOVATION** | **FAIL** — n=100 ge3=**0.0900** · vs V2 +0 · INNOVATION 롤백 |
 | **K-FUSION-DYNAMIC-V2** | **FAIL(1bp)** — solo×ref quota ge3=**0.0900** · plan 4/0/1 · FUTURE-WIRE에 흡수 |
@@ -49,6 +50,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-FUTURE-WIRE-REVAL** | 리셋 WF · QUICK200 + FULL1182 · draws 유지·pred/learn 재기입 | patch **PASS** · pin FULL **FAIL** · ge3 0.135/0.1184 |
 | **K-FUTURE-WIRE** | 독립뇌 RNG isolate + aux_hint_native · V2 quota 유지 · n=100 | **PASS** · ge3=**0.1500** (+0.06) |
 | **K-NEW-ENGINE-STAT-A1** | stat_brain engine v2 dual-window+cycle gap · solo n=200 A/B | **PASS** · ge3 0.1350=0.1350 · ENGINE_V2=False |
 | **K-BRAIN-TUNE-SURVEY** | P0 wire · P1 look_back · P2 hint_weight FULL n=1182 · best_combo | **SURVEY OK** · ge3=0.1032 · HOLD |

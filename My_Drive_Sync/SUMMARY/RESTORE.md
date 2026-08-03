@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7025db1` · WORK=`IDLE`
-2. **지금:** **K-FUTURE-WIRE** — 독립뇌 RNG+aux_hint ge3=**0.1500** PASS(+0.06) · **live**
-3. **다음1건:** K-FUTURE-WIRE-DONE — 독립뇌 RNG+aux_hint_native ge3=**0.1500** PASS(+0.06 vs V2) · live 유지 · 다음 축(FULL 재검증/형 방향) **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `84d9b70` · WORK=`IDLE`
+2. **지금:** **K-FUTURE-WIRE-REVAL** — QUICK**0.1350** · FULL**0.1184** · patch PASS · pin FAIL · **live**
+3. **다음1건:** K-FUTURE-WIRE-REVAL-DONE — QUICK200 ge3=**0.1350** · FULL ge3=**0.1184** · patch>0.09 PASS · pin FULL FAIL · collapse −0.03 · 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-03 | 재검증 진행 GO | 리셋 WF · QUICK200 ge3=0.1350 · FULL ge3=0.1184 · patch PASS · pin FAIL | **REVAL** | pending |
 | 2026-08-03 | 제자리분석→패치 GO | K-FUTURE-WIRE · 독립뇌 RNG+aux_hint · smoke PASS · n=100 ge3=0.1500 | **PASS** | ae582fb |
 | 2026-08-03 | K-FUSION-INNOVATION GO | conf bucket+AUX reweight · smoke PASS · n=100 ge3=0.0900 tie · INNOVATION 롤백 | **FAIL** | dcc20b3 |
 | 2026-08-03 | 젠스파크 동기화 GO | 20260803 보고서 · AI_COLLAB §3·§6 · RESTORE commit열 | **DOC** | 8b20473 |
@@ -45,7 +46,6 @@
 | 2026-08-01 | K-ENGINE-PHASE1 GO | B1 rollback · window100 solo FAIL ge3=0.0850 · window 롤백 | **FAIL** | 82b9356 |
 | 2026-08-01 | K-BRAIN-SIGNAL-A1 GO | pattern_signal.py 신규 · coordinator conf blend 85/15 · smoke 1225~1234 OK · engine 미변경 | **PASS** | uncommitted |
 | 2026-08-01 | K-HIGHWAY-BACKTEST-100 GO | n=100 draw1135~1234 · overall ge3=0.0600 · baseline −0.0415 · learn adj 누적 OK | **FAIL** | pending |
-| 2026-08-01 | K-HIGHWAY-QUOTA GO | dynamic_brain_quota · referee 가중 5장 · min1/뇌 · PHASE1 COMPLETE | **OK** | pending |
 
 ---
 
