@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c1ba20c` · WORK=`IDLE`
+1. **HEAD:** `4becae8` · WORK=`IDLE`
 2. **지금:** **K-BENCH-NULL-BY-EVAL** — eval_mode별 null 병기 · enrich_metrics · TAIL100 정정 · **live**
 3. **다음1건:** K-BENCH-NULL-BY-EVAL-DONE — eval_mode null 병기 live · signal_repack FAIL(vs 0.3036) · pin갭 다음축 **형 GO 대기** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-03 | 다음 진행(P0) | K-BENCH-NULL-BY-EVAL · eval_mode null · repack FAIL 정정 | **DONE** | pending |
+| 2026-08-03 | 다음 진행(P0) | K-BENCH-NULL-BY-EVAL · eval_mode null · repack FAIL 정정 | **DONE** | 4becae8 |
 | 2026-08-03 | 종료체크 commit+push | TAIL100보고서·KSIGNAL JSON n=200 동기 · DB리셋보고서 | **DONE** | dabd848 |
 | 2026-08-03 | 백테 정밀분석·외부벤치 | WIRE붕괴·best15 null재정합 · 문헌대조 · canvas/보고서 | **ANAL** | 9341da3 |
 | 2026-08-03 | 모든DB초기화·백테재실행 | testlotto reset · tail-200 WF · pool 201 · 1210·1235 API OK | **OK** | (미커밋) |
@@ -46,8 +46,6 @@
 | 2026-08-03 | 재검증 진행 GO | 리셋 WF · QUICK200 ge3=0.1350 · FULL ge3=0.1184 · patch PASS · pin FAIL | **REVAL** | 144461e |
 | 2026-08-03 | 제자리분석→패치 GO | K-FUTURE-WIRE · 독립뇌 RNG+aux_hint · smoke PASS · n=100 ge3=0.1500 | **PASS** | ae582fb |
 | 2026-08-03 | K-FUSION-INNOVATION GO | conf bucket+AUX reweight · smoke PASS · n=100 ge3=0.0900 tie · INNOVATION 롤백 | **FAIL** | dcc20b3 |
-| 2026-08-03 | 젠스파크 동기화 GO | 20260803 보고서 · AI_COLLAB §3·§6 · RESTORE commit열 | **DOC** | 8b20473 |
-| 2026-08-02 | K-FUSION-DYNAMIC-V2 GO | solo×ref quota · referee-only 0.06→solo prior 0.09 · plan 4/0/1 · gate FAIL 1bp | **FAIL** | f97312c |
 
 ---
 

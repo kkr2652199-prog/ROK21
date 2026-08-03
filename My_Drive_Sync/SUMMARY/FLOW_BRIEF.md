@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c1ba20c` · WORK=`IDLE`
+- HEAD: `4becae8` · WORK=`IDLE`
 - 지금: **K-BENCH-NULL-BY-EVAL** — eval_mode별 null 병기 · enrich_metrics · TAIL100 정정 · **live**
 - 직전: K-BT-PRECISION-BENCH 정밀분석
 - BOOT다음: pin갭(FULL0.1184→0.1447) **형 GO 대기**
