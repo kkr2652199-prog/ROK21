@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `9341da3` · WORK=`IDLE`
+- HEAD: `dabd848` · WORK=`IDLE`
 - 지금: **K-BT-PRECISION-BENCH** — BT200/WIRE 정밀분석 · 외부문헌 대조 · canvas · **DONE**
 - 직전: K-DB-RESET-BT200 · tail-200 WF · pool 201
 - BOOT다음: eval_mode null 병기·pin갭 등 **형 GO 대기**
