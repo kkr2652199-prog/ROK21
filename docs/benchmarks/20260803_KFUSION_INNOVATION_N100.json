@@ -1,0 +1,100 @@
+{
+  "id": "K-FUSION-INNOVATION",
+  "ts": "2026-08-03T00:47:30+00:00",
+  "seed": 42,
+  "draw_range": [
+    1135,
+    1234
+  ],
+  "pipeline": "V2 quota + conf-desc bucket + AUX reweight",
+  "config": {
+    "AUX_WEIGHTS": [
+      0.2,
+      0.35,
+      0.1,
+      0.35
+    ],
+    "bucket_sort": "confidence_desc",
+    "SOLO_GE3_PRIORS": {
+      "stat": 0.09,
+      "markov": 0.13,
+      "review": 0.11
+    },
+    "QUOTA_DOMINANCE_FLOOR": 1.15,
+    "QUOTA_ADAPTIVE_MIN_EACH": 0,
+    "BENCH_FIXED_QUOTA": null
+  },
+  "references": {
+    "v2_baseline_ge3": 0.09,
+    "pass_threshold": 0.09
+  },
+  "overall": {
+    "n": 100,
+    "mean": 1.7,
+    "ge3_rate": 0.09,
+    "ge3_count": 9,
+    "delta_ge3_vs_null": -0.0237,
+    "delta_ge3_vs_pin": -0.0547,
+    "p_value": 0.815343,
+    "verdict": "FAIL",
+    "mean_match": 1.7,
+    "n_eval": 100
+  },
+  "by_period": {
+    "early": {
+      "n": 25,
+      "mean": 1.76,
+      "ge3_rate": 0.12,
+      "ge3_count": 3,
+      "delta_ge3_vs_null": 0.0063,
+      "delta_ge3_vs_pin": -0.0247,
+      "p_value": 0.552625,
+      "verdict": "FAIL",
+      "mean_match": 1.76,
+      "n_eval": 25
+    },
+    "mid": {
+      "n": 25,
+      "mean": 1.6,
+      "ge3_rate": 0.04,
+      "ge3_count": 1,
+      "delta_ge3_vs_null": -0.0737,
+      "delta_ge3_vs_pin": -0.1047,
+      "p_value": 0.951076,
+      "verdict": "FAIL",
+      "mean_match": 1.6,
+      "n_eval": 25
+    },
+    "late": {
+      "n": 50,
+      "mean": 1.72,
+      "ge3_rate": 0.1,
+      "ge3_count": 5,
+      "delta_ge3_vs_null": -0.0137,
+      "delta_ge3_vs_pin": -0.0447,
+      "p_value": 0.685658,
+      "verdict": "FAIL",
+      "mean_match": 1.72,
+      "n_eval": 50
+    }
+  },
+  "quota_stats": {
+    "counts": {
+      "markov": 400,
+      "review": 100
+    },
+    "avg_pct": {
+      "stat": 0.0,
+      "markov": 80.0,
+      "review": 20.0
+    },
+    "markov_ge4_plan_rate": 1.0
+  },
+  "verdict": "FAIL",
+  "pass": false,
+  "rolled_back": true,
+  "rollback_note": "INNOVATION 2곳 롤백 · V2 SOLO_GE3_PRIORS quota 유지",
+  "gate": {
+    "null_ge3": 0.1137
+  }
+}

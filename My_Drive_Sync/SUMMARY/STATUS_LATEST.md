@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-02 KST  
-📌 사유: **K-FUSION-DYNAMIC-V2 FAIL(1bp)** — solo×ref quota ge3=**0.0900** · referee-only 0.06 대비 +0.03 · gate >0.09 tie
+📅 최종 갱신: 2026-08-03 KST  
+📌 사유: **K-FUSION-INNOVATION FAIL** — conf bucket+AUX reweight ge3=**0.0900** · vs V2 +0 · **rolled back**
 
 ---
 
@@ -10,7 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-FUSION-DYNAMIC-V2** | **FAIL(1bp)** — solo×ref quota n=100 ge3=**0.0900** · plan 4/0/1 · vs fixed quota60 +0.01 · live 후보 |
+| **K-FUSION-INNOVATION** | **FAIL** — n=100 ge3=**0.0900** · vs V2 +0 · INNOVATION 롤백 · V2 live |
+| **K-FUSION-DYNAMIC-V2** | **FAIL(1bp)** — solo×ref quota ge3=**0.0900** · plan 4/0/1 · **live** |
 | **K-SIGNAL-BACKTEST-TAIL100** | **DONE** — tail n=100 seed=42 · repack ge3=**0.23**(23) run_id=**3** · combined ge3=**0.15**(15) run_id=**4** · 기존 backtest 2건 유지 |
 | **TESTLOTTO UI+DB** | **DONE** — 「🎯 3뇌 예측」단일 · backtest 회차 pool auto-WF · `PATCH_PINS.md` |
 | K-SIGNAL-REPACK-01 | **DONE** — 신호 몰아주기 **3등 1회(r3=1)** · top5 ge3=**0.085** · combined=**0.145** · **5장 공정 FAIL** |

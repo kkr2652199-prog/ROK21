@@ -24,10 +24,26 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-03 09:40 KST)
-- **HEAD(실측)**: `f97312c` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-FUSION-DYNAMIC-V2 FAIL(1bp)** — solo×ref quota ge3=**0.0900** · gate >0.09 tie · **SOLO_GE3_PRIORS live**
-- **다음(공식)**: ge3 0.09+ 경로(aux/wire/gate) · **형 GO 대기**
+### 최신 상태 (2026-08-03 09:50 KST)
+- **HEAD(실측)**: pending commit · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-FUSION-INNOVATION FAIL** — conf bucket+AUX reweight ge3=**0.0900** (vs V2 +0) · **INNOVATION 롤백** · **V2 live**
+- **다음(공식)**: ge3 0.09+ 추가 경로 · **형 GO 대기**
+
+### K-FUSION-INNOVATION (형 GO · FAIL · rolled back)
+근거: `docs/benchmarks/20260803_KFUSION_INNOVATION_N100.json` · `reports/20260803_KFUSION_INNOVATION_N100.md`
+
+| 항목 | 값 |
+|------|-----|
+| 변경 (1) | bucket **confidence desc** (기존 set_no asc) |
+| 변경 (2) | AUX_WEIGHTS **[0.20, 0.35, 0.10, 0.35]** |
+| smoke 1230~1234 | **PASS** (5장 ×5 · plan 4/0/1) |
+| n=100 ge3 | **0.0900** (9/100) |
+| vs V2 baseline | **+0.0000** (tie) |
+| by_period | early **0.1200** · mid **0.0400** · late **0.1000** |
+| gate | ge3 **>** 0.0900 → **FAIL** |
+| rollback | INNOVATION 2곳 **롤백** · V2 SOLO_GE3_PRIORS **유지** |
+
+**결론:** aux/wire 단독 조정으로 ge3 벽 미돌파 · K-AUX-DIAG 예상(ge3 quota 지배) 재확인 · **형 GO 대기**
 
 ### K-FUSION-DYNAMIC-V2 (형 GO · FAIL(1bp) · live)
 근거: `docs/benchmarks/20260802_KFUSION_DYNAMIC_V2_N100.json` · `reports/20260802_KFUSION_DYNAMIC_V2_N100.md`
@@ -248,7 +264,7 @@ run_coordinated_prediction 진입
 ### 벤치 수치 SSOT (주요 · `docs/benchmarks/*.json`)
 | ID | n | ge3 | 판정 |
 |----|---|-----|------|
-| **K-FUSION-DYNAMIC-V2** | 100 | **0.0900** (solo×ref live) | **FAIL**(1bp) |
+| **K-FUSION-INNOVATION** | **FAIL** — conf bucket+AUX reweight n=100 ge3=**0.0900** · vs V2 +0 · **rolled back** |
 | K-QUOTA-MARKOV80-REV2 | 100 | **0.0900** (floor 4/5) | **FAIL** → V2 대체 |
 | **K-AUX-DIAG** | 100 | **0.0800** (전 시나리오 동일) | **DONE** |
 | K-FUSION-QUOTA-FIX | 100 | **0.0800** | **FAIL** (>0.09) |

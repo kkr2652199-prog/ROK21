@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-03 | K-FUSION-INNOVATION GO | conf bucket+AUX reweight · smoke PASS · n=100 ge3=0.0900 tie · INNOVATION 롤백 | **FAIL** | pending |
 | 2026-08-03 | 젠스파크 동기화 GO | 20260803 보고서 · AI_COLLAB §3·§6 · RESTORE commit열 | **DOC** | 8b20473 |
 | 2026-08-02 | K-FUSION-DYNAMIC-V2 GO | solo×ref quota · referee-only 0.06→solo prior 0.09 · plan 4/0/1 · gate FAIL 1bp | **FAIL** | f97312c |
 | 2026-08-01 | K-QUOTA-MARKOV80-REV2 GO | floor 4/5 · smoke PASS · n=100 ge3=0.0900 quota 80/20/0 · gate FAIL · rollback | **FAIL** | 289f4b1 |
