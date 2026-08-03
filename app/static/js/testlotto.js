@@ -515,7 +515,7 @@ function _testlottoStubRowsForDraw(drawNo, actualRef) {
   return [row];
 }
 
-/** 회차 전환 — hero + DB 캐시 hit 즉시 표시 · miss 시 빈 상태(계산 안 함) */
+/** 회차 전환 — hero + DB 캐시/백테 요약 즉시 표시 · 무거운 계산은 버튼만 */
 async function testlottoShowDrawContext(drawNo) {
   const d = parseInt(drawNo, 10);
   const container = document.getElementById('testlottoPredictionResults');
@@ -535,10 +535,10 @@ async function testlottoShowDrawContext(drawNo) {
   _testlottoDetailRows = _testlottoStubRowsForDraw(d, actualRef);
 
   let poolView = _testlottoPoolViewMemCache.get(d) || null;
-  if (!poolView || !poolView.ok) {
+  if (!poolView || !(poolView.ok || poolView.backtest_only)) {
     try {
       const fetched = await _fetchPoolView(d, { cacheOnly: true });
-      if (fetched && fetched.ok) {
+      if (fetched && (fetched.ok || fetched.backtest_only)) {
         poolView = fetched;
       } else {
         poolView = null;
@@ -555,6 +555,21 @@ async function testlottoShowDrawContext(drawNo) {
 
   if (poolView && poolView.ok) {
     await renderPredictionsByBrain(d, _testlottoDetailRows, { poolView, skipPoolFetch: true });
+    loadTestlottoWarrantPanel(d);
+    return;
+  }
+
+  // 백테 DB 저장분 — 즉시 요약 표시 (자동 WF 없음)
+  if (poolView && poolView.backtest_only) {
+    await renderTestlottoDrawHero(d, null, actualRef);
+    const ms = poolView.cache_ms != null ? ` · ${poolView.cache_ms}ms` : '';
+    container.innerHTML =
+      `<p class="testlotto-cache-note" role="status">백테스트 DB 저장됨 · 즉시 표시${ms}</p>` +
+      _testlottoRenderBacktestFallbackHtml(d, poolView.backtest_summaries || []) +
+      '<div class="testlotto-predict-empty">' +
+      '<p class="testlotto-predict-empty__msg">pool 10+5 상세는 「3뇌 예측」으로 계산합니다</p>' +
+      '<button type="button" class="btn btn-primary testlotto-predict-empty__btn" onclick="testlottoRunPoolPredict()">🎯 3뇌 예측</button>' +
+      '</div>';
     loadTestlottoWarrantPanel(d);
     return;
   }
@@ -1161,7 +1176,7 @@ async function _fetchPoolView(drawNo, options) {
 
   if (!forceRefresh) {
     const mem = _testlottoPoolViewMemCache.get(drawNo);
-    if (mem && mem.ok) {
+    if (mem && (mem.ok || mem.backtest_only)) {
       return { ...mem, from_mem: true };
     }
   }
@@ -1182,7 +1197,7 @@ async function _fetchPoolView(drawNo, options) {
     throw new Error(String(pr.status));
   }
   const data = await pr.json();
-  if (data && data.ok) {
+  if (data && (data.ok || data.backtest_only)) {
     _testlottoPoolViewMemCache.set(drawNo, data);
   } else if (cacheOnly && data && data.cache_miss && !data.backtest_only) {
     return data;
@@ -1195,7 +1210,7 @@ function _testlottoRenderBacktestFallbackHtml(drawNo, summaries) {
     return '<p style="color:#888;padding:8px;">pool 데이터 없음</p>';
   }
   let html =
-    `<p class="testlotto-backtest-fallback-note">${drawNo}회차 · 백테스트 기록 있음 · pool 캐시 로드 중…</p>` +
+    `<p class="testlotto-backtest-fallback-note">${drawNo}회차 · 백테스트 DB 저장됨 · 즉시 표시 (pool 상세는 예측 버튼)</p>` +
     '<table class="testlotto-backtest-table testlotto-backtest-table--draws"><thead><tr>' +
     '<th>전략</th><th>최고 적중</th><th>등수</th></tr></thead><tbody>';
   summaries.forEach((s) => {

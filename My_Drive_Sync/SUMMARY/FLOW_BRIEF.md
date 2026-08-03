@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e3214c7` · WORK=`IDLE`
-- 지금: **K-FUTURE-WIRE-REVAL** — QUICK**0.1350** · FULL**0.1184** · patch PASS · pin FAIL · **live**
-- 직전: K-FUTURE-WIRE n100 ge3=0.1500 PASS · 독립뇌 RNG+aux_hint
-- BOOT다음: 다음축( pin갭/페이지리셋 등) · **형 GO 대기**
-- NEXT1: K-FUTURE-WIRE-REVAL-DONE — QUICK200 ge3=**0.1350** · FULL ge3=**0.1184** · patch>0.09 PASS · pin FULL FAIL · collapse −0.03 · 다음축 **형 GO 대기** (승인=미확인)
+- HEAD: `bc801e4` · WORK=`IDLE`
+- 지금: **K-UI-BT-INSTANT** — 백테 DB 저장→페이지 즉시 반응 · 자동WF 제거 · **live**
+- 직전: K-FUTURE-WIRE-REVAL QUICK0.135 · FULL0.1184 · patch PASS · pin FAIL
+- BOOT다음: 다음축(pin갭 등) · **형 GO 대기**
+- NEXT1: K-UI-BT-INSTANT-DONE — 백테 DB→페이지 즉시 반응 live · QUICK/FULL reval 유지 · 다음축(pin갭 등) **형 GO 대기** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

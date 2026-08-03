@@ -235,7 +235,11 @@ async def api_predict_pool_view(
     refresh: bool = False,
     compute: bool = False,
 ):
-    """10세트 pool + 5 몰아주기 (뇌별). 기본=DB 캐시 · 백테스트 회차는 cache miss 시 자동 WF."""
+    """10세트 pool + 5 몰아주기 (뇌별).
+
+    기본 GET=DB 캐시 즉시 · 백테 DB면 요약 즉시(자동 WF 금지).
+    상세 계산은 ``compute=1`` / ``refresh=1`` 만.
+    """
     import time
 
     from app.testlotto.pool_view_cache import get_or_build_pool_view, resolve_pool_view_for_ui

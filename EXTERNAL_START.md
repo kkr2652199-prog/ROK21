@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `e3214c7` |
+| HEAD(실측) | `bc801e4` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-FUTURE-WIRE-REVAL** — QUICK**0.1350** · FULL**0.1184** · patch PASS · pin FAIL · **live** |
-| 직전 | K-FUTURE-WIRE n100 ge3=0.1500 PASS · 독립뇌 RNG+aux_hint |
-| BOOT다음 | 다음축( pin갭/페이지리셋 등) · **형 GO 대기** |
-| NEXT1 ID | **K-FUTURE-WIRE-REVAL-DONE** |
-| NEXT1 할일 | QUICK200 ge3=**0.1350** · FULL ge3=**0.1184** · patch>0.09 PASS · pin FULL FAIL · collapse −0.03 · 다음축 **형 GO 대기** |
+| 지금 | **K-UI-BT-INSTANT** — 백테 DB 저장→페이지 즉시 반응 · 자동WF 제거 · **live** |
+| 직전 | K-FUTURE-WIRE-REVAL QUICK0.135 · FULL0.1184 · patch PASS · pin FAIL |
+| BOOT다음 | 다음축(pin갭 등) · **형 GO 대기** |
+| NEXT1 ID | **K-UI-BT-INSTANT-DONE** |
+| NEXT1 할일 | 백테 DB→페이지 즉시 반응 live · QUICK/FULL reval 유지 · 다음축(pin갭 등) **형 GO 대기** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=e3214c7 · 지금=**K-FUTURE-WIRE-REVAL** — QUICK**0.1350** · FULL**0.1184** · patch PASS · pin FAIL · **live** · 다음=K-FUTURE-WIRE-REVAL-DONE`
+1. 첫줄 `[복귀] HEAD=bc801e4 · 지금=**K-UI-BT-INSTANT** — 백테 DB 저장→페이지 즉시 반응 · 자동WF 제거 · **live** · 다음=K-UI-BT-INSTANT-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: e3214c7_
+_generated: bc801e4_

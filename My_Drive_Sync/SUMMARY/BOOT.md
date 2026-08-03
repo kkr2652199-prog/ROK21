@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-FUTURE-WIRE-REVAL** — QUICK**0.1350** · FULL**0.1184** · patch PASS · pin FAIL · **live**
-- 직전: K-FUTURE-WIRE n100 ge3=0.1500 PASS · 독립뇌 RNG+aux_hint
-- 다음: 다음축( pin갭/페이지리셋 등) · **형 GO 대기**
+- 지금: **K-UI-BT-INSTANT** — 백테 DB 저장→페이지 즉시 반응 · 자동WF 제거 · **live**
+- 직전: K-FUTURE-WIRE-REVAL QUICK0.135 · FULL0.1184 · patch PASS · pin FAIL
+- 다음: 다음축(pin갭 등) · **형 GO 대기**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

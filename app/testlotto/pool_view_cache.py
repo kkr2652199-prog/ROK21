@@ -187,7 +187,11 @@ def resolve_pool_view_for_ui(
     force_refresh: bool = False,
     allow_compute: bool = False,
 ) -> dict[str, Any]:
-    """UI GET용 — 캐시 hit · 백테스트 회차 자동 WF · 그 외 cache_miss."""
+    """UI GET용 — 캐시 hit 즉시 · 백테 DB면 요약 즉시 · 계산은 compute/refresh만.
+
+    K-UI-BT-INSTANT: 브라우즈 GET에서 백테 회차 자동 WF 금지 (회차당 수십 초 hang 제거).
+    pool 10+5 상세 계산은 ``compute=1`` / ``refresh=1`` / 「3뇌 예측」만.
+    """
     from app.testlotto.backtest_store import get_backtest_summaries_for_draw, is_draw_backtested
 
     t0 = time.perf_counter()
@@ -197,7 +201,8 @@ def resolve_pool_view_for_ui(
             cached["cache_ms"] = round((time.perf_counter() - t0) * 1000, 1)
             return cached
 
-    if force_refresh or allow_compute or is_draw_backtested(target_draw_no):
+    # 명시 계산만 무거운 WF 허용
+    if force_refresh or allow_compute:
         out = get_or_build_pool_view(target_draw_no, force_refresh=force_refresh)
         if out.get("ok"):
             return out
@@ -209,10 +214,23 @@ def resolve_pool_view_for_ui(
                     "backtest_only": True,
                     "target_draw_no": target_draw_no,
                     "backtest_summaries": summaries,
-                    "message": "pool 캐시 없음 · 백테스트 요약만 표시",
+                    "message": "pool 계산 실패 · 백테스트 요약만 표시",
                     "cache_ms": round((time.perf_counter() - t0) * 1000, 1),
                 }
         return out
+
+    # 수동 브라우즈: DB에 백테 기록이 있으면 즉시 요약 (자동 WF 없음)
+    if is_draw_backtested(target_draw_no):
+        summaries = get_backtest_summaries_for_draw(target_draw_no)
+        if summaries:
+            return {
+                "ok": False,
+                "backtest_only": True,
+                "target_draw_no": target_draw_no,
+                "backtest_summaries": summaries,
+                "message": "백테스트 DB 저장됨 · 즉시 표시 (pool은 예측 버튼)",
+                "cache_ms": round((time.perf_counter() - t0) * 1000, 1),
+            }
 
     return {
         "ok": False,

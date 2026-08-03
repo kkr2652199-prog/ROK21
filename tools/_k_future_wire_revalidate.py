@@ -75,7 +75,10 @@ def _apply_production_flags() -> None:
 
 
 def reset_backtest_tables() -> None:
-    """당첨 lotto_draws 유지 · pred/learn/review/weights 리셋 후 재기입."""
+    """당첨 lotto_draws·pool UI 캐시 유지 · pred/learn/review/weights만 리셋 후 재기입.
+
+    K-UI-BT-INSTANT: pool_view_cache 삭제 금지 — 페이지가 백테 직후에도 즉시 반응.
+    """
     init_lotto_db()
     conn = get_lotto_db()
     try:
@@ -85,21 +88,6 @@ def reset_backtest_tables() -> None:
         conn.execute(
             "UPDATE testlotto_brain_weights SET current_weight=1.0, recent_avg_match=0, "
             "total_predictions=0, total_matches=0, last_updated_draw=0"
-        )
-        try:
-            conn.execute("DELETE FROM testlotto_pool_view_cache")
-        except Exception:
-            pass
-        conn.commit()
-    finally:
-        conn.close()
-
-
-def _cleanup_predictions(lo: int, hi: int) -> None:
-    conn = get_lotto_db()
-    try:
-        conn.execute(
-            "DELETE FROM lotto_predictions WHERE target_draw_no BETWEEN ? AND ?", (lo, hi)
         )
         conn.commit()
     finally:
@@ -215,7 +203,7 @@ def run_backtest(mode: str) -> dict[str, Any]:
         if (idx + 1) % step == 0 or idx + 1 == total:
             print(f"  [{idx + 1}/{total}] draw={draw_no} best={best}", flush=True)
 
-    _cleanup_predictions(lo, hi)
+    # UI 즉시 반응: WF로 재기입한 lotto_predictions 유지 (삭제하지 않음)
     o = _summarize(overall, gate_mode)
     ge3 = float(o["ge3_rate"])
     qt = sum(quota_counter.values()) or 1
@@ -239,8 +227,9 @@ def run_backtest(mode: str) -> dict[str, Any]:
             "learn_state": True,
             "brain_review": True,
             "brain_weights": True,
-            "pool_view_cache": True,
+            "pool_view_cache": False,
             "lotto_draws": False,
+            "keep_predictions_after_wf": True,
         },
         "config": {
             "BUCKET_SELECT_MODE": BUCKET_SELECT_MODE,
@@ -294,8 +283,8 @@ def write_report(
         "",
         "## reset",
         "",
-        "- lotto_predictions / learn_state / brain_review / weights / pool cache **삭제 후 재기입**",
-        "- lotto_draws(당첨) **유지**",
+        "- lotto_predictions / learn_state / brain_review / weights **삭제 후 재기입·유지**",
+        "- pool_view_cache · lotto_draws **유지** (페이지 즉시 반응)",
         "",
         "## quota avg %",
         "",
