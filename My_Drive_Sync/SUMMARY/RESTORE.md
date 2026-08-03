@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a15672a` · WORK=`IDLE`
-2. **지금:** **K-RARE-APPLY-ANAL** — 극소번들 수학검증 · wire HOLD · 1D/2D/3D안 · **DONE**
-3. **다음1건:** K-RARE-APPLY-ANAL-DONE — 극소번들 wire HOLD 확정 · 다음 A1(UI고지) 또는 pin갭 **형 GO 대기** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `59cb765` · WORK=`IDLE`
+2. **지금:** **K-RARE-NESTED** — 극소의극소·역이용·뇌이식 설계 · 돌파=목적재정의 · **DONE**
+3. **다음1건:** K-RARE-NESTED-DONE — 중첩희귀·역이용 분석 완료 · 다음 B1(1D로그)/B2(mild-consec)/pin갭 **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-03 | 극소의극소·역이용·814만돌파 | L0~L3·실측·covering/EV문헌 · 뇌이식안 · wire HOLD | **ANAL** | pending |
 | 2026-08-03 | 극소번들 적용분석·1D2D3D | 수학검증 wire HOLD · canvas/보고서 · A1/pin 권고 | **ANAL** | 726d7be |
 | 2026-08-03 | 814만 극소번호번들 | catalog 213 · ultra 183 · hits 1235 · API 3종 | **DONE** | 796c92c |
 | 2026-08-03 | 다음 진행(P0) | K-BENCH-NULL-BY-EVAL · eval_mode null · repack FAIL 정정 | **DONE** | 4becae8 |
@@ -45,7 +46,6 @@
 | 2026-08-03 | 서버 종료후 재가동 | 7021 kill→run_v13 · home=200 · draw-index n=200 | **OK** | cc05d38 |
 | 2026-08-03 | 200회DB즉시적용·버그확인 GO | draw-index 프리로드 · init수정 · JS 20260803b · 서버재기동 | **DONE** | 37e945b |
 | 2026-08-03 | 백테DB→즉시반응 GO | K-UI-BT-INSTANT · GET 자동WF 제거 · backtest_only 즉시 · 1100≈86ms | **DONE** | 6536464 |
-| 2026-08-03 | 재검증 진행 GO | 리셋 WF · QUICK200 ge3=0.1350 · FULL ge3=0.1184 · patch PASS · pin FAIL | **REVAL** | 144461e |
 
 ---
 

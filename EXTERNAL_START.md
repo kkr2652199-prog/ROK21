@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `a15672a` |
+| HEAD(실측) | `59cb765` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-RARE-APPLY-ANAL** — 극소번들 수학검증 · wire HOLD · 1D/2D/3D안 · **DONE** |
-| 직전 | K-RARE-BUNDLE catalog 213 · ultra 183 API |
-| BOOT다음 | A1 UI고지 또는 pin갭 **형 GO 대기** |
-| NEXT1 ID | **K-RARE-APPLY-ANAL-DONE** |
-| NEXT1 할일 | 극소번들 wire HOLD 확정 · 다음 A1(UI고지) 또는 pin갭 **형 GO 대기** |
+| 지금 | **K-RARE-NESTED** — 극소의극소·역이용·뇌이식 설계 · 돌파=목적재정의 · **DONE** |
+| 직전 | K-RARE-APPLY-ANAL wire HOLD |
+| BOOT다음 | B1 feature로그 / B2 mild-consec / pin갭 **형 GO** |
+| NEXT1 ID | **K-RARE-NESTED-DONE** |
+| NEXT1 할일 | 중첩희귀·역이용 분석 완료 · 다음 B1(1D로그)/B2(mild-consec)/pin갭 **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=a15672a · 지금=**K-RARE-APPLY-ANAL** — 극소번들 수학검증 · wire HOLD · 1D/2D/3D안 · **DONE** · 다음=K-RARE-APPLY-ANAL-DONE`
+1. 첫줄 `[복귀] HEAD=59cb765 · 지금=**K-RARE-NESTED** — 극소의극소·역이용·뇌이식 설계 · 돌파=목적재정의 · **DONE** · 다음=K-RARE-NESTED-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: a15672a_
+_generated: 59cb765_

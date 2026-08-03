@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-03 KST  
-📌 사유: **K-RARE-APPLY-ANAL** — 814만 극소번들 적용여부 · 수학/문헌 · 1D·2D·3D · wire HOLD
+📌 사유: **K-RARE-NESTED** — 극소의극소·리스크역이용·뇌이식 블루프린트 · 814만「돌파」목적재정의
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-RARE-NESTED** | **DONE** — L0~L3 · 실측연속쌍0.517·3홀3짝0.334 · 역이용=mild구조+비인기EV+covering · `reports/20260803_KRARE_NESTED_BREAKTHROUGH.md` |
 | **K-RARE-APPLY-ANAL** | **DONE** — 구조희귀≠당첨확률 · ultra wire HOLD · A1 UI / A4 pin갭 권고 · `reports/20260803_KRARE_APPLY_ANALYSIS.md` |
 | **K-RARE-BUNDLE** | **DONE** — catalog 213 · ultra 183 · hits 1235 · API live · `796c92c` |
 | **K-BENCH-NULL-BY-EVAL** | **DONE** — `null_for_eval_mode` · enrich_metrics(eval_mode) · BENCH §0.1 · signal_repack ge3=0.275 vs null15=0.3036 **FAIL** · combined 0.145 vs null5 **PASS** |
