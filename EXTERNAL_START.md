@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `bc2f5bb` |
+| HEAD(실측) | `a3d1efa` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-COVER-DIAG** — 중복+cold-free · **NORMAL/IMPROVE** |
-| 직전 | K-COLD-EXCLUDE-DIAG |
-| BOOT다음 | 각도3(early) · **형 GO** |
-| NEXT1 ID | **K-COVER-DIAG-DONE** |
-| NEXT1 할일 | covering 진단 완료 · 결과 확인 · **각도3(early 취약성) 진행** |
+| 지금 | **K-EARLY-DIAG** — early 취약성 · **STRUCTURAL** |
+| 직전 | K-COVER-DIAG |
+| BOOT다음 | K-NEIGHBOR-MATCH · **형 GO** |
+| NEXT1 ID | **K-EARLY-DIAG-DONE** |
+| NEXT1 할일 | early 취약성 진단 완료 · 결과 확인 · **K-NEIGHBOR-MATCH 진행** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=bc2f5bb · 지금=**K-COVER-DIAG** — 중복+cold-free · **NORMAL/IMPROVE** · 다음=K-COVER-DIAG-DONE`
+1. 첫줄 `[복귀] HEAD=a3d1efa · 지금=**K-EARLY-DIAG** — early 취약성 · **STRUCTURAL** · 다음=K-EARLY-DIAG-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: bc2f5bb_
+_generated: a3d1efa_

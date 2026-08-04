@@ -1,0 +1,438 @@
+{
+  "id": "K-EARLY-DIAG",
+  "ts": "2026-08-04T19:56:21.746595+00:00",
+  "verdict": "STRUCTURAL",
+  "wire": false,
+  "draw_range": [
+    1036,
+    1235
+  ],
+  "by_period": {
+    "early_1036_1115": {
+      "ge3": 0.1375,
+      "n_draws": 80,
+      "sum_dist": {
+        "mean": 142.0125,
+        "std": 27.503861,
+        "min": 68,
+        "max": 209
+      },
+      "odd_k_dist": {
+        "0": 2,
+        "1": 5,
+        "2": 24,
+        "3": 25,
+        "4": 21,
+        "5": 3
+      },
+      "zone_dist": {
+        "mix": 80
+      },
+      "sum_tier_dist": {
+        "mid": 41,
+        "low": 15,
+        "high": 24
+      },
+      "cold_k5_contamination": 0.2875,
+      "cold_k5_clean_ge3": 0.035088,
+      "cold_k5_all_ge3_sets": 0.03,
+      "cold_k5_delta": 0.005088,
+      "cold_dirty_draw_profile": {
+        "n": 59,
+        "sum_dist": {
+          "mean": 139.338983,
+          "std": 28.781238,
+          "min": 68,
+          "max": 209
+        },
+        "odd_k_dist": {
+          "0": 2,
+          "1": 3,
+          "2": 16,
+          "3": 21,
+          "4": 14,
+          "5": 3
+        },
+        "zone_dist": {
+          "mix": 59
+        },
+        "sum_tier_dist": {
+          "mid": 29,
+          "low": 14,
+          "high": 16
+        }
+      },
+      "pool_entropy": 5.429417,
+      "pool_top3_rate": 0.116204,
+      "ge3_hit_profile": {
+        "n_hit": 11,
+        "n_miss": 69,
+        "hit": {
+          "n": 11,
+          "sum_dist": {
+            "mean": 137.818182,
+            "std": 31.027314,
+            "min": 99,
+            "max": 209
+          },
+          "odd_k_dist": {
+            "2": 1,
+            "3": 6,
+            "4": 4
+          },
+          "zone_dist": {
+            "mix": 11
+          },
+          "sum_tier_dist": {
+            "mid": 6,
+            "high": 2,
+            "low": 3
+          }
+        },
+        "miss": {
+          "n": 69,
+          "sum_dist": {
+            "mean": 142.681159,
+            "std": 26.839022,
+            "min": 68,
+            "max": 193
+          },
+          "odd_k_dist": {
+            "0": 2,
+            "1": 5,
+            "2": 23,
+            "3": 19,
+            "4": 17,
+            "5": 3
+          },
+          "zone_dist": {
+            "mix": 69
+          },
+          "sum_tier_dist": {
+            "mid": 35,
+            "low": 12,
+            "high": 22
+          }
+        }
+      },
+      "sum_tier_ge3": {
+        "low": {
+          "n": 15,
+          "ge3": 0.2
+        },
+        "mid": {
+          "n": 41,
+          "ge3": 0.146341
+        },
+        "high": {
+          "n": 24,
+          "ge3": 0.083333
+        }
+      },
+      "cover_ref": {
+        "note": "from K-COVER-DIAG by_period",
+        "ge3": 0.1375,
+        "avg_jaccard": 0.108019,
+        "avg_unique": 20.875
+      },
+      "cold_prior_k5": {
+        "delta": 0.005088,
+        "verdict": "MARGINAL",
+        "clean_ge3": 0.035088,
+        "all_ge3": 0.03
+      }
+    },
+    "mid_1116_1175": {
+      "ge3": 0.15,
+      "n_draws": 60,
+      "sum_dist": {
+        "mean": 133.55,
+        "std": 32.353477,
+        "min": 56,
+        "max": 220
+      },
+      "odd_k_dist": {
+        "0": 2,
+        "1": 2,
+        "2": 10,
+        "3": 19,
+        "4": 23,
+        "5": 4
+      },
+      "zone_dist": {
+        "mix": 59,
+        "mid": 1
+      },
+      "sum_tier_dist": {
+        "mid": 34,
+        "low": 18,
+        "high": 8
+      },
+      "cold_k5_contamination": 0.313333,
+      "cold_k5_clean_ge3": 0.053398,
+      "cold_k5_all_ge3_sets": 0.036667,
+      "cold_k5_delta": 0.016731,
+      "cold_dirty_draw_profile": {
+        "n": 49,
+        "sum_dist": {
+          "mean": 131.877551,
+          "std": 32.725595,
+          "min": 56,
+          "max": 220
+        },
+        "odd_k_dist": {
+          "1": 2,
+          "2": 8,
+          "3": 16,
+          "4": 19,
+          "5": 4
+        },
+        "zone_dist": {
+          "mix": 49
+        },
+        "sum_tier_dist": {
+          "low": 17,
+          "mid": 26,
+          "high": 6
+        }
+      },
+      "pool_entropy": 5.415461,
+      "pool_top3_rate": 0.110432,
+      "ge3_hit_profile": {
+        "n_hit": 9,
+        "n_miss": 51,
+        "hit": {
+          "n": 9,
+          "sum_dist": {
+            "mean": 122.555556,
+            "std": 28.860242,
+            "min": 56,
+            "max": 154
+          },
+          "odd_k_dist": {
+            "2": 1,
+            "3": 2,
+            "4": 5,
+            "5": 1
+          },
+          "zone_dist": {
+            "mix": 8,
+            "mid": 1
+          },
+          "sum_tier_dist": {
+            "mid": 7,
+            "low": 2
+          }
+        },
+        "miss": {
+          "n": 51,
+          "sum_dist": {
+            "mean": 135.490196,
+            "std": 32.548228,
+            "min": 75,
+            "max": 220
+          },
+          "odd_k_dist": {
+            "0": 2,
+            "1": 2,
+            "2": 9,
+            "3": 17,
+            "4": 18,
+            "5": 3
+          },
+          "zone_dist": {
+            "mix": 51
+          },
+          "sum_tier_dist": {
+            "mid": 27,
+            "low": 16,
+            "high": 8
+          }
+        }
+      },
+      "sum_tier_ge3": {
+        "low": {
+          "n": 18,
+          "ge3": 0.111111
+        },
+        "mid": {
+          "n": 34,
+          "ge3": 0.205882
+        },
+        "high": {
+          "n": 8,
+          "ge3": 0.0
+        }
+      },
+      "cover_ref": {
+        "note": "from K-COVER-DIAG by_period",
+        "ge3": 0.15,
+        "avg_jaccard": 0.110303,
+        "avg_unique": 20.416667
+      },
+      "cold_prior_k5": {
+        "delta": 0.016731,
+        "verdict": "VIABLE",
+        "clean_ge3": 0.053398,
+        "all_ge3": 0.036667
+      }
+    },
+    "late_1176_1235": {
+      "ge3": 0.116667,
+      "n_draws": 60,
+      "sum_dist": {
+        "mean": 136.2,
+        "std": 27.778769,
+        "min": 75,
+        "max": 207
+      },
+      "odd_k_dist": {
+        "1": 5,
+        "2": 15,
+        "3": 12,
+        "4": 18,
+        "5": 9,
+        "6": 1
+      },
+      "zone_dist": {
+        "mix": 60
+      },
+      "sum_tier_dist": {
+        "low": 13,
+        "mid": 37,
+        "high": 10
+      },
+      "cold_k5_contamination": 0.406667,
+      "cold_k5_clean_ge3": 0.022472,
+      "cold_k5_all_ge3_sets": 0.023333,
+      "cold_k5_delta": -0.000861,
+      "cold_dirty_draw_profile": {
+        "n": 52,
+        "sum_dist": {
+          "mean": 137.961538,
+          "std": 28.58655,
+          "min": 75,
+          "max": 207
+        },
+        "odd_k_dist": {
+          "1": 4,
+          "2": 14,
+          "3": 10,
+          "4": 16,
+          "5": 8
+        },
+        "zone_dist": {
+          "mix": 52
+        },
+        "sum_tier_dist": {
+          "low": 10,
+          "mid": 32,
+          "high": 10
+        }
+      },
+      "pool_entropy": 5.438224,
+      "pool_top3_rate": 0.104938,
+      "ge3_hit_profile": {
+        "n_hit": 7,
+        "n_miss": 53,
+        "hit": {
+          "n": 7,
+          "sum_dist": {
+            "mean": 130.285714,
+            "std": 22.713836,
+            "min": 94,
+            "max": 157
+          },
+          "odd_k_dist": {
+            "1": 2,
+            "2": 3,
+            "5": 2
+          },
+          "zone_dist": {
+            "mix": 7
+          },
+          "sum_tier_dist": {
+            "mid": 5,
+            "low": 2
+          }
+        },
+        "miss": {
+          "n": 53,
+          "sum_dist": {
+            "mean": 136.981132,
+            "std": 28.287934,
+            "min": 75,
+            "max": 207
+          },
+          "odd_k_dist": {
+            "1": 3,
+            "2": 12,
+            "3": 12,
+            "4": 18,
+            "5": 7,
+            "6": 1
+          },
+          "zone_dist": {
+            "mix": 53
+          },
+          "sum_tier_dist": {
+            "low": 11,
+            "mid": 32,
+            "high": 10
+          }
+        }
+      },
+      "sum_tier_ge3": {
+        "low": {
+          "n": 13,
+          "ge3": 0.153846
+        },
+        "mid": {
+          "n": 37,
+          "ge3": 0.135135
+        },
+        "high": {
+          "n": 10,
+          "ge3": 0.0
+        }
+      },
+      "cover_ref": {
+        "note": "from K-COVER-DIAG by_period",
+        "ge3": 0.116667,
+        "avg_jaccard": 0.10651,
+        "avg_unique": 20.85
+      },
+      "cold_prior_k5": {
+        "delta": -0.000861,
+        "verdict": "NOT_VIABLE",
+        "clean_ge3": 0.022472,
+        "all_ge3": 0.023333
+      }
+    }
+  },
+  "contrast": {
+    "early_vs_mid_ge3": 0.0125,
+    "early_vs_late_ge3": -0.020833,
+    "entropy_mid_minus_early": -0.013956,
+    "sum_mean_early_minus_mid": 8.4625,
+    "cold_delta_early_vs_mid": {
+      "early": 0.005088,
+      "mid": 0.016731,
+      "late": -0.000861
+    }
+  },
+  "root_cause": "early vs mid: entropyΔ=-0.013956, coldΔ갭=0.011643, sum_meanΔ=8.46 · late ge3=0.116667가 더 낮아 'early만 붕괴' 아님",
+  "wire_implication": "early 단독 wire 근거 약함 · cold-free는 mid에서 더 유리(prior VIABLE) · early 전용 패치보다 전구간 cold-free/neighbor 쪽이 우선",
+  "forbid": [
+    "random.choices",
+    "engine.py",
+    "auto-tune",
+    "wire",
+    "DB INSERT/UPDATE",
+    "_get_draws_before mutate",
+    "ge3 향상 클레임"
+  ],
+  "pass": true,
+  "tool": "tools/_k_early_diag.py",
+  "prior": "docs/benchmarks/20260805_KCOVER_DIAG.json"
+}

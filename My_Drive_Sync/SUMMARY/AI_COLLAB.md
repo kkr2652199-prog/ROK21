@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-COVER-DIAG** — overlap NORMAL · cold-free **IMPROVE**
-- **다음(공식)**: 각도3(early) · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KCOVER_DIAG.json`
+- **지금(판정)**: **K-EARLY-DIAG** — **STRUCTURAL**
+- **다음(공식)**: K-NEIGHBOR-MATCH · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KEARLY_DIAG.json`
+
+### K-EARLY-DIAG (형 지시 · STRUCTURAL)
+- ge3 early0.138/mid0.150/late0.117 · early단독붕괴 아님
+- cold mid에서만 VIABLE · pool entropy 구간차 미미
+- early 전용 wire 근거 약 · cold-free/neighbor 우선
 
 ### K-COVER-DIAG (형 지시 · NORMAL/IMPROVE)
 - Jaccard0.108 NORMAL · unique20.7 · cold-free replace Δge3+0.030 (n160)

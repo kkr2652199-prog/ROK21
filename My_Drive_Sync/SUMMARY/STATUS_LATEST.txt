@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-COVER-DIAG** — 세트 중복 + cold-free 보강 진단
+📌 사유: **K-EARLY-DIAG** — early 취약성 · **STRUCTURAL**
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-EARLY-DIAG** | **STRUCTURAL** — ge3 early**0.138**/mid**0.150**/late**0.117** · coldΔ early**+0.005**/mid**+0.017**/late**−0.001** · pool entropy 거의同 · early단독붕괴否 · early전용wire 근거약 · `docs/benchmarks/20260805_KEARLY_DIAG.json` |
 | **K-COVER-DIAG** | **NORMAL** overlap Jaccard**0.108**(기대0.122) · unique**20.7**<기대26.5 · cold-free replace Δge3**+0.030** IMPROVE(n**160**) · cover_wire否 · cold_free_add 후보 · `docs/benchmarks/20260805_KCOVER_DIAG.json` |
 | **K-COLD-EXCLUDE-DIAG** | **MARGINAL** — k5 best Δ**+0.007** (clean**0.037**/all**0.030**) · k3**+0.006** · k7**+0.003** · early k5**+0.005** · VIABLE미달 · wire HOLD · `docs/benchmarks/20260805_KCOLD_EXCLUDE_DIAG.json` |
 | **K-EMA-MARKOV-DIAG** | **NOISE** — H8 mean_hit**2.014** Δ+0.014 p**0.336** · H26**1.996** · H78**1.965** · div median-split Δ**0.005** · rescore **비권고** · `docs/benchmarks/20260805_KEMA_MARKOV_DIAG.json` |
@@ -298,7 +299,7 @@
 
 ## 5) 다음
 
-covering **NORMAL** · cold-free **IMPROVE(+0.03)** · **각도3(early)** — 형 GO.  
+early **STRUCTURAL**(단독붕괴否) · **K-NEIGHBOR-MATCH** — 형 GO.  
 압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START 붙여넣기 · JSON raw 재페치.
 
 ---
