@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f85de74` · WORK=`IDLE`
+- HEAD: `b75c2fe` · WORK=`IDLE`
 - 지금: **K-SIGNAL-TAXONOMY-V1** — L1·L3·L4 진단 · **DOC_SURVEY**
 - 직전: K-LIVE-QUICK200-RESET
 - BOOT다음: L2 EMA 진단 또는 L1 annotate stub · **형 GO**
