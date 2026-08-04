@@ -1,0 +1,341 @@
+{
+  "id": "K-EVOLVE-AUTO-S3",
+  "ts": "2026-08-04T15:54:36+00:00",
+  "step": "S3",
+  "dry_run": false,
+  "apply_score": false,
+  "apply_predict": true,
+  "EVOLVE_AUTO": false,
+  "tick": {
+    "ok": true,
+    "dry_run": false,
+    "ts_local": "2026-08-05T00:54:24",
+    "max_lotto_draw": 1235,
+    "evolve_log_max": 1235,
+    "next_predict_draw": 1236,
+    "g2": {
+      "lookback": 5,
+      "checked": [
+        {
+          "draw_no": 1231,
+          "brains": 3
+        },
+        {
+          "draw_no": 1232,
+          "brains": 3
+        },
+        {
+          "draw_no": 1233,
+          "brains": 3
+        },
+        {
+          "draw_no": 1234,
+          "brains": 3
+        },
+        {
+          "draw_no": 1235,
+          "brains": 3
+        }
+      ],
+      "missing_or_incomplete": [],
+      "g2_pass": true
+    },
+    "actions": [
+      {
+        "op": "PREDICT_ONLY",
+        "draw_no": 1236,
+        "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+        "source": "build_pool_and_repack",
+        "optional": true
+      }
+    ],
+    "action_count": 1,
+    "mandatory_actions": [],
+    "blocked_for_apply": [
+      "EVOLVE_AUTO!=1"
+    ],
+    "would_apply": true,
+    "gates": {
+      "G0_hyung_go": "required_for_S2+",
+      "G1_EVOLVE_AUTO": false,
+      "G2_recent_log": true,
+      "paused": false
+    },
+    "forbid": [
+      "FEATURE_LAMBDA_WIRE",
+      "STRUCTURE_COVER_WIRE",
+      "PAIR_COVER_WIRE",
+      "best_as_learn_input",
+      "W_HINT_auto_tune"
+    ],
+    "note": "S3 PREDICT+SCORE · feedback/λ/covering 미실행 · weight=0",
+    "apply_predict": true,
+    "executed": [
+      {
+        "action": {
+          "op": "PREDICT_ONLY",
+          "draw_no": 1236,
+          "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+          "source": "build_pool_and_repack",
+          "optional": true
+        },
+        "result": {
+          "ok": true,
+          "draw_no": 1236,
+          "cached": true,
+          "seed": 42,
+          "hybrid": {
+            "mode": "p45_r123",
+            "brains": [
+              "review",
+              "stat"
+            ],
+            "markov": "baseline_repack"
+          },
+          "feature_lambda": {
+            "wired": false,
+            "by_brain": {}
+          },
+          "scored": false
+        }
+      }
+    ],
+    "skipped": [],
+    "errors": [],
+    "plan_after": {
+      "evolve_log_max": 1235,
+      "g2_pass": true,
+      "mandatory_left": 0,
+      "next_predict_draw": 1236
+    },
+    "state_saved": true,
+    "status_after": {
+      "ok": true,
+      "last_completed_draw": 1235,
+      "phase": "predicted",
+      "last_error": "",
+      "paused": false,
+      "last_plan": {
+        "ok": true,
+        "dry_run": false,
+        "ts_local": "2026-08-05T00:54:24",
+        "max_lotto_draw": 1235,
+        "evolve_log_max": 1235,
+        "next_predict_draw": 1236,
+        "g2": {
+          "lookback": 5,
+          "checked": [
+            {
+              "draw_no": 1231,
+              "brains": 3
+            },
+            {
+              "draw_no": 1232,
+              "brains": 3
+            },
+            {
+              "draw_no": 1233,
+              "brains": 3
+            },
+            {
+              "draw_no": 1234,
+              "brains": 3
+            },
+            {
+              "draw_no": 1235,
+              "brains": 3
+            }
+          ],
+          "missing_or_incomplete": [],
+          "g2_pass": true
+        },
+        "actions": [
+          {
+            "op": "PREDICT_ONLY",
+            "draw_no": 1236,
+            "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+            "source": "build_pool_and_repack",
+            "optional": true
+          }
+        ],
+        "action_count": 1,
+        "mandatory_actions": [],
+        "blocked_for_apply": [
+          "EVOLVE_AUTO!=1"
+        ],
+        "would_apply": true,
+        "gates": {
+          "G0_hyung_go": "required_for_S2+",
+          "G1_EVOLVE_AUTO": false,
+          "G2_recent_log": true,
+          "paused": false
+        },
+        "forbid": [
+          "FEATURE_LAMBDA_WIRE",
+          "STRUCTURE_COVER_WIRE",
+          "PAIR_COVER_WIRE",
+          "best_as_learn_input",
+          "W_HINT_auto_tune"
+        ],
+        "note": "S3 PREDICT+SCORE · feedback/λ/covering 미실행 · weight=0",
+        "apply_predict": true,
+        "executed": [
+          {
+            "action": {
+              "op": "PREDICT_ONLY",
+              "draw_no": 1236,
+              "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+              "source": "build_pool_and_repack",
+              "optional": true
+            },
+            "result": {
+              "ok": true,
+              "draw_no": 1236,
+              "cached": true,
+              "seed": 42,
+              "hybrid": {
+                "mode": "p45_r123",
+                "brains": [
+                  "review",
+                  "stat"
+                ],
+                "markov": "baseline_repack"
+              },
+              "feature_lambda": {
+                "wired": false,
+                "by_brain": {}
+              },
+              "scored": false
+            }
+          }
+        ],
+        "skipped": [],
+        "errors": [],
+        "plan_after": {
+          "evolve_log_max": 1235,
+          "g2_pass": true,
+          "mandatory_left": 0,
+          "next_predict_draw": 1236
+        }
+      },
+      "updated_at": "2026-08-05 00:54:36",
+      "evolve_auto_env": false
+    }
+  },
+  "state": {
+    "ok": true,
+    "last_completed_draw": 1235,
+    "phase": "predicted",
+    "last_error": "",
+    "paused": false,
+    "last_plan": {
+      "ok": true,
+      "dry_run": false,
+      "ts_local": "2026-08-05T00:54:24",
+      "max_lotto_draw": 1235,
+      "evolve_log_max": 1235,
+      "next_predict_draw": 1236,
+      "g2": {
+        "lookback": 5,
+        "checked": [
+          {
+            "draw_no": 1231,
+            "brains": 3
+          },
+          {
+            "draw_no": 1232,
+            "brains": 3
+          },
+          {
+            "draw_no": 1233,
+            "brains": 3
+          },
+          {
+            "draw_no": 1234,
+            "brains": 3
+          },
+          {
+            "draw_no": 1235,
+            "brains": 3
+          }
+        ],
+        "missing_or_incomplete": [],
+        "g2_pass": true
+      },
+      "actions": [
+        {
+          "op": "PREDICT_ONLY",
+          "draw_no": 1236,
+          "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+          "source": "build_pool_and_repack",
+          "optional": true
+        }
+      ],
+      "action_count": 1,
+      "mandatory_actions": [],
+      "blocked_for_apply": [
+        "EVOLVE_AUTO!=1"
+      ],
+      "would_apply": true,
+      "gates": {
+        "G0_hyung_go": "required_for_S2+",
+        "G1_EVOLVE_AUTO": false,
+        "G2_recent_log": true,
+        "paused": false
+      },
+      "forbid": [
+        "FEATURE_LAMBDA_WIRE",
+        "STRUCTURE_COVER_WIRE",
+        "PAIR_COVER_WIRE",
+        "best_as_learn_input",
+        "W_HINT_auto_tune"
+      ],
+      "note": "S3 PREDICT+SCORE · feedback/λ/covering 미실행 · weight=0",
+      "apply_predict": true,
+      "executed": [
+        {
+          "action": {
+            "op": "PREDICT_ONLY",
+            "draw_no": 1236,
+            "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+            "source": "build_pool_and_repack",
+            "optional": true
+          },
+          "result": {
+            "ok": true,
+            "draw_no": 1236,
+            "cached": true,
+            "seed": 42,
+            "hybrid": {
+              "mode": "p45_r123",
+              "brains": [
+                "review",
+                "stat"
+              ],
+              "markov": "baseline_repack"
+            },
+            "feature_lambda": {
+              "wired": false,
+              "by_brain": {}
+            },
+            "scored": false
+          }
+        }
+      ],
+      "skipped": [],
+      "errors": [],
+      "plan_after": {
+        "evolve_log_max": 1235,
+        "g2_pass": true,
+        "mandatory_left": 0,
+        "next_predict_draw": 1236
+      }
+    },
+    "updated_at": "2026-08-05 00:54:36",
+    "evolve_auto_env": false
+  },
+  "pass": true,
+  "verdict": "PASS",
+  "wire": false,
+  "note": "S3 PREDICT+SCORE · feedback/λ/covering 없음 · weight=0"
+}

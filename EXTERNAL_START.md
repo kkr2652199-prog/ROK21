@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1f80f7f` |
+| HEAD(실측) | `405d2e4` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-EVOLVE-AUTO-S2** — SCORE 1235 · evolve_log=1235 · **PASS** |
-| 직전 | K-EVOLVE-AUTO-S1 dry-run |
-| BOOT다음 | S3 PREDICT+SCORE 또는 다른축 · **형 GO** |
-| NEXT1 ID | **K-EVOLVE-AUTO-S2-DONE** |
-| NEXT1 할일 | S2 SCORE PASS(1235로그) · **S3 PREDICT+SCORE** 또는 다른축 · **형 GO** |
+| 지금 | **K-EVOLVE-AUTO-S3** — PREDICT 1236 캐시 · **PASS** |
+| 직전 | K-EVOLVE-AUTO-S2 SCORE 1235 |
+| BOOT다음 | S4 EVOLVE_AUTO=1 운영 또는 다른축 · **형 GO** |
+| NEXT1 ID | **K-EVOLVE-AUTO-S3-DONE** |
+| NEXT1 할일 | S3 PREDICT 1236 캐시 PASS · **S4 EVOLVE_AUTO=1 운영** 또는 다른축 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1f80f7f · 지금=**K-EVOLVE-AUTO-S2** — SCORE 1235 · evolve_log=1235 · **PASS** · 다음=K-EVOLVE-AUTO-S2-DONE`
+1. 첫줄 `[복귀] HEAD=405d2e4 · 지금=**K-EVOLVE-AUTO-S3** — PREDICT 1236 캐시 · **PASS** · 다음=K-EVOLVE-AUTO-S3-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 1f80f7f_
+_generated: 405d2e4_

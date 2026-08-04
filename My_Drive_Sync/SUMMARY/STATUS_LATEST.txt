@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-EVOLVE-AUTO-S2** — SCORE apply 1235 · evolve_log=1235 PASS
+📌 사유: **K-EVOLVE-AUTO-S3** — PREDICT+SCORE 통합 · 1236 캐시 PASS
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-EVOLVE-AUTO-S3** | **PASS** — `--apply-predict` · PREDICT **1236** pool_view_cache · SCORE갭 없음 · feedback미실행 · `docs/benchmarks/20260805_KEVOLVE_AUTO_S3.json` |
 | **K-EVOLVE-AUTO-S2** | **PASS** — `--apply-score` · draw**1235** cache→evolve_log 3뇌 · PREDICT/feedback 없음 · weight=0 · `docs/benchmarks/20260805_KEVOLVE_AUTO_S2.json` |
 | **K-EVOLVE-AUTO-S1** | **PASS** — `evolve_auto.tick(dry_run)` · auto_state 테이블 · 계획 SCORE/PREDICT · apply 거부 · EVOLVE_AUTO=0 · `docs/benchmarks/20260805_KEVOLVE_AUTO_S1.json` |
 | **K-EVOLVE-AUTO-DESIGN** | **DOC** — 1236~ 예측·채점·evolve_log 파이프 설계 · EVOLVE_AUTO기본0 · λ/covering wire 금지 · `reports/20260805_KEVOLVE_AUTO_DESIGN.md` |
@@ -79,6 +80,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-EVOLVE-AUTO-S3** | PREDICT+SCORE 통합 · 1236 캐시 워밍 | **PASS** |
 | **K-EVOLVE-AUTO-S2** | SCORE-only apply · 1235 로그 기입 | **PASS** |
 | **K-EVOLVE-AUTO-S1** | auto_state + tick dry-run · apply stub거부 | **PASS** |
 | **K-EVOLVE-AUTO-DESIGN** | Phase3 AUTO 파이프·게이트·S0~S4 | **DOC** |
@@ -281,8 +283,8 @@
 
 ## 5) 다음
 
-**S3 PREDICT+SCORE** 또는 **다른축** — 형 GO.  
-evolve_log max=1235 · EVOLVE_AUTO=0 · λ/covering HOLD · mean/hybrid 유지.
+**S4 EVOLVE_AUTO=1 운영**(형 명시 GO) 또는 **다른축** — 형 GO.  
+S0~S3 코드 준비 · 플래그 기본 0 · λ/covering HOLD · mean/hybrid 유지.
 
 ---
 

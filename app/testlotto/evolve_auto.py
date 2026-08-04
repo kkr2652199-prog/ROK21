@@ -322,7 +322,7 @@ def score_draw_from_cache(draw_no: int) -> dict[str, Any]:
         erow = build_evolve_row(
             int(draw_no), tag, actual, pool, repack, draws_before=draws_before
         )
-        erow["note"] = "K-EVOLVE-AUTO S2 SCORE · weight=0 · cache→log"
+        erow["note"] = "K-EVOLVE-AUTO SCORE · weight=0 · cache→log"
         upsert_evolve_row(erow)
         written.append(
             {
@@ -335,22 +335,158 @@ def score_draw_from_cache(draw_no: int) -> dict[str, Any]:
     return {"ok": True, "draw_no": int(draw_no), "brains": written}
 
 
+def predict_and_cache(draw_no: int) -> dict[str, Any]:
+    """S3: build_pool_and_repack → pool_view_cache 저장 (현재 schema)."""
+    from app.testlotto.pool_view_cache import save_pool_view_cache
+    from app.testlotto.signal_pool import build_pool_and_repack
+
+    built = build_pool_and_repack(int(draw_no))
+    if not built.get("ok"):
+        return {
+            "ok": False,
+            "draw_no": int(draw_no),
+            "error": built.get("error") or "build_pool_and_repack 실패",
+        }
+    save_pool_view_cache(int(draw_no), built)
+    return {
+        "ok": True,
+        "draw_no": int(draw_no),
+        "cached": True,
+        "seed": built.get("seed"),
+        "hybrid": built.get("hybrid"),
+        "feature_lambda": built.get("feature_lambda"),
+    }
+
+
+def predict_then_score(draw_no: int) -> dict[str, Any]:
+    """S3: 예측·캐시 후, 확정번호 있으면 SCORE."""
+    pred = predict_and_cache(draw_no)
+    if not pred.get("ok"):
+        return pred
+    conn = get_lotto_db()
+    try:
+        has = conn.execute(
+            "SELECT 1 FROM lotto_draws WHERE draw_no=?", (int(draw_no),)
+        ).fetchone()
+    finally:
+        conn.close()
+    if not has:
+        return {
+            "ok": True,
+            "draw_no": int(draw_no),
+            "predicted": True,
+            "scored": False,
+            "predict": pred,
+            "note": "미추첨 · PREDICT_ONLY 완료",
+        }
+    scored = score_draw_from_cache(draw_no)
+    return {
+        "ok": bool(scored.get("ok")),
+        "draw_no": int(draw_no),
+        "predicted": True,
+        "scored": bool(scored.get("ok")),
+        "predict": pred,
+        "score": scored,
+    }
+
+
 def tick(
     *,
     dry_run: bool = True,
     lookback: int = DEFAULT_LOOKBACK,
     apply_score: bool = False,
+    apply_predict: bool = False,
 ) -> dict[str, Any]:
     """틱 1회.
 
     - dry_run=True (기본): 계획만
-    - apply_score=True: SCORE 액션만 실행 (S2) · PREDICT 미실행
-    - dry_run=False and not apply_score: 거부 (전체 apply는 S3+)
+    - apply_score=True: SCORE만 (S2)
+    - apply_predict=True: PREDICT(+SCORE) (S3) · feedback 없음
     """
     plan = plan_tick(lookback=lookback)
     if not plan.get("ok"):
         save_auto_state(phase="error", last_error=plan.get("error") or "plan_failed", last_plan=plan)
         return plan
+
+    if apply_predict:
+        if get_auto_state().get("paused"):
+            out = {
+                **plan,
+                "ok": False,
+                "dry_run": False,
+                "apply_predict": True,
+                "error": "paused=1 · PREDICT 중단",
+            }
+            save_auto_state(phase="paused", last_error=out["error"], last_plan=out)
+            return out
+
+        executed = []
+        skipped = []
+        errors = []
+        # mandatory first
+        for a in plan.get("mandatory_actions") or []:
+            op = a.get("op")
+            dno = int(a["draw_no"])
+            if op == "SCORE":
+                r = score_draw_from_cache(dno)
+            elif op == "PREDICT_THEN_SCORE":
+                r = predict_then_score(dno)
+            else:
+                skipped.append({"action": a, "reason": "unknown mandatory op"})
+                continue
+            if r.get("ok"):
+                executed.append({"action": a, "result": r})
+            else:
+                errors.append({"action": a, "result": r})
+
+        # optional PREDICT_ONLY
+        for a in plan.get("actions") or []:
+            if not a.get("optional"):
+                continue
+            if a.get("op") != "PREDICT_ONLY":
+                skipped.append({"action": a, "reason": "optional non-predict skipped"})
+                continue
+            dno = int(a["draw_no"])
+            r = predict_and_cache(dno)
+            if r.get("ok"):
+                executed.append({"action": a, "result": {**r, "scored": False}})
+            else:
+                errors.append({"action": a, "result": r})
+
+        ok = len(errors) == 0 and len(executed) > 0
+        scored_draws = [
+            e["result"]["draw_no"]
+            for e in executed
+            if e.get("result", {}).get("scored") or e.get("action", {}).get("op") == "SCORE"
+        ]
+        last_done = max(scored_draws) if scored_draws else plan.get("evolve_log_max")
+        plan_after = plan_tick(lookback=lookback)
+        out = {
+            **plan,
+            "ok": ok,
+            "dry_run": False,
+            "apply_predict": True,
+            "would_apply": True,
+            "executed": executed,
+            "skipped": skipped,
+            "errors": errors,
+            "plan_after": {
+                "evolve_log_max": plan_after.get("evolve_log_max"),
+                "g2_pass": (plan_after.get("g2") or {}).get("g2_pass"),
+                "mandatory_left": len(plan_after.get("mandatory_actions") or []),
+                "next_predict_draw": plan_after.get("next_predict_draw"),
+            },
+            "note": "S3 PREDICT+SCORE · feedback/λ/covering 미실행 · weight=0",
+        }
+        save_auto_state(
+            phase="predicted" if ok else "error",
+            last_error="" if ok else json.dumps(errors, ensure_ascii=False)[:500],
+            last_plan=out,
+            last_completed_draw=last_done,
+        )
+        out["state_saved"] = True
+        out["status_after"] = get_auto_state()
+        return out
 
     if apply_score:
         if plan.get("paused") or (get_auto_state().get("paused")):
@@ -428,7 +564,7 @@ def tick(
             "ok": False,
             "dry_run": False,
             "would_apply": False,
-            "error": "전체 apply는 S3+ · S2는 --apply-score 사용",
+            "error": "use --apply-score (S2) or --apply-predict (S3)",
             "actions_not_executed": plan.get("actions"),
         }
         save_auto_state(phase="error", last_error=plan["error"], last_plan=plan)
