@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d20f5ae` · WORK=`IDLE`
+- HEAD: `57c9291` · WORK=`IDLE`
 - 지금: **K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS**
 - 직전: K-PATTERN-OWN-V1
 - BOOT다음: B·C 측정 또는 L2 EMA · **형 GO**
