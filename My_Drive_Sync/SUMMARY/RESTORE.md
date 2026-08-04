@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6b5cd12` · WORK=`IDLE`
+1. **HEAD:** `f15a1ce` · WORK=`IDLE`
 2. **지금:** **K-QUOTA-D-WIRE** — 실적용 검증 · **FAIL·롤백**
 3. **다음1건:** K-QUOTA-D-WIRE-DONE — quota D wire **FAIL·롤백완료** · 검증 결과 확인 · **형 GO**(다음: live경로 재측정 또는 다른 후보) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | quota D wire | n100=0.10·full=0.115 · 롤백 | **FAIL** | (push후) |
+| 2026-08-05 | quota D wire | n100=0.10·full=0.115 · 롤백 | **FAIL** | f15a1ce |
 | 2026-08-05 | 1235패치준비 | quota B/C/D후보 · PMI/B/D기각 | **MEASURED** | aededd8 |
 | 2026-08-05 | B·C 패턴 실측 | odd/sum런·PMI클러스터 · wire OFF | **MEASURED** | 72554e1 |
 | 2026-08-05 | 젠스파크압축복구 | GENSPARK_COMPRESS_RECOVER R37자동 | **PASS** | 42573f3 |
