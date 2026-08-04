@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `bca3202` · WORK=`IDLE`
+- HEAD: `87cb094` · WORK=`IDLE`
 - 지금: **K-PAIR-COVER** — 저출현쌍 covering · ge3↓ · **HOLD**
 - 직전: K-STRUCTURE-COVER HOLD
 - BOOT다음: Phase3 AUTO 설계문서 · **형 GO**
