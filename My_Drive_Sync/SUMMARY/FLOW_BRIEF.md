@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `36b1461` · WORK=`IDLE`
+- HEAD: `96217bd` · WORK=`IDLE`
 - 지금: **K-EVOLVE-AUTO-DESIGN** — Phase3 설계문서 · wire없음 · **DOC**
 - 직전: K-PAIR-COVER HOLD
 - BOOT다음: AUTO S1 dry-run 또는 다른축 · **형 GO**
