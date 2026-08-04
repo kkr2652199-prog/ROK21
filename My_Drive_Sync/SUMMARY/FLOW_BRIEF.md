@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `dc1b68e` · WORK=`IDLE`
+- HEAD: `3f4f4ce` · WORK=`IDLE`
 - 지금: **K-EVOLVE-FEAT-LAM-WIRE** — review λ=0.3 live · ge3=0.145 MATCH · **PASS**
 - 직전: K-FUTURE-FULL-POST-EVOLVE ge3=0.1184 Δ=0
 - BOOT다음: evolve_log 53~1234 확장 또는 AUTO준비 · **형 GO**

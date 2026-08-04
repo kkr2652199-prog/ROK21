@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `dc1b68e` |
+| HEAD(실측) | `3f4f4ce` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-EVOLVE-FEAT-LAM-WIRE** — review λ=0.3 live · ge3=0.145 MATCH · **PASS** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=dc1b68e · 지금=**K-EVOLVE-FEAT-LAM-WIRE** — review λ=0.3 live · ge3=0.145 MATCH · **PASS** · 다음=K-EVOLVE-FEAT-LAM-DONE`
+1. 첫줄 `[복귀] HEAD=3f4f4ce · 지금=**K-EVOLVE-FEAT-LAM-WIRE** — review λ=0.3 live · ge3=0.145 MATCH · **PASS** · 다음=K-EVOLVE-FEAT-LAM-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: dc1b68e_
+_generated: 3f4f4ce_
