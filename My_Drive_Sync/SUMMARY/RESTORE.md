@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a3d1efa` · WORK=`IDLE`
+1. **HEAD:** `6a4adc7` · WORK=`IDLE`
 2. **지금:** **K-EARLY-DIAG** — early 취약성 · **STRUCTURAL**
 3. **다음1건:** K-EARLY-DIAG-DONE — early 취약성 진단 완료 · 결과 확인 · **K-NEIGHBOR-MATCH 진행** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | early취약성 | STRUCTURAL · late가더낮음 · early전용wire否 | **STRUCT** | (push후) |
+| 2026-08-05 | early취약성 | STRUCTURAL · late가더낮음 · early전용wire否 | **STRUCT** | 6a4adc7 |
 | 2026-08-05 | covering진단 | Jaccard NORMAL · cold-free+0.03 | **IMPROVE** | eab094f |
 | 2026-08-05 | cold제외진단 | k5 Δ+0.007 MARGINAL · wire否 | **MARGINAL** | 3fbc1c0 |
 | 2026-08-05 | L2 EMA 진단 | H8/26/78 전부 NOISE · rescore否 | **NOISE** | 176da32 |

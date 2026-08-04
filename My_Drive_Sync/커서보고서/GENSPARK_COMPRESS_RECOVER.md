@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`eab094f` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`6a4adc7` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -20,7 +20,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=eab094f]
+[ROK21 젠스파크 압축복구 · HEAD=6a4adc7]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -28,14 +28,16 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: eab094f · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-COVER-DIAG** — 중복+cold-free · **NORMAL/IMPROVE**
-- 직전: K-COLD-EXCLUDE-DIAG
-- BOOT다음: 각도3(early) · **형 GO**
-- NEXT1: K-COVER-DIAG-DONE — covering 진단 완료 · 결과 확인 · **각도3(early 취약성) 진행**
+- HEAD: 6a4adc7 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-EARLY-DIAG** — early 취약성 · **STRUCTURAL**
+- 직전: K-COVER-DIAG
+- BOOT다음: K-NEIGHBOR-MATCH · **형 GO**
+- NEXT1: K-EARLY-DIAG-DONE — early 취약성 진단 완료 · 결과 확인 · **K-NEIGHBOR-MATCH 진행**
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 증거 체인 (반드시 재페치)
+- `20260805_KEARLY_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KEARLY_DIAG.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KEARLY_DIAG.md
 - `20260805_KCOVER_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KCOVER_DIAG.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KCOVER_DIAG.md
 - `20260805_KCOLD_EXCLUDE_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KCOLD_EXCLUDE_DIAG.json
@@ -50,8 +52,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KQUOTA_D_WIRE.md
 - `20260805_KPATCH_1235_PREP` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KPATCH_1235_PREP.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KPATCH_1235_PREP.md
-- `20260805_KPATTERN_BC_MEASURE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KPATTERN_BC_MEASURE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KPATTERN_BC_MEASURE.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -61,7 +61,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=eab094f · 지금=**K-COVER-DIAG** — 중복+cold-free · **NORMAL/IMPROVE** · 다음=K-COVER-DIAG-DONE
+1. 첫줄: [복귀] HEAD=6a4adc7 · 지금=**K-EARLY-DIAG** — early 취약성 · **STRUCTURAL** · 다음=K-EARLY-DIAG-DONE
 2. 위 JSON 중 지금 ID 관련 1~2개 fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -90,4 +90,4 @@ engine wire(GO없이) · auto-tune · 채팅기억으로 수치 인용
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: eab094f_
+_generated: 6a4adc7_

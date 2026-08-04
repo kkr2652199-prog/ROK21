@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a3d1efa` · WORK=`IDLE`
+- HEAD: `6a4adc7` · WORK=`IDLE`
 - 지금: **K-EARLY-DIAG** — early 취약성 · **STRUCTURAL**
 - 직전: K-COVER-DIAG
 - BOOT다음: K-NEIGHBOR-MATCH · **형 GO**
