@@ -1,0 +1,250 @@
+{
+  "id": "K-STAT-SEED-DIAG",
+  "ts": "2026-08-04T18:47:37.850898+00:00",
+  "verdict": "HIGH_SENSITIVITY",
+  "wire": false,
+  "draw_range": [
+    1136,
+    1235
+  ],
+  "n_draws": 100,
+  "seeds_tested": [
+    42,
+    0,
+    7,
+    99,
+    1
+  ],
+  "path": "signal_pool.expand_pool+repack_by_brain (hy_p45_r123 / markov baseline) · SELECT-ONLY",
+  "stat": {
+    "by_seed": {
+      "42": {
+        "ge3": 0.23,
+        "mean": 1.82,
+        "ge3_count": 23,
+        "n": 100,
+        "mean_of_set_means": 0.81
+      },
+      "0": {
+        "ge3": 0.14,
+        "mean": 1.82,
+        "ge3_count": 14,
+        "n": 100,
+        "mean_of_set_means": 0.858
+      },
+      "7": {
+        "ge3": 0.12,
+        "mean": 1.76,
+        "ge3_count": 12,
+        "n": 100,
+        "mean_of_set_means": 0.81
+      },
+      "99": {
+        "ge3": 0.09,
+        "mean": 1.61,
+        "ge3_count": 9,
+        "n": 100,
+        "mean_of_set_means": 0.774
+      },
+      "1": {
+        "ge3": 0.17,
+        "mean": 1.86,
+        "ge3_count": 17,
+        "n": 100,
+        "mean_of_set_means": 0.824
+      }
+    },
+    "summary": {
+      "mean_ge3": 0.15,
+      "std_ge3": 0.047749,
+      "min_ge3": 0.09,
+      "max_ge3": 0.23,
+      "range_ge3": 0.14,
+      "sensitivity": "HIGH_SENSITIVITY"
+    }
+  },
+  "markov": {
+    "by_seed": {
+      "42": {
+        "ge3": 0.16,
+        "mean": 1.88,
+        "ge3_count": 16,
+        "n": 100,
+        "mean_of_set_means": 0.78
+      },
+      "0": {
+        "ge3": 0.09,
+        "mean": 1.81,
+        "ge3_count": 9,
+        "n": 100,
+        "mean_of_set_means": 0.78
+      },
+      "7": {
+        "ge3": 0.17,
+        "mean": 1.87,
+        "ge3_count": 17,
+        "n": 100,
+        "mean_of_set_means": 0.748
+      },
+      "99": {
+        "ge3": 0.07,
+        "mean": 1.79,
+        "ge3_count": 7,
+        "n": 100,
+        "mean_of_set_means": 0.794
+      },
+      "1": {
+        "ge3": 0.08,
+        "mean": 1.83,
+        "ge3_count": 8,
+        "n": 100,
+        "mean_of_set_means": 0.798
+      }
+    },
+    "summary": {
+      "mean_ge3": 0.114,
+      "std_ge3": 0.042237,
+      "min_ge3": 0.07,
+      "max_ge3": 0.17,
+      "range_ge3": 0.1,
+      "sensitivity": "HIGH_SENSITIVITY"
+    }
+  },
+  "review": {
+    "by_seed": {
+      "42": {
+        "ge3": 0.13,
+        "mean": 1.78,
+        "ge3_count": 13,
+        "n": 100,
+        "mean_of_set_means": 0.852
+      },
+      "0": {
+        "ge3": 0.15,
+        "mean": 1.73,
+        "ge3_count": 15,
+        "n": 100,
+        "mean_of_set_means": 0.8
+      },
+      "7": {
+        "ge3": 0.14,
+        "mean": 1.69,
+        "ge3_count": 14,
+        "n": 100,
+        "mean_of_set_means": 0.78
+      },
+      "99": {
+        "ge3": 0.12,
+        "mean": 1.76,
+        "ge3_count": 12,
+        "n": 100,
+        "mean_of_set_means": 0.764
+      },
+      "1": {
+        "ge3": 0.15,
+        "mean": 1.87,
+        "ge3_count": 15,
+        "n": 100,
+        "mean_of_set_means": 0.802
+      }
+    },
+    "summary": {
+      "mean_ge3": 0.138,
+      "std_ge3": 0.011662,
+      "min_ge3": 0.12,
+      "max_ge3": 0.15,
+      "range_ge3": 0.03,
+      "sensitivity": "STABLE"
+    }
+  },
+  "pool_diversity": {
+    "stat_seed42": {
+      "top3_rate": 0.112,
+      "sum_mean": 133.02,
+      "sum_std": 48.012911,
+      "entropy": 5.408944,
+      "slot_entropy": 4.541414,
+      "detail": {
+        "n_sets": 500,
+        "top3_nums": [
+          {
+            "num": 13,
+            "count": 118
+          },
+          {
+            "num": 6,
+            "count": 109
+          },
+          {
+            "num": 44,
+            "count": 109
+          }
+        ],
+        "top3_rate": 0.112,
+        "sum_mean": 133.02,
+        "sum_std": 48.012911,
+        "sum_min": 35,
+        "sum_max": 243,
+        "entropy": 5.408944,
+        "slot_entropy": 4.541414,
+        "biased": false
+      }
+    },
+    "stat_seed0": {
+      "top3_rate": 0.129667,
+      "sum_mean": 132.294,
+      "sum_std": 46.004952,
+      "entropy": 5.366229,
+      "slot_entropy": 4.504772,
+      "detail": {
+        "n_sets": 500,
+        "top3_nums": [
+          {
+            "num": 7,
+            "count": 161
+          },
+          {
+            "num": 16,
+            "count": 121
+          },
+          {
+            "num": 35,
+            "count": 107
+          }
+        ],
+        "top3_rate": 0.129667,
+        "sum_mean": 132.294,
+        "sum_std": 46.004952,
+        "sum_min": 31,
+        "sum_max": 246,
+        "entropy": 5.366229,
+        "slot_entropy": 4.504772,
+        "biased": false
+      }
+    },
+    "diversity_gap": 0.042715,
+    "verdict": "DIVERSE"
+  },
+  "cross_compare": {
+    "most_stable_brain": "review",
+    "most_sensitive_brain": "stat",
+    "stat_vs_markov_range_diff": 0.04,
+    "note": "hybrid solo best_of_5 · QUOTA-D-WIRE 괴리 가설(stat seed 민감) 검증용 · 발권 ge3 약속 금지"
+  },
+  "implication": {
+    "quota_increase_safe": false,
+    "recommended_next": "pool 안정화 선행 (seed 민감) · quota 증가 HOLD"
+  },
+  "forbid": [
+    "random.choices",
+    "_get_draws_before mutate",
+    "engine.py",
+    "auto-tune",
+    "wire",
+    "DB INSERT/UPDATE"
+  ],
+  "pass": true,
+  "tool": "tools/_k_stat_seed_diag.py",
+  "prior": "docs/benchmarks/20260805_KQUOTA_D_WIRE.json",
+  "elapsed_sec": 86.4
+}

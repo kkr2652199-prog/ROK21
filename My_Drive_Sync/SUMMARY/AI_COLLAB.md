@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-QUOTA-D-WIRE** — **FAIL·롤백**
-- **다음(공식)**: 형 확인 · live경로 재측정 여부
-- **산출물**: `docs/benchmarks/20260805_KQUOTA_D_WIRE.json`
+- **지금(판정)**: **K-STAT-SEED-DIAG** — **HIGH_SENSITIVITY**
+- **다음(공식)**: 결과 기반 다음 방향 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KSTAT_SEED_DIAG.json`
+
+### K-STAT-SEED-DIAG (형 지시 · HIGH_SENSITIVITY)
+- N100 5seed · stat range**0.14**(0.09~0.23) · markov**0.10** · review**0.03 STABLE**
+- pool DIVERSE(편중 아님) · quota_increase_safe=False
+- tool `tools/_k_stat_seed_diag.py`
 
 ### K-QUOTA-D-WIRE (형 GO · FAIL)
 - BENCH_FIXED 2/3/0 슬롯 발권 OK · n100 avg**0.10** · full**0.115** → 하드롤백

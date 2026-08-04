@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `dffbc5b` |
+| HEAD(실측) | `42ec4ae` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-QUOTA-D-WIRE** — 실적용 검증 · **FAIL·롤백** |
-| 직전 | K-PATCH-1235-PREP |
-| BOOT다음 | 형 확인 · live경로 재측정 여부 |
-| NEXT1 ID | **K-QUOTA-D-WIRE-DONE** |
-| NEXT1 할일 | quota D wire **FAIL·롤백완료** · 검증 결과 확인 · **형 GO**(다음: live경로 재측정 또는 다른 후보) |
+| 지금 | **K-STAT-SEED-DIAG** — seed 안정성 · **HIGH_SENSITIVITY** |
+| 직전 | K-QUOTA-D-WIRE |
+| BOOT다음 | 결과 기반 다음 방향 · **형 GO** |
+| NEXT1 ID | **K-STAT-SEED-DIAG-DONE** |
+| NEXT1 할일 | seed 안정성 진단 완료 · **결과 기반 다음 방향** · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=dffbc5b · 지금=**K-QUOTA-D-WIRE** — 실적용 검증 · **FAIL·롤백** · 다음=K-QUOTA-D-WIRE-DONE`
+1. 첫줄 `[복귀] HEAD=42ec4ae · 지금=**K-STAT-SEED-DIAG** — seed 안정성 · **HIGH_SENSITIVITY** · 다음=K-STAT-SEED-DIAG-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: dffbc5b_
+_generated: 42ec4ae_

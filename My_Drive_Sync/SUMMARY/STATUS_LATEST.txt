@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-QUOTA-D-WIRE** — quota D 실적용 FAIL·롤백 (live≠PREP 경로)
+📌 사유: **K-STAT-SEED-DIAG** — 뇌별 seed 민감도 진단 (wire OFF)
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-STAT-SEED-DIAG** | **HIGH_SENSITIVITY** — N100·5seed · stat range**0.14**(0.09~0.23) · markov**0.10** · review**0.03=STABLE** · pool **DIVERSE** · quota↑ **unsafe** · `docs/benchmarks/20260805_KSTAT_SEED_DIAG.json` |
 | **K-QUOTA-D-WIRE** | **FAIL** — 슬롯2/3/0 발권OK · n100 avg ge3=**0.10** · full**0.115** · 하드롤백 `BENCH_FIXED_QUOTA=None` · fusion**0.135**복원 · 원인=PREP(hybrid repack)≠live(predict_sets) · `docs/benchmarks/20260805_KQUOTA_D_WIRE.json` |
 | **K-PATCH-1235-PREP** | **MEASURED** — quota A**0.135**/B**0.155**/C**0.155**/D**0.170**(repack시뮬) · 후보=B·C·D · PMI/B/D기각 · wire=False · `docs/benchmarks/20260805_KPATCH_1235_PREP.json` |
 | **K-PATTERN-BC-MEASURE** | **MEASURED** — B: odd_k thr**2**/cur**1** · zone thr**115**/cur**73**(mix지배) · sum_tier thr**3**/cur**5**=임박 · C: top mean**0.463**/frac_ge2**0.070** vs bottom mean**0.070**/frac_ge2**0.0016** · B=**MODERATE** C=**STRONG** · wire=False · `docs/benchmarks/20260805_KPATTERN_BC_MEASURE.json` |
@@ -293,7 +294,7 @@
 
 ## 5) 다음
 
-quota D wire **FAIL 확인** · live coordinator 경로 재측정 여부 — 형 GO.  
+stat/markov **HIGH_SENSITIVITY** · pool 안정화 또는 review 안정축 활용 — 형 GO.  
 압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START 붙여넣기 · JSON raw 재페치.
 
 ---
