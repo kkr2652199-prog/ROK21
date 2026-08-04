@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`f18b19f` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`176da32` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -20,7 +20,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=f18b19f]
+[ROK21 젠스파크 압축복구 · HEAD=176da32]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -28,14 +28,16 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: f18b19f · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-REVIEW-QUOTA-SIM** — review quota live · **A 유지**
-- 직전: K-STAT-SEED-DIAG
-- BOOT다음: wire GO 대기 · **형 결정**
-- NEXT1: K-REVIEW-QUOTA-SIM-DONE — review quota 시뮬 완료 · best=**A(현행)** · wire GO 대기 · **형 결정**
+- HEAD: 176da32 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-EMA-MARKOV-DIAG** — L2 EMA · **NOISE**
+- 직전: K-REVIEW-QUOTA-SIM
+- BOOT다음: 다른 방향 탐색 · **형 GO**
+- NEXT1: K-EMA-MARKOV-DIAG-DONE — EMA 진단 완료 · **NOISE** 확인 · **형 GO**(다른 방향 탐색)
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 증거 체인 (반드시 재페치)
+- `20260805_KEMA_MARKOV_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KEMA_MARKOV_DIAG.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KEMA_MARKOV_DIAG.md
 - `20260805_KREVIEW_QUOTA_SIM` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KREVIEW_QUOTA_SIM.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KREVIEW_QUOTA_SIM.md
 - `20260805_KSTAT_SEED_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KSTAT_SEED_DIAG.json
@@ -50,8 +52,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KPATTERN_OWN_V1.md
 - `20260805_KSIGNAL_TAXONOMY_V1` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KSIGNAL_TAXONOMY_V1.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KSIGNAL_TAXONOMY_V1.md
-- `20260805_KLIVE_QUICK200_RESET` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KLIVE_QUICK200_RESET.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -61,7 +61,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=f18b19f · 지금=**K-REVIEW-QUOTA-SIM** — review quota live · **A 유지** · 다음=K-REVIEW-QUOTA-SIM-DONE
+1. 첫줄: [복귀] HEAD=176da32 · 지금=**K-EMA-MARKOV-DIAG** — L2 EMA · **NOISE** · 다음=K-EMA-MARKOV-DIAG-DONE
 2. 위 JSON 중 지금 ID 관련 1~2개 fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -90,4 +90,4 @@ engine wire(GO없이) · auto-tune · 채팅기억으로 수치 인용
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: f18b19f_
+_generated: 176da32_
