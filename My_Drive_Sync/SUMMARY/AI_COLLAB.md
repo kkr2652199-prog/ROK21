@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-REVIEW-QUOTA-SIM** — best=**A 현행**
-- **다음(공식)**: wire GO 대기 · **형 결정**
-- **산출물**: `docs/benchmarks/20260805_KREVIEW_QUOTA_SIM.json`
+- **지금(판정)**: **K-EMA-MARKOV-DIAG** — **NOISE**
+- **다음(공식)**: 다른 방향 탐색 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KEMA_MARKOV_DIAG.json`
+
+### K-EMA-MARKOV-DIAG (형 지시 · NOISE)
+- H8/26/78 top15 hit ≈ random(2.0) · p≥0.05 전부 NOISE
+- divergence median-split Δ0.005 NOISE · markov rescore 비권고
+- tool `tools/_k_ema_markov_diag.py`
 
 ### K-REVIEW-QUOTA-SIM (형 지시 · A 유지)
 - live coordinator 경로 · n200×3seed · A0.128 > B/C0.127 > D0.123 > E0.118

@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `55edbdf` |
+| HEAD(실측) | `0f4cb23` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-REVIEW-QUOTA-SIM** — review quota live · **A 유지** |
-| 직전 | K-STAT-SEED-DIAG |
-| BOOT다음 | wire GO 대기 · **형 결정** |
-| NEXT1 ID | **K-REVIEW-QUOTA-SIM-DONE** |
-| NEXT1 할일 | review quota 시뮬 완료 · best=**A(현행)** · wire GO 대기 · **형 결정** |
+| 지금 | **K-EMA-MARKOV-DIAG** — L2 EMA · **NOISE** |
+| 직전 | K-REVIEW-QUOTA-SIM |
+| BOOT다음 | 다른 방향 탐색 · **형 GO** |
+| NEXT1 ID | **K-EMA-MARKOV-DIAG-DONE** |
+| NEXT1 할일 | EMA 진단 완료 · **NOISE** 확인 · **형 GO**(다른 방향 탐색) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=55edbdf · 지금=**K-REVIEW-QUOTA-SIM** — review quota live · **A 유지** · 다음=K-REVIEW-QUOTA-SIM-DONE`
+1. 첫줄 `[복귀] HEAD=0f4cb23 · 지금=**K-EMA-MARKOV-DIAG** — L2 EMA · **NOISE** · 다음=K-EMA-MARKOV-DIAG-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
