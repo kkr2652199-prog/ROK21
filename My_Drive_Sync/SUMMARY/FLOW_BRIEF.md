@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `72405f6` · WORK=`IDLE`
-- 지금: **K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC**
-- 직전: K-REPACK-HYBRID-WIRE PASS
-- BOOT다음: **K-EVOLVE-LOG A/B** 또는 C/D · **형 선택**
-- NEXT1: K-MULTI-AI-PATCH-DONE — 다중AI 최종안 보고 완료 · 권고 **K-EVOLVE-LOG** · **형 A/B/C/D 선택** (승인=미확인)
+- HEAD: `8794484` · WORK=`IDLE`
+- 지금: **K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS**
+- 직전: K-MULTI-AI-PATCH 최종안 DOC
+- BOOT다음: **K-EVOLVE-SIGNAL** 또는 FULL스냅샷 · **형 GO**
+- NEXT1: K-EVOLVE-LOG-DONE — Phase1 LOG PASS · 다음 **K-EVOLVE-SIGNAL**(best차단+λ) · **형 GO** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

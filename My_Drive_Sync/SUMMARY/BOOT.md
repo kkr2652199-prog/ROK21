@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC**
-- 직전: K-REPACK-HYBRID-WIRE PASS
-- 다음: **K-EVOLVE-LOG A/B** 또는 C/D · **형 선택**
+- 지금: **K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS**
+- 직전: K-MULTI-AI-PATCH 최종안 DOC
+- 다음: **K-EVOLVE-SIGNAL** 또는 FULL스냅샷 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

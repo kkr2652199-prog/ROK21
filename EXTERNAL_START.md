@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `72405f6` |
+| HEAD(실측) | `8794484` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC** |
-| 직전 | K-REPACK-HYBRID-WIRE PASS |
-| BOOT다음 | **K-EVOLVE-LOG A/B** 또는 C/D · **형 선택** |
-| NEXT1 ID | **K-MULTI-AI-PATCH-DONE** |
-| NEXT1 할일 | 다중AI 최종안 보고 완료 · 권고 **K-EVOLVE-LOG** · **형 A/B/C/D 선택** |
+| 지금 | **K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS** |
+| 직전 | K-MULTI-AI-PATCH 최종안 DOC |
+| BOOT다음 | **K-EVOLVE-SIGNAL** 또는 FULL스냅샷 · **형 GO** |
+| NEXT1 ID | **K-EVOLVE-LOG-DONE** |
+| NEXT1 할일 | Phase1 LOG PASS · 다음 **K-EVOLVE-SIGNAL**(best차단+λ) · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=72405f6 · 지금=**K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC** · 다음=K-MULTI-AI-PATCH-DONE`
+1. 첫줄 `[복귀] HEAD=8794484 · 지금=**K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS** · 다음=K-EVOLVE-LOG-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 72405f6_
+_generated: 8794484_

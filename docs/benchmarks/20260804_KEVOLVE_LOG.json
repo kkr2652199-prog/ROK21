@@ -1,0 +1,65 @@
+{
+  "id": "K-EVOLVE-LOG",
+  "ts": "2026-08-04T03:36:23+00:00",
+  "phase": 1,
+  "weight_applied": 0.0,
+  "wire_to_predict": false,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "backfill": {
+    "filled_draws": 200,
+    "missing_cache": 0
+  },
+  "summary": {
+    "ok": true,
+    "draw_range": [
+      1035,
+      1234
+    ],
+    "n_draws": 200,
+    "weight_applied": 0.0,
+    "by_brain": {
+      "markov": {
+        "n": 200,
+        "avg_best_hits": 1.885,
+        "avg_mean_hits": 0.806,
+        "ge3_count": 26,
+        "ge3_rate": 0.13
+      },
+      "review": {
+        "n": 200,
+        "avg_best_hits": 1.785,
+        "avg_mean_hits": 0.841,
+        "ge3_count": 27,
+        "ge3_rate": 0.135
+      },
+      "stat": {
+        "n": 200,
+        "avg_best_hits": 1.745,
+        "avg_mean_hits": 0.791,
+        "ge3_count": 33,
+        "ge3_rate": 0.165
+      }
+    }
+  },
+  "sample_draw": 1200,
+  "sample_ok": true,
+  "sample_brains": [
+    "markov",
+    "review",
+    "stat"
+  ],
+  "api": {
+    "log": "/api/testlotto/evolve/log/{draw_no}",
+    "summary": "/api/testlotto/evolve/summary?start=1035&end=1234"
+  },
+  "forbid": [
+    "apply_feedback_change",
+    "W_HINT_tune",
+    "quota_change",
+    "best_as_learn_input"
+  ],
+  "pass": true
+}

@@ -291,6 +291,33 @@ def init_testlotto_db():
             is_ultra_rare_hit   INTEGER NOT NULL DEFAULT 0,
             updated_at          TEXT DEFAULT (datetime('now','localtime'))
         );
+
+        -- K-EVOLVE-LOG Phase1: 회차×뇌 예측·채점·패턴 (가중 0 · 학습 wire 없음)
+        CREATE TABLE IF NOT EXISTS testlotto_evolve_log (
+            draw_no            INTEGER NOT NULL,
+            brain_tag          TEXT NOT NULL,
+            as_of              INTEGER NOT NULL,
+            schema_version     INTEGER NOT NULL DEFAULT 1,
+            weight_applied     REAL NOT NULL DEFAULT 0,
+            actual_nums_json   TEXT NOT NULL,
+            pool_json          TEXT NOT NULL,
+            repack_json        TEXT NOT NULL,
+            pool_hits_json     TEXT NOT NULL,
+            repack_hits_json   TEXT NOT NULL,
+            best_hits          INTEGER NOT NULL DEFAULT 0,
+            mean_hits          REAL NOT NULL DEFAULT 0,
+            best_set_kind      TEXT,
+            best_set_no        INTEGER,
+            features_json      TEXT NOT NULL,
+            miss_tags_json     TEXT NOT NULL,
+            assemble_mode      TEXT,
+            note               TEXT DEFAULT '',
+            created_at         TEXT DEFAULT (datetime('now','localtime')),
+            updated_at         TEXT DEFAULT (datetime('now','localtime')),
+            PRIMARY KEY (draw_no, brain_tag)
+        );
+        CREATE INDEX IF NOT EXISTS idx_evolve_log_draw ON testlotto_evolve_log(draw_no);
+        CREATE INDEX IF NOT EXISTS idx_evolve_log_brain ON testlotto_evolve_log(brain_tag);
     """
     )
     existing_cols = [r[1] for r in conn.execute("PRAGMA table_info(lotto_predictions)").fetchall()]

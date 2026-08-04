@@ -24,11 +24,18 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 12:35 KST)
-- **HEAD(실측)**: `72405f6` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-MULTI-AI-PATCH** — K-EVOLVE 최종안 **DOC**
-- **다음(공식)**: **K-EVOLVE-LOG** A/B 또는 C/D · **형 선택**
-- **산출물**: `reports/20260804_MULTI_AI_PATCH_FINAL.md`
+### 최신 상태 (2026-08-04 12:45 KST)
+- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-EVOLVE-LOG** — Phase1 **PASS**
+- **다음(공식)**: **K-EVOLVE-SIGNAL** · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KEVOLVE_LOG.json` · `reports/20260804_KEVOLVE_LOG.md`
+
+### K-EVOLVE-LOG (형 A안 GO · PASS · weight=0)
+- 테이블 `testlotto_evolve_log` · 백필 1035~1234 **200**회
+- API: `/api/testlotto/evolve/log/{draw}` · `/evolve/summary`
+- 저장: pool10+repack5 hits · features · miss_tags · assemble · **weight_applied=0**
+- predict/W_*/quota/apply_feedback **미수정**
+- ge3 참고(=hybrid): stat 0.165 · markov 0.130 · review 0.135
 
 ### K-MULTI-AI-PATCH (형 요청 · DOC)
 - 합의: 진화 학습=약 · best번호 복습=독(K-N)

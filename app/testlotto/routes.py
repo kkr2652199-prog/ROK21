@@ -314,6 +314,25 @@ async def api_clear_pool_view_cache_draw(draw_no: int):
     return {"ok": True, "draw_no": draw_no, "deleted_rows": deleted}
 
 
+@router.get("/evolve/log/{draw_no}")
+async def api_evolve_log(draw_no: int):
+    """K-EVOLVE-LOG — 회차×뇌 예측·채점·패턴 조회 (가중 0)."""
+    from app.testlotto.evolve_log import get_evolve_log
+
+    out = get_evolve_log(draw_no)
+    if not out:
+        return {"ok": False, "draw_no": draw_no, "error": "evolve_log 없음 · 백필 필요"}
+    return out
+
+
+@router.get("/evolve/summary")
+async def api_evolve_summary(start: int = 1035, end: int = 1234):
+    """K-EVOLVE-LOG 구간 요약 (가중 0 · ge3는 참고)."""
+    from app.testlotto.evolve_log import evolve_summary
+
+    return evolve_summary(start, end)
+
+
 @router.delete("/predict/pool-view/cache")
 async def api_clear_pool_view_cache_all():
     """관리용 — pool-view 캐시 전체 삭제."""
