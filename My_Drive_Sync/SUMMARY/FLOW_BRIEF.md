@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `176da32` · WORK=`IDLE`
+- HEAD: `94fe2b5` · WORK=`IDLE`
 - 지금: **K-EMA-MARKOV-DIAG** — L2 EMA · **NOISE**
 - 직전: K-REVIEW-QUOTA-SIM
 - BOOT다음: 다른 방향 탐색 · **형 GO**
