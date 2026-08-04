@@ -1,0 +1,87 @@
+{
+  "id": "K-COVER-DIAG",
+  "ts": "2026-08-04T19:22:11.730750+00:00",
+  "verdict": "NORMAL",
+  "wire": false,
+  "draw_range": [
+    1036,
+    1235
+  ],
+  "n_draws": 200,
+  "overlap_diag": {
+    "avg_jaccard": 0.108252,
+    "jaccard_expected": 0.122,
+    "avg_unique_per_draw": 20.73,
+    "unique_expected": 26.5,
+    "unique_min": 17,
+    "unique_max": 24,
+    "unique_hist": {
+      "17": 1,
+      "18": 9,
+      "19": 29,
+      "20": 44,
+      "21": 67,
+      "22": 26,
+      "23": 19,
+      "24": 5
+    },
+    "bias_rate_ge2": 0.563833,
+    "avg_best_ge3": 0.135,
+    "verdict": "NORMAL"
+  },
+  "cold_free_replace": {
+    "n_replaced_draws": 160,
+    "n_skip_no_candidate": 0,
+    "cold_k": 5,
+    "before": {
+      "avg_jaccard": 0.108252,
+      "avg_unique": 20.73,
+      "avg_ge3": 0.135
+    },
+    "after": {
+      "avg_jaccard": 0.083498,
+      "avg_unique": 22.715,
+      "avg_ge3": 0.165
+    },
+    "delta_ge3": 0.03,
+    "delta_unique": 1.985,
+    "verdict": "IMPROVE",
+    "note": "대체 후보=pool_view_cache repack cold-free · 발권 재생성 아님"
+  },
+  "by_period": {
+    "early_1036_1115": {
+      "avg_jaccard": 0.108019,
+      "avg_unique": 20.875,
+      "ge3": 0.1375,
+      "n": 80
+    },
+    "mid_1116_1175": {
+      "avg_jaccard": 0.110303,
+      "avg_unique": 20.416667,
+      "ge3": 0.15,
+      "n": 60
+    },
+    "late_1176_1235": {
+      "avg_jaccard": 0.10651,
+      "avg_unique": 20.85,
+      "ge3": 0.116667,
+      "n": 60
+    }
+  },
+  "implication": {
+    "cover_wire_viable": false,
+    "cold_free_add_viable": true,
+    "recommended_next": "cold-free replace wire GO 후보 · 형 승인 후"
+  },
+  "forbid": [
+    "random.choices",
+    "_get_draws_before mutate",
+    "engine.py",
+    "auto-tune",
+    "wire",
+    "DB INSERT/UPDATE"
+  ],
+  "pass": true,
+  "tool": "tools/_k_cover_diag.py",
+  "prior": "docs/benchmarks/20260805_KCOLD_EXCLUDE_DIAG.json"
+}

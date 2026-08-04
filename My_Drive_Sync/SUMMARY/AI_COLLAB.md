@@ -29,9 +29,13 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-COLD-EXCLUDE-DIAG** — **MARGINAL**
-- **다음(공식)**: 각도2(covering) · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KCOLD_EXCLUDE_DIAG.json`
+- **지금(판정)**: **K-COVER-DIAG** — overlap NORMAL · cold-free **IMPROVE**
+- **다음(공식)**: 각도3(early) · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KCOVER_DIAG.json`
+
+### K-COVER-DIAG (형 지시 · NORMAL/IMPROVE)
+- Jaccard0.108 NORMAL · unique20.7 · cold-free replace Δge3+0.030 (n160)
+- cover_wire否 · cold_free_add 후보 · tool `tools/_k_cover_diag.py`
 
 ### K-COLD-EXCLUDE-DIAG (형 지시 · MARGINAL)
 - EMA H=8 cold 사후필터 · k5 Δ+0.007 · k3+0.006 · k7+0.003

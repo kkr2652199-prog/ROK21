@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `80f7b24` |
+| HEAD(실측) | `4b0d1ab` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-COLD-EXCLUDE-DIAG** — cold제외 · **MARGINAL** |
-| 직전 | K-EMA-MARKOV-DIAG |
-| BOOT다음 | 각도2(covering) · **형 GO** |
-| NEXT1 ID | **K-COLD-EXCLUDE-DIAG-DONE** |
-| NEXT1 할일 | cold 제외 진단 완료 · 결과 확인 · **각도2(covering) 진행** |
+| 지금 | **K-COVER-DIAG** — 중복+cold-free · **NORMAL/IMPROVE** |
+| 직전 | K-COLD-EXCLUDE-DIAG |
+| BOOT다음 | 각도3(early) · **형 GO** |
+| NEXT1 ID | **K-COVER-DIAG-DONE** |
+| NEXT1 할일 | covering 진단 완료 · 결과 확인 · **각도3(early 취약성) 진행** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=80f7b24 · 지금=**K-COLD-EXCLUDE-DIAG** — cold제외 · **MARGINAL** · 다음=K-COLD-EXCLUDE-DIAG-DONE`
+1. 첫줄 `[복귀] HEAD=4b0d1ab · 지금=**K-COVER-DIAG** — 중복+cold-free · **NORMAL/IMPROVE** · 다음=K-COVER-DIAG-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

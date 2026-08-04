@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-COLD-EXCLUDE-DIAG** — EMA H=8 cold 제외 사후필터 · **MARGINAL**
+📌 사유: **K-COVER-DIAG** — 세트 중복 + cold-free 보강 진단
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-COVER-DIAG** | **NORMAL** overlap Jaccard**0.108**(기대0.122) · unique**20.7**<기대26.5 · cold-free replace Δge3**+0.030** IMPROVE(n**160**) · cover_wire否 · cold_free_add 후보 · `docs/benchmarks/20260805_KCOVER_DIAG.json` |
 | **K-COLD-EXCLUDE-DIAG** | **MARGINAL** — k5 best Δ**+0.007** (clean**0.037**/all**0.030**) · k3**+0.006** · k7**+0.003** · early k5**+0.005** · VIABLE미달 · wire HOLD · `docs/benchmarks/20260805_KCOLD_EXCLUDE_DIAG.json` |
 | **K-EMA-MARKOV-DIAG** | **NOISE** — H8 mean_hit**2.014** Δ+0.014 p**0.336** · H26**1.996** · H78**1.965** · div median-split Δ**0.005** · rescore **비권고** · `docs/benchmarks/20260805_KEMA_MARKOV_DIAG.json` |
 | **K-REVIEW-QUOTA-SIM** | **BEST=A** — live predict_sets·3seed n200 · A**0.128** > B/C**0.127** > D**0.123** > E**0.118**(DEGRADED) · review↑ 이득無 · FIXED=None 원복 · `docs/benchmarks/20260805_KREVIEW_QUOTA_SIM.json` |
@@ -297,7 +298,7 @@
 
 ## 5) 다음
 
-cold 제외 **MARGINAL** · **각도2(covering)** — 형 GO.  
+covering **NORMAL** · cold-free **IMPROVE(+0.03)** · **각도3(early)** — 형 GO.  
 압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START 붙여넣기 · JSON raw 재페치.
 
 ---
