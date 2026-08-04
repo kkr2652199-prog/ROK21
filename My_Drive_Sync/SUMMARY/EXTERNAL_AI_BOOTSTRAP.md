@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6c10b3a` |
+| HEAD(실측) | `72554e1` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-PATTERN-BC-MEASURE** — B·C 실측 · **MEASURED** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6c10b3a · 지금=**K-PATTERN-BC-MEASURE** — B·C 실측 · **MEASURED** · 다음=K-PATTERN-BC-MEASURE-DONE`
+1. 첫줄 `[복귀] HEAD=72554e1 · 지금=**K-PATTERN-BC-MEASURE** — B·C 실측 · **MEASURED** · 다음=K-PATTERN-BC-MEASURE-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
