@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `42ec4ae` · WORK=`IDLE`
+1. **HEAD:** `36dec66` · WORK=`IDLE`
 2. **지금:** **K-STAT-SEED-DIAG** — seed 안정성 · **HIGH_SENSITIVITY**
 3. **다음1건:** K-STAT-SEED-DIAG-DONE — seed 안정성 진단 완료 · **결과 기반 다음 방향** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | stat seed진단 | range0.14 HIGH · review STABLE | **HIGH** | (push후) |
+| 2026-08-05 | stat seed진단 | range0.14 HIGH · review STABLE | **HIGH** | 36dec66 |
 | 2026-08-05 | quota D wire | n100=0.10·full=0.115 · 롤백 | **FAIL** | f15a1ce |
 | 2026-08-05 | 1235패치준비 | quota B/C/D후보 · PMI/B/D기각 | **MEASURED** | aededd8 |
 | 2026-08-05 | B·C 패턴 실측 | odd/sum런·PMI클러스터 · wire OFF | **MEASURED** | 72554e1 |
