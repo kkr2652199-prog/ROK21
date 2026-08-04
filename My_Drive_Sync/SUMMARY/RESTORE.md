@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `20067f2` · WORK=`IDLE`
+1. **HEAD:** `962c783` · WORK=`IDLE`
 2. **지금:** **K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED**
 3. **다음1건:** K-LIVE-QUICK200-RESET-DONE — n200 리셋백테 MEASURED · **taxonomy v1 확장** 또는 **rare R4 설계심화** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

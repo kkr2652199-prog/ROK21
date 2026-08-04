@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `20067f2` |
+| HEAD(실측) | `962c783` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=20067f2 · 지금=**K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED** · 다음=K-LIVE-QUICK200-RESET-DONE`
+1. 첫줄 `[복귀] HEAD=962c783 · 지금=**K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED** · 다음=K-LIVE-QUICK200-RESET-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 20067f2_
+_generated: 962c783_

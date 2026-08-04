@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `20067f2` · WORK=`IDLE`
+- HEAD: `962c783` · WORK=`IDLE`
 - 지금: **K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED**
 - 직전: K-RARE-FILTER-PREP
 - BOOT다음: taxonomy v1 확장 또는 rare R4 설계심화 · **형 GO**
