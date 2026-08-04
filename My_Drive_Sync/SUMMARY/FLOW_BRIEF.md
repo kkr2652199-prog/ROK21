@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `36dec66` · WORK=`IDLE`
+- HEAD: `1e5f762` · WORK=`IDLE`
 - 지금: **K-STAT-SEED-DIAG** — seed 안정성 · **HIGH_SENSITIVITY**
 - 직전: K-QUOTA-D-WIRE
 - BOOT다음: 결과 기반 다음 방향 · **형 GO**
