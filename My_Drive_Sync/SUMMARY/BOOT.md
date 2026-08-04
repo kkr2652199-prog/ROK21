@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-EMA-MARKOV-DIAG** — L2 EMA · **NOISE**
-- 직전: K-REVIEW-QUOTA-SIM
-- 다음: 다른 방향 탐색 · **형 GO**
+- 지금: **K-COLD-EXCLUDE-DIAG** — cold제외 · **MARGINAL**
+- 직전: K-EMA-MARKOV-DIAG
+- 다음: 각도2(covering) · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

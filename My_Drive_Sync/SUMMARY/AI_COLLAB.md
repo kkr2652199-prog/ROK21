@@ -29,9 +29,13 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EMA-MARKOV-DIAG** — **NOISE**
-- **다음(공식)**: 다른 방향 탐색 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KEMA_MARKOV_DIAG.json`
+- **지금(판정)**: **K-COLD-EXCLUDE-DIAG** — **MARGINAL**
+- **다음(공식)**: 각도2(covering) · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KCOLD_EXCLUDE_DIAG.json`
+
+### K-COLD-EXCLUDE-DIAG (형 지시 · MARGINAL)
+- EMA H=8 cold 사후필터 · k5 Δ+0.007 · k3+0.006 · k7+0.003
+- VIABLE(≥+0.01) 미달 · wire HOLD · tool `tools/_k_cold_exclude_diag.py`
 
 ### K-EMA-MARKOV-DIAG (형 지시 · NOISE)
 - H8/26/78 top15 hit ≈ random(2.0) · p≥0.05 전부 NOISE

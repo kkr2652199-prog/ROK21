@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `94fe2b5` · WORK=`IDLE`
-- 지금: **K-EMA-MARKOV-DIAG** — L2 EMA · **NOISE**
-- 직전: K-REVIEW-QUOTA-SIM
-- BOOT다음: 다른 방향 탐색 · **형 GO**
-- NEXT1: K-EMA-MARKOV-DIAG-DONE — EMA 진단 완료 · **NOISE** 확인 · **형 GO**(다른 방향 탐색) (승인=미확인)
+- HEAD: `866a560` · WORK=`IDLE`
+- 지금: **K-COLD-EXCLUDE-DIAG** — cold제외 · **MARGINAL**
+- 직전: K-EMA-MARKOV-DIAG
+- BOOT다음: 각도2(covering) · **형 GO**
+- NEXT1: K-COLD-EXCLUDE-DIAG-DONE — cold 제외 진단 완료 · 결과 확인 · **각도2(covering) 진행** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

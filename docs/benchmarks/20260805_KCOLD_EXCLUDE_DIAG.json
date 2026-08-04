@@ -1,0 +1,195 @@
+{
+  "id": "K-COLD-EXCLUDE-DIAG",
+  "ts": "2026-08-04T19:18:16.930120+00:00",
+  "verdict": "MARGINAL",
+  "wire": false,
+  "draw_range": [
+    1036,
+    1235
+  ],
+  "n_draws": 200,
+  "ema_h": 8,
+  "alpha": 0.222222,
+  "cold_at_1235_before": {
+    "k3": [
+      5,
+      23,
+      10
+    ],
+    "k5": [
+      5,
+      23,
+      10,
+      11,
+      33
+    ],
+    "k7": [
+      5,
+      23,
+      10,
+      11,
+      33,
+      39,
+      21
+    ]
+  },
+  "cold_sets": {
+    "cold_k3": {
+      "contamination_rate": 0.187,
+      "clean_n_sets": 813,
+      "dirty_n_sets": 187,
+      "total_n_sets": 1000,
+      "clean_ge3": 0.03567,
+      "dirty_ge3": 0.005348,
+      "all_ge3": 0.03,
+      "delta": 0.00567,
+      "low_sample": false,
+      "verdict": "MARGINAL",
+      "draw_level_meta": {
+        "all_best_ge3": 0.135,
+        "clean_best_ge3": 0.13,
+        "n_draws_with_clean": 200,
+        "n_draws": 200,
+        "note": "draw-level best_of among remaining clean sets (참고)"
+      }
+    },
+    "cold_k5": {
+      "contamination_rate": 0.331,
+      "clean_n_sets": 669,
+      "dirty_n_sets": 331,
+      "total_n_sets": 1000,
+      "clean_ge3": 0.037369,
+      "dirty_ge3": 0.015106,
+      "all_ge3": 0.03,
+      "delta": 0.007369,
+      "low_sample": false,
+      "verdict": "MARGINAL",
+      "draw_level_meta": {
+        "all_best_ge3": 0.135,
+        "clean_best_ge3": 0.110553,
+        "n_draws_with_clean": 199,
+        "n_draws": 200,
+        "note": "draw-level best_of among remaining clean sets (참고)"
+      }
+    },
+    "cold_k7": {
+      "contamination_rate": 0.452,
+      "clean_n_sets": 548,
+      "dirty_n_sets": 452,
+      "total_n_sets": 1000,
+      "clean_ge3": 0.032847,
+      "dirty_ge3": 0.026549,
+      "all_ge3": 0.03,
+      "delta": 0.002847,
+      "low_sample": false,
+      "verdict": "NOT_VIABLE",
+      "draw_level_meta": {
+        "all_best_ge3": 0.135,
+        "clean_best_ge3": 0.088542,
+        "n_draws_with_clean": 192,
+        "n_draws": 200,
+        "note": "draw-level best_of among remaining clean sets (참고)"
+      }
+    }
+  },
+  "by_period": {
+    "early_1036_1115": {
+      "cold_k3": {
+        "clean_ge3": 0.036697,
+        "all_ge3": 0.03,
+        "delta": 0.006697,
+        "clean_n_sets": 327,
+        "low_sample": false,
+        "verdict": "MARGINAL"
+      },
+      "cold_k5": {
+        "clean_ge3": 0.035088,
+        "all_ge3": 0.03,
+        "delta": 0.005088,
+        "clean_n_sets": 285,
+        "low_sample": false,
+        "verdict": "MARGINAL"
+      },
+      "cold_k7": {
+        "clean_ge3": 0.033058,
+        "all_ge3": 0.03,
+        "delta": 0.003058,
+        "clean_n_sets": 242,
+        "low_sample": false,
+        "verdict": "NOT_VIABLE"
+      }
+    },
+    "mid_1116_1175": {
+      "cold_k3": {
+        "clean_ge3": 0.043307,
+        "all_ge3": 0.036667,
+        "delta": 0.00664,
+        "clean_n_sets": 254,
+        "low_sample": false,
+        "verdict": "MARGINAL"
+      },
+      "cold_k5": {
+        "clean_ge3": 0.053398,
+        "all_ge3": 0.036667,
+        "delta": 0.016731,
+        "clean_n_sets": 206,
+        "low_sample": false,
+        "verdict": "VIABLE"
+      },
+      "cold_k7": {
+        "clean_ge3": 0.041667,
+        "all_ge3": 0.036667,
+        "delta": 0.005,
+        "clean_n_sets": 168,
+        "low_sample": false,
+        "verdict": "MARGINAL"
+      }
+    },
+    "late_1176_1235": {
+      "cold_k3": {
+        "clean_ge3": 0.025862,
+        "all_ge3": 0.023333,
+        "delta": 0.002529,
+        "clean_n_sets": 232,
+        "low_sample": false,
+        "verdict": "NOT_VIABLE"
+      },
+      "cold_k5": {
+        "clean_ge3": 0.022472,
+        "all_ge3": 0.023333,
+        "delta": -0.000861,
+        "clean_n_sets": 178,
+        "low_sample": false,
+        "verdict": "NOT_VIABLE"
+      },
+      "cold_k7": {
+        "clean_ge3": 0.021739,
+        "all_ge3": 0.023333,
+        "delta": -0.001594,
+        "clean_n_sets": 138,
+        "low_sample": false,
+        "verdict": "NOT_VIABLE"
+      }
+    }
+  },
+  "best": {
+    "cold_k": 5,
+    "delta": 0.007369,
+    "viable": false,
+    "verdict": "MARGINAL",
+    "clean_ge3": 0.037369,
+    "all_ge3": 0.03
+  },
+  "forbid": [
+    "random.choices",
+    "_get_draws_before mutate",
+    "engine.py",
+    "auto-tune",
+    "wire",
+    "DB INSERT/UPDATE"
+  ],
+  "pass": true,
+  "tool": "tools/_k_cold_exclude_diag.py",
+  "prior": "docs/benchmarks/20260805_KEMA_MARKOV_DIAG.json",
+  "note": "사후필터 시뮬 · 발권 ge3 향상 클레임 금지 · wire 후 재측정 필요"
+}

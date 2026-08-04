@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `94fe2b5` · WORK=`IDLE`
-2. **지금:** **K-EMA-MARKOV-DIAG** — L2 EMA · **NOISE**
-3. **다음1건:** K-EMA-MARKOV-DIAG-DONE — EMA 진단 완료 · **NOISE** 확인 · **형 GO**(다른 방향 탐색) (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `866a560` · WORK=`IDLE`
+2. **지금:** **K-COLD-EXCLUDE-DIAG** — cold제외 · **MARGINAL**
+3. **다음1건:** K-COLD-EXCLUDE-DIAG-DONE — cold 제외 진단 완료 · 결과 확인 · **각도2(covering) 진행** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | cold제외진단 | k5 Δ+0.007 MARGINAL · wire否 | **MARGINAL** | (push후) |
 | 2026-08-05 | L2 EMA 진단 | H8/26/78 전부 NOISE · rescore否 | **NOISE** | 176da32 |
 | 2026-08-05 | review quota시뮬 | live A0.128 최선 · ↑기각 | **A유지** | f18b19f |
 | 2026-08-05 | stat seed진단 | range0.14 HIGH · review STABLE | **HIGH** | 36dec66 |
@@ -45,7 +46,6 @@
 | 2026-08-05 | TAXONOMY-V1 L1/L3/L4 | deviation·PMI·페널티스펙 · w*=0 | **DOC** | b75c2fe |
 | 2026-08-05 | 예측DB리셋+n200백테 | fusion0.135·hybrid 0.165/0.15/0.13 | **MEASURED** | 962c783 |
 | 2026-08-05 | 극소수필터 준비 | R0~R3 DESIGN·MEASURE·TAG · wire OFF | **PASS** | 13f0f99 |
-| 2026-08-05 | 1235가상·분석적용 | VIRTUAL PREDICT→SCORE · hybrid · ge3無 | **PASS** | cdf1bda |
 
 ---
 
