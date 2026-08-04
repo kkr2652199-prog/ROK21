@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `214a31f` · WORK=`IDLE`
+1. **HEAD:** `685a519` · WORK=`IDLE`
 2. **지금:** **K-MATH-PATTERN-WARRANT** — 1~1235 구조명분 10건 · **FOUND**
 3. **다음1건:** K-MATH-PATTERN-WARRANT-DONE — 구조명분10 FOUND · **covering/존·합·연속·쌍 1축 설계** 또는 AUTO설계문서 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 1~1235 수학명분(확률만論금지) | 구조명분10 · WARRANT_FOUND | **FOUND** | (push후) |
+| 2026-08-05 | 1~1235 수학명분(확률만論금지) | 구조명분10 · WARRANT_FOUND | **FOUND** | 685a519 |
 | 2026-08-05 | 종료체크 20260805보고서 | SESSION_STATUS · reports+커서보고서 | **DONE** | 3007a9a |
 | 2026-08-04 | 진행(λ재검증) | full Δ−0.0025 · λ OFF 롤백 · HOLD | **HOLD** | 2d3e3d4 |
 | 2026-08-04 | 다음(자음) evolve확장 | evolve_log 1182 · wf982+cache200 | **PASS** | ab7e6fb |
