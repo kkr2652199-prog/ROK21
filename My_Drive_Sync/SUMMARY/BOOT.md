@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS**
-- 직전: K-PATTERN-OWN-V1
-- 다음: B·C 측정 또는 L2 EMA · **형 GO**
+- 지금: **K-PATTERN-BC-MEASURE** — B·C 실측 · **MEASURED**
+- 직전: K-GENSPARK-COMPRESS-RECOVER
+- 다음: L2 EMA 진단 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

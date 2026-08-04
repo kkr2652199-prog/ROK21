@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS**
-- **다음(공식)**: B·C 측정 또는 L2 EMA · **형 GO** (본선) / 압축 시 RECOVER 붙여넣기
-- **산출물**: `My_Drive_Sync/SUMMARY/GENSPARK_COMPRESS_RECOVER.md`
+- **지금(판정)**: **K-PATTERN-BC-MEASURE** — B·C 실측 · **MEASURED**
+- **다음(공식)**: L2 EMA 진단 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KPATTERN_BC_MEASURE.json`
+
+### K-PATTERN-BC-MEASURE (형 지시 · MEASURED)
+- B: odd_k thr2/cur1 · zone thr115/cur73(mix지배) · sum_tier thr3/cur5=임박 · 신호 MODERATE
+- C: top20 mean0.463 frac_ge2≈0.070 vs bottom mean0.070 frac_ge2≈0.0016 · 신호 STRONG
+- wire=False · ge3 클레임 금지 · tool `tools/_k_pattern_bc_measure.py`
 
 ### K-GENSPARK-COMPRESS-RECOVER (형 요청 · PASS)
 - 문제: 젠스파크 세션 압축 → 보고서 기반 장문 유실·불신

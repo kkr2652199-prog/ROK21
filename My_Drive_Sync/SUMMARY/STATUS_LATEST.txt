@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-GENSPARK-COMPRESS-RECOVER** — 젠스파크 압축 시 빠른 복구 패킷 자동화
+📌 사유: **K-PATTERN-BC-MEASURE** — B 구조전환·C PMI클러스터 실측 (wire OFF)
 
 ---
 
@@ -10,8 +10,9 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-PATTERN-BC-MEASURE** | **MEASURED** — B: odd_k thr**2**/cur**1** · zone thr**115**/cur**73**(mix지배) · sum_tier thr**3**/cur**5**=임박 · C: top mean**0.463**/frac_ge2**0.070** vs bottom mean**0.070**/frac_ge2**0.0016** · B=**MODERATE** C=**STRONG** · wire=False · `docs/benchmarks/20260805_KPATTERN_BC_MEASURE.json` |
 | **K-GENSPARK-COMPRESS-RECOVER** | **PASS** — `GENSPARK_COMPRESS_RECOVER.md` R37자동(붙여넣기+증거체인) · 채팅기억불신·JSON재페치 · EXTERNAL_START/AI_COLLAB§2·§6 · `reports/20260805_GENSPARK_COMPRESS_RESUME.md` |
-| **K-PATTERN-OWN-V1** | **MEASURED_PARTIAL** — A accel(neg≈0.49) · D slot bias frac≥4=**0.542** · E carry priorΔ≈**0** · F high→low wait mean**3.21** · B/C DESIGN_ONLY · `docs/benchmarks/20260805_KPATTERN_OWN_V1.json` |
+| **K-PATTERN-OWN-V1** | **MEASURED_PARTIAL** — A accel(neg≈0.49) · D slot bias frac≥4=**0.542** · E carry priorΔ≈**0** · F high→low wait mean**3.21** · B/C→**K-PATTERN-BC-MEASURE**로 승격실측 · `docs/benchmarks/20260805_KPATTERN_OWN_V1.json` |
 | **K-SIGNAL-TAXONOMY-V1** | **DOC_SURVEY** — L1 전수w+deviation(consec_3plus th**0.0563**/emp**0.0543**) · L3 PMI 990쌍·top(11,21) pmi**0.421** · set_pmi mean**−0.138** · L4 birthday/sum/consec 스펙 · score w*=**0** · `docs/benchmarks/20260805_KSIGNAL_TAXONOMY_V1.json` |
 | **K-LIVE-QUICK200-RESET** | **MEASURED** — preds**5910**+cache**606**+learn 삭제 후 WF · fusion ge3=**0.135**(27/200) mean**1.715** · hybrid ge3 stat**0.165**/markov**0.150**/review**0.130** · rare진단 ultra율**0.233**(WIRE OFF) · `docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json` |
 | **K-RARE-FILTER-PREP** | **PASS** — R0 DESIGN · R1 TAXONOMY · R2 MEASURE 1~1235 · R3 TAG_SPEC · `rare_annotate.py` WIRE=**False** · signal_pool 삽입점 주석만 · 등확률·컨닝금지·당첨P↑비약속 · `docs/benchmarks/20260805_KRARE_FILTER_DESIGN.json` |
@@ -290,7 +291,7 @@
 
 ## 5) 다음
 
-**B·C 측정** 또는 **L2 EMA** — 형 GO (본선).  
+**L2 EMA 진단** — 형 GO.  
 압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START 붙여넣기 · JSON raw 재페치.
 
 ---

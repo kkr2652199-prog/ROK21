@@ -1,0 +1,274 @@
+{
+  "id": "K-PATTERN-BC-MEASURE",
+  "ts": "2026-08-04T18:06:57.847053+00:00",
+  "verdict": "MEASURED",
+  "wire": false,
+  "draw_range": [
+    1,
+    1235
+  ],
+  "n_draws": 1235,
+  "B": {
+    "id": "B_structure_transition",
+    "odd_k": {
+      "run_summary": {
+        "mean": 1.351204,
+        "median": 1.0,
+        "p90": 2.0,
+        "max": 8
+      },
+      "run_hist": {
+        "1": 698,
+        "2": 150,
+        "3": 41,
+        "4": 16,
+        "5plus": 9
+      },
+      "transition_threshold_p90": 2,
+      "current_run_1235": 1,
+      "transition_imminent": false
+    },
+    "zone": {
+      "run_summary": {
+        "mean": 176.428571,
+        "median": 73,
+        "p90": 115.0,
+        "max": 965
+      },
+      "run_hist": {
+        "1": 3,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5plus": 4
+      },
+      "transition_threshold_p90": 115,
+      "current_run_1235": 73,
+      "transition_imminent": false
+    },
+    "sum_tier": {
+      "run_summary": {
+        "mean": 1.614379,
+        "median": 1,
+        "p90": 3.0,
+        "max": 10
+      },
+      "run_hist": {
+        "1": 494,
+        "2": 167,
+        "3": 59,
+        "4": 25,
+        "5plus": 20
+      },
+      "transition_threshold_p90": 3,
+      "current_run_1235": 5,
+      "transition_imminent": true
+    },
+    "success_check": {
+      "B_has_run_dist": true,
+      "B_has_threshold": true,
+      "B_has_current": true
+    },
+    "_meta": {
+      "labels_at_1235": {
+        "odd_k": 5,
+        "zone": "mix",
+        "sum_tier": "mid"
+      }
+    }
+  },
+  "C": {
+    "id": "C_pmi_cluster",
+    "top20_pairs_used": 20,
+    "top20_pairs": [
+      {
+        "a": 11,
+        "b": 21
+      },
+      {
+        "a": 1,
+        "b": 28
+      },
+      {
+        "a": 10,
+        "b": 31
+      },
+      {
+        "a": 6,
+        "b": 38
+      },
+      {
+        "a": 33,
+        "b": 40
+      },
+      {
+        "a": 25,
+        "b": 36
+      },
+      {
+        "a": 6,
+        "b": 28
+      },
+      {
+        "a": 12,
+        "b": 24
+      },
+      {
+        "a": 34,
+        "b": 42
+      },
+      {
+        "a": 10,
+        "b": 22
+      },
+      {
+        "a": 19,
+        "b": 21
+      },
+      {
+        "a": 5,
+        "b": 11
+      },
+      {
+        "a": 8,
+        "b": 39
+      },
+      {
+        "a": 3,
+        "b": 24
+      },
+      {
+        "a": 2,
+        "b": 25
+      },
+      {
+        "a": 3,
+        "b": 22
+      },
+      {
+        "a": 37,
+        "b": 40
+      },
+      {
+        "a": 5,
+        "b": 20
+      },
+      {
+        "a": 14,
+        "b": 15
+      },
+      {
+        "a": 3,
+        "b": 20
+      }
+    ],
+    "cluster_dist": {
+      "hist": {
+        "0": 760,
+        "1": 389,
+        "2": 75,
+        "3plus": 11
+      },
+      "mean": 0.463158,
+      "median": 0,
+      "p90": 1.0,
+      "frac_ge2": 0.069636,
+      "frac_zero": 0.615385
+    },
+    "transition": {
+      "after_high_ge2_next": {
+        "0": 0.639535,
+        "1": 0.313953,
+        "ge2": 0.046512
+      },
+      "after_low_0_next": {
+        "0": 0.629776,
+        "1": 0.299078,
+        "ge2": 0.071146
+      },
+      "n_after_high": 86,
+      "n_after_low": 759
+    },
+    "bottom10_contrast": {
+      "bottom10_pairs": [
+        {
+          "a": 8,
+          "b": 12
+        },
+        {
+          "a": 24,
+          "b": 43
+        },
+        {
+          "a": 8,
+          "b": 26
+        },
+        {
+          "a": 6,
+          "b": 33
+        },
+        {
+          "a": 11,
+          "b": 40
+        },
+        {
+          "a": 11,
+          "b": 34
+        },
+        {
+          "a": 26,
+          "b": 32
+        },
+        {
+          "a": 3,
+          "b": 25
+        },
+        {
+          "a": 4,
+          "b": 30
+        },
+        {
+          "a": 37,
+          "b": 44
+        }
+      ],
+      "hist": {
+        "0": 1150,
+        "1": 83,
+        "2": 2,
+        "3plus": 0
+      },
+      "mean": 0.070445,
+      "frac_ge2": 0.001619,
+      "note": "top20 vs bottom10 · PMI 가설 교차검증"
+    },
+    "success_check": {
+      "C_has_cluster_dist": true,
+      "C_has_transition": true,
+      "C_has_bottom_contrast": true
+    },
+    "_meta": {
+      "cluster_at_1235": 0
+    }
+  },
+  "summary": {
+    "B_signal": "MODERATE",
+    "C_signal": "STRONG",
+    "note": "당첨회차 내부 진단 · 발권 ge3 클레임 금지 · zone은 6번호가 저/중/고 2구역 이상이면 mix → 대부분 mix라 런이 매우 김",
+    "C_top_vs_bottom_mean_ratio": 6.574746
+  },
+  "forbid": [
+    "random.choices",
+    "_get_draws_before mutate",
+    "engine.py",
+    "auto-tune",
+    "wire",
+    "p_boost_claim"
+  ],
+  "pass": true,
+  "tool": "tools/_k_pattern_bc_measure.py",
+  "prior": [
+    "docs/benchmarks/20260805_KPATTERN_OWN_V1.json",
+    "docs/benchmarks/20260805_KSIGNAL_TAXONOMY_V1.json"
+  ]
+}
