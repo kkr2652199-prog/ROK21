@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `27cc41d` · WORK=`IDLE`
+1. **HEAD:** `83332c9` · WORK=`IDLE`
 2. **지금:** **K-PIN-GAP-DIAG-REVIEW** — 젠스파크 지시서 구조대조 · 수정3건 · **DOC**
 3. **다음1건:** K-PIN-GAP-DIAG-WAIT — 지시서 수정3건 반영 후 **K-PIN-GAP-DIAG GO** · 또는 로드맵 A/B/C/D **형 선택** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-04 | 젠스파크압축복구·과거현재복귀 | COMPRESS_RESUME·§6패킷·수정3건·NEXT WAIT | **DOC** | (본커밋) |
+| 2026-08-04 | 젠스파크압축복구·과거현재복귀 | COMPRESS_RESUME·§6패킷·수정3건·NEXT WAIT | **DOC** | 83332c9 |
 | 2026-08-04 | 대폭개선 조사·리스크·최선 | I1+I3 권고 · ultra HOLD · 외부벤치 아이디어 · 보고서 | **DOC** | 7b7a42a |
 | 2026-08-04 | 젠스파크검토 팩트체크 | HEAD 53decde 정정 · 수학 PASS · pin/collapse 구분 | **OK** | 71bc88d |
 | 2026-08-03 | 극소의극소·역이용·814만돌파 | L0~L3·실측·covering/EV문헌 · 뇌이식안 · wire HOLD | **ANAL** | 89f871e |

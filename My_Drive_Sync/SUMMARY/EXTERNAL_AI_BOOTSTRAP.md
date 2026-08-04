@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `27cc41d` |
+| HEAD(실측) | `83332c9` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-PIN-GAP-DIAG-REVIEW** — 젠스파크 지시서 구조대조 · 수정3건 · **DOC** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=27cc41d · 지금=**K-PIN-GAP-DIAG-REVIEW** — 젠스파크 지시서 구조대조 · 수정3건 · **DOC** · 다음=K-PIN-GAP-DIAG-WAIT`
+1. 첫줄 `[복귀] HEAD=83332c9 · 지금=**K-PIN-GAP-DIAG-REVIEW** — 젠스파크 지시서 구조대조 · 수정3건 · **DOC** · 다음=K-PIN-GAP-DIAG-WAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
