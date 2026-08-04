@@ -1,0 +1,560 @@
+{
+  "id": "K-PATTERN-OWN-V1",
+  "ts": "2026-08-04T17:46:28+00:00",
+  "verdict": "MEASURED_PARTIAL",
+  "wire": false,
+  "draw_range": [
+    1,
+    1235
+  ],
+  "n_draws": 1235,
+  "measured": [
+    "A",
+    "D",
+    "E",
+    "F"
+  ],
+  "design_only": [
+    "B",
+    "C"
+  ],
+  "A": {
+    "id": "A_gap_acceleration",
+    "delta_gap_hist": {
+      "n_deltas": 7275,
+      "bins": {
+        "accel_neg": 3402,
+        "accel_zero": 502,
+        "accel_pos": 3371
+      },
+      "summary": {
+        "n": 7275,
+        "mean": -0.002062,
+        "median": 0.0,
+        "p10": -11.0,
+        "p90": 11.0,
+        "min": -72.0,
+        "max": 71.0
+      }
+    },
+    "winning_set_accel_score": {
+      "n": 1235,
+      "mean": -0.007773,
+      "median": 0.0,
+      "p10": -5.166667,
+      "p90": 5.166667,
+      "min": -13.666667,
+      "max": 15.333333
+    },
+    "contrast": {
+      "definition": "winning-draw accel_score ≤ median vs > median (diagnostic)",
+      "median": 0.0,
+      "n_le_median": 636,
+      "n_gt_median": 599,
+      "mean_le_median": -3.128905,
+      "mean_gt_median": 3.306149,
+      "frac_accel_neg": 0.491498,
+      "frac_accel_pos": 0.48502,
+      "frac_zero": 0.023482,
+      "note": "당첨회차 내부 분포 대비 · 발권 ge3 아님 · wire OFF"
+    },
+    "gap_series_per_num_sample": {
+      "1": [
+        1,
+        4,
+        9,
+        8,
+        7
+      ],
+      "2": [
+        14,
+        9,
+        10,
+        1,
+        13
+      ],
+      "3": [
+        8,
+        3,
+        10,
+        2,
+        12
+      ],
+      "4": [
+        9,
+        5,
+        17,
+        4,
+        5
+      ],
+      "5": [
+        9,
+        10,
+        5,
+        10,
+        1
+      ]
+    }
+  },
+  "D": {
+    "id": "D_slot_position_bias",
+    "slot_top10": [
+      {
+        "slot": 1,
+        "top10": [
+          {
+            "num": 1,
+            "n": 170
+          },
+          {
+            "num": 3,
+            "n": 132
+          },
+          {
+            "num": 2,
+            "n": 131
+          },
+          {
+            "num": 4,
+            "n": 106
+          },
+          {
+            "num": 6,
+            "n": 98
+          },
+          {
+            "num": 5,
+            "n": 97
+          },
+          {
+            "num": 7,
+            "n": 79
+          },
+          {
+            "num": 8,
+            "n": 63
+          },
+          {
+            "num": 10,
+            "n": 50
+          },
+          {
+            "num": 9,
+            "n": 42
+          }
+        ]
+      },
+      {
+        "slot": 2,
+        "top10": [
+          {
+            "num": 7,
+            "n": 79
+          },
+          {
+            "num": 10,
+            "n": 75
+          },
+          {
+            "num": 12,
+            "n": 73
+          },
+          {
+            "num": 11,
+            "n": 72
+          },
+          {
+            "num": 8,
+            "n": 72
+          },
+          {
+            "num": 9,
+            "n": 65
+          },
+          {
+            "num": 13,
+            "n": 61
+          },
+          {
+            "num": 15,
+            "n": 61
+          },
+          {
+            "num": 14,
+            "n": 59
+          },
+          {
+            "num": 18,
+            "n": 55
+          }
+        ]
+      },
+      {
+        "slot": 3,
+        "top10": [
+          {
+            "num": 19,
+            "n": 71
+          },
+          {
+            "num": 18,
+            "n": 67
+          },
+          {
+            "num": 20,
+            "n": 67
+          },
+          {
+            "num": 13,
+            "n": 66
+          },
+          {
+            "num": 15,
+            "n": 61
+          },
+          {
+            "num": 17,
+            "n": 58
+          },
+          {
+            "num": 16,
+            "n": 52
+          },
+          {
+            "num": 24,
+            "n": 51
+          },
+          {
+            "num": 14,
+            "n": 51
+          },
+          {
+            "num": 22,
+            "n": 50
+          }
+        ]
+      },
+      {
+        "slot": 4,
+        "top10": [
+          {
+            "num": 27,
+            "n": 64
+          },
+          {
+            "num": 31,
+            "n": 63
+          },
+          {
+            "num": 26,
+            "n": 61
+          },
+          {
+            "num": 30,
+            "n": 60
+          },
+          {
+            "num": 33,
+            "n": 58
+          },
+          {
+            "num": 24,
+            "n": 57
+          },
+          {
+            "num": 25,
+            "n": 56
+          },
+          {
+            "num": 32,
+            "n": 53
+          },
+          {
+            "num": 23,
+            "n": 52
+          },
+          {
+            "num": 21,
+            "n": 51
+          }
+        ]
+      },
+      {
+        "slot": 5,
+        "top10": [
+          {
+            "num": 34,
+            "n": 84
+          },
+          {
+            "num": 39,
+            "n": 79
+          },
+          {
+            "num": 37,
+            "n": 77
+          },
+          {
+            "num": 38,
+            "n": 72
+          },
+          {
+            "num": 33,
+            "n": 68
+          },
+          {
+            "num": 36,
+            "n": 63
+          },
+          {
+            "num": 40,
+            "n": 61
+          },
+          {
+            "num": 35,
+            "n": 61
+          },
+          {
+            "num": 41,
+            "n": 57
+          },
+          {
+            "num": 31,
+            "n": 52
+          }
+        ]
+      },
+      {
+        "slot": 6,
+        "top10": [
+          {
+            "num": 45,
+            "n": 175
+          },
+          {
+            "num": 44,
+            "n": 150
+          },
+          {
+            "num": 43,
+            "n": 131
+          },
+          {
+            "num": 42,
+            "n": 103
+          },
+          {
+            "num": 40,
+            "n": 96
+          },
+          {
+            "num": 41,
+            "n": 83
+          },
+          {
+            "num": 39,
+            "n": 72
+          },
+          {
+            "num": 38,
+            "n": 69
+          },
+          {
+            "num": 37,
+            "n": 59
+          },
+          {
+            "num": 36,
+            "n": 57
+          }
+        ]
+      }
+    ],
+    "winning_bias_hits_0to6": {
+      "n": 1235,
+      "mean": 3.625911,
+      "median": 4.0,
+      "p10": 2.0,
+      "p90": 5.0,
+      "min": 1.0,
+      "max": 6.0
+    },
+    "hist_bias_hits": {
+      "4": 315,
+      "2": 208,
+      "3": 286,
+      "5": 252,
+      "1": 72,
+      "6": 102
+    },
+    "contrast": {
+      "definition": "bias_hits>=4 vs <=1 among winning draws",
+      "n_ge4": 669,
+      "n_le1": 72,
+      "frac_ge4": 0.5417,
+      "frac_le1": 0.0583,
+      "median_hits": 4,
+      "note": "당첨회차 내 슬롯편향 강도 · 예측 ge3 아님"
+    }
+  },
+  "E": {
+    "id": "E_carry_continuity",
+    "carry_summary": {
+      "n": 1234,
+      "mean": 0.82577,
+      "median": 1.0,
+      "p10": 0.0,
+      "p90": 2.0,
+      "min": 0.0,
+      "max": 4.0
+    },
+    "carry_hist": {
+      "0": 477,
+      "1": 523,
+      "2": 208,
+      "3": 24,
+      "4": 2
+    },
+    "zero_run_lengths": {
+      "n": 296,
+      "mean": 1.611486,
+      "median": 1.0,
+      "p10": 1.0,
+      "p90": 3.0,
+      "min": 1.0,
+      "max": 6.0
+    },
+    "ge2_run_lengths": {
+      "n": 193,
+      "mean": 1.212435,
+      "median": 1.0,
+      "p10": 1.0,
+      "p90": 2.0,
+      "min": 1.0,
+      "max": 4.0
+    },
+    "next_carry_prior_K5": {
+      "n": 1233,
+      "mean": 0.825588,
+      "median": 0.8,
+      "p10": 0.4,
+      "p90": 1.2,
+      "min": 0.0,
+      "max": 2.2
+    },
+    "contrast": {
+      "definition": "prior_mean_K5>=1 vs <0.5 → actual carry mean",
+      "n_high_prior": 480,
+      "n_low_prior": 237,
+      "actual_mean_when_prior_high": 0.86875,
+      "actual_mean_when_prior_low": 0.873418,
+      "delta_mean": -0.004668,
+      "note": "직전 상태→다음 carry · 티켓 ge3 아님"
+    }
+  },
+  "F": {
+    "id": "F_sum_reversion",
+    "sum_summary": {
+      "n": 1235,
+      "mean": 138.247773,
+      "median": 138.0,
+      "p10": 98.0,
+      "p90": 177.0,
+      "min": 48.0,
+      "max": 238.0
+    },
+    "tier_counts": {
+      "high": 322,
+      "mid": 564,
+      "low": 349
+    },
+    "tier_rates": {
+      "high": 0.260729,
+      "mid": 0.45668,
+      "low": 0.282591
+    },
+    "streak_lengths": {
+      "high": {
+        "n": 236,
+        "mean": 1.364407,
+        "median": 1.0,
+        "p10": 1.0,
+        "p90": 2.0,
+        "min": 1.0,
+        "max": 4.0
+      },
+      "mid": {
+        "n": 300,
+        "mean": 1.88,
+        "median": 1.0,
+        "p10": 1.0,
+        "p90": 3.0,
+        "min": 1.0,
+        "max": 10.0
+      },
+      "low": {
+        "n": 246,
+        "mean": 1.418699,
+        "median": 1.0,
+        "p10": 1.0,
+        "p90": 2.0,
+        "min": 1.0,
+        "max": 5.0
+      }
+    },
+    "high_to_low_wait": {
+      "n": 236,
+      "mean": 3.207627,
+      "median": 2.0,
+      "p10": 1.0,
+      "p90": 7.0,
+      "min": 1.0,
+      "max": 13.0
+    },
+    "contrast": {
+      "definition": "after high_streak>=2 vs low_streak>=2 → next tier rates",
+      "after_high_streak2_next": {
+        "high": 0.244186,
+        "low": 0.325581,
+        "mid": 0.430233
+      },
+      "after_low_streak2_next": {
+        "high": 0.252427,
+        "low": 0.31068,
+        "mid": 0.436893
+      },
+      "n_after_high": 86,
+      "n_after_low": 103,
+      "note": "회귀 경향 진단 · 당첨P 아님"
+    }
+  },
+  "B_C_design": {
+    "B_structure_transition": {
+      "status": "DESIGN_ONLY",
+      "plan": "회차별 odd_k/zone/sum_tier 기록 → 동일 구조 연속 N 분포 → 전환 직전 N = next_transition_signal",
+      "measure_next": "연속 구조 길이 mean/median/p90 표"
+    },
+    "C_pmi_cluster": {
+      "status": "DESIGN_ONLY",
+      "plan": "PMI top20 페어 · 회차당 동시 포함 cluster_count → cluster≥2 비율 · (나중) 고/저 cluster 세트 ge3 대비",
+      "depends_on": "20260805_KSIGNAL_TAXONOMY_V1 PMI",
+      "note": "발권 ge3 대비는 pool 재점수 필요 · 별도 GO"
+    }
+  },
+  "success_check": {
+    "A_has_dist": true,
+    "D_has_dist": true,
+    "E_has_contrast_delta": true,
+    "F_has_contrast": true,
+    "note": "당첨회차 내부 신호 유/무 대비 · 발권 ge3 클레임 금지"
+  },
+  "forbid": [
+    "random.choices",
+    "_get_draws_before mutate",
+    "engine.py",
+    "auto-tune",
+    "wire",
+    "p_boost_claim"
+  ],
+  "pass": true
+}

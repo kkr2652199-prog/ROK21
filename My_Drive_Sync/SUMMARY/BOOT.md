@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-SIGNAL-TAXONOMY-V1** — L1·L3·L4 진단 · **DOC_SURVEY**
-- 직전: K-LIVE-QUICK200-RESET
-- 다음: L2 EMA 진단 또는 L1 annotate stub · **형 GO**
+- 지금: **K-PATTERN-OWN-V1** — ADEF 독자패턴 측정 · **MEASURED**
+- 직전: K-SIGNAL-TAXONOMY-V1
+- 다음: B·C 측정 또는 L2 EMA 진단 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

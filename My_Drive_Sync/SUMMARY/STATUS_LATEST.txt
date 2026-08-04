@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-SIGNAL-TAXONOMY-V1** — L1 deviation·L3 PMI·L4스펙·통합스코어 스키마 (wire OFF)
+📌 사유: **K-PATTERN-OWN-V1** — ROK21 독자패턴 A·D·E·F 측정 (B·C 설계만 · wire OFF)
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-PATTERN-OWN-V1** | **MEASURED_PARTIAL** — A accel(neg≈0.49) · D slot bias frac≥4=**0.542** · E carry priorΔ≈**0** · F high→low wait mean**3.21** · B/C DESIGN_ONLY · `docs/benchmarks/20260805_KPATTERN_OWN_V1.json` |
 | **K-SIGNAL-TAXONOMY-V1** | **DOC_SURVEY** — L1 전수w+deviation(consec_3plus th**0.0563**/emp**0.0543**) · L3 PMI 990쌍·top(11,21) pmi**0.421** · set_pmi mean**−0.138** · L4 birthday/sum/consec 스펙 · score w*=**0** · `docs/benchmarks/20260805_KSIGNAL_TAXONOMY_V1.json` |
 | **K-LIVE-QUICK200-RESET** | **MEASURED** — preds**5910**+cache**606**+learn 삭제 후 WF · fusion ge3=**0.135**(27/200) mean**1.715** · hybrid ge3 stat**0.165**/markov**0.150**/review**0.130** · rare진단 ultra율**0.233**(WIRE OFF) · `docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json` |
 | **K-RARE-FILTER-PREP** | **PASS** — R0 DESIGN · R1 TAXONOMY · R2 MEASURE 1~1235 · R3 TAG_SPEC · `rare_annotate.py` WIRE=**False** · signal_pool 삽입점 주석만 · 등확률·컨닝금지·당첨P↑비약속 · `docs/benchmarks/20260805_KRARE_FILTER_DESIGN.json` |
@@ -288,8 +289,8 @@
 
 ## 5) 다음
 
-**L2 EMA(H=8/26/78) 진단 구현** 또는 **L1 deviation annotate stub** — 형 GO.  
-TAXONOMY-V1 진단 완료 · 통합 score w*=0 · quota/발권/engine 미변경 · L5 CUSUM은 별도 GO.
+**B·C 측정 완성** 또는 **L2 EMA 진단** — 형 GO.  
+OWN-V1 ADEF 측정 · wire OFF · 당첨시계열 진단(발권 ge3 비클레임) · E prior 신호 약함.
 
 ---
 

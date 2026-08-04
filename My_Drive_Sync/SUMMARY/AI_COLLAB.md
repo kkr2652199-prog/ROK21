@@ -26,9 +26,15 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-SIGNAL-TAXONOMY-V1** — **DOC_SURVEY** (L1·L3·L4)
-- **다음(공식)**: L2 EMA 진단 또는 L1 annotate stub · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KSIGNAL_TAXONOMY_V1.json`
+- **지금(판정)**: **K-PATTERN-OWN-V1** — **MEASURED** (ADEF · BC설계)
+- **다음(공식)**: B·C 측정 또는 L2 EMA · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KPATTERN_OWN_V1.json`
+
+### K-PATTERN-OWN-V1 (형 논의 · MEASURED_PARTIAL)
+- 독자패턴: A gap가속도 · D 슬롯편향 · E carry연속 · F sum회귀 (B·C 설계만)
+- D: bias≥4 비율 **0.542** · E: prior→carry Δ≈**0** (약) · F: high→low mean **3.21**회
+- wire=False · 당첨시계열 진단 · 발권/quota 미변경
+- tool: `tools/_k_pattern_own_v1_survey.py`
 
 ### K-SIGNAL-TAXONOMY-V1 (형 논의 · DOC_SURVEY)
 - fusion 0.135 정체 → 신호 레이어 L1~L5 설계 · **wire OFF · w*=0**
