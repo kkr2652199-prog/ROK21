@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `2037617` · WORK=`IDLE`
+- HEAD: `3f90a86` · WORK=`IDLE`
 - 지금: **K-REPACK-HYBRID** — stat+0.04·review+0.03·markov동률 · **DONE**
 - 직전: K-REPACK-ANALYSIS PER_BRAIN+DECOMPOSE
 - BOOT다음: **K-REPACK-HYBRID-WIRE** (stat/review p45) 또는 I2 · **형 GO**

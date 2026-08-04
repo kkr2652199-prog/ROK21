@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-04 12:10 KST)
-- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **HEAD(실측)**: `3f90a86` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-REPACK-HYBRID** — 조립 ablation **DONE**
 - **다음(공식)**: **K-REPACK-HYBRID-WIRE** (stat/review p45+r123 · markov 유지) · **형 GO**
 - **산출물**: `docs/benchmarks/20260804_KREPACK_HYBRID_survey.json` · `reports/20260804_KREPACK_HYBRID_SURVEY.md`
