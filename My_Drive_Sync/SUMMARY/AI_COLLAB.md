@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-04 12:50 KST)
-- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **HEAD(실측)**: `1a87bc7` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-EVOLVE-SIGNAL** — **DONE**
 - **다음(공식)**: review λ0.3 또는 FULL스냅샷 · **형 GO**
 - **산출물**: `docs/benchmarks/20260804_KEVOLVE_SIGNAL_survey.json`

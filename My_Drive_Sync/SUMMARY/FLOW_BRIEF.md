@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `df65a8a` · WORK=`IDLE`
+- HEAD: `1a87bc7` · WORK=`IDLE`
 - 지금: **K-EVOLVE-SIGNAL** — mean피드백 wire · λ HOLD · **DONE**
 - 직전: K-EVOLVE-LOG Phase1 PASS
 - BOOT다음: review λ=0.3 GO-WAIT 또는 FULL스냅샷 · **형 GO**
