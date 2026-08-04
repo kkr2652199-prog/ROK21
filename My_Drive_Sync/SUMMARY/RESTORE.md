@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8794484` · WORK=`IDLE`
+1. **HEAD:** `8cf8a55` · WORK=`IDLE`
 2. **지금:** **K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS**
 3. **다음1건:** K-EVOLVE-LOG-DONE — Phase1 LOG PASS · 다음 **K-EVOLVE-SIGNAL**(best차단+λ) · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-04 | A안 K-EVOLVE-LOG GO | evolve_log 백필200 · API · weight0 PASS | **PASS** | (본커밋) |
+| 2026-08-04 | A안 K-EVOLVE-LOG GO | evolve_log 백필200 · API · weight0 PASS | **PASS** | 8cf8a55 |
 | 2026-08-04 | 다중AI 패치논의·최종안 | K-EVOLVE-LOG 권고 · A/B/C/D · 보고서 | **DOC** | 72405f6 |
 | 2026-08-04 | HYBRID-WIRE 진행 | signal_pool p45 · schema2 · ge3 match PASS | **PASS** | 4baab6e |
 | 2026-08-04 | HYBRID ablation 진행 | stat+0.04·review+0.03·markov동률 · wire후보 | **DONE** | 3f90a86 |

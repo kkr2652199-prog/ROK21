@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `8794484` |
+| HEAD(실측) | `8cf8a55` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS** |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=8794484 · 지금=**K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS** · 다음=K-EVOLVE-LOG-DONE`
+1. 첫줄 `[복귀] HEAD=8cf8a55 · 지금=**K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS** · 다음=K-EVOLVE-LOG-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 8794484_
+_generated: 8cf8a55_

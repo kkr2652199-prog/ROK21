@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `8794484` · WORK=`IDLE`
+- HEAD: `8cf8a55` · WORK=`IDLE`
 - 지금: **K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS**
 - 직전: K-MULTI-AI-PATCH 최종안 DOC
 - BOOT다음: **K-EVOLVE-SIGNAL** 또는 FULL스냅샷 · **형 GO**
