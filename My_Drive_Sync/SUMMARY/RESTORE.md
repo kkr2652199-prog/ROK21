@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `13f0f99` · WORK=`IDLE`
+1. **HEAD:** `0b81fee` · WORK=`IDLE`
 2. **지금:** **K-RARE-FILTER-PREP** — R0~R3 설계·측정·태그스펙 · **PASS**
 3. **다음1건:** K-RARE-FILTER-PREP-DONE — R0~R3 준비 PASS · **taxonomy v1(홀짝·존 전수) 측정확장** 또는 **1236 ops SCORE** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 극소수필터 준비 | R0~R3 DESIGN·MEASURE·TAG · wire OFF | **PASS** | (push후) |
+| 2026-08-05 | 극소수필터 준비 | R0~R3 DESIGN·MEASURE·TAG · wire OFF | **PASS** | 13f0f99 |
 | 2026-08-05 | 1235가상·분석적용 | VIRTUAL PREDICT→SCORE · hybrid · ge3無 | **PASS** | cdf1bda |
 | 2026-08-05 | 다음(AUTO S4) | `--ops`+EVOLVE_AUTO=1 · phase=ops · idle | **PASS** | 51e6236 |
 | 2026-08-05 | 진행(AUTO S3) | PREDICT 1236 캐시 · phase=predicted | **PASS** | 7e010bf |
