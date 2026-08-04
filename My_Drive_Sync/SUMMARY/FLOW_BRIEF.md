@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `53decde` · WORK=`IDLE`
+- HEAD: `71bc88d` · WORK=`IDLE`
 - 지금: **K-GS-FACTCHECK** — 젠스파크 NESTED 검토 재검증 · HEAD정정 · **DONE**
 - 직전: K-RARE-NESTED 극소의극소·역이용 설계
 - BOOT다음: B1/B2/pin갭 **형 GO**
