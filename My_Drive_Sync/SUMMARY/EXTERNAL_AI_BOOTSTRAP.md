@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `780ab4c` |
+| HEAD(실측) | `410af20` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-FUTURE-FULL-POST-EVOLVE** — FULL n=1182 ge3=0.1184 Δ=0 · **DONE** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=780ab4c · 지금=**K-FUTURE-FULL-POST-EVOLVE** — FULL n=1182 ge3=0.1184 Δ=0 · **DONE** · 다음=K-EVOLVE-FULL-SNAP-DONE`
+1. 첫줄 `[복귀] HEAD=410af20 · 지금=**K-FUTURE-FULL-POST-EVOLVE** — FULL n=1182 ge3=0.1184 Δ=0 · **DONE** · 다음=K-EVOLVE-FULL-SNAP-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `780ab4c` · WORK=`IDLE`
+- HEAD: `410af20` · WORK=`IDLE`
 - 지금: **K-FUTURE-FULL-POST-EVOLVE** — FULL n=1182 ge3=0.1184 Δ=0 · **DONE**
 - 직전: K-EVOLVE-SIGNAL mean wire · λ HOLD
 - BOOT다음: review λ=0.3 wire GO-WAIT 또는 evolve_log 확장 · **형 GO**
