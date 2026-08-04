@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-04 12:35 KST)
-- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **HEAD(실측)**: `72405f6` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-MULTI-AI-PATCH** — K-EVOLVE 최종안 **DOC**
 - **다음(공식)**: **K-EVOLVE-LOG** A/B 또는 C/D · **형 선택**
 - **산출물**: `reports/20260804_MULTI_AI_PATCH_FINAL.md`

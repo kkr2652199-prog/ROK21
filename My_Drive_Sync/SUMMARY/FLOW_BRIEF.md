@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d6231a3` · WORK=`IDLE`
+- HEAD: `72405f6` · WORK=`IDLE`
 - 지금: **K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC**
 - 직전: K-REPACK-HYBRID-WIRE PASS
 - BOOT다음: **K-EVOLVE-LOG A/B** 또는 C/D · **형 선택**
