@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a9fd424` · WORK=`IDLE`
+- HEAD: `55c6f12` · WORK=`IDLE`
 - 지금: **K-PATTERN-OWN-V1** — ADEF 독자패턴 측정 · **MEASURED**
 - 직전: K-SIGNAL-TAXONOMY-V1
 - BOOT다음: B·C 측정 또는 L2 EMA 진단 · **형 GO**
