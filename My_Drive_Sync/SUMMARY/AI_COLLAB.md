@@ -26,9 +26,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-STRUCTURE-COVER** — **HOLD** (ge3↓)
-- **다음(공식)**: 저출현쌍 covering 또는 AUTO설계 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KSTRUCTURE_COVER_survey.json`
+- **지금(판정)**: **K-PAIR-COVER** — **HOLD** (ge3↓)
+- **다음(공식)**: Phase3 AUTO 설계문서 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KPAIR_COVER_survey.json`
+
+### K-PAIR-COVER (형 진행 · HOLD)
+- `pair_cover.py` · as_of 희소쌍 top80 · assemble=`pair_cover_v1` · **WIRE=False**
+- n200: stat −0.01 · markov −0.025 · review −0.02 vs hybrid
+- covering 2축(구조·쌍) 모두 발권 ge3 변환 실패 · 명분 문서는 유효
 
 ### K-STRUCTURE-COVER (형 진행 · HOLD)
 - 모듈 `structure_cover.py` · assemble=`struct_cover_v1` · **WIRE=False**

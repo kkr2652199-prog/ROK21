@@ -1,0 +1,82 @@
+{
+  "id": "K-PAIR-COVER",
+  "ts": "2026-08-04T15:45:17+00:00",
+  "phase": "survey",
+  "wire": false,
+  "PAIR_COVER_WIRE_live": false,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "n_draws": 200,
+  "axis": "low-frequency pair covering (as_of)",
+  "warrant_ref": "20260805_KMATH_PATTERN_WARRANT.json#W-PAIR-COVERING",
+  "by_brain": {
+    "stat": {
+      "baseline_repack": {
+        "n": 200,
+        "ge3_count": 33,
+        "ge3_rate": 0.165,
+        "mean_best": 1.745,
+        "delta_vs_null": 0.0513,
+        "delta_vs_pin": 0.0203
+      },
+      "pair_cover": {
+        "n": 200,
+        "ge3_count": 31,
+        "ge3_rate": 0.155,
+        "mean_best": 1.755,
+        "delta_vs_null": 0.0413,
+        "delta_vs_pin": 0.0103
+      },
+      "delta_ge3": -0.01,
+      "mean_n_rare_in_picked": 2.15
+    },
+    "markov": {
+      "baseline_repack": {
+        "n": 200,
+        "ge3_count": 26,
+        "ge3_rate": 0.13,
+        "mean_best": 1.885,
+        "delta_vs_null": 0.0163,
+        "delta_vs_pin": -0.0147
+      },
+      "pair_cover": {
+        "n": 200,
+        "ge3_count": 21,
+        "ge3_rate": 0.105,
+        "mean_best": 1.715,
+        "delta_vs_null": -0.0087,
+        "delta_vs_pin": -0.0397
+      },
+      "delta_ge3": -0.025,
+      "mean_n_rare_in_picked": 2.199
+    },
+    "review": {
+      "baseline_repack": {
+        "n": 200,
+        "ge3_count": 27,
+        "ge3_rate": 0.135,
+        "mean_best": 1.785,
+        "delta_vs_null": 0.0213,
+        "delta_vs_pin": -0.0097
+      },
+      "pair_cover": {
+        "n": 200,
+        "ge3_count": 23,
+        "ge3_rate": 0.115,
+        "mean_best": 1.71,
+        "delta_vs_null": 0.0013,
+        "delta_vs_pin": -0.0297
+      },
+      "delta_ge3": -0.02,
+      "mean_n_rare_in_picked": 2.254
+    }
+  },
+  "verdict": {
+    "label": "HOLD",
+    "wire_brains": [],
+    "next": "PAIR_COVER HOLD · AUTO설계문서 또는 다른축 · 형 GO"
+  },
+  "pass": true
+}
