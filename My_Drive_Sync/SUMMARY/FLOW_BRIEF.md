@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `581e23c` · WORK=`IDLE`
+- HEAD: `d068327` · WORK=`IDLE`
 - 지금: **K-STRUCTURE-COVER** — 구조covering survey · ge3↓ · **HOLD**
 - 직전: K-MATH-PATTERN-WARRANT 명분10 FOUND
 - BOOT다음: 저출현쌍 covering 또는 AUTO설계문서 · **형 GO**
