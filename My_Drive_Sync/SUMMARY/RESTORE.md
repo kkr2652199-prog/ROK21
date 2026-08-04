@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `aededd8` · WORK=`IDLE`
+1. **HEAD:** `33e959d` · WORK=`IDLE`
 2. **지금:** **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED**
 3. **다음1건:** K-PATCH-1235-PREP-DONE — 패치 후보 측정 완료 · **wire GO 대기** · **형 결정** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
