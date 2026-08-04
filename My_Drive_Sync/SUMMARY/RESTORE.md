@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3539759` · WORK=`IDLE`
+1. **HEAD:** `780ab4c` · WORK=`IDLE`
 2. **지금:** **K-FUTURE-FULL-POST-EVOLVE** — FULL n=1182 ge3=0.1184 Δ=0 · **DONE**
 3. **다음1건:** K-EVOLVE-FULL-SNAP-DONE — FULL post-evolve ge3=0.1184(=구FULL) · mean live · **review λ0.3 wire** 또는 evolve_log 53~1234 확장 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
