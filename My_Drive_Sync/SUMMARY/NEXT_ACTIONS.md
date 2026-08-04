@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-RARE-FILTER-PREP-DONE
-- 할일: R0~R3 준비 PASS · **taxonomy v1(홀짝·존 전수) 측정확장** 또는 **1236 ops SCORE** · **형 GO**
+- ID: K-LIVE-QUICK200-RESET-DONE
+- 할일: n200 리셋백테 MEASURED · **taxonomy v1 확장** 또는 **rare R4 설계심화** · **형 GO**
 - 완료조건: 형 선택
-- 선행완료: docs/benchmarks/20260805_KRARE_FILTER_DESIGN.json · MEASURE · TAG_SPEC
+- 선행완료: docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json
 
 ## WORKSTATE
 IDLE
@@ -15,6 +15,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- RARE_ANNOTATE_WIRE=False · 정책 off · λ/cover HOLD
-- 1236 실추첨 전 컨닝 금지 · 티켓등확률 사실 유지
-- 재측정: `python tools/_k_rare_measure_1_1235.py`
+- 예측DB 리셋 후 재기입 · evolve_log 유지
+- fusion ge3=0.135 · hybrid stat0.165/markov0.15/review0.13
+- λ/cover/rare wire OFF · 1236 대기 불필요(확정분 분석)

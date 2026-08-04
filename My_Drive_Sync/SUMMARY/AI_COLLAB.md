@@ -26,9 +26,16 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-RARE-FILTER-PREP** — **PASS** (R0~R3 · wire OFF)
-- **다음(공식)**: taxonomy v1 확장 또는 1236 ops SCORE · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KRARE_FILTER_DESIGN.json`
+- **지금(판정)**: **K-LIVE-QUICK200-RESET** — **MEASURED** (예측DB리셋+n200)
+- **다음(공식)**: taxonomy v1 확장 또는 rare R4 설계심화 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json`
+
+### K-LIVE-QUICK200-RESET (형 진행 · MEASURED)
+- 예측DB 전량 삭제 후 재기입: preds 5910 · cache 606 · learn 리셋 (evolve_log 유지)
+- 구간 **1036~1235** n=200 · seed=42 · 1236 미대기
+- fusion ge3=**0.135** (=구 QUICK) · hybrid ge3 stat**0.165**/markov**0.15**/review**0.13**
+- rare 진단 ultra율 0.233 · annotate WIRE OFF
+- tool: `tools/_k_live_quick200_reset_bench.py`
 
 ### K-RARE-FILTER-PREP (형 진행 · PASS)
 - 철학: 티켓등확률 · 컨닝금지 · 군희소≠당첨P↑ · 일괄wire금지 · 1236대기

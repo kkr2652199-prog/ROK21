@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-RARE-FILTER-PREP** — 극소수 필터 R0~R3 준비(DOC·MEASURE·SPEC·wire OFF)
+📌 사유: **K-LIVE-QUICK200-RESET** — 예측DB 리셋 후 n200(1036~1235) dual 백테
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-LIVE-QUICK200-RESET** | **MEASURED** — preds**5910**+cache**606**+learn 삭제 후 WF · fusion ge3=**0.135**(27/200) mean**1.715** · hybrid ge3 stat**0.165**/markov**0.150**/review**0.130** · rare진단 ultra율**0.233**(WIRE OFF) · `docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json` |
 | **K-RARE-FILTER-PREP** | **PASS** — R0 DESIGN · R1 TAXONOMY · R2 MEASURE 1~1235 · R3 TAG_SPEC · `rare_annotate.py` WIRE=**False** · signal_pool 삽입점 주석만 · 등확률·컨닝금지·당첨P↑비약속 · `docs/benchmarks/20260805_KRARE_FILTER_DESIGN.json` |
 | **K-EVOLVE-VIRTUAL-1235** | **PASS** — 확정회차 가상생애 · live hybrid(`hy_p45_r123`)+mean · λ/cover OFF · actual`[6,7,11,15,39,43]` · warrant(consec1·carry2·odd5) · SCORE best stat**2**/markov**1**/review**2** · schema3 · `docs/benchmarks/20260805_KEVOLVE_VIRTUAL_1235.json` |
 | **K-EVOLVE-AUTO-S4** | **PASS** — `--ops` · G1 `EVOLVE_AUTO=1` 필수 · phase=`ops` · SCORE갭없음·1236캐시warm skip · mean feedback경로(기존·predictions없으면 no-op) · λ/covering OFF · `docs/benchmarks/20260805_KEVOLVE_AUTO_S4.json` |
@@ -286,8 +287,8 @@
 
 ## 5) 다음
 
-**taxonomy v1(홀짝·존 전수) 확장** 또는 **1236 실추첨 후 ops SCORE** — 형 GO.  
-극소수 필터 R0~R3 준비 완료 · `RARE_ANNOTATE_WIRE=False` · λ/covering HOLD · AUTO S4 유지.
+**taxonomy v1(홀짝·존 전수) 확장** 또는 **rare R4 설계심화** — 형 GO.  
+n200 리셋백테 완료 · 1236 대기로 얻는 확정분 분석 이득 없음(이미 1~1235) · λ/cover/rare wire OFF.
 
 ---
 

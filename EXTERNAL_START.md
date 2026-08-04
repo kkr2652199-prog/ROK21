@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `13f0f99` |
+| HEAD(실측) | `20067f2` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-RARE-FILTER-PREP** — R0~R3 설계·측정·태그스펙 · **PASS** |
-| 직전 | K-EVOLVE-VIRTUAL-1235 |
-| BOOT다음 | taxonomy v1 확장 또는 1236 ops SCORE · **형 GO** |
-| NEXT1 ID | **K-RARE-FILTER-PREP-DONE** |
-| NEXT1 할일 | R0~R3 준비 PASS · **taxonomy v1(홀짝·존 전수) 측정확장** 또는 **1236 ops SCORE** · **형 GO** |
+| 지금 | **K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED** |
+| 직전 | K-RARE-FILTER-PREP |
+| BOOT다음 | taxonomy v1 확장 또는 rare R4 설계심화 · **형 GO** |
+| NEXT1 ID | **K-LIVE-QUICK200-RESET-DONE** |
+| NEXT1 할일 | n200 리셋백테 MEASURED · **taxonomy v1 확장** 또는 **rare R4 설계심화** · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=13f0f99 · 지금=**K-RARE-FILTER-PREP** — R0~R3 설계·측정·태그스펙 · **PASS** · 다음=K-RARE-FILTER-PREP-DONE`
+1. 첫줄 `[복귀] HEAD=20067f2 · 지금=**K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED** · 다음=K-LIVE-QUICK200-RESET-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 13f0f99_
+_generated: 20067f2_

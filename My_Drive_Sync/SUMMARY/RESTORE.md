@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0b81fee` · WORK=`IDLE`
-2. **지금:** **K-RARE-FILTER-PREP** — R0~R3 설계·측정·태그스펙 · **PASS**
-3. **다음1건:** K-RARE-FILTER-PREP-DONE — R0~R3 준비 PASS · **taxonomy v1(홀짝·존 전수) 측정확장** 또는 **1236 ops SCORE** · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `20067f2` · WORK=`IDLE`
+2. **지금:** **K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED**
+3. **다음1건:** K-LIVE-QUICK200-RESET-DONE — n200 리셋백테 MEASURED · **taxonomy v1 확장** 또는 **rare R4 설계심화** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | 예측DB리셋+n200백테 | fusion0.135·hybrid 0.165/0.15/0.13 | **MEASURED** | (push후) |
 | 2026-08-05 | 극소수필터 준비 | R0~R3 DESIGN·MEASURE·TAG · wire OFF | **PASS** | 13f0f99 |
 | 2026-08-05 | 1235가상·분석적용 | VIRTUAL PREDICT→SCORE · hybrid · ge3無 | **PASS** | cdf1bda |
 | 2026-08-05 | 다음(AUTO S4) | `--ops`+EVOLVE_AUTO=1 · phase=ops · idle | **PASS** | 51e6236 |
@@ -45,7 +46,6 @@
 | 2026-08-05 | 진행(명분→설계1축) | struct_cover survey ge3↓ · WIRE OFF | **HOLD** | d068327 |
 | 2026-08-05 | 1~1235 수학명분(확률만論금지) | 구조명분10 · WARRANT_FOUND | **FOUND** | 685a519 |
 | 2026-08-05 | 종료체크 20260805보고서 | SESSION_STATUS · reports+커서보고서 | **DONE** | 3007a9a |
-| 2026-08-04 | 진행(λ재검증) | full Δ−0.0025 · λ OFF 롤백 · HOLD | **HOLD** | 2d3e3d4 |
 
 ---
 
