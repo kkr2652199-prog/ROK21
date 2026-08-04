@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-GS-FACTCHECK-DONE
-- 할일: 젠스파크 팩트체크 재검증 완료(HEAD=53decde) · B1/B2/pin갭 **형 GO**
-- 완료조건: 형 GO
-- 선행완료: reports/20260804_GENSPARK_FACTCHECK_KRARE.md
+- ID: K-IMPROVE-ROADMAP-DONE
+- 할일: 개선조사 로드맵 보고 완료 · 권고 **I1 pin갭진단 + I3 B1로그** · **형 GO/선택**
+- 완료조건: 형 A/B/C/D 선택
+- 선행완료: reports/20260804_IMPROVEMENT_INVESTIGATION_ROADMAP.md · canvas rok21-improvement-roadmap
 
 ## WORKSTATE
 IDLE
