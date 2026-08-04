@@ -149,7 +149,7 @@ updated_at TEXT
 | S3 | PREDICT+SCORE 통합 | staging 1회차 |
 | S4 | 운영 on (`EVOLVE_AUTO=1`) | 형 GO · 모니터링 1주 |
 
-**진행:** S0 DOC 완료 · **S1 dry-run 구현 완료** (`evolve_auto.py` · `_k_evolve_auto_tick.py`) · S2+ 미구현.
+**진행:** S0 DOC · S1 dry-run · **S2 SCORE apply 완료** (`--apply-score`) · S3 PREDICT 통합 미구현.
 
 ---
 

@@ -4,7 +4,7 @@
 Usage:
   python tools/_k_evolve_auto_tick.py
   python tools/_k_evolve_auto_tick.py --lookback 5
-  python tools/_k_evolve_auto_tick.py --apply   # S1에서는 거부됨
+  python tools/_k_evolve_auto_tick.py --apply-score   # S2 SCORE only
 """
 from __future__ import annotations
 
@@ -17,18 +17,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-OUT_JSON = ROOT / "docs" / "benchmarks" / "20260805_KEVOLVE_AUTO_S1.json"
-OUT_MD = ROOT / "reports" / "20260805_KEVOLVE_AUTO_S1.md"
-DRIVE = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
-
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--lookback", type=int, default=5)
     ap.add_argument(
+        "--apply-score",
+        action="store_true",
+        help="S2: SCORE 액션만 실행 (PREDICT 없음)",
+    )
+    ap.add_argument(
         "--apply",
         action="store_true",
-        help="S1에서 거부됨 · S2+ 전용",
+        help="전체 apply — S3+ 전 거부",
     )
     args = ap.parse_args()
 
@@ -39,94 +40,125 @@ def main() -> int:
         tick,
     )
 
-    dry = not args.apply
-    print(
-        f"K-EVOLVE-AUTO S1 tick dry_run={dry} {AUTO_FLAG_ENV}={evolve_auto_enabled()}",
-        flush=True,
-    )
-    result = tick(dry_run=dry, lookback=args.lookback)
-    state = get_auto_state()
+    if args.apply_score:
+        step = "S2"
+        out_json = ROOT / "docs" / "benchmarks" / "20260805_KEVOLVE_AUTO_S2.json"
+        out_md = ROOT / "reports" / "20260805_KEVOLVE_AUTO_S2.md"
+        print(
+            f"K-EVOLVE-AUTO S2 apply-score {AUTO_FLAG_ENV}={evolve_auto_enabled()}",
+            flush=True,
+        )
+        result = tick(dry_run=False, lookback=args.lookback, apply_score=True)
+        passed = bool(result.get("ok")) and bool(result.get("executed"))
+    else:
+        step = "S1"
+        out_json = ROOT / "docs" / "benchmarks" / "20260805_KEVOLVE_AUTO_S1.json"
+        out_md = ROOT / "reports" / "20260805_KEVOLVE_AUTO_S1.md"
+        dry = not args.apply
+        print(
+            f"K-EVOLVE-AUTO S1 tick dry_run={dry} {AUTO_FLAG_ENV}={evolve_auto_enabled()}",
+            flush=True,
+        )
+        result = tick(dry_run=dry, lookback=args.lookback, apply_score=False)
+        passed = bool(result.get("ok")) and dry and result.get("dry_run") is True
 
-    passed = bool(result.get("ok")) and dry and result.get("dry_run") is True
+    state = get_auto_state()
+    drive = ROOT / "My_Drive_Sync" / "커서보고서" / out_md.name
     payload = {
-        "id": "K-EVOLVE-AUTO-S1",
+        "id": f"K-EVOLVE-AUTO-{step}",
         "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "step": "S1",
-        "dry_run": dry,
+        "step": step,
+        "dry_run": result.get("dry_run"),
+        "apply_score": bool(args.apply_score),
         "EVOLVE_AUTO": evolve_auto_enabled(),
         "tick": result,
         "state": state,
         "pass": passed,
         "verdict": "PASS" if passed else "FAIL",
         "wire": False,
-        "note": "S1=plan+state only · SCORE/PREDICT apply 없음",
+        "note": (
+            "S2 SCORE apply · PREDICT/feedback 없음 · weight=0"
+            if args.apply_score
+            else "S1=plan+state only"
+        ),
     }
-    OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
-    OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    actions = result.get("mandatory_actions") or result.get("actions") or []
-    lines = [
-        "# K-EVOLVE-AUTO S1 — dry-run tick",
-        "",
-        f"📅 {payload['ts'][:10]} · **{payload['verdict']}** · dry_run=**{dry}** · wire=**False**",
-        "",
-        "## 0) 한 줄",
-        "",
-        "AUTO 상태테이블 + tick 계획만 수행. 예측/채점 **미실행**.",
-        "",
-        "## 1) 관측",
-        "",
-        f"- max lotto_draws = **{result.get('max_lotto_draw')}**",
-        f"- evolve_log max = **{result.get('evolve_log_max')}**",
-        f"- next_predict = **{result.get('next_predict_draw')}**",
-        f"- G1 EVOLVE_AUTO = **{evolve_auto_enabled()}**",
-        f"- G2 recent log = **{(result.get('gates') or {}).get('G2_recent_log')}**",
-        f"- blocked_for_apply = {result.get('blocked_for_apply')}",
-        "",
-        "## 2) 계획 액션 (미실행)",
-        "",
-    ]
-    for a in actions:
-        lines.append(
-            f"- `{a.get('op')}` draw={a.get('draw_no')} · {a.get('reason')}"
-        )
-    if not actions:
-        lines.append("- (mandatory 없음)")
-    opt = [a for a in (result.get("actions") or []) if a.get("optional")]
-    if opt:
-        lines.append("")
-        lines.append("optional:")
-        for a in opt:
-            lines.append(f"- `{a.get('op')}` draw={a.get('draw_no')}")
-    lines.extend(
-        [
+    if args.apply_score:
+        lines = [
+            "# K-EVOLVE-AUTO S2 — SCORE apply",
             "",
-            "## 3) 상태",
+            f"📅 {payload['ts'][:10]} · **{payload['verdict']}** · apply_score=**True**",
             "",
-            f"- phase = `{state.get('phase')}`",
-            f"- last_completed_draw = {state.get('last_completed_draw')}",
-            "",
-            "## 4) 다음",
-            "",
-            "- S2: SCORE 자동(캐시 있는 미로그 회차) · 형 GO + 별도 승인",
-            "- `EVOLVE_AUTO=1` 없이는 apply 금지 유지",
-            "",
-            f"근거: `{OUT_JSON.name}` · 설계 `20260805_KEVOLVE_AUTO_DESIGN.md`",
+            "## 실행",
             "",
         ]
-    )
+        for e in result.get("executed") or []:
+            r = e.get("result") or {}
+            lines.append(
+                f"- SCORE draw=**{r.get('draw_no')}** ok · brains={r.get('brains')}"
+            )
+        if result.get("errors"):
+            lines.append("")
+            lines.append("## errors")
+            lines.append(f"```json\n{json.dumps(result['errors'], ensure_ascii=False, indent=2)}\n```")
+        lines.extend(
+            [
+                "",
+                "## after",
+                "",
+                f"- evolve_log_max = **{(result.get('plan_after') or {}).get('evolve_log_max')}**",
+                f"- G2 pass = **{(result.get('plan_after') or {}).get('g2_pass')}**",
+                f"- phase = `{state.get('phase')}`",
+                "",
+                "## 다음",
+                "",
+                "- S3: PREDICT+SCORE 통합 · 형 GO",
+                "- feedback/λ/covering wire 금지 유지",
+                "",
+                f"근거: `{out_json.name}`",
+                "",
+            ]
+        )
+    else:
+        actions = result.get("mandatory_actions") or result.get("actions") or []
+        lines = [
+            "# K-EVOLVE-AUTO S1 — dry-run tick",
+            "",
+            f"📅 {payload['ts'][:10]} · **{payload['verdict']}** · dry_run=**{result.get('dry_run')}**",
+            "",
+            "## 계획 액션",
+            "",
+        ]
+        for a in actions:
+            lines.append(f"- `{a.get('op')}` draw={a.get('draw_no')} · {a.get('reason')}")
+        lines.extend(
+            [
+                "",
+                f"phase=`{state.get('phase')}` · 근거 `{out_json.name}`",
+                "",
+            ]
+        )
+
     text = "\n".join(lines)
-    OUT_MD.write_text(text, encoding="utf-8")
-    DRIVE.parent.mkdir(parents=True, exist_ok=True)
-    DRIVE.write_text(text, encoding="utf-8")
-    print(json.dumps({
-        "pass": passed,
-        "max_draw": result.get("max_lotto_draw"),
-        "evolve_max": result.get("evolve_log_max"),
-        "mandatory": len(result.get("mandatory_actions") or []),
-        "blocked": result.get("blocked_for_apply"),
-        "phase": state.get("phase"),
-    }, ensure_ascii=False, indent=2))
+    out_md.write_text(text, encoding="utf-8")
+    drive.parent.mkdir(parents=True, exist_ok=True)
+    drive.write_text(text, encoding="utf-8")
+    print(
+        json.dumps(
+            {
+                "pass": passed,
+                "step": step,
+                "evolve_max_after": (result.get("plan_after") or {}).get("evolve_log_max")
+                or result.get("evolve_log_max"),
+                "executed": len(result.get("executed") or []),
+                "phase": state.get("phase"),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
     return 0 if passed else 1
 
 

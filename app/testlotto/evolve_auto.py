@@ -276,12 +276,151 @@ def plan_tick(*, lookback: int = DEFAULT_LOOKBACK) -> dict[str, Any]:
         conn.close()
 
 
-def tick(*, dry_run: bool = True, lookback: int = DEFAULT_LOOKBACK) -> dict[str, Any]:
-    """틱 1회. S1: dry_run=True만 지원. dry_run=False면 거부(S2 미구현)."""
+def score_draw_from_cache(draw_no: int) -> dict[str, Any]:
+    """S2: pool_view_cache(any_schema) → evolve_log 3뇌 upsert. 예측 재실행 없음."""
+    from app.testlotto.data_service import _get_draws_before
+    from app.testlotto.evolve_log import (
+        BRAIN_TAGS,
+        build_evolve_row,
+        ensure_evolve_log_table,
+        upsert_evolve_row,
+    )
+    from app.testlotto.pool_view_cache import get_cached_pool_view_any_schema
+
+    ensure_evolve_log_table()
+    init_testlotto_db()
+    conn = get_lotto_db()
+    try:
+        row = conn.execute(
+            """
+            SELECT draw_no, num1,num2,num3,num4,num5,num6
+            FROM lotto_draws WHERE draw_no=?
+            """,
+            (int(draw_no),),
+        ).fetchone()
+    finally:
+        conn.close()
+    if not row:
+        return {"ok": False, "draw_no": draw_no, "error": "lotto_draws 없음"}
+    d = dict(row)
+    actual = [int(d[f"num{k}"]) for k in range(1, 7)]
+    pv = get_cached_pool_view_any_schema(int(draw_no))
+    if not pv or not pv.get("ok"):
+        return {"ok": False, "draw_no": draw_no, "error": "pool_view_cache 없음"}
+
+    draws_before = _get_draws_before(int(draw_no))
+    written = []
+    for tag in BRAIN_TAGS:
+        pool = pv.get("pool_by_brain", {}).get(tag, [])
+        repack = pv.get("repack_by_brain", {}).get(tag, [])
+        if not pool or not repack:
+            return {
+                "ok": False,
+                "draw_no": draw_no,
+                "error": f"cache incomplete brain={tag}",
+            }
+        erow = build_evolve_row(
+            int(draw_no), tag, actual, pool, repack, draws_before=draws_before
+        )
+        erow["note"] = "K-EVOLVE-AUTO S2 SCORE · weight=0 · cache→log"
+        upsert_evolve_row(erow)
+        written.append(
+            {
+                "brain_tag": tag,
+                "best_hits": erow["best_hits"],
+                "mean_hits": erow["mean_hits"],
+                "assemble_mode": erow.get("assemble_mode"),
+            }
+        )
+    return {"ok": True, "draw_no": int(draw_no), "brains": written}
+
+
+def tick(
+    *,
+    dry_run: bool = True,
+    lookback: int = DEFAULT_LOOKBACK,
+    apply_score: bool = False,
+) -> dict[str, Any]:
+    """틱 1회.
+
+    - dry_run=True (기본): 계획만
+    - apply_score=True: SCORE 액션만 실행 (S2) · PREDICT 미실행
+    - dry_run=False and not apply_score: 거부 (전체 apply는 S3+)
+    """
     plan = plan_tick(lookback=lookback)
     if not plan.get("ok"):
         save_auto_state(phase="error", last_error=plan.get("error") or "plan_failed", last_plan=plan)
         return plan
+
+    if apply_score:
+        if plan.get("paused") or (get_auto_state().get("paused")):
+            out = {
+                **plan,
+                "ok": False,
+                "dry_run": False,
+                "apply_score": True,
+                "error": "paused=1 · SCORE 중단",
+            }
+            save_auto_state(phase="paused", last_error=out["error"], last_plan=out)
+            return out
+
+        executed = []
+        skipped = []
+        errors = []
+        for a in plan.get("mandatory_actions") or []:
+            op = a.get("op")
+            dno = int(a["draw_no"])
+            if op == "SCORE":
+                r = score_draw_from_cache(dno)
+                if r.get("ok"):
+                    executed.append({"action": a, "result": r})
+                else:
+                    errors.append({"action": a, "result": r})
+            elif op == "PREDICT_THEN_SCORE":
+                skipped.append(
+                    {
+                        "action": a,
+                        "reason": "S2는 SCORE-only · 캐시 없으면 스킵(S3 PREDICT)",
+                    }
+                )
+            else:
+                skipped.append({"action": a, "reason": "S2 not handling"})
+
+        for a in plan.get("actions") or []:
+            if a.get("optional"):
+                skipped.append({"action": a, "reason": "optional PREDICT skipped in S2"})
+
+        ok = len(errors) == 0 and len(executed) > 0
+        # 성공 시 last_completed = 실행한 최대 draw
+        done_draws = [e["result"]["draw_no"] for e in executed if e.get("result", {}).get("ok")]
+        last_done = max(done_draws) if done_draws else plan.get("evolve_log_max")
+        # 재계획으로 G2 확인
+        plan_after = plan_tick(lookback=lookback)
+        out = {
+            **plan,
+            "ok": ok,
+            "dry_run": False,
+            "apply_score": True,
+            "would_apply": True,
+            "executed": executed,
+            "skipped": skipped,
+            "errors": errors,
+            "plan_after": {
+                "evolve_log_max": plan_after.get("evolve_log_max"),
+                "g2_pass": (plan_after.get("g2") or {}).get("g2_pass"),
+                "mandatory_left": len(plan_after.get("mandatory_actions") or []),
+            },
+            "note": "S2 SCORE apply · PREDICT/feedback 미실행 · weight=0",
+        }
+        save_auto_state(
+            phase="scored" if ok else "error",
+            last_error="" if ok else json.dumps(errors, ensure_ascii=False)[:500],
+            last_plan=out,
+            last_completed_draw=last_done,
+        )
+        out["state_saved"] = True
+        out["status_after"] = get_auto_state()
+        return out
 
     if not dry_run:
         plan = {
@@ -289,7 +428,7 @@ def tick(*, dry_run: bool = True, lookback: int = DEFAULT_LOOKBACK) -> dict[str,
             "ok": False,
             "dry_run": False,
             "would_apply": False,
-            "error": "S1: apply 미구현 · S2 SCORE 자동 전 dry-run만 허용",
+            "error": "전체 apply는 S3+ · S2는 --apply-score 사용",
             "actions_not_executed": plan.get("actions"),
         }
         save_auto_state(phase="error", last_error=plan["error"], last_plan=plan)

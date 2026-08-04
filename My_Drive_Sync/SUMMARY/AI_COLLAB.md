@@ -26,9 +26,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-AUTO-S1** — **PASS** (dry-run)
-- **다음(공식)**: S2 SCORE자동 또는 다른축 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KEVOLVE_AUTO_S1.json`
+- **지금(판정)**: **K-EVOLVE-AUTO-S2** — **PASS** (SCORE 1235)
+- **다음(공식)**: S3 PREDICT+SCORE 또는 다른축 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KEVOLVE_AUTO_S2.json`
+
+### K-EVOLVE-AUTO-S2 (형 진행 · PASS)
+- `--apply-score` · cache→evolve_log · draw **1235** 3뇌
+- PREDICT / apply_feedback / λ·covering **미실행**
+- phase=`scored` · evolve_log_max=**1235**
 
 ### K-EVOLVE-AUTO-S1 (형 진행 · PASS)
 - `app/testlotto/evolve_auto.py` · `tools/_k_evolve_auto_tick.py`
