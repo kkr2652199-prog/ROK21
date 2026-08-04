@@ -24,11 +24,22 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 11:35 KST)
-- **HEAD(실측)**: `ccdcfd7` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-PIN-GAP-DIAG-REVIEW** — 젠스파크 pin갭 지시서 구조대조 · **수정3건** · DOC
-- **다음(공식)**: 수정본 **K-PIN-GAP-DIAG GO** 또는 로드맵 A/B/C/D · **형 선택**
-- **압축복구**: `reports/20260804_GENSPARK_COMPRESS_RESUME.md` · 본 파일 §6
+### 최신 상태 (2026-08-04 11:50 KST)
+- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-PIN-GAP-DIAG** — FULL pin갭 진단 **DONE**
+- **다음(공식)**: **I2 FULL-first** 또는 **I3 B1로그** · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KPIN_GAP_DIAG.json` · `reports/20260804_KPIN_GAP_DIAG.md`
+
+### K-PIN-GAP-DIAG (형 GO · DONE · wire 없음)
+| 항목 | 결과 |
+|------|------|
+| FULL Δpin | **−0.0263** (0.1184 vs 0.1447) |
+| 기간(n=394) | early **0.099** 최악 · mid 0.132 · late 0.1244 · **mid붕괴 기각** |
+| markov80% | fused 0.1184 · blend≈0.126 · solo markov 0.13도 pin 미달 |
+| N100 seed | 42→**0.15** · 0/7→**0.10** · range **0.05** 민감 |
+| K-M | pin갭 기여 **≈0** |
+| K-N | **low_indirect** (early≪late) |
+| 다음후보 | early안정화 · I2 FULL-first · multi-seed 게이트 · I3 B1 |
 
 ### K-PIN-GAP-DIAG-REVIEW (커서 검토 · 실행 전)
 목적 OK: FULL ge3 **0.1184** vs pin **0.1447** Δ**−0.0263** · READ-ONLY 진단 · wire 금지.  

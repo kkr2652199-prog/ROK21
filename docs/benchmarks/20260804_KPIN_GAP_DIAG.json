@@ -1,0 +1,287 @@
+{
+  "id": "K-PIN-GAP-DIAG",
+  "ts": "2026-08-04T02:45:16+00:00",
+  "mode": "json_readonly_plus_n100_seed_sweep",
+  "eval_mode": "best_of_5",
+  "references": {
+    "full_ge3": 0.1184,
+    "quick_ge3": 0.135,
+    "n100_ge3": 0.15,
+    "wire_pin_ge3": 0.1447,
+    "null_ge3_best_of_5": 0.1137,
+    "delta_full_vs_pin": -0.0263,
+    "delta_full_vs_n100": -0.0316,
+    "sources": {
+      "full": "docs/benchmarks/20260803_KFUTURE_WIRE_FULL.json",
+      "quick": "docs/benchmarks/20260803_KFUTURE_WIRE_QUICK200.json",
+      "n100": "docs/benchmarks/20260803_KFUTURE_WIRE_N100.json"
+    }
+  },
+  "period_decomposition": {
+    "window": "FULL",
+    "draw_range": [
+      53,
+      1234
+    ],
+    "n_eval": 1182,
+    "split": "thirds_by_draw_index",
+    "n_each": 394,
+    "note": "N100의 25/25/50·「mid 붕괴」는 FULL pin갭 진단에 사용 금지",
+    "by_period": {
+      "early": {
+        "n": 394,
+        "ge3_rate": 0.099,
+        "ge3_count": 39,
+        "mean": 1.6954,
+        "delta_ge3_vs_pin": -0.0457,
+        "delta_ge3_vs_null": -0.0147
+      },
+      "mid": {
+        "n": 394,
+        "ge3_rate": 0.132,
+        "ge3_count": 52,
+        "mean": 1.703,
+        "delta_ge3_vs_pin": -0.0127,
+        "delta_ge3_vs_null": 0.0183
+      },
+      "late": {
+        "n": 394,
+        "ge3_rate": 0.1244,
+        "ge3_count": 49,
+        "mean": 1.6751,
+        "delta_ge3_vs_pin": -0.0203,
+        "delta_ge3_vs_null": 0.0107
+      }
+    },
+    "worst_vs_pin": {
+      "period": "early",
+      "delta_ge3_vs_pin": -0.0457
+    },
+    "mid_collapse_claim": false,
+    "mid_vs_early_ge3": 0.033
+  },
+  "n100_period_aux": {
+    "window": "N100_aux_only",
+    "draw_range": [
+      1135,
+      1234
+    ],
+    "split": "25/25/50",
+    "by_period": {
+      "early": {
+        "n": 25,
+        "ge3_rate": 0.2,
+        "delta_ge3_vs_pin": 0.0553
+      },
+      "mid": {
+        "n": 25,
+        "ge3_rate": 0.16,
+        "delta_ge3_vs_pin": 0.0153
+      },
+      "late": {
+        "n": 50,
+        "ge3_rate": 0.12,
+        "delta_ge3_vs_pin": -0.0247
+      }
+    },
+    "note": "보조 창. late가 pin 대비 최약(−0.0247). mid 붕괴 아님."
+  },
+  "quick_period_aux": {
+    "window": "QUICK200",
+    "by_period": {
+      "early": {
+        "n": 50,
+        "ge3_rate": 0.12,
+        "delta_ge3_vs_pin": -0.0247
+      },
+      "mid": {
+        "n": 50,
+        "ge3_rate": 0.12,
+        "delta_ge3_vs_pin": -0.0247
+      },
+      "late": {
+        "n": 100,
+        "ge3_rate": 0.15,
+        "delta_ge3_vs_pin": 0.0053
+      }
+    }
+  },
+  "brain_contribution": {
+    "quota_avg_pct_full": {
+      "stat": 0.0,
+      "markov": 80.0,
+      "review": 20.0
+    },
+    "solo_ge3_priors_ref": {
+      "stat": 0.09,
+      "markov": 0.13,
+      "review": 0.11
+    },
+    "solo_source": "K-HIGHWAY-BACKTEST-100 by_brain (docs/benchmarks/20260801_KHIGHWAY_BACKTEST_100.json)",
+    "linear_blend_ge3": 0.126,
+    "full_fused_ge3": 0.1184,
+    "dilution_vs_blend": -0.0076,
+    "dilution_vs_markov_solo": -0.0116,
+    "markov_solo_vs_pin": -0.0147,
+    "stat_share_pct": 0.0,
+    "lockin_effect": {
+      "markov_share_pct": 80.0,
+      "interpretation": "quota 고착으로 fused≈markov 지배. 단 markov solo 0.13 자체도 pin 0.1447 미달(Δ−0.0147)이므로 pin갭 전량이 희석만으로 설명되지 않음.",
+      "pin_gap_explained_by_quota_alone": false,
+      "est_gap_from_dilution_vs_markov": -0.0116,
+      "residual_gap_markov_to_pin": -0.0147
+    }
+  },
+  "km_kn": {
+    "K-M": {
+      "status": "HOLD",
+      "source": "reports/20260727_KM_KN_분산검정.md · FINDINGS",
+      "weight_max_delta_vs_uniform": 0.0018,
+      "top5_membership_mismatch_vs_uniform_pct": 5.0,
+      "effective_referee_leverage": "~0%",
+      "pin_gap_contribution": {
+        "verdict": "negligible",
+        "rationale": "referee≈균등·멤버십 95% 동일. FULL pin갭 Δ−0.0263을 가중 변동(0.18%p)으로 설명 불가. 현 live quota는 SOLO_GE3_PRIORS×dominance(학습 referee 실효0)에 의해 4/0/1 고정.",
+        "est_ge3_delta_attributable": 0.0
+      }
+    },
+    "K-N": {
+      "status": "HOLD",
+      "source": "reports/20260727_KM_KN_분산검정.md · FINDINGS",
+      "finding": "학습입력 best → null상 실력 증거 없음(창100)",
+      "pin_gap_contribution": {
+        "verdict": "low_indirect",
+        "rationale": "FULL WF는 learn_state reset 후 재누적. early(0.099)가 late(0.1244)보다 낮아 「잘못된 best학습 누적」이 early 붕괴의 주원인 가설과 불일치. 간접(가중·boost 경로) 가능하나 pin갭 주성분으로 수치 미입증.",
+        "est_ge3_delta_attributable": null,
+        "note": "미확인(직접 계수 분리 실험 없음) — null로 표기하지 않고 None"
+      }
+    }
+  },
+  "gap_drivers_ranked": [
+    {
+      "rank": 1,
+      "driver": "FULL_early_period_weakness",
+      "evidence": "early ge3=0.099 Δpin=-0.0457 (n=394)",
+      "share_note": "기간 중 pin 대비 최악 · mid 붕괴 아님"
+    },
+    {
+      "rank": 2,
+      "driver": "n100_seed42_luck_and_full_collapse",
+      "evidence": "N100 seed42=0.15 vs seed0/7=0.10 (range 0.05); FULL 0.1184 Δn100=-0.0316",
+      "share_note": "n100 PASS는 seed 민감 · FULL pin갭은 seed42 고정값(다른 seed FULL 미검증)"
+    },
+    {
+      "rank": 3,
+      "driver": "markov80_quota_lock_plus_solo_below_pin",
+      "evidence": "quota markov80% · fused=0.1184 · blend≈0.126 · markov_solo=0.13 vs pin=0.1447",
+      "share_note": "희석(−0.0116 vs solo) + solo자체 pin미달(−0.0147)"
+    },
+    {
+      "rank": 4,
+      "driver": "K-M_referee",
+      "evidence": "membership mismatch 5% · wΔ≈0.0018",
+      "share_note": "pin갭 기여 ≈0"
+    },
+    {
+      "rank": 5,
+      "driver": "K-N_best_feedback",
+      "evidence": "early≪late → 누적오인 주원인 불일치",
+      "share_note": "직접 기여 미입증(low_indirect)"
+    }
+  ],
+  "seed_sensitivity": {
+    "status": "done",
+    "window": "N100 1135~1234",
+    "seeds": [
+      42,
+      0,
+      7
+    ],
+    "runs": [
+      {
+        "seed_base": 42,
+        "n_eval": 100,
+        "draw_range": [
+          1135,
+          1234
+        ],
+        "ge3_rate": 0.15,
+        "ge3_count": 15,
+        "mean": 1.7,
+        "delta_ge3_vs_pin": 0.0053,
+        "delta_ge3_vs_ref_n100_seed42": 0.0,
+        "quota_avg_pct": {
+          "stat": 0.0,
+          "markov": 80.0,
+          "review": 20.0
+        }
+      },
+      {
+        "seed_base": 0,
+        "n_eval": 100,
+        "draw_range": [
+          1135,
+          1234
+        ],
+        "ge3_rate": 0.1,
+        "ge3_count": 10,
+        "mean": 1.71,
+        "delta_ge3_vs_pin": -0.0447,
+        "delta_ge3_vs_ref_n100_seed42": -0.05,
+        "quota_avg_pct": {
+          "stat": 0.0,
+          "markov": 80.0,
+          "review": 20.0
+        }
+      },
+      {
+        "seed_base": 7,
+        "n_eval": 100,
+        "draw_range": [
+          1135,
+          1234
+        ],
+        "ge3_rate": 0.1,
+        "ge3_count": 10,
+        "mean": 1.59,
+        "delta_ge3_vs_pin": -0.0447,
+        "delta_ge3_vs_ref_n100_seed42": -0.05,
+        "quota_avg_pct": {
+          "stat": 0.0,
+          "markov": 80.0,
+          "review": 20.0
+        }
+      }
+    ],
+    "ge3_min": 0.1,
+    "ge3_max": 0.15,
+    "ge3_range": 0.05,
+    "seed42_ge3": 0.15,
+    "sensitive": true,
+    "interpretation": "N100에서 seed에 따라 ge3가 크게 변함(0.15↔0.10, range 0.05). n100 PASS·소표본은 seed=42 운에 민감. FULL pin갭(Δ−0.0263)은 seed=42 고정 FULL 결과 — 다른 seed로 pin 회복은 미검증(FULL multi-seed 별도 GO)."
+  },
+  "conclusions": {
+    "mid_collapse": false,
+    "primary_period": "early",
+    "km_explains_pin_gap": false,
+    "kn_explains_pin_gap": false,
+    "quota_alone_explains_pin_gap": false,
+    "n100_seed_sensitive": true,
+    "n100_seed_ge3_range": 0.05,
+    "next_patch_candidates": [
+      "early-period 안정화 조사(윈도/학습 warm-up)",
+      "FULL-first 게이트(I2) · n100 단독 PASS→wire 금지",
+      "N100 multi-seed 게이트 또는 seed-robust 지표",
+      "quota/stat0% A/B는 I1 후(I7) — solo markov도 pin 미달 전제",
+      "I3 B1 feature 로그(가중0) 병행"
+    ],
+    "forbid": [
+      "ultra_wire",
+      "engine_wire_without_GO",
+      "auto_tune"
+    ]
+  },
+  "early_vs_full_note": {
+    "early_minus_overall_ge3": -0.0194
+  }
+}
