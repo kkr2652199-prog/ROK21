@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a21cd38` · WORK=`IDLE`
+- HEAD: `3007a9a` · WORK=`IDLE`
 - 지금: **종료체크** — `20260805_ROK21_SESSION_STATUS` · λ HOLD 확정
 - 직전: K-EVOLVE-FEAT-LAM-REVAL HOLD/롤백
 - BOOT다음: Phase3 AUTO 설계문서만 또는 새축 · **형 GO**

@@ -1,6 +1,6 @@
 # ROK21 세션 현황 — 2026-08-05
 
-📅 2026-08-05 KST · HEAD 실측 `a21cd38`  
+📅 2026-08-05 KST · HEAD 실측 `3007a9a`  
 📌 **20260805 날짜 보고서** — 8/4 K-EVOLVE arc 마감 · 종료체크(날짜 보고서 보강)
 
 ---
@@ -64,7 +64,7 @@
 |----|------|
 | **K-EVOLVE-FEAT-LAM-REVAL-DONE** | λ HOLD 확정 · **Phase3 AUTO 설계문서만** 또는 **새 개선축** · **형 GO** |
 
-선행: REVAL JSON · WIRE=False · HEAD `a21cd38`
+선행: REVAL JSON · WIRE=False · HEAD `3007a9a`
 
 ---
 
