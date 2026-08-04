@@ -13,9 +13,12 @@ from typing import Any
 
 from app.testlotto.evolve_log import set_features
 
-# K-EVOLVE-SIGNAL survey: review best λ=0.3 · Δ+0.01 vs baseline
-FEATURE_LAMBDA_BY_BRAIN: dict[str, float] = {"review": 0.3}
+# K-EVOLVE-FEAT-LAM-REVAL 20260804: full 53~1234에서 review λ0.3 Δ−0.0025
+# (SIGNAL n200 +0.01은 희소히스토리 과적합) → wire HOLD
+FEATURE_LAMBDA_BY_BRAIN: dict[str, float] = {}
 MARKOV_LAMBDA_SCALE = 0.5  # survey 표기용 · wire 대상 아님
+# 참고(HOLD): 직전 live 후보였던 값
+_HOLD_CANDIDATE_LAMBDA: dict[str, float] = {"review": 0.3}
 
 
 def feat_key(features: dict | None) -> tuple:

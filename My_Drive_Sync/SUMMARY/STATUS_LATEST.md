@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-04 KST  
-📌 사유: **K-EVOLVE-LOG-EXPAND** — evolve_log 53~1234 n=1182 PASS
+📌 사유: **K-EVOLVE-FEAT-LAM-REVAL** — full λ재검증 · wire HOLD 롤백
 
 ---
 
@@ -10,8 +10,9 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-EVOLVE-FEAT-LAM-REVAL** | **HOLD** — full n1182 review λ0.3 ge3=**0.1227** Δ**−0.0025** · tail Δ**−0.03** · SIGNAL n200 과적합 · `FEATURE_LAMBDA_WIRE=False` · `docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_REVAL.json` |
 | **K-EVOLVE-LOG-EXPAND** | **PASS** — evolve_log **1182**회(53~1234) · wf**982**+cache**200** · weight=0 · miss구간 cache미저장 · `docs/benchmarks/20260804_KEVOLVE_LOG_EXPAND.json` |
-| **K-EVOLVE-FEAT-LAM-WIRE** | **PASS** — review λ=**0.3** live · offline ge3=**0.145**(29/200)=SIGNAL · schema=**3** · assemble `feat_lam_0.3` · stat/markov λ HOLD · `docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_WIRE.json` |
+| **K-EVOLVE-FEAT-LAM-WIRE** | **ROLLED BACK** — 당시 n200 MATCH 0.145였으나 REVAL로 기각 · 모듈/`feat_lam` 코드는 잔존·OFF |
 | **K-FUTURE-FULL-POST-EVOLVE** | **DONE** — FULL n=1182 ge3=**0.1184**(140) · vs구FULL **Δ=0** · thirds 0.099/0.132/0.1244 · mean feedback live · 구FULL JSON 유지 · `docs/benchmarks/20260804_KFUTURE_FULL_POST_EVOLVE.json` |
 | **K-EVOLVE-SIGNAL** | **DONE** — `FEEDBACK_MATCH_MODE=mean` live(K-N차단) · λ전뇌 HOLD · review λ0.3 Δ+0.01 GO-WAIT · `docs/benchmarks/20260804_KEVOLVE_SIGNAL_survey.json` |
 | **K-EVOLVE-LOG** | **PASS** — `testlotto_evolve_log` n=200 · weight=0 · API evolve/log·summary · ge3참고 stat0.165/markov0.130/review0.135 · `docs/benchmarks/20260804_KEVOLVE_LOG.json` |
@@ -71,6 +72,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-EVOLVE-FEAT-LAM-REVAL** | full λ스윕 · review0.3 기각 · wire OFF | **HOLD** · 롤백 |
 | **K-EVOLVE-LOG-EXPAND** | evolve_log 53~1234 · 순차WF+캐시백필 · weight0 | **PASS** · n=1182 |
 | **K-EVOLVE-FEAT-LAM-WIRE** | review feature-bucket λ0.3 · schema3 · survey MATCH | **PASS** · ge3=0.145 |
 | **K-FUTURE-FULL-POST-EVOLVE** | hybrid+mean 이후 FULL 리셋WF · 구FULL 대비 | **DONE** · ge3=0.1184 Δ=0 |
@@ -265,8 +267,8 @@
 
 ## 5) 다음
 
-**Phase3 AUTO 준비** 또는 **review λ 풀히스토리 재검증** — 형 GO.  
-evolve_log n=1182 · review λ0.3 live · mean · schema3 · BOOST_CAPS/W_*/quota 미수정.
+**Phase3 AUTO 설계문서만**(실행 wire 금지) 또는 **새 개선축** — 형 GO.  
+λ OFF · mean feedback · hybrid · evolve_log 1182 · BOOST_CAPS/W_*/quota 미수정.
 
 ---
 

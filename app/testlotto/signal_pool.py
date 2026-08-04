@@ -27,8 +27,8 @@ W_LEARN = 0.35
 HYBRID_P45_R123_BRAINS: frozenset[str] = frozenset({"stat", "review"})
 HYBRID_ASSEMBLE_MODE: str = "p45_r123"  # "" 이면 전원 baseline 몰아주기
 
-# K-EVOLVE-FEAT-LAM-WIRE — SIGNAL PartB: review λ=0.3 only
-FEATURE_LAMBDA_WIRE: bool = True
+# K-EVOLVE-FEAT-LAM-REVAL — full history에서 review λ0.3 기각 → OFF
+FEATURE_LAMBDA_WIRE: bool = False
 
 
 class RollingSignalLearner:

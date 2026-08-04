@@ -24,11 +24,17 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 ~13:30 KST)
+### 최신 상태 (2026-08-04 ~14:15 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-LOG-EXPAND** — **PASS** (n=1182)
-- **다음(공식)**: Phase3 AUTO 준비 또는 λ재검증 · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KEVOLVE_LOG_EXPAND.json`
+- **지금(판정)**: **K-EVOLVE-FEAT-LAM-REVAL** — **HOLD** (λ 롤백)
+- **다음(공식)**: Phase3 AUTO 설계문서만 또는 새축 · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_REVAL.json`
+
+### K-EVOLVE-FEAT-LAM-REVAL (형 진행 · HOLD)
+- full 53~1234: review λ0.3 ge3=0.1227 vs base 0.1252 (**Δ−0.0025**)
+- tail200: λ0.3=0.105 vs base 0.135 (**Δ−0.03**) — SIGNAL 0.145는 희소과적합
+- 조치: `FEATURE_LAMBDA_WIRE=False` · by_brain={} · assemble 복귀 `hy_p45_r123`
+- AUTO 실행 게이트 **미달** · 설계문서만 가능
 
 ### K-EVOLVE-LOG-EXPAND (형 다음진행 · PASS)
 - evolve_log **53~1234** · **1182**회 · weight=0

@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `ab7e6fb` |
+| HEAD(실측) | `337fbc5` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-EVOLVE-LOG-EXPAND** — evolve_log 53~1234 n=1182 · **PASS** |
-| 직전 | K-EVOLVE-FEAT-LAM-WIRE review λ0.3 |
-| BOOT다음 | Phase3 AUTO 준비 또는 λ재검증 · **형 GO** |
-| NEXT1 ID | **K-EVOLVE-LOG-EXPAND-DONE** |
-| NEXT1 할일 | evolve_log n=1182 DONE · **Phase3 AUTO 준비** 또는 review λ 재검증(풀히스토리) · **형 GO** |
+| 지금 | **K-EVOLVE-FEAT-LAM-REVAL** — full λ재검증 · review0.3 **HOLD/롤백** |
+| 직전 | K-EVOLVE-LOG-EXPAND n=1182 |
+| BOOT다음 | Phase3 AUTO 설계문서만 또는 다른축 · **형 GO** |
+| NEXT1 ID | **K-EVOLVE-FEAT-LAM-REVAL-DONE** |
+| NEXT1 할일 | λ풀재검증 HOLD(롤백) · **Phase3 AUTO 설계문서만** 또는 새 개선축 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=ab7e6fb · 지금=**K-EVOLVE-LOG-EXPAND** — evolve_log 53~1234 n=1182 · **PASS** · 다음=K-EVOLVE-LOG-EXPAND-DONE`
+1. 첫줄 `[복귀] HEAD=337fbc5 · 지금=**K-EVOLVE-FEAT-LAM-REVAL** — full λ재검증 · review0.3 **HOLD/롤백** · 다음=K-EVOLVE-FEAT-LAM-REVAL-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
