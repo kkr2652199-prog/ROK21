@@ -24,11 +24,17 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 12:45 KST)
-- **HEAD(실측)**: `8cf8a55` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-LOG** — Phase1 **PASS**
-- **다음(공식)**: **K-EVOLVE-SIGNAL** · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KEVOLVE_LOG.json` · `reports/20260804_KEVOLVE_LOG.md`
+### 최신 상태 (2026-08-04 12:50 KST)
+- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-EVOLVE-SIGNAL** — **DONE**
+- **다음(공식)**: review λ0.3 또는 FULL스냅샷 · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KEVOLVE_SIGNAL_survey.json`
+
+### K-EVOLVE-SIGNAL (형 GO · DONE)
+- **WIRE:** `FEEDBACK_MATCH_MODE=mean` — best단독 학습 차단(K-N)
+- PartA: best−mean ≈ +0.95~1.08 · best>mean **96%+**
+- PartB λ: review **0.145**(+0.01 @λ0.3) · stat/markov는 baseline 미달 → **λ 전뇌 HOLD** · review만 GO-WAIT
+- BOOST_CAPS / W_* / quota 미수정
 
 ### K-EVOLVE-LOG (형 A안 GO · PASS · weight=0)
 - 테이블 `testlotto_evolve_log` · 백필 1035~1234 **200**회

@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `8cf8a55` |
+| HEAD(실측) | `df65a8a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS** |
-| 직전 | K-MULTI-AI-PATCH 최종안 DOC |
-| BOOT다음 | **K-EVOLVE-SIGNAL** 또는 FULL스냅샷 · **형 GO** |
-| NEXT1 ID | **K-EVOLVE-LOG-DONE** |
-| NEXT1 할일 | Phase1 LOG PASS · 다음 **K-EVOLVE-SIGNAL**(best차단+λ) · **형 GO** |
+| 지금 | **K-EVOLVE-SIGNAL** — mean피드백 wire · λ HOLD · **DONE** |
+| 직전 | K-EVOLVE-LOG Phase1 PASS |
+| BOOT다음 | review λ=0.3 GO-WAIT 또는 FULL스냅샷 · **형 GO** |
+| NEXT1 ID | **K-EVOLVE-SIGNAL-DONE** |
+| NEXT1 할일 | SIGNAL DONE · mean(K-N차단) live · λ전뇌 HOLD · **review λ0.3** 또는 FULL스냅샷 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=8cf8a55 · 지금=**K-EVOLVE-LOG** — 가중0 회차로그 200회 백필 · **PASS** · 다음=K-EVOLVE-LOG-DONE`
+1. 첫줄 `[복귀] HEAD=df65a8a · 지금=**K-EVOLVE-SIGNAL** — mean피드백 wire · λ HOLD · **DONE** · 다음=K-EVOLVE-SIGNAL-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 8cf8a55_
+_generated: df65a8a_

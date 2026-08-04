@@ -295,6 +295,11 @@ def _prediction_row_nums(row: dict) -> list[int]:
     ]
 
 
+# K-EVOLVE-SIGNAL / K-N: best 단독 학습 오인 차단 → 뇌 내 세트 mean 사용
+# "best" = 구경로(비권고) · "mean" = Phase2 기본
+FEEDBACK_MATCH_MODE: str = "mean"
+
+
 def _auto_feedback(target_draw_no: int, conn) -> None:
     """직전 회차 예측·정답으로 learn_state 피드백 (중복 apply 방지)."""
     from app.testlotto.learn_state import _load_global_learn_state, apply_feedback
@@ -351,24 +356,31 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
             )
             continue
 
-        best_row = max(
-            rows,
-            key=lambda r: (
-                int(r.get("matched_count") if r.get("matched_count") is not None else -1),
-                float(r.get("confidence") or 0),
-            ),
-        )
-        pred_nums = _prediction_row_nums(best_row)
-        matched_count = len(set(pred_nums) & actual_set)
-        if int(best_row.get("matched_count") or -1) >= 0:
-            matched_count = int(best_row["matched_count"])
+        scored: list[tuple[int, list[int], dict]] = []
+        for row in rows:
+            pred_nums = _prediction_row_nums(row)
+            mc = len(set(pred_nums) & actual_set)
+            if int(row.get("matched_count") or -1) >= 0:
+                mc = int(row["matched_count"])
+            scored.append((mc, pred_nums, row))
+
+        if FEEDBACK_MATCH_MODE == "best":
+            pick = max(scored, key=lambda s: (s[0], float(s[2].get("confidence") or 0)))
+            matched_count = int(pick[0])
+            pred_nums = pick[1]
+        else:
+            # mean: 실력 지표 · miss 태그는 mean에 가장 가까운 세트에서 추출
+            mean_mc = sum(s[0] for s in scored) / len(scored)
+            matched_count = int(round(mean_mc))
+            pred_nums = min(scored, key=lambda s: (abs(s[0] - mean_mc), -s[0]))[1]
 
         missed = _detect_missed_patterns(pred_nums, actual_nums, draws_before)
         apply_feedback(tag, prev_draw_no, matched_count, missed)
         logger.info(
-            "[K-HIGHWAY-FEEDBACK] %s draw=%d matched=%d missed=%s",
+            "[K-HIGHWAY-FEEDBACK] %s draw=%d mode=%s matched=%d missed=%s",
             tag,
             prev_draw_no,
+            FEEDBACK_MATCH_MODE,
             matched_count,
             missed,
         )

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-04 KST  
-📌 사유: **K-EVOLVE-LOG** — Phase1 가중0 회차로그 백필 PASS
+📌 사유: **K-EVOLVE-SIGNAL** — mean피드백 wire · λ survey DONE
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-EVOLVE-SIGNAL** | **DONE** — `FEEDBACK_MATCH_MODE=mean` live(K-N차단) · λ전뇌 HOLD · review λ0.3 Δ+0.01 GO-WAIT · `docs/benchmarks/20260804_KEVOLVE_SIGNAL_survey.json` |
 | **K-EVOLVE-LOG** | **PASS** — `testlotto_evolve_log` n=200 · weight=0 · API evolve/log·summary · ge3참고 stat0.165/markov0.130/review0.135 · `docs/benchmarks/20260804_KEVOLVE_LOG.json` |
 | **K-MULTI-AI-PATCH** | **DOC** — 형·커서·젠스파크·벤치·FINDINGS 합의 · 최종 **K-EVOLVE-LOG→SIGNAL→AUTO** · `reports/20260804_MULTI_AI_PATCH_FINAL.md` |
 | **K-REPACK-HYBRID-WIRE** | **PASS** — signal_pool wire · schema=2 · ge3 stat**0.165**/markov**0.130**/review**0.135** (=ablation) · smoke assemble OK · `docs/benchmarks/20260804_KREPACK_HYBRID_WIRE.json` |
@@ -67,6 +68,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-EVOLVE-SIGNAL** | mean피드백 wire · feature λ survey · review+0.01 | **DONE** · λ HOLD |
 | **K-EVOLVE-LOG** | 회차×뇌 로그 테이블·백필·조회 API · 가중0 | **PASS** · n=200 |
 | **K-MULTI-AI-PATCH** | 다중AI 패치논의 · 진화학습 최종안 · 형 A/B/C/D | **DOC** |
 | **K-REPACK-HYBRID-WIRE** | signal_pool hy_p45 · cache schema2 · markov baseline | **PASS** · ref match |
