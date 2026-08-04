@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `962c783` |
+| HEAD(실측) | `f85de74` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED** |
-| 직전 | K-RARE-FILTER-PREP |
-| BOOT다음 | taxonomy v1 확장 또는 rare R4 설계심화 · **형 GO** |
-| NEXT1 ID | **K-LIVE-QUICK200-RESET-DONE** |
-| NEXT1 할일 | n200 리셋백테 MEASURED · **taxonomy v1 확장** 또는 **rare R4 설계심화** · **형 GO** |
+| 지금 | **K-SIGNAL-TAXONOMY-V1** — L1·L3·L4 진단 · **DOC_SURVEY** |
+| 직전 | K-LIVE-QUICK200-RESET |
+| BOOT다음 | L2 EMA 진단 또는 L1 annotate stub · **형 GO** |
+| NEXT1 ID | **K-SIGNAL-TAXONOMY-V1-DONE** |
+| NEXT1 할일 | L1/L3/L4 진단 PASS · **L2 EMA 구현(진단)** 또는 **L1 deviation→annotate stub** · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=962c783 · 지금=**K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED** · 다음=K-LIVE-QUICK200-RESET-DONE`
+1. 첫줄 `[복귀] HEAD=f85de74 · 지금=**K-SIGNAL-TAXONOMY-V1** — L1·L3·L4 진단 · **DOC_SURVEY** · 다음=K-SIGNAL-TAXONOMY-V1-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

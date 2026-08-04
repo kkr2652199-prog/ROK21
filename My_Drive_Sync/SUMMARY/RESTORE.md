@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0997b93` · WORK=`IDLE`
-2. **지금:** **K-LIVE-QUICK200-RESET** — 예측DB리셋+n200 · **MEASURED**
-3. **다음1건:** K-LIVE-QUICK200-RESET-DONE — n200 리셋백테 MEASURED · **taxonomy v1 확장** 또는 **rare R4 설계심화** · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `f85de74` · WORK=`IDLE`
+2. **지금:** **K-SIGNAL-TAXONOMY-V1** — L1·L3·L4 진단 · **DOC_SURVEY**
+3. **다음1건:** K-SIGNAL-TAXONOMY-V1-DONE — L1/L3/L4 진단 PASS · **L2 EMA 구현(진단)** 또는 **L1 deviation→annotate stub** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | TAXONOMY-V1 L1/L3/L4 | deviation·PMI·페널티스펙 · w*=0 | **DOC** | (push후) |
 | 2026-08-05 | 예측DB리셋+n200백테 | fusion0.135·hybrid 0.165/0.15/0.13 | **MEASURED** | 962c783 |
 | 2026-08-05 | 극소수필터 준비 | R0~R3 DESIGN·MEASURE·TAG · wire OFF | **PASS** | 13f0f99 |
 | 2026-08-05 | 1235가상·분석적용 | VIRTUAL PREDICT→SCORE · hybrid · ge3無 | **PASS** | cdf1bda |
@@ -45,7 +46,6 @@
 | 2026-08-05 | 진행(저출현쌍) | pair_cover survey ge3↓ · WIRE OFF | **HOLD** | 87cb094 |
 | 2026-08-05 | 진행(명분→설계1축) | struct_cover survey ge3↓ · WIRE OFF | **HOLD** | d068327 |
 | 2026-08-05 | 1~1235 수학명분(확률만論금지) | 구조명분10 · WARRANT_FOUND | **FOUND** | 685a519 |
-| 2026-08-05 | 종료체크 20260805보고서 | SESSION_STATUS · reports+커서보고서 | **DONE** | 3007a9a |
 
 ---
 

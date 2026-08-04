@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-LIVE-QUICK200-RESET-DONE
-- 할일: n200 리셋백테 MEASURED · **taxonomy v1 확장** 또는 **rare R4 설계심화** · **형 GO**
+- ID: K-SIGNAL-TAXONOMY-V1-DONE
+- 할일: L1/L3/L4 진단 PASS · **L2 EMA 구현(진단)** 또는 **L1 deviation→annotate stub** · **형 GO**
 - 완료조건: 형 선택
-- 선행완료: docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json
+- 선행완료: docs/benchmarks/20260805_KSIGNAL_TAXONOMY_V1.json
 
 ## WORKSTATE
 IDLE
@@ -15,6 +15,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- 예측DB 리셋 후 재기입 · evolve_log 유지
-- fusion ge3=0.135 · hybrid stat0.165/markov0.15/review0.13
-- λ/cover/rare wire OFF · 1236 대기 불필요(확정분 분석)
+- wire/quota/engine 미변경 · w*=0
+- consec_3plus th≈5.63% emp≈5.43% (≠23.4% 추정)
+- PMI top (11,21) · set_pmi mean≈−0.138

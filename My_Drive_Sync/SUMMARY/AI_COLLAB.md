@@ -26,9 +26,16 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-LIVE-QUICK200-RESET** — **MEASURED** (예측DB리셋+n200)
-- **다음(공식)**: taxonomy v1 확장 또는 rare R4 설계심화 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json`
+- **지금(판정)**: **K-SIGNAL-TAXONOMY-V1** — **DOC_SURVEY** (L1·L3·L4)
+- **다음(공식)**: L2 EMA 진단 또는 L1 annotate stub · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KSIGNAL_TAXONOMY_V1.json`
+
+### K-SIGNAL-TAXONOMY-V1 (형 논의 · DOC_SURVEY)
+- fusion 0.135 정체 → 신호 레이어 L1~L5 설계 · **wire OFF · w*=0**
+- L1: 이론 w 전수/공식 · consec_3plus th≈**5.63%** emp≈**5.43%**
+- L3: PMI 전쌍 · top (11,21) · set_pmi mean≈**−0.138**
+- L4: birthday/sum≤120/consec 페널티 스펙 · EV용
+- L2·L5 설계만 · tool `tools/_k_signal_taxonomy_v1_survey.py`
 
 ### K-LIVE-QUICK200-RESET (형 진행 · MEASURED)
 - 예측DB 전량 삭제 후 재기입: preds 5910 · cache 606 · learn 리셋 (evolve_log 유지)

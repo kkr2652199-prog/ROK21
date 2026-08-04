@@ -1,0 +1,737 @@
+{
+  "id": "K-SIGNAL-TAXONOMY-V1",
+  "ts": "2026-08-04T17:36:07+00:00",
+  "verdict": "DOC_SURVEY",
+  "wire": false,
+  "C_45_6": 8145060,
+  "draw_range": [
+    1,
+    1235
+  ],
+  "n_draws": 1235,
+  "problem": {
+    "fusion_ge3_ref": 0.135,
+    "stat_solo_ge3_ref": 0.165,
+    "note": "fusion이 뇌별 우세 수치를 흡수 못함 · 신호 종류 부족"
+  },
+  "L1_deviation_table": [
+    {
+      "tag": "parity_all_odd",
+      "w": 100947,
+      "p_theory": 0.01239365,
+      "emp_n": 19,
+      "emp_rate": 0.015385,
+      "expected_n": 15.31,
+      "deviation_score": 0.2414,
+      "method": "C(23,6)"
+    },
+    {
+      "tag": "parity_all_even",
+      "w": 74613,
+      "p_theory": 0.00916052,
+      "emp_n": 17,
+      "emp_rate": 0.013765,
+      "expected_n": 11.31,
+      "deviation_score": 0.5026,
+      "method": "C(22,6)"
+    },
+    {
+      "tag": "zone_all_low_1_15",
+      "w": 5005,
+      "p_theory": 0.00061448,
+      "emp_n": 0,
+      "emp_rate": 0.0,
+      "expected_n": 0.76,
+      "deviation_score": -1.0,
+      "method": "C(15,6)"
+    },
+    {
+      "tag": "zone_all_high_31_45",
+      "w": 5005,
+      "p_theory": 0.00061448,
+      "emp_n": 1,
+      "emp_rate": 0.00081,
+      "expected_n": 0.76,
+      "deviation_score": 0.3182,
+      "method": "C(15,6)"
+    },
+    {
+      "tag": "consec_6",
+      "w": 40,
+      "p_theory": 4.91e-06,
+      "emp_n": 0,
+      "emp_rate": 0.0,
+      "expected_n": 0.01,
+      "deviation_score": -1.0,
+      "method": "windows_1to40"
+    },
+    {
+      "tag": "arithmetic_6",
+      "w": 175,
+      "p_theory": 2.149e-05,
+      "emp_n": 0,
+      "emp_rate": 0.0,
+      "expected_n": 0.03,
+      "deviation_score": -1.0,
+      "method": "enumerate_d_ge1"
+    },
+    {
+      "tag": "rank_top1000",
+      "w": 1000,
+      "p_theory": 0.00012277,
+      "emp_n": 0,
+      "emp_rate": 0.0,
+      "expected_n": 0.15,
+      "deviation_score": -1.0,
+      "method": "combinadic_slice"
+    },
+    {
+      "tag": "rank_bottom1000",
+      "w": 1000,
+      "p_theory": 0.00012277,
+      "emp_n": 1,
+      "emp_rate": 0.00081,
+      "expected_n": 0.15,
+      "deviation_score": 5.5975,
+      "method": "combinadic_slice"
+    },
+    {
+      "tag": "split_exact_123_434445",
+      "w": 1,
+      "p_theory": 1.2e-07,
+      "emp_n": 0,
+      "emp_rate": 0.0,
+      "expected_n": 0.0,
+      "deviation_score": -1.0,
+      "method": "singleton"
+    },
+    {
+      "tag": "consec_ge1_pair",
+      "w": 4306680,
+      "p_theory": 0.52874749,
+      "emp_n": 639,
+      "emp_rate": 0.517409,
+      "expected_n": 653.0,
+      "deviation_score": -0.0214,
+      "method": "C(45,6)-C(40,6)"
+    },
+    {
+      "tag": "consec_3plus",
+      "w": 458420,
+      "p_theory": 0.05628197,
+      "emp_n": 67,
+      "emp_rate": 0.054251,
+      "expected_n": 69.51,
+      "deviation_score": -0.0361,
+      "method": "full_C45_6_scan"
+    },
+    {
+      "tag": "consec_4plus",
+      "w": 32800,
+      "p_theory": 0.00402698,
+      "emp_n": 6,
+      "emp_rate": 0.004858,
+      "expected_n": 4.97,
+      "deviation_score": 0.2064,
+      "method": "full_C45_6_scan"
+    },
+    {
+      "tag": "consec_5plus",
+      "w": 1600,
+      "p_theory": 0.00019644,
+      "emp_n": 0,
+      "emp_rate": 0.0,
+      "expected_n": 0.24,
+      "deviation_score": -1.0,
+      "method": "full_C45_6_scan"
+    },
+    {
+      "tag": "spread_min_gap7",
+      "w": 5005,
+      "p_theory": 0.00061448,
+      "emp_n": 1,
+      "emp_rate": 0.00081,
+      "expected_n": 0.76,
+      "deviation_score": 0.3182,
+      "method": "full_C45_6_scan"
+    },
+    {
+      "tag": "spread_min_gap8",
+      "w": 210,
+      "p_theory": 2.578e-05,
+      "emp_n": 0,
+      "emp_rate": 0.0,
+      "expected_n": 0.03,
+      "deviation_score": -1.0,
+      "method": "full_C45_6_scan"
+    },
+    {
+      "tag": "odd_k_0",
+      "w": 74613,
+      "p_theory": 0.00916052,
+      "emp_n": 17,
+      "emp_rate": 0.013765,
+      "expected_n": 11.31,
+      "deviation_score": 0.5026,
+      "method": "C(23,k)*C(22,6-k)"
+    },
+    {
+      "tag": "odd_k_1",
+      "w": 605682,
+      "p_theory": 0.07436188,
+      "emp_n": 82,
+      "emp_rate": 0.066397,
+      "expected_n": 91.84,
+      "deviation_score": -0.1071,
+      "method": "C(23,k)*C(22,6-k)"
+    },
+    {
+      "tag": "odd_k_2",
+      "w": 1850695,
+      "p_theory": 0.22721687,
+      "emp_n": 277,
+      "emp_rate": 0.224291,
+      "expected_n": 280.61,
+      "deviation_score": -0.0129,
+      "method": "C(23,k)*C(22,6-k)"
+    },
+    {
+      "tag": "odd_k_3",
+      "w": 2727340,
+      "p_theory": 0.33484591,
+      "emp_n": 413,
+      "emp_rate": 0.334413,
+      "expected_n": 413.53,
+      "deviation_score": -0.0013,
+      "method": "C(23,k)*C(22,6-k)"
+    },
+    {
+      "tag": "odd_k_4",
+      "w": 2045505,
+      "p_theory": 0.25113443,
+      "emp_n": 328,
+      "emp_rate": 0.265587,
+      "expected_n": 310.15,
+      "deviation_score": 0.0575,
+      "method": "C(23,k)*C(22,6-k)"
+    },
+    {
+      "tag": "odd_k_5",
+      "w": 740278,
+      "p_theory": 0.09088675,
+      "emp_n": 99,
+      "emp_rate": 0.080162,
+      "expected_n": 112.25,
+      "deviation_score": -0.118,
+      "method": "C(23,k)*C(22,6-k)"
+    },
+    {
+      "tag": "odd_k_6",
+      "w": 100947,
+      "p_theory": 0.01239365,
+      "emp_n": 19,
+      "emp_rate": 0.015385,
+      "expected_n": 15.31,
+      "deviation_score": 0.2414,
+      "method": "C(23,k)*C(22,6-k)"
+    }
+  ],
+  "L1_scan_meta": {
+    "skipped": false,
+    "method": "full_C45_6_scan"
+  },
+  "L3_pmi": {
+    "n_draws": 1235,
+    "n_pair_types_seen": 990,
+    "n_pair_universe": 990,
+    "top_pmi": [
+      {
+        "a": 11,
+        "b": 21,
+        "n_co": 34,
+        "p_ab": 0.02753,
+        "pmi": 0.421211
+      },
+      {
+        "a": 1,
+        "b": 28,
+        "n_co": 30,
+        "p_ab": 0.024291,
+        "pmi": 0.327979
+      },
+      {
+        "a": 10,
+        "b": 31,
+        "n_co": 30,
+        "p_ab": 0.024291,
+        "pmi": 0.308721
+      },
+      {
+        "a": 6,
+        "b": 38,
+        "n_co": 31,
+        "p_ab": 0.025101,
+        "pmi": 0.305027
+      },
+      {
+        "a": 33,
+        "b": 40,
+        "n_co": 33,
+        "p_ab": 0.026721,
+        "pmi": 0.302987
+      },
+      {
+        "a": 25,
+        "b": 36,
+        "n_co": 27,
+        "p_ab": 0.021862,
+        "pmi": 0.284359
+      },
+      {
+        "a": 6,
+        "b": 28,
+        "n_co": 28,
+        "p_ab": 0.022672,
+        "pmi": 0.282797
+      },
+      {
+        "a": 12,
+        "b": 24,
+        "n_co": 31,
+        "p_ab": 0.025101,
+        "pmi": 0.25344
+      },
+      {
+        "a": 34,
+        "b": 42,
+        "n_co": 30,
+        "p_ab": 0.024291,
+        "pmi": 0.248842
+      },
+      {
+        "a": 10,
+        "b": 22,
+        "n_co": 24,
+        "p_ab": 0.019433,
+        "pmi": 0.238742
+      },
+      {
+        "a": 19,
+        "b": 21,
+        "n_co": 29,
+        "p_ab": 0.023482,
+        "pmi": 0.238336
+      },
+      {
+        "a": 5,
+        "b": 11,
+        "n_co": 26,
+        "p_ab": 0.021053,
+        "pmi": 0.234497
+      },
+      {
+        "a": 8,
+        "b": 39,
+        "n_co": 27,
+        "p_ab": 0.021862,
+        "pmi": 0.228104
+      },
+      {
+        "a": 3,
+        "b": 24,
+        "n_co": 29,
+        "p_ab": 0.023482,
+        "pmi": 0.22664
+      },
+      {
+        "a": 2,
+        "b": 25,
+        "n_co": 24,
+        "p_ab": 0.019433,
+        "pmi": 0.223017
+      },
+      {
+        "a": 3,
+        "b": 22,
+        "n_co": 25,
+        "p_ab": 0.020243,
+        "pmi": 0.213474
+      },
+      {
+        "a": 37,
+        "b": 40,
+        "n_co": 30,
+        "p_ab": 0.024291,
+        "pmi": 0.21344
+      },
+      {
+        "a": 5,
+        "b": 20,
+        "n_co": 26,
+        "p_ab": 0.021053,
+        "pmi": 0.210686
+      },
+      {
+        "a": 14,
+        "b": 15,
+        "n_co": 29,
+        "p_ab": 0.023482,
+        "pmi": 0.202829
+      },
+      {
+        "a": 3,
+        "b": 20,
+        "n_co": 29,
+        "p_ab": 0.023482,
+        "pmi": 0.202829
+      },
+      {
+        "a": 31,
+        "b": 32,
+        "n_co": 24,
+        "p_ab": 0.019433,
+        "pmi": 0.197168
+      },
+      {
+        "a": 30,
+        "b": 41,
+        "n_co": 23,
+        "p_ab": 0.018623,
+        "pmi": 0.18109
+      },
+      {
+        "a": 24,
+        "b": 27,
+        "n_co": 29,
+        "p_ab": 0.023482,
+        "pmi": 0.175637
+      },
+      {
+        "a": 30,
+        "b": 34,
+        "n_co": 28,
+        "p_ab": 0.022672,
+        "pmi": 0.1735
+      },
+      {
+        "a": 10,
+        "b": 16,
+        "n_co": 26,
+        "p_ab": 0.021053,
+        "pmi": 0.171554
+      },
+      {
+        "a": 12,
+        "b": 42,
+        "n_co": 27,
+        "p_ab": 0.021862,
+        "pmi": 0.171032
+      },
+      {
+        "a": 11,
+        "b": 44,
+        "n_co": 26,
+        "p_ab": 0.021053,
+        "pmi": 0.165069
+      },
+      {
+        "a": 16,
+        "b": 41,
+        "n_co": 24,
+        "p_ab": 0.019433,
+        "pmi": 0.162281
+      },
+      {
+        "a": 7,
+        "b": 9,
+        "n_co": 22,
+        "p_ab": 0.017814,
+        "pmi": 0.161415
+      },
+      {
+        "a": 18,
+        "b": 32,
+        "n_co": 24,
+        "p_ab": 0.019433,
+        "pmi": 0.156583
+      }
+    ],
+    "bottom_pmi": [
+      {
+        "a": 8,
+        "b": 12,
+        "n_co": 7,
+        "p_ab": 0.005668,
+        "pmi": -1.185244
+      },
+      {
+        "a": 24,
+        "b": 43,
+        "n_co": 8,
+        "p_ab": 0.006478,
+        "pmi": -1.019665
+      },
+      {
+        "a": 8,
+        "b": 26,
+        "n_co": 8,
+        "p_ab": 0.006478,
+        "pmi": -0.970273
+      },
+      {
+        "a": 6,
+        "b": 33,
+        "n_co": 9,
+        "p_ab": 0.007287,
+        "pmi": -0.954992
+      },
+      {
+        "a": 11,
+        "b": 40,
+        "n_co": 9,
+        "p_ab": 0.007287,
+        "pmi": -0.949229
+      },
+      {
+        "a": 11,
+        "b": 34,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.905512
+      },
+      {
+        "a": 26,
+        "b": 32,
+        "n_co": 8,
+        "p_ab": 0.006478,
+        "pmi": -0.877491
+      },
+      {
+        "a": 3,
+        "b": 25,
+        "n_co": 9,
+        "p_ab": 0.007287,
+        "pmi": -0.861882
+      },
+      {
+        "a": 4,
+        "b": 30,
+        "n_co": 9,
+        "p_ab": 0.007287,
+        "pmi": -0.834141
+      },
+      {
+        "a": 37,
+        "b": 44,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.831747
+      },
+      {
+        "a": 1,
+        "b": 22,
+        "n_co": 9,
+        "p_ab": 0.007287,
+        "pmi": -0.796481
+      },
+      {
+        "a": 19,
+        "b": 29,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.757812
+      },
+      {
+        "a": 24,
+        "b": 28,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.746822
+      },
+      {
+        "a": 6,
+        "b": 29,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.734002
+      },
+      {
+        "a": 15,
+        "b": 18,
+        "n_co": 12,
+        "p_ab": 0.009717,
+        "pmi": -0.70255
+      },
+      {
+        "a": 28,
+        "b": 33,
+        "n_co": 11,
+        "p_ab": 0.008907,
+        "pmi": -0.69858
+      },
+      {
+        "a": 23,
+        "b": 41,
+        "n_co": 9,
+        "p_ab": 0.007287,
+        "pmi": -0.685017
+      },
+      {
+        "a": 7,
+        "b": 32,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.6842
+      },
+      {
+        "a": 4,
+        "b": 21,
+        "n_co": 11,
+        "p_ab": 0.008907,
+        "pmi": -0.682863
+      },
+      {
+        "a": 6,
+        "b": 23,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.681009
+      },
+      {
+        "a": 7,
+        "b": 14,
+        "n_co": 12,
+        "p_ab": 0.009717,
+        "pmi": -0.67956
+      },
+      {
+        "a": 16,
+        "b": 22,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.679286
+      },
+      {
+        "a": 6,
+        "b": 45,
+        "n_co": 12,
+        "p_ab": 0.009717,
+        "pmi": -0.673041
+      },
+      {
+        "a": 10,
+        "b": 26,
+        "n_co": 11,
+        "p_ab": 0.008907,
+        "pmi": -0.670628
+      },
+      {
+        "a": 3,
+        "b": 21,
+        "n_co": 12,
+        "p_ab": 0.009717,
+        "pmi": -0.655749
+      },
+      {
+        "a": 21,
+        "b": 28,
+        "n_co": 11,
+        "p_ab": 0.008907,
+        "pmi": -0.651512
+      },
+      {
+        "a": 10,
+        "b": 45,
+        "n_co": 12,
+        "p_ab": 0.009717,
+        "pmi": -0.642457
+      },
+      {
+        "a": 28,
+        "b": 35,
+        "n_co": 11,
+        "p_ab": 0.008907,
+        "pmi": -0.633274
+      },
+      {
+        "a": 23,
+        "b": 33,
+        "n_co": 11,
+        "p_ab": 0.008907,
+        "pmi": -0.632766
+      },
+      {
+        "a": 9,
+        "b": 20,
+        "n_co": 10,
+        "p_ab": 0.008097,
+        "pmi": -0.627042
+      }
+    ],
+    "set_pmi_hist": {
+      "mean": -0.138241,
+      "min": -0.314674,
+      "max": 0.015243,
+      "p10": -0.200609,
+      "p50": -0.136204,
+      "p90": -0.077782
+    },
+    "note": "as_of 없음 · 전체 1~1235 일괄 PMI(진단). 발권 wire 시에는 draw<target만."
+  },
+  "L4_popularity_spec": {
+    "purpose": "공유당첨 회피 EV · 당첨P 부스트 아님",
+    "penalties": [
+      {
+        "id": "birthday_bias",
+        "rule": "count(num<=31)/6 >= 4/6 → penalty += 1",
+        "emp_rate_1_1235": 0.727935
+      },
+      {
+        "id": "sum_low_iqr",
+        "rule": "sum(nums) <= 120 → penalty += 1 (IQR low proxy · refine later)",
+        "emp_rate_1_1235": 0.282591,
+        "note": "이론 합 mean≈138 · 120은 하측 근사 임계"
+      },
+      {
+        "id": "consec_3plus",
+        "rule": "max_run>=3 → penalty += 0.5 (tag already exists)",
+        "emp_rate_1_1235": 0.054251
+      }
+    ],
+    "popularity_penalty": "sum of above · wire OFF · score only",
+    "wire": false
+  },
+  "L2_L5_design_only": {
+    "L2": "EMA H=8/26/78 parallel ranks · markov aux · quota untouched",
+    "L5": "CUSUM regime · separate GO"
+  },
+  "scoring_schema": {
+    "id": "signal_light_v1",
+    "formula": "score(set)=w1*deviation_score + w2*ema_divergence + w3*pmi_score + w4*(-popularity_penalty)",
+    "weights_init": {
+      "w1": 0,
+      "w2": 0,
+      "w3": 0,
+      "w4": 0
+    },
+    "layers": {
+      "L1": "deviation_score from template emp vs theory",
+      "L2": "EMA multi-half-life — design only this turn",
+      "L3": "set_pmi_score = mean PMI of pairs in set",
+      "L4": "popularity_penalty (birthday/sum/consec)",
+      "L5": "CUSUM regime — design only · separate GO"
+    },
+    "wire": false,
+    "quota": "unchanged",
+    "insert": "after brain set gen · before/parallel referee (GO later)"
+  },
+  "forbid": [
+    "random.choices",
+    "_get_draws_before mutate",
+    "engine.py",
+    "auto-tune",
+    "quota change",
+    "policy wire"
+  ],
+  "pass": true
+}
