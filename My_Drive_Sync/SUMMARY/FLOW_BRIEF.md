@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `cff7228` · WORK=`IDLE`
+- HEAD: `51e6236` · WORK=`IDLE`
 - 지금: **K-EVOLVE-AUTO-S4** — ops(`EVOLVE_AUTO=1`) · **PASS**
 - 직전: K-EVOLVE-AUTO-S3 PREDICT 1236
 - BOOT다음: 모니터링(1236 SCORE) 또는 다른축 · **형 GO**
