@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""K-EVOLVE-AUTO S1 — 상태머신 + dry-run 계획.
+"""K-EVOLVE-AUTO — 상태머신 + tick.
 
 실행 wire 기본 OFF (`EVOLVE_AUTO` env != 1).
-S1: plan만 · SCORE/PREDICT 실적용은 S2+ (apply 호출 시 명시 차단 또는 stub).
+S1 dry-run · S2 --apply-score · S3 --apply-predict · S4 --ops(EVOLVE_AUTO=1 필수).
 """
 from __future__ import annotations
 
@@ -20,6 +20,20 @@ DEFAULT_LOOKBACK = 5  # G2: 직전 N회 로그 완비 검사
 
 def evolve_auto_enabled() -> bool:
     return os.environ.get(AUTO_FLAG_ENV, "0").strip() == "1"
+
+
+def _maybe_mean_feedback_after_score(draw_no: int) -> dict[str, Any]:
+    """SCORE 후 기존 coordinator mean 피드백 (lotto_predictions 없으면 no-op)."""
+    from app.testlotto.brains.coordinator import _auto_feedback
+
+    conn = get_lotto_db()
+    try:
+        _auto_feedback(int(draw_no) + 1, conn)
+        return {"ok": True, "draw_no": int(draw_no), "mode": "mean", "via": "_auto_feedback"}
+    except Exception as e:
+        return {"ok": False, "draw_no": int(draw_no), "error": str(e)[:200]}
+    finally:
+        conn.close()
 
 
 def ensure_auto_state_table(conn=None) -> None:
@@ -255,7 +269,11 @@ def plan_tick(*, lookback: int = DEFAULT_LOOKBACK) -> dict[str, Any]:
             "action_count": len(actions),
             "mandatory_actions": [a for a in actions if not a.get("optional")],
             "blocked_for_apply": blocked,
-            "would_apply": False,  # S1 항상 False
+            "would_apply": bool(
+                evolve_auto_enabled()
+                and not state.get("paused")
+                and g2["g2_pass"]
+            ),
             "gates": {
                 "G0_hyung_go": "required_for_S2+",
                 "G1_EVOLVE_AUTO": evolve_auto_enabled(),
@@ -390,23 +408,158 @@ def predict_then_score(draw_no: int) -> dict[str, Any]:
     }
 
 
+def _execute_score_predict_actions(
+    plan: dict[str, Any],
+    *,
+    skip_cached_predict: bool = False,
+    with_mean_feedback: bool = False,
+) -> dict[str, Any]:
+    """SCORE / PREDICT_THEN_SCORE / optional PREDICT_ONLY 실행 본체."""
+    executed: list[dict[str, Any]] = []
+    skipped: list[dict[str, Any]] = []
+    errors: list[dict[str, Any]] = []
+    feedbacks: list[dict[str, Any]] = []
+
+    for a in plan.get("mandatory_actions") or []:
+        op = a.get("op")
+        dno = int(a["draw_no"])
+        if op == "SCORE":
+            r = score_draw_from_cache(dno)
+        elif op == "PREDICT_THEN_SCORE":
+            r = predict_then_score(dno)
+        else:
+            skipped.append({"action": a, "reason": "unknown mandatory op"})
+            continue
+        if r.get("ok"):
+            executed.append({"action": a, "result": r})
+            scored = bool(r.get("scored")) or op == "SCORE"
+            if with_mean_feedback and scored:
+                feedbacks.append(_maybe_mean_feedback_after_score(dno))
+        else:
+            errors.append({"action": a, "result": r})
+
+    for a in plan.get("actions") or []:
+        if not a.get("optional"):
+            continue
+        if a.get("op") != "PREDICT_ONLY":
+            skipped.append({"action": a, "reason": "optional non-predict skipped"})
+            continue
+        dno = int(a["draw_no"])
+        if skip_cached_predict:
+            conn = get_lotto_db()
+            try:
+                cached = _has_pool_cache_any(conn, dno)
+            finally:
+                conn.close()
+            if cached:
+                skipped.append(
+                    {"action": a, "reason": "pool_view_cache already warm · skip"}
+                )
+                continue
+        r = predict_and_cache(dno)
+        if r.get("ok"):
+            executed.append({"action": a, "result": {**r, "scored": False}})
+        else:
+            errors.append({"action": a, "result": r})
+
+    return {
+        "executed": executed,
+        "skipped": skipped,
+        "errors": errors,
+        "feedbacks": feedbacks,
+    }
+
+
 def tick(
     *,
     dry_run: bool = True,
     lookback: int = DEFAULT_LOOKBACK,
     apply_score: bool = False,
     apply_predict: bool = False,
+    apply_ops: bool = False,
 ) -> dict[str, Any]:
     """틱 1회.
 
     - dry_run=True (기본): 계획만
     - apply_score=True: SCORE만 (S2)
     - apply_predict=True: PREDICT(+SCORE) (S3) · feedback 없음
+    - apply_ops=True: S4 운영 · EVOLVE_AUTO=1 필수 · mean feedback(기존경로)
     """
     plan = plan_tick(lookback=lookback)
     if not plan.get("ok"):
         save_auto_state(phase="error", last_error=plan.get("error") or "plan_failed", last_plan=plan)
         return plan
+
+    if apply_ops:
+        if not evolve_auto_enabled():
+            out = {
+                **plan,
+                "ok": False,
+                "dry_run": False,
+                "apply_ops": True,
+                "error": f"{AUTO_FLAG_ENV}!=1 · S4 ops 거부",
+            }
+            save_auto_state(phase="idle", last_error=out["error"], last_plan=out)
+            return out
+        if get_auto_state().get("paused"):
+            out = {
+                **plan,
+                "ok": False,
+                "dry_run": False,
+                "apply_ops": True,
+                "error": "paused=1 · S4 ops 중단",
+            }
+            save_auto_state(phase="paused", last_error=out["error"], last_plan=out)
+            return out
+
+        run = _execute_score_predict_actions(
+            plan, skip_cached_predict=True, with_mean_feedback=True
+        )
+        executed = run["executed"]
+        skipped = run["skipped"]
+        errors = run["errors"]
+        feedbacks = run["feedbacks"]
+        mandatory = plan.get("mandatory_actions") or []
+        healthy_idle = len(mandatory) == 0 and len(errors) == 0
+        ok = len(errors) == 0 and (len(executed) > 0 or healthy_idle)
+        scored_draws = [
+            e["result"]["draw_no"]
+            for e in executed
+            if e.get("result", {}).get("scored")
+            or e.get("action", {}).get("op") == "SCORE"
+        ]
+        last_done = max(scored_draws) if scored_draws else plan.get("evolve_log_max")
+        plan_after = plan_tick(lookback=lookback)
+        out = {
+            **plan,
+            "ok": ok,
+            "dry_run": False,
+            "apply_ops": True,
+            "would_apply": True,
+            "executed": executed,
+            "skipped": skipped,
+            "errors": errors,
+            "feedbacks": feedbacks,
+            "healthy_idle": healthy_idle,
+            "plan_after": {
+                "evolve_log_max": plan_after.get("evolve_log_max"),
+                "g2_pass": (plan_after.get("g2") or {}).get("g2_pass"),
+                "mandatory_left": len(plan_after.get("mandatory_actions") or []),
+                "next_predict_draw": plan_after.get("next_predict_draw"),
+                "would_apply": plan_after.get("would_apply"),
+            },
+            "note": "S4 ops · EVOLVE_AUTO=1 · mean feedback(기존) · λ/covering OFF · weight=0",
+        }
+        save_auto_state(
+            phase="ops" if ok else "error",
+            last_error="" if ok else json.dumps(errors, ensure_ascii=False)[:500],
+            last_plan=out,
+            last_completed_draw=last_done,
+            paused=False,
+        )
+        out["state_saved"] = True
+        out["status_after"] = get_auto_state()
+        return out
 
     if apply_predict:
         if get_auto_state().get("paused"):
@@ -420,38 +573,12 @@ def tick(
             save_auto_state(phase="paused", last_error=out["error"], last_plan=out)
             return out
 
-        executed = []
-        skipped = []
-        errors = []
-        # mandatory first
-        for a in plan.get("mandatory_actions") or []:
-            op = a.get("op")
-            dno = int(a["draw_no"])
-            if op == "SCORE":
-                r = score_draw_from_cache(dno)
-            elif op == "PREDICT_THEN_SCORE":
-                r = predict_then_score(dno)
-            else:
-                skipped.append({"action": a, "reason": "unknown mandatory op"})
-                continue
-            if r.get("ok"):
-                executed.append({"action": a, "result": r})
-            else:
-                errors.append({"action": a, "result": r})
-
-        # optional PREDICT_ONLY
-        for a in plan.get("actions") or []:
-            if not a.get("optional"):
-                continue
-            if a.get("op") != "PREDICT_ONLY":
-                skipped.append({"action": a, "reason": "optional non-predict skipped"})
-                continue
-            dno = int(a["draw_no"])
-            r = predict_and_cache(dno)
-            if r.get("ok"):
-                executed.append({"action": a, "result": {**r, "scored": False}})
-            else:
-                errors.append({"action": a, "result": r})
+        run = _execute_score_predict_actions(
+            plan, skip_cached_predict=False, with_mean_feedback=False
+        )
+        executed = run["executed"]
+        skipped = run["skipped"]
+        errors = run["errors"]
 
         ok = len(errors) == 0 and len(executed) > 0
         scored_draws = [
@@ -564,7 +691,7 @@ def tick(
             "ok": False,
             "dry_run": False,
             "would_apply": False,
-            "error": "use --apply-score (S2) or --apply-predict (S3)",
+            "error": "use --apply-score (S2) / --apply-predict (S3) / --ops (S4)",
             "actions_not_executed": plan.get("actions"),
         }
         save_auto_state(phase="error", last_error=plan["error"], last_plan=plan)

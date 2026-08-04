@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-EVOLVE-AUTO-S3** — PREDICT 1236 캐시 · **PASS**
-- 직전: K-EVOLVE-AUTO-S2 SCORE 1235
-- 다음: S4 EVOLVE_AUTO=1 운영 또는 다른축 · **형 GO**
+- 지금: **K-EVOLVE-AUTO-S4** — ops(`EVOLVE_AUTO=1`) · **PASS**
+- 직전: K-EVOLVE-AUTO-S3 PREDICT 1236
+- 다음: 모니터링(1236 SCORE) 또는 다른축 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

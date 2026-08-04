@@ -149,7 +149,7 @@ updated_at TEXT
 | S3 | PREDICT+SCORE 통합 | staging 1회차 |
 | S4 | 운영 on (`EVOLVE_AUTO=1`) | 형 GO · 모니터링 1주 |
 
-**진행:** S0~**S3** 완료 (`--apply-predict`) · S4 운영 on(`EVOLVE_AUTO=1`) 미실시.
+**진행:** S0~**S4** 완료 · `--ops` + `EVOLVE_AUTO=1` · healthy_idle PASS · 롤백=`EVOLVE_AUTO=0`.
 
 ---
 

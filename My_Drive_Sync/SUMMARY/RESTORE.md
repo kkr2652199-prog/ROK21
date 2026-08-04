@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7e010bf` · WORK=`IDLE`
-2. **지금:** **K-EVOLVE-AUTO-S3** — PREDICT 1236 캐시 · **PASS**
-3. **다음1건:** K-EVOLVE-AUTO-S3-DONE — S3 PREDICT 1236 캐시 PASS · **S4 EVOLVE_AUTO=1 운영** 또는 다른축 · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `cff7228` · WORK=`IDLE`
+2. **지금:** **K-EVOLVE-AUTO-S4** — ops(`EVOLVE_AUTO=1`) · **PASS**
+3. **다음1건:** K-EVOLVE-AUTO-S4-DONE — S4 ops PASS · **모니터링(1236 SCORE)** 또는 다른축 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 진행(AUTO S3) | PREDICT 1236 캐시 · phase=predicted | **PASS** | (push후) |
+| 2026-08-05 | 다음(AUTO S4) | `--ops`+EVOLVE_AUTO=1 · phase=ops · idle | **PASS** | (push후) |
+| 2026-08-05 | 진행(AUTO S3) | PREDICT 1236 캐시 · phase=predicted | **PASS** | 7e010bf |
 | 2026-08-05 | 다음(AUTO S2) | SCORE 1235 · evolve_log=1235 | **PASS** | 1f80f7f |
 | 2026-08-05 | 진행(AUTO S1) | dry-run tick PASS · apply거부 · state | **PASS** | 7eedee2 |
 | 2026-08-05 | 진행(AUTO설계) | K-EVOLVE-AUTO-DESIGN · wire없음 DOC | **DOC** | 96217bd |
@@ -45,7 +46,6 @@
 | 2026-08-04 | 진행(λ재검증) | full Δ−0.0025 · λ OFF 롤백 · HOLD | **HOLD** | 2d3e3d4 |
 | 2026-08-04 | 다음(자음) evolve확장 | evolve_log 1182 · wf982+cache200 | **PASS** | ab7e6fb |
 | 2026-08-04 | 다음 진행(λ wire) | review λ0.3 · ge3=0.145 MATCH · schema3 | **PASS** | 3f4f4ce |
-| 2026-08-04 | 진행(FULL스냅샷) | FULL n1182 ge3=0.1184 Δ=0 · mean live | **DONE** | 3539759 |
 
 ---
 

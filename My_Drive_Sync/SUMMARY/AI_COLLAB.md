@@ -26,9 +26,15 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-AUTO-S3** — **PASS** (PREDICT 1236)
-- **다음(공식)**: S4 EVOLVE_AUTO=1 또는 다른축 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KEVOLVE_AUTO_S3.json`
+- **지금(판정)**: **K-EVOLVE-AUTO-S4** — **PASS** (ops · EVOLVE_AUTO=1)
+- **다음(공식)**: 모니터링(1236 SCORE) 또는 다른축 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KEVOLVE_AUTO_S4.json`
+
+### K-EVOLVE-AUTO-S4 (형 진행 · PASS)
+- `--ops` · `EVOLVE_AUTO=1` 필수(미설정 시 거부 확인)
+- healthy_idle · SCORE갭 없음 · PREDICT 1236 캐시 warm → skip
+- phase=`ops` · mean feedback 기존경로(lotto_predictions 없으면 no-op)
+- λ/covering/W_* 미변경 · weight=0 · 롤백=`EVOLVE_AUTO=0`
 
 ### K-EVOLVE-AUTO-S3 (형 진행 · PASS)
 - `--apply-predict` · `predict_and_cache` / `predict_then_score`
@@ -46,10 +52,10 @@
 - 관측: draws max=1235 · evolve_log max=1234 → SCORE 1235 계획
 - apply 경로 거부 · `EVOLVE_AUTO` 기본 0
 
-### K-EVOLVE-AUTO-DESIGN (형 진행 · DOC)
+### K-EVOLVE-AUTO-DESIGN (형 진행 · DOC→S4실장)
 - 1236~ 예측→채점→evolve_log 운송벨트 설계
 - `EVOLVE_AUTO` 기본 0 · weight=0 · mean만 · λ/covering wire 금지
-- 구현 단계 S0(현재)~S4 · **코드 미구현**
+- 구현 단계 **S0~S4 완료**
 
 ### K-PAIR-COVER (형 진행 · HOLD)
 - `pair_cover.py` · as_of 희소쌍 top80 · assemble=`pair_cover_v1` · **WIRE=False**
