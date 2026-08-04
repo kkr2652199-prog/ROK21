@@ -1,0 +1,143 @@
+{
+  "id": "K-FUTURE-FULL-POST-EVOLVE",
+  "ts": "2026-08-04T03:56:40+00:00",
+  "seed": 42,
+  "mode": "full",
+  "draw_range": [
+    53,
+    1234
+  ],
+  "n_eval": 1182,
+  "pipeline": "reset→walkforward · V2 solo×ref + aux_hint_native + per-brain RNG",
+  "reset": {
+    "lotto_predictions": true,
+    "learn_state": true,
+    "brain_review": true,
+    "brain_weights": true,
+    "pool_view_cache": false,
+    "lotto_draws": false,
+    "keep_predictions_after_wf": true
+  },
+  "config": {
+    "BUCKET_SELECT_MODE": "aux_hint_native",
+    "BRAIN_RNG_SEED_BASE": 42,
+    "SOLO_GE3_PRIORS": {
+      "stat": 0.09,
+      "markov": 0.13,
+      "review": 0.11
+    },
+    "QUOTA_ADAPTIVE_MIN_EACH": 0,
+    "QUOTA_DOMINANCE_FLOOR": 1.15
+  },
+  "references": {
+    "n100_ge3": 0.15,
+    "v2_baseline_ge3": 0.09,
+    "pass_threshold_patch": 0.09,
+    "null_ge3": 0.1137,
+    "wire_pin_ge3": 0.1447
+  },
+  "overall": {
+    "n": 1182,
+    "mean": 1.6912,
+    "ge3_rate": 0.1184,
+    "ge3_count": 140,
+    "delta_ge3_vs_null": 0.0047,
+    "delta_ge3_vs_pin": -0.0263,
+    "p_value": 0.316656,
+    "verdict": "FAIL",
+    "eval_mode": "best_of_5",
+    "null_ge3": 0.1137,
+    "null_mean": 1.7289,
+    "mean_match": 1.691201,
+    "n_eval": 1182
+  },
+  "by_period": {
+    "early": {
+      "n": 394,
+      "mean": 1.6954,
+      "ge3_rate": 0.099,
+      "ge3_count": 39,
+      "delta_ge3_vs_null": -0.0147,
+      "delta_ge3_vs_pin": -0.0457,
+      "p_value": 0.841361,
+      "verdict": "FAIL",
+      "eval_mode": "best_of_5",
+      "null_ge3": 0.1137,
+      "null_mean": 1.7289,
+      "mean_match": 1.695431,
+      "n_eval": 394
+    },
+    "mid": {
+      "n": 394,
+      "mean": 1.703,
+      "ge3_rate": 0.132,
+      "ge3_count": 52,
+      "delta_ge3_vs_null": 0.0183,
+      "delta_ge3_vs_pin": -0.0127,
+      "p_value": 0.144168,
+      "verdict": "FAIL",
+      "eval_mode": "best_of_5",
+      "null_ge3": 0.1137,
+      "null_mean": 1.7289,
+      "mean_match": 1.703046,
+      "n_eval": 394
+    },
+    "late": {
+      "n": 394,
+      "mean": 1.6751,
+      "ge3_rate": 0.1244,
+      "ge3_count": 49,
+      "delta_ge3_vs_null": 0.0107,
+      "delta_ge3_vs_pin": -0.0203,
+      "p_value": 0.273965,
+      "verdict": "FAIL",
+      "eval_mode": "best_of_5",
+      "null_ge3": 0.1137,
+      "null_mean": 1.7289,
+      "mean_match": 1.675127,
+      "n_eval": 394
+    }
+  },
+  "quota_stats": {
+    "counts": {
+      "markov": 4728,
+      "review": 1182
+    },
+    "avg_pct": {
+      "stat": 0.0,
+      "markov": 80.0,
+      "review": 20.0
+    }
+  },
+  "delta_ge3_vs_n100": -0.0316,
+  "delta_ge3_vs_pin": -0.0263,
+  "patch_gate_pass": true,
+  "verdict": "PASS",
+  "pass": true,
+  "gate": {
+    "null_ge3": 0.1137,
+    "wire_pin_ge3": 0.1447,
+    "enrich_verdict": "FAIL"
+  },
+  "snapshot_note": "After K-REPACK-HYBRID-WIRE + K-EVOLVE-SIGNAL(mean). signal_pool hybrid는 fusion 경로와 별개 · 본 스냅샷은 coordinator WF.",
+  "live_flags": {
+    "FEEDBACK_MATCH_MODE": "mean",
+    "BUCKET_SELECT_MODE": "aux_hint_native"
+  },
+  "vs_prev_full": {
+    "prev_id": "K-FUTURE-WIRE-FULL",
+    "prev_ge3": 0.1184,
+    "new_ge3": 0.1184,
+    "delta_ge3": 0.0,
+    "prev_by_period": {
+      "early": 0.099,
+      "mid": 0.132,
+      "late": 0.1244
+    },
+    "new_by_period": {
+      "early": 0.099,
+      "mid": 0.132,
+      "late": 0.1244
+    }
+  }
+}

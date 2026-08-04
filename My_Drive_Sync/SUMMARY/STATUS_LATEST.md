@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-04 KST  
-📌 사유: **K-EVOLVE-SIGNAL** — mean피드백 wire · λ survey DONE
+📌 사유: **K-FUTURE-FULL-POST-EVOLVE** — FULL 스냅샷 ge3=0.1184 Δ=0 DONE
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-FUTURE-FULL-POST-EVOLVE** | **DONE** — FULL n=1182 ge3=**0.1184**(140) · vs구FULL **Δ=0** · thirds 0.099/0.132/0.1244 · mean feedback live · 구FULL JSON 유지 · `docs/benchmarks/20260804_KFUTURE_FULL_POST_EVOLVE.json` |
 | **K-EVOLVE-SIGNAL** | **DONE** — `FEEDBACK_MATCH_MODE=mean` live(K-N차단) · λ전뇌 HOLD · review λ0.3 Δ+0.01 GO-WAIT · `docs/benchmarks/20260804_KEVOLVE_SIGNAL_survey.json` |
 | **K-EVOLVE-LOG** | **PASS** — `testlotto_evolve_log` n=200 · weight=0 · API evolve/log·summary · ge3참고 stat0.165/markov0.130/review0.135 · `docs/benchmarks/20260804_KEVOLVE_LOG.json` |
 | **K-MULTI-AI-PATCH** | **DOC** — 형·커서·젠스파크·벤치·FINDINGS 합의 · 최종 **K-EVOLVE-LOG→SIGNAL→AUTO** · `reports/20260804_MULTI_AI_PATCH_FINAL.md` |
@@ -68,6 +69,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-FUTURE-FULL-POST-EVOLVE** | hybrid+mean 이후 FULL 리셋WF · 구FULL 대비 | **DONE** · ge3=0.1184 Δ=0 |
 | **K-EVOLVE-SIGNAL** | mean피드백 wire · feature λ survey · review+0.01 | **DONE** · λ HOLD |
 | **K-EVOLVE-LOG** | 회차×뇌 로그 테이블·백필·조회 API · 가중0 | **PASS** · n=200 |
 | **K-MULTI-AI-PATCH** | 다중AI 패치논의 · 진화학습 최종안 · 형 A/B/C/D | **DOC** |
@@ -259,8 +261,9 @@
 
 ## 5) 다음
 
-**K-SIGNAL-SELECT-FULL** — QUICK PASS(combined ge3=0.145) → full n=1182 확인 · wire는 형 GO 전 금지.  
-V2 pin ge3=0.1447 유지 · coordinator·predict_* **수정 금지**.
+**review λ=0.3 wire GO-WAIT** 또는 **evolve_log 53~1234 확장** — 형 GO.  
+FULL post-evolve = 구FULL과 동률(0.1184) · patch gate PASS · pin/enrich FAIL 유지.  
+`FEEDBACK_MATCH_MODE=mean` live · λ전뇌 HOLD · BOOST_CAPS/W_*/quota 미수정.
 
 ---
 

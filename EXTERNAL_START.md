@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1a87bc7` |
+| HEAD(실측) | `6bde716` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-EVOLVE-SIGNAL** — mean피드백 wire · λ HOLD · **DONE** |
-| 직전 | K-EVOLVE-LOG Phase1 PASS |
-| BOOT다음 | review λ=0.3 GO-WAIT 또는 FULL스냅샷 · **형 GO** |
-| NEXT1 ID | **K-EVOLVE-SIGNAL-DONE** |
-| NEXT1 할일 | SIGNAL DONE · mean(K-N차단) live · λ전뇌 HOLD · **review λ0.3** 또는 FULL스냅샷 · **형 GO** |
+| 지금 | **K-FUTURE-FULL-POST-EVOLVE** — FULL n=1182 ge3=0.1184 Δ=0 · **DONE** |
+| 직전 | K-EVOLVE-SIGNAL mean wire · λ HOLD |
+| BOOT다음 | review λ=0.3 wire GO-WAIT 또는 evolve_log 확장 · **형 GO** |
+| NEXT1 ID | **K-EVOLVE-FULL-SNAP-DONE** |
+| NEXT1 할일 | FULL post-evolve ge3=0.1184(=구FULL) · mean live · **review λ0.3 wire** 또는 evolve_log 53~1234 확장 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1a87bc7 · 지금=**K-EVOLVE-SIGNAL** — mean피드백 wire · λ HOLD · **DONE** · 다음=K-EVOLVE-SIGNAL-DONE`
+1. 첫줄 `[복귀] HEAD=6bde716 · 지금=**K-FUTURE-FULL-POST-EVOLVE** — FULL n=1182 ge3=0.1184 Δ=0 · **DONE** · 다음=K-EVOLVE-FULL-SNAP-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 1a87bc7_
+_generated: 6bde716_

@@ -24,11 +24,17 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 12:50 KST)
-- **HEAD(실측)**: `1a87bc7` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-SIGNAL** — **DONE**
-- **다음(공식)**: review λ0.3 또는 FULL스냅샷 · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KEVOLVE_SIGNAL_survey.json`
+### 최신 상태 (2026-08-04 ~13:00 KST)
+- **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-FUTURE-FULL-POST-EVOLVE** — **DONE** (ge3=0.1184 Δ=0)
+- **다음(공식)**: review λ0.3 wire 또는 evolve_log 확장 · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KFUTURE_FULL_POST_EVOLVE.json`
+
+### K-FUTURE-FULL-POST-EVOLVE (형 진행 · DONE)
+- hybrid+mean 이후 FULL 리셋 WF · draw 53~1234 · n=1182
+- ge3=**0.1184**(140) · mean=1.6912 · vs 구FULL **Δ=0** · thirds 동일
+- `FEEDBACK_MATCH_MODE=mean` · 구FULL JSON **미덮어씀**
+- patch gate PASS · pin/enrich FAIL 유지
 
 ### K-EVOLVE-SIGNAL (형 GO · DONE)
 - **WIRE:** `FEEDBACK_MATCH_MODE=mean` — best단독 학습 차단(K-N)
