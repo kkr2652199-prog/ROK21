@@ -24,11 +24,17 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 12:15 KST)
-- **HEAD(실측)**: `4baab6e` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-REPACK-HYBRID-WIRE** — **PASS**
-- **다음(공식)**: combined/FULL 재검증 또는 I2 · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KREPACK_HYBRID_WIRE.json` · `reports/20260804_KREPACK_HYBRID_WIRE.md`
+### 최신 상태 (2026-08-04 12:35 KST)
+- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-MULTI-AI-PATCH** — K-EVOLVE 최종안 **DOC**
+- **다음(공식)**: **K-EVOLVE-LOG** A/B 또는 C/D · **형 선택**
+- **산출물**: `reports/20260804_MULTI_AI_PATCH_FINAL.md`
+
+### K-MULTI-AI-PATCH (형 요청 · DOC)
+- 합의: 진화 학습=약 · best번호 복습=독(K-N)
+- 최종: Phase1 LOG(가중0) → Phase2 SIGNAL → Phase3 AUTO(1236~)
+- 선택: A=LOG · B=LOG+FULL스냅샷 · C=FULL만 · D=계수재탕(비권고)
+- 권고: **A 또는 B**
 
 ### K-REPACK-HYBRID-WIRE (형 GO · PASS · live)
 - `signal_pool.assemble_hybrid_p45_r123` · brains=stat,review · markov=baseline

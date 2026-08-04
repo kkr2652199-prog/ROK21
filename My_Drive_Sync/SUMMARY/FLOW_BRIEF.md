@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4baab6e` · WORK=`IDLE`
-- 지금: **K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS**
-- 직전: K-REPACK-HYBRID ablation +0.04/+0.03
-- BOOT다음: **FULL/combined 재검증** 또는 I2 · **형 GO**
-- NEXT1: K-REPACK-HYBRID-WIRE-DONE — hybrid wire PASS · 다음 **combined/FULL 재검증** 또는 I2 · **형 GO** (승인=미확인)
+- HEAD: `d6231a3` · WORK=`IDLE`
+- 지금: **K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC**
+- 직전: K-REPACK-HYBRID-WIRE PASS
+- BOOT다음: **K-EVOLVE-LOG A/B** 또는 C/D · **형 선택**
+- NEXT1: K-MULTI-AI-PATCH-DONE — 다중AI 최종안 보고 완료 · 권고 **K-EVOLVE-LOG** · **형 A/B/C/D 선택** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

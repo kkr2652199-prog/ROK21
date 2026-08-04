@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `4baab6e` |
+| HEAD(실측) | `d6231a3` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS** |
-| 직전 | K-REPACK-HYBRID ablation +0.04/+0.03 |
-| BOOT다음 | **FULL/combined 재검증** 또는 I2 · **형 GO** |
-| NEXT1 ID | **K-REPACK-HYBRID-WIRE-DONE** |
-| NEXT1 할일 | hybrid wire PASS · 다음 **combined/FULL 재검증** 또는 I2 · **형 GO** |
+| 지금 | **K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC** |
+| 직전 | K-REPACK-HYBRID-WIRE PASS |
+| BOOT다음 | **K-EVOLVE-LOG A/B** 또는 C/D · **형 선택** |
+| NEXT1 ID | **K-MULTI-AI-PATCH-DONE** |
+| NEXT1 할일 | 다중AI 최종안 보고 완료 · 권고 **K-EVOLVE-LOG** · **형 A/B/C/D 선택** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=4baab6e · 지금=**K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS** · 다음=K-REPACK-HYBRID-WIRE-DONE`
+1. 첫줄 `[복귀] HEAD=d6231a3 · 지금=**K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC** · 다음=K-MULTI-AI-PATCH-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 4baab6e_
+_generated: d6231a3_

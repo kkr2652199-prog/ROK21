@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4baab6e` · WORK=`IDLE`
-2. **지금:** **K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS**
-3. **다음1건:** K-REPACK-HYBRID-WIRE-DONE — hybrid wire PASS · 다음 **combined/FULL 재검증** 또는 I2 · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `d6231a3` · WORK=`IDLE`
+2. **지금:** **K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC**
+3. **다음1건:** K-MULTI-AI-PATCH-DONE — 다중AI 최종안 보고 완료 · 권고 **K-EVOLVE-LOG** · **형 A/B/C/D 선택** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-04 | 다중AI 패치논의·최종안 | K-EVOLVE-LOG 권고 · A/B/C/D · 보고서 | **DOC** | (본커밋) |
 | 2026-08-04 | HYBRID-WIRE 진행 | signal_pool p45 · schema2 · ge3 match PASS | **PASS** | 4baab6e |
 | 2026-08-04 | HYBRID ablation 진행 | stat+0.04·review+0.03·markov동률 · wire후보 | **DONE** | 3f90a86 |
 | 2026-08-04 | 몰아주기 정밀분해·개선 | PER_BRAIN+DECOMPOSE 200회 · oracle ge3 2× · push | **ANAL** | 82c3d03 |

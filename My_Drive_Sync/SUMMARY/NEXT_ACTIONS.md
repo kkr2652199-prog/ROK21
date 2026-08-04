@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-REPACK-HYBRID-WIRE-DONE
-- 할일: hybrid wire PASS · 다음 **combined/FULL 재검증** 또는 I2 · **형 GO**
-- 완료조건: 형 다음축 명시
-- 선행완료: docs/benchmarks/20260804_KREPACK_HYBRID_WIRE.json · schema=2 · ge3 match ablation
+- ID: K-MULTI-AI-PATCH-DONE
+- 할일: 다중AI 최종안 보고 완료 · 권고 **K-EVOLVE-LOG** · **형 A/B/C/D 선택**
+- 완료조건: 형 선택 명시
+- 선행완료: reports/20260804_MULTI_AI_PATCH_FINAL.md
 
 ## WORKSTATE
 IDLE
@@ -15,6 +15,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- **WIRE** — signal_pool hy_p45_r123 (stat/review) · markov baseline · CACHE_SCHEMA_VERSION=2
-- **검증 ge3** — stat 0.165 · markov 0.130 · review 0.135 (=ablation)
-- coordinator/quota 미수정
+- **최종안** — Phase1 LOG(가중0) → Phase2 SIGNAL(K-N best차단) → Phase3 AUTO(1236~)
+- **독** = best번호 복습 · **약** = 회차 적중/오답 패턴 진화
+- A=LOG만 · B=LOG+FULL스냅샷 · C=FULL만 · D=계수재탕(비권고)

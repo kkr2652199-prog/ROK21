@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS**
-- 직전: K-REPACK-HYBRID ablation +0.04/+0.03
-- 다음: **FULL/combined 재검증** 또는 I2 · **형 GO**
+- 지금: **K-MULTI-AI-PATCH** — 진화학습 K-EVOLVE 최종안 · **DOC**
+- 직전: K-REPACK-HYBRID-WIRE PASS
+- 다음: **K-EVOLVE-LOG A/B** 또는 C/D · **형 선택**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
