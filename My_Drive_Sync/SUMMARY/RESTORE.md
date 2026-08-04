@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3ba50cb` · WORK=`IDLE`
+1. **HEAD:** `1f80f7f` · WORK=`IDLE`
 2. **지금:** **K-EVOLVE-AUTO-S2** — SCORE 1235 · evolve_log=1235 · **PASS**
 3. **다음1건:** K-EVOLVE-AUTO-S2-DONE — S2 SCORE PASS(1235로그) · **S3 PREDICT+SCORE** 또는 다른축 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 다음(AUTO S2) | SCORE 1235 · evolve_log=1235 | **PASS** | (push후) |
+| 2026-08-05 | 다음(AUTO S2) | SCORE 1235 · evolve_log=1235 | **PASS** | 1f80f7f |
 | 2026-08-05 | 진행(AUTO S1) | dry-run tick PASS · apply거부 · state | **PASS** | 7eedee2 |
 | 2026-08-05 | 진행(AUTO설계) | K-EVOLVE-AUTO-DESIGN · wire없음 DOC | **DOC** | 96217bd |
 | 2026-08-05 | 진행(저출현쌍) | pair_cover survey ge3↓ · WIRE OFF | **HOLD** | 87cb094 |

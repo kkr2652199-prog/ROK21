@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3ba50cb` · WORK=`IDLE`
+- HEAD: `1f80f7f` · WORK=`IDLE`
 - 지금: **K-EVOLVE-AUTO-S2** — SCORE 1235 · evolve_log=1235 · **PASS**
 - 직전: K-EVOLVE-AUTO-S1 dry-run
 - BOOT다음: S3 PREDICT+SCORE 또는 다른축 · **형 GO**
