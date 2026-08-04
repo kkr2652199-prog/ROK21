@@ -11,7 +11,7 @@ from app.testlotto.models import get_lotto_db, init_testlotto_db
 from app.testlotto.signal_pool import MC_SEED, build_pool_and_repack
 
 BRAIN_TAGS = ("stat", "markov", "review")
-CACHE_SCHEMA_VERSION = 1
+CACHE_SCHEMA_VERSION = 2  # K-REPACK-HYBRID-WIRE: stat/review hy_p45_r123
 
 
 def _row_to_brain_payload(pool_json: str, repack_json: str) -> tuple[list[dict], list[dict]]:
@@ -33,6 +33,8 @@ def _rows_to_pool_payload(draw_no: int, rows: list[dict[str, Any]]) -> dict[str,
             return None
         if int(row.get("seed") or MC_SEED) != MC_SEED:
             return None
+        if int(row.get("schema_version") or 0) != CACHE_SCHEMA_VERSION:
+            return None
         pool, repack = _row_to_brain_payload(row["pool_json"], row["repack_json"])
         pool_by_brain[tag] = pool
         repack_by_brain[tag] = repack
@@ -44,6 +46,7 @@ def _rows_to_pool_payload(draw_no: int, rows: list[dict[str, Any]]) -> dict[str,
         "pool_sets_per_brain": 10,
         "repack_sets_per_brain": 5,
         "seed": seed,
+        "schema_version": CACHE_SCHEMA_VERSION,
         "pool_by_brain": pool_by_brain,
         "repack_by_brain": repack_by_brain,
         "cached": True,
@@ -58,12 +61,12 @@ def get_cached_pool_view(draw_no: int) -> dict[str, Any] | None:
     try:
         rows = conn.execute(
             """
-            SELECT brain, pool_json, repack_json, computed_at, seed
+            SELECT brain, pool_json, repack_json, computed_at, seed, schema_version
             FROM testlotto_pool_view_cache
-            WHERE draw_no = ?
+            WHERE draw_no = ? AND schema_version = ?
             ORDER BY brain
             """,
-            (draw_no,),
+            (draw_no, CACHE_SCHEMA_VERSION),
         ).fetchall()
     finally:
         conn.close()
@@ -77,11 +80,13 @@ def build_pool_view_index() -> dict[str, Any]:
     try:
         rows = conn.execute(
             """
-            SELECT c.draw_no, c.brain, c.pool_json, c.repack_json, c.computed_at, c.seed
+            SELECT c.draw_no, c.brain, c.pool_json, c.repack_json, c.computed_at, c.seed, c.schema_version
             FROM testlotto_pool_view_cache c
-            WHERE c.draw_no IN (SELECT DISTINCT draw_no FROM testlotto_backtest_draw_results)
+            WHERE c.schema_version = ?
+              AND c.draw_no IN (SELECT DISTINCT draw_no FROM testlotto_backtest_draw_results)
             ORDER BY c.draw_no, c.brain
-            """
+            """,
+            (CACHE_SCHEMA_VERSION,),
         ).fetchall()
     finally:
         conn.close()

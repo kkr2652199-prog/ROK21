@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-04 KST  
-📌 사유: **K-REPACK-HYBRID** — pool+몰아주기 조립 ablation DONE
+📌 사유: **K-REPACK-HYBRID-WIRE** — stat/review hy_p45_r123 live · PASS
 
 ---
 
@@ -10,7 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-REPACK-HYBRID** | **DONE** — n200 · hy_p45_r123: stat ge3 **0.165**(+0.04) · review **0.135**(+0.03) · markov baseline **0.130**(동률) · wire 후보 · `docs/benchmarks/20260804_KREPACK_HYBRID_survey.json` |
+| **K-REPACK-HYBRID-WIRE** | **PASS** — signal_pool wire · schema=2 · ge3 stat**0.165**/markov**0.130**/review**0.135** (=ablation) · smoke assemble OK · `docs/benchmarks/20260804_KREPACK_HYBRID_WIRE.json` |
+| **K-REPACK-HYBRID** | **DONE** — n200 · hy_p45_r123: stat ge3 **0.165**(+0.04) · review **0.135**(+0.03) · markov baseline **0.130**(동률) · `docs/benchmarks/20260804_KREPACK_HYBRID_survey.json` |
 | **K-REPACK-ANALYSIS** | **DONE** — PER_BRAIN+DECOMPOSE · oracle gap · lift 전부 음수 |
 | **K-PIN-GAP-DIAG** | **DONE** — early ge3=**0.099** 최악 · mid붕괴 기각 · N100 seed42=0.15 vs 0/7=0.10 · K-M≈0 · K-N low_indirect · `docs/benchmarks/20260804_KPIN_GAP_DIAG.json` |
 | **K-PIN-GAP-DIAG-REVIEW** | **DOC** — FULL thirds n=394 · mid붕괴 오인 정정 · READ-ONLY≠revalidate reset · 종료5종 보강 · `reports/20260804_GENSPARK_COMPRESS_RESUME.md` |
@@ -64,6 +65,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-REPACK-HYBRID-WIRE** | signal_pool hy_p45 · cache schema2 · markov baseline | **PASS** · ref match |
 | **K-REPACK-HYBRID** | pool4+5+몰1~3 ablation · markov 유지 · wire 없음 | **DONE** · stat+0.04 · review+0.03 |
 | **K-REPACK-ANALYSIS** | PER_BRAIN+DECOMPOSE · oracle/lift | **DONE** |
 | **K-PIN-GAP-DIAG** | FULL thirds·뇌기여·seed스윕·K-M/N · wire 없음 | **DONE** · early/−0.0457 · seed range 0.05 |

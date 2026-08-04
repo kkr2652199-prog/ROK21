@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `3f90a86` |
+| HEAD(실측) | `535ac27` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-REPACK-HYBRID** — stat+0.04·review+0.03·markov동률 · **DONE** |
-| 직전 | K-REPACK-ANALYSIS PER_BRAIN+DECOMPOSE |
-| BOOT다음 | **K-REPACK-HYBRID-WIRE** (stat/review p45) 또는 I2 · **형 GO** |
-| NEXT1 ID | **K-REPACK-HYBRID-DONE** |
-| NEXT1 할일 | hybrid ablation 완료 · 다음 **K-REPACK-HYBRID-WIRE**(stat/review p45+r123 · markov 유지) · **형 GO** |
+| 지금 | **K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS** |
+| 직전 | K-REPACK-HYBRID ablation +0.04/+0.03 |
+| BOOT다음 | **FULL/combined 재검증** 또는 I2 · **형 GO** |
+| NEXT1 ID | **K-REPACK-HYBRID-WIRE-DONE** |
+| NEXT1 할일 | hybrid wire PASS · 다음 **combined/FULL 재검증** 또는 I2 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=3f90a86 · 지금=**K-REPACK-HYBRID** — stat+0.04·review+0.03·markov동률 · **DONE** · 다음=K-REPACK-HYBRID-DONE`
+1. 첫줄 `[복귀] HEAD=535ac27 · 지금=**K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS** · 다음=K-REPACK-HYBRID-WIRE-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

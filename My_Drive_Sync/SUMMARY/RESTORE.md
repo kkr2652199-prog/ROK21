@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3f90a86` · WORK=`IDLE`
-2. **지금:** **K-REPACK-HYBRID** — stat+0.04·review+0.03·markov동률 · **DONE**
-3. **다음1건:** K-REPACK-HYBRID-DONE — hybrid ablation 완료 · 다음 **K-REPACK-HYBRID-WIRE**(stat/review p45+r123 · markov 유지) · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `535ac27` · WORK=`IDLE`
+2. **지금:** **K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS**
+3. **다음1건:** K-REPACK-HYBRID-WIRE-DONE — hybrid wire PASS · 다음 **combined/FULL 재검증** 또는 I2 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-04 | HYBRID-WIRE 진행 | signal_pool p45 · schema2 · ge3 match PASS | **PASS** | (본커밋) |
 | 2026-08-04 | HYBRID ablation 진행 | stat+0.04·review+0.03·markov동률 · wire후보 | **DONE** | 3f90a86 |
 | 2026-08-04 | 몰아주기 정밀분해·개선 | PER_BRAIN+DECOMPOSE 200회 · oracle ge3 2× · push | **ANAL** | 82c3d03 |
 | 2026-08-04 | 패치=K-PIN-GAP-DIAG GO | early최악·seed0.05·K-M≈0 · JSON+보고서 | **DONE** | 62e21bc |

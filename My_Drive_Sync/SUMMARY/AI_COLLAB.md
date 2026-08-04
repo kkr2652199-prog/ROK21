@@ -24,11 +24,18 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 12:10 KST)
-- **HEAD(실측)**: `3f90a86` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-REPACK-HYBRID** — 조립 ablation **DONE**
-- **다음(공식)**: **K-REPACK-HYBRID-WIRE** (stat/review p45+r123 · markov 유지) · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KREPACK_HYBRID_survey.json` · `reports/20260804_KREPACK_HYBRID_SURVEY.md`
+### 최신 상태 (2026-08-04 12:15 KST)
+- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-REPACK-HYBRID-WIRE** — **PASS**
+- **다음(공식)**: combined/FULL 재검증 또는 I2 · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KREPACK_HYBRID_WIRE.json` · `reports/20260804_KREPACK_HYBRID_WIRE.md`
+
+### K-REPACK-HYBRID-WIRE (형 GO · PASS · live)
+- `signal_pool.assemble_hybrid_p45_r123` · brains=stat,review · markov=baseline
+- `pool_view_cache` schema **2** (구캐시 miss→재계산)
+- 검증 n200: stat **0.165** · markov **0.130** · review **0.135** (ablation 일치)
+- smoke 1230 assemble: stat/review=hy_p45_r123 · markov=baseline_repack
+- coordinator/quota **미수정**
 
 ### K-REPACK-HYBRID (형 GO · DONE · wire 없음)
 n=200 · 1035~1234 · cache READ-ONLY

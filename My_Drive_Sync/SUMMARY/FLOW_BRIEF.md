@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3f90a86` · WORK=`IDLE`
-- 지금: **K-REPACK-HYBRID** — stat+0.04·review+0.03·markov동률 · **DONE**
-- 직전: K-REPACK-ANALYSIS PER_BRAIN+DECOMPOSE
-- BOOT다음: **K-REPACK-HYBRID-WIRE** (stat/review p45) 또는 I2 · **형 GO**
-- NEXT1: K-REPACK-HYBRID-DONE — hybrid ablation 완료 · 다음 **K-REPACK-HYBRID-WIRE**(stat/review p45+r123 · markov 유지) · **형 GO** (승인=미확인)
+- HEAD: `535ac27` · WORK=`IDLE`
+- 지금: **K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS**
+- 직전: K-REPACK-HYBRID ablation +0.04/+0.03
+- BOOT다음: **FULL/combined 재검증** 또는 I2 · **형 GO**
+- NEXT1: K-REPACK-HYBRID-WIRE-DONE — hybrid wire PASS · 다음 **combined/FULL 재검증** 또는 I2 · **형 GO** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

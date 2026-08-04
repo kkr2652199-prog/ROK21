@@ -1,0 +1,72 @@
+{
+  "id": "K-REPACK-HYBRID-WIRE",
+  "ts": "2026-08-04T03:13:54+00:00",
+  "wire": true,
+  "scope": {
+    "hybrid_brains": [
+      "review",
+      "stat"
+    ],
+    "mode": "p45_r123",
+    "markov": "baseline_repack",
+    "cache_schema_version": 2
+  },
+  "migrated_draws": 200,
+  "by_brain": {
+    "stat": {
+      "n_eval": 200,
+      "ge3_count": 33,
+      "ge3_rate": 0.165,
+      "mean": 1.745,
+      "ref_ablation_ge3": 0.165,
+      "delta_vs_ref": 0.0,
+      "delta_vs_null": 0.0513,
+      "delta_vs_pin": 0.0203,
+      "match_ref": true
+    },
+    "markov": {
+      "n_eval": 200,
+      "ge3_count": 26,
+      "ge3_rate": 0.13,
+      "mean": 1.885,
+      "ref_ablation_ge3": 0.13,
+      "delta_vs_ref": 0.0,
+      "delta_vs_null": 0.0163,
+      "delta_vs_pin": -0.0147,
+      "match_ref": true
+    },
+    "review": {
+      "n_eval": 200,
+      "ge3_count": 27,
+      "ge3_rate": 0.135,
+      "mean": 1.785,
+      "ref_ablation_ge3": 0.135,
+      "delta_vs_ref": 0.0,
+      "delta_vs_null": 0.0213,
+      "delta_vs_pin": -0.0097,
+      "match_ref": true
+    }
+  },
+  "smoke_build_1230": {
+    "ok": true,
+    "assemble": {
+      "stat": "hy_p45_r123",
+      "markov": "baseline_repack",
+      "review": "hy_p45_r123"
+    },
+    "hybrid_meta": {
+      "mode": "p45_r123",
+      "brains": [
+        "review",
+        "stat"
+      ],
+      "markov": "baseline_repack"
+    }
+  },
+  "pass": true,
+  "references": {
+    "ablation": "docs/benchmarks/20260804_KREPACK_HYBRID_survey.json",
+    "null_ge3": 0.1137,
+    "pin_ge3": 0.1447
+  }
+}

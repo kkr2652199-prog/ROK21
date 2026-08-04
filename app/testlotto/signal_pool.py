@@ -22,6 +22,11 @@ W_HINT = 0.40
 W_FREQ = 0.25
 W_LEARN = 0.35
 
+# K-REPACK-HYBRID-WIRE — ablation 20260804: stat/review hy_p45_r123 · markov baseline
+# pool set 4+5 + score-몰아주기 rank1~3 → 발권 5장 (중복 시 rank4/5·다른 pool로 보충)
+HYBRID_P45_R123_BRAINS: frozenset[str] = frozenset({"stat", "review"})
+HYBRID_ASSEMBLE_MODE: str = "p45_r123"  # "" 이면 전원 baseline 몰아주기
+
 
 class RollingSignalLearner:
     """Walk-forward: target draw 이전 회차만으로 번호·세트위치 기여도 EMA."""
@@ -140,6 +145,50 @@ def repack_sets(scores: dict[int, float], n_sets: int = REPACK_SETS_PER_BRAIN) -
     return sets
 
 
+def _nums_key(nums: list[int]) -> tuple[int, ...]:
+    return tuple(sorted(int(x) for x in nums))
+
+
+def assemble_hybrid_p45_r123(
+    pool: list[dict],
+    classic_repack: list[list[int]],
+    *,
+    n_sets: int = REPACK_SETS_PER_BRAIN,
+) -> list[dict]:
+    """pool set_no 4·5 + 점수몰아주기 rank1~3 조립 (K-REPACK-HYBRID).
+
+    Returns list of {nums, source, source_set_no} length ≤ n_sets.
+    """
+    p_by = {
+        int(c.get("pred_set_no") or c.get("set_no") or 0): [int(x) for x in c["nums"]]
+        for c in pool
+    }
+    primary: list[tuple[list[int], str, int]] = []
+    for sn in (4, 5):
+        if sn in p_by:
+            primary.append((p_by[sn], "pool", sn))
+    for i, nums in enumerate(classic_repack[:3]):
+        primary.append((list(nums), "score_repack", i + 1))
+    fillers: list[tuple[list[int], str, int]] = []
+    for i, nums in enumerate(classic_repack[3:], start=4):
+        fillers.append((list(nums), "score_repack", i))
+    for sn in sorted(p_by):
+        if sn not in (4, 5):
+            fillers.append((p_by[sn], "pool", sn))
+
+    out: list[dict] = []
+    seen: set[tuple[int, ...]] = set()
+    for nums, src, ssn in primary + fillers:
+        key = _nums_key(nums)
+        if key in seen or len(nums) != 6:
+            continue
+        seen.add(key)
+        out.append({"nums": sorted(nums), "source": src, "source_set_no": ssn})
+        if len(out) >= n_sets:
+            break
+    return out
+
+
 def repack_by_brain(
     pool_by_brain: dict[str, list[dict]],
     hint: dict[int, float],
@@ -162,17 +211,39 @@ def repack_by_brain(
             hint_only=hint_only,
             random_scores=random_repack,
         )
-        for i, nums in enumerate(repack_sets(scores)):
-            out.append(
-                {
-                    "nums": nums,
-                    "brain_tag": tag,
-                    "pred_set_no": i + 1,
-                    "set_no": i + 1,
-                    "repack_rank": i + 1,
-                    "kind": "repack",
-                }
-            )
+        classic = repack_sets(scores)
+        use_hybrid = (
+            HYBRID_ASSEMBLE_MODE == "p45_r123" and tag in HYBRID_P45_R123_BRAINS
+        )
+        if use_hybrid:
+            assembled = assemble_hybrid_p45_r123(pool, classic)
+            for i, item in enumerate(assembled):
+                out.append(
+                    {
+                        "nums": item["nums"],
+                        "brain_tag": tag,
+                        "pred_set_no": i + 1,
+                        "set_no": i + 1,
+                        "repack_rank": i + 1,
+                        "kind": "repack",
+                        "assemble": "hy_p45_r123",
+                        "source": item["source"],
+                        "source_set_no": item["source_set_no"],
+                    }
+                )
+        else:
+            for i, nums in enumerate(classic):
+                out.append(
+                    {
+                        "nums": nums,
+                        "brain_tag": tag,
+                        "pred_set_no": i + 1,
+                        "set_no": i + 1,
+                        "repack_rank": i + 1,
+                        "kind": "repack",
+                        "assemble": "baseline_repack",
+                    }
+                )
     return out
 
 
@@ -256,14 +327,17 @@ def build_pool_and_repack(
     by_brain_repack: dict[str, list[dict]] = {t: [] for t in BRAIN_TAGS}
     for c in repacked:
         tag = str(c["brain_tag"])
-        by_brain_repack.setdefault(tag, []).append(
-            {
-                "set_no": int(c.get("repack_rank") or c.get("set_no") or 1),
-                "nums": [int(x) for x in c["nums"]],
-                "brain_tag": tag,
-                "kind": "repack",
-            }
-        )
+        entry: dict[str, Any] = {
+            "set_no": int(c.get("repack_rank") or c.get("set_no") or 1),
+            "nums": [int(x) for x in c["nums"]],
+            "brain_tag": tag,
+            "kind": "repack",
+            "assemble": c.get("assemble") or "baseline_repack",
+        }
+        if c.get("source"):
+            entry["source"] = c["source"]
+            entry["source_set_no"] = c.get("source_set_no")
+        by_brain_repack.setdefault(tag, []).append(entry)
 
     return {
         "ok": True,
@@ -273,6 +347,11 @@ def build_pool_and_repack(
         "repack_sets_per_brain": REPACK_SETS_PER_BRAIN,
         "seed": seed,
         "window_hint": {"weeks": WINDOW_WEEKS, "signal": WINDOW_SIGNAL},
+        "hybrid": {
+            "mode": HYBRID_ASSEMBLE_MODE,
+            "brains": sorted(HYBRID_P45_R123_BRAINS),
+            "markov": "baseline_repack",
+        },
         "pool_by_brain": by_brain_pool,
         "repack_by_brain": by_brain_repack,
     }
