@@ -24,11 +24,17 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 ~13:10 KST)
+### 최신 상태 (2026-08-04 ~13:30 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-FEAT-LAM-WIRE** — **PASS** (review λ0.3 · ge3=0.145)
-- **다음(공식)**: evolve_log 확장 또는 AUTO준비 · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_WIRE.json`
+- **지금(판정)**: **K-EVOLVE-LOG-EXPAND** — **PASS** (n=1182)
+- **다음(공식)**: Phase3 AUTO 준비 또는 λ재검증 · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KEVOLVE_LOG_EXPAND.json`
+
+### K-EVOLVE-LOG-EXPAND (형 다음진행 · PASS)
+- evolve_log **53~1234** · **1182**회 · weight=0
+- from_wf **982** · from_cache **200** · miss구간 pool_cache 미저장
+- 확장 중 λ OFF → 종료 후 live review λ0.3 복원
+- 재실행: `python tools/_k_evolve_log_expand.py`
 
 ### K-EVOLVE-FEAT-LAM-WIRE (형 다음진행 · PASS)
 - `feature_lambda.py` · `FEATURE_LAMBDA_BY_BRAIN={review:0.3}`

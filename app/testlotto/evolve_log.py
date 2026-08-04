@@ -354,10 +354,21 @@ def evolve_summary(draw_start: int, draw_end: int) -> dict[str, Any]:
     }
 
 
-def backfill_from_pool_cache(draw_start: int, draw_end: int) -> dict[str, Any]:
-    """pool_view_cache + lotto_draws로 로그 백필 (예측 재실행 없음 · 가중 0)."""
+def backfill_from_pool_cache(
+    draw_start: int,
+    draw_end: int,
+    *,
+    any_schema: bool = False,
+) -> dict[str, Any]:
+    """pool_view_cache + lotto_draws로 로그 백필 (예측 재실행 없음 · 가중 0).
+
+    any_schema=True: UI schema 핀 무시(확장 백필용). False면 현재 CACHE_SCHEMA만.
+    """
     from app.testlotto.data_service import _get_draws_before
-    from app.testlotto.pool_view_cache import get_cached_pool_view
+    from app.testlotto.pool_view_cache import (
+        get_cached_pool_view,
+        get_cached_pool_view_any_schema,
+    )
 
     ensure_evolve_log_table()
     init_testlotto_db()
@@ -371,13 +382,14 @@ def backfill_from_pool_cache(draw_start: int, draw_end: int) -> dict[str, Any]:
     ).fetchall()
     conn.close()
 
+    getter = get_cached_pool_view_any_schema if any_schema else get_cached_pool_view
     ok = 0
     miss_cache = 0
     for r in draw_rows:
         d = dict(r)
         dno = int(d["draw_no"])
         actual = [int(d[f"num{k}"]) for k in range(1, 7)]
-        pv = get_cached_pool_view(dno)
+        pv = getter(dno)
         if not pv or not pv.get("ok"):
             miss_cache += 1
             continue
@@ -399,4 +411,158 @@ def backfill_from_pool_cache(draw_start: int, draw_end: int) -> dict[str, Any]:
         "filled_draws": ok,
         "missing_cache": miss_cache,
         "summary": summary,
+    }
+
+
+def backfill_expand_wf(
+    draw_start: int,
+    draw_end: int,
+    *,
+    seed: int = 42,
+    progress_every: int = 50,
+) -> dict[str, Any]:
+    """캐시 있는 회차 any_schema 백필 + miss는 순차 WF로 evolve_log만 채움.
+
+    pool_view_cache는 miss 구간에 쓰지 않음(UI schema=3/λ와 혼동 방지).
+    순차 빌드 중 FEATURE_LAMBDA_WIRE 일시 OFF (O(n²) 버킷스캔·조기희소 회피).
+    weight_applied=0 유지.
+    """
+    import random
+
+    from app.testlotto.data_service import _get_draws_before
+    from app.testlotto.learn_state_cutoff import set_learn_as_of
+    from app.testlotto.pool_view_cache import get_cached_pool_view_any_schema
+    from app.testlotto import signal_pool as sp
+
+    ensure_evolve_log_table()
+    init_testlotto_db()
+    conn = get_lotto_db()
+    draw_rows = conn.execute(
+        """
+        SELECT draw_no, num1,num2,num3,num4,num5,num6
+        FROM lotto_draws WHERE draw_no BETWEEN ? AND ? ORDER BY draw_no
+        """,
+        (draw_start, draw_end),
+    ).fetchall()
+    conn.close()
+
+    prev_lam = bool(getattr(sp, "FEATURE_LAMBDA_WIRE", False))
+    sp.FEATURE_LAMBDA_WIRE = False
+    learner = sp.RollingSignalLearner()
+    from_cache = 0
+    from_wf = 0
+    miss_draw = 0
+    try:
+        for i, r in enumerate(draw_rows):
+            d = dict(r)
+            dno = int(d["draw_no"])
+            actual_list = [int(d[f"num{k}"]) for k in range(1, 7)]
+            actual = set(actual_list)
+            draws_before = _get_draws_before(dno)
+
+            pv = get_cached_pool_view_any_schema(dno)
+            if pv and pv.get("ok"):
+                pool_by = pv.get("pool_by_brain") or {}
+                repack_by = pv.get("repack_by_brain") or {}
+                # learner 동기: 캐시 pool로 EMA 갱신
+                pool_br = {
+                    t: [
+                        {
+                            "nums": s["nums"],
+                            "pred_set_no": s.get("set_no"),
+                            "set_no": s.get("set_no"),
+                            "brain_tag": t,
+                        }
+                        for s in (pool_by.get(t) or [])
+                    ]
+                    for t in BRAIN_TAGS
+                }
+                learner.update_from_pool(pool_br, actual)
+                for tag in BRAIN_TAGS:
+                    pool = pool_by.get(tag) or []
+                    repack = repack_by.get(tag) or []
+                    if not pool or not repack:
+                        continue
+                    row = build_evolve_row(
+                        dno, tag, actual_list, pool, repack, draws_before=draws_before
+                    )
+                    upsert_evolve_row(row)
+                from_cache += 1
+            else:
+                set_learn_as_of(dno)
+                draws = draws_before
+                if not draws:
+                    miss_draw += 1
+                    continue
+                random.seed(seed)
+                pool = sp.expand_pool(draws, dno, seed=seed)
+                pool_br = sp._pool_by_brain(pool)
+                hint = sp._build_hint(draws, dno)
+                num_ema, pos_ema = learner.snapshot()
+                repacked = sp.repack_by_brain(
+                    pool_br, hint, num_ema, pos_ema, target_draw_no=None
+                )
+                by_pool: dict[str, list] = {t: [] for t in BRAIN_TAGS}
+                for tag in BRAIN_TAGS:
+                    sets = sorted(
+                        pool_br.get(tag, []),
+                        key=lambda x: int(x.get("pred_set_no") or 0),
+                    )
+                    by_pool[tag] = [
+                        {
+                            "set_no": int(c.get("pred_set_no") or c.get("set_no") or 1),
+                            "nums": [int(x) for x in c["nums"]],
+                            "brain_tag": tag,
+                            "kind": "pool",
+                        }
+                        for c in sets
+                    ]
+                by_repack: dict[str, list] = {t: [] for t in BRAIN_TAGS}
+                for c in repacked:
+                    tag = str(c["brain_tag"])
+                    entry = {
+                        "set_no": int(c.get("repack_rank") or c.get("set_no") or 1),
+                        "nums": [int(x) for x in c["nums"]],
+                        "brain_tag": tag,
+                        "kind": "repack",
+                        "assemble": c.get("assemble") or "baseline_repack",
+                    }
+                    if c.get("source"):
+                        entry["source"] = c["source"]
+                        entry["source_set_no"] = c.get("source_set_no")
+                    by_repack.setdefault(tag, []).append(entry)
+
+                for tag in BRAIN_TAGS:
+                    pool = by_pool.get(tag) or []
+                    repack = by_repack.get(tag) or []
+                    if not pool or not repack:
+                        continue
+                    row = build_evolve_row(
+                        dno, tag, actual_list, pool, repack, draws_before=draws_before
+                    )
+                    row["note"] = (
+                        "K-EVOLVE-LOG expand WF · weight=0 · cache미저장 · lam OFF"
+                    )
+                    upsert_evolve_row(row)
+                learner.update_from_pool(pool_br, actual)
+                from_wf += 1
+
+            if progress_every and (i + 1) % progress_every == 0:
+                print(
+                    f"  [{i+1}/{len(draw_rows)}] draw={dno} "
+                    f"cache={from_cache} wf={from_wf}",
+                    flush=True,
+                )
+    finally:
+        sp.FEATURE_LAMBDA_WIRE = prev_lam
+
+    summary = evolve_summary(draw_start, draw_end)
+    return {
+        "ok": True,
+        "filled_from_cache": from_cache,
+        "filled_from_wf": from_wf,
+        "miss_draw": miss_draw,
+        "filled_draws": from_cache + from_wf,
+        "summary": summary,
+        "feature_lambda_restored": prev_lam,
     }

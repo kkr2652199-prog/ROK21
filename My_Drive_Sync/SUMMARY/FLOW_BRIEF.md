@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3f4f4ce` · WORK=`IDLE`
-- 지금: **K-EVOLVE-FEAT-LAM-WIRE** — review λ=0.3 live · ge3=0.145 MATCH · **PASS**
-- 직전: K-FUTURE-FULL-POST-EVOLVE ge3=0.1184 Δ=0
-- BOOT다음: evolve_log 53~1234 확장 또는 AUTO준비 · **형 GO**
-- NEXT1: K-EVOLVE-FEAT-LAM-DONE — review λ0.3 WIRE PASS · schema=3 · **evolve_log 53~1234 확장** 또는 Phase3 AUTO준비 · **형 GO** (승인=미확인)
+- HEAD: `a7d5235` · WORK=`IDLE`
+- 지금: **K-EVOLVE-LOG-EXPAND** — evolve_log 53~1234 n=1182 · **PASS**
+- 직전: K-EVOLVE-FEAT-LAM-WIRE review λ0.3
+- BOOT다음: Phase3 AUTO 준비 또는 λ재검증 · **형 GO**
+- NEXT1: K-EVOLVE-LOG-EXPAND-DONE — evolve_log n=1182 DONE · **Phase3 AUTO 준비** 또는 review λ 재검증(풀히스토리) · **형 GO** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

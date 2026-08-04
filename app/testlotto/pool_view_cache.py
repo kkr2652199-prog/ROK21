@@ -20,21 +20,29 @@ def _row_to_brain_payload(pool_json: str, repack_json: str) -> tuple[list[dict],
     return pool, repack
 
 
-def _rows_to_pool_payload(draw_no: int, rows: list[dict[str, Any]]) -> dict[str, Any] | None:
+def _rows_to_pool_payload(
+    draw_no: int,
+    rows: list[dict[str, Any]],
+    *,
+    require_schema: int | None = CACHE_SCHEMA_VERSION,
+) -> dict[str, Any] | None:
     if len(rows) != len(BRAIN_TAGS):
         return None
     pool_by_brain: dict[str, list[dict]] = {}
     repack_by_brain: dict[str, list[dict]] = {}
     computed_at = None
     seed = MC_SEED
+    schema_seen: int | None = None
     for row in rows:
         tag = str(row["brain"])
         if tag not in BRAIN_TAGS:
             return None
         if int(row.get("seed") or MC_SEED) != MC_SEED:
             return None
-        if int(row.get("schema_version") or 0) != CACHE_SCHEMA_VERSION:
+        sv = int(row.get("schema_version") or 0)
+        if require_schema is not None and sv != require_schema:
             return None
+        schema_seen = sv if schema_seen is None else schema_seen
         pool, repack = _row_to_brain_payload(row["pool_json"], row["repack_json"])
         pool_by_brain[tag] = pool
         repack_by_brain[tag] = repack
@@ -46,7 +54,7 @@ def _rows_to_pool_payload(draw_no: int, rows: list[dict[str, Any]]) -> dict[str,
         "pool_sets_per_brain": 10,
         "repack_sets_per_brain": 5,
         "seed": seed,
-        "schema_version": CACHE_SCHEMA_VERSION,
+        "schema_version": schema_seen if require_schema is None else CACHE_SCHEMA_VERSION,
         "pool_by_brain": pool_by_brain,
         "repack_by_brain": repack_by_brain,
         "cached": True,
@@ -71,6 +79,36 @@ def get_cached_pool_view(draw_no: int) -> dict[str, Any] | None:
     finally:
         conn.close()
     return _rows_to_pool_payload(draw_no, [dict(r) for r in rows])
+
+
+def get_cached_pool_view_any_schema(draw_no: int) -> dict[str, Any] | None:
+    """evolve_log 백필용 — schema 불문 최신 캐시 1세트 (UI 서빙용 아님)."""
+    init_testlotto_db()
+    conn = get_lotto_db()
+    try:
+        ver = conn.execute(
+            """
+            SELECT MAX(schema_version) AS v FROM testlotto_pool_view_cache
+            WHERE draw_no = ?
+            """,
+            (draw_no,),
+        ).fetchone()
+        if not ver or ver["v"] is None:
+            return None
+        rows = conn.execute(
+            """
+            SELECT brain, pool_json, repack_json, computed_at, seed, schema_version
+            FROM testlotto_pool_view_cache
+            WHERE draw_no = ? AND schema_version = ?
+            ORDER BY brain
+            """,
+            (draw_no, int(ver["v"])),
+        ).fetchall()
+    finally:
+        conn.close()
+    return _rows_to_pool_payload(
+        draw_no, [dict(r) for r in rows], require_schema=None
+    )
 
 
 def build_pool_view_index() -> dict[str, Any]:

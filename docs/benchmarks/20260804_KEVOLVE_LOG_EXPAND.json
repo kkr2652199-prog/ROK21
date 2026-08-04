@@ -1,0 +1,61 @@
+{
+  "id": "K-EVOLVE-LOG-EXPAND",
+  "ts": "2026-08-04T04:31:52+00:00",
+  "draw_range": [
+    53,
+    1234
+  ],
+  "expected_draws": 1182,
+  "n_draws_logged": 1182,
+  "n_rows": 3546,
+  "log_min_max": [
+    53,
+    1234
+  ],
+  "filled_from_cache": 200,
+  "filled_from_wf": 982,
+  "miss_draw": 0,
+  "weight_applied": 0.0,
+  "wire_to_predict": false,
+  "feature_lambda_live": true,
+  "feature_lambda_by_brain": {
+    "review": 0.3
+  },
+  "summary": {
+    "ok": true,
+    "draw_range": [
+      53,
+      1234
+    ],
+    "n_draws": 1182,
+    "weight_applied": 0.0,
+    "by_brain": {
+      "markov": {
+        "n": 1182,
+        "avg_best_hits": 1.8613,
+        "avg_mean_hits": 0.7997,
+        "ge3_count": 142,
+        "ge3_rate": 0.1201
+      },
+      "review": {
+        "n": 1182,
+        "avg_best_hits": 1.7623,
+        "avg_mean_hits": 0.8196,
+        "ge3_count": 148,
+        "ge3_rate": 0.1252
+      },
+      "stat": {
+        "n": 1182,
+        "avg_best_hits": 1.7648,
+        "avg_mean_hits": 0.8005,
+        "ge3_count": 153,
+        "ge3_rate": 0.1294
+      }
+    }
+  },
+  "sample_100_ok": true,
+  "sample_1200_ok": true,
+  "note": "miss구간 pool_cache 미저장 · 순차WF λ OFF · live λ/schema3 유지",
+  "pass": true,
+  "verdict": "PASS"
+}
