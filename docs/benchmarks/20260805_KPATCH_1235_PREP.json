@@ -1,0 +1,215 @@
+{
+  "id": "K-PATCH-1235-PREP",
+  "ts": "2026-08-04T18:16:43.494379+00:00",
+  "verdict": "MEASURED",
+  "wire": false,
+  "draw_range": [
+    1036,
+    1235
+  ],
+  "n_draws": 200,
+  "base_1235": {
+    "actual": [
+      6,
+      7,
+      11,
+      15,
+      39,
+      43
+    ],
+    "sum": 121,
+    "sum_tier": "mid",
+    "sum_tier_def": "low<116 / high>160 / else mid (BC-MEASURE)",
+    "odd": 5,
+    "zone_low": 4,
+    "B_sum_tier_run_before": 4,
+    "B_transition_occurred": false,
+    "prev_sum_tier": "mid",
+    "note_bg": "배경문구 sum=121(low)는 정의상 mid(116~160) — 실측 레이블 mid"
+  },
+  "quota_sim": {
+    "A_stat0_markov80_review20": 0.135,
+    "B_stat10_markov80_review10": 0.155,
+    "C_stat20_markov70_review10": 0.155,
+    "D_stat30_markov60_review10": 0.17
+  },
+  "quota_sim_meta": {
+    "A_source": "lotto_predictions fusion (brain_tag markov80/review20)",
+    "A_live_ge3": 0.135,
+    "A_cache_sim_ge3": 0.14,
+    "BCD_source": "testlotto_pool_view_cache repack_by_brain SELECT-ONLY",
+    "slots": {
+      "A_stat0_markov80_review20": {
+        "stat": 0,
+        "markov": 4,
+        "review": 1
+      },
+      "B_stat10_markov80_review10": {
+        "stat": 1,
+        "markov": 4,
+        "review": 0
+      },
+      "C_stat20_markov70_review10": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "D_stat30_markov60_review10": {
+        "stat": 2,
+        "markov": 3,
+        "review": 0
+      }
+    },
+    "detail": {
+      "A_stat0_markov80_review20": {
+        "slots": {
+          "stat": 0,
+          "markov": 4,
+          "review": 1
+        },
+        "pct": {
+          "stat": 0,
+          "markov": 80,
+          "review": 20
+        },
+        "n_draws": 200,
+        "ge3_rate": 0.14,
+        "mean_slots_used": {
+          "stat": 0.0,
+          "markov": 4.0,
+          "review": 1.0
+        }
+      },
+      "B_stat10_markov80_review10": {
+        "slots": {
+          "stat": 1,
+          "markov": 4,
+          "review": 0
+        },
+        "pct": {
+          "stat": 10,
+          "markov": 80,
+          "review": 10
+        },
+        "n_draws": 200,
+        "ge3_rate": 0.155,
+        "mean_slots_used": {
+          "stat": 1.0,
+          "markov": 4.0,
+          "review": 0.0
+        }
+      },
+      "C_stat20_markov70_review10": {
+        "slots": {
+          "stat": 1,
+          "markov": 3,
+          "review": 1
+        },
+        "pct": {
+          "stat": 20,
+          "markov": 70,
+          "review": 10
+        },
+        "n_draws": 200,
+        "ge3_rate": 0.155,
+        "mean_slots_used": {
+          "stat": 1.0,
+          "markov": 3.0,
+          "review": 1.0
+        }
+      },
+      "D_stat30_markov60_review10": {
+        "slots": {
+          "stat": 2,
+          "markov": 3,
+          "review": 0
+        },
+        "pct": {
+          "stat": 30,
+          "markov": 60,
+          "review": 10
+        },
+        "n_draws": 200,
+        "ge3_rate": 0.17,
+        "mean_slots_used": {
+          "stat": 2.0,
+          "markov": 3.0,
+          "review": 0.0
+        }
+      }
+    },
+    "note": "A는 발권 fusion DB. B/C/D는 캐시 뇌별 repack에서 슬롯 재조합 시뮬 (predictions에 stat=0이라 재할당 불가)"
+  },
+  "pmi_cluster_ge3": {
+    "cluster_0": {
+      "n_sets": 721,
+      "ge3_rate": 0.027739
+    },
+    "cluster_1": {
+      "n_sets": 233,
+      "ge3_rate": 0.038627
+    },
+    "cluster_ge2": {
+      "n_sets": 46,
+      "ge3_rate": 0.021739
+    },
+    "delta_ge2_minus_0": -0.006,
+    "signal": "WEAK"
+  },
+  "sum_tier_transition": {
+    "imminent_n_draws": 41,
+    "imminent_ge3": 0.097561,
+    "normal_n_draws": 159,
+    "normal_ge3": 0.144654,
+    "delta": -0.047093,
+    "threshold_run": 3,
+    "signal": "WEAK"
+  },
+  "D_dynamic": {
+    "d_ge4_n_sets": 26,
+    "d_ge4_ge3": 0.0,
+    "d_lt4_n_sets": 974,
+    "d_lt4_ge3": 0.030801,
+    "d_delta": -0.030801,
+    "signal": "WEAK"
+  },
+  "patch_candidates": [
+    {
+      "id": "quota_B_stat10_markov80_review10",
+      "axis": "quota_sim",
+      "delta_ge3": 0.02,
+      "ge3": 0.155,
+      "base_ge3": 0.135,
+      "wire_GO_required": true,
+      "note": "wire GO 필요 · quota 실변경 금지(현 측정만)"
+    },
+    {
+      "id": "quota_C_stat20_markov70_review10",
+      "axis": "quota_sim",
+      "delta_ge3": 0.02,
+      "ge3": 0.155,
+      "base_ge3": 0.135,
+      "wire_GO_required": true,
+      "note": "wire GO 필요 · quota 실변경 금지(현 측정만)"
+    },
+    {
+      "id": "quota_D_stat30_markov60_review10",
+      "axis": "quota_sim",
+      "delta_ge3": 0.035,
+      "ge3": 0.17,
+      "base_ge3": 0.135,
+      "wire_GO_required": true,
+      "note": "wire GO 필요 · quota 실변경 금지(현 측정만)"
+    }
+  ],
+  "forbid": [
+    "random.choices",
+    "_get_draws_before mutate",
+    "engine.py",
+    "auto-tune",
+    "wire",
+    "quota 실제 변경"
+  ],
+  "pass": true,
+  "tool": "tools/_k_patch_1235_prep.py"
+}

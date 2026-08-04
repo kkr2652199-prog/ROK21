@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-PATTERN-BC-MEASURE** — B·C 실측 · **MEASURED**
-- **다음(공식)**: L2 EMA 진단 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KPATTERN_BC_MEASURE.json`
+- **지금(판정)**: **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED**
+- **다음(공식)**: wire GO 대기 · **형 결정**
+- **산출물**: `docs/benchmarks/20260805_KPATCH_1235_PREP.json`
+
+### K-PATCH-1235-PREP (형 지시 · MEASURED)
+- quota A0.135 → B/C0.155(+0.02) · D0.170(+0.035) → **후보 등재·wire GO 필요**
+- PMI/B-sum임박/D-dynamic: ge3 역방향·미등재
+- wire=False · tool `tools/_k_patch_1235_prep.py`
 
 ### K-PATTERN-BC-MEASURE (형 지시 · MEASURED)
 - B: odd_k thr2/cur1 · zone thr115/cur73(mix지배) · sum_tier thr3/cur5=임박 · 신호 MODERATE
