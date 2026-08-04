@@ -26,9 +26,15 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-VIRTUAL-1235** — **PASS** (분석스택 가상생애)
-- **다음(공식)**: 1236 실추첨 후 ops SCORE 또는 다른축 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KEVOLVE_VIRTUAL_1235.json`
+- **지금(판정)**: **K-RARE-FILTER-PREP** — **PASS** (R0~R3 · wire OFF)
+- **다음(공식)**: taxonomy v1 확장 또는 1236 ops SCORE · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KRARE_FILTER_DESIGN.json`
+
+### K-RARE-FILTER-PREP (형 진행 · PASS)
+- 철학: 티켓등확률 · 컨닝금지 · 군희소≠당첨P↑ · 일괄wire금지 · 1236대기
+- R0 DESIGN · R1 TAXONOMY · R2 MEASURE(1~1235·갭9축) · R3 TAG_SPEC
+- `rare_annotate.py` stub · `RARE_ANNOTATE_WIRE=False` · signal_pool 주석 삽입점만
+- HOLD: λ / structure·pair cover / ultra→ge3
 
 ### K-EVOLVE-VIRTUAL-1235 (형 진행 · PASS)
 - 이번주=1236 미추첨 · 스테이징=**1235** 가상 PREDICT→SCORE

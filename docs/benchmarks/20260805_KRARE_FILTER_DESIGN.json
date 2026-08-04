@@ -1,0 +1,54 @@
+{
+  "id": "K-RARE-FILTER-DESIGN",
+  "ts": "2026-08-05T01:30:00+00:00",
+  "verdict": "DOC",
+  "wire": false,
+  "philosophy": {
+    "ticket_p_equal": true,
+    "C_45_6": 8145060,
+    "no_cheat": true,
+    "no_claim_p_boost": true,
+    "wait_draw": 1236,
+    "batch_wire_forbidden": true
+  },
+  "layers": {
+    "diagnostic": "taxonomy+measure+catalog+tags",
+    "policy_default": "off"
+  },
+  "steps": {
+    "R0": "K-RARE-FILTER-DESIGN",
+    "R1": "K-RARE-TEMPLATE-TAXONOMY",
+    "R2": "K-RARE-MEASURE-1_1235",
+    "R3": "K-RARE-TAG-SPEC",
+    "R4": "policy_wire_blocked"
+  },
+  "assets": {
+    "rare_bundle_catalog": 213,
+    "ultra": 183,
+    "warrant": "20260805_KMATH_PATTERN_WARRANT.json",
+    "annotate_module": "app/testlotto/rare_annotate.py",
+    "annotate_wire": false
+  },
+  "refs": [
+    "arXiv:math/0507469",
+    "arXiv:1001.2972",
+    "arXiv:2307.12430",
+    "arXiv:2408.06857",
+    "LotteryCodex composition",
+    "internal WARRANT",
+    "internal K-RARE-BUNDLE"
+  ],
+  "hold": [
+    "FEATURE_LAMBDA_WIRE",
+    "STRUCTURE_COVER_WIRE",
+    "PAIR_COVER_WIRE",
+    "ultra_to_ge3"
+  ],
+  "reports": [
+    "reports/20260805_KRARE_FILTER_DESIGN.md",
+    "reports/20260805_KRARE_TEMPLATE_TAXONOMY.md",
+    "reports/20260805_KRARE_MEASURE_1_1235.md",
+    "reports/20260805_KRARE_TAG_SPEC.md"
+  ],
+  "note": "준비팩 R0~R3 · 발권 불변 · 1236 ops SCORE와 독립 트랙"
+}

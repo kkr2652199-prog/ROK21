@@ -1,0 +1,21 @@
+{
+  "id": "K-RARE-TAG-SPEC",
+  "ts": "2026-08-05T01:30:00+00:00",
+  "verdict": "SPEC",
+  "wire": false,
+  "schema": "rare_tag_v1",
+  "fields": ["rare_tags", "rarity_score", "is_ultra_rare_tag"],
+  "module": "app/testlotto/rare_annotate.py",
+  "flags": {
+    "RARE_ANNOTATE_WIRE": false,
+    "RARE_POLICY_MODE": "off"
+  },
+  "policy_enum": ["off", "tag_only", "exclude_ultra", "prefer_ultra"],
+  "insert_point": "app/testlotto/signal_pool.py::build_pool_and_repack return-before comment",
+  "smoke": {
+    "nums": [1, 2, 3, 4, 5, 6],
+    "expect_tags_include": ["consec_6"],
+    "expect_wire": false
+  },
+  "report": "reports/20260805_KRARE_TAG_SPEC.md"
+}

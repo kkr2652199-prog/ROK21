@@ -1,0 +1,195 @@
+{
+  "id": "K-RARE-MEASURE-1_1235",
+  "ts": "2026-08-04T16:28:57+00:00",
+  "draw_range": [
+    1,
+    1235
+  ],
+  "n_draws": 1235,
+  "unique_drawn_sets": 1235,
+  "duplicate_sets": 0,
+  "C_45_6": 8145060,
+  "coverage_of_universe": 0.00015163,
+  "rare_bundle": {
+    "catalog_n": 213,
+    "ultra_n": 183,
+    "ultra_hits_in_history": 1,
+    "PATTERN_META_keys": [
+      "arithmetic_6",
+      "consec_5_window",
+      "consec_6",
+      "parity_all_even",
+      "parity_all_odd",
+      "rank_bottom1000",
+      "rank_top1000",
+      "split_exact_123_434445",
+      "split_low3_high3_extreme",
+      "spread_min_gap7",
+      "zone_all_high_31_45",
+      "zone_all_low_1_15"
+    ]
+  },
+  "detect_pattern_counts": {
+    "consec_3plus": 67,
+    "consec_4plus": 6,
+    "parity_all_even": 17,
+    "parity_all_odd": 19,
+    "rank_bottom1000": 1,
+    "spread_min_gap7": 1,
+    "zone_all_high_31_45": 1
+  },
+  "comparisons": [
+    {
+      "id": "odd_k",
+      "rows": [
+        {
+          "k": 0,
+          "emp": 0.0138,
+          "null": 0.0092,
+          "n_emp": 17
+        },
+        {
+          "k": 1,
+          "emp": 0.0664,
+          "null": 0.0744,
+          "n_emp": 82
+        },
+        {
+          "k": 2,
+          "emp": 0.2243,
+          "null": 0.2272,
+          "n_emp": 277
+        },
+        {
+          "k": 3,
+          "emp": 0.3344,
+          "null": 0.3348,
+          "n_emp": 413
+        },
+        {
+          "k": 4,
+          "emp": 0.2656,
+          "null": 0.2511,
+          "n_emp": 328
+        },
+        {
+          "k": 5,
+          "emp": 0.0802,
+          "null": 0.0909,
+          "n_emp": 99
+        },
+        {
+          "k": 6,
+          "emp": 0.0154,
+          "null": 0.0124,
+          "n_emp": 19
+        }
+      ]
+    },
+    {
+      "id": "consec_ge1_pair",
+      "emp": 0.5174,
+      "null": 0.5287,
+      "n_emp": 639
+    },
+    {
+      "id": "zone_all_low_1_15",
+      "emp": 0.0,
+      "null": 0.000614,
+      "n_emp": 0,
+      "w": 5005
+    },
+    {
+      "id": "zone_all_high_31_45",
+      "emp": 0.00081,
+      "null": 0.000614,
+      "n_emp": 1,
+      "w": 5005
+    },
+    {
+      "id": "parity_all_odd",
+      "emp": 0.015385,
+      "null": 0.012394,
+      "n_emp": 19,
+      "w": 100947
+    },
+    {
+      "id": "parity_all_even",
+      "emp": 0.013765,
+      "null": 0.009161,
+      "n_emp": 17,
+      "w": 74613
+    },
+    {
+      "id": "consec_run_ge6",
+      "emp": 0.0,
+      "null": 5e-06,
+      "n_emp": 0,
+      "w": 40
+    },
+    {
+      "id": "consec_run_ge5",
+      "emp": 0.0,
+      "n_emp": 0,
+      "null_note": "exact w needs inclusion; PATTERN_META consec_5_window≈660",
+      "w_ref": 660
+    },
+    {
+      "id": "arithmetic_6",
+      "emp": 0.0,
+      "null": 2e-05,
+      "n_emp": 0,
+      "w": 165
+    }
+  ],
+  "taxonomy_gaps": [
+    {
+      "axis": "carry_k",
+      "status": "MISSING (as_of; WARRANT has hist)",
+      "in_PATTERN_META": false
+    },
+    {
+      "axis": "consec_pair_count",
+      "status": "partial consec_*plus runs",
+      "in_PATTERN_META": false
+    },
+    {
+      "axis": "ending_digit_hist",
+      "status": "MISSING",
+      "in_PATTERN_META": false
+    },
+    {
+      "axis": "lo_hi_4way",
+      "status": "MISSING",
+      "in_PATTERN_META": false
+    },
+    {
+      "axis": "max_run",
+      "status": "partial consec_*plus",
+      "in_PATTERN_META": false
+    },
+    {
+      "axis": "odd_even_k",
+      "status": "partial via parity_all_odd/even only",
+      "in_PATTERN_META": false
+    },
+    {
+      "axis": "span_bin",
+      "status": "partial spread_min_gap7/8",
+      "in_PATTERN_META": false
+    },
+    {
+      "axis": "sum_bin",
+      "status": "MISSING",
+      "in_PATTERN_META": false
+    },
+    {
+      "axis": "zone_triplet_l_m_h",
+      "status": "partial zone_all_low/high only",
+      "in_PATTERN_META": false
+    }
+  ],
+  "verdict": "MEASURED",
+  "wire": false,
+  "note": "진단 측정 · 발권/λ/cover 미변경 · 당첨P↑ 클레임 없음"
+}

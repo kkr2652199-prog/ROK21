@@ -1,0 +1,31 @@
+{
+  "id": "K-RARE-TEMPLATE-TAXONOMY",
+  "ts": "2026-08-05T01:30:00+00:00",
+  "verdict": "DOC",
+  "wire": false,
+  "C_45_6": 8145060,
+  "axes": [
+    {"id": "odd_even_k", "w_formula": "C(23,k)*C(22,6-k)", "status": "partial_ends_only"},
+    {"id": "zone_l_m_h", "w_formula": "C(15,l)*C(15,m)*C(15,h)", "status": "partial_all_low_high"},
+    {"id": "sum_bin", "w_formula": "genfunc_or_DP", "status": "MISSING"},
+    {"id": "span_bin", "w_formula": "enumerate", "status": "partial_min_gap"},
+    {"id": "consec_pair_ge1", "w_formula": "C(45,6)-C(40,6)", "status": "HAVE_WARRANT"},
+    {"id": "consec_run6", "w": 40, "status": "HAVE"},
+    {"id": "arithmetic_6", "w": 165, "status": "HAVE"},
+    {"id": "lo_hi_4way", "status": "MISSING"},
+    {"id": "carry_overdue_asof", "status": "SEPARATE_LAYER"}
+  ],
+  "ultra_ops_def": [
+    "consec_6",
+    "split_exact_123_434445",
+    "arithmetic_6",
+    "parity_all_odd",
+    "parity_all_even",
+    "zone_all_low_1_15",
+    "zone_all_high_31_45",
+    "rank_top1000",
+    "rank_bottom1000"
+  ],
+  "v0_core": "app/testlotto/rare_bundle.py",
+  "report": "reports/20260805_KRARE_TEMPLATE_TAXONOMY.md"
+}

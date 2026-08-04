@@ -361,6 +361,14 @@ def build_pool_and_repack(
             entry["source_set_no"] = c.get("source_set_no")
         by_brain_repack.setdefault(tag, []).append(entry)
 
+    # K-RARE-FILTER 삽입점 (WIRE OFF · 호출 금지):
+    #   from app.testlotto.rare_annotate import RARE_ANNOTATE_WIRE, annotate_sets, policy_filter
+    #   if RARE_ANNOTATE_WIRE:  # 형 GO 후에만
+    #       for tag in BRAIN_TAGS:
+    #           by_brain_pool[tag] = annotate_sets(by_brain_pool[tag])
+    #           by_brain_repack[tag] = policy_filter(annotate_sets(by_brain_repack[tag]))
+    # 기본: pass-through (발권 불변)
+
     return {
         "ok": True,
         "target_draw_no": target_draw_no,

@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-EVOLVE-VIRTUAL-1235** — 분석스택 가상생애 · **PASS**
-- 직전: K-EVOLVE-AUTO-S4 ops
-- 다음: 1236 실추첨 후 ops SCORE 또는 다른축 · **형 GO**
+- 지금: **K-RARE-FILTER-PREP** — R0~R3 설계·측정·태그스펙 · **PASS**
+- 직전: K-EVOLVE-VIRTUAL-1235
+- 다음: taxonomy v1 확장 또는 1236 ops SCORE · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
