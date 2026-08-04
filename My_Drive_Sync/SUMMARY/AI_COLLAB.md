@@ -24,11 +24,22 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 11:50 KST)
-- **HEAD(실측)**: `62e21bc` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-PIN-GAP-DIAG** — FULL pin갭 진단 **DONE**
-- **다음(공식)**: **I2 FULL-first** 또는 **I3 B1로그** · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KPIN_GAP_DIAG.json` · `reports/20260804_KPIN_GAP_DIAG.md`
+### 최신 상태 (2026-08-04 12:10 KST)
+- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **지금(판정)**: **K-REPACK-HYBRID** — 조립 ablation **DONE**
+- **다음(공식)**: **K-REPACK-HYBRID-WIRE** (stat/review p45+r123 · markov 유지) · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KREPACK_HYBRID_survey.json` · `reports/20260804_KREPACK_HYBRID_SURVEY.md`
+
+### K-REPACK-HYBRID (형 GO · DONE · wire 없음)
+n=200 · 1035~1234 · cache READ-ONLY
+
+| 뇌 | baseline | hy_brain_rec | Δ |
+|----|----------|--------------|---|
+| stat | 0.125 | **0.165** | **+0.040** |
+| markov | 0.130 | 0.130 | 0 |
+| review | 0.105 | **0.135** | **+0.030** |
+
+권고 wire: stat+review = pool4+5 + 몰1~3 · markov = 현행 몰아주기 유지
 
 ### K-PIN-GAP-DIAG (형 GO · DONE · wire 없음)
 | 항목 | 결과 |

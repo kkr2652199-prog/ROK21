@@ -1,0 +1,1166 @@
+{
+  "id": "K-REPACK-HYBRID",
+  "ts": "2026-08-04T03:08:24+00:00",
+  "mode": "cache_readonly_ablation",
+  "wire": false,
+  "eval_mode": "best_of_5",
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "n_eval": 200,
+  "missing_cache_n": 0,
+  "missing_cache_sample": [],
+  "null_ge3": 0.1137,
+  "wire_pin_ge3": 0.1447,
+  "null_meta": {
+    "eval_mode": "best_of_5",
+    "m": 5,
+    "null_ge3": 0.1137,
+    "null_mean": 1.7289,
+    "known": true
+  },
+  "strategy_defs": {
+    "baseline_repack": "현행 몰아주기 rank1~5",
+    "pool_asc_1_5": "pool set 1~5 그대로",
+    "pool_late_6_10": "pool set 6~10 그대로",
+    "hy_freq2_r123": "freq상위 pool2 + 몰1~3",
+    "hy_freq2_r145": "freq상위 pool2 + 몰1/4/5",
+    "hy_freq2_r13_r2": "freq상위 pool2 + 몰1/2/3 (몰5 제외)",
+    "hy_p45_r123": "pool4+5 + 몰1~3",
+    "hy_p89_r145": "pool8+9 + 몰1/4/5",
+    "hy_freq3_r12": "freq상위 pool3 + 몰1~2",
+    "hy_brain_rec": "뇌별 권고(stat/review=p45+r123, markov=p89+r145)",
+    "oracle_best_pool5": "pool 적중순 상위5 (상한·배포금지)"
+  },
+  "brain_recommendation": {
+    "stat": "hy_p45_r123 (pool4+5 + 몰1~3)",
+    "markov": "hy_p89_r145 또는 baseline_repack (동률·보수적으로 baseline 유지 가능)",
+    "review": "hy_p45_r123 (pool4+5 + 몰1~3) — freq2보다 ablation 우세",
+    "note": "1차 가설 후 ablation으로 review 권고 정정 · wire 전"
+  },
+  "winners": {
+    "stat": {
+      "best_deployable": "hy_brain_rec",
+      "best_ge3": 0.165,
+      "baseline_ge3": 0.125,
+      "top3": [
+        {
+          "strategy": "hy_brain_rec",
+          "ge3_rate": 0.165,
+          "delta_vs_baseline": 0.04
+        },
+        {
+          "strategy": "hy_p45_r123",
+          "ge3_rate": 0.165,
+          "delta_vs_baseline": 0.04
+        },
+        {
+          "strategy": "pool_asc_1_5",
+          "ge3_rate": 0.15,
+          "delta_vs_baseline": 0.025
+        }
+      ]
+    },
+    "markov": {
+      "best_deployable": "baseline_repack",
+      "best_ge3": 0.13,
+      "baseline_ge3": 0.13,
+      "top3": [
+        {
+          "strategy": "baseline_repack",
+          "ge3_rate": 0.13,
+          "delta_vs_baseline": 0.0
+        },
+        {
+          "strategy": "hy_brain_rec",
+          "ge3_rate": 0.13,
+          "delta_vs_baseline": 0.0
+        },
+        {
+          "strategy": "hy_p89_r145",
+          "ge3_rate": 0.13,
+          "delta_vs_baseline": 0.0
+        }
+      ]
+    },
+    "review": {
+      "best_deployable": "hy_brain_rec",
+      "best_ge3": 0.135,
+      "baseline_ge3": 0.105,
+      "top3": [
+        {
+          "strategy": "hy_brain_rec",
+          "ge3_rate": 0.135,
+          "delta_vs_baseline": 0.03
+        },
+        {
+          "strategy": "hy_p45_r123",
+          "ge3_rate": 0.135,
+          "delta_vs_baseline": 0.03
+        },
+        {
+          "strategy": "pool_asc_1_5",
+          "ge3_rate": 0.13,
+          "delta_vs_baseline": 0.025
+        }
+      ]
+    }
+  },
+  "strategies": {
+    "baseline_repack": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 25,
+          "ge3_rate": 0.125,
+          "mean": 1.77,
+          "delta_vs_null": 0.0113,
+          "delta_vs_pin": -0.0197,
+          "delta_vs_baseline": 0.0,
+          "gate": {
+            "n": 200,
+            "mean": 1.77,
+            "ge3_rate": 0.125,
+            "ge3_count": 25,
+            "delta_ge3_vs_null": 0.0113,
+            "delta_ge3_vs_pin": -0.0197,
+            "p_value": 0.338657,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 26,
+          "ge3_rate": 0.13,
+          "mean": 1.885,
+          "delta_vs_null": 0.0163,
+          "delta_vs_pin": -0.0147,
+          "delta_vs_baseline": 0.0,
+          "gate": {
+            "n": 200,
+            "mean": 1.885,
+            "ge3_rate": 0.13,
+            "ge3_count": 26,
+            "delta_ge3_vs_null": 0.0163,
+            "delta_ge3_vs_pin": -0.0147,
+            "p_value": 0.263504,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 21,
+          "ge3_rate": 0.105,
+          "mean": 1.76,
+          "delta_vs_null": -0.0087,
+          "delta_vs_pin": -0.0397,
+          "delta_vs_baseline": 0.0,
+          "gate": {
+            "n": 200,
+            "mean": 1.76,
+            "ge3_rate": 0.105,
+            "ge3_count": 21,
+            "delta_ge3_vs_null": -0.0087,
+            "delta_ge3_vs_pin": -0.0397,
+            "p_value": 0.683286,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "pool_asc_1_5": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 30,
+          "ge3_rate": 0.15,
+          "mean": 1.795,
+          "delta_vs_null": 0.0363,
+          "delta_vs_pin": 0.0053,
+          "delta_vs_baseline": 0.025,
+          "gate": {
+            "n": 200,
+            "mean": 1.795,
+            "ge3_rate": 0.15,
+            "ge3_count": 30,
+            "delta_ge3_vs_null": 0.0363,
+            "delta_ge3_vs_pin": 0.0053,
+            "p_value": 0.070087,
+            "verdict": "PASS",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 16,
+          "ge3_rate": 0.08,
+          "mean": 1.645,
+          "delta_vs_null": -0.0337,
+          "delta_vs_pin": -0.0647,
+          "delta_vs_baseline": -0.05,
+          "gate": {
+            "n": 200,
+            "mean": 1.645,
+            "ge3_rate": 0.08,
+            "ge3_count": 16,
+            "delta_ge3_vs_null": -0.0337,
+            "delta_ge3_vs_pin": -0.0647,
+            "p_value": 0.952412,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 26,
+          "ge3_rate": 0.13,
+          "mean": 1.73,
+          "delta_vs_null": 0.0163,
+          "delta_vs_pin": -0.0147,
+          "delta_vs_baseline": 0.025,
+          "gate": {
+            "n": 200,
+            "mean": 1.73,
+            "ge3_rate": 0.13,
+            "ge3_count": 26,
+            "delta_ge3_vs_null": 0.0163,
+            "delta_ge3_vs_pin": -0.0147,
+            "p_value": 0.263504,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "pool_late_6_10": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 26,
+          "ge3_rate": 0.13,
+          "mean": 1.715,
+          "delta_vs_null": 0.0163,
+          "delta_vs_pin": -0.0147,
+          "delta_vs_baseline": 0.005,
+          "gate": {
+            "n": 200,
+            "mean": 1.715,
+            "ge3_rate": 0.13,
+            "ge3_count": 26,
+            "delta_ge3_vs_null": 0.0163,
+            "delta_ge3_vs_pin": -0.0147,
+            "p_value": 0.263504,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 23,
+          "ge3_rate": 0.115,
+          "mean": 1.68,
+          "delta_vs_null": 0.0013,
+          "delta_vs_pin": -0.0297,
+          "delta_vs_baseline": -0.015,
+          "gate": {
+            "n": 200,
+            "mean": 1.68,
+            "ge3_rate": 0.115,
+            "ge3_count": 23,
+            "delta_ge3_vs_null": 0.0013,
+            "delta_ge3_vs_pin": -0.0297,
+            "p_value": 0.509824,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 24,
+          "ge3_rate": 0.12,
+          "mean": 1.665,
+          "delta_vs_null": 0.0063,
+          "delta_vs_pin": -0.0247,
+          "delta_vs_baseline": 0.015,
+          "gate": {
+            "n": 200,
+            "mean": 1.665,
+            "ge3_rate": 0.12,
+            "ge3_count": 24,
+            "delta_ge3_vs_null": 0.0063,
+            "delta_ge3_vs_pin": -0.0247,
+            "p_value": 0.42187,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "hy_freq2_r123": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 22,
+          "ge3_rate": 0.11,
+          "mean": 1.68,
+          "delta_vs_null": -0.0037,
+          "delta_vs_pin": -0.0347,
+          "delta_vs_baseline": -0.015,
+          "gate": {
+            "n": 200,
+            "mean": 1.68,
+            "ge3_rate": 0.11,
+            "ge3_count": 22,
+            "delta_ge3_vs_null": -0.0037,
+            "delta_ge3_vs_pin": -0.0347,
+            "p_value": 0.598413,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 21,
+          "ge3_rate": 0.105,
+          "mean": 1.675,
+          "delta_vs_null": -0.0087,
+          "delta_vs_pin": -0.0397,
+          "delta_vs_baseline": -0.025,
+          "gate": {
+            "n": 200,
+            "mean": 1.675,
+            "ge3_rate": 0.105,
+            "ge3_count": 21,
+            "delta_ge3_vs_null": -0.0087,
+            "delta_ge3_vs_pin": -0.0397,
+            "p_value": 0.683286,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 23,
+          "ge3_rate": 0.115,
+          "mean": 1.67,
+          "delta_vs_null": 0.0013,
+          "delta_vs_pin": -0.0297,
+          "delta_vs_baseline": 0.01,
+          "gate": {
+            "n": 200,
+            "mean": 1.67,
+            "ge3_rate": 0.115,
+            "ge3_count": 23,
+            "delta_ge3_vs_null": 0.0013,
+            "delta_ge3_vs_pin": -0.0297,
+            "p_value": 0.509824,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "hy_freq2_r145": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 22,
+          "ge3_rate": 0.11,
+          "mean": 1.665,
+          "delta_vs_null": -0.0037,
+          "delta_vs_pin": -0.0347,
+          "delta_vs_baseline": -0.015,
+          "gate": {
+            "n": 200,
+            "mean": 1.665,
+            "ge3_rate": 0.11,
+            "ge3_count": 22,
+            "delta_ge3_vs_null": -0.0037,
+            "delta_ge3_vs_pin": -0.0347,
+            "p_value": 0.598413,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 24,
+          "ge3_rate": 0.12,
+          "mean": 1.785,
+          "delta_vs_null": 0.0063,
+          "delta_vs_pin": -0.0247,
+          "delta_vs_baseline": -0.01,
+          "gate": {
+            "n": 200,
+            "mean": 1.785,
+            "ge3_rate": 0.12,
+            "ge3_count": 24,
+            "delta_ge3_vs_null": 0.0063,
+            "delta_ge3_vs_pin": -0.0247,
+            "p_value": 0.42187,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 19,
+          "ge3_rate": 0.095,
+          "mean": 1.63,
+          "delta_vs_null": -0.0187,
+          "delta_vs_pin": -0.0497,
+          "delta_vs_baseline": -0.01,
+          "gate": {
+            "n": 200,
+            "mean": 1.63,
+            "ge3_rate": 0.095,
+            "ge3_count": 19,
+            "delta_ge3_vs_null": -0.0187,
+            "delta_ge3_vs_pin": -0.0497,
+            "p_value": 0.826954,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "hy_freq2_r13_r2": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 22,
+          "ge3_rate": 0.11,
+          "mean": 1.68,
+          "delta_vs_null": -0.0037,
+          "delta_vs_pin": -0.0347,
+          "delta_vs_baseline": -0.015,
+          "gate": {
+            "n": 200,
+            "mean": 1.68,
+            "ge3_rate": 0.11,
+            "ge3_count": 22,
+            "delta_ge3_vs_null": -0.0037,
+            "delta_ge3_vs_pin": -0.0347,
+            "p_value": 0.598413,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 21,
+          "ge3_rate": 0.105,
+          "mean": 1.675,
+          "delta_vs_null": -0.0087,
+          "delta_vs_pin": -0.0397,
+          "delta_vs_baseline": -0.025,
+          "gate": {
+            "n": 200,
+            "mean": 1.675,
+            "ge3_rate": 0.105,
+            "ge3_count": 21,
+            "delta_ge3_vs_null": -0.0087,
+            "delta_ge3_vs_pin": -0.0397,
+            "p_value": 0.683286,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 23,
+          "ge3_rate": 0.115,
+          "mean": 1.67,
+          "delta_vs_null": 0.0013,
+          "delta_vs_pin": -0.0297,
+          "delta_vs_baseline": 0.01,
+          "gate": {
+            "n": 200,
+            "mean": 1.67,
+            "ge3_rate": 0.115,
+            "ge3_count": 23,
+            "delta_ge3_vs_null": 0.0013,
+            "delta_ge3_vs_pin": -0.0297,
+            "p_value": 0.509824,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "hy_p45_r123": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 33,
+          "ge3_rate": 0.165,
+          "mean": 1.745,
+          "delta_vs_null": 0.0513,
+          "delta_vs_pin": 0.0203,
+          "delta_vs_baseline": 0.04,
+          "gate": {
+            "n": 200,
+            "mean": 1.745,
+            "ge3_rate": 0.165,
+            "ge3_count": 33,
+            "delta_ge3_vs_null": 0.0513,
+            "delta_ge3_vs_pin": 0.0203,
+            "p_value": 0.018508,
+            "verdict": "PASS",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 20,
+          "ge3_rate": 0.1,
+          "mean": 1.685,
+          "delta_vs_null": -0.0137,
+          "delta_vs_pin": -0.0447,
+          "delta_vs_baseline": -0.03,
+          "gate": {
+            "n": 200,
+            "mean": 1.685,
+            "ge3_rate": 0.1,
+            "ge3_count": 20,
+            "delta_ge3_vs_null": -0.0137,
+            "delta_ge3_vs_pin": -0.0447,
+            "p_value": 0.760471,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 27,
+          "ge3_rate": 0.135,
+          "mean": 1.785,
+          "delta_vs_null": 0.0213,
+          "delta_vs_pin": -0.0097,
+          "delta_vs_baseline": 0.03,
+          "gate": {
+            "n": 200,
+            "mean": 1.785,
+            "ge3_rate": 0.135,
+            "ge3_count": 27,
+            "delta_ge3_vs_null": 0.0213,
+            "delta_ge3_vs_pin": -0.0097,
+            "p_value": 0.198612,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "hy_p89_r145": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 29,
+          "ge3_rate": 0.145,
+          "mean": 1.73,
+          "delta_vs_null": 0.0313,
+          "delta_vs_pin": 0.0003,
+          "delta_vs_baseline": 0.02,
+          "gate": {
+            "n": 200,
+            "mean": 1.73,
+            "ge3_rate": 0.145,
+            "ge3_count": 29,
+            "delta_ge3_vs_null": 0.0313,
+            "delta_ge3_vs_pin": 0.0003,
+            "p_value": 0.102441,
+            "verdict": "PASS",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 26,
+          "ge3_rate": 0.13,
+          "mean": 1.79,
+          "delta_vs_null": 0.0163,
+          "delta_vs_pin": -0.0147,
+          "delta_vs_baseline": 0.0,
+          "gate": {
+            "n": 200,
+            "mean": 1.79,
+            "ge3_rate": 0.13,
+            "ge3_count": 26,
+            "delta_ge3_vs_null": 0.0163,
+            "delta_ge3_vs_pin": -0.0147,
+            "p_value": 0.263504,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 20,
+          "ge3_rate": 0.1,
+          "mean": 1.66,
+          "delta_vs_null": -0.0137,
+          "delta_vs_pin": -0.0447,
+          "delta_vs_baseline": -0.005,
+          "gate": {
+            "n": 200,
+            "mean": 1.66,
+            "ge3_rate": 0.1,
+            "ge3_count": 20,
+            "delta_ge3_vs_null": -0.0137,
+            "delta_ge3_vs_pin": -0.0447,
+            "p_value": 0.760471,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "hy_freq3_r12": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 19,
+          "ge3_rate": 0.095,
+          "mean": 1.655,
+          "delta_vs_null": -0.0187,
+          "delta_vs_pin": -0.0497,
+          "delta_vs_baseline": -0.03,
+          "gate": {
+            "n": 200,
+            "mean": 1.655,
+            "ge3_rate": 0.095,
+            "ge3_count": 19,
+            "delta_ge3_vs_null": -0.0187,
+            "delta_ge3_vs_pin": -0.0497,
+            "p_value": 0.826954,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 20,
+          "ge3_rate": 0.1,
+          "mean": 1.635,
+          "delta_vs_null": -0.0137,
+          "delta_vs_pin": -0.0447,
+          "delta_vs_baseline": -0.03,
+          "gate": {
+            "n": 200,
+            "mean": 1.635,
+            "ge3_rate": 0.1,
+            "ge3_count": 20,
+            "delta_ge3_vs_null": -0.0137,
+            "delta_ge3_vs_pin": -0.0447,
+            "p_value": 0.760471,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 23,
+          "ge3_rate": 0.115,
+          "mean": 1.64,
+          "delta_vs_null": 0.0013,
+          "delta_vs_pin": -0.0297,
+          "delta_vs_baseline": 0.01,
+          "gate": {
+            "n": 200,
+            "mean": 1.64,
+            "ge3_rate": 0.115,
+            "ge3_count": 23,
+            "delta_ge3_vs_null": 0.0013,
+            "delta_ge3_vs_pin": -0.0297,
+            "p_value": 0.509824,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "hy_brain_rec": {
+      "deployable": true,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 33,
+          "ge3_rate": 0.165,
+          "mean": 1.745,
+          "delta_vs_null": 0.0513,
+          "delta_vs_pin": 0.0203,
+          "delta_vs_baseline": 0.04,
+          "gate": {
+            "n": 200,
+            "mean": 1.745,
+            "ge3_rate": 0.165,
+            "ge3_count": 33,
+            "delta_ge3_vs_null": 0.0513,
+            "delta_ge3_vs_pin": 0.0203,
+            "p_value": 0.018508,
+            "verdict": "PASS",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 26,
+          "ge3_rate": 0.13,
+          "mean": 1.79,
+          "delta_vs_null": 0.0163,
+          "delta_vs_pin": -0.0147,
+          "delta_vs_baseline": 0.0,
+          "gate": {
+            "n": 200,
+            "mean": 1.79,
+            "ge3_rate": 0.13,
+            "ge3_count": 26,
+            "delta_ge3_vs_null": 0.0163,
+            "delta_ge3_vs_pin": -0.0147,
+            "p_value": 0.263504,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 27,
+          "ge3_rate": 0.135,
+          "mean": 1.785,
+          "delta_vs_null": 0.0213,
+          "delta_vs_pin": -0.0097,
+          "delta_vs_baseline": 0.03,
+          "gate": {
+            "n": 200,
+            "mean": 1.785,
+            "ge3_rate": 0.135,
+            "ge3_count": 27,
+            "delta_ge3_vs_null": 0.0213,
+            "delta_ge3_vs_pin": -0.0097,
+            "p_value": 0.198612,
+            "verdict": "FAIL",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    },
+    "oracle_best_pool5": {
+      "deployable": false,
+      "by_brain": {
+        "stat": {
+          "label": "1뇌·통계요정",
+          "n_eval": 200,
+          "ge3_count": 49,
+          "ge3_rate": 0.245,
+          "mean": 2.08,
+          "delta_vs_null": 0.1313,
+          "delta_vs_pin": 0.1003,
+          "delta_vs_baseline": 0.12,
+          "gate": {
+            "n": 200,
+            "mean": 2.08,
+            "ge3_rate": 0.245,
+            "ge3_count": 49,
+            "delta_ge3_vs_null": 0.1313,
+            "delta_ge3_vs_pin": 0.1003,
+            "p_value": 0.0,
+            "verdict": "PASS",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "markov": {
+          "label": "2뇌·흐름술사",
+          "n_eval": 200,
+          "ge3_count": 38,
+          "ge3_rate": 0.19,
+          "mean": 2.01,
+          "delta_vs_null": 0.0763,
+          "delta_vs_pin": 0.0453,
+          "delta_vs_baseline": 0.06,
+          "gate": {
+            "n": 200,
+            "mean": 2.01,
+            "ge3_rate": 0.19,
+            "ge3_count": 38,
+            "delta_ge3_vs_null": 0.0763,
+            "delta_ge3_vs_pin": 0.0453,
+            "p_value": 0.001075,
+            "verdict": "PASS",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        },
+        "review": {
+          "label": "3뇌·복습왕",
+          "n_eval": 200,
+          "ge3_count": 41,
+          "ge3_rate": 0.205,
+          "mean": 1.975,
+          "delta_vs_null": 0.0913,
+          "delta_vs_pin": 0.0603,
+          "delta_vs_baseline": 0.1,
+          "gate": {
+            "n": 200,
+            "mean": 1.975,
+            "ge3_rate": 0.205,
+            "ge3_count": 41,
+            "delta_ge3_vs_null": 0.0913,
+            "delta_ge3_vs_pin": 0.0603,
+            "p_value": 0.000136,
+            "verdict": "PASS",
+            "eval_mode": "best_of_5",
+            "null_ge3": 0.1137,
+            "null_mean": 1.7289
+          }
+        }
+      }
+    }
+  },
+  "composition_samples": {
+    "baseline_repack": {
+      "markov": {
+        "draw_no": 1085,
+        "tickets": [
+          {
+            "kind": "repack",
+            "set_no": 1,
+            "nums": [
+              32,
+              33,
+              35,
+              40,
+              41,
+              45
+            ],
+            "hits": 0
+          },
+          {
+            "kind": "repack",
+            "set_no": 2,
+            "nums": [
+              31,
+              34,
+              36,
+              37,
+              38,
+              44
+            ],
+            "hits": 2
+          },
+          {
+            "kind": "repack",
+            "set_no": 3,
+            "nums": [
+              7,
+              13,
+              27,
+              39,
+              42,
+              43
+            ],
+            "hits": 1
+          },
+          {
+            "kind": "repack",
+            "set_no": 4,
+            "nums": [
+              9,
+              11,
+              12,
+              22,
+              24,
+              26
+            ],
+            "hits": 0
+          },
+          {
+            "kind": "repack",
+            "set_no": 5,
+            "nums": [
+              6,
+              10,
+              14,
+              16,
+              19,
+              30
+            ],
+            "hits": 0
+          }
+        ]
+      }
+    },
+    "hy_freq2_r123": {
+      "markov": {
+        "draw_no": 1085,
+        "tickets": [
+          {
+            "kind": "pool",
+            "set_no": 1,
+            "nums": [
+              11,
+              12,
+              13,
+              26,
+              40,
+              45
+            ],
+            "hits": 0
+          },
+          {
+            "kind": "pool",
+            "set_no": 5,
+            "nums": [
+              7,
+              13,
+              24,
+              37,
+              40,
+              45
+            ],
+            "hits": 1
+          },
+          {
+            "kind": "repack",
+            "set_no": 1,
+            "nums": [
+              32,
+              33,
+              35,
+              40,
+              41,
+              45
+            ],
+            "hits": 0
+          },
+          {
+            "kind": "repack",
+            "set_no": 2,
+            "nums": [
+              31,
+              34,
+              36,
+              37,
+              38,
+              44
+            ],
+            "hits": 2
+          },
+          {
+            "kind": "repack",
+            "set_no": 3,
+            "nums": [
+              7,
+              13,
+              27,
+              39,
+              42,
+              43
+            ],
+            "hits": 1
+          }
+        ]
+      }
+    },
+    "hy_brain_rec": {
+      "markov": {
+        "draw_no": 1085,
+        "tickets": [
+          {
+            "kind": "pool",
+            "set_no": 8,
+            "nums": [
+              4,
+              9,
+              16,
+              26,
+              27,
+              32
+            ],
+            "hits": 1
+          },
+          {
+            "kind": "pool",
+            "set_no": 9,
+            "nums": [
+              7,
+              22,
+              24,
+              27,
+              40,
+              41
+            ],
+            "hits": 1
+          },
+          {
+            "kind": "repack",
+            "set_no": 1,
+            "nums": [
+              32,
+              33,
+              35,
+              40,
+              41,
+              45
+            ],
+            "hits": 0
+          },
+          {
+            "kind": "repack",
+            "set_no": 4,
+            "nums": [
+              9,
+              11,
+              12,
+              22,
+              24,
+              26
+            ],
+            "hits": 0
+          },
+          {
+            "kind": "repack",
+            "set_no": 5,
+            "nums": [
+              6,
+              10,
+              14,
+              16,
+              19,
+              30
+            ],
+            "hits": 0
+          }
+        ]
+      }
+    }
+  },
+  "verdict": {
+    "any_deployable_beats_baseline": true,
+    "hy_brain_rec_vs_baseline": {
+      "stat": 0.04,
+      "markov": 0.0,
+      "review": 0.03
+    }
+  },
+  "next_wire_candidate": {
+    "id": "K-REPACK-HYBRID-WIRE",
+    "scope": "stat+review hy_p45_r123 · markov baseline_repack 유지",
+    "delta": {
+      "stat": 0.04,
+      "markov": 0.0,
+      "review": 0.03
+    },
+    "forbid": [
+      "oracle",
+      "coordinator_quota_change",
+      "auto_tune"
+    ]
+  }
+}
