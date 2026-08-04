@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `87cb094` · WORK=`IDLE`
-- 지금: **K-PAIR-COVER** — 저출현쌍 covering · ge3↓ · **HOLD**
-- 직전: K-STRUCTURE-COVER HOLD
-- BOOT다음: Phase3 AUTO 설계문서 · **형 GO**
-- NEXT1: K-PAIR-COVER-DONE — pair_cover HOLD(ge3↓) · covering2축 실패 · **Phase3 AUTO 설계문서** · **형 GO** (승인=미확인)
+- HEAD: `36b1461` · WORK=`IDLE`
+- 지금: **K-EVOLVE-AUTO-DESIGN** — Phase3 설계문서 · wire없음 · **DOC**
+- 직전: K-PAIR-COVER HOLD
+- BOOT다음: AUTO S1 dry-run 또는 다른축 · **형 GO**
+- NEXT1: K-EVOLVE-AUTO-DESIGN-DONE — AUTO설계 DOC 완료 · wire없음 · **S1 dry-run** 또는 다른축 · **형 GO** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

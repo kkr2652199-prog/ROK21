@@ -9,14 +9,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `87cb094` |
+| HEAD(실측) | `36b1461` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PAIR-COVER** — 저출현쌍 covering · ge3↓ · **HOLD** |
-| 직전 | K-STRUCTURE-COVER HOLD |
-| BOOT다음 | Phase3 AUTO 설계문서 · **형 GO** |
-| NEXT1 ID | **K-PAIR-COVER-DONE** |
-| NEXT1 할일 | pair_cover HOLD(ge3↓) · covering2축 실패 · **Phase3 AUTO 설계문서** · **형 GO** |
+| 지금 | **K-EVOLVE-AUTO-DESIGN** — Phase3 설계문서 · wire없음 · **DOC** |
+| 직전 | K-PAIR-COVER HOLD |
+| BOOT다음 | AUTO S1 dry-run 또는 다른축 · **형 GO** |
+| NEXT1 ID | **K-EVOLVE-AUTO-DESIGN-DONE** |
+| NEXT1 할일 | AUTO설계 DOC 완료 · wire없음 · **S1 dry-run** 또는 다른축 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=87cb094 · 지금=**K-PAIR-COVER** — 저출현쌍 covering · ge3↓ · **HOLD** · 다음=K-PAIR-COVER-DONE`
+1. 첫줄 `[복귀] HEAD=36b1461 · 지금=**K-EVOLVE-AUTO-DESIGN** — Phase3 설계문서 · wire없음 · **DOC** · 다음=K-EVOLVE-AUTO-DESIGN-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 87cb094_
+_generated: 36b1461_

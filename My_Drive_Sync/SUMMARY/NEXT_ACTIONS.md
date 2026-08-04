@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-PAIR-COVER-DONE
-- 할일: pair_cover HOLD(ge3↓) · covering2축 실패 · **Phase3 AUTO 설계문서** · **형 GO**
+- ID: K-EVOLVE-AUTO-DESIGN-DONE
+- 할일: AUTO설계 DOC 완료 · wire없음 · **S1 dry-run** 또는 다른축 · **형 GO**
 - 완료조건: 형 선택
-- 선행완료: docs/benchmarks/20260805_KPAIR_COVER_survey.json · PAIR_COVER_WIRE=False
+- 선행완료: reports/20260805_KEVOLVE_AUTO_DESIGN.md
 
 ## WORKSTATE
 IDLE
@@ -15,6 +15,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- pair Δ: stat−0.01 · markov−0.025 · review−0.02
-- struct_cover도 ge3↓ · 명분≠발권ge3 변환
-- λ OFF · mean/hybrid 유지
+- AUTO=운송벨트(로그축적) · 학습가중/λ/covering wire 금지
+- EVOLVE_AUTO 기본 0 · 형 GO 전 실행 금지
+- λ·struct·pair COVER 모두 HOLD

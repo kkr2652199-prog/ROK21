@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-PAIR-COVER** — 저출현쌍 covering survey HOLD (ge3↓)
+📌 사유: **K-EVOLVE-AUTO-DESIGN** — Phase3 설계문서 DOC (wire 없음)
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-EVOLVE-AUTO-DESIGN** | **DOC** — 1236~ 예측·채점·evolve_log 파이프 설계 · EVOLVE_AUTO기본0 · λ/covering wire 금지 · `reports/20260805_KEVOLVE_AUTO_DESIGN.md` |
 | **K-PAIR-COVER** | **HOLD** — as_of 희소쌍 covering n200 · ge3 stat**0.155**(−0.01)·markov**0.105**(−0.025)·review**0.115**(−0.02) · WIRE=False · `docs/benchmarks/20260805_KPAIR_COVER_survey.json` |
 | **K-STRUCTURE-COVER** | **HOLD** — sum/zone/odd/consec covering n200 · ge3 stat**0.145**(−0.02)·markov**0.085**(−0.045)·review**0.085**(−0.05) · WIRE=False · `docs/benchmarks/20260805_KSTRUCTURE_COVER_survey.json` |
 | **K-MATH-PATTERN-WARRANT** | **FOUND** — draw1~1235 n=1235 · 명분10(연속·carry·합·존·쌍·overdue…) · 예측백테아님 · 확률만論 미사용 · `docs/benchmarks/20260805_KMATH_PATTERN_WARRANT.json` |
@@ -76,6 +77,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-EVOLVE-AUTO-DESIGN** | Phase3 AUTO 파이프·게이트·S0~S4 · 코드미구현 | **DOC** |
 | **K-PAIR-COVER** | 저출현쌍 as_of covering 모듈+ n200 survey | **HOLD** · ge3↓ |
 | **K-STRUCTURE-COVER** | 구조질량 covering 모듈+ n200 survey · wire없음 | **HOLD** · ge3↓ |
 | **K-MATH-PATTERN-WARRANT** | 1~1235 조합·실측 구조명분 10 · 예측아님 | **FOUND** |
@@ -275,8 +277,8 @@
 
 ## 5) 다음
 
-**Phase3 AUTO 설계문서** — 형 GO.  
-covering 2축(구조·쌍) 모두 ge3↓ HOLD · 모듈만 유지·WIRE=False · λ OFF · mean/hybrid.
+**AUTO S1 dry-run**(형 GO) 또는 **다른 개선축** — 형 GO.  
+설계 DOC 완료 · 실행 wire 없음 · λ/covering HOLD · mean/hybrid 유지.
 
 ---
 

@@ -26,9 +26,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-PAIR-COVER** — **HOLD** (ge3↓)
-- **다음(공식)**: Phase3 AUTO 설계문서 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KPAIR_COVER_survey.json`
+- **지금(판정)**: **K-EVOLVE-AUTO-DESIGN** — **DOC**
+- **다음(공식)**: AUTO S1 dry-run 또는 다른축 · **형 GO**
+- **산출물**: `reports/20260805_KEVOLVE_AUTO_DESIGN.md`
+
+### K-EVOLVE-AUTO-DESIGN (형 진행 · DOC)
+- 1236~ 예측→채점→evolve_log 운송벨트 설계
+- `EVOLVE_AUTO` 기본 0 · weight=0 · mean만 · λ/covering wire 금지
+- 구현 단계 S0(현재)~S4 · **코드 미구현**
 
 ### K-PAIR-COVER (형 진행 · HOLD)
 - `pair_cover.py` · as_of 희소쌍 top80 · assemble=`pair_cover_v1` · **WIRE=False**
