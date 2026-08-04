@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f15a1ce` · WORK=`IDLE`
+- HEAD: `dffbc5b` · WORK=`IDLE`
 - 지금: **K-QUOTA-D-WIRE** — 실적용 검증 · **FAIL·롤백**
 - 직전: K-PATCH-1235-PREP
 - BOOT다음: 형 확인 · live경로 재측정 여부
