@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `57c9291` · WORK=`IDLE`
+1. **HEAD:** `7d64590` · WORK=`IDLE`
 2. **지금:** **K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS**
 3. **다음1건:** K-GENSPARK-COMPRESS-RECOVER-DONE — 압축복구 자동화 PASS · **B·C 측정** 또는 **L2 EMA** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
