@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `563b271` · WORK=`IDLE`
+1. **HEAD:** `13f0f99` · WORK=`IDLE`
 2. **지금:** **K-RARE-FILTER-PREP** — R0~R3 설계·측정·태그스펙 · **PASS**
 3. **다음1건:** K-RARE-FILTER-PREP-DONE — R0~R3 준비 PASS · **taxonomy v1(홀짝·존 전수) 측정확장** 또는 **1236 ops SCORE** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

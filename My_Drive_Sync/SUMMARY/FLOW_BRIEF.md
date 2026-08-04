@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `563b271` · WORK=`IDLE`
+- HEAD: `13f0f99` · WORK=`IDLE`
 - 지금: **K-RARE-FILTER-PREP** — R0~R3 설계·측정·태그스펙 · **PASS**
 - 직전: K-EVOLVE-VIRTUAL-1235
 - BOOT다음: taxonomy v1 확장 또는 1236 ops SCORE · **형 GO**
