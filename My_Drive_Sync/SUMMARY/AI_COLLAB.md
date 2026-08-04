@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-04 11:35 KST)
-- **HEAD(실측)**: `83332c9` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **HEAD(실측)**: `ccdcfd7` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-PIN-GAP-DIAG-REVIEW** — 젠스파크 pin갭 지시서 구조대조 · **수정3건** · DOC
 - **다음(공식)**: 수정본 **K-PIN-GAP-DIAG GO** 또는 로드맵 A/B/C/D · **형 선택**
 - **압축복구**: `reports/20260804_GENSPARK_COMPRESS_RESUME.md` · 본 파일 §6

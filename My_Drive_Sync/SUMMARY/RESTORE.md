@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `83332c9` · WORK=`IDLE`
+1. **HEAD:** `ccdcfd7` · WORK=`IDLE`
 2. **지금:** **K-PIN-GAP-DIAG-REVIEW** — 젠스파크 지시서 구조대조 · 수정3건 · **DOC**
 3. **다음1건:** K-PIN-GAP-DIAG-WAIT — 지시서 수정3건 반영 후 **K-PIN-GAP-DIAG GO** · 또는 로드맵 A/B/C/D **형 선택** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
