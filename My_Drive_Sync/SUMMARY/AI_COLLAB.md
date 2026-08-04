@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-04 11:50 KST)
-- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **HEAD(실측)**: `62e21bc` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-PIN-GAP-DIAG** — FULL pin갭 진단 **DONE**
 - **다음(공식)**: **I2 FULL-first** 또는 **I3 B1로그** · **형 GO**
 - **산출물**: `docs/benchmarks/20260804_KPIN_GAP_DIAG.json` · `reports/20260804_KPIN_GAP_DIAG.md`

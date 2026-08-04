@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c398ef2` · WORK=`IDLE`
+- HEAD: `62e21bc` · WORK=`IDLE`
 - 지금: **K-PIN-GAP-DIAG** — early최악·seed민감·K-M≈0 · **DONE**
 - 직전: K-PIN-GAP-DIAG-REVIEW · 수정3건 DOC
 - BOOT다음: **I2 FULL-first게이트** 또는 **I3 B1로그** · **형 GO**
