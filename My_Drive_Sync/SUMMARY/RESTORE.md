@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `62e21bc` · WORK=`IDLE`
+1. **HEAD:** `47ec0be` · WORK=`IDLE`
 2. **지금:** **K-PIN-GAP-DIAG** — early최악·seed민감·K-M≈0 · **DONE**
 3. **다음1건:** K-PIN-GAP-DIAG-DONE — pin갭진단 완료 · 다음 **I2 FULL-first** 또는 **I3 B1로그** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-04 | 몰아주기 정밀분해·개선 | PER_BRAIN+DECOMPOSE 200회 · oracle ge3 2× · push | **ANAL** | (push) |
 | 2026-08-04 | 패치=K-PIN-GAP-DIAG GO | early최악·seed0.05·K-M≈0 · JSON+보고서 | **DONE** | 62e21bc |
 | 2026-08-04 | 젠스파크압축복구·과거현재복귀 | COMPRESS_RESUME·§6패킷·수정3건·NEXT WAIT | **DOC** | 83332c9 |
 | 2026-08-04 | 대폭개선 조사·리스크·최선 | I1+I3 권고 · ultra HOLD · 외부벤치 아이디어 · 보고서 | **DOC** | 7b7a42a |

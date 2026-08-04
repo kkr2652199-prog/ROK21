@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-PIN-GAP-DIAG-DONE
-- 할일: pin갭진단 완료 · 다음 **I2 FULL-first** 또는 **I3 B1로그** · **형 GO**
-- 완료조건: 형 I2/I3/기타 명시
-- 선행완료: docs/benchmarks/20260804_KPIN_GAP_DIAG.json · reports/20260804_KPIN_GAP_DIAG.md
+- ID: K-REPACK-ANALYSIS-DONE
+- 할일: 몰아주기 정밀분해 push 완료 · **K-REPACK-HYBRID ablation** 또는 I2/I3 · **형 GO**
+- 완료조건: 형 GO on next axis
+- 선행완료: PER_BRAIN+DECOMPOSE survey · oracle ge3 gap 확인
 
 ## WORKSTATE
 IDLE

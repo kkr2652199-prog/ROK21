@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-PIN-GAP-DIAG** — early최악·seed민감·K-M≈0 · **DONE**
-- 직전: K-PIN-GAP-DIAG-REVIEW · 수정3건 DOC
-- 다음: **I2 FULL-first게이트** 또는 **I3 B1로그** · **형 GO**
+- 지금: **K-REPACK-ANALYSIS** — 3뇌 몰아주기 PER_BRAIN+DECOMPOSE · oracle gap · **DONE**
+- 직전: K-PIN-GAP-DIAG early·seed·K-M≈0
+- 다음: **K-REPACK-HYBRID** ablation 또는 I2/I3 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
