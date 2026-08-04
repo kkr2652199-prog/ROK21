@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `685a519` · WORK=`IDLE`
-2. **지금:** **K-MATH-PATTERN-WARRANT** — 1~1235 구조명분 10건 · **FOUND**
-3. **다음1건:** K-MATH-PATTERN-WARRANT-DONE — 구조명분10 FOUND · **covering/존·합·연속·쌍 1축 설계** 또는 AUTO설계문서 · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `581e23c` · WORK=`IDLE`
+2. **지금:** **K-STRUCTURE-COVER** — 구조covering survey · ge3↓ · **HOLD**
+3. **다음1건:** K-STRUCTURE-COVER-DONE — struct_cover HOLD(ge3↓) · 모듈만 유지 · **저출현쌍 covering** 또는 AUTO설계문서 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | 진행(명분→설계1축) | struct_cover survey ge3↓ · WIRE OFF | **HOLD** | (push후) |
 | 2026-08-05 | 1~1235 수학명분(확률만論금지) | 구조명분10 · WARRANT_FOUND | **FOUND** | 685a519 |
 | 2026-08-05 | 종료체크 20260805보고서 | SESSION_STATUS · reports+커서보고서 | **DONE** | 3007a9a |
 | 2026-08-04 | 진행(λ재검증) | full Δ−0.0025 · λ OFF 롤백 · HOLD | **HOLD** | 2d3e3d4 |
@@ -45,7 +46,6 @@
 | 2026-08-04 | 다중AI 패치논의·최종안 | K-EVOLVE-LOG 권고 · A/B/C/D · 보고서 | **DOC** | 72405f6 |
 | 2026-08-04 | HYBRID-WIRE 진행 | signal_pool p45 · schema2 · ge3 match PASS | **PASS** | 4baab6e |
 | 2026-08-04 | HYBRID ablation 진행 | stat+0.04·review+0.03·markov동률 · wire후보 | **DONE** | 3f90a86 |
-| 2026-08-04 | 몰아주기 정밀분해·개선 | PER_BRAIN+DECOMPOSE 200회 · oracle ge3 2× · push | **ANAL** | 82c3d03 |
 
 ---
 

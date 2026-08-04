@@ -1,0 +1,88 @@
+{
+  "id": "K-STRUCTURE-COVER",
+  "ts": "2026-08-04T15:41:46+00:00",
+  "phase": "survey",
+  "wire": false,
+  "STRUCTURE_COVER_WIRE_live": false,
+  "draw_range": [
+    1035,
+    1234
+  ],
+  "n_draws": 200,
+  "axis": "sum+zone+odd+consec covering (mass bands)",
+  "warrant_ref": "20260805_KMATH_PATTERN_WARRANT.json",
+  "by_brain": {
+    "stat": {
+      "baseline_repack": {
+        "n": 200,
+        "ge3_count": 33,
+        "ge3_rate": 0.165,
+        "mean_best": 1.745,
+        "delta_vs_null": 0.0513,
+        "delta_vs_pin": 0.0203
+      },
+      "struct_cover": {
+        "n": 200,
+        "ge3_count": 29,
+        "ge3_rate": 0.145,
+        "mean_best": 1.71,
+        "delta_vs_null": 0.0313,
+        "delta_vs_pin": 0.0003
+      },
+      "delta_ge3": -0.02,
+      "ref_hybrid_ge3": 0.165,
+      "mean_unique_keys_baseline": 4.9,
+      "mean_unique_keys_cover": 5
+    },
+    "markov": {
+      "baseline_repack": {
+        "n": 200,
+        "ge3_count": 26,
+        "ge3_rate": 0.13,
+        "mean_best": 1.885,
+        "delta_vs_null": 0.0163,
+        "delta_vs_pin": -0.0147
+      },
+      "struct_cover": {
+        "n": 200,
+        "ge3_count": 17,
+        "ge3_rate": 0.085,
+        "mean_best": 1.695,
+        "delta_vs_null": -0.0287,
+        "delta_vs_pin": -0.0597
+      },
+      "delta_ge3": -0.045,
+      "ref_hybrid_ge3": 0.13,
+      "mean_unique_keys_baseline": 4.895,
+      "mean_unique_keys_cover": 5
+    },
+    "review": {
+      "baseline_repack": {
+        "n": 200,
+        "ge3_count": 27,
+        "ge3_rate": 0.135,
+        "mean_best": 1.785,
+        "delta_vs_null": 0.0213,
+        "delta_vs_pin": -0.0097
+      },
+      "struct_cover": {
+        "n": 200,
+        "ge3_count": 17,
+        "ge3_rate": 0.085,
+        "mean_best": 1.61,
+        "delta_vs_null": -0.0287,
+        "delta_vs_pin": -0.0597
+      },
+      "delta_ge3": -0.05,
+      "ref_hybrid_ge3": 0.135,
+      "mean_unique_keys_baseline": 4.88,
+      "mean_unique_keys_cover": 5
+    }
+  },
+  "verdict": {
+    "label": "HOLD",
+    "wire_brains": [],
+    "next": "STRUCTURE_COVER HOLD · 설계모듈 유지 · 형 다음축/AUTO설계"
+  },
+  "pass": true
+}

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-MATH-PATTERN-WARRANT** — 1~1235 구조·수학 명분 10건 FOUND
+📌 사유: **K-STRUCTURE-COVER** — 구조 covering survey HOLD (ge3↓)
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-STRUCTURE-COVER** | **HOLD** — sum/zone/odd/consec covering n200 · ge3 stat**0.145**(−0.02)·markov**0.085**(−0.045)·review**0.085**(−0.05) · WIRE=False · `docs/benchmarks/20260805_KSTRUCTURE_COVER_survey.json` |
 | **K-MATH-PATTERN-WARRANT** | **FOUND** — draw1~1235 n=1235 · 명분10(연속·carry·합·존·쌍·overdue…) · 예측백테아님 · 확률만論 미사용 · `docs/benchmarks/20260805_KMATH_PATTERN_WARRANT.json` |
 | **20260805 세션보고서** | **DONE** — `reports/20260805_ROK21_SESSION_STATUS.md` · 커서보고서 동기 |
 | **K-EVOLVE-FEAT-LAM-REVAL** | **HOLD** — full n1182 review λ0.3 ge3=**0.1227** Δ**−0.0025** · tail Δ**−0.03** · SIGNAL n200 과적합 · `FEATURE_LAMBDA_WIRE=False` · `docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_REVAL.json` |
@@ -74,6 +75,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-STRUCTURE-COVER** | 구조질량 covering 모듈+ n200 survey · wire없음 | **HOLD** · ge3↓ |
 | **K-MATH-PATTERN-WARRANT** | 1~1235 조합·실측 구조명분 10 · 예측아님 | **FOUND** |
 | **20260805_SESSION** | 종료체크 · 날짜보고서 · EVOLVE arc 요약 | **DONE** |
 | **K-EVOLVE-FEAT-LAM-REVAL** | full λ스윕 · review0.3 기각 · wire OFF | **HOLD** · 롤백 |
@@ -271,8 +273,8 @@
 
 ## 5) 다음
 
-**명분→설계 1축**(covering/존·합·연속·저출현쌍 등) 또는 **AUTO 설계문서** — 형 GO.  
-λ OFF · mean/hybrid · evolve_log 1182 · BOOST_CAPS/W_*/quota 미수정.
+**저출현쌍 covering** 또는 **Phase3 AUTO 설계문서** — 형 GO.  
+struct_cover 모듈 유지·WIRE=False · λ OFF · mean/hybrid · BOOST_CAPS/W_*/quota 미수정.
 
 ---
 

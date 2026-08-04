@@ -26,9 +26,15 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-MATH-PATTERN-WARRANT** — **FOUND** (명분10)
-- **다음(공식)**: 명분→설계1축 또는 AUTO설계 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KMATH_PATTERN_WARRANT.json`
+- **지금(판정)**: **K-STRUCTURE-COVER** — **HOLD** (ge3↓)
+- **다음(공식)**: 저출현쌍 covering 또는 AUTO설계 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KSTRUCTURE_COVER_survey.json`
+
+### K-STRUCTURE-COVER (형 진행 · HOLD)
+- 모듈 `structure_cover.py` · assemble=`struct_cover_v1` · **WIRE=False**
+- n200 vs hybrid: stat −0.02 · markov −0.045 · review −0.05
+- 교훈: 구조키 다양↑ ≠ ge3↑ · 명분은 유효, 발권 변환은 실패
+- 다음 후보축: 저출현쌍 covering
 
 ### K-MATH-PATTERN-WARRANT (형 지시 · FOUND)
 - 범위 draw **1~1235** · 예측백테/ge3 **아님**
