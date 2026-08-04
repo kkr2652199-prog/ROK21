@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `b75c2fe` · WORK=`IDLE`
+1. **HEAD:** `8456e85` · WORK=`IDLE`
 2. **지금:** **K-SIGNAL-TAXONOMY-V1** — L1·L3·L4 진단 · **DOC_SURVEY**
 3. **다음1건:** K-SIGNAL-TAXONOMY-V1-DONE — L1/L3/L4 진단 PASS · **L2 EMA 구현(진단)** 또는 **L1 deviation→annotate stub** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | TAXONOMY-V1 L1/L3/L4 | deviation·PMI·페널티스펙 · w*=0 | **DOC** | (push후) |
+| 2026-08-05 | TAXONOMY-V1 L1/L3/L4 | deviation·PMI·페널티스펙 · w*=0 | **DOC** | b75c2fe |
 | 2026-08-05 | 예측DB리셋+n200백테 | fusion0.135·hybrid 0.165/0.15/0.13 | **MEASURED** | 962c783 |
 | 2026-08-05 | 극소수필터 준비 | R0~R3 DESIGN·MEASURE·TAG · wire OFF | **PASS** | 13f0f99 |
 | 2026-08-05 | 1235가상·분석적용 | VIRTUAL PREDICT→SCORE · hybrid · ge3無 | **PASS** | cdf1bda |
