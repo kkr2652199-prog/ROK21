@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c47c652` · WORK=`IDLE`
+- HEAD: `f18b19f` · WORK=`IDLE`
 - 지금: **K-REVIEW-QUOTA-SIM** — review quota live · **A 유지**
 - 직전: K-STAT-SEED-DIAG
 - BOOT다음: wire GO 대기 · **형 결정**

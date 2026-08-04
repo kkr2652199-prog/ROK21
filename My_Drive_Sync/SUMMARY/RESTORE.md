@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c47c652` · WORK=`IDLE`
+1. **HEAD:** `f18b19f` · WORK=`IDLE`
 2. **지금:** **K-REVIEW-QUOTA-SIM** — review quota live · **A 유지**
 3. **다음1건:** K-REVIEW-QUOTA-SIM-DONE — review quota 시뮬 완료 · best=**A(현행)** · wire GO 대기 · **형 결정** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | review quota시뮬 | live A0.128 최선 · ↑기각 | **A유지** | (push후) |
+| 2026-08-05 | review quota시뮬 | live A0.128 최선 · ↑기각 | **A유지** | f18b19f |
 | 2026-08-05 | stat seed진단 | range0.14 HIGH · review STABLE | **HIGH** | 36dec66 |
 | 2026-08-05 | quota D wire | n100=0.10·full=0.115 · 롤백 | **FAIL** | f15a1ce |
 | 2026-08-05 | 1235패치준비 | quota B/C/D후보 · PMI/B/D기각 | **MEASURED** | aededd8 |
