@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `192da71` · WORK=`IDLE`
+- HEAD: `7b7a42a` · WORK=`IDLE`
 - 지금: **K-IMPROVE-ROADMAP** — 대폭개선 조사안 · I1 pin진단+I3 B1 권고 · **DONE**
 - 직전: K-GS-FACTCHECK 젠스파크 재검증
 - BOOT다음: **I1+I3 GO** 또는 B2/C/D **형 선택**
