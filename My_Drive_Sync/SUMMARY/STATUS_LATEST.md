@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-STAT-SEED-DIAG** — 뇌별 seed 민감도 진단 (wire OFF)
+📌 사유: **K-REVIEW-QUOTA-SIM** — review↑ live 경로 시뮬 (wire OFF · A 유지)
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-QUOTA-SIM** | **BEST=A** — live predict_sets·3seed n200 · A**0.128** > B/C**0.127** > D**0.123** > E**0.118**(DEGRADED) · review↑ 이득無 · FIXED=None 원복 · `docs/benchmarks/20260805_KREVIEW_QUOTA_SIM.json` |
 | **K-STAT-SEED-DIAG** | **HIGH_SENSITIVITY** — N100·5seed · stat range**0.14**(0.09~0.23) · markov**0.10** · review**0.03=STABLE** · pool **DIVERSE** · quota↑ **unsafe** · `docs/benchmarks/20260805_KSTAT_SEED_DIAG.json` |
 | **K-QUOTA-D-WIRE** | **FAIL** — 슬롯2/3/0 발권OK · n100 avg ge3=**0.10** · full**0.115** · 하드롤백 `BENCH_FIXED_QUOTA=None` · fusion**0.135**복원 · 원인=PREP(hybrid repack)≠live(predict_sets) · `docs/benchmarks/20260805_KQUOTA_D_WIRE.json` |
 | **K-PATCH-1235-PREP** | **MEASURED** — quota A**0.135**/B**0.155**/C**0.155**/D**0.170**(repack시뮬) · 후보=B·C·D · PMI/B/D기각 · wire=False · `docs/benchmarks/20260805_KPATCH_1235_PREP.json` |
@@ -294,7 +295,7 @@
 
 ## 5) 다음
 
-stat/markov **HIGH_SENSITIVITY** · pool 안정화 또는 review 안정축 활용 — 형 GO.  
+review quota↑ **기각(A 유지)** · 다음 방향 — 형 결정.  
 압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START 붙여넣기 · JSON raw 재페치.
 
 ---

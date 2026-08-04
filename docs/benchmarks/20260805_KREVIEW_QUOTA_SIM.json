@@ -1,0 +1,171 @@
+{
+  "id": "K-REVIEW-QUOTA-SIM",
+  "ts": "2026-08-04T19:02:59.867160+00:00",
+  "verdict": "BEST_SCENARIO: A_stat0_markov80_review20",
+  "wire": false,
+  "path": "live coordinator BENCH_FIXED_QUOTA · brains.predict_sets → aux → dedup → quota (in-memory · no DB write)",
+  "draw_range": [
+    1036,
+    1235
+  ],
+  "n_draws": 200,
+  "seeds": [
+    42,
+    0,
+    7
+  ],
+  "baseline": {
+    "label": "A_stat0_markov80_review20",
+    "slots": {
+      "stat": 0,
+      "markov": 4,
+      "review": 1
+    },
+    "by_seed": {
+      "42": {
+        "ge3": 0.135,
+        "mean": 1.715
+      },
+      "0": {
+        "ge3": 0.115,
+        "mean": 1.72
+      },
+      "7": {
+        "ge3": 0.135,
+        "mean": 1.705
+      }
+    },
+    "avg_ge3": 0.128333,
+    "range_ge3": 0.02
+  },
+  "scenarios": {
+    "B_markov70_review30": {
+      "slots": {
+        "stat": 0,
+        "markov": 3,
+        "review": 2
+      },
+      "by_seed": {
+        "42": {
+          "ge3": 0.12,
+          "mean": 1.69
+        },
+        "0": {
+          "ge3": 0.12,
+          "mean": 1.7
+        },
+        "7": {
+          "ge3": 0.14,
+          "mean": 1.74
+        }
+      },
+      "avg_ge3": 0.126667,
+      "range_ge3": 0.02,
+      "delta_vs_baseline": -0.001666,
+      "verdict": "NO_GAIN",
+      "note": ""
+    },
+    "C_markov60_review40": {
+      "slots": {
+        "stat": 0,
+        "markov": 3,
+        "review": 2
+      },
+      "by_seed": {
+        "42": {
+          "ge3": 0.12,
+          "mean": 1.69
+        },
+        "0": {
+          "ge3": 0.12,
+          "mean": 1.7
+        },
+        "7": {
+          "ge3": 0.14,
+          "mean": 1.74
+        }
+      },
+      "avg_ge3": 0.126667,
+      "range_ge3": 0.02,
+      "delta_vs_baseline": -0.001666,
+      "verdict": "NO_GAIN",
+      "note": "슬롯=B와 동일"
+    },
+    "D_markov50_review50": {
+      "slots": {
+        "stat": 0,
+        "markov": 2,
+        "review": 3
+      },
+      "by_seed": {
+        "42": {
+          "ge3": 0.105,
+          "mean": 1.65
+        },
+        "0": {
+          "ge3": 0.115,
+          "mean": 1.66
+        },
+        "7": {
+          "ge3": 0.15,
+          "mean": 1.765
+        }
+      },
+      "avg_ge3": 0.123333,
+      "range_ge3": 0.045,
+      "delta_vs_baseline": -0.005,
+      "verdict": "NO_GAIN",
+      "note": ""
+    },
+    "E_stat10_markov50_review40": {
+      "slots": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "by_seed": {
+        "42": {
+          "ge3": 0.095,
+          "mean": 1.645
+        },
+        "0": {
+          "ge3": 0.115,
+          "mean": 1.68
+        },
+        "7": {
+          "ge3": 0.145,
+          "mean": 1.75
+        }
+      },
+      "avg_ge3": 0.118333,
+      "range_ge3": 0.05,
+      "delta_vs_baseline": -0.01,
+      "verdict": "DEGRADED",
+      "note": ""
+    }
+  },
+  "best_scenario": {
+    "label": "A_stat0_markov80_review20",
+    "avg_ge3": 0.128333,
+    "delta_vs_baseline": 0.0,
+    "slots": {
+      "stat": 0,
+      "markov": 4,
+      "review": 1
+    },
+    "note": "테스트 시나리오 전부 baseline 미상회"
+  },
+  "rollback_confirmed": true,
+  "forbid": [
+    "pool_view_cache 재조합 경로",
+    "random.choices",
+    "_get_draws_before mutate",
+    "engine.py",
+    "auto-tune",
+    "DB INSERT/UPDATE",
+    "BENCH_FIXED_QUOTA 원복 누락"
+  ],
+  "pass": true,
+  "tool": "tools/_k_review_quota_sim.py",
+  "prior": "docs/benchmarks/20260805_KSTAT_SEED_DIAG.json"
+}

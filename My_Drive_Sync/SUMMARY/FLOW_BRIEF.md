@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `1e5f762` · WORK=`IDLE`
-- 지금: **K-STAT-SEED-DIAG** — seed 안정성 · **HIGH_SENSITIVITY**
-- 직전: K-QUOTA-D-WIRE
-- BOOT다음: 결과 기반 다음 방향 · **형 GO**
-- NEXT1: K-STAT-SEED-DIAG-DONE — seed 안정성 진단 완료 · **결과 기반 다음 방향** · **형 GO** (승인=미확인)
+- HEAD: `c47c652` · WORK=`IDLE`
+- 지금: **K-REVIEW-QUOTA-SIM** — review quota live · **A 유지**
+- 직전: K-STAT-SEED-DIAG
+- BOOT다음: wire GO 대기 · **형 결정**
+- NEXT1: K-REVIEW-QUOTA-SIM-DONE — review quota 시뮬 완료 · best=**A(현행)** · wire GO 대기 · **형 결정** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
