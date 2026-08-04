@@ -26,9 +26,15 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **종료체크** — `20260805_ROK21_SESSION_STATUS` · λ HOLD 확정
-- **다음(공식)**: Phase3 AUTO 설계문서만 또는 새축 · **형 GO**
-- **산출물**: `reports/20260805_ROK21_SESSION_STATUS.md`
+- **지금(판정)**: **K-MATH-PATTERN-WARRANT** — **FOUND** (명분10)
+- **다음(공식)**: 명분→설계1축 또는 AUTO설계 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KMATH_PATTERN_WARRANT.json`
+
+### K-MATH-PATTERN-WARRANT (형 지시 · FOUND)
+- 범위 draw **1~1235** · 예측백테/ge3 **아님**
+- 금지결론「확률 외 방법 없음」**미사용**
+- 명분: 연속·carry·합띠·존·쌍covering·overdue·끝자리·스팬·빈도분산·3홀3짝
+- 실측예: 연속≥1 **0.517**≈이론0.529 · carry≥1 **0.614**≈0.599 · 합 mean≈**138**
 
 ### K-EVOLVE-FEAT-LAM-REVAL (형 진행 · HOLD)
 - full 53~1234: review λ0.3 ge3=0.1227 vs base 0.1252 (**Δ−0.0025**)

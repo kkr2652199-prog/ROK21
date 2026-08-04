@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `3007a9a` |
+| HEAD(실측) | `214a31f` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **종료체크** — `20260805_ROK21_SESSION_STATUS` · λ HOLD 확정 |
-| 직전 | K-EVOLVE-FEAT-LAM-REVAL HOLD/롤백 |
-| BOOT다음 | Phase3 AUTO 설계문서만 또는 새축 · **형 GO** |
-| NEXT1 ID | **K-EVOLVE-FEAT-LAM-REVAL-DONE** |
-| NEXT1 할일 | 20260805세션보고서 DONE · λ HOLD · **Phase3 AUTO 설계문서만** 또는 새 개선축 · **형 GO** |
+| 지금 | **K-MATH-PATTERN-WARRANT** — 1~1235 구조명분 10건 · **FOUND** |
+| 직전 | 종료체크 20260805 SESSION_STATUS |
+| BOOT다음 | 명분→설계 1축 선택 또는 AUTO설계 · **형 GO** |
+| NEXT1 ID | **K-MATH-PATTERN-WARRANT-DONE** |
+| NEXT1 할일 | 구조명분10 FOUND · **covering/존·합·연속·쌍 1축 설계** 또는 AUTO설계문서 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=3007a9a · 지금=**종료체크** — `20260805_ROK21_SESSION_STATUS` · λ HOLD 확정 · 다음=K-EVOLVE-FEAT-LAM-REVAL-DONE`
+1. 첫줄 `[복귀] HEAD=214a31f · 지금=**K-MATH-PATTERN-WARRANT** — 1~1235 구조명분 10건 · **FOUND** · 다음=K-MATH-PATTERN-WARRANT-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
