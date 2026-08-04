@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `47ec0be` · WORK=`IDLE`
-2. **지금:** **K-PIN-GAP-DIAG** — early최악·seed민감·K-M≈0 · **DONE**
-3. **다음1건:** K-PIN-GAP-DIAG-DONE — pin갭진단 완료 · 다음 **I2 FULL-first** 또는 **I3 B1로그** · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `82c3d03` · WORK=`IDLE`
+2. **지금:** **K-REPACK-ANALYSIS** — 3뇌 몰아주기 PER_BRAIN+DECOMPOSE · oracle gap · **DONE**
+3. **다음1건:** K-REPACK-ANALYSIS-DONE — 몰아주기 정밀분해 push 완료 · **K-REPACK-HYBRID ablation** 또는 I2/I3 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 

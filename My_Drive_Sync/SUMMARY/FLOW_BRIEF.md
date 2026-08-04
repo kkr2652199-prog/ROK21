@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `62e21bc` · WORK=`IDLE`
-- 지금: **K-PIN-GAP-DIAG** — early최악·seed민감·K-M≈0 · **DONE**
-- 직전: K-PIN-GAP-DIAG-REVIEW · 수정3건 DOC
-- BOOT다음: **I2 FULL-first게이트** 또는 **I3 B1로그** · **형 GO**
-- NEXT1: K-PIN-GAP-DIAG-DONE — pin갭진단 완료 · 다음 **I2 FULL-first** 또는 **I3 B1로그** · **형 GO** (승인=미확인)
+- HEAD: `82c3d03` · WORK=`IDLE`
+- 지금: **K-REPACK-ANALYSIS** — 3뇌 몰아주기 PER_BRAIN+DECOMPOSE · oracle gap · **DONE**
+- 직전: K-PIN-GAP-DIAG early·seed·K-M≈0
+- BOOT다음: **K-REPACK-HYBRID** ablation 또는 I2/I3 · **형 GO**
+- NEXT1: K-REPACK-ANALYSIS-DONE — 몰아주기 정밀분해 push 완료 · **K-REPACK-HYBRID ablation** 또는 I2/I3 · **형 GO** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
