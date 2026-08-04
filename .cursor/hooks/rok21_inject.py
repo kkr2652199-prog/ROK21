@@ -18,6 +18,10 @@ FLOW_BRIEF = SUMMARY / "FLOW_BRIEF.md"
 FINDINGS = SUMMARY / "FINDINGS.md"
 EXTERNAL_START = ROOT / "EXTERNAL_START.md"
 EXTERNAL_BOOTSTRAP = SUMMARY / "EXTERNAL_AI_BOOTSTRAP.md"
+GENSPARK_RECOVER = SUMMARY / "GENSPARK_COMPRESS_RECOVER.md"
+BENCH = ROOT / "docs" / "benchmarks"
+REPORTS = ROOT / "reports"
+RAW_BASE = "https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main"
 MAX_LINES = 15
 
 
@@ -229,6 +233,7 @@ def build_flow_brief() -> str:
         "- SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT",
         "- 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축",
         "- 진입: **EXTERNAL_START.md** (레포 루트) → 없으면 이 FLOW_BRIEF",
+        "- 젠스파크압축: **GENSPARK_COMPRESS_RECOVER.md** (채팅기억 불신·JSON 재페치)",
         "- 주의: HEAD는 생성 시점 git. push 직후 1커밋 지연 가능.",
         "",
     ]
@@ -313,11 +318,17 @@ def build_external_start() -> str:
             "# EXTERNAL_START — 외부 에이전트 작업 흐름 진입점",
             "",
             "> **이 파일 하나면 흐름 복구.** GitHub 404 / 로컬 미접근이면 형이 이 파일 전체를 채팅에 붙여넣는다.",
+            "> **젠스파크 압축 시:** `My_Drive_Sync/SUMMARY/GENSPARK_COMPRESS_RECOVER.md` 를 **같이** 붙여넣기 (채팅기억 불신·JSON 재페치).",
             "> 상세 복사용 프롬프트: `My_Drive_Sync/SUMMARY/EXTERNAL_AI_BOOTSTRAP.md`",
             "> **핀 베이스라인:** `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md`",
             "> 동생 큐(권한 있을 때): `My_Drive_Sync/SUMMARY/RESTORE.md`",
             "",
             body,
+            "",
+            "## 압축 복구 (젠스파크)",
+            "1. 채팅 기억·압축 전 장문 = **불신**",
+            "2. `GENSPARK_COMPRESS_RECOVER.md` 붙여넣기 + 증거체인 JSON raw fetch",
+            "3. `[복귀]` 한 줄 후, JSON과 불일치하는 기억은 폐기 선언",
             "",
             "## 파일 지도 (권한 있을 때만)",
             "| 용도 | 경로 |",
@@ -325,6 +336,7 @@ def build_external_start() -> str:
             "| 복귀5줄 | `My_Drive_Sync/SUMMARY/RESTORE.md` |",
             "| NEXT 1건 | `My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md` |",
             "| 매턴요약 | `My_Drive_Sync/SUMMARY/FLOW_BRIEF.md` |",
+            "| **젠스파크압축복구** | `My_Drive_Sync/SUMMARY/GENSPARK_COMPRESS_RECOVER.md` |",
             "| 결함 | `My_Drive_Sync/SUMMARY/FINDINGS.md` |",
             "| 명분 | `My_Drive_Sync/SUMMARY/WARRANT.md` |",
             "| 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |",
@@ -383,11 +395,153 @@ def sync_external_bootstrap_live() -> bool:
         return False
 
 
+def _latest_evidence(limit: int = 8) -> list[tuple[str, str]]:
+    """최근 benchmarks JSON → (stem, relative json path)."""
+    if not BENCH.is_dir():
+        return []
+    files = sorted(
+        BENCH.glob("2026*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    out: list[tuple[str, str]] = []
+    for p in files[:limit]:
+        out.append((p.stem, f"docs/benchmarks/{p.name}"))
+    return out
+
+
+def build_genspark_compress_recover() -> str:
+    """젠스파크 세션 압축 후 붙여넣기·재페치용 복구 패킷 (자동)."""
+    head = short_head()
+
+    def _strip_boot(ln: str) -> str:
+        s = ln.lstrip("- ").strip()
+        for pref in ("지금:", "직전:", "다음:"):
+            if s.startswith(pref):
+                return s[len(pref) :].strip()
+        return s
+
+    boot = parse_boot_section1()
+    now, prev, boot_next = (_strip_boot(boot[0]), _strip_boot(boot[1]), _strip_boot(boot[2]))
+    nxt = parse_next_block()
+    work = parse_workstate()
+    evidence = _latest_evidence(8)
+    ev_lines = []
+    for stem, rel in evidence:
+        ev_lines.append(f"- `{stem}` → {RAW_BASE}/{rel}")
+        md = REPORTS / f"{stem}.md"
+        if not md.exists():
+            # some reports use different casing/suffix
+            cands = list(REPORTS.glob(f"{stem}*.md"))
+            md = cands[0] if cands else None
+        if md and md.exists():
+            ev_lines.append(f"  - report: {RAW_BASE}/reports/{md.name}")
+
+    paste = "\n".join(
+        [
+            f"[ROK21 젠스파크 압축복구 · HEAD={head}]",
+            "",
+            "■ 신뢰 규칙 (필수)",
+            "- 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.",
+            "- 보고서 '읽었다'고 말해도 JSON을 다시 fetch하기 전엔 확정 금지.",
+            "- 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.",
+            "",
+            "■ LIVE",
+            f"- HEAD: {head} · WORK={work} · SSOT=ROK21/7021",
+            f"- 지금: {now}",
+            f"- 직전: {prev}",
+            f"- BOOT다음: {boot_next}",
+            f"- NEXT1: {nxt['id']} — {nxt['todo']}",
+            "- kweon(D:\\3kweon) 동결 · 1~3군 미기록",
+            "",
+            "■ 증거 체인 (반드시 재페치)",
+            *ev_lines,
+            "",
+            "■ 진입 파일",
+            f"- {RAW_BASE}/EXTERNAL_START.md",
+            f"- {RAW_BASE}/My_Drive_Sync/SUMMARY/GENSPARK_COMPRESS_RECOVER.md",
+            f"- {RAW_BASE}/My_Drive_Sync/SUMMARY/AI_COLLAB.md",
+            f"- {RAW_BASE}/My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md",
+            f"- {RAW_BASE}/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md",
+            "",
+            "■ 복구 후 할 일",
+            f"1. 첫줄: [복귀] HEAD={head} · 지금={now} · 다음={nxt['id']}",
+            "2. 위 JSON 중 지금 ID 관련 1~2개 fetch → 표로 팩트체크",
+            "3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기",
+            "4. 승인 없으면 장문 지시서 금지 · 질문 1개",
+            "",
+            "■ 금지",
+            "random.choices · _get_draws_before · boost상한 · kweon쓰기",
+            "engine wire(GO없이) · auto-tune · 채팅기억으로 수치 인용",
+        ]
+    )
+
+    return "\n".join(
+        [
+            "# GENSPARK_COMPRESS_RECOVER — 젠스파크 세션 압축 복구 SSOT",
+            "",
+            "> **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**",
+            "> 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`",
+            f"> 자동생성 HEAD=`{head}` · R37 `sync_all_resume_docs()`",
+            "",
+            "## 0) 왜 필요한가",
+            "",
+            "- 젠스파크가 세션 압축하면 긴 분석·보고서 해석이 **유실/왜곡**될 수 있다.",
+            "- 압축 직후 에이전트가 '보고서를 읽었다'고 해도, 그 내용은 **신뢰 불가**.",
+            "- 복구 = **GitHub raw 재페치** + 아래 붙여넣기 블록.",
+            "",
+            "## 1) 형 → 젠스파크 30초 복구 절차",
+            "",
+            "1. 이 파일(또는 아래 ``` 블록) 전체를 채팅에 붙여넣기",
+            "2. `EXTERNAL_START.md` raw도 함께 첨부(404면 붙여넣기)",
+            "3. 에이전트에게: **증거 체인 JSON을 fetch한 뒤 [복귀] 한 줄 + 팩트체크 표**",
+            "4. 압축 전 장문과 다르면 JSON을 따르고, 틀린 기억은 명시적으로 폐기 선언",
+            "",
+            "## 2) 붙여넣기 블록 (자동)",
+            "",
+            "```",
+            paste,
+            "```",
+            "",
+            "## 3) 추가 아이디어 (운영)",
+            "",
+            "| 아이디어 | 설명 |",
+            "|----------|------|",
+            "| 이중 붙여넣기 | 짧은 LIVE(EXTERNAL_START) + 이 RECOVER 증거체인 |",
+            "| 세션 지문 | HEAD+지금ID를 매 답 첫줄에 강제 → 압축 감지 |",
+            "| 불신 선언 템플릿 | `압축감지: 채팅기억 폐기 · JSON 재페치 시작` |",
+            "| 보고서≠수치 | MD는 해설, 판정·숫자는 항상 `docs/benchmarks/*.json` |",
+            "| 커서 동시갱신 | 매 push 후 sync가 이 파일을 갱신(본 자동화) |",
+            "| 드라이브 사본 | `My_Drive_Sync/커서보고서`의 동명 MD도 교차확인 |",
+            "",
+            "## 4) 파일 지도",
+            "",
+            f"| 용도 | raw |",
+            f"|------|-----|",
+            f"| 본 복구 | `{RAW_BASE}/My_Drive_Sync/SUMMARY/GENSPARK_COMPRESS_RECOVER.md` |",
+            f"| LIVE | `{RAW_BASE}/EXTERNAL_START.md` |",
+            f"| 대화요약 | `{RAW_BASE}/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |",
+            "",
+            f"_generated: {head}_",
+            "",
+        ]
+    )
+
+
+def sync_genspark_compress_recover() -> bool:
+    try:
+        GENSPARK_RECOVER.write_text(build_genspark_compress_recover(), encoding="utf-8")
+        return True
+    except OSError:
+        return False
+
+
 def sync_all_resume_docs() -> dict[str, bool]:
-    """종료루틴: RESTORE + FLOW_BRIEF + EXTERNAL_START + BOOTSTRAP LIVE."""
+    """종료루틴: RESTORE + FLOW_BRIEF + EXTERNAL_START + BOOTSTRAP + 젠스파크압축복구."""
     return {
         "restore": sync_restore_header(),
         "flow_brief": sync_flow_brief(),
         "external_start": sync_external_start(),
         "external_bootstrap": sync_external_bootstrap_live(),
+        "genspark_recover": sync_genspark_compress_recover(),
     }

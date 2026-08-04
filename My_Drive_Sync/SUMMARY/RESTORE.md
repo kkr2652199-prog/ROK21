@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c157148` · WORK=`IDLE`
-2. **지금:** **K-PATTERN-OWN-V1** — ADEF 독자패턴 측정 · **MEASURED**
-3. **다음1건:** K-PATTERN-OWN-V1-DONE — ADEF 측정 PASS · **B·C 측정** 또는 **L2 EMA 진단** · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `6ac4fb5` · WORK=`IDLE`
+2. **지금:** **K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS**
+3. **다음1건:** K-GENSPARK-COMPRESS-RECOVER-DONE — 압축복구 자동화 PASS · **B·C 측정** 또는 **L2 EMA** · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | 젠스파크압축복구 | GENSPARK_COMPRESS_RECOVER R37자동 | **PASS** | (push후) |
 | 2026-08-05 | OWN-V1 독자패턴 | ADEF 측정 · BC설계 · wire OFF | **MEASURED** | 55c6f12 |
 | 2026-08-05 | TAXONOMY-V1 L1/L3/L4 | deviation·PMI·페널티스펙 · w*=0 | **DOC** | b75c2fe |
 | 2026-08-05 | 예측DB리셋+n200백테 | fusion0.135·hybrid 0.165/0.15/0.13 | **MEASURED** | 962c783 |
@@ -45,7 +46,6 @@
 | 2026-08-05 | 진행(AUTO S1) | dry-run tick PASS · apply거부 · state | **PASS** | 7eedee2 |
 | 2026-08-05 | 진행(AUTO설계) | K-EVOLVE-AUTO-DESIGN · wire없음 DOC | **DOC** | 96217bd |
 | 2026-08-05 | 진행(저출현쌍) | pair_cover survey ge3↓ · WIRE OFF | **HOLD** | 87cb094 |
-| 2026-08-05 | 진행(명분→설계1축) | struct_cover survey ge3↓ · WIRE OFF | **HOLD** | d068327 |
 
 ---
 

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-PATTERN-OWN-V1** — ROK21 독자패턴 A·D·E·F 측정 (B·C 설계만 · wire OFF)
+📌 사유: **K-GENSPARK-COMPRESS-RECOVER** — 젠스파크 압축 시 빠른 복구 패킷 자동화
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-GENSPARK-COMPRESS-RECOVER** | **PASS** — `GENSPARK_COMPRESS_RECOVER.md` R37자동(붙여넣기+증거체인) · 채팅기억불신·JSON재페치 · EXTERNAL_START/AI_COLLAB§2·§6 · `reports/20260805_GENSPARK_COMPRESS_RESUME.md` |
 | **K-PATTERN-OWN-V1** | **MEASURED_PARTIAL** — A accel(neg≈0.49) · D slot bias frac≥4=**0.542** · E carry priorΔ≈**0** · F high→low wait mean**3.21** · B/C DESIGN_ONLY · `docs/benchmarks/20260805_KPATTERN_OWN_V1.json` |
 | **K-SIGNAL-TAXONOMY-V1** | **DOC_SURVEY** — L1 전수w+deviation(consec_3plus th**0.0563**/emp**0.0543**) · L3 PMI 990쌍·top(11,21) pmi**0.421** · set_pmi mean**−0.138** · L4 birthday/sum/consec 스펙 · score w*=**0** · `docs/benchmarks/20260805_KSIGNAL_TAXONOMY_V1.json` |
 | **K-LIVE-QUICK200-RESET** | **MEASURED** — preds**5910**+cache**606**+learn 삭제 후 WF · fusion ge3=**0.135**(27/200) mean**1.715** · hybrid ge3 stat**0.165**/markov**0.150**/review**0.130** · rare진단 ultra율**0.233**(WIRE OFF) · `docs/benchmarks/20260805_KLIVE_QUICK200_RESET.json` |
@@ -289,8 +290,8 @@
 
 ## 5) 다음
 
-**B·C 측정 완성** 또는 **L2 EMA 진단** — 형 GO.  
-OWN-V1 ADEF 측정 · wire OFF · 당첨시계열 진단(발권 ge3 비클레임) · E prior 신호 약함.
+**B·C 측정** 또는 **L2 EMA** — 형 GO (본선).  
+압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START 붙여넣기 · JSON raw 재페치.
 
 ---
 

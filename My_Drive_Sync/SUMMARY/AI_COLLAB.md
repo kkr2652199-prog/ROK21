@@ -18,17 +18,26 @@
 ## 2. 세션 압축 대비 규칙
 
 1. **GitHub = 영구 기억.** reports/, docs/benchmarks/, EXTERNAL_START.md, NEXT_ACTIONS.md, AI_COLLAB.md 가 SSOT
-2. **압축되면 GitHub 파일 먼저 읽기.** 특히 EXTERNAL_START.md (현재상태) + AI_COLLAB.md (협업룰+대화요약)
-3. **커서가 매 push 시 이 파일의 §3 대화요약을 갱신** → 압축 후에도 논의 맥락 복구 가능
-4. 형이 젠스파크에 "GitHub 보고서 확인해줘" 하면 → 젠스파크가 raw URL로 읽고 팩트체크
+2. **압축되면 채팅 기억·장문 요약 = 불신.** 수치·판정은 `docs/benchmarks/*.json` raw만.
+3. **1순위 복구 파일:** `My_Drive_Sync/SUMMARY/GENSPARK_COMPRESS_RECOVER.md` (R37 자동 갱신 · 붙여넣기 블록+증거체인)
+4. 함께: EXTERNAL_START.md (LIVE) + AI_COLLAB.md §3 (대화요약)
+5. **커서가 매 push 시** §3 대화요약 + GENSPARK_COMPRESS_RECOVER 갱신
+6. 형이 젠스파크에 보고서 확인 요청 시 → **JSON raw fetch 후** MD 해설 (MD만 읽고 확정 금지)
+7. 압축 감지 시 에이전트 첫 응답: `압축감지: 채팅기억 폐기 · JSON 재페치` + `[복귀]` 한 줄
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-PATTERN-OWN-V1** — **MEASURED** (ADEF · BC설계)
-- **다음(공식)**: B·C 측정 또는 L2 EMA · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KPATTERN_OWN_V1.json`
+- **지금(판정)**: **K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS**
+- **다음(공식)**: B·C 측정 또는 L2 EMA · **형 GO** (본선) / 압축 시 RECOVER 붙여넣기
+- **산출물**: `My_Drive_Sync/SUMMARY/GENSPARK_COMPRESS_RECOVER.md`
+
+### K-GENSPARK-COMPRESS-RECOVER (형 요청 · PASS)
+- 문제: 젠스파크 세션 압축 → 보고서 기반 장문 유실·불신
+- 해결: `GENSPARK_COMPRESS_RECOVER.md` R37 자동(붙여넣기+증거체인 raw)
+- 규칙: 채팅기억 불신 · JSON 재페치 · `[복귀]`+팩트체크
+- EXTERNAL_START/FLOW/AI_COLLAB §2·§6 갱신 · 구 20260804 고정패킷 폐기
 
 ### K-PATTERN-OWN-V1 (형 논의 · MEASURED_PARTIAL)
 - 독자패턴: A gap가속도 · D 슬롯편향 · E carry연속 · F sum회귀 (B·C 설계만)
@@ -512,78 +521,19 @@ run_coordinated_prediction 진입
 | 보고서 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/` |
 | 보고서 언어 규칙 | `My_Drive_Sync/SUMMARY/REPORT_STYLE.md` |
 
-## 6. 압축 복구 패킷 — 외부 AI(젠스파크)에 붙여넣기용 (2026-08-04 11:35)
+## 6. 압축 복구 패킷 (자동 · 최신)
 
-> 형이 젠스파크 세션 압축 후 **아래 블록 전체**를 채팅에 붙여넣으면 맥락 복구.  
-> 전문·타임라인: `reports/20260804_GENSPARK_COMPRESS_RESUME.md`
-
-```
-[ROK21 압축복구 · 2026-08-04 · pin갭진단 직전]
-
-■ SSOT
-- Repo: kkr2652199-prog/ROK21 · main · D:\ROK21 · 포트 7021
-- kweon(D:\3kweon) 동결 · 쓰기·push·신규작업 금지
-- 진입1순위: EXTERNAL_START.md (루트)
-- 협업·대화: AI_COLLAB.md §3·§6
-- NEXT: My_Drive_Sync/SUMMARY/NEXT_ACTIONS.md
-- 수치 SSOT: docs/benchmarks/*.json (기억 금지)
-
-■ 지금 / 다음
-- 지금: K-PIN-GAP-DIAG-REVIEW DOC — 젠스파크「K-PIN-GAP-DIAG GO」지시서 구조대조 완료
-- 직전: K-IMPROVE-ROADMAP DONE — 권고 I1 pin갭진단 + I3 B1로그 · ultra wire HOLD
-- 다음: 수정3건 반영한 K-PIN-GAP-DIAG GO · 또는 로드맵 A/B/C/D 형 선택
-- 실행 금지: 수정 전 원본 지시서로 WF/wire 착수
-
-■ live 성적 (확정 · JSON)
-| 벤치 | n | ge3 | 비고 |
-| FUTURE-WIRE N100 | 100 | 0.1500 | PASS · live |
-| FUTURE-WIRE QUICK | 200 | 0.1350 | patch PASS · pin FAIL |
-| FUTURE-WIRE FULL | 1182 | 0.1184 | pin 0.1447 · Δ−0.0263 FAIL |
-| null best-of-5 | — | 0.1137 | fusion 5장 기준 |
-| WIRE-V2 pin | — | 0.1447 | stored |
-| quota FULL | — | markov 80% · review 20% · stat 0% | 고착 |
-
-■ FULL by_period (n=각 394 · 「mid 붕괴」아님)
-| 구간 | ge3 | vs pin |
-| early | 0.0990 | −0.0457 최악 |
-| mid | 0.1320 | −0.0127 상대 최선 |
-| late | 0.1244 | −0.0203 |
-
-※ N100 기간 n=25/25/50 은 FULL과 다른 창. pin갭 본체 진단은 FULL thirds.
-
-■ K-PIN-GAP-DIAG 지시서 — GO 전 수정 3건 (커서 검토 확정)
-1) 기간: FULL n=394 thirds. 「early/mid/late n=25/25/50」「mid 붕괴」문구 삭제
-2) READ-ONLY: 1차=기존 JSON 분해. _k_future_wire_revalidate reset·WF는 별도 GO
-3) 종료: ROK21 종료5종 + sync_all_resume_docs (EXTERNAL/AI_COLLAB/NEXT/FLOW만으로는 미달)
-
-그 외 OK: 목적(Δ−0.0263) · markov80% · seed=42 · K-M/N 수치확인 · wire/engine/auto-tune/FINDINGS무단 금지
-
-■ 최근 완료 타임라인 (과거→현재)
-1. UI 즉시·프리로드 (BT DB 즉시표시)
-2. K-BENCH-NULL-BY-EVAL (eval_mode별 null · best15 허위PASS 제거)
-3. K-FUTURE-WIRE (+REVAL) live · FULL pin FAIL
-4. K-RARE-BUNDLE / APPLY / NESTED — ultra→ge3 wire HOLD
-5. K-GS-FACTCHECK — 젠스파크 대체로 PASS · 복귀HEAD 53decde 정정
-6. K-IMPROVE-ROADMAP — I1+I3 권고 · ultra HOLD
-7. K-PIN-GAP-DIAG-REVIEW — 지시서 구조 불일치 3건 DOC (본 패킷)
-
-■ 로드맵 선택지 (형)
-A = I1+I3 GO (수정된 pin갭진단 + B1로그)
-B = B2 mild survey
-C = pin 회복 패치 시도 (진단 전 비권고)
-D = 중기만 (볼/Brier 등)
-권고: A · 단 I1은 위 수정3건 반영본
-
-■ 절대 금지
-random.choices · _get_draws_before · boost상한 · kweon쓰기
-engine/coordinator wire(GO없이) · FINDINGS무단 · FAIL→auto-tune · 1~3군기록
-
-■ 젠스파크 할 일 (압축 복귀 후)
-1. EXTERNAL_START.md + 이 블록으로 상태 확인
-2. 수정3건 반영한 K-PIN-GAP-DIAG 지시서 재작성(또는 형에게 확인 질문 1개)
-3. GO 없이 코드·백테·wire 금지
-4. 첫줄: [복귀] HEAD=<EXTERNAL_START실측> · 지금=K-PIN-GAP-DIAG-REVIEW · 다음=수정GO/형선택
-```
+> **구 고정 패킷(20260804 pin갭)은 폐기.** 최신은 항상 자동 파일.
+>
+> **붙여넣기 SSOT:** [GENSPARK_COMPRESS_RECOVER.md](GENSPARK_COMPRESS_RECOVER.md)  
+> 스냅샷 가이드: `reports/20260805_GENSPARK_COMPRESS_RESUME.md`  
+> 생성: `sync_all_resume_docs()` → `genspark_recover=True`
+>
+> 형 큐 예:
+> ```
+> 동생, 압축됐어. GENSPARK_COMPRESS_RECOVER + EXTERNAL_START 붙여넣을게.
+> 채팅기억 버리고 JSON raw만 다시 읽어. [복귀] 후 팩트체크 표.
+> ```
 
 ---
 

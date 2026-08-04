@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `55c6f12` |
+| HEAD(실측) | `6ac4fb5` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PATTERN-OWN-V1** — ADEF 독자패턴 측정 · **MEASURED** |
-| 직전 | K-SIGNAL-TAXONOMY-V1 |
-| BOOT다음 | B·C 측정 또는 L2 EMA 진단 · **형 GO** |
-| NEXT1 ID | **K-PATTERN-OWN-V1-DONE** |
-| NEXT1 할일 | ADEF 측정 PASS · **B·C 측정** 또는 **L2 EMA 진단** · **형 GO** |
+| 지금 | **K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS** |
+| 직전 | K-PATTERN-OWN-V1 |
+| BOOT다음 | B·C 측정 또는 L2 EMA · **형 GO** |
+| NEXT1 ID | **K-GENSPARK-COMPRESS-RECOVER-DONE** |
+| NEXT1 할일 | 압축복구 자동화 PASS · **B·C 측정** 또는 **L2 EMA** · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=55c6f12 · 지금=**K-PATTERN-OWN-V1** — ADEF 독자패턴 측정 · **MEASURED** · 다음=K-PATTERN-OWN-V1-DONE`
+1. 첫줄 `[복귀] HEAD=6ac4fb5 · 지금=**K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS** · 다음=K-GENSPARK-COMPRESS-RECOVER-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
@@ -54,7 +54,8 @@ GitHub·D:\ROK21 접근 불가면 fetch 시도하지 말고 붙여넣기만 읽�
 |------|------|
 | GitHub 404 | `EXTERNAL_START.md` 채팅 붙여넣기 |
 | 흐름 못 찾음 | 레포 루트 `EXTERNAL_START.md` = 1순위 |
-| 매턴 갱신 | 커서 종료루틴 `sync_all_resume_docs()` (R37) |
+| **젠스파크 압축** | `GENSPARK_COMPRESS_RECOVER.md` + EXTERNAL_START 붙여넣기 · JSON 재페치 |
+| 매턴 갱신 | 커서 종료루틴 `sync_all_resume_docs()` (R37 · genspark_recover 포함) |
 
 커서에게 **"EXTERNAL_START 최신화"** 라고 하면 HEAD/NEXT 다시 박음.
 
