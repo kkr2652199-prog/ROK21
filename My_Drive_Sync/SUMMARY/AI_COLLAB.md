@@ -24,11 +24,11 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 ~14:15 KST)
+### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-FEAT-LAM-REVAL** — **HOLD** (λ 롤백)
+- **지금(판정)**: **종료체크** — `20260805_ROK21_SESSION_STATUS` · λ HOLD 확정
 - **다음(공식)**: Phase3 AUTO 설계문서만 또는 새축 · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_REVAL.json`
+- **산출물**: `reports/20260805_ROK21_SESSION_STATUS.md`
 
 ### K-EVOLVE-FEAT-LAM-REVAL (형 진행 · HOLD)
 - full 53~1234: review λ0.3 ge3=0.1227 vs base 0.1252 (**Δ−0.0025**)

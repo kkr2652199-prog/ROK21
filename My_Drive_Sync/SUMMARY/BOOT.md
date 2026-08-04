@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-EVOLVE-FEAT-LAM-REVAL** — full λ재검증 · review0.3 **HOLD/롤백**
-- 직전: K-EVOLVE-LOG-EXPAND n=1182
-- 다음: Phase3 AUTO 설계문서만 또는 다른축 · **형 GO**
+- 지금: **종료체크** — `20260805_ROK21_SESSION_STATUS` · λ HOLD 확정
+- 직전: K-EVOLVE-FEAT-LAM-REVAL HOLD/롤백
+- 다음: Phase3 AUTO 설계문서만 또는 새축 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

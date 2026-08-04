@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-EVOLVE-FEAT-LAM-REVAL-DONE
-- 할일: λ풀재검증 HOLD(롤백) · **Phase3 AUTO 설계문서만** 또는 새 개선축 · **형 GO**
+- 할일: 20260805세션보고서 DONE · λ HOLD · **Phase3 AUTO 설계문서만** 또는 새 개선축 · **형 GO**
 - 완료조건: 형 선택
-- 선행완료: docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_REVAL.json · FEATURE_LAMBDA_WIRE=False
+- 선행완료: reports/20260805_ROK21_SESSION_STATUS.md · FEATURE_LAMBDA_WIRE=False
 
 ## WORKSTATE
 IDLE
@@ -15,6 +15,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- full review λ0.3 Δ−0.0025 · tail200 Δ−0.03 · SIGNAL n200은 희소과적합
-- mean feedback · hybrid · schema3 · evolve_log 1182 유지
-- BOOST_CAPS / W_* / quota 미수정
+- 종료체크: 20260805_ROK21_SESSION_STATUS → reports/ + 커서보고서/
+- full review λ0.3 Δ−0.0025 · tail200 Δ−0.03 · SIGNAL n200 과적합
+- mean · hybrid · evolve_log 1182 · BOOST_CAPS/W_*/quota 미수정

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-04 KST  
-📌 사유: **K-EVOLVE-FEAT-LAM-REVAL** — full λ재검증 · wire HOLD 롤백
+📅 최종 갱신: 2026-08-05 KST  
+📌 사유: **종료체크** — `20260805_ROK21_SESSION_STATUS` · 8/4 EVOLVE arc 마감
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **20260805 세션보고서** | **DONE** — `reports/20260805_ROK21_SESSION_STATUS.md` · 커서보고서 동기 |
 | **K-EVOLVE-FEAT-LAM-REVAL** | **HOLD** — full n1182 review λ0.3 ge3=**0.1227** Δ**−0.0025** · tail Δ**−0.03** · SIGNAL n200 과적합 · `FEATURE_LAMBDA_WIRE=False` · `docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_REVAL.json` |
 | **K-EVOLVE-LOG-EXPAND** | **PASS** — evolve_log **1182**회(53~1234) · wf**982**+cache**200** · weight=0 · miss구간 cache미저장 · `docs/benchmarks/20260804_KEVOLVE_LOG_EXPAND.json` |
 | **K-EVOLVE-FEAT-LAM-WIRE** | **ROLLED BACK** — 당시 n200 MATCH 0.145였으나 REVAL로 기각 · 모듈/`feat_lam` 코드는 잔존·OFF |
@@ -72,6 +73,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **20260805_SESSION** | 종료체크 · 날짜보고서 · EVOLVE arc 요약 | **DONE** |
 | **K-EVOLVE-FEAT-LAM-REVAL** | full λ스윕 · review0.3 기각 · wire OFF | **HOLD** · 롤백 |
 | **K-EVOLVE-LOG-EXPAND** | evolve_log 53~1234 · 순차WF+캐시백필 · weight0 | **PASS** · n=1182 |
 | **K-EVOLVE-FEAT-LAM-WIRE** | review feature-bucket λ0.3 · schema3 · survey MATCH | **PASS** · ge3=0.145 |
