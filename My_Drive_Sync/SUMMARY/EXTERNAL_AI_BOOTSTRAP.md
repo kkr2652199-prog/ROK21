@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7b7a42a` |
+| HEAD(실측) | `27cc41d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-IMPROVE-ROADMAP** — 대폭개선 조사안 · I1 pin진단+I3 B1 권고 · **DONE** |
-| 직전 | K-GS-FACTCHECK 젠스파크 재검증 |
-| BOOT다음 | **I1+I3 GO** 또는 B2/C/D **형 선택** |
-| NEXT1 ID | **K-IMPROVE-ROADMAP-DONE** |
-| NEXT1 할일 | 개선조사 로드맵 보고 완료 · 권고 **I1 pin갭진단 + I3 B1로그** · **형 GO/선택** |
+| 지금 | **K-PIN-GAP-DIAG-REVIEW** — 젠스파크 지시서 구조대조 · 수정3건 · **DOC** |
+| 직전 | K-IMPROVE-ROADMAP · I1+I3 권고 DONE |
+| BOOT다음 | **수정 K-PIN-GAP-DIAG GO** 또는 A/B/C/D **형 선택** |
+| NEXT1 ID | **K-PIN-GAP-DIAG-WAIT** |
+| NEXT1 할일 | 지시서 수정3건 반영 후 **K-PIN-GAP-DIAG GO** · 또는 로드맵 A/B/C/D **형 선택** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7b7a42a · 지금=**K-IMPROVE-ROADMAP** — 대폭개선 조사안 · I1 pin진단+I3 B1 권고 · **DONE** · 다음=K-IMPROVE-ROADMAP-DONE`
+1. 첫줄 `[복귀] HEAD=27cc41d · 지금=**K-PIN-GAP-DIAG-REVIEW** — 젠스파크 지시서 구조대조 · 수정3건 · **DOC** · 다음=K-PIN-GAP-DIAG-WAIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

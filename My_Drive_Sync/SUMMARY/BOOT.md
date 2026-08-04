@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-IMPROVE-ROADMAP** — 대폭개선 조사안 · I1 pin진단+I3 B1 권고 · **DONE**
-- 직전: K-GS-FACTCHECK 젠스파크 재검증
-- 다음: **I1+I3 GO** 또는 B2/C/D **형 선택**
+- 지금: **K-PIN-GAP-DIAG-REVIEW** — 젠스파크 지시서 구조대조 · 수정3건 · **DOC**
+- 직전: K-IMPROVE-ROADMAP · I1+I3 권고 DONE
+- 다음: **수정 K-PIN-GAP-DIAG GO** 또는 A/B/C/D **형 선택**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

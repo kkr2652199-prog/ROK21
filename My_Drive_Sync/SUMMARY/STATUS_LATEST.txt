@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-04 KST  
-📌 사유: **K-IMPROVE-ROADMAP** — 대폭개선 조사·리스크·최선선택(I1+I3 권고)
+📌 사유: **K-PIN-GAP-DIAG-REVIEW** — 지시서 구조대조·수정3건 · 젠스파크 압축복구 패킷
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-PIN-GAP-DIAG-REVIEW** | **DOC** — FULL thirds n=394 · mid붕괴 오인 정정 · READ-ONLY≠revalidate reset · 종료5종 보강 · `reports/20260804_GENSPARK_COMPRESS_RESUME.md` |
 | **K-IMPROVE-ROADMAP** | **DONE** — I1 pin진단 1순위 · I3 B1 병행 · ultra wire 기각 · `reports/20260804_IMPROVEMENT_INVESTIGATION_ROADMAP.md` |
 | **K-GS-FACTCHECK** | **DONE** — 젠스파크 대체로 PASS · 복귀 HEAD=`53decde` 정정 · pin갭≠collapse 구분 · `reports/20260804_GENSPARK_FACTCHECK_KRARE.md` |
 | **K-RARE-NESTED** | **DONE** — L0~L3 · 실측연속쌍0.517·3홀3짝0.334 · 역이용=mild구조+비인기EV+covering · `reports/20260803_KRARE_NESTED_BREAKTHROUGH.md` |
@@ -60,6 +61,8 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-PIN-GAP-DIAG-REVIEW** | 젠스파크 I1 지시서 vs FULL JSON 구조대조 · 수정3건 · 압축복구 §6 | **DOC** · GO 대기 |
+| **K-IMPROVE-ROADMAP** | 대폭개선 조사·리스크·I1+I3 권고 · ultra HOLD | **DONE** |
 | **K-UI-BT-PRELOAD** | 200회 draw-index 프리로드 · init 재진입 갱신 · JS 20260803b | **DONE** · index≈119ms |
 | **K-UI-BT-INSTANT** | 백테 저장분 페이지 즉시 표시 · GET 자동WF 금지 · JS backtest_only | **DONE** · 1100≈86ms |
 | **K-FUTURE-WIRE-REVAL** | 리셋 WF · QUICK200 + FULL1182 · draws 유지·pred/learn 재기입 | patch **PASS** · pin FULL **FAIL** · ge3 0.135/0.1184 |
