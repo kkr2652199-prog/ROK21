@@ -11,7 +11,7 @@ from app.testlotto.models import get_lotto_db, init_testlotto_db
 from app.testlotto.signal_pool import MC_SEED, build_pool_and_repack
 
 BRAIN_TAGS = ("stat", "markov", "review")
-CACHE_SCHEMA_VERSION = 2  # K-REPACK-HYBRID-WIRE: stat/review hy_p45_r123
+CACHE_SCHEMA_VERSION = 3  # K-EVOLVE-FEAT-LAM: review feat_lam_0.3 + hybrid
 
 
 def _row_to_brain_payload(pool_json: str, repack_json: str) -> tuple[list[dict], list[dict]]:

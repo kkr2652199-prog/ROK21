@@ -24,11 +24,17 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-04 ~13:00 KST)
+### 최신 상태 (2026-08-04 ~13:10 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-FUTURE-FULL-POST-EVOLVE** — **DONE** (ge3=0.1184 Δ=0)
-- **다음(공식)**: review λ0.3 wire 또는 evolve_log 확장 · **형 GO**
-- **산출물**: `docs/benchmarks/20260804_KFUTURE_FULL_POST_EVOLVE.json`
+- **지금(판정)**: **K-EVOLVE-FEAT-LAM-WIRE** — **PASS** (review λ0.3 · ge3=0.145)
+- **다음(공식)**: evolve_log 확장 또는 AUTO준비 · **형 GO**
+- **산출물**: `docs/benchmarks/20260804_KEVOLVE_FEAT_LAM_WIRE.json`
+
+### K-EVOLVE-FEAT-LAM-WIRE (형 다음진행 · PASS)
+- `feature_lambda.py` · `FEATURE_LAMBDA_BY_BRAIN={review:0.3}`
+- offline n200 ge3=**0.145** = SIGNAL survey MATCH
+- live assemble=`feat_lam_0.3` · CACHE_SCHEMA_VERSION=**3**
+- stat/markov λ **HOLD** · mean feedback / hybrid / quota 유지
 
 ### K-FUTURE-FULL-POST-EVOLVE (형 진행 · DONE)
 - hybrid+mean 이후 FULL 리셋 WF · draw 53~1234 · n=1182

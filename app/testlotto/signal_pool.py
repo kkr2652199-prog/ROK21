@@ -27,6 +27,9 @@ W_LEARN = 0.35
 HYBRID_P45_R123_BRAINS: frozenset[str] = frozenset({"stat", "review"})
 HYBRID_ASSEMBLE_MODE: str = "p45_r123"  # "" 이면 전원 baseline 몰아주기
 
+# K-EVOLVE-FEAT-LAM-WIRE — SIGNAL PartB: review λ=0.3 only
+FEATURE_LAMBDA_WIRE: bool = True
+
 
 class RollingSignalLearner:
     """Walk-forward: target draw 이전 회차만으로 번호·세트위치 기여도 EMA."""
@@ -197,7 +200,10 @@ def repack_by_brain(
     *,
     hint_only: bool = False,
     random_repack: bool = False,
+    target_draw_no: int | None = None,
 ) -> list[dict]:
+    from app.testlotto.feature_lambda import FEATURE_LAMBDA_BY_BRAIN, apply_feature_lambda
+
     out: list[dict] = []
     for tag in BRAIN_TAGS:
         pool = pool_by_brain.get(tag, [])
@@ -215,10 +221,11 @@ def repack_by_brain(
         use_hybrid = (
             HYBRID_ASSEMBLE_MODE == "p45_r123" and tag in HYBRID_P45_R123_BRAINS
         )
+        assembled_rows: list[dict] = []
         if use_hybrid:
             assembled = assemble_hybrid_p45_r123(pool, classic)
             for i, item in enumerate(assembled):
-                out.append(
+                assembled_rows.append(
                     {
                         "nums": item["nums"],
                         "brain_tag": tag,
@@ -233,7 +240,7 @@ def repack_by_brain(
                 )
         else:
             for i, nums in enumerate(classic):
-                out.append(
+                assembled_rows.append(
                     {
                         "nums": nums,
                         "brain_tag": tag,
@@ -244,6 +251,19 @@ def repack_by_brain(
                         "assemble": "baseline_repack",
                     }
                 )
+
+        if (
+            FEATURE_LAMBDA_WIRE
+            and target_draw_no is not None
+            and tag in FEATURE_LAMBDA_BY_BRAIN
+        ):
+            lam_rows = apply_feature_lambda(
+                tag, pool, assembled_rows, int(target_draw_no)
+            )
+            if lam_rows:
+                out.extend(lam_rows)
+                continue
+        out.extend(assembled_rows)
     return out
 
 
@@ -309,7 +329,9 @@ def build_pool_and_repack(
     pool = expand_pool(draws, target_draw_no, seed=seed)
     pool_br = _pool_by_brain(pool)
     hint = _build_hint(draws, target_draw_no)
-    repacked = repack_by_brain(pool_br, hint, num_ema, pos_ema)
+    repacked = repack_by_brain(
+        pool_br, hint, num_ema, pos_ema, target_draw_no=target_draw_no
+    )
 
     by_brain_pool: dict[str, list[dict]] = {}
     for tag in BRAIN_TAGS:
@@ -352,6 +374,13 @@ def build_pool_and_repack(
             "brains": sorted(HYBRID_P45_R123_BRAINS),
             "markov": "baseline_repack",
         },
+        "feature_lambda": _feature_lambda_meta(),
         "pool_by_brain": by_brain_pool,
         "repack_by_brain": by_brain_repack,
     }
+
+
+def _feature_lambda_meta() -> dict[str, Any]:
+    from app.testlotto.feature_lambda import FEATURE_LAMBDA_BY_BRAIN
+
+    return {"wired": FEATURE_LAMBDA_WIRE, "by_brain": dict(FEATURE_LAMBDA_BY_BRAIN)}
