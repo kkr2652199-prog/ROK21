@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `337fbc5` · WORK=`IDLE`
+1. **HEAD:** `2d3e3d4` · WORK=`IDLE`
 2. **지금:** **K-EVOLVE-FEAT-LAM-REVAL** — full λ재검증 · review0.3 **HOLD/롤백**
 3. **다음1건:** K-EVOLVE-FEAT-LAM-REVAL-DONE — λ풀재검증 HOLD(롤백) · **Phase3 AUTO 설계문서만** 또는 새 개선축 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-04 | 진행(λ재검증) | full Δ−0.0025 · λ OFF 롤백 · HOLD | **HOLD** | (push후) |
+| 2026-08-04 | 진행(λ재검증) | full Δ−0.0025 · λ OFF 롤백 · HOLD | **HOLD** | 2d3e3d4 |
 | 2026-08-04 | 다음(자음) evolve확장 | evolve_log 1182 · wf982+cache200 | **PASS** | ab7e6fb |
 | 2026-08-04 | 다음 진행(λ wire) | review λ0.3 · ge3=0.145 MATCH · schema3 | **PASS** | 3f4f4ce |
 | 2026-08-04 | 진행(FULL스냅샷) | FULL n1182 ge3=0.1184 Δ=0 · mean live | **DONE** | 3539759 |

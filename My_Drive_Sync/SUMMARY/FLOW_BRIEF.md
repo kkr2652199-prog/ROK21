@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `337fbc5` · WORK=`IDLE`
+- HEAD: `2d3e3d4` · WORK=`IDLE`
 - 지금: **K-EVOLVE-FEAT-LAM-REVAL** — full λ재검증 · review0.3 **HOLD/롤백**
 - 직전: K-EVOLVE-LOG-EXPAND n=1182
 - BOOT다음: Phase3 AUTO 설계문서만 또는 다른축 · **형 GO**
