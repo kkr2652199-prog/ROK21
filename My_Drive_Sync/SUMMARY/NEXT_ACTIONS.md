@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-RARE-NESTED-DONE
-- 할일: 중첩희귀·역이용 분석 완료 · 다음 B1(1D로그)/B2(mild-consec)/pin갭 **형 GO**
+- ID: K-GS-FACTCHECK-DONE
+- 할일: 젠스파크 팩트체크 재검증 완료(HEAD=53decde) · B1/B2/pin갭 **형 GO**
 - 완료조건: 형 GO
-- 선행완료: reports/20260803_KRARE_NESTED_BREAKTHROUGH.md · canvas rare-nested-breakthrough
+- 선행완료: reports/20260804_GENSPARK_FACTCHECK_KRARE.md
 
 ## WORKSTATE
 IDLE

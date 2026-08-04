@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-RARE-NESTED** — 극소의극소·역이용·뇌이식 설계 · 돌파=목적재정의 · **DONE**
-- 직전: K-RARE-APPLY-ANAL wire HOLD
-- 다음: B1 feature로그 / B2 mild-consec / pin갭 **형 GO**
+- 지금: **K-GS-FACTCHECK** — 젠스파크 NESTED 검토 재검증 · HEAD정정 · **DONE**
+- 직전: K-RARE-NESTED 극소의극소·역이용 설계
+- 다음: B1/B2/pin갭 **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

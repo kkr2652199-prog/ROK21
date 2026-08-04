@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `89f871e` |
+| HEAD(실측) | `53decde` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-RARE-NESTED** — 극소의극소·역이용·뇌이식 설계 · 돌파=목적재정의 · **DONE** |
-| 직전 | K-RARE-APPLY-ANAL wire HOLD |
-| BOOT다음 | B1 feature로그 / B2 mild-consec / pin갭 **형 GO** |
-| NEXT1 ID | **K-RARE-NESTED-DONE** |
-| NEXT1 할일 | 중첩희귀·역이용 분석 완료 · 다음 B1(1D로그)/B2(mild-consec)/pin갭 **형 GO** |
+| 지금 | **K-GS-FACTCHECK** — 젠스파크 NESTED 검토 재검증 · HEAD정정 · **DONE** |
+| 직전 | K-RARE-NESTED 극소의극소·역이용 설계 |
+| BOOT다음 | B1/B2/pin갭 **형 GO** |
+| NEXT1 ID | **K-GS-FACTCHECK-DONE** |
+| NEXT1 할일 | 젠스파크 팩트체크 재검증 완료(HEAD=53decde) · B1/B2/pin갭 **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=89f871e · 지금=**K-RARE-NESTED** — 극소의극소·역이용·뇌이식 설계 · 돌파=목적재정의 · **DONE** · 다음=K-RARE-NESTED-DONE`
+1. 첫줄 `[복귀] HEAD=53decde · 지금=**K-GS-FACTCHECK** — 젠스파크 NESTED 검토 재검증 · HEAD정정 · **DONE** · 다음=K-GS-FACTCHECK-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

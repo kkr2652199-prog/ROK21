@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-03 KST  
-📌 사유: **K-RARE-NESTED** — 극소의극소·리스크역이용·뇌이식 블루프린트 · 814만「돌파」목적재정의
+📅 최종 갱신: 2026-08-04 KST  
+📌 사유: **K-GS-FACTCHECK** — 젠스파크 NESTED 검토 재검증 · HEAD/pin 표현 정정
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-GS-FACTCHECK** | **DONE** — 젠스파크 대체로 PASS · 복귀 HEAD=`53decde` 정정 · pin갭≠collapse 구분 · `reports/20260804_GENSPARK_FACTCHECK_KRARE.md` |
 | **K-RARE-NESTED** | **DONE** — L0~L3 · 실측연속쌍0.517·3홀3짝0.334 · 역이용=mild구조+비인기EV+covering · `reports/20260803_KRARE_NESTED_BREAKTHROUGH.md` |
 | **K-RARE-APPLY-ANAL** | **DONE** — 구조희귀≠당첨확률 · ultra wire HOLD · A1 UI / A4 pin갭 권고 · `reports/20260803_KRARE_APPLY_ANALYSIS.md` |
 | **K-RARE-BUNDLE** | **DONE** — catalog 213 · ultra 183 · hits 1235 · API live · `796c92c` |
