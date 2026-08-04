@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `cdf1bda` · WORK=`IDLE`
+- HEAD: `4085d1e` · WORK=`IDLE`
 - 지금: **K-EVOLVE-VIRTUAL-1235** — 분석스택 가상생애 · **PASS**
 - 직전: K-EVOLVE-AUTO-S4 ops
 - BOOT다음: 1236 실추첨 후 ops SCORE 또는 다른축 · **형 GO**

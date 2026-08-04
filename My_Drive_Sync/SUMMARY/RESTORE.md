@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `cdf1bda` · WORK=`IDLE`
+1. **HEAD:** `4085d1e` · WORK=`IDLE`
 2. **지금:** **K-EVOLVE-VIRTUAL-1235** — 분석스택 가상생애 · **PASS**
 3. **다음1건:** K-EVOLVE-VIRTUAL-1235-DONE — 1235 가상생애 PASS · **1236 실추첨 후 ops SCORE** 또는 다른축 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 1235가상·분석적용 | VIRTUAL PREDICT→SCORE · hybrid · ge3無 | **PASS** | (push후) |
+| 2026-08-05 | 1235가상·분석적용 | VIRTUAL PREDICT→SCORE · hybrid · ge3無 | **PASS** | cdf1bda |
 | 2026-08-05 | 다음(AUTO S4) | `--ops`+EVOLVE_AUTO=1 · phase=ops · idle | **PASS** | 51e6236 |
 | 2026-08-05 | 진행(AUTO S3) | PREDICT 1236 캐시 · phase=predicted | **PASS** | 7e010bf |
 | 2026-08-05 | 다음(AUTO S2) | SCORE 1235 · evolve_log=1235 | **PASS** | 1f80f7f |
@@ -46,7 +46,6 @@
 | 2026-08-05 | 종료체크 20260805보고서 | SESSION_STATUS · reports+커서보고서 | **DONE** | 3007a9a |
 | 2026-08-04 | 진행(λ재검증) | full Δ−0.0025 · λ OFF 롤백 · HOLD | **HOLD** | 2d3e3d4 |
 | 2026-08-04 | 다음(자음) evolve확장 | evolve_log 1182 · wf982+cache200 | **PASS** | ab7e6fb |
-| 2026-08-04 | 다음 진행(λ wire) | review λ0.3 · ge3=0.145 MATCH · schema3 | **PASS** | 3f4f4ce |
 
 ---
 
