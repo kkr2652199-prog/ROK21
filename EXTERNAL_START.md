@@ -9,7 +9,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `3c19704` |
+| HEAD(실측) | `7eedee2` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-EVOLVE-AUTO-S1** — dry-run tick PASS · apply미구현 |
@@ -32,7 +32,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=3c19704 · 지금=**K-EVOLVE-AUTO-S1** — dry-run tick PASS · apply미구현 · 다음=K-EVOLVE-AUTO-S1-DONE`
+1. 첫줄 `[복귀] HEAD=7eedee2 · 지금=**K-EVOLVE-AUTO-S1** — dry-run tick PASS · apply미구현 · 다음=K-EVOLVE-AUTO-S1-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -47,4 +47,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 3c19704_
+_generated: 7eedee2_

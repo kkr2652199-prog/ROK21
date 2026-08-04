@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3c19704` · WORK=`IDLE`
+- HEAD: `7eedee2` · WORK=`IDLE`
 - 지금: **K-EVOLVE-AUTO-S1** — dry-run tick PASS · apply미구현
 - 직전: K-EVOLVE-AUTO-DESIGN DOC
 - BOOT다음: S2 SCORE자동 또는 다른축 · **형 GO**
