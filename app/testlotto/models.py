@@ -318,6 +318,19 @@ def init_testlotto_db():
         );
         CREATE INDEX IF NOT EXISTS idx_evolve_log_draw ON testlotto_evolve_log(draw_no);
         CREATE INDEX IF NOT EXISTS idx_evolve_log_brain ON testlotto_evolve_log(brain_tag);
+
+        -- K-EVOLVE-AUTO S1: 상태머신 (실행은 EVOLVE_AUTO=1 + 형 GO)
+        CREATE TABLE IF NOT EXISTS testlotto_evolve_auto_state (
+            id                   INTEGER PRIMARY KEY CHECK (id = 1),
+            last_completed_draw  INTEGER,
+            phase                TEXT NOT NULL DEFAULT 'idle',
+            last_error           TEXT DEFAULT '',
+            last_plan_json       TEXT DEFAULT '',
+            paused               INTEGER NOT NULL DEFAULT 0,
+            updated_at           TEXT DEFAULT (datetime('now','localtime'))
+        );
+        INSERT OR IGNORE INTO testlotto_evolve_auto_state (id, phase, paused)
+        VALUES (1, 'idle', 0);
     """
     )
     existing_cols = [r[1] for r in conn.execute("PRAGMA table_info(lotto_predictions)").fetchall()]

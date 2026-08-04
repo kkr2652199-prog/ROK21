@@ -26,9 +26,15 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-AUTO-DESIGN** — **DOC**
-- **다음(공식)**: AUTO S1 dry-run 또는 다른축 · **형 GO**
-- **산출물**: `reports/20260805_KEVOLVE_AUTO_DESIGN.md`
+- **지금(판정)**: **K-EVOLVE-AUTO-S1** — **PASS** (dry-run)
+- **다음(공식)**: S2 SCORE자동 또는 다른축 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KEVOLVE_AUTO_S1.json`
+
+### K-EVOLVE-AUTO-S1 (형 진행 · PASS)
+- `app/testlotto/evolve_auto.py` · `tools/_k_evolve_auto_tick.py`
+- 테이블 `testlotto_evolve_auto_state` · phase=planned
+- 관측: draws max=1235 · evolve_log max=1234 → SCORE 1235 계획
+- apply 경로 거부 · `EVOLVE_AUTO` 기본 0
 
 ### K-EVOLVE-AUTO-DESIGN (형 진행 · DOC)
 - 1236~ 예측→채점→evolve_log 운송벨트 설계

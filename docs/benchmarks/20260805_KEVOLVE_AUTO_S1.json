@@ -1,0 +1,270 @@
+{
+  "id": "K-EVOLVE-AUTO-S1",
+  "ts": "2026-08-04T15:49:18+00:00",
+  "step": "S1",
+  "dry_run": true,
+  "EVOLVE_AUTO": false,
+  "tick": {
+    "ok": true,
+    "dry_run": true,
+    "ts_local": "2026-08-05T00:49:18",
+    "max_lotto_draw": 1235,
+    "evolve_log_max": 1234,
+    "next_predict_draw": 1236,
+    "g2": {
+      "lookback": 5,
+      "checked": [
+        {
+          "draw_no": 1231,
+          "brains": 3
+        },
+        {
+          "draw_no": 1232,
+          "brains": 3
+        },
+        {
+          "draw_no": 1233,
+          "brains": 3
+        },
+        {
+          "draw_no": 1234,
+          "brains": 3
+        },
+        {
+          "draw_no": 1235,
+          "brains": 0
+        }
+      ],
+      "missing_or_incomplete": [
+        1235
+      ],
+      "g2_pass": false
+    },
+    "actions": [
+      {
+        "op": "SCORE",
+        "draw_no": 1235,
+        "reason": "draws확정·pool캐시있음·evolve_log미완",
+        "source": "pool_cache"
+      },
+      {
+        "op": "PREDICT_ONLY",
+        "draw_no": 1236,
+        "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+        "source": "build_pool_and_repack",
+        "optional": true
+      }
+    ],
+    "action_count": 2,
+    "mandatory_actions": [
+      {
+        "op": "SCORE",
+        "draw_no": 1235,
+        "reason": "draws확정·pool캐시있음·evolve_log미완",
+        "source": "pool_cache"
+      }
+    ],
+    "blocked_for_apply": [
+      "EVOLVE_AUTO!=1",
+      "G2_incomplete_recent_logs"
+    ],
+    "would_apply": false,
+    "gates": {
+      "G0_hyung_go": "required_for_S2+",
+      "G1_EVOLVE_AUTO": false,
+      "G2_recent_log": false,
+      "paused": false
+    },
+    "forbid": [
+      "FEATURE_LAMBDA_WIRE",
+      "STRUCTURE_COVER_WIRE",
+      "PAIR_COVER_WIRE",
+      "best_as_learn_input",
+      "W_HINT_auto_tune"
+    ],
+    "note": "S1 dry-run · SCORE/PREDICT 실적용 없음",
+    "state_saved": true,
+    "status_after": {
+      "ok": true,
+      "last_completed_draw": 1234,
+      "phase": "planned",
+      "last_error": "",
+      "paused": false,
+      "last_plan": {
+        "ok": true,
+        "dry_run": true,
+        "ts_local": "2026-08-05T00:49:18",
+        "max_lotto_draw": 1235,
+        "evolve_log_max": 1234,
+        "next_predict_draw": 1236,
+        "g2": {
+          "lookback": 5,
+          "checked": [
+            {
+              "draw_no": 1231,
+              "brains": 3
+            },
+            {
+              "draw_no": 1232,
+              "brains": 3
+            },
+            {
+              "draw_no": 1233,
+              "brains": 3
+            },
+            {
+              "draw_no": 1234,
+              "brains": 3
+            },
+            {
+              "draw_no": 1235,
+              "brains": 0
+            }
+          ],
+          "missing_or_incomplete": [
+            1235
+          ],
+          "g2_pass": false
+        },
+        "actions": [
+          {
+            "op": "SCORE",
+            "draw_no": 1235,
+            "reason": "draws확정·pool캐시있음·evolve_log미완",
+            "source": "pool_cache"
+          },
+          {
+            "op": "PREDICT_ONLY",
+            "draw_no": 1236,
+            "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+            "source": "build_pool_and_repack",
+            "optional": true
+          }
+        ],
+        "action_count": 2,
+        "mandatory_actions": [
+          {
+            "op": "SCORE",
+            "draw_no": 1235,
+            "reason": "draws확정·pool캐시있음·evolve_log미완",
+            "source": "pool_cache"
+          }
+        ],
+        "blocked_for_apply": [
+          "EVOLVE_AUTO!=1",
+          "G2_incomplete_recent_logs"
+        ],
+        "would_apply": false,
+        "gates": {
+          "G0_hyung_go": "required_for_S2+",
+          "G1_EVOLVE_AUTO": false,
+          "G2_recent_log": false,
+          "paused": false
+        },
+        "forbid": [
+          "FEATURE_LAMBDA_WIRE",
+          "STRUCTURE_COVER_WIRE",
+          "PAIR_COVER_WIRE",
+          "best_as_learn_input",
+          "W_HINT_auto_tune"
+        ],
+        "note": "S1 dry-run · SCORE/PREDICT 실적용 없음"
+      },
+      "updated_at": "2026-08-05 00:49:18",
+      "evolve_auto_env": false
+    }
+  },
+  "state": {
+    "ok": true,
+    "last_completed_draw": 1234,
+    "phase": "planned",
+    "last_error": "",
+    "paused": false,
+    "last_plan": {
+      "ok": true,
+      "dry_run": true,
+      "ts_local": "2026-08-05T00:49:18",
+      "max_lotto_draw": 1235,
+      "evolve_log_max": 1234,
+      "next_predict_draw": 1236,
+      "g2": {
+        "lookback": 5,
+        "checked": [
+          {
+            "draw_no": 1231,
+            "brains": 3
+          },
+          {
+            "draw_no": 1232,
+            "brains": 3
+          },
+          {
+            "draw_no": 1233,
+            "brains": 3
+          },
+          {
+            "draw_no": 1234,
+            "brains": 3
+          },
+          {
+            "draw_no": 1235,
+            "brains": 0
+          }
+        ],
+        "missing_or_incomplete": [
+          1235
+        ],
+        "g2_pass": false
+      },
+      "actions": [
+        {
+          "op": "SCORE",
+          "draw_no": 1235,
+          "reason": "draws확정·pool캐시있음·evolve_log미완",
+          "source": "pool_cache"
+        },
+        {
+          "op": "PREDICT_ONLY",
+          "draw_no": 1236,
+          "reason": "미추첨 회차 사전 예측(캐시 워밍)",
+          "source": "build_pool_and_repack",
+          "optional": true
+        }
+      ],
+      "action_count": 2,
+      "mandatory_actions": [
+        {
+          "op": "SCORE",
+          "draw_no": 1235,
+          "reason": "draws확정·pool캐시있음·evolve_log미완",
+          "source": "pool_cache"
+        }
+      ],
+      "blocked_for_apply": [
+        "EVOLVE_AUTO!=1",
+        "G2_incomplete_recent_logs"
+      ],
+      "would_apply": false,
+      "gates": {
+        "G0_hyung_go": "required_for_S2+",
+        "G1_EVOLVE_AUTO": false,
+        "G2_recent_log": false,
+        "paused": false
+      },
+      "forbid": [
+        "FEATURE_LAMBDA_WIRE",
+        "STRUCTURE_COVER_WIRE",
+        "PAIR_COVER_WIRE",
+        "best_as_learn_input",
+        "W_HINT_auto_tune"
+      ],
+      "note": "S1 dry-run · SCORE/PREDICT 실적용 없음"
+    },
+    "updated_at": "2026-08-05 00:49:18",
+    "evolve_auto_env": false
+  },
+  "pass": true,
+  "verdict": "PASS",
+  "wire": false,
+  "note": "S1=plan+state only · SCORE/PREDICT apply 없음"
+}
