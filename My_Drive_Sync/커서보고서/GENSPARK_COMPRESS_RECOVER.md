@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`6ac4fb5` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`d20f5ae` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -20,7 +20,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=6ac4fb5]
+[ROK21 젠스파크 압축복구 · HEAD=d20f5ae]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -28,7 +28,7 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 6ac4fb5 · WORK=IDLE · SSOT=ROK21/7021
+- HEAD: d20f5ae · WORK=IDLE · SSOT=ROK21/7021
 - 지금: **K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS**
 - 직전: K-PATTERN-OWN-V1
 - BOOT다음: B·C 측정 또는 L2 EMA · **형 GO**
@@ -61,7 +61,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=6ac4fb5 · 지금=**K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS** · 다음=K-GENSPARK-COMPRESS-RECOVER-DONE
+1. 첫줄: [복귀] HEAD=d20f5ae · 지금=**K-GENSPARK-COMPRESS-RECOVER** — 압축복구 자동화 · **PASS** · 다음=K-GENSPARK-COMPRESS-RECOVER-DONE
 2. 위 JSON 중 지금 ID 관련 1~2개 fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -90,4 +90,4 @@ engine wire(GO없이) · auto-tune · 채팅기억으로 수치 인용
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 6ac4fb5_
+_generated: d20f5ae_
