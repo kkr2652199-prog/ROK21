@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f18b19f` · WORK=`IDLE`
+1. **HEAD:** `55edbdf` · WORK=`IDLE`
 2. **지금:** **K-REVIEW-QUOTA-SIM** — review quota live · **A 유지**
 3. **다음1건:** K-REVIEW-QUOTA-SIM-DONE — review quota 시뮬 완료 · best=**A(현행)** · wire GO 대기 · **형 결정** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
