@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4b0d1ab` · WORK=`IDLE`
+- HEAD: `eab094f` · WORK=`IDLE`
 - 지금: **K-COVER-DIAG** — 중복+cold-free · **NORMAL/IMPROVE**
 - 직전: K-COLD-EXCLUDE-DIAG
 - BOOT다음: 각도3(early) · **형 GO**
