@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `535ac27` · WORK=`IDLE`
+- HEAD: `4baab6e` · WORK=`IDLE`
 - 지금: **K-REPACK-HYBRID-WIRE** — stat/review hy_p45 · markov유지 · **PASS**
 - 직전: K-REPACK-HYBRID ablation +0.04/+0.03
 - BOOT다음: **FULL/combined 재검증** 또는 I2 · **형 GO**

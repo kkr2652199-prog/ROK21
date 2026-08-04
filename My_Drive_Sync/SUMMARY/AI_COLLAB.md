@@ -25,7 +25,7 @@
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
 ### 최신 상태 (2026-08-04 12:15 KST)
-- **HEAD(실측)**: push 후 EXTERNAL_START · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
+- **HEAD(실측)**: `4baab6e` · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-REPACK-HYBRID-WIRE** — **PASS**
 - **다음(공식)**: combined/FULL 재검증 또는 I2 · **형 GO**
 - **산출물**: `docs/benchmarks/20260804_KREPACK_HYBRID_WIRE.json` · `reports/20260804_KREPACK_HYBRID_WIRE.md`
