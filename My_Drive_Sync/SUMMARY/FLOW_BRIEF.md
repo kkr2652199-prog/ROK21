@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `51e6236` · WORK=`IDLE`
-- 지금: **K-EVOLVE-AUTO-S4** — ops(`EVOLVE_AUTO=1`) · **PASS**
-- 직전: K-EVOLVE-AUTO-S3 PREDICT 1236
-- BOOT다음: 모니터링(1236 SCORE) 또는 다른축 · **형 GO**
-- NEXT1: K-EVOLVE-AUTO-S4-DONE — S4 ops PASS · **모니터링(1236 SCORE)** 또는 다른축 · **형 GO** (승인=미확인)
+- HEAD: `6911eaa` · WORK=`IDLE`
+- 지금: **K-EVOLVE-VIRTUAL-1235** — 분석스택 가상생애 · **PASS**
+- 직전: K-EVOLVE-AUTO-S4 ops
+- BOOT다음: 1236 실추첨 후 ops SCORE 또는 다른축 · **형 GO**
+- NEXT1: K-EVOLVE-VIRTUAL-1235-DONE — 1235 가상생애 PASS · **1236 실추첨 후 ops SCORE** 또는 다른축 · **형 GO** (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

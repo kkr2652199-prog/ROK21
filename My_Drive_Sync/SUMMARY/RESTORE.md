@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `51e6236` · WORK=`IDLE`
-2. **지금:** **K-EVOLVE-AUTO-S4** — ops(`EVOLVE_AUTO=1`) · **PASS**
-3. **다음1건:** K-EVOLVE-AUTO-S4-DONE — S4 ops PASS · **모니터링(1236 SCORE)** 또는 다른축 · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `6911eaa` · WORK=`IDLE`
+2. **지금:** **K-EVOLVE-VIRTUAL-1235** — 분석스택 가상생애 · **PASS**
+3. **다음1건:** K-EVOLVE-VIRTUAL-1235-DONE — 1235 가상생애 PASS · **1236 실추첨 후 ops SCORE** 또는 다른축 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 다음(AUTO S4) | `--ops`+EVOLVE_AUTO=1 · phase=ops · idle | **PASS** | (push후) |
+| 2026-08-05 | 1235가상·분석적용 | VIRTUAL PREDICT→SCORE · hybrid · ge3無 | **PASS** | (push후) |
+| 2026-08-05 | 다음(AUTO S4) | `--ops`+EVOLVE_AUTO=1 · phase=ops · idle | **PASS** | 51e6236 |
 | 2026-08-05 | 진행(AUTO S3) | PREDICT 1236 캐시 · phase=predicted | **PASS** | 7e010bf |
 | 2026-08-05 | 다음(AUTO S2) | SCORE 1235 · evolve_log=1235 | **PASS** | 1f80f7f |
 | 2026-08-05 | 진행(AUTO S1) | dry-run tick PASS · apply거부 · state | **PASS** | 7eedee2 |

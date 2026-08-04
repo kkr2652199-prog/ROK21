@@ -26,9 +26,16 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EVOLVE-AUTO-S4** — **PASS** (ops · EVOLVE_AUTO=1)
-- **다음(공식)**: 모니터링(1236 SCORE) 또는 다른축 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KEVOLVE_AUTO_S4.json`
+- **지금(판정)**: **K-EVOLVE-VIRTUAL-1235** — **PASS** (분석스택 가상생애)
+- **다음(공식)**: 1236 실추첨 후 ops SCORE 또는 다른축 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KEVOLVE_VIRTUAL_1235.json`
+
+### K-EVOLVE-VIRTUAL-1235 (형 진행 · PASS)
+- 이번주=1236 미추첨 · 스테이징=**1235** 가상 PREDICT→SCORE
+- 적용: hybrid+mean+FUTURE-WIRE · **λ/covering OFF**(분석기각 유지)
+- actual `[6,7,11,15,39,43]` · warrant consec1·carry2·odd5·sum121
+- SCORE best: stat**2** / markov**1** / review**2** · ge3 없음 · schema3
+- tool: `tools/_k_evolve_virtual_draw.py --draw 1235`
 
 ### K-EVOLVE-AUTO-S4 (형 진행 · PASS)
 - `--ops` · `EVOLVE_AUTO=1` 필수(미설정 시 거부 확인)

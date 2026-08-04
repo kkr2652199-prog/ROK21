@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `51e6236` |
+| HEAD(실측) | `6911eaa` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-EVOLVE-AUTO-S4** — ops(`EVOLVE_AUTO=1`) · **PASS** |
-| 직전 | K-EVOLVE-AUTO-S3 PREDICT 1236 |
-| BOOT다음 | 모니터링(1236 SCORE) 또는 다른축 · **형 GO** |
-| NEXT1 ID | **K-EVOLVE-AUTO-S4-DONE** |
-| NEXT1 할일 | S4 ops PASS · **모니터링(1236 SCORE)** 또는 다른축 · **형 GO** |
+| 지금 | **K-EVOLVE-VIRTUAL-1235** — 분석스택 가상생애 · **PASS** |
+| 직전 | K-EVOLVE-AUTO-S4 ops |
+| BOOT다음 | 1236 실추첨 후 ops SCORE 또는 다른축 · **형 GO** |
+| NEXT1 ID | **K-EVOLVE-VIRTUAL-1235-DONE** |
+| NEXT1 할일 | 1235 가상생애 PASS · **1236 실추첨 후 ops SCORE** 또는 다른축 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=51e6236 · 지금=**K-EVOLVE-AUTO-S4** — ops(`EVOLVE_AUTO=1`) · **PASS** · 다음=K-EVOLVE-AUTO-S4-DONE`
+1. 첫줄 `[복귀] HEAD=6911eaa · 지금=**K-EVOLVE-VIRTUAL-1235** — 분석스택 가상생애 · **PASS** · 다음=K-EVOLVE-VIRTUAL-1235-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

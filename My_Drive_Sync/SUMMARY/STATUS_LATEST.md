@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-EVOLVE-AUTO-S4** — ops(`EVOLVE_AUTO=1`) · healthy_idle PASS
+📌 사유: **K-EVOLVE-VIRTUAL-1235** — 분석스택 가상 PREDICT→SCORE PASS
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-EVOLVE-VIRTUAL-1235** | **PASS** — 확정회차 가상생애 · live hybrid(`hy_p45_r123`)+mean · λ/cover OFF · actual`[6,7,11,15,39,43]` · warrant(consec1·carry2·odd5) · SCORE best stat**2**/markov**1**/review**2** · schema3 · `docs/benchmarks/20260805_KEVOLVE_VIRTUAL_1235.json` |
 | **K-EVOLVE-AUTO-S4** | **PASS** — `--ops` · G1 `EVOLVE_AUTO=1` 필수 · phase=`ops` · SCORE갭없음·1236캐시warm skip · mean feedback경로(기존·predictions없으면 no-op) · λ/covering OFF · `docs/benchmarks/20260805_KEVOLVE_AUTO_S4.json` |
 | **K-EVOLVE-AUTO-S3** | **PASS** — `--apply-predict` · PREDICT **1236** pool_view_cache · SCORE갭 없음 · feedback미실행 · `docs/benchmarks/20260805_KEVOLVE_AUTO_S3.json` |
 | **K-EVOLVE-AUTO-S2** | **PASS** — `--apply-score` · draw**1235** cache→evolve_log 3뇌 · PREDICT/feedback 없음 · weight=0 · `docs/benchmarks/20260805_KEVOLVE_AUTO_S2.json` |
@@ -284,8 +285,8 @@
 
 ## 5) 다음
 
-**모니터링(1236 추첨 후 SCORE)** 또는 **다른축** — 형 GO.  
-S0~S4 완료 · 운영 CLI=`EVOLVE_AUTO=1 --ops` · 롤백=`EVOLVE_AUTO=0` · λ/covering HOLD · mean/hybrid 유지.
+**1236 실추첨 후 ops SCORE** 또는 **다른축** — 형 GO.  
+가상1235 PASS · S0~S4 완료 · 운영=`EVOLVE_AUTO=1 --ops` · 롤백=`EVOLVE_AUTO=0` · λ/covering HOLD.
 
 ---
 

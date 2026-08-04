@@ -1,0 +1,318 @@
+{
+  "id": "K-EVOLVE-VIRTUAL",
+  "ts": "2026-08-04T16:12:53+00:00",
+  "draw_no": 1235,
+  "virtual": true,
+  "stack": {
+    "hybrid_assemble": "hy_p45_r123 (stat/review) · markov baseline",
+    "FEEDBACK_MATCH_MODE": "mean",
+    "CACHE_SCHEMA_VERSION": 3,
+    "FEATURE_LAMBDA_WIRE": false,
+    "FEATURE_LAMBDA_BY_BRAIN": {},
+    "STRUCTURE_COVER_WIRE": false,
+    "PAIR_COVER_WIRE": false,
+    "weight_applied": 0,
+    "applied_from_analysis": [
+      "FUTURE-WIRE + V2 quota (live)",
+      "repack hybrid hy_p45_r123",
+      "mean feedback path (predictions 없으면 no-op)",
+      "λ HOLD (full/tail 기각)",
+      "structure/pair cover HOLD (ge3↓)",
+      "warrant = 진단 라벨 only"
+    ]
+  },
+  "actual": {
+    "ok": true,
+    "draw_no": 1235,
+    "actual": [
+      6,
+      7,
+      11,
+      15,
+      39,
+      43
+    ],
+    "prev_draw": 1234,
+    "prev_nums": [
+      1,
+      15,
+      19,
+      31,
+      35,
+      43
+    ],
+    "features": {
+      "sum": 121,
+      "odd": 5,
+      "even": 1,
+      "zone_low": 4,
+      "zone_mid": 0,
+      "zone_high": 2,
+      "max_run": 2,
+      "span": 37
+    },
+    "warrant_view": {
+      "consec_pairs": 1,
+      "consec_ge1": true,
+      "carry": 2,
+      "carry_ge1": true,
+      "odd": 5,
+      "sum": 121,
+      "zones": [
+        4,
+        0,
+        2
+      ],
+      "span": 37,
+      "max_run": 2,
+      "note": "명분진단만 · covering/λ wire 아님"
+    }
+  },
+  "predict": {
+    "ok": true,
+    "cached": true,
+    "seed": 42,
+    "hybrid": {
+      "mode": "p45_r123",
+      "brains": [
+        "review",
+        "stat"
+      ],
+      "markov": "baseline_repack"
+    },
+    "feature_lambda": {
+      "wired": false,
+      "by_brain": {}
+    }
+  },
+  "score": {
+    "ok": true,
+    "draw_no": 1235,
+    "brains": [
+      {
+        "brain_tag": "stat",
+        "best_hits": 2,
+        "mean_hits": 0.6,
+        "assemble_mode": "hy_p45_r123"
+      },
+      {
+        "brain_tag": "markov",
+        "best_hits": 1,
+        "mean_hits": 0.4,
+        "assemble_mode": "baseline_repack"
+      },
+      {
+        "brain_tag": "review",
+        "best_hits": 2,
+        "mean_hits": 0.8,
+        "assemble_mode": "hy_p45_r123"
+      }
+    ]
+  },
+  "feedback": {
+    "ok": true,
+    "draw_no": 1235,
+    "mode": "mean",
+    "via": "_auto_feedback"
+  },
+  "before_evolve": [
+    {
+      "brain_tag": "markov",
+      "best_hits": 1,
+      "mean_hits": 0.4,
+      "assemble_mode": "unknown",
+      "features": {
+        "weight_applied": 0.0,
+        "n_repack": 5,
+        "repack_avg_sum": 130.8,
+        "repack_avg_odd": 3.2,
+        "repack_avg_zone_low": 1.8,
+        "repack_avg_zone_mid": 3.0,
+        "repack_avg_zone_high": 1.2,
+        "repack_avg_max_run": 2.0,
+        "repack_avg_span": 25.8,
+        "best_features": {
+          "sum": 71,
+          "odd": 3,
+          "even": 3,
+          "zone_low": 5,
+          "zone_mid": 0,
+          "zone_high": 1,
+          "max_run": 3,
+          "span": 34
+        }
+      },
+      "miss_tags": [
+        "carry_over",
+        "ending_digit"
+      ],
+      "note": "K-EVOLVE-AUTO S2 SCORE · weight=0 · cache→log"
+    },
+    {
+      "brain_tag": "review",
+      "best_hits": 2,
+      "mean_hits": 0.4,
+      "assemble_mode": "unknown",
+      "features": {
+        "weight_applied": 0.0,
+        "n_repack": 5,
+        "repack_avg_sum": 147.4,
+        "repack_avg_odd": 3.4,
+        "repack_avg_zone_low": 1.2,
+        "repack_avg_zone_mid": 3.0,
+        "repack_avg_zone_high": 1.8,
+        "repack_avg_max_run": 1.8,
+        "repack_avg_span": 25.2,
+        "best_features": {
+          "sum": 165,
+          "odd": 5,
+          "even": 1,
+          "zone_low": 1,
+          "zone_mid": 3,
+          "zone_high": 2,
+          "max_run": 1,
+          "span": 28
+        }
+      },
+      "miss_tags": [
+        "ending_digit"
+      ],
+      "note": "K-EVOLVE-AUTO S2 SCORE · weight=0 · cache→log"
+    },
+    {
+      "brain_tag": "stat",
+      "best_hits": 2,
+      "mean_hits": 0.8,
+      "assemble_mode": "unknown",
+      "features": {
+        "weight_applied": 0.0,
+        "n_repack": 5,
+        "repack_avg_sum": 141.0,
+        "repack_avg_odd": 3.4,
+        "repack_avg_zone_low": 1.4,
+        "repack_avg_zone_mid": 3.0,
+        "repack_avg_zone_high": 1.6,
+        "repack_avg_max_run": 2.0,
+        "repack_avg_span": 27.8,
+        "best_features": {
+          "sum": 113,
+          "odd": 5,
+          "even": 1,
+          "zone_low": 4,
+          "zone_mid": 0,
+          "zone_high": 2,
+          "max_run": 2,
+          "span": 42
+        }
+      },
+      "miss_tags": [
+        "ending_digit"
+      ],
+      "note": "K-EVOLVE-AUTO S2 SCORE · weight=0 · cache→log"
+    }
+  ],
+  "after_evolve": [
+    {
+      "brain_tag": "markov",
+      "best_hits": 1,
+      "mean_hits": 0.4,
+      "assemble_mode": "baseline_repack",
+      "features": {
+        "weight_applied": 0.0,
+        "n_repack": 5,
+        "repack_avg_sum": 130.8,
+        "repack_avg_odd": 3.2,
+        "repack_avg_zone_low": 1.8,
+        "repack_avg_zone_mid": 3.0,
+        "repack_avg_zone_high": 1.2,
+        "repack_avg_max_run": 2.0,
+        "repack_avg_span": 25.8,
+        "best_features": {
+          "sum": 71,
+          "odd": 3,
+          "even": 3,
+          "zone_low": 5,
+          "zone_mid": 0,
+          "zone_high": 1,
+          "max_run": 3,
+          "span": 34
+        }
+      },
+      "miss_tags": [
+        "carry_over",
+        "ending_digit"
+      ],
+      "note": "K-EVOLVE-VIRTUAL · live hybrid+mean · λ/cover OFF · weight=0"
+    },
+    {
+      "brain_tag": "review",
+      "best_hits": 2,
+      "mean_hits": 0.8,
+      "assemble_mode": "hy_p45_r123",
+      "features": {
+        "weight_applied": 0.0,
+        "n_repack": 5,
+        "repack_avg_sum": 135.0,
+        "repack_avg_odd": 3.8,
+        "repack_avg_zone_low": 1.2,
+        "repack_avg_zone_mid": 3.8,
+        "repack_avg_zone_high": 1.0,
+        "repack_avg_max_run": 2.2,
+        "repack_avg_span": 20.2,
+        "best_features": {
+          "sum": 165,
+          "odd": 5,
+          "even": 1,
+          "zone_low": 1,
+          "zone_mid": 3,
+          "zone_high": 2,
+          "max_run": 1,
+          "span": 28
+        }
+      },
+      "miss_tags": [
+        "ending_digit"
+      ],
+      "note": "K-EVOLVE-VIRTUAL · live hybrid+mean · λ/cover OFF · weight=0"
+    },
+    {
+      "brain_tag": "stat",
+      "best_hits": 2,
+      "mean_hits": 0.6,
+      "assemble_mode": "hy_p45_r123",
+      "features": {
+        "weight_applied": 0.0,
+        "n_repack": 5,
+        "repack_avg_sum": 141.8,
+        "repack_avg_odd": 3.4,
+        "repack_avg_zone_low": 1.0,
+        "repack_avg_zone_mid": 3.6,
+        "repack_avg_zone_high": 1.4,
+        "repack_avg_max_run": 1.6,
+        "repack_avg_span": 26.2,
+        "best_features": {
+          "sum": 144,
+          "odd": 4,
+          "even": 2,
+          "zone_low": 2,
+          "zone_mid": 1,
+          "zone_high": 3,
+          "max_run": 1,
+          "span": 42
+        }
+      },
+      "miss_tags": [
+        "ending_digit"
+      ],
+      "note": "K-EVOLVE-VIRTUAL · live hybrid+mean · λ/cover OFF · weight=0"
+    }
+  ],
+  "ge3_best": {
+    "stat": false,
+    "markov": false,
+    "review": false
+  },
+  "pass": true,
+  "verdict": "PASS",
+  "note": "확정회차 가상 생애 · 회차번호는 스테이징 · 분석스택만 적용(실패축 OFF)"
+}
