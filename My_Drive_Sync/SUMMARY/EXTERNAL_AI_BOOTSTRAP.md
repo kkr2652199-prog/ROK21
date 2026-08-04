@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `33e959d` |
+| HEAD(실측) | `6b5cd12` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED** |
-| 직전 | K-PATTERN-BC-MEASURE |
-| BOOT다음 | wire GO 대기 · **형 결정** |
-| NEXT1 ID | **K-PATCH-1235-PREP-DONE** |
-| NEXT1 할일 | 패치 후보 측정 완료 · **wire GO 대기** · **형 결정** |
+| 지금 | **K-QUOTA-D-WIRE** — 실적용 검증 · **FAIL·롤백** |
+| 직전 | K-PATCH-1235-PREP |
+| BOOT다음 | 형 확인 · live경로 재측정 여부 |
+| NEXT1 ID | **K-QUOTA-D-WIRE-DONE** |
+| NEXT1 할일 | quota D wire **FAIL·롤백완료** · 검증 결과 확인 · **형 GO**(다음: live경로 재측정 또는 다른 후보) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=33e959d · 지금=**K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED** · 다음=K-PATCH-1235-PREP-DONE`
+1. 첫줄 `[복귀] HEAD=6b5cd12 · 지금=**K-QUOTA-D-WIRE** — 실적용 검증 · **FAIL·롤백** · 다음=K-QUOTA-D-WIRE-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

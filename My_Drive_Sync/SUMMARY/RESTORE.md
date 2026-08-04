@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `33e959d` · WORK=`IDLE`
-2. **지금:** **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED**
-3. **다음1건:** K-PATCH-1235-PREP-DONE — 패치 후보 측정 완료 · **wire GO 대기** · **형 결정** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `6b5cd12` · WORK=`IDLE`
+2. **지금:** **K-QUOTA-D-WIRE** — 실적용 검증 · **FAIL·롤백**
+3. **다음1건:** K-QUOTA-D-WIRE-DONE — quota D wire **FAIL·롤백완료** · 검증 결과 확인 · **형 GO**(다음: live경로 재측정 또는 다른 후보) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | quota D wire | n100=0.10·full=0.115 · 롤백 | **FAIL** | (push후) |
 | 2026-08-05 | 1235패치준비 | quota B/C/D후보 · PMI/B/D기각 | **MEASURED** | aededd8 |
 | 2026-08-05 | B·C 패턴 실측 | odd/sum런·PMI클러스터 · wire OFF | **MEASURED** | 72554e1 |
 | 2026-08-05 | 젠스파크압축복구 | GENSPARK_COMPRESS_RECOVER R37자동 | **PASS** | 42573f3 |
@@ -45,7 +46,6 @@
 | 2026-08-05 | 다음(AUTO S4) | `--ops`+EVOLVE_AUTO=1 · phase=ops · idle | **PASS** | 51e6236 |
 | 2026-08-05 | 진행(AUTO S3) | PREDICT 1236 캐시 · phase=predicted | **PASS** | 7e010bf |
 | 2026-08-05 | 다음(AUTO S2) | SCORE 1235 · evolve_log=1235 | **PASS** | 1f80f7f |
-| 2026-08-05 | 진행(AUTO S1) | dry-run tick PASS · apply거부 · state | **PASS** | 7eedee2 |
 
 ---
 

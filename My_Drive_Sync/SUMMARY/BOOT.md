@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED**
-- 직전: K-PATTERN-BC-MEASURE
-- 다음: wire GO 대기 · **형 결정**
+- 지금: **K-QUOTA-D-WIRE** — 실적용 검증 · **FAIL·롤백**
+- 직전: K-PATCH-1235-PREP
+- 다음: 형 확인 · live경로 재측정 여부
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -71,7 +71,8 @@ def _seed_independent_brain(target_draw_no: int) -> None:
     random.seed(BRAIN_RNG_SEED_BASE + int(target_draw_no))
 # 벤치 pin 참조용 (production은 dynamic_brain_quota 사용)
 MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {"markov": 3, "stat": 1, "review": 1}
-# 벤치 전용: 고정 쿼터 override (None=production dynamic). 진단 후 반드시 None 복원.
+# K-QUOTA-D-WIRE (형 GO): 고정 슬롯 stat2/markov3/review0 (=30/60/10 · 5세트)
+# None=production dynamic(구 0/4/1). 롤백 시 None 복원.
 BENCH_FIXED_QUOTA: dict[str, int] | None = None
 
 

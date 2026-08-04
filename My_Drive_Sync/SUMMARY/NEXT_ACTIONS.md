@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-PATCH-1235-PREP-DONE
-- 할일: 패치 후보 측정 완료 · **wire GO 대기** · **형 결정**
-- 완료조건: 형 선택(quota B/C/D 중 wire GO 여부)
-- 선행완료: docs/benchmarks/20260805_KPATCH_1235_PREP.json
+- ID: K-QUOTA-D-WIRE-DONE
+- 할일: quota D wire **FAIL·롤백완료** · 검증 결과 확인 · **형 GO**(다음: live경로 재측정 또는 다른 후보)
+- 완료조건: 형 확인
+- 선행완료: docs/benchmarks/20260805_KQUOTA_D_WIRE.json
 - 승인필요: 미확인
 - 선행조건: 없음
 - 최종갱신: 2026-08-05
@@ -18,5 +18,5 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- 후보: quota B/C(+0.02)·D(+0.035)만 Δ≥+0.01 · PMI/B-sum/D-dynamic는 역방향·미등재
-- wire=False · quota 실변경 금지
+- n100 avg ge3=0.10 · full=0.115 → 하드롤백 · BENCH_FIXED_QUOTA=None · fusion 0.135 복원
+- PREP 0.170은 hybrid repack 시뮬 ≠ live predict_sets

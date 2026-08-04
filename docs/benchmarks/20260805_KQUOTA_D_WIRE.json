@@ -1,0 +1,115 @@
+{
+  "id": "K-QUOTA-D-WIRE",
+  "ts": "2026-08-04T18:35:27.107103+00:00",
+  "verdict": "FAIL",
+  "wire": false,
+  "quota_before": {
+    "stat": 0,
+    "markov": 80,
+    "review": 20
+  },
+  "quota_after": {
+    "stat": 30,
+    "markov": 60,
+    "review": 10
+  },
+  "slots_before": {
+    "stat": 0,
+    "markov": 4,
+    "review": 1
+  },
+  "slots_after": {
+    "stat": 2,
+    "markov": 3,
+    "review": 0
+  },
+  "change": {
+    "file": "app/testlotto/brains/coordinator.py",
+    "symbol": "BENCH_FIXED_QUOTA",
+    "value": {
+      "stat": 2,
+      "markov": 3,
+      "review": 0
+    },
+    "note": "지시서 path app/testlotto/coordinator.py 는 없음 · brains/coordinator.py 가 SSOT"
+  },
+  "n100_multiseed": {
+    "seed42": {
+      "ge3": 0.09,
+      "mean": 1.59
+    },
+    "seed0": {
+      "ge3": 0.11,
+      "mean": 1.72
+    },
+    "seed7": {
+      "ge3": 0.1,
+      "mean": 1.62
+    },
+    "avg_ge3": 0.1,
+    "verdict": "FAIL",
+    "detail": {
+      "42": {
+        "ge3": 0.09,
+        "mean": 1.59,
+        "n": 100,
+        "seed": 42,
+        "elapsed_sec": 40.3
+      },
+      "0": {
+        "ge3": 0.11,
+        "mean": 1.72,
+        "n": 100,
+        "seed": 0,
+        "elapsed_sec": 30.1
+      },
+      "7": {
+        "ge3": 0.1,
+        "mean": 1.62,
+        "n": 100,
+        "seed": 7,
+        "elapsed_sec": 29.8
+      }
+    }
+  },
+  "full_n200": {
+    "draw_range": [
+      1036,
+      1235
+    ],
+    "ge3": 0.115,
+    "mean": 1.645,
+    "vs_null": 0.0013,
+    "vs_pin": -0.0297,
+    "verdict": "FAIL",
+    "elapsed_sec": 61.6
+  },
+  "slot_log_ok": true,
+  "slot_detail": {
+    "totals": {
+      "markov": 600,
+      "stat": 400
+    },
+    "avg_slots_per_draw": {
+      "stat": 2.0,
+      "markov": 3.0,
+      "review": 0.0
+    },
+    "n_draws_with_preds": 200,
+    "n_mismatch_draws": 0,
+    "mismatch_sample": [],
+    "stat_slots_ok": true
+  },
+  "rollback_target": "640cb67",
+  "rolled_back": true,
+  "pass": false,
+  "prior": "docs/benchmarks/20260805_KPATCH_1235_PREP.json",
+  "tool": "tools/_k_quota_d_wire_verify.py",
+  "root_cause": {
+    "summary": "PREP 시뮬(ge3=0.170)은 pool_view_cache hybrid repack 재조합 · live wire는 coordinator predict_sets→quota 경로 → 성적 괴리",
+    "prep_path": "testlotto_pool_view_cache.repack_by_brain (hy_p45_r123)",
+    "live_path": "brains.predict_sets ×15 → dynamic_brain_quota/BENCH_FIXED",
+    "lesson": "quota 후보는 live coordinator 경로로 재측정 후 wire GO"
+  },
+  "rollback_action": "BENCH_FIXED_QUOTA=None (quota-only · not git 640cb67)"
+}

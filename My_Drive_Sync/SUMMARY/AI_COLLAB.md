@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED**
-- **다음(공식)**: wire GO 대기 · **형 결정**
-- **산출물**: `docs/benchmarks/20260805_KPATCH_1235_PREP.json`
+- **지금(판정)**: **K-QUOTA-D-WIRE** — **FAIL·롤백**
+- **다음(공식)**: 형 확인 · live경로 재측정 여부
+- **산출물**: `docs/benchmarks/20260805_KQUOTA_D_WIRE.json`
+
+### K-QUOTA-D-WIRE (형 GO · FAIL)
+- BENCH_FIXED 2/3/0 슬롯 발권 OK · n100 avg**0.10** · full**0.115** → 하드롤백
+- PREP 0.170=hybrid repack 시뮬 ≠ live predict_sets
+- fusion 예측 **0.135** 복원 · `BENCH_FIXED_QUOTA=None`
 
 ### K-PATCH-1235-PREP (형 지시 · MEASURED)
 - quota A0.135 → B/C0.155(+0.02) · D0.170(+0.035) → **후보 등재·wire GO 필요**
