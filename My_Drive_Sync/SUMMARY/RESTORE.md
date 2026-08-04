@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4fe37af` · WORK=`IDLE`
+1. **HEAD:** `aededd8` · WORK=`IDLE`
 2. **지금:** **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED**
 3. **다음1건:** K-PATCH-1235-PREP-DONE — 패치 후보 측정 완료 · **wire GO 대기** · **형 결정** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 1235패치준비 | quota B/C/D후보 · PMI/B/D기각 | **MEASURED** | (push후) |
+| 2026-08-05 | 1235패치준비 | quota B/C/D후보 · PMI/B/D기각 | **MEASURED** | aededd8 |
 | 2026-08-05 | B·C 패턴 실측 | odd/sum런·PMI클러스터 · wire OFF | **MEASURED** | 72554e1 |
 | 2026-08-05 | 젠스파크압축복구 | GENSPARK_COMPRESS_RECOVER R37자동 | **PASS** | 42573f3 |
 | 2026-08-05 | OWN-V1 독자패턴 | ADEF 측정 · BC설계 · wire OFF | **MEASURED** | 55c6f12 |

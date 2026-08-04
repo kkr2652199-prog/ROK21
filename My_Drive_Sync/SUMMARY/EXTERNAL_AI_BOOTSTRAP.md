@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `4fe37af` |
+| HEAD(실측) | `aededd8` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=4fe37af · 지금=**K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED** · 다음=K-PATCH-1235-PREP-DONE`
+1. 첫줄 `[복귀] HEAD=aededd8 · 지금=**K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED** · 다음=K-PATCH-1235-PREP-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

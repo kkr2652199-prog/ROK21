@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4fe37af` · WORK=`IDLE`
+- HEAD: `aededd8` · WORK=`IDLE`
 - 지금: **K-PATCH-1235-PREP** — 패치후보 측정 · **MEASURED**
 - 직전: K-PATTERN-BC-MEASURE
 - BOOT다음: wire GO 대기 · **형 결정**
