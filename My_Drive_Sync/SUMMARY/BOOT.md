@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-TRANSITION-FULL** — 전이·이월 · **STRONG**
-- 직전: K-ASSOC-RULE-DIAG
+- 지금: K-TRANSITION 논의기록 push — 팩트체크·무작위표본·로드맵
+- 직전: K-TRANSITION-FULL STRONG · 1234→1235 패턴 검증
 - 다음: stat 뇌 교체 설계 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

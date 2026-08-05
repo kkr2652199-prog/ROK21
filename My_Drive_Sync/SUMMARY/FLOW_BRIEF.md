@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `03b7f3c` · WORK=`IDLE`
-- 지금: **K-TRANSITION-FULL** — 전이·이월 · **STRONG**
-- 직전: K-ASSOC-RULE-DIAG
+- HEAD: `f3f6869` · WORK=`IDLE`
+- 지금: K-TRANSITION 논의기록 push — 팩트체크·무작위표본·로드맵
+- 직전: K-TRANSITION-FULL STRONG · 1234→1235 패턴 검증
 - BOOT다음: stat 뇌 교체 설계 · **형 GO**
 - NEXT1: K-TRANSITION-FULL-DONE — 전회차 전이 패턴 진단 완료 · 결과 확인 · **stat 뇌 교체 설계 착수** (STRONG) (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **K-TRANSITION-FULL** — 전회차 유사전이·이월 · **STRONG**
+📌 사유: **K-TRANSITION 논의기록** — 팩트체크·무작위표본·로드맵 push
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-TRANSITION-DISCUSS** | **DOC** — 1234→1235 팩트체크(carry·212·hit2 일치) · 무작위5+1234 단건 hit全**2** · 로드맵=검증완료→stat설계 · wire否 · `reports/20260805_KTRANSITION_*.md` · `docs/benchmarks/20260805_KTRANSITION_RANDOM_SAMPLE.json` |
 | **K-TRANSITION-FULL** | **STRONG** — sim_k2 n**1135** mean_hit**2.172** Δ**+0.172** · k3 n**811** Δ**+0.065** MARGINAL · k4 n**0** · carry1235=[15,43] · brain_replace=**즉시착수**(stat) · wire否 · `docs/benchmarks/20260805_KTRANSITION_FULL.json` |
 | **K-ASSOC-RULE-DIAG** | **NOISE** — STEP1 maxδ**0.084**<p95**0.117** · STEP2**0.45**<**0.559** · STEP3**0.667**<**0.867** · SIGNAL 0/3 · assoc wire否 · `docs/benchmarks/20260805_KASSOC_RULE_DIAG.json` |
 | **K-NEIGHBOR-MATCH** | **NOISE** — rolling top15 hit≥3 =**0.23** < 무작위**0.311**(Δ**−0.081**) · mean_hit**1.91**<2.0 · HIGH maxJ≈mid → pool실패 · carry[15,43] 재출현**0.139**≈rand · neighbor wire否 · `docs/benchmarks/20260805_KNEIGHBOR_MATCH.json` |

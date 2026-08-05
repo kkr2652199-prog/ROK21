@@ -20,4 +20,5 @@ IDLE
 
 - sim_k2 mean_hit**2.172** Δ**+0.172** → **STRONG** · brain_replace=즉시착수(stat)
 - sim_k3 Δ**+0.065** MARGINAL · sim_k4 n_valid=0 (support<10)
+- 논의기록: FACTCHECK · RANDOM_SAMPLE(6건 hit=2) · DISCUSS_ROADMAP push됨
 - markov/review 유지 · wire 금지 · 형 GO 후 교체 설계
