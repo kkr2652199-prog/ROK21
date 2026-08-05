@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6bd5be8` · WORK=`IDLE`
+1. **HEAD:** `03b7f3c` · WORK=`IDLE`
 2. **지금:** **K-TRANSITION-FULL** — 전이·이월 · **STRONG**
 3. **다음1건:** K-TRANSITION-FULL-DONE — 전회차 전이 패턴 진단 완료 · 결과 확인 · **stat 뇌 교체 설계 착수** (STRONG) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 전회차 전이·이월 | k2 Δ+0.172 STRONG · stat교체즉시 | **STRONG** | (push후) |
+| 2026-08-05 | 전회차 전이·이월 | k2 Δ+0.172 STRONG · stat교체즉시 | **STRONG** | 03b7f3c |
 | 2026-08-05 | 연관규칙 전수 | STEP1~3 maxδ<p95 · NOISE | **NOISE** | 2be3708 |
 | 2026-08-05 | kNN neighbor | top15 0.23<rand0.311 · NOISE | **NOISE** | 37ba5d2 |
 | 2026-08-05 | early취약성 | STRUCTURAL · late가더낮음 · early전용wire否 | **STRUCT** | 6a4adc7 |
@@ -46,6 +46,7 @@
 | 2026-08-05 | quota D wire | n100=0.10·full=0.115 · 롤백 | **FAIL** | f15a1ce |
 | 2026-08-05 | 1235패치준비 | quota B/C/D후보 · PMI/B/D기각 | **MEASURED** | aededd8 |
 | 2026-08-05 | B·C 패턴 실측 | odd/sum런·PMI클러스터 · wire OFF | **MEASURED** | 72554e1 |
+
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

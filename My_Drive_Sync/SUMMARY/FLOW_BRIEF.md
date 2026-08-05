@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6bd5be8` · WORK=`IDLE`
+- HEAD: `03b7f3c` · WORK=`IDLE`
 - 지금: **K-TRANSITION-FULL** — 전이·이월 · **STRONG**
 - 직전: K-ASSOC-RULE-DIAG
 - BOOT다음: stat 뇌 교체 설계 · **형 GO**
