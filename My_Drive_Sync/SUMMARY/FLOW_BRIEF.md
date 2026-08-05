@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `757db27` · WORK=`IDLE`
+- HEAD: `3cf51d6` · WORK=`IDLE`
 - 지금: **K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF)
 - 직전: K-TRANSITION-STEP4-WIRE · PASS
 - BOOT다음: n200 결과 형 확인 · 통계요정 복귀 유지 · **형 GO**
