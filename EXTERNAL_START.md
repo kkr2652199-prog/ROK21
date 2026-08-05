@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `88ba6bd` |
+| HEAD(실측) | `20d06cc` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push |
 | 직전 | K-TRANSITION 논의기록 · STRONG rolling |
 | BOOT다음 | stat 뇌 교체 설계 · **형 GO** |
-| NEXT1 ID | **K-TRANSITION-FULL-DONE** |
-| NEXT1 할일 | 전회차 전이 패턴 진단 완료 · 결과 확인 · **stat 뇌 교체 설계 착수** (STRONG) |
+| NEXT1 ID | **K-TRANSITION-COLLECT-DESIGN** |
+| NEXT1 할일 | transition 패턴 수집(DB/로그) 설계 · **wire/뇌/발권 미접촉** · 방향성 브리핑(`DIRECTION_BRIEF_CURSOR`) 확인 후 진행 |
 | 승인필요 | 미확인 |
-| 선행 | 없음 |
+| 선행 | docs/benchmarks/20260805_KTRANSITION_FULL.json |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=88ba6bd · 지금=**Cursor 종합브리핑** — K-TRANSITION 외부AI용 push · 다음=K-TRANSITION-FULL-DONE`
+1. 첫줄 `[복귀] HEAD=20d06cc · 지금=**Cursor 종합브리핑** — K-TRANSITION 외부AI용 push · 다음=K-TRANSITION-COLLECT-DESIGN`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 88ba6bd_
+_generated: 20d06cc_
