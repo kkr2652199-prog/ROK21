@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `71d6763` · WORK=`IDLE`
-2. **지금:** **K-EARLY-DIAG** — early 취약성 · **STRUCTURAL**
-3. **다음1건:** K-EARLY-DIAG-DONE — early 취약성 진단 완료 · 결과 확인 · **K-NEIGHBOR-MATCH 진행** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `3097c21` · WORK=`IDLE`
+2. **지금:** **K-NEIGHBOR-MATCH** — kNN · **NOISE**
+3. **다음1건:** K-NEIGHBOR-MATCH-DONE — kNN 패턴 진단 완료 · 결과 확인 · **cold-free wire GO 여부 결정** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | kNN neighbor | top15 0.23<rand0.311 · NOISE | **NOISE** | (push후) |
 | 2026-08-05 | early취약성 | STRUCTURAL · late가더낮음 · early전용wire否 | **STRUCT** | 6a4adc7 |
 | 2026-08-05 | covering진단 | Jaccard NORMAL · cold-free+0.03 | **IMPROVE** | eab094f |
 | 2026-08-05 | cold제외진단 | k5 Δ+0.007 MARGINAL · wire否 | **MARGINAL** | 3fbc1c0 |
@@ -45,7 +46,6 @@
 | 2026-08-05 | B·C 패턴 실측 | odd/sum런·PMI클러스터 · wire OFF | **MEASURED** | 72554e1 |
 | 2026-08-05 | 젠스파크압축복구 | GENSPARK_COMPRESS_RECOVER R37자동 | **PASS** | 42573f3 |
 | 2026-08-05 | OWN-V1 독자패턴 | ADEF 측정 · BC설계 · wire OFF | **MEASURED** | 55c6f12 |
-| 2026-08-05 | TAXONOMY-V1 L1/L3/L4 | deviation·PMI·페널티스펙 · w*=0 | **DOC** | b75c2fe |
 
 ---
 

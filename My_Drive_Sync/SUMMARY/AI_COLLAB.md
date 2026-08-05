@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-EARLY-DIAG** — **STRUCTURAL**
-- **다음(공식)**: K-NEIGHBOR-MATCH · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KEARLY_DIAG.json`
+- **지금(판정)**: **K-NEIGHBOR-MATCH** — **NOISE**
+- **다음(공식)**: cold-free wire GO 여부 · **형 결정**
+- **산출물**: `docs/benchmarks/20260805_KNEIGHBOR_MATCH.json`
+
+### K-NEIGHBOR-MATCH (형 지시 · NOISE)
+- rolling k10→top15 hit≥3 =0.23 < 무작위0.311 · neighbor wire否
+- fusion0.135와 지표 다름(혼동금지) · cold-free는 별도 형 결정
+- tool `tools/_k_neighbor_match.py`
 
 ### K-EARLY-DIAG (형 지시 · STRUCTURAL)
 - ge3 early0.138/mid0.150/late0.117 · early단독붕괴 아님
