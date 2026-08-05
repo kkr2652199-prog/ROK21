@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `793c254` · WORK=`IDLE`
+- HEAD: `1d22fe2` · WORK=`IDLE`
 - 지금: K-TRANSITION 논의기록 push — 팩트체크·무작위표본·로드맵
 - 직전: K-TRANSITION-FULL STRONG · 1234→1235 패턴 검증
 - BOOT다음: stat 뇌 교체 설계 · **형 GO**
