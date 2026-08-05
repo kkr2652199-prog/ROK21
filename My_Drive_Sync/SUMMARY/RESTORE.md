@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `bc5d5c8` · WORK=`IDLE`
+1. **HEAD:** `0557d2a` · WORK=`IDLE`
 2. **지금:** **DIRECTION_BRIEF_CURSOR** — COLLECT_FIRST push
 3. **다음1건:** K-TRANSITION-COLLECT-DESIGN — transition 패턴 수집(DB/로그) 설계 · **wire/뇌/발권 미접촉** · 방향성 브리핑(`DIRECTION_BRIEF_CURSOR`) 확인 후 진행 (승인필요=미확인 · 선행=docs/benchmarks/20260805_KTRANSITION_FULL.json)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 방향브리핑push | DIRECTION_BRIEF·수집NEXT·[CURSOR] | **DOC** | (push후) |
+| 2026-08-05 | 방향브리핑push | DIRECTION_BRIEF·수집NEXT·[CURSOR] | **DOC** | 0557d2a |
 | 2026-08-05 | Cursor종합브리핑 | 외부AI용 K-TRANSITION·[CURSOR]표기 | **DOC** | 20d06cc |
 | 2026-08-05 | 논의기록 push | 팩트체크·무작위6건·로드맵 문서화 | **DOC** | 99e8a90 |
 | 2026-08-05 | 전회차 전이·이월 | k2 Δ+0.172 STRONG · stat교체즉시 | **STRONG** | 03b7f3c |

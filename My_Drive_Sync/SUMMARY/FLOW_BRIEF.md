@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `bc5d5c8` · WORK=`IDLE`
+- HEAD: `0557d2a` · WORK=`IDLE`
 - 지금: **DIRECTION_BRIEF_CURSOR** — COLLECT_FIRST push
 - 직전: Cursor 종합브리핑 · TRANSITION STRONG
 - BOOT다음: 패턴 수집 설계 · **형 GO**
