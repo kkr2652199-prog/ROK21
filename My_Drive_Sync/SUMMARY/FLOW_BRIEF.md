@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5503ffc` · WORK=`IDLE`
+- HEAD: `2be3708` · WORK=`IDLE`
 - 지금: **K-ASSOC-RULE-DIAG** — 연관규칙 · **NOISE**
 - 직전: K-NEIGHBOR-MATCH
 - BOOT다음: cold-free wire 단독 · **형 GO**
