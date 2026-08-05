@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **[CURSOR] K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF)
+📌 사유: **[CURSOR] K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG**
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-TRANSITION-HIT-WARRANT** | **CATALOG** — n_draws**1134** · explained**0.545**/unexplained**0.455** · carry**0.136** · trans_top15**0.333**(≈null) · consec**0.211** · STABLE · wire否 · `docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT.json` |
 | **K-TRANSITION-FUSION-N200** | **ROLLBACK** — fusion n200(1035~1234) ge3=**0.135**(27) mean_hit=**1.715** · Δbaseline**0** · period STABLE · `TRANSITION_V1_WIRE=False` 적용 · `docs/benchmarks/20260805_KTRANSITION_FUSION_N200.json` |
 | **K-TRANSITION-STEP4-WIRE** | **PASS**(smoke) · 당시 ON · solo n50 ge3=**0.06** mean_best**1.22** · fusion재검증→ROLLBACK · `docs/benchmarks/20260805_KTRANSITION_STEP4_WIRE.json` |
 | **K-TRANSITION-STEP3-DESIGN** | **DESIGN_HOLD** — nopeek mean**2.007** · FULL-ho**2.178** · replace=HOLD · `docs/benchmarks/20260805_KTRANSITION_STEP3_DESIGN.json` |

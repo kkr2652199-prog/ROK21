@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `3cf51d6` |
+| HEAD(실측) | `d6912aa` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF) |
-| 직전 | K-TRANSITION-STEP4-WIRE · PASS |
-| BOOT다음 | n200 결과 형 확인 · 통계요정 복귀 유지 · **형 GO** |
-| NEXT1 ID | **K-TRANSITION-FUSION-N200-DONE** |
-| NEXT1 할일 | n200 결과 형 확인 · KEEP→현배선유지 / MARGINAL→추가검증or조건부유지 / ROLLBACK→`K_STAT_TRANSITION_V1=0` 즉시적용(**적용완료·WIRE=False**) · 다음회차 자동수집 대기 |
+| 지금 | **K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG** |
+| 직전 | K-TRANSITION-FUSION-N200 · ROLLBACK |
+| BOOT다음 | 명분 로그 패치(설명 문자열) 여부 · 발권가중 금지 · **형 GO** |
+| NEXT1 ID | **K-TRANSITION-HIT-WARRANT-DONE** |
+| NEXT1 할일 | HIT-WARRANT 카탈로그 형 확인 · 다음=명분 라벨을 학습로그/설명문자열에 부착(발권가중·WIRE 금지) 또는 추가 라벨 확장 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=3cf51d6 · 지금=**K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF) · 다음=K-TRANSITION-FUSION-N200-DONE`
+1. 첫줄 `[복귀] HEAD=d6912aa · 지금=**K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG** · 다음=K-TRANSITION-HIT-WARRANT-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 3cf51d6_
+_generated: d6912aa_

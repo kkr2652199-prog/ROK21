@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3cf51d6` · WORK=`IDLE`
-2. **지금:** **K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF)
-3. **다음1건:** K-TRANSITION-FUSION-N200-DONE — n200 결과 형 확인 · KEEP→현배선유지 / MARGINAL→추가검증or조건부유지 / ROLLBACK→`K_STAT_TRANSITION_V1=0` 즉시적용(**적용완료·WIRE=False**) · 다음회차 자동수집 대기 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `d6912aa` · WORK=`IDLE`
+2. **지금:** **K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG**
+3. **다음1건:** K-TRANSITION-HIT-WARRANT-DONE — HIT-WARRANT 카탈로그 형 확인 · 다음=명분 라벨을 학습로그/설명문자열에 부착(발권가중·WIRE 금지) 또는 추가 라벨 확장 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | 명분축 전환 | HIT-WARRANT 전수 · top15≈null | **CATALOG** | (push후) |
 | 2026-08-05 | fusion n200 | ge3=0.135 mean=1.715 · WIRE OFF | **ROLLBACK** | ae5c35d |
 | 2026-08-05 | STEP4 GO(A) | transition_v1 wire·smokeOK·n50=0.06 | **PASS** | edd7c7b |
 | 2026-08-05 | STEP3 설계 | nopeek2.007 HOLD · FULL-ho2.178 | **HOLD** | 145a6f4 |
@@ -45,7 +46,6 @@
 | 2026-08-05 | 전회차 전이·이월 | k2 Δ+0.172 STRONG · stat교체즉시 | **STRONG** | 03b7f3c |
 | 2026-08-05 | 연관규칙 전수 | STEP1~3 maxδ<p95 · NOISE | **NOISE** | 2be3708 |
 | 2026-08-05 | kNN neighbor | top15 0.23<rand0.311 · NOISE | **NOISE** | 37ba5d2 |
-| 2026-08-05 | early취약성 | STRUCTURAL · late가더낮음 · early전용wire否 | **STRUCT** | 6a4adc7 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

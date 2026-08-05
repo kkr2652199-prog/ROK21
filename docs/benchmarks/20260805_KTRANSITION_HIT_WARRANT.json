@@ -1,0 +1,638 @@
+{
+  "id": "K-TRANSITION-HIT-WARRANT",
+  "ts": "2026-08-05T05:49:02.984548+00:00",
+  "verdict": "CATALOG",
+  "wire": false,
+  "claim": "설명 라벨 비율만 · 당첨확률↑ 금지",
+  "range": {
+    "N_lo": 101,
+    "N_hi": 1234,
+    "N1_max": 1235
+  },
+  "n_draws": 1134,
+  "n_numbers": 6804,
+  "n_explained": 3709,
+  "n_unexplained": 3095,
+  "n_skip_no_log": 0,
+  "n_skip_no_next": 0,
+  "transition_log_rows": 1134,
+  "sim_k": 2,
+  "label_definition": {
+    "carry": "num ∈ D_N ∩ D_{N+1}",
+    "trans_top15": "num ∈ transition_log.top15 (draw_no=N, sim_k=2)",
+    "trans_top15_rank": "1-based index in top15",
+    "struct_consec": "num ∈ consecutive pair within D_{N+1}",
+    "struct_zone_*": "L1-15 / M16-30 / H31-45 attribute",
+    "struct_odd/even": "parity attribute",
+    "explained": "carry OR trans_top15 OR struct_consec",
+    "unexplained": "no primary warrant (zone/parity alone do not explain)"
+  },
+  "rates": {
+    "carry": 0.13639,
+    "trans_top15": 0.333039,
+    "struct_consec": 0.210758,
+    "unexplained": 0.454879,
+    "explained_any_primary": 0.545121
+  },
+  "label_counts": {
+    "carry": 928,
+    "trans_top15": 2266,
+    "struct_zone_M": 2249,
+    "struct_odd": 3481,
+    "struct_even": 3323,
+    "unexplained": 3095,
+    "struct_zone_H": 2283,
+    "struct_zone_L": 2272,
+    "struct_consec": 1434
+  },
+  "primary_combo": {
+    "trans_top15": {
+      "count": 1519,
+      "rate_of_explained": 0.409544
+    },
+    "struct_consec": {
+      "count": 873,
+      "rate_of_explained": 0.235373
+    },
+    "carry": {
+      "count": 469,
+      "rate_of_explained": 0.126449
+    },
+    "struct_consec|trans_top15": {
+      "count": 389,
+      "rate_of_explained": 0.10488
+    },
+    "carry|trans_top15": {
+      "count": 287,
+      "rate_of_explained": 0.077379
+    },
+    "carry|struct_consec": {
+      "count": 101,
+      "rate_of_explained": 0.027231
+    },
+    "carry|struct_consec|trans_top15": {
+      "count": 71,
+      "rate_of_explained": 0.019143
+    }
+  },
+  "baselines": {
+    "trans_top15_null_per_num": 0.333333,
+    "note": "null은 균등 가정. carry/consec는 세트 구조 의존 — 비율만 보고 확률↑ 금지"
+  },
+  "by_period": {
+    "early": {
+      "n_draws": 378,
+      "n_numbers": 2268,
+      "explained_rate": 0.533069,
+      "unexplained_rate": 0.466931
+    },
+    "mid": {
+      "n_draws": 378,
+      "n_numbers": 2268,
+      "explained_rate": 0.563933,
+      "unexplained_rate": 0.436067
+    },
+    "late": {
+      "n_draws": 378,
+      "n_numbers": 2268,
+      "explained_rate": 0.53836,
+      "unexplained_rate": 0.46164
+    },
+    "max_gap": 0.030864,
+    "stable": true
+  },
+  "spot_1234_1235": {
+    "N": 1234,
+    "N1": 1235,
+    "D_N": [
+      1,
+      15,
+      19,
+      31,
+      35,
+      43
+    ],
+    "D_N1": [
+      6,
+      7,
+      11,
+      15,
+      39,
+      43
+    ],
+    "carry": [
+      15,
+      43
+    ],
+    "top15": [
+      34,
+      37,
+      38,
+      3,
+      44,
+      13,
+      15,
+      33,
+      1,
+      12,
+      17,
+      21,
+      45,
+      7,
+      19
+    ],
+    "numbers": [
+      {
+        "num": 6,
+        "labels": [
+          "struct_consec",
+          "struct_zone_L",
+          "struct_even"
+        ],
+        "trans_top15_rank": null,
+        "explained": true
+      },
+      {
+        "num": 7,
+        "labels": [
+          "trans_top15",
+          "struct_consec",
+          "struct_zone_L",
+          "struct_odd"
+        ],
+        "trans_top15_rank": 14,
+        "explained": true
+      },
+      {
+        "num": 11,
+        "labels": [
+          "struct_zone_L",
+          "struct_odd",
+          "unexplained"
+        ],
+        "trans_top15_rank": null,
+        "explained": false
+      },
+      {
+        "num": 15,
+        "labels": [
+          "carry",
+          "trans_top15",
+          "struct_zone_L",
+          "struct_odd"
+        ],
+        "trans_top15_rank": 7,
+        "explained": true
+      },
+      {
+        "num": 39,
+        "labels": [
+          "struct_zone_H",
+          "struct_odd",
+          "unexplained"
+        ],
+        "trans_top15_rank": null,
+        "explained": false
+      },
+      {
+        "num": 43,
+        "labels": [
+          "carry",
+          "struct_zone_H",
+          "struct_odd"
+        ],
+        "trans_top15_rank": null,
+        "explained": true
+      }
+    ]
+  },
+  "sample_heads": [
+    {
+      "N": 101,
+      "N1": 102,
+      "D_N": [
+        1,
+        3,
+        17,
+        32,
+        35,
+        45
+      ],
+      "D_N1": [
+        17,
+        22,
+        24,
+        26,
+        35,
+        40
+      ],
+      "carry": [
+        17,
+        35
+      ],
+      "top15": [
+        6,
+        38,
+        15,
+        17,
+        18,
+        35,
+        7,
+        10,
+        23,
+        24,
+        26,
+        36,
+        40,
+        44,
+        1
+      ],
+      "numbers": [
+        {
+          "num": 17,
+          "labels": [
+            "carry",
+            "trans_top15",
+            "struct_zone_M",
+            "struct_odd"
+          ],
+          "trans_top15_rank": 4,
+          "explained": true
+        },
+        {
+          "num": 22,
+          "labels": [
+            "struct_zone_M",
+            "struct_even",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 24,
+          "labels": [
+            "trans_top15",
+            "struct_zone_M",
+            "struct_even"
+          ],
+          "trans_top15_rank": 10,
+          "explained": true
+        },
+        {
+          "num": 26,
+          "labels": [
+            "trans_top15",
+            "struct_zone_M",
+            "struct_even"
+          ],
+          "trans_top15_rank": 11,
+          "explained": true
+        },
+        {
+          "num": 35,
+          "labels": [
+            "carry",
+            "trans_top15",
+            "struct_zone_H",
+            "struct_odd"
+          ],
+          "trans_top15_rank": 6,
+          "explained": true
+        },
+        {
+          "num": 40,
+          "labels": [
+            "trans_top15",
+            "struct_zone_H",
+            "struct_even"
+          ],
+          "trans_top15_rank": 13,
+          "explained": true
+        }
+      ]
+    },
+    {
+      "N": 102,
+      "N1": 103,
+      "D_N": [
+        17,
+        22,
+        24,
+        26,
+        35,
+        40
+      ],
+      "D_N1": [
+        5,
+        14,
+        15,
+        27,
+        30,
+        45
+      ],
+      "carry": [],
+      "top15": [
+        26,
+        37,
+        40,
+        3,
+        7,
+        24,
+        33,
+        35,
+        6,
+        29,
+        32,
+        36,
+        38,
+        2,
+        5
+      ],
+      "numbers": [
+        {
+          "num": 5,
+          "labels": [
+            "trans_top15",
+            "struct_zone_L",
+            "struct_odd"
+          ],
+          "trans_top15_rank": 15,
+          "explained": true
+        },
+        {
+          "num": 14,
+          "labels": [
+            "struct_consec",
+            "struct_zone_L",
+            "struct_even"
+          ],
+          "trans_top15_rank": null,
+          "explained": true
+        },
+        {
+          "num": 15,
+          "labels": [
+            "struct_consec",
+            "struct_zone_L",
+            "struct_odd"
+          ],
+          "trans_top15_rank": null,
+          "explained": true
+        },
+        {
+          "num": 27,
+          "labels": [
+            "struct_zone_M",
+            "struct_odd",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 30,
+          "labels": [
+            "struct_zone_M",
+            "struct_even",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 45,
+          "labels": [
+            "struct_zone_H",
+            "struct_odd",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        }
+      ]
+    }
+  ],
+  "sample_tails": [
+    {
+      "N": 1233,
+      "N1": 1234,
+      "D_N": [
+        2,
+        7,
+        20,
+        25,
+        37,
+        40
+      ],
+      "D_N1": [
+        1,
+        15,
+        19,
+        31,
+        35,
+        43
+      ],
+      "carry": [],
+      "top15": [
+        10,
+        43,
+        33,
+        37,
+        17,
+        40,
+        2,
+        15,
+        6,
+        22,
+        32,
+        3,
+        38,
+        39,
+        7
+      ],
+      "numbers": [
+        {
+          "num": 1,
+          "labels": [
+            "struct_zone_L",
+            "struct_odd",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 15,
+          "labels": [
+            "trans_top15",
+            "struct_zone_L",
+            "struct_odd"
+          ],
+          "trans_top15_rank": 8,
+          "explained": true
+        },
+        {
+          "num": 19,
+          "labels": [
+            "struct_zone_M",
+            "struct_odd",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 31,
+          "labels": [
+            "struct_zone_H",
+            "struct_odd",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 35,
+          "labels": [
+            "struct_zone_H",
+            "struct_odd",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 43,
+          "labels": [
+            "trans_top15",
+            "struct_zone_H",
+            "struct_odd"
+          ],
+          "trans_top15_rank": 2,
+          "explained": true
+        }
+      ]
+    },
+    {
+      "N": 1234,
+      "N1": 1235,
+      "D_N": [
+        1,
+        15,
+        19,
+        31,
+        35,
+        43
+      ],
+      "D_N1": [
+        6,
+        7,
+        11,
+        15,
+        39,
+        43
+      ],
+      "carry": [
+        15,
+        43
+      ],
+      "top15": [
+        34,
+        37,
+        38,
+        3,
+        44,
+        13,
+        15,
+        33,
+        1,
+        12,
+        17,
+        21,
+        45,
+        7,
+        19
+      ],
+      "numbers": [
+        {
+          "num": 6,
+          "labels": [
+            "struct_consec",
+            "struct_zone_L",
+            "struct_even"
+          ],
+          "trans_top15_rank": null,
+          "explained": true
+        },
+        {
+          "num": 7,
+          "labels": [
+            "trans_top15",
+            "struct_consec",
+            "struct_zone_L",
+            "struct_odd"
+          ],
+          "trans_top15_rank": 14,
+          "explained": true
+        },
+        {
+          "num": 11,
+          "labels": [
+            "struct_zone_L",
+            "struct_odd",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 15,
+          "labels": [
+            "carry",
+            "trans_top15",
+            "struct_zone_L",
+            "struct_odd"
+          ],
+          "trans_top15_rank": 7,
+          "explained": true
+        },
+        {
+          "num": 39,
+          "labels": [
+            "struct_zone_H",
+            "struct_odd",
+            "unexplained"
+          ],
+          "trans_top15_rank": null,
+          "explained": false
+        },
+        {
+          "num": 43,
+          "labels": [
+            "carry",
+            "struct_zone_H",
+            "struct_odd"
+          ],
+          "trans_top15_rank": null,
+          "explained": true
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "tool": "tools/_k_transition_hit_warrant.py",
+  "prior": [
+    "docs/benchmarks/20260805_KTRANSITION_COLLECT_DESIGN.json",
+    "docs/benchmarks/20260805_KTRANSITION_FUSION_N200.json",
+    "My_Drive_Sync/SUMMARY/WARRANT.md"
+  ],
+  "forbid": [
+    "engine.py",
+    "random.choices",
+    "발권 INSERT",
+    "coordinator 수정",
+    "WIRE ON",
+    "당첨확률↑ 클레임"
+  ]
+}

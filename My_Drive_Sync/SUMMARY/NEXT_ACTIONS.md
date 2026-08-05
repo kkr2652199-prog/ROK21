@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-TRANSITION-FUSION-N200-DONE
-- 할일: n200 결과 형 확인 · KEEP→현배선유지 / MARGINAL→추가검증or조건부유지 / ROLLBACK→`K_STAT_TRANSITION_V1=0` 즉시적용(**적용완료·WIRE=False**) · 다음회차 자동수집 대기
+- ID: K-TRANSITION-HIT-WARRANT-DONE
+- 할일: HIT-WARRANT 카탈로그 형 확인 · 다음=명분 라벨을 학습로그/설명문자열에 부착(발권가중·WIRE 금지) 또는 추가 라벨 확장
 - 완료조건: 형 GO
-- 선행완료: docs/benchmarks/20260805_KTRANSITION_FUSION_N200.json
+- 선행완료: docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT.json
 - 승인필요: 미확인
 - 선행조건: 없음
 - 최종갱신: 2026-08-05
@@ -18,6 +18,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- fusion n200: ge3=**0.135**(=baseline) · mean_hit=**1.715**(&lt;1.8) → **ROLLBACK**
-- `TRANSITION_V1_WIRE=False` 적용됨 · 재ON=`K_STAT_TRANSITION_V1=1`
-- by_period STABLE (max_gap 0.028)
+- explained_any=**0.545** · unexplained=**0.455** · trans_top15=**0.333**(≈null 15/45)
+- carry=**0.136** · struct_consec=**0.211** · period STABLE
+- WIRE OFF 유지 · 당첨확률↑ 클레임 금지
