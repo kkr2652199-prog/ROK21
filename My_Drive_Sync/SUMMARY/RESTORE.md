@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | STEP4 GO(A) | transition_v1 wire·smokeOK·n50=0.06 | **PASS** | (push후) |
+| 2026-08-05 | STEP4 GO(A) | transition_v1 wire·smokeOK·n50=0.06 | **PASS** | edd7c7b |
 | 2026-08-05 | STEP3 설계 | nopeek2.007 HOLD · FULL-ho2.178 | **HOLD** | 145a6f4 |
 | 2026-08-05 | STEP2 재검증 | table·FULL·period STABLE | **PASS** | f27f78a |
 | 2026-08-05 | transition수집 | log테이블·backfill1134·FULL재현OK | **PASS** | a518cdf |
@@ -46,7 +46,6 @@
 | 2026-08-05 | kNN neighbor | top15 0.23<rand0.311 · NOISE | **NOISE** | 37ba5d2 |
 | 2026-08-05 | early취약성 | STRUCTURAL · late가더낮음 · early전용wire否 | **STRUCT** | 6a4adc7 |
 | 2026-08-05 | covering진단 | Jaccard NORMAL · cold-free+0.03 | **IMPROVE** | eab094f |
-| 2026-08-05 | cold제외진단 | k5 Δ+0.007 MARGINAL · wire否 | **MARGINAL** | 3fbc1c0 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
