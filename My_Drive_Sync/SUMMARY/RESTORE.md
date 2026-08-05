@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `24e6632` · WORK=`IDLE`
+1. **HEAD:** `97cc724` · WORK=`IDLE`
 2. **지금:** **K-NEIGHBOR-MATCH** — kNN · **NOISE**
 3. **다음1건:** K-NEIGHBOR-MATCH-DONE — kNN 패턴 진단 완료 · 결과 확인 · **cold-free wire GO 여부 결정** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
