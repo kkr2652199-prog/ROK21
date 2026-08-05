@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f2f851f` · WORK=`IDLE`
+- HEAD: `145a6f4` · WORK=`IDLE`
 - 지금: **K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD**
 - 직전: K-TRANSITION-STEP2-VERIFY · PASS
 - BOOT다음: STEP4 패치 또는 HOLD · **형 GO**

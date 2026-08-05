@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f2f851f` · WORK=`IDLE`
+1. **HEAD:** `145a6f4` · WORK=`IDLE`
 2. **지금:** **K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD**
 3. **다음1건:** K-TRANSITION-STEP3-DESIGN-DONE — 설계 결과 형 확인 → **STEP4(실제 stat 교체 패치) GO 여부** 결정 (현재 replace=**HOLD**) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
