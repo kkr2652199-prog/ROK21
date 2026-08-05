@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | STEP3 설계 | nopeek2.007 HOLD · FULL-ho2.178 | **HOLD** | (push후) |
+| 2026-08-05 | STEP3 설계 | nopeek2.007 HOLD · FULL-ho2.178 | **HOLD** | 145a6f4 |
 | 2026-08-05 | STEP2 재검증 | table·FULL·period STABLE | **PASS** | f27f78a |
 | 2026-08-05 | transition수집 | log테이블·backfill1134·FULL재현OK | **PASS** | a518cdf |
 | 2026-08-05 | 방향브리핑push | DIRECTION_BRIEF·수집NEXT·[CURSOR] | **DOC** | 0557d2a |
