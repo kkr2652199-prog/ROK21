@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `779ef42` · WORK=`IDLE`
+1. **HEAD:** `ae5c35d` · WORK=`IDLE`
 2. **지금:** **K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF)
 3. **다음1건:** K-TRANSITION-FUSION-N200-DONE — n200 결과 형 확인 · KEEP→현배선유지 / MARGINAL→추가검증or조건부유지 / ROLLBACK→`K_STAT_TRANSITION_V1=0` 즉시적용(**적용완료·WIRE=False**) · 다음회차 자동수집 대기 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | fusion n200 | ge3=0.135 mean=1.715 · WIRE OFF | **ROLLBACK** | (push후) |
+| 2026-08-05 | fusion n200 | ge3=0.135 mean=1.715 · WIRE OFF | **ROLLBACK** | ae5c35d |
 | 2026-08-05 | STEP4 GO(A) | transition_v1 wire·smokeOK·n50=0.06 | **PASS** | edd7c7b |
 | 2026-08-05 | STEP3 설계 | nopeek2.007 HOLD · FULL-ho2.178 | **HOLD** | 145a6f4 |
 | 2026-08-05 | STEP2 재검증 | table·FULL·period STABLE | **PASS** | f27f78a |
