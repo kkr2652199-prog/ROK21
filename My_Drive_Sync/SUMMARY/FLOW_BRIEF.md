@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `ec1c03f` · WORK=`IDLE`
+- HEAD: `a518cdf` · WORK=`IDLE`
 - 지금: **K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS**
 - 직전: DIRECTION_BRIEF_CURSOR · COLLECT_FIRST
 - BOOT다음: STEP2 재검증 또는 자동수집 · **형 GO**

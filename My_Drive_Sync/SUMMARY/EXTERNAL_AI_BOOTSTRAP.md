@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `ec1c03f` |
+| HEAD(실측) | `a518cdf` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=ec1c03f · 지금=**K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS** · 다음=K-TRANSITION-COLLECT-DESIGN-DONE`
+1. 첫줄 `[복귀] HEAD=a518cdf · 지금=**K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS** · 다음=K-TRANSITION-COLLECT-DESIGN-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
