@@ -1,0 +1,55 @@
+{
+  "id": "K-TRANSITION-COLLECT-DESIGN",
+  "ts": "2026-08-05T03:47:04.438536+00:00",
+  "verdict": "PASS",
+  "wire": false,
+  "table_created": true,
+  "table_name": "transition_log",
+  "db": "data/lotto_testlotto.db",
+  "metric_note": "transition_log.hit_count = |top15 ∩ D_{N+1}| (수집·학습용). K-TRANSITION-FULL mean 2.172 = |top15 ∩ D_N| (FULL 동치 재현은 full_style_recheck).",
+  "backfill": {
+    "draw_range": [
+      101,
+      1234
+    ],
+    "total_inserted": 1134,
+    "total_skipped": 0,
+    "sim_k2": {
+      "mean_hit": 1.998236,
+      "delta": -0.001764,
+      "hit_ge3_count": 352,
+      "total_rows": 1134,
+      "match_prior_json": false,
+      "match_prior_note": "collect(N→N+1) vs FULL(hit@N) 지표 상이 — abs(mean-prior)<0.02 → False"
+    }
+  },
+  "full_style_recheck": {
+    "draw_range": [
+      101,
+      1235
+    ],
+    "n_valid": 1135,
+    "n_skipped": 0,
+    "mean_hit": 2.171806,
+    "delta": 0.171806,
+    "prior_mean": 2.171806,
+    "prior_delta": 0.171806,
+    "match_prior_json": true,
+    "note": "hit@N · similar next before N · min_similar=10 (FULL 동치)"
+  },
+  "hook_registered": true,
+  "hook_file": ".cursor/hooks/transition_collect_hook.py",
+  "next_step": "STEP2 — 수집 데이터 재검증 (데이터 쌓인 후)",
+  "forbid": [
+    "random.choices",
+    "engine.py",
+    "auto-tune",
+    "wire",
+    "coordinator 접촉",
+    "기존 발권 테이블 수정",
+    "신호 과장"
+  ],
+  "pass": true,
+  "tool": "tools/_k_transition_collect.py",
+  "prior": "docs/benchmarks/20260805_KTRANSITION_FULL.json"
+}

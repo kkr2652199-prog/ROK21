@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **[CURSOR] K-TRANSITION 전체 브리핑** — DIRECTION_BRIEF + 종합 + NEXT=COLLECT-DESIGN
+📌 사유: **[CURSOR] K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS**
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-TRANSITION-COLLECT-DESIGN** | **PASS** — table=`transition_log` · backfill 101~1234 n**1134** · collect mean≈**1.998**(N→N+1) · FULL재현 **2.171806** match · hook stop등록 · wire否 · `docs/benchmarks/20260805_KTRANSITION_COLLECT_DESIGN.json` |
 | **K-TRANSITION-CURSOR-BRIEF** | **DOC** — **[CURSOR]** 외부AI 종합 · `CURSOR_BRIEF_FOR_EXTERNAL_AI.md` + **`DIRECTION_BRIEF_CURSOR.md`(SSOT)** · JSON author=Cursor |
 | **K-TRANSITION-DISCUSS** | **DOC** — 1234→1235 팩트체크(carry·212·hit2 일치) · 무작위5+1234 단건 hit全**2** · 로드맵=검증완료→stat설계 · wire否 · `reports/20260805_KTRANSITION_*.md` · `docs/benchmarks/20260805_KTRANSITION_RANDOM_SAMPLE.json` |
 | **K-TRANSITION-FULL** | **STRONG** — sim_k2 n**1135** mean_hit**2.172** Δ**+0.172** · k3 n**811** Δ**+0.065** MARGINAL · k4 n**0** · carry1235=[15,43] · brain_replace=**보류(수집후)** · wire否 · `docs/benchmarks/20260805_KTRANSITION_FULL.json` |
@@ -304,8 +305,7 @@
 
 ## 5) 다음
 
-transition **STRONG**(미세) · **패턴 수집 설계** — 형 GO.  
-외부AI 1순위: `DIRECTION_BRIEF_CURSOR` + `CURSOR_BRIEF_FOR_EXTERNAL_AI`.  
+collect **PASS** · **STEP2 재검증 또는 자동수집** — 형 GO.  
 압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START · JSON raw 재페치.
 
 ---

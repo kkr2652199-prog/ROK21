@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0557d2a` · WORK=`IDLE`
-- 지금: **DIRECTION_BRIEF_CURSOR** — COLLECT_FIRST push
-- 직전: Cursor 종합브리핑 · TRANSITION STRONG
-- BOOT다음: 패턴 수집 설계 · **형 GO**
-- NEXT1: K-TRANSITION-COLLECT-DESIGN — transition 패턴 수집(DB/로그) 설계 · **wire/뇌/발권 미접촉** · 방향성 브리핑(`DIRECTION_BRIEF_CURSOR`) 확인 후 진행 (승인=미확인)
+- HEAD: `ec1c03f` · WORK=`IDLE`
+- 지금: **K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS**
+- 직전: DIRECTION_BRIEF_CURSOR · COLLECT_FIRST
+- BOOT다음: STEP2 재검증 또는 자동수집 · **형 GO**
+- NEXT1: K-TRANSITION-COLLECT-DESIGN-DONE — 수집 구조 완료 · backfill 검증 · 형 확인 → **STEP2 (데이터 재검증)** 또는 다음 회차 자동수집 대기 (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

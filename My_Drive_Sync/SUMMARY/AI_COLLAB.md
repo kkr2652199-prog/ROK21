@@ -27,17 +27,20 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-05 KST · Cursor DIRECTION 정정 push)
+### 최신 상태 (2026-08-05 KST · Cursor COLLECT-DESIGN)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **DIRECTION_BRIEF_CURSOR** — **COLLECT_FIRST**
-- **다음(공식)**: `K-TRANSITION-COLLECT-DESIGN` · **형 GO** (stat 교체는 STEP3)
-- **외부AI 1순위:** `reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md` (**[CURSOR 작성]**)
-- **종합 인덱스:** `reports/20260805_KTRANSITION_CURSOR_BRIEF_FOR_EXTERNAL_AI.md`
+- **지금(판정)**: **K-TRANSITION-COLLECT-DESIGN** — **PASS**
+- **다음(공식)**: COLLECT-DESIGN-DONE · STEP2 재검증 · **형 GO**
+- **산출물:** `docs/benchmarks/20260805_KTRANSITION_COLLECT_DESIGN.json`
+
+### K-TRANSITION-COLLECT-DESIGN (형 지시 · PASS · Cursor)
+- transition_log 신규 · backfill 101~1234 · wire/coordinator 미접촉
+- collect(N→N+1) mean≈1.998 · FULL재현 hit@N=2.171806 match
+- tool `tools/_k_transition_collect.py` · hook `transition_collect_hook.py`
 
 ### K-TRANSITION-DIRECTION-BRIEF (Cursor · COLLECT_FIRST)
 - **SSOT MD:** `reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md` · JSON author=Cursor
-- STRONG=미세신호 · 지금=**패턴 수집 설계** · stat교체=STEP3·형GO 후
-- NEXT: **K-TRANSITION-COLLECT-DESIGN** · wire/뇌/발권 금지
+- STRONG=미세신호 · 수집 STEP 완료(COLLECT-DESIGN PASS) · stat교체=STEP3·형GO 후
 - 종합인덱스: `CURSOR_BRIEF_FOR_EXTERNAL_AI.md`
 
 ### K-TRANSITION-DISCUSS (형·Cursor 대화 · DOC)
