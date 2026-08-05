@@ -1,0 +1,132 @@
+{
+  "id": "K-TRANSITION-STEP3-DESIGN",
+  "ts": "2026-08-05T04:12:43.092449+00:00",
+  "verdict": "DESIGN_HOLD",
+  "wire": false,
+  "alignment_check": {
+    "direction_match": true,
+    "cursor_cover": [
+      "K-A 0.760=set mean ≠ top15; 판정은 nopeek top15 hold-out",
+      "FULL≈2.172는 peek 참고(backtest_full_style_holdout)",
+      "ge3 기준=무작위 top15 0.311 (stat top15 ge3 미확인)"
+    ],
+    "hard_stop": false
+  },
+  "stat_current_summary": {
+    "file": "app/testlotto/brains/predict_stat_fairy.py",
+    "logic_summary": "1) `_statistical_predict`로 oversample 후보 생성 (빈도 기반). 2) 이월·끝수·미출30+ reasoning + learn_state 부스트로 confidence 조정. 3) `diversify_pick`로 Jaccard 다양성 선별 후 n_sets 반환 (random.choices 동결).",
+    "current_mean_ref": 0.76,
+    "current_mean_ref_note": "FINDINGS K-A OPEN: set-level mean=0.760 (최근100·500세트). top15 pool mean(2.0)과 지표 다름 — 교체판정은 top15 hold-out 기준.",
+    "interface": {
+      "fn": "predict_sets(draws: list[dict], n_sets: int=5) -> list[dict]",
+      "row_keys": [
+        "nums",
+        "confidence",
+        "reasoning",
+        "method",
+        "brain_tag",
+        "rank"
+      ],
+      "brain_tag": "stat",
+      "predict_sets_found": true
+    },
+    "read_only": true
+  },
+  "design_spec": {
+    "name": "predict_transition_v1",
+    "logic_steps": [
+      "A: 예측 대상 T에 대해 직전 회차 D_{T-1}을 anchor로 사용 (컨닝 금지)",
+      "B: 과거 1..T-2 중 D_{T-1}과 공통≥min_common 유사 회차 추출 (similar+1 은 T 이전만 · min_similar 미달 시 fallback)",
+      "C: 유사 회차들의 다음회 번호 빈도 → top_m 후보 풀",
+      "D: top_m에서 n_sets개 6번호 조합 구성·반환 (인터페이스=predict_sets 동형 · brain_tag='stat' 또는 'transition')"
+    ],
+    "params": {
+      "min_common": 2,
+      "min_similar": 10,
+      "top_m": 15,
+      "n_sets_default": 5,
+      "anchor": "D_{T-1}",
+      "data_source": "lotto_draws (+ optional transition_log cache)"
+    },
+    "interface_match": true,
+    "return_shape": {
+      "nums": "list[int] len6",
+      "confidence": "float",
+      "reasoning": "str",
+      "method": "전이패턴v1",
+      "brain_tag": "stat",
+      "rank": "int"
+    },
+    "note": "본 STEP=설계만. brains/ 신규 파일·coordinator 배선은 STEP4·형 GO 후. transition_log는 캐시; 런타임은 lotto_draws만으로도 동일 계산 가능."
+  },
+  "backtest_result": {
+    "draw_range": [
+      1100,
+      1234
+    ],
+    "n_draws": 135,
+    "mean_hit": 2.007407,
+    "delta_vs_stat": 1.247407,
+    "delta_vs_baseline2": 0.007407,
+    "hit_dist": {
+      "0": 8,
+      "1": 36,
+      "2": 54,
+      "3": 22,
+      "4": 14,
+      "5": 1,
+      "6": 0
+    },
+    "ge3_count": 37,
+    "ge3_rate": 0.274074,
+    "mode": "nopeek_Nminus1_to_N",
+    "metric_note": "top15∩D_T · transition_log(anchor=T-1) · 발권 가능 경로",
+    "n_missing_log": 0,
+    "random_ge3_rate": 0.311375,
+    "instruction_target_mean_approx": 2.171806,
+    "instruction_note": "지시서 '≈2.172'는 FULL hit@N 전역 신호. 발권 가능 nopeek hold-out는 별도(본 backtest_result)."
+  },
+  "backtest_full_style_holdout": {
+    "mode": "full_style_hit_at_N_peek",
+    "draw_range": [
+      1100,
+      1234
+    ],
+    "n_draws": 135,
+    "n_skipped": 0,
+    "mean_hit": 2.177778,
+    "delta_vs_full_prior": 0.005972,
+    "hit_dist": {
+      "0": 10,
+      "1": 28,
+      "2": 44,
+      "3": 36,
+      "4": 15,
+      "5": 2,
+      "6": 0
+    },
+    "ge3_count": 53,
+    "ge3_rate": 0.392593,
+    "metric_note": "FULL 동치·hold-out · 컨닝성(발권 판단 1차 아님)"
+  },
+  "replace_verdict": "HOLD",
+  "risk_list": [
+    "(a) transition_log/hook 미작동 시 캐시 공백 — 런타임은 lotto_draws 재계산 fallback 필수",
+    "(b) 초반·희소 구간 min_similar<10 → top15 불안정 · fallback(빈도/직전풀) 명세 필요",
+    "(c) 롤백: predict_stat_fairy.py·stat_brain.predict 경로 유지·플래그로 전환 (STEP4에서 FEATURE 플래그·하드코딩 금지 검토)"
+  ],
+  "forbid": [
+    "engine.py 수정",
+    "brains/ 파일 수정 (읽기만)",
+    "wire",
+    "auto-tune",
+    "random.choices",
+    "발권 테이블 INSERT/UPDATE",
+    "stat 즉시 교체 실행",
+    "coordinator 접촉",
+    "신호 과장 클레임"
+  ],
+  "pass": true,
+  "tool": "tools/_k_transition_step3_design.py",
+  "prior": "docs/benchmarks/20260805_KTRANSITION_STEP2_VERIFY.json"
+}

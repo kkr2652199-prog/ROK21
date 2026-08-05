@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7fd8164` |
+| HEAD(실측) | `f2f851f` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-TRANSITION-STEP2-VERIFY** — **PASS** |
-| 직전 | K-TRANSITION-COLLECT-DESIGN · PASS |
-| BOOT다음 | STEP3 stat 재설계 · **형 GO** |
-| NEXT1 ID | **K-TRANSITION-STEP2-VERIFY-DONE** |
-| NEXT1 할일 | STEP2 검증 결과 형 확인 → **STEP3(stat 재설계) GO 여부** 결정 |
+| 지금 | **K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD** |
+| 직전 | K-TRANSITION-STEP2-VERIFY · PASS |
+| BOOT다음 | STEP4 패치 또는 HOLD · **형 GO** |
+| NEXT1 ID | **K-TRANSITION-STEP3-DESIGN-DONE** |
+| NEXT1 할일 | 설계 결과 형 확인 → **STEP4(실제 stat 교체 패치) GO 여부** 결정 (현재 replace=**HOLD**) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7fd8164 · 지금=**K-TRANSITION-STEP2-VERIFY** — **PASS** · 다음=K-TRANSITION-STEP2-VERIFY-DONE`
+1. 첫줄 `[복귀] HEAD=f2f851f · 지금=**K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD** · 다음=K-TRANSITION-STEP3-DESIGN-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 7fd8164_
+_generated: f2f851f_

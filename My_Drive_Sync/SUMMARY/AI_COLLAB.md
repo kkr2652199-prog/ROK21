@@ -27,11 +27,16 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-05 KST · Cursor STEP2-VERIFY)
+### 최신 상태 (2026-08-05 KST · Cursor STEP3-DESIGN)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-TRANSITION-STEP2-VERIFY** — **PASS**
-- **다음(공식)**: STEP3 stat 재설계 · **형 GO**
-- **산출물:** `docs/benchmarks/20260805_KTRANSITION_STEP2_VERIFY.json`
+- **지금(판정)**: **K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD**
+- **다음(공식)**: STEP4 패치 GO 여부 · **형 결정**
+- **산출물:** `docs/benchmarks/20260805_KTRANSITION_STEP3_DESIGN.json`
+
+### K-TRANSITION-STEP3-DESIGN (형 지시 · DESIGN_HOLD · Cursor)
+- predict_transition_v1 설계만 · brains/engine 미수정
+- nopeek mean2.007 HOLD · FULL-holdout2.178 · replace=HOLD
+- tool `tools/_k_transition_step3_design.py`
 
 ### K-TRANSITION-STEP2-VERIFY (형 지시 · PASS · Cursor)
 - table 1134 ok · collect≈1.998 · FULL 2.171806 match · period STABLE
