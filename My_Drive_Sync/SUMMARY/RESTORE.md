@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a1f5fa7` · WORK=`IDLE`
+1. **HEAD:** `512832f` · WORK=`IDLE`
 2. **지금:** K-TRANSITION 논의기록 push — 팩트체크·무작위표본·로드맵
 3. **다음1건:** K-TRANSITION-FULL-DONE — 전회차 전이 패턴 진단 완료 · 결과 확인 · **stat 뇌 교체 설계 착수** (STRONG) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
