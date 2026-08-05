@@ -1,0 +1,60 @@
+{
+  "id": "K-TRANSITION-STEP4-WIRE",
+  "ts": "2026-08-05T04:39:55.114991+00:00",
+  "verdict": "PASS",
+  "wire": true,
+  "flag": {
+    "TRANSITION_V1_WIRE": true,
+    "env_off": "K_STAT_TRANSITION_V1=0",
+    "module": "app/testlotto/brains/stat_brain/transition_v1.py",
+    "entry": "app/testlotto/brains/stat_brain/predict.py"
+  },
+  "smoke": {
+    "smoke_ok": true,
+    "wire_default": true,
+    "on_methods": [
+      "전이패턴v1",
+      "전이패턴v1",
+      "전이패턴v1",
+      "전이패턴v1",
+      "전이패턴v1"
+    ],
+    "off_methods": [
+      "통계요정",
+      "통계요정",
+      "통계요정",
+      "통계요정",
+      "통계요정"
+    ],
+    "on_sample": [
+      3,
+      13,
+      15,
+      34,
+      37,
+      38
+    ],
+    "rollback_env": "K_STAT_TRANSITION_V1=0"
+  },
+  "mini_wf_n50": {
+    "draw_range": [
+      1185,
+      1234
+    ],
+    "n": 50,
+    "ge3_count": 3,
+    "ge3_rate": 0.06,
+    "mean_best_of_5": 1.22,
+    "baseline_fusion_ge3_ref": 0.135,
+    "note": "stat solo best-of-5 · fusion 전체 아님 · n50 smoke"
+  },
+  "prior_hold_note": "STEP3 DESIGN_HOLD(nopeek≈2.007) 상태에서 형 A=STEP4 GO. solo n50는 참고 · fusion n200 재검증 권고.",
+  "forbid_kept": [
+    "random.choices",
+    "engine.py 미수정",
+    "auto-tune"
+  ],
+  "pass": true,
+  "tool": "tools/_k_transition_step4_wire.py",
+  "prior": "docs/benchmarks/20260805_KTRANSITION_STEP3_DESIGN.json"
+}

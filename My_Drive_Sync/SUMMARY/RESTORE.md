@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `145a6f4` · WORK=`IDLE`
-2. **지금:** **K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD**
-3. **다음1건:** K-TRANSITION-STEP3-DESIGN-DONE — 설계 결과 형 확인 → **STEP4(실제 stat 교체 패치) GO 여부** 결정 (현재 replace=**HOLD**) (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `399391a` · WORK=`IDLE`
+2. **지금:** **K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke)
+3. **다음1건:** K-TRANSITION-STEP4-WIRE-DONE — STEP4 배선 완료 · **fusion n200 live 재검증** 또는 롤백(`K_STAT_TRANSITION_V1=0`) 결정 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | STEP4 GO(A) | transition_v1 wire·smokeOK·n50=0.06 | **PASS** | (push후) |
 | 2026-08-05 | STEP3 설계 | nopeek2.007 HOLD · FULL-ho2.178 | **HOLD** | 145a6f4 |
 | 2026-08-05 | STEP2 재검증 | table·FULL·period STABLE | **PASS** | f27f78a |
 | 2026-08-05 | transition수집 | log테이블·backfill1134·FULL재현OK | **PASS** | a518cdf |

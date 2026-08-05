@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `145a6f4` |
+| HEAD(실측) | `399391a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD** |
-| 직전 | K-TRANSITION-STEP2-VERIFY · PASS |
-| BOOT다음 | STEP4 패치 또는 HOLD · **형 GO** |
-| NEXT1 ID | **K-TRANSITION-STEP3-DESIGN-DONE** |
-| NEXT1 할일 | 설계 결과 형 확인 → **STEP4(실제 stat 교체 패치) GO 여부** 결정 (현재 replace=**HOLD**) |
+| 지금 | **K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke) |
+| 직전 | STEP3 DESIGN_HOLD · 형A=GO |
+| BOOT다음 | fusion n200 재검증/롤백 · **형 GO** |
+| NEXT1 ID | **K-TRANSITION-STEP4-WIRE-DONE** |
+| NEXT1 할일 | STEP4 배선 완료 · **fusion n200 live 재검증** 또는 롤백(`K_STAT_TRANSITION_V1=0`) 결정 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=145a6f4 · 지금=**K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD** · 다음=K-TRANSITION-STEP3-DESIGN-DONE`
+1. 첫줄 `[복귀] HEAD=399391a · 지금=**K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke) · 다음=K-TRANSITION-STEP4-WIRE-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

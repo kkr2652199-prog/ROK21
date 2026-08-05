@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **[CURSOR] K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD**
+📌 사유: **[CURSOR] K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke)
 
 ---
 
@@ -10,7 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-TRANSITION-STEP3-DESIGN** | **DESIGN_HOLD** — nopeek1100~1234 mean**2.007** ge3**0.274**<rand · FULL-holdout**2.178** · replace=HOLD · brains미수정 · `docs/benchmarks/20260805_KTRANSITION_STEP3_DESIGN.json` |
+| **K-TRANSITION-STEP4-WIRE** | **PASS**(smoke) · `TRANSITION_V1_WIRE=True` · solo n50 ge3=**0.06** mean_best**1.22** · 롤백 env=0 · engine.py미수정 · `docs/benchmarks/20260805_KTRANSITION_STEP4_WIRE.json` |
+| **K-TRANSITION-STEP3-DESIGN** | **DESIGN_HOLD** — nopeek mean**2.007** · FULL-ho**2.178** · replace=HOLD · `docs/benchmarks/20260805_KTRANSITION_STEP3_DESIGN.json` |
 | **K-TRANSITION-STEP2-VERIFY** | **PASS** — table_ok · collect mean**1.998**/std · FULL **2.171806** match · period STABLE · wire否 · `docs/benchmarks/20260805_KTRANSITION_STEP2_VERIFY.json` |
 | **K-TRANSITION-COLLECT-DESIGN** | **PASS** — table=`transition_log` · backfill 101~1234 n**1134** · collect mean≈**1.998**(N→N+1) · FULL재현 **2.171806** match · hook stop등록 · wire否 · `docs/benchmarks/20260805_KTRANSITION_COLLECT_DESIGN.json` |
 | **K-TRANSITION-CURSOR-BRIEF** | **DOC** — **[CURSOR]** 외부AI 종합 · `CURSOR_BRIEF_FOR_EXTERNAL_AI.md` + **`DIRECTION_BRIEF_CURSOR.md`(SSOT)** · JSON author=Cursor |
@@ -307,7 +308,7 @@
 
 ## 5) 다음
 
-STEP3 **DESIGN_HOLD** · **STEP4 GO 여부** — 형 결정.  
+STEP4 wire **ON** · solo n50 ge3**0.06** 약함 · **fusion n200/롤백** — 형 GO.  
 압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START · JSON raw 재페치.
 
 ---

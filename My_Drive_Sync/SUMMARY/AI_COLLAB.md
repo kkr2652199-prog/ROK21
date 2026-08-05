@@ -27,11 +27,16 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-05 KST · Cursor STEP3-DESIGN)
+### 최신 상태 (2026-08-05 KST · Cursor STEP4-WIRE)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD**
-- **다음(공식)**: STEP4 패치 GO 여부 · **형 결정**
-- **산출물:** `docs/benchmarks/20260805_KTRANSITION_STEP3_DESIGN.json`
+- **지금(판정)**: **K-TRANSITION-STEP4-WIRE** — **PASS**(smoke) · wire ON
+- **다음(공식)**: fusion n200 재검증/롤백 · **형 GO**
+- **산출물:** `docs/benchmarks/20260805_KTRANSITION_STEP4_WIRE.json`
+
+### K-TRANSITION-STEP4-WIRE (형 A=GO · Cursor)
+- transition_v1 → stat_brain.predict · 기본 ON · 롤백 env=0
+- smoke OK · solo n50 ge3=0.06 (약함) · engine.py 미수정
+- tool `tools/_k_transition_step4_wire.py`
 
 ### K-TRANSITION-STEP3-DESIGN (형 지시 · DESIGN_HOLD · Cursor)
 - predict_transition_v1 설계만 · brains/engine 미수정

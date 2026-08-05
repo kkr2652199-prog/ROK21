@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-TRANSITION-STEP3-DESIGN** — **DESIGN_HOLD**
-- 직전: K-TRANSITION-STEP2-VERIFY · PASS
-- 다음: STEP4 패치 또는 HOLD · **형 GO**
+- 지금: **K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke)
+- 직전: STEP3 DESIGN_HOLD · 형A=GO
+- 다음: fusion n200 재검증/롤백 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
