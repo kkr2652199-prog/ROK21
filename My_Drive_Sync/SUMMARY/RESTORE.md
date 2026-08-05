@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `ae5c35d` · WORK=`IDLE`
+1. **HEAD:** `757db27` · WORK=`IDLE`
 2. **지금:** **K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF)
 3. **다음1건:** K-TRANSITION-FUSION-N200-DONE — n200 결과 형 확인 · KEEP→현배선유지 / MARGINAL→추가검증or조건부유지 / ROLLBACK→`K_STAT_TRANSITION_V1=0` 즉시적용(**적용완료·WIRE=False**) · 다음회차 자동수집 대기 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
