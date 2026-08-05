@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0bf5560` |
+| HEAD(실측) | `77a923a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **압축복구** — MEMORY_RESTORE_CURSOR push |
+| 지금 | **K-TRANSITION-STEP2-VERIFY** — **PASS** |
 | 직전 | K-TRANSITION-COLLECT-DESIGN · PASS |
-| BOOT다음 | STEP2 재검증 또는 자동수집 · **형 GO** |
-| NEXT1 ID | **K-TRANSITION-COLLECT-DESIGN-DONE** |
-| NEXT1 할일 | 수집 구조 완료 · backfill 검증 · 형 확인 → **STEP2 (데이터 재검증)** 또는 다음 회차 자동수집 대기 |
+| BOOT다음 | STEP3 stat 재설계 · **형 GO** |
+| NEXT1 ID | **K-TRANSITION-STEP2-VERIFY-DONE** |
+| NEXT1 할일 | STEP2 검증 결과 형 확인 → **STEP3(stat 재설계) GO 여부** 결정 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0bf5560 · 지금=**압축복구** — MEMORY_RESTORE_CURSOR push · 다음=K-TRANSITION-COLLECT-DESIGN-DONE`
+1. 첫줄 `[복귀] HEAD=77a923a · 지금=**K-TRANSITION-STEP2-VERIFY** — **PASS** · 다음=K-TRANSITION-STEP2-VERIFY-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

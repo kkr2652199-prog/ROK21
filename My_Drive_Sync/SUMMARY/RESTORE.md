@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0bf5560` · WORK=`IDLE`
-2. **지금:** **압축복구** — MEMORY_RESTORE_CURSOR push
-3. **다음1건:** K-TRANSITION-COLLECT-DESIGN-DONE — 수집 구조 완료 · backfill 검증 · 형 확인 → **STEP2 (데이터 재검증)** 또는 다음 회차 자동수집 대기 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `77a923a` · WORK=`IDLE`
+2. **지금:** **K-TRANSITION-STEP2-VERIFY** — **PASS**
+3. **다음1건:** K-TRANSITION-STEP2-VERIFY-DONE — STEP2 검증 결과 형 확인 → **STEP3(stat 재설계) GO 여부** 결정 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-05 | STEP2 재검증 | table·FULL·period STABLE | **PASS** | (push후) |
 | 2026-08-05 | transition수집 | log테이블·backfill1134·FULL재현OK | **PASS** | a518cdf |
 | 2026-08-05 | 방향브리핑push | DIRECTION_BRIEF·수집NEXT·[CURSOR] | **DOC** | 0557d2a |
 | 2026-08-05 | Cursor종합브리핑 | 외부AI용 K-TRANSITION·[CURSOR]표기 | **DOC** | 20d06cc |
@@ -45,7 +46,6 @@
 | 2026-08-05 | covering진단 | Jaccard NORMAL · cold-free+0.03 | **IMPROVE** | eab094f |
 | 2026-08-05 | cold제외진단 | k5 Δ+0.007 MARGINAL · wire否 | **MARGINAL** | 3fbc1c0 |
 | 2026-08-05 | L2 EMA 진단 | H8/26/78 전부 NOISE · rescore否 | **NOISE** | 176da32 |
-| 2026-08-05 | review quota시뮬 | live A0.128 최선 · ↑기각 | **A유지** | f18b19f |
 
 ---
 
