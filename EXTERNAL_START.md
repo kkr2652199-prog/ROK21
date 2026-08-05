@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d6912aa` |
+| HEAD(실측) | `dc39b84` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG** |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d6912aa · 지금=**K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG** · 다음=K-TRANSITION-HIT-WARRANT-DONE`
+1. 첫줄 `[복귀] HEAD=dc39b84 · 지금=**K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG** · 다음=K-TRANSITION-HIT-WARRANT-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: d6912aa_
+_generated: dc39b84_

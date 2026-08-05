@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d6912aa` · WORK=`IDLE`
+- HEAD: `dc39b84` · WORK=`IDLE`
 - 지금: **K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG**
 - 직전: K-TRANSITION-FUSION-N200 · ROLLBACK
 - BOOT다음: 명분 로그 패치(설명 문자열) 여부 · 발권가중 금지 · **형 GO**
