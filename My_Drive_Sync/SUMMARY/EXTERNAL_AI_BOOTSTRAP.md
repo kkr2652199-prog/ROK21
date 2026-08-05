@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `710d11a` |
+| HEAD(실측) | `0bf5560` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **압축복구** — MEMORY_RESTORE_CURSOR push |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=710d11a · 지금=**압축복구** — MEMORY_RESTORE_CURSOR push · 다음=K-TRANSITION-COLLECT-DESIGN-DONE`
+1. 첫줄 `[복귀] HEAD=0bf5560 · 지금=**압축복구** — MEMORY_RESTORE_CURSOR push · 다음=K-TRANSITION-COLLECT-DESIGN-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

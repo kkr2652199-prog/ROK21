@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `710d11a` · WORK=`IDLE`
+1. **HEAD:** `0bf5560` · WORK=`IDLE`
 2. **지금:** **압축복구** — MEMORY_RESTORE_CURSOR push
 3. **다음1건:** K-TRANSITION-COLLECT-DESIGN-DONE — 수집 구조 완료 · backfill 검증 · 형 확인 → **STEP2 (데이터 재검증)** 또는 다음 회차 자동수집 대기 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

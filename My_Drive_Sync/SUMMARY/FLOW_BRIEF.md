@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `710d11a` · WORK=`IDLE`
+- HEAD: `0bf5560` · WORK=`IDLE`
 - 지금: **압축복구** — MEMORY_RESTORE_CURSOR push
 - 직전: K-TRANSITION-COLLECT-DESIGN · PASS
 - BOOT다음: STEP2 재검증 또는 자동수집 · **형 GO**
