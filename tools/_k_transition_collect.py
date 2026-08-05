@@ -247,6 +247,20 @@ def build_transition_row(draw_no: int, sim_k: int = 2) -> dict[str, Any]:
                 "reason": "no_next_or_missing",
             }
         insert_row(conn, row)
+        # HIT-WARRANT 학습로그 (발권 미접촉)
+        try:
+            from app.testlotto.hit_warrant import label_pair, upsert_hit_warrant_log
+
+            cat = label_pair(row["anchor_nums"], row["next_actual"], row["top15"])
+            upsert_hit_warrant_log(
+                int(row["draw_no"]) + 1,
+                int(row["draw_no"]),
+                cat,
+                sim_k=sim_k,
+                conn=conn,
+            )
+        except Exception:
+            pass
         conn.commit()
         return {
             "ok": True,

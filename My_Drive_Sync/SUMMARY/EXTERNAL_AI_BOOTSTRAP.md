@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `dc39b84` |
+| HEAD(실측) | `535c128` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG** |
-| 직전 | K-TRANSITION-FUSION-N200 · ROLLBACK |
-| BOOT다음 | 명분 로그 패치(설명 문자열) 여부 · 발권가중 금지 · **형 GO** |
-| NEXT1 ID | **K-TRANSITION-HIT-WARRANT-DONE** |
-| NEXT1 할일 | HIT-WARRANT 카탈로그 형 확인 · 다음=명분 라벨을 학습로그/설명문자열에 부착(발권가중·WIRE 금지) 또는 추가 라벨 확장 |
+| 지금 | **K-TRANSITION-HIT-WARRANT-ATTACH** — 명분→로그 부착 · **PASS** |
+| 직전 | K-TRANSITION-HIT-WARRANT · CATALOG |
+| BOOT다음 | 형 확인 · 라벨확장 or 정지 · 발권가중 금지 · **형 GO** |
+| NEXT1 ID | **K-TRANSITION-HIT-WARRANT-ATTACH-DONE** |
+| NEXT1 할일 | ATTACH PASS 형 확인 · hit_warrant_log+evolve.note 부착 유지 · 추가 라벨확장 or 트랙 종료(발권가중·WIRE 금지) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=dc39b84 · 지금=**K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG** · 다음=K-TRANSITION-HIT-WARRANT-DONE`
+1. 첫줄 `[복귀] HEAD=535c128 · 지금=**K-TRANSITION-HIT-WARRANT-ATTACH** — 명분→로그 부착 · **PASS** · 다음=K-TRANSITION-HIT-WARRANT-ATTACH-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

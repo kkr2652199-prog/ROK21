@@ -159,6 +159,15 @@ def build_evolve_row(
     }
     assemble_mode = ",".join(sorted(m for m in assemble_modes if m)) or "unknown"
 
+    base_note = "K-EVOLVE-LOG Phase1 · weight=0 · best는 참고(학습입력 금지)"
+    # HIT-WARRANT: 설명 문자열만 부착 · weight_applied 불변 · 발권 미접촉
+    try:
+        from app.testlotto.hit_warrant import attach_summary_for_evolve_note
+
+        note = attach_summary_for_evolve_note(int(draw_no), base_note)
+    except Exception:
+        note = base_note
+
     return {
         "draw_no": int(draw_no),
         "brain_tag": brain_tag,
@@ -175,7 +184,7 @@ def build_evolve_row(
         "features": agg,
         "miss_tags": miss_tags,
         "assemble_mode": assemble_mode,
-        "note": "K-EVOLVE-LOG Phase1 · weight=0 · best는 참고(학습입력 금지)",
+        "note": note,
     }
 
 

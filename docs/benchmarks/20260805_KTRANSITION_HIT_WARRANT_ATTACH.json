@@ -1,0 +1,200 @@
+{
+  "id": "K-TRANSITION-HIT-WARRANT-ATTACH",
+  "ts": "2026-08-05T05:55:51.893172+00:00",
+  "verdict": "PASS",
+  "wire": false,
+  "pass": true,
+  "backfill": {
+    "HIT_WARRANT_ATTACH": true,
+    "transition_rows": 1134,
+    "upserted": 1134,
+    "hit_warrant_log_rows": 1134,
+    "spot_1235": {
+      "draw_no": 1235,
+      "summary_text": "HIT-WARRANT carry=[15, 43] exp=4/6 [6:struct_consec; 7:trans_top15+struct_consec@14; 11:unexplained; 15:carry+trans_top15@7; 39:unexplained; 43:carry]",
+      "n_explained": 4,
+      "n_unexplained": 2
+    }
+  },
+  "evolve_note_patch": {
+    "evolve_rows_scanned": 3549,
+    "notes_updated": 3402,
+    "weight_all_zero": true,
+    "samples": [
+      {
+        "draw_no": 1235,
+        "brain_tag": "review",
+        "note_tail": "eight=0 · HIT-WARRANT carry=[15, 43] exp=4/6 [6:struct_consec; 7:trans_top15+struct_consec@14; 11:unexplained; 15:carry+trans_top15@7; 39:unexplained; 43:carry]"
+      },
+      {
+        "draw_no": 1235,
+        "brain_tag": "markov",
+        "note_tail": "eight=0 · HIT-WARRANT carry=[15, 43] exp=4/6 [6:struct_consec; 7:trans_top15+struct_consec@14; 11:unexplained; 15:carry+trans_top15@7; 39:unexplained; 43:carry]"
+      },
+      {
+        "draw_no": 1235,
+        "brain_tag": "stat",
+        "note_tail": "eight=0 · HIT-WARRANT carry=[15, 43] exp=4/6 [6:struct_consec; 7:trans_top15+struct_consec@14; 11:unexplained; 15:carry+trans_top15@7; 39:unexplained; 43:carry]"
+      },
+      {
+        "draw_no": 1234,
+        "brain_tag": "review",
+        "note_tail": " weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=2/6 [1:unexplained; 15:trans_top15@8; 19:unexplained; 31:unexplained; 35:unexplained; 43:trans_top15@2]"
+      },
+      {
+        "draw_no": 1234,
+        "brain_tag": "markov",
+        "note_tail": " weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=2/6 [1:unexplained; 15:trans_top15@8; 19:unexplained; 31:unexplained; 35:unexplained; 43:trans_top15@2]"
+      },
+      {
+        "draw_no": 1234,
+        "brain_tag": "stat",
+        "note_tail": " weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=2/6 [1:unexplained; 15:trans_top15@8; 19:unexplained; 31:unexplained; 35:unexplained; 43:trans_top15@2]"
+      },
+      {
+        "draw_no": 1233,
+        "brain_tag": "review",
+        "note_tail": " · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [2:unexplained; 7:unexplained; 20:unexplained; 25:trans_top15@12; 37:unexplained; 40:unexplained]"
+      },
+      {
+        "draw_no": 1233,
+        "brain_tag": "markov",
+        "note_tail": " · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [2:unexplained; 7:unexplained; 20:unexplained; 25:trans_top15@12; 37:unexplained; 40:unexplained]"
+      },
+      {
+        "draw_no": 1233,
+        "brain_tag": "stat",
+        "note_tail": " · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [2:unexplained; 7:unexplained; 20:unexplained; 25:trans_top15@12; 37:unexplained; 40:unexplained]"
+      },
+      {
+        "draw_no": 1232,
+        "brain_tag": "review",
+        "note_tail": "· weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [12:unexplained; 15:unexplained; 19:unexplained; 22:unexplained; 24:trans_top15@2; 36:unexplained]"
+      },
+      {
+        "draw_no": 1232,
+        "brain_tag": "markov",
+        "note_tail": "· weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [12:unexplained; 15:unexplained; 19:unexplained; 22:unexplained; 24:trans_top15@2; 36:unexplained]"
+      },
+      {
+        "draw_no": 1232,
+        "brain_tag": "stat",
+        "note_tail": "· weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [12:unexplained; 15:unexplained; 19:unexplained; 22:unexplained; 24:trans_top15@2; 36:unexplained]"
+      },
+      {
+        "draw_no": 1231,
+        "brain_tag": "review",
+        "note_tail": " HIT-WARRANT carry=[] exp=3/6 [4:trans_top15@11; 13:trans_top15+struct_consec@1; 14:trans_top15+struct_consec@8; 18:unexplained; 31:unexplained; 38:unexplained]"
+      },
+      {
+        "draw_no": 1231,
+        "brain_tag": "markov",
+        "note_tail": " HIT-WARRANT carry=[] exp=3/6 [4:trans_top15@11; 13:trans_top15+struct_consec@1; 14:trans_top15+struct_consec@8; 18:unexplained; 31:unexplained; 38:unexplained]"
+      },
+      {
+        "draw_no": 1231,
+        "brain_tag": "stat",
+        "note_tail": " HIT-WARRANT carry=[] exp=3/6 [4:trans_top15@11; 13:trans_top15+struct_consec@1; 14:trans_top15+struct_consec@8; 18:unexplained; 31:unexplained; 38:unexplained]"
+      },
+      {
+        "draw_no": 1230,
+        "brain_tag": "review",
+        "note_tail": "1 · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[42] exp=4/6 [3:unexplained; 8:struct_consec; 9:struct_consec; 22:unexplained; 28:trans_top15@11; 42:carry]"
+      },
+      {
+        "draw_no": 1230,
+        "brain_tag": "markov",
+        "note_tail": "1 · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[42] exp=4/6 [3:unexplained; 8:struct_consec; 9:struct_consec; 22:unexplained; 28:trans_top15@11; 42:carry]"
+      },
+      {
+        "draw_no": 1230,
+        "brain_tag": "stat",
+        "note_tail": "1 · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[42] exp=4/6 [3:unexplained; 8:struct_consec; 9:struct_consec; 22:unexplained; 28:trans_top15@11; 42:carry]"
+      },
+      {
+        "draw_no": 1229,
+        "brain_tag": "review",
+        "note_tail": "est는 참고(학습입력 금지) · HIT-WARRANT carry=[29] exp=4/6 [12:trans_top15+struct_consec@5; 13:struct_consec; 29:carry; 34:unexplained; 37:trans_top15@6; 42:unexplained]"
+      },
+      {
+        "draw_no": 1229,
+        "brain_tag": "markov",
+        "note_tail": "est는 참고(학습입력 금지) · HIT-WARRANT carry=[29] exp=4/6 [12:trans_top15+struct_consec@5; 13:struct_consec; 29:carry; 34:unexplained; 37:trans_top15@6; 42:unexplained]"
+      },
+      {
+        "draw_no": 1229,
+        "brain_tag": "stat",
+        "note_tail": "est는 참고(학습입력 금지) · HIT-WARRANT carry=[29] exp=4/6 [12:trans_top15+struct_consec@5; 13:struct_consec; 29:carry; 34:unexplained; 37:trans_top15@6; 42:unexplained]"
+      },
+      {
+        "draw_no": 1228,
+        "brain_tag": "review",
+        "note_tail": "weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[44] exp=5/6 [24:trans_top15@5; 29:struct_consec; 30:struct_consec; 31:struct_consec; 35:unexplained; 44:carry]"
+      },
+      {
+        "draw_no": 1228,
+        "brain_tag": "markov",
+        "note_tail": "weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[44] exp=5/6 [24:trans_top15@5; 29:struct_consec; 30:struct_consec; 31:struct_consec; 35:unexplained; 44:carry]"
+      },
+      {
+        "draw_no": 1228,
+        "brain_tag": "stat",
+        "note_tail": "weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[44] exp=5/6 [24:trans_top15@5; 29:struct_consec; 30:struct_consec; 31:struct_consec; 35:unexplained; 44:carry]"
+      },
+      {
+        "draw_no": 1227,
+        "brain_tag": "review",
+        "note_tail": " · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [1:unexplained; 14:unexplained; 16:trans_top15@6; 34:unexplained; 41:unexplained; 44:unexplained]"
+      },
+      {
+        "draw_no": 1227,
+        "brain_tag": "markov",
+        "note_tail": " · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [1:unexplained; 14:unexplained; 16:trans_top15@6; 34:unexplained; 41:unexplained; 44:unexplained]"
+      },
+      {
+        "draw_no": 1227,
+        "brain_tag": "stat",
+        "note_tail": " · weight=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=1/6 [1:unexplained; 14:unexplained; 16:trans_top15@6; 34:unexplained; 41:unexplained; 44:unexplained]"
+      },
+      {
+        "draw_no": 1226,
+        "brain_tag": "review",
+        "note_tail": "ht=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=4/6 [4:trans_top15@4; 6:unexplained; 13:trans_top15@12; 17:trans_top15@14; 26:unexplained; 28:trans_top15@7]"
+      },
+      {
+        "draw_no": 1226,
+        "brain_tag": "markov",
+        "note_tail": "ht=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=4/6 [4:trans_top15@4; 6:unexplained; 13:trans_top15@12; 17:trans_top15@14; 26:unexplained; 28:trans_top15@7]"
+      },
+      {
+        "draw_no": 1226,
+        "brain_tag": "stat",
+        "note_tail": "ht=0 · best는 참고(학습입력 금지) · HIT-WARRANT carry=[] exp=4/6 [4:trans_top15@4; 6:unexplained; 13:trans_top15@12; 17:trans_top15@14; 26:unexplained; 28:trans_top15@7]"
+      }
+    ]
+  },
+  "smoke": {
+    "TRANSITION_V1_WIRE": false,
+    "HIT_WARRANT_ATTACH": true,
+    "wire_must_be_false": true
+  },
+  "prior_catalog_rates": {
+    "carry": 0.13639,
+    "trans_top15": 0.333039,
+    "struct_consec": 0.210758,
+    "unexplained": 0.454879,
+    "explained_any_primary": 0.545121
+  },
+  "claim": "로그·설명 부착만 · 발권가중/WIRE/confidence 미변경 · 당첨P↑금지",
+  "tool": "tools/_k_transition_hit_warrant_attach.py",
+  "module": "app/testlotto/hit_warrant.py",
+  "prior": "docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT.json",
+  "forbid": [
+    "engine.py",
+    "random.choices",
+    "발권 INSERT 경로 가중",
+    "coordinator 산출 수정",
+    "TRANSITION_V1_WIRE ON",
+    "당첨확률↑ 클레임"
+  ]
+}

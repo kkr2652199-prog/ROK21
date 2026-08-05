@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-TRANSITION-HIT-WARRANT** — D_N→D_{N+1} 명분 카탈로그 · **CATALOG**
-- 직전: K-TRANSITION-FUSION-N200 · ROLLBACK
-- 다음: 명분 로그 패치(설명 문자열) 여부 · 발권가중 금지 · **형 GO**
+- 지금: **K-TRANSITION-HIT-WARRANT-ATTACH** — 명분→로그 부착 · **PASS**
+- 직전: K-TRANSITION-HIT-WARRANT · CATALOG
+- 다음: 형 확인 · 라벨확장 or 정지 · 발권가중 금지 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
