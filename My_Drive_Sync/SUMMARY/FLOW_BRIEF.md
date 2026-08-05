@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3097c21` · WORK=`IDLE`
+- HEAD: `37ba5d2` · WORK=`IDLE`
 - 지금: **K-NEIGHBOR-MATCH** — kNN · **NOISE**
 - 직전: K-EARLY-DIAG
 - BOOT다음: cold-free wire GO 여부 · **형 결정**
