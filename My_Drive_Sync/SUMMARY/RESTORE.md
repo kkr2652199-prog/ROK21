@@ -3,8 +3,8 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a518cdf` · WORK=`IDLE`
-2. **지금:** **K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS**
+1. **HEAD:** `710d11a` · WORK=`IDLE`
+2. **지금:** **압축복구** — MEMORY_RESTORE_CURSOR push
 3. **다음1건:** K-TRANSITION-COLLECT-DESIGN-DONE — 수집 구조 완료 · backfill 검증 · 형 확인 → **STEP2 (데이터 재검증)** 또는 다음 회차 자동수집 대기 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.

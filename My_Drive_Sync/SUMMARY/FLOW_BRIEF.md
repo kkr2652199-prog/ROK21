@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a518cdf` · WORK=`IDLE`
-- 지금: **K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS**
-- 직전: DIRECTION_BRIEF_CURSOR · COLLECT_FIRST
+- HEAD: `710d11a` · WORK=`IDLE`
+- 지금: **압축복구** — MEMORY_RESTORE_CURSOR push
+- 직전: K-TRANSITION-COLLECT-DESIGN · PASS
 - BOOT다음: STEP2 재검증 또는 자동수집 · **형 GO**
 - NEXT1: K-TRANSITION-COLLECT-DESIGN-DONE — 수집 구조 완료 · backfill 검증 · 형 확인 → **STEP2 (데이터 재검증)** 또는 다음 회차 자동수집 대기 (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05

@@ -27,11 +27,16 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-05 KST · Cursor COLLECT-DESIGN)
+### 최신 상태 (2026-08-05 KST · Cursor COLLECT-DESIGN + 압축복구)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-TRANSITION-COLLECT-DESIGN** — **PASS**
 - **다음(공식)**: COLLECT-DESIGN-DONE · STEP2 재검증 · **형 GO**
+- **압축복구:** `reports/20260805_GENSPARK_MEMORY_RESTORE_CURSOR.md` (**Cursor**)
 - **산출물:** `docs/benchmarks/20260805_KTRANSITION_COLLECT_DESIGN.json`
+
+### GENSPARK-MEMORY-RESTORE-CURSOR (형 요청 · Cursor)
+- 압축 시 채팅불신 · 보고서 읽기 순서·두 지표(FULL vs collect) 혼동방지
+- 형→젠스파크: RECOVER 붙여넣기 + MEMORY_RESTORE + JSON raw
 
 ### K-TRANSITION-COLLECT-DESIGN (형 지시 · PASS · Cursor)
 - transition_log 신규 · backfill 101~1234 · wire/coordinator 미접촉

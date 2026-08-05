@@ -10,11 +10,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `a518cdf` |
+| HEAD(실측) | `710d11a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS** |
-| 직전 | DIRECTION_BRIEF_CURSOR · COLLECT_FIRST |
+| 지금 | **압축복구** — MEMORY_RESTORE_CURSOR push |
+| 직전 | K-TRANSITION-COLLECT-DESIGN · PASS |
 | BOOT다음 | STEP2 재검증 또는 자동수집 · **형 GO** |
 | NEXT1 ID | **K-TRANSITION-COLLECT-DESIGN-DONE** |
 | NEXT1 할일 | 수집 구조 완료 · backfill 검증 · 형 확인 → **STEP2 (데이터 재검증)** 또는 다음 회차 자동수집 대기 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=a518cdf · 지금=**K-TRANSITION-COLLECT-DESIGN** — transition_log · **PASS** · 다음=K-TRANSITION-COLLECT-DESIGN-DONE`
+1. 첫줄 `[복귀] HEAD=710d11a · 지금=**압축복구** — MEMORY_RESTORE_CURSOR push · 다음=K-TRANSITION-COLLECT-DESIGN-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: a518cdf_
+_generated: 710d11a_
