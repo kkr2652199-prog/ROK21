@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`2be3708` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`6bd5be8` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -20,7 +20,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=2be3708]
+[ROK21 젠스파크 압축복구 · HEAD=6bd5be8]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -28,14 +28,16 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 2be3708 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-ASSOC-RULE-DIAG** — 연관규칙 · **NOISE**
-- 직전: K-NEIGHBOR-MATCH
-- BOOT다음: cold-free wire 단독 · **형 GO**
-- NEXT1: K-ASSOC-RULE-DIAG-DONE — 연관규칙 신호 진단 완료 · 결과 확인 · **cold-free wire 단독 진행** (신호無)
+- HEAD: 6bd5be8 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-TRANSITION-FULL** — 전이·이월 · **STRONG**
+- 직전: K-ASSOC-RULE-DIAG
+- BOOT다음: stat 뇌 교체 설계 · **형 GO**
+- NEXT1: K-TRANSITION-FULL-DONE — 전회차 전이 패턴 진단 완료 · 결과 확인 · **stat 뇌 교체 설계 착수** (STRONG)
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 증거 체인 (반드시 재페치)
+- `20260805_KTRANSITION_FULL` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_FULL.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KASSOC_RULE_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KASSOC_RULE_DIAG.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KASSOC_RULE_DIAG.md
 - `20260805_KNEIGHBOR_MATCH` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KNEIGHBOR_MATCH.json
@@ -50,8 +52,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KEMA_MARKOV_DIAG.md
 - `20260805_KREVIEW_QUOTA_SIM` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KREVIEW_QUOTA_SIM.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KREVIEW_QUOTA_SIM.md
-- `20260805_KSTAT_SEED_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KSTAT_SEED_DIAG.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KSTAT_SEED_DIAG.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -61,7 +61,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=2be3708 · 지금=**K-ASSOC-RULE-DIAG** — 연관규칙 · **NOISE** · 다음=K-ASSOC-RULE-DIAG-DONE
+1. 첫줄: [복귀] HEAD=6bd5be8 · 지금=**K-TRANSITION-FULL** — 전이·이월 · **STRONG** · 다음=K-TRANSITION-FULL-DONE
 2. 위 JSON 중 지금 ID 관련 1~2개 fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -90,4 +90,4 @@ engine wire(GO없이) · auto-tune · 채팅기억으로 수치 인용
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 2be3708_
+_generated: 6bd5be8_

@@ -1,0 +1,192 @@
+{
+  "id": "K-TRANSITION-FULL",
+  "ts": "2026-08-05T03:00:18.728673+00:00",
+  "verdict": "STRONG",
+  "wire": false,
+  "draw_range": [
+    101,
+    1235
+  ],
+  "n_draws": 1135,
+  "random_baseline_hit": 2.0,
+  "primary_metric": "sim_k2",
+  "by_sim_k": {
+    "sim_k2": {
+      "n_valid_draws": 1135,
+      "n_skipped_low_support": 0,
+      "mean_hit": 2.171806,
+      "delta": 0.171806,
+      "hit_dist": {
+        "0": 62,
+        "1": 246,
+        "2": 397,
+        "3": 310,
+        "4": 106,
+        "5": 13,
+        "6": 1
+      },
+      "mean_n_similar": 116.822,
+      "verdict": "STRONG",
+      "min_common": 2,
+      "min_similar": 10,
+      "top_m": 15
+    },
+    "sim_k3": {
+      "n_valid_draws": 811,
+      "n_skipped_low_support": 324,
+      "mean_hit": 2.065351,
+      "delta": 0.065351,
+      "hit_dist": {
+        "0": 44,
+        "1": 217,
+        "2": 286,
+        "3": 181,
+        "4": 72,
+        "5": 11,
+        "6": 0
+      },
+      "mean_n_similar": 19.841,
+      "verdict": "MARGINAL",
+      "min_common": 3,
+      "min_similar": 10,
+      "top_m": 15
+    },
+    "sim_k4": {
+      "n_valid_draws": 0,
+      "n_skipped_low_support": 1135,
+      "mean_hit": 0.0,
+      "delta": -2.0,
+      "hit_dist": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "mean_n_similar": 0.0,
+      "verdict": "NOISE",
+      "min_common": 4,
+      "min_similar": 10,
+      "top_m": 15
+    }
+  },
+  "carry_analysis": {
+    "n_draws": 1234,
+    "full_dist": {
+      "0": 477,
+      "1": 523,
+      "2": 208,
+      "3": 24,
+      "4": 2,
+      "5": 0,
+      "6": 0
+    },
+    "mean_carry": 0.82577,
+    "carry_transition": {
+      "0": {
+        "n": 477,
+        "counts": {
+          "0": 181,
+          "1": 206,
+          "2": 79,
+          "3": 10,
+          "4": 1
+        },
+        "probs": {
+          "0": 0.379455,
+          "1": 0.431866,
+          "2": 0.165618,
+          "3": 0.020964,
+          "4": 0.002096
+        }
+      },
+      "1": {
+        "n": 523,
+        "counts": {
+          "0": 211,
+          "1": 209,
+          "2": 91,
+          "3": 11,
+          "4": 1
+        },
+        "probs": {
+          "0": 0.403442,
+          "1": 0.399618,
+          "2": 0.173996,
+          "3": 0.021033,
+          "4": 0.001912
+        }
+      },
+      "2": {
+        "n": 207,
+        "counts": {
+          "0": 70,
+          "1": 101,
+          "2": 33,
+          "3": 3
+        },
+        "probs": {
+          "0": 0.338164,
+          "1": 0.487923,
+          "2": 0.15942,
+          "3": 0.014493
+        }
+      },
+      "3": {
+        "n": 24,
+        "counts": {
+          "0": 13,
+          "1": 6,
+          "2": 5
+        },
+        "probs": {
+          "0": 0.541667,
+          "1": 0.25,
+          "2": 0.208333
+        }
+      },
+      "4": {
+        "n": 2,
+        "counts": {
+          "0": 1,
+          "1": 1
+        },
+        "probs": {
+          "0": 0.5,
+          "1": 0.5
+        }
+      }
+    },
+    "current_1235_carry": 2,
+    "carry_numbers_1235": [
+      15,
+      43
+    ],
+    "pred_1236_carry_dist": {
+      "0": 0.338164,
+      "1": 0.487923,
+      "2": 0.15942,
+      "3": 0.014493
+    },
+    "pred_1236_from_n": 207,
+    "note": "pred_1236 = empirical P(next_carry | carry_1235); 예측 클레임 아님"
+  },
+  "brain_replace_verdict": "즉시착수",
+  "brain_replace_target": "stat",
+  "brain_replace_note": "현재 3뇌 markov80%/review20%/stat0% · STRONG→stat교체 즉시착수 · MARGINAL→형GO 소규모테스트 · NOISE→보류·cold-free 단독",
+  "signal_summary": "sim_k2 Δ=0.171806 STRONG · k3 Δ=0.065351 k4 Δ=-2.0",
+  "forbid": [
+    "random.choices",
+    "engine.py 직접 수정",
+    "auto-tune",
+    "wire",
+    "DB INSERT/UPDATE",
+    "_get_draws_before mutate",
+    "신호 과장 클레임 (판정 기준 수치만 기재)"
+  ],
+  "pass": true,
+  "tool": "tools/_k_transition_full.py",
+  "prior": "docs/benchmarks/20260805_KASSOC_RULE_DIAG.json"
+}

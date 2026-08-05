@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-ASSOC-RULE-DIAG** — **NOISE**
-- **다음(공식)**: cold-free wire 단독 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KASSOC_RULE_DIAG.json`
+- **지금(판정)**: **K-TRANSITION-FULL** — **STRONG**
+- **다음(공식)**: stat 뇌 교체 설계 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KTRANSITION_FULL.json`
+
+### K-TRANSITION-FULL (형 지시 · STRONG)
+- sim_k2 mean_hit=2.172 Δ=+0.172 · brain_replace=즉시착수(stat) · wire否
+- k3 Δ=+0.065 MARGINAL · k4 n_valid=0 · carry1235=[15,43]
+- tool `tools/_k_transition_full.py`
 
 ### K-ASSOC-RULE-DIAG (형 지시 · NOISE)
 - 1/2/3-gram→다음회 조건부δ · 1000회 null sim · STEP전부 maxδ < p95

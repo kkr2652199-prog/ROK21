@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-ASSOC-RULE-DIAG-DONE
-- 할일: 연관규칙 신호 진단 완료 · 결과 확인 · **cold-free wire 단독 진행** (신호無)
+- ID: K-TRANSITION-FULL-DONE
+- 할일: 전회차 전이 패턴 진단 완료 · 결과 확인 · **stat 뇌 교체 설계 착수** (STRONG)
 - 완료조건: 형 GO
-- 선행완료: docs/benchmarks/20260805_KASSOC_RULE_DIAG.json
+- 선행완료: docs/benchmarks/20260805_KTRANSITION_FULL.json
 - 승인필요: 미확인
 - 선행조건: 없음
 - 최종갱신: 2026-08-05
@@ -18,6 +18,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- STEP1~3 전부 NOISE (maxδ < sim p95) → assoc wire 통합 보류
-- NOISE → **cold-free wire 단독 진행** 검토
-- STRONG/MARGINAL 시에만 신호 통합 wire 논의
+- sim_k2 mean_hit**2.172** Δ**+0.172** → **STRONG** · brain_replace=즉시착수(stat)
+- sim_k3 Δ**+0.065** MARGINAL · sim_k4 n_valid=0 (support<10)
+- markov/review 유지 · wire 금지 · 형 GO 후 교체 설계
