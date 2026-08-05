@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `77a923a` · WORK=`IDLE`
+- HEAD: `f27f78a` · WORK=`IDLE`
 - 지금: **K-TRANSITION-STEP2-VERIFY** — **PASS**
 - 직전: K-TRANSITION-COLLECT-DESIGN · PASS
 - BOOT다음: STEP3 stat 재설계 · **형 GO**
