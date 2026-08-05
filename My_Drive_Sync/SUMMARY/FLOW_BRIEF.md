@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `2b80bad` · WORK=`IDLE`
+- HEAD: `b8a827c` · WORK=`IDLE`
 - 지금: **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push
 - 직전: K-TRANSITION 논의기록 · STRONG rolling
 - BOOT다음: transition **패턴 수집** 설계 · **형 GO**

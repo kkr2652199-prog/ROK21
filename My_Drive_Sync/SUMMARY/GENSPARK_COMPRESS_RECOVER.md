@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`2b80bad` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`b8a827c` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -20,7 +20,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=2b80bad]
+[ROK21 젠스파크 압축복구 · HEAD=b8a827c]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -28,7 +28,7 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 2b80bad · WORK=IDLE · SSOT=ROK21/7021
+- HEAD: b8a827c · WORK=IDLE · SSOT=ROK21/7021
 - 지금: **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push
 - 직전: K-TRANSITION 논의기록 · STRONG rolling
 - BOOT다음: transition **패턴 수집** 설계 · **형 GO**
@@ -61,7 +61,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=2b80bad · 지금=**Cursor 종합브리핑** — K-TRANSITION 외부AI용 push · 다음=K-TRANSITION-COLLECT-DESIGN
+1. 첫줄: [복귀] HEAD=b8a827c · 지금=**Cursor 종합브리핑** — K-TRANSITION 외부AI용 push · 다음=K-TRANSITION-COLLECT-DESIGN
 2. 위 JSON 중 지금 ID 관련 1~2개 fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -90,4 +90,4 @@ engine wire(GO없이) · auto-tune · 채팅기억으로 수치 인용
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 2b80bad_
+_generated: b8a827c_

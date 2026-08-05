@@ -304,8 +304,9 @@
 
 ## 5) 다음
 
-transition **STRONG** · **stat 뇌 교체 설계** — 형 GO.  
-압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START 붙여넣기 · JSON raw 재페치.
+transition **STRONG**(미세) · **패턴 수집 설계** — 형 GO.  
+외부AI 1순위: `DIRECTION_BRIEF_CURSOR` + `CURSOR_BRIEF_FOR_EXTERNAL_AI`.  
+압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START · JSON raw 재페치.
 
 ---
 

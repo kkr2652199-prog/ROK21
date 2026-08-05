@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2b80bad` · WORK=`IDLE`
+1. **HEAD:** `b8a827c` · WORK=`IDLE`
 2. **지금:** **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push
 3. **다음1건:** K-TRANSITION-COLLECT-DESIGN — transition 패턴 수집(DB/로그) 설계 · **wire/뇌/발권 미접촉** · 방향성 브리핑(`DIRECTION_BRIEF_CURSOR`) 확인 후 진행 (승인필요=미확인 · 선행=docs/benchmarks/20260805_KTRANSITION_FULL.json)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | Cursor종합브리핑 | 외부AI용 K-TRANSITION 전체·[CURSOR]표기 | **DOC** | (push) |
+| 2026-08-05 | 방향브리핑push | DIRECTION_BRIEF·수집NEXT·[CURSOR] | **DOC** | (push후) |
+| 2026-08-05 | Cursor종합브리핑 | 외부AI용 K-TRANSITION·[CURSOR]표기 | **DOC** | 20d06cc |
 | 2026-08-05 | 논의기록 push | 팩트체크·무작위6건·로드맵 문서화 | **DOC** | 99e8a90 |
 | 2026-08-05 | 전회차 전이·이월 | k2 Δ+0.172 STRONG · stat교체즉시 | **STRONG** | 03b7f3c |
 | 2026-08-05 | 연관규칙 전수 | STEP1~3 maxδ<p95 · NOISE | **NOISE** | 2be3708 |
@@ -46,7 +47,6 @@
 | 2026-08-05 | review quota시뮬 | live A0.128 최선 · ↑기각 | **A유지** | f18b19f |
 | 2026-08-05 | stat seed진단 | range0.14 HIGH · review STABLE | **HIGH** | 36dec66 |
 | 2026-08-05 | quota D wire | n100=0.10·full=0.115 · 롤백 | **FAIL** | f15a1ce |
-| 2026-08-05 | 1235패치준비 | quota B/C/D후보 · PMI/B/D기각 | **MEASURED** | aededd8 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
