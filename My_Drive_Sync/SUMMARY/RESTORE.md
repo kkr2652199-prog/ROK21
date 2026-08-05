@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `399391a` · WORK=`IDLE`
+1. **HEAD:** `edd7c7b` · WORK=`IDLE`
 2. **지금:** **K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke)
 3. **다음1건:** K-TRANSITION-STEP4-WIRE-DONE — STEP4 배선 완료 · **fusion n200 live 재검증** 또는 롤백(`K_STAT_TRANSITION_V1=0`) 결정 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

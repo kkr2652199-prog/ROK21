@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `399391a` · WORK=`IDLE`
+- HEAD: `edd7c7b` · WORK=`IDLE`
 - 지금: **K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke)
 - 직전: STEP3 DESIGN_HOLD · 형A=GO
 - BOOT다음: fusion n200 재검증/롤백 · **형 GO**
