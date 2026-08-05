@@ -10,12 +10,12 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `b8a827c` |
+| HEAD(실측) | `bc5d5c8` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push |
-| 직전 | K-TRANSITION 논의기록 · STRONG rolling |
-| BOOT다음 | transition **패턴 수집** 설계 · **형 GO** |
+| 지금 | **DIRECTION_BRIEF_CURSOR** — COLLECT_FIRST push |
+| 직전 | Cursor 종합브리핑 · TRANSITION STRONG |
+| BOOT다음 | 패턴 수집 설계 · **형 GO** |
 | NEXT1 ID | **K-TRANSITION-COLLECT-DESIGN** |
 | NEXT1 할일 | transition 패턴 수집(DB/로그) 설계 · **wire/뇌/발권 미접촉** · 방향성 브리핑(`DIRECTION_BRIEF_CURSOR`) 확인 후 진행 |
 | 승인필요 | 미확인 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=b8a827c · 지금=**Cursor 종합브리핑** — K-TRANSITION 외부AI용 push · 다음=K-TRANSITION-COLLECT-DESIGN`
+1. 첫줄 `[복귀] HEAD=bc5d5c8 · 지금=**DIRECTION_BRIEF_CURSOR** — COLLECT_FIRST push · 다음=K-TRANSITION-COLLECT-DESIGN`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: b8a827c_
+_generated: bc5d5c8_

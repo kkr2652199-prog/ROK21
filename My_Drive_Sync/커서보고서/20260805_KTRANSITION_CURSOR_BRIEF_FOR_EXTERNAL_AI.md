@@ -139,7 +139,7 @@ Cursor가 seed=20260805로 **무작위 5회+1234** 단건 재분석 → 전건 h
 |----|------|-------------|
 | markov | ~80% quota · ge3 기여 | **유지** |
 | review | ~20% · seed STABLE | **유지** |
-| stat | **0%** · seed HIGH · 성능 낮음 | **교체** → sim_k2 transition hint |
+| stat | **0%** · seed HIGH · 성능 낮음 | **나중 교체 후보** (지금은 수집) |
 
 ### 같이 읽어야 할 교훈 (K-QUOTA-D-WIRE · FAIL)
 
@@ -205,29 +205,37 @@ ID: K-TRANSITION-COLLECT-DESIGN
 
 ---
 
-## 11) 의사결정 트리 (외부 AI용)
+## 11) 의사결정 트리 (외부 AI용 · **정정**)
 
 ```
-K-TRANSITION sim_k2 STRONG (Δ+0.172, n=1135)
+K-TRANSITION sim_k2 STRONG (Δ+0.172, n=1135) = 미세신호
         │
         ▼
-stat 뇌 = transition hint 설계 (wire=False, Cursor 실행)
+[지금] 패턴 수집 설계 (DB/로그) · wire=0 · 뇌=0 · 발권=0
         │
         ▼
-live WF ge3 ≥ 0.135 (fusion baseline)?
-   ├─ YES → 형 GO → 소규모 wire 테스트
-   └─ NO  → 가중·top_m 조정, wire 보류
+수집 데이터 재검증
+   ├─ YES → 형 GO → stat = 전이 엔진 재설계 → live WF
+   └─ NO  → 수집 로직 수정 · 교체 보류
 ```
 
 ---
 
-## 12) 요약 3줄 (복붙용)
+## 12) 요약 3줄 (복붙용 · **정정**)
 
-1. **방향:** 1234 패턴 → rolling STRONG → stat 교체 → (미래) 자동 힌트.  
-2. **지금:** 검증·기록 완료 — **설계만**, wire **전**.  
+1. **방향:** 유사≥2 → next-freq **수집** → 재검증 → (나중) stat 재설계 → 자동학습.  
+2. **지금:** 검증 완료 · **수집 설계 대기** — wire/뇌 교체 **전**.  
 3. **신호:** rolling +0.17 (미세) · 단건=baseline — **과장 금지**.
 
 ---
+
+## 13) 작성 서명
+
+```
+author      : Cursor Agent (ROK21 executor)
+not_author  : Genspark / chat-only AI
+corrective  : DIRECTION_BRIEF_CURSOR · COLLECT_FIRST
+```
 
 _Cursor Agent · ROK21 · kkr2652199-prog/ROK21 · main · D:\ROK21 · port 7021_  
 _본 문서 수정·push = Cursor 실행 결과. 젠스파크는 검토·코멘트만._

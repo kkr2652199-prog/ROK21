@@ -27,10 +27,10 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-05 KST · Cursor 종합브리핑 push)
+### 최신 상태 (2026-08-05 KST · Cursor DIRECTION 정정 push)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-TRANSITION-DISCUSS** — 방향성·논의 **Cursor 종합브리핑** push
-- **다음(공식)**: transition **패턴 수집** 설계 · **형 GO** (stat 교체는 STEP3)
+- **지금(판정)**: **DIRECTION_BRIEF_CURSOR** — **COLLECT_FIRST**
+- **다음(공식)**: `K-TRANSITION-COLLECT-DESIGN` · **형 GO** (stat 교체는 STEP3)
 - **외부AI 1순위:** `reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md` (**[CURSOR 작성]**)
 - **종합 인덱스:** `reports/20260805_KTRANSITION_CURSOR_BRIEF_FOR_EXTERNAL_AI.md`
 
@@ -49,7 +49,7 @@
 - quota D FAIL 교훈: PREP≠live · stat 변경은 live WF 후만
 
 ### K-TRANSITION-FULL (형 지시 · STRONG)
-- sim_k2 mean_hit=2.172 Δ=+0.172 · brain_replace=즉시착수(stat) · wire否
+- sim_k2 mean_hit=2.172 Δ=+0.172 · brain_replace=**보류(수집후)** · wire否
 - k3 Δ=+0.065 MARGINAL · k4 n_valid=0 · carry1235=[15,43]
 - tool `tools/_k_transition_full.py`
 

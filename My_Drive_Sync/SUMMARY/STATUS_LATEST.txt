@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **[CURSOR 작성] K-TRANSITION 종합브리핑** — 외부 AI 판독용 push
+📌 사유: **[CURSOR] K-TRANSITION 전체 브리핑** — DIRECTION_BRIEF + 종합 + NEXT=COLLECT-DESIGN
 
 ---
 
@@ -12,7 +12,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **K-TRANSITION-CURSOR-BRIEF** | **DOC** — **[CURSOR]** 외부AI 종합 · `CURSOR_BRIEF_FOR_EXTERNAL_AI.md` + **`DIRECTION_BRIEF_CURSOR.md`(SSOT)** · JSON author=Cursor |
 | **K-TRANSITION-DISCUSS** | **DOC** — 1234→1235 팩트체크(carry·212·hit2 일치) · 무작위5+1234 단건 hit全**2** · 로드맵=검증완료→stat설계 · wire否 · `reports/20260805_KTRANSITION_*.md` · `docs/benchmarks/20260805_KTRANSITION_RANDOM_SAMPLE.json` |
-| **K-TRANSITION-FULL** | **STRONG** — sim_k2 n**1135** mean_hit**2.172** Δ**+0.172** · k3 n**811** Δ**+0.065** MARGINAL · k4 n**0** · carry1235=[15,43] · brain_replace=**즉시착수**(stat) · wire否 · `docs/benchmarks/20260805_KTRANSITION_FULL.json` |
+| **K-TRANSITION-FULL** | **STRONG** — sim_k2 n**1135** mean_hit**2.172** Δ**+0.172** · k3 n**811** Δ**+0.065** MARGINAL · k4 n**0** · carry1235=[15,43] · brain_replace=**보류(수집후)** · wire否 · `docs/benchmarks/20260805_KTRANSITION_FULL.json` |
 | **K-ASSOC-RULE-DIAG** | **NOISE** — STEP1 maxδ**0.084**<p95**0.117** · STEP2**0.45**<**0.559** · STEP3**0.667**<**0.867** · SIGNAL 0/3 · assoc wire否 · `docs/benchmarks/20260805_KASSOC_RULE_DIAG.json` |
 | **K-NEIGHBOR-MATCH** | **NOISE** — rolling top15 hit≥3 =**0.23** < 무작위**0.311**(Δ**−0.081**) · mean_hit**1.91**<2.0 · HIGH maxJ≈mid → pool실패 · carry[15,43] 재출현**0.139**≈rand · neighbor wire否 · `docs/benchmarks/20260805_KNEIGHBOR_MATCH.json` |
 | **K-EARLY-DIAG** | **STRUCTURAL** — ge3 early**0.138**/mid**0.150**/late**0.117** · coldΔ early**+0.005**/mid**+0.017**/late**−0.001** · pool entropy 거의同 · early단독붕괴否 · early전용wire 근거약 · `docs/benchmarks/20260805_KEARLY_DIAG.json` |
@@ -304,8 +304,9 @@
 
 ## 5) 다음
 
-transition **STRONG** · **stat 뇌 교체 설계** — 형 GO.  
-압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START 붙여넣기 · JSON raw 재페치.
+transition **STRONG**(미세) · **패턴 수집 설계** — 형 GO.  
+외부AI 1순위: `DIRECTION_BRIEF_CURSOR` + `CURSOR_BRIEF_FOR_EXTERNAL_AI`.  
+압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START · JSON raw 재페치.
 
 ---
 

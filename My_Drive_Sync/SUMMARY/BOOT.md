@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push
-- 직전: K-TRANSITION 논의기록 · STRONG rolling
-- 다음: transition **패턴 수집** 설계 · **형 GO**
+- 지금: **DIRECTION_BRIEF_CURSOR** — COLLECT_FIRST push
+- 직전: Cursor 종합브리핑 · TRANSITION STRONG
+- 다음: 패턴 수집 설계 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
