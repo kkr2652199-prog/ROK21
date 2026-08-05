@@ -1,9 +1,9 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `20d06cc` · WORK=`IDLE`
+- HEAD: `2b80bad` · WORK=`IDLE`
 - 지금: **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push
 - 직전: K-TRANSITION 논의기록 · STRONG rolling
-- BOOT다음: stat 뇌 교체 설계 · **형 GO**
+- BOOT다음: transition **패턴 수집** 설계 · **형 GO**
 - NEXT1: K-TRANSITION-COLLECT-DESIGN — transition 패턴 수집(DB/로그) 설계 · **wire/뇌/발권 미접촉** · 방향성 브리핑(`DIRECTION_BRIEF_CURSOR`) 확인 후 진행 (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT

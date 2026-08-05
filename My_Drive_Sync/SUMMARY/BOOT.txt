@@ -7,7 +7,7 @@
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
 - 지금: **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push
 - 직전: K-TRANSITION 논의기록 · STRONG rolling
-- 다음: stat 뇌 교체 설계 · **형 GO**
+- 다음: transition **패턴 수집** 설계 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -21,25 +21,29 @@
 
 ---
 
-## 1) 한 줄 방향 (North Star · 형 확정)
+## 1) 한 줄 방향 (North Star · 형 확정 · **Cursor 2026-08-05 정정**)
 
-**「과거 회차는 단서다」** — 회차 N과 번호 **2+ 겹치는** 과거 회차들의 **다음 회차 빈도** + **이월(carry)**을 힌트로 쓰고, 전 회차 rolling으로 검증한 뒤 **stat 뇌(현재 quota 0%)**에 넣어 **1236~ 자동 힌트**로 확장한다.
+**「과거 회차는 단서다」** — 회차 N과 번호 **2+ 겹치는** 과거 회차들의 **다음 회차 빈도** + **이월(carry)** 패턴을 **먼저 수집·기록**하고, 재검증 후 약한 뇌(stat)를 **그 패턴 엔진으로 재설계**, 성공 시 **1236~ 자동 학습**.
 
 - 독립 추첨 전제 · 1등 보장 **없음**
-- 현재 단계 = **패턴 검증 완료 → stat 설계 대기** (자동 패치 **아님**)
+- **지금 단계 = 패턴 수집 설계** (발권·wire·뇌 교체 **아님**)
+- 정정 SSOT: `reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md` (**Cursor**)
 
 ---
 
-## 2) 진행 단계 (어디까지 왔는지)
+## 2) 진행 단계 (어디까지 왔는지 · **정정**)
 
 | # | 단계 | 상태 | 산출물 (Cursor 작성) |
 |---|------|------|----------------------|
 | 1 | 1234→1235 ad-hoc 분석 | ✅ | 채팅 + 팩트체크 MD |
 | 2 | 전회차 rolling 101~1235 | ✅ STRONG | `20260805_KTRANSITION_FULL.json` |
 | 3 | 팩트체크·무작위 sanity·로드맵 | ✅ | FACTCHECK · RANDOM_SAMPLE · ROADMAP MD |
-| 4 | **본 종합 브리핑** | ✅ | **본 파일** |
-| 5 | stat 뇌 교체 설계 | ⏳ | **형 GO** 대기 |
-| 6 | engine wire / auto-patch | 🚫 | GO 전 금지 |
+| 4 | 종합 브리핑 | ✅ | **본 파일** |
+| 4b | **방향 정정 브리핑** | ✅ | `DIRECTION_BRIEF_CURSOR` · JSON |
+| 5 | **패턴 수집(DB/로그) 설계** | ⏳ | **형 GO** ← **지금** |
+| 6 | 수집 데이터 재검증 | ⏳ | 수집 후 |
+| 7 | stat 뇌 재설계 | ⏳ | 재검증·형 GO 후 |
+| 8 | engine wire / 발권 / 자동학습 | 🚫 | 확실 전 금지 |
 
 ---
 
@@ -87,10 +91,10 @@ Cursor가 seed=20260805로 **무작위 5회+1234** 단건 재분석 → 전건 h
 | 1235 carry | **2** · nums **[15, 43]** |
 | pred_1236 \| carry=2 | 0:33.8% · **1:48.8%** · 2:15.9% · 3:1.4% (n=207) |
 
-### brain_replace (JSON 명시)
+### brain_replace (JSON 원문 → **Cursor 운용 정정**)
 
-- target: **stat**
-- verdict: **즉시착수** = **설계 착수** (wire 아님)
+- JSON 원문 target: **stat** · verdict: **즉시착수**
+- **운용 정정(2026-08-05):** 「즉시착수」= **수집 충분히 끝난 뒤** 설계 착수. **지금은 수집 STEP**. wire 아님.
 - markov/review **유지**
 
 ---
@@ -135,7 +139,7 @@ Cursor가 seed=20260805로 **무작위 5회+1234** 단건 재분석 → 전건 h
 |----|------|-------------|
 | markov | ~80% quota · ge3 기여 | **유지** |
 | review | ~20% · seed STABLE | **유지** |
-| stat | **0%** · seed HIGH · 성능 낮음 | **교체** → sim_k2 transition hint |
+| stat | **0%** · seed HIGH · 성능 낮음 | **나중 교체 후보** (지금은 수집) |
 
 ### 같이 읽어야 할 교훈 (K-QUOTA-D-WIRE · FAIL)
 
@@ -158,24 +162,26 @@ Cursor가 seed=20260805로 **무작위 5회+1234** 단건 재분석 → 전건 h
 
 ---
 
-## 9) 다음 1건 (NEXT_ACTIONS 공식)
+## 9) 다음 1건 (NEXT_ACTIONS · Cursor 정정 2026-08-05)
+
+> **정정:** JSON `brain_replace=즉시착수` = rolling 판정용. **지금 실행 = 패턴 수집 설계** (stat wire **아님**).  
+> 상세: `reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md`
 
 ```
-ID: K-TRANSITION-FULL-DONE
-할일: stat 뇌 교체 설계 착수 (STRONG 근거)
+ID: K-TRANSITION-COLLECT-DESIGN
+할일: transition 패턴 수집(DB/로그) 설계 · 회차별 유사→freq 저장 · wire/뇌/발권 미접촉
 완료조건: 형 GO
 선행완료: docs/benchmarks/20260805_KTRANSITION_FULL.json
 ```
 
-### 설계 시 Cursor가 지킬 조건 (형 GO 후)
+### 확정 순서 (Cursor)
 
-| 항목 | 내용 |
-|------|------|
-| 입력 | `_get_draws_before` · 컨닝 금지 |
-| 로직 | sim_k2 → freq → top15 **soft weight** |
-| carry | soft boost · 상한 **0.2** (동결) |
-| 검증 | tail-200 WF · **live path** · ge3 vs fusion **0.135** |
-| 금지 | random.choices · engine.py 직접 · auto-tune · wire · DB 쓰기 |
+| STEP | 내용 | 상태 |
+|------|------|------|
+| 1 | 패턴 **수집** 설계 (테이블/로그·backfill READ) | **← 지금** |
+| 2 | 수집 데이터 재검증 | 대기 |
+| 3 | stat → 전이 엔진 재설계 | 형 GO 후 |
+| 4 | 발권 반영 + 주간 자동학습 | 형 GO 후 |
 
 ---
 
@@ -184,6 +190,8 @@ ID: K-TRANSITION-FULL-DONE
 | 유형 | 경로 |
 |------|------|
 | **종합 브리핑 (본문)** | `reports/20260805_KTRANSITION_CURSOR_BRIEF_FOR_EXTERNAL_AI.md` |
+| **방향성 SSOT (Cursor)** | `reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md` |
+| 방향성 JSON 마커 | `docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json` |
 | rolling SSOT | `docs/benchmarks/20260805_KTRANSITION_FULL.json` |
 | rolling 보고서 | `reports/20260805_KTRANSITION_FULL.md` |
 | 팩트체크 | `reports/20260805_KTRANSITION_FACTCHECK.md` |
@@ -197,29 +205,37 @@ ID: K-TRANSITION-FULL-DONE
 
 ---
 
-## 11) 의사결정 트리 (외부 AI용)
+## 11) 의사결정 트리 (외부 AI용 · **정정**)
 
 ```
-K-TRANSITION sim_k2 STRONG (Δ+0.172, n=1135)
+K-TRANSITION sim_k2 STRONG (Δ+0.172, n=1135) = 미세신호
         │
         ▼
-stat 뇌 = transition hint 설계 (wire=False, Cursor 실행)
+[지금] 패턴 수집 설계 (DB/로그) · wire=0 · 뇌=0 · 발권=0
         │
         ▼
-live WF ge3 ≥ 0.135 (fusion baseline)?
-   ├─ YES → 형 GO → 소규모 wire 테스트
-   └─ NO  → 가중·top_m 조정, wire 보류
+수집 데이터 재검증
+   ├─ YES → 형 GO → stat = 전이 엔진 재설계 → live WF
+   └─ NO  → 수집 로직 수정 · 교체 보류
 ```
 
 ---
 
-## 12) 요약 3줄 (복붙용)
+## 12) 요약 3줄 (복붙용 · **정정**)
 
-1. **방향:** 1234 패턴 → rolling STRONG → stat 교체 → (미래) 자동 힌트.  
-2. **지금:** 검증·기록 완료 — **설계만**, wire **전**.  
+1. **방향:** 유사≥2 → next-freq **수집** → 재검증 → (나중) stat 재설계 → 자동학습.  
+2. **지금:** 검증 완료 · **수집 설계 대기** — wire/뇌 교체 **전**.  
 3. **신호:** rolling +0.17 (미세) · 단건=baseline — **과장 금지**.
 
 ---
+
+## 13) 작성 서명
+
+```
+author      : Cursor Agent (ROK21 executor)
+not_author  : Genspark / chat-only AI
+corrective  : DIRECTION_BRIEF_CURSOR · COLLECT_FIRST
+```
 
 _Cursor Agent · ROK21 · kkr2652199-prog/ROK21 · main · D:\ROK21 · port 7021_  
 _본 문서 수정·push = Cursor 실행 결과. 젠스파크는 검토·코멘트만._

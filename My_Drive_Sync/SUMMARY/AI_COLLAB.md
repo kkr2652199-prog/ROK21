@@ -30,8 +30,15 @@
 ### 최신 상태 (2026-08-05 KST · Cursor 종합브리핑 push)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
 - **지금(판정)**: **K-TRANSITION-DISCUSS** — 방향성·논의 **Cursor 종합브리핑** push
-- **다음(공식)**: stat 뇌 교체 설계 · **형 GO**
-- **외부AI 1순위 읽을 파일**: `reports/20260805_KTRANSITION_CURSOR_BRIEF_FOR_EXTERNAL_AI.md` (**[CURSOR 작성]** 표기)
+- **다음(공식)**: transition **패턴 수집** 설계 · **형 GO** (stat 교체는 STEP3)
+- **외부AI 1순위:** `reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md` (**[CURSOR 작성]**)
+- **종합 인덱스:** `reports/20260805_KTRANSITION_CURSOR_BRIEF_FOR_EXTERNAL_AI.md`
+
+### K-TRANSITION-DIRECTION-BRIEF (Cursor · COLLECT_FIRST)
+- **SSOT MD:** `reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md` · JSON author=Cursor
+- STRONG=미세신호 · 지금=**패턴 수집 설계** · stat교체=STEP3·형GO 후
+- NEXT: **K-TRANSITION-COLLECT-DESIGN** · wire/뇌/발권 금지
+- 종합인덱스: `CURSOR_BRIEF_FOR_EXTERNAL_AI.md`
 
 ### K-TRANSITION-DISCUSS (형·Cursor 대화 · DOC)
 - **작성:** Cursor Agent (NOT 젠스파크) · 혼동 방지용 종합본
