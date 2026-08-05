@@ -10,11 +10,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1d22fe2` |
+| HEAD(실측) | `88ba6bd` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | K-TRANSITION 논의기록 push — 팩트체크·무작위표본·로드맵 |
-| 직전 | K-TRANSITION-FULL STRONG · 1234→1235 패턴 검증 |
+| 지금 | **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push |
+| 직전 | K-TRANSITION 논의기록 · STRONG rolling |
 | BOOT다음 | stat 뇌 교체 설계 · **형 GO** |
 | NEXT1 ID | **K-TRANSITION-FULL-DONE** |
 | NEXT1 할일 | 전회차 전이 패턴 진단 완료 · 결과 확인 · **stat 뇌 교체 설계 착수** (STRONG) |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1d22fe2 · 지금=K-TRANSITION 논의기록 push — 팩트체크·무작위표본·로드맵 · 다음=K-TRANSITION-FULL-DONE`
+1. 첫줄 `[복귀] HEAD=88ba6bd · 지금=**Cursor 종합브리핑** — K-TRANSITION 외부AI용 push · 다음=K-TRANSITION-FULL-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 1d22fe2_
+_generated: 88ba6bd_

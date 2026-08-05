@@ -3,8 +3,8 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `1d22fe2` · WORK=`IDLE`
-2. **지금:** K-TRANSITION 논의기록 push — 팩트체크·무작위표본·로드맵
+1. **HEAD:** `88ba6bd` · WORK=`IDLE`
+2. **지금:** **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push
 3. **다음1건:** K-TRANSITION-FULL-DONE — 전회차 전이 패턴 진단 완료 · 결과 확인 · **stat 뇌 교체 설계 착수** (STRONG) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 논의기록 push | 팩트체크·무작위6건·로드맵 문서화 | **DOC** | (push) |
+| 2026-08-05 | Cursor종합브리핑 | 외부AI용 K-TRANSITION 전체·[CURSOR]표기 | **DOC** | (push) |
+| 2026-08-05 | 논의기록 push | 팩트체크·무작위6건·로드맵 문서화 | **DOC** | 99e8a90 |
 | 2026-08-05 | 전회차 전이·이월 | k2 Δ+0.172 STRONG · stat교체즉시 | **STRONG** | 03b7f3c |
 | 2026-08-05 | 연관규칙 전수 | STEP1~3 maxδ<p95 · NOISE | **NOISE** | 2be3708 |
 | 2026-08-05 | kNN neighbor | top15 0.23<rand0.311 · NOISE | **NOISE** | 37ba5d2 |

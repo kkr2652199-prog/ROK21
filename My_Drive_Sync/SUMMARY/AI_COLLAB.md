@@ -27,11 +27,19 @@
 
 ## 3. 대화 요약 (커서가 매 push 시 갱신)
 
-### 최신 상태 (2026-08-05 KST)
+### 최신 상태 (2026-08-05 KST · Cursor 종합브리핑 push)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-TRANSITION-FULL** — **STRONG**
+- **지금(판정)**: **K-TRANSITION-DISCUSS** — 방향성·논의 **Cursor 종합브리핑** push
 - **다음(공식)**: stat 뇌 교체 설계 · **형 GO**
-- **산출물**: `docs/benchmarks/20260805_KTRANSITION_FULL.json`
+- **외부AI 1순위 읽을 파일**: `reports/20260805_KTRANSITION_CURSOR_BRIEF_FOR_EXTERNAL_AI.md` (**[CURSOR 작성]** 표기)
+
+### K-TRANSITION-DISCUSS (형·Cursor 대화 · DOC)
+- **작성:** Cursor Agent (NOT 젠스파크) · 혼동 방지용 종합본
+- 1234→1235 ad-hoc = rolling K-TRANSITION-FULL과 **동일 패턴 축** · carry[15,43]·212·hit2 **일치**
+- 무작위 seed20260805 5회+1234: **전건 hit=2** (baseline) → 단건 변별력 약
+- 로드맵: 검증완료 → stat설계 → (미래)자동적용 · **wire GO 전 금지**
+- 산출: FACTCHECK · RANDOM_SAMPLE.json · ROADMAP · **CURSOR_BRIEF_FOR_EXTERNAL_AI.md**
+- quota D FAIL 교훈: PREP≠live · stat 변경은 live WF 후만
 
 ### K-TRANSITION-FULL (형 지시 · STRONG)
 - sim_k2 mean_hit=2.172 Δ=+0.172 · brain_replace=즉시착수(stat) · wire否
