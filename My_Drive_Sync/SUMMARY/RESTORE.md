@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `535c128` · WORK=`IDLE`
+1. **HEAD:** `bf8efac` · WORK=`IDLE`
 2. **지금:** **K-TRANSITION-HIT-WARRANT-ATTACH** — 명분→로그 부착 · **PASS**
 3. **다음1건:** K-TRANSITION-HIT-WARRANT-ATTACH-DONE — ATTACH PASS 형 확인 · hit_warrant_log+evolve.note 부착 유지 · 추가 라벨확장 or 트랙 종료(발권가중·WIRE 금지) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | 명분로그부착 | hit_warrant_log1134·evolve.note | **PASS** | (push후) |
+| 2026-08-05 | 명분로그부착 | hit_warrant_log1134·evolve.note | **PASS** | bf8efac |
 | 2026-08-05 | 명분축 전환 | HIT-WARRANT 전수 · top15≈null | **CATALOG** | dc39b84 |
 | 2026-08-05 | fusion n200 | ge3=0.135 mean=1.715 · WIRE OFF | **ROLLBACK** | ae5c35d |
 | 2026-08-05 | STEP4 GO(A) | transition_v1 wire·smokeOK·n50=0.06 | **PASS** | edd7c7b |

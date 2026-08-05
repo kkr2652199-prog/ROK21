@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `535c128` · WORK=`IDLE`
+- HEAD: `bf8efac` · WORK=`IDLE`
 - 지금: **K-TRANSITION-HIT-WARRANT-ATTACH** — 명분→로그 부착 · **PASS**
 - 직전: K-TRANSITION-HIT-WARRANT · CATALOG
 - BOOT다음: 형 확인 · 라벨확장 or 정지 · 발권가중 금지 · **형 GO**
