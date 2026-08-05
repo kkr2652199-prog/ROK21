@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **[CURSOR] K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke)
+📌 사유: **[CURSOR] K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF)
 
 ---
 
@@ -10,7 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-TRANSITION-STEP4-WIRE** | **PASS**(smoke) · `TRANSITION_V1_WIRE=True` · solo n50 ge3=**0.06** mean_best**1.22** · 롤백 env=0 · engine.py미수정 · `docs/benchmarks/20260805_KTRANSITION_STEP4_WIRE.json` |
+| **K-TRANSITION-FUSION-N200** | **ROLLBACK** — fusion n200(1035~1234) ge3=**0.135**(27) mean_hit=**1.715** · Δbaseline**0** · period STABLE · `TRANSITION_V1_WIRE=False` 적용 · `docs/benchmarks/20260805_KTRANSITION_FUSION_N200.json` |
+| **K-TRANSITION-STEP4-WIRE** | **PASS**(smoke) · 당시 ON · solo n50 ge3=**0.06** mean_best**1.22** · fusion재검증→ROLLBACK · `docs/benchmarks/20260805_KTRANSITION_STEP4_WIRE.json` |
 | **K-TRANSITION-STEP3-DESIGN** | **DESIGN_HOLD** — nopeek mean**2.007** · FULL-ho**2.178** · replace=HOLD · `docs/benchmarks/20260805_KTRANSITION_STEP3_DESIGN.json` |
 | **K-TRANSITION-STEP2-VERIFY** | **PASS** — table_ok · collect mean**1.998**/std · FULL **2.171806** match · period STABLE · wire否 · `docs/benchmarks/20260805_KTRANSITION_STEP2_VERIFY.json` |
 | **K-TRANSITION-COLLECT-DESIGN** | **PASS** — table=`transition_log` · backfill 101~1234 n**1134** · collect mean≈**1.998**(N→N+1) · FULL재현 **2.171806** match · hook stop등록 · wire否 · `docs/benchmarks/20260805_KTRANSITION_COLLECT_DESIGN.json` |

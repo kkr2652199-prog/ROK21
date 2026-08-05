@@ -1,0 +1,84 @@
+{
+  "id": "K-TRANSITION-FUSION-N200",
+  "ts": "2026-08-05T05:27:18.891110+00:00",
+  "verdict": "ROLLBACK",
+  "wire": true,
+  "env_ok": true,
+  "env": {
+    "env_ok": true,
+    "TRANSITION_V1_WIRE": true,
+    "use_transition_v1": true,
+    "transition_log_rows": 1134,
+    "brains": [
+      "markov",
+      "review",
+      "stat(transition_v1 if wired)"
+    ],
+    "env_K_STAT_TRANSITION_V1": null
+  },
+  "fusion_n200": {
+    "draw_range": [
+      1035,
+      1234
+    ],
+    "n": 200,
+    "mean_hit": 1.715,
+    "ge3_rate": 0.135,
+    "ge3_count": 27,
+    "hit_dist": {
+      "0": 3,
+      "1": 82,
+      "2": 88,
+      "3": 23,
+      "4": 4,
+      "5": 0,
+      "6": 0
+    },
+    "baseline_ge3": 0.135,
+    "delta_vs_baseline": 0.0,
+    "random_ge3_top15_ref": 0.311,
+    "step3_nopeek_ge3_ref": 0.274,
+    "seed": 42,
+    "path": "in-memory coordinator fuse · no lotto_predictions write"
+  },
+  "by_period": {
+    "early": 0.149254,
+    "mid": 0.121212,
+    "late": 0.134328,
+    "max_gap": 0.028042,
+    "stable": true,
+    "ranges": {
+      "early": [
+        1035,
+        1101
+      ],
+      "mid": [
+        1102,
+        1167
+      ],
+      "late": [
+        1168,
+        1234
+      ]
+    }
+  },
+  "final_verdict": "ROLLBACK",
+  "rollback_cmd": "K_STAT_TRANSITION_V1=0",
+  "rollback_applied": {
+    "applied": true,
+    "TRANSITION_V1_WIRE_now": false,
+    "cmd": "K_STAT_TRANSITION_V1=0 또는 TRANSITION_V1_WIRE=False"
+  },
+  "pass": true,
+  "tool": "tools/_k_transition_fusion_n200.py",
+  "prior": "docs/benchmarks/20260805_KTRANSITION_STEP4_WIRE.json",
+  "forbid": [
+    "engine.py 수정",
+    "auto-tune",
+    "random.choices",
+    "발권 테이블 INSERT/UPDATE",
+    "coordinator 수정",
+    "신호 과장",
+    "검증 중 TRANSITION_V1_WIRE 변경"
+  ]
+}

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `edd7c7b` · WORK=`IDLE`
-- 지금: **K-TRANSITION-STEP4-WIRE** — transition_v1 · **PASS**(smoke)
-- 직전: STEP3 DESIGN_HOLD · 형A=GO
-- BOOT다음: fusion n200 재검증/롤백 · **형 GO**
-- NEXT1: K-TRANSITION-STEP4-WIRE-DONE — STEP4 배선 완료 · **fusion n200 live 재검증** 또는 롤백(`K_STAT_TRANSITION_V1=0`) 결정 (승인=미확인)
+- HEAD: `779ef42` · WORK=`IDLE`
+- 지금: **K-TRANSITION-FUSION-N200** — fusion n200 · **ROLLBACK**(WIRE OFF)
+- 직전: K-TRANSITION-STEP4-WIRE · PASS
+- BOOT다음: n200 결과 형 확인 · 통계요정 복귀 유지 · **형 GO**
+- NEXT1: K-TRANSITION-FUSION-N200-DONE — n200 결과 형 확인 · KEEP→현배선유지 / MARGINAL→추가검증or조건부유지 / ROLLBACK→`K_STAT_TRANSITION_V1=0` 즉시적용(**적용완료·WIRE=False**) · 다음회차 자동수집 대기 (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

@@ -12,8 +12,8 @@ from typing import Any
 
 import numpy as np
 
-# 형 STEP4 GO 기본 ON · 롤백: K_STAT_TRANSITION_V1=0 또는 TRANSITION_V1_WIRE=False
-TRANSITION_V1_WIRE: bool = True
+# FUSION-N200 ROLLBACK(mean=1.715<1.8) → OFF · 재ON: K_STAT_TRANSITION_V1=1 또는 True
+TRANSITION_V1_WIRE: bool = False
 
 MIN_COMMON = 2
 MIN_SIMILAR = 10
