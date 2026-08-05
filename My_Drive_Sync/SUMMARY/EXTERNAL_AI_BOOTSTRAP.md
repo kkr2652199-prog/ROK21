@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `f31adf3` |
+| HEAD(실측) | `5503ffc` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-NEIGHBOR-MATCH** — kNN · **NOISE** |
-| 직전 | K-EARLY-DIAG |
-| BOOT다음 | cold-free wire GO 여부 · **형 결정** |
-| NEXT1 ID | **K-NEIGHBOR-MATCH-DONE** |
-| NEXT1 할일 | kNN 패턴 진단 완료 · 결과 확인 · **cold-free wire GO 여부 결정** |
+| 지금 | **K-ASSOC-RULE-DIAG** — 연관규칙 · **NOISE** |
+| 직전 | K-NEIGHBOR-MATCH |
+| BOOT다음 | cold-free wire 단독 · **형 GO** |
+| NEXT1 ID | **K-ASSOC-RULE-DIAG-DONE** |
+| NEXT1 할일 | 연관규칙 신호 진단 완료 · 결과 확인 · **cold-free wire 단독 진행** (신호無) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=f31adf3 · 지금=**K-NEIGHBOR-MATCH** — kNN · **NOISE** · 다음=K-NEIGHBOR-MATCH-DONE`
+1. 첫줄 `[복귀] HEAD=5503ffc · 지금=**K-ASSOC-RULE-DIAG** — 연관규칙 · **NOISE** · 다음=K-ASSOC-RULE-DIAG-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-NEIGHBOR-MATCH** — kNN · **NOISE**
-- 직전: K-EARLY-DIAG
-- 다음: cold-free wire GO 여부 · **형 결정**
+- 지금: **K-ASSOC-RULE-DIAG** — 연관규칙 · **NOISE**
+- 직전: K-NEIGHBOR-MATCH
+- 다음: cold-free wire 단독 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

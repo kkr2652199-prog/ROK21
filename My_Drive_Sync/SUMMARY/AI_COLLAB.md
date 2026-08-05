@@ -29,9 +29,14 @@
 
 ### 최신 상태 (2026-08-05 KST)
 - **HEAD(실측)**: push 후 sync · SSOT=`kkr2652199-prog/ROK21` · 포트 **7021**
-- **지금(판정)**: **K-NEIGHBOR-MATCH** — **NOISE**
-- **다음(공식)**: cold-free wire GO 여부 · **형 결정**
-- **산출물**: `docs/benchmarks/20260805_KNEIGHBOR_MATCH.json`
+- **지금(판정)**: **K-ASSOC-RULE-DIAG** — **NOISE**
+- **다음(공식)**: cold-free wire 단독 · **형 GO**
+- **산출물**: `docs/benchmarks/20260805_KASSOC_RULE_DIAG.json`
+
+### K-ASSOC-RULE-DIAG (형 지시 · NOISE)
+- 1/2/3-gram→다음회 조건부δ · 1000회 null sim · STEP전부 maxδ < p95
+- assoc wire 통합 보류 · cold-free 단독 진행
+- tool `tools/_k_assoc_rule_diag.py`
 
 ### K-NEIGHBOR-MATCH (형 지시 · NOISE)
 - rolling k10→top15 hit≥3 =0.23 < 무작위0.311 · neighbor wire否
