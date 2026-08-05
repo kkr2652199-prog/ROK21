@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f27f78a` · WORK=`IDLE`
+1. **HEAD:** `7fd8164` · WORK=`IDLE`
 2. **지금:** **K-TRANSITION-STEP2-VERIFY** — **PASS**
 3. **다음1건:** K-TRANSITION-STEP2-VERIFY-DONE — STEP2 검증 결과 형 확인 → **STEP3(stat 재설계) GO 여부** 결정 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-05 | STEP2 재검증 | table·FULL·period STABLE | **PASS** | (push후) |
+| 2026-08-05 | STEP2 재검증 | table·FULL·period STABLE | **PASS** | f27f78a |
 | 2026-08-05 | transition수집 | log테이블·backfill1134·FULL재현OK | **PASS** | a518cdf |
 | 2026-08-05 | 방향브리핑push | DIRECTION_BRIEF·수집NEXT·[CURSOR] | **DOC** | 0557d2a |
 | 2026-08-05 | Cursor종합브리핑 | 외부AI용 K-TRANSITION·[CURSOR]표기 | **DOC** | 20d06cc |
