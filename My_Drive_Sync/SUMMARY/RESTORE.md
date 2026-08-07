@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d5b466d` · WORK=`IDLE`
+1. **HEAD:** `5ffd960` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-TUNE-ENGINE-APPLY** — win26/mix0.8 적용 · fusion**0.135** · **PASS**
 3. **다음1건:** K-PAST-LEARN-TUNE-DONE — APPLY PASS(win26/mix0.8·fusion Δ0) 형 확인 · 추가 튜닝(decay 등) or 트랙정지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
