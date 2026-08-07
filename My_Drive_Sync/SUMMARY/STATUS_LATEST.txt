@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-05 KST  
-📌 사유: **[CURSOR] K-TRANSITION-HIT-WARRANT-ATTACH** — 명분→로그 부착 · **PASS**
+📅 최종 갱신: 2026-08-07 KST  
+📌 사유: **[CURSOR] 20260807 종료체크** — 세션보고서 보완 · **DONE**
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **20260807 세션보고서** | **DONE** — `reports/20260807_ROK21_SESSION_STATUS.md` · 커서보고서 동기 · transition→HIT-WARRANT-ATTACH 마감요약 |
 | **K-TRANSITION-HIT-WARRANT-ATTACH** | **PASS** — `hit_warrant_log` n**1134** · evolve.note 부착**3402** · weight=0 유지 · WIRE OFF · `docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT_ATTACH.json` |
 | **K-TRANSITION-HIT-WARRANT** | **CATALOG** — n_draws**1134** · explained**0.545**/unexplained**0.455** · carry**0.136** · trans_top15**0.333**(≈null) · consec**0.211** · STABLE · wire否 · `docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT.json` |
 | **K-TRANSITION-FUSION-N200** | **ROLLBACK** — fusion n200(1035~1234) ge3=**0.135**(27) mean_hit=**1.715** · Δbaseline**0** · period STABLE · `TRANSITION_V1_WIRE=False` 적용 · `docs/benchmarks/20260805_KTRANSITION_FUSION_N200.json` |

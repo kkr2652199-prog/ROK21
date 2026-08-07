@@ -4,12 +4,12 @@
 
 ## NEXT (1건)
 - ID: K-TRANSITION-HIT-WARRANT-ATTACH-DONE
-- 할일: ATTACH PASS 형 확인 · hit_warrant_log+evolve.note 부착 유지 · 추가 라벨확장 or 트랙 종료(발권가중·WIRE 금지)
+- 할일: 20260807 세션보고서 보완완료 · 형 확인 — 라벨확장 or 트랙정지(발권가중·WIRE 금지) · hit_warrant_log+evolve.note 유지
 - 완료조건: 형 GO
-- 선행완료: docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT_ATTACH.json
+- 선행완료: reports/20260807_ROK21_SESSION_STATUS.md · docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT_ATTACH.json
 - 승인필요: 미확인
 - 선행조건: 없음
-- 최종갱신: 2026-08-05
+- 최종갱신: 2026-08-07
 
 ## WORKSTATE
 IDLE
