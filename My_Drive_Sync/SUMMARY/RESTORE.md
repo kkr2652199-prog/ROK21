@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5686e94` · WORK=`IDLE`
-2. **지금:** **K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED**
-3. **다음1건:** K-PAST-LEARN-DETAIL-TUNE — 틀(FRAME_LOCKED) 위 세부 튜닝 — decay(`LONG`/`SHORT`) 등 · 시드 n50+holdout · fusion 회귀 · **형 GO** (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `7f031aa` · WORK=`IDLE`
+2. **지금:** **K-PAST-LEARN-DETAIL-TUNE** — decay 후보 L0.01/S0.05 · **CANDIDATE**
+3. **다음1건:** K-PAST-LEARN-DETAIL-APPLY — decay 후보 `LONG=0.01`/`SHORT=0.05`(hold ge3**0.16**·fusion**0.135**) 상수적용 or KEEP_BASE · **형 GO** (승인필요=필요 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-08 | decay세부 | 후보 L0.01/S0.05 · fusion0.135 · 미적용 | **CAND** | (push후) |
 | 2026-08-08 | 틀잠금 | FRAME_LOCKED · 세부는다음 | **LOCK** | 0e14774 |
 | 2026-08-08 | 후보적용 | win26/mix0.8·tune재현·fusionΔ0 | **PASS** | d5b466d |
 | 2026-08-08 | engine스윕 | 후보 win26/mix0.8 ge30.28 · 미적용 | **CAND** | addc82b |
@@ -45,7 +46,6 @@
 | 2026-08-08 | 과거학습분석 | 1234 번호별 next빈도·윈도우 | **MEASURED** | 6f19881 |
 | 2026-08-08 | stat명칭 | 통계요정→과거학습 | **PASS** | f305191 |
 | 2026-08-08 | YT벤치+보고서push | KYT_FILTER_BENCH JSON+reports+Drive | **DOC_SURVEY** | bbde687 |
-| 2026-08-07 | 종료체크 | 20260807 세션보고서 reports+Drive | **DONE** | 7656f77 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

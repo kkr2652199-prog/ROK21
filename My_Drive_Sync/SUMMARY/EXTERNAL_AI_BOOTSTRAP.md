@@ -8,15 +8,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5686e94` |
+| HEAD(실측) | `7f031aa` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED** |
-| 직전 | K-PAST-LEARN-TUNE-ENGINE-APPLY · PASS |
-| BOOT다음 | 세부 튜닝(DETAIL) · **형 GO** |
-| NEXT1 ID | **K-PAST-LEARN-DETAIL-TUNE** |
-| NEXT1 할일 | 틀(FRAME_LOCKED) 위 세부 튜닝 — decay(`LONG`/`SHORT`) 등 · 시드 n50+holdout · fusion 회귀 · **형 GO** |
-| 승인필요 | 미확인 |
+| 지금 | **K-PAST-LEARN-DETAIL-TUNE** — decay 후보 L0.01/S0.05 · **CANDIDATE** |
+| 직전 | K-PAST-LEARN-FRAME-DONE · FRAME_LOCKED |
+| BOOT다음 | 후보 적용/보류 · **형 GO** |
+| NEXT1 ID | **K-PAST-LEARN-DETAIL-APPLY** |
+| NEXT1 할일 | decay 후보 `LONG=0.01`/`SHORT=0.05`(hold ge3**0.16**·fusion**0.135**) 상수적용 or KEEP_BASE · **형 GO** |
+| 승인필요 | 필요 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5686e94 · 지금=**K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED** · 다음=K-PAST-LEARN-DETAIL-TUNE`
+1. 첫줄 `[복귀] HEAD=7f031aa · 지금=**K-PAST-LEARN-DETAIL-TUNE** — decay 후보 L0.01/S0.05 · **CANDIDATE** · 다음=K-PAST-LEARN-DETAIL-APPLY`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED**
-- 직전: K-PAST-LEARN-TUNE-ENGINE-APPLY · PASS
-- 다음: 세부 튜닝(DETAIL) · **형 GO**
+- 지금: **K-PAST-LEARN-DETAIL-TUNE** — decay 후보 L0.01/S0.05 · **CANDIDATE**
+- 직전: K-PAST-LEARN-FRAME-DONE · FRAME_LOCKED
+- 다음: 후보 적용/보류 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-PAST-LEARN-FRAME-DONE** — 과거학습 기본 틀 잠금 · **FRAME_LOCKED**
+📌 사유: **[CURSOR] K-PAST-LEARN-DETAIL-TUNE** — decay 세부 스윕 · **CANDIDATE**
 
 ---
 
@@ -10,7 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-PAST-LEARN-FRAME-DONE** | **FRAME_LOCKED** — 과거학습 기본 틀 잠금(세부 전) · win**26**/mix**0.8** · soft/ASSOC/transition OFF · `framework_snapshot` · smoke OK · 다음=DETAIL(decay) · `docs/benchmarks/20260808_KPAST_LEARN_FRAME_DONE.json` · `reports/20260808_KPAST_LEARN_FRAME_DONE.md` |
+| **K-PAST-LEARN-DETAIL-TUNE** | **CANDIDATE** — 틀 win26/mix0.8 고정 · decay 3×3 · base L**0.005**/S**0.05** tune**0.28**/hold**0.14** · 후보 L**0.01**/S**0.05** tune**0.24**/hold**0.16** · fusion base=best=**0.135** · applied=**False** · `docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json` · `reports/20260808_KPAST_LEARN_DETAIL_TUNE.md` |
+| **K-PAST-LEARN-FRAME-DONE** | **FRAME_LOCKED** — 과거학습 기본 틀 잠금(세부 전) · win**26**/mix**0.8** · soft/ASSOC/transition OFF · `framework_snapshot` · smoke OK · `docs/benchmarks/20260808_KPAST_LEARN_FRAME_DONE.json` · `reports/20260808_KPAST_LEARN_FRAME_DONE.md` |
 | **K-PAST-LEARN-TUNE-ENGINE-APPLY** | **PASS** — `V2_SHORT_WIN=26`/`V2_SHORT_MIX=0.8` 적용 · tune n50 ge3=**0.28**/mean**1.88**(재현) · holdout(1085~1134) ge3=**0.14**/mean**1.72** · fusion n200 ge3=**0.135** Δ**0** · 롤백52/0.6 · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json` · `reports/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.md` |
 | **K-PAST-LEARN-TUNE-ENGINE** | **CANDIDATE→APPLIED** — seed n50 · base(win52/mix0.6) ge3=**0.12**/mean**1.78** · 후보 **win26/mix0.8** ge3=**0.28**(Δ**+0.16**) · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json` · `reports/20260808_KPAST_LEARN_TUNE_ENGINE.md` |
 | **K-PAST-LEARN-TUNE-SOFT** | **KEEP_BASE** — seed(`42000+dno`) 15셀 **전부** ge3=**0.12** mean=**1.78** · soft conf 노브→발권불변 · unseeded↑=RNG잡음 · 상수 w**0.12**/cap**3.0** 유지 · applied=False · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_SOFT.json` · `reports/20260808_KPAST_LEARN_TUNE_SOFT.md` |
