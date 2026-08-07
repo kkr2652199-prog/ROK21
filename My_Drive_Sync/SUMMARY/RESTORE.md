@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `74c7dbd` · WORK=`IDLE`
+1. **HEAD:** `d5b466d` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-TUNE-ENGINE-APPLY** — win26/mix0.8 적용 · fusion**0.135** · **PASS**
 3. **다음1건:** K-PAST-LEARN-TUNE-DONE — APPLY PASS(win26/mix0.8·fusion Δ0) 형 확인 · 추가 튜닝(decay 등) or 트랙정지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-08 | 후보적용 | win26/mix0.8·tune재현·fusionΔ0 | **PASS** | (push후) |
+| 2026-08-08 | 후보적용 | win26/mix0.8·tune재현·fusionΔ0 | **PASS** | d5b466d |
 | 2026-08-08 | engine스윕 | 후보 win26/mix0.8 ge30.28 · 미적용 | **CAND** | addc82b |
 | 2026-08-08 | SOFT스윕 | seed15셀동일 · soft무효과 · base유지 | **KEEP** | caf49bd |
 | 2026-08-08 | 과거학습패치 | past_learn wire·v2·soft · n50 ge30.14 | **PASS** | df310d6 |
