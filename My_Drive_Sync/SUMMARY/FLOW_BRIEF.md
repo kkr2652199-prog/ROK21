@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `1446e47` · WORK=`IDLE`
+- HEAD: `f305191` · WORK=`IDLE`
 - 지금: **K-BRAIN-RENAME-STAT** — 통계요정→과거학습 · **PASS**
 - 직전: K-YT-FILTER-BENCH · DOC_SURVEY
 - BOOT다음: 라벨확장 or 트랙정지 · 발권가중 금지 · **형 GO**

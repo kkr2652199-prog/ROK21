@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `1446e47` · WORK=`IDLE`
+1. **HEAD:** `f305191` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-RENAME-STAT** — 통계요정→과거학습 · **PASS**
 3. **다음1건:** K-BRAIN-RENAME-STAT-DONE — stat 표시명 **과거학습** 적용 확인 · 이어서 라벨확장 or 트랙정지(발권가중·WIRE 금지) · LSTM부활 금지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-08 | stat명칭 | 통계요정→과거학습 | **PASS** | (push후) |
+| 2026-08-08 | stat명칭 | 통계요정→과거학습 | **PASS** | f305191 |
 | 2026-08-08 | YT벤치+보고서push | KYT_FILTER_BENCH JSON+reports+Drive | **DOC_SURVEY** | bbde687 |
 | 2026-08-07 | 종료체크 | 20260807 세션보고서 reports+Drive | **DONE** | 7656f77 |
 | 2026-08-05 | 명분로그부착 | hit_warrant_log1134·evolve.note | **PASS** | bf8efac |
