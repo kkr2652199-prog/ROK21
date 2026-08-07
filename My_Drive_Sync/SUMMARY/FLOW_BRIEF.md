@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `472073b` · WORK=`IDLE`
+- HEAD: `0450d5a` · WORK=`IDLE`
 - 지금: **K-STAT-NUM-ASSOC-SAMPLE** — 과거30회 리프트샘플 · **MEASURED**
 - 직전: K-STAT-NUM-ASSOC · MEASURED
 - BOOT다음: 형 논의 · 전수여부 · WIRE금지 · **형 GO**

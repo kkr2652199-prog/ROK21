@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `472073b` · WORK=`IDLE`
+1. **HEAD:** `0450d5a` · WORK=`IDLE`
 2. **지금:** **K-STAT-NUM-ASSOC-SAMPLE** — 과거30회 리프트샘플 · **MEASURED**
 3. **다음1건:** K-STAT-NUM-ASSOC-SAMPLE-DONE — SAMPLE n30 결과 형 논의 · meanL≈1 · top1_hit&lt;null → 전수/정지 결정 (과거학습 · WIRE금지) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-08 | 과거샘플 | ASSOC n30 meanL1.009 top1&lt;null | **MEASURED** | (push후) |
+| 2026-08-08 | 과거샘플 | ASSOC n30 meanL1.009 top1&lt;null | **MEASURED** | 0450d5a |
 | 2026-08-08 | 연관정밀 | 1234→next 리프트·연도후순위 | **MEASURED** | 51aa602 |
 | 2026-08-08 | 과거학습분석 | 1234 번호별 next빈도·윈도우 | **MEASURED** | 6f19881 |
 | 2026-08-08 | stat명칭 | 통계요정→과거학습 | **PASS** | f305191 |
@@ -46,7 +46,6 @@
 | 2026-08-05 | STEP4 GO(A) | transition_v1 wire·smokeOK·n50=0.06 | **PASS** | edd7c7b |
 | 2026-08-05 | STEP3 설계 | nopeek2.007 HOLD · FULL-ho2.178 | **HOLD** | 145a6f4 |
 | 2026-08-05 | STEP2 재검증 | table·FULL·period STABLE | **PASS** | f27f78a |
-| 2026-08-05 | transition수집 | log테이블·backfill1134·FULL재현OK | **PASS** | a518cdf |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
