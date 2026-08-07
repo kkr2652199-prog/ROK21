@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `77d197b` · WORK=`IDLE`
+- HEAD: `51aa602` · WORK=`IDLE`
 - 지금: **K-STAT-NUM-ASSOC** — 1234 번호→다음회 리프트 · **MEASURED**
 - 직전: K-STAT-NUM-NEXT-FREQ · MEASURED
 - BOOT다음: 논의·1233↓ 연관전수 · 연도별=후순위 · **형 GO**
