@@ -10,15 +10,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `9a44877` |
+| HEAD(실측) | `5675df6` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-STAT-DECISION-GATE** — 판정눈금 확정 · **RULER_TOO_COARSE** · 적용상수 win26/mix0.8=**NOISE_SELECTION_CONFIRMED**(n50·K10 Δ0.16 = 잡음p95 0.16 · holdout 0.14≈null) · 순서불변 증명 2.429e-17 |
-| 직전 | K-PAST-LEARN-EV-RELABEL(인기편향 FW p=0.0004 · 태그축 무신호) · SCORE-RULE-DIAG(NO_SKILL) |
-| BOOT다음 | ①게이트 도구화 전면적용(권장) ②seed full-range ③1236+ 전향적 EV로그 중 **형 1건 선택** · 발권가중 금지 |
-| NEXT1 ID | **K-STAT-GATE-ADOPT** |
-| NEXT1 할일 | DECISION-GATE 결과(**적용상수 win26/mix0.8 = NOISE_SELECTION_CONFIRMED** · 순서불변 2.429e-17 · 문제→답 nopeek 0.274 < 무작위 0.311) 형 확인 후 1건 선택 — **①게이트를 공용 모듈로 승격해 모든 튜닝 도구가 gate(n,k) 기록 강제**(권장 · 잡음보다 작은 차이 채택을 구조적으로 차단) / ②seed full-range 재측정으로 잡음 하한 확정 / ③회차 1236+ 전향적 EV 로그(개입 없음) / ④트랙정지 |
-| 승인필요 | ①은 도구 신규모듈(발권경로 무변경) → 형 GO 필요 |
+| 지금 | **R38 게이트 강제 가동** — `tools/k_gate.py` 공용모듈 · 벤치 `decision_gate` 기록 필수 · 준수검사 **COMPLIANT**(자기검증 8/8 · 184벤치 · legacy132면제 · 위반0 · 프로브로 exit=1 실동작 확인) |
+| 직전 | K-STAT-DECISION-GATE — 적용상수 win26/mix0.8=**NOISE_SELECTION_CONFIRMED** · 순서불변 2.429e-17 · 문제답 nopeek 0.274<무작위 0.311 |
+| BOOT다음 | ①seed full-range로 잡음하한 확정 ②1236+ 전향적 EV로그 ③기존 legacy 판정 게이트 소급적용 중 **형 1건 선택** · 발권가중 금지 |
+| NEXT1 ID | **K-GATE-NEXT-PICK** |
+| NEXT1 할일 | R38 게이트 가동 완료(공용모듈 승격 · 준수검사 COMPLIANT · 강제 exit=1 실동작 확인) 형 확인 후 1건 선택 — **①seed 민감도 full-range 재측정으로 잡음 하한 확정**(권장 · 현재 폭 0.14 는 n=100 단일 추정 · 약 25분) / ②회차 1236+ 전향적 EV 로그(개입 없음 · 저번호·저합 인기축 검증) / ③legacy 132건 중 상수·배선에 영향 준 판정만 골라 게이트 소급적용 / ④트랙정지 |
+| 승인필요 | 없음 (①~③ 모두 측정·기록만 · 발권경로 무변경) |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=9a44877 · 지금=**K-STAT-DECISION-GATE** — 판정눈금 확정 · **RULER_TOO_COARSE** · 적용상수 win26/mix0.8=**NOISE_SELECTION_CONFIRMED**(n50·K10 Δ0.16 = 잡음p95 0.16 · holdout 0.14≈null) · 순서불변 증명 2.429e-17 · 다음=K-STAT-GATE-ADOPT`
+1. 첫줄 `[복귀] HEAD=5675df6 · 지금=**R38 게이트 강제 가동** — `tools/k_gate.py` 공용모듈 · 벤치 `decision_gate` 기록 필수 · 준수검사 **COMPLIANT**(자기검증 8/8 · 184벤치 · legacy132면제 · 위반0 · 프로브로 exit=1 실동작 확인) · 다음=K-GATE-NEXT-PICK`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 9a44877_
+_generated: 5675df6_
