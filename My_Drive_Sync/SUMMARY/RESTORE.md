@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `caf49bd` · WORK=`IDLE`
+1. **HEAD:** `df919e0` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-TUNE-SOFT** — 시드고정 15셀 동일 · **KEEP_BASE**
 3. **다음1건:** K-PAST-LEARN-TUNE-ENGINE — soft rerank 무효과(KEEP_BASE) → engine v2 윈도우/가중 스윕 설계·실측 · `random.choices` 동결 유지 · ASSOC OFF (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

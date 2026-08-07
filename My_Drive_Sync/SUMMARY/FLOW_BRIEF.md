@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `caf49bd` · WORK=`IDLE`
+- HEAD: `df919e0` · WORK=`IDLE`
 - 지금: **K-PAST-LEARN-TUNE-SOFT** — 시드고정 15셀 동일 · **KEEP_BASE**
 - 직전: K-PAST-LEARN-WIRE · PASS
 - BOOT다음: engine 생성단 튜닝 · **형 GO**
