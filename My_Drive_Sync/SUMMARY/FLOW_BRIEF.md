@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6e2aa6a` · WORK=`IDLE`
+- HEAD: `7b499fe` · WORK=`IDLE`
 - 지금: **K-STAT-NUM-ASSOC-FULL** — 전수 A+B+C+F · **NOISE_LIKE**
 - 직전: K-STAT-NUM-ASSOC-SAMPLE · MEASURED
 - BOOT다음: 형 확인 · 발권wire 금지·명분만 · **형 GO**
