@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-PAST-LEARN-EV-RELABEL** — 1등 당첨자수 NB2+무작위화추론 · **SELECTION_YES_TAGS_NO_AXIS_CANDIDATE**
+📌 사유: **[CURSOR] K-STAT-DECISION-GATE** — 판정 눈금 확정 · **RULER_TOO_COARSE** (적용상수 win26/mix0.8 = 잡음선택)
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-STAT-DECISION-GATE** | **RULER_TOO_COARSE** — null 해석적 검증: 초기하 1장 P(≥3)=**0.02383408** → 5장최고 **0.113624** vs 측정 **0.1137**(일치) · 15장 **0.303607** vs **0.3036**(일치) → null 기준선 신뢰 확정 · **눈금표**: n50 SE**0.044881** 단일MDD**0.124403** K10선택보정p95**0.16** / n100 **0.087966**·K10 **0.11** / n200 **0.062202**·K10 **0.08** / n1182 **0.025586**·K10 **0.032149** · **소급감사**: TUNE-ENGINE(win26/mix0.8 · n50·K10·Δ+0.16 = p95와 동일 · holdout 0.14 = null+0.0264 붕괴 · fusion Δ0) → **NOISE_SELECTION_CONFIRMED** / DETAIL-TUNE(score Δ+0.0008) → UNDECIDABLE / SEED-DIAG(폭 0.14, seed std 0.047749 > 이론SE 0.031735) → **NOISE_FLOOR** / FULL-WF(n1182 Δ+0.0047 vs MDD 0.025586) → UNDECIDABLE · **순서불변 증명**: 1→N vs N→1 최대차 **2.429e-17**(동일) · 리스트 실제역전 시 최대차 0.007995=시간축손상 · **문제→답 프레임**: `transition_log` n1134 이미구현·채점완료 · nopeek mean**2.007407** ge3**0.274074** < 무작위**0.311375** / peek 2.177778·0.392593 → 컨닝차이가 전부 · wire否·상수무변경 · `docs/benchmarks/20260808_KSTAT_DECISION_GATE.json` · `reports/20260808_KSTAT_DECISION_GATE.md` |
 | **K-PAST-LEARN-EV-RELABEL** | **SELECTION_YES_TAGS_NO_AXIS_CANDIDATE** — 종속=1등당첨자수 `first_winners` · n**1131**(회차105~1235) · 분산/평균**2.95**→NB2(α=**0.06621**) · offset=log(total_sales) · 교란=시간spline6+연주기4+이월 · permutation score test B**5000** · **전역 max|z|=4.381 FW p=0.0004**(인기편향 실증) · 유의축 `sum_z` β**−0.0575**(z−4.38) · `n_le22` β**+0.0463**(z+4.19) = 동일 저번호·저합축(상관−0.876) · 태그 전부 FW 무의미: `t_carry` β−0.0337(z−2.09 pFW0.28) · `t_hot1y` β**+0.0243=인기(EV역방향)** 4시대 전부 · `t_overdue` β−0.0539(z−0.96) · `t_cold1y` β−0.0136(z−0.66) · **soft태그 EV재정의 지지=아니오** · 후보축 전후반 엄격재현 미달(전반 z−1.10/후반 −4.37 · 시대부호 3/4) → 전향적 검증 필요 · wire否·코드/가중 무변경(w=0) · `docs/benchmarks/20260808_KPAST_LEARN_EV_RELABEL.json` · `reports/20260808_KPAST_LEARN_EV_RELABEL.md` |
 | **K-PAST-LEARN-AUDIT-DIMS** | **AUDIT_DONE** — 전구간 감사+차원+외부AI자문 · 실행가능 잔여 **6건**(①seed full-range ②EV전향로그 ③cycle_gap_boost 단독AB ④STATUS§5 드리프트정정 ⑤bin taxonomy ⑥cold-free live검증) · 미도구화 아이디어 7건 · 되살리기금지 8건 · 문서모순 4건 · 차원 셀당관측 1차**164.7**/2차**18.7**/3차**1.74**/4차0.12/6차0.0002 → **차원상승=표본분할**(pair/triple NOISE는 공정추첨의 정상결과) · 자문 채택: "recency=정보없음" 문구 축소 · nested WF·block bootstrap 미충족 · 해외문헌으로 한국인기도 대체금지 · `docs/benchmarks/20260808_KPAST_LEARN_AUDIT_DIMS.json` · `reports/20260808_KPAST_LEARN_AUDIT_DIMS_ADVISORY.md` |
 | **K-PAST-LEARN-SCORE-RULE-DIAG** | **NO_SKILL_VS_NULL** — n**500**(736~1235) · 셀**15** log-score 전부 null(**3.8067**) 미달 · 현행 L0.005/S0.05=**3.8982**(skill **−0.0240**) · 최선 L0.0005/S0.02=**3.8875**(**−0.0212**) · 균등이탈L1↔score **r=0.9854** · 보정χ²=**32.42**(df44 p≈**0.90**, 기각못함) · PBO=**0.0** · 기대최대**0.0306**≥실측**0.0107** · hot1y=인기축(EV역방향) 경고 · wire否·상수불변 · `docs/benchmarks/20260808_KPAST_LEARN_SCORE_RULE_DIAG.json` · `reports/20260808_KPAST_LEARN_SCORE_RULE_DIAG.md` |

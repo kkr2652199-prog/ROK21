@@ -3,11 +3,11 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-PAST-LEARN-NEXT-PICK
-- 할일: EV-RELABEL 결과(인기편향 FW p=0.0004 실증 · **태그축 무신호 → soft 재정의 지지 안 됨**) 형 확인 후 다음 1건 선택 — **①seed 민감도 full-range 재측정** (권장 · 잡음 하한 미확정 상태로 그동안 판정해왔음) / ②회차 1236+ 전향적 EV 로그(개입 없음) / ③`cycle_gap_boost` 단독 A/B / ④트랙정지
+- ID: K-STAT-GATE-ADOPT
+- 할일: DECISION-GATE 결과(**적용상수 win26/mix0.8 = NOISE_SELECTION_CONFIRMED** · 순서불변 2.429e-17 · 문제→답 nopeek 0.274 < 무작위 0.311) 형 확인 후 1건 선택 — **①게이트를 공용 모듈로 승격해 모든 튜닝 도구가 gate(n,k) 기록 강제**(권장 · 잡음보다 작은 차이 채택을 구조적으로 차단) / ②seed full-range 재측정으로 잡음 하한 확정 / ③회차 1236+ 전향적 EV 로그(개입 없음) / ④트랙정지
 - 완료조건: 형이 ①~④ 중 1건 지정
-- 선행완료: docs/benchmarks/20260808_KPAST_LEARN_EV_RELABEL.json · docs/benchmarks/20260808_KPAST_LEARN_AUDIT_DIMS.json · reports/20260808_KPAST_LEARN_EV_RELABEL.md · reports/20260808_KPAST_LEARN_AUDIT_DIMS_ADVISORY.md · 커서보고서 동기
-- 승인필요: 미확인
+- 선행완료: docs/benchmarks/20260808_KSTAT_DECISION_GATE.json · reports/20260808_KSTAT_DECISION_GATE.md · 커서보고서 동기 · (앞선) EV_RELABEL · AUDIT_DIMS
+- 승인필요: ①은 도구 신규모듈(발권경로 무변경) → 형 GO 필요
 - 선행조건: 없음
 - 최종갱신: 2026-08-08
 
@@ -29,4 +29,8 @@ IDLE
 - **유일한 유의 인기축 = 저번호·저합**(sum β−0.0575 · le22 β+0.0463 · FW p=0.0004). 현재 과거학습 뇌에 **이 축이 아예 없다**. 단 전반구간 약함(구간2 z≈0) → 전향적 검증 전 발권 반영 금지
 - **차원 사실**: 셀당 관측 1차 164.7 / 2차 18.7 / **3차 1.74** → 3차원 순위화 불가. pair/triple NOISE 판정은 정상
 - **잡음 하한 미확정**: stat seed ge3 range **0.14** 를 n=100 에서만 측정. 이보다 작은 차이는 판정 불가
+- **눈금 확정(20260808 DECISION-GATE)**: null 해석적 재현 성공(초기하 5장최고 0.113624 vs 측정 0.1137) · n50 단일MDD **0.124403** · n50·K10 잡음p95 **0.16** · n200 K10 **0.08** · n1182 K10 **0.032149**
+- **적용상수 win26/mix0.8 = 잡음선택 확정**: n50·K10 Δ+0.16 = 잡음p95와 동일 · holdout 0.14(null+0.0264) 붕괴 · fusion Δ0 → '개선' 인용 금지. 단 **되돌릴 근거도 없음**(양쪽 무근거) → 상수 그대로 유지
+- **학습 순서 무의미**: weight=Σexp(−decay·age) 는 합 → 1→N vs N→1 최대차 **2.429e-17**(동일). 리스트 실제역전은 시간축손상(버그, 최대차 0.007995)
+- **문제→답 프레임 이미 채점완료**: `transition_log`(anchor=문제 → next_actual=답) n1134 · nopeek top15 ge3 **0.274074** < 무작위 **0.311375** · peek 0.392593 → peek-nopeek 차이가 신호의 전부
 - 상수·배선 불변: engine decay 0.005/0.05 · FRAME win26/mix0.8 · ASSOC/transition/LSTM OFF

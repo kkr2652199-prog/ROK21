@@ -1,0 +1,476 @@
+{
+  "bench_id": "K-STAT-DECISION-GATE",
+  "date": "2026-08-08",
+  "scope": "ROK21 / testlotto / 과거학습(stat) — 판정 방법론",
+  "wire": false,
+  "policy": {
+    "read_only": true,
+    "db_write": false,
+    "code_change": false,
+    "constant_change": false
+  },
+  "null_analytic": {
+    "method": "초기하분포 (45개 중 6개 추첨)",
+    "p_single_ge3": 0.02383408,
+    "pmf": {
+      "0": 0.4005646367,
+      "1": 0.4241272624,
+      "2": 0.1514740223,
+      "3": 0.0224405959,
+      "4": 0.0013646308,
+      "5": 2.87291e-05,
+      "6": 1.228e-07
+    },
+    "null_ge3_best_of_5": 0.113624,
+    "null_ge3_best_of_15": 0.303607,
+    "measured_best_of_5": 0.1137,
+    "measured_best_of_15": 0.3036,
+    "match_best_of_5": true,
+    "match_best_of_15": true,
+    "source_measured": "docs/benchmarks/20260730_KSIGNAL_BACKTEST_tail100.json"
+  },
+  "problem_answer_frame": {
+    "table": "transition_log",
+    "structure_ko": "anchor_nums(=문제 · 직전회차) → next_actual(=답) → hit_count(=채점)",
+    "n": 1134,
+    "nopeek_mean_hit": 2.007407,
+    "nopeek_ge3": 0.274074,
+    "random_ge3": 0.311375,
+    "peek_mean_hit": 2.177778,
+    "peek_ge3": 0.392593,
+    "source": "20260805_KTRANSITION_STEP3_DESIGN.json",
+    "conclusion_ko": "컨닝을 막으면 top15 ge3 가 무작위보다 낮다 → 문제→답 학습기는 이미 채점 실패"
+  },
+  "order_invariance": {
+    "n_draws": 1235,
+    "long_decay": 0.005,
+    "max_abs_diff_forward_vs_backward": 2.429e-17,
+    "identical": true,
+    "max_abs_diff_if_list_reversed": 0.007995,
+    "conclusion_ko": "순회 순서(1→N vs N→1)는 결과를 전혀 바꾸지 않는다. 가중치는 age 기반 지수가중의 **합**이고 합은 교환법칙이 성립한다. 리스트를 실제로 뒤집으면 '최근'의 정의가 뒤바뀌어 결과가 달라지지만, 그것은 학습 방향이 아니라 시간축 손상(버그)이다."
+  },
+  "ruler": [
+    {
+      "n": 50,
+      "k_cells": 1,
+      "p0": 0.113624,
+      "se_single": 0.044881,
+      "ci95_halfwidth": 0.087966,
+      "mdd_single_pair": 0.124403,
+      "mdd_selection_p95": 0.1,
+      "mdd_selection_p99": 0.14,
+      "noise_delta_expected": -8.5e-05
+    },
+    {
+      "n": 50,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.044881,
+      "ci95_halfwidth": 0.087966,
+      "mdd_single_pair": 0.124403,
+      "mdd_selection_p95": 0.16,
+      "mdd_selection_p99": 0.2,
+      "noise_delta_expected": 0.069357
+    },
+    {
+      "n": 50,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.044881,
+      "ci95_halfwidth": 0.087966,
+      "mdd_single_pair": 0.124403,
+      "mdd_selection_p95": 0.16,
+      "mdd_selection_p99": 0.2,
+      "noise_delta_expected": 0.072672
+    },
+    {
+      "n": 50,
+      "k_cells": 15,
+      "p0": 0.113624,
+      "se_single": 0.044881,
+      "ci95_halfwidth": 0.087966,
+      "mdd_single_pair": 0.124403,
+      "mdd_selection_p95": 0.16,
+      "mdd_selection_p99": 0.2,
+      "noise_delta_expected": 0.082921
+    },
+    {
+      "n": 100,
+      "k_cells": 1,
+      "p0": 0.113624,
+      "se_single": 0.031735,
+      "ci95_halfwidth": 0.062201,
+      "mdd_single_pair": 0.087966,
+      "mdd_selection_p95": 0.07,
+      "mdd_selection_p99": 0.1,
+      "noise_delta_expected": 3e-06
+    },
+    {
+      "n": 100,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.031735,
+      "ci95_halfwidth": 0.062201,
+      "mdd_single_pair": 0.087966,
+      "mdd_selection_p95": 0.11,
+      "mdd_selection_p99": 0.14,
+      "noise_delta_expected": 0.048982
+    },
+    {
+      "n": 100,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.031735,
+      "ci95_halfwidth": 0.062201,
+      "mdd_single_pair": 0.087966,
+      "mdd_selection_p95": 0.11,
+      "mdd_selection_p99": 0.14,
+      "noise_delta_expected": 0.050702
+    },
+    {
+      "n": 100,
+      "k_cells": 15,
+      "p0": 0.113624,
+      "se_single": 0.031735,
+      "ci95_halfwidth": 0.062201,
+      "mdd_single_pair": 0.087966,
+      "mdd_selection_p95": 0.12,
+      "mdd_selection_p99": 0.14,
+      "noise_delta_expected": 0.057889
+    },
+    {
+      "n": 135,
+      "k_cells": 1,
+      "p0": 0.113624,
+      "se_single": 0.027313,
+      "ci95_halfwidth": 0.053534,
+      "mdd_single_pair": 0.075709,
+      "mdd_selection_p95": 0.066667,
+      "mdd_selection_p99": 0.088889,
+      "noise_delta_expected": 0.000576
+    },
+    {
+      "n": 135,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.027313,
+      "ci95_halfwidth": 0.053534,
+      "mdd_single_pair": 0.075709,
+      "mdd_selection_p95": 0.096296,
+      "mdd_selection_p99": 0.118519,
+      "noise_delta_expected": 0.041949
+    },
+    {
+      "n": 135,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.027313,
+      "ci95_halfwidth": 0.053534,
+      "mdd_single_pair": 0.075709,
+      "mdd_selection_p95": 0.096296,
+      "mdd_selection_p99": 0.118519,
+      "noise_delta_expected": 0.04347
+    },
+    {
+      "n": 135,
+      "k_cells": 15,
+      "p0": 0.113624,
+      "se_single": 0.027313,
+      "ci95_halfwidth": 0.053534,
+      "mdd_single_pair": 0.075709,
+      "mdd_selection_p95": 0.103704,
+      "mdd_selection_p99": 0.125926,
+      "noise_delta_expected": 0.04932
+    },
+    {
+      "n": 200,
+      "k_cells": 1,
+      "p0": 0.113624,
+      "se_single": 0.02244,
+      "ci95_halfwidth": 0.043983,
+      "mdd_single_pair": 0.062201,
+      "mdd_selection_p95": 0.055,
+      "mdd_selection_p99": 0.075,
+      "noise_delta_expected": 0.000352
+    },
+    {
+      "n": 200,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.02244,
+      "ci95_halfwidth": 0.043983,
+      "mdd_single_pair": 0.062201,
+      "mdd_selection_p95": 0.08,
+      "mdd_selection_p99": 0.095,
+      "noise_delta_expected": 0.034371
+    },
+    {
+      "n": 200,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.02244,
+      "ci95_halfwidth": 0.043983,
+      "mdd_single_pair": 0.062201,
+      "mdd_selection_p95": 0.08,
+      "mdd_selection_p99": 0.095,
+      "noise_delta_expected": 0.035305
+    },
+    {
+      "n": 200,
+      "k_cells": 15,
+      "p0": 0.113624,
+      "se_single": 0.02244,
+      "ci95_halfwidth": 0.043983,
+      "mdd_single_pair": 0.062201,
+      "mdd_selection_p95": 0.085,
+      "mdd_selection_p99": 0.1,
+      "noise_delta_expected": 0.040678
+    },
+    {
+      "n": 500,
+      "k_cells": 1,
+      "p0": 0.113624,
+      "se_single": 0.014192,
+      "ci95_halfwidth": 0.027817,
+      "mdd_single_pair": 0.03934,
+      "mdd_selection_p95": 0.034,
+      "mdd_selection_p99": 0.048,
+      "noise_delta_expected": -1.1e-05
+    },
+    {
+      "n": 500,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.014192,
+      "ci95_halfwidth": 0.027817,
+      "mdd_single_pair": 0.03934,
+      "mdd_selection_p95": 0.05,
+      "mdd_selection_p99": 0.06,
+      "noise_delta_expected": 0.021454
+    },
+    {
+      "n": 500,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.014192,
+      "ci95_halfwidth": 0.027817,
+      "mdd_single_pair": 0.03934,
+      "mdd_selection_p95": 0.05,
+      "mdd_selection_p99": 0.062,
+      "noise_delta_expected": 0.022318
+    },
+    {
+      "n": 500,
+      "k_cells": 15,
+      "p0": 0.113624,
+      "se_single": 0.014192,
+      "ci95_halfwidth": 0.027817,
+      "mdd_single_pair": 0.03934,
+      "mdd_selection_p95": 0.052,
+      "mdd_selection_p99": 0.064,
+      "noise_delta_expected": 0.025158
+    },
+    {
+      "n": 900,
+      "k_cells": 1,
+      "p0": 0.113624,
+      "se_single": 0.010578,
+      "ci95_halfwidth": 0.020734,
+      "mdd_single_pair": 0.029322,
+      "mdd_selection_p95": 0.024444,
+      "mdd_selection_p99": 0.034444,
+      "noise_delta_expected": 1e-06
+    },
+    {
+      "n": 900,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.010578,
+      "ci95_halfwidth": 0.020734,
+      "mdd_single_pair": 0.029322,
+      "mdd_selection_p95": 0.036667,
+      "mdd_selection_p99": 0.045556,
+      "noise_delta_expected": 0.01603
+    },
+    {
+      "n": 900,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.010578,
+      "ci95_halfwidth": 0.020734,
+      "mdd_single_pair": 0.029322,
+      "mdd_selection_p95": 0.036667,
+      "mdd_selection_p99": 0.045556,
+      "noise_delta_expected": 0.016543
+    },
+    {
+      "n": 900,
+      "k_cells": 15,
+      "p0": 0.113624,
+      "se_single": 0.010578,
+      "ci95_halfwidth": 0.020734,
+      "mdd_single_pair": 0.029322,
+      "mdd_selection_p95": 0.038889,
+      "mdd_selection_p99": 0.047778,
+      "noise_delta_expected": 0.018678
+    },
+    {
+      "n": 1182,
+      "k_cells": 1,
+      "p0": 0.113624,
+      "se_single": 0.009231,
+      "ci95_halfwidth": 0.018092,
+      "mdd_single_pair": 0.025586,
+      "mdd_selection_p95": 0.021997,
+      "mdd_selection_p99": 0.030457,
+      "noise_delta_expected": 9.5e-05
+    },
+    {
+      "n": 1182,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.009231,
+      "ci95_halfwidth": 0.018092,
+      "mdd_single_pair": 0.025586,
+      "mdd_selection_p95": 0.031303,
+      "mdd_selection_p99": 0.038917,
+      "noise_delta_expected": 0.013868
+    },
+    {
+      "n": 1182,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.009231,
+      "ci95_halfwidth": 0.018092,
+      "mdd_single_pair": 0.025586,
+      "mdd_selection_p95": 0.032149,
+      "mdd_selection_p99": 0.039763,
+      "noise_delta_expected": 0.014423
+    },
+    {
+      "n": 1182,
+      "k_cells": 15,
+      "p0": 0.113624,
+      "se_single": 0.009231,
+      "ci95_halfwidth": 0.018092,
+      "mdd_single_pair": 0.025586,
+      "mdd_selection_p95": 0.033841,
+      "mdd_selection_p99": 0.041455,
+      "noise_delta_expected": 0.016368
+    }
+  ],
+  "retro_audit": [
+    {
+      "id": "K-PAST-LEARN-TUNE-ENGINE (win26/mix0.8) — live 적용됨",
+      "source": "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json, 20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json",
+      "n": 50,
+      "k_cells": 10,
+      "claim_ko": "base ge3 0.12 → best 0.28",
+      "delta": 0.16,
+      "gate": {
+        "n": 50,
+        "k_cells": 10,
+        "p0": 0.113624,
+        "se_single": 0.044881,
+        "ci95_halfwidth": 0.087966,
+        "mdd_single_pair": 0.124403,
+        "mdd_selection_p95": 0.16,
+        "mdd_selection_p99": 0.2,
+        "noise_delta_expected": 0.072672
+      },
+      "holdout_ge3": 0.14,
+      "holdout_vs_null": 0.026376,
+      "holdout_collapsed": true,
+      "fusion_delta": 0.0,
+      "verdict": "NOISE_SELECTION_CONFIRMED",
+      "why_ko": "홀드아웃에서 null 수준으로 붕괴 → 선택잡음으로 확정"
+    },
+    {
+      "id": "K-PAST-LEARN-DETAIL-TUNE (decay) — 미채택",
+      "source": "docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json",
+      "n": 50,
+      "k_cells": 9,
+      "claim_ko": "선택기준 score 0.5772 → 0.578 (tune_ge3 0.28→0.24 · hold_ge3 0.14→0.16)",
+      "delta": 0.0008,
+      "tune_ge3_delta": -0.04,
+      "gate": {
+        "n": 50,
+        "k_cells": 9,
+        "p0": 0.113624,
+        "se_single": 0.044881,
+        "ci95_halfwidth": 0.087966,
+        "mdd_single_pair": 0.124403,
+        "mdd_selection_p95": 0.16,
+        "mdd_selection_p99": 0.2,
+        "noise_delta_expected": 0.069357
+      },
+      "fusion_delta": 0.0,
+      "verdict": "UNDECIDABLE",
+      "why_ko": "단일비교 최소검출차 미달 → 차이 주장 불가"
+    },
+    {
+      "id": "K-STAT-SEED-DIAG — 잡음 하한 실측",
+      "source": "docs/benchmarks/20260805_KSTAT_SEED_DIAG.json",
+      "n": 100,
+      "k_cells": 5,
+      "claim_ko": "동일 파라미터·동일 데이터 · seed만 변경 → ge3 0.09~0.23 (std 0.047749)",
+      "delta": 0.14,
+      "gate": {
+        "n": 100,
+        "k_cells": 5,
+        "p0": 0.113624,
+        "se_single": 0.031735,
+        "ci95_halfwidth": 0.062201,
+        "mdd_single_pair": 0.087966,
+        "mdd_selection_p95": 0.1,
+        "mdd_selection_p99": 0.13,
+        "noise_delta_expected": 0.037676
+      },
+      "verdict": "NOISE_FLOOR",
+      "why_ko": "이론 이항 SE=0.031735 인데 seed만으로 표준편차 0.047749 · 폭 0.14 발생 → 파이프라인이 이항잡음 이상을 더한다"
+    },
+    {
+      "id": "K-FUTURE-WIRE-FULL — 전구간 walk-forward",
+      "source": "docs/benchmarks/20260803_KFUTURE_WIRE_FULL.json",
+      "n": 1182,
+      "k_cells": 1,
+      "claim_ko": "ge3 0.1184 vs null 0.1136 (p=0.316656)",
+      "delta": 0.0047,
+      "gate": {
+        "n": 1182,
+        "k_cells": 1,
+        "p0": 0.113624,
+        "se_single": 0.009231,
+        "ci95_halfwidth": 0.018092,
+        "mdd_single_pair": 0.025586,
+        "mdd_selection_p95": 0.021997,
+        "mdd_selection_p99": 0.030457,
+        "noise_delta_expected": 9.5e-05
+      },
+      "verdict": "UNDECIDABLE",
+      "why_ko": "단일비교 최소검출차 미달 → 차이 주장 불가"
+    }
+  ],
+  "key_numbers": {
+    "n50_k10_p95": 0.16,
+    "n50_single_mdd": 0.124403,
+    "seed_range": 0.14,
+    "seed_std": 0.047749
+  },
+  "mc": {
+    "B": 40000,
+    "seed": 20260808
+  },
+  "verdict": {
+    "code": "RULER_TOO_COARSE",
+    "headline_ko": "적용된 엔진 상수(win26/mix0.8)는 잡음 선택으로 판정 — 자의 눈금이 주장보다 굵다",
+    "detail_ko": "**live 에 적용된 `win26/mix0.8` 은 out-of-sample 근거가 없다.** n=50·10셀 탐색에서 Δ+0.16 로 뽑혔으나, 순수 잡음만으로도 Δ0.16 가 나오는 조건이었다. 바로 다음 홀드아웃 50회차에서 ge3 는 0.14 (null 0.1136 대비 +0.0264) 로 붕괴했고, fusion n=200 에서 Δ는 0.0 였다.\n\n**상수를 되돌리자는 뜻이 아니다.** 되돌릴 근거도 없다(양쪽 다 무근거). 요점은 이 상수를 '개선'으로 인용하는 문서를 정정하고, 앞으로 같은 방식으로 상수를 채택하지 않는 것이다."
+  },
+  "next_rule_ko": [
+    "모든 튜닝 도구는 gate(n, k_cells) 결과를 벤치 JSON 에 기록",
+    "|Δ| < mdd_selection_p95 이면 '차이 없음'으로 보고",
+    "ge3 대신 proper scoring rule 병기 (ge3 는 둔함)",
+    "홀드아웃이 null CI 로 붕괴하면 그 판정은 폐기"
+  ],
+  "tool": "tools/_k_stat_decision_gate.py"
+}
