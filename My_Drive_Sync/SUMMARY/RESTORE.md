@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `aac28d3` · WORK=`IDLE`
-2. **지금:** **K-PAST-LEARN-EV-RELABEL** — 1등당첨자수 NB2+무작위화 · 인기편향 FW p=**0.0004** 실증 · **태그축은 무신호(재정의 지지 안 됨)**
-3. **다음1건:** K-PAST-LEARN-NEXT-PICK — EV-RELABEL 결과(인기편향 FW p=0.0004 실증 · **태그축 무신호 → soft 재정의 지지 안 됨**) 형 확인 후 다음 1건 선택 — **①seed 민감도 full-range 재측정** (권장 · 잡음 하한 미확정 상태로 그동안 판정해왔음) / ②회차 1236+ 전향적 EV 로그(개입 없음) / ③`cycle_gap_boost` 단독 A/B / ④트랙정지 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `9a44877` · WORK=`IDLE`
+2. **지금:** **K-STAT-DECISION-GATE** — 판정눈금 확정 · **RULER_TOO_COARSE** · 적용상수 win26/mix0.8=**NOISE_SELECTION_CONFIRMED**(n50·K10 Δ0.16 = 잡음p95 0.16 · holdout 0.14≈null) · 순서불변 증명 2.429e-17
+3. **다음1건:** K-STAT-GATE-ADOPT — DECISION-GATE 결과(**적용상수 win26/mix0.8 = NOISE_SELECTION_CONFIRMED** · 순서불변 2.429e-17 · 문제→답 nopeek 0.274 < 무작위 0.311) 형 확인 후 1건 선택 — **①게이트를 공용 모듈로 승격해 모든 튜닝 도구가 gate(n,k) 기록 강제**(권장 · 잡음보다 작은 차이 채택을 구조적으로 차단) / ②seed full-range 재측정으로 잡음 하한 확정 / ③회차 1236+ 전향적 EV 로그(개입 없음) / ④트랙정지 (승인필요=①은 도구 신규모듈(발권경로 무변경) → 형 GO 필요 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
