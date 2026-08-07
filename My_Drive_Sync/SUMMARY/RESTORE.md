@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `484b145` · WORK=`IDLE`
-2. **지금:** **K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지)
-3. **다음1건:** K-PAST-LEARN-EV-RELABEL-GO — SCORE-RULE-DIAG 결과(적중축 상한 없음) 형 확인 — soft 태그(hot1y/overdue)를 **EV 인기회피축**으로 라벨 재정의할지 결정 · 결정 전 코드·가중 변경 금지 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `aac28d3` · WORK=`IDLE`
+2. **지금:** **K-PAST-LEARN-EV-RELABEL** — 1등당첨자수 NB2+무작위화 · 인기편향 FW p=**0.0004** 실증 · **태그축은 무신호(재정의 지지 안 됨)**
+3. **다음1건:** K-PAST-LEARN-NEXT-PICK — EV-RELABEL 결과(인기편향 FW p=0.0004 실증 · **태그축 무신호 → soft 재정의 지지 안 됨**) 형 확인 후 다음 1건 선택 — **①seed 민감도 full-range 재측정** (권장 · 잡음 하한 미확정 상태로 그동안 판정해왔음) / ②회차 1236+ 전향적 EV 로그(개입 없음) / ③`cycle_gap_boost` 단독 A/B / ④트랙정지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 

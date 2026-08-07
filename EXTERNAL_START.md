@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `484b145` |
+| HEAD(실측) | `aac28d3` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지) |
-| 직전 | K-PAST-LEARN-DETAIL-KEEP · KEEP_BASE |
-| BOOT다음 | soft태그 EV(인기회피) 재정의 or 트랙정지 · 발권가중 금지 · **형 GO** |
-| NEXT1 ID | **K-PAST-LEARN-EV-RELABEL-GO** |
-| NEXT1 할일 | SCORE-RULE-DIAG 결과(적중축 상한 없음) 형 확인 — soft 태그(hot1y/overdue)를 **EV 인기회피축**으로 라벨 재정의할지 결정 · 결정 전 코드·가중 변경 금지 |
+| 지금 | **K-PAST-LEARN-EV-RELABEL** — 1등당첨자수 NB2+무작위화 · 인기편향 FW p=**0.0004** 실증 · **태그축은 무신호(재정의 지지 안 됨)** |
+| 직전 | K-PAST-LEARN-SCORE-RULE-DIAG · NO_SKILL_VS_NULL · + AUDIT-DIMS 감사(잔여 6건) |
+| BOOT다음 | ①seed full-range ②1236+ 전향적 EV로그 ③cycle_gap_boost 단독AB 중 **형 1건 선택** · 발권가중 금지 |
+| NEXT1 ID | **K-PAST-LEARN-NEXT-PICK** |
+| NEXT1 할일 | EV-RELABEL 결과(인기편향 FW p=0.0004 실증 · **태그축 무신호 → soft 재정의 지지 안 됨**) 형 확인 후 다음 1건 선택 — **①seed 민감도 full-range 재측정** (권장 · 잡음 하한 미확정 상태로 그동안 판정해왔음) / ②회차 1236+ 전향적 EV 로그(개입 없음) / ③`cycle_gap_boost` 단독 A/B / ④트랙정지 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=484b145 · 지금=**K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지) · 다음=K-PAST-LEARN-EV-RELABEL-GO`
+1. 첫줄 `[복귀] HEAD=aac28d3 · 지금=**K-PAST-LEARN-EV-RELABEL** — 1등당첨자수 NB2+무작위화 · 인기편향 FW p=**0.0004** 실증 · **태그축은 무신호(재정의 지지 안 됨)** · 다음=K-PAST-LEARN-NEXT-PICK`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 484b145_
+_generated: aac28d3_
