@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-STAT-DECISION-GATE** — 판정눈금 확정 · **RULER_TOO_COARSE** · 적용상수 win26/mix0.8=**NOISE_SELECTION_CONFIRMED**(n50·K10 Δ0.16 = 잡음p95 0.16 · holdout 0.14≈null) · 순서불변 증명 2.429e-17
-- 직전: K-PAST-LEARN-EV-RELABEL(인기편향 FW p=0.0004 · 태그축 무신호) · SCORE-RULE-DIAG(NO_SKILL)
-- 다음: ①게이트 도구화 전면적용(권장) ②seed full-range ③1236+ 전향적 EV로그 중 **형 1건 선택** · 발권가중 금지
+- 지금: **R38 게이트 강제 가동** — `tools/k_gate.py` 공용모듈 · 벤치 `decision_gate` 기록 필수 · 준수검사 **COMPLIANT**(자기검증 8/8 · 184벤치 · legacy132면제 · 위반0 · 프로브로 exit=1 실동작 확인)
+- 직전: K-STAT-DECISION-GATE — 적용상수 win26/mix0.8=**NOISE_SELECTION_CONFIRMED** · 순서불변 2.429e-17 · 문제답 nopeek 0.274<무작위 0.311
+- 다음: ①seed full-range로 잡음하한 확정 ②1236+ 전향적 EV로그 ③기존 legacy 판정 게이트 소급적용 중 **형 1건 선택** · 발권가중 금지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

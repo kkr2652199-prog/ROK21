@@ -383,7 +383,7 @@
       "holdout_collapsed": true,
       "fusion_delta": 0.0,
       "verdict": "NOISE_SELECTION_CONFIRMED",
-      "why_ko": "홀드아웃에서 null 수준으로 붕괴 → 선택잡음으로 확정"
+      "why_ko": "홀드아웃 0.14 가 null 0.113624 의 95% 구간(±0.087966) 안으로 붕괴 → 선택잡음으로 확정"
     },
     {
       "id": "K-PAST-LEARN-DETAIL-TUNE (decay) — 미채택",
@@ -406,7 +406,7 @@
       },
       "fusion_delta": 0.0,
       "verdict": "UNDECIDABLE",
-      "why_ko": "단일비교 최소검출차 미달 → 차이 주장 불가"
+      "why_ko": "|Δ|=0.000800 < 단일비교 최소검출차 0.124403 (n=50) → 차이 주장 불가"
     },
     {
       "id": "K-STAT-SEED-DIAG — 잡음 하한 실측",
@@ -448,7 +448,7 @@
         "noise_delta_expected": 9.5e-05
       },
       "verdict": "UNDECIDABLE",
-      "why_ko": "단일비교 최소검출차 미달 → 차이 주장 불가"
+      "why_ko": "|Δ|=0.004700 < 단일비교 최소검출차 0.025586 (n=1182) → 차이 주장 불가"
     }
   ],
   "key_numbers": {
@@ -457,9 +457,71 @@
     "seed_range": 0.14,
     "seed_std": 0.047749
   },
-  "mc": {
-    "B": 40000,
-    "seed": 20260808
+  "gate_module": {
+    "path": "tools/k_gate.py",
+    "rule": "R38",
+    "self_test": {
+      "all_pass": true,
+      "n_checks": 8,
+      "checks": [
+        {
+          "name": "null_ge3(5) vs 20260730 측정",
+          "got": 0.11362355,
+          "want": 0.1137,
+          "tol": 0.0005,
+          "pass": true
+        },
+        {
+          "name": "null_ge3(15) vs 20260730 측정",
+          "got": 0.30360662,
+          "want": 0.3036,
+          "tol": 0.0005,
+          "pass": true
+        },
+        {
+          "name": "p_single_ge3 해석값",
+          "got": 0.02383408,
+          "want": 0.02383408,
+          "tol": 1e-07,
+          "pass": true
+        },
+        {
+          "name": "pmf 합 = 1",
+          "got": 1.0,
+          "want": 1.0,
+          "tol": 1e-12,
+          "pass": true
+        },
+        {
+          "name": "n50 SE",
+          "got": 0.044881,
+          "want": 0.044881,
+          "tol": 1e-05,
+          "pass": true
+        },
+        {
+          "name": "n50 단일 MDD",
+          "got": 0.124403,
+          "want": 0.124403,
+          "tol": 1e-05,
+          "pass": true
+        },
+        {
+          "name": "n50·K10 선택보정 p95",
+          "got": 0.16,
+          "want": 0.16,
+          "tol": 1e-06,
+          "pass": true
+        },
+        {
+          "name": "win26/mix0.8 재판정",
+          "got": "NOISE_SELECTION_CONFIRMED",
+          "want": "NOISE_SELECTION_CONFIRMED",
+          "tol": 0,
+          "pass": true
+        }
+      ]
+    }
   },
   "verdict": {
     "code": "RULER_TOO_COARSE",
@@ -467,10 +529,35 @@
     "detail_ko": "**live 에 적용된 `win26/mix0.8` 은 out-of-sample 근거가 없다.** n=50·10셀 탐색에서 Δ+0.16 로 뽑혔으나, 순수 잡음만으로도 Δ0.16 가 나오는 조건이었다. 바로 다음 홀드아웃 50회차에서 ge3 는 0.14 (null 0.1136 대비 +0.0264) 로 붕괴했고, fusion n=200 에서 Δ는 0.0 였다.\n\n**상수를 되돌리자는 뜻이 아니다.** 되돌릴 근거도 없다(양쪽 다 무근거). 요점은 이 상수를 '개선'으로 인용하는 문서를 정정하고, 앞으로 같은 방식으로 상수를 채택하지 않는 것이다."
   },
   "next_rule_ko": [
-    "모든 튜닝 도구는 gate(n, k_cells) 결과를 벤치 JSON 에 기록",
-    "|Δ| < mdd_selection_p95 이면 '차이 없음'으로 보고",
+    "R38: 모든 튜닝 도구는 tools/k_gate.gate_block(...) 결과를 벤치 JSON 의 `decision_gate` 키로 기록",
+    "actionable=False 이면 '차이 없음'으로 보고",
     "ge3 대신 proper scoring rule 병기 (ge3 는 둔함)",
-    "홀드아웃이 null CI 로 붕괴하면 그 판정은 폐기"
+    "홀드아웃이 null CI 로 붕괴하면 그 판정은 폐기",
+    "준수 검사: tools/_k_gate_compliance.py"
   ],
-  "tool": "tools/_k_stat_decision_gate.py"
+  "tool": "tools/_k_stat_decision_gate.py",
+  "decision_gate": {
+    "gate": {
+      "n": 50,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.044881,
+      "ci95_halfwidth": 0.087966,
+      "mdd_single_pair": 0.124403,
+      "mdd_selection_p95": 0.16,
+      "mdd_selection_p99": 0.2,
+      "noise_delta_expected": 0.072672
+    },
+    "delta": 0.16,
+    "holdout_value": 0.14,
+    "holdout_collapsed": true,
+    "verdict": "NOISE_SELECTION_CONFIRMED",
+    "why_ko": "홀드아웃 0.14 가 null 0.113624 의 95% 구간(±0.087966) 안으로 붕괴 → 선택잡음으로 확정",
+    "actionable": false,
+    "rule": "R38",
+    "metric": "ge3",
+    "label": "적용상수 win26/mix0.8 소급판정",
+    "module": "tools/k_gate.py",
+    "report_as_ko": "차이 없음 (눈금 미달)"
+  }
 }

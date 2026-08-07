@@ -36,16 +36,27 @@ READ-ONLY. DB 쓰기 없음 · 코드·가중 변경 없음 · wire 없음.
 from __future__ import annotations
 
 import json
-import math
 import sys
-from math import comb, exp
+from math import exp
 from pathlib import Path
 from typing import Any
 
-import numpy as np
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+
+from tools.k_gate import (  # noqa: E402
+    GATE_KEY,
+    NOISE_SELECTION_CONFIRMED,
+    SELECTION_SUSPECT,
+    UNDECIDABLE,
+    classify,
+    gate,
+    gate_block,
+    hyper_pmf,
+    null_ge3,
+    p_single_ge3,
+    self_test,
+)
 
 BENCH_DIR = ROOT / "docs" / "benchmarks"
 OUT_JSON = BENCH_DIR / "20260808_KSTAT_DECISION_GATE.json"
@@ -53,9 +64,7 @@ OUT_MD = ROOT / "reports" / "20260808_KSTAT_DECISION_GATE.md"
 DRIVE = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
 
 BENCH_ID = "K-STAT-DECISION-GATE"
-M_TOTAL, M_DRAWN = 45, 6
-MC_B = 40000
-MC_SEED = 20260808
+M_TOTAL = 45
 
 # 참조 벤치 (수치 원본)
 REF_NULL = "20260730_KSIGNAL_BACKTEST_tail100.json"
@@ -68,66 +77,6 @@ REF_FULL = "20260803_KFUTURE_WIRE_FULL.json"
 
 def load_bench(name: str) -> dict[str, Any]:
     return json.loads((BENCH_DIR / name).read_text(encoding="utf-8"))
-
-
-# ── 1. null 해석적 계산 ────────────────────────────────────────────────
-def hyper_pmf(k: int) -> float:
-    """1장으로 정확히 k개 맞을 확률 (초기하)."""
-    return comb(M_DRAWN, k) * comb(M_TOTAL - M_DRAWN, M_DRAWN - k) / comb(M_TOTAL, M_DRAWN)
-
-
-def p_single_ge3() -> float:
-    return sum(hyper_pmf(k) for k in (3, 4, 5, 6))
-
-
-def null_ge3(n_tickets: int) -> float:
-    """서로 독립인 n장 중 최고가 3개 이상일 확률."""
-    p = p_single_ge3()
-    return 1.0 - (1.0 - p) ** n_tickets
-
-
-# ── 2·3. 눈금 계산 ────────────────────────────────────────────────────
-def se_binom(p: float, n: int) -> float:
-    return math.sqrt(p * (1.0 - p) / n)
-
-
-def mc_selection(
-    n: int, k_cells: int, p0: float, b: int = MC_B, seed: int = MC_SEED
-) -> dict[str, float]:
-    """K셀 중 최선을 골랐을 때 순수 잡음이 만드는 (최선 − 기준셀) Δ 분포."""
-    rng = np.random.default_rng(seed + n * 131 + k_cells)
-    base = rng.binomial(n, p0, size=b) / n
-    cells = rng.binomial(n, p0, size=(b, k_cells)) / n
-    delta = cells.max(axis=1) - base
-    return {
-        "delta_mean": float(delta.mean()),
-        "delta_p50": float(np.quantile(delta, 0.50)),
-        "delta_p95": float(np.quantile(delta, 0.95)),
-        "delta_p99": float(np.quantile(delta, 0.99)),
-    }
-
-
-def gate(n: int, k_cells: int, p0: float | None = None) -> dict[str, Any]:
-    """앞으로 모든 튜닝 도구가 호출할 판정 게이트.
-
-    n        : 평가 회차 수
-    k_cells  : 그 판정에서 비교·탐색한 셀(설정) 개수
-    반환 mdd_selection_p95 를 넘지 못한 Δ 는 '차이 없음'으로 보고해야 한다.
-    """
-    p = p0 if p0 is not None else null_ge3(5)
-    se = se_binom(p, n)
-    sel = mc_selection(n, max(1, k_cells), p)
-    return {
-        "n": n,
-        "k_cells": k_cells,
-        "p0": round(p, 6),
-        "se_single": round(se, 6),
-        "ci95_halfwidth": round(1.96 * se, 6),
-        "mdd_single_pair": round(1.96 * se * math.sqrt(2.0), 6),
-        "mdd_selection_p95": round(sel["delta_p95"], 6),
-        "mdd_selection_p99": round(sel["delta_p99"], 6),
-        "noise_delta_expected": round(sel["delta_mean"], 6),
-    }
 
 
 # ── 6. 학습 순서 불변성 증명 ───────────────────────────────────────────
@@ -194,20 +143,6 @@ def _load_draw_rows() -> list[dict[str, Any]]:
 
 
 # ── 4. 소급감사 ───────────────────────────────────────────────────────
-def _verdict(delta: float, g: dict[str, Any], holdout_collapsed: bool) -> tuple[str, str]:
-    ad = abs(delta)
-    if holdout_collapsed:
-        return (
-            "NOISE_SELECTION_CONFIRMED",
-            "홀드아웃에서 null 수준으로 붕괴 → 선택잡음으로 확정",
-        )
-    if ad < g["mdd_single_pair"]:
-        return ("UNDECIDABLE", "단일비교 최소검출차 미달 → 차이 주장 불가")
-    if ad < g["mdd_selection_p95"]:
-        return ("SELECTION_SUSPECT", "K셀 탐색 시 순수잡음이 만들 수 있는 범위 → 근거 불충분")
-    return ("DECIDABLE", "선택보정 임계값 초과 → 차이 주장 가능")
-
-
 def retro_audit(p0: float, seed_range: float) -> list[dict[str, Any]]:
     tune = load_bench(REF_TUNE)
     apply_ = load_bench(REF_APPLY)
@@ -221,10 +156,11 @@ def retro_audit(p0: float, seed_range: float) -> list[dict[str, Any]]:
     n1 = 50
     k1 = int(tune["n_cells"])
     d1 = float(tune["best"]["delta_ge3_vs_base"])
-    g1 = gate(n1, k1, p0)
     hold_ge3 = float(apply_["holdout_n50"]["ge3_rate"])
-    collapsed = abs(hold_ge3 - p0) < g1["ci95_halfwidth"]
-    v1, why1 = _verdict(d1, g1, collapsed)
+    c1 = classify(d1, n1, k1, p0=p0, holdout_value=hold_ge3)
+    g1 = c1["gate"]
+    collapsed = bool(c1["holdout_collapsed"])
+    v1, why1 = c1["verdict"], c1["why_ko"]
     items.append(
         {
             "id": "K-PAST-LEARN-TUNE-ENGINE (win26/mix0.8) — live 적용됨",
@@ -248,8 +184,9 @@ def retro_audit(p0: float, seed_range: float) -> list[dict[str, Any]]:
     k2 = len(detail.get("rows") or []) or 9
     # 이 판정의 실제 선택 기준은 tune/hold 결합 score 였다
     d2 = round(float(detail["best"]["score"]) - float(detail["base_cell"]["score"]), 6)
-    g2 = gate(n2, k2, p0)
-    v2, why2 = _verdict(d2, g2, False)
+    c2 = classify(d2, n2, k2, p0=p0)
+    g2 = c2["gate"]
+    v2, why2 = c2["verdict"], c2["why_ko"]
     items.append(
         {
             "id": "K-PAST-LEARN-DETAIL-TUNE (decay) — 미채택",
@@ -297,9 +234,10 @@ def retro_audit(p0: float, seed_range: float) -> list[dict[str, Any]]:
 
     # (4) FULL WF — 유일한 대표본 판정
     ov = full["overall"]
-    g4 = gate(int(ov["n"]), 1, p0)
     d4 = float(ov["delta_ge3_vs_null"])
-    v4, why4 = _verdict(d4, g4, False)
+    c4 = classify(d4, int(ov["n"]), 1, p0=p0)
+    g4 = c4["gate"]
+    v4, why4 = c4["verdict"], c4["why_ko"]
     items.append(
         {
             "id": "K-FUTURE-WIRE-FULL — 전구간 walk-forward",
@@ -479,8 +417,14 @@ def main() -> int:
     audit = retro_audit(p0, float(seed_b["stat"]["summary"]["range_ge3"]))
     g50_10 = gate(50, 10, p0)
 
+    st = self_test()
+    if not st["all_pass"]:
+        print("[FATAL] k_gate self_test 실패 — 게이트를 신뢰할 수 없다", file=sys.stderr)
+        print(json.dumps(st, ensure_ascii=False, indent=2), file=sys.stderr)
+        return 2
+
     applied = audit[0]
-    if applied["verdict"] in ("NOISE_SELECTION_CONFIRMED", "SELECTION_SUSPECT", "UNDECIDABLE"):
+    if applied["verdict"] in (NOISE_SELECTION_CONFIRMED, SELECTION_SUSPECT, UNDECIDABLE):
         code = "RULER_TOO_COARSE"
         head = "적용된 엔진 상수(win26/mix0.8)는 잡음 선택으로 판정 — 자의 눈금이 주장보다 굵다"
         detail = (
@@ -545,16 +489,31 @@ def main() -> int:
             "seed_range": float(seed_b["stat"]["summary"]["range_ge3"]),
             "seed_std": float(seed_b["stat"]["summary"]["std_ge3"]),
         },
-        "mc": {"B": MC_B, "seed": MC_SEED},
+        "gate_module": {
+            "path": "tools/k_gate.py",
+            "rule": "R38",
+            "self_test": st,
+        },
         "verdict": {"code": code, "headline_ko": head, "detail_ko": detail},
         "next_rule_ko": [
-            "모든 튜닝 도구는 gate(n, k_cells) 결과를 벤치 JSON 에 기록",
-            "|Δ| < mdd_selection_p95 이면 '차이 없음'으로 보고",
+            "R38: 모든 튜닝 도구는 tools/k_gate.gate_block(...) 결과를 벤치 JSON 의 "
+            "`decision_gate` 키로 기록",
+            "actionable=False 이면 '차이 없음'으로 보고",
             "ge3 대신 proper scoring rule 병기 (ge3 는 둔함)",
             "홀드아웃이 null CI 로 붕괴하면 그 판정은 폐기",
+            "준수 검사: tools/_k_gate_compliance.py",
         ],
         "tool": "tools/_k_stat_decision_gate.py",
     }
+    # 이 벤치의 대표 주장(적용상수 win26/mix0.8) 자체도 R38 형식으로 기록한다
+    payload[GATE_KEY] = gate_block(
+        n=applied["n"],
+        k_cells=applied["k_cells"],
+        delta=applied["delta"],
+        metric="ge3",
+        holdout_value=applied["holdout_ge3"],
+        label="적용상수 win26/mix0.8 소급판정",
+    )
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_MD.parent.mkdir(parents=True, exist_ok=True)

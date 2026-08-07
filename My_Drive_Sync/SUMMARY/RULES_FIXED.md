@@ -253,6 +253,25 @@ R33 (복원 SSOT 확정, 2026-07-10):
 - **목적:** 채팅 압축으로 외부AI가 프롬프트를 받아도 흐름을 못 잇는 경우, GitHub의 짧은 요약본으로 즉시 재정렬.
 - HEAD 드리프트: 문서동기 커밋은 직전 해시가 본문에 남을 수 있음 → push 후 `git rev-parse` / `ls-remote` 대조를 보고서에 명시 (K-AF 1-4).
 
+## R38 (NEW 판정 게이트 강제 · 2026-08-08 K-STAT-DECISION-GATE · 형 GO)
+
+**배경(실측):** 튜닝 판정을 `ge3` 로 내려왔으나 그 지표의 분해능을 확정하지 않았다.
+같은 파라미터·같은 데이터에서 seed만 바꿔도 ge3 는 **0.09~0.23 (폭 0.14)**. n=50 에서
+10셀을 훑으면 **순수 잡음만으로 Δ 0.16** 이 나온다. 그런데 Δ 0.0008 을 "후보"로 올렸다.
+그 결과 live 적용된 `win26/mix0.8` 은 소급판정에서 **NOISE_SELECTION_CONFIRMED** 다.
+
+- **모든 튜닝·비교 도구는** 판정 전에 `tools/k_gate.gate_block(...)` 을 호출하고, 결과를
+  벤치 JSON 의 **`decision_gate`** 키에 기록한다. 누락은 위반이다.
+- `actionable` 이 False 면 그 판정은 **"차이 없음"** 으로 보고한다. 등급 4종:
+  `DECIDABLE` / `SELECTION_SUSPECT` / `UNDECIDABLE` / `NOISE_SELECTION_CONFIRMED`.
+- `k_cells` 는 **실제 탐색한 셀 전체**를 적는다. 작게 적으면 임계가 느슨해져 자기기만이 된다.
+- 홀드아웃이 null 95% 구간으로 붕괴하면 튜닝창 Δ 가 아무리 커도 **그 판정은 폐기**.
+- 준수 검사: `python tools/_k_gate_compliance.py` (exit≠0 이면 위반 · 자기검증 8건 포함).
+  2026-08-08 스냅샷 기준 legacy 132건 면제(기록물 소급수정 금지) · 이후 신규 벤치부터 강제.
+- **ge3 는 둔한 지표다.** 작은 효과를 볼 때는 proper scoring rule 을 병기한다.
+- 근거: `docs/benchmarks/20260808_KSTAT_DECISION_GATE.json` ·
+  `docs/benchmarks/20260808_KGATE_COMPLIANCE.json`
+
 ---
 
 ## 📂 저장소·경로 지도 (혼동 방지, 20260711 박제)

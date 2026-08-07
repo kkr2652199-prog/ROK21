@@ -1,0 +1,2178 @@
+{
+  "bench_id": "K-GATE-COMPLIANCE",
+  "date": "2026-08-08",
+  "rule": "R38",
+  "gate_key": "decision_gate",
+  "wire": false,
+  "policy": {
+    "read_only": true,
+    "db_write": false,
+    "bench_mutation": false
+  },
+  "module_self_test": {
+    "all_pass": true,
+    "n_checks": 8,
+    "checks": [
+      {
+        "name": "null_ge3(5) vs 20260730 측정",
+        "got": 0.11362355,
+        "want": 0.1137,
+        "tol": 0.0005,
+        "pass": true
+      },
+      {
+        "name": "null_ge3(15) vs 20260730 측정",
+        "got": 0.30360662,
+        "want": 0.3036,
+        "tol": 0.0005,
+        "pass": true
+      },
+      {
+        "name": "p_single_ge3 해석값",
+        "got": 0.02383408,
+        "want": 0.02383408,
+        "tol": 1e-07,
+        "pass": true
+      },
+      {
+        "name": "pmf 합 = 1",
+        "got": 1.0,
+        "want": 1.0,
+        "tol": 1e-12,
+        "pass": true
+      },
+      {
+        "name": "n50 SE",
+        "got": 0.044881,
+        "want": 0.044881,
+        "tol": 1e-05,
+        "pass": true
+      },
+      {
+        "name": "n50 단일 MDD",
+        "got": 0.124403,
+        "want": 0.124403,
+        "tol": 1e-05,
+        "pass": true
+      },
+      {
+        "name": "n50·K10 선택보정 p95",
+        "got": 0.16,
+        "want": 0.16,
+        "tol": 1e-06,
+        "pass": true
+      },
+      {
+        "name": "win26/mix0.8 재판정",
+        "got": "NOISE_SELECTION_CONFIRMED",
+        "want": "NOISE_SELECTION_CONFIRMED",
+        "tol": 0,
+        "pass": true
+      }
+    ]
+  },
+  "counts": {
+    "comparative": 133,
+    "with_gate": 1,
+    "violations": 0
+  },
+  "scan": {
+    "n_files": 184,
+    "n_readable": 184,
+    "unreadable": [],
+    "rows": [
+      {
+        "file": "20260727_KAA_apply_verify.json",
+        "comparative": true,
+        "hints": [
+          "candidate",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KAB_draw_gap.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KAC_doc_drift.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KAD_hook_inject.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KAE_fanout_verify.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KAF_fanout_followup.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KAG_pair_zone_learnkeys.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KAG_step0_measure.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KB_bench_ssot.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KP3_review_ending.json",
+        "comparative": true,
+        "hints": [
+          "improve"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KP4_hyodo_lstm.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KP5_hyodo_infra.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KPIN_CLOSE.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KT_KV_results.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KV_dedup_verify.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KW_alignment.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KW_post_KP3.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "improve"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KX_review_ending.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KY_aux_audit.json",
+        "comparative": true,
+        "hints": [
+          "candidate",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_KZ_theory_constants.json",
+        "comparative": true,
+        "hints": [
+          "candidate",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260727_PIN_3db_smoke.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_K00_homework_expand.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KANALOG_backtest.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KANALOG_multidim.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KANALOG_multidim_200.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KANALOG_multidim_500.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KANALOG_prep.json",
+        "comparative": true,
+        "hints": [
+          "candidate"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KAWAIT_readiness.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KDETAIL_cutoff_fix.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KD_fusion_path.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KH_unused_aux.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KPIPE_unify.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KREVIEW_full_2_1234.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260728_KUI_ssot_fix.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KATTACK_cover.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KATTACK_slice.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KAUX_BLEND_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KAUX_SIGNAL_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KAUX_WEIGHT_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "grid",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KBAND_select.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KBAYES_dyn_weight.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KBENCH01_WIRE_verify.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KBENCH_CONFIDENCE_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KBENCH_POSTMORTEM.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KCONFCAL_results.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KCOVER_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "grid"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KEV_pop.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KGATHER_pilot.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "improve",
+          "vs_base"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KGATHER_v1_exclusive_ceiling.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KGATHER_v1_oracle.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KGATHER_v1_pilot.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "improve"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KGATHER_v2_pilot.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "improve"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KGENDIV_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KGENMIX_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KHISIM_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "grid"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KMARKOV_TUNE_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "candidate",
+          "delta",
+          "grid"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KMARKOV_WIRE_V2_verify.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KMARKOV_WIRE_verify.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KOPEN_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KPATTERN2_aux_quartile.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KPATTERN_tier4_vs_control.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KPOSTHOC_analysis.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KPOSTMORTEM_SIGNAL02.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KPOS_trace.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KPROBVEC_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KREFEREE_WINDOW.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KREVIEW_TUNE_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "grid",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSCATTER_brain5.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSETCOUNT_null.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "candidate",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSETCOUNT_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "grid"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSETNO_hitmap.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "grid",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSETPACK_top6.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSTAT_TUNE_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "grid"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSTAT_WIRE_verify.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSTRUCT_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KSUM_select.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KTRUST_bench.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260729_KWINDOW_SIGNAL_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260730_KEXCLUDE_HIST_survey.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260730_KSIGNAL_BACKTEST_tail100.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260730_KSIGNAL_REPACK_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260730_KSIGNAL_SELECT_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260730_KSIGNAL_SELECT_survey_full.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_K10SET_DET_LAB_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_K10SET_DET_LAB_survey_full.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KAUX_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KBACKTEST_FULL_C.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KBRAIN_PACKAGE_COMPLETE.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KBRAIN_SIGNAL_BACKTEST_100.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KBRAIN_TUNE_SURVEY.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "sweep",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KCOMBO_SIGNAL_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KCOMBO_V2_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "candidate",
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KCOORDINATOR_PHASE4_EQUIV.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KEXCLUDE_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "sweep",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KFUSION_BOTTLE_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KHIGHWAY_BACKTEST_100.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KMARKOV_BRAIN_EQUIV.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KMARKOV_LEARN_survey.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KMARKOV_WINDOW100_SOLO_N200.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KNEW_ENGINE_STAT_A1.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KPHASE5_AUX_HINT_BENCH.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KPHASE6_MARKOV_LEARN_BENCH.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KPHASE7_AUX_1TO1_BENCH.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KQUOTA_FIX_N100.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KQUOTA_GAP_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KQUOTA_MARKOV80_N100.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KREVIEW_BRAIN_EQUIV.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KSTAT_BRAIN_EQUIV.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260801_KWIRE_SELECT_FULL_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260802_KFUSION_DYNAMIC_V2_N100.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260803_KFUSION_INNOVATION_N100.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260803_KFUTURE_WIRE_FULL.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260803_KFUTURE_WIRE_N100.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260803_KFUTURE_WIRE_QUICK200.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260803_KRARE_BUNDLE_survey.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KEVOLVE_FEAT_LAM_REVAL.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KEVOLVE_FEAT_LAM_WIRE.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KEVOLVE_LOG.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KEVOLVE_LOG_EXPAND.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KEVOLVE_SIGNAL_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KFUTURE_FULL_POST_EVOLVE.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KPIN_GAP_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "candidate",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KREPACK_DECOMPOSE_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "improve"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KREPACK_HYBRID_WIRE.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KREPACK_HYBRID_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "candidate",
+          "delta",
+          "vs_base",
+          "vs_baseline",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260804_KREPACK_PER_BRAIN_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_GENSPARK_MEMORY_RESTORE_CURSOR.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KASSOC_RULE_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "candidate",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KCOLD_EXCLUDE_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KCOVER_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "candidate",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KEARLY_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KEMA_MARKOV_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KEVOLVE_AUTO_S1.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KEVOLVE_AUTO_S2.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KEVOLVE_AUTO_S3.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KEVOLVE_AUTO_S4.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KEVOLVE_VIRTUAL_1235.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KLIVE_QUICK200_RESET.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KMATH_PATTERN_WARRANT.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KNEIGHBOR_MATCH.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KPAIR_COVER_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KPATCH_1235_PREP.json",
+        "comparative": true,
+        "hints": [
+          "candidate",
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KPATTERN_BC_MEASURE.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KPATTERN_OWN_V1.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KQUOTA_D_WIRE.json",
+        "comparative": true,
+        "hints": [
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KRARE_FILTER_DESIGN.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KRARE_MEASURE_1_1235.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KRARE_TAG_SPEC.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KRARE_TEMPLATE_TAXONOMY.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KREVIEW_QUOTA_SIM.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KSIGNAL_TAXONOMY_V1.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KSTAT_SEED_DIAG.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KSTRUCTURE_COVER_survey.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "vs_null",
+          "vs_pin"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KTRANSITION_COLLECT_DESIGN.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KTRANSITION_FULL.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KTRANSITION_FUSION_N200.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KTRANSITION_HIT_WARRANT.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": true
+      },
+      {
+        "file": "20260805_KTRANSITION_HIT_WARRANT_ATTACH.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KTRANSITION_RANDOM_SAMPLE.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KTRANSITION_STEP2_VERIFY.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260805_KTRANSITION_STEP3_DESIGN.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "holdout",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": true
+      },
+      {
+        "file": "20260805_KTRANSITION_STEP4_WIRE.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KBRAIN_RENAME_STAT.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KGATE_COMPLIANCE.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_AUDIT_DIMS.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_DETAIL_KEEP.json",
+        "comparative": true,
+        "hints": [
+          "candidate"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_DETAIL_TUNE.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "grid",
+          "holdout",
+          "tune_",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_EV_RELABEL.json",
+        "comparative": true,
+        "hints": [
+          "candidate",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_FRAME_DONE.json",
+        "comparative": true,
+        "hints": [
+          "tune_"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_SCORE_RULE_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "grid",
+          "holdout",
+          "n_cells",
+          "vs_base",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_TUNE_ENGINE.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "candidate",
+          "delta",
+          "grid",
+          "n_cells",
+          "vs_base"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "candidate",
+          "delta",
+          "holdout",
+          "tune_",
+          "vs_base",
+          "vs_baseline"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_TUNE_SOFT.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "grid",
+          "n_cells",
+          "tune_",
+          "vs_base"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_WIRE.json",
+        "comparative": true,
+        "hints": [
+          "best"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KPAST_LEARN_YT_BENCH.json",
+        "comparative": true,
+        "hints": [
+          "candidate"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KSTAT_DECISION_GATE.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "holdout",
+          "tune_",
+          "vs_null"
+        ],
+        "has_gate": true,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KSTAT_NUM_ASSOC_1234.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KSTAT_NUM_ASSOC_FULL.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KSTAT_NUM_ASSOC_SAMPLE.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KSTAT_NUM_NEXT_FREQ_1234.json",
+        "comparative": true,
+        "hints": [
+          "delta"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KYT_FILTER_BENCH.json",
+        "comparative": true,
+        "hints": [
+          "delta",
+          "vs_null"
+        ],
+        "has_gate": false,
+        "record_only": false
+      },
+      {
+        "file": "_c45_6_theory_cache.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "record_only": false
+      }
+    ],
+    "first_run": false,
+    "legacy_exempt": [
+      "20260727_KAA_apply_verify.json",
+      "20260727_KAG_pair_zone_learnkeys.json",
+      "20260727_KB_bench_ssot.json",
+      "20260727_KP3_review_ending.json",
+      "20260727_KV_dedup_verify.json",
+      "20260727_KW_post_KP3.json",
+      "20260727_KX_review_ending.json",
+      "20260727_KY_aux_audit.json",
+      "20260727_KZ_theory_constants.json",
+      "20260728_K00_homework_expand.json",
+      "20260728_KANALOG_backtest.json",
+      "20260728_KANALOG_multidim.json",
+      "20260728_KANALOG_multidim_200.json",
+      "20260728_KANALOG_multidim_500.json",
+      "20260728_KANALOG_prep.json",
+      "20260729_KATTACK_cover.json",
+      "20260729_KATTACK_slice.json",
+      "20260729_KAUX_BLEND_survey.json",
+      "20260729_KAUX_SIGNAL_survey.json",
+      "20260729_KAUX_WEIGHT_survey.json",
+      "20260729_KBAND_select.json",
+      "20260729_KBAYES_dyn_weight.json",
+      "20260729_KBENCH01_WIRE_verify.json",
+      "20260729_KBENCH_CONFIDENCE_survey.json",
+      "20260729_KBENCH_POSTMORTEM.json",
+      "20260729_KCONFCAL_results.json",
+      "20260729_KCOVER_survey.json",
+      "20260729_KEV_pop.json",
+      "20260729_KGATHER_pilot.json",
+      "20260729_KGATHER_v1_oracle.json",
+      "20260729_KGATHER_v1_pilot.json",
+      "20260729_KGATHER_v2_pilot.json",
+      "20260729_KGENDIV_survey.json",
+      "20260729_KGENMIX_survey.json",
+      "20260729_KHISIM_survey.json",
+      "20260729_KMARKOV_TUNE_survey.json",
+      "20260729_KMARKOV_WIRE_V2_verify.json",
+      "20260729_KMARKOV_WIRE_verify.json",
+      "20260729_KOPEN_survey.json",
+      "20260729_KPATTERN2_aux_quartile.json",
+      "20260729_KPATTERN_tier4_vs_control.json",
+      "20260729_KPOSTHOC_analysis.json",
+      "20260729_KPOSTMORTEM_SIGNAL02.json",
+      "20260729_KPOS_trace.json",
+      "20260729_KPROBVEC_survey.json",
+      "20260729_KREVIEW_TUNE_survey.json",
+      "20260729_KSCATTER_brain5.json",
+      "20260729_KSETCOUNT_null.json",
+      "20260729_KSETCOUNT_survey.json",
+      "20260729_KSETNO_hitmap.json",
+      "20260729_KSETPACK_top6.json",
+      "20260729_KSTAT_TUNE_survey.json",
+      "20260729_KSTAT_WIRE_verify.json",
+      "20260729_KSTRUCT_survey.json",
+      "20260729_KSUM_select.json",
+      "20260729_KTRUST_bench.json",
+      "20260729_KWINDOW_SIGNAL_survey.json",
+      "20260730_KSIGNAL_BACKTEST_tail100.json",
+      "20260730_KSIGNAL_REPACK_survey.json",
+      "20260730_KSIGNAL_SELECT_survey.json",
+      "20260730_KSIGNAL_SELECT_survey_full.json",
+      "20260801_K10SET_DET_LAB_survey.json",
+      "20260801_K10SET_DET_LAB_survey_full.json",
+      "20260801_KAUX_DIAG.json",
+      "20260801_KBACKTEST_FULL_C.json",
+      "20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.json",
+      "20260801_KBRAIN_SIGNAL_BACKTEST_100.json",
+      "20260801_KBRAIN_TUNE_SURVEY.json",
+      "20260801_KCOMBO_SIGNAL_survey.json",
+      "20260801_KCOMBO_V2_survey.json",
+      "20260801_KEXCLUDE_survey.json",
+      "20260801_KFUSION_BOTTLE_DIAG.json",
+      "20260801_KHIGHWAY_BACKTEST_100.json",
+      "20260801_KMARKOV_LEARN_survey.json",
+      "20260801_KMARKOV_WINDOW100_SOLO_N200.json",
+      "20260801_KNEW_ENGINE_STAT_A1.json",
+      "20260801_KQUOTA_FIX_N100.json",
+      "20260801_KQUOTA_GAP_survey.json",
+      "20260801_KQUOTA_MARKOV80_N100.json",
+      "20260801_KWIRE_SELECT_FULL_survey.json",
+      "20260802_KFUSION_DYNAMIC_V2_N100.json",
+      "20260803_KFUSION_INNOVATION_N100.json",
+      "20260803_KFUTURE_WIRE_FULL.json",
+      "20260803_KFUTURE_WIRE_N100.json",
+      "20260803_KFUTURE_WIRE_QUICK200.json",
+      "20260804_KEVOLVE_FEAT_LAM_REVAL.json",
+      "20260804_KEVOLVE_FEAT_LAM_WIRE.json",
+      "20260804_KEVOLVE_LOG.json",
+      "20260804_KEVOLVE_LOG_EXPAND.json",
+      "20260804_KEVOLVE_SIGNAL_survey.json",
+      "20260804_KFUTURE_FULL_POST_EVOLVE.json",
+      "20260804_KPIN_GAP_DIAG.json",
+      "20260804_KREPACK_DECOMPOSE_survey.json",
+      "20260804_KREPACK_HYBRID_WIRE.json",
+      "20260804_KREPACK_HYBRID_survey.json",
+      "20260804_KREPACK_PER_BRAIN_survey.json",
+      "20260805_KASSOC_RULE_DIAG.json",
+      "20260805_KCOLD_EXCLUDE_DIAG.json",
+      "20260805_KCOVER_DIAG.json",
+      "20260805_KEARLY_DIAG.json",
+      "20260805_KEMA_MARKOV_DIAG.json",
+      "20260805_KEVOLVE_AUTO_S2.json",
+      "20260805_KEVOLVE_VIRTUAL_1235.json",
+      "20260805_KLIVE_QUICK200_RESET.json",
+      "20260805_KNEIGHBOR_MATCH.json",
+      "20260805_KPAIR_COVER_survey.json",
+      "20260805_KPATCH_1235_PREP.json",
+      "20260805_KPATTERN_OWN_V1.json",
+      "20260805_KQUOTA_D_WIRE.json",
+      "20260805_KREVIEW_QUOTA_SIM.json",
+      "20260805_KSTRUCTURE_COVER_survey.json",
+      "20260805_KTRANSITION_COLLECT_DESIGN.json",
+      "20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json",
+      "20260805_KTRANSITION_FULL.json",
+      "20260805_KTRANSITION_FUSION_N200.json",
+      "20260805_KTRANSITION_RANDOM_SAMPLE.json",
+      "20260805_KTRANSITION_STEP2_VERIFY.json",
+      "20260805_KTRANSITION_STEP3_DESIGN.json",
+      "20260805_KTRANSITION_STEP4_WIRE.json",
+      "20260808_KPAST_LEARN_DETAIL_KEEP.json",
+      "20260808_KPAST_LEARN_DETAIL_TUNE.json",
+      "20260808_KPAST_LEARN_EV_RELABEL.json",
+      "20260808_KPAST_LEARN_FRAME_DONE.json",
+      "20260808_KPAST_LEARN_SCORE_RULE_DIAG.json",
+      "20260808_KPAST_LEARN_TUNE_ENGINE.json",
+      "20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json",
+      "20260808_KPAST_LEARN_TUNE_SOFT.json",
+      "20260808_KPAST_LEARN_WIRE.json",
+      "20260808_KPAST_LEARN_YT_BENCH.json",
+      "20260808_KSTAT_NUM_ASSOC_FULL.json",
+      "20260808_KSTAT_NUM_NEXT_FREQ_1234.json",
+      "20260808_KYT_FILTER_BENCH.json"
+    ],
+    "violations": [],
+    "compliant": [
+      "20260808_KSTAT_DECISION_GATE.json"
+    ]
+  },
+  "legacy_exempt": [
+    "20260727_KAA_apply_verify.json",
+    "20260727_KAG_pair_zone_learnkeys.json",
+    "20260727_KB_bench_ssot.json",
+    "20260727_KP3_review_ending.json",
+    "20260727_KV_dedup_verify.json",
+    "20260727_KW_post_KP3.json",
+    "20260727_KX_review_ending.json",
+    "20260727_KY_aux_audit.json",
+    "20260727_KZ_theory_constants.json",
+    "20260728_K00_homework_expand.json",
+    "20260728_KANALOG_backtest.json",
+    "20260728_KANALOG_multidim.json",
+    "20260728_KANALOG_multidim_200.json",
+    "20260728_KANALOG_multidim_500.json",
+    "20260728_KANALOG_prep.json",
+    "20260729_KATTACK_cover.json",
+    "20260729_KATTACK_slice.json",
+    "20260729_KAUX_BLEND_survey.json",
+    "20260729_KAUX_SIGNAL_survey.json",
+    "20260729_KAUX_WEIGHT_survey.json",
+    "20260729_KBAND_select.json",
+    "20260729_KBAYES_dyn_weight.json",
+    "20260729_KBENCH01_WIRE_verify.json",
+    "20260729_KBENCH_CONFIDENCE_survey.json",
+    "20260729_KBENCH_POSTMORTEM.json",
+    "20260729_KCONFCAL_results.json",
+    "20260729_KCOVER_survey.json",
+    "20260729_KEV_pop.json",
+    "20260729_KGATHER_pilot.json",
+    "20260729_KGATHER_v1_oracle.json",
+    "20260729_KGATHER_v1_pilot.json",
+    "20260729_KGATHER_v2_pilot.json",
+    "20260729_KGENDIV_survey.json",
+    "20260729_KGENMIX_survey.json",
+    "20260729_KHISIM_survey.json",
+    "20260729_KMARKOV_TUNE_survey.json",
+    "20260729_KMARKOV_WIRE_V2_verify.json",
+    "20260729_KMARKOV_WIRE_verify.json",
+    "20260729_KOPEN_survey.json",
+    "20260729_KPATTERN2_aux_quartile.json",
+    "20260729_KPATTERN_tier4_vs_control.json",
+    "20260729_KPOSTHOC_analysis.json",
+    "20260729_KPOSTMORTEM_SIGNAL02.json",
+    "20260729_KPOS_trace.json",
+    "20260729_KPROBVEC_survey.json",
+    "20260729_KREVIEW_TUNE_survey.json",
+    "20260729_KSCATTER_brain5.json",
+    "20260729_KSETCOUNT_null.json",
+    "20260729_KSETCOUNT_survey.json",
+    "20260729_KSETNO_hitmap.json",
+    "20260729_KSETPACK_top6.json",
+    "20260729_KSTAT_TUNE_survey.json",
+    "20260729_KSTAT_WIRE_verify.json",
+    "20260729_KSTRUCT_survey.json",
+    "20260729_KSUM_select.json",
+    "20260729_KTRUST_bench.json",
+    "20260729_KWINDOW_SIGNAL_survey.json",
+    "20260730_KSIGNAL_BACKTEST_tail100.json",
+    "20260730_KSIGNAL_REPACK_survey.json",
+    "20260730_KSIGNAL_SELECT_survey.json",
+    "20260730_KSIGNAL_SELECT_survey_full.json",
+    "20260801_K10SET_DET_LAB_survey.json",
+    "20260801_K10SET_DET_LAB_survey_full.json",
+    "20260801_KAUX_DIAG.json",
+    "20260801_KBACKTEST_FULL_C.json",
+    "20260801_KBRAIN_SIGNAL_B1_BACKTEST_100.json",
+    "20260801_KBRAIN_SIGNAL_BACKTEST_100.json",
+    "20260801_KBRAIN_TUNE_SURVEY.json",
+    "20260801_KCOMBO_SIGNAL_survey.json",
+    "20260801_KCOMBO_V2_survey.json",
+    "20260801_KEXCLUDE_survey.json",
+    "20260801_KFUSION_BOTTLE_DIAG.json",
+    "20260801_KHIGHWAY_BACKTEST_100.json",
+    "20260801_KMARKOV_LEARN_survey.json",
+    "20260801_KMARKOV_WINDOW100_SOLO_N200.json",
+    "20260801_KNEW_ENGINE_STAT_A1.json",
+    "20260801_KQUOTA_FIX_N100.json",
+    "20260801_KQUOTA_GAP_survey.json",
+    "20260801_KQUOTA_MARKOV80_N100.json",
+    "20260801_KWIRE_SELECT_FULL_survey.json",
+    "20260802_KFUSION_DYNAMIC_V2_N100.json",
+    "20260803_KFUSION_INNOVATION_N100.json",
+    "20260803_KFUTURE_WIRE_FULL.json",
+    "20260803_KFUTURE_WIRE_N100.json",
+    "20260803_KFUTURE_WIRE_QUICK200.json",
+    "20260804_KEVOLVE_FEAT_LAM_REVAL.json",
+    "20260804_KEVOLVE_FEAT_LAM_WIRE.json",
+    "20260804_KEVOLVE_LOG.json",
+    "20260804_KEVOLVE_LOG_EXPAND.json",
+    "20260804_KEVOLVE_SIGNAL_survey.json",
+    "20260804_KFUTURE_FULL_POST_EVOLVE.json",
+    "20260804_KPIN_GAP_DIAG.json",
+    "20260804_KREPACK_DECOMPOSE_survey.json",
+    "20260804_KREPACK_HYBRID_WIRE.json",
+    "20260804_KREPACK_HYBRID_survey.json",
+    "20260804_KREPACK_PER_BRAIN_survey.json",
+    "20260805_KASSOC_RULE_DIAG.json",
+    "20260805_KCOLD_EXCLUDE_DIAG.json",
+    "20260805_KCOVER_DIAG.json",
+    "20260805_KEARLY_DIAG.json",
+    "20260805_KEMA_MARKOV_DIAG.json",
+    "20260805_KEVOLVE_AUTO_S2.json",
+    "20260805_KEVOLVE_VIRTUAL_1235.json",
+    "20260805_KLIVE_QUICK200_RESET.json",
+    "20260805_KNEIGHBOR_MATCH.json",
+    "20260805_KPAIR_COVER_survey.json",
+    "20260805_KPATCH_1235_PREP.json",
+    "20260805_KPATTERN_OWN_V1.json",
+    "20260805_KQUOTA_D_WIRE.json",
+    "20260805_KREVIEW_QUOTA_SIM.json",
+    "20260805_KSTRUCTURE_COVER_survey.json",
+    "20260805_KTRANSITION_COLLECT_DESIGN.json",
+    "20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json",
+    "20260805_KTRANSITION_FULL.json",
+    "20260805_KTRANSITION_FUSION_N200.json",
+    "20260805_KTRANSITION_RANDOM_SAMPLE.json",
+    "20260805_KTRANSITION_STEP2_VERIFY.json",
+    "20260805_KTRANSITION_STEP3_DESIGN.json",
+    "20260805_KTRANSITION_STEP4_WIRE.json",
+    "20260808_KPAST_LEARN_DETAIL_KEEP.json",
+    "20260808_KPAST_LEARN_DETAIL_TUNE.json",
+    "20260808_KPAST_LEARN_EV_RELABEL.json",
+    "20260808_KPAST_LEARN_FRAME_DONE.json",
+    "20260808_KPAST_LEARN_SCORE_RULE_DIAG.json",
+    "20260808_KPAST_LEARN_TUNE_ENGINE.json",
+    "20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json",
+    "20260808_KPAST_LEARN_TUNE_SOFT.json",
+    "20260808_KPAST_LEARN_WIRE.json",
+    "20260808_KPAST_LEARN_YT_BENCH.json",
+    "20260808_KSTAT_NUM_ASSOC_FULL.json",
+    "20260808_KSTAT_NUM_NEXT_FREQ_1234.json",
+    "20260808_KYT_FILTER_BENCH.json"
+  ],
+  "verdict": {
+    "code": "COMPLIANT",
+    "headline_ko": "자기검증 통과 · 위반 없음 (게이트 기록 1건)"
+  },
+  "prior": "docs/benchmarks/20260808_KSTAT_DECISION_GATE.json",
+  "tool": "tools/_k_gate_compliance.py",
+  "ts": "2026-08-07T21:11:04.258875+00:00"
+}

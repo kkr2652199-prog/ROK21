@@ -3,11 +3,11 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-STAT-GATE-ADOPT
-- 할일: DECISION-GATE 결과(**적용상수 win26/mix0.8 = NOISE_SELECTION_CONFIRMED** · 순서불변 2.429e-17 · 문제→답 nopeek 0.274 < 무작위 0.311) 형 확인 후 1건 선택 — **①게이트를 공용 모듈로 승격해 모든 튜닝 도구가 gate(n,k) 기록 강제**(권장 · 잡음보다 작은 차이 채택을 구조적으로 차단) / ②seed full-range 재측정으로 잡음 하한 확정 / ③회차 1236+ 전향적 EV 로그(개입 없음) / ④트랙정지
+- ID: K-GATE-NEXT-PICK
+- 할일: R38 게이트 가동 완료(공용모듈 승격 · 준수검사 COMPLIANT · 강제 exit=1 실동작 확인) 형 확인 후 1건 선택 — **①seed 민감도 full-range 재측정으로 잡음 하한 확정**(권장 · 현재 폭 0.14 는 n=100 단일 추정 · 약 25분) / ②회차 1236+ 전향적 EV 로그(개입 없음 · 저번호·저합 인기축 검증) / ③legacy 132건 중 상수·배선에 영향 준 판정만 골라 게이트 소급적용 / ④트랙정지
 - 완료조건: 형이 ①~④ 중 1건 지정
-- 선행완료: docs/benchmarks/20260808_KSTAT_DECISION_GATE.json · reports/20260808_KSTAT_DECISION_GATE.md · 커서보고서 동기 · (앞선) EV_RELABEL · AUDIT_DIMS
-- 승인필요: ①은 도구 신규모듈(발권경로 무변경) → 형 GO 필요
+- 선행완료: tools/k_gate.py · tools/_k_gate_compliance.py · docs/benchmarks/20260808_KGATE_COMPLIANCE.json · 20260808_KSTAT_DECISION_GATE.json · reports 2건 · 커서보고서 동기 · RULES_FIXED R38 등재
+- 승인필요: 없음 (①~③ 모두 측정·기록만 · 발권경로 무변경)
 - 선행조건: 없음
 - 최종갱신: 2026-08-08
 
@@ -29,6 +29,7 @@ IDLE
 - **유일한 유의 인기축 = 저번호·저합**(sum β−0.0575 · le22 β+0.0463 · FW p=0.0004). 현재 과거학습 뇌에 **이 축이 아예 없다**. 단 전반구간 약함(구간2 z≈0) → 전향적 검증 전 발권 반영 금지
 - **차원 사실**: 셀당 관측 1차 164.7 / 2차 18.7 / **3차 1.74** → 3차원 순위화 불가. pair/triple NOISE 판정은 정상
 - **잡음 하한 미확정**: stat seed ge3 range **0.14** 를 n=100 에서만 측정. 이보다 작은 차이는 판정 불가
+- **R38 가동(20260808)**: 게이트 = `tools/k_gate.py` · 모든 튜닝 도구는 `gate_block()` 결과를 벤치 JSON `decision_gate` 키에 기록 필수 · `actionable=False` → "차이 없음" 보고 · 준수검사 `tools/_k_gate_compliance.py`(exit≠0=위반) · `k_cells` 를 실제 탐색량보다 작게 적으면 임계가 느슨해짐(자기기만 주의)
 - **눈금 확정(20260808 DECISION-GATE)**: null 해석적 재현 성공(초기하 5장최고 0.113624 vs 측정 0.1137) · n50 단일MDD **0.124403** · n50·K10 잡음p95 **0.16** · n200 K10 **0.08** · n1182 K10 **0.032149**
 - **적용상수 win26/mix0.8 = 잡음선택 확정**: n50·K10 Δ+0.16 = 잡음p95와 동일 · holdout 0.14(null+0.0264) 붕괴 · fusion Δ0 → '개선' 인용 금지. 단 **되돌릴 근거도 없음**(양쪽 무근거) → 상수 그대로 유지
 - **학습 순서 무의미**: weight=Σexp(−decay·age) 는 합 → 1→N vs N→1 최대차 **2.429e-17**(동일). 리스트 실제역전은 시간축손상(버그, 최대차 0.007995)
