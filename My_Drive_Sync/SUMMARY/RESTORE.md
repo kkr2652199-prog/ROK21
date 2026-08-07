@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d4889d2` · WORK=`IDLE`
+1. **HEAD:** `f5db94d` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-YT-BENCH** — 신뢰YT 벤치 · decay보류권고 · **DOC_SURVEY**
 3. **다음1건:** K-PAST-LEARN-DETAIL-KEEP — YT벤치 권고대로 DETAIL decay **KEEP_BASE**(0.005/0.05) 확정 · tipster/LSTM wire 금지 · **형 GO** (승인필요=필요 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-08 | YT신뢰벤치 | 4축채택·tipster기각·decay보류권고 | **SURVEY** | (push후) |
+| 2026-08-08 | YT신뢰벤치 | 4축채택·tipster기각·decay보류권고 | **SURVEY** | f5db94d |
 | 2026-08-08 | decay세부 | 후보 L0.01/S0.05 · fusion0.135 · 미적용 | **CAND** | 96fdc33 |
 | 2026-08-08 | 틀잠금 | FRAME_LOCKED · 세부는다음 | **LOCK** | 0e14774 |
 | 2026-08-08 | 후보적용 | win26/mix0.8·tune재현·fusionΔ0 | **PASS** | d5b466d |

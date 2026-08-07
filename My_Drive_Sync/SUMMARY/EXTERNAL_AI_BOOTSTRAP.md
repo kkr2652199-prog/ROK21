@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d4889d2` |
+| HEAD(실측) | `f5db94d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-PAST-LEARN-YT-BENCH** — 신뢰YT 벤치 · decay보류권고 · **DOC_SURVEY** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d4889d2 · 지금=**K-PAST-LEARN-YT-BENCH** — 신뢰YT 벤치 · decay보류권고 · **DOC_SURVEY** · 다음=K-PAST-LEARN-DETAIL-KEEP`
+1. 첫줄 `[복귀] HEAD=f5db94d · 지금=**K-PAST-LEARN-YT-BENCH** — 신뢰YT 벤치 · decay보류권고 · **DOC_SURVEY** · 다음=K-PAST-LEARN-DETAIL-KEEP`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
