@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **20260807 종료체크** — 세션보고서 보완 · **DONE**
-- 직전: K-TRANSITION-HIT-WARRANT-ATTACH · PASS
+- 지금: **K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY**
+- 직전: 20260807 종료체크 · DONE
 - 다음: 라벨확장 or 트랙정지 · 발권가중 금지 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

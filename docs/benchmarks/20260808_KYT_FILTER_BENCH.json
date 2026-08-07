@@ -1,0 +1,238 @@
+{
+  "id": "K-YT-FILTER-BENCH",
+  "ts": "2026-08-07T15:29:01Z",
+  "verdict": "DOC_SURVEY",
+  "pass": true,
+  "wire": false,
+  "meta": {
+    "max_draw": 1235,
+    "n_draws": 1235,
+    "db": "data/lotto_testlotto.db",
+    "note": "당첨P↑ 비약속 · 필터=조합 프로파일 질량"
+  },
+  "sources": {
+    "gemini_generator": {
+      "url": "https://youtu.be/T7I3hEfQBlc",
+      "claim": "다중필터(합·홀짝·고저·연번·이월·끝수)+균형/핫/콜드 · Gemini 2.5 Pro 딥리서치"
+    },
+    "lstm_critique": {
+      "url": "https://youtu.be/3G3zExNItj0",
+      "claim": "LSTM 로또예측 무효 · train만 당첨·val/test≈일상 · 독립시행"
+    }
+  },
+  "windows": {
+    "full": {
+      "label": "full",
+      "n": 1235,
+      "draw_range": [
+        1,
+        1235
+      ],
+      "sum": {
+        "mean": 138.248,
+        "min": 48,
+        "max": 238,
+        "in_110_170": {
+          "count": 827,
+          "rate": 0.669636
+        },
+        "in_100_180": {
+          "count": 991,
+          "rate": 0.802429
+        }
+      },
+      "odd_even_balanced_3_4_2": {
+        "count": 1018,
+        "rate": 0.824291
+      },
+      "odd_even_top": {
+        "3:3": 413,
+        "4:2": 328,
+        "2:4": 277,
+        "5:1": 99,
+        "1:5": 82,
+        "6:0": 19,
+        "0:6": 17
+      },
+      "high_low_balanced_3_4_2": {
+        "count": 995,
+        "rate": 0.805668
+      },
+      "high_low_top": {
+        "3:3": 406,
+        "2:4": 309,
+        "4:2": 280,
+        "1:5": 113,
+        "5:1": 94,
+        "0:6": 17,
+        "6:0": 16
+      },
+      "has_consecutive_pair": {
+        "count": 639,
+        "rate": 0.517409
+      },
+      "same_ending_digit_ge1": {
+        "count": 963,
+        "rate": 0.779757
+      },
+      "carry_over": {
+        "pairs": 1234,
+        "main6_ge1": {
+          "count": 757,
+          "rate": 0.613452
+        },
+        "prev_main_in_next_main_or_bonus_ge1": {
+          "count": 825,
+          "rate": 0.668558,
+          "note": "영상 '보너스포함 7개 중 1개'에 가까운 정의"
+        }
+      },
+      "yt_profile_and": {
+        "sum110_170_oe_hl_consec_ending": {
+          "count": 250,
+          "rate": 0.202429
+        },
+        "sum100_180_oe_hl_consec_ending": {
+          "count": 287,
+          "rate": 0.232389
+        },
+        "note": "이월은 시계열쌍이라 AND 프로파일에서 제외(단건 필터만)"
+      }
+    },
+    "tail100": {
+      "label": "tail100",
+      "n": 100,
+      "draw_range": [
+        1136,
+        1235
+      ],
+      "sum": {
+        "mean": 137.15,
+        "min": 56,
+        "max": 220,
+        "in_110_170": {
+          "count": 74,
+          "rate": 0.74
+        },
+        "in_100_180": {
+          "count": 80,
+          "rate": 0.8
+        }
+      },
+      "odd_even_balanced_3_4_2": {
+        "count": 81,
+        "rate": 0.81
+      },
+      "odd_even_top": {
+        "4:2": 36,
+        "3:3": 23,
+        "2:4": 22,
+        "5:1": 10,
+        "1:5": 6,
+        "0:6": 2,
+        "6:0": 1
+      },
+      "high_low_balanced_3_4_2": {
+        "count": 82,
+        "rate": 0.82
+      },
+      "high_low_top": {
+        "3:3": 33,
+        "4:2": 27,
+        "2:4": 22,
+        "1:5": 7,
+        "0:6": 5,
+        "5:1": 4,
+        "6:0": 2
+      },
+      "has_consecutive_pair": {
+        "count": 50,
+        "rate": 0.5
+      },
+      "same_ending_digit_ge1": {
+        "count": 75,
+        "rate": 0.75
+      },
+      "carry_over": {
+        "pairs": 99,
+        "main6_ge1": {
+          "count": 61,
+          "rate": 0.616162
+        },
+        "prev_main_in_next_main_or_bonus_ge1": {
+          "count": 67,
+          "rate": 0.676768,
+          "note": "영상 '보너스포함 7개 중 1개'에 가까운 정의"
+        }
+      },
+      "yt_profile_and": {
+        "sum110_170_oe_hl_consec_ending": {
+          "count": 20,
+          "rate": 0.2
+        },
+        "sum100_180_oe_hl_consec_ending": {
+          "count": 20,
+          "rate": 0.2
+        },
+        "note": "이월은 시계열쌍이라 AND 프로파일에서 제외(단건 필터만)"
+      }
+    }
+  },
+  "null_mc": {
+    "method": "MC_uniform_C45_6",
+    "n_samples": 200000,
+    "seed": 42,
+    "rates": {
+      "sum_110_170": 0.682195,
+      "sum_100_180": 0.818255,
+      "odd_even_balanced": 0.81272,
+      "high_low_balanced": 0.81377,
+      "has_consecutive_pair": 0.5285,
+      "has_consecutive_pair_theory": 0.528747,
+      "same_ending_digit_ge1": 0.788785,
+      "carry_main6_ge1": 0.599285,
+      "yt_profile_sum110": 0.21033,
+      "yt_profile_sum100": 0.245675
+    }
+  },
+  "delta_vs_null": {
+    "full": {
+      "sum_110_170": -0.012559,
+      "sum_100_180": -0.015826,
+      "odd_even_balanced": 0.011571,
+      "high_low_balanced": -0.008102,
+      "has_consecutive_pair": -0.011091,
+      "same_ending_digit_ge1": -0.009028,
+      "carry_main6_ge1": 0.014167,
+      "yt_profile_sum110": -0.007901
+    },
+    "tail100": {
+      "sum_110_170": 0.057805,
+      "sum_100_180": -0.018255,
+      "odd_even_balanced": -0.00272,
+      "high_low_balanced": 0.00623,
+      "has_consecutive_pair": -0.0285,
+      "same_ending_digit_ge1": -0.038785,
+      "carry_main6_ge1": 0.016877,
+      "yt_profile_sum110": -0.01033
+    }
+  },
+  "rok21_map": {
+    "structure_cover": "HOLD_WIRE_OFF",
+    "hit_warrant_carry_consec": "LOG_ONLY",
+    "stat_carry_ending_boost": "FROZEN_CAPS",
+    "ksignal_l4_popularity": "SPEC_W0",
+    "lstm_path": "NOT_WIRED_KEEP_DEAD"
+  },
+  "adopt": [
+    "filters_as_annotate_warrant_structure_diag",
+    "recalibrate_yt_claims_on_our_db_null",
+    "mode_labels_doc_only"
+  ],
+  "reject": [
+    "vibe_rewrite_generator",
+    "revive_lstm",
+    "force_and_filters_on_live_quota",
+    "claim_higher_win_probability"
+  ]
+}

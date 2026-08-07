@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7656f77` · WORK=`IDLE`
-2. **지금:** **20260807 종료체크** — 세션보고서 보완 · **DONE**
-3. **다음1건:** K-TRANSITION-HIT-WARRANT-ATTACH-DONE — 20260807 세션보고서 보완완료 · 형 확인 — 라벨확장 or 트랙정지(발권가중·WIRE 금지) · hit_warrant_log+evolve.note 유지 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `3ce0ce6` · WORK=`IDLE`
+2. **지금:** **K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY**
+3. **다음1건:** K-YT-FILTER-BENCH-DONE — 20260808 YT필터벤치 DOC_SURVEY 완료 · 형 확인 — 라벨확장 or 트랙정지(발권가중·WIRE 금지) · 필터는 annotate/warrant 진단만 · LSTM부활 금지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-08 | YT벤치+보고서push | KYT_FILTER_BENCH JSON+reports+Drive | **DOC_SURVEY** | (push후) |
 | 2026-08-07 | 종료체크 | 20260807 세션보고서 reports+Drive | **DONE** | 7656f77 |
 | 2026-08-05 | 명분로그부착 | hit_warrant_log1134·evolve.note | **PASS** | bf8efac |
 | 2026-08-05 | 명분축 전환 | HIT-WARRANT 전수 · top15≈null | **CATALOG** | dc39b84 |
@@ -45,7 +46,6 @@
 | 2026-08-05 | 방향브리핑push | DIRECTION_BRIEF·수집NEXT·[CURSOR] | **DOC** | 0557d2a |
 | 2026-08-05 | Cursor종합브리핑 | 외부AI용 K-TRANSITION·[CURSOR]표기 | **DOC** | 20d06cc |
 | 2026-08-05 | 논의기록 push | 팩트체크·무작위6건·로드맵 문서화 | **DOC** | 99e8a90 |
-| 2026-08-05 | 전회차 전이·이월 | k2 Δ+0.172 STRONG · stat교체즉시 | **STRONG** | 03b7f3c |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

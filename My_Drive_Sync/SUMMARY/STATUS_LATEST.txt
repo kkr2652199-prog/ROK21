@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-07 KST  
-📌 사유: **[CURSOR] 20260807 종료체크** — 세션보고서 보완 · **DONE**
+📅 최종 갱신: 2026-08-08 KST  
+📌 사유: **[CURSOR] K-YT-FILTER-BENCH** — 유튜브 필터/LSTM vs DB 실측 · **DOC_SURVEY**
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-YT-FILTER-BENCH** | **DOC_SURVEY** — MAX**1235** · sum100–180=**0.802** · 연번=**0.517**(≈null) · 끝수=**0.780** · 이월main=**0.613** · YT AND=**0.202** · wire否 · LSTM기각유지 · `docs/benchmarks/20260808_KYT_FILTER_BENCH.json` · `reports/20260808_KYT_FILTER_BENCH.md` |
 | **20260807 세션보고서** | **DONE** — `reports/20260807_ROK21_SESSION_STATUS.md` · 커서보고서 동기 · transition→HIT-WARRANT-ATTACH 마감요약 |
 | **K-TRANSITION-HIT-WARRANT-ATTACH** | **PASS** — `hit_warrant_log` n**1134** · evolve.note 부착**3402** · weight=0 유지 · WIRE OFF · `docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT_ATTACH.json` |
 | **K-TRANSITION-HIT-WARRANT** | **CATALOG** — n_draws**1134** · explained**0.545**/unexplained**0.455** · carry**0.136** · trans_top15**0.333**(≈null) · consec**0.211** · STABLE · wire否 · `docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT.json` |
@@ -109,6 +110,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-YT-FILTER-BENCH** | YT다중필터+LSTM 비판 · DB1~1235 재실측 · annotate진단만 | **DOC_SURVEY** |
 | **K-EVOLVE-AUTO-S3** | PREDICT+SCORE 통합 · 1236 캐시 워밍 | **PASS** |
 | **K-EVOLVE-AUTO-S2** | SCORE-only apply · 1235 로그 기입 | **PASS** |
 | **K-EVOLVE-AUTO-S1** | auto_state + tick dry-run · apply stub거부 | **PASS** |
