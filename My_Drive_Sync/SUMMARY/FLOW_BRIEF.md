@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `83e3470` · WORK=`IDLE`
+- HEAD: `45dba8e` · WORK=`IDLE`
 - 지금: **K-PAST-LEARN-DETAIL-KEEP** — decay **0.005/0.05** 확정 · **KEEP_BASE**
 - 직전: K-PAST-LEARN-YT-BENCH · DOC_SURVEY
 - BOOT다음: 과거학습 추가세부 or 트랙정지 · **형 GO**
