@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `bbde687` |
+| HEAD(실측) | `ed3e848` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=bbde687 · 지금=**K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY** · 다음=K-YT-FILTER-BENCH-DONE`
+1. 첫줄 `[복귀] HEAD=ed3e848 · 지금=**K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY** · 다음=K-YT-FILTER-BENCH-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

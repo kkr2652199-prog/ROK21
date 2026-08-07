@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `bbde687` · WORK=`IDLE`
+1. **HEAD:** `ed3e848` · WORK=`IDLE`
 2. **지금:** **K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY**
 3. **다음1건:** K-YT-FILTER-BENCH-DONE — 20260808 YT필터벤치 DOC_SURVEY 완료 · 형 확인 — 라벨확장 or 트랙정지(발권가중·WIRE 금지) · 필터는 annotate/warrant 진단만 · LSTM부활 금지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
