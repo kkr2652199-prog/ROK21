@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `96fdc33` · WORK=`IDLE`
+- HEAD: `56fd4b8` · WORK=`IDLE`
 - 지금: **K-PAST-LEARN-DETAIL-TUNE** — decay 후보 L0.01/S0.05 · **CANDIDATE**
 - 직전: K-PAST-LEARN-FRAME-DONE · FRAME_LOCKED
 - BOOT다음: 후보 적용/보류 · **형 GO**

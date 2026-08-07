@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `96fdc33` · WORK=`IDLE`
+1. **HEAD:** `56fd4b8` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-DETAIL-TUNE** — decay 후보 L0.01/S0.05 · **CANDIDATE**
 3. **다음1건:** K-PAST-LEARN-DETAIL-APPLY — decay 후보 `LONG=0.01`/`SHORT=0.05`(hold ge3**0.16**·fusion**0.135**) 상수적용 or KEEP_BASE · **형 GO** (승인필요=필요 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
