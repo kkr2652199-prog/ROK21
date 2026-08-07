@@ -1,0 +1,38 @@
+{
+  "id": "K-PAST-LEARN-DETAIL-KEEP",
+  "ts": "2026-08-07T19:40:00+00:00",
+  "verdict": "KEEP_BASE",
+  "go": true,
+  "applied_change": false,
+  "decay": {
+    "kept": {"long_decay": 0.005, "short_decay": 0.05},
+    "rejected_candidate": {"long_decay": 0.01, "short_decay": 0.05},
+    "reason": [
+      "YT신뢰벤치: 최근가중=당첨P↑ 비지지",
+      "DETAIL hold +0.02만·tune −0.04·fusion Δ0",
+      "형 GO 2026-08-08 KEEP_BASE"
+    ]
+  },
+  "frame_unchanged": {
+    "V2_SHORT_WIN": 26,
+    "V2_SHORT_MIX": 0.8,
+    "ASSOC": false,
+    "TRANSITION_V1": false
+  },
+  "policy": {
+    "tipster_wire": false,
+    "LSTM_wire": false,
+    "ASSOC_wire": false
+  },
+  "module": "app/testlotto/brains/stat_brain/engine.py",
+  "priors": [
+    "docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json",
+    "docs/benchmarks/20260808_KPAST_LEARN_YT_BENCH.json",
+    "docs/benchmarks/20260808_KPAST_LEARN_FRAME_DONE.json"
+  ],
+  "beginner": {
+    "done": "세부 decay는 지금 값 유지로 확정",
+    "not_changed": "코드 숫자는 원래부터 0.005/0.05였음(후보 안 넣음)",
+    "next": "과거학습 트랙 추가 세부 or 정지 — 형 지시"
+  }
+}

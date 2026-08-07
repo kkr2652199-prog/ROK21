@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2cdc685` · WORK=`IDLE`
-2. **지금:** **K-PAST-LEARN-YT-BENCH** — 신뢰YT 벤치 · decay보류권고 · **DOC_SURVEY**
-3. **다음1건:** K-PAST-LEARN-DETAIL-KEEP — YT벤치 권고대로 DETAIL decay **KEEP_BASE**(0.005/0.05) 확정 · tipster/LSTM wire 금지 · **형 GO** (승인필요=필요 · 선행=없음)
+1. **HEAD:** `83e3470` · WORK=`IDLE`
+2. **지금:** **K-PAST-LEARN-DETAIL-KEEP** — decay **0.005/0.05** 확정 · **KEEP_BASE**
+3. **다음1건:** K-PAST-LEARN-TRACK — FRAME+DETAIL_KEEP 완료 · 추가 세부축 or 트랙정지 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-08 | KEEP GO | decay 0.005/0.05 확정 · 후보미채택 | **KEEP** | (push후) |
 | 2026-08-08 | YT신뢰벤치 | 4축채택·tipster기각·decay보류권고 | **SURVEY** | f5db94d |
 | 2026-08-08 | decay세부 | 후보 L0.01/S0.05 · fusion0.135 · 미적용 | **CAND** | 96fdc33 |
 | 2026-08-08 | 틀잠금 | FRAME_LOCKED · 세부는다음 | **LOCK** | 0e14774 |
@@ -45,7 +46,6 @@
 | 2026-08-08 | 과거샘플 | ASSOC n30 meanL1.009 top1&lt;null | **MEASURED** | 0450d5a |
 | 2026-08-08 | 연관정밀 | 1234→next 리프트·연도후순위 | **MEASURED** | 51aa602 |
 | 2026-08-08 | 과거학습분석 | 1234 번호별 next빈도·윈도우 | **MEASURED** | 6f19881 |
-| 2026-08-08 | stat명칭 | 통계요정→과거학습 | **PASS** | f305191 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

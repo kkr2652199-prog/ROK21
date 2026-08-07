@@ -17,9 +17,9 @@ logger = logging.getLogger(__name__)
 ENGINE_V2 = False
 
 # v2 튜닝 기본값 (env로 스윕 · random.choices 미수정)
-# K-PAST-LEARN-TUNE-ENGINE-APPLY: win26/mix0.8 (seed n50 CANDIDATE)
+# FRAME: win26/mix0.8 (ENGINE-APPLY) · DETAIL decay KEEP_BASE (YT벤치+형GO)
 V2_SHORT_WIN = 26
-V2_LONG_DECAY = 0.005
+V2_LONG_DECAY = 0.005  # DETAIL 후보 0.01 미채택
 V2_SHORT_DECAY = 0.05
 V2_SHORT_MIX = 0.8  # long_mix = 1 - short_mix
 V2_PREV_SHORT_WIN = 52  # 롤백 참고

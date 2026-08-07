@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-PAST-LEARN-YT-BENCH** — 신뢰YT×과거학습패치 · **DOC_SURVEY**
+📌 사유: **[CURSOR] K-PAST-LEARN-DETAIL-KEEP** — decay KEEP_BASE 형GO 확정
 
 ---
 
@@ -10,8 +10,9 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-PAST-LEARN-YT-BENCH** | **DOC_SURVEY** — 신뢰게이트 통과 4축(조코딩LSTM·Numberphile·KYT필터·covering논문) · tipster기각 · 적용사례 A1~A4 전부 wire否 · DETAIL decay **KEEP_BASE 권고** · `docs/benchmarks/20260808_KPAST_LEARN_YT_BENCH.json` · `reports/20260808_KPAST_LEARN_YT_BENCH.md` |
-| **K-PAST-LEARN-DETAIL-TUNE** | **CANDIDATE**(미적용·보류권고) — 틀 win26/mix0.8 · base L**0.005**/S**0.05** · 후보 L**0.01**/S**0.05** hold+0.02·fusion**0.135** · `docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json` · `reports/20260808_KPAST_LEARN_DETAIL_TUNE.md` |
+| **K-PAST-LEARN-DETAIL-KEEP** | **KEEP_BASE** — 형GO · decay L**0.005**/S**0.05** 확정 · 후보0.01 **미채택** · tipster/LSTM/ASSOC wire否 · `docs/benchmarks/20260808_KPAST_LEARN_DETAIL_KEEP.json` · `reports/20260808_KPAST_LEARN_DETAIL_KEEP.md` |
+| **K-PAST-LEARN-YT-BENCH** | **DOC_SURVEY** — 신뢰게이트 통과 4축(조코딩LSTM·Numberphile·KYT필터·covering논문) · tipster기각 · 적용사례 A1~A4 전부 wire否 · `docs/benchmarks/20260808_KPAST_LEARN_YT_BENCH.json` · `reports/20260808_KPAST_LEARN_YT_BENCH.md` |
+| **K-PAST-LEARN-DETAIL-TUNE** | **CANDIDATE→KEEP** — 틀 win26/mix0.8 · 후보 L0.01 기각 · `docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json` · `reports/20260808_KPAST_LEARN_DETAIL_TUNE.md` |
 | **K-PAST-LEARN-FRAME-DONE** | **FRAME_LOCKED** — 과거학습 기본 틀 잠금(세부 전) · win**26**/mix**0.8** · soft/ASSOC/transition OFF · `framework_snapshot` · smoke OK · `docs/benchmarks/20260808_KPAST_LEARN_FRAME_DONE.json` · `reports/20260808_KPAST_LEARN_FRAME_DONE.md` |
 | **K-PAST-LEARN-TUNE-ENGINE-APPLY** | **PASS** — `V2_SHORT_WIN=26`/`V2_SHORT_MIX=0.8` 적용 · tune n50 ge3=**0.28**/mean**1.88**(재현) · holdout(1085~1134) ge3=**0.14**/mean**1.72** · fusion n200 ge3=**0.135** Δ**0** · 롤백52/0.6 · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json` · `reports/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.md` |
 | **K-PAST-LEARN-TUNE-ENGINE** | **CANDIDATE→APPLIED** — seed n50 · base(win52/mix0.6) ge3=**0.12**/mean**1.78** · 후보 **win26/mix0.8** ge3=**0.28**(Δ**+0.16**) · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json` · `reports/20260808_KPAST_LEARN_TUNE_ENGINE.md` |
