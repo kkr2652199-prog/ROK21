@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `ed3e848` |
+| HEAD(실측) | `1446e47` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY** |
-| 직전 | 20260807 종료체크 · DONE |
+| 지금 | **K-BRAIN-RENAME-STAT** — 통계요정→과거학습 · **PASS** |
+| 직전 | K-YT-FILTER-BENCH · DOC_SURVEY |
 | BOOT다음 | 라벨확장 or 트랙정지 · 발권가중 금지 · **형 GO** |
-| NEXT1 ID | **K-YT-FILTER-BENCH-DONE** |
-| NEXT1 할일 | 20260808 YT필터벤치 DOC_SURVEY 완료 · 형 확인 — 라벨확장 or 트랙정지(발권가중·WIRE 금지) · 필터는 annotate/warrant 진단만 · LSTM부활 금지 |
+| NEXT1 ID | **K-BRAIN-RENAME-STAT-DONE** |
+| NEXT1 할일 | stat 표시명 **과거학습** 적용 확인 · 이어서 라벨확장 or 트랙정지(발권가중·WIRE 금지) · LSTM부활 금지 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=ed3e848 · 지금=**K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY** · 다음=K-YT-FILTER-BENCH-DONE`
+1. 첫줄 `[복귀] HEAD=1446e47 · 지금=**K-BRAIN-RENAME-STAT** — 통계요정→과거학습 · **PASS** · 다음=K-BRAIN-RENAME-STAT-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: ed3e848_
+_generated: 1446e47_

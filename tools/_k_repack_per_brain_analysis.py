@@ -22,7 +22,7 @@ OUT_JSON = ROOT / "docs" / "benchmarks" / "20260804_KREPACK_PER_BRAIN_survey.jso
 OUT_MD = ROOT / "reports" / "20260804_KREPACK_PER_BRAIN_SURVEY.md"
 
 BRAIN_TAGS = ["stat", "markov", "review"]
-BRAIN_KO = {"stat": "1뇌·통계요정", "markov": "2뇌·흐름술사", "review": "3뇌·복습왕"}
+BRAIN_KO = {"stat": "1뇌·과거학습", "markov": "2뇌·흐름술사", "review": "3뇌·복습왕"}
 REPACK_RANK_KO = {
     1: "몰아주기 1번(최고 신호 6수)",
     2: "몰아주기 2번(7~12위 6수)",

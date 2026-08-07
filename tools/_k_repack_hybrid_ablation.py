@@ -27,7 +27,7 @@ OUT_MD = ROOT / "reports" / "20260804_KREPACK_HYBRID_SURVEY.md"
 DRIVE_MD = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
 
 BRAIN_TAGS = ["stat", "markov", "review"]
-BRAIN_KO = {"stat": "1뇌·통계요정", "markov": "2뇌·흐름술사", "review": "3뇌·복습왕"}
+BRAIN_KO = {"stat": "1뇌·과거학습", "markov": "2뇌·흐름술사", "review": "3뇌·복습왕"}
 PIN = 0.1447
 NULL5 = 0.1137
 

@@ -6,9 +6,9 @@ PREDICT_BRAINS: list[dict[str, str]] = [
     {
         "tag": "stat",
         "code": "stat_fairy",
-        "name": "통계요정",
+        "name": "과거학습",
         "role": "predict",
-        "desc": "빈도·끝수·이월수 가중 통계",
+        "desc": "빈도·끝수·이월수 가중 통계(과거 학습)",
         "short_desc": "최근 빈도·끝수·이월수로 자주 나온 흐름을 잡는다",
     },
     {
@@ -67,7 +67,8 @@ AUX_BRAINS: list[dict[str, str]] = [
 SETS_PER_PREDICT_BRAIN = 5
 
 METHOD_TO_TAG: dict[str, str] = {
-    "통계요정": "stat",
+    "과거학습": "stat",
+    "통계요정": "stat",  # 구명칭 호환(DB method 잔존)
     "흐름술사": "markov",
     "복습왕": "review",
 }

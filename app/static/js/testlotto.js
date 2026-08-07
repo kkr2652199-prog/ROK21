@@ -8,7 +8,7 @@ const _testlottoResolveApiUrl = (typeof resolveApiUrl === 'function')
     : function(path) { return path; };
 
 const _testlottoBrainDisplayNames = {
-  stat: '🧚 통계요정',
+  stat: '📚 과거학습',
   markov: '🌊 흐름술사',
   review: '📖 복습왕',
 };
@@ -345,7 +345,7 @@ function lottoBrainTierNanoHtml(tag) {
 }
 
 const TESTLOTTO_BRAIN_LIST = [
-  { tag: 'stat', name: '통계요정', icon: '🧚', color: '#3b82f6' },
+  { tag: 'stat', name: '과거학습', icon: '📚', color: '#3b82f6' },
   { tag: 'markov', name: '흐름술사', icon: '🌊', color: '#10b981' },
   { tag: 'review', name: '복습왕', icon: '📖', color: '#f59e0b' },
 ];

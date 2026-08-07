@@ -61,7 +61,10 @@ def smoke_predict() -> dict:
         and len(sets_off) == 5
         and all(len(s["nums"]) == 6 for s in sets_on)
         and any(str(m).startswith("전이") for m in methods_on)
-        and all(str(m) == "통계요정" or "통계" in str(m) for m in methods_off)
+        and all(
+            str(m) in ("과거학습", "통계요정") or "과거" in str(m) or "통계" in str(m)
+            for m in methods_off
+        )
     )
     return {
         "smoke_ok": ok,

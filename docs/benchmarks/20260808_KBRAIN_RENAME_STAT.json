@@ -1,0 +1,11 @@
+{
+  "id": "K-BRAIN-RENAME-STAT",
+  "ts": "2026-08-07T15:53:57.062933+00:00",
+  "verdict": "PASS",
+  "wire": false,
+  "old": "통계요정",
+  "new": "과거학습",
+  "tag": "stat",
+  "pass": true,
+  "tool": "manual-rename"
+}

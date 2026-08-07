@@ -3,7 +3,7 @@
  */
 
 const BRAINS = [
-  { tag: 'stat', name: '통계요정', color: '#3b82f6', short_desc: '자주 나온 번호·끝자리·이월 번호 위주' },
+  { tag: 'stat', name: '과거학습', color: '#3b82f6', short_desc: '자주 나온 번호·끝자리·이월 번호 위주' },
   { tag: 'markov', name: '흐름술사', color: '#10b981', short_desc: '직전 회차와 연결·함께 나온 번호 위주' },
   { tag: 'review', name: '복습왕', color: '#f59e0b', short_desc: '예전 오답을 다시 공부하는 방식' },
 ];
@@ -1142,7 +1142,7 @@ function _renderLearnFlowHint(brain, brainTag) {
   const learnNote =
     brainTag === 'markov'
       ? '흐름술사: 바로 직전 회차와 연결된 번호를 중점적으로 봅니다.'
-      : '통계요정·복습왕: 다음 예측 때 이번에 조정한 가중치를 반영합니다.';
+      : '과거학습·복습왕: 다음 예측 때 이번에 조정한 가중치를 반영합니다.';
   return `<div class="tld-learn-flow">
     <h4 class="tld-learn-flow__title">이번에 틀린 것 → 다음 예측에 반영</h4>
     <ul class="tld-learn-flow__list">

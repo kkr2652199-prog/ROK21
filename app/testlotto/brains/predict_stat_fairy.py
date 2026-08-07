@@ -1,5 +1,5 @@
 # DEPRECATED: stat_brain.predict.run() 사용 — K-BRAIN-PACKAGE-PHASE1 동치 PASS 후 유지(삭제 금지).
-"""통계요정 — 빈도·끝수·이월수 (SELMA hot/cold + 이월수 벤치마킹).
+"""과거학습(구 통계요정) — 빈도·끝수·이월수 (SELMA hot/cold + 이월수 벤치마킹).
 
 [명분] 기각 · K-Q 볼균등 p=0.965 (빈도 전제 미입증) · 출처 K-Q/K-W
 [K-W] 산출 정합성: 당첨분포(A) 근접 경향 (무해·정합) — WARRANT.md
@@ -43,7 +43,7 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
         if carry and carry_boost > 1:
             conf = min(95, conf + len(carry) * (carry_boost - 1) * 8)
         reasoning = (
-            f"통계요정: 빈도가중+끝수{endings}"
+            f"과거학습: 빈도가중+끝수{endings}"
             f"+이월{len(carry)}개{carry if carry else ''}"
             f"+미출30+{overdue if overdue else '없음'}"
             f"{learn_note}"
@@ -53,7 +53,7 @@ def predict_sets(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 "nums": sorted(nums),
                 "confidence": conf,
                 "reasoning": reasoning,
-                "method": "통계요정",
+                "method": "과거학습",
                 "brain_tag": "stat",
                 "rank": i + 1,
             }

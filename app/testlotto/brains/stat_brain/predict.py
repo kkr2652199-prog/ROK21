@@ -53,12 +53,12 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
             method = "전이패턴v1"
         else:
             reasoning = (
-                f"통계요정: 빈도가중+끝수{endings}"
+                f"과거학습: 빈도가중+끝수{endings}"
                 f"+이월{len(carry)}개{carry if carry else ''}"
                 f"+미출30+{overdue if overdue else '없음'}"
                 f"{learn_note}"
             )
-            method = "통계요정"
+            method = "과거학습"
         tagged.append(
             {
                 "nums": sorted(nums),
