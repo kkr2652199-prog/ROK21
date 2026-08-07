@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0e14774` · WORK=`IDLE`
+1. **HEAD:** `5686e94` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED**
 3. **다음1건:** K-PAST-LEARN-DETAIL-TUNE — 틀(FRAME_LOCKED) 위 세부 튜닝 — decay(`LONG`/`SHORT`) 등 · 시드 n50+holdout · fusion 회귀 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
