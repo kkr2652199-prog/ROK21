@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `51aa602` |
+| HEAD(실측) | `472073b` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-STAT-NUM-ASSOC** — 1234 번호→다음회 리프트 · **MEASURED** |
-| 직전 | K-STAT-NUM-NEXT-FREQ · MEASURED |
-| BOOT다음 | 논의·1233↓ 연관전수 · 연도별=후순위 · **형 GO** |
-| NEXT1 ID | **K-STAT-NUM-ASSOC-DONE** |
-| NEXT1 할일 | ASSOC 1234 형 논의 · 연도별출현=LOW_PRIORITY 합의 · 다음=1233↓ 리프트 전수/공통패턴 (과거학습 · WIRE금지) |
+| 지금 | **K-STAT-NUM-ASSOC-SAMPLE** — 과거30회 리프트샘플 · **MEASURED** |
+| 직전 | K-STAT-NUM-ASSOC · MEASURED |
+| BOOT다음 | 형 논의 · 전수여부 · WIRE금지 · **형 GO** |
+| NEXT1 ID | **K-STAT-NUM-ASSOC-SAMPLE-DONE** |
+| NEXT1 할일 | SAMPLE n30 결과 형 논의 · meanL≈1 · top1_hit&lt;null → 전수/정지 결정 (과거학습 · WIRE금지) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=51aa602 · 지금=**K-STAT-NUM-ASSOC** — 1234 번호→다음회 리프트 · **MEASURED** · 다음=K-STAT-NUM-ASSOC-DONE`
+1. 첫줄 `[복귀] HEAD=472073b · 지금=**K-STAT-NUM-ASSOC-SAMPLE** — 과거30회 리프트샘플 · **MEASURED** · 다음=K-STAT-NUM-ASSOC-SAMPLE-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

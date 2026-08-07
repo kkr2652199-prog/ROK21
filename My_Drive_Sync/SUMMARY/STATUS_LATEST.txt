@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-STAT-NUM-ASSOC** — 1234 번호→다음회 리프트 · **MEASURED**
+📌 사유: **[CURSOR] K-STAT-NUM-ASSOC-SAMPLE** — 과거30회 리프트샘플 · **MEASURED**
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-STAT-NUM-ASSOC-SAMPLE** | **MEASURED** — n**30**(recent10+rand20) meanL=**1.009** · top1_hit=**0.103**(&lt;null0.133) · carry**0.533** · wire否 · `docs/benchmarks/20260808_KSTAT_NUM_ASSOC_SAMPLE.json` |
 | **K-STAT-NUM-ASSOC** | **MEASURED** — 번호→다음회 lift · 연도별=LOW_PRIORITY · 1235 meanL≈null · multi**34**(6표) · wire否 · `docs/benchmarks/20260808_KSTAT_NUM_ASSOC_1234.json` |
 | **K-STAT-NUM-NEXT-FREQ** | **MEASURED** — anchor**1234** `[1,15,19,31,35,43]`→1235 · carry`[15,43]` · next-top15∩all6=`[34]` · wire否 · `docs/benchmarks/20260808_KSTAT_NUM_NEXT_FREQ_1234.json` |
 | **K-BRAIN-RENAME-STAT** | **PASS** — 표시명 `통계요정`→**과거학습** · tag=`stat` 유지 · 구명 METHOD_TO_TAG 호환 · `docs/benchmarks/20260808_KBRAIN_RENAME_STAT.json` |
