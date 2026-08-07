@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0245cd4` · WORK=`IDLE`
+- HEAD: `04c49b3` · WORK=`IDLE`
 - 지금: **K-PAST-LEARN-WIRE** — 과거학습 구조패치 · smoke **PASS** · solo n50 ge3**0.14**
 - 직전: K-STAT-NUM-ASSOC-FULL · NOISE_LIKE
 - BOOT다음: 튜닝재개 · SOFT_WEIGHT 스윕 · **형 GO**
