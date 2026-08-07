@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6f19881` |
+| HEAD(실측) | `77d197b` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-STAT-NUM-NEXT-FREQ** — 1234 번호별 다음회빈도 · **MEASURED** |
-| 직전 | K-BRAIN-RENAME-STAT · PASS |
-| BOOT다음 | 1233↓ 동일분석·공통패턴 · 논의 · **형 GO** |
-| NEXT1 ID | **K-STAT-NUM-NEXT-FREQ-DONE** |
-| NEXT1 할일 | 1234 MEASURED 형 확인·논의 · 다음=1233/1232… 동일 분석 후 공통패턴 (과거학습 only · 발권가중·WIRE 금지) |
+| 지금 | **K-STAT-NUM-ASSOC** — 1234 번호→다음회 리프트 · **MEASURED** |
+| 직전 | K-STAT-NUM-NEXT-FREQ · MEASURED |
+| BOOT다음 | 논의·1233↓ 연관전수 · 연도별=후순위 · **형 GO** |
+| NEXT1 ID | **K-STAT-NUM-ASSOC-DONE** |
+| NEXT1 할일 | ASSOC 1234 형 논의 · 연도별출현=LOW_PRIORITY 합의 · 다음=1233↓ 리프트 전수/공통패턴 (과거학습 · WIRE금지) |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6f19881 · 지금=**K-STAT-NUM-NEXT-FREQ** — 1234 번호별 다음회빈도 · **MEASURED** · 다음=K-STAT-NUM-NEXT-FREQ-DONE`
+1. 첫줄 `[복귀] HEAD=77d197b · 지금=**K-STAT-NUM-ASSOC** — 1234 번호→다음회 리프트 · **MEASURED** · 다음=K-STAT-NUM-ASSOC-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 6f19881_
+_generated: 77d197b_

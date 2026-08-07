@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6f19881` · WORK=`IDLE`
-2. **지금:** **K-STAT-NUM-NEXT-FREQ** — 1234 번호별 다음회빈도 · **MEASURED**
-3. **다음1건:** K-STAT-NUM-NEXT-FREQ-DONE — 1234 MEASURED 형 확인·논의 · 다음=1233/1232… 동일 분석 후 공통패턴 (과거학습 only · 발권가중·WIRE 금지) (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `77d197b` · WORK=`IDLE`
+2. **지금:** **K-STAT-NUM-ASSOC** — 1234 번호→다음회 리프트 · **MEASURED**
+3. **다음1건:** K-STAT-NUM-ASSOC-DONE — ASSOC 1234 형 논의 · 연도별출현=LOW_PRIORITY 합의 · 다음=1233↓ 리프트 전수/공통패턴 (과거학습 · WIRE금지) (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-08 | 연관정밀 | 1234→next 리프트·연도후순위 | **MEASURED** | (push후) |
 | 2026-08-08 | 과거학습분석 | 1234 번호별 next빈도·윈도우 | **MEASURED** | 6f19881 |
 | 2026-08-08 | stat명칭 | 통계요정→과거학습 | **PASS** | f305191 |
 | 2026-08-08 | YT벤치+보고서push | KYT_FILTER_BENCH JSON+reports+Drive | **DOC_SURVEY** | bbde687 |
