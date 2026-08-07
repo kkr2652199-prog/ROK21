@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-STAT-NUM-ASSOC-SAMPLE** — 과거30회 리프트샘플 · **MEASURED**
-- 직전: K-STAT-NUM-ASSOC · MEASURED
-- 다음: 형 논의 · 전수여부 · WIRE금지 · **형 GO**
+- 지금: **K-STAT-NUM-ASSOC-FULL** — 전수 A+B+C+F · **NOISE_LIKE**
+- 직전: K-STAT-NUM-ASSOC-SAMPLE · MEASURED
+- 다음: 형 확인 · 발권wire 금지·명분만 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

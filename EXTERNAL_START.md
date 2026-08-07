@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0450d5a` |
+| HEAD(실측) | `6e2aa6a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-STAT-NUM-ASSOC-SAMPLE** — 과거30회 리프트샘플 · **MEASURED** |
-| 직전 | K-STAT-NUM-ASSOC · MEASURED |
-| BOOT다음 | 형 논의 · 전수여부 · WIRE금지 · **형 GO** |
-| NEXT1 ID | **K-STAT-NUM-ASSOC-SAMPLE-DONE** |
-| NEXT1 할일 | SAMPLE n30 결과 형 논의 · meanL≈1 · top1_hit&lt;null → 전수/정지 결정 (과거학습 · WIRE금지) |
+| 지금 | **K-STAT-NUM-ASSOC-FULL** — 전수 A+B+C+F · **NOISE_LIKE** |
+| 직전 | K-STAT-NUM-ASSOC-SAMPLE · MEASURED |
+| BOOT다음 | 형 확인 · 발권wire 금지·명분만 · **형 GO** |
+| NEXT1 ID | **K-STAT-NUM-ASSOC-FULL-DONE** |
+| NEXT1 할일 | FULL n1035 **NOISE_LIKE** 형 확인 · 과거학습 발권WIRE 금지 · 명분/로그 유지 or 트랙정지 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0450d5a · 지금=**K-STAT-NUM-ASSOC-SAMPLE** — 과거30회 리프트샘플 · **MEASURED** · 다음=K-STAT-NUM-ASSOC-SAMPLE-DONE`
+1. 첫줄 `[복귀] HEAD=6e2aa6a · 지금=**K-STAT-NUM-ASSOC-FULL** — 전수 A+B+C+F · **NOISE_LIKE** · 다음=K-STAT-NUM-ASSOC-FULL-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 0450d5a_
+_generated: 6e2aa6a_
