@@ -1,0 +1,184 @@
+{
+  "bench_id": "K-PAST-LEARN-AUDIT-DIMS",
+  "date": "2026-08-08",
+  "scope": "ROK21 / testlotto / 과거학습(stat)",
+  "kind": "DOC_AUDIT + DIMENSION_COVERAGE + EXTERNAL_ADVISORY",
+  "verdict": "AUDIT_DONE",
+  "wire": false,
+  "policy": {
+    "read_only": true,
+    "db_write": false,
+    "code_change": false,
+    "ticket_weight_change": false
+  },
+  "report": "reports/20260808_KPAST_LEARN_AUDIT_DIMS_ADVISORY.md",
+
+  "open_actionable": [
+    {
+      "rank": 1,
+      "id": "SEED-FULL-RANGE",
+      "what_ko": "stat seed 민감도 full-range 재측정",
+      "why_ko": "ge3 range 0.14 를 n=100 에서만 측정. 잡음 하한 미확정 상태로 모든 튜닝 판정이 이뤄졌음",
+      "evidence": "docs/benchmarks/20260805_KSTAT_SEED_DIAG.json",
+      "cost": "low"
+    },
+    {
+      "rank": 2,
+      "id": "EV-PROSPECTIVE-LOG",
+      "what_ko": "회차 1236+ 전향적 EV 홀드아웃 로그 (개입 없음)",
+      "why_ko": "저번호·저합 인기축이 유일한 유의 신호. 시대 편중 있어 전향적 검증만 인정",
+      "evidence": "docs/benchmarks/20260808_KPAST_LEARN_EV_RELABEL.json",
+      "cost": "low"
+    },
+    {
+      "rank": 3,
+      "id": "CYCLE-GAP-BOOST-AB",
+      "what_ko": "cycle_gap_boost 단독 A/B 벤치",
+      "why_ko": "live v2 엔진에 있으나 단독 측정 이력 전무. detail_tune_later 등재만",
+      "evidence": "app/testlotto/brains/stat_brain/engine.py L122-131",
+      "prior_expectation_ko": "도박사 오류형 재배치 → 손해 예상",
+      "cost": "low"
+    },
+    {
+      "rank": 4,
+      "id": "STATUS-S5-DRIFT-FIX",
+      "what_ko": "STATUS_LATEST.md §5 의 transition STEP4 wire=ON 표기 수정",
+      "why_ko": "실제는 FUSION-N200 ROLLBACK 으로 OFF. 문서 드리프트",
+      "evidence": "docs/benchmarks/20260805_KTRANSITION_FUSION_N200.json",
+      "cost": "low"
+    },
+    {
+      "rank": 5,
+      "id": "BIN-TAXONOMY-GAP",
+      "what_ko": "끝수·합·span bin 단위 null 대비 측정",
+      "why_ko": "KRARE 가 taxonomy_gaps 에 MISSING 으로 자체 기록",
+      "evidence": "docs/benchmarks/20260805_KRARE_MEASURE_1_1235.json",
+      "cost": "low"
+    },
+    {
+      "rank": 6,
+      "id": "COLD-FREE-LIVE-VERIFY",
+      "what_ko": "cold-free replace 를 live predict_sets 경로에서 재확인",
+      "why_ko": "진단 Δge3 +0.03 이나 live 검증 없음. QUOTA-D 가 동일 sim≠live 함정에서 FAIL",
+      "evidence": "docs/benchmarks/20260805_KCOVER_DIAG.json",
+      "cost": "mid"
+    }
+  ],
+
+  "ideas_never_tooled": [
+    "high_lift>=2 앵커 투표 -> 다음회 커버 전수 (20260808_KSTAT_NUM_ASSOC_1234.json)",
+    "1233 이하 번호별 next-top15 카탈로그 전수 (tools/_k_stat_num_next_freq.py)",
+    "pos_ema 가중 repack / top-2 pool union (20260804_KREPACK_DECOMPOSE_survey.json P0)",
+    "rank1 skip / rank3-5 mix ablation (동 P1)",
+    "freq 25%->35% / overlap bonus (동 P2)",
+    "PMI 카탈로그 -> 발권 backtest (20260805_KSIGNAL_TAXONOMY_V1.json w3=0)",
+    "B/C 패턴 -> pool 재점수 (20260805_KPATTERN_OWN_V1.json)"
+  ],
+
+  "closed_do_not_revive": [
+    {"item": "decay long 0.005->0.01", "why": "DETAIL-KEEP + YT-BENCH + SCORE-RULE 3중 기각"},
+    {"item": "SOFT_WEIGHT / SOFT_CONF_CAP 스윕", "why": "15셀 전부 ge3 동일 = 발권 불변"},
+    {"item": "ASSOC soft ON", "why": "전수 n=1035 NOISE_LIKE (lift 0.998 vs null 1.002)"},
+    {"item": "transition_v1 fusion ON", "why": "FUSION-N200 ROLLBACK, delta ge3 = 0.000"},
+    {"item": "quota B/C/D stat 슬롯 증가", "why": "QUOTA-D live FAIL avg ge3 0.10"},
+    {"item": "PAIR_COVER / STRUCTURE_COVER wire", "why": "stat ge3 -0.01 / -0.02"},
+    {"item": "neighbor kNN", "why": "hit>=3 0.23 < random 0.311"},
+    {"item": "LSTM / 시퀀스 예측", "why": "독립시행. YT-BENCH 기각"}
+  ],
+
+  "doc_contradictions": [
+    {
+      "where": "My_Drive_Sync/SUMMARY/STATUS_LATEST.md §5",
+      "issue": "transition STEP4 wire=ON 표기",
+      "ssot": "FUSION-N200 ROLLBACK -> OFF"
+    },
+    {
+      "where": "20260805_KTRANSITION_FULL.json",
+      "issue": "brain_replace_verdict=즉시착수",
+      "ssot": "STEP3 DESIGN_HOLD + FUSION ROLLBACK 이 최종"
+    },
+    {
+      "where": "KNEW_ENGINE_STAT_A1 vs KPAST_LEARN_TUNE_ENGINE",
+      "issue": "v2 solo delta ge3=0 vs solo n50 ge3=0.28",
+      "ssot": "경로/윈도우/seed 상이. v2 자체 uplift 근거로 인용 금지"
+    },
+    {
+      "where": "engine.py ENGINE_V2=False vs live True",
+      "issue": "이중 스위치",
+      "ssot": "_use_engine_v2() 가 past_learn 을 따름. 의도된 설계"
+    }
+  ],
+
+  "dimension_coverage": {
+    "draws": 1235,
+    "cells": [
+      {"dim": 1, "space": 45, "obs": 7410, "obs_per_cell": 164.6667, "verdict_ko": "균등성 검정 가능"},
+      {"dim": 2, "space": 990, "obs": 18525, "obs_per_cell": 18.7121, "verdict_ko": "큰 효과만 겨우"},
+      {"dim": 3, "space": 14190, "obs": 24700, "obs_per_cell": 1.7407, "verdict_ko": "순위화 불가"},
+      {"dim": 4, "space": 148995, "obs": 18525, "obs_per_cell": 0.1243, "verdict_ko": "불가"},
+      {"dim": 6, "space": 8145060, "obs": 1235, "obs_per_cell": 0.0002, "verdict_ko": "사실상 전부 미관측"}
+    ],
+    "conclusion_ko": "차원 상승은 정보를 더 주지 않고 표본을 나눈다. pair/triple NOISE 판정은 측정 실패가 아니라 공정 추첨에서 기대되는 결과다.",
+    "remaining_gaps": [
+      "1차: 끝수 bin 분포",
+      "2차: PMI 예측 backtest · 자리 postmortem skill",
+      "3차+: 합/span/연번 bin 단위 · AC value",
+      "meta: seed full-range"
+    ],
+    "axis_with_real_power_ko": "번호 상호작용이 아니라 조합특성 -> 소비자선택 -> 당첨자수 차원. 저차원 특성으로 압축되므로 1131회차로도 검정력이 생긴다."
+  },
+
+  "external_advisory": {
+    "model": "gpt (별도 세션 · 적대적 검토 요청)",
+    "accepted_corrections": [
+      {
+        "issue_ko": "'recency 가중은 정보가 아니다' 는 과장",
+        "fix_ko": "검증한 시간창/혼합비/gap boost 계열 한정으로 문구를 좁힘"
+      },
+      {
+        "issue_ko": "점수 SE 는 회차 단위 block 으로",
+        "status_ko": "SCORE-RULE paired 통계는 이미 회차 단위 n=500 → 문제 없음"
+      },
+      {
+        "issue_ko": "그리드 탐색 전체를 감싼 nested walk-forward 필요",
+        "status_ko": "미충족 → 향후 규칙화"
+      },
+      {
+        "issue_ko": "차이값에 block bootstrap CI / permutation p 필요",
+        "status_ko": "미충족 → 다음 튜닝 필수 항목"
+      },
+      {
+        "issue_ko": "chi2 p=0.90 은 장기 주변빈도 균등만 의미. 조건부 구조 부재 아님",
+        "status_ko": "해석 수정"
+      },
+      {
+        "issue_ko": "해외 문헌으로 한국 인기도를 대체 금지. hot/overdue 자동 비인기 라벨링 금지",
+        "status_ko": "채택 → 한국 데이터 직접 측정 결과 hot1y 는 오히려 인기 방향"
+      }
+    ],
+    "top_traps": [
+      "null 을 이겼다는 착각 (seed 폭 0.14 vs 차이 0.0008)",
+      "튜닝과 검증의 경계 붕괴",
+      "best-of-5 를 확률 개선으로 오해",
+      "사후 지급액을 설명변수로 투입 (collider)",
+      "시대별 z 보고 유리한 구간만 골라 재적합 (사후선택)"
+    ]
+  },
+
+  "ev_result_summary": {
+    "bench": "docs/benchmarks/20260808_KPAST_LEARN_EV_RELABEL.json",
+    "verdict": "SELECTION_YES_TAGS_NO_AXIS_CANDIDATE",
+    "global_familywise_p": 0.0004,
+    "significant_axis": ["sum_z", "n_le22"],
+    "tag_relabel_supported": false,
+    "wire": false
+  },
+
+  "next_priority": [
+    "SEED-FULL-RANGE",
+    "EV-PROSPECTIVE-LOG",
+    "CYCLE-GAP-BOOST-AB",
+    "STATUS-S5-DRIFT-FIX",
+    "BIN-TAXONOMY-GAP"
+  ]
+}

@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-PAST-LEARN-EV-RELABEL-GO
-- 할일: SCORE-RULE-DIAG 결과(적중축 상한 없음) 형 확인 — soft 태그(hot1y/overdue)를 **EV 인기회피축**으로 라벨 재정의할지 결정 · 결정 전 코드·가중 변경 금지
-- 완료조건: 형 GO (재정의 진행 or 트랙정지)
-- 선행완료: docs/benchmarks/20260808_KPAST_LEARN_SCORE_RULE_DIAG.json · reports/20260808_KPAST_LEARN_SCORE_RULE_DIAG.md · 커서보고서 동기
+- ID: K-PAST-LEARN-NEXT-PICK
+- 할일: EV-RELABEL 결과(인기편향 FW p=0.0004 실증 · **태그축 무신호 → soft 재정의 지지 안 됨**) 형 확인 후 다음 1건 선택 — **①seed 민감도 full-range 재측정** (권장 · 잡음 하한 미확정 상태로 그동안 판정해왔음) / ②회차 1236+ 전향적 EV 로그(개입 없음) / ③`cycle_gap_boost` 단독 A/B / ④트랙정지
+- 완료조건: 형이 ①~④ 중 1건 지정
+- 선행완료: docs/benchmarks/20260808_KPAST_LEARN_EV_RELABEL.json · docs/benchmarks/20260808_KPAST_LEARN_AUDIT_DIMS.json · reports/20260808_KPAST_LEARN_EV_RELABEL.md · reports/20260808_KPAST_LEARN_AUDIT_DIMS_ADVISORY.md · 커서보고서 동기
 - 승인필요: 미확인
 - 선행조건: 없음
 - 최종갱신: 2026-08-08
@@ -25,4 +25,8 @@ IDLE
 - 보정χ²=32.42 (df44 · p≈0.90) → 번호 편향 근거 없음 (Genest 2002 · Joe 1993)
 - PBO=0.0 · 기대최대 0.0306 ≥ 실측 0.0107 (Bailey et al. 2014)
 - Suetens et al.(2016 JEEA): hot=대중 몰림 / 직전번호=대중 회피 → hot1y 가점은 EV 역방향
+- **한국 실측(20260808 EV-RELABEL)**: 문헌 방향을 한국 데이터로 직접 검증. `t_hot1y` β=+0.0243 = **실제로 인기 방향**(4개 시대 전부) → hot1y 를 EV 레버로 재정의할 근거 없음
+- **유일한 유의 인기축 = 저번호·저합**(sum β−0.0575 · le22 β+0.0463 · FW p=0.0004). 현재 과거학습 뇌에 **이 축이 아예 없다**. 단 전반구간 약함(구간2 z≈0) → 전향적 검증 전 발권 반영 금지
+- **차원 사실**: 셀당 관측 1차 164.7 / 2차 18.7 / **3차 1.74** → 3차원 순위화 불가. pair/triple NOISE 판정은 정상
+- **잡음 하한 미확정**: stat seed ge3 range **0.14** 를 n=100 에서만 측정. 이보다 작은 차이는 판정 불가
 - 상수·배선 불변: engine decay 0.005/0.05 · FRAME win26/mix0.8 · ASSOC/transition/LSTM OFF

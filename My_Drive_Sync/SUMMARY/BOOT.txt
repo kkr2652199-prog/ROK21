@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **Cursor 종합브리핑** — K-TRANSITION 외부AI용 push
-- 직전: K-TRANSITION 논의기록 · STRONG rolling
-- 다음: transition **패턴 수집** 설계 · **형 GO**
+- 지금: **K-PAST-LEARN-EV-RELABEL** — 1등당첨자수 NB2+무작위화 · 인기편향 FW p=**0.0004** 실증 · **태그축은 무신호(재정의 지지 안 됨)**
+- 직전: K-PAST-LEARN-SCORE-RULE-DIAG · NO_SKILL_VS_NULL · + AUDIT-DIMS 감사(잔여 6건)
+- 다음: ①seed full-range ②1236+ 전향적 EV로그 ③cycle_gap_boost 단독AB 중 **형 1건 선택** · 발권가중 금지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

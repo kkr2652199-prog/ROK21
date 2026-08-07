@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**
+📌 사유: **[CURSOR] K-PAST-LEARN-EV-RELABEL** — 1등 당첨자수 NB2+무작위화추론 · **SELECTION_YES_TAGS_NO_AXIS_CANDIDATE**
 
 ---
 
@@ -10,6 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-PAST-LEARN-EV-RELABEL** | **SELECTION_YES_TAGS_NO_AXIS_CANDIDATE** — 종속=1등당첨자수 `first_winners` · n**1131**(회차105~1235) · 분산/평균**2.95**→NB2(α=**0.06621**) · offset=log(total_sales) · 교란=시간spline6+연주기4+이월 · permutation score test B**5000** · **전역 max|z|=4.381 FW p=0.0004**(인기편향 실증) · 유의축 `sum_z` β**−0.0575**(z−4.38) · `n_le22` β**+0.0463**(z+4.19) = 동일 저번호·저합축(상관−0.876) · 태그 전부 FW 무의미: `t_carry` β−0.0337(z−2.09 pFW0.28) · `t_hot1y` β**+0.0243=인기(EV역방향)** 4시대 전부 · `t_overdue` β−0.0539(z−0.96) · `t_cold1y` β−0.0136(z−0.66) · **soft태그 EV재정의 지지=아니오** · 후보축 전후반 엄격재현 미달(전반 z−1.10/후반 −4.37 · 시대부호 3/4) → 전향적 검증 필요 · wire否·코드/가중 무변경(w=0) · `docs/benchmarks/20260808_KPAST_LEARN_EV_RELABEL.json` · `reports/20260808_KPAST_LEARN_EV_RELABEL.md` |
+| **K-PAST-LEARN-AUDIT-DIMS** | **AUDIT_DONE** — 전구간 감사+차원+외부AI자문 · 실행가능 잔여 **6건**(①seed full-range ②EV전향로그 ③cycle_gap_boost 단독AB ④STATUS§5 드리프트정정 ⑤bin taxonomy ⑥cold-free live검증) · 미도구화 아이디어 7건 · 되살리기금지 8건 · 문서모순 4건 · 차원 셀당관측 1차**164.7**/2차**18.7**/3차**1.74**/4차0.12/6차0.0002 → **차원상승=표본분할**(pair/triple NOISE는 공정추첨의 정상결과) · 자문 채택: "recency=정보없음" 문구 축소 · nested WF·block bootstrap 미충족 · 해외문헌으로 한국인기도 대체금지 · `docs/benchmarks/20260808_KPAST_LEARN_AUDIT_DIMS.json` · `reports/20260808_KPAST_LEARN_AUDIT_DIMS_ADVISORY.md` |
 | **K-PAST-LEARN-SCORE-RULE-DIAG** | **NO_SKILL_VS_NULL** — n**500**(736~1235) · 셀**15** log-score 전부 null(**3.8067**) 미달 · 현행 L0.005/S0.05=**3.8982**(skill **−0.0240**) · 최선 L0.0005/S0.02=**3.8875**(**−0.0212**) · 균등이탈L1↔score **r=0.9854** · 보정χ²=**32.42**(df44 p≈**0.90**, 기각못함) · PBO=**0.0** · 기대최대**0.0306**≥실측**0.0107** · hot1y=인기축(EV역방향) 경고 · wire否·상수불변 · `docs/benchmarks/20260808_KPAST_LEARN_SCORE_RULE_DIAG.json` · `reports/20260808_KPAST_LEARN_SCORE_RULE_DIAG.md` |
 | **K-PAST-LEARN-DETAIL-KEEP** | **KEEP_BASE** — 형GO · decay L**0.005**/S**0.05** 확정 · 후보0.01 **미채택** · tipster/LSTM/ASSOC wire否 · `docs/benchmarks/20260808_KPAST_LEARN_DETAIL_KEEP.json` · `reports/20260808_KPAST_LEARN_DETAIL_KEEP.md` |
 | **K-PAST-LEARN-YT-BENCH** | **DOC_SURVEY** — 신뢰게이트 통과 4축(조코딩LSTM·Numberphile·KYT필터·covering논문) · tipster기각 · 적용사례 A1~A4 전부 wire否 · `docs/benchmarks/20260808_KPAST_LEARN_YT_BENCH.json` · `reports/20260808_KPAST_LEARN_YT_BENCH.md` |
@@ -329,7 +331,9 @@
 
 ## 5) 다음
 
-STEP4 wire **ON** · solo n50 ge3**0.06** 약함 · **fusion n200/롤백** — 형 GO.  
+**K-PAST-LEARN-EV-RELABEL 결과 형 확인** — 적중축(SCORE-RULE NO_SKILL) · EV축(태그 무신호) 양쪽 다 닫힘. soft 태그 재정의 근거 없음.
+다음 후보 = ① seed 민감도 full-range 재측정(잡음 하한 확정) ② 회차 1236+ 전향적 EV 로그(개입 없음) ③ `cycle_gap_boost` 단독 A/B.
+**드리프트 정정(20260808):** transition STEP4 wire = **OFF**. `TRANSITION_V1_WIRE=False` (FUSION-N200 ROLLBACK 확정) — 이전 "STEP4 wire ON" 표기는 오기.  
 압축 시: `GENSPARK_COMPRESS_RECOVER.md`+EXTERNAL_START · JSON raw 재페치.
 
 ---

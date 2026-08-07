@@ -1,0 +1,728 @@
+{
+  "bench_id": "K-PAST-LEARN-EV-RELABEL",
+  "date": "2026-08-08",
+  "scope": "ROK21 / testlotto / 과거학습(stat)",
+  "policy": {
+    "read_only": true,
+    "db_write": false,
+    "ticket_weight_change": false,
+    "brain_code_change": false,
+    "weight": 0
+  },
+  "data": {
+    "draws_total": 1235,
+    "draws_used": 1131,
+    "draw_range": [
+      105,
+      1235
+    ],
+    "min_history": 104,
+    "w1_mean": 8.939,
+    "w1_var": 26.3742,
+    "var_over_mean": 2.9505,
+    "sales_offset": "log(total_sales)"
+  },
+  "tag_thresholds_live": {
+    "overdue_gap": 30,
+    "hot_mult": 1.15,
+    "cold_mult": 0.75,
+    "win_1y": 52,
+    "null_rate": 0.133333,
+    "source": "app/testlotto/brains/stat_brain/past_learn.py"
+  },
+  "baseline_model": {
+    "family": "NegativeBinomial NB2",
+    "terms": [
+      "const",
+      "time",
+      "time_k1",
+      "time_k2",
+      "time_k3",
+      "time_k4",
+      "time_k5",
+      "sin1",
+      "cos1",
+      "sin2",
+      "cos2",
+      "rollover_prev"
+    ],
+    "alpha": 0.06621,
+    "pearson_dispersion": 1.7881,
+    "llf": -3020.827,
+    "converged": true,
+    "grad_norm": 0.001051,
+    "zero_check": {
+      "observed_zeros": 3,
+      "nb2_expected_zeros": 3.92,
+      "zero_inflation_flag": false
+    }
+  },
+  "full_model": {
+    "terms": [
+      "const",
+      "time",
+      "time_k1",
+      "time_k2",
+      "time_k3",
+      "time_k4",
+      "time_k5",
+      "sin1",
+      "cos1",
+      "sin2",
+      "cos2",
+      "rollover_prev",
+      "n_le31",
+      "n_le22",
+      "sum_z",
+      "n_consec",
+      "n_endrep",
+      "span_z",
+      "t_overdue",
+      "t_hot1y",
+      "t_cold1y",
+      "t_carry"
+    ],
+    "alpha": 0.05749,
+    "llf": -2992.872,
+    "converged": true,
+    "grad_norm": 0.01522,
+    "lr_stat_vs_baseline": 55.9103,
+    "lr_df": 10
+  },
+  "randomization_inference": {
+    "design": "조합을 균등 6/45로 재배정 · 교란·판매량·당첨자수 고정",
+    "n_perm": 5000,
+    "seed": 20260808,
+    "global_max_abs_z": 4.381,
+    "global_p": 0.0004
+  },
+  "standardization": {
+    "sum_mean": 138.162,
+    "sum_sd": 30.715,
+    "span_mean": 32.659,
+    "span_sd": 6.942
+  },
+  "replication_split": {
+    "split_draw_no": 670,
+    "n_perm_per_half": 1500,
+    "note_ko": "전·후반 각각 독립 permutation. 부호 일치 + 양쪽 |z|>=1.5 를 재현으로 본다."
+  },
+  "era_profile": {
+    "n_perm_per_era": 1000,
+    "features": [
+      "n_le31",
+      "n_le22",
+      "sum_z",
+      "n_consec",
+      "n_endrep",
+      "span_z",
+      "t_overdue",
+      "t_hot1y",
+      "t_cold1y",
+      "t_carry"
+    ],
+    "eras": [
+      {
+        "era": 1,
+        "draw_from": 105,
+        "draw_to": 386,
+        "n": 282,
+        "z": [
+          0.02,
+          2.01,
+          -1.8,
+          0.05,
+          -0.68,
+          -1.1,
+          -1.29,
+          0.36,
+          -1.7,
+          -0.1
+        ]
+      },
+      {
+        "era": 2,
+        "draw_from": 387,
+        "draw_to": 668,
+        "n": 282,
+        "z": [
+          -0.39,
+          0.06,
+          0.21,
+          -3.01,
+          2.06,
+          0.56,
+          -0.52,
+          1.37,
+          -0.2,
+          -0.82
+        ]
+      },
+      {
+        "era": 3,
+        "draw_from": 669,
+        "draw_to": 950,
+        "n": 282,
+        "z": [
+          1.68,
+          2.26,
+          -2.97,
+          -0.9,
+          0.97,
+          1.14,
+          -0.68,
+          0.24,
+          -0.98,
+          0.23
+        ]
+      },
+      {
+        "era": 4,
+        "draw_from": 951,
+        "draw_to": 1235,
+        "n": 285,
+        "z": [
+          1.3,
+          3.28,
+          -3.42,
+          0.26,
+          0.91,
+          -0.51,
+          -0.05,
+          1.28,
+          0.72,
+          -2.56
+        ]
+      }
+    ],
+    "note_ko": "시대 4분할. 효과가 특정 시기에 몰렸는지 확인용 (사전 지정 robustness)."
+  },
+  "feature_correlation": {
+    "names": [
+      "n_le31",
+      "n_le22",
+      "sum_z",
+      "n_consec",
+      "n_endrep",
+      "span_z",
+      "t_overdue",
+      "t_hot1y",
+      "t_cold1y",
+      "t_carry"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.676,
+        -0.815,
+        0.015,
+        -0.039,
+        -0.2,
+        0.04,
+        -0.062,
+        0.052,
+        0.022
+      ],
+      [
+        0.676,
+        1.0,
+        -0.876,
+        0.029,
+        0.018,
+        0.051,
+        0.042,
+        -0.008,
+        0.013,
+        0.022
+      ],
+      [
+        -0.815,
+        -0.876,
+        1.0,
+        -0.032,
+        0.007,
+        -0.042,
+        -0.057,
+        0.041,
+        -0.039,
+        -0.034
+      ],
+      [
+        0.015,
+        0.029,
+        -0.032,
+        1.0,
+        -0.064,
+        -0.268,
+        0.017,
+        0.021,
+        -0.015,
+        -0.002
+      ],
+      [
+        -0.039,
+        0.018,
+        0.007,
+        -0.064,
+        1.0,
+        0.152,
+        -0.023,
+        -0.006,
+        -0.002,
+        -0.043
+      ],
+      [
+        -0.2,
+        0.051,
+        -0.042,
+        -0.268,
+        0.152,
+        1.0,
+        0.008,
+        0.014,
+        0.015,
+        0.001
+      ],
+      [
+        0.04,
+        0.042,
+        -0.057,
+        0.017,
+        -0.023,
+        0.008,
+        1.0,
+        -0.041,
+        0.182,
+        -0.018
+      ],
+      [
+        -0.062,
+        -0.008,
+        0.041,
+        0.021,
+        -0.006,
+        0.014,
+        -0.041,
+        1.0,
+        -0.432,
+        0.062
+      ],
+      [
+        0.052,
+        0.013,
+        -0.039,
+        -0.015,
+        -0.002,
+        0.015,
+        0.182,
+        -0.432,
+        1.0,
+        -0.074
+      ],
+      [
+        0.022,
+        0.022,
+        -0.034,
+        -0.002,
+        -0.043,
+        0.001,
+        -0.018,
+        0.062,
+        -0.074,
+        1.0
+      ]
+    ],
+    "note_ko": "sum_z 와 n_le22/n_le31 은 구조적으로 강한 음의 상관 → 동시보정 β 불안정."
+  },
+  "effects": [
+    {
+      "feature": "sum_z",
+      "desc_ko": "번호합 (표준화)",
+      "beta_marginal": -0.05748,
+      "se_marginal": 0.01267,
+      "irr_marginal": 0.9441,
+      "pct_winners_per_unit": -5.59,
+      "pct_payout_per_unit": 5.92,
+      "beta_adjusted": -0.14328,
+      "se_adjusted": 0.03461,
+      "z_perm": -4.381,
+      "p_perm": 0.0004,
+      "p_holm": 0.0036,
+      "p_familywise": 0.0004,
+      "sig_fw_05": true,
+      "z_first_half": -1.102,
+      "z_second_half": -4.371,
+      "replicates": false,
+      "era_z": [
+        -1.8,
+        0.21,
+        -2.97,
+        -3.42
+      ],
+      "era_sign_consistent": 3,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": 25.85
+    },
+    {
+      "feature": "n_le22",
+      "desc_ko": "번호 중 22 이하 개수 (저번호 선호)",
+      "beta_marginal": 0.0463,
+      "se_marginal": 0.01072,
+      "irr_marginal": 1.0474,
+      "pct_winners_per_unit": 4.74,
+      "pct_payout_per_unit": -4.52,
+      "beta_adjusted": -0.00196,
+      "se_adjusted": 0.02246,
+      "z_perm": 4.186,
+      "p_perm": 0.0002,
+      "p_holm": 0.002,
+      "p_familywise": 0.0004,
+      "sig_fw_05": true,
+      "z_first_half": 1.42,
+      "z_second_half": 3.946,
+      "replicates": false,
+      "era_z": [
+        2.01,
+        0.06,
+        2.26,
+        3.28
+      ],
+      "era_sign_consistent": 4,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": -16.91
+    },
+    {
+      "feature": "t_carry",
+      "desc_ko": "직전 회차 번호 포함 개수 (도박사 오류축)",
+      "beta_marginal": -0.03369,
+      "se_marginal": 0.01644,
+      "irr_marginal": 0.9669,
+      "pct_winners_per_unit": -3.31,
+      "pct_payout_per_unit": 3.43,
+      "beta_adjusted": -0.03771,
+      "se_adjusted": 0.01619,
+      "z_perm": -2.093,
+      "p_perm": 0.03739,
+      "p_holm": 0.29914,
+      "p_familywise": 0.28154,
+      "sig_fw_05": false,
+      "z_first_half": -0.657,
+      "z_second_half": -2.031,
+      "replicates": false,
+      "era_z": [
+        -0.1,
+        -0.82,
+        0.23,
+        -2.56
+      ],
+      "era_sign_consistent": 3,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": 14.42
+    },
+    {
+      "feature": "t_hot1y",
+      "desc_ko": "과거학습 태그: 52회 rate>1.15x 핫 번호 개수",
+      "beta_marginal": 0.02428,
+      "se_marginal": 0.0111,
+      "irr_marginal": 1.0246,
+      "pct_winners_per_unit": 2.46,
+      "pct_payout_per_unit": -2.4,
+      "beta_adjusted": 0.02528,
+      "se_adjusted": 0.01216,
+      "z_perm": 1.707,
+      "p_perm": 0.08818,
+      "p_holm": 0.61728,
+      "p_familywise": 0.54609,
+      "sig_fw_05": false,
+      "z_first_half": 1.245,
+      "z_second_half": 1.246,
+      "replicates": false,
+      "era_z": [
+        0.36,
+        1.37,
+        0.24,
+        1.28
+      ],
+      "era_sign_consistent": 4,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": -9.25
+    },
+    {
+      "feature": "n_endrep",
+      "desc_ko": "같은 끝수 쌍 개수",
+      "beta_marginal": 0.02097,
+      "se_marginal": 0.01267,
+      "irr_marginal": 1.0212,
+      "pct_winners_per_unit": 2.12,
+      "pct_payout_per_unit": -2.08,
+      "beta_adjusted": 0.019,
+      "se_adjusted": 0.01259,
+      "z_perm": 1.646,
+      "p_perm": 0.09618,
+      "p_holm": 0.61728,
+      "p_familywise": 0.59528,
+      "sig_fw_05": false,
+      "z_first_half": 1.053,
+      "z_second_half": 1.361,
+      "replicates": false,
+      "era_z": [
+        -0.68,
+        2.06,
+        0.97,
+        0.91
+      ],
+      "era_sign_consistent": 3,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": -8.05
+    },
+    {
+      "feature": "n_le31",
+      "desc_ko": "번호 중 31 이하 개수 (생일·달력 선택)",
+      "beta_marginal": 0.01935,
+      "se_marginal": 0.01207,
+      "irr_marginal": 1.0195,
+      "pct_winners_per_unit": 1.95,
+      "pct_payout_per_unit": -1.92,
+      "beta_adjusted": -0.09285,
+      "se_adjusted": 0.02255,
+      "z_perm": 1.55,
+      "p_perm": 0.11538,
+      "p_holm": 0.61728,
+      "p_familywise": 0.67506,
+      "sig_fw_05": false,
+      "z_first_half": -0.289,
+      "z_second_half": 1.956,
+      "replicates": false,
+      "era_z": [
+        0.02,
+        -0.39,
+        1.68,
+        1.3
+      ],
+      "era_sign_consistent": 3,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": -7.45
+    },
+    {
+      "feature": "n_consec",
+      "desc_ko": "인접(연번) 쌍 개수",
+      "beta_marginal": -0.0261,
+      "se_marginal": 0.01705,
+      "irr_marginal": 0.9742,
+      "pct_winners_per_unit": -2.58,
+      "pct_payout_per_unit": 2.64,
+      "beta_adjusted": -0.04065,
+      "se_adjusted": 0.01765,
+      "z_perm": -1.259,
+      "p_perm": 0.21356,
+      "p_holm": 0.85423,
+      "p_familywise": 0.86523,
+      "sig_fw_05": false,
+      "z_first_half": -2.122,
+      "z_second_half": -0.137,
+      "replicates": false,
+      "era_z": [
+        0.05,
+        -3.01,
+        -0.9,
+        0.26
+      ],
+      "era_sign_consistent": 2,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": 11.01
+    },
+    {
+      "feature": "t_overdue",
+      "desc_ko": "과거학습 태그: gap>=30 미출 번호 개수",
+      "beta_marginal": -0.05393,
+      "se_marginal": 0.04388,
+      "irr_marginal": 0.9475,
+      "pct_winners_per_unit": -5.25,
+      "pct_payout_per_unit": 5.54,
+      "beta_adjusted": -0.06124,
+      "se_adjusted": 0.04382,
+      "z_perm": -0.962,
+      "p_perm": 0.33893,
+      "p_holm": 1.0,
+      "p_familywise": 0.96821,
+      "sig_fw_05": false,
+      "z_first_half": -1.312,
+      "z_second_half": -0.368,
+      "replicates": false,
+      "era_z": [
+        -1.29,
+        -0.52,
+        -0.68,
+        -0.05
+      ],
+      "era_sign_consistent": 4,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": 24.07
+    },
+    {
+      "feature": "t_cold1y",
+      "desc_ko": "과거학습 태그: 52회 rate<0.75x 콜드 번호 개수",
+      "beta_marginal": -0.01359,
+      "se_marginal": 0.01213,
+      "irr_marginal": 0.9865,
+      "pct_winners_per_unit": -1.35,
+      "pct_payout_per_unit": 1.37,
+      "beta_adjusted": 4e-05,
+      "se_adjusted": 0.01352,
+      "z_perm": -0.661,
+      "p_perm": 0.5037,
+      "p_holm": 1.0,
+      "p_familywise": 0.9974,
+      "sig_fw_05": false,
+      "z_first_half": -1.322,
+      "z_second_half": 0.033,
+      "replicates": false,
+      "era_z": [
+        -1.7,
+        -0.2,
+        -0.98,
+        0.72
+      ],
+      "era_sign_consistent": 3,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": 5.59
+    },
+    {
+      "feature": "span_z",
+      "desc_ko": "최대-최소 폭 (표준화)",
+      "beta_marginal": 0.00096,
+      "se_marginal": 0.0126,
+      "irr_marginal": 1.001,
+      "pct_winners_per_unit": 0.1,
+      "pct_payout_per_unit": -0.1,
+      "beta_adjusted": -0.03525,
+      "se_adjusted": 0.0143,
+      "z_perm": -0.025,
+      "p_perm": 0.9828,
+      "p_holm": 1.0,
+      "p_familywise": 1.0,
+      "sig_fw_05": false,
+      "z_first_half": -0.362,
+      "z_second_half": 0.219,
+      "replicates": false,
+      "era_z": [
+        -1.1,
+        0.56,
+        1.14,
+        -0.51
+      ],
+      "era_sign_consistent": 2,
+      "era_count": 4,
+      "payout_gain_pct_pm2sd": -0.38
+    }
+  ],
+  "literature": [
+    {
+      "ref": "Suetens, Galbo-Jørgensen & Tyran (2016), J. European Economic Assoc.",
+      "point_ko": "실제 베팅 데이터: 직전 당첨번호는 회피(도박사 오류), 연속 출현 번호는 추종(핫핸드).",
+      "use_ko": "t_carry · t_hot1y · t_overdue 의 방향 가설 근거."
+    },
+    {
+      "ref": "Cook & Clotfelter (1993), American Economic Review",
+      "point_ko": "conscious selection — 플레이어의 번호 선택은 균등하지 않다.",
+      "use_ko": "1등 당첨자수를 인기도 대리변수로 쓰는 정당화."
+    },
+    {
+      "ref": "Baker & McHale (2011), J. Royal Statistical Society A",
+      "point_ko": "조합선호 모형 — 비인기 조합은 분할이 적어 기대수익이 높다.",
+      "use_ko": "EV 축 정의 및 pct_payout 해석."
+    },
+    {
+      "ref": "Cameron & Trivedi, Regression Analysis of Count Data (2nd ed.)",
+      "point_ko": "과산포 count 자료는 NB2. Poisson 강제 시 SE 과소추정.",
+      "use_ko": "분산/평균 ≈ 3 (전체 3.16 · 사용표본 2.95) → NB2 선택 근거."
+    },
+    {
+      "ref": "Rosenbaum, Observational Studies / Fisher randomization inference",
+      "point_ko": "처리(조합)가 무작위 배정된 경우 분포가정 없는 정확검정 가능.",
+      "use_ko": "permutation score test 를 1차 추론으로 사용."
+    },
+    {
+      "ref": "Holm (1979), Scandinavian J. Statistics",
+      "point_ko": "다중검정 순차 보정.",
+      "use_ko": "10개 특성 동시검정 보정 (+ max|z| family-wise)."
+    }
+  ],
+  "verdict": {
+    "code": "SELECTION_YES_TAGS_NO_AXIS_CANDIDATE",
+    "headline_ko": "인기 편향 실증 · 기존 태그축 무신호 · 다른 축에 EV 후보 (전후반 재현 미달)",
+    "global_p": 0.0004,
+    "significant_features": [
+      "sum_z",
+      "n_le22"
+    ],
+    "replicating_levers": [],
+    "candidate_ev_axis": [
+      {
+        "feature": "sum_z",
+        "beta_marginal": -0.05748,
+        "p_familywise": 0.0004,
+        "era_sign_consistent": "3/4",
+        "half_split_replicates": false,
+        "payout_gain_pct_pm2sd": 25.85,
+        "status_ko": "후보 — 전향적 검증 필요"
+      },
+      {
+        "feature": "n_le22",
+        "beta_marginal": 0.0463,
+        "p_familywise": 0.0004,
+        "era_sign_consistent": "4/4",
+        "half_split_replicates": false,
+        "payout_gain_pct_pm2sd": -16.91,
+        "status_ko": "후보 — 전향적 검증 필요"
+      }
+    ],
+    "significant_tags": [],
+    "tag_directions": [
+      {
+        "feature": "t_carry",
+        "beta_marginal": -0.03369,
+        "direction_ko": "비인기(EV↑)",
+        "fw_significant": false,
+        "replicates": false
+      },
+      {
+        "feature": "t_hot1y",
+        "beta_marginal": 0.02428,
+        "direction_ko": "인기(EV↓)",
+        "fw_significant": false,
+        "replicates": false
+      },
+      {
+        "feature": "t_overdue",
+        "beta_marginal": -0.05393,
+        "direction_ko": "비인기(EV↑)",
+        "fw_significant": false,
+        "replicates": false
+      },
+      {
+        "feature": "t_cold1y",
+        "beta_marginal": -0.01359,
+        "direction_ko": "비인기(EV↑)",
+        "fw_significant": false,
+        "replicates": false
+      }
+    ],
+    "relabel_supported": false,
+    "wire": false,
+    "note_ko": "EV 축은 당첨확률을 올리지 않는다. 당첨 시 분할 인원을 줄여 1인당 지급액 기대값만 바꾼다. 발권 가중 변경은 형 승인 전 금지."
+  },
+  "recommendation": {
+    "relabel_soft_tags_as_ev": false,
+    "reason_ko": "hot1y/overdue/cold1y 어느 것도 family-wise 유의하지 않다. 특히 hot1y 는 β=+0.0243 로 4개 시대 전부 '인기(EV↓)' 방향이라 EV 레버로 재정의할 근거가 없다. overdue 는 β=-0.0539 로 방향은 EV↑이나 z=-0.96 로 무의미하다.",
+    "do_not_ko": [
+      "soft 태그 가중 상향 — 적중축(SCORE-RULE NO_SKILL)·EV축 모두 근거 없음",
+      "본 진단 결과로 발권 가중 즉시 변경 — 전향적 검증 전 금지",
+      "1인당 지급액을 종속변수로 재분석 — 당첨자수의 기계적 역함수",
+      "시대별 z 를 보고 유리한 구간만 골라 재적합 — 사후선택"
+    ],
+    "next_verifiable_step_ko": "회차 1236 이후를 전향적 홀드아웃으로 두고, 저번호/저합 인기 축의 부호가 유지되는지만 관찰한다. 발권 개입 없이 로그만 축적 (w=0).",
+    "candidate_axis_ko": "저번호·저합 선호(생일 효과)가 유일하게 family-wise 유의한 인기 축이다. 현재 과거학습 뇌에는 이 축이 아예 없다.",
+    "gate_ko": "형 승인 없이 코드·가중 변경 금지 (R34 · 동결 규정)"
+  }
+}
