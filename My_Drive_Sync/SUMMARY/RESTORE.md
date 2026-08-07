@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7f4ac5a` · WORK=`IDLE`
+1. **HEAD:** `0e14774` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED**
 3. **다음1건:** K-PAST-LEARN-DETAIL-TUNE — 틀(FRAME_LOCKED) 위 세부 튜닝 — decay(`LONG`/`SHORT`) 등 · 시드 n50+holdout · fusion 회귀 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-08 | 틀잠금 | FRAME_LOCKED · 세부는다음 | **LOCK** | (push후) |
+| 2026-08-08 | 틀잠금 | FRAME_LOCKED · 세부는다음 | **LOCK** | 0e14774 |
 | 2026-08-08 | 후보적용 | win26/mix0.8·tune재현·fusionΔ0 | **PASS** | d5b466d |
 | 2026-08-08 | engine스윕 | 후보 win26/mix0.8 ge30.28 · 미적용 | **CAND** | addc82b |
 | 2026-08-08 | SOFT스윕 | seed15셀동일 · soft무효과 · base유지 | **KEEP** | caf49bd |
