@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BRAIN-RENAME-STAT** — 통계요정→과거학습 · **PASS**
-- 직전: K-YT-FILTER-BENCH · DOC_SURVEY
-- 다음: 라벨확장 or 트랙정지 · 발권가중 금지 · **형 GO**
+- 지금: **K-STAT-NUM-NEXT-FREQ** — 1234 번호별 다음회빈도 · **MEASURED**
+- 직전: K-BRAIN-RENAME-STAT · PASS
+- 다음: 1233↓ 동일분석·공통패턴 · 논의 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

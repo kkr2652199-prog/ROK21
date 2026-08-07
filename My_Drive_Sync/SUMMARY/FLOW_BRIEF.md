@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f305191` · WORK=`IDLE`
-- 지금: **K-BRAIN-RENAME-STAT** — 통계요정→과거학습 · **PASS**
-- 직전: K-YT-FILTER-BENCH · DOC_SURVEY
-- BOOT다음: 라벨확장 or 트랙정지 · 발권가중 금지 · **형 GO**
-- NEXT1: K-BRAIN-RENAME-STAT-DONE — stat 표시명 **과거학습** 적용 확인 · 이어서 라벨확장 or 트랙정지(발권가중·WIRE 금지) · LSTM부활 금지 (승인=미확인)
+- HEAD: `d9cd2fc` · WORK=`IDLE`
+- 지금: **K-STAT-NUM-NEXT-FREQ** — 1234 번호별 다음회빈도 · **MEASURED**
+- 직전: K-BRAIN-RENAME-STAT · PASS
+- BOOT다음: 1233↓ 동일분석·공통패턴 · 논의 · **형 GO**
+- NEXT1: K-STAT-NUM-NEXT-FREQ-DONE — 1234 MEASURED 형 확인·논의 · 다음=1233/1232… 동일 분석 후 공통패턴 (과거학습 only · 발권가중·WIRE 금지) (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

@@ -1,0 +1,1553 @@
+{
+  "id": "K-STAT-NUM-NEXT-FREQ",
+  "ts": "2026-08-07T16:11:29.615360+00:00",
+  "verdict": "MEASURED",
+  "wire": false,
+  "brain": "과거학습",
+  "tag": "stat",
+  "anchor": {
+    "draw_no": 1234,
+    "draw_date": "2026-07-25",
+    "nums": [
+      1,
+      15,
+      19,
+      31,
+      35,
+      43
+    ],
+    "prize_note": "형 제공 메타(1등 인원·당첨금)는 DB 외 참고"
+  },
+  "actual_next": {
+    "draw_no": 1235,
+    "nums": [
+      6,
+      7,
+      11,
+      15,
+      39,
+      43
+    ],
+    "carry_from_anchor": [
+      15,
+      43
+    ]
+  },
+  "windows_def": {
+    "1w": 1,
+    "2w": 2,
+    "1y": 52,
+    "2y": 104,
+    "10y": 520,
+    "20y": 1040
+  },
+  "per_number": [
+    {
+      "num": 1,
+      "appearances_1_to_anchor": 170,
+      "expected_uniform": 164.533,
+      "delta_vs_expected": 5.467,
+      "first_draw": 11,
+      "last_draw": 1234,
+      "gap_from_last_to_anchor": 0,
+      "windows": {
+        "1w": {
+          "window_draws": 1,
+          "appearances": 1,
+          "rate": 1.0,
+          "null_rate": 0.133333
+        },
+        "2w": {
+          "window_draws": 2,
+          "appearances": 1,
+          "rate": 0.5,
+          "null_rate": 0.133333
+        },
+        "1y": {
+          "window_draws": 52,
+          "appearances": 9,
+          "rate": 0.173077,
+          "null_rate": 0.133333
+        },
+        "2y": {
+          "window_draws": 104,
+          "appearances": 14,
+          "rate": 0.134615,
+          "null_rate": 0.133333
+        },
+        "10y": {
+          "window_draws": 520,
+          "appearances": 64,
+          "rate": 0.123077,
+          "null_rate": 0.133333
+        },
+        "20y": {
+          "window_draws": 1040,
+          "appearances": 143,
+          "rate": 0.1375,
+          "null_rate": 0.133333
+        }
+      },
+      "next_freq_asof_anchor": {
+        "note": "번호 출현 회차 N의 다음 N+1 (N+1<=anchor · 컨닝금지)",
+        "n_pairs": 169,
+        "top15": [
+          {
+            "num": 34,
+            "count": 31,
+            "rate_per_pair": 0.183432,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 39,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 35,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 17,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 44,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 27,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 23,
+            "count": 28,
+            "rate_per_pair": 0.16568,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 45,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 7,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 38,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 11,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 31,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 28,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 24,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 37,
+            "count": 24,
+            "rate_per_pair": 0.142012,
+            "null_per_pair": 0.133333
+          }
+        ],
+        "hit_count_dist_note": "count = 다음회 6개 중 해당 번호 포함 횟수"
+      },
+      "next_freq_full_incl_after_anchor": {
+        "note": "참고·peek 가능 — N+1이 DB에 있으면 포함(1235 포함 가능)",
+        "n_pairs": 170,
+        "top15": [
+          {
+            "num": 34,
+            "count": 31,
+            "rate_per_pair": 0.182353,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 39,
+            "count": 30,
+            "rate_per_pair": 0.176471,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 35,
+            "count": 29,
+            "rate_per_pair": 0.170588,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 17,
+            "count": 29,
+            "rate_per_pair": 0.170588,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 44,
+            "count": 29,
+            "rate_per_pair": 0.170588,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 27,
+            "count": 29,
+            "rate_per_pair": 0.170588,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 23,
+            "count": 28,
+            "rate_per_pair": 0.164706,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 7,
+            "count": 28,
+            "rate_per_pair": 0.164706,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 45,
+            "count": 27,
+            "rate_per_pair": 0.158824,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 38,
+            "count": 27,
+            "rate_per_pair": 0.158824,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 11,
+            "count": 26,
+            "rate_per_pair": 0.152941,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 31,
+            "count": 25,
+            "rate_per_pair": 0.147059,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 28,
+            "count": 25,
+            "rate_per_pair": 0.147059,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 24,
+            "count": 25,
+            "rate_per_pair": 0.147059,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 37,
+            "count": 24,
+            "rate_per_pair": 0.141176,
+            "null_per_pair": 0.133333
+          }
+        ]
+      },
+      "in_anchor_plus_1_actual": false
+    },
+    {
+      "num": 15,
+      "appearances_1_to_anchor": 169,
+      "expected_uniform": 164.533,
+      "delta_vs_expected": 4.467,
+      "first_draw": 6,
+      "last_draw": 1234,
+      "gap_from_last_to_anchor": 0,
+      "windows": {
+        "1w": {
+          "window_draws": 1,
+          "appearances": 1,
+          "rate": 1.0,
+          "null_rate": 0.133333
+        },
+        "2w": {
+          "window_draws": 2,
+          "appearances": 1,
+          "rate": 0.5,
+          "null_rate": 0.133333
+        },
+        "1y": {
+          "window_draws": 52,
+          "appearances": 11,
+          "rate": 0.211538,
+          "null_rate": 0.133333
+        },
+        "2y": {
+          "window_draws": 104,
+          "appearances": 19,
+          "rate": 0.182692,
+          "null_rate": 0.133333
+        },
+        "10y": {
+          "window_draws": 520,
+          "appearances": 71,
+          "rate": 0.136538,
+          "null_rate": 0.133333
+        },
+        "20y": {
+          "window_draws": 1040,
+          "appearances": 145,
+          "rate": 0.139423,
+          "null_rate": 0.133333
+        }
+      },
+      "next_freq_asof_anchor": {
+        "note": "번호 출현 회차 N의 다음 N+1 (N+1<=anchor · 컨닝금지)",
+        "n_pairs": 168,
+        "top15": [
+          {
+            "num": 45,
+            "count": 32,
+            "rate_per_pair": 0.190476,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 16,
+            "count": 30,
+            "rate_per_pair": 0.178571,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 40,
+            "count": 30,
+            "rate_per_pair": 0.178571,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 8,
+            "count": 28,
+            "rate_per_pair": 0.166667,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 38,
+            "count": 28,
+            "rate_per_pair": 0.166667,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 19,
+            "count": 27,
+            "rate_per_pair": 0.160714,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 44,
+            "count": 27,
+            "rate_per_pair": 0.160714,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 34,
+            "count": 27,
+            "rate_per_pair": 0.160714,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 37,
+            "count": 27,
+            "rate_per_pair": 0.160714,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 2,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 33,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 15,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 25,
+            "count": 25,
+            "rate_per_pair": 0.14881,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 13,
+            "count": 25,
+            "rate_per_pair": 0.14881,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 14,
+            "count": 25,
+            "rate_per_pair": 0.14881,
+            "null_per_pair": 0.133333
+          }
+        ],
+        "hit_count_dist_note": "count = 다음회 6개 중 해당 번호 포함 횟수"
+      },
+      "next_freq_full_incl_after_anchor": {
+        "note": "참고·peek 가능 — N+1이 DB에 있으면 포함(1235 포함 가능)",
+        "n_pairs": 169,
+        "top15": [
+          {
+            "num": 45,
+            "count": 32,
+            "rate_per_pair": 0.189349,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 16,
+            "count": 30,
+            "rate_per_pair": 0.177515,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 40,
+            "count": 30,
+            "rate_per_pair": 0.177515,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 8,
+            "count": 28,
+            "rate_per_pair": 0.16568,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 38,
+            "count": 28,
+            "rate_per_pair": 0.16568,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 19,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 44,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 15,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 34,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 37,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 2,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 11,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 33,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 25,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 13,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          }
+        ]
+      },
+      "in_anchor_plus_1_actual": true
+    },
+    {
+      "num": 19,
+      "appearances_1_to_anchor": 170,
+      "expected_uniform": 164.533,
+      "delta_vs_expected": 5.467,
+      "first_draw": 3,
+      "last_draw": 1234,
+      "gap_from_last_to_anchor": 0,
+      "windows": {
+        "1w": {
+          "window_draws": 1,
+          "appearances": 1,
+          "rate": 1.0,
+          "null_rate": 0.133333
+        },
+        "2w": {
+          "window_draws": 2,
+          "appearances": 1,
+          "rate": 0.5,
+          "null_rate": 0.133333
+        },
+        "1y": {
+          "window_draws": 52,
+          "appearances": 9,
+          "rate": 0.173077,
+          "null_rate": 0.133333
+        },
+        "2y": {
+          "window_draws": 104,
+          "appearances": 17,
+          "rate": 0.163462,
+          "null_rate": 0.133333
+        },
+        "10y": {
+          "window_draws": 520,
+          "appearances": 76,
+          "rate": 0.146154,
+          "null_rate": 0.133333
+        },
+        "20y": {
+          "window_draws": 1040,
+          "appearances": 143,
+          "rate": 0.1375,
+          "null_rate": 0.133333
+        }
+      },
+      "next_freq_asof_anchor": {
+        "note": "번호 출현 회차 N의 다음 N+1 (N+1<=anchor · 컨닝금지)",
+        "n_pairs": 169,
+        "top15": [
+          {
+            "num": 34,
+            "count": 35,
+            "rate_per_pair": 0.207101,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 13,
+            "count": 31,
+            "rate_per_pair": 0.183432,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 33,
+            "count": 30,
+            "rate_per_pair": 0.177515,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 27,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 12,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 21,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 44,
+            "count": 28,
+            "rate_per_pair": 0.16568,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 19,
+            "count": 28,
+            "rate_per_pair": 0.16568,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 45,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 30,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 4,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 20,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 10,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 14,
+            "count": 24,
+            "rate_per_pair": 0.142012,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 28,
+            "count": 24,
+            "rate_per_pair": 0.142012,
+            "null_per_pair": 0.133333
+          }
+        ],
+        "hit_count_dist_note": "count = 다음회 6개 중 해당 번호 포함 횟수"
+      },
+      "next_freq_full_incl_after_anchor": {
+        "note": "참고·peek 가능 — N+1이 DB에 있으면 포함(1235 포함 가능)",
+        "n_pairs": 170,
+        "top15": [
+          {
+            "num": 34,
+            "count": 35,
+            "rate_per_pair": 0.205882,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 13,
+            "count": 31,
+            "rate_per_pair": 0.182353,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 33,
+            "count": 30,
+            "rate_per_pair": 0.176471,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 27,
+            "count": 29,
+            "rate_per_pair": 0.170588,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 12,
+            "count": 29,
+            "rate_per_pair": 0.170588,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 21,
+            "count": 29,
+            "rate_per_pair": 0.170588,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 44,
+            "count": 28,
+            "rate_per_pair": 0.164706,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 19,
+            "count": 28,
+            "rate_per_pair": 0.164706,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 45,
+            "count": 27,
+            "rate_per_pair": 0.158824,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 30,
+            "count": 25,
+            "rate_per_pair": 0.147059,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 4,
+            "count": 25,
+            "rate_per_pair": 0.147059,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 20,
+            "count": 25,
+            "rate_per_pair": 0.147059,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 10,
+            "count": 25,
+            "rate_per_pair": 0.147059,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 14,
+            "count": 24,
+            "rate_per_pair": 0.141176,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 39,
+            "count": 24,
+            "rate_per_pair": 0.141176,
+            "null_per_pair": 0.133333
+          }
+        ]
+      },
+      "in_anchor_plus_1_actual": false
+    },
+    {
+      "num": 31,
+      "appearances_1_to_anchor": 169,
+      "expected_uniform": 164.533,
+      "delta_vs_expected": 4.467,
+      "first_draw": 3,
+      "last_draw": 1234,
+      "gap_from_last_to_anchor": 0,
+      "windows": {
+        "1w": {
+          "window_draws": 1,
+          "appearances": 1,
+          "rate": 1.0,
+          "null_rate": 0.133333
+        },
+        "2w": {
+          "window_draws": 2,
+          "appearances": 1,
+          "rate": 0.5,
+          "null_rate": 0.133333
+        },
+        "1y": {
+          "window_draws": 52,
+          "appearances": 10,
+          "rate": 0.192308,
+          "null_rate": 0.133333
+        },
+        "2y": {
+          "window_draws": 104,
+          "appearances": 16,
+          "rate": 0.153846,
+          "null_rate": 0.133333
+        },
+        "10y": {
+          "window_draws": 520,
+          "appearances": 72,
+          "rate": 0.138462,
+          "null_rate": 0.133333
+        },
+        "20y": {
+          "window_draws": 1040,
+          "appearances": 146,
+          "rate": 0.140385,
+          "null_rate": 0.133333
+        }
+      },
+      "next_freq_asof_anchor": {
+        "note": "번호 출현 회차 N의 다음 N+1 (N+1<=anchor · 컨닝금지)",
+        "n_pairs": 168,
+        "top15": [
+          {
+            "num": 14,
+            "count": 31,
+            "rate_per_pair": 0.184524,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 1,
+            "count": 29,
+            "rate_per_pair": 0.172619,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 34,
+            "count": 29,
+            "rate_per_pair": 0.172619,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 6,
+            "count": 28,
+            "rate_per_pair": 0.166667,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 36,
+            "count": 28,
+            "rate_per_pair": 0.166667,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 15,
+            "count": 28,
+            "rate_per_pair": 0.166667,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 24,
+            "count": 27,
+            "rate_per_pair": 0.160714,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 44,
+            "count": 27,
+            "rate_per_pair": 0.160714,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 42,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 37,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 17,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 45,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 26,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 12,
+            "count": 26,
+            "rate_per_pair": 0.154762,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 31,
+            "count": 25,
+            "rate_per_pair": 0.14881,
+            "null_per_pair": 0.133333
+          }
+        ],
+        "hit_count_dist_note": "count = 다음회 6개 중 해당 번호 포함 횟수"
+      },
+      "next_freq_full_incl_after_anchor": {
+        "note": "참고·peek 가능 — N+1이 DB에 있으면 포함(1235 포함 가능)",
+        "n_pairs": 169,
+        "top15": [
+          {
+            "num": 14,
+            "count": 31,
+            "rate_per_pair": 0.183432,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 6,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 1,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 15,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 34,
+            "count": 29,
+            "rate_per_pair": 0.171598,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 36,
+            "count": 28,
+            "rate_per_pair": 0.16568,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 24,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 44,
+            "count": 27,
+            "rate_per_pair": 0.159763,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 42,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 37,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 17,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 45,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 26,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 12,
+            "count": 26,
+            "rate_per_pair": 0.153846,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 31,
+            "count": 25,
+            "rate_per_pair": 0.147929,
+            "null_per_pair": 0.133333
+          }
+        ]
+      },
+      "in_anchor_plus_1_actual": false
+    },
+    {
+      "num": 35,
+      "appearances_1_to_anchor": 163,
+      "expected_uniform": 164.533,
+      "delta_vs_expected": -1.533,
+      "first_draw": 18,
+      "last_draw": 1234,
+      "gap_from_last_to_anchor": 0,
+      "windows": {
+        "1w": {
+          "window_draws": 1,
+          "appearances": 1,
+          "rate": 1.0,
+          "null_rate": 0.133333
+        },
+        "2w": {
+          "window_draws": 2,
+          "appearances": 1,
+          "rate": 0.5,
+          "null_rate": 0.133333
+        },
+        "1y": {
+          "window_draws": 52,
+          "appearances": 7,
+          "rate": 0.134615,
+          "null_rate": 0.133333
+        },
+        "2y": {
+          "window_draws": 104,
+          "appearances": 15,
+          "rate": 0.144231,
+          "null_rate": 0.133333
+        },
+        "10y": {
+          "window_draws": 520,
+          "appearances": 74,
+          "rate": 0.142308,
+          "null_rate": 0.133333
+        },
+        "20y": {
+          "window_draws": 1040,
+          "appearances": 136,
+          "rate": 0.130769,
+          "null_rate": 0.133333
+        }
+      },
+      "next_freq_asof_anchor": {
+        "note": "번호 출현 회차 N의 다음 N+1 (N+1<=anchor · 컨닝금지)",
+        "n_pairs": 162,
+        "top15": [
+          {
+            "num": 37,
+            "count": 30,
+            "rate_per_pair": 0.185185,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 21,
+            "count": 30,
+            "rate_per_pair": 0.185185,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 12,
+            "count": 29,
+            "rate_per_pair": 0.179012,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 19,
+            "count": 28,
+            "rate_per_pair": 0.17284,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 45,
+            "count": 28,
+            "rate_per_pair": 0.17284,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 34,
+            "count": 27,
+            "rate_per_pair": 0.166667,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 20,
+            "count": 27,
+            "rate_per_pair": 0.166667,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 38,
+            "count": 26,
+            "rate_per_pair": 0.160494,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 30,
+            "count": 25,
+            "rate_per_pair": 0.154321,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 3,
+            "count": 25,
+            "rate_per_pair": 0.154321,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 1,
+            "count": 24,
+            "rate_per_pair": 0.148148,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 17,
+            "count": 24,
+            "rate_per_pair": 0.148148,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 41,
+            "count": 24,
+            "rate_per_pair": 0.148148,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 40,
+            "count": 23,
+            "rate_per_pair": 0.141975,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 7,
+            "count": 23,
+            "rate_per_pair": 0.141975,
+            "null_per_pair": 0.133333
+          }
+        ],
+        "hit_count_dist_note": "count = 다음회 6개 중 해당 번호 포함 횟수"
+      },
+      "next_freq_full_incl_after_anchor": {
+        "note": "참고·peek 가능 — N+1이 DB에 있으면 포함(1235 포함 가능)",
+        "n_pairs": 163,
+        "top15": [
+          {
+            "num": 37,
+            "count": 30,
+            "rate_per_pair": 0.184049,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 21,
+            "count": 30,
+            "rate_per_pair": 0.184049,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 12,
+            "count": 29,
+            "rate_per_pair": 0.177914,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 19,
+            "count": 28,
+            "rate_per_pair": 0.171779,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 45,
+            "count": 28,
+            "rate_per_pair": 0.171779,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 34,
+            "count": 27,
+            "rate_per_pair": 0.165644,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 20,
+            "count": 27,
+            "rate_per_pair": 0.165644,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 38,
+            "count": 26,
+            "rate_per_pair": 0.159509,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 30,
+            "count": 25,
+            "rate_per_pair": 0.153374,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 3,
+            "count": 25,
+            "rate_per_pair": 0.153374,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 1,
+            "count": 24,
+            "rate_per_pair": 0.147239,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 7,
+            "count": 24,
+            "rate_per_pair": 0.147239,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 17,
+            "count": 24,
+            "rate_per_pair": 0.147239,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 41,
+            "count": 24,
+            "rate_per_pair": 0.147239,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 40,
+            "count": 23,
+            "rate_per_pair": 0.141104,
+            "null_per_pair": 0.133333
+          }
+        ]
+      },
+      "in_anchor_plus_1_actual": false
+    },
+    {
+      "num": 43,
+      "appearances_1_to_anchor": 164,
+      "expected_uniform": 164.533,
+      "delta_vs_expected": -0.533,
+      "first_draw": 19,
+      "last_draw": 1234,
+      "gap_from_last_to_anchor": 0,
+      "windows": {
+        "1w": {
+          "window_draws": 1,
+          "appearances": 1,
+          "rate": 1.0,
+          "null_rate": 0.133333
+        },
+        "2w": {
+          "window_draws": 2,
+          "appearances": 1,
+          "rate": 0.5,
+          "null_rate": 0.133333
+        },
+        "1y": {
+          "window_draws": 52,
+          "appearances": 3,
+          "rate": 0.057692,
+          "null_rate": 0.133333
+        },
+        "2y": {
+          "window_draws": 104,
+          "appearances": 7,
+          "rate": 0.067308,
+          "null_rate": 0.133333
+        },
+        "10y": {
+          "window_draws": 520,
+          "appearances": 67,
+          "rate": 0.128846,
+          "null_rate": 0.133333
+        },
+        "20y": {
+          "window_draws": 1040,
+          "appearances": 137,
+          "rate": 0.131731,
+          "null_rate": 0.133333
+        }
+      },
+      "next_freq_asof_anchor": {
+        "note": "번호 출현 회차 N의 다음 N+1 (N+1<=anchor · 컨닝금지)",
+        "n_pairs": 163,
+        "top15": [
+          {
+            "num": 13,
+            "count": 32,
+            "rate_per_pair": 0.196319,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 36,
+            "count": 31,
+            "rate_per_pair": 0.190184,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 18,
+            "count": 29,
+            "rate_per_pair": 0.177914,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 34,
+            "count": 29,
+            "rate_per_pair": 0.177914,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 6,
+            "count": 27,
+            "rate_per_pair": 0.165644,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 12,
+            "count": 27,
+            "rate_per_pair": 0.165644,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 38,
+            "count": 27,
+            "rate_per_pair": 0.165644,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 30,
+            "count": 26,
+            "rate_per_pair": 0.159509,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 15,
+            "count": 26,
+            "rate_per_pair": 0.159509,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 7,
+            "count": 25,
+            "rate_per_pair": 0.153374,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 28,
+            "count": 25,
+            "rate_per_pair": 0.153374,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 24,
+            "count": 24,
+            "rate_per_pair": 0.147239,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 33,
+            "count": 24,
+            "rate_per_pair": 0.147239,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 21,
+            "count": 23,
+            "rate_per_pair": 0.141104,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 35,
+            "count": 23,
+            "rate_per_pair": 0.141104,
+            "null_per_pair": 0.133333
+          }
+        ],
+        "hit_count_dist_note": "count = 다음회 6개 중 해당 번호 포함 횟수"
+      },
+      "next_freq_full_incl_after_anchor": {
+        "note": "참고·peek 가능 — N+1이 DB에 있으면 포함(1235 포함 가능)",
+        "n_pairs": 164,
+        "top15": [
+          {
+            "num": 13,
+            "count": 32,
+            "rate_per_pair": 0.195122,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 36,
+            "count": 31,
+            "rate_per_pair": 0.189024,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 18,
+            "count": 29,
+            "rate_per_pair": 0.176829,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 34,
+            "count": 29,
+            "rate_per_pair": 0.176829,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 6,
+            "count": 28,
+            "rate_per_pair": 0.170732,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 15,
+            "count": 27,
+            "rate_per_pair": 0.164634,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 12,
+            "count": 27,
+            "rate_per_pair": 0.164634,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 38,
+            "count": 27,
+            "rate_per_pair": 0.164634,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 30,
+            "count": 26,
+            "rate_per_pair": 0.158537,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 7,
+            "count": 26,
+            "rate_per_pair": 0.158537,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 28,
+            "count": 25,
+            "rate_per_pair": 0.152439,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 24,
+            "count": 24,
+            "rate_per_pair": 0.146341,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 33,
+            "count": 24,
+            "rate_per_pair": 0.146341,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 39,
+            "count": 24,
+            "rate_per_pair": 0.146341,
+            "null_per_pair": 0.133333
+          },
+          {
+            "num": 21,
+            "count": 23,
+            "rate_per_pair": 0.140244,
+            "null_per_pair": 0.133333
+          }
+        ]
+      },
+      "in_anchor_plus_1_actual": true
+    }
+  ],
+  "cross": {
+    "top15_intersection_all6": [
+      34
+    ],
+    "top15_union_size": 39,
+    "pairwise_top15_overlap": {
+      "1&15": 5,
+      "1&19": 5,
+      "1&31": 7,
+      "1&35": 6,
+      "1&43": 6,
+      "15&19": 7,
+      "15&31": 6,
+      "15&35": 6,
+      "15&43": 5,
+      "19&31": 5,
+      "19&35": 7,
+      "19&43": 7,
+      "31&35": 6,
+      "31&43": 6,
+      "35&43": 6
+    }
+  },
+  "top15_vs_actual_next": {
+    "1": [
+      7,
+      11,
+      39
+    ],
+    "15": [
+      15
+    ],
+    "19": [],
+    "31": [
+      6,
+      15
+    ],
+    "35": [
+      7
+    ],
+    "43": [
+      6,
+      7,
+      15
+    ]
+  },
+  "ideas": [
+    "번호별 '다음회 빈도'는 과거학습 뇌의 자연 재료(전이와 유사하나 앵커=단일번호).",
+    "asof(컨닝금지) top15 ∩ 실제 다음회를 6번호 합치면 커버리지 측정 가능.",
+    "윈도우 1y/2y vs 전구간 출현 Δ로 hot/cold 라벨을 unexplained에 붙일 수 있음.",
+    "6개 next-top15 교집합이 비면 '공통 다음번호' 신화 약함 — 번호별 특화 신호 쪽.",
+    "발권 wire 전: 카탈로그·커버리지 전수(1233↓) 후 HOLD/GO."
+  ],
+  "pass": true,
+  "tool": "tools/_k_stat_num_next_freq.py",
+  "forbid": [
+    "engine 수정",
+    "발권가중",
+    "WIRE ON",
+    "당첨P↑ 클레임"
+  ]
+}
