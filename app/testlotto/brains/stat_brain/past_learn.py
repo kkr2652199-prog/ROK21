@@ -62,6 +62,26 @@ def assoc_hint_on() -> bool:
     return wire_on() and _env_flag("K_PAST_LEARN_ASSOC", PAST_LEARN_ASSOC_HINT)
 
 
+def soft_weight() -> float:
+    v = os.environ.get("K_PAST_LEARN_SOFT_WEIGHT", "").strip()
+    if v:
+        try:
+            return float(v)
+        except ValueError:
+            pass
+    return float(SOFT_WEIGHT)
+
+
+def soft_conf_cap() -> float:
+    v = os.environ.get("K_PAST_LEARN_SOFT_CAP", "").strip()
+    if v:
+        try:
+            return float(v)
+        except ValueError:
+            pass
+    return float(SOFT_CONF_CAP)
+
+
 def _draw_nums(d: dict) -> list[int]:
     if d.get("nums"):
         return [int(x) for x in d["nums"]]
@@ -162,7 +182,7 @@ def soft_delta_for_set(
         if a > 0:
             tags.append(f"assocSoft{a:.2f}")
             raw += ASSOC_SOFT_WEIGHT * 10 * a  # scale ~0..0.5
-    delta = min(SOFT_CONF_CAP, SOFT_WEIGHT * 10 * raw / 3.0)
+    delta = min(soft_conf_cap(), soft_weight() * 10 * raw / 3.0)
     return round(delta, 3), tags
 
 
@@ -208,7 +228,7 @@ def flags_snapshot() -> dict[str, Any]:
         "PAST_LEARN_WIRE": wire_on(),
         "PAST_LEARN_ENGINE_V2": use_engine_v2(),
         "PAST_LEARN_ASSOC_HINT": assoc_hint_on(),
-        "SOFT_WEIGHT": SOFT_WEIGHT,
-        "SOFT_CONF_CAP": SOFT_CONF_CAP,
+        "SOFT_WEIGHT": soft_weight(),
+        "SOFT_CONF_CAP": soft_conf_cap(),
         "rollback": "K_PAST_LEARN=0 · K_STAT_ENGINE_V2=0 · K_PAST_LEARN_ASSOC=0",
     }

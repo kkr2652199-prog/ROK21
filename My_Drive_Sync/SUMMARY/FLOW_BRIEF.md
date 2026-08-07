@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `6e10135` · WORK=`IDLE`
-- 지금: **K-PAST-LEARN-WIRE** — 과거학습 구조패치 · smoke **PASS** · solo n50 ge3**0.14**
-- 직전: K-STAT-NUM-ASSOC-FULL · NOISE_LIKE
-- BOOT다음: 튜닝재개 · SOFT_WEIGHT 스윕 · **형 GO**
-- NEXT1: K-PAST-LEARN-TUNE-SOFT — past_learn SOFT_WEIGHT/SOFT_CONF_CAP 스윕 · solo n50 vs wire베이스(ge3**0.14**/mean**1.58**) · ASSOC기본OFF 유지 (승인=미확인)
+- HEAD: `3645ca6` · WORK=`IDLE`
+- 지금: **K-PAST-LEARN-TUNE-SOFT** — 시드고정 15셀 동일 · **KEEP_BASE**
+- 직전: K-PAST-LEARN-WIRE · PASS
+- BOOT다음: engine 생성단 튜닝 · **형 GO**
+- NEXT1: K-PAST-LEARN-TUNE-ENGINE — soft rerank 무효과(KEEP_BASE) → engine v2 윈도우/가중 스윕 설계·실측 · `random.choices` 동결 유지 · ASSOC OFF (승인=미확인)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

@@ -1,0 +1,197 @@
+{
+  "id": "K-PAST-LEARN-TUNE-SOFT",
+  "ts": "2026-08-07T16:50:53.622734+00:00",
+  "verdict": "KEEP_BASE",
+  "wire_baseline_ref": {
+    "SOFT_WEIGHT": 0.12,
+    "SOFT_CONF_CAP": 3.0,
+    "ge3_rate": 0.14,
+    "mean_best": 1.58,
+    "note": "unseeded · K-PAST-LEARN-WIRE"
+  },
+  "seeded_base_cell": {
+    "SOFT_WEIGHT": 0.12,
+    "SOFT_CONF_CAP": 3.0,
+    "ge3_rate": 0.12,
+    "mean_best": 1.78,
+    "seed_mode": "random.seed(42000+draw_no)"
+  },
+  "grid": {
+    "SOFT_WEIGHT": [
+      0.0,
+      0.06,
+      0.12,
+      0.18,
+      0.24
+    ],
+    "SOFT_CONF_CAP": [
+      1.5,
+      3.0,
+      5.0
+    ]
+  },
+  "n_cells": 15,
+  "draw_range": [
+    1035,
+    1084
+  ],
+  "assoc": false,
+  "rows": [
+    {
+      "SOFT_WEIGHT": 0.0,
+      "SOFT_CONF_CAP": 1.5,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.0,
+      "SOFT_CONF_CAP": 3.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.0,
+      "SOFT_CONF_CAP": 5.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.06,
+      "SOFT_CONF_CAP": 1.5,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.06,
+      "SOFT_CONF_CAP": 3.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.06,
+      "SOFT_CONF_CAP": 5.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.12,
+      "SOFT_CONF_CAP": 1.5,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.12,
+      "SOFT_CONF_CAP": 3.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.12,
+      "SOFT_CONF_CAP": 5.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.18,
+      "SOFT_CONF_CAP": 1.5,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.18,
+      "SOFT_CONF_CAP": 3.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.18,
+      "SOFT_CONF_CAP": 5.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.24,
+      "SOFT_CONF_CAP": 1.5,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.24,
+      "SOFT_CONF_CAP": 3.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "SOFT_WEIGHT": 0.24,
+      "SOFT_CONF_CAP": 5.0,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    }
+  ],
+  "best": {
+    "SOFT_WEIGHT": 0.12,
+    "SOFT_CONF_CAP": 3.0,
+    "ge3_rate": 0.12,
+    "mean_best": 1.78,
+    "delta_ge3_vs_base": 0.0,
+    "delta_mean_vs_base": 0.0,
+    "action": "KEEP_BASE",
+    "note": "시드고정 n50 · 상수적용·fusion n200은 형 GO · ASSOC OFF",
+    "seed_mode": "random.seed(42000+draw_no)"
+  },
+  "applied_to_past_learn": false,
+  "forbid": [
+    "fusion n200 without 형 GO",
+    "ASSOC ON default",
+    "engine random.choices 수정"
+  ],
+  "tool": "tools/_k_past_learn_tune_soft.py",
+  "prior": "docs/benchmarks/20260808_KPAST_LEARN_WIRE.json",
+  "finding": "15/15 cells identical under seed — soft conf does not change picked nums; unseeded uplift was RNG noise",
+  "next_tune_axis": "engine generation (windows/weights), not soft rerank alone"
+}

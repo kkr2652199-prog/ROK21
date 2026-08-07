@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-PAST-LEARN-WIRE** — 과거학습 구조패치 · 튜닝재개 베이스
+📌 사유: **[CURSOR] K-PAST-LEARN-TUNE-SOFT** — SOFT 스윕 · **KEEP_BASE**
 
 ---
 
@@ -10,7 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-PAST-LEARN-WIRE** | **PASS** — `past_learn.py` WIRE·engine v2 ON · ASSOC soft **OFF** · transition OFF · method=`과거학습` · solo n50(1035~1084) ge3=**0.14** mean_best=**1.58** · 롤백`K_PAST_LEARN=0` · `docs/benchmarks/20260808_KPAST_LEARN_WIRE.json` · `reports/20260808_KPAST_LEARN_WIRE.md` |
+| **K-PAST-LEARN-TUNE-SOFT** | **KEEP_BASE** — seed(`42000+dno`) 15셀 **전부** ge3=**0.12** mean=**1.78** · soft conf 노브→발권불변 · unseeded↑=RNG잡음 · 상수 w**0.12**/cap**3.0** 유지 · applied=False · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_SOFT.json` · `reports/20260808_KPAST_LEARN_TUNE_SOFT.md` |
+| **K-PAST-LEARN-WIRE** | **PASS** — `past_learn.py` WIRE·engine v2 ON · ASSOC soft **OFF** · transition OFF · method=`과거학습` · solo n50(1035~1084) ge3=**0.14** mean_best=**1.58**(unseeded) · 롤백`K_PAST_LEARN=0` · `docs/benchmarks/20260808_KPAST_LEARN_WIRE.json` · `reports/20260808_KPAST_LEARN_WIRE.md` |
 | **K-STAT-NUM-ASSOC-FULL** | **NOISE_LIKE** — n**1035** meanL**0.998**(Δnull**-0.004**) · union15**5.207**(Δ**-0.048**) · top1 Δ**-0.008** · thr스윕 전부 null이하 · wire否 · `docs/benchmarks/20260808_KSTAT_NUM_ASSOC_FULL.json` |
 | **K-STAT-NUM-ASSOC-SAMPLE** | **MEASURED** — n**30**(recent10+rand20) meanL=**1.009** · top1_hit=**0.103**(&lt;null0.133) · carry**0.533** · wire否 · `docs/benchmarks/20260808_KSTAT_NUM_ASSOC_SAMPLE.json` |
 | **K-STAT-NUM-ASSOC** | **MEASURED** — 번호→다음회 lift · 연도별=LOW_PRIORITY · 1235 meanL≈null · multi**34**(6표) · wire否 · `docs/benchmarks/20260808_KSTAT_NUM_ASSOC_1234.json` |
