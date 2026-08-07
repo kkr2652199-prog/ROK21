@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-PAST-LEARN-TUNE-ENGINE** — engine v2 스윕 · **CANDIDATE**
+📌 사유: **[CURSOR] K-PAST-LEARN-TUNE-ENGINE-APPLY** — win26/mix0.8 적용 · **PASS**
 
 ---
 
@@ -10,7 +10,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-PAST-LEARN-TUNE-ENGINE** | **CANDIDATE** — seed n50 · base(win52/mix0.6) ge3=**0.12**/mean**1.78** · 후보 **win26/mix0.8** ge3=**0.28**(Δ**+0.16**) mean**1.88** · v1 ge3=**0.04** · applied=**False** · `random.choices`미수정 · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json` · `reports/20260808_KPAST_LEARN_TUNE_ENGINE.md` |
+| **K-PAST-LEARN-TUNE-ENGINE-APPLY** | **PASS** — `V2_SHORT_WIN=26`/`V2_SHORT_MIX=0.8` 적용 · tune n50 ge3=**0.28**/mean**1.88**(재현) · holdout(1085~1134) ge3=**0.14**/mean**1.72** · fusion n200 ge3=**0.135** Δ**0** · 롤백52/0.6 · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json` · `reports/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.md` |
+| **K-PAST-LEARN-TUNE-ENGINE** | **CANDIDATE→APPLIED** — seed n50 · base(win52/mix0.6) ge3=**0.12**/mean**1.78** · 후보 **win26/mix0.8** ge3=**0.28**(Δ**+0.16**) · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json` · `reports/20260808_KPAST_LEARN_TUNE_ENGINE.md` |
 | **K-PAST-LEARN-TUNE-SOFT** | **KEEP_BASE** — seed(`42000+dno`) 15셀 **전부** ge3=**0.12** mean=**1.78** · soft conf 노브→발권불변 · unseeded↑=RNG잡음 · 상수 w**0.12**/cap**3.0** 유지 · applied=False · `docs/benchmarks/20260808_KPAST_LEARN_TUNE_SOFT.json` · `reports/20260808_KPAST_LEARN_TUNE_SOFT.md` |
 | **K-PAST-LEARN-WIRE** | **PASS** — `past_learn.py` WIRE·engine v2 ON · ASSOC soft **OFF** · transition OFF · method=`과거학습` · solo n50(1035~1084) ge3=**0.14** mean_best=**1.58**(unseeded) · 롤백`K_PAST_LEARN=0` · `docs/benchmarks/20260808_KPAST_LEARN_WIRE.json` · `reports/20260808_KPAST_LEARN_WIRE.md` |
 | **K-STAT-NUM-ASSOC-FULL** | **NOISE_LIKE** — n**1035** meanL**0.998**(Δnull**-0.004**) · union15**5.207**(Δ**-0.048**) · top1 Δ**-0.008** · thr스윕 전부 null이하 · wire否 · `docs/benchmarks/20260808_KSTAT_NUM_ASSOC_FULL.json` |

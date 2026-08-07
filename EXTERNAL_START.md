@@ -10,15 +10,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `2beb04d` |
+| HEAD(실측) | `74c7dbd` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PAST-LEARN-TUNE-ENGINE** — 후보 win26/mix0.8 ge3**0.28** · **CANDIDATE** |
-| 직전 | K-PAST-LEARN-TUNE-SOFT · KEEP_BASE |
-| BOOT다음 | 후보 상수적용 or fusion · **형 GO** |
-| NEXT1 ID | **K-PAST-LEARN-TUNE-ENGINE-APPLY** |
-| NEXT1 할일 | 후보 `short_win=26`/`short_mix=0.8`(seed n50 ge3**0.28** Δ+0.16) 상수적용 여부 · 또는 fusion n200 검증 · **형 GO** |
-| 승인필요 | 필요 |
+| 지금 | **K-PAST-LEARN-TUNE-ENGINE-APPLY** — win26/mix0.8 적용 · fusion**0.135** · **PASS** |
+| 직전 | K-PAST-LEARN-TUNE-ENGINE · CANDIDATE |
+| BOOT다음 | 과거학습 추가튜닝 or 종료 · **형 GO** |
+| NEXT1 ID | **K-PAST-LEARN-TUNE-DONE** |
+| NEXT1 할일 | APPLY PASS(win26/mix0.8·fusion Δ0) 형 확인 · 추가 튜닝(decay 등) or 트랙정지 |
+| 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=2beb04d · 지금=**K-PAST-LEARN-TUNE-ENGINE** — 후보 win26/mix0.8 ge3**0.28** · **CANDIDATE** · 다음=K-PAST-LEARN-TUNE-ENGINE-APPLY`
+1. 첫줄 `[복귀] HEAD=74c7dbd · 지금=**K-PAST-LEARN-TUNE-ENGINE-APPLY** — win26/mix0.8 적용 · fusion**0.135** · **PASS** · 다음=K-PAST-LEARN-TUNE-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 2beb04d_
+_generated: 74c7dbd_

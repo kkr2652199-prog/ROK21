@@ -1,0 +1,82 @@
+{
+  "id": "K-PAST-LEARN-TUNE-ENGINE-APPLY",
+  "ts": "2026-08-07T16:58:11.847121+00:00",
+  "verdict": "PASS",
+  "applied": {
+    "V2_SHORT_WIN": 26,
+    "V2_SHORT_MIX": 0.8,
+    "prev": {
+      "V2_SHORT_WIN": 52,
+      "V2_SHORT_MIX": 0.6
+    },
+    "module": "app/testlotto/brains/stat_brain/engine.py"
+  },
+  "flags": {
+    "V2_SHORT_WIN": 26,
+    "V2_SHORT_MIX": 0.8,
+    "v2_params": {
+      "short_win": 26,
+      "long_decay": 0.005,
+      "short_decay": 0.05,
+      "short_mix": 0.8,
+      "long_mix": 0.2
+    },
+    "past_learn_engine_v2": true,
+    "TRANSITION_V1_WIRE": false,
+    "assoc": false
+  },
+  "apply_ok": true,
+  "tune_window": {
+    "draw_range": [
+      1035,
+      1084
+    ],
+    "n": 50,
+    "mean_best": 1.88,
+    "ge3_rate": 0.28,
+    "ge3_count": 14,
+    "seed_mode": "random.seed(42000+draw_no)"
+  },
+  "tune_match_candidate": true,
+  "holdout_n50": {
+    "draw_range": [
+      1085,
+      1134
+    ],
+    "n": 50,
+    "mean_best": 1.72,
+    "ge3_rate": 0.14,
+    "ge3_count": 7,
+    "seed_mode": "random.seed(42000+draw_no)"
+  },
+  "fusion_n200": {
+    "draw_range": [
+      1035,
+      1234
+    ],
+    "n": 200,
+    "mean_hit": 1.715,
+    "ge3_rate": 0.135,
+    "ge3_count": 27,
+    "hit_dist": {
+      "0": 3,
+      "1": 82,
+      "2": 88,
+      "3": 23,
+      "4": 4,
+      "5": 0,
+      "6": 0
+    },
+    "baseline_ge3": 0.135,
+    "delta_vs_baseline": 0.0,
+    "seed": 42,
+    "path": "in-memory coordinator · no DB write"
+  },
+  "rollback": "V2_SHORT_WIN=52 · V2_SHORT_MIX=0.6",
+  "forbid": [
+    "random.choices edit",
+    "ASSOC ON"
+  ],
+  "tool": "tools/_k_past_learn_tune_engine_apply.py",
+  "prior": "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json"
+}
