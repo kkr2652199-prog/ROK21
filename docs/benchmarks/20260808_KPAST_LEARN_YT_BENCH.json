@@ -1,0 +1,150 @@
+{
+  "id": "K-PAST-LEARN-YT-BENCH",
+  "ts": "2026-08-07T17:30:00+00:00",
+  "verdict": "DOC_SURVEY",
+  "wire": false,
+  "scope": "과거학습 패치(틀+세부후보) vs 신뢰 YouTube 벤치 · 당첨P↑ 비약속",
+  "our_patch": {
+    "brain": "과거학습(stat)",
+    "frame": {
+      "short_win": 26,
+      "short_mix": 0.8,
+      "long_decay_default": 0.005,
+      "short_decay_default": 0.05,
+      "ASSOC": false,
+      "TRANSITION_V1": false,
+      "soft_rerank": "wired_but_no_pick_effect"
+    },
+    "detail_candidate": {
+      "long_decay": 0.01,
+      "short_decay": 0.05,
+      "applied": false,
+      "evidence": "docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json"
+    },
+    "fusion_pin": {
+      "ge3": 0.135,
+      "evidence": "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json"
+    }
+  },
+  "trust_gate": {
+    "accept_if": [
+      "교육/수학 채널 또는 실험으로 한계를 명시",
+      "독립시행·도박사오류·covering 등 재현 가능 주장",
+      "당첨 보장·필출·AI예언 비주장"
+    ],
+    "reject_if": [
+      "회차별 추천번호·필출·세로라인 예언",
+      "딥러닝 당첨 보장 톤",
+      "출처·방법 불명 통계 마케팅"
+    ]
+  },
+  "videos_accepted": [
+    {
+      "id": "YT-A",
+      "url": "https://www.youtube.com/watch?v=3G3zExNItj0",
+      "channel": "조코딩",
+      "title": "딥러닝이 예측한 로또 번호는 당첨이 잘될까?",
+      "trust": "HIGH",
+      "why_trust": "실험(train vs val/test)으로 LSTM 한계 공개 · 독립시행 결론",
+      "maps_to_patch": ["시퀀스/ASSOC 기각 유지", "과거패턴→다음회 가중 과장 금지"],
+      "rok21_prior": "docs/benchmarks/20260808_KYT_FILTER_BENCH.json"
+    },
+    {
+      "id": "YT-B",
+      "url": "https://www.youtube.com/watch?v=tP-Ipsat90c",
+      "channel": "Numberphile",
+      "title": "Randomness is Random",
+      "trust": "HIGH",
+      "why_trust": "수학 교육 채널 · 도박사오류·랜덤 줄무늬(streak) 설명",
+      "maps_to_patch": ["미출 soft/장기미출 당첨P↑ 금지", "decay·hot을 P↑로 해석 금지"],
+      "rok21_prior": null
+    },
+    {
+      "id": "YT-C",
+      "url": "https://youtu.be/T7I3hEfQBlc",
+      "channel": "Gemini필터 생성기 계열(기존 KYT)",
+      "title": "다중필터+핫/콜드 생성기",
+      "trust": "MED",
+      "why_trust": "방법 공개·필터 나열 · 다만 생성기 마케팅 톤 주의 → ROK21 실측으로 교정됨",
+      "maps_to_patch": ["합·홀짝·연번·이월=프로파일(≈null)", "핫/콜드=명분/다양성 후보이지 엣지 아님"],
+      "rok21_prior": "docs/benchmarks/20260808_KYT_FILTER_BENCH.json",
+      "measured": "YT AND≈0.20 ≈null · wire否"
+    },
+    {
+      "id": "YT-D",
+      "url": "https://www.youtube.com/results?search_query=standupmaths+27+lottery+tickets",
+      "url_note": "채널 검색 진입 · 영상 ID는 업로드 복제 다수 → 수치 SSOT는 논문",
+      "channel": "Stand-up Maths + arXiv",
+      "title": "27 tickets guarantee a (small) win — covering design",
+      "paper": "https://arxiv.org/abs/2307.12430",
+      "trust": "HIGH",
+      "why_trust": "수학 논문(메인) + 수학 유튜버 해설 · 수익 비보장 명시",
+      "maps_to_patch": ["ticket covering/diversify 개념", "당첨P↑ 아님·비용>기대 명시"],
+      "rok21_prior": "docs/benchmarks/20260805_KPAIR_COVER_survey.json",
+      "rok21_status": "HOLD · WIRE=False"
+    }
+  ],
+  "videos_rejected": [
+    {
+      "id": "YT-R1",
+      "url": "https://www.youtube.com/watch?v=I5nxvjDQrUg",
+      "reason": "회차 예언·미출/세로라인 필출 톤 · 신뢰게이트 탈락"
+    },
+    {
+      "id": "YT-R2",
+      "url": "https://www.youtube.com/watch?v=YZMfWyuzIyc",
+      "reason": "정예풀·필출법칙 추천 · 독립시행 면책 후 예언 지속"
+    },
+    {
+      "id": "YT-R3",
+      "url": "https://www.youtube.com/watch?v=XMb_T56sVLI",
+      "reason": "AI/LSTM 당첨번호 예측 마케팅"
+    },
+    {
+      "id": "YT-R4",
+      "examples": "멘사노트 라이브·골드 핫콜드 Shorts 등",
+      "reason": "주간 예언/알고리즘 당첨 암시 · 재현벤치 불가"
+    }
+  ],
+  "applicable_cases": [
+    {
+      "case_id": "A1",
+      "title": "빈도·decay·hot/cold = 생성 다양성/명분 라벨만",
+      "from_videos": ["YT-A", "YT-B", "YT-C"],
+      "action": "KEEP_POLICY",
+      "detail": "현재 FRAME(win26/mix0.8)+soft 태그 유지 · 당첨P↑ 문구/가중 폭주 금지 · DETAIL decay 후보는 이득 미미+이론지지약 → 적용 보류 권고(KEEP_BASE)",
+      "wire": false
+    },
+    {
+      "case_id": "A2",
+      "title": "ASSOC/시퀀스/LSTM 발권 가중 금지",
+      "from_videos": ["YT-A"],
+      "action": "KEEP_OFF",
+      "detail": "ASSOC FULL NOISE_LIKE · TRANSITION OFF · LSTM 부활 금지와 동일",
+      "wire": false
+    },
+    {
+      "case_id": "A3",
+      "title": "필터 프로파일(합·홀짝·연번)은 annotate/warrant만",
+      "from_videos": ["YT-C"],
+      "action": "KEEP_DOC",
+      "detail": "KYT 실측≈null · structure_cover HOLD 유지 · 과거학습 soft에 필터 강제 삽입 금지",
+      "wire": false
+    },
+    {
+      "case_id": "A4",
+      "title": "covering=다장 분산 개념(참고) · 6/45 ge3 엣지 아님",
+      "from_videos": ["YT-D"],
+      "action": "HOLD_REFERENCE",
+      "detail": "K-PAIR-COVER HOLD 재확인 · 과거학습 단뇌 튜닝축 아님 · EV↑ 비약속",
+      "wire": false
+    }
+  ],
+  "recommendation": {
+    "detail_decay_apply": "KEEP_BASE(보류)",
+    "reason": "YT 신뢰축이 '최근가중=당첨↑'를 지지하지 않음 · 자체 hold +0.02는 n50 잡음 가능 · fusion Δ0",
+    "next": "형 GO: DETAIL 보류확정 or 다른 세부축"
+  },
+  "tool": "manual survey + priors KYT/DETAIL/FRAME",
+  "forbid": ["tipster wire", "LSTM wire", "당첨P↑ 과장"]
+}
