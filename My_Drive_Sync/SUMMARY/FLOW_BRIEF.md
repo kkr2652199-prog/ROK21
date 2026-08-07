@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7b3ecc0` · WORK=`IDLE`
+- HEAD: `7656f77` · WORK=`IDLE`
 - 지금: **20260807 종료체크** — 세션보고서 보완 · **DONE**
 - 직전: K-TRANSITION-HIT-WARRANT-ATTACH · PASS
 - BOOT다음: 라벨확장 or 트랙정지 · 발권가중 금지 · **형 GO**
