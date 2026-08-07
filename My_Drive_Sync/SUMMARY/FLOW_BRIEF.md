@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3ce0ce6` · WORK=`IDLE`
+- HEAD: `bbde687` · WORK=`IDLE`
 - 지금: **K-YT-FILTER-BENCH** — YT필터/LSTM vs DB실측 · **DOC_SURVEY**
 - 직전: 20260807 종료체크 · DONE
 - BOOT다음: 라벨확장 or 트랙정지 · 발권가중 금지 · **형 GO**
