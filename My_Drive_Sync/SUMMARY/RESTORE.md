@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `97ea170` · WORK=`IDLE`
+1. **HEAD:** `df310d6` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-WIRE** — 과거학습 구조패치 · smoke **PASS** · solo n50 ge3**0.14**
 3. **다음1건:** K-PAST-LEARN-TUNE-SOFT — past_learn SOFT_WEIGHT/SOFT_CONF_CAP 스윕 · solo n50 vs wire베이스(ge3**0.14**/mean**1.58**) · ASSOC기본OFF 유지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-08 | 과거학습패치 | past_learn wire·v2·soft · n50 ge30.14 | **PASS** | (push후) |
+| 2026-08-08 | 과거학습패치 | past_learn wire·v2·soft · n50 ge30.14 | **PASS** | df310d6 |
 | 2026-08-08 | ASSOC전수 | n1035 A+B+C+F · ≈null | **NOISE** | 7b499fe |
 | 2026-08-08 | 과거샘플 | ASSOC n30 meanL1.009 top1&lt;null | **MEASURED** | 0450d5a |
 | 2026-08-08 | 연관정밀 | 1234→next 리프트·연도후순위 | **MEASURED** | 51aa602 |
