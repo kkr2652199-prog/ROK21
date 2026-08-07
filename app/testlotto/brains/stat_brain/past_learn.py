@@ -232,3 +232,40 @@ def flags_snapshot() -> dict[str, Any]:
         "SOFT_CONF_CAP": soft_conf_cap(),
         "rollback": "K_PAST_LEARN=0 · K_STAT_ENGINE_V2=0 · K_PAST_LEARN_ASSOC=0",
     }
+
+
+def framework_snapshot() -> dict[str, Any]:
+    """기본 틀(프레임) 잠금 상태 — 세부 튜닝 전 기준점."""
+    from app.testlotto.brains.stat_brain import engine, transition_v1
+
+    return {
+        "phase": "FRAME_LOCKED",
+        "brain": "과거학습",
+        "tag": "stat",
+        "pipe": "transition(OFF) → engine(v2) → aux → past_learn soft → diversity",
+        "flags": flags_snapshot(),
+        "engine_v2": engine.v2_params(),
+        "engine_defaults": {
+            "V2_SHORT_WIN": engine.V2_SHORT_WIN,
+            "V2_SHORT_MIX": engine.V2_SHORT_MIX,
+            "V2_LONG_DECAY": engine.V2_LONG_DECAY,
+            "V2_SHORT_DECAY": engine.V2_SHORT_DECAY,
+            "rollback_win_mix": [engine.V2_PREV_SHORT_WIN, engine.V2_PREV_SHORT_MIX],
+        },
+        "fixed_off": {
+            "TRANSITION_V1_WIRE": bool(transition_v1.TRANSITION_V1_WIRE),
+            "ASSOC_HINT": assoc_hint_on(),
+        },
+        "detail_tune_later": [
+            "K_STAT_ENG_LONG_DECAY",
+            "K_STAT_ENG_SHORT_DECAY",
+            "SOFT_WEIGHT (효과 약함·참고)",
+            "cycle_gap_boost",
+        ],
+        "evidence": [
+            "docs/benchmarks/20260808_KPAST_LEARN_WIRE.json",
+            "docs/benchmarks/20260808_KPAST_LEARN_TUNE_SOFT.json",
+            "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json",
+            "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json",
+        ],
+    }

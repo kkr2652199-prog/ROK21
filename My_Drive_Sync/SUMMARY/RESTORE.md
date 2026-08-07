@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5ffd960` · WORK=`IDLE`
-2. **지금:** **K-PAST-LEARN-TUNE-ENGINE-APPLY** — win26/mix0.8 적용 · fusion**0.135** · **PASS**
-3. **다음1건:** K-PAST-LEARN-TUNE-DONE — APPLY PASS(win26/mix0.8·fusion Δ0) 형 확인 · 추가 튜닝(decay 등) or 트랙정지 (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `7f4ac5a` · WORK=`IDLE`
+2. **지금:** **K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED**
+3. **다음1건:** K-PAST-LEARN-DETAIL-TUNE — 틀(FRAME_LOCKED) 위 세부 튜닝 — decay(`LONG`/`SHORT`) 등 · 시드 n50+holdout · fusion 회귀 · **형 GO** (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-08 | 틀잠금 | FRAME_LOCKED · 세부는다음 | **LOCK** | (push후) |
 | 2026-08-08 | 후보적용 | win26/mix0.8·tune재현·fusionΔ0 | **PASS** | d5b466d |
 | 2026-08-08 | engine스윕 | 후보 win26/mix0.8 ge30.28 · 미적용 | **CAND** | addc82b |
 | 2026-08-08 | SOFT스윕 | seed15셀동일 · soft무효과 · base유지 | **KEEP** | caf49bd |
@@ -45,7 +46,6 @@
 | 2026-08-08 | stat명칭 | 통계요정→과거학습 | **PASS** | f305191 |
 | 2026-08-08 | YT벤치+보고서push | KYT_FILTER_BENCH JSON+reports+Drive | **DOC_SURVEY** | bbde687 |
 | 2026-08-07 | 종료체크 | 20260807 세션보고서 reports+Drive | **DONE** | 7656f77 |
-| 2026-08-05 | 명분로그부착 | hit_warrant_log1134·evolve.note | **PASS** | bf8efac |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

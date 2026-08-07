@@ -1,0 +1,82 @@
+{
+  "id": "K-PAST-LEARN-FRAME-DONE",
+  "ts": "2026-08-07T17:03:24.497751+00:00",
+  "verdict": "FRAME_LOCKED",
+  "smoke_ok": true,
+  "framework": {
+    "phase": "FRAME_LOCKED",
+    "brain": "과거학습",
+    "tag": "stat",
+    "pipe": "transition(OFF) → engine(v2) → aux → past_learn soft → diversity",
+    "flags": {
+      "PAST_LEARN_WIRE": true,
+      "PAST_LEARN_ENGINE_V2": true,
+      "PAST_LEARN_ASSOC_HINT": false,
+      "SOFT_WEIGHT": 0.12,
+      "SOFT_CONF_CAP": 3.0,
+      "rollback": "K_PAST_LEARN=0 · K_STAT_ENGINE_V2=0 · K_PAST_LEARN_ASSOC=0"
+    },
+    "engine_v2": {
+      "short_win": 26,
+      "long_decay": 0.005,
+      "short_decay": 0.05,
+      "short_mix": 0.8,
+      "long_mix": 0.2
+    },
+    "engine_defaults": {
+      "V2_SHORT_WIN": 26,
+      "V2_SHORT_MIX": 0.8,
+      "V2_LONG_DECAY": 0.005,
+      "V2_SHORT_DECAY": 0.05,
+      "rollback_win_mix": [
+        52,
+        0.6
+      ]
+    },
+    "fixed_off": {
+      "TRANSITION_V1_WIRE": false,
+      "ASSOC_HINT": false
+    },
+    "detail_tune_later": [
+      "K_STAT_ENG_LONG_DECAY",
+      "K_STAT_ENG_SHORT_DECAY",
+      "SOFT_WEIGHT (효과 약함·참고)",
+      "cycle_gap_boost"
+    ],
+    "evidence": [
+      "docs/benchmarks/20260808_KPAST_LEARN_WIRE.json",
+      "docs/benchmarks/20260808_KPAST_LEARN_TUNE_SOFT.json",
+      "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json",
+      "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json"
+    ]
+  },
+  "sample_methods": [
+    "과거학습",
+    "과거학습",
+    "과거학습",
+    "과거학습",
+    "과거학습"
+  ],
+  "sample_nums": [
+    8,
+    20,
+    21,
+    31,
+    37,
+    38
+  ],
+  "meaning_for_beginner": {
+    "done": "과거학습 뇌 기본 파이프·엔진 기본값(26/0.8) 잠금",
+    "not_yet": "decay·세부 가중 같은 미세 튜닝은 다음 단계",
+    "other_brains": "markov/review 미변경",
+    "fusion": "n200 ge3=0.135 유지(APPLY 근거)"
+  },
+  "next_detail": "K-PAST-LEARN-DETAIL-TUNE (decay 등) · 형 GO",
+  "tool": "tools/_k_past_learn_frame_done.py",
+  "priors": [
+    "docs/benchmarks/20260808_KPAST_LEARN_WIRE.json",
+    "docs/benchmarks/20260808_KPAST_LEARN_TUNE_SOFT.json",
+    "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE.json",
+    "docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json"
+  ]
+}

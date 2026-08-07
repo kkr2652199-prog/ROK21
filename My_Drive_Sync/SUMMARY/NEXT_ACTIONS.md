@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-PAST-LEARN-TUNE-DONE
-- 할일: APPLY PASS(win26/mix0.8·fusion Δ0) 형 확인 · 추가 튜닝(decay 등) or 트랙정지
-- 완료조건: 형 GO
-- 선행완료: docs/benchmarks/20260808_KPAST_LEARN_TUNE_ENGINE_APPLY.json
+- ID: K-PAST-LEARN-DETAIL-TUNE
+- 할일: 틀(FRAME_LOCKED) 위 세부 튜닝 — decay(`LONG`/`SHORT`) 등 · 시드 n50+holdout · fusion 회귀 · **형 GO**
+- 완료조건: 세부 스윕 JSON + 후보1안(적용은 별도 GO)
+- 선행완료: docs/benchmarks/20260808_KPAST_LEARN_FRAME_DONE.json
 - 승인필요: 미확인
 - 선행조건: 없음
 - 최종갱신: 2026-08-08
@@ -18,5 +18,6 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- tune n50 ge3**0.28**/mean**1.88** 재현 · holdout1085~1134 ge3**0.14**/mean**1.72**
-- fusion n200 ge3**0.135** Δ**0** (pin유지) · 롤백=`V2_SHORT_WIN=52`/`V2_SHORT_MIX=0.6`
+- 틀: pipe + win26/mix0.8 + soft/ASSOC/transition OFF 정책
+- 세부 예정: LONG_DECAY / SHORT_DECAY · cycle_gap 등
+- fusion pin ge3**0.135** 유지 목표

@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5ffd960` |
+| HEAD(실측) | `7f4ac5a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PAST-LEARN-TUNE-ENGINE-APPLY** — win26/mix0.8 적용 · fusion**0.135** · **PASS** |
-| 직전 | K-PAST-LEARN-TUNE-ENGINE · CANDIDATE |
-| BOOT다음 | 과거학습 추가튜닝 or 종료 · **형 GO** |
-| NEXT1 ID | **K-PAST-LEARN-TUNE-DONE** |
-| NEXT1 할일 | APPLY PASS(win26/mix0.8·fusion Δ0) 형 확인 · 추가 튜닝(decay 등) or 트랙정지 |
+| 지금 | **K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED** |
+| 직전 | K-PAST-LEARN-TUNE-ENGINE-APPLY · PASS |
+| BOOT다음 | 세부 튜닝(DETAIL) · **형 GO** |
+| NEXT1 ID | **K-PAST-LEARN-DETAIL-TUNE** |
+| NEXT1 할일 | 틀(FRAME_LOCKED) 위 세부 튜닝 — decay(`LONG`/`SHORT`) 등 · 시드 n50+holdout · fusion 회귀 · **형 GO** |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5ffd960 · 지금=**K-PAST-LEARN-TUNE-ENGINE-APPLY** — win26/mix0.8 적용 · fusion**0.135** · **PASS** · 다음=K-PAST-LEARN-TUNE-DONE`
+1. 첫줄 `[복귀] HEAD=7f4ac5a · 지금=**K-PAST-LEARN-FRAME-DONE** — 기본 틀 잠금 · **FRAME_LOCKED** · 다음=K-PAST-LEARN-DETAIL-TUNE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 5ffd960_
+_generated: 7f4ac5a_
