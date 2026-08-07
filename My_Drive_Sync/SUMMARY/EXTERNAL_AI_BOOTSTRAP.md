@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `36156c1` |
+| HEAD(실측) | `484b145` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지) |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=36156c1 · 지금=**K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지) · 다음=K-PAST-LEARN-EV-RELABEL-GO`
+1. 첫줄 `[복귀] HEAD=484b145 · 지금=**K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지) · 다음=K-PAST-LEARN-EV-RELABEL-GO`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

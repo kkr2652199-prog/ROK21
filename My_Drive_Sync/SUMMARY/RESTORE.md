@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `36156c1` · WORK=`IDLE`
+1. **HEAD:** `484b145` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지)
 3. **다음1건:** K-PAST-LEARN-EV-RELABEL-GO — SCORE-RULE-DIAG 결과(적중축 상한 없음) 형 확인 — soft 태그(hot1y/overdue)를 **EV 인기회피축**으로 라벨 재정의할지 결정 · 결정 전 코드·가중 변경 금지 (승인필요=미확인 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

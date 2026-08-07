@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `36156c1` · WORK=`IDLE`
+- HEAD: `484b145` · WORK=`IDLE`
 - 지금: **K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지)
 - 직전: K-PAST-LEARN-DETAIL-KEEP · KEEP_BASE
 - BOOT다음: soft태그 EV(인기회피) 재정의 or 트랙정지 · 발권가중 금지 · **형 GO**
