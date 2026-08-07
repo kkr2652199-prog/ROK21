@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `addc82b` · WORK=`IDLE`
+1. **HEAD:** `2beb04d` · WORK=`IDLE`
 2. **지금:** **K-PAST-LEARN-TUNE-ENGINE** — 후보 win26/mix0.8 ge3**0.28** · **CANDIDATE**
 3. **다음1건:** K-PAST-LEARN-TUNE-ENGINE-APPLY — 후보 `short_win=26`/`short_mix=0.8`(seed n50 ge3**0.28** Δ+0.16) 상수적용 여부 · 또는 fusion n200 검증 · **형 GO** (승인필요=필요 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

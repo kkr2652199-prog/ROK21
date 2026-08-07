@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `addc82b` · WORK=`IDLE`
+- HEAD: `2beb04d` · WORK=`IDLE`
 - 지금: **K-PAST-LEARN-TUNE-ENGINE** — 후보 win26/mix0.8 ge3**0.28** · **CANDIDATE**
 - 직전: K-PAST-LEARN-TUNE-SOFT · KEEP_BASE
 - BOOT다음: 후보 상수적용 or fusion · **형 GO**
