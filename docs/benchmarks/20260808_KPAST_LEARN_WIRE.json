@@ -1,0 +1,62 @@
+{
+  "id": "K-PAST-LEARN-WIRE",
+  "ts": "2026-08-07T16:44:24.624846+00:00",
+  "verdict": "PASS",
+  "wire": true,
+  "pass": true,
+  "smoke": {
+    "flags": {
+      "PAST_LEARN_WIRE": true,
+      "PAST_LEARN_ENGINE_V2": true,
+      "PAST_LEARN_ASSOC_HINT": false,
+      "SOFT_WEIGHT": 0.12,
+      "SOFT_CONF_CAP": 3.0,
+      "rollback": "K_PAST_LEARN=0 · K_STAT_ENGINE_V2=0 · K_PAST_LEARN_ASSOC=0"
+    },
+    "TRANSITION_V1_WIRE": false,
+    "n_sets": 5,
+    "methods": [
+      "과거학습",
+      "과거학습",
+      "과거학습",
+      "과거학습",
+      "과거학습"
+    ],
+    "has_past_learn_field": true,
+    "sample_reasoning": "과거학습: 빈도가중+끝수[1, 2, 5, 6, 9]+이월1개[15]+미출30+없음 [과거학습:1yHot[9, 15] Δ0.2] [학습조정 이월×1.00 끝수×1.00]",
+    "sample_nums": [
+      2,
+      9,
+      15,
+      26,
+      41,
+      42
+    ],
+    "smoke_ok": true,
+    "tags_present": true
+  },
+  "solo_n50": {
+    "draw_range": [
+      1035,
+      1084
+    ],
+    "n": 50,
+    "mean_best": 1.58,
+    "ge3_rate": 0.14,
+    "ge3_count": 7,
+    "note": "튜닝 베이스라인(solo n50) · fusion n200은 별도"
+  },
+  "tuning_next": [
+    "SOFT_WEIGHT / SOFT_CONF_CAP 스윕",
+    "K_PAST_LEARN_ASSOC=1 A/B (전수 NOISE 주의)",
+    "fusion n200 vs pin 0.135"
+  ],
+  "forbid": [
+    "random.choices",
+    "engine.py 로직 대치 아닌 플래그",
+    "당첨P↑ 과장"
+  ],
+  "tool": "tools/_k_past_learn_wire.py",
+  "module": "app/testlotto/brains/stat_brain/past_learn.py",
+  "prior": "docs/benchmarks/20260808_KSTAT_NUM_ASSOC_FULL.json"
+}

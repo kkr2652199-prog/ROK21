@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`7b499fe` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`97ea170` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=7b499fe]
+[ROK21 젠스파크 압축복구 · HEAD=97ea170]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 7b499fe · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-STAT-NUM-ASSOC-FULL** — 전수 A+B+C+F · **NOISE_LIKE**
-- 직전: K-STAT-NUM-ASSOC-SAMPLE · MEASURED
-- BOOT다음: 형 확인 · 발권wire 금지·명분만 · **형 GO**
-- NEXT1: K-STAT-NUM-ASSOC-FULL-DONE — FULL n1035 **NOISE_LIKE** 형 확인 · 과거학습 발권WIRE 금지 · 명분/로그 유지 or 트랙정지
+- HEAD: 97ea170 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-PAST-LEARN-WIRE** — 과거학습 구조패치 · smoke **PASS** · solo n50 ge3**0.14**
+- 직전: K-STAT-NUM-ASSOC-FULL · NOISE_LIKE
+- BOOT다음: 튜닝재개 · SOFT_WEIGHT 스윕 · **형 GO**
+- NEXT1: K-PAST-LEARN-TUNE-SOFT — past_learn SOFT_WEIGHT/SOFT_CONF_CAP 스윕 · solo n50 vs wire베이스(ge3**0.14**/mean**1.58**) · ASSOC기본OFF 유지
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260808_KPAST_LEARN_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KPAST_LEARN_WIRE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KPAST_LEARN_WIRE.md
 - `20260808_KSTAT_NUM_ASSOC_FULL` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_NUM_ASSOC_FULL.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_NUM_ASSOC_FULL.md
 - `20260808_KSTAT_NUM_ASSOC_SAMPLE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_NUM_ASSOC_SAMPLE.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_HIT_WARRANT.md
 - `20260808_KYT_FILTER_BENCH` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KYT_FILTER_BENCH.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KYT_FILTER_BENCH.md
-- `20260805_KTRANSITION_HIT_WARRANT_ATTACH` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_HIT_WARRANT_ATTACH.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_HIT_WARRANT_ATTACH.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=7b499fe · 지금=**K-STAT-NUM-ASSOC-FULL** — 전수 A+B+C+F · **NOISE_LIKE** · 다음=K-STAT-NUM-ASSOC-FULL-DONE
+1. 첫줄: [복귀] HEAD=97ea170 · 지금=**K-PAST-LEARN-WIRE** — 과거학습 구조패치 · smoke **PASS** · solo n50 ge3**0.14** · 다음=K-PAST-LEARN-TUNE-SOFT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 7b499fe_
+_generated: 97ea170_

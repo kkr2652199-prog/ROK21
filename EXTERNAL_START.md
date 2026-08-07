@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7b499fe` |
+| HEAD(실측) | `97ea170` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-STAT-NUM-ASSOC-FULL** — 전수 A+B+C+F · **NOISE_LIKE** |
-| 직전 | K-STAT-NUM-ASSOC-SAMPLE · MEASURED |
-| BOOT다음 | 형 확인 · 발권wire 금지·명분만 · **형 GO** |
-| NEXT1 ID | **K-STAT-NUM-ASSOC-FULL-DONE** |
-| NEXT1 할일 | FULL n1035 **NOISE_LIKE** 형 확인 · 과거학습 발권WIRE 금지 · 명분/로그 유지 or 트랙정지 |
+| 지금 | **K-PAST-LEARN-WIRE** — 과거학습 구조패치 · smoke **PASS** · solo n50 ge3**0.14** |
+| 직전 | K-STAT-NUM-ASSOC-FULL · NOISE_LIKE |
+| BOOT다음 | 튜닝재개 · SOFT_WEIGHT 스윕 · **형 GO** |
+| NEXT1 ID | **K-PAST-LEARN-TUNE-SOFT** |
+| NEXT1 할일 | past_learn SOFT_WEIGHT/SOFT_CONF_CAP 스윕 · solo n50 vs wire베이스(ge3**0.14**/mean**1.58**) · ASSOC기본OFF 유지 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7b499fe · 지금=**K-STAT-NUM-ASSOC-FULL** — 전수 A+B+C+F · **NOISE_LIKE** · 다음=K-STAT-NUM-ASSOC-FULL-DONE`
+1. 첫줄 `[복귀] HEAD=97ea170 · 지금=**K-PAST-LEARN-WIRE** — 과거학습 구조패치 · smoke **PASS** · solo n50 ge3**0.14** · 다음=K-PAST-LEARN-TUNE-SOFT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 7b499fe_
+_generated: 97ea170_

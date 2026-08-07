@@ -19,8 +19,18 @@ ENGINE_V2 = False
 
 def _use_engine_v2() -> bool:
     env = os.environ.get("K_STAT_ENGINE_V2", "").strip().lower()
-    if env in ("1", "true", "yes"):
+    if env in ("0", "false", "no", "off"):
+        return False
+    if env in ("1", "true", "yes", "on"):
         return True
+    # 과거학습 구조 패치: past_learn이 v2를 켜면 따름
+    try:
+        from app.testlotto.brains.stat_brain import past_learn
+
+        if past_learn.use_engine_v2():
+            return True
+    except Exception:
+        pass
     return ENGINE_V2
 
 

@@ -1,21 +1,23 @@
-"""stat_brain.predict — 통계뇌 단일 진입점."""
+# -*- coding: utf-8 -*-
+"""stat_brain.predict — 과거학습 뇌 단일 진입점 (구조 패치)."""
 
 from __future__ import annotations
 
 from app.testlotto.brains import aux_balance_keeper
 from app.testlotto.brains.shared import diversity
 from app.testlotto.brains.shared.aux_hint import rerank_by_aux
-from app.testlotto.brains.stat_brain import engine, learn, transition_v1
+from app.testlotto.brains.stat_brain import engine, learn, past_learn, transition_v1
 from app.testlotto.features.draw_features import build_number_gaps, carry_over_from_prev
 
 HINT_WEIGHT = 0.15  # PHASE5 · bench can monkeypatch to 0 / 0.10
 
 
 def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
-    """stat 슬롯 진입점.
+    """과거학습(stat) 슬롯.
 
-    K-TRANSITION-STEP4: TRANSITION_V1_WIRE(기본 ON) 시 전이 풀 우선.
-    실패/롤백(K_STAT_TRANSITION_V1=0) 시 기존 engine.generate.
+    파이프:
+      transition_v1(기본 OFF) → engine(v2 기본 ON via past_learn)
+      → aux_hint → past_learn soft/태그 → learn boost → diversity
     """
     raw_n = diversity.factor(n_sets)
     used_transition = False
@@ -30,6 +32,9 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
     base = rerank_by_aux(
         base, draws, target_draw_no, aux_balance_keeper, "stat", hint_weight=HINT_WEIGHT
     )
+    # 과거학습 soft·reasoning (ASSOC 기본 OFF)
+    base = past_learn.apply_to_candidates(draws, base)
+
     prev = draws[-1] if draws else None
     gaps = build_number_gaps(draws)
     learn_data = learn.get_adjustments()
@@ -47,7 +52,9 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
             learn_note = f" [학습조정 이월×{carry_boost:.2f} 끝수×{ending_boost:.2f}]"
         conf = float(r.get("confidence", 70))
         if carry and carry_boost > 1:
+            # boost 상한 동결: carry 가중은 learn 쪽 값 존중 · 추가 폭주 금지
             conf = min(95, conf + len(carry) * (carry_boost - 1) * 8)
+        pl = r.get("past_learn") or {}
         if used_transition and str(r.get("method", "")).startswith("전이"):
             reasoning = str(r.get("reasoning", "전이패턴v1")) + learn_note
             method = "전이패턴v1"
@@ -56,8 +63,12 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 f"과거학습: 빈도가중+끝수{endings}"
                 f"+이월{len(carry)}개{carry if carry else ''}"
                 f"+미출30+{overdue if overdue else '없음'}"
-                f"{learn_note}"
             )
+            tags = pl.get("tags") or []
+            if tags and past_learn.wire_on():
+                reasoning += f" [과거학습:{'|'.join(tags)} Δ{pl.get('soft_delta', 0)}]"
+            if learn_note:
+                reasoning += learn_note
             method = "과거학습"
         tagged.append(
             {
@@ -69,9 +80,10 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 "method": method,
                 "brain_tag": "stat",
                 "rank": i + 1,
+                "past_learn": pl,
             }
         )
     return diversity.pick(tagged, n_sets)
 
 
-predict_sets = run  # coordinator 호환 어댑터 (PHASE4)
+predict_sets = run
