@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f5db94d` · WORK=`IDLE`
+- HEAD: `2cdc685` · WORK=`IDLE`
 - 지금: **K-PAST-LEARN-YT-BENCH** — 신뢰YT 벤치 · decay보류권고 · **DOC_SURVEY**
 - 직전: K-PAST-LEARN-DETAIL-TUNE · CANDIDATE
 - BOOT다음: DETAIL KEEP_BASE 확정 · **형 GO**
