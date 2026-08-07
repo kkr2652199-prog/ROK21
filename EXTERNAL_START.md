@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `c5583d6` |
+| HEAD(실측) | `5fd682b` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PAST-LEARN-DETAIL-KEEP** — decay **0.005/0.05** 확정 · **KEEP_BASE** |
-| 직전 | K-PAST-LEARN-YT-BENCH · DOC_SURVEY |
-| BOOT다음 | 과거학습 추가세부 or 트랙정지 · **형 GO** |
-| NEXT1 ID | **K-PAST-LEARN-TRACK** |
-| NEXT1 할일 | FRAME+DETAIL_KEEP 완료 · 추가 세부축 or 트랙정지 · **형 GO** |
+| 지금 | **K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지) |
+| 직전 | K-PAST-LEARN-DETAIL-KEEP · KEEP_BASE |
+| BOOT다음 | soft태그 EV(인기회피) 재정의 or 트랙정지 · 발권가중 금지 · **형 GO** |
+| NEXT1 ID | **K-PAST-LEARN-EV-RELABEL-GO** |
+| NEXT1 할일 | SCORE-RULE-DIAG 결과(적중축 상한 없음) 형 확인 — soft 태그(hot1y/overdue)를 **EV 인기회피축**으로 라벨 재정의할지 결정 · 결정 전 코드·가중 변경 금지 |
 | 승인필요 | 미확인 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=c5583d6 · 지금=**K-PAST-LEARN-DETAIL-KEEP** — decay **0.005/0.05** 확정 · **KEEP_BASE** · 다음=K-PAST-LEARN-TRACK`
+1. 첫줄 `[복귀] HEAD=5fd682b · 지금=**K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지) · 다음=K-PAST-LEARN-EV-RELABEL-GO`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: c5583d6_
+_generated: 5fd682b_

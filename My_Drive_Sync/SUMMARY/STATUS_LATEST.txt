@@ -1,7 +1,7 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-PAST-LEARN-DETAIL-KEEP** — decay KEEP_BASE 형GO 확정
+📌 사유: **[CURSOR] K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**
 
 ---
 
@@ -10,6 +10,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-PAST-LEARN-SCORE-RULE-DIAG** | **NO_SKILL_VS_NULL** — n**500**(736~1235) · 셀**15** log-score 전부 null(**3.8067**) 미달 · 현행 L0.005/S0.05=**3.8982**(skill **−0.0240**) · 최선 L0.0005/S0.02=**3.8875**(**−0.0212**) · 균등이탈L1↔score **r=0.9854** · 보정χ²=**32.42**(df44 p≈**0.90**, 기각못함) · PBO=**0.0** · 기대최대**0.0306**≥실측**0.0107** · hot1y=인기축(EV역방향) 경고 · wire否·상수불변 · `docs/benchmarks/20260808_KPAST_LEARN_SCORE_RULE_DIAG.json` · `reports/20260808_KPAST_LEARN_SCORE_RULE_DIAG.md` |
 | **K-PAST-LEARN-DETAIL-KEEP** | **KEEP_BASE** — 형GO · decay L**0.005**/S**0.05** 확정 · 후보0.01 **미채택** · tipster/LSTM/ASSOC wire否 · `docs/benchmarks/20260808_KPAST_LEARN_DETAIL_KEEP.json` · `reports/20260808_KPAST_LEARN_DETAIL_KEEP.md` |
 | **K-PAST-LEARN-YT-BENCH** | **DOC_SURVEY** — 신뢰게이트 통과 4축(조코딩LSTM·Numberphile·KYT필터·covering논문) · tipster기각 · 적용사례 A1~A4 전부 wire否 · `docs/benchmarks/20260808_KPAST_LEARN_YT_BENCH.json` · `reports/20260808_KPAST_LEARN_YT_BENCH.md` |
 | **K-PAST-LEARN-DETAIL-TUNE** | **CANDIDATE→KEEP** — 틀 win26/mix0.8 · 후보 L0.01 기각 · `docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json` · `reports/20260808_KPAST_LEARN_DETAIL_TUNE.md` |
@@ -123,6 +124,7 @@
 
 | ID | 요지 | 게이트 |
 |----|------|--------|
+| **K-PAST-LEARN-SCORE-RULE-DIAG** | 논문방법(적정채점규칙·PBO·보정χ²)으로 decay 재채점 · KEEP_BASE 지지 | **NO_SKILL_VS_NULL** |
 | **K-YT-FILTER-BENCH** | YT다중필터+LSTM 비판 · DB1~1235 재실측 · annotate진단만 | **DOC_SURVEY** |
 | **K-EVOLVE-AUTO-S3** | PREDICT+SCORE 통합 · 1236 캐시 워밍 | **PASS** |
 | **K-EVOLVE-AUTO-S2** | SCORE-only apply · 1235 로그 기입 | **PASS** |

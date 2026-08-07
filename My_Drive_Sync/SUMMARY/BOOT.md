@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-PAST-LEARN-DETAIL-KEEP** — decay **0.005/0.05** 확정 · **KEEP_BASE**
-- 직전: K-PAST-LEARN-YT-BENCH · DOC_SURVEY
-- 다음: 과거학습 추가세부 or 트랙정지 · **형 GO**
+- 지금: **K-PAST-LEARN-SCORE-RULE-DIAG** — 논문식 재채점 · **NO_SKILL_VS_NULL**(KEEP_BASE 지지)
+- 직전: K-PAST-LEARN-DETAIL-KEEP · KEEP_BASE
+- 다음: soft태그 EV(인기회피) 재정의 or 트랙정지 · 발권가중 금지 · **형 GO**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

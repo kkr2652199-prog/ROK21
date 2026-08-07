@@ -1,0 +1,421 @@
+{
+  "id": "K-PAST-LEARN-SCORE-RULE-DIAG",
+  "ts": "2026-08-07T19:52:37.566674+00:00",
+  "verdict": "NO_SKILL_VS_NULL",
+  "pass": true,
+  "wire": false,
+  "applied_change": false,
+  "one_line": "셀 15개 전부 log-score가 null(균등, 3.806662)보다 **나쁘다** (최선 `L0.0005_S0.02`=3.887453 · 현행=3.898167). 균등이탈–점수 상관 r=0.9854 → 최근가중은 정보가 아니라 **자기부과 벌점**이다. decay 재튜닝으로 null을 넘길 수 없으므로 **KEEP_BASE 유지**가 맞고, 개선은 적중축이 아니라 EV(인기회피)축에서만 가능하다.",
+  "target": {
+    "brain": "과거학습",
+    "tag": "stat",
+    "modules": [
+      "app/testlotto/brains/stat_brain/engine.py",
+      "app/testlotto/brains/stat_brain/past_learn.py"
+    ],
+    "note": "테스트로또 내부 1번 예측뇌 · R34의 1~3군(memoy)과 무관"
+  },
+  "max_draw": 1235,
+  "uniformity": {
+    "n_draws": 1235,
+    "expected_per_number": 164.667,
+    "chi2_naive": 28.7368,
+    "adjust_factor": 1.128205,
+    "chi2_adjusted": 32.4211,
+    "df": 44,
+    "p_value_approx": 0.901615,
+    "crit_005": 60.4809,
+    "reject_uniform_005": false,
+    "hottest": [
+      {
+        "num": 34,
+        "count": 184
+      },
+      {
+        "num": 27,
+        "count": 181
+      },
+      {
+        "num": 12,
+        "count": 179
+      },
+      {
+        "num": 13,
+        "count": 179
+      },
+      {
+        "num": 18,
+        "count": 176
+      }
+    ],
+    "coldest": [
+      {
+        "num": 9,
+        "count": 136
+      },
+      {
+        "num": 32,
+        "count": 144
+      },
+      {
+        "num": 22,
+        "count": 145
+      },
+      {
+        "num": 23,
+        "count": 147
+      },
+      {
+        "num": 41,
+        "count": 150
+      }
+    ],
+    "method": "Pearson X2 * (M-1)/(M-m) · Genest·Lockhart·Stephens(2002) · Joe(1993) · Haigh(1997)",
+    "note": "귀무=모든 번호 등확률. 기각 못하면 번호별 편향 근거 없음 → decay 튜닝 상한도 없음"
+  },
+  "grid_result": {
+    "eval_range": [
+      736,
+      1235
+    ],
+    "n_targets": 500,
+    "null_log_score": 3.806662,
+    "null_brier": 0.115556,
+    "grid": {
+      "long_decay": [
+        0.0005,
+        0.002,
+        0.005,
+        0.01,
+        0.02
+      ],
+      "short_decay": [
+        0.02,
+        0.05,
+        0.1
+      ],
+      "n_cells": 15
+    },
+    "frame_fixed": {
+      "short_win": 26,
+      "short_mix": 0.8
+    },
+    "rows": [
+      {
+        "cell": "L0.0005_S0.02",
+        "long_decay": 0.0005,
+        "short_decay": 0.02,
+        "mean_log_score": 3.887453,
+        "log_skill_vs_null": -0.021224,
+        "mean_brier": 0.11819,
+        "brier_skill_vs_null": -0.0228,
+        "mean_l1_dev_from_uniform": 0.29754,
+        "is_base": false
+      },
+      {
+        "cell": "L0.002_S0.02",
+        "long_decay": 0.002,
+        "short_decay": 0.02,
+        "mean_log_score": 3.888858,
+        "log_skill_vs_null": -0.021593,
+        "mean_brier": 0.118226,
+        "brier_skill_vs_null": -0.023108,
+        "mean_l1_dev_from_uniform": 0.299845,
+        "is_base": false
+      },
+      {
+        "cell": "L0.005_S0.02",
+        "long_decay": 0.005,
+        "short_decay": 0.02,
+        "mean_log_score": 3.892596,
+        "log_skill_vs_null": -0.022575,
+        "mean_brier": 0.118317,
+        "brier_skill_vs_null": -0.023899,
+        "mean_l1_dev_from_uniform": 0.30559,
+        "is_base": false
+      },
+      {
+        "cell": "L0.0005_S0.05",
+        "long_decay": 0.0005,
+        "short_decay": 0.05,
+        "mean_log_score": 3.892945,
+        "log_skill_vs_null": -0.022666,
+        "mean_brier": 0.118442,
+        "brier_skill_vs_null": -0.024983,
+        "mean_l1_dev_from_uniform": 0.308503,
+        "is_base": false
+      },
+      {
+        "cell": "L0.002_S0.05",
+        "long_decay": 0.002,
+        "short_decay": 0.05,
+        "mean_log_score": 3.894368,
+        "log_skill_vs_null": -0.02304,
+        "mean_brier": 0.118479,
+        "brier_skill_vs_null": -0.025297,
+        "mean_l1_dev_from_uniform": 0.310747,
+        "is_base": false
+      },
+      {
+        "cell": "L0.005_S0.05",
+        "long_decay": 0.005,
+        "short_decay": 0.05,
+        "mean_log_score": 3.898167,
+        "log_skill_vs_null": -0.024038,
+        "mean_brier": 0.118573,
+        "brier_skill_vs_null": -0.026111,
+        "mean_l1_dev_from_uniform": 0.316418,
+        "is_base": true
+      },
+      {
+        "cell": "L0.01_S0.02",
+        "long_decay": 0.01,
+        "short_decay": 0.02,
+        "mean_log_score": 3.899256,
+        "log_skill_vs_null": -0.024324,
+        "mean_brier": 0.118474,
+        "brier_skill_vs_null": -0.025253,
+        "mean_l1_dev_from_uniform": 0.314976,
+        "is_base": false
+      },
+      {
+        "cell": "L0.01_S0.05",
+        "long_decay": 0.01,
+        "short_decay": 0.05,
+        "mean_log_score": 3.904986,
+        "log_skill_vs_null": -0.025829,
+        "mean_brier": 0.118736,
+        "brier_skill_vs_null": -0.02752,
+        "mean_l1_dev_from_uniform": 0.325836,
+        "is_base": false
+      },
+      {
+        "cell": "L0.02_S0.02",
+        "long_decay": 0.02,
+        "short_decay": 0.02,
+        "mean_log_score": 3.911405,
+        "log_skill_vs_null": -0.027516,
+        "mean_brier": 0.118744,
+        "brier_skill_vs_null": -0.027589,
+        "mean_l1_dev_from_uniform": 0.330002,
+        "is_base": false
+      },
+      {
+        "cell": "L0.02_S0.05",
+        "long_decay": 0.02,
+        "short_decay": 0.05,
+        "mean_log_score": 3.917602,
+        "log_skill_vs_null": -0.029143,
+        "mean_brier": 0.119024,
+        "brier_skill_vs_null": -0.030016,
+        "mean_l1_dev_from_uniform": 0.341278,
+        "is_base": false
+      },
+      {
+        "cell": "L0.0005_S0.1",
+        "long_decay": 0.0005,
+        "short_decay": 0.1,
+        "mean_log_score": 3.918391,
+        "log_skill_vs_null": -0.029351,
+        "mean_brier": 0.119401,
+        "brier_skill_vs_null": -0.033281,
+        "mean_l1_dev_from_uniform": 0.358347,
+        "is_base": false
+      },
+      {
+        "cell": "L0.002_S0.1",
+        "long_decay": 0.002,
+        "short_decay": 0.1,
+        "mean_log_score": 3.919905,
+        "log_skill_vs_null": -0.029749,
+        "mean_brier": 0.119439,
+        "brier_skill_vs_null": -0.033606,
+        "mean_l1_dev_from_uniform": 0.360325,
+        "is_base": false
+      },
+      {
+        "cell": "L0.005_S0.1",
+        "long_decay": 0.005,
+        "short_decay": 0.1,
+        "mean_log_score": 3.923976,
+        "log_skill_vs_null": -0.030818,
+        "mean_brier": 0.119537,
+        "brier_skill_vs_null": -0.034455,
+        "mean_l1_dev_from_uniform": 0.365381,
+        "is_base": false
+      },
+      {
+        "cell": "L0.01_S0.1",
+        "long_decay": 0.01,
+        "short_decay": 0.1,
+        "mean_log_score": 3.931375,
+        "log_skill_vs_null": -0.032762,
+        "mean_brier": 0.11971,
+        "brier_skill_vs_null": -0.035952,
+        "mean_l1_dev_from_uniform": 0.374001,
+        "is_base": false
+      },
+      {
+        "cell": "L0.02_S0.1",
+        "long_decay": 0.02,
+        "short_decay": 0.1,
+        "mean_log_score": 3.945393,
+        "log_skill_vs_null": -0.036444,
+        "mean_brier": 0.120027,
+        "brier_skill_vs_null": -0.038696,
+        "mean_l1_dev_from_uniform": 0.388826,
+        "is_base": false
+      }
+    ],
+    "base_cell": {
+      "long_decay": 0.005,
+      "short_decay": 0.05,
+      "key": "L0.005_S0.05"
+    },
+    "best_cell": {
+      "cell": "L0.0005_S0.02",
+      "long_decay": 0.0005,
+      "short_decay": 0.02,
+      "mean_log_score": 3.887453,
+      "log_skill_vs_null": -0.021224,
+      "mean_brier": 0.11819,
+      "brier_skill_vs_null": -0.0228,
+      "mean_l1_dev_from_uniform": 0.29754,
+      "is_base": false
+    },
+    "tests": {
+      "base_vs_null": {
+        "n": 500,
+        "mean_diff": 0.091505,
+        "t": 11.779,
+        "p_two_sided": 0.0,
+        "sign_wins": 154,
+        "sign_win_rate": 0.308
+      },
+      "best_vs_null": {
+        "n": 500,
+        "mean_diff": 0.080791,
+        "t": 11.0708,
+        "p_two_sided": 0.0,
+        "sign_wins": 164,
+        "sign_win_rate": 0.328
+      },
+      "best_vs_base": {
+        "n": 500,
+        "mean_diff": -0.010714,
+        "t": -6.2831,
+        "p_two_sided": 0.0,
+        "sign_wins": 297,
+        "sign_win_rate": 0.594
+      }
+    },
+    "selection_bias": {
+      "n_trials": 15,
+      "var_of_cell_means": 0.000297927,
+      "expected_max_gain_under_null": 0.030563,
+      "observed_gain_best_vs_base": 0.010714,
+      "ref": "Bailey & López de Prado (2014) Deflated Sharpe / false-strategy theorem"
+    },
+    "mechanism": {
+      "r_l1dev_vs_logscore": 0.9854,
+      "n_cells": 15,
+      "claim": "균등분포 이탈이 클수록 log-score 악화 = 최근가중이 정보가 아니라 자기부과 벌점",
+      "expected_if_uniform_truth": "r ≈ +1 (이탈=순손실)"
+    },
+    "pbo": {
+      "pbo": 0.0,
+      "n_combinations": 70,
+      "partitions": 8,
+      "n_cells": 15,
+      "lambda_mean": 2.7081,
+      "interpretation": "PBO>=0.5 → 최적셀 선택이 우연 수준(과적합 위험)",
+      "ref": "Bailey, Borwein, López de Prado & Zhu (2014) J. Computational Finance"
+    }
+  },
+  "prior_method_weakness": {
+    "prior": "docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json",
+    "base_score": 0.5772,
+    "best_score": 0.578,
+    "score_gap": 0.0008,
+    "holdout_n": 50,
+    "gap_in_hits": 1,
+    "fusion_delta": 0.0,
+    "seed_range_ref": "docs/benchmarks/20260805_KSTAT_SEED_DIAG.json (stat range 0.14)"
+  },
+  "literature": [
+    {
+      "ref": "Genest, Lockhart & Stephens (2002) 'χ² and the lottery', JRSS-D",
+      "core": "비복원 추첨은 naive Pearson χ² 가 χ² 분포를 안 따름 → 가중합/보정 필요",
+      "apply": "6/45 보정 (M-1)/(M-m)=44/39 · df=44 로 번호 균등성 검정 (§3)",
+      "url": "https://doi.org/10.1111/1467-9884.00315"
+    },
+    {
+      "ref": "Joe (1993) 'Tests of uniformity for sets of lotto numbers', SPL",
+      "core": "단일번호·쌍·삼중 균등성 및 회차간 독립 검정 도출",
+      "apply": "번호축 먼저 검정 · 쌍/삼중은 기존 KSIGNAL L3 PMI 트랙과 연결",
+      "url": "https://doi.org/10.1016/0167-7152(93)90141-5"
+    },
+    {
+      "ref": "Gneiting & Raftery (2007) 'Strictly Proper Scoring Rules', JASA 102(477)",
+      "core": "log/Brier 등 적정채점규칙은 참분포에서 기대점수 최적 → 파라미터 추정에 사용 가능",
+      "apply": "decay 를 ge3(0/1) 대신 확률벡터 log-score 로 선택 (§4) · 시드 무관·검정력↑",
+      "url": "https://doi.org/10.1198/016214506000001437"
+    },
+    {
+      "ref": "Bailey, Borwein, López de Prado & Zhu (2014) 'The Probability of Backtest Overfitting'",
+      "core": "CSCV 로 '최적 IS 셀이 OOS 중위 이하일 확률'(PBO) 추정 · 0.5↑면 선택=우연",
+      "apply": "decay 그리드 선택의 과적합 확률 직접 계산 (§5)",
+      "url": "https://davidhbailey.com/dhbpapers/backtest-prob.pdf"
+    },
+    {
+      "ref": "Bailey & López de Prado (2014) 'The Deflated Sharpe Ratio', JPM 40(5)",
+      "core": "시행수 N·시행간 분산으로 기대최대 성과를 계산해 선택편의 차감",
+      "apply": "9~15칸 그리드의 '우연 최대이득' 과 실제 이득 비교 (§5)",
+      "url": "https://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf"
+    },
+    {
+      "ref": "Bodenham & Adams / Plasse & Adams — forgetting factors (categorical streams)",
+      "core": "망각계수는 우도(likelihood) 기반으로 온라인 튜닝 · 고정망각은 특수사례",
+      "apply": "decay=망각계수 → 우도(log-score)로 고르는 게 표준. 적응형은 신호 확인 후에만",
+      "url": "https://doi.org/10.1007/s11222-019-09858-0"
+    },
+    {
+      "ref": "Suetens, Galbo-Jørgensen & Tyran (2016) JEEA 14(3) 584-607",
+      "core": "플레이어는 직전 당첨번호를 피하고(도박사오류) 최근 연속출현 번호로 몰린다(핫핸드)",
+      "apply": "past_learn 의 '미출30+'·'1yHot' 태그는 플레이어 인기축과 겹침 → 공유당첨 EV 주의 (§6)",
+      "url": "https://doi.org/10.1111/jeea.12147"
+    },
+    {
+      "ref": "Cook & Clotfelter (1993) / Baker & McHale (2011) JRSS-A 174(4) — conscious selection",
+      "core": "당첨P는 고정 · 비인기 조합은 분배 감소로 기대값(EV)↑",
+      "apply": "ROK21 기존 EV축(적중축 폐기)과 정합 · 인기페널티(KSIGNAL L4)로 연결",
+      "url": "https://doi.org/10.1111/j.1467-985x.2011.00693.x"
+    }
+  ],
+  "conclusions": [
+    "균등성: 보정 χ²=32.4211 (df=44, p≈0.901615) → 번호별 편향 근거 없음",
+    "셀 전체 중 null 초과(skill>0) 존재 = False · 균등이탈↔log-score 상관 r=0.9854",
+    "현행 decay(0.005/0.05) vs null: mean Δ=+0.091505 · p=0.0 → null보다 유의하게 나쁨",
+    "최적셀 `L0.0005_S0.02` vs 현행: p=0.0 · PBO=0.0 · 우연 기대최대 0.030563 ≥ 실측 0.010714 = True",
+    "ge3(n=50) 대신 log-score 를 쓰면 시드 분산 없이 같은 데이터에서 훨씬 촘촘히 비교된다",
+    "실질 개선 후보는 decay 미세조정이 아니라 soft 태그의 EV(인기회피) 재정의"
+  ],
+  "adopt": [
+    "metric_ge3_to_log_score",
+    "always_report_pbo_and_expected_max",
+    "adjusted_chi2_before_number_axis_claims",
+    "relabel_soft_tags_as_ev_popularity"
+  ],
+  "reject": [
+    "change_decay_on_one_hit_difference",
+    "raise_hot1y_weight",
+    "wire_adaptive_forgetting_now",
+    "revive_lstm_or_patch_random_choices"
+  ],
+  "beginner": {
+    "무엇": "과거학습 뇌의 '얼마나 옛날을 잊을지(decay)' 를 논문식으로 다시 채점",
+    "왜": "전에는 50회차 ≥3개 맞춘 횟수로 비교 → 1건 차이로 흔들렸다",
+    "결과": "셀 15개 전부 log-score가 null(균등, 3.806662)보다 **나쁘다** (최선 `L0.0005_S0.02`=3.887453 · 현행=3.898167). 균등이탈–점수 상관 r=0.9854 → 최근가중은 정보가 아니라 **자기부과 벌점**이다. decay 재튜닝으로 null을 넘길 수 없으므로 **KEEP_BASE 유지**가 맞고, 개선은 적중축이 아니라 EV(인기회피)축에서만 가능하다.",
+    "바뀐것": "없음 (숫자·배선 그대로 · 보고서만)"
+  }
+}
