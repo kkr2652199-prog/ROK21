@@ -1,0 +1,165 @@
+{
+  "id": "K-PAST-LEARN-TUNE-ENGINE",
+  "ts": "2026-08-07T16:55:33.413646+00:00",
+  "verdict": "CANDIDATE",
+  "seed_mode": "random.seed(42000+draw_no)",
+  "base_cell": {
+    "engine_v2": true,
+    "short_win": 52,
+    "short_mix": 0.6,
+    "ge3_rate": 0.12,
+    "mean_best": 1.78
+  },
+  "grid": {
+    "short_win": [
+      26,
+      52,
+      78
+    ],
+    "short_mix": [
+      0.4,
+      0.6,
+      0.8
+    ],
+    "plus": "v1_control"
+  },
+  "n_cells": 10,
+  "draw_range": [
+    1035,
+    1084
+  ],
+  "assoc": false,
+  "rows": [
+    {
+      "engine_v2": false,
+      "short_win": null,
+      "short_mix": null,
+      "mean_best": 1.56,
+      "ge3_rate": 0.04,
+      "ge3_count": 2,
+      "delta_ge3_vs_base": -0.08,
+      "delta_mean_vs_base": -0.22
+    },
+    {
+      "engine_v2": true,
+      "short_win": 26,
+      "short_mix": 0.4,
+      "mean_best": 1.6,
+      "ge3_rate": 0.02,
+      "ge3_count": 1,
+      "delta_ge3_vs_base": -0.1,
+      "delta_mean_vs_base": -0.18
+    },
+    {
+      "engine_v2": true,
+      "short_win": 26,
+      "short_mix": 0.6,
+      "mean_best": 1.72,
+      "ge3_rate": 0.1,
+      "ge3_count": 5,
+      "delta_ge3_vs_base": -0.02,
+      "delta_mean_vs_base": -0.06
+    },
+    {
+      "engine_v2": true,
+      "short_win": 26,
+      "short_mix": 0.8,
+      "mean_best": 1.88,
+      "ge3_rate": 0.28,
+      "ge3_count": 14,
+      "delta_ge3_vs_base": 0.16,
+      "delta_mean_vs_base": 0.1
+    },
+    {
+      "engine_v2": true,
+      "short_win": 52,
+      "short_mix": 0.4,
+      "mean_best": 1.7,
+      "ge3_rate": 0.06,
+      "ge3_count": 3,
+      "delta_ge3_vs_base": -0.06,
+      "delta_mean_vs_base": -0.08
+    },
+    {
+      "engine_v2": true,
+      "short_win": 52,
+      "short_mix": 0.6,
+      "mean_best": 1.78,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": 0.0
+    },
+    {
+      "engine_v2": true,
+      "short_win": 52,
+      "short_mix": 0.8,
+      "mean_best": 1.72,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": -0.06
+    },
+    {
+      "engine_v2": true,
+      "short_win": 78,
+      "short_mix": 0.4,
+      "mean_best": 1.74,
+      "ge3_rate": 0.06,
+      "ge3_count": 3,
+      "delta_ge3_vs_base": -0.06,
+      "delta_mean_vs_base": -0.04
+    },
+    {
+      "engine_v2": true,
+      "short_win": 78,
+      "short_mix": 0.6,
+      "mean_best": 1.74,
+      "ge3_rate": 0.12,
+      "ge3_count": 6,
+      "delta_ge3_vs_base": 0.0,
+      "delta_mean_vs_base": -0.04
+    },
+    {
+      "engine_v2": true,
+      "short_win": 78,
+      "short_mix": 0.8,
+      "mean_best": 1.64,
+      "ge3_rate": 0.08,
+      "ge3_count": 4,
+      "delta_ge3_vs_base": -0.04,
+      "delta_mean_vs_base": -0.14
+    }
+  ],
+  "best": {
+    "engine_v2": true,
+    "short_win": 26,
+    "short_mix": 0.8,
+    "ge3_rate": 0.28,
+    "mean_best": 1.88,
+    "delta_ge3_vs_base": 0.16,
+    "delta_mean_vs_base": 0.1,
+    "action": "CANDIDATE",
+    "note": "상수 적용·fusion n200은 형 GO · random.choices 동결"
+  },
+  "applied_to_engine": false,
+  "env_keys": [
+    "K_STAT_ENGINE_V2",
+    "K_STAT_ENG_SHORT_WIN",
+    "K_STAT_ENG_SHORT_MIX",
+    "K_STAT_ENG_LONG_DECAY",
+    "K_STAT_ENG_SHORT_DECAY"
+  ],
+  "forbid": [
+    "random.choices edit",
+    "fusion n200 without 형 GO",
+    "ASSOC ON"
+  ],
+  "tool": "tools/_k_past_learn_tune_engine.py",
+  "prior": "docs/benchmarks/20260808_KPAST_LEARN_TUNE_SOFT.json",
+  "finding": "CANDIDATE win26/mix0.8 ge3=0.28 vs base0.12; v1=0.04; constants not applied pending 형 GO",
+  "candidate_env": {
+    "K_STAT_ENG_SHORT_WIN": "26",
+    "K_STAT_ENG_SHORT_MIX": "0.8"
+  }
+}

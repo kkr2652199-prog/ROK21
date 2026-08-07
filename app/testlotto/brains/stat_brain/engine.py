@@ -16,6 +16,43 @@ logger = logging.getLogger(__name__)
 # K-NEW-ENGINE-STAT-A1: dual-window + cycle gap (default off until bench PASS)
 ENGINE_V2 = False
 
+# v2 튜닝 기본값 (env로 스윕 · random.choices 미수정)
+V2_SHORT_WIN = 52
+V2_LONG_DECAY = 0.005
+V2_SHORT_DECAY = 0.05
+V2_SHORT_MIX = 0.6  # long_mix = 1 - short_mix
+
+
+def _env_float(name: str, default: float) -> float:
+    v = os.environ.get(name, "").strip()
+    if not v:
+        return default
+    try:
+        return float(v)
+    except ValueError:
+        return default
+
+
+def _env_int(name: str, default: int) -> int:
+    v = os.environ.get(name, "").strip()
+    if not v:
+        return default
+    try:
+        return int(float(v))
+    except ValueError:
+        return default
+
+
+def v2_params() -> dict[str, float | int]:
+    short_mix = min(0.95, max(0.05, _env_float("K_STAT_ENG_SHORT_MIX", V2_SHORT_MIX)))
+    return {
+        "short_win": max(5, _env_int("K_STAT_ENG_SHORT_WIN", V2_SHORT_WIN)),
+        "long_decay": max(1e-6, _env_float("K_STAT_ENG_LONG_DECAY", V2_LONG_DECAY)),
+        "short_decay": max(1e-6, _env_float("K_STAT_ENG_SHORT_DECAY", V2_SHORT_DECAY)),
+        "short_mix": short_mix,
+        "long_mix": round(1.0 - short_mix, 6),
+    }
+
 
 def _use_engine_v2() -> bool:
     env = os.environ.get("K_STAT_ENGINE_V2", "").strip().lower()
@@ -114,17 +151,22 @@ def _build_freq_v1(draws: list[dict], last_seen: dict[int, int]) -> dict[int, fl
 
 
 def _build_freq_v2(draws: list[dict]) -> dict[int, float]:
-    long_norm = _window_freq_norm(draws, 0.005)
-    if len(draws) >= 52:
-        short_draws = draws[-52:]
+    p = v2_params()
+    long_norm = _window_freq_norm(draws, float(p["long_decay"]))
+    win = int(p["short_win"])
+    if len(draws) >= win:
+        short_draws = draws[-win:]
     else:
         short_draws = draws
         logger.debug(
-            "stat engine v2: short window uses all %d draws (<52)",
+            "stat engine v2: short window uses all %d draws (<%d)",
             len(draws),
+            win,
         )
-    short_norm = _window_freq_norm(short_draws, 0.05)
-    freq = {n: 0.4 * long_norm[n] + 0.6 * short_norm[n] for n in range(1, 46)}
+    short_norm = _window_freq_norm(short_draws, float(p["short_decay"]))
+    sm = float(p["short_mix"])
+    lm = float(p["long_mix"])
+    freq = {n: lm * long_norm[n] + sm * short_norm[n] for n in range(1, 46)}
     _apply_cycle_gap_boost(freq, draws)
     return freq
 

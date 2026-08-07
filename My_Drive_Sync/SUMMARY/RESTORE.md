@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `df919e0` · WORK=`IDLE`
-2. **지금:** **K-PAST-LEARN-TUNE-SOFT** — 시드고정 15셀 동일 · **KEEP_BASE**
-3. **다음1건:** K-PAST-LEARN-TUNE-ENGINE — soft rerank 무효과(KEEP_BASE) → engine v2 윈도우/가중 스윕 설계·실측 · `random.choices` 동결 유지 · ASSOC OFF (승인필요=미확인 · 선행=없음)
+1. **HEAD:** `1b886bb` · WORK=`IDLE`
+2. **지금:** **K-PAST-LEARN-TUNE-ENGINE** — 후보 win26/mix0.8 ge3**0.28** · **CANDIDATE**
+3. **다음1건:** K-PAST-LEARN-TUNE-ENGINE-APPLY — 후보 `short_win=26`/`short_mix=0.8`(seed n50 ge3**0.28** Δ+0.16) 상수적용 여부 · 또는 fusion n200 검증 · **형 GO** (승인필요=필요 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-08 | engine스윕 | 후보 win26/mix0.8 ge30.28 · 미적용 | **CAND** | (push후) |
 | 2026-08-08 | SOFT스윕 | seed15셀동일 · soft무효과 · base유지 | **KEEP** | caf49bd |
 | 2026-08-08 | 과거학습패치 | past_learn wire·v2·soft · n50 ge30.14 | **PASS** | df310d6 |
 | 2026-08-08 | ASSOC전수 | n1035 A+B+C+F · ≈null | **NOISE** | 7b499fe |
@@ -45,7 +46,6 @@
 | 2026-08-07 | 종료체크 | 20260807 세션보고서 reports+Drive | **DONE** | 7656f77 |
 | 2026-08-05 | 명분로그부착 | hit_warrant_log1134·evolve.note | **PASS** | bf8efac |
 | 2026-08-05 | 명분축 전환 | HIT-WARRANT 전수 · top15≈null | **CATALOG** | dc39b84 |
-| 2026-08-05 | fusion n200 | ge3=0.135 mean=1.715 · WIRE OFF | **ROLLBACK** | ae5c35d |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
