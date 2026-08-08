@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `91618c1` |
+| HEAD(실측) | `9a0a323` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=91618c1 · 지금=**K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE · 다음=K-SEED-AVG-NEXT-PICK`
+1. 첫줄 `[복귀] HEAD=9a0a323 · 지금=**K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE · 다음=K-SEED-AVG-NEXT-PICK`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 91618c1_
+_generated: 9a0a323_

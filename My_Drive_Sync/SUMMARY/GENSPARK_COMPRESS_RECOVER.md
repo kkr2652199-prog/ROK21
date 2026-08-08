@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`91618c1` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`9a0a323` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=91618c1]
+[ROK21 젠스파크 압축복구 · HEAD=9a0a323]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,7 +29,7 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 91618c1 · WORK=IDLE · SSOT=ROK21/7021
+- HEAD: 9a0a323 · WORK=IDLE · SSOT=ROK21/7021
 - 지금: **K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE
 - 직전: SEED-NOISE-FLOOR v2(FLOOR_NOT_ESTABLISHED · 바닥 0.005087 CI 0포함) · R39 신설(`tools/k_precision.py` 7/7)
 - BOOT다음: ①학습기 경로 잡음(평균 안 되는 A몫) 진단 ②1236+ 전향적 EV로그 ③트랙정지 중 **형 1건 선택** · 발권가중 금지
@@ -76,7 +76,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=91618c1 · 지금=**K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE · 다음=K-SEED-AVG-NEXT-PICK
+1. 첫줄: [복귀] HEAD=9a0a323 · 지금=**K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE · 다음=K-SEED-AVG-NEXT-PICK
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -108,4 +108,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 91618c1_
+_generated: 9a0a323_

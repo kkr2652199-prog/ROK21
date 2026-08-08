@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `91618c1` · WORK=`IDLE`
+- HEAD: `9a0a323` · WORK=`IDLE`
 - 지금: **K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE
 - 직전: SEED-NOISE-FLOOR v2(FLOOR_NOT_ESTABLISHED · 바닥 0.005087 CI 0포함) · R39 신설(`tools/k_precision.py` 7/7)
 - BOOT다음: ①학습기 경로 잡음(평균 안 되는 A몫) 진단 ②1236+ 전향적 EV로그 ③트랙정지 중 **형 1건 선택** · 발권가중 금지
