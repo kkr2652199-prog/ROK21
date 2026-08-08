@@ -50,10 +50,20 @@ SCORE_WEIGHTS_BY_BRAIN: dict[str, tuple[float, float, float]] = dict.fromkeys(
 )
 LEARN_EMA_BY_BRAIN: dict[str, float] = dict.fromkeys(BRAIN_TAGS, LEARN_EMA)
 
-# hint 는 아직 3뇌 공유다 (`_build_hint` 하나를 그대로 넘김 · 가중치 W_HINT).
-# 뇌별 hint 는 「어느 신호가 어느 뇌에 맞는가」를 데이터로 정해야 하므로
-# 성적 주장이 필요한 튜닝 = 이번 범위 밖. 이 사실을 메타에 드러낸다.
-HINT_SHARED_ACROSS_BRAINS: bool = True
+# hint 축도 뇌별로 열어둔다. **현재 값은 3뇌 전부 동일** = 성적 무변화.
+# 실측(K-BRAIN-INDEPENDENCE-AUDIT B5): hint 를 공유하면 3뇌 점수세트의 번호
+# 겹침이 Jaccard 0.743 (무작위 기대 0.250 의 약 3배)이고, hint 가중치를 0 으로
+# 두면 0.30 까지 내려간다 → **공유 hint 가 뇌 간 번호 공유의 주원인**.
+# 다만 「어느 (창, 신호)가 어느 뇌에 맞는가」는 데이터로 정해야 하는 성적 주장이라
+# 값 차별화는 R38 게이트 통과 후에 한다. 지금은 배선만 살려둔다.
+HINT_SPEC_BY_BRAIN: dict[str, tuple[int | None, str]] = dict.fromkeys(
+    BRAIN_TAGS, (WINDOW_WEEKS, WINDOW_SIGNAL)
+)
+
+
+def hint_shared_across_brains() -> bool:
+    """3뇌가 같은 (창, 신호) 를 쓰고 있으면 True. 값을 다르게 두면 자동으로 False."""
+    return len(set(HINT_SPEC_BY_BRAIN.values())) <= 1
 
 # K-EVOLVE-FEAT-LAM-REVAL — full history에서 review λ0.3 기각 → OFF
 FEATURE_LAMBDA_WIRE: bool = False
@@ -390,23 +400,41 @@ def repack_by_brain(
     hint_only: bool = False,
     random_repack: bool = False,
     target_draw_no: int | None = None,
+    hint_by_brain: dict[str, dict[int, float]] | None = None,
 ) -> list[dict]:
+    """뇌별 몰아주기.
+
+    `hint_by_brain` 을 안 주더라도 `HINT_SPEC_BY_BRAIN` 이 뇌마다 다르면 여기서 직접
+    만든다. 호출자가 넘기는 걸 잊어도 뇌별 hint 가 조용히 무시되지 않게 하려는 것이다
+    (`brain_tag` 를 빠뜨려 뇌별 가중치가 죽었던 K-REPACK-BRAINTAG-DEAD-WIRE 와 같은 함정).
+    3뇌 spec 이 동일한 현재 상태에서는 이 분기를 타지 않으므로 비용·결과 변화가 없다.
+    """
     from app.testlotto.feature_lambda import FEATURE_LAMBDA_BY_BRAIN, apply_feature_lambda
+
+    if (
+        hint_by_brain is None
+        and target_draw_no is not None
+        and not hint_shared_across_brains()
+    ):
+        hint_by_brain = build_hint_by_brain(_get_draws_before(target_draw_no), target_draw_no)
 
     out: list[dict] = []
     for tag in BRAIN_TAGS:
         pool = pool_by_brain.get(tag, [])
         if not pool:
             continue
-        num_t = brain_signal(num_ema, tag)
+        h = (hint_by_brain or {}).get(tag, hint)
         pos_t = brain_signal(pos_ema, tag)
+        # brain_tag 필수 — 빠뜨리면 SCORE_WEIGHTS_BY_BRAIN 이 조회되지 않아
+        # 뇌별 가중치가 조용히 무시된다 (K-REPACK-BRAINTAG-DEAD-WIRE)
         scores = number_scores(
             pool,
-            hint,
-            num_t,
-            pos_t,
+            h,
+            num_ema,
+            pos_ema,
             hint_only=hint_only,
             random_scores=random_repack,
+            brain_tag=tag,
         )
         classic = repack_sets(scores)
         assembled_rows = _rows_for_brain(tag, pool, classic, pos_t)
@@ -430,6 +458,20 @@ def _build_hint(draws: list[dict], draw_no: int) -> dict[int, float]:
     from tools._k_window_signal_survey import _build_hint as _bh
 
     return _bh(draws, WINDOW_WEEKS, WINDOW_SIGNAL, draw_no)
+
+
+def build_hint_by_brain(draws: list[dict], draw_no: int) -> dict[str, dict[int, float]]:
+    """뇌별 hint. `HINT_SPEC_BY_BRAIN` 이 전부 같으면 결과도 전부 같다(성적 무변화)."""
+    from tools._k_window_signal_survey import _build_hint as _bh
+
+    cache: dict[tuple[int | None, str], dict[int, float]] = {}
+    out: dict[str, dict[int, float]] = {}
+    for tag in BRAIN_TAGS:
+        spec = HINT_SPEC_BY_BRAIN.get(tag, (WINDOW_WEEKS, WINDOW_SIGNAL))
+        if spec not in cache:
+            cache[spec] = _bh(draws, spec[0], spec[1], draw_no)
+        out[tag] = cache[spec]
+    return out
 
 
 def warm_learner_to_draw(
@@ -489,7 +531,12 @@ def build_pool_and_repack(
     pool_br = _pool_by_brain(pool)
     hint = _build_hint(draws, target_draw_no)
     repacked = repack_by_brain(
-        pool_br, hint, num_ema, pos_ema, target_draw_no=target_draw_no
+        pool_br,
+        hint,
+        num_ema,
+        pos_ema,
+        target_draw_no=target_draw_no,
+        hint_by_brain=build_hint_by_brain(draws, target_draw_no),
     )
 
     by_brain_pool: dict[str, list[dict]] = {}
@@ -535,7 +582,12 @@ def build_pool_and_repack(
         "pool_sets_per_brain": POOL_SETS_PER_BRAIN,
         "repack_sets_per_brain": REPACK_SETS_PER_BRAIN,
         "seed": seed,
-        "window_hint": {"weeks": WINDOW_WEEKS, "signal": WINDOW_SIGNAL},
+        "window_hint": {
+            "weeks": WINDOW_WEEKS,
+            "signal": WINDOW_SIGNAL,
+            "by_brain": {t: list(v) for t, v in HINT_SPEC_BY_BRAIN.items()},
+            "shared_across_brains": hint_shared_across_brains(),
+        },
         "hybrid": _assemble_meta(),
         "feature_lambda": _feature_lambda_meta(),
         "pool_by_brain": by_brain_pool,
@@ -552,7 +604,8 @@ def _assemble_meta() -> dict[str, Any]:
             "pool_slots_by_brain": dict(POOL_SLOTS_BY_BRAIN),
             "pool_slot_rule": "위치 EMA 상위 (뇌별 성적표)",
             "rng_independent": True,
-            "hint_shared_across_brains": HINT_SHARED_ACROSS_BRAINS,
+            "hint_shared_across_brains": hint_shared_across_brains(),
+            "hint_spec_by_brain": {t: list(v) for t, v in HINT_SPEC_BY_BRAIN.items()},
         }
     if ASSEMBLE_MODE == "p45_r123":
         return {

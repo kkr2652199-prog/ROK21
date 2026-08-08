@@ -1,6 +1,6 @@
 {
   "id": "K-REPACK-SIGNAL-WIRE-VERIFY",
-  "generated_at": "2026-08-08T08:13:00.144035+00:00",
+  "generated_at": "2026-08-08T09:10:51.399799+00:00",
   "range": [
     1216,
     1235
@@ -39,6 +39,20 @@
       "markov": 0.15,
       "stat": 0.15,
       "review": 0.15
+    },
+    "HINT_SPEC_BY_BRAIN": {
+      "markov": [
+        4,
+        "zone_mix"
+      ],
+      "stat": [
+        4,
+        "zone_mix"
+      ],
+      "review": [
+        4,
+        "zone_mix"
+      ]
     },
     "HINT_SHARED_ACROSS_BRAINS": true
   },

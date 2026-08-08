@@ -1,0 +1,3418 @@
+{
+  "id": "K-BRAIN-INDEPENDENCE-AUDIT",
+  "generated_at": "2026-08-08T09:21:35.613038+00:00",
+  "range": [
+    1216,
+    1235
+  ],
+  "seed": 42,
+  "policy": {
+    "measures_performance": false,
+    "read_only": true,
+    "db_write": false
+  },
+  "config": {
+    "ASSEMBLE_MODE": "signal_top",
+    "POOL_SLOTS_BY_BRAIN": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
+    "HINT_SPEC_BY_BRAIN": {
+      "markov": [
+        4,
+        "zone_mix"
+      ],
+      "stat": [
+        4,
+        "zone_mix"
+      ],
+      "review": [
+        4,
+        "zone_mix"
+      ]
+    },
+    "HINT_SHARED_ACROSS_BRAINS": true
+  },
+  "verdict": {
+    "checks": {
+      "A1_뇌별_10세트": {
+        "pass": true,
+        "detail_ko": "3뇌 모두 매 회차 정확히 10세트"
+      },
+      "A2_set_no_1~10": {
+        "pass": true,
+        "detail_ko": "set_no 가 1~10 빠짐없이 붙었다"
+      },
+      "A3_번호형식": {
+        "pass": true,
+        "detail_ko": "세트마다 1~45 범위의 서로 다른 번호 6개"
+      },
+      "A4_10세트내_중복없음": {
+        "pass": true,
+        "detail_ko": "10세트가 전부 서로 다르다",
+        "dup_total": 0,
+        "by_brain": {
+          "markov": 0,
+          "stat": 0,
+          "review": 0
+        },
+        "unique_mean": {
+          "markov": 10,
+          "stat": 10,
+          "review": 10
+        }
+      },
+      "A5_몰아주기_5세트": {
+        "pass": true,
+        "detail_ko": "3뇌 모두 5세트 · 5세트 안에 중복 없음"
+      },
+      "B1_뇌간_동일세트_없음": {
+        "pass": true,
+        "detail_ko": "서로 다른 뇌가 완전히 같은 세트를 낸 적 없다",
+        "by_pair": {
+          "markov|stat": 0,
+          "markov|review": 0,
+          "stat|review": 0
+        }
+      },
+      "B2_몰아주기_동일세트_없음": {
+        "pass": true,
+        "detail_ko": "뇌 간 몰아주기 세트가 겹치지 않는다",
+        "by_pair": {
+          "markov|stat": 0,
+          "markov|review": 0,
+          "stat|review": 0
+        }
+      },
+      "B3_몰아주기_pool슬롯_확보": {
+        "pass": true,
+        "detail_ko": "3뇌 모두 자기 pool 세트를 통째로 보존한 자리가 있다",
+        "by_brain": {
+          "markov": 2,
+          "stat": 2,
+          "review": 2
+        }
+      },
+      "B4_점수세트_pool외_번호유입": {
+        "pass": true,
+        "detail_ko": "점수조립 세트의 번호 중 자기 pool 출신 비율 — markov 0.788889 · stat 0.822222 · review 0.794444 (1.0 미만이면 공유 hint 등 pool 밖 경로로 번호가 들어왔다)",
+        "by_brain": {
+          "markov": 0.788889,
+          "stat": 0.822222,
+          "review": 0.794444
+        },
+        "cross_brain_score_num_jaccard": {
+          "markov|stat": {
+            "score_num_jaccard_mean": 0.664061,
+            "n_shared_mean": 14.15
+          },
+          "markov|review": {
+            "score_num_jaccard_mean": 0.673705,
+            "n_shared_mean": 14.3
+          },
+          "stat|review": {
+            "score_num_jaccard_mean": 0.68663,
+            "n_shared_mean": 14.45
+          }
+        },
+        "is_informational": true
+      },
+      "B5_겹침원인_공유hint": {
+        "pass": true,
+        "detail_ko": "관측 겹침 0.7429 vs 무작위 기대 0.2500 · hint 가중치 0 으로 두면 +0.4390 변화 → **공유 hint 가 주원인**",
+        "observed_jaccard_mean": 0.742857,
+        "expected_by_chance_mean": 0.25,
+        "jaccard_drop_when_hint_off": 0.438955,
+        "hint_is_main_driver": true,
+        "is_informational": true
+      },
+      "B6_뇌별설정_살아있음": {
+        "pass": true,
+        "detail_ko": "뇌별 설정 dict 를 바꾸면 결과가 바뀐다 (죽은 배선 아님) — SCORE_WEIGHTS_BY_BRAIN O · POOL_SLOTS_BY_BRAIN O · HINT_SPEC_BY_BRAIN O · LEARN_EMA_BY_BRAIN O",
+        "by_config": {
+          "SCORE_WEIGHTS_BY_BRAIN": {
+            "live": true
+          },
+          "POOL_SLOTS_BY_BRAIN": {
+            "live": true
+          },
+          "HINT_SPEC_BY_BRAIN": {
+            "live": true,
+            "shared_flag_flips": true
+          },
+          "LEARN_EMA_BY_BRAIN": {
+            "live": true
+          }
+        },
+        "restored_ok": true
+      },
+      "C1_RNG독립": {
+        "pass": true,
+        "detail_ko": "단독 실행이 합동 실행과 같다 (뇌 간 난수 오염 없음)"
+      },
+      "C2_학습_교차오염없음": {
+        "pass": true,
+        "detail_ko": "한 뇌 결과만 먹이면 그 뇌 성적표만 바뀐다",
+        "by_brain": {
+          "markov": {
+            "fed_brain_updated": true,
+            "other_brains_leaked": [],
+            "isolated": true
+          },
+          "stat": {
+            "fed_brain_updated": true,
+            "other_brains_leaked": [],
+            "isolated": true
+          },
+          "review": {
+            "fed_brain_updated": true,
+            "other_brains_leaked": [],
+            "isolated": true
+          }
+        }
+      },
+      "D1_learn_state_뇌별": {
+        "pass": true,
+        "detail_ko": "learn_state 가 뇌별 1행 이하 (리셋 후 비어 있음이 정상)"
+      }
+    },
+    "n_pass": 14,
+    "n_total": 14,
+    "all_pass": true,
+    "failed": [],
+    "code": "INDEPENDENCE_OK"
+  },
+  "result": {
+    "tags": [
+      "markov",
+      "stat",
+      "review"
+    ],
+    "aggregate": {
+      "completeness": {
+        "markov": {
+          "n_draws": 20,
+          "pool_count_all_ok": true,
+          "set_nos_all_ok": true,
+          "bad_form_total": 0,
+          "dup_in_pool10_total": 0,
+          "draws_with_dup_pool": 0,
+          "unique_pool_sets_mean": 10,
+          "repack_count_all_ok": true,
+          "dup_in_repack5_total": 0,
+          "pass0_equals_pass1_count": 0
+        },
+        "stat": {
+          "n_draws": 20,
+          "pool_count_all_ok": true,
+          "set_nos_all_ok": true,
+          "bad_form_total": 0,
+          "dup_in_pool10_total": 0,
+          "draws_with_dup_pool": 0,
+          "unique_pool_sets_mean": 10,
+          "repack_count_all_ok": true,
+          "dup_in_repack5_total": 0,
+          "pass0_equals_pass1_count": 0
+        },
+        "review": {
+          "n_draws": 20,
+          "pool_count_all_ok": true,
+          "set_nos_all_ok": true,
+          "bad_form_total": 0,
+          "dup_in_pool10_total": 0,
+          "draws_with_dup_pool": 0,
+          "unique_pool_sets_mean": 10,
+          "repack_count_all_ok": true,
+          "dup_in_repack5_total": 0,
+          "pass0_equals_pass1_count": 0
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets_total": 0,
+          "draws_with_identical_pool": 0,
+          "identical_repack_sets_total": 0,
+          "draws_with_identical_repack": 0,
+          "number_jaccard_mean": 0.569868
+        },
+        "markov|review": {
+          "identical_pool_sets_total": 0,
+          "draws_with_identical_pool": 0,
+          "identical_repack_sets_total": 0,
+          "draws_with_identical_repack": 0,
+          "number_jaccard_mean": 0.511898
+        },
+        "stat|review": {
+          "identical_pool_sets_total": 0,
+          "draws_with_identical_pool": 0,
+          "identical_repack_sets_total": 0,
+          "draws_with_identical_repack": 0,
+          "number_jaccard_mean": 0.573575
+        }
+      },
+      "provenance": {
+        "markov": {
+          "own_pool_ratio_all_mean": 0.873333,
+          "own_pool_ratio_score_sets_mean": 0.788889,
+          "rows_from_pool_mean": 2,
+          "rows_from_score_mean": 3,
+          "own_pool_numbers_mean": 29.6
+        },
+        "stat": {
+          "own_pool_ratio_all_mean": 0.893333,
+          "own_pool_ratio_score_sets_mean": 0.822222,
+          "rows_from_pool_mean": 2,
+          "rows_from_score_mean": 3,
+          "own_pool_numbers_mean": 33.3
+        },
+        "review": {
+          "own_pool_ratio_all_mean": 0.876667,
+          "own_pool_ratio_score_sets_mean": 0.794444,
+          "rows_from_pool_mean": 2,
+          "rows_from_score_mean": 3,
+          "own_pool_numbers_mean": 30.55
+        }
+      },
+      "score_set_overlap": {
+        "markov|stat": {
+          "score_num_jaccard_mean": 0.664061,
+          "n_shared_mean": 14.15
+        },
+        "markov|review": {
+          "score_num_jaccard_mean": 0.673705,
+          "n_shared_mean": 14.3
+        },
+        "stat|review": {
+          "score_num_jaccard_mean": 0.68663,
+          "n_shared_mean": 14.45
+        }
+      }
+    },
+    "b5_hint_attribution": {
+      "draw_no": 1235,
+      "with_hint": {
+        "markov|stat": {
+          "shared": 15,
+          "jaccard": 0.714286,
+          "expected_shared": 7.2,
+          "expected_jaccard": 0.25
+        },
+        "markov|review": {
+          "shared": 15,
+          "jaccard": 0.714286,
+          "expected_shared": 7.2,
+          "expected_jaccard": 0.25
+        },
+        "stat|review": {
+          "shared": 16,
+          "jaccard": 0.8,
+          "expected_shared": 7.2,
+          "expected_jaccard": 0.25
+        }
+      },
+      "hint_weight_zero": {
+        "markov|stat": {
+          "shared": 7,
+          "jaccard": 0.241379,
+          "expected_shared": 7.2,
+          "expected_jaccard": 0.25
+        },
+        "markov|review": {
+          "shared": 8,
+          "jaccard": 0.285714,
+          "expected_shared": 7.2,
+          "expected_jaccard": 0.25
+        },
+        "stat|review": {
+          "shared": 10,
+          "jaccard": 0.384615,
+          "expected_shared": 7.2,
+          "expected_jaccard": 0.25
+        }
+      },
+      "jaccard_drop_mean": 0.438955,
+      "hint_is_main_driver": true,
+      "note_ko": "무작위 기대치(expected_jaccard)보다 관측 겹침이 크고, hint 를 끄면 겹침이 내려간다면 공유 hint 가 뇌 간 번호 공유의 원인이다"
+    },
+    "b6_config_liveness": {
+      "SCORE_WEIGHTS_BY_BRAIN": {
+        "live": true
+      },
+      "POOL_SLOTS_BY_BRAIN": {
+        "live": true
+      },
+      "HINT_SPEC_BY_BRAIN": {
+        "live": true,
+        "shared_flag_flips": true
+      },
+      "LEARN_EMA_BY_BRAIN": {
+        "live": true
+      },
+      "restored_ok": true,
+      "all_live": true
+    },
+    "c1_rng_independence": {
+      "markov": {
+        "solo_equals_joint": true,
+        "n_solo": 10,
+        "n_joint": 10
+      },
+      "stat": {
+        "solo_equals_joint": true,
+        "n_solo": 10,
+        "n_joint": 10
+      },
+      "review": {
+        "solo_equals_joint": true,
+        "n_solo": 10,
+        "n_joint": 10
+      }
+    },
+    "c2_learner_isolation": {
+      "markov": {
+        "fed_brain_updated": true,
+        "other_brains_leaked": [],
+        "isolated": true
+      },
+      "stat": {
+        "fed_brain_updated": true,
+        "other_brains_leaked": [],
+        "isolated": true
+      },
+      "review": {
+        "fed_brain_updated": true,
+        "other_brains_leaked": [],
+        "isolated": true
+      }
+    },
+    "d1_learn_state": {
+      "rows_by_brain": {},
+      "table_empty": true,
+      "note_ko": "K-PREDICT-RESET 로 비운 상태가 정상. 값이 있으면 뇌별 1행씩이어야 한다",
+      "one_row_per_brain": true
+    }
+  },
+  "per_draw": [
+    {
+      "draw_no": 1216,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.615385,
+          "n_numbers_a": 30,
+          "n_numbers_b": 33
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.487179,
+          "n_numbers_a": 30,
+          "n_numbers_b": 28
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.452381,
+          "n_numbers_a": 33,
+          "n_numbers_b": 28
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 30
+          },
+          "stat": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "review": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 28
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.384615,
+            "n_shared": 10,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.333333,
+            "n_shared": 9,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.333333,
+            "n_shared": 9,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1217,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.6,
+          "n_numbers_a": 30,
+          "n_numbers_b": 34
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.675676,
+          "n_numbers_a": 30,
+          "n_numbers_b": 32
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.692308,
+          "n_numbers_a": 34,
+          "n_numbers_b": 32
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.666667,
+            "own_pool_ratio_score_sets": 0.444444,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 30
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.8,
+            "own_pool_ratio_score_sets": 0.666667,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 34
+          },
+          "review": {
+            "own_pool_ratio_all": 0.733333,
+            "own_pool_ratio_score_sets": 0.555556,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 32
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1218,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.731707,
+          "n_numbers_a": 32,
+          "n_numbers_b": 39
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.512195,
+          "n_numbers_a": 32,
+          "n_numbers_b": 30
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.604651,
+          "n_numbers_a": 39,
+          "n_numbers_b": 30
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 32
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 39
+          },
+          "review": {
+            "own_pool_ratio_all": 0.866667,
+            "own_pool_ratio_score_sets": 0.777778,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 30
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.894737,
+            "n_shared": 17,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1219,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.575,
+          "n_numbers_a": 28,
+          "n_numbers_b": 35
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.594595,
+          "n_numbers_a": 28,
+          "n_numbers_b": 31
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.609756,
+          "n_numbers_a": 35,
+          "n_numbers_b": 31
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 28
+          },
+          "stat": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 35
+          },
+          "review": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 31
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.333333,
+            "n_shared": 9,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.565217,
+            "n_shared": 13,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.384615,
+            "n_shared": 10,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1220,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.571429,
+          "n_numbers_a": 33,
+          "n_numbers_b": 33
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.52381,
+          "n_numbers_a": 33,
+          "n_numbers_b": 31
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.488372,
+          "n_numbers_a": 33,
+          "n_numbers_b": 31
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.966667,
+            "own_pool_ratio_score_sets": 0.944444,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "stat": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "review": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 31
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.44,
+            "n_shared": 11,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.5,
+            "n_shared": 12,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.5,
+            "n_shared": 12,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1221,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.55,
+          "n_numbers_a": 27,
+          "n_numbers_b": 35
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.342105,
+          "n_numbers_a": 27,
+          "n_numbers_b": 24
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.439024,
+          "n_numbers_a": 35,
+          "n_numbers_b": 24
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.8,
+            "own_pool_ratio_score_sets": 0.666667,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 27
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 35
+          },
+          "review": {
+            "own_pool_ratio_all": 0.866667,
+            "own_pool_ratio_score_sets": 0.777778,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 24
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1222,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.577778,
+          "n_numbers_a": 33,
+          "n_numbers_b": 38
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.619048,
+          "n_numbers_a": 33,
+          "n_numbers_b": 35
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.697674,
+          "n_numbers_a": 38,
+          "n_numbers_b": 35
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.933333,
+            "own_pool_ratio_score_sets": 0.888889,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 38
+          },
+          "review": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 35
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1223,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.452381,
+          "n_numbers_a": 29,
+          "n_numbers_b": 32
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.414634,
+          "n_numbers_a": 29,
+          "n_numbers_b": 29
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.525,
+          "n_numbers_a": 32,
+          "n_numbers_b": 29
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.766667,
+            "own_pool_ratio_score_sets": 0.611111,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 29
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 32
+          },
+          "review": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 29
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.894737,
+            "n_shared": 17,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1224,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.641026,
+          "n_numbers_a": 33,
+          "n_numbers_b": 31
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.657895,
+          "n_numbers_a": 33,
+          "n_numbers_b": 30
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.564103,
+          "n_numbers_a": 31,
+          "n_numbers_b": 30
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.933333,
+            "own_pool_ratio_score_sets": 0.888889,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 31
+          },
+          "review": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 30
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1225,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.631579,
+          "n_numbers_a": 30,
+          "n_numbers_b": 32
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.45,
+          "n_numbers_a": 30,
+          "n_numbers_b": 28
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.538462,
+          "n_numbers_a": 32,
+          "n_numbers_b": 28
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.8,
+            "own_pool_ratio_score_sets": 0.666667,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 30
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 32
+          },
+          "review": {
+            "own_pool_ratio_all": 0.766667,
+            "own_pool_ratio_score_sets": 0.611111,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 28
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.894737,
+            "n_shared": 17,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1226,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.439024,
+          "n_numbers_a": 28,
+          "n_numbers_b": 31
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.547619,
+          "n_numbers_a": 28,
+          "n_numbers_b": 37
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.7,
+          "n_numbers_a": 31,
+          "n_numbers_b": 37
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.8,
+            "own_pool_ratio_score_sets": 0.666667,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 28
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.866667,
+            "own_pool_ratio_score_sets": 0.777778,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 31
+          },
+          "review": {
+            "own_pool_ratio_all": 0.933333,
+            "own_pool_ratio_score_sets": 0.888889,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 37
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1227,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.585366,
+          "n_numbers_a": 31,
+          "n_numbers_b": 34
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.452381,
+          "n_numbers_a": 31,
+          "n_numbers_b": 30
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.6,
+          "n_numbers_a": 34,
+          "n_numbers_b": 30
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 31
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 34
+          },
+          "review": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 30
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.44,
+            "n_shared": 11,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.565217,
+            "n_shared": 13,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.565217,
+            "n_shared": 13,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1228,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.487805,
+          "n_numbers_a": 31,
+          "n_numbers_b": 30
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.5,
+          "n_numbers_a": 31,
+          "n_numbers_b": 29
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.439024,
+          "n_numbers_a": 30,
+          "n_numbers_b": 29
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.8,
+            "own_pool_ratio_score_sets": 0.666667,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 31
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.766667,
+            "own_pool_ratio_score_sets": 0.611111,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 30
+          },
+          "review": {
+            "own_pool_ratio_all": 0.8,
+            "own_pool_ratio_score_sets": 0.666667,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 29
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1229,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.564103,
+          "n_numbers_a": 28,
+          "n_numbers_b": 33
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.5,
+          "n_numbers_a": 28,
+          "n_numbers_b": 29
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.512195,
+          "n_numbers_a": 33,
+          "n_numbers_b": 29
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 28
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.866667,
+            "own_pool_ratio_score_sets": 0.777778,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "review": {
+            "own_pool_ratio_all": 0.766667,
+            "own_pool_ratio_score_sets": 0.611111,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 29
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.894737,
+            "n_shared": 17,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1230,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.55,
+          "n_numbers_a": 28,
+          "n_numbers_b": 34
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.439024,
+          "n_numbers_a": 28,
+          "n_numbers_b": 31
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.585366,
+          "n_numbers_a": 34,
+          "n_numbers_b": 31
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 28
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.866667,
+            "own_pool_ratio_score_sets": 0.777778,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 34
+          },
+          "review": {
+            "own_pool_ratio_all": 0.866667,
+            "own_pool_ratio_score_sets": 0.777778,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 31
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1231,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.525,
+          "n_numbers_a": 28,
+          "n_numbers_b": 33
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.461538,
+          "n_numbers_a": 28,
+          "n_numbers_b": 29
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.55,
+          "n_numbers_a": 33,
+          "n_numbers_b": 29
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 28
+          },
+          "stat": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "review": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 29
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.565217,
+            "n_shared": 13,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.384615,
+            "n_shared": 10,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.5,
+            "n_shared": 12,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1232,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.628571,
+          "n_numbers_a": 27,
+          "n_numbers_b": 30
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.564103,
+          "n_numbers_a": 27,
+          "n_numbers_b": 34
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.72973,
+          "n_numbers_a": 30,
+          "n_numbers_b": 34
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.866667,
+            "own_pool_ratio_score_sets": 0.777778,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 27
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 30
+          },
+          "review": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 34
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.894737,
+            "n_shared": 17,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1233,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.605263,
+          "n_numbers_a": 28,
+          "n_numbers_b": 33
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.447368,
+          "n_numbers_a": 28,
+          "n_numbers_b": 27
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.538462,
+          "n_numbers_a": 33,
+          "n_numbers_b": 27
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 28
+          },
+          "stat": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "review": {
+            "own_pool_ratio_all": 1.0,
+            "own_pool_ratio_score_sets": 1.0,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 27
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.5,
+            "n_shared": 12,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.44,
+            "n_shared": 11,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.565217,
+            "n_shared": 13,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1234,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.47619,
+          "n_numbers_a": 29,
+          "n_numbers_b": 33
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.536585,
+          "n_numbers_a": 29,
+          "n_numbers_b": 34
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.595238,
+          "n_numbers_a": 33,
+          "n_numbers_b": 34
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.8,
+            "own_pool_ratio_score_sets": 0.666667,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 29
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "review": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 34
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    },
+    {
+      "draw_no": 1235,
+      "completeness": {
+        "markov": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "stat": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        },
+        "review": {
+          "n_pool": 10,
+          "pool_count_ok": true,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "set_nos_ok": true,
+          "bad_form_count": 0,
+          "dup_sets_in_pool10": 0,
+          "n_unique_pool_sets": 10,
+          "n_repack": 5,
+          "repack_count_ok": true,
+          "dup_sets_in_repack5": 0,
+          "pass0_equals_pass1": false
+        }
+      },
+      "cross_share": {
+        "markov|stat": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.589744,
+          "n_numbers_a": 29,
+          "n_numbers_b": 33
+        },
+        "markov|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.512195,
+          "n_numbers_a": 29,
+          "n_numbers_b": 33
+        },
+        "stat|review": {
+          "identical_pool_sets": 0,
+          "identical_repack_sets": 0,
+          "number_jaccard": 0.609756,
+          "n_numbers_a": 33,
+          "n_numbers_b": 33
+        }
+      },
+      "provenance": {
+        "by_brain": {
+          "markov": {
+            "own_pool_ratio_all": 0.866667,
+            "own_pool_ratio_score_sets": 0.777778,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 29
+          },
+          "stat": {
+            "own_pool_ratio_all": 0.833333,
+            "own_pool_ratio_score_sets": 0.722222,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          },
+          "review": {
+            "own_pool_ratio_all": 0.9,
+            "own_pool_ratio_score_sets": 0.833333,
+            "n_numbers_all": 30,
+            "n_numbers_score_sets": 18,
+            "n_rows_from_pool": 2,
+            "n_rows_from_score": 3,
+            "n_own_pool_numbers": 33
+          }
+        },
+        "score_set_overlap": {
+          "markov|stat": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "markov|review": {
+            "score_num_jaccard": 0.714286,
+            "n_shared": 15,
+            "n_a": 18,
+            "n_b": 18
+          },
+          "stat|review": {
+            "score_num_jaccard": 0.8,
+            "n_shared": 16,
+            "n_a": 18,
+            "n_b": 18
+          }
+        }
+      }
+    }
+  ]
+}

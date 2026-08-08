@@ -3,6 +3,15 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
+- ID: K-STAT-TUNE-START-PICK
+- 할일: 형 지시 「한번 더 버그를 찾아보자 · 없으면 과거학습 뇌부터 튜닝」 → **버그 2건 발견·수정 후 14/14** 이므로 **이제 튜닝 착수 가능**. ⑹ **`brain_tag` 죽은 배선**: `repack_by_brain` 이 `number_scores` 에 `brain_tag` 를 안 넘겨 **뇌별 가중치 dict 가 한 번도 조회되지 않았다**. 처음 hint 절제가 `+0.0000` 으로 나온 게 이 버그의 증상(절제가 물리적으로 불가능했다) → `brain_tag=tag` 추가. 다른 5개 호출부는 전부 넘기고 있었고 발권 분석 경로 하나만 누락 · ⑺ **죽은배선 탐지 B6 신설** 후 hint 축을 열자 **즉시 또 검출** → `repack_by_brain` 이 spec 갈릴 때 직접 만들게 수정 · **실측(형이 걱정한 「예측번호 공유」의 크기)**: 3뇌 점수세트 번호겹침 Jaccard **0.664~0.687**(공유 14.2~14.5개) vs 무작위 기대 **0.250** = 약 **2.7배**, hint 가중치 0 으로 두면 **0.743 → 0.30** → **공유 hint 가 주원인 확정** · 점수세트 번호의 자기 pool 출신 비율 **0.79~0.82**(약 20% 가 pool 밖 유입) · **깨지지 않은 것**: 10세트 정확·set_no 1~10·번호형식·**pass0≠pass1**(「10세트가 실은 5세트」 의심은 사실 아님 · 3뇌 전부 난수 사용)·뇌간 동일세트 0건·pool 슬롯 2자리·RNG 독립·학습 교차오염 없음. 형 1건 선택 — **①과거학습 뇌(stat) 예측 튜닝 착수**(권장 · 형 예정대로 · **착수 전 백테스트 재생성 필수** — DB 리셋으로 learn_state·feedback 이 비어 피드백·boost 경로가 현재 무효) / ②뇌별 hint spec 값 차별화(배선·탐지기 완료 · **값 결정만 R38 게이트 필요** · 겹침 2.7배의 주원인이라 효과 큼) / ③1236+ 회차별 자동시스템 배선(형이 「이후 패치」로 미뤄둔 건) / ④트랙정지
+- 완료조건: 형이 ①~④ 중 1건 지정
+- 선행완료: `app/testlotto/signal_pool.py`(brain_tag 전달 · `HINT_SPEC_BY_BRAIN` · `build_hint_by_brain` · `hint_shared_across_brains()` · 호출자 누락 대비 자동생성) · `tools/_k_brain_independence_audit.py`(14검사 · B6 죽은배선 탐지) · `tools/_k_hint_neutrality_check.py`(성적 무변화 실증) · `tools/_k_predict_reset.py` · `tools/_k_db_table_census.py` · 벤치 JSON 3건 · 보고서 3건
+- 승인필요: 없음 (발권경로 `coordinator` 무변경 · 동결항목 무접촉 · DB 커밋 안 함)
+- 선행조건: 없음
+- 최종갱신: 2026-08-08
+
+## 참고 (직전 1건)
 - ID: K-BRAIN-INDEPENDENT-NEXT-PICK
 - 할일: 형 지시 3건 **완료** — ⑴ **나머지 2뇌 독립**: 「3뇌 동일 배선」은 앞 턴에 됐지만 **독립은 아니었다**. `expand_pool` 이 `_live_candidates` 로 3뇌를 **한 난수 흐름에서 순차 호출**해 앞 뇌의 뽑기 소비량이 뒤 뇌 결과를 바꿨다(stat→markov 오염). 발권경로 `coordinator._seed_independent_brain` 은 이미 뇌별 시드리셋인데 **pool 경로만 누락**이었다 → `expand_pool` 이 `BRAIN_TAGS` 를 직접 돌며 뇌마다 시드 리셋. 덤으로 pass0 시드를 발권 규칙(`42+draw_no`)과 맞춰 **pool 1~5 = 실제 발권 5세트** 확보(C8 신설 · 분석과 발권이 어긋나던 것도 해소). 뇌별 상수 dict(`POOL_SLOTS_BY_BRAIN`·`SCORE_WEIGHTS_BY_BRAIN`·`LEARN_EMA_BY_BRAIN`) 개방했으나 **값은 3뇌 동일 = 성적 무변화**(차별화는 게이트 통과 후) · 검증 **9/9**(1216~1235 · 리셋 후 재실행) · ⑵ **DB 리셋**: 테스트로또 DB 3뇌 예측 **7,094행 삭제** · 원천데이터 보존 · `rare_bundle_hits`·`transition_log` 는 회차 파생이라 3뇌 예측 아님 → 보존 · ⑶ **미해결 1건 명시**: `HINT_SHARED_ACROSS_BRAINS=True` — `_build_hint` 하나를 3뇌에 그대로 넘기고 `W_HINT=0.40` 이라 **점수의 40%가 3뇌 동일**. 완전 독립이 아니다. 형 확인 후 1건 선택 — **①과거학습 뇌(stat) 예측 튜닝**(권장 · 형이 말한 「과거 회차 분석해 번호 예측하는 뇌 튜닝」 · 통로가 뚫렸으니 이제 개선이 몰아주기까지 전달됨 · 튜닝 지점 후보는 아래 메모) / ②뇌별 hint 분리(남은 마지막 공유축 · 단 어느 hint 가 어느 뇌에 맞는지는 데이터로 정해야 하므로 게이트 필요) / ③1236+ 회차별 자동시스템 배선(형이 「이후 패치」로 미뤄둔 건) / ④트랙정지
 - 완료조건: 형이 ①~④ 중 1건 지정
@@ -67,6 +76,8 @@ IDLE
 - **뇌별 성적표 분리 완료(K-REPACK-SIGNAL-WIRE)**: `RollingSignalLearner.num_hit_ema`·`pos_hit_ema` 는 이제 `dict[brain][key]` 중첩. `snapshot()` 도 중첩 반환 → 옛 도구가 `num_ema.get(n)` 로 바로 읽으면 **조용히 0** 이 나온다. 반드시 `brain_signal(table, tag)` 를 거칠 것. `number_scores(..., brain_tag=...)` 신설
 - **RNG 독립 완료(K-BRAIN-RNG-INDEPENDENT)**: `expand_pool` 은 더 이상 `_live_candidates` 를 쓰지 않고 뇌마다 `random.seed(_pass_seed(seed,draw_no,pass))` 를 건다. **구 `_live_candidates` 는 대조군으로만 남김**(3뇌 한 흐름 = 오염 버전). pass0 시드가 `seed+draw_no` 로 바뀌었으므로 **20260808 이전 pool 기반 벤치 수치는 새 배선과 직접 비교 불가**(재측정 필요)
 - **pool 1~5 = 발권 5세트(C8)**: `_pass_seed(...,pass=0)` 이 `coordinator._seed_independent_brain`(=`42+draw_no`) 과 같은 규칙. 분석경로 앞 5세트가 실제 티켓 후보와 일치한다. coordinator 시드 규칙을 바꾸면 C8 이 깨지므로 같이 고칠 것
-- **아직 남은 공유축 = hint**: `HINT_SHARED_ACROSS_BRAINS=True`. `_build_hint(draws, dno)` 하나를 3뇌에 그대로 넘기고 `W_HINT=0.40` 이므로 **점수의 40%가 3뇌 동일**. 「완전 독립」이라고 말하면 안 된다
+- **아직 남은 공유축 = hint (배선은 열렸고 값만 동일)**: `HINT_SPEC_BY_BRAIN` 이 3뇌 전부 `(4, "zone_mix")`. `hint_shared_across_brains()` 로 판정하며 값을 다르게 두면 자동으로 False 가 되고 `repack_by_brain` 이 뇌별 hint 를 만든다. `W_HINT=0.40` 이라 **점수의 40%가 3뇌 동일** → 실측 겹침이 무작위 기대의 2.7배. 「완전 독립」이라고 말하면 안 된다
+- **`number_scores` 호출 시 `brain_tag` 필수**: 빠뜨리면 `SCORE_WEIGHTS_BY_BRAIN.get("" , 기본값)` 으로 떨어져 **뇌별 가중치가 조용히 무시된다**(K-REPACK-BRAINTAG-DEAD-WIRE). 오류도 로그도 안 난다
+- **뇌별 설정 dict 를 새로 만들면 반드시 B6 로 검증**: `tools/_k_brain_independence_audit.py` 의 `_audit_config_liveness` 에 항목 추가. 값을 바꿨는데 결과가 그대로면 죽은 배선이다. hint 축도 이 검사가 잡아냈다
 - **과거학습 뇌 튜닝 지점 후보(미검증·근거파일 없음 = 착수 시 실측 필요)**: `stat_brain/engine.py` — `ENGINE_V2=False`(v2 미가동) · `V2_SHORT_WIN=26`·`V2_SHORT_MIX=0.8`·`V2_LONG_DECAY=0.005`·`V2_SHORT_DECAY=0.05`(전부 잡음선택 이력 있음 · 되돌릴 근거도 없어 유지 중) · `hot_count>=2 → freq*=1.2`(하드코딩) · `top_pairs[:30] → bonus=0.05*cnt` 상한 0.5(하드코딩) · 피드백 `trap*0.8`/`hit*1.15`(하드코딩) · `learn.apply_learn_boost` 의 overdue gap>=30 조건. **DB 리셋으로 learn_state·feedback 이 비었으므로 지금은 이 경로들이 무효(중립) 상태** — 튜닝 전 백테스트 재생성 필요
 - 상수·배선 불변: engine decay 0.005/0.05 · FRAME win26/mix0.8 · ASSOC/transition/LSTM OFF

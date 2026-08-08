@@ -502,7 +502,8 @@ def main() -> None:
                 k: list(v) for k, v in sp.SCORE_WEIGHTS_BY_BRAIN.items()
             },
             "LEARN_EMA_BY_BRAIN": dict(sp.LEARN_EMA_BY_BRAIN),
-            "HINT_SHARED_ACROSS_BRAINS": sp.HINT_SHARED_ACROSS_BRAINS,
+            "HINT_SPEC_BY_BRAIN": {t: list(v) for t, v in sp.HINT_SPEC_BY_BRAIN.items()},
+            "HINT_SHARED_ACROSS_BRAINS": sp.hint_shared_across_brains(),
         },
         "policy": {
             "measures_performance": False,

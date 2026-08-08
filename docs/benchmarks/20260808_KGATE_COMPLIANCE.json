@@ -77,8 +77,8 @@
     "violations": 0
   },
   "scan": {
-    "n_files": 194,
-    "n_readable": 194,
+    "n_files": 195,
+    "n_readable": 195,
     "unreadable": [],
     "rows": [
       {
@@ -1854,6 +1854,14 @@
         "record_only": false
       },
       {
+        "file": "20260808_KBRAIN_INDEP_AUDIT.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "raw_dump": false,
+        "record_only": false
+      },
+      {
         "file": "20260808_KBRAIN_RENAME_STAT.json",
         "comparative": false,
         "hints": [],
@@ -2463,5 +2471,5 @@
   },
   "prior": "docs/benchmarks/20260808_KSTAT_DECISION_GATE.json",
   "tool": "tools/_k_gate_compliance.py",
-  "ts": "2026-08-08T08:15:22.138305+00:00"
+  "ts": "2026-08-08T09:21:57.085108+00:00"
 }
