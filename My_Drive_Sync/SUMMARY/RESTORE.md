@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `741de31` · WORK=`IDLE`
+1. **HEAD:** `59418d4` · WORK=`IDLE`
 2. **지금:** **K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF
 3. **다음1건:** K-STAT-HOMEWORK-FILL-PICK — UI는 테스트로또 집중 HOLD 중 · 형 1건 — **①회차 숙제 백테스트로 기록 채우기**(권장) / ②명분 샘플 리뷰 / ③재료 튜닝(게이트) / ④트랙정지 (승인필요=없음 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

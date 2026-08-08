@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `741de31` · WORK=`IDLE`
+- HEAD: `59418d4` · WORK=`IDLE`
 - 지금: **K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF
 - 직전: K-STAT-PASTLEARN-READY-CHECK · 튜닝직전아님
 - BOOT다음: 회차 숙제 백필 or 형 GO · **테스트로또만**
