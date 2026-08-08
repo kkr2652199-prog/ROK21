@@ -7,6 +7,48 @@
 
   const API = '/api/lotto4/v13';
 
+  /**
+   * 테스트로또 집중 HOLD — 전략X·두뇌예측(4군)·효도 예측번호 UI 숨김.
+   * 끄려면 false. (형: 1236 등 타탭 예측 혼동 방지)
+   */
+  const ROK21_TESTLOTTO_FOCUS_HOLD = true;
+  const HOLD_HIDE_VIEWS = new Set(['predict', 'strategy-x', 'hyodo']);
+  const HOLD_DEFAULT_VIEW = 'testlotto';
+
+  function applyTestlottoFocusHold() {
+    if (!ROK21_TESTLOTTO_FOCUS_HOLD) return;
+    document.querySelectorAll('.nav-btn[data-view]').forEach((btn) => {
+      const v = btn.getAttribute('data-view');
+      if (HOLD_HIDE_VIEWS.has(v)) {
+        btn.classList.add('ui-hold-hidden');
+        btn.setAttribute('aria-hidden', 'true');
+        btn.tabIndex = -1;
+      }
+    });
+    HOLD_HIDE_VIEWS.forEach((name) => {
+      const panel = document.querySelector('.view-panel[data-view-panel="' + name + '"]');
+      if (panel) {
+        panel.classList.remove('active');
+        panel.classList.add('ui-hold-hidden');
+      }
+    });
+    const sxDash = document.getElementById('strategyXBrainPowerTable');
+    if (sxDash) {
+      const wrap = sxDash.closest('div[style]') || sxDash.parentElement;
+      if (wrap) wrap.classList.add('ui-hold-hidden');
+    }
+    const brandSub = document.querySelector('.brand-sub');
+    if (brandSub) {
+      brandSub.textContent = '포트 7021 · 테스트로또 집중 · 전략X/두뇌예측 HOLD';
+    }
+    const holdNote = document.getElementById('rok21HoldBanner');
+    if (holdNote) holdNote.hidden = false;
+  }
+
+  function isViewHeld(name) {
+    return ROK21_TESTLOTTO_FOCUS_HOLD && HOLD_HIDE_VIEWS.has(name);
+  }
+
   /** 구버전 DB brain_tag → 현행 v13 (표시·탭·필터 통일, DB 비변경) */
   const LEGACY_TO_CANONICAL = {
     v13_bayesian: 'v13_cdm',
@@ -211,11 +253,24 @@
   }
 
   function switchView(name) {
+    if (isViewHeld(name)) {
+      name = HOLD_DEFAULT_VIEW;
+    }
     document.querySelectorAll('.view-panel').forEach((p) => {
-      p.classList.toggle('active', p.getAttribute('data-view-panel') === name);
+      const pn = p.getAttribute('data-view-panel');
+      if (isViewHeld(pn)) {
+        p.classList.remove('active');
+        return;
+      }
+      p.classList.toggle('active', pn === name);
     });
     document.querySelectorAll('.nav-btn').forEach((b) => {
-      b.classList.toggle('active', b.getAttribute('data-view') === name);
+      const v = b.getAttribute('data-view');
+      if (isViewHeld(v)) {
+        b.classList.remove('active');
+        return;
+      }
+      b.classList.toggle('active', v === name);
     });
   }
 
@@ -2969,14 +3024,25 @@
   window.goToDirectDraw = goToDirectDraw;
 
   document.addEventListener('DOMContentLoaded', () => {
+    applyTestlottoFocusHold();
     refreshEliteTags();
-    loadDashboard()
-      .then(() => loadBrainMeta())
-      .then(() => syncPredictionsForCurrentDraw());
+    // HOLD: 두뇌예측/전략X 번호 자동로드 금지 (1236 등 혼동 방지)
+    if (ROK21_TESTLOTTO_FOCUS_HOLD) {
+      loadDashboard().catch(() => {});
+      switchView(HOLD_DEFAULT_VIEW);
+      if (typeof initTestlottoDrawSearch === 'function') {
+        initTestlottoDrawSearch();
+      }
+    } else {
+      loadDashboard()
+        .then(() => loadBrainMeta())
+        .then(() => syncPredictionsForCurrentDraw());
+    }
 
     document.querySelectorAll('.nav-btn[data-view]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const v = btn.getAttribute('data-view');
+        if (isViewHeld(v)) return;
         switchView(v);
         if (v === 'predict') syncPredictionsForCurrentDraw();
         if (v === 'hall') loadHall();

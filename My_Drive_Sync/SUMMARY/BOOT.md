@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-STAT-PASTLEARN-READY-CHECK**(READ-ONLY) — 과거학습 뇌가 「회차 숙제」 길로 패치 준비됐는지 점검. **방향·컨닝차단·파이프는 준비됨** · **학습/명분 DB는 리셋으로 비어 튜닝 직전 아님**. 실측: _get_draws_before(1235)→last1234 · cutoff 없으면 learn 로드 차단 · wire ON·v2 ON·ASSOC OFF · reasoning 태그 있음(1yHot) · learn_state/predictions/hit_warrant/evolve=0
-- 직전: K-BRAIN-INDEPENDENCE-AUDIT 14/14 · RNG독립·예측DB리셋
-- 다음: **형 GO** — ①회차 숙제 백테스트로 기록 채우기(권장·튜닝 전 필수) ②한 회차 명분 샘플 리뷰 ③재료 튜닝(게이트) 중 1건
+- 지금: **K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF
+- 직전: K-STAT-PASTLEARN-READY-CHECK · 튜닝직전아님
+- 다음: 회차 숙제 백필 or 형 GO · **테스트로또만**
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

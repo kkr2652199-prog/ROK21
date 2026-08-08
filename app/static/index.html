@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROK21 — 4군 AI 예측</title>
-  <link rel="stylesheet" href="/static/css/lotto4.css?v=20260620c" />
+  <link rel="stylesheet" href="/static/css/lotto4.css?v=20260808hold" />
   <link rel="stylesheet" href="/static/css/hyodo.css?v=20260727p5" />
   <link rel="stylesheet" href="/static/css/testlotto.css?v=20260730g" />
 </head>
@@ -15,14 +15,17 @@
         <div class="brand-title">ROK21<br />4군 AI 예측</div>
         <div class="brand-sub">포트 7021 · 독립 DB · 8뇌 엔진 · SSOT</div>
       </div>
+      <div id="rok21HoldBanner" class="hold-banner" hidden>
+        테스트로또 집중 · 전략X/두뇌예측/효도 <strong>HOLD</strong>
+      </div>
       <button type="button" class="nav-btn" data-view="dashboard">대시보드</button>
-      <button type="button" class="nav-btn active" data-view="predict">두뇌예측</button>
+      <button type="button" class="nav-btn" data-view="predict">두뇌예측</button>
       <button type="button" class="nav-btn" data-view="hall">명예의전당</button>
       <button type="button" class="nav-btn" data-view="stats">통계분석</button>
       <button type="button" class="nav-btn" data-view="truth">로또의 진실</button>
       <button type="button" class="nav-btn" data-view="strategy-x">전략 X</button>
       <button type="button" class="nav-btn" data-view="hyodo">효도로또</button>
-      <button type="button" class="nav-btn" data-view="testlotto">테스트로또</button>
+      <button type="button" class="nav-btn active" data-view="testlotto">테스트로또</button>
       <button type="button" class="nav-btn" data-view="combo-lookup">로또 조회</button>
       <button type="button" class="nav-btn" data-view="all-combos">전체 조합</button>
       <button type="button" class="nav-btn" data-view="data">데이터수집</button>
@@ -103,7 +106,7 @@
         </section>
 
         <!-- 두뇌예측 -->
-        <section id="view-predict" class="view-panel active" data-view-panel="predict">
+        <section id="view-predict" class="view-panel" data-view-panel="predict">
           <div class="card">
             <h2>두뇌 예측</h2>
             <div class="predict-toolbar">
@@ -336,7 +339,7 @@
         </section>
 
         <!-- ROK21 테스트로또 (실험·튜닝 전용) -->
-        <section id="view-testlotto" class="view-panel" data-view-panel="testlotto">
+        <section id="view-testlotto" class="view-panel active" data-view-panel="testlotto">
           <div class="card testlotto-main-card">
             <div class="testlotto-page-head">
               <h2>ROK21 테스트로또</h2>
@@ -610,6 +613,6 @@
 
   <script src="/static/js/hyodo.js?v=20260727p5"></script>
   <script src="/static/js/testlotto.js?v=20260803e"></script>
-  <script src="/static/js/lotto4.js?v=20260620c"></script>
+  <script src="/static/js/lotto4.js?v=20260808hold"></script>
 </body>
 </html>

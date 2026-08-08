@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`11a6890` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`854d1b4` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=11a6890]
+[ROK21 젠스파크 압축복구 · HEAD=854d1b4]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 11a6890 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-STAT-PASTLEARN-READY-CHECK**(READ-ONLY) — 과거학습 뇌가 「회차 숙제」 길로 패치 준비됐는지 점검. **방향·컨닝차단·파이프는 준비됨** · **학습/명분 DB는 리셋으로 비어 튜닝 직전 아님**. 실측: _get_draws_before(1235)→last1234 · cutoff 없으면 learn 로드 차단 · wire ON·v2 ON·ASSOC OFF · reasoning 태그 있음(1yHot) · learn_state/predictions/hit_warrant/evolve=0
-- 직전: K-BRAIN-INDEPENDENCE-AUDIT 14/14 · RNG독립·예측DB리셋
-- BOOT다음: **형 GO** — ①회차 숙제 백테스트로 기록 채우기(권장·튜닝 전 필수) ②한 회차 명분 샘플 리뷰 ③재료 튜닝(게이트) 중 1건
-- NEXT1: K-STAT-HOMEWORK-FILL-PICK — **K-STAT-PASTLEARN-READY-CHECK 완료** — 형 질문 「확정 길(회차 숙제)로 패치 준비된 뇌인가?」에 대한 실측 답. **방향·컨닝차단·파이프는 준비됨 / 학습·명분 DB는 비어 튜닝 직전 아님.** 실측: `_get_draws_before(1235)`→last=1234 · `set_learn_as_of` 없으면 learn 로드 차단 · `PAST_LEARN_WIRE=ON`·`ENGINE_V2=ON`(past_learn경유)·ASSOC OFF · reasoning에 `1yHot` 태그 존재 · `learn_state/predictions/hit_warrant/evolve_log=0`. **확정 길 잠금**: 예측=N 숙제 · 재료=1..(N-1) · 채점=N 정답 · 깊은 패턴은 재료일 뿐 본선 아님. 형 1건 선택 — **①회차 숙제 백테스트로 기록 채우기**(권장 · 빈 DB로 decay/하드코딩 튜닝 금지) / ②한 회차(예 1235) 명분 샘플을 형이 읽고 부족한 점 지적 / ③재료 튜닝(게이트·성적주장) / ④트랙정지
+- HEAD: 854d1b4 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF
+- 직전: K-STAT-PASTLEARN-READY-CHECK · 튜닝직전아님
+- BOOT다음: 회차 숙제 백필 or 형 GO · **테스트로또만**
+- NEXT1: K-STAT-HOMEWORK-FILL-PICK — UI는 테스트로또 집중 HOLD 중 · 형 1건 — **①회차 숙제 백테스트로 기록 채우기**(권장) / ②명분 샘플 리뷰 / ③재료 튜닝(게이트) / ④트랙정지
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,10 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260808_KUI_TESTLOTTO_FOCUS_HOLD` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KUI_TESTLOTTO_FOCUS_HOLD.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KUI_TESTLOTTO_FOCUS_HOLD.md
+- `20260808_KSTAT_HOMEWORK_FILL` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_HOMEWORK_FILL.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_HOMEWORK_FILL.md
 - `20260808_KGATE_COMPLIANCE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KGATE_COMPLIANCE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KGATE_COMPLIANCE.md
 - `20260808_KBRAIN_INDEP_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KBRAIN_INDEP_AUDIT.json
@@ -64,9 +68,6 @@
 - `20260808_KREPACK_SELECT_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KREPACK_SELECT_DIAG.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KREPACK_SELECT_DIAG.md
 - `20260808_KREPACK_SELECT_DIAG_raw` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KREPACK_SELECT_DIAG_raw.json
-- `20260808_KSEED_AVERAGE_DESIGN` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSEED_AVERAGE_DESIGN.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSEED_AVERAGE_DESIGN.md
-- `20260808_KSEED_AVERAGE_DESIGN_raw` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSEED_AVERAGE_DESIGN_raw.json
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -77,7 +78,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=11a6890 · 지금=**K-STAT-PASTLEARN-READY-CHECK**(READ-ONLY) — 과거학습 뇌가 「회차 숙제」 길로 패치 준비됐는지 점검. **방향·컨닝차단·파이프는 준비됨** · **학습/명분 DB는 리셋으로 비어 튜닝 직전 아님**. 실측: _get_draws_before(1235)→last1234 · cutoff 없으면 learn 로드 차단 · wire ON·v2 ON·ASSOC OFF · reasoning 태그 있음(1yHot) · learn_state/predictions/hit_warrant/evolve=0 · 다음=K-STAT-HOMEWORK-FILL-PICK
+1. 첫줄: [복귀] HEAD=854d1b4 · 지금=**K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF · 다음=K-STAT-HOMEWORK-FILL-PICK
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -109,4 +110,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 11a6890_
+_generated: 854d1b4_

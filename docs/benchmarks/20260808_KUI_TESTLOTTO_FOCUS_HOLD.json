@@ -1,0 +1,15 @@
+{
+  "id": "K-UI-TESTLOTTO-FOCUS-HOLD",
+  "ts": "2026-08-08T09:55:00+00:00",
+  "verdict": "HOLD_ON",
+  "flag": "ROK21_TESTLOTTO_FOCUS_HOLD=true",
+  "hide_views": ["predict", "strategy-x", "hyodo"],
+  "default_view": "testlotto",
+  "skip_autoload_predictions": true,
+  "restore": "set ROK21_TESTLOTTO_FOCUS_HOLD=false in app/static/js/lotto4.js",
+  "files": [
+    "app/static/js/lotto4.js",
+    "app/static/index.html",
+    "app/static/css/lotto4.css"
+  ]
+}
