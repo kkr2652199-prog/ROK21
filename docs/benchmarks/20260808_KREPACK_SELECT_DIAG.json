@@ -1,0 +1,824 @@
+{
+  "id": "K-REPACK-SELECT-DIAG",
+  "generated_at": "2026-08-08T07:14:37.360879+00:00",
+  "brain": "stat",
+  "policy": {
+    "read_only": true,
+    "wire": false,
+    "db_write": false,
+    "frozen_respected": [
+      "random.choices",
+      "_get_draws_before",
+      "boost_caps"
+    ]
+  },
+  "design": {
+    "range": [
+      53,
+      1235
+    ],
+    "n_draws_per_seed": 1183,
+    "seeds": [
+      42,
+      7,
+      99,
+      2026,
+      314
+    ],
+    "n_pool_sets": 10,
+    "n_pick": 5,
+    "features": [
+      "score_sum",
+      "score_rank_mean",
+      "dup_count",
+      "hint_sum",
+      "numema_sum",
+      "pos_ema",
+      "confidence",
+      "sum_nums",
+      "odd_cnt",
+      "zones",
+      "max_consec"
+    ],
+    "peek_free": "특성은 전부 target 이전 정보만 사용 · 정답 미참조"
+  },
+  "null_reference": {
+    "null_ge3_5": 0.113624,
+    "null_ge3_10": 0.214337,
+    "ci95_halfwidth_n5": 0.018085,
+    "ci95_halfwidth_n10": 0.023385,
+    "repack_vs_null5": {
+      "value": 0.119019,
+      "delta": 0.005395,
+      "beats_null": false
+    },
+    "oracle_vs_null10": {
+      "value": 0.215216,
+      "delta": 0.000879,
+      "beats_null": false
+    },
+    "meaning_ko": "oracle 의 올바른 기준선은 무작위 **10장**이다. oracle 이 null10 과 같으면 pool 10세트는 무작위 10장과 다를 게 없고, '놓친 기회'라는 표현 자체가 성립하지 않는다"
+  },
+  "pooled": {
+    "miss": {
+      "n_draws": 5915,
+      "pool_has_ge3": 1273,
+      "repack_has_ge3": 704,
+      "pool_ge3_rate": 0.215216,
+      "repack_ge3_rate": 0.119019,
+      "missed": 871,
+      "rescued": 302,
+      "miss_rate_given_pool_ge3": 0.684211,
+      "net": -569,
+      "best_hit_gap_mean": 0.319696,
+      "meaning_ko": "missed = pool 에 3개 이상 세트가 있었는데 몰아주기가 못 만든 회차 · rescued = 그 반대. net<0 이면 몰아주기가 순손실"
+    },
+    "select": {
+      "spearman_vs_hits": {
+        "score_sum": 0.004377,
+        "score_rank_mean": 0.000815,
+        "dup_count": -0.003266,
+        "hint_sum": 0.008823,
+        "numema_sum": -0.004542,
+        "pos_ema": 0.002786,
+        "confidence": -0.007454,
+        "sum_nums": 0.000902,
+        "odd_cnt": 0.003156,
+        "zones": -0.003277,
+        "max_consec": 0.000886
+      },
+      "strategies": {
+        "feat_score_sum": {
+          "n": 5915,
+          "ge3_rate": 0.111919,
+          "best_hit_mean": 1.697041,
+          "hit_mean_per_ticket": 0.799189
+        },
+        "feat_score_rank_mean": {
+          "n": 5915,
+          "ge3_rate": 0.111074,
+          "best_hit_mean": 1.687405,
+          "hit_mean_per_ticket": 0.797532
+        },
+        "feat_dup_count": {
+          "n": 5915,
+          "ge3_rate": 0.104987,
+          "best_hit_mean": 1.655621,
+          "hit_mean_per_ticket": 0.794624
+        },
+        "feat_hint_sum": {
+          "n": 5915,
+          "ge3_rate": 0.115469,
+          "best_hit_mean": 1.727303,
+          "hit_mean_per_ticket": 0.804598
+        },
+        "feat_numema_sum": {
+          "n": 5915,
+          "ge3_rate": 0.110904,
+          "best_hit_mean": 1.702959,
+          "hit_mean_per_ticket": 0.796855
+        },
+        "feat_pos_ema": {
+          "n": 5915,
+          "ge3_rate": 0.118512,
+          "best_hit_mean": 1.731192,
+          "hit_mean_per_ticket": 0.805647
+        },
+        "feat_confidence": {
+          "n": 5915,
+          "ge3_rate": 0.113271,
+          "best_hit_mean": 1.689941,
+          "hit_mean_per_ticket": 0.800338
+        },
+        "feat_sum_nums": {
+          "n": 5915,
+          "ge3_rate": 0.117329,
+          "best_hit_mean": 1.722063,
+          "hit_mean_per_ticket": 0.803381
+        },
+        "feat_odd_cnt": {
+          "n": 5915,
+          "ge3_rate": 0.111581,
+          "best_hit_mean": 1.725275,
+          "hit_mean_per_ticket": 0.801623
+        },
+        "feat_zones": {
+          "n": 5915,
+          "ge3_rate": 0.116314,
+          "best_hit_mean": 1.739814,
+          "hit_mean_per_ticket": 0.799763
+        },
+        "feat_max_consec": {
+          "n": 5915,
+          "ge3_rate": 0.113271,
+          "best_hit_mean": 1.72426,
+          "hit_mean_per_ticket": 0.804598
+        },
+        "setno_1_5": {
+          "n": 5915,
+          "ge3_rate": 0.117329,
+          "best_hit_mean": 1.752832,
+          "hit_mean_per_ticket": 0.804565
+        },
+        "repack": {
+          "n": 5915,
+          "ge3_rate": 0.119019,
+          "best_hit_mean": 1.752832,
+          "hit_mean_per_ticket": 0.804024
+        },
+        "oracle_top5": {
+          "n": 5915,
+          "ge3_rate": 0.215216,
+          "best_hit_mean": 2.072527,
+          "hit_mean_per_ticket": 1.35104
+        }
+      }
+    }
+  },
+  "per_seed": {
+    "42": {
+      "miss": {
+        "n_draws": 1183,
+        "pool_has_ge3": 252,
+        "repack_has_ge3": 151,
+        "pool_ge3_rate": 0.213018,
+        "repack_ge3_rate": 0.127642,
+        "missed": 156,
+        "rescued": 55,
+        "miss_rate_given_pool_ge3": 0.619048,
+        "net": -101,
+        "best_hit_gap_mean": 0.291631,
+        "meaning_ko": "missed = pool 에 3개 이상 세트가 있었는데 몰아주기가 못 만든 회차 · rescued = 그 반대. net<0 이면 몰아주기가 순손실"
+      },
+      "select": {
+        "spearman_vs_hits": {
+          "score_sum": 0.009523,
+          "score_rank_mean": -0.016943,
+          "dup_count": 0.007478,
+          "hint_sum": 0.0193,
+          "numema_sum": -0.001166,
+          "pos_ema": 0.010793,
+          "confidence": -0.006151,
+          "sum_nums": -0.009108,
+          "odd_cnt": 0.005725,
+          "zones": 0.005152,
+          "max_consec": 0.006454
+        },
+        "strategies": {
+          "feat_score_sum": {
+            "n": 1183,
+            "ge3_rate": 0.12426,
+            "best_hit_mean": 1.721048,
+            "hit_mean_per_ticket": 0.808791
+          },
+          "feat_score_rank_mean": {
+            "n": 1183,
+            "ge3_rate": 0.114962,
+            "best_hit_mean": 1.69738,
+            "hit_mean_per_ticket": 0.801014
+          },
+          "feat_dup_count": {
+            "n": 1183,
+            "ge3_rate": 0.092984,
+            "best_hit_mean": 1.639899,
+            "hit_mean_per_ticket": 0.789349
+          },
+          "feat_hint_sum": {
+            "n": 1183,
+            "ge3_rate": 0.117498,
+            "best_hit_mean": 1.728656,
+            "hit_mean_per_ticket": 0.811327
+          },
+          "feat_numema_sum": {
+            "n": 1183,
+            "ge3_rate": 0.108199,
+            "best_hit_mean": 1.691462,
+            "hit_mean_per_ticket": 0.793068
+          },
+          "feat_pos_ema": {
+            "n": 1183,
+            "ge3_rate": 0.121724,
+            "best_hit_mean": 1.731192,
+            "hit_mean_per_ticket": 0.81082
+          },
+          "feat_confidence": {
+            "n": 1183,
+            "ge3_rate": 0.098056,
+            "best_hit_mean": 1.661031,
+            "hit_mean_per_ticket": 0.797464
+          },
+          "feat_sum_nums": {
+            "n": 1183,
+            "ge3_rate": 0.102282,
+            "best_hit_mean": 1.690617,
+            "hit_mean_per_ticket": 0.789856
+          },
+          "feat_odd_cnt": {
+            "n": 1183,
+            "ge3_rate": 0.096365,
+            "best_hit_mean": 1.702451,
+            "hit_mean_per_ticket": 0.801014
+          },
+          "feat_zones": {
+            "n": 1183,
+            "ge3_rate": 0.109045,
+            "best_hit_mean": 1.721048,
+            "hit_mean_per_ticket": 0.799324
+          },
+          "feat_max_consec": {
+            "n": 1183,
+            "ge3_rate": 0.105664,
+            "best_hit_mean": 1.706678,
+            "hit_mean_per_ticket": 0.793914
+          },
+          "setno_1_5": {
+            "n": 1183,
+            "ge3_rate": 0.110735,
+            "best_hit_mean": 1.726965,
+            "hit_mean_per_ticket": 0.796788
+          },
+          "repack": {
+            "n": 1183,
+            "ge3_rate": 0.127642,
+            "best_hit_mean": 1.76754,
+            "hit_mean_per_ticket": 0.800507
+          },
+          "oracle_top5": {
+            "n": 1183,
+            "ge3_rate": 0.213018,
+            "best_hit_mean": 2.059172,
+            "hit_mean_per_ticket": 1.346746
+          }
+        }
+      }
+    },
+    "7": {
+      "miss": {
+        "n_draws": 1183,
+        "pool_has_ge3": 285,
+        "repack_has_ge3": 148,
+        "pool_ge3_rate": 0.240913,
+        "repack_ge3_rate": 0.125106,
+        "missed": 199,
+        "rescued": 62,
+        "miss_rate_given_pool_ge3": 0.698246,
+        "net": -137,
+        "best_hit_gap_mean": 0.340659,
+        "meaning_ko": "missed = pool 에 3개 이상 세트가 있었는데 몰아주기가 못 만든 회차 · rescued = 그 반대. net<0 이면 몰아주기가 순손실"
+      },
+      "select": {
+        "spearman_vs_hits": {
+          "score_sum": 0.011824,
+          "score_rank_mean": 0.013921,
+          "dup_count": -0.015894,
+          "hint_sum": 0.017147,
+          "numema_sum": -0.019243,
+          "pos_ema": -0.003196,
+          "confidence": -0.010553,
+          "sum_nums": 0.008682,
+          "odd_cnt": 0.009139,
+          "zones": -0.00689,
+          "max_consec": -0.007219
+        },
+        "strategies": {
+          "feat_score_sum": {
+            "n": 1183,
+            "ge3_rate": 0.114962,
+            "best_hit_mean": 1.71175,
+            "hit_mean_per_ticket": 0.802705
+          },
+          "feat_score_rank_mean": {
+            "n": 1183,
+            "ge3_rate": 0.115807,
+            "best_hit_mean": 1.702451,
+            "hit_mean_per_ticket": 0.800676
+          },
+          "feat_dup_count": {
+            "n": 1183,
+            "ge3_rate": 0.121724,
+            "best_hit_mean": 1.673711,
+            "hit_mean_per_ticket": 0.797464
+          },
+          "feat_hint_sum": {
+            "n": 1183,
+            "ge3_rate": 0.121724,
+            "best_hit_mean": 1.743872,
+            "hit_mean_per_ticket": 0.813187
+          },
+          "feat_numema_sum": {
+            "n": 1183,
+            "ge3_rate": 0.136095,
+            "best_hit_mean": 1.720203,
+            "hit_mean_per_ticket": 0.810144
+          },
+          "feat_pos_ema": {
+            "n": 1183,
+            "ge3_rate": 0.125106,
+            "best_hit_mean": 1.746407,
+            "hit_mean_per_ticket": 0.811834
+          },
+          "feat_confidence": {
+            "n": 1183,
+            "ge3_rate": 0.13694,
+            "best_hit_mean": 1.729501,
+            "hit_mean_per_ticket": 0.818259
+          },
+          "feat_sum_nums": {
+            "n": 1183,
+            "ge3_rate": 0.137785,
+            "best_hit_mean": 1.751479,
+            "hit_mean_per_ticket": 0.815892
+          },
+          "feat_odd_cnt": {
+            "n": 1183,
+            "ge3_rate": 0.120879,
+            "best_hit_mean": 1.749789,
+            "hit_mean_per_ticket": 0.810482
+          },
+          "feat_zones": {
+            "n": 1183,
+            "ge3_rate": 0.121724,
+            "best_hit_mean": 1.743872,
+            "hit_mean_per_ticket": 0.802029
+          },
+          "feat_max_consec": {
+            "n": 1183,
+            "ge3_rate": 0.137785,
+            "best_hit_mean": 1.755706,
+            "hit_mean_per_ticket": 0.820287
+          },
+          "setno_1_5": {
+            "n": 1183,
+            "ge3_rate": 0.130178,
+            "best_hit_mean": 1.769231,
+            "hit_mean_per_ticket": 0.809975
+          },
+          "repack": {
+            "n": 1183,
+            "ge3_rate": 0.125106,
+            "best_hit_mean": 1.770921,
+            "hit_mean_per_ticket": 0.810144
+          },
+          "oracle_top5": {
+            "n": 1183,
+            "ge3_rate": 0.240913,
+            "best_hit_mean": 2.111581,
+            "hit_mean_per_ticket": 1.357058
+          }
+        }
+      }
+    },
+    "99": {
+      "miss": {
+        "n_draws": 1183,
+        "pool_has_ge3": 245,
+        "repack_has_ge3": 134,
+        "pool_ge3_rate": 0.207101,
+        "repack_ge3_rate": 0.113271,
+        "missed": 170,
+        "rescued": 59,
+        "miss_rate_given_pool_ge3": 0.693878,
+        "net": -111,
+        "best_hit_gap_mean": 0.333897,
+        "meaning_ko": "missed = pool 에 3개 이상 세트가 있었는데 몰아주기가 못 만든 회차 · rescued = 그 반대. net<0 이면 몰아주기가 순손실"
+      },
+      "select": {
+        "spearman_vs_hits": {
+          "score_sum": 0.011208,
+          "score_rank_mean": 0.001844,
+          "dup_count": -0.003348,
+          "hint_sum": 0.00999,
+          "numema_sum": -0.006489,
+          "pos_ema": -0.011816,
+          "confidence": -0.008506,
+          "sum_nums": -0.000113,
+          "odd_cnt": 0.008196,
+          "zones": -0.004278,
+          "max_consec": 0.000156
+        },
+        "strategies": {
+          "feat_score_sum": {
+            "n": 1183,
+            "ge3_rate": 0.106509,
+            "best_hit_mean": 1.688081,
+            "hit_mean_per_ticket": 0.796619
+          },
+          "feat_score_rank_mean": {
+            "n": 1183,
+            "ge3_rate": 0.102282,
+            "best_hit_mean": 1.666103,
+            "hit_mean_per_ticket": 0.791547
+          },
+          "feat_dup_count": {
+            "n": 1183,
+            "ge3_rate": 0.103973,
+            "best_hit_mean": 1.648352,
+            "hit_mean_per_ticket": 0.797633
+          },
+          "feat_hint_sum": {
+            "n": 1183,
+            "ge3_rate": 0.112426,
+            "best_hit_mean": 1.717667,
+            "hit_mean_per_ticket": 0.800169
+          },
+          "feat_numema_sum": {
+            "n": 1183,
+            "ge3_rate": 0.102282,
+            "best_hit_mean": 1.685545,
+            "hit_mean_per_ticket": 0.788673
+          },
+          "feat_pos_ema": {
+            "n": 1183,
+            "ge3_rate": 0.114117,
+            "best_hit_mean": 1.715976,
+            "hit_mean_per_ticket": 0.794083
+          },
+          "feat_confidence": {
+            "n": 1183,
+            "ge3_rate": 0.107354,
+            "best_hit_mean": 1.701606,
+            "hit_mean_per_ticket": 0.79273
+          },
+          "feat_sum_nums": {
+            "n": 1183,
+            "ge3_rate": 0.117498,
+            "best_hit_mean": 1.720203,
+            "hit_mean_per_ticket": 0.796619
+          },
+          "feat_odd_cnt": {
+            "n": 1183,
+            "ge3_rate": 0.10989,
+            "best_hit_mean": 1.728656,
+            "hit_mean_per_ticket": 0.797464
+          },
+          "feat_zones": {
+            "n": 1183,
+            "ge3_rate": 0.108199,
+            "best_hit_mean": 1.716822,
+            "hit_mean_per_ticket": 0.788673
+          },
+          "feat_max_consec": {
+            "n": 1183,
+            "ge3_rate": 0.107354,
+            "best_hit_mean": 1.716822,
+            "hit_mean_per_ticket": 0.799662
+          },
+          "setno_1_5": {
+            "n": 1183,
+            "ge3_rate": 0.105664,
+            "best_hit_mean": 1.736264,
+            "hit_mean_per_ticket": 0.797295
+          },
+          "repack": {
+            "n": 1183,
+            "ge3_rate": 0.113271,
+            "best_hit_mean": 1.731192,
+            "hit_mean_per_ticket": 0.794421
+          },
+          "oracle_top5": {
+            "n": 1183,
+            "ge3_rate": 0.207101,
+            "best_hit_mean": 2.065089,
+            "hit_mean_per_ticket": 1.346407
+          }
+        }
+      }
+    },
+    "2026": {
+      "miss": {
+        "n_draws": 1183,
+        "pool_has_ge3": 246,
+        "repack_has_ge3": 120,
+        "pool_ge3_rate": 0.207946,
+        "repack_ge3_rate": 0.101437,
+        "missed": 186,
+        "rescued": 60,
+        "miss_rate_given_pool_ge3": 0.756098,
+        "net": -126,
+        "best_hit_gap_mean": 0.341505,
+        "meaning_ko": "missed = pool 에 3개 이상 세트가 있었는데 몰아주기가 못 만든 회차 · rescued = 그 반대. net<0 이면 몰아주기가 순손실"
+      },
+      "select": {
+        "spearman_vs_hits": {
+          "score_sum": -0.006918,
+          "score_rank_mean": 0.009308,
+          "dup_count": 0.00072,
+          "hint_sum": -0.00524,
+          "numema_sum": -0.00563,
+          "pos_ema": -0.002906,
+          "confidence": -0.00657,
+          "sum_nums": 0.003917,
+          "odd_cnt": -0.002996,
+          "zones": -0.01448,
+          "max_consec": -0.005226
+        },
+        "strategies": {
+          "feat_score_sum": {
+            "n": 1183,
+            "ge3_rate": 0.105664,
+            "best_hit_mean": 1.679628,
+            "hit_mean_per_ticket": 0.797802
+          },
+          "feat_score_rank_mean": {
+            "n": 1183,
+            "ge3_rate": 0.103128,
+            "best_hit_mean": 1.661877,
+            "hit_mean_per_ticket": 0.790871
+          },
+          "feat_dup_count": {
+            "n": 1183,
+            "ge3_rate": 0.103973,
+            "best_hit_mean": 1.671175,
+            "hit_mean_per_ticket": 0.800338
+          },
+          "feat_hint_sum": {
+            "n": 1183,
+            "ge3_rate": 0.102282,
+            "best_hit_mean": 1.701606,
+            "hit_mean_per_ticket": 0.798309
+          },
+          "feat_numema_sum": {
+            "n": 1183,
+            "ge3_rate": 0.096365,
+            "best_hit_mean": 1.69738,
+            "hit_mean_per_ticket": 0.793068
+          },
+          "feat_pos_ema": {
+            "n": 1183,
+            "ge3_rate": 0.12257,
+            "best_hit_mean": 1.734573,
+            "hit_mean_per_ticket": 0.807101
+          },
+          "feat_confidence": {
+            "n": 1183,
+            "ge3_rate": 0.110735,
+            "best_hit_mean": 1.677937,
+            "hit_mean_per_ticket": 0.797295
+          },
+          "feat_sum_nums": {
+            "n": 1183,
+            "ge3_rate": 0.111581,
+            "best_hit_mean": 1.719358,
+            "hit_mean_per_ticket": 0.809129
+          },
+          "feat_odd_cnt": {
+            "n": 1183,
+            "ge3_rate": 0.110735,
+            "best_hit_mean": 1.715131,
+            "hit_mean_per_ticket": 0.803043
+          },
+          "feat_zones": {
+            "n": 1183,
+            "ge3_rate": 0.12426,
+            "best_hit_mean": 1.762468,
+            "hit_mean_per_ticket": 0.809467
+          },
+          "feat_max_consec": {
+            "n": 1183,
+            "ge3_rate": 0.113271,
+            "best_hit_mean": 1.739645,
+            "hit_mean_per_ticket": 0.81437
+          },
+          "setno_1_5": {
+            "n": 1183,
+            "ge3_rate": 0.120879,
+            "best_hit_mean": 1.757396,
+            "hit_mean_per_ticket": 0.809975
+          },
+          "repack": {
+            "n": 1183,
+            "ge3_rate": 0.101437,
+            "best_hit_mean": 1.72612,
+            "hit_mean_per_ticket": 0.803381
+          },
+          "oracle_top5": {
+            "n": 1183,
+            "ge3_rate": 0.207946,
+            "best_hit_mean": 2.067625,
+            "hit_mean_per_ticket": 1.354861
+          }
+        }
+      }
+    },
+    "314": {
+      "miss": {
+        "n_draws": 1183,
+        "pool_has_ge3": 245,
+        "repack_has_ge3": 151,
+        "pool_ge3_rate": 0.207101,
+        "repack_ge3_rate": 0.127642,
+        "missed": 160,
+        "rescued": 66,
+        "miss_rate_given_pool_ge3": 0.653061,
+        "net": -94,
+        "best_hit_gap_mean": 0.290786,
+        "meaning_ko": "missed = pool 에 3개 이상 세트가 있었는데 몰아주기가 못 만든 회차 · rescued = 그 반대. net<0 이면 몰아주기가 순손실"
+      },
+      "select": {
+        "spearman_vs_hits": {
+          "score_sum": -0.004194,
+          "score_rank_mean": -0.003289,
+          "dup_count": -0.004977,
+          "hint_sum": 0.002653,
+          "numema_sum": 0.010075,
+          "pos_ema": 0.021518,
+          "confidence": -0.005667,
+          "sum_nums": 0.002712,
+          "odd_cnt": -0.004837,
+          "zones": 0.004288,
+          "max_consec": 0.009465
+        },
+        "strategies": {
+          "feat_score_sum": {
+            "n": 1183,
+            "ge3_rate": 0.108199,
+            "best_hit_mean": 1.6847,
+            "hit_mean_per_ticket": 0.790025
+          },
+          "feat_score_rank_mean": {
+            "n": 1183,
+            "ge3_rate": 0.119189,
+            "best_hit_mean": 1.709214,
+            "hit_mean_per_ticket": 0.80355
+          },
+          "feat_dup_count": {
+            "n": 1183,
+            "ge3_rate": 0.102282,
+            "best_hit_mean": 1.64497,
+            "hit_mean_per_ticket": 0.788335
+          },
+          "feat_hint_sum": {
+            "n": 1183,
+            "ge3_rate": 0.123415,
+            "best_hit_mean": 1.744717,
+            "hit_mean_per_ticket": 0.8
+          },
+          "feat_numema_sum": {
+            "n": 1183,
+            "ge3_rate": 0.111581,
+            "best_hit_mean": 1.720203,
+            "hit_mean_per_ticket": 0.799324
+          },
+          "feat_pos_ema": {
+            "n": 1183,
+            "ge3_rate": 0.109045,
+            "best_hit_mean": 1.727811,
+            "hit_mean_per_ticket": 0.804396
+          },
+          "feat_confidence": {
+            "n": 1183,
+            "ge3_rate": 0.113271,
+            "best_hit_mean": 1.679628,
+            "hit_mean_per_ticket": 0.795943
+          },
+          "feat_sum_nums": {
+            "n": 1183,
+            "ge3_rate": 0.117498,
+            "best_hit_mean": 1.728656,
+            "hit_mean_per_ticket": 0.80541
+          },
+          "feat_odd_cnt": {
+            "n": 1183,
+            "ge3_rate": 0.120034,
+            "best_hit_mean": 1.730347,
+            "hit_mean_per_ticket": 0.796112
+          },
+          "feat_zones": {
+            "n": 1183,
+            "ge3_rate": 0.118343,
+            "best_hit_mean": 1.754861,
+            "hit_mean_per_ticket": 0.799324
+          },
+          "feat_max_consec": {
+            "n": 1183,
+            "ge3_rate": 0.102282,
+            "best_hit_mean": 1.702451,
+            "hit_mean_per_ticket": 0.794759
+          },
+          "setno_1_5": {
+            "n": 1183,
+            "ge3_rate": 0.119189,
+            "best_hit_mean": 1.774303,
+            "hit_mean_per_ticket": 0.808791
+          },
+          "repack": {
+            "n": 1183,
+            "ge3_rate": 0.127642,
+            "best_hit_mean": 1.768385,
+            "hit_mean_per_ticket": 0.811665
+          },
+          "oracle_top5": {
+            "n": 1183,
+            "ge3_rate": 0.207101,
+            "best_hit_mean": 2.059172,
+            "hit_mean_per_ticket": 1.350127
+          }
+        }
+      }
+    }
+  },
+  "elapsed_sec": 309.2,
+  "decision_gate": {
+    "gate": {
+      "n": 1183,
+      "k_cells": 11,
+      "p0": 0.113624,
+      "se_single": 0.009227,
+      "ci95_halfwidth": 0.018085,
+      "mdd_single_pair": 0.025575,
+      "mdd_selection_p95": 0.032967,
+      "mdd_selection_p99": 0.040575,
+      "noise_delta_expected": 0.014877
+    },
+    "delta": -0.000507,
+    "holdout_value": null,
+    "holdout_collapsed": null,
+    "verdict": "UNDECIDABLE",
+    "why_ko": "|Δ|=0.000507 < 단일비교 최소검출차 0.025575 (n=1183) → 차이 주장 불가",
+    "actionable": false,
+    "rule": "R38",
+    "metric": "ge3(stat, 5장)",
+    "label": "최선 특성 선별(feat_pos_ema) vs 현행 몰아주기",
+    "module": "tools/k_gate.py",
+    "report_as_ko": "차이 없음 (눈금 미달)"
+  },
+  "precision_check": {
+    "rule": "R39",
+    "module": "tools/k_precision.py",
+    "note": "seed 간 흔들림이 결론 폭보다 크지 않은지 확인",
+    "repack_vs_best_feature_seed_std": {
+      "sigma": [
+        0.010276,
+        0.005987
+      ],
+      "n_samples": 5,
+      "se": [
+        0.003633,
+        0.002117
+      ],
+      "diff": 0.004289,
+      "resolve_threshold": 0.008241,
+      "resolvable": false,
+      "samples_needed": 16
+    }
+  },
+  "best_feature": {
+    "key": "feat_pos_ema",
+    "n": 5915,
+    "ge3_rate": 0.118512,
+    "best_hit_mean": 1.731192,
+    "hit_mean_per_ticket": 0.805647
+  },
+  "verdict": {
+    "structure": "REPACK_NET_LOSS",
+    "structure_why_ko": "몰아주기가 pool 의 ge3 를 살린 회차(302)보다 죽인 회차(871)가 많다 → 순손실 -569",
+    "selection": "SELECT_SIGNAL_NOT_FOUND",
+    "selection_why_ko": "11개 특성 전부 눈금 미달 — 정답을 안 보고 pool 세트를 고르는 신호는 이 특성 집합 안에 없다",
+    "actionable": false,
+    "pool_quality": {
+      "code": "POOL_EQUALS_RANDOM",
+      "why_ko": "pool 10세트 최고 0.215216 가 무작위 10장 기준선 0.214337 와 구별되지 않는다(±0.023385) → **'좋은 세트를 놓쳤다'는 전제 자체가 성립하지 않는다.** oracle 과 몰아주기의 격차는 10장 vs 5장이라는 장수 차이일 뿐이다"
+    }
+  },
+  "raw_reused": true
+}

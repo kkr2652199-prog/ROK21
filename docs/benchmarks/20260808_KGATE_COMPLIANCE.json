@@ -72,13 +72,13 @@
     ]
   },
   "counts": {
-    "comparative": 137,
-    "with_gate": 4,
+    "comparative": 138,
+    "with_gate": 5,
     "violations": 0
   },
   "scan": {
-    "n_files": 190,
-    "n_readable": 190,
+    "n_files": 192,
+    "n_readable": 192,
     "unreadable": [],
     "rows": [
       {
@@ -2008,6 +2008,27 @@
         "record_only": false
       },
       {
+        "file": "20260808_KREPACK_SELECT_DIAG.json",
+        "comparative": true,
+        "hints": [
+          "best",
+          "delta",
+          "holdout",
+          "vs_null"
+        ],
+        "has_gate": true,
+        "raw_dump": false,
+        "record_only": false
+      },
+      {
+        "file": "20260808_KREPACK_SELECT_DIAG_raw.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "raw_dump": true,
+        "record_only": true
+      },
+      {
         "file": "20260808_KSEED_AVERAGE_DESIGN.json",
         "comparative": true,
         "hints": [
@@ -2279,6 +2300,7 @@
     ],
     "violations": [],
     "compliant": [
+      "20260808_KREPACK_SELECT_DIAG.json",
       "20260808_KSEED_AVERAGE_DESIGN.json",
       "20260808_KSTAT_DECISION_GATE.json",
       "20260808_KSTAT_NOISE_SOURCE.json",
@@ -2421,9 +2443,9 @@
   ],
   "verdict": {
     "code": "COMPLIANT",
-    "headline_ko": "자기검증 통과 · 위반 없음 (게이트 기록 4건)"
+    "headline_ko": "자기검증 통과 · 위반 없음 (게이트 기록 5건)"
   },
   "prior": "docs/benchmarks/20260808_KSTAT_DECISION_GATE.json",
   "tool": "tools/_k_gate_compliance.py",
-  "ts": "2026-08-08T05:41:54.338165+00:00"
+  "ts": "2026-08-08T07:14:38.416667+00:00"
 }
