@@ -1,0 +1,1294 @@
+{
+  "id": "K-SEED-AVERAGE-DESIGN",
+  "generated_at": "2026-08-08T05:41:53.702902+00:00",
+  "policy": {
+    "read_only": true,
+    "wire": false,
+    "db_write": false,
+    "frozen_respected": [
+      "random.choices",
+      "_get_draws_before",
+      "boost_caps"
+    ]
+  },
+  "design": {
+    "range": [
+      936,
+      1235
+    ],
+    "n_draws": 300,
+    "n_outer": 10,
+    "R_list": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "methods": {
+      "hybrid": "R개 pool 이어붙여 현행 repack_by_brain (pool 4·5 슬롯은 평균 안 됨)",
+      "score": "평균 점수 순위로 5장 전부 구성 (pool 슬롯 미사용)"
+    },
+    "learner_update": "R=1 pool 로만 갱신 (현행 경로와 동일 상태 유지)"
+  },
+  "elapsed_sec": 1345.0,
+  "null_ge3_5tickets": 0.113624,
+  "per_brain": {
+    "stat": {
+      "rows": {
+        "hybrid_R1": {
+          "method": "hybrid",
+          "R": 1,
+          "ge3_by_outer": [
+            0.156667,
+            0.106667,
+            0.096667,
+            0.076667,
+            0.11,
+            0.083333,
+            0.09,
+            0.12,
+            0.123333,
+            0.123333
+          ],
+          "ge3_mean": 0.108667,
+          "outer_std": 0.02242
+        },
+        "hybrid_R2": {
+          "method": "hybrid",
+          "R": 2,
+          "ge3_by_outer": [
+            0.106667,
+            0.12,
+            0.123333,
+            0.106667,
+            0.126667,
+            0.08,
+            0.103333,
+            0.103333,
+            0.113333,
+            0.103333
+          ],
+          "ge3_mean": 0.108667,
+          "outer_std": 0.012667
+        },
+        "hybrid_R4": {
+          "method": "hybrid",
+          "R": 4,
+          "ge3_by_outer": [
+            0.12,
+            0.146667,
+            0.123333,
+            0.1,
+            0.103333,
+            0.113333,
+            0.103333,
+            0.106667,
+            0.136667,
+            0.12
+          ],
+          "ge3_mean": 0.117333,
+          "outer_std": 0.014514
+        },
+        "hybrid_R8": {
+          "method": "hybrid",
+          "R": 8,
+          "ge3_by_outer": [
+            0.15,
+            0.1,
+            0.086667,
+            0.113333,
+            0.096667,
+            0.123333,
+            0.103333,
+            0.106667,
+            0.093333,
+            0.106667
+          ],
+          "ge3_mean": 0.108,
+          "outer_std": 0.017075
+        },
+        "score_R1": {
+          "method": "score",
+          "R": 1,
+          "ge3_by_outer": [
+            0.146667,
+            0.11,
+            0.09,
+            0.1,
+            0.13,
+            0.09,
+            0.083333,
+            0.096667,
+            0.126667,
+            0.116667
+          ],
+          "ge3_mean": 0.109,
+          "outer_std": 0.01961
+        },
+        "score_R2": {
+          "method": "score",
+          "R": 2,
+          "ge3_by_outer": [
+            0.093333,
+            0.123333,
+            0.13,
+            0.09,
+            0.116667,
+            0.093333,
+            0.113333,
+            0.106667,
+            0.106667,
+            0.11
+          ],
+          "ge3_mean": 0.108333,
+          "outer_std": 0.012583
+        },
+        "score_R4": {
+          "method": "score",
+          "R": 4,
+          "ge3_by_outer": [
+            0.12,
+            0.14,
+            0.126667,
+            0.09,
+            0.123333,
+            0.116667,
+            0.103333,
+            0.103333,
+            0.123333,
+            0.12
+          ],
+          "ge3_mean": 0.116667,
+          "outer_std": 0.013499
+        },
+        "score_R8": {
+          "method": "score",
+          "R": 8,
+          "ge3_by_outer": [
+            0.15,
+            0.136667,
+            0.1,
+            0.116667,
+            0.11,
+            0.126667,
+            0.106667,
+            0.123333,
+            0.11,
+            0.116667
+          ],
+          "ge3_mean": 0.119667,
+          "outer_std": 0.014256
+        }
+      },
+      "baseline": "hybrid_R1",
+      "baseline_ge3": 0.108667,
+      "best_key": "score_R8",
+      "best_ge3": 0.119667,
+      "delta_vs_baseline": 0.011,
+      "decay": {
+        "hybrid": {
+          "method": "hybrid",
+          "R": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "outer_std": [
+            0.02242,
+            0.012667,
+            0.014514,
+            0.017075
+          ],
+          "std_R1_over_std_Rmax": 1.313,
+          "expected_ratio_sqrtR": 2.8284,
+          "loglog_slope": -0.0982,
+          "slope_target": -0.5,
+          "R1_vs_Rmax_resolvable": {
+            "sigma": [
+              0.02242,
+              0.017075
+            ],
+            "n_samples": 10,
+            "se": [
+              0.005284,
+              0.004025
+            ],
+            "diff": 0.005345,
+            "resolve_threshold": 0.013019,
+            "resolvable": false,
+            "samples_needed": 55
+          },
+          "seeds_needed_if_unresolved": 55,
+          "decomposition": {
+            "fit_ok": true,
+            "sigma_floor_A": 0.012654,
+            "sigma_draw_B": 0.016731,
+            "removable_share_at_R1": 0.6361,
+            "sigma_at_R_inf": 0.012654,
+            "note_ko": "A>0 이면 평균화만으로는 그 아래로 못 내려간다 (학습기 경로 등)"
+          }
+        },
+        "score": {
+          "method": "score",
+          "R": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "outer_std": [
+            0.01961,
+            0.012583,
+            0.013499,
+            0.014256
+          ],
+          "std_R1_over_std_Rmax": 1.3756,
+          "expected_ratio_sqrtR": 2.8284,
+          "loglog_slope": -0.1279,
+          "slope_target": -0.5,
+          "R1_vs_Rmax_resolvable": {
+            "sigma": [
+              0.01961,
+              0.014256
+            ],
+            "n_samples": 10,
+            "se": [
+              0.004622,
+              0.00336
+            ],
+            "diff": 0.005354,
+            "resolve_threshold": 0.0112,
+            "resolvable": false,
+            "samples_needed": 41
+          },
+          "seeds_needed_if_unresolved": 41,
+          "decomposition": {
+            "fit_ok": true,
+            "sigma_floor_A": 0.011324,
+            "sigma_draw_B": 0.014884,
+            "removable_share_at_R1": 0.6334,
+            "sigma_at_R_inf": 0.011324,
+            "note_ko": "A>0 이면 평균화만으로는 그 아래로 못 내려간다 (학습기 경로 등)"
+          }
+        }
+      },
+      "resolution": {
+        "hybrid": {
+          "binomial_se": 0.018322,
+          "ceiling_gain_if_seed_noise_zero": 1.5803,
+          "rows": [
+            {
+              "R": 1,
+              "seed_std": 0.02242,
+              "total_std": 0.028955,
+              "resolution_gain_vs_R1": 1.0,
+              "cost_multiplier": 1,
+              "gain_per_cost": 1.0
+            },
+            {
+              "R": 2,
+              "seed_std": 0.012667,
+              "total_std": 0.022275,
+              "resolution_gain_vs_R1": 1.2999,
+              "cost_multiplier": 2,
+              "gain_per_cost": 0.6499
+            },
+            {
+              "R": 4,
+              "seed_std": 0.014514,
+              "total_std": 0.023374,
+              "resolution_gain_vs_R1": 1.2387,
+              "cost_multiplier": 4,
+              "gain_per_cost": 0.3097
+            },
+            {
+              "R": 8,
+              "seed_std": 0.017075,
+              "total_std": 0.025045,
+              "resolution_gain_vs_R1": 1.1561,
+              "cost_multiplier": 8,
+              "gain_per_cost": 0.1445
+            }
+          ]
+        },
+        "score": {
+          "binomial_se": 0.018322,
+          "ceiling_gain_if_seed_noise_zero": 1.4647,
+          "rows": [
+            {
+              "R": 1,
+              "seed_std": 0.01961,
+              "total_std": 0.026838,
+              "resolution_gain_vs_R1": 1.0,
+              "cost_multiplier": 1,
+              "gain_per_cost": 1.0
+            },
+            {
+              "R": 2,
+              "seed_std": 0.012583,
+              "total_std": 0.022227,
+              "resolution_gain_vs_R1": 1.2074,
+              "cost_multiplier": 2,
+              "gain_per_cost": 0.6037
+            },
+            {
+              "R": 4,
+              "seed_std": 0.013499,
+              "total_std": 0.022758,
+              "resolution_gain_vs_R1": 1.1793,
+              "cost_multiplier": 4,
+              "gain_per_cost": 0.2948
+            },
+            {
+              "R": 8,
+              "seed_std": 0.014256,
+              "total_std": 0.023215,
+              "resolution_gain_vs_R1": 1.156,
+              "cost_multiplier": 8,
+              "gain_per_cost": 0.1445
+            }
+          ]
+        }
+      },
+      "budget": {
+        "hybrid": {
+          "basis_ko": "잡음바닥 24seed 분산모형 b≈0 → 총 잡음 ∝ 1/√n",
+          "n_draws": 300,
+          "rows": [
+            {
+              "R": 1,
+              "total_std": 0.028955,
+              "equiv_n_at_R1": 300.0,
+              "cost_seed_averaging": 300,
+              "cost_more_draws": 300.0,
+              "averaging_overpay": 1.0
+            },
+            {
+              "R": 2,
+              "total_std": 0.022275,
+              "equiv_n_at_R1": 506.9,
+              "cost_seed_averaging": 600,
+              "cost_more_draws": 506.9,
+              "averaging_overpay": 1.18
+            },
+            {
+              "R": 4,
+              "total_std": 0.023374,
+              "equiv_n_at_R1": 460.4,
+              "cost_seed_averaging": 1200,
+              "cost_more_draws": 460.4,
+              "averaging_overpay": 2.61
+            },
+            {
+              "R": 8,
+              "total_std": 0.025045,
+              "equiv_n_at_R1": 401.0,
+              "cost_seed_averaging": 2400,
+              "cost_more_draws": 401.0,
+              "averaging_overpay": 5.99
+            }
+          ]
+        },
+        "score": {
+          "basis_ko": "잡음바닥 24seed 분산모형 b≈0 → 총 잡음 ∝ 1/√n",
+          "n_draws": 300,
+          "rows": [
+            {
+              "R": 1,
+              "total_std": 0.026838,
+              "equiv_n_at_R1": 300.0,
+              "cost_seed_averaging": 300,
+              "cost_more_draws": 300.0,
+              "averaging_overpay": 1.0
+            },
+            {
+              "R": 2,
+              "total_std": 0.022227,
+              "equiv_n_at_R1": 437.4,
+              "cost_seed_averaging": 600,
+              "cost_more_draws": 437.4,
+              "averaging_overpay": 1.37
+            },
+            {
+              "R": 4,
+              "total_std": 0.022758,
+              "equiv_n_at_R1": 417.2,
+              "cost_seed_averaging": 1200,
+              "cost_more_draws": 417.2,
+              "averaging_overpay": 2.88
+            },
+            {
+              "R": 8,
+              "total_std": 0.023215,
+              "equiv_n_at_R1": 400.9,
+              "cost_seed_averaging": 2400,
+              "cost_more_draws": 400.9,
+              "averaging_overpay": 5.99
+            }
+          ]
+        }
+      }
+    },
+    "markov": {
+      "rows": {
+        "hybrid_R1": {
+          "method": "hybrid",
+          "R": 1,
+          "ge3_by_outer": [
+            0.11,
+            0.123333,
+            0.14,
+            0.123333,
+            0.123333,
+            0.143333,
+            0.13,
+            0.096667,
+            0.133333,
+            0.123333
+          ],
+          "ge3_mean": 0.124667,
+          "outer_std": 0.013013
+        },
+        "hybrid_R2": {
+          "method": "hybrid",
+          "R": 2,
+          "ge3_by_outer": [
+            0.093333,
+            0.103333,
+            0.126667,
+            0.156667,
+            0.1,
+            0.116667,
+            0.153333,
+            0.14,
+            0.133333,
+            0.11
+          ],
+          "ge3_mean": 0.123333,
+          "outer_std": 0.021134
+        },
+        "hybrid_R4": {
+          "method": "hybrid",
+          "R": 4,
+          "ge3_by_outer": [
+            0.1,
+            0.08,
+            0.1,
+            0.116667,
+            0.093333,
+            0.103333,
+            0.14,
+            0.12,
+            0.136667,
+            0.113333
+          ],
+          "ge3_mean": 0.110333,
+          "outer_std": 0.017854
+        },
+        "hybrid_R8": {
+          "method": "hybrid",
+          "R": 8,
+          "ge3_by_outer": [
+            0.136667,
+            0.103333,
+            0.146667,
+            0.106667,
+            0.123333,
+            0.136667,
+            0.136667,
+            0.113333,
+            0.12,
+            0.11
+          ],
+          "ge3_mean": 0.123333,
+          "outer_std": 0.014298
+        },
+        "score_R1": {
+          "method": "score",
+          "R": 1,
+          "ge3_by_outer": [
+            0.11,
+            0.123333,
+            0.14,
+            0.123333,
+            0.123333,
+            0.143333,
+            0.13,
+            0.096667,
+            0.133333,
+            0.123333
+          ],
+          "ge3_mean": 0.124667,
+          "outer_std": 0.013013
+        },
+        "score_R2": {
+          "method": "score",
+          "R": 2,
+          "ge3_by_outer": [
+            0.093333,
+            0.103333,
+            0.126667,
+            0.156667,
+            0.1,
+            0.116667,
+            0.153333,
+            0.14,
+            0.133333,
+            0.11
+          ],
+          "ge3_mean": 0.123333,
+          "outer_std": 0.021134
+        },
+        "score_R4": {
+          "method": "score",
+          "R": 4,
+          "ge3_by_outer": [
+            0.1,
+            0.08,
+            0.1,
+            0.116667,
+            0.093333,
+            0.103333,
+            0.14,
+            0.12,
+            0.136667,
+            0.113333
+          ],
+          "ge3_mean": 0.110333,
+          "outer_std": 0.017854
+        },
+        "score_R8": {
+          "method": "score",
+          "R": 8,
+          "ge3_by_outer": [
+            0.136667,
+            0.103333,
+            0.146667,
+            0.106667,
+            0.123333,
+            0.136667,
+            0.136667,
+            0.113333,
+            0.12,
+            0.11
+          ],
+          "ge3_mean": 0.123333,
+          "outer_std": 0.014298
+        }
+      },
+      "baseline": "hybrid_R1",
+      "baseline_ge3": 0.124667,
+      "best_key": "score_R1",
+      "best_ge3": 0.124667,
+      "delta_vs_baseline": 0.0,
+      "decay": {
+        "hybrid": {
+          "method": "hybrid",
+          "R": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "outer_std": [
+            0.013013,
+            0.021134,
+            0.017854,
+            0.014298
+          ],
+          "std_R1_over_std_Rmax": 0.9101,
+          "expected_ratio_sqrtR": 2.8284,
+          "loglog_slope": 0.0164,
+          "slope_target": -0.5,
+          "R1_vs_Rmax_resolvable": {
+            "sigma": [
+              0.013013,
+              0.014298
+            ],
+            "n_samples": 10,
+            "se": [
+              0.003067,
+              0.00337
+            ],
+            "diff": 0.001285,
+            "resolve_threshold": 0.008931,
+            "resolvable": false,
+            "samples_needed": 436
+          },
+          "seeds_needed_if_unresolved": 436,
+          "decomposition": {
+            "fit_ok": true,
+            "sigma_floor_A": 0.017957,
+            "sigma_draw_B": 0.0,
+            "removable_share_at_R1": 0.0,
+            "sigma_at_R_inf": 0.017957,
+            "note_ko": "A>0 이면 평균화만으로는 그 아래로 못 내려간다 (학습기 경로 등)"
+          }
+        },
+        "score": {
+          "method": "score",
+          "R": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "outer_std": [
+            0.013013,
+            0.021134,
+            0.017854,
+            0.014298
+          ],
+          "std_R1_over_std_Rmax": 0.9101,
+          "expected_ratio_sqrtR": 2.8284,
+          "loglog_slope": 0.0164,
+          "slope_target": -0.5,
+          "R1_vs_Rmax_resolvable": {
+            "sigma": [
+              0.013013,
+              0.014298
+            ],
+            "n_samples": 10,
+            "se": [
+              0.003067,
+              0.00337
+            ],
+            "diff": 0.001285,
+            "resolve_threshold": 0.008931,
+            "resolvable": false,
+            "samples_needed": 436
+          },
+          "seeds_needed_if_unresolved": 436,
+          "decomposition": {
+            "fit_ok": true,
+            "sigma_floor_A": 0.017957,
+            "sigma_draw_B": 0.0,
+            "removable_share_at_R1": 0.0,
+            "sigma_at_R_inf": 0.017957,
+            "note_ko": "A>0 이면 평균화만으로는 그 아래로 못 내려간다 (학습기 경로 등)"
+          }
+        }
+      },
+      "resolution": {
+        "hybrid": {
+          "binomial_se": 0.018322,
+          "ceiling_gain_if_seed_noise_zero": 1.2265,
+          "rows": [
+            {
+              "R": 1,
+              "seed_std": 0.013013,
+              "total_std": 0.022473,
+              "resolution_gain_vs_R1": 1.0,
+              "cost_multiplier": 1,
+              "gain_per_cost": 1.0
+            },
+            {
+              "R": 2,
+              "seed_std": 0.021134,
+              "total_std": 0.027971,
+              "resolution_gain_vs_R1": 0.8035,
+              "cost_multiplier": 2,
+              "gain_per_cost": 0.4017
+            },
+            {
+              "R": 4,
+              "seed_std": 0.017854,
+              "total_std": 0.025583,
+              "resolution_gain_vs_R1": 0.8785,
+              "cost_multiplier": 4,
+              "gain_per_cost": 0.2196
+            },
+            {
+              "R": 8,
+              "seed_std": 0.014298,
+              "total_std": 0.023241,
+              "resolution_gain_vs_R1": 0.967,
+              "cost_multiplier": 8,
+              "gain_per_cost": 0.1209
+            }
+          ]
+        },
+        "score": {
+          "binomial_se": 0.018322,
+          "ceiling_gain_if_seed_noise_zero": 1.2265,
+          "rows": [
+            {
+              "R": 1,
+              "seed_std": 0.013013,
+              "total_std": 0.022473,
+              "resolution_gain_vs_R1": 1.0,
+              "cost_multiplier": 1,
+              "gain_per_cost": 1.0
+            },
+            {
+              "R": 2,
+              "seed_std": 0.021134,
+              "total_std": 0.027971,
+              "resolution_gain_vs_R1": 0.8035,
+              "cost_multiplier": 2,
+              "gain_per_cost": 0.4017
+            },
+            {
+              "R": 4,
+              "seed_std": 0.017854,
+              "total_std": 0.025583,
+              "resolution_gain_vs_R1": 0.8785,
+              "cost_multiplier": 4,
+              "gain_per_cost": 0.2196
+            },
+            {
+              "R": 8,
+              "seed_std": 0.014298,
+              "total_std": 0.023241,
+              "resolution_gain_vs_R1": 0.967,
+              "cost_multiplier": 8,
+              "gain_per_cost": 0.1209
+            }
+          ]
+        }
+      },
+      "budget": {
+        "hybrid": {
+          "basis_ko": "잡음바닥 24seed 분산모형 b≈0 → 총 잡음 ∝ 1/√n",
+          "n_draws": 300,
+          "rows": [
+            {
+              "R": 1,
+              "total_std": 0.022473,
+              "equiv_n_at_R1": 300.0,
+              "cost_seed_averaging": 300,
+              "cost_more_draws": 300.0,
+              "averaging_overpay": 1.0
+            },
+            {
+              "R": 2,
+              "total_std": 0.027971,
+              "equiv_n_at_R1": 193.7,
+              "cost_seed_averaging": 600,
+              "cost_more_draws": 193.7,
+              "averaging_overpay": 3.1
+            },
+            {
+              "R": 4,
+              "total_std": 0.025583,
+              "equiv_n_at_R1": 231.5,
+              "cost_seed_averaging": 1200,
+              "cost_more_draws": 231.5,
+              "averaging_overpay": 5.18
+            },
+            {
+              "R": 8,
+              "total_std": 0.023241,
+              "equiv_n_at_R1": 280.5,
+              "cost_seed_averaging": 2400,
+              "cost_more_draws": 280.5,
+              "averaging_overpay": 8.56
+            }
+          ]
+        },
+        "score": {
+          "basis_ko": "잡음바닥 24seed 분산모형 b≈0 → 총 잡음 ∝ 1/√n",
+          "n_draws": 300,
+          "rows": [
+            {
+              "R": 1,
+              "total_std": 0.022473,
+              "equiv_n_at_R1": 300.0,
+              "cost_seed_averaging": 300,
+              "cost_more_draws": 300.0,
+              "averaging_overpay": 1.0
+            },
+            {
+              "R": 2,
+              "total_std": 0.027971,
+              "equiv_n_at_R1": 193.7,
+              "cost_seed_averaging": 600,
+              "cost_more_draws": 193.7,
+              "averaging_overpay": 3.1
+            },
+            {
+              "R": 4,
+              "total_std": 0.025583,
+              "equiv_n_at_R1": 231.5,
+              "cost_seed_averaging": 1200,
+              "cost_more_draws": 231.5,
+              "averaging_overpay": 5.18
+            },
+            {
+              "R": 8,
+              "total_std": 0.023241,
+              "equiv_n_at_R1": 280.5,
+              "cost_seed_averaging": 2400,
+              "cost_more_draws": 280.5,
+              "averaging_overpay": 8.56
+            }
+          ]
+        }
+      }
+    },
+    "review": {
+      "rows": {
+        "hybrid_R1": {
+          "method": "hybrid",
+          "R": 1,
+          "ge3_by_outer": [
+            0.1,
+            0.11,
+            0.113333,
+            0.12,
+            0.116667,
+            0.106667,
+            0.123333,
+            0.083333,
+            0.13,
+            0.123333
+          ],
+          "ge3_mean": 0.112667,
+          "outer_std": 0.012893
+        },
+        "hybrid_R2": {
+          "method": "hybrid",
+          "R": 2,
+          "ge3_by_outer": [
+            0.126667,
+            0.113333,
+            0.1,
+            0.126667,
+            0.126667,
+            0.103333,
+            0.15,
+            0.1,
+            0.126667,
+            0.096667
+          ],
+          "ge3_mean": 0.117,
+          "outer_std": 0.016292
+        },
+        "hybrid_R4": {
+          "method": "hybrid",
+          "R": 4,
+          "ge3_by_outer": [
+            0.116667,
+            0.136667,
+            0.116667,
+            0.153333,
+            0.163333,
+            0.113333,
+            0.153333,
+            0.1,
+            0.123333,
+            0.123333
+          ],
+          "ge3_mean": 0.13,
+          "outer_std": 0.019664
+        },
+        "hybrid_R8": {
+          "method": "hybrid",
+          "R": 8,
+          "ge3_by_outer": [
+            0.126667,
+            0.126667,
+            0.156667,
+            0.126667,
+            0.143333,
+            0.113333,
+            0.116667,
+            0.093333,
+            0.143333,
+            0.153333
+          ],
+          "ge3_mean": 0.13,
+          "outer_std": 0.018559
+        },
+        "score_R1": {
+          "method": "score",
+          "R": 1,
+          "ge3_by_outer": [
+            0.1,
+            0.116667,
+            0.086667,
+            0.143333,
+            0.136667,
+            0.123333,
+            0.116667,
+            0.086667,
+            0.146667,
+            0.103333
+          ],
+          "ge3_mean": 0.116,
+          "outer_std": 0.020753
+        },
+        "score_R2": {
+          "method": "score",
+          "R": 2,
+          "ge3_by_outer": [
+            0.11,
+            0.116667,
+            0.116667,
+            0.136667,
+            0.123333,
+            0.12,
+            0.14,
+            0.103333,
+            0.116667,
+            0.103333
+          ],
+          "ge3_mean": 0.118667,
+          "outer_std": 0.011662
+        },
+        "score_R4": {
+          "method": "score",
+          "R": 4,
+          "ge3_by_outer": [
+            0.113333,
+            0.16,
+            0.096667,
+            0.153333,
+            0.17,
+            0.113333,
+            0.143333,
+            0.103333,
+            0.126667,
+            0.103333
+          ],
+          "ge3_mean": 0.128333,
+          "outer_std": 0.025089
+        },
+        "score_R8": {
+          "method": "score",
+          "R": 8,
+          "ge3_by_outer": [
+            0.133333,
+            0.13,
+            0.136667,
+            0.146667,
+            0.15,
+            0.116667,
+            0.106667,
+            0.11,
+            0.136667,
+            0.136667
+          ],
+          "ge3_mean": 0.130333,
+          "outer_std": 0.01394
+        }
+      },
+      "baseline": "hybrid_R1",
+      "baseline_ge3": 0.112667,
+      "best_key": "score_R8",
+      "best_ge3": 0.130333,
+      "delta_vs_baseline": 0.017666,
+      "decay": {
+        "hybrid": {
+          "method": "hybrid",
+          "R": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "outer_std": [
+            0.012893,
+            0.016292,
+            0.019664,
+            0.018559
+          ],
+          "std_R1_over_std_Rmax": 0.6947,
+          "expected_ratio_sqrtR": 2.8284,
+          "loglog_slope": 0.1848,
+          "slope_target": -0.5,
+          "R1_vs_Rmax_resolvable": {
+            "sigma": [
+              0.012893,
+              0.018559
+            ],
+            "n_samples": 10,
+            "se": [
+              0.003039,
+              0.004374
+            ],
+            "diff": 0.005666,
+            "resolve_threshold": 0.01044,
+            "resolvable": false,
+            "samples_needed": 32
+          },
+          "seeds_needed_if_unresolved": 32,
+          "decomposition": {
+            "fit_ok": true,
+            "sigma_floor_A": 0.020042,
+            "sigma_draw_B": 0.0,
+            "removable_share_at_R1": 0.0,
+            "sigma_at_R_inf": 0.020042,
+            "note_ko": "A>0 이면 평균화만으로는 그 아래로 못 내려간다 (학습기 경로 등)"
+          }
+        },
+        "score": {
+          "method": "score",
+          "R": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "outer_std": [
+            0.020753,
+            0.011662,
+            0.025089,
+            0.01394
+          ],
+          "std_R1_over_std_Rmax": 1.4887,
+          "expected_ratio_sqrtR": 2.8284,
+          "loglog_slope": -0.0617,
+          "slope_target": -0.5,
+          "R1_vs_Rmax_resolvable": {
+            "sigma": [
+              0.020753,
+              0.01394
+            ],
+            "n_samples": 10,
+            "se": [
+              0.004892,
+              0.003286
+            ],
+            "diff": 0.006813,
+            "resolve_threshold": 0.011549,
+            "resolvable": false,
+            "samples_needed": 27
+          },
+          "seeds_needed_if_unresolved": 27,
+          "decomposition": {
+            "fit_ok": true,
+            "sigma_floor_A": 0.017827,
+            "sigma_draw_B": 0.007974,
+            "removable_share_at_R1": 0.1667,
+            "sigma_at_R_inf": 0.017827,
+            "note_ko": "A>0 이면 평균화만으로는 그 아래로 못 내려간다 (학습기 경로 등)"
+          }
+        }
+      },
+      "resolution": {
+        "hybrid": {
+          "binomial_se": 0.018322,
+          "ceiling_gain_if_seed_noise_zero": 1.2228,
+          "rows": [
+            {
+              "R": 1,
+              "seed_std": 0.012893,
+              "total_std": 0.022404,
+              "resolution_gain_vs_R1": 1.0,
+              "cost_multiplier": 1,
+              "gain_per_cost": 1.0
+            },
+            {
+              "R": 2,
+              "seed_std": 0.016292,
+              "total_std": 0.024518,
+              "resolution_gain_vs_R1": 0.9138,
+              "cost_multiplier": 2,
+              "gain_per_cost": 0.4569
+            },
+            {
+              "R": 4,
+              "seed_std": 0.019664,
+              "total_std": 0.026877,
+              "resolution_gain_vs_R1": 0.8336,
+              "cost_multiplier": 4,
+              "gain_per_cost": 0.2084
+            },
+            {
+              "R": 8,
+              "seed_std": 0.018559,
+              "total_std": 0.02608,
+              "resolution_gain_vs_R1": 0.8591,
+              "cost_multiplier": 8,
+              "gain_per_cost": 0.1074
+            }
+          ]
+        },
+        "score": {
+          "binomial_se": 0.018322,
+          "ceiling_gain_if_seed_noise_zero": 1.5109,
+          "rows": [
+            {
+              "R": 1,
+              "seed_std": 0.020753,
+              "total_std": 0.027684,
+              "resolution_gain_vs_R1": 1.0,
+              "cost_multiplier": 1,
+              "gain_per_cost": 1.0
+            },
+            {
+              "R": 2,
+              "seed_std": 0.011662,
+              "total_std": 0.021719,
+              "resolution_gain_vs_R1": 1.2746,
+              "cost_multiplier": 2,
+              "gain_per_cost": 0.6373
+            },
+            {
+              "R": 4,
+              "seed_std": 0.025089,
+              "total_std": 0.031067,
+              "resolution_gain_vs_R1": 0.8911,
+              "cost_multiplier": 4,
+              "gain_per_cost": 0.2228
+            },
+            {
+              "R": 8,
+              "seed_std": 0.01394,
+              "total_std": 0.023022,
+              "resolution_gain_vs_R1": 1.2025,
+              "cost_multiplier": 8,
+              "gain_per_cost": 0.1503
+            }
+          ]
+        }
+      },
+      "budget": {
+        "hybrid": {
+          "basis_ko": "잡음바닥 24seed 분산모형 b≈0 → 총 잡음 ∝ 1/√n",
+          "n_draws": 300,
+          "rows": [
+            {
+              "R": 1,
+              "total_std": 0.022404,
+              "equiv_n_at_R1": 300.0,
+              "cost_seed_averaging": 300,
+              "cost_more_draws": 300.0,
+              "averaging_overpay": 1.0
+            },
+            {
+              "R": 2,
+              "total_std": 0.024518,
+              "equiv_n_at_R1": 250.5,
+              "cost_seed_averaging": 600,
+              "cost_more_draws": 250.5,
+              "averaging_overpay": 2.4
+            },
+            {
+              "R": 4,
+              "total_std": 0.026877,
+              "equiv_n_at_R1": 208.5,
+              "cost_seed_averaging": 1200,
+              "cost_more_draws": 208.5,
+              "averaging_overpay": 5.76
+            },
+            {
+              "R": 8,
+              "total_std": 0.02608,
+              "equiv_n_at_R1": 221.4,
+              "cost_seed_averaging": 2400,
+              "cost_more_draws": 221.4,
+              "averaging_overpay": 10.84
+            }
+          ]
+        },
+        "score": {
+          "basis_ko": "잡음바닥 24seed 분산모형 b≈0 → 총 잡음 ∝ 1/√n",
+          "n_draws": 300,
+          "rows": [
+            {
+              "R": 1,
+              "total_std": 0.027684,
+              "equiv_n_at_R1": 300.0,
+              "cost_seed_averaging": 300,
+              "cost_more_draws": 300.0,
+              "averaging_overpay": 1.0
+            },
+            {
+              "R": 2,
+              "total_std": 0.021719,
+              "equiv_n_at_R1": 487.4,
+              "cost_seed_averaging": 600,
+              "cost_more_draws": 487.4,
+              "averaging_overpay": 1.23
+            },
+            {
+              "R": 4,
+              "total_std": 0.031067,
+              "equiv_n_at_R1": 238.2,
+              "cost_seed_averaging": 1200,
+              "cost_more_draws": 238.2,
+              "averaging_overpay": 5.04
+            },
+            {
+              "R": 8,
+              "total_std": 0.023022,
+              "equiv_n_at_R1": 433.8,
+              "cost_seed_averaging": 2400,
+              "cost_more_draws": 433.8,
+              "averaging_overpay": 5.53
+            }
+          ]
+        }
+      }
+    }
+  },
+  "decision_gate": {
+    "gate": {
+      "n": 300,
+      "k_cells": 7,
+      "p0": 0.113624,
+      "se_single": 0.018322,
+      "ci95_halfwidth": 0.035912,
+      "mdd_single_pair": 0.050787,
+      "mdd_selection_p95": 0.06,
+      "mdd_selection_p99": 0.076667,
+      "noise_delta_expected": 0.025402
+    },
+    "delta": 0.011,
+    "holdout_value": null,
+    "holdout_collapsed": null,
+    "verdict": "UNDECIDABLE",
+    "why_ko": "|Δ|=0.011000 < 단일비교 최소검출차 0.050787 (n=300) → 차이 주장 불가",
+    "actionable": false,
+    "rule": "R38",
+    "metric": "ge3(stat, best-of-5)",
+    "label": "seed 평균화 최선안 vs 현행 단일 seed",
+    "module": "tools/k_gate.py",
+    "report_as_ko": "차이 없음 (눈금 미달)"
+  },
+  "precision_check": {
+    "rule": "R39",
+    "module": "tools/k_precision.py",
+    "note": "잔여 잡음 감소는 σ̂ 비교이므로 σ̂ 자체의 오차를 넘는지 확인한다",
+    "stat_hybrid": {
+      "sigma": [
+        0.02242,
+        0.017075
+      ],
+      "n_samples": 10,
+      "se": [
+        0.005284,
+        0.004025
+      ],
+      "diff": 0.005345,
+      "resolve_threshold": 0.013019,
+      "resolvable": false,
+      "samples_needed": 55
+    },
+    "stat_score": {
+      "sigma": [
+        0.01961,
+        0.014256
+      ],
+      "n_samples": 10,
+      "se": [
+        0.004622,
+        0.00336
+      ],
+      "diff": 0.005354,
+      "resolve_threshold": 0.0112,
+      "resolvable": false,
+      "samples_needed": 41
+    }
+  },
+  "verdict": {
+    "code": "NOISE_CUT_NOT_ESTABLISHED",
+    "noise_cut_methods": [],
+    "hit_change_actionable": false,
+    "why_ko": "outer 10개로는 R1↔R8 잔여 잡음 차이가 측정 오차를 넘지 못했다. 감소했다고 주장할 수 없다 (R39)."
+  },
+  "raw_reused": true
+}
