@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a142b77` · WORK=`IDLE`
+- HEAD: `536360f` · WORK=`IDLE`
 - 지금: **K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS 뇌별 **APPLY** · prefer↑/prize더음수/stat hit↑ · ge3미사용
 - 직전: K-BRAIN-INDEPENDENT-WIRE · WIRE_CONFORMS
 - BOOT다음: **형 선택** — ①군중 BLEND 소튜닝(review EV) ②과거학습 명분리뷰 ③정지
