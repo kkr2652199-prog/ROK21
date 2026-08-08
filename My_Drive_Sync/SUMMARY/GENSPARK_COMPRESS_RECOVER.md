@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`9a0a323` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`d3c2059` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=9a0a323]
+[ROK21 젠스파크 압축복구 · HEAD=d3c2059]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 9a0a323 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE
-- 직전: SEED-NOISE-FLOOR v2(FLOOR_NOT_ESTABLISHED · 바닥 0.005087 CI 0포함) · R39 신설(`tools/k_precision.py` 7/7)
-- BOOT다음: ①학습기 경로 잡음(평균 안 되는 A몫) 진단 ②1236+ 전향적 EV로그 ③트랙정지 중 **형 1건 선택** · 발권가중 금지
-- NEXT1: K-SEED-AVG-NEXT-PICK — seed 평균화 설계·검증 완료 — **결론: NOISE_CUT_NOT_ESTABLISHED · 배선 안 함**. R8 까지 올려도 잔여 잡음이 √R(2.83배)로 안 줄고 **1.38배**에 그침(기울기 −0.13) · R39 구분불가(필요 outer 41~55). 결정타는 손익 — 이항SE 0.018322 는 못 줄이므로 **seed 잡음을 0으로 만들어도 판정 해상도 상한 1.4647배**, R8 실측 1.156배에 비용 8배. 같은 해상도를 **회차 늘리기로 사면 5.99배 싸다**(등가 n=400.9 vs 반복비용 2400). ge3 는 Δ+0.011 로 게이트 UNDECIDABLE = 무변화. 분해 σ²=A+B/R 에서 stat 은 63%만 제거 가능하고 나머지 A 는 **평균되지 않는 학습기 경로**. 형 확인 후 1건 선택 — **①학습기 경로 잡음 진단**(권장 · 평균화가 못 건드린 A 몫의 정체 확인 · 이걸 줄여야 판정 해상도가 오름 · 측정만 · 발권 무변경) / ②회차 1236+ 전향적 EV 로그 시작(개입 없이 인기회피축 검증) / ③트랙정지
+- HEAD: d3c2059 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-REPACK-SELECT-DIAG**(stat 단독 · 53~1235 n1183 × seed5 = 5915 · 309초) — **POOL_EQUALS_RANDOM**: pool 10세트 최고 **0.2152** = 무작위 **10장** null **0.2143**(±0.0234) 초과False · 몰아주기 5장 0.1190 = 무작위 5장 null 0.1136 초과False ⇒ **20260804 「pool최고 0.245 vs 몰0.125 = 좋은세트 놓침」은 오독 · 실체는 10장 vs 5장 산수** · 사전특성 11개 **Spearman 최대 |0.0088|** · 특성상위5 선별 11개 전부 몰아주기 이하(최선 Δ−0.000507 · R38 UNDECIDABLE) → **선별 재설계 근거 없음 · 몰아주기 구조 유지**
+- 직전: K-SEED-AVERAGE-DESIGN(NOISE_CUT_NOT_ESTABLISHED · √R 불성립 1.38배 · 회차로 사면 5.99배 싸다 → 배선안함) · R39 신설
+- BOOT다음: ①당첨금(인기회피) 축 설계 ②다른 특성축 탐색(세트궁합·짝동시출현) ③1236+ 전향적 EV로그 중 **형 1건 선택** · 발권가중 금지
+- NEXT1: K-REPACK-SELECT-NEXT-PICK — 형 지시 「몰아주기 정상작동 패치 + 과거학습 뇌 계속」 의 **선행 진단 완료** — **결론: 패치할 결함이 없다**. ⑴ **전제가 붕괴**했다: 20260804 DECOMPOSE 의 「pool 최고 0.245 vs 몰아주기 0.125 → 좋은 세트를 놓친다」는 오독이었고, pool 10세트 최고 **0.215216** 을 **무작위 10장** null **0.214337**(±0.023385) 과 대보면 **초과 False** — 격차의 실체는 **10장 vs 5장 장수 산수**다. 몰아주기 5장 0.119019 도 무작위 5장 null 0.113624 초과 False. ⑵ 놓침 871 / 구제 302 / 순 −569 는 결함이 아니라 같은 산수(10장 중 5장만 발권). ⑶ **선별 신호 없음**: 사전특성 11개 Spearman 최대 |0.0088| · 특성상위5 전략 11개 전부 몰아주기 이하(최선 feat_pos_ema Δ−0.000507 · R38 UNDECIDABLE · MDD 0.025575) · 무선별 대조군 setno_1_5 도 동일. ⇒ **몰아주기 구조 유지**(바꿀 근거도 되돌릴 근거도 없음) · 선별 재설계 금지. 형 확인 후 1건 선택 — **①당첨금(인기회피) 축 설계**(권장 · 「어느 세트가 맞을지」는 원리적으로 못 고르나 「맞았을 때 덜 나눌 세트」는 고를 수 있음 · 유일한 유의축 = 저번호·저합 sum β−0.0575 · 설계·측정만 · 발권 무변경) / ②다른 특성축 탐색(세트궁합·짝 동시출현 등 이번 11개에 없던 축 · 단 pool 자체가 무작위와 구별불가라 기대 낮음) / ③회차 1236+ 전향적 EV 로그 시작 / ④트랙정지
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -55,6 +55,9 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
 - `20260808_KGATE_COMPLIANCE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KGATE_COMPLIANCE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KGATE_COMPLIANCE.md
+- `20260808_KREPACK_SELECT_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KREPACK_SELECT_DIAG.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KREPACK_SELECT_DIAG.md
+- `20260808_KREPACK_SELECT_DIAG_raw` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KREPACK_SELECT_DIAG_raw.json
 - `20260808_KSEED_AVERAGE_DESIGN` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSEED_AVERAGE_DESIGN.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSEED_AVERAGE_DESIGN.md
 - `20260808_KSEED_AVERAGE_DESIGN_raw` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSEED_AVERAGE_DESIGN_raw.json
@@ -63,9 +66,6 @@
 - `20260808_KSTAT_SEED_NOISE_FLOOR_raw` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_SEED_NOISE_FLOOR_raw.json
 - `20260808_KSTAT_SEED_NOISE_FLOOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_SEED_NOISE_FLOOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_SEED_NOISE_FLOOR.md
-- `20260808_KSTAT_NOISE_SOURCE_RAW` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_NOISE_SOURCE_RAW.json
-- `20260808_KSTAT_DECISION_GATE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_DECISION_GATE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_DECISION_GATE.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -76,7 +76,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=9a0a323 · 지금=**K-SEED-AVERAGE-DESIGN**(n300·outer10×안쪽8) — **NOISE_CUT_NOT_ESTABLISHED**: R8 까지 올려도 σ 비 **1.38배**(√R 예측 2.83배 미달 · 기울기 −0.13) · R39 구분불가(필요 outer 41~55) · **손익이 결정타**: 해상도 이득 1.156배/비용 8배 · seed 잡음 0 이어도 상한 1.4647배 · **등가회차 역산 시 평균화 과지불 5.99배** → **배선 안 함** · ge3 Δ+0.011 게이트 UNDECIDABLE · 다음=K-SEED-AVG-NEXT-PICK
+1. 첫줄: [복귀] HEAD=d3c2059 · 지금=**K-REPACK-SELECT-DIAG**(stat 단독 · 53~1235 n1183 × seed5 = 5915 · 309초) — **POOL_EQUALS_RANDOM**: pool 10세트 최고 **0.2152** = 무작위 **10장** null **0.2143**(±0.0234) 초과False · 몰아주기 5장 0.1190 = 무작위 5장 null 0.1136 초과False ⇒ **20260804 「pool최고 0.245 vs 몰0.125 = 좋은세트 놓침」은 오독 · 실체는 10장 vs 5장 산수** · 사전특성 11개 **Spearman 최대 |0.0088|** · 특성상위5 선별 11개 전부 몰아주기 이하(최선 Δ−0.000507 · R38 UNDECIDABLE) → **선별 재설계 근거 없음 · 몰아주기 구조 유지** · 다음=K-REPACK-SELECT-NEXT-PICK
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -108,4 +108,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 9a0a323_
+_generated: d3c2059_
