@@ -1,0 +1,146 @@
+{
+  "id": "K-BRAIN-INDEPENDENT-WIRE",
+  "ts": "2026-08-08T19:27:30+09:00",
+  "verdict": "WIRE_CONFORMS",
+  "wire": true,
+  "hint_separation": {
+    "separated": true,
+    "hint_shared_flag": false,
+    "spec": {
+      "stat": [
+        26,
+        "miss_pattern"
+      ],
+      "markov": [
+        null,
+        "crowd_prefer"
+      ],
+      "review": [
+        null,
+        "crowd_prize"
+      ]
+    },
+    "stat_hint_top5": [
+      15,
+      28,
+      31,
+      13,
+      19
+    ],
+    "markov_hint_top5": [
+      12,
+      7,
+      3,
+      13,
+      18
+    ],
+    "review_hint_top5": [
+      40,
+      37,
+      45,
+      39,
+      34
+    ],
+    "all_different": true
+  },
+  "wire_checks": {
+    "V1_hint_separated": true,
+    "V2_dead_wire_clear": true,
+    "V3_signal_top_per_brain": true,
+    "V4_rng_independent": true,
+    "V5_draws_shared": true,
+    "passed": "5/5",
+    "detail": {
+      "V2": {
+        "live": true,
+        "restored_ok": true,
+        "pass": true,
+        "detail_ko": "HINT_SPEC 변경→결과 변경 (배선 살아있음)"
+      },
+      "V3": {
+        "by_brain": {
+          "markov": {
+            "own_hint_top15_overlap": 12,
+            "foreign_only_overlap": 2,
+            "n_repack_nums": 18,
+            "ok": true
+          },
+          "stat": {
+            "own_hint_top15_overlap": 10,
+            "foreign_only_overlap": 4,
+            "n_repack_nums": 18,
+            "ok": true
+          },
+          "review": {
+            "own_hint_top15_overlap": 14,
+            "foreign_only_overlap": 3,
+            "n_repack_nums": 18,
+            "ok": true
+          }
+        },
+        "pass": true
+      },
+      "V4": {
+        "all_independent": true,
+        "by_brain": {
+          "markov": {
+            "solo_equals_joint": true,
+            "n_sets": 10
+          },
+          "stat": {
+            "solo_equals_joint": true,
+            "n_sets": 10
+          },
+          "review": {
+            "solo_equals_joint": true,
+            "n_sets": 10
+          }
+        },
+        "pass": true
+      },
+      "V5": {
+        "draws_len": 1234,
+        "draws_last": 1234,
+        "target": 1235,
+        "no_peek": true,
+        "brains_ran": {
+          "markov": true,
+          "stat": true,
+          "review": true
+        },
+        "pass": true,
+        "shared_allowed_ko": "lotto_draws 원본 공유 유지 (형 명시 허용)"
+      }
+    }
+  },
+  "ev_proxy_gate": {
+    "draw_range": [
+      1100,
+      1235
+    ],
+    "n_draws": 136,
+    "prize_proxy_delta": -0.092741,
+    "by_period": {
+      "early": -0.066372,
+      "mid": -0.094988,
+      "late": -0.116339,
+      "consistent": true,
+      "bins_ko": "early=1100~1144 / mid=1145~1189 / late=1190~1235"
+    },
+    "verdict": "MARGINAL",
+    "metric_ko": "review hint top15 번호의 과거 first_winners평균 − 전체45 평균 (음수=비인기)",
+    "ge3_used": false
+  },
+  "rollback": "K_CROWD_PREFER=0 K_PRIZE_EV=0",
+  "pass": true,
+  "tool": "tools/_k_brain_independent_wire.py",
+  "prior": "docs/benchmarks/20260808_KBRAIN_CROWD_RESTRUCTURE.json",
+  "forbid": [
+    "lotto_draws share removal",
+    "coordinator modify",
+    "random.choices modify",
+    "_get_draws_before modify",
+    "ge3 as EV metric"
+  ],
+  "predict_modules": "stat_brain/markov_brain/review_brain (live packages)"
+}

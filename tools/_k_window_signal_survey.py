@@ -30,10 +30,10 @@ from app.testlotto.brains import (  # noqa: E402
     aux_miss_detective,
     aux_pattern_spotlight,
     aux_referee,
-    predict_flow_shaman,
-    predict_review_king,
-    predict_stat_fairy,
 )
+from app.testlotto.brains.markov_brain import predict as predict_markov_brain  # noqa: E402
+from app.testlotto.brains.review_brain import predict as predict_review_brain  # noqa: E402
+from app.testlotto.brains.stat_brain import predict as predict_stat_brain  # noqa: E402
 from app.testlotto.brains.coordinator import apply_markov_wire_quota  # noqa: E402
 from app.testlotto.brains.registry import SETS_PER_PREDICT_BRAIN  # noqa: E402
 from app.testlotto.data_service import _get_draws_before  # noqa: E402
@@ -70,10 +70,12 @@ ALPHAS = [0.05, 0.10, 0.20]
 WINDOW_WEEKS: list[int | None] = [4, 8, 12, 52, None]
 SIGNAL_TYPES = ["odd_even", "zone_mix", "sum_band", "miss_pattern"]
 
+# K-BRAIN-INDEPENDENT-WIRE — pool/몰아주기는 실뇌 패키지 사용
+# (deprecated predict_flow_shaman/review_king 은 구특성·군중신호 미적용)
 PREDICT_MODULES = {
-    "markov": predict_flow_shaman,
-    "stat": predict_stat_fairy,
-    "review": predict_review_king,
+    "markov": predict_markov_brain,
+    "stat": predict_stat_brain,
+    "review": predict_review_brain,
 }
 
 AUX_MODULES = {

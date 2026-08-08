@@ -50,15 +50,17 @@ SCORE_WEIGHTS_BY_BRAIN: dict[str, tuple[float, float, float]] = dict.fromkeys(
 )
 LEARN_EMA_BY_BRAIN: dict[str, float] = dict.fromkeys(BRAIN_TAGS, LEARN_EMA)
 
-# hint 축도 뇌별로 열어둔다. **현재 값은 3뇌 전부 동일** = 성적 무변화.
-# 실측(K-BRAIN-INDEPENDENCE-AUDIT B5): hint 를 공유하면 3뇌 점수세트의 번호
-# 겹침이 Jaccard 0.743 (무작위 기대 0.250 의 약 3배)이고, hint 가중치를 0 으로
-# 두면 0.30 까지 내려간다 → **공유 hint 가 뇌 간 번호 공유의 주원인**.
-# 다만 「어느 (창, 신호)가 어느 뇌에 맞는가」는 데이터로 정해야 하는 성적 주장이라
-# 값 차별화는 R38 게이트 통과 후에 한다. 지금은 배선만 살려둔다.
-HINT_SPEC_BY_BRAIN: dict[str, tuple[int | None, str]] = dict.fromkeys(
-    BRAIN_TAGS, (WINDOW_WEEKS, WINDOW_SIGNAL)
-)
+# K-BRAIN-INDEPENDENT-WIRE (20260808) — hint 를 뇌 특성축으로 분리.
+# 공유 허용 = lotto_draws(원본) + 읽기 헬퍼만. hint 테이블 공유 금지.
+#   stat   → 과거 당첨 패턴(miss_pattern · 창26)
+#   markov → 선호번호(crowd_prefer · first_winners 인기회차)
+#   review → 금액뇌(crowd_prize · 비선호·저당첨자수)
+# 기존 (WINDOW_WEEKS, WINDOW_SIGNAL) 단일 hint 는 `_build_hint` fallback 으로만 유지.
+HINT_SPEC_BY_BRAIN: dict[str, tuple[int | None, str]] = {
+    "stat": (26, "miss_pattern"),
+    "markov": (None, "crowd_prefer"),
+    "review": (None, "crowd_prize"),
+}
 
 
 def hint_shared_across_brains() -> bool:
@@ -407,15 +409,10 @@ def repack_by_brain(
     `hint_by_brain` 을 안 주더라도 `HINT_SPEC_BY_BRAIN` 이 뇌마다 다르면 여기서 직접
     만든다. 호출자가 넘기는 걸 잊어도 뇌별 hint 가 조용히 무시되지 않게 하려는 것이다
     (`brain_tag` 를 빠뜨려 뇌별 가중치가 죽었던 K-REPACK-BRAINTAG-DEAD-WIRE 와 같은 함정).
-    3뇌 spec 이 동일한 현재 상태에서는 이 분기를 타지 않으므로 비용·결과 변화가 없다.
     """
     from app.testlotto.feature_lambda import FEATURE_LAMBDA_BY_BRAIN, apply_feature_lambda
 
-    if (
-        hint_by_brain is None
-        and target_draw_no is not None
-        and not hint_shared_across_brains()
-    ):
+    if hint_by_brain is None and target_draw_no is not None and not hint_shared_across_brains():
         hint_by_brain = build_hint_by_brain(_get_draws_before(target_draw_no), target_draw_no)
 
     out: list[dict] = []
@@ -454,23 +451,45 @@ def repack_by_brain(
     return out
 
 
-def _build_hint(draws: list[dict], draw_no: int) -> dict[int, float]:
+def _weights_to_hint(table: dict[int, float]) -> dict[int, float]:
+    """군중 가중(평균≈1) → number_scores용 hint(-1..1, 양수만 점수 반영)."""
+    from tools._k_window_signal_survey import _normalize_hint
+
+    raw = {n: float(table.get(n, 1.0)) - 1.0 for n in range(1, 46)}
+    return _normalize_hint(raw)
+
+
+def _build_hint_for_spec(
+    draws: list[dict], weeks: int | None, signal: str, draw_no: int
+) -> dict[int, float]:
+    """단일 (창, 신호) hint. crowd_* 는 lotto_draws 기반 군중표 → hint 변환."""
+    if signal == "crowd_prefer":
+        from app.testlotto.brains.shared import crowd_signal
+
+        return _weights_to_hint(crowd_signal.prefer_table(draws))
+    if signal == "crowd_prize":
+        from app.testlotto.brains.shared import crowd_signal
+
+        return _weights_to_hint(crowd_signal.prize_table(draws))
     from tools._k_window_signal_survey import _build_hint as _bh
 
-    return _bh(draws, WINDOW_WEEKS, WINDOW_SIGNAL, draw_no)
+    return _bh(draws, weeks, signal, draw_no)
+
+
+def _build_hint(draws: list[dict], draw_no: int) -> dict[int, float]:
+    """공유 fallback (구경로 호환). 뇌별 분리는 `build_hint_by_brain`."""
+    return _build_hint_for_spec(draws, WINDOW_WEEKS, WINDOW_SIGNAL, draw_no)
 
 
 def build_hint_by_brain(draws: list[dict], draw_no: int) -> dict[str, dict[int, float]]:
-    """뇌별 hint. `HINT_SPEC_BY_BRAIN` 이 전부 같으면 결과도 전부 같다(성적 무변화)."""
-    from tools._k_window_signal_survey import _build_hint as _bh
-
+    """뇌별 hint. `HINT_SPEC_BY_BRAIN` 이 다르면 테이블이 갈라진다."""
     cache: dict[tuple[int | None, str], dict[int, float]] = {}
     out: dict[str, dict[int, float]] = {}
     for tag in BRAIN_TAGS:
         spec = HINT_SPEC_BY_BRAIN.get(tag, (WINDOW_WEEKS, WINDOW_SIGNAL))
         if spec not in cache:
-            cache[spec] = _bh(draws, spec[0], spec[1], draw_no)
-        out[tag] = cache[spec]
+            cache[spec] = _build_hint_for_spec(draws, spec[0], spec[1], draw_no)
+        out[tag] = dict(cache[spec])
     return out
 
 
