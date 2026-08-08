@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 **1216~1235 · 20/20 OK · 298초**. 발권+**stat숙제5장강제** · 채점 · pool/evolve. pred200(stat100) · learn3 · evolve60 · pool60 · warrant20
+📌 사유: **[CURSOR] K-BRAIN-CROWD-RESTRUCTURE** — 흐름술사→**선호번호** · 복습왕→**금액뇌** · 과거학습 유지. `crowd_signal` 배선 · 학술벤치 · SMOKE_OK · ge3 성적주장 없음
 
-📌 직전: **[CURSOR] K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또
+📌 직전: **[CURSOR] K-STAT-HOMEWORK-FILL**(형GO ①) — 1216~1235 20/20 OK
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-BRAIN-CROWD-RESTRUCTURE (형GO · 판단진행)** | **WIRE_SMOKE_OK** — 형 「과거학습 특성맞게 진행 · 흐름술사→선호번호 · 복습왕→금액뇌 · 엔진견고 · 학술벤치」. **역할**: `stat`=과거학습(당첨번호 숙제·패턴) 유지 · `markov`=**선호번호**(1등다수 회차+생일대 1~31) · `review`=**금액뇌**(저당첨자수·고번호·끝수0/8/9 비선호 → **당첨시 몫 EV**, P(win)↑ 비주장). **데이터한계**: 조합별 판매수 없음 → `first_winners`+`total_sales` 프록시 + 구조사전. **문헌**: Thaler&Ziemba JEP1988 · Ziemba ARFE2023 · Chernoff conscious selection. **배선**: `shared/crowd_signal.py` · 엔진 가중치만 `blend_weights`(STRENGTH0.55) · **`random.choices` 미수정** · `_get_draws_before` 유지. 롤백 `K_CROWD_PREFER=0`/`K_PRIZE_EV=0`. UI·registry·METHOD_TO_TAG(구명호환). 스모크 as_of1236: method 일치 · prefer_top≈저번호 · prize_top≈고번호. 과거학습 decay 튜닝은 게이트보류(이번 턴 범위 밖). · `docs/benchmarks/20260808_KBRAIN_CROWD_RESTRUCTURE.json` · `reports/20260808_KBRAIN_CROWD_RESTRUCTURE.md` |
 | **K-STAT-HOMEWORK-FILL (형GO ①)** | **20/20 OK** · 회차 **1216~1235** · 298.3초 · 확정길(N숙제←1..N-1·채점N). **발견**: 발권 쿼터만 쓰면 **stat가 lotto_predictions 0장**일 수 있음 → 매회 `brain_filter=("stat",)` 로 숙제 5장 추가. 후: pred **200**(scored) · stat **100** · learn **3** · evolve **60** · pool **60** · warrant **20**. 명분예 1235 set5 적중3 · `1yHot/Cold`. 튜닝아님 · DB로컬만 · `docs/benchmarks/20260808_KSTAT_HOMEWORK_FILL.json` · `reports/20260808_KSTAT_HOMEWORK_FILL.md` · `tools/_k_stat_homework_fill.py` |
 | **K-UI-TESTLOTTO-FOCUS-HOLD** | **HOLD_ON** — `ROK21_TESTLOTTO_FOCUS_HOLD=true` · 숨김=`predict`/`strategy-x`/`hyodo` · 기본뷰=`testlotto` · 진입 시 lotto4 예측 자동로드 **OFF**(1236 혼동 방지) · 복원=`false` · `docs/benchmarks/20260808_KUI_TESTLOTTO_FOCUS_HOLD.json` · `reports/20260808_KUI_TESTLOTTO_FOCUS_HOLD.md` |
 | **K-STAT-PASTLEARN-READY-CHECK (READ-ONLY)** | **방향 준비 · 기록 미준비** — 형 「확정 길로 패치 준비된 뇌인가?」 · **준비됨**: 워크포워드(`_get_draws_before` · target=`last+1`) · `ROK21_LEARN_CUTOFF`/`set_learn_as_of` 컨닝차단(미설정 시 learn 로드 `ValueError`) · 파이프 `transition(OFF)→engine(v2 ON via past_learn)→aux→past_learn soft→diversity` · `PAST_LEARN_WIRE=True` · ASSOC OFF · reasoning 문자열·`past_learn.tags` 존재(예 1235: `1yHot[…]`) · **미준비**: 리셋 후 `lotto_predictions=0` · `learn_state=0` · `hit_warrant_log=0` · `evolve_log=0` → 피드백·학습 boost·명분 누적 경로 무효(중립) · **확정 길 잠금**: N숙제 / 재료1..(N-1) / 채점 N / 깊은패턴=재료 · 다음=기록 채우기 먼저 · `reports/20260808_KSTAT_PASTLEARN_READY_CHECK.md` |

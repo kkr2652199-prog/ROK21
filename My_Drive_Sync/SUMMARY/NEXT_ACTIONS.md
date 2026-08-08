@@ -3,12 +3,11 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-STAT-HOMEWORK-NEXT-PICK
-- 할일: **K-STAT-HOMEWORK-FILL 완료 20/20** (1216~1235). 확정 길로 기록 채움 — 발권 쿼터5장 + **stat 숙제 5장 강제**(쿼터만 쓰면 past학습이 DB에 0장이던 문제 해결) + matched 채점 + pool_view_cache + evolve_log. 후행수: predictions **200**(stat **100**) · learn_state **3** · evolve **60** · pool **60** · hit_warrant **20**. 형 1건 — **①1235 명분 샘플 리뷰**(권장 · 보고서 §3) / ②재료 튜닝 착수(게이트) / ③구간 확장 1136~1235 / ④정지
-- 완료조건: 형이 ①~④ 중 1건 지정
-- 선행완료: 	ools/_k_stat_homework_fill.py · docs/benchmarks/20260808_KSTAT_HOMEWORK_FILL.json · 
-eports/20260808_KSTAT_HOMEWORK_FILL.md
-- 승인필요: 없음 (DB 로컬만 · 커밋 안 함)
+- ID: K-BRAIN-CROWD-NEXT-PICK
+- 할일: **K-BRAIN-CROWD-RESTRUCTURE 완료**(WIRE_SMOKE_OK). markov=선호번호 · review=금액뇌 · crowd_signal 배선 · 학술벤치 반영. 형 1건 — **①선호/금액 EV프록시 소구간 게이트 설계**(권장 · ge3 아님 · first_winners/몫 축) / ②1235 과거학습 명분 샘플 리뷰 / ③정지
+- 완료조건: 형이 ①~③ 중 1건 지정
+- 선행완료: app/testlotto/brains/shared/crowd_signal.py · docs/benchmarks/20260808_KBRAIN_CROWD_RESTRUCTURE.json · reports/20260808_KBRAIN_CROWD_RESTRUCTURE.md
+- 승인필요: 없음 (배선·문서 · DB커밋 안 함)
 - 선행조건: 없음
 - 최종갱신: 2026-08-08
 
@@ -22,3 +21,4 @@ IDLE
 
 - HOLD 복원: `lotto4.js` → `ROK21_TESTLOTTO_FOCUS_HOLD = false`
 - 숨김: 두뇌예측 · 전략 X · 효도로또
+- 롤백: `K_CROWD_PREFER=0` · `K_PRIZE_EV=0`

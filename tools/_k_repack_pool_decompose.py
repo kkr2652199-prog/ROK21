@@ -24,7 +24,7 @@ OUT_JSON = ROOT / "docs" / "benchmarks" / "20260804_KREPACK_DECOMPOSE_survey.jso
 OUT_MD = ROOT / "reports" / "20260804_KREPACK_DECOMPOSE_SURVEY.md"
 
 BRAIN_TAGS = ["stat", "markov", "review"]
-BRAIN_KO = {"stat": "1뇌·과거학습", "markov": "2뇌·흐름술사", "review": "3뇌·복습왕"}
+BRAIN_KO = {"stat": "1뇌·과거학습", "markov": "2뇌·선호번호", "review": "3뇌·금액뇌"}
 
 
 def _hits(nums: list[int], actual: set[int]) -> int:

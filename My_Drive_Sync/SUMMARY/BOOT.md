@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그
-- 직전: K-STAT-PASTLEARN-READY-CHECK (방향준비·기록미준비)
-- 다음: **형 선택** — ①1235 명분 샘플 읽고 부족한 점 지적(권장) ②재료 튜닝(게이트) ③구간 확장(100회+) ④정지
+- 지금: **K-BRAIN-CROWD-RESTRUCTURE** — 흐름술사→**선호번호** · 복습왕→**금액뇌** · 과거학습 유지. `crowd_signal`+학술벤치 · SMOKE_OK · ge3주장없음
+- 직전: K-STAT-HOMEWORK-FILL (1216~1235 20/20)
+- 다음: **형 선택** — ①선호/금액 EV프록시 소구간 게이트설계(권장) ②1235 명분리뷰 ③정지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

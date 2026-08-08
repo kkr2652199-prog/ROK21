@@ -8,24 +8,24 @@ PREDICT_BRAINS: list[dict[str, str]] = [
         "code": "stat_fairy",
         "name": "과거학습",
         "role": "predict",
-        "desc": "빈도·끝수·이월수 가중 통계(과거 학습)",
-        "short_desc": "최근 빈도·끝수·이월수로 자주 나온 흐름을 잡는다",
+        "desc": "회차 숙제: 과거 당첨번호 빈도·끝수·이월 패턴 (군중선호와 별개)",
+        "short_desc": "N회 숙제=1..(N-1) 당첨번호로 패턴·명분을 쌓는다",
     },
     {
         "tag": "markov",
         "code": "flow_shaman",
-        "name": "흐름술사",
+        "name": "선호번호",
         "role": "predict",
-        "desc": "전이행렬·동반출현 흐름",
-        "short_desc": "직전 회차와의 전이·궁합수 연결을 추적한다",
+        "desc": "사람들이 선호하는 번호(1등당첨자 많은 회차·생일대) 축",
+        "short_desc": "인기 회차·저번호를 학습해 선호 조합을 잡는다",
     },
     {
         "tag": "review",
         "code": "review_king",
-        "name": "복습왕",
+        "name": "금액뇌",
         "role": "predict",
-        "desc": "전회차 복습·반복률 학습형",
-        "short_desc": "과거 오답을 복습해 놓쳤던 구간을 보정한다",
+        "desc": "비선호 번호(저당첨자수·고번호)로 당첨 시 몫(금액) 축",
+        "short_desc": "사람들이 덜 고르는 쪽으로 당첨금 기댓값을 노린다",
     },
 ]
 
@@ -69,8 +69,10 @@ SETS_PER_PREDICT_BRAIN = 5
 METHOD_TO_TAG: dict[str, str] = {
     "과거학습": "stat",
     "통계요정": "stat",  # 구명칭 호환(DB method 잔존)
-    "흐름술사": "markov",
-    "복습왕": "review",
+    "선호번호": "markov",
+    "흐름술사": "markov",  # 구명칭 호환
+    "금액뇌": "review",
+    "복습왕": "review",  # 구명칭 호환
 }
 
 DISPLAY_NAMES: dict[str, str] = {b["tag"]: b["name"] for b in PREDICT_BRAINS + AUX_BRAINS}

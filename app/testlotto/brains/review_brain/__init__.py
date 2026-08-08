@@ -1,5 +1,5 @@
-"""review_brain — 복습왕(review) 뇌 패키지 (K-BRAIN-PACKAGE Phase0 스켈레톤).
+"""review_brain — 금액뇌 (tag=review · 구 복습왕).
 
-Phase1에서 predict_review_king.py 로직을 engine/learn/aux로 흡수 예정.
-전용 보조: miss (trap·오답·복습). review↔miss hint 통합 설계 필요.
+이월·복습 가중 + crowd_signal(저당첨자수·비선호) · UI명=금액뇌.
+전용 보조: miss (trap·오답·복습).
 """

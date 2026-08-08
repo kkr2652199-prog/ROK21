@@ -1,18 +1,19 @@
-"""markov_brain.predict — 마르코프뇌 단일 진입점."""
+"""markov_brain.predict — 선호번호뇌 단일 진입점 (구 흐름술사 tag=markov)."""
 
 from __future__ import annotations
 
 from app.testlotto.brains import aux_pattern_spotlight
 from app.testlotto.brains.markov_brain import engine, learn
-from app.testlotto.brains.shared import diversity
+from app.testlotto.brains.shared import crowd_signal, diversity
 from app.testlotto.brains.shared.aux_hint import rerank_by_aux
 from app.testlotto.features.draw_features import build_pair_freq, pair_set
 
 HINT_WEIGHT = 0.15  # PHASE5 · bench can monkeypatch to 0 / 0.10
+METHOD_NAME = "선호번호"
 
 
 def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
-    """predict_flow_shaman.predict_sets 와 동치 — engine.generate + diversity.pick."""
+    """전이·동반 기반 생성 + 군중 선호(당첨자수 많은 회) 신호."""
     raw_n = diversity.factor(n_sets)
     base = engine.generate(draws, raw_n)
     target_draw_no = int(draws[-1]["draw_no"]) + 1 if draws else 0
@@ -25,7 +26,7 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
     carry_boost = 1.0 + float(adj.get("carry_over_boost", 0))
     ending_boost = 1.0 + float(adj.get("ending_digit_boost", 0))
     overdue_boost = 1.0 + float(adj.get("overdue_boost", 0))
-    out: list[dict] = []
+    tagged: list[dict] = []
     for i, r in enumerate(base):
         nums = sorted(r["nums"])
         pairs = pair_set(nums)
@@ -36,21 +37,26 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 f" [학습조정 이월×{carry_boost:.2f}"
                 f" 끝수×{ending_boost:.2f} 미출×{overdue_boost:.2f}]"
             )
-        reasoning = f"흐름술사: 마르코프전이+동반쌍점수{hot_pairs}{learn_note}"
-        native_conf = float(r.get("confidence", 68))
-        out.append(
+        tagged.append(
             {
-                "nums": sorted(nums),
-                "confidence": native_conf,
-                "native_confidence": native_conf,
+                "nums": nums,
+                "confidence": float(r.get("confidence", 68)),
+                "native_confidence": float(r.get("confidence", 68)),
                 "aux_hint_score": float(r.get("aux_hint_score", 0.5)),
-                "reasoning": reasoning,
-                "method": "흐름술사",
+                "reasoning": (
+                    f"{METHOD_NAME}: 인기회차(1등다수)학습+생일대선호"
+                    f"+동반쌍{hot_pairs}{learn_note}"
+                ),
+                "method": METHOD_NAME,
                 "brain_tag": "markov",
                 "rank": i + 1,
             }
         )
-    return diversity.pick(out, n_sets)
+    tagged = crowd_signal.annotate_prefer(draws, tagged)
+    for t in tagged:
+        t["method"] = METHOD_NAME
+        t["brain_tag"] = "markov"
+    return diversity.pick(tagged, n_sets)
 
 
-predict_sets = run  # coordinator 호환 어댑터 (PHASE4)
+predict_sets = run

@@ -9,14 +9,14 @@ const _testlottoResolveApiUrl = (typeof resolveApiUrl === 'function')
 
 const _testlottoBrainDisplayNames = {
   stat: '📚 과거학습',
-  markov: '🌊 흐름술사',
-  review: '📖 복습왕',
+  markov: '⭐ 선호번호',
+  review: '💰 금액뇌',
 };
 
 const _testlottoBrainDescriptions = {
-  stat: '자주 나온 번호·끝자리·이월 번호 위주',
-  markov: '직전 회차와 함께 나온 번호 위주',
-  review: '예전에 틀렸던 패턴을 다시 공부하는 방식',
+  stat: '과거 당첨번호 빈도·끝자리·이월 패턴(숙제)',
+  markov: '1등 많은 회차·사람들이 선호하는 번호 위주',
+  review: '덜 고르는 번호로 당첨 시 몫(금액)을 노림',
 };
 
 /** REPORT_STYLE.md SSOT — 형이 읽는 과제·전략 한국어 */
@@ -346,8 +346,8 @@ function lottoBrainTierNanoHtml(tag) {
 
 const TESTLOTTO_BRAIN_LIST = [
   { tag: 'stat', name: '과거학습', icon: '📚', color: '#3b82f6' },
-  { tag: 'markov', name: '흐름술사', icon: '🌊', color: '#10b981' },
-  { tag: 'review', name: '복습왕', icon: '📖', color: '#f59e0b' },
+  { tag: 'markov', name: '선호번호', icon: '⭐', color: '#10b981' },
+  { tag: 'review', name: '금액뇌', icon: '💰', color: '#f59e0b' },
 ];
 
 function lottoFormatDow(dateStr) {

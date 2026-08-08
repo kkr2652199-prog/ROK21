@@ -3,9 +3,9 @@
  */
 
 const BRAINS = [
-  { tag: 'stat', name: '과거학습', color: '#3b82f6', short_desc: '자주 나온 번호·끝자리·이월 번호 위주' },
-  { tag: 'markov', name: '흐름술사', color: '#10b981', short_desc: '직전 회차와 연결·함께 나온 번호 위주' },
-  { tag: 'review', name: '복습왕', color: '#f59e0b', short_desc: '예전 오답을 다시 공부하는 방식' },
+  { tag: 'stat', name: '과거학습', color: '#3b82f6', short_desc: '과거 당첨번호 빈도·끝자리·이월 패턴(숙제)' },
+  { tag: 'markov', name: '선호번호', color: '#10b981', short_desc: '1등 많은 회차·사람들이 선호하는 번호 위주' },
+  { tag: 'review', name: '금액뇌', color: '#f59e0b', short_desc: '덜 고르는 번호로 당첨 시 몫(금액)을 노림' },
 ];
 
 const AUX_BRAINS_META = [
@@ -1141,8 +1141,10 @@ function _renderLearnFlowHint(brain, brainTag) {
   const adjCount = Object.values(adj).filter((v) => Number(v) > 0).length;
   const learnNote =
     brainTag === 'markov'
-      ? '흐름술사: 바로 직전 회차와 연결된 번호를 중점적으로 봅니다.'
-      : '과거학습·복습왕: 다음 예측 때 이번에 조정한 가중치를 반영합니다.';
+      ? '선호번호: 1등 당첨자가 많았던 회차·생일대 선호를 중점적으로 봅니다.'
+      : brainTag === 'review'
+        ? '금액뇌: 사람들이 덜 고르는 쪽으로 당첨 시 몫을 노리며 가중치를 반영합니다.'
+        : '과거학습: 다음 예측 때 이번에 조정한 가중치를 반영합니다.';
   return `<div class="tld-learn-flow">
     <h4 class="tld-learn-flow__title">이번에 틀린 것 → 다음 예측에 반영</h4>
     <ul class="tld-learn-flow__list">

@@ -1,0 +1,39 @@
+{
+  "id": "K-BRAIN-CROWD-RESTRUCTURE",
+  "date": "20260808",
+  "verdict": "WIRE_SMOKE_OK",
+  "roles": {
+    "stat": {"name": "과거학습", "axis": "hit_pattern_homework"},
+    "markov": {"name": "선호번호", "axis": "crowd_popular", "was": "흐름술사"},
+    "review": {"name": "금액뇌", "axis": "prize_share_ev", "was": "복습왕"}
+  },
+  "data_limit": "no_per_combo_sales; proxy=first_winners+total_sales+structural_prior",
+  "flags": {
+    "K_CROWD_PREFER": true,
+    "K_PRIZE_EV": true,
+    "W_CROWD": 0.7,
+    "W_STRUCT": 0.3,
+    "BLEND_STRENGTH": 0.55,
+    "rollback": "K_CROWD_PREFER=0 K_PRIZE_EV=0"
+  },
+  "lit": [
+    "Thaler & Ziemba JEP 1988 10.1257/jep.2.2.161",
+    "Ziemba ARFE 2023 pari-mutuel revisited",
+    "Chernoff / conscious selection (Lotto 6/49 literature)"
+  ],
+  "freeze": {
+    "random.choices": "untouched",
+    "_get_draws_before": "untouched",
+    "boost_caps": "untouched"
+  },
+  "smoke": {
+    "as_of": 1236,
+    "draws_last": 1235,
+    "n_sets": 5,
+    "methods": ["과거학습", "선호번호", "금액뇌"],
+    "prefer_top8": [12, 7, 3, 13, 18, 27, 1, 6],
+    "prize_top8": [40, 37, 45, 39, 34, 38, 43, 44],
+    "result": "SMOKE_OK"
+  },
+  "claim": "Wiring+rename only. No ge3 lift claim. Prize brain targets share-EV axis not P(win)."
+}

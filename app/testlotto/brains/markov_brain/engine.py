@@ -1,4 +1,4 @@
-"""markov_brain.engine — 마르코프 전이·random walk 기반 생성 엔진."""
+"""markov_brain.engine — 선호번호뇌 생성 엔진 (전이 + 군중 인기 혼합)."""
 
 from __future__ import annotations
 
@@ -137,6 +137,18 @@ def generate(draws: list[dict], n_sets: int = 5) -> list[dict]:
 
     if learn.LEARN_WIRED:
         visit_count = learn.apply_learn_boost(visit_count, draws)
+
+    # 선호번호뇌: 군중 인기 프록시(first_winners) + 생일대 사전을 가중치에만 혼합
+    # random.choices 라인은 그대로 · 가중치 테이블만 변경
+    try:
+        from app.testlotto.brains.shared import crowd_signal
+
+        if crowd_signal.prefer_on():
+            visit_count = crowd_signal.blend_weights(
+                visit_count, crowd_signal.prefer_table(draws)
+            )
+    except Exception as e:  # noqa: BLE001
+        logger.debug("선호번호 군중신호 스킵: %s", e)
 
     top_candidates = sorted(visit_count.items(), key=lambda x: x[1], reverse=True)[:25]
     candidate_nums = [n for n, _ in top_candidates]

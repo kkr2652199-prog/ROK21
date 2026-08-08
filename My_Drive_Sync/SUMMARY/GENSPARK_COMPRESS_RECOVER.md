@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`bc7582d` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`b59be4e` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=bc7582d]
+[ROK21 젠스파크 압축복구 · HEAD=b59be4e]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: bc7582d · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그
-- 직전: K-STAT-PASTLEARN-READY-CHECK (방향준비·기록미준비)
-- BOOT다음: **형 선택** — ①1235 명분 샘플 읽고 부족한 점 지적(권장) ②재료 튜닝(게이트) ③구간 확장(100회+) ④정지
-- NEXT1: K-STAT-HOMEWORK-NEXT-PICK — **K-STAT-HOMEWORK-FILL 완료 20/20** (1216~1235). 확정 길로 기록 채움 — 발권 쿼터5장 + **stat 숙제 5장 강제**(쿼터만 쓰면 past학습이 DB에 0장이던 문제 해결) + matched 채점 + pool_view_cache + evolve_log. 후행수: predictions **200**(stat **100**) · learn_state **3** · evolve **60** · pool **60** · hit_warrant **20**. 형 1건 — **①1235 명분 샘플 리뷰**(권장 · 보고서 §3) / ②재료 튜닝 착수(게이트) / ③구간 확장 1136~1235 / ④정지
+- HEAD: b59be4e · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-BRAIN-CROWD-RESTRUCTURE** — 흐름술사→**선호번호** · 복습왕→**금액뇌** · 과거학습 유지. `crowd_signal`+학술벤치 · SMOKE_OK · ge3주장없음
+- 직전: K-STAT-HOMEWORK-FILL (1216~1235 20/20)
+- BOOT다음: **형 선택** — ①선호/금액 EV프록시 소구간 게이트설계(권장) ②1235 명분리뷰 ③정지
+- NEXT1: K-BRAIN-CROWD-NEXT-PICK — **K-BRAIN-CROWD-RESTRUCTURE 완료**(WIRE_SMOKE_OK). markov=선호번호 · review=금액뇌 · crowd_signal 배선 · 학술벤치 반영. 형 1건 — **①선호/금액 EV프록시 소구간 게이트 설계**(권장 · ge3 아님 · first_winners/몫 축) / ②1235 과거학습 명분 샘플 리뷰 / ③정지
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260808_KBRAIN_CROWD_RESTRUCTURE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KBRAIN_CROWD_RESTRUCTURE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KBRAIN_CROWD_RESTRUCTURE.md
 - `20260808_KSTAT_HOMEWORK_FILL` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_HOMEWORK_FILL.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_HOMEWORK_FILL.md
 - `20260808_KUI_TESTLOTTO_FOCUS_HOLD` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KUI_TESTLOTTO_FOCUS_HOLD.json
@@ -67,7 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KPREDICT_RESET.md
 - `20260808_KREPACK_SELECT_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KREPACK_SELECT_DIAG.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KREPACK_SELECT_DIAG.md
-- `20260808_KREPACK_SELECT_DIAG_raw` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KREPACK_SELECT_DIAG_raw.json
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -78,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=bc7582d · 지금=**K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그 · 다음=K-STAT-HOMEWORK-NEXT-PICK
+1. 첫줄: [복귀] HEAD=b59be4e · 지금=**K-BRAIN-CROWD-RESTRUCTURE** — 흐름술사→**선호번호** · 복습왕→**금액뇌** · 과거학습 유지. `crowd_signal`+학술벤치 · SMOKE_OK · ge3주장없음 · 다음=K-BRAIN-CROWD-NEXT-PICK
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -110,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: bc7582d_
+_generated: b59be4e_

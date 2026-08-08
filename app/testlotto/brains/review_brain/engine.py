@@ -1,4 +1,4 @@
-"""review_brain.engine — 복습·이월·neutralize 생성 엔진."""
+"""review_brain.engine — 금액뇌 생성 엔진 (이월·neutralize + 비선호 혼합)."""
 
 from __future__ import annotations
 
@@ -22,7 +22,19 @@ def build_review_weights(draws: list[dict], adj: dict | None = None) -> dict[int
     for n in range(1, 46):
         if n not in prev_nums:
             weights[n] *= 0.85
-    return neutralize_ending_digit_mass(weights)
+    weights = neutralize_ending_digit_mass(weights)
+    # 금액뇌: 저당첨자수 회차·고번호 비선호 신호를 가중치에만 혼합
+    # random.choices 라인은 그대로
+    try:
+        from app.testlotto.brains.shared import crowd_signal
+
+        if crowd_signal.prize_on():
+            weights = crowd_signal.blend_weights(
+                weights, crowd_signal.prize_table(draws)
+            )
+    except Exception:  # noqa: BLE001
+        pass
+    return weights
 
 
 def neutralize_ending_digit_mass(weights: dict[int, float]) -> dict[int, float]:

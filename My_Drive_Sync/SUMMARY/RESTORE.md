@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `bc7582d` · WORK=`IDLE`
-2. **지금:** **K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그
-3. **다음1건:** K-STAT-HOMEWORK-NEXT-PICK — **K-STAT-HOMEWORK-FILL 완료 20/20** (1216~1235). 확정 길로 기록 채움 — 발권 쿼터5장 + **stat 숙제 5장 강제**(쿼터만 쓰면 past학습이 DB에 0장이던 문제 해결) + matched 채점 + pool_view_cache + evolve_log. 후행수: predictions **200**(stat **100**) · learn_state **3** · evolve **60** · pool **60** · hit_warrant **20**. 형 1건 — **①1235 명분 샘플 리뷰**(권장 · 보고서 §3) / ②재료 튜닝 착수(게이트) / ③구간 확장 1136~1235 / ④정지 (승인필요=없음 (DB 로컬만 · 커밋 안 함) · 선행=없음)
+1. **HEAD:** `b59be4e` · WORK=`IDLE`
+2. **지금:** **K-BRAIN-CROWD-RESTRUCTURE** — 흐름술사→**선호번호** · 복습왕→**금액뇌** · 과거학습 유지. `crowd_signal`+학술벤치 · SMOKE_OK · ge3주장없음
+3. **다음1건:** K-BRAIN-CROWD-NEXT-PICK — **K-BRAIN-CROWD-RESTRUCTURE 완료**(WIRE_SMOKE_OK). markov=선호번호 · review=금액뇌 · crowd_signal 배선 · 학술벤치 반영. 형 1건 — **①선호/금액 EV프록시 소구간 게이트 설계**(권장 · ge3 아님 · first_winners/몫 축) / ②1235 과거학습 명분 샘플 리뷰 / ③정지 (승인필요=없음 (배선·문서 · DB커밋 안 함) · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-08 | 선호번호·금액뇌 재구조·과거학습 판단진행 | 흐름술사→선호번호 · 복습왕→금액뇌 · crowd_signal+문헌 · SMOKE_OK · ge3주장없음 | **WIRE_SMOKE_OK** | (본턴) |
 | 2026-08-08 | 가장 추천방식(①기록채우기) GO | 1216~1235 **20/20** · stat숙제5장강제 · pred200(stat100) · learn3 · evolve60 · pool60 · 298초 | **FILL_OK** | (본턴) |
 | 2026-08-08 | 전략X홀딩·테스트만 | UI HOLD·기본testlotto·예측autoload OFF | **HOLD** | 741de31 |
 | 2026-08-08 | 과거학습 뇌 패치준비 체크·인간관점 | READ-ONLY · 방향준비·기록미준비 · 확정길=회차숙제 | **READY_DIR/NOT_TUNE** | 11a6890 |
@@ -45,8 +46,6 @@
 | 2026-08-08 | ①바닥재측정GO | n1183·seed24 · 바닥0.0101→**0.005087** CI[−0.0082,0.0180] 0포함 → 「영원히판정불가」**철회** · R39신설(k_precision 7/7) | **FLOOR_NO** | (본턴) |
 | 2026-08-08 | ②stat잡음원인GO | n400·seed24 · 유입점=뽑기확정(점수·repack결정적) · **전제붕괴**: 뇌별팽창차 구분가능쌍0/3 · 반사실 짝지은 p0.7156 무손해 | **PREMISE_NO** | 392320f |
 | 2026-08-08 | ①seed전구간GO | n1183·seed10 · 바닥b=0.010127 · ~~FULL-WFΔ<바닥~~ **상단 재측정에서 철회됨** | ~~FLOOR확정~~ | 0fe62b1 |
-| 2026-08-08 | ①게이트승격GO | k_gate공용모듈·R38강제·자기검증8/8·184벤치위반0·프로브exit=1확인 | **COMPLIANT** | 5675df6 |
-| 2026-08-08 | 합리적패치+학습순서 | 눈금확정 n50K10잡음p95=0.16=적용상수Δ · 순서불변2.4e-17 · 문제답nopeek0.274<무작위0.311 | **RULER_COARSE** | 9a44877 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
