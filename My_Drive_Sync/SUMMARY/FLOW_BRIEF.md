@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `23177cb` · WORK=`IDLE`
+- HEAD: `bc7582d` · WORK=`IDLE`
 - 지금: **K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그
 - 직전: K-STAT-PASTLEARN-READY-CHECK (방향준비·기록미준비)
 - BOOT다음: **형 선택** — ①1235 명분 샘플 읽고 부족한 점 지적(권장) ②재료 튜닝(게이트) ③구간 확장(100회+) ④정지

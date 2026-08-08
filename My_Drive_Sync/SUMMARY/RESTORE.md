@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `23177cb` · WORK=`IDLE`
+1. **HEAD:** `bc7582d` · WORK=`IDLE`
 2. **지금:** **K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그
 3. **다음1건:** K-STAT-HOMEWORK-NEXT-PICK — **K-STAT-HOMEWORK-FILL 완료 20/20** (1216~1235). 확정 길로 기록 채움 — 발권 쿼터5장 + **stat 숙제 5장 강제**(쿼터만 쓰면 past학습이 DB에 0장이던 문제 해결) + matched 채점 + pool_view_cache + evolve_log. 후행수: predictions **200**(stat **100**) · learn_state **3** · evolve **60** · pool **60** · hit_warrant **20**. 형 1건 — **①1235 명분 샘플 리뷰**(권장 · 보고서 §3) / ②재료 튜닝 착수(게이트) / ③구간 확장 1136~1235 / ④정지 (승인필요=없음 (DB 로컬만 · 커밋 안 함) · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
