@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5c93cda` |
+| HEAD(실측) | `392320f` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5c93cda · 지금=**K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음 · 다음=K-NOISE-SOURCE-NEXT-PICK`
+1. 첫줄 `[복귀] HEAD=392320f · 지금=**K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음 · 다음=K-NOISE-SOURCE-NEXT-PICK`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 5c93cda_
+_generated: 392320f_

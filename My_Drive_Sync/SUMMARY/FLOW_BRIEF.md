@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5c93cda` · WORK=`IDLE`
+- HEAD: `392320f` · WORK=`IDLE`
 - 지금: **K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음
 - 직전: K-STAT-SEED-NOISE-FLOOR(바닥 b=0.010127 · FULL-WF Δ+0.0047 < 바닥 → 적중축 판정불가 확정) · R38 게이트 가동(k_gate · COMPLIANT)
 - BOOT다음: ①잡음바닥 seed16+ 재측정(권장 · 바닥 자체 오차 미상) ②1236+ 전향적 EV로그 ③seed 평균화 설계(형 GO 필요) 중 **형 1건 선택** · 발권가중 금지

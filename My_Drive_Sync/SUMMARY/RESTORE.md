@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5c93cda` · WORK=`IDLE`
+1. **HEAD:** `392320f` · WORK=`IDLE`
 2. **지금:** **K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음
 3. **다음1건:** K-NOISE-SOURCE-NEXT-PICK — stat 잡음 원인 진단 완료 — **결론: 질문의 전제가 무너짐(PREMISE_NOT_ESTABLISHED)**. 뇌별 팽창차(stat 1.2739 / markov 0.7329)는 seed10 측정오차 안이라 구분가능쌍 **0/3**. 잡음 유입점은 **'뽑기' 단계로 확정**(점수·repack 모두 결정적). 형 확인 후 1건 선택 — **①잡음바닥 seed 16+ 재측정**(권장 · 현 바닥 b=0.010127 이 seed10 기반이라 바닥 자체의 오차가 미상 · 이 값이 앞으로 모든 판정 임계를 정함 · stat↔markov 구분에 seed 16이면 충분) / ②회차 1236+ 전향적 EV 로그 시작 / ③seed 평균화 설계(같은 회차 반복 뽑기→번호 득표 · random.choices 무수정 · 발권경로 변경이라 형 GO 필요) / ④트랙정지 (승인필요=없음 (①②는 측정·기록만 · 발권경로 무변경) / ③은 형 GO 필수 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
