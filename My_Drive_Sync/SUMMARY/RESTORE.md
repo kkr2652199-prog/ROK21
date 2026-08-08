@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `40a3264` · WORK=`IDLE`
+1. **HEAD:** `9582ac7` · WORK=`IDLE`
 2. **지금:** **K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS**
 3. **다음1건:** K-BRAIN-INDEPENDENT-WIRE-DONE — hint 분리 결과 + EV프록시 게이트 형 확인. **WIRE_CONFORMS 5/5** · EV=`MARGINAL`(delta−0.0927 · 3구간 consistent). 형 GO → 각 뇌 독립 튜닝 단계로 / PARTIAL·FAIL이었으면 추가 버그 수정 후 재검증(이번 턴은 CONFORMS) (승인필요=형 GO (다음 튜닝 착수) · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

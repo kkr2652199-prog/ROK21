@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `40a3264` · WORK=`IDLE`
+- HEAD: `9582ac7` · WORK=`IDLE`
 - 지금: **K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS**
 - 직전: K-BRAIN-CROWD-RESTRUCTURE · WIRE_SMOKE_OK
 - BOOT다음: hint 분리 PASS → **형 GO 후 뇌별 독립 튜닝** (FAIL였으면 롤백 `K_CROWD_PREFER=0`)

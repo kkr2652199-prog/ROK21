@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `40a3264` |
+| HEAD(실측) | `9582ac7` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS** |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=40a3264 · 지금=**K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS** · 다음=K-BRAIN-INDEPENDENT-WIRE-DONE`
+1. 첫줄 `[복귀] HEAD=9582ac7 · 지금=**K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS** · 다음=K-BRAIN-INDEPENDENT-WIRE-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
