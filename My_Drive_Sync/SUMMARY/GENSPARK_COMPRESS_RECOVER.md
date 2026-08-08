@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`5675df6` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`0fe62b1` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=5675df6]
+[ROK21 젠스파크 압축복구 · HEAD=0fe62b1]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 5675df6 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **R38 게이트 강제 가동** — `tools/k_gate.py` 공용모듈 · 벤치 `decision_gate` 기록 필수 · 준수검사 **COMPLIANT**(자기검증 8/8 · 184벤치 · legacy132면제 · 위반0 · 프로브로 exit=1 실동작 확인)
-- 직전: K-STAT-DECISION-GATE — 적용상수 win26/mix0.8=**NOISE_SELECTION_CONFIRMED** · 순서불변 2.429e-17 · 문제답 nopeek 0.274<무작위 0.311
-- BOOT다음: ①seed full-range로 잡음하한 확정 ②1236+ 전향적 EV로그 ③기존 legacy 판정 게이트 소급적용 중 **형 1건 선택** · 발권가중 금지
-- NEXT1: K-GATE-NEXT-PICK — R38 게이트 가동 완료(공용모듈 승격 · 준수검사 COMPLIANT · 강제 exit=1 실동작 확인) 형 확인 후 1건 선택 — **①seed 민감도 full-range 재측정으로 잡음 하한 확정**(권장 · 현재 폭 0.14 는 n=100 단일 추정 · 약 25분) / ②회차 1236+ 전향적 EV 로그(개입 없음 · 저번호·저합 인기축 검증) / ③legacy 132건 중 상수·배선에 영향 준 판정만 골라 게이트 소급적용 / ④트랙정지
+- HEAD: 0fe62b1 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-STAT-SEED-NOISE-FLOOR** — n1183·seed10 전구간 · stat ge3 폭 **0.035503** · 분산적합 `a²/n+b²` → **바닥 b=0.010127**(R²0.9985) · **FULL-WF Δ+0.0047 < 바닥 → 표본 늘려도 판정 불가**
+- 직전: R38 게이트 강제 가동(k_gate 공용모듈 · COMPLIANT) · DECISION-GATE(win26/mix0.8=NOISE_SELECTION_CONFIRMED · 순서불변 2.429e-17)
+- BOOT다음: ①1236+ 전향적 EV로그 ②stat 잡음저감(팽창1.27 · markov 0.73 대비 최악) ③legacy 판정 게이트 소급적용 중 **형 1건 선택** · 발권가중 금지
+- NEXT1: K-NOISE-FLOOR-NEXT-PICK — 잡음 하한 확정 완료(**바닥 b=0.010127** · FULL-WF Δ+0.0047 이 바닥 미만 → 적중축은 표본을 늘려도 판정 불가로 확정) 형 확인 후 1건 선택 — **①회차 1236+ 전향적 EV 로그 시작**(권장 · 적중축이 닫혔으므로 유일하게 남은 인기회피축을 개입 없이 검증) / ②stat 잡음 저감 진단(팽창 stat 1.2739 vs markov 0.7329 — 왜 stat만 잡음을 더하는지 원인 특정) / ③legacy 132건 중 상수·배선에 실제 영향 준 판정만 게이트 소급적용 / ④트랙정지
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -55,6 +55,9 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
 - `20260808_KGATE_COMPLIANCE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KGATE_COMPLIANCE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KGATE_COMPLIANCE.md
+- `20260808_KSTAT_SEED_NOISE_FLOOR_raw` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_SEED_NOISE_FLOOR_raw.json
+- `20260808_KSTAT_SEED_NOISE_FLOOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_SEED_NOISE_FLOOR.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_SEED_NOISE_FLOOR.md
 - `20260808_KSTAT_DECISION_GATE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_DECISION_GATE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_DECISION_GATE.md
 - `20260808_KPAST_LEARN_AUDIT_DIMS` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KPAST_LEARN_AUDIT_DIMS.json
@@ -65,10 +68,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KPAST_LEARN_SCORE_RULE_DIAG.md
 - `20260808_KPAST_LEARN_DETAIL_KEEP` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KPAST_LEARN_DETAIL_KEEP.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KPAST_LEARN_DETAIL_KEEP.md
-- `20260808_KPAST_LEARN_YT_BENCH` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KPAST_LEARN_YT_BENCH.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KPAST_LEARN_YT_BENCH.md
-- `20260808_KPAST_LEARN_DETAIL_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KPAST_LEARN_DETAIL_TUNE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KPAST_LEARN_DETAIL_TUNE.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +78,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=5675df6 · 지금=**R38 게이트 강제 가동** — `tools/k_gate.py` 공용모듈 · 벤치 `decision_gate` 기록 필수 · 준수검사 **COMPLIANT**(자기검증 8/8 · 184벤치 · legacy132면제 · 위반0 · 프로브로 exit=1 실동작 확인) · 다음=K-GATE-NEXT-PICK
+1. 첫줄: [복귀] HEAD=0fe62b1 · 지금=**K-STAT-SEED-NOISE-FLOOR** — n1183·seed10 전구간 · stat ge3 폭 **0.035503** · 분산적합 `a²/n+b²` → **바닥 b=0.010127**(R²0.9985) · **FULL-WF Δ+0.0047 < 바닥 → 표본 늘려도 판정 불가** · 다음=K-NOISE-FLOOR-NEXT-PICK
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +110,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 5675df6_
+_generated: 0fe62b1_
