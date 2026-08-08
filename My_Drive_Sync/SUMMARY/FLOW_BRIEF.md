@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e652318` · WORK=`IDLE`
+- HEAD: `49744dd` · WORK=`IDLE`
 - 지금: **K-BRAIN-CROWD-RESTRUCTURE** — 흐름술사→**선호번호** · 복습왕→**금액뇌** · 과거학습 유지. `crowd_signal`+학술벤치 · SMOKE_OK · ge3주장없음
 - 직전: K-STAT-HOMEWORK-FILL (1216~1235 20/20)
 - BOOT다음: **형 선택** — ①선호/금액 EV프록시 소구간 게이트설계(권장) ②1235 명분리뷰 ③정지
