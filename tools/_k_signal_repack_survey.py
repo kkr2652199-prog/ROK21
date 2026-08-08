@@ -196,11 +196,13 @@ def _repack_by_brain(
         pool = pool_by_brain.get(tag, [])
         if not pool:
             continue
+        from app.testlotto.signal_pool import brain_signal
+
         scores = _number_scores(
             pool,
             hint,
-            num_ema,
-            pos_ema,
+            brain_signal(num_ema, tag),
+            brain_signal(pos_ema, tag),
             hint_only=hint_only,
             random_scores=random_repack,
         )

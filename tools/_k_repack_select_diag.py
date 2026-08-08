@@ -245,8 +245,16 @@ def _one_row(
     number_scores: Any,
     repack_by_brain: Any,
 ) -> dict[str, Any]:
-    scores = number_scores(stat_pool, hint, num_ema, pos_ema)
-    feats = set_features(stat_pool, scores, hint, num_ema, pos_ema)
+    from app.testlotto.signal_pool import brain_signal
+
+    scores = number_scores(stat_pool, hint, num_ema, pos_ema, brain_tag=BRAIN)
+    feats = set_features(
+        stat_pool,
+        scores,
+        hint,
+        brain_signal(num_ema, BRAIN),
+        brain_signal(pos_ema, BRAIN),
+    )
     for f in feats:
         f["hits"] = len(set(f["nums"]) & actual)
 

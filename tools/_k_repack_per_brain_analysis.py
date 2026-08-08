@@ -105,6 +105,7 @@ def _explain_repack(draw_no: int, brain: str) -> dict[str, Any]:
         _build_hint,
         _pool_by_brain,
         _pool_freq,
+        brain_signal,
         expand_pool,
         number_scores,
         repack_sets,
@@ -121,7 +122,8 @@ def _explain_repack(draw_no: int, brain: str) -> dict[str, Any]:
     draws = _get_draws_before(draw_no)
     learner = RollingSignalLearner()
     warm_learner_to_draw(learner, max(1, draw_no - 200), draw_no, seed=MC_SEED)
-    num_ema, pos_ema = learner.snapshot()
+    num_all, pos_all = learner.snapshot()
+    num_ema, pos_ema = brain_signal(num_all, brain), brain_signal(pos_all, brain)
     random.seed(MC_SEED)
     pool = expand_pool(draws, draw_no, seed=MC_SEED)
     pool_br = _pool_by_brain(pool)
@@ -135,7 +137,7 @@ def _explain_repack(draw_no: int, brain: str) -> dict[str, Any]:
         for n in c["nums"]:
             pos_boost[int(n)] = max(pos_boost[int(n)], pw)
 
-    scores = number_scores(brain_pool, hint, num_ema, pos_ema)
+    scores = number_scores(brain_pool, hint, num_ema, pos_ema, brain_tag=brain)
     ranked = sorted(range(1, 46), key=lambda x: (-scores[x], x))
     repack = repack_sets(scores)
 

@@ -77,8 +77,8 @@
     "violations": 0
   },
   "scan": {
-    "n_files": 192,
-    "n_readable": 192,
+    "n_files": 193,
+    "n_readable": 193,
     "unreadable": [],
     "rows": [
       {
@@ -2029,6 +2029,14 @@
         "record_only": true
       },
       {
+        "file": "20260808_KREPACK_SIGNAL_WIRE_VERIFY.json",
+        "comparative": false,
+        "hints": [],
+        "has_gate": false,
+        "raw_dump": false,
+        "record_only": false
+      },
+      {
         "file": "20260808_KSEED_AVERAGE_DESIGN.json",
         "comparative": true,
         "hints": [
@@ -2447,5 +2455,5 @@
   },
   "prior": "docs/benchmarks/20260808_KSTAT_DECISION_GATE.json",
   "tool": "tools/_k_gate_compliance.py",
-  "ts": "2026-08-08T07:14:38.416667+00:00"
+  "ts": "2026-08-08T07:43:14.878081+00:00"
 }

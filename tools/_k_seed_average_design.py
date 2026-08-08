@@ -144,7 +144,9 @@ def _score_only_sets(
         pool = pool_br.get(tag, [])
         if not pool:
             continue
-        out[tag] = repack_sets(number_scores(pool, hint, num_ema, pos_ema))
+        out[tag] = repack_sets(
+            number_scores(pool, hint, num_ema, pos_ema, brain_tag=tag)
+        )
     return out
 
 
