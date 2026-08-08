@@ -1,7 +1,7 @@
 {
   "bench_id": "K-STAT-SEED-NOISE-FLOOR",
   "date": "2026-08-08",
-  "ts": "2026-08-08T03:07:37.029036+00:00",
+  "ts": "2026-08-08T04:53:06.997007+00:00",
   "wire": false,
   "policy": {
     "read_only": true,
@@ -24,7 +24,21 @@
     314,
     777,
     12345,
-    8
+    8,
+    13,
+    21,
+    55,
+    89,
+    144,
+    233,
+    377,
+    610,
+    1001,
+    2718,
+    3141,
+    4096,
+    5150,
+    6180
   ],
   "p0": 0.113624,
   "eval": "best_of_5 · signal_pool expand+repack (SEED-DIAG 와 동일 경로)",
@@ -74,81 +88,137 @@
       "8": {
         "ge3": 0.094675,
         "mean": 1.715976
+      },
+      "13": {
+        "ge3": 0.111581,
+        "mean": 1.746407
+      },
+      "21": {
+        "ge3": 0.125106,
+        "mean": 1.744717
+      },
+      "55": {
+        "ge3": 0.105664,
+        "mean": 1.744717
+      },
+      "89": {
+        "ge3": 0.099746,
+        "mean": 1.719358
+      },
+      "144": {
+        "ge3": 0.117498,
+        "mean": 1.751479
+      },
+      "233": {
+        "ge3": 0.127642,
+        "mean": 1.762468
+      },
+      "377": {
+        "ge3": 0.112426,
+        "mean": 1.754015
+      },
+      "610": {
+        "ge3": 0.120879,
+        "mean": 1.761623
+      },
+      "1001": {
+        "ge3": 0.109045,
+        "mean": 1.734573
+      },
+      "2718": {
+        "ge3": 0.117498,
+        "mean": 1.744717
+      },
+      "3141": {
+        "ge3": 0.094675,
+        "mean": 1.704142
+      },
+      "4096": {
+        "ge3": 0.117498,
+        "mean": 1.737109
+      },
+      "5150": {
+        "ge3": 0.114117,
+        "mean": 1.722739
+      },
+      "6180": {
+        "ge3": 0.103973,
+        "mean": 1.758242
       }
     },
     "full_summary": {
-      "mean_ge3": 0.115638,
-      "std_ge3": 0.011754,
+      "mean_ge3": 0.113905,
+      "std_ge3": 0.010371,
       "min_ge3": 0.094675,
       "max_ge3": 0.130178,
       "range_ge3": 0.035503,
-      "mean_of_means": 1.753085
+      "mean_of_means": 1.746548
     },
     "noise_curve": [
       {
         "window_n": 50,
         "n_tiles": 23,
-        "n_seeds": 10,
-        "seed_std_mean": 0.038032,
-        "seed_range_mean": 0.127826,
-        "seed_range_max": 0.18,
+        "n_seeds": 24,
+        "seed_std_mean": 0.040824,
+        "seed_range_mean": 0.158261,
+        "seed_range_max": 0.2,
         "binomial_se": 0.044881,
-        "inflation": 0.8474,
+        "inflation": 0.9096,
         "is_full_range": false
       },
       {
         "window_n": 100,
         "n_tiles": 11,
-        "n_seeds": 10,
-        "seed_std_mean": 0.027652,
-        "seed_range_mean": 0.096364,
+        "n_seeds": 24,
+        "seed_std_mean": 0.028467,
+        "seed_range_mean": 0.11,
         "seed_range_max": 0.14,
         "binomial_se": 0.031735,
-        "inflation": 0.8713,
+        "inflation": 0.897,
         "is_full_range": false
       },
       {
         "window_n": 200,
         "n_tiles": 5,
-        "n_seeds": 10,
-        "seed_std_mean": 0.020387,
-        "seed_range_mean": 0.064,
-        "seed_range_max": 0.085,
+        "n_seeds": 24,
+        "seed_std_mean": 0.021343,
+        "seed_range_mean": 0.085,
+        "seed_range_max": 0.11,
         "binomial_se": 0.02244,
-        "inflation": 0.9085,
+        "inflation": 0.9511,
         "is_full_range": false
       },
       {
         "window_n": 400,
         "n_tiles": 2,
-        "n_seeds": 10,
-        "seed_std_mean": 0.01792,
-        "seed_range_mean": 0.0625,
+        "n_seeds": 24,
+        "seed_std_mean": 0.016131,
+        "seed_range_mean": 0.065,
         "seed_range_max": 0.07,
         "binomial_se": 0.015868,
-        "inflation": 1.1293,
+        "inflation": 1.0166,
         "is_full_range": false
       },
       {
         "window_n": 800,
         "n_tiles": 1,
-        "n_seeds": 10,
-        "seed_std_mean": 0.015882,
+        "n_seeds": 24,
+        "seed_std_mean": 0.012928,
         "seed_range_mean": 0.05125,
         "seed_range_max": 0.05125,
         "binomial_se": 0.01122,
-        "inflation": 1.4155,
+        "inflation": 1.1523,
         "is_full_range": false
       },
       {
         "window_n": 1183,
         "n_tiles": 1,
-        "n_seeds": 10,
-        "seed_std_mean": 0.011754,
+        "n_seeds": 24,
+        "seed_std_mean": 0.010371,
         "seed_range_mean": 0.035503,
         "seed_range_max": 0.035503,
         "binomial_se": 0.009227,
-        "inflation": 1.2739,
+        "inflation": 1.124,
         "is_full_range": true
       }
     ]
@@ -194,81 +264,137 @@
       "8": {
         "ge3": 0.108199,
         "mean": 1.803888
+      },
+      "13": {
+        "ge3": 0.135249,
+        "mean": 1.870668
+      },
+      "21": {
+        "ge3": 0.114117,
+        "mean": 1.845309
+      },
+      "55": {
+        "ge3": 0.10989,
+        "mean": 1.831784
+      },
+      "89": {
+        "ge3": 0.128487,
+        "mean": 1.865596
+      },
+      "144": {
+        "ge3": 0.114117,
+        "mean": 1.839391
+      },
+      "233": {
+        "ge3": 0.102282,
+        "mean": 1.816568
+      },
+      "377": {
+        "ge3": 0.123415,
+        "mean": 1.828402
+      },
+      "610": {
+        "ge3": 0.117498,
+        "mean": 1.840237
+      },
+      "1001": {
+        "ge3": 0.125106,
+        "mean": 1.868977
+      },
+      "2718": {
+        "ge3": 0.125951,
+        "mean": 1.841927
+      },
+      "3141": {
+        "ge3": 0.119189,
+        "mean": 1.828402
+      },
+      "4096": {
+        "ge3": 0.114117,
+        "mean": 1.85038
+      },
+      "5150": {
+        "ge3": 0.105664,
+        "mean": 1.809806
+      },
+      "6180": {
+        "ge3": 0.117498,
+        "mean": 1.862215
       }
     },
     "full_summary": {
-      "mean_ge3": 0.117498,
-      "std_ge3": 0.006762,
-      "min_ge3": 0.108199,
-      "max_ge3": 0.127642,
-      "range_ge3": 0.019442,
-      "mean_of_means": 1.839391
+      "mean_ge3": 0.117815,
+      "std_ge3": 0.007963,
+      "min_ge3": 0.102282,
+      "max_ge3": 0.135249,
+      "range_ge3": 0.032967,
+      "mean_of_means": 1.841399
     },
     "noise_curve": [
       {
         "window_n": 50,
         "n_tiles": 23,
-        "n_seeds": 10,
-        "seed_std_mean": 0.039597,
-        "seed_range_mean": 0.126087,
+        "n_seeds": 24,
+        "seed_std_mean": 0.042743,
+        "seed_range_mean": 0.171304,
         "seed_range_max": 0.26,
         "binomial_se": 0.044881,
-        "inflation": 0.8823,
+        "inflation": 0.9524,
         "is_full_range": false
       },
       {
         "window_n": 100,
         "n_tiles": 11,
-        "n_seeds": 10,
-        "seed_std_mean": 0.025955,
-        "seed_range_mean": 0.084545,
+        "n_seeds": 24,
+        "seed_std_mean": 0.029259,
+        "seed_range_mean": 0.122727,
         "seed_range_max": 0.16,
         "binomial_se": 0.031735,
-        "inflation": 0.8179,
+        "inflation": 0.922,
         "is_full_range": false
       },
       {
         "window_n": 200,
         "n_tiles": 5,
-        "n_seeds": 10,
-        "seed_std_mean": 0.017799,
-        "seed_range_mean": 0.061,
-        "seed_range_max": 0.09,
+        "n_seeds": 24,
+        "seed_std_mean": 0.020258,
+        "seed_range_mean": 0.083,
+        "seed_range_max": 0.115,
         "binomial_se": 0.02244,
-        "inflation": 0.7932,
+        "inflation": 0.9028,
         "is_full_range": false
       },
       {
         "window_n": 400,
         "n_tiles": 2,
-        "n_seeds": 10,
-        "seed_std_mean": 0.012507,
-        "seed_range_mean": 0.04,
-        "seed_range_max": 0.0475,
+        "n_seeds": 24,
+        "seed_std_mean": 0.014698,
+        "seed_range_mean": 0.0675,
+        "seed_range_max": 0.0875,
         "binomial_se": 0.015868,
-        "inflation": 0.7882,
+        "inflation": 0.9263,
         "is_full_range": false
       },
       {
         "window_n": 800,
         "n_tiles": 1,
-        "n_seeds": 10,
-        "seed_std_mean": 0.007846,
-        "seed_range_mean": 0.03125,
-        "seed_range_max": 0.03125,
+        "n_seeds": 24,
+        "seed_std_mean": 0.010789,
+        "seed_range_mean": 0.04875,
+        "seed_range_max": 0.04875,
         "binomial_se": 0.01122,
-        "inflation": 0.6993,
+        "inflation": 0.9616,
         "is_full_range": false
       },
       {
         "window_n": 1183,
         "n_tiles": 1,
-        "n_seeds": 10,
-        "seed_std_mean": 0.006762,
-        "seed_range_mean": 0.019442,
-        "seed_range_max": 0.019442,
+        "n_seeds": 24,
+        "seed_std_mean": 0.007963,
+        "seed_range_mean": 0.032967,
+        "seed_range_max": 0.032967,
         "binomial_se": 0.009227,
-        "inflation": 0.7329,
+        "inflation": 0.863,
         "is_full_range": true
       }
     ]
@@ -314,129 +440,215 @@
       "8": {
         "ge3": 0.125951,
         "mean": 1.737954
+      },
+      "13": {
+        "ge3": 0.120034,
+        "mean": 1.730347
+      },
+      "21": {
+        "ge3": 0.115807,
+        "mean": 1.749789
+      },
+      "55": {
+        "ge3": 0.108199,
+        "mean": 1.744717
+      },
+      "89": {
+        "ge3": 0.116653,
+        "mean": 1.754861
+      },
+      "144": {
+        "ge3": 0.103128,
+        "mean": 1.728656
+      },
+      "233": {
+        "ge3": 0.096365,
+        "mean": 1.700761
+      },
+      "377": {
+        "ge3": 0.110735,
+        "mean": 1.724429
+      },
+      "610": {
+        "ge3": 0.107354,
+        "mean": 1.729501
+      },
+      "1001": {
+        "ge3": 0.09721,
+        "mean": 1.723584
+      },
+      "2718": {
+        "ge3": 0.119189,
+        "mean": 1.762468
+      },
+      "3141": {
+        "ge3": 0.120034,
+        "mean": 1.763314
+      },
+      "4096": {
+        "ge3": 0.092139,
+        "mean": 1.737954
+      },
+      "5150": {
+        "ge3": 0.110735,
+        "mean": 1.742181
+      },
+      "6180": {
+        "ge3": 0.123415,
+        "mean": 1.760778
       }
     },
     "full_summary": {
-      "mean_ge3": 0.118597,
-      "std_ge3": 0.008152,
-      "min_ge3": 0.107354,
+      "mean_ge3": 0.113624,
+      "std_ge3": 0.009915,
+      "min_ge3": 0.092139,
       "max_ge3": 0.136095,
-      "range_ge3": 0.02874,
-      "mean_of_means": 1.745731
+      "range_ge3": 0.043956,
+      "mean_of_means": 1.74211
     },
     "noise_curve": [
       {
         "window_n": 50,
         "n_tiles": 23,
-        "n_seeds": 10,
-        "seed_std_mean": 0.043765,
-        "seed_range_mean": 0.145217,
+        "n_seeds": 24,
+        "seed_std_mean": 0.043342,
+        "seed_range_mean": 0.177391,
         "seed_range_max": 0.28,
         "binomial_se": 0.044881,
-        "inflation": 0.9751,
+        "inflation": 0.9657,
         "is_full_range": false
       },
       {
         "window_n": 100,
         "n_tiles": 11,
-        "n_seeds": 10,
-        "seed_std_mean": 0.028283,
-        "seed_range_mean": 0.092727,
-        "seed_range_max": 0.14,
+        "n_seeds": 24,
+        "seed_std_mean": 0.029436,
+        "seed_range_mean": 0.116364,
+        "seed_range_max": 0.16,
         "binomial_se": 0.031735,
-        "inflation": 0.8912,
+        "inflation": 0.9275,
         "is_full_range": false
       },
       {
         "window_n": 200,
         "n_tiles": 5,
-        "n_seeds": 10,
-        "seed_std_mean": 0.018602,
-        "seed_range_mean": 0.055,
+        "n_seeds": 24,
+        "seed_std_mean": 0.019701,
+        "seed_range_mean": 0.075,
         "seed_range_max": 0.09,
         "binomial_se": 0.02244,
-        "inflation": 0.829,
+        "inflation": 0.8779,
         "is_full_range": false
       },
       {
         "window_n": 400,
         "n_tiles": 2,
-        "n_seeds": 10,
-        "seed_std_mean": 0.011952,
-        "seed_range_mean": 0.0425,
-        "seed_range_max": 0.055,
+        "n_seeds": 24,
+        "seed_std_mean": 0.013871,
+        "seed_range_mean": 0.0575,
+        "seed_range_max": 0.06,
         "binomial_se": 0.015868,
-        "inflation": 0.7533,
+        "inflation": 0.8742,
         "is_full_range": false
       },
       {
         "window_n": 800,
         "n_tiles": 1,
-        "n_seeds": 10,
-        "seed_std_mean": 0.009189,
-        "seed_range_mean": 0.0325,
-        "seed_range_max": 0.0325,
+        "n_seeds": 24,
+        "seed_std_mean": 0.010574,
+        "seed_range_mean": 0.05125,
+        "seed_range_max": 0.05125,
         "binomial_se": 0.01122,
-        "inflation": 0.819,
+        "inflation": 0.9424,
         "is_full_range": false
       },
       {
         "window_n": 1183,
         "n_tiles": 1,
-        "n_seeds": 10,
-        "seed_std_mean": 0.008152,
-        "seed_range_mean": 0.02874,
-        "seed_range_max": 0.02874,
+        "n_seeds": 24,
+        "seed_std_mean": 0.009915,
+        "seed_range_mean": 0.043956,
+        "seed_range_max": 0.043956,
         "binomial_se": 0.009227,
-        "inflation": 0.8835,
+        "inflation": 1.0746,
         "is_full_range": true
       }
     ]
   },
   "variance_model": {
     "form": "seed_var(n) = a^2/n + b^2",
-    "a2": 0.0670655462460756,
-    "a": 0.25897,
-    "b2": 0.00010255509352849704,
-    "irreducible_seed_std": 0.010127,
-    "weighted_r2": 0.998519,
+    "a2": 0.08172463508940586,
+    "a": 0.285875,
+    "b2": 2.5873382319071212e-05,
+    "irreducible_seed_std": 0.005087,
+    "weighted_r2": 0.998631,
     "points": [
       {
         "window_n": 50,
-        "observed_std": 0.038032,
-        "fitted_std": 0.037998
+        "observed_std": 0.040824,
+        "fitted_std": 0.040748
       },
       {
         "window_n": 100,
-        "observed_std": 0.027652,
-        "fitted_std": 0.027807
+        "observed_std": 0.028467,
+        "fitted_std": 0.029037
       },
       {
         "window_n": 200,
-        "observed_std": 0.020387,
-        "fitted_std": 0.020926
+        "observed_std": 0.021343,
+        "fitted_std": 0.020845
       },
       {
         "window_n": 400,
-        "observed_std": 0.01792,
-        "fitted_std": 0.016438
+        "observed_std": 0.016131,
+        "fitted_std": 0.015172
       },
       {
         "window_n": 800,
-        "observed_std": 0.015882,
-        "fitted_std": 0.013652
+        "observed_std": 0.012928,
+        "fitted_std": 0.011315
       },
       {
         "window_n": 1183,
-        "observed_std": 0.011754,
-        "fitted_std": 0.012619
+        "observed_std": 0.010371,
+        "fitted_std": 0.009745
       }
     ],
     "meaning_ko": "a²/n 은 회차를 늘리면 사라지는 잡음, b 는 아무리 늘려도 남는 바닥이다. b 보다 작은 Δ 는 백테스트를 무한히 길게 해도 판정할 수 없다."
   },
-  "irreducible_seed_std": 0.010127,
+  "irreducible_seed_std": 0.005087,
+  "floor_uncertainty": {
+    "available": true,
+    "method": "delete-1 잭나이프 (seed 24개 → 24회 재적합)",
+    "a": {
+      "jack_mean": 0.285483,
+      "se": 0.009065,
+      "ci95": [
+        0.267716,
+        0.303249
+      ],
+      "min": 0.281664,
+      "max": 0.289375
+    },
+    "b": {
+      "jack_mean": 0.004884,
+      "se": 0.006698,
+      "ci95": [
+        -0.008244,
+        0.018012
+      ],
+      "min": 0.001656,
+      "max": 0.006895
+    },
+    "b_positive_replicates": "24/24",
+    "boundary_note_ko": "b 는 정의상 0 이상이라(b² 를 음수로 두지 않는다) 표본분포가 한쪽으로 쏠린다. 따라서 대칭 신뢰구간의 하단이 0 을 넘는다는 것은 '바닥이 0 이다'라는 증명이 아니라 **'0 과 구별되지 않는다'** 는 뜻으로만 읽어야 한다.",
+    "meaning_ko": "b 의 신뢰구간이 넓으면 바닥값을 임계로 쓸 때 그 폭만큼 함께 의심해야 한다. 구간 하단이 0 에 닿으면 '바닥이 있다'는 주장 자체가 흔들린다."
+  },
+  "floor_ci_lower": -0.008244,
+  "floor_established": false,
   "full_wf_delta_vs_null": 0.0047,
   "full_wf_below_floor": true,
+  "full_wf_below_floor_ci_lower": false,
   "inflated_gates": [
     {
       "n": 50,
@@ -448,11 +660,11 @@
       "mdd_selection_p95": 0.16,
       "mdd_selection_p99": 0.2,
       "noise_delta_expected": 0.072672,
-      "seed_std_modeled": 0.037998,
-      "se_total": 0.058806,
-      "se_factor": 1.3103,
-      "mdd_single_pair_infl": 0.163001,
-      "mdd_selection_p95_infl": 0.209643
+      "seed_std_modeled": 0.040748,
+      "se_total": 0.060619,
+      "se_factor": 1.3507,
+      "mdd_single_pair_infl": 0.168026,
+      "mdd_selection_p95_infl": 0.216106
     },
     {
       "n": 100,
@@ -464,11 +676,11 @@
       "mdd_selection_p95": 0.11,
       "mdd_selection_p99": 0.14,
       "noise_delta_expected": 0.050702,
-      "seed_std_modeled": 0.027807,
-      "se_total": 0.042194,
-      "se_factor": 1.3296,
-      "mdd_single_pair_infl": 0.116957,
-      "mdd_selection_p95_infl": 0.146253
+      "seed_std_modeled": 0.029037,
+      "se_total": 0.043014,
+      "se_factor": 1.3554,
+      "mdd_single_pair_infl": 0.119231,
+      "mdd_selection_p95_infl": 0.149096
     },
     {
       "n": 200,
@@ -480,11 +692,11 @@
       "mdd_selection_p95": 0.08,
       "mdd_selection_p99": 0.095,
       "noise_delta_expected": 0.034371,
-      "seed_std_modeled": 0.020926,
-      "se_total": 0.030683,
-      "se_factor": 1.3673,
-      "mdd_single_pair_infl": 0.085049,
-      "mdd_selection_p95_infl": 0.109386
+      "seed_std_modeled": 0.020845,
+      "se_total": 0.030628,
+      "se_factor": 1.3649,
+      "mdd_single_pair_infl": 0.084896,
+      "mdd_selection_p95_infl": 0.109189
     },
     {
       "n": 500,
@@ -496,11 +708,11 @@
       "mdd_selection_p95": 0.05,
       "mdd_selection_p99": 0.06,
       "noise_delta_expected": 0.021454,
-      "seed_std_modeled": 0.015385,
-      "se_total": 0.020931,
-      "se_factor": 1.4748,
-      "mdd_single_pair_infl": 0.05802,
-      "mdd_selection_p95_infl": 0.073742
+      "seed_std_modeled": 0.013759,
+      "se_total": 0.019767,
+      "se_factor": 1.3928,
+      "mdd_single_pair_infl": 0.054794,
+      "mdd_selection_p95_infl": 0.069641
     },
     {
       "n": 1183,
@@ -512,40 +724,119 @@
       "mdd_selection_p95": 0.021978,
       "mdd_selection_p99": 0.030431,
       "noise_delta_expected": 0.000154,
-      "seed_std_modeled": 0.012619,
-      "se_total": 0.015633,
-      "se_factor": 1.6942,
-      "mdd_single_pair_infl": 0.04333,
-      "mdd_selection_p95_infl": 0.037236
+      "seed_std_modeled": 0.009745,
+      "se_total": 0.01342,
+      "se_factor": 1.4544,
+      "mdd_single_pair_infl": 0.037197,
+      "mdd_selection_p95_infl": 0.031965
     }
   ],
   "interpretation_ko": "팽창계수가 1 을 넘으면, 우리가 보는 흔들림 중 일부는 추첨 탓이 아니라 **파이프라인 탓**이라는 뜻이다. 이 경우 게이트 임계를 그만큼 올려야 하고, 올리지 않으면 잡음을 신호로 착각한다.",
   "verdict": {
-    "code": "IRREDUCIBLE_SEED_FLOOR",
-    "headline_ko": "회차를 아무리 늘려도 사라지지 않는 seed 잡음 바닥 0.010127 확인 — 이보다 작은 Δ 는 표본을 늘려도 판정 불가",
-    "detail_ko": "전구간 n=1183 · seed 10개에서 stat 의 ge3 는 0.094675~0.130178 (폭 **0.035503** · 표준편차 0.011754) 로 갈린다. 파라미터도 데이터도 추첨 결과도 전부 같은데 seed 하나로 이만큼 움직인다.\n\n더 중요한 건 잡음이 **1/√n 으로 줄지 않는다**는 점이다. 분산을 `a²/n + b²` 로 적합하면 b = **0.010127** 가 남는다(가중 R²=0.998519). 회차를 무한히 늘려도 seed 선택만으로 ge3 가 표준편차 0.010127 만큼 흔들린다는 뜻이다.\n\n이 바닥을 실제 판정에 대보면: 전구간 walk-forward 가 측정한 null 대비 Δ 는 **+0.0047** 였다. 바닥 0.010127 **보다 작다**. 즉 그 판정은 표본을 더 모아도 결론이 나지 않는다.\n\n실무 결론: n=50·10셀 판정의 보정 선택보정 임계는 **0.209643** 이다(보정 전 0.16). 이전 n=100 단일 추정(폭 0.14)은 이제 곡선과 바닥값으로 대체됐다."
+    "code": "FLOOR_NOT_ESTABLISHED",
+    "headline_ko": "바닥 점추정은 0.005087 이지만 신뢰구간 하단이 -0.008244 — 바닥의 존재를 단정할 수 없다",
+    "detail_ko": "전구간 n=1183 · seed 24개에서 stat 의 ge3 는 0.094675~0.130178 (폭 **0.035503** · 표준편차 0.010371) 로 갈린다. 파라미터도 데이터도 추첨 결과도 전부 같은데 seed 하나로 이만큼 움직인다.\n\n잡음이 **1/√n 으로 깔끔하게 줄지는 않는다**. 분산을 `a²/n + b²` 로 적합하면 a = 0.285875, b = **0.005087** 가 나온다(가중 R²=0.998631).\n\n이번엔 그 바닥값 자체의 오차도 쟀다. seed 를 하나씩 빼며 24번 다시 적합한 결과 b 의 95% 신뢰구간은 **[-0.008244, 0.018012]** (표준오차 0.006698)다. 구간 하단이 0 에 닿는다. 바닥이 있다는 주장부터 다시 봐야 한다.\n\n이 바닥을 실제 판정에 대보면: 전구간 walk-forward 가 측정한 null 대비 Δ 는 **+0.0047** 였다. 점추정 바닥 0.005087 보다 작고, 이전 판(seed 10개)에서는 바닥이 0.010127 로 나와 'Δ 가 바닥보다 작으니 표본을 늘려도 영원히 판정 불가'라고 적었다. **그 주장을 철회한다.** seed 를 24개로 늘리자 바닥은 0.005087 로 절반이 됐고, 0 과 구별되지 않는다. 바닥의 존재를 전제로 한 결론이므로 전제가 무너지면 결론도 무너진다.\n\n대신 이렇게 말해야 한다. 전 역사를 다 써도 n=1183 이고 그때 seed 표준편차 실측이 0.010371, 보정 단일 MDD 가 0.037197 다. Δ +0.0047 는 어느 쪽에도 한참 못 미친다. 즉 **'원리적으로 영원히 불가'가 아니라 '가용한 데이터로는 불가'** 다.\n\n뇌별 서열도 이번엔 따졌다(R39). seed 24개 기준 구분 가능한 쌍은 **0/3** 다. 세 뇌의 잡음 크기는 서로 구별되지 않으므로 서열을 인용하면 안 된다. 20260808 NOISE-SOURCE 가 독립 측정으로 낸 결론과 일치한다.\n\n실무 결론: n=50·10셀 판정의 보정 선택보정 임계는 **0.216106** 이다(보정 전 0.16). 이전 n=100 단일 추정(폭 0.14)은 이제 잡음 곡선과 보정 임계표로 대체됐다."
   },
-  "elapsed_sec": 0.2,
+  "elapsed_sec": 0.4,
   "walk_reused_from_raw": true,
   "walk_elapsed_sec_original": 601.3,
   "tool": "tools/_k_stat_seed_noise_floor.py",
+  "precision_check": {
+    "rule": "R39",
+    "n_samples": 24,
+    "sigma": {
+      "stat": 0.010371,
+      "markov": 0.007963,
+      "review": 0.009915
+    },
+    "se": {
+      "stat": 0.001529,
+      "markov": 0.001174,
+      "review": 0.001462
+    },
+    "pairs": [
+      {
+        "sigma": [
+          0.010371,
+          0.007963
+        ],
+        "n_samples": 24,
+        "se": [
+          0.001529,
+          0.001174
+        ],
+        "diff": 0.002408,
+        "resolve_threshold": 0.003779,
+        "resolvable": false,
+        "samples_needed": 58,
+        "pair": [
+          "stat",
+          "markov"
+        ]
+      },
+      {
+        "sigma": [
+          0.010371,
+          0.009915
+        ],
+        "n_samples": 24,
+        "se": [
+          0.001529,
+          0.001462
+        ],
+        "diff": 0.000456,
+        "resolve_threshold": 0.004146,
+        "resolvable": false,
+        "samples_needed": 1903,
+        "pair": [
+          "stat",
+          "review"
+        ]
+      },
+      {
+        "sigma": [
+          0.007963,
+          0.009915
+        ],
+        "n_samples": 24,
+        "se": [
+          0.001174,
+          0.001462
+        ],
+        "diff": 0.001952,
+        "resolve_threshold": 0.003675,
+        "resolvable": false,
+        "samples_needed": 83,
+        "pair": [
+          "markov",
+          "review"
+        ]
+      }
+    ],
+    "n_pairs": 3,
+    "n_resolvable": 0,
+    "any_resolvable": false,
+    "samples_needed_max": 1903,
+    "formula": "SE(sigma_hat) = sigma / sqrt(2(k-1))",
+    "meaning_ko": "구분 가능한 쌍이 0개다. 계열 간 서열은 측정 오차 안의 흔들림이므로 서열을 인용하면 안 된다. 가르려면 표본 약 1903개가 필요하다."
+  },
   "decision_gate": {
     "gate": {
       "n": 1183,
-      "k_cells": 10,
+      "k_cells": 24,
       "p0": 0.113624,
       "se_single": 0.009227,
       "ci95_halfwidth": 0.018085,
       "mdd_single_pair": 0.025575,
-      "mdd_selection_p95": 0.032122,
-      "mdd_selection_p99": 0.03973,
-      "noise_delta_expected": 0.014312
+      "mdd_selection_p95": 0.035503,
+      "mdd_selection_p99": 0.043111,
+      "noise_delta_expected": 0.018229
     },
     "delta": 0.035503,
     "holdout_value": null,
     "holdout_collapsed": null,
     "verdict": "DECIDABLE",
-    "why_ko": "|Δ|=0.035503 ≥ 선택보정 임계 0.032122 (10셀) → 차이 주장 가능",
+    "why_ko": "|Δ|=0.035503 ≥ 선택보정 임계 0.035503 (24셀) → 차이 주장 가능",
     "actionable": true,
     "rule": "R38",
     "metric": "ge3 (seed 간 폭)",

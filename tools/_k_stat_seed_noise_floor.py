@@ -53,6 +53,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from tools.k_gate import GATE_KEY, gate, gate_block, null_ge3, se_binom  # noqa: E402
+from tools.k_precision import (  # noqa: E402
+    PRECISION_KEY,
+    Z95,
+    pairwise_resolvable,
+)
 
 BENCH_ID = "K-STAT-SEED-NOISE-FLOOR"
 OUT_JSON = ROOT / "docs" / "benchmarks" / "20260808_KSTAT_SEED_NOISE_FLOOR.json"
@@ -61,10 +66,19 @@ RAW_JSON = ROOT / "docs" / "benchmarks" / "20260808_KSTAT_SEED_NOISE_FLOOR_raw.j
 DRIVE = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
 
 BRAINS = ("stat", "markov", "review")
-DEFAULT_SEEDS = (42, 0, 7, 99, 1, 2026, 314, 777, 12345, 8)
+DEFAULT_SEEDS = (
+    42, 0, 7, 99, 1, 2026, 314, 777, 12345, 8,
+    13, 21, 55, 89, 144, 233, 377, 610,
+    1001, 2718, 3141, 4096, 5150, 6180,
+)
 WINDOW_SIZES = (50, 100, 200, 400, 800)
 
 PRIOR_SEED_DIAG = "docs/benchmarks/20260805_KSTAT_SEED_DIAG.json"
+
+SEP6 = "|---|---|---|---|---|---|"
+
+# seed 10개로 측정하던 시절의 바닥값. 철회 근거를 보고서에 남기기 위해 보존한다.
+PRIOR_FLOOR_10SEED = 0.010127
 
 
 def _env_int(name: str, default: int) -> int:
@@ -256,6 +270,57 @@ def fit_variance_model(curve: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def jackknife_model(per_seed: dict[str, list[int]], p0: float) -> dict[str, Any]:
+    """바닥값 b 자체의 오차를 잰다 — seed 하나씩 빼면서 다시 적합한다.
+
+    b 는 앞으로 모든 판정의 임계를 정하는 숫자다. 그 숫자에 오차가 얼마나 붙는지
+    모르면 임계를 신뢰할 근거가 없다. 20260808 NOISE-SOURCE 에서 seed 10개짜리
+    표준편차를 확정값처럼 쓴 것이 바로 그 실수였다(R39).
+
+    delete-1 잭나이프: SE = sqrt((k−1)/k · Σ(θ_(i) − θ̄)²).
+    """
+    seeds = sorted(per_seed)
+    k = len(seeds)
+    if k < 3:
+        return {"available": False, "reason_ko": "seed 3개 미만이라 잭나이프 불가"}
+
+    a_vals: list[float] = []
+    b_vals: list[float] = []
+    for drop in seeds:
+        sub = {s: v for s, v in per_seed.items() if s != drop}
+        m = fit_variance_model(noise_curve(sub, p0))
+        a_vals.append(math.sqrt(m["a2"]))
+        b_vals.append(math.sqrt(m["b2"]))
+
+    def _jack(vals: list[float]) -> dict[str, Any]:
+        bar = mean(vals)
+        se = math.sqrt((k - 1) / k * sum((v - bar) ** 2 for v in vals))
+        return {
+            "jack_mean": round(bar, 6),
+            "se": round(se, 6),
+            "ci95": [round(bar - Z95 * se, 6), round(bar + Z95 * se, 6)],
+            "min": round(min(vals), 6),
+            "max": round(max(vals), 6),
+        }
+
+    return {
+        "available": True,
+        "method": f"delete-1 잭나이프 (seed {k}개 → {k}회 재적합)",
+        "a": _jack(a_vals),
+        "b": _jack(b_vals),
+        "b_positive_replicates": f"{sum(1 for v in b_vals if v > 0)}/{k}",
+        "boundary_note_ko": (
+            "b 는 정의상 0 이상이라(b² 를 음수로 두지 않는다) 표본분포가 한쪽으로 쏠린다. "
+            "따라서 대칭 신뢰구간의 하단이 0 을 넘는다는 것은 '바닥이 0 이다'라는 증명이 "
+            "아니라 **'0 과 구별되지 않는다'** 는 뜻으로만 읽어야 한다."
+        ),
+        "meaning_ko": (
+            "b 의 신뢰구간이 넓으면 바닥값을 임계로 쓸 때 그 폭만큼 함께 의심해야 한다. "
+            "구간 하단이 0 에 닿으면 '바닥이 있다'는 주장 자체가 흔들린다."
+        ),
+    }
+
+
 def seed_std_at(n: int, model: dict[str, Any]) -> float:
     return math.sqrt(model["a2"] / n + model["b2"])
 
@@ -278,6 +343,102 @@ def inflated_gate(n: int, k_cells: int, p0: float, model: dict[str, Any]) -> dic
         "mdd_single_pair_infl": round(g["mdd_single_pair"] * factor, 6),
         "mdd_selection_p95_infl": round(g["mdd_selection_p95"] * factor, 6),
     }
+
+
+def _section_floor_precision(p: dict[str, Any], mdl: dict[str, Any]) -> list[str]:
+    """4-B. 바닥값 자체의 오차 (R39)."""
+    lines = [
+        "### 4-B. 그 바닥값은 얼마나 정확한가 (R39)",
+        "",
+        "b 는 앞으로 모든 판정의 임계를 정하는 숫자다. 그러니 b 자체의 오차부터 알아야 한다.",
+        f"seed 를 하나씩 빼며 {len(p['seeds'])}번 다시 적합했다 (delete-1 잭나이프).",
+        "",
+        "| 모수 | 점추정 | 잭나이프 평균 | 표준오차 | 95% 신뢰구간 | 최소~최대 |",
+        SEP6,
+    ]
+    ju = p["floor_uncertainty"]
+    if ju.get("available"):
+        for name, key in (("a (사라지는 성분)", "a"), ("**b (바닥)**", "b")):
+            j = ju[key]
+            point = mdl["a"] if key == "a" else mdl["irreducible_seed_std"]
+            lines.append(
+                f"| {name} | {point} | {j['jack_mean']} | {j['se']} | "
+                f"[{j['ci95'][0]}, {j['ci95'][1]}] | {j['min']}~{j['max']} |"
+            )
+    else:
+        lines.append(f"| — | — | — | — | — | {ju.get('reason_ko')} |")
+    lines += [
+        "",
+        (
+            f"신뢰구간 하단이 **{p['floor_ci_lower']}** 로 0 보다 크다. "
+            "바닥이 존재한다는 것 자체는 확정이다."
+            if p["floor_established"]
+            else (
+                f"표준오차({ju['b']['se']})가 점추정({mdl['irreducible_seed_std']})보다 크다. "
+                f"**바닥을 0 과 구별할 수 없다.** "
+                f"(재적합 {ju['b_positive_replicates']} 가 양수였고 개별값은 "
+                f"{ju['b']['min']}~{ju['b']['max']} 범위였다.)"
+            )
+        ),
+        "",
+        ju.get("boundary_note_ko", ""),
+        "",
+        "### 이 바닥을 실제 판정에 대보면",
+        "",
+        f"전구간 walk-forward(K-FUTURE-WIRE-FULL, n=1182)가 측정한 null 대비 Δ 는 "
+        f"**{p['full_wf_delta_vs_null']:+.4f}** 였다. 점추정 바닥 "
+        f"{mdl['irreducible_seed_std']} "
+        f"**{'보다 작다' if p['full_wf_below_floor'] else '보다 크다'}**.",
+        "",
+    ]
+    if p["full_wf_below_floor_ci_lower"]:
+        lines += [
+            f"보수적으로 신뢰구간 하단 **{p['floor_ci_lower']}** 을 임계로 써도 Δ 가 여전히 "
+            "작다. 결론이 바닥의 점추정 하나에 매달려 있지 않다는 뜻이다. "
+            "**표본을 더 모아도 결론이 나지 않는다.**",
+            "",
+        ]
+    else:
+        gate_full = p["inflated_gates"][-1]
+        lines += [
+            "**다만 바닥이 0 과 구별되지 않으므로 이 비교는 근거가 되지 못한다.**",
+            "'회차를 무한히 늘려도 판정이 불가능하다'는 주장은 b > 0 을 전제로만 성립한다.",
+            "그 전제가 확인되지 않았으니 주장을 철회한다.",
+            "",
+            "대신 **지금 가진 데이터로 무엇을 말할 수 있는지**로 바꿔 답한다. 전 역사를 다 써도",
+            f"회차는 n={p['n_draws']} 뿐이고, 그때 seed 표준편차 실측은 "
+            f"**{p['stat']['full_summary']['std_ge3']}**, 보정 단일 MDD 는 "
+            f"**{gate_full['mdd_single_pair_infl']}** 이다.",
+            f"Δ {p['full_wf_delta_vs_null']:+.4f} 는 그 어느 쪽에도 한참 못 미친다.",
+            "",
+            "즉 결론은 **'원리적으로 영원히 불가'가 아니라 '가용한 데이터로는 불가'** 다.",
+            "실무적 처방은 같지만, 근거의 강도가 다르므로 인용할 때 구분해야 한다.",
+            "",
+        ]
+    return lines
+
+
+def _section_brain_order(p: dict[str, Any]) -> list[str]:
+    """6-B. 뇌별 서열을 인용해도 되는지 (R39)."""
+    prec = p[PRECISION_KEY]
+    lines = [
+        "### 6-B. 이 서열을 인용해도 되나 (R39)",
+        "",
+        "표준편차끼리 비교할 때는 σ 자체의 표준오차 σ/√(2(k−1)) 를 먼저 따져야 한다.",
+        "이 절차를 건너뛴 탓에 20260808 NOISE-SOURCE 에서 헛수고가 났다.",
+        "",
+        "| 쌍 | 표준편차 | 차이 | 구분 임계 | 구분 가능 | 필요 seed |",
+        SEP6,
+    ]
+    for pr in prec["pairs"]:
+        lines.append(
+            f"| {pr['pair'][0]} vs {pr['pair'][1]} | "
+            f"{pr['sigma'][0]} / {pr['sigma'][1]} | {pr['diff']} | "
+            f"{pr['resolve_threshold']} | "
+            f"{'예' if pr['resolvable'] else '**아니오**'} | {pr['samples_needed']} |"
+        )
+    lines += ["", f"**{prec['meaning_ko']}**", ""]
+    return lines
 
 
 def build_report(p: dict[str, Any]) -> str:
@@ -342,7 +503,11 @@ def build_report(p: dict[str, Any]) -> str:
         "",
         p["interpretation_ko"],
         "",
-        "## 4. 가장 중요한 발견 — 줄어들지 않는 바닥",
+        (
+            "## 4. 잡음은 1/√n 으로 줄어드는가"
+            if not p["floor_established"]
+            else "## 4. 가장 중요한 발견 — 줄어들지 않는 바닥"
+        ),
         "",
         "위 표에서 창을 키워도 seed 표준편차가 **1/√n 만큼 줄지 않는다**. 이항 SE 는",
         f"n=50→{p['n_draws']} 에서 {mdl['binom_shrink']}배 줄지만, seed 표준편차는 "
@@ -362,21 +527,17 @@ def build_report(p: dict[str, Any]) -> str:
         lines.append(f"| {pt['window_n']} | {pt['observed_std']} | {pt['fitted_std']} |")
     lines += [
         "",
-        f"`a²/n` 은 회차를 늘리면 평균되어 사라진다. 문제는 **b = {mdl['irreducible_seed_std']}** 다.",
-        "이건 회차를 무한히 늘려도 남는다. 즉 **백테스트를 아무리 길게 해도 seed 선택만으로",
-        f"ge3 가 표준편차 {mdl['irreducible_seed_std']} 만큼 계속 흔들린다.**",
-        "",
-        "### 이 바닥을 실제 판정에 대보면",
-        "",
-        f"전구간 walk-forward(K-FUTURE-WIRE-FULL, n=1182)가 측정한 null 대비 Δ 는 "
-        f"**{p['full_wf_delta_vs_null']:+.4f}** 였다. 바닥 {mdl['irreducible_seed_std']} "
-        f"**{'보다 작다' if p['full_wf_below_floor'] else '보다 크다'}**. "
-        + (
-            "표본을 더 모아도 결론이 나지 않는 크기라는 뜻이다."
-            if p["full_wf_below_floor"]
-            else "표본을 더 모으면 판정 가능한 크기다."
+        f"`a²/n` 은 회차를 늘리면 평균되어 사라진다. 남는 건 **b = "
+        f"{mdl['irreducible_seed_std']}** 다.",
+        (
+            "이건 회차를 무한히 늘려도 남는다. 즉 **백테스트를 아무리 길게 해도 seed 선택만으로 "
+            f"ge3 가 표준편차 {mdl['irreducible_seed_std']} 만큼 계속 흔들린다.**"
+            if p["floor_established"]
+            else "다만 이 b 가 진짜 0 보다 큰지는 아래 4-B 에서 따로 확인해야 한다. "
+            "적합이 값을 하나 내놓는다는 것과 그 값이 0 과 구별된다는 것은 다른 얘기다."
         ),
         "",
+        *_section_floor_precision(p, mdl),
         "## 5. R38 게이트 보정",
         "",
         "seed 잡음과 추첨 잡음은 원인이 다르므로 분산을 더한다. 팽창은 n 에 따라 달라진다",
@@ -413,14 +574,15 @@ def build_report(p: dict[str, Any]) -> str:
 
     lines += [
         "",
+        *_section_brain_order(p),
         "## 7. 결론",
         "",
         p["verdict"]["detail_ko"],
         "",
         "## 8. 한계",
         "",
-        f"- seed {len(p['seeds'])}개로 잰 표준편차다. 표준편차 자체의 불확실성이 남는다",
-        f"  (자유도 {len(p['seeds']) - 1}).",
+        f"- seed {len(p['seeds'])}개로 잰 표준편차다. 자유도 {len(p['seeds']) - 1} 에서 오는",
+        "  불확실성은 4-B(바닥값 잭나이프)와 6-B(서열 구분가능성)에서 정량화했다.",
         "- 큰 창(800·전구간)은 타일이 1개뿐이라 그 점의 추정이 가장 불안하다. 그래서",
         "  적합에 타일 수를 가중치로 썼다.",
         "- 창 타일은 겹치지 않게 잘랐다. 다만 초기 회차는 학습 이력이 짧아 후기 회차와",
@@ -492,6 +654,25 @@ def collect_raw(
     return draw_nos_ref, raw, False
 
 
+def summarize_brains(
+    raw: dict[str, dict[str, list[int]]], seeds: list[int], p0: float
+) -> dict[str, Any]:
+    return {
+        b: {
+            "full_by_seed": {
+                str(s): {
+                    "ge3": round(ge3_of(raw[b][str(s)]), 6),
+                    "mean": round(mean(raw[b][str(s)]), 6),
+                }
+                for s in seeds
+            },
+            "full_summary": summarize_full(raw[b]),
+            "noise_curve": noise_curve(raw[b], p0),
+        }
+        for b in BRAINS
+    }
+
+
 def main() -> int:
     t0 = time.time()
     n_seeds = _env_int("K_NF_SEEDS", len(DEFAULT_SEEDS))
@@ -513,22 +694,15 @@ def main() -> int:
     draw_nos_ref, raw, reused = collect_raw(seeds, lo, hi, actuals, t0)
 
     p0 = null_ge3(5)
-    per_brain: dict[str, Any] = {}
-    for b in BRAINS:
-        per_brain[b] = {
-            "full_by_seed": {
-                str(s): {
-                    "ge3": round(ge3_of(raw[b][str(s)]), 6),
-                    "mean": round(mean(raw[b][str(s)]), 6),
-                }
-                for s in seeds
-            },
-            "full_summary": summarize_full(raw[b]),
-            "noise_curve": noise_curve(raw[b], p0),
-        }
+    per_brain = summarize_brains(raw, seeds, p0)
 
     model = fit_variance_model(per_brain["stat"]["noise_curve"])
     floor = model["irreducible_seed_std"]
+    jack = jackknife_model(raw["stat"], p0)
+    prec = pairwise_resolvable(
+        {b: float(per_brain[b]["full_summary"]["std_ge3"]) for b in BRAINS},
+        len(seeds),
+    )
     infl_gates = [
         inflated_gate(n, k, p0, model)
         for n, k in ((50, 10), (100, 10), (200, 9), (500, 9), (len(draw_nos_ref), 1))
@@ -545,33 +719,70 @@ def main() -> int:
     full_delta = float(full_wf["overall"]["delta_ge3_vs_null"])
 
     fs = per_brain["stat"]["full_summary"]
-    if floor >= 0.005:
+    b_lo = jack["b"]["ci95"][0] if jack.get("available") else None
+    floor_solid = b_lo is not None and b_lo > 0
+    delta_below_lo = b_lo is not None and abs(full_delta) < b_lo
+
+    if not floor_solid:
+        code = "FLOOR_NOT_ESTABLISHED"
+        head = (
+            f"바닥 점추정은 {floor} 이지만 신뢰구간 하단이 "
+            f"{b_lo if b_lo is not None else '미산출'} — 바닥의 존재를 단정할 수 없다"
+        )
+    elif floor >= 0.005:
         code = "IRREDUCIBLE_SEED_FLOOR"
         head = (
-            f"회차를 아무리 늘려도 사라지지 않는 seed 잡음 바닥 {floor} 확인 — "
-            f"이보다 작은 Δ 는 표본을 늘려도 판정 불가"
+            f"회차를 아무리 늘려도 사라지지 않는 seed 잡음 바닥 {floor} 확인"
+            f"(95% CI {jack['b']['ci95']}) — 이보다 작은 Δ 는 표본을 늘려도 판정 불가"
         )
-    elif floor > 0:
-        code = "SMALL_SEED_FLOOR"
-        head = f"seed 잡음 바닥 {floor} — 작지만 0 은 아니다"
     else:
-        code = "NO_SEED_FLOOR"
-        head = "seed 잡음이 회차를 늘리면 사라진다 — 표본만 키우면 판정 가능"
+        code = "SMALL_SEED_FLOOR"
+        head = f"seed 잡음 바닥 {floor}(CI {jack['b']['ci95']}) — 작지만 0 은 아니다"
 
     g50 = next(g for g in infl_gates if g["n"] == 50)
     detail = (
         f"전구간 n={len(draw_nos_ref)} · seed {len(seeds)}개에서 stat 의 ge3 는 "
         f"{fs['min_ge3']}~{fs['max_ge3']} (폭 **{fs['range_ge3']}** · 표준편차 {fs['std_ge3']}) 로 갈린다. "
         f"파라미터도 데이터도 추첨 결과도 전부 같은데 seed 하나로 이만큼 움직인다.\n\n"
-        f"더 중요한 건 잡음이 **1/√n 으로 줄지 않는다**는 점이다. 분산을 `a²/n + b²` 로 적합하면 "
-        f"b = **{floor}** 가 남는다(가중 R²={model['weighted_r2']}). 회차를 무한히 늘려도 "
-        f"seed 선택만으로 ge3 가 표준편차 {floor} 만큼 흔들린다는 뜻이다.\n\n"
-        f"이 바닥을 실제 판정에 대보면: 전구간 walk-forward 가 측정한 null 대비 Δ 는 "
-        f"**{full_delta:+.4f}** 였다. 바닥 {floor} **보다 작다**. 즉 그 판정은 표본을 더 모아도 "
-        f"결론이 나지 않는다.\n\n"
-        f"실무 결론: n=50·10셀 판정의 보정 선택보정 임계는 **{g50['mdd_selection_p95_infl']}** "
+        f"잡음이 **1/√n 으로 깔끔하게 줄지는 않는다**. 분산을 `a²/n + b²` 로 적합하면 "
+        f"a = {model['a']}, b = **{floor}** 가 나온다(가중 R²={model['weighted_r2']}).\n\n"
+        f"이번엔 그 바닥값 자체의 오차도 쟀다. seed 를 하나씩 빼며 {len(seeds)}번 다시 적합한 "
+        f"결과 b 의 95% 신뢰구간은 **{jack['b']['ci95']}** (표준오차 {jack['b']['se']})다. "
+        + (
+            "구간 하단이 0 보다 크므로 **바닥의 존재 자체는 확정**이다.\n\n"
+            if floor_solid
+            else "구간 하단이 0 에 닿는다. 바닥이 있다는 주장부터 다시 봐야 한다.\n\n"
+        )
+        + f"이 바닥을 실제 판정에 대보면: 전구간 walk-forward 가 측정한 null 대비 Δ 는 "
+        f"**{full_delta:+.4f}** 였다. 점추정 바닥 {floor} 보다 작고, "
+        + (
+            f"보수적으로 신뢰구간 하단 {b_lo} 을 써도 여전히 작다. "
+            "즉 그 판정은 표본을 더 모아도 결론이 나지 않는다.\n\n"
+            if delta_below_lo
+            else (
+                f"이전 판(seed 10개)에서는 바닥이 {PRIOR_FLOOR_10SEED} 로 나와 "
+                f"'Δ 가 바닥보다 작으니 표본을 늘려도 영원히 판정 불가'라고 적었다. "
+                f"**그 주장을 철회한다.** seed 를 {len(seeds)}개로 늘리자 바닥은 "
+                f"{floor} 로 절반이 됐고, 0 과 구별되지 않는다. "
+                f"바닥의 존재를 전제로 한 결론이므로 전제가 무너지면 결론도 무너진다.\n\n"
+                f"대신 이렇게 말해야 한다. 전 역사를 다 써도 n={len(draw_nos_ref)} 이고 "
+                f"그때 seed 표준편차 실측이 {fs['std_ge3']}, 보정 단일 MDD 가 "
+                f"{infl_gates[-1]['mdd_single_pair_infl']} 다. Δ {full_delta:+.4f} 는 "
+                f"어느 쪽에도 한참 못 미친다. 즉 **'원리적으로 영원히 불가'가 아니라 "
+                f"'가용한 데이터로는 불가'** 다.\n\n"
+            )
+        )
+        + f"뇌별 서열도 이번엔 따졌다(R39). seed {len(seeds)}개 기준 구분 가능한 쌍은 "
+        f"**{prec['n_resolvable']}/{prec['n_pairs']}** 다. "
+        + (
+            "세 뇌의 잡음 크기는 서로 구별되지 않으므로 서열을 인용하면 안 된다. "
+            "20260808 NOISE-SOURCE 가 독립 측정으로 낸 결론과 일치한다.\n\n"
+            if prec["n_resolvable"] == 0
+            else f"{prec['meaning_ko']}\n\n"
+        )
+        + f"실무 결론: n=50·10셀 판정의 보정 선택보정 임계는 **{g50['mdd_selection_p95_infl']}** "
         f"이다(보정 전 {g50['mdd_selection_p95']}). 이전 n=100 단일 추정(폭 {prior_range})은 "
-        f"이제 곡선과 바닥값으로 대체됐다."
+        f"이제 잡음 곡선과 보정 임계표로 대체됐다."
     )
 
     payload: dict[str, Any] = {
@@ -596,8 +807,12 @@ def main() -> int:
         "review": per_brain["review"],
         "variance_model": model,
         "irreducible_seed_std": floor,
+        "floor_uncertainty": jack,
+        "floor_ci_lower": b_lo,
+        "floor_established": floor_solid,
         "full_wf_delta_vs_null": full_delta,
         "full_wf_below_floor": abs(full_delta) < floor,
+        "full_wf_below_floor_ci_lower": delta_below_lo,
         "inflated_gates": infl_gates,
         "interpretation_ko": (
             "팽창계수가 1 을 넘으면, 우리가 보는 흔들림 중 일부는 추첨 탓이 아니라 "
@@ -610,6 +825,7 @@ def main() -> int:
         "walk_elapsed_sec_original": 601.3,
         "tool": "tools/_k_stat_seed_noise_floor.py",
     }
+    payload[PRECISION_KEY] = prec
     payload[GATE_KEY] = gate_block(
         n=len(draw_nos_ref),
         k_cells=len(seeds),
@@ -643,6 +859,21 @@ def main() -> int:
 
     print(f"[{BENCH_ID}] {code} — {head}")
     print(f"  stat 전구간 ge3 {fs['min_ge3']}~{fs['max_ge3']} 폭={fs['range_ge3']} std={fs['std_ge3']}")
+    if jack.get("available"):
+        print(
+            f"  바닥 b={floor} 잭나이프SE={jack['b']['se']} CI={jack['b']['ci95']} "
+            f"· |Δ{full_delta:+.4f}| < CI하단? {delta_below_lo}"
+        )
+    print(
+        f"  R39 서열 구분가능쌍={prec['n_resolvable']}/{prec['n_pairs']} "
+        f"(필요 seed 최대 {prec['samples_needed_max']})"
+    )
+    for pr in prec["pairs"]:
+        print(
+            f"    {pr['pair'][0]:7s}vs {pr['pair'][1]:7s} 차이={pr['diff']:.6f} "
+            f"임계={pr['resolve_threshold']:.6f} 구분={pr['resolvable']} "
+            f"필요seed={pr['samples_needed']}"
+        )
     for r in per_brain["stat"]["noise_curve"]:
         print(
             f"  n={r['window_n']:>5} tiles={r['n_tiles']:>3} seed_std={r['seed_std_mean']:.6f} "

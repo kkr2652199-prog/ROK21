@@ -1,7 +1,7 @@
 {
   "bench_id": "K-STAT-NOISE-SOURCE",
   "date": "2026-08-08",
-  "ts": "2026-08-08T04:04:21.224567+00:00",
+  "ts": "2026-08-08T04:54:53.216376+00:00",
   "wire": false,
   "policy": {
     "read_only": true,
@@ -43,12 +43,12 @@
   ],
   "prior": {
     "file": "docs/benchmarks/20260808_KSTAT_SEED_NOISE_FLOOR.json",
-    "stat_inflation": 1.2739,
-    "markov_inflation": 0.7329,
-    "review_inflation": 0.8835,
-    "stat_seed_std": 0.011754,
-    "markov_seed_std": 0.006762,
-    "review_seed_std": 0.008152
+    "stat_inflation": 1.124,
+    "markov_inflation": 0.863,
+    "review_inflation": 1.0746,
+    "stat_seed_std": 0.010371,
+    "markov_seed_std": 0.007963,
+    "review_seed_std": 0.009915
   },
   "pipeline_randomness": {
     "repack_by_brain_deterministic": true,
@@ -217,15 +217,15 @@
       "values": {
         "stat": {
           "metric": 0.01604,
-          "pipeline_seed_std": 0.011754
+          "pipeline_seed_std": 0.010371
         },
         "markov": {
           "metric": 0.015184,
-          "pipeline_seed_std": 0.006762
+          "pipeline_seed_std": 0.007963
         },
         "review": {
           "metric": 0.013584,
-          "pipeline_seed_std": 0.008152
+          "pipeline_seed_std": 0.009915
         }
       }
     },
@@ -246,15 +246,15 @@
       "values": {
         "stat": {
           "metric": 0.373618,
-          "pipeline_seed_std": 0.011754
+          "pipeline_seed_std": 0.010371
         },
         "markov": {
           "metric": 0.464213,
-          "pipeline_seed_std": 0.006762
+          "pipeline_seed_std": 0.007963
         },
         "review": {
           "metric": 0.356604,
-          "pipeline_seed_std": 0.008152
+          "pipeline_seed_std": 0.009915
         }
       }
     },
@@ -275,15 +275,15 @@
       "values": {
         "stat": {
           "metric": 0.368867,
-          "pipeline_seed_std": 0.011754
+          "pipeline_seed_std": 0.010371
         },
         "markov": {
           "metric": 0.417512,
-          "pipeline_seed_std": 0.006762
+          "pipeline_seed_std": 0.007963
         },
         "review": {
           "metric": 0.359674,
-          "pipeline_seed_std": 0.008152
+          "pipeline_seed_std": 0.009915
         }
       }
     },
@@ -304,15 +304,15 @@
       "values": {
         "stat": {
           "metric": 1.1e-05,
-          "pipeline_seed_std": 0.011754
+          "pipeline_seed_std": 0.010371
         },
         "markov": {
           "metric": 6e-06,
-          "pipeline_seed_std": 0.006762
+          "pipeline_seed_std": 0.007963
         },
         "review": {
           "metric": 2.2e-05,
-          "pipeline_seed_std": 0.008152
+          "pipeline_seed_std": 0.009915
         }
       },
       "note_ko": "값이 클수록 안정적인 지표라 순서를 뒤집어 비교했다"
@@ -334,15 +334,15 @@
       "values": {
         "stat": {
           "metric": 0.637181,
-          "pipeline_seed_std": 0.011754
+          "pipeline_seed_std": 0.010371
         },
         "markov": {
           "metric": 0.55135,
-          "pipeline_seed_std": 0.006762
+          "pipeline_seed_std": 0.007963
         },
         "review": {
           "metric": 0.602975,
-          "pipeline_seed_std": 0.008152
+          "pipeline_seed_std": 0.009915
         }
       },
       "note_ko": "값이 클수록 안정적인 지표라 순서를 뒤집어 비교했다"
@@ -364,69 +364,84 @@
       "values": {
         "stat": {
           "metric": 29.0318,
-          "pipeline_seed_std": 0.011754
+          "pipeline_seed_std": 0.010371
         },
         "markov": {
           "metric": 26.0762,
-          "pipeline_seed_std": 0.006762
+          "pipeline_seed_std": 0.007963
         },
         "review": {
           "metric": 24.9264,
-          "pipeline_seed_std": 0.008152
+          "pipeline_seed_std": 0.009915
         }
       }
     }
   ],
   "metrics_explaining_order": [],
   "premise_check": {
-    "n_seeds_used_in_floor": 10,
+    "n_seeds_used_in_floor": 24,
     "std_se": {
-      "stat": 0.00277,
-      "markov": 0.001594,
-      "review": 0.001921
+      "stat": 0.001529,
+      "markov": 0.001174,
+      "review": 0.001462
     },
     "pairs": [
       {
+        "n_samples": 24,
+        "se": [
+          0.001529,
+          0.001174
+        ],
+        "diff": 0.002408,
+        "resolve_threshold": 0.003779,
+        "resolvable": false,
         "pair": [
           "stat",
           "markov"
         ],
         "pipeline_std": [
-          0.011754,
-          0.006762
+          0.010371,
+          0.007963
         ],
-        "diff": 0.004992,
-        "resolve_threshold": 0.006265,
-        "resolvable": false,
-        "seeds_needed": 16
+        "seeds_needed": 58
       },
       {
+        "n_samples": 24,
+        "se": [
+          0.001529,
+          0.001462
+        ],
+        "diff": 0.000456,
+        "resolve_threshold": 0.004146,
+        "resolvable": false,
         "pair": [
           "stat",
           "review"
         ],
         "pipeline_std": [
-          0.011754,
-          0.008152
+          0.010371,
+          0.009915
         ],
-        "diff": 0.003602,
-        "resolve_threshold": 0.006608,
-        "resolvable": false,
-        "seeds_needed": 32
+        "seeds_needed": 1903
       },
       {
+        "n_samples": 24,
+        "se": [
+          0.001174,
+          0.001462
+        ],
+        "diff": 0.001952,
+        "resolve_threshold": 0.003675,
+        "resolvable": false,
         "pair": [
           "markov",
           "review"
         ],
         "pipeline_std": [
-          0.006762,
-          0.008152
+          0.007963,
+          0.009915
         ],
-        "diff": 0.00139,
-        "resolve_threshold": 0.004893,
-        "resolvable": false,
-        "seeds_needed": 113
+        "seeds_needed": 83
       }
     ],
     "n_resolvable": 0,
@@ -442,61 +457,76 @@
     },
     "pairs": [
       {
-        "pair": [
-          "stat",
-          "markov"
-        ],
-        "brain_std": [
-          0.01604,
-          0.015184
+        "n_samples": 24,
+        "se": [
+          0.002365,
+          0.002239
         ],
         "diff": 0.000856,
         "resolve_threshold": 0.006383,
         "resolvable": false,
-        "seeds_needed": 1280,
-        "pipeline_std": [
-          0.011754,
-          0.006762
-        ],
-        "order_agrees": null
-      },
-      {
         "pair": [
           "stat",
-          "review"
+          "markov"
         ],
+        "order_agrees": null,
         "brain_std": [
           0.01604,
-          0.013584
+          0.015184
+        ],
+        "seeds_needed": 1280,
+        "pipeline_std": [
+          0.010371,
+          0.007963
+        ]
+      },
+      {
+        "n_samples": 24,
+        "se": [
+          0.002365,
+          0.002003
         ],
         "diff": 0.002456,
         "resolve_threshold": 0.006074,
         "resolvable": false,
-        "seeds_needed": 142,
-        "pipeline_std": [
-          0.011754,
-          0.008152
-        ],
-        "order_agrees": null
-      },
-      {
         "pair": [
-          "markov",
+          "stat",
           "review"
         ],
+        "order_agrees": null,
         "brain_std": [
-          0.015184,
+          0.01604,
           0.013584
+        ],
+        "seeds_needed": 142,
+        "pipeline_std": [
+          0.010371,
+          0.009915
+        ]
+      },
+      {
+        "n_samples": 24,
+        "se": [
+          0.002239,
+          0.002003
         ],
         "diff": 0.0016,
         "resolve_threshold": 0.005888,
         "resolvable": false,
+        "pair": [
+          "markov",
+          "review"
+        ],
+        "order_agrees": null,
+        "brain_std": [
+          0.015184,
+          0.013584
+        ],
         "seeds_needed": 313,
         "pipeline_std": [
-          0.006762,
-          0.008152
-        ],
-        "order_agrees": null
+          0.007963,
+          0.009915
+        ]
       }
     ],
     "n_resolvable": 0,
@@ -562,8 +592,8 @@
     },
     {
       "what": "stat 전용 잡음 대책은 보류",
-      "why": "뇌별 팽창 차이(1.27 대 0.73)가 측정 오차 안이다. 이번에 seed 24개로 독립 측정한 뇌 수준 잡음도 세 뇌가 사실상 같았다. 특정 뇌만 손보는 것은 존재가 확인되지 않은 차이를 쫓는 일이다",
-      "risk": "차이가 실재하는데 놓칠 가능성. 다만 stat 대 markov 를 가르려면 잡음바닥 재측정에 seed 16개면 되므로, 확인 비용이 낮다"
+      "why": "뇌별 팽창 차이(stat 1.124 대 markov 0.863)가 측정 오차 안이다. 이번에 seed 24개·400회차로 독립 측정한 뇌 수준 잡음도 세 뇌가 사실상 같았다. 특정 뇌만 손보는 것은 존재가 확인되지 않은 차이를 쫓는 일이다",
+      "risk": "차이가 실재하는데 놓칠 가능성. 다만 stat 대 markov 를 가르려면 잡음바닥 재측정에 seed 58개가 필요하므로, 확인하려면 그만큼 더 돌려야 한다"
     },
     {
       "what": "판정용 지표를 ge3 에서 번호 확률벡터 스코어로 전환",
@@ -571,15 +601,15 @@
       "risk": "발권 성능과 지표가 분리된다. 지표 개선이 발권 개선을 보장하지 않음"
     },
     {
-      "what": "잡음바닥(SEED_NOISE_FLOOR)을 seed 16개 이상으로 재측정",
-      "why": "현재 바닥값 0.010127 은 seed 10개 기반이다. 이 값이 앞으로 모든 판정의 임계를 정하는데, 그 자체의 오차를 아직 모른다. 바닥을 신뢰하려면 먼저 바닥의 오차부터 좁혀야 한다",
-      "risk": "재측정 시간만 든다. 코드·상수 변경 없음"
+      "what": "잡음바닥 재측정 완료 — 현재 바닥 0.005087",
+      "why": "seed 24개로 다시 쟀다. 바닥값은 0.005087 이고 95% 신뢰구간이 [-0.008244, 0.018012] 라 **0 과 구별되지 않는다**. '표본을 늘려도 영원히 판정 불가'라는 이전 주장은 철회됐다",
+      "risk": "바닥이 정말 0 인지 가르려면 seed 를 더 늘려야 한다. 다만 실무 임계는 이미 잡음 곡선에서 나오므로 급하지 않다"
     }
   ],
   "verdict": {
     "code": "PREMISE_NOT_ESTABLISHED",
-    "headline_ko": "질문의 전제가 성립하지 않는다 — 'stat 만 시끄럽다'는 뇌별 팽창 차이가 seed 10개 측정의 오차 범위 안이다",
-    "detail_ko": "먼저 확실한 것. stat 의 점수(가중치)는 seed 와 무관하게 항상 같고(True) markov 도 같다(True). 코드상 `repack_by_brain` 도 기본 인자에서 결정적이다. 따라서 **흔들림은 점수를 만드는 과정이 아니라 그 점수로 6개를 뽑는 과정에서만 들어온다.** 이건 확정이다.\n\n구조 차이도 확인됐다. 유효 후보수 중앙값이 stat **40.0192** 대 markov **24.9844** (약 1.60배)다. stat 은 45개 전체에서 뽑고 markov 는 상위 25개에서만 뽑는다.\n\n다만 '후보가 넓으면 결과도 불안정하다'는 단순 연결은 **성립하지 않았다.** pool 번호분포의 seed 간 변동은 오히려 markov 가 가장 크다(markov 0.464213 > stat 0.373618). 그런데 최종 잡음은 markov 가 가장 작다. 생성 단계에서 많이 흩어지는 것과 결과가 흔들리는 것은 별개다.\n\n그리고 더 중요한 것이 나왔다. **이 진단의 전제가 무너졌다.** 출발점이던 '뇌별 팽창 1.27 대 0.73' 은 seed 10개로 잰 표준편차다. 표준편차에도 오차가 있고, 그 오차를 넘는 쌍이 0/3 이다. 구분 가능한 쌍이 0개면, 뇌별 팽창계수 순위는 측정 오차 안의 흔들림이다. 'stat 만 유독 시끄럽다'는 전제가 근거를 잃는다. 이번에 seed 24개·400회차로 독립 측정한 뇌 수준 잡음도 stat 0.01604 · markov 0.015184 · review 0.013584 로 사실상 같다. 두 측정이 같은 곳을 가리킨다.\n\n뇌별 잡음 크기 차이는 **판정 불가**다. 실패가 아니라 측정 정밀도 부족이다. seed 24개로 잰 표준편차 자체의 오차가 커서 세 쌍 중 구분되는 쌍이 0개다. 즉 위 순서표의 '불일치'는 지표가 틀렸다는 뜻이 아니라 눈금이 없다는 뜻이다. 쌍을 가르려면 seed 가 약 1280개 필요하다.\n\n대신 실무적으로 더 쓸모 있는 답이 나왔다. 뽑기를 없애고 가중치 상위로 결정적으로 자르면 흔들림은 **정확히 0** 이 되는데, 적중이 떨어지지 않는다. 같은 회차로 짝지어 비교하면 stat 의 ge3 차이는 +0.006146 (95% 신뢰구간 [-0.024167, 0.038854], p=0.7156) 다. 유의하지는 않지만 **손해라는 증거도 없다.** 잡음을 공짜로 없앨 여지가 있다는 뜻이다."
+    "headline_ko": "질문의 전제가 성립하지 않는다 — 'stat 만 시끄럽다'는 뇌별 팽창 차이가 seed 24개 측정의 오차 범위 안이다",
+    "detail_ko": "먼저 확실한 것. stat 의 점수(가중치)는 seed 와 무관하게 항상 같고(True) markov 도 같다(True). 코드상 `repack_by_brain` 도 기본 인자에서 결정적이다. 따라서 **흔들림은 점수를 만드는 과정이 아니라 그 점수로 6개를 뽑는 과정에서만 들어온다.** 이건 확정이다.\n\n구조 차이도 확인됐다. 유효 후보수 중앙값이 stat **40.0192** 대 markov **24.9844** (약 1.60배)다. stat 은 45개 전체에서 뽑고 markov 는 상위 25개에서만 뽑는다.\n\n다만 '후보가 넓으면 결과도 불안정하다'는 단순 연결은 **성립하지 않았다.** pool 번호분포의 seed 간 변동은 오히려 markov 가 가장 크다(markov 0.464213 > stat 0.373618). 그런데 최종 잡음은 markov 가 가장 작다. 생성 단계에서 많이 흩어지는 것과 결과가 흔들리는 것은 별개다.\n\n그리고 더 중요한 것이 나왔다. **이 진단의 전제가 무너졌다.** 출발점이던 뇌별 팽창차(stat 1.124 대 markov 0.863)는 seed 24개로 잰 표준편차에서 나온 값이다. 표준편차에도 오차가 있고, 그 오차를 넘는 쌍이 0/3 이다. 구분 가능한 쌍이 0개면, 뇌별 팽창계수 순위는 측정 오차 안의 흔들림이다. 'stat 만 유독 시끄럽다'는 전제가 근거를 잃는다. 이번에 seed 24개·400회차로 독립 측정한 뇌 수준 잡음도 stat 0.01604 · markov 0.015184 · review 0.013584 로 사실상 같다. 두 측정이 같은 곳을 가리킨다.\n\n뇌별 잡음 크기 차이는 **판정 불가**다. 실패가 아니라 측정 정밀도 부족이다. seed 24개로 잰 표준편차 자체의 오차가 커서 세 쌍 중 구분되는 쌍이 0개다. 즉 위 순서표의 '불일치'는 지표가 틀렸다는 뜻이 아니라 눈금이 없다는 뜻이다. 쌍을 가르려면 seed 가 약 1280개 필요하다.\n\n대신 실무적으로 더 쓸모 있는 답이 나왔다. 뽑기를 없애고 가중치 상위로 결정적으로 자르면 흔들림은 **정확히 0** 이 되는데, 적중이 떨어지지 않는다. 같은 회차로 짝지어 비교하면 stat 의 ge3 차이는 +0.006146 (95% 신뢰구간 [-0.024167, 0.038854], p=0.7156) 다. 유의하지는 않지만 **손해라는 증거도 없다.** 잡음을 공짜로 없앨 여지가 있다는 뜻이다."
   },
   "elapsed_sec": 0.2,
   "tool": "tools/_k_stat_noise_source_diag.py",

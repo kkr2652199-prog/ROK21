@@ -60,6 +60,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from tools.k_gate import GATE_KEY, classify, gate_block, null_ge3  # noqa: E402
+from tools.k_precision import pairwise_resolvable  # noqa: E402
 
 BENCH_ID = "K-STAT-NOISE-SOURCE"
 OUT_JSON = ROOT / "docs" / "benchmarks" / "20260808_KSTAT_NOISE_SOURCE.json"
@@ -381,46 +382,20 @@ def resolvable_pairs(
     seed k개로 잰 표준편차의 표준오차는 대략 σ/√(2(k−1)) 다. 이 불확실성을 넘어
     **구분 가능한 쌍**만 골라, 그 쌍들의 순서가 파이프라인 실측과 맞는지 본다.
     """
-    brains = list(prior_std)
-    se = {
-        b: res[b]["sampled_ge3"]["std"] / math.sqrt(2 * max(1, n_seeds - 1))
-        for b in brains
-    }
-    pairs = []
-    for a, b in combinations(brains, 2):
-        sa, sb = res[a]["sampled_ge3"]["std"], res[b]["sampled_ge3"]["std"]
-        crit = 1.96 * math.sqrt(se[a] ** 2 + se[b] ** 2)
-        res_ok = abs(sa - sb) > crit
-        agree = None
-        if res_ok:
-            agree = (sa < sb) == (prior_std[a] < prior_std[b])
-        # 이 쌍을 구분하려면 seed 가 몇 개 필요한가 (관측 차이가 유지된다는 가정)
-        d = abs(sa - sb)
-        need = None
-        if d > 0:
-            need = int(math.ceil(1 + (1.96 * math.sqrt(sa**2 + sb**2) / d) ** 2 / 2))
-        pairs.append(
-            {
-                "pair": [a, b],
-                "brain_std": [round(sa, 6), round(sb, 6)],
-                "diff": round(d, 6),
-                "resolve_threshold": round(crit, 6),
-                "resolvable": res_ok,
-                "seeds_needed": need,
-                "pipeline_std": [prior_std[a], prior_std[b]],
-                "order_agrees": agree,
-            }
-        )
-    res_pairs = [p for p in pairs if p["resolvable"]]
+    sigmas = {b: res[b]["sampled_ge3"]["std"] for b in prior_std}
+    block = pairwise_resolvable(sigmas, n_seeds, truth_order=prior_std)
+    for pr in block["pairs"]:
+        a, b = pr["pair"]
+        pr["brain_std"] = pr.pop("sigma")
+        pr["seeds_needed"] = pr.pop("samples_needed")
+        pr["pipeline_std"] = [prior_std[a], prior_std[b]]
     return {
         "n_seeds": n_seeds,
-        "std_se": {b: round(v, 6) for b, v in se.items()},
-        "pairs": pairs,
-        "n_resolvable": len(res_pairs),
-        "n_agree": sum(1 for p in res_pairs if p["order_agrees"]),
-        "seeds_needed_max": max(
-            (p["seeds_needed"] for p in pairs if p["seeds_needed"]), default=None
-        ),
+        "std_se": block["se"],
+        "pairs": block["pairs"],
+        "n_resolvable": block["n_resolvable"],
+        "n_agree": block["n_agree"],
+        "seeds_needed_max": block["samples_needed_max"],
         "note_ko": (
             "구분 가능한 쌍에서만 순서를 비교한다. 구분 불가한 쌍을 '불일치'로 세면 "
             "측정 정밀도 부족을 결론으로 착각하게 된다."
@@ -436,32 +411,15 @@ def premise_check(prior_std: dict[str, float], n_seeds: int) -> dict[str, Any]:
     뇌 사이 차이가 실제로 구분되는지 먼저 따져야 한다. 구분이 안 된다면
     '왜 stat 만 시끄러운가'라는 질문 자체가 성립하지 않는다.
     """
-    brains = list(prior_std)
-    se = {b: prior_std[b] / math.sqrt(2 * max(1, n_seeds - 1)) for b in brains}
-    pairs = []
-    for a, b in combinations(brains, 2):
-        sa, sb = prior_std[a], prior_std[b]
-        crit = 1.96 * math.sqrt(se[a] ** 2 + se[b] ** 2)
-        d = abs(sa - sb)
-        pairs.append(
-            {
-                "pair": [a, b],
-                "pipeline_std": [sa, sb],
-                "diff": round(d, 6),
-                "resolve_threshold": round(crit, 6),
-                "resolvable": d > crit,
-                "seeds_needed": (
-                    int(math.ceil(1 + (1.96 * math.sqrt(sa**2 + sb**2) / d) ** 2 / 2))
-                    if d > 0
-                    else None
-                ),
-            }
-        )
-    n_res = sum(1 for p in pairs if p["resolvable"])
+    block = pairwise_resolvable(prior_std, n_seeds)
+    for pr in block["pairs"]:
+        pr["pipeline_std"] = pr.pop("sigma")
+        pr["seeds_needed"] = pr.pop("samples_needed")
+    n_res = block["n_resolvable"]
     return {
         "n_seeds_used_in_floor": n_seeds,
-        "std_se": {b: round(v, 6) for b, v in se.items()},
-        "pairs": pairs,
+        "std_se": block["se"],
+        "pairs": block["pairs"],
         "n_resolvable": n_res,
         "premise_holds": n_res > 0,
         "meaning_ko": (
@@ -918,6 +876,7 @@ def main() -> int:
     }
     rp = resolvable_pairs(res, prior_std, len(seeds))
     pc = premise_check(prior_std, len(prior.get("seeds", [])) or 10)
+    prior_infl = {b: _infl(b) for b in c["brains"]}
 
     code, head = decide_verdict(res, ordering, rp, pc, explaining, len(seeds))
 
@@ -939,8 +898,9 @@ def main() -> int:
         f"그런데 최종 잡음은 markov 가 가장 작다. 생성 단계에서 많이 흩어지는 것과 "
         f"결과가 흔들리는 것은 별개다.\n\n"
         f"그리고 더 중요한 것이 나왔다. **이 진단의 전제가 무너졌다.** "
-        f"출발점이던 '뇌별 팽창 1.27 대 0.73' 은 seed {pc['n_seeds_used_in_floor']}개로 잰 "
-        f"표준편차다. 표준편차에도 오차가 있고, 그 오차를 넘는 쌍이 "
+        f"출발점이던 뇌별 팽창차(stat {prior_infl['stat']} 대 markov {prior_infl['markov']})는 "
+        f"seed {pc['n_seeds_used_in_floor']}개로 잰 "
+        f"표준편차에서 나온 값이다. 표준편차에도 오차가 있고, 그 오차를 넘는 쌍이 "
         f"{pc['n_resolvable']}/3 이다. {pc['meaning_ko']} "
         f"이번에 seed {len(seeds)}개·{len(c['targets'])}회차로 독립 측정한 뇌 수준 잡음도 "
         f"stat {st['sampled_ge3']['std']} · markov {mk['sampled_ge3']['std']} · "
@@ -1052,13 +1012,16 @@ def main() -> int:
             {
                 "what": "stat 전용 잡음 대책은 보류",
                 "why": (
-                    "뇌별 팽창 차이(1.27 대 0.73)가 측정 오차 안이다. 이번에 seed 24개로 "
-                    "독립 측정한 뇌 수준 잡음도 세 뇌가 사실상 같았다. 특정 뇌만 손보는 것은 "
-                    "존재가 확인되지 않은 차이를 쫓는 일이다"
+                    f"뇌별 팽창 차이(stat {prior_infl['stat']} 대 markov "
+                    f"{prior_infl['markov']})가 측정 오차 안이다. 이번에 seed "
+                    f"{len(seeds)}개·{len(c['targets'])}회차로 독립 측정한 뇌 수준 잡음도 "
+                    "세 뇌가 사실상 같았다. 특정 뇌만 손보는 것은 존재가 확인되지 않은 "
+                    "차이를 쫓는 일이다"
                 ),
                 "risk": (
-                    "차이가 실재하는데 놓칠 가능성. 다만 stat 대 markov 를 가르려면 "
-                    "잡음바닥 재측정에 seed 16개면 되므로, 확인 비용이 낮다"
+                    f"차이가 실재하는데 놓칠 가능성. 다만 stat 대 markov 를 가르려면 "
+                    f"잡음바닥 재측정에 seed {pc['pairs'][0]['seeds_needed']}개가 필요하므로, "
+                    f"확인하려면 그만큼 더 돌려야 한다"
                 ),
             },
             {
@@ -1070,13 +1033,17 @@ def main() -> int:
                 "risk": "발권 성능과 지표가 분리된다. 지표 개선이 발권 개선을 보장하지 않음",
             },
             {
-                "what": "잡음바닥(SEED_NOISE_FLOOR)을 seed 16개 이상으로 재측정",
+                "what": f"잡음바닥 재측정 완료 — 현재 바닥 {prior['irreducible_seed_std']}",
                 "why": (
-                    "현재 바닥값 0.010127 은 seed 10개 기반이다. 이 값이 앞으로 모든 판정의 "
-                    "임계를 정하는데, 그 자체의 오차를 아직 모른다. 바닥을 신뢰하려면 "
-                    "먼저 바닥의 오차부터 좁혀야 한다"
+                    f"seed {pc['n_seeds_used_in_floor']}개로 다시 쟀다. 바닥값은 "
+                    f"{prior['irreducible_seed_std']} 이고 95% 신뢰구간이 "
+                    f"{prior['floor_uncertainty']['b']['ci95']} 라 **0 과 구별되지 않는다**. "
+                    "'표본을 늘려도 영원히 판정 불가'라는 이전 주장은 철회됐다"
                 ),
-                "risk": "재측정 시간만 든다. 코드·상수 변경 없음",
+                "risk": (
+                    "바닥이 정말 0 인지 가르려면 seed 를 더 늘려야 한다. "
+                    "다만 실무 임계는 이미 잡음 곡선에서 나오므로 급하지 않다"
+                ),
             },
         ],
         "verdict": {"code": code, "headline_ko": head, "detail_ko": detail},

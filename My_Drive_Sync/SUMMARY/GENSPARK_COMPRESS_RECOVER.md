@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`392320f` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`8bd0eef` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=392320f]
+[ROK21 젠스파크 압축복구 · HEAD=8bd0eef]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 392320f · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음
-- 직전: K-STAT-SEED-NOISE-FLOOR(바닥 b=0.010127 · FULL-WF Δ+0.0047 < 바닥 → 적중축 판정불가 확정) · R38 게이트 가동(k_gate · COMPLIANT)
-- BOOT다음: ①잡음바닥 seed16+ 재측정(권장 · 바닥 자체 오차 미상) ②1236+ 전향적 EV로그 ③seed 평균화 설계(형 GO 필요) 중 **형 1건 선택** · 발권가중 금지
-- NEXT1: K-NOISE-SOURCE-NEXT-PICK — stat 잡음 원인 진단 완료 — **결론: 질문의 전제가 무너짐(PREMISE_NOT_ESTABLISHED)**. 뇌별 팽창차(stat 1.2739 / markov 0.7329)는 seed10 측정오차 안이라 구분가능쌍 **0/3**. 잡음 유입점은 **'뽑기' 단계로 확정**(점수·repack 모두 결정적). 형 확인 후 1건 선택 — **①잡음바닥 seed 16+ 재측정**(권장 · 현 바닥 b=0.010127 이 seed10 기반이라 바닥 자체의 오차가 미상 · 이 값이 앞으로 모든 판정 임계를 정함 · stat↔markov 구분에 seed 16이면 충분) / ②회차 1236+ 전향적 EV 로그 시작 / ③seed 평균화 설계(같은 회차 반복 뽑기→번호 득표 · random.choices 무수정 · 발권경로 변경이라 형 GO 필요) / ④트랙정지
+- HEAD: 8bd0eef · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **SEED-NOISE-FLOOR v2**(n1183·seed24) — **FLOOR_NOT_ESTABLISHED**: 바닥 0.010127→**0.005087** · 잭나이프 95%CI **[−0.008244,0.018012]** 0 포함 → **「표본 늘려도 영원히 판정 불가」 철회**, 올바른 표현은 **「가용데이터로는 불가」** · **R39 신설**(σ 비교 전 σ/√(2(k−1)) 선검증 강제 · `tools/k_precision.py` 7/7)
+- 직전: K-STAT-NOISE-SOURCE(잡음 유입점 **'뽑기' 확정** · 뇌별 팽창차 구분가능쌍 **0/3** → stat 전용대책 근거 없음 · 반사실 결정적절단 짝지은 p=0.7156 무손해)
+- BOOT다음: ①1236+ 전향적 EV로그 ②seed 평균화 설계(형 GO 필요) ③바닥 0 여부 확정(seed 대폭 증량) 중 **형 1건 선택** · 발권가중 금지
+- NEXT1: K-FLOOR-V2-NEXT-PICK — 잡음바닥 seed24 재측정 완료 — **결론: FLOOR_NOT_ESTABLISHED**. 바닥 0.010127→**0.005087** · 잭나이프 95%CI **[−0.008244, 0.018012]** 로 0 과 구별 불가 → 「Δ+0.0047 < 바닥이니 표본 늘려도 영원히 판정 불가」 **철회**, 올바른 표현은 **「가용데이터(n=1183)로는 판정 불가」**(실무 처방은 동일). **R39 신설**(σ 비교 전 정밀도 선검증 강제). 형 확인 후 1건 선택 — **①회차 1236+ 전향적 EV 로그 시작**(권장 · 적중축은 어느 쪽 표현이든 지금 데이터로 닫혀 있고, 남은 인기회피축을 개입 없이 검증) / ②seed 평균화 설계(같은 회차 반복 뽑기→번호 득표 · 잡음 유입점이 '뽑기'로 확정됐으므로 √반복수만큼 감소 · random.choices 무수정이나 발권경로 변경이라 **형 GO 필수**) / ③바닥이 진짜 0 인지 확정(seed 대폭 증량 재측정 · 실익은 낮음 · 임계는 이미 잡음곡선에서 나옴) / ④트랙정지
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,14 +53,14 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
-- `20260808_KGATE_COMPLIANCE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KGATE_COMPLIANCE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KGATE_COMPLIANCE.md
 - `20260808_KSTAT_NOISE_SOURCE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_NOISE_SOURCE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_NOISE_SOURCE.md
-- `20260808_KSTAT_NOISE_SOURCE_RAW` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_NOISE_SOURCE_RAW.json
+- `20260808_KGATE_COMPLIANCE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KGATE_COMPLIANCE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KGATE_COMPLIANCE.md
 - `20260808_KSTAT_SEED_NOISE_FLOOR_raw` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_SEED_NOISE_FLOOR_raw.json
 - `20260808_KSTAT_SEED_NOISE_FLOOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_SEED_NOISE_FLOOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_SEED_NOISE_FLOOR.md
+- `20260808_KSTAT_NOISE_SOURCE_RAW` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_NOISE_SOURCE_RAW.json
 - `20260808_KSTAT_DECISION_GATE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KSTAT_DECISION_GATE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KSTAT_DECISION_GATE.md
 - `20260808_KPAST_LEARN_AUDIT_DIMS` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KPAST_LEARN_AUDIT_DIMS.json
@@ -77,7 +77,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=392320f · 지금=**K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음 · 다음=K-NOISE-SOURCE-NEXT-PICK
+1. 첫줄: [복귀] HEAD=8bd0eef · 지금=**SEED-NOISE-FLOOR v2**(n1183·seed24) — **FLOOR_NOT_ESTABLISHED**: 바닥 0.010127→**0.005087** · 잭나이프 95%CI **[−0.008244,0.018012]** 0 포함 → **「표본 늘려도 영원히 판정 불가」 철회**, 올바른 표현은 **「가용데이터로는 불가」** · **R39 신설**(σ 비교 전 σ/√(2(k−1)) 선검증 강제 · `tools/k_precision.py` 7/7) · 다음=K-FLOOR-V2-NEXT-PICK
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -109,4 +109,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 392320f_
+_generated: 8bd0eef_
