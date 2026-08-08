@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BRAIN-INDEPENDENCE-AUDIT**(형GO · 버그사냥) — **INDEPENDENCE_OK 14/14**. 형 지시 「한번 더 버그를 찾아보자」로 **2건 추가 발견·수정** — ⑥`repack_by_brain` 이 `number_scores` 에 **`brain_tag` 미전달** → 뇌별 가중치 dict 가 **한 번도 조회 안 되는 죽은 배선**(첫 hint 절제가 `+0.0000` 이던 게 증상) ⑦hint 축 개방 직후 **또 죽은 배선 검출** → 호출자 누락에도 `repack_by_brain` 이 직접 만들게 수정 · **죽은배선 탐지 B6 신설**(dict 바꿔서 결과 안 바뀌면 실패) · **실측**: 3뇌 점수세트 번호겹침 Jaccard **0.664~0.687**(공유 14.2~14.5개) vs 무작위 기대 **0.250** = 약 2.7배 · hint 0 으로 두면 **0.743→0.30** → **공유 hint 가 주원인** · 10세트 완전성·pass0≠pass1·뇌간 동일세트 0건 통과 · hint 개방은 성적 무변화 실증
-- 직전: **K-BRAIN-RNG-INDEPENDENT + K-PREDICT-RESET**(형GO) — **WIRE_CONFORMS 9/9**(1216~1235 · 리셋 후 재검증). ④`expand_pool` 이 3뇌를 **한 난수 흐름**으로 돌려 stat 이 markov 를 오염(발권경로는 이미 뇌별 시드리셋인데 pool 경로만 누락) → **뇌마다 `random.seed` 리셋** ⑤pass0 시드를 `seed+draw_no` 로 맞춰 **pool 1~5 = 실제 발권 5세트**(C8 신설) · 뇌별 상수 dict 개방(`POOL_SLOTS/SCORE_WEIGHTS/LEARN_EMA_BY_BRAIN` · **값 전부 동일=성적 무변화**) · **미해결 명시: hint 는 3뇌 공유**(`W_HINT=0.40` · 뇌별 hint 는 성적 주장이라 범위 밖) · DB 3뇌 예측 **7,094행 삭제**(원천 보존 · rare_hits·transition_log 는 회차파생이라 보존)
-- 다음: **선생님 차례** — 형 예정대로 **①과거학습 뇌(stat) 예측 튜닝**(권장) / ②뇌별 hint spec 값 차별화(배선 완료·값만 게이트 필요 · 겹침 2.7배의 주원인) / ③1236+ 자동시스템 배선 중 **형 1건 선택** · 발권가중 금지
+- 지금: **K-STAT-PASTLEARN-READY-CHECK**(READ-ONLY) — 과거학습 뇌가 「회차 숙제」 길로 패치 준비됐는지 점검. **방향·컨닝차단·파이프는 준비됨** · **학습/명분 DB는 리셋으로 비어 튜닝 직전 아님**. 실측: _get_draws_before(1235)→last1234 · cutoff 없으면 learn 로드 차단 · wire ON·v2 ON·ASSOC OFF · reasoning 태그 있음(1yHot) · learn_state/predictions/hit_warrant/evolve=0
+- 직전: K-BRAIN-INDEPENDENCE-AUDIT 14/14 · RNG독립·예측DB리셋
+- 다음: **형 GO** — ①회차 숙제 백테스트로 기록 채우기(권장·튜닝 전 필수) ②한 회차 명분 샘플 리뷰 ③재료 튜닝(게이트) 중 1건
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

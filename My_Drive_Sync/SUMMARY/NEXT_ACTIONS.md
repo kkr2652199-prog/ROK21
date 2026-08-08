@@ -3,12 +3,17 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-STAT-TUNE-START-PICK
-- 할일: 형 지시 「한번 더 버그를 찾아보자 · 없으면 과거학습 뇌부터 튜닝」 → **버그 2건 발견·수정 후 14/14** 이므로 **이제 튜닝 착수 가능**. ⑹ **`brain_tag` 죽은 배선**: `repack_by_brain` 이 `number_scores` 에 `brain_tag` 를 안 넘겨 **뇌별 가중치 dict 가 한 번도 조회되지 않았다**. 처음 hint 절제가 `+0.0000` 으로 나온 게 이 버그의 증상(절제가 물리적으로 불가능했다) → `brain_tag=tag` 추가. 다른 5개 호출부는 전부 넘기고 있었고 발권 분석 경로 하나만 누락 · ⑺ **죽은배선 탐지 B6 신설** 후 hint 축을 열자 **즉시 또 검출** → `repack_by_brain` 이 spec 갈릴 때 직접 만들게 수정 · **실측(형이 걱정한 「예측번호 공유」의 크기)**: 3뇌 점수세트 번호겹침 Jaccard **0.664~0.687**(공유 14.2~14.5개) vs 무작위 기대 **0.250** = 약 **2.7배**, hint 가중치 0 으로 두면 **0.743 → 0.30** → **공유 hint 가 주원인 확정** · 점수세트 번호의 자기 pool 출신 비율 **0.79~0.82**(약 20% 가 pool 밖 유입) · **깨지지 않은 것**: 10세트 정확·set_no 1~10·번호형식·**pass0≠pass1**(「10세트가 실은 5세트」 의심은 사실 아님 · 3뇌 전부 난수 사용)·뇌간 동일세트 0건·pool 슬롯 2자리·RNG 독립·학습 교차오염 없음. 형 1건 선택 — **①과거학습 뇌(stat) 예측 튜닝 착수**(권장 · 형 예정대로 · **착수 전 백테스트 재생성 필수** — DB 리셋으로 learn_state·feedback 이 비어 피드백·boost 경로가 현재 무효) / ②뇌별 hint spec 값 차별화(배선·탐지기 완료 · **값 결정만 R38 게이트 필요** · 겹침 2.7배의 주원인이라 효과 큼) / ③1236+ 회차별 자동시스템 배선(형이 「이후 패치」로 미뤄둔 건) / ④트랙정지
+- ID: K-STAT-HOMEWORK-FILL-PICK
+- 할일: **K-STAT-PASTLEARN-READY-CHECK 완료** — 형 질문 「확정 길(회차 숙제)로 패치 준비된 뇌인가?」에 대한 실측 답. **방향·컨닝차단·파이프는 준비됨 / 학습·명분 DB는 비어 튜닝 직전 아님.** 실측: `_get_draws_before(1235)`→last=1234 · `set_learn_as_of` 없으면 learn 로드 차단 · `PAST_LEARN_WIRE=ON`·`ENGINE_V2=ON`(past_learn경유)·ASSOC OFF · reasoning에 `1yHot` 태그 존재 · `learn_state/predictions/hit_warrant/evolve_log=0`. **확정 길 잠금**: 예측=N 숙제 · 재료=1..(N-1) · 채점=N 정답 · 깊은 패턴은 재료일 뿐 본선 아님. 형 1건 선택 — **①회차 숙제 백테스트로 기록 채우기**(권장 · 빈 DB로 decay/하드코딩 튜닝 금지) / ②한 회차(예 1235) 명분 샘플을 형이 읽고 부족한 점 지적 / ③재료 튜닝(게이트·성적주장) / ④트랙정지
 - 완료조건: 형이 ①~④ 중 1건 지정
-- 선행완료: `app/testlotto/signal_pool.py`(brain_tag 전달 · `HINT_SPEC_BY_BRAIN` · `build_hint_by_brain` · `hint_shared_across_brains()` · 호출자 누락 대비 자동생성) · `tools/_k_brain_independence_audit.py`(14검사 · B6 죽은배선 탐지) · `tools/_k_hint_neutrality_check.py`(성적 무변화 실증) · `tools/_k_predict_reset.py` · `tools/_k_db_table_census.py` · 벤치 JSON 3건 · 보고서 3건
-- 승인필요: 없음 (발권경로 `coordinator` 무변경 · 동결항목 무접촉 · DB 커밋 안 함)
+- 선행완료: `reports/20260808_KSTAT_PASTLEARN_READY_CHECK.md` · `past_learn.framework_snapshot` 파이프 확인 · 1235 예측 스모크
+- 승인필요: 없음 (READ-ONLY 점검 · 발권/동결 무접촉)
 - 선행조건: 없음
+- 최종갱신: 2026-08-08
+
+## 참고 (직전 1건)
+- ID: K-STAT-TUNE-START-PICK
+- 할일: (이전) 튜닝 착수 선택지 — READY-CHECK로 「기록 채우기 먼저」로 갱신됨
 - 최종갱신: 2026-08-08
 
 ## 참고 (직전 1건)
