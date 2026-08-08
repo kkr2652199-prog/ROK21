@@ -8,15 +8,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0fe62b1` |
+| HEAD(실측) | `5c93cda` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-STAT-SEED-NOISE-FLOOR** — n1183·seed10 전구간 · stat ge3 폭 **0.035503** · 분산적합 `a²/n+b²` → **바닥 b=0.010127**(R²0.9985) · **FULL-WF Δ+0.0047 < 바닥 → 표본 늘려도 판정 불가** |
-| 직전 | R38 게이트 강제 가동(k_gate 공용모듈 · COMPLIANT) · DECISION-GATE(win26/mix0.8=NOISE_SELECTION_CONFIRMED · 순서불변 2.429e-17) |
-| BOOT다음 | ①1236+ 전향적 EV로그 ②stat 잡음저감(팽창1.27 · markov 0.73 대비 최악) ③legacy 판정 게이트 소급적용 중 **형 1건 선택** · 발권가중 금지 |
-| NEXT1 ID | **K-NOISE-FLOOR-NEXT-PICK** |
-| NEXT1 할일 | 잡음 하한 확정 완료(**바닥 b=0.010127** · FULL-WF Δ+0.0047 이 바닥 미만 → 적중축은 표본을 늘려도 판정 불가로 확정) 형 확인 후 1건 선택 — **①회차 1236+ 전향적 EV 로그 시작**(권장 · 적중축이 닫혔으므로 유일하게 남은 인기회피축을 개입 없이 검증) / ②stat 잡음 저감 진단(팽창 stat 1.2739 vs markov 0.7329 — 왜 stat만 잡음을 더하는지 원인 특정) / ③legacy 132건 중 상수·배선에 실제 영향 준 판정만 게이트 소급적용 / ④트랙정지 |
-| 승인필요 | 없음 (①~③ 모두 측정·기록만 · 발권경로 무변경) |
+| 지금 | **K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음 |
+| 직전 | K-STAT-SEED-NOISE-FLOOR(바닥 b=0.010127 · FULL-WF Δ+0.0047 < 바닥 → 적중축 판정불가 확정) · R38 게이트 가동(k_gate · COMPLIANT) |
+| BOOT다음 | ①잡음바닥 seed16+ 재측정(권장 · 바닥 자체 오차 미상) ②1236+ 전향적 EV로그 ③seed 평균화 설계(형 GO 필요) 중 **형 1건 선택** · 발권가중 금지 |
+| NEXT1 ID | **K-NOISE-SOURCE-NEXT-PICK** |
+| NEXT1 할일 | stat 잡음 원인 진단 완료 — **결론: 질문의 전제가 무너짐(PREMISE_NOT_ESTABLISHED)**. 뇌별 팽창차(stat 1.2739 / markov 0.7329)는 seed10 측정오차 안이라 구분가능쌍 **0/3**. 잡음 유입점은 **'뽑기' 단계로 확정**(점수·repack 모두 결정적). 형 확인 후 1건 선택 — **①잡음바닥 seed 16+ 재측정**(권장 · 현 바닥 b=0.010127 이 seed10 기반이라 바닥 자체의 오차가 미상 · 이 값이 앞으로 모든 판정 임계를 정함 · stat↔markov 구분에 seed 16이면 충분) / ②회차 1236+ 전향적 EV 로그 시작 / ③seed 평균화 설계(같은 회차 반복 뽑기→번호 득표 · random.choices 무수정 · 발권경로 변경이라 형 GO 필요) / ④트랙정지 |
+| 승인필요 | 없음 (①②는 측정·기록만 · 발권경로 무변경) / ③은 형 GO 필수 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0fe62b1 · 지금=**K-STAT-SEED-NOISE-FLOOR** — n1183·seed10 전구간 · stat ge3 폭 **0.035503** · 분산적합 `a²/n+b²` → **바닥 b=0.010127**(R²0.9985) · **FULL-WF Δ+0.0047 < 바닥 → 표본 늘려도 판정 불가** · 다음=K-NOISE-FLOOR-NEXT-PICK`
+1. 첫줄 `[복귀] HEAD=5c93cda · 지금=**K-STAT-NOISE-SOURCE**(n400·seed24) — 잡음 유입점 **'뽑기' 단계로 확정**(점수·repack 결정적) · 그러나 **PREMISE_NOT_ESTABLISHED**: 뇌별 팽창차(stat1.2739/markov0.7329)가 seed10 오차 안(구분가능쌍 **0/3**) · 뇌수준 std 도 stat0.016040/markov0.015184/review0.013584 **동일** → stat 전용 대책 근거 없음 · 다음=K-NOISE-SOURCE-NEXT-PICK`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
