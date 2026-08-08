@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-REPACK-SIGNAL-WIRE**(형GO · 배선수정) — **WIRE_CONFORMS 7/7**. 몰아주기가 설계와 어긋난 3건 수정: ①3뇌가 `pos/num EMA` **한 장 공유**(`for _tag` 로 태그 버림) → **뇌별 분리** + `brain_signal()` 해석기 ②`for sn in (4,5)` **하드코딩** → `signal_top_set_nos()` 로 **위치 EMA 상위 2세트**(실측 4·5 이탈률 markov 1.000/review 1.000/stat 0.900) ③markov 만 pool 슬롯 0개 → **3뇌 동일**. 검증 1216~1235: C1 뇌별분리·C2 신호상위·C2b 4·5이탈·C3 3뇌동일·C4 세트통째보존·C5 결정성·C6 미래참조없음. **성적 주장 아님 → R38 게이트 대상 아님** · 발권경로(`coordinator`) 무변경 · 보존 슬롯수 2는 구 4·5 와 동수 유지(장수는 튜닝이라 범위 외)
-- 직전: K-REPACK-SELECT-DIAG(POOL_EQUALS_RANDOM · pool 10세트=무작위10장 · 「좋은세트 놓침」 전제 오독 확인) · K-SEED-AVERAGE-DESIGN(배선안함)
-- 다음: **선생님 먼저** — ①과거학습 뇌(stat) 예측 튜닝 ②당첨금(인기회피) 축 ③1236+ 전향적 EV로그 중 **형 1건 선택** · 발권가중 금지
+- 지금: **K-BRAIN-RNG-INDEPENDENT + K-PREDICT-RESET**(형GO) — **WIRE_CONFORMS 9/9**(1216~1235 · 리셋 후 재검증). ④`expand_pool` 이 3뇌를 **한 난수 흐름**으로 돌려 stat 이 markov 를 오염(발권경로는 이미 뇌별 시드리셋인데 pool 경로만 누락) → **뇌마다 `random.seed` 리셋** ⑤pass0 시드를 `seed+draw_no` 로 맞춰 **pool 1~5 = 실제 발권 5세트**(C8 신설) · 뇌별 상수 dict 개방(`POOL_SLOTS/SCORE_WEIGHTS/LEARN_EMA_BY_BRAIN` · **값 전부 동일=성적 무변화**) · **미해결 명시: hint 는 3뇌 공유**(`W_HINT=0.40` · 뇌별 hint 는 성적 주장이라 범위 밖) · DB 3뇌 예측 **7,094행 삭제**(원천 보존 · rare_hits·transition_log 는 회차파생이라 보존)
+- 직전: K-REPACK-SIGNAL-WIRE(성적표 뇌별분리·4·5고정제거·3뇌동일 · 7/7) · K-REPACK-SELECT-DIAG(POOL_EQUALS_RANDOM)
+- 다음: **선생님 차례** — ①과거학습 뇌(stat) 예측 튜닝 ②뇌별 hint 분리 ③1236+ 자동시스템 배선 중 **형 1건 선택** · 발권가중 금지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

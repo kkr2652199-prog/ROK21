@@ -41,6 +41,20 @@ ASSEMBLE_MODE: str = "signal_top"  # "p45_r123"=구버전 · ""=전원 baseline
 POOL_SLOTS_PER_BRAIN: int = 2
 SIGNAL_TOP_BRAINS: frozenset[str] = frozenset(BRAIN_TAGS)
 
+# K-BRAIN-INDEPENDENT (20260808) — 뇌별로 따로 정할 수 있게 구조만 열어둔다.
+# **현재 값은 3뇌 전부 동일** = 성적 무변화. 값을 다르게 만드는 것은 성적 주장이
+# 필요한 튜닝이므로 R38 게이트를 통과한 뒤에 바꾼다.
+POOL_SLOTS_BY_BRAIN: dict[str, int] = dict.fromkeys(BRAIN_TAGS, POOL_SLOTS_PER_BRAIN)
+SCORE_WEIGHTS_BY_BRAIN: dict[str, tuple[float, float, float]] = dict.fromkeys(
+    BRAIN_TAGS, (W_HINT, W_FREQ, W_LEARN)
+)
+LEARN_EMA_BY_BRAIN: dict[str, float] = dict.fromkeys(BRAIN_TAGS, LEARN_EMA)
+
+# hint 는 아직 3뇌 공유다 (`_build_hint` 하나를 그대로 넘김 · 가중치 W_HINT).
+# 뇌별 hint 는 「어느 신호가 어느 뇌에 맞는가」를 데이터로 정해야 하므로
+# 성적 주장이 필요한 튜닝 = 이번 범위 밖. 이 사실을 메타에 드러낸다.
+HINT_SHARED_ACROSS_BRAINS: bool = True
+
 # K-EVOLVE-FEAT-LAM-REVAL — full history에서 review λ0.3 기각 → OFF
 FEATURE_LAMBDA_WIRE: bool = False
 
@@ -84,6 +98,7 @@ class RollingSignalLearner:
         for tag, pool in pool_by_brain.items():
             num_t = self.num_hit_ema.setdefault(tag, self._new_num())
             pos_t = self.pos_hit_ema.setdefault(tag, self._new_pos())
+            a = LEARN_EMA_BY_BRAIN.get(tag, LEARN_EMA)
             for c in pool:
                 sn = int(c.get("pred_set_no") or c.get("set_no") or 1)
                 nums = [int(x) for x in c["nums"]]
@@ -92,10 +107,10 @@ class RollingSignalLearner:
                 if mc <= 0:
                     continue
                 credit = mc / 6.0
-                pos_t[sn] = (1 - LEARN_EMA) * pos_t.get(sn, 0.0) + LEARN_EMA * credit
+                pos_t[sn] = (1 - a) * pos_t.get(sn, 0.0) + a * credit
                 for n in nums:
                     if n in actual:
-                        num_t[n] = (1 - LEARN_EMA) * num_t.get(n, 0.0) + LEARN_EMA * credit
+                        num_t[n] = (1 - a) * num_t.get(n, 0.0) + a * credit
 
 
 def brain_signal(table: dict, brain_tag: str | None) -> dict[int, float]:
@@ -118,26 +133,43 @@ def brain_signal(table: dict, brain_tag: str | None) -> dict[int, float]:
 
 
 def _live_candidates(draws: list[dict], draw_no: int) -> list[dict]:
-    """Coordinator live WF — survey _k_window_signal_survey._live_candidates 와 동일."""
+    """구버전 — 3뇌를 **한 난수 흐름으로** 순차 호출 (뇌 간 RNG 오염). 대조용."""
     from tools._k_window_signal_survey import _live_candidates as _lc
 
     return _lc(draws, draw_no)
 
 
+def _pass_seed(seed: int, draw_no: int, pass_idx: int) -> int:
+    """pass 별 시드. pass0 은 `coordinator._seed_independent_brain` 과 같은 규칙이라
+    pool 1~5 세트가 실제 발권 경로가 만드는 5세트와 일치한다.
+    """
+    return int(seed) + int(draw_no) + pass_idx * 10000
+
+
 def expand_pool(draws: list[dict], draw_no: int, *, seed: int = MC_SEED) -> list[dict]:
-    """Survey-only 10-set/brain: 2× predict_sets (seed offset on pass 2)."""
+    """뇌별 10세트 pool = 뇌마다 2× predict_sets.
+
+    K-BRAIN-RNG-INDEPENDENT (20260808) — **뇌마다 시드를 리셋한다.** 이전에는
+    3뇌를 한 난수 흐름으로 순차 호출해서, 앞 뇌가 뽑기를 몇 번 하느냐에 따라
+    뒤 뇌의 결과가 바뀌었다(stat → markov 오염). 발권 경로(`coordinator`)는
+    이미 뇌마다 시드를 리셋하고 있었고 pool 경로만 빠져 있었다.
+    """
+    from tools._k_window_signal_survey import PREDICT_MODULES
+
     pool: list[dict] = []
     for pass_idx in range(2):
-        if pass_idx == 0:
-            random.seed(seed)
-        else:
-            random.seed(seed + 10000 + draw_no)
-        batch = _live_candidates(draws, draw_no)
-        for c in batch:
-            base_sn = int(c.get("pred_set_no") or c.get("set_no") or 1)
-            c = {**c, "pred_set_no": base_sn + pass_idx * SETS_PER_PREDICT_BRAIN}
-            c["set_no"] = c["pred_set_no"]
-            pool.append(c)
+        s = _pass_seed(seed, draw_no, pass_idx)
+        for tag in BRAIN_TAGS:
+            mod = PREDICT_MODULES.get(tag)
+            if mod is None:
+                continue
+            random.seed(s)  # 뇌마다 같은 시작점 → 서로 오염되지 않음
+            for i, c in enumerate(mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)):
+                base_sn = int(
+                    c.get("rank") or c.get("set_no") or c.get("pred_set_no") or (i + 1)
+                )
+                sn = base_sn + pass_idx * SETS_PER_PREDICT_BRAIN
+                pool.append({**c, "brain_tag": tag, "pred_set_no": sn, "set_no": sn})
     return pool
 
 
@@ -171,6 +203,9 @@ def number_scores(
 ) -> dict[int, float]:
     num_t = brain_signal(num_ema, brain_tag)
     pos_t = brain_signal(pos_ema, brain_tag)
+    w_hint, w_freq, w_learn = SCORE_WEIGHTS_BY_BRAIN.get(
+        brain_tag or "", (W_HINT, W_FREQ, W_LEARN)
+    )
     freq = _pool_freq(pool)
     pos_boost: dict[int, float] = defaultdict(float)
     for c in pool:
@@ -187,9 +222,9 @@ def number_scores(
             scores[n] = max(0.0, hint.get(n, 0.0))
         else:
             scores[n] = (
-                W_HINT * max(0.0, hint.get(n, 0.0))
-                + W_FREQ * freq.get(n, 0.0)
-                + W_LEARN * (num_t.get(n, 0.0) + 0.5 * pos_boost.get(n, 0.0))
+                w_hint * max(0.0, hint.get(n, 0.0))
+                + w_freq * freq.get(n, 0.0)
+                + w_learn * (num_t.get(n, 0.0) + 0.5 * pos_boost.get(n, 0.0))
             )
     return scores
 
@@ -308,7 +343,8 @@ def _assembled_for_brain(
 ) -> tuple[list[dict] | None, str]:
     """뇌별 조립 방식 선택. (조립결과, 라벨) — None 이면 baseline 점수몰아주기."""
     if ASSEMBLE_MODE == "signal_top" and tag in SIGNAL_TOP_BRAINS:
-        return assemble_signal_top(pool, classic, pos_t), "signal_top"
+        n_slots = POOL_SLOTS_BY_BRAIN.get(tag, POOL_SLOTS_PER_BRAIN)
+        return assemble_signal_top(pool, classic, pos_t, n_slots=n_slots), "signal_top"
     if ASSEMBLE_MODE == "p45_r123" and tag in HYBRID_P45_R123_BRAINS:
         return assemble_hybrid_p45_r123(pool, classic), "hy_p45_r123"
     return None, "baseline_repack"
@@ -513,8 +549,10 @@ def _assemble_meta() -> dict[str, Any]:
         return {
             "mode": "signal_top",
             "brains": sorted(SIGNAL_TOP_BRAINS),
-            "pool_slots_per_brain": POOL_SLOTS_PER_BRAIN,
+            "pool_slots_by_brain": dict(POOL_SLOTS_BY_BRAIN),
             "pool_slot_rule": "위치 EMA 상위 (뇌별 성적표)",
+            "rng_independent": True,
+            "hint_shared_across_brains": HINT_SHARED_ACROSS_BRAINS,
         }
     if ASSEMBLE_MODE == "p45_r123":
         return {

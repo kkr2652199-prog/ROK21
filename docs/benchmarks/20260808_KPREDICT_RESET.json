@@ -1,0 +1,142 @@
+{
+  "id": "K-PREDICT-RESET",
+  "generated_at": "2026-08-08T08:07:05.148450+00:00",
+  "db": "D:/ROK21/data/lotto_testlotto.db",
+  "applied": true,
+  "backup": "없음 (형 지시)",
+  "db_mb_before": 51.98,
+  "db_mb_after": 34.43,
+  "survey": {
+    "tables": [
+      "hit_warrant_log",
+      "lotto_analysis",
+      "lotto_draws",
+      "lotto_predictions",
+      "sqlite_sequence",
+      "testlotto_backtest_draw_results",
+      "testlotto_backtest_runs",
+      "testlotto_brain_learn_state",
+      "testlotto_brain_page",
+      "testlotto_brain_review",
+      "testlotto_brain_weights",
+      "testlotto_draw_detail",
+      "testlotto_draw_features",
+      "testlotto_draw_prize_tiers",
+      "testlotto_draw_win_stores",
+      "testlotto_evolve_auto_state",
+      "testlotto_evolve_log",
+      "testlotto_pool_view_cache",
+      "testlotto_rare_bundle_catalog",
+      "testlotto_rare_bundle_hits",
+      "transition_log"
+    ],
+    "counts_before": {
+      "hit_warrant_log": 1134,
+      "lotto_analysis": 0,
+      "lotto_draws": 1235,
+      "lotto_predictions": 1000,
+      "sqlite_sequence": 7,
+      "testlotto_backtest_draw_results": 800,
+      "testlotto_backtest_runs": 4,
+      "testlotto_brain_learn_state": 3,
+      "testlotto_brain_page": 3698,
+      "testlotto_brain_review": 0,
+      "testlotto_brain_weights": 3,
+      "testlotto_draw_detail": 1234,
+      "testlotto_draw_features": 1234,
+      "testlotto_draw_prize_tiers": 6170,
+      "testlotto_draw_win_stores": 0,
+      "testlotto_evolve_auto_state": 1,
+      "testlotto_evolve_log": 3549,
+      "testlotto_pool_view_cache": 600,
+      "testlotto_rare_bundle_catalog": 213,
+      "testlotto_rare_bundle_hits": 1235,
+      "transition_log": 1134
+    },
+    "brain_columns": {
+      "lotto_predictions": [
+        "brain_tag"
+      ],
+      "testlotto_brain_learn_state": [
+        "brain_tag"
+      ],
+      "testlotto_brain_page": [
+        "brain_tag"
+      ],
+      "testlotto_brain_review": [
+        "brain_tag"
+      ],
+      "testlotto_brain_weights": [
+        "brain_tag"
+      ],
+      "testlotto_evolve_log": [
+        "brain_tag"
+      ],
+      "testlotto_pool_view_cache": [
+        "brain"
+      ]
+    },
+    "unknown_tables": [],
+    "to_delete": {
+      "lotto_predictions": 1000,
+      "lotto_analysis": 0,
+      "testlotto_brain_review": 0,
+      "testlotto_brain_learn_state": 3,
+      "testlotto_brain_weights": 3,
+      "testlotto_backtest_runs": 4,
+      "testlotto_backtest_draw_results": 800,
+      "testlotto_pool_view_cache": 600,
+      "testlotto_evolve_log": 3549,
+      "testlotto_evolve_auto_state": 1,
+      "hit_warrant_log": 1134
+    },
+    "to_keep": {
+      "lotto_draws": 1235,
+      "testlotto_draw_features": 1234,
+      "testlotto_draw_prize_tiers": 6170,
+      "testlotto_draw_detail": 1234,
+      "testlotto_draw_win_stores": 0,
+      "testlotto_rare_bundle_catalog": 213,
+      "testlotto_rare_bundle_hits": 1235,
+      "transition_log": 1134,
+      "testlotto_brain_page": 3698,
+      "sqlite_sequence": 7
+    }
+  },
+  "deleted": {
+    "hit_warrant_log": 1134,
+    "lotto_analysis": 0,
+    "lotto_predictions": 1000,
+    "testlotto_backtest_draw_results": 800,
+    "testlotto_backtest_runs": 4,
+    "testlotto_brain_learn_state": 3,
+    "testlotto_brain_review": 0,
+    "testlotto_brain_weights": 3,
+    "testlotto_evolve_auto_state": 1,
+    "testlotto_evolve_log": 3549,
+    "testlotto_pool_view_cache": 600
+  },
+  "counts_after": {
+    "hit_warrant_log": 0,
+    "lotto_analysis": 0,
+    "lotto_draws": 1235,
+    "lotto_predictions": 0,
+    "sqlite_sequence": 7,
+    "testlotto_backtest_draw_results": 0,
+    "testlotto_backtest_runs": 0,
+    "testlotto_brain_learn_state": 0,
+    "testlotto_brain_page": 3698,
+    "testlotto_brain_review": 0,
+    "testlotto_brain_weights": 3,
+    "testlotto_draw_detail": 1234,
+    "testlotto_draw_features": 1234,
+    "testlotto_draw_prize_tiers": 6170,
+    "testlotto_draw_win_stores": 0,
+    "testlotto_evolve_auto_state": 1,
+    "testlotto_evolve_log": 0,
+    "testlotto_pool_view_cache": 0,
+    "testlotto_rare_bundle_catalog": 213,
+    "testlotto_rare_bundle_hits": 1235,
+    "transition_log": 1134
+  }
+}

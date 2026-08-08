@@ -3,6 +3,15 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
+- ID: K-BRAIN-INDEPENDENT-NEXT-PICK
+- 할일: 형 지시 3건 **완료** — ⑴ **나머지 2뇌 독립**: 「3뇌 동일 배선」은 앞 턴에 됐지만 **독립은 아니었다**. `expand_pool` 이 `_live_candidates` 로 3뇌를 **한 난수 흐름에서 순차 호출**해 앞 뇌의 뽑기 소비량이 뒤 뇌 결과를 바꿨다(stat→markov 오염). 발권경로 `coordinator._seed_independent_brain` 은 이미 뇌별 시드리셋인데 **pool 경로만 누락**이었다 → `expand_pool` 이 `BRAIN_TAGS` 를 직접 돌며 뇌마다 시드 리셋. 덤으로 pass0 시드를 발권 규칙(`42+draw_no`)과 맞춰 **pool 1~5 = 실제 발권 5세트** 확보(C8 신설 · 분석과 발권이 어긋나던 것도 해소). 뇌별 상수 dict(`POOL_SLOTS_BY_BRAIN`·`SCORE_WEIGHTS_BY_BRAIN`·`LEARN_EMA_BY_BRAIN`) 개방했으나 **값은 3뇌 동일 = 성적 무변화**(차별화는 게이트 통과 후) · 검증 **9/9**(1216~1235 · 리셋 후 재실행) · ⑵ **DB 리셋**: 테스트로또 DB 3뇌 예측 **7,094행 삭제** · 원천데이터 보존 · `rare_bundle_hits`·`transition_log` 는 회차 파생이라 3뇌 예측 아님 → 보존 · ⑶ **미해결 1건 명시**: `HINT_SHARED_ACROSS_BRAINS=True` — `_build_hint` 하나를 3뇌에 그대로 넘기고 `W_HINT=0.40` 이라 **점수의 40%가 3뇌 동일**. 완전 독립이 아니다. 형 확인 후 1건 선택 — **①과거학습 뇌(stat) 예측 튜닝**(권장 · 형이 말한 「과거 회차 분석해 번호 예측하는 뇌 튜닝」 · 통로가 뚫렸으니 이제 개선이 몰아주기까지 전달됨 · 튜닝 지점 후보는 아래 메모) / ②뇌별 hint 분리(남은 마지막 공유축 · 단 어느 hint 가 어느 뇌에 맞는지는 데이터로 정해야 하므로 게이트 필요) / ③1236+ 회차별 자동시스템 배선(형이 「이후 패치」로 미뤄둔 건) / ④트랙정지
+- 완료조건: 형이 ①~④ 중 1건 지정
+- 선행완료: `app/testlotto/signal_pool.py`(RNG 독립·뇌별 상수·`_pass_seed`) · `tools/_k_repack_signal_wire_verify.py`(9/9 · C7·C8 신설) · `tools/_k_predict_reset.py`(dry-run 기본 · `K_RESET_APPLY=1` 로만 삭제) · `tools/_k_db_table_census.py` · 벤치 JSON 2건 · 보고서 2건 · 커서보고서 동기
+- 승인필요: 없음 (발권경로 `coordinator` 무변경 · 동결항목 무접촉 · DB 는 커밋 안 함)
+- 선행조건: 없음
+- 최종갱신: 2026-08-08
+
+## 참고 (직전 1건)
 - ID: K-SIGNAL-WIRE-NEXT-PICK
 - 할일: 형 지시 「몰아주기 정상작동 패치」 **완료 · WIRE_CONFORMS 7/7**. 형 지적(「백테스트 성적으로 몰아주기를 판정하지 말라 · 선생님이 잘 가르쳐야 학생 성적이 오른다」)이 정확했고, 코드를 다시 읽어 **설계와 어긋난 배선 3건**을 찾아 고쳤다 — ①`update_from_pool` 이 `for _tag` 로 뇌를 버려 3뇌가 성적표 한 장을 공유(stat 3번 세트 성적에 markov·review 3번 성적이 겹침 = 뇌를 개선해도 전달 불가) → 뇌별 분리 + `brain_signal()` ②`assemble_hybrid_p45_r123` 의 `for sn in (4, 5)` 하드코딩(신호 0 인 세트도 항상 발권·신호 최고 세트는 버림) → `assemble_signal_top()` 위치 EMA 상위 2세트 · **실측 4·5 이탈률 markov 1.000 / review 1.000 / stat 0.900** = 신호가 4·5 를 가리키는 건 20회 중 2회뿐이었다 ③markov 만 pool 슬롯 0개 → 3뇌 동일. **이 수정은 성적 주장이 아니라 설계일치이므로 R38 게이트 대상이 아니다**(코드 판독으로 확정). 보존 슬롯수 2는 구 4·5 와 동수 유지 — 「몇 장 보존할지」는 성적 주장이 필요하므로 범위 제외. 이제 **통로가 뚫렸으므로 선생님 차례**. 형 확인 후 1건 선택 — **①과거학습 뇌(stat) 예측 튜닝**(권장 · 형이 말한 「과거 회차를 분석해서 번호를 예측하는 뇌 튜닝」 · 뇌가 좋아지면 이제 그 신호가 몰아주기까지 실제로 전달된다) / ②당첨금(인기회피) 축 설계(저번호·저합 sum β−0.0575) / ③1236+ 전향적 EV 로그 시작 / ④트랙정지
 - 완료조건: 형이 ①~④ 중 1건 지정
@@ -56,4 +65,8 @@ IDLE
 - **판정 기준 구분(20260808 형 지적 반영 · 중요)**: ⑴ **「성적이 올랐다」 주장** → R38 게이트 필수. 안 그러면 잡음을 신호로 착각한다(win26/mix0.8 사례) ⑵ **「코드가 설계와 다르다」 수정** → 게이트 불필요. 코드 판독으로 확정되며 성적과 무관하게 고쳐야 한다. K-REPACK-SIGNAL-WIRE 3건은 전부 ⑵ 였다. 백테스트 성적표를 모든 판단의 심판으로 쓰던 것이 오분석의 원인 — 백테스트 DB는 테스트 결과일 뿐 목표가 아니다
 - **순서 원칙(형)**: 선생님(과거학습 뇌)이 잘 가르쳐야 학생(몰아주기) 성적이 오른다. 신호 전달 통로를 먼저 뚫고(=배선 수정 완료), 그 다음 뇌 튜닝. 통로가 막힌 상태에서 뇌만 손대면 좋아져도 전달이 안 되어 「효과 없다」고 잘못 결론 낸다
 - **뇌별 성적표 분리 완료(K-REPACK-SIGNAL-WIRE)**: `RollingSignalLearner.num_hit_ema`·`pos_hit_ema` 는 이제 `dict[brain][key]` 중첩. `snapshot()` 도 중첩 반환 → 옛 도구가 `num_ema.get(n)` 로 바로 읽으면 **조용히 0** 이 나온다. 반드시 `brain_signal(table, tag)` 를 거칠 것. `number_scores(..., brain_tag=...)` 신설
+- **RNG 독립 완료(K-BRAIN-RNG-INDEPENDENT)**: `expand_pool` 은 더 이상 `_live_candidates` 를 쓰지 않고 뇌마다 `random.seed(_pass_seed(seed,draw_no,pass))` 를 건다. **구 `_live_candidates` 는 대조군으로만 남김**(3뇌 한 흐름 = 오염 버전). pass0 시드가 `seed+draw_no` 로 바뀌었으므로 **20260808 이전 pool 기반 벤치 수치는 새 배선과 직접 비교 불가**(재측정 필요)
+- **pool 1~5 = 발권 5세트(C8)**: `_pass_seed(...,pass=0)` 이 `coordinator._seed_independent_brain`(=`42+draw_no`) 과 같은 규칙. 분석경로 앞 5세트가 실제 티켓 후보와 일치한다. coordinator 시드 규칙을 바꾸면 C8 이 깨지므로 같이 고칠 것
+- **아직 남은 공유축 = hint**: `HINT_SHARED_ACROSS_BRAINS=True`. `_build_hint(draws, dno)` 하나를 3뇌에 그대로 넘기고 `W_HINT=0.40` 이므로 **점수의 40%가 3뇌 동일**. 「완전 독립」이라고 말하면 안 된다
+- **과거학습 뇌 튜닝 지점 후보(미검증·근거파일 없음 = 착수 시 실측 필요)**: `stat_brain/engine.py` — `ENGINE_V2=False`(v2 미가동) · `V2_SHORT_WIN=26`·`V2_SHORT_MIX=0.8`·`V2_LONG_DECAY=0.005`·`V2_SHORT_DECAY=0.05`(전부 잡음선택 이력 있음 · 되돌릴 근거도 없어 유지 중) · `hot_count>=2 → freq*=1.2`(하드코딩) · `top_pairs[:30] → bonus=0.05*cnt` 상한 0.5(하드코딩) · 피드백 `trap*0.8`/`hit*1.15`(하드코딩) · `learn.apply_learn_boost` 의 overdue gap>=30 조건. **DB 리셋으로 learn_state·feedback 이 비었으므로 지금은 이 경로들이 무효(중립) 상태** — 튜닝 전 백테스트 재생성 필요
 - 상수·배선 불변: engine decay 0.005/0.05 · FRAME win26/mix0.8 · ASSOC/transition/LSTM OFF

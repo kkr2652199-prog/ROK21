@@ -16,6 +16,8 @@
   C4 통째 보존이 실제로 되는가 (발권 세트가 pool 세트와 번호까지 같은가)
   C5 같은 seed 로 두 번 돌리면 완전히 같은가 (결정성)
   C6 미래참조가 없는가 (N회 신호가 N회 정답을 안 보는가)
+  C7 뇌 간 RNG 독립인가 (한 뇌만 돌려도 같은 세트가 나오는가)
+  C8 pool 1~5 가 실제 발권 경로의 5세트와 일치하는가
 
 Usage
   python tools/_k_repack_signal_wire_verify.py
@@ -204,6 +206,84 @@ def check_no_peek(dno: int, seed: int) -> dict[str, Any]:
     }
 
 
+def check_rng_independent(dno: int, seed: int) -> dict[str, Any]:
+    """C7 — 한 뇌만 단독으로 돌려도 같은 세트가 나오는가.
+
+    3뇌를 한 난수 흐름으로 돌리면 앞 뇌의 뽑기 횟수가 뒤 뇌를 바꾼다. 뇌마다
+    시드를 리셋하면 「단독 실행」과 「3뇌 함께 실행」의 결과가 같아야 한다.
+    """
+    import app.testlotto.signal_pool as sp
+    from tools._k_window_signal_survey import PREDICT_MODULES
+
+    sp.set_learn_as_of(dno)
+    draws = sp._get_draws_before(dno)
+    together = sp._pool_by_brain(sp.expand_pool(draws, dno, seed=seed))
+
+    per_brain: dict[str, Any] = {}
+    for tag in sp.BRAIN_TAGS:
+        mod = PREDICT_MODULES.get(tag)
+        if mod is None:
+            continue
+        solo: list[list[int]] = []
+        for pass_idx in range(2):
+            random.seed(sp._pass_seed(seed, dno, pass_idx))
+            solo += [
+                sorted(int(x) for x in c["nums"])
+                for c in mod.predict_sets(draws, sp.SETS_PER_PREDICT_BRAIN)
+            ]
+        joint = [
+            sorted(int(x) for x in c["nums"])
+            for c in sorted(
+                together.get(tag, []), key=lambda x: int(x.get("pred_set_no") or 0)
+            )
+        ]
+        per_brain[tag] = {"solo_equals_joint": solo == joint, "n_sets": len(joint)}
+    return {
+        "draw_no": dno,
+        "by_brain": per_brain,
+        "all_independent": all(v["solo_equals_joint"] for v in per_brain.values()),
+    }
+
+
+def check_pool_matches_live(dno: int, seed: int) -> dict[str, Any]:
+    """C8 — pool 1~5 가 발권 경로(`coordinator`)의 5세트와 같은가.
+
+    `_pass_seed(pass 0)` 은 `coordinator._seed_independent_brain` 과 같은 규칙이므로
+    pool 앞 5세트는 실제 티켓 후보와 일치해야 한다. 분석과 발권이 어긋나지 않는지 본다.
+    """
+    import app.testlotto.signal_pool as sp
+    from app.testlotto.brains.coordinator import _seed_independent_brain
+    from tools._k_window_signal_survey import PREDICT_MODULES
+
+    sp.set_learn_as_of(dno)
+    draws = sp._get_draws_before(dno)
+    pool_br = sp._pool_by_brain(sp.expand_pool(draws, dno, seed=seed))
+
+    per_brain: dict[str, Any] = {}
+    for tag in sp.BRAIN_TAGS:
+        mod = PREDICT_MODULES.get(tag)
+        if mod is None:
+            continue
+        _seed_independent_brain(dno)
+        live = [
+            sorted(int(x) for x in c["nums"])
+            for c in mod.predict_sets(draws, sp.SETS_PER_PREDICT_BRAIN)
+        ]
+        first5 = [
+            sorted(int(x) for x in c["nums"])
+            for c in sorted(
+                pool_br.get(tag, []), key=lambda x: int(x.get("pred_set_no") or 0)
+            )[: sp.SETS_PER_PREDICT_BRAIN]
+        ]
+        per_brain[tag] = {"pool_first5_equals_live": live == first5}
+    return {
+        "draw_no": dno,
+        "by_brain": per_brain,
+        "all_match": all(v["pool_first5_equals_live"] for v in per_brain.values()),
+        "note_ko": "coordinator 시드 규칙 = MC_SEED(42) + draw_no 여야 성립",
+    }
+
+
 def run(lo: int, hi: int, seed: int) -> dict[str, Any]:
     import app.testlotto.signal_pool as sp
 
@@ -244,6 +324,8 @@ def run(lo: int, hi: int, seed: int) -> dict[str, Any]:
         "c2_c3_c4_by_brain": agg,
         "c5_determinism": check_determinism(hi, seed),
         "c6_no_peek": check_no_peek(hi, seed),
+        "c7_rng_independent": check_rng_independent(hi, seed),
+        "c8_pool_matches_live": check_pool_matches_live(hi, seed),
         "per_draw": per_draw,
     }
 
@@ -295,6 +377,16 @@ def verdict(res: dict[str, Any], n_slots: int, tags: list[str]) -> dict[str, Any
     checks["C6_미래참조_없음"] = {
         "pass": bool(res["c6_no_peek"]["state_changes_when_actual_fed"]),
         "detail_ko": "해당 회차 정답이 그 회차 신호표에 안 들어가 있다",
+    }
+    checks["C7_뇌간_RNG독립"] = {
+        "pass": bool(res["c7_rng_independent"]["all_independent"]),
+        "detail_ko": "한 뇌만 단독 실행해도 3뇌 함께 실행과 같은 세트가 나온다",
+        "by_brain": res["c7_rng_independent"]["by_brain"],
+    }
+    checks["C8_pool1~5＝발권세트"] = {
+        "pass": bool(res["c8_pool_matches_live"]["all_match"]),
+        "detail_ko": "pool 앞 5세트가 발권 경로(coordinator)의 5세트와 일치",
+        "by_brain": res["c8_pool_matches_live"]["by_brain"],
     }
 
     all_pass = all(v["pass"] for v in checks.values())
@@ -360,6 +452,15 @@ def build_md(p: dict[str, Any]) -> str:
         "|성적표|3뇌가 한 장 공유 (`for _tag`)|뇌별 분리|",
         "|pool 슬롯 선택|`for sn in (4, 5)` 고정|위치 EMA 상위|",
         "|대상 뇌|stat·review 만|3뇌 전부|",
+        "|RNG|3뇌를 한 난수 흐름으로 순차 호출|뇌마다 시드 리셋|",
+        "|pool pass0 시드|`seed` (발권과 불일치)|`seed+draw_no` (발권과 동일)|",
+        "|뇌별 상수|단일 상수|뇌별 dict (**값은 전부 동일** = 성적 무변화)|",
+        "",
+        "아직 공유 중인 것 (튜닝 과제 · 이번 범위 밖):",
+        "",
+        f"- **hint 는 3뇌 공유** (`HINT_SHARED_ACROSS_BRAINS={p['config'].get('HINT_SHARED_ACROSS_BRAINS')}`)."
+        " 가중치가 가장 크므로 영향이 크지만, 「어느 신호가 어느 뇌에 맞는가」는"
+        " 데이터로 정해야 하는 성적 주장이다",
         "",
         "## 4. 한계",
         "",
@@ -395,9 +496,13 @@ def main() -> None:
         "seed": seed,
         "config": {
             "ASSEMBLE_MODE": sp.ASSEMBLE_MODE,
-            "POOL_SLOTS_PER_BRAIN": sp.POOL_SLOTS_PER_BRAIN,
+            "POOL_SLOTS_BY_BRAIN": dict(sp.POOL_SLOTS_BY_BRAIN),
             "SIGNAL_TOP_BRAINS": sorted(sp.SIGNAL_TOP_BRAINS),
-            "LEARN_EMA": sp.LEARN_EMA,
+            "SCORE_WEIGHTS_BY_BRAIN": {
+                k: list(v) for k, v in sp.SCORE_WEIGHTS_BY_BRAIN.items()
+            },
+            "LEARN_EMA_BY_BRAIN": dict(sp.LEARN_EMA_BY_BRAIN),
+            "HINT_SHARED_ACROSS_BRAINS": sp.HINT_SHARED_ACROSS_BRAINS,
         },
         "policy": {
             "measures_performance": False,

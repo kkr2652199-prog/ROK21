@@ -1,6 +1,6 @@
 {
   "id": "K-REPACK-SIGNAL-WIRE-VERIFY",
-  "generated_at": "2026-08-08T07:42:55.618775+00:00",
+  "generated_at": "2026-08-08T08:13:00.144035+00:00",
   "range": [
     1216,
     1235
@@ -8,13 +8,39 @@
   "seed": 42,
   "config": {
     "ASSEMBLE_MODE": "signal_top",
-    "POOL_SLOTS_PER_BRAIN": 2,
+    "POOL_SLOTS_BY_BRAIN": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
     "SIGNAL_TOP_BRAINS": [
       "markov",
       "review",
       "stat"
     ],
-    "LEARN_EMA": 0.15
+    "SCORE_WEIGHTS_BY_BRAIN": {
+      "markov": [
+        0.4,
+        0.25,
+        0.35
+      ],
+      "stat": [
+        0.4,
+        0.25,
+        0.35
+      ],
+      "review": [
+        0.4,
+        0.25,
+        0.35
+      ]
+    },
+    "LEARN_EMA_BY_BRAIN": {
+      "markov": 0.15,
+      "stat": 0.15,
+      "review": 0.15
+    },
+    "HINT_SHARED_ACROSS_BRAINS": true
   },
   "policy": {
     "measures_performance": false,
@@ -36,7 +62,7 @@
         "detail_ko": "회차별로 4·5 이외 세트도 골랐다 (고정 아님)",
         "escaped_rate": {
           "markov": 1.0,
-          "stat": 0.9,
+          "stat": 1.0,
           "review": 1.0
         }
       },
@@ -77,10 +103,43 @@
       "C6_미래참조_없음": {
         "pass": true,
         "detail_ko": "해당 회차 정답이 그 회차 신호표에 안 들어가 있다"
+      },
+      "C7_뇌간_RNG독립": {
+        "pass": true,
+        "detail_ko": "한 뇌만 단독 실행해도 3뇌 함께 실행과 같은 세트가 나온다",
+        "by_brain": {
+          "markov": {
+            "solo_equals_joint": true,
+            "n_sets": 10
+          },
+          "stat": {
+            "solo_equals_joint": true,
+            "n_sets": 10
+          },
+          "review": {
+            "solo_equals_joint": true,
+            "n_sets": 10
+          }
+        }
+      },
+      "C8_pool1~5＝발권세트": {
+        "pass": true,
+        "detail_ko": "pool 앞 5세트가 발권 경로(coordinator)의 5세트와 일치",
+        "by_brain": {
+          "markov": {
+            "pool_first5_equals_live": true
+          },
+          "stat": {
+            "pool_first5_equals_live": true
+          },
+          "review": {
+            "pool_first5_equals_live": true
+          }
+        }
       }
     },
-    "n_pass": 7,
-    "n_total": 7,
+    "n_pass": 9,
+    "n_total": 9,
     "all_pass": true,
     "code": "WIRE_CONFORMS"
   },
@@ -120,19 +179,19 @@
         "signal_all_zero_count": 0,
         "top_pick_patterns": [
           [
-            "2,9",
-            8
+            "2,6",
+            7
           ],
           [
-            "2,6",
+            "2,9",
             6
           ],
           [
             "6,9",
-            3
+            4
           ],
           [
-            "1,2",
+            "4,9",
             3
           ]
         ]
@@ -140,8 +199,8 @@
       "stat": {
         "n_draws": 20,
         "subset_of_expected_all": true,
-        "legacy_45_count": 2,
-        "escaped_45_rate": 0.9,
+        "legacy_45_count": 0,
+        "escaped_45_rate": 1.0,
         "labels_seen": [
           "signal_top"
         ],
@@ -152,24 +211,24 @@
         "signal_all_zero_count": 0,
         "top_pick_patterns": [
           [
-            "1,9",
-            6
+            "4,6",
+            5
           ],
           [
-            "1,4",
+            "5,6",
             4
           ],
           [
-            "1,7",
+            "3,6",
+            3
+          ],
+          [
+            "4,7",
             2
           ],
           [
-            "4,5",
+            "7,9",
             2
-          ],
-          [
-            "4,9",
-            1
           ]
         ]
       },
@@ -188,24 +247,24 @@
         "signal_all_zero_count": 0,
         "top_pick_patterns": [
           [
-            "2,4",
-            5
+            "1,8",
+            13
           ],
           [
-            "2,9",
-            4
-          ],
-          [
-            "4,9",
+            "4,8",
             3
           ],
           [
-            "1,7",
-            3
-          ],
-          [
-            "1,9",
+            "3,4",
             2
+          ],
+          [
+            "2,4",
+            1
+          ],
+          [
+            "1,5",
+            1
           ]
         ]
       }
@@ -219,6 +278,40 @@
       "draw_no": 1235,
       "state_changes_when_actual_fed": true,
       "meaning_ko": "True = dno 시점 표에 dno 정답이 안 들어가 있다(정상). False 면 이미 반영됐다는 뜻이므로 컨닝"
+    },
+    "c7_rng_independent": {
+      "draw_no": 1235,
+      "by_brain": {
+        "markov": {
+          "solo_equals_joint": true,
+          "n_sets": 10
+        },
+        "stat": {
+          "solo_equals_joint": true,
+          "n_sets": 10
+        },
+        "review": {
+          "solo_equals_joint": true,
+          "n_sets": 10
+        }
+      },
+      "all_independent": true
+    },
+    "c8_pool_matches_live": {
+      "draw_no": 1235,
+      "by_brain": {
+        "markov": {
+          "pool_first5_equals_live": true
+        },
+        "stat": {
+          "pool_first5_equals_live": true
+        },
+        "review": {
+          "pool_first5_equals_live": true
+        }
+      },
+      "all_match": true,
+      "note_ko": "coordinator 시드 규칙 = MC_SEED(42) + draw_no 여야 성립"
     }
   },
   "per_draw": [
@@ -228,11 +321,11 @@
         "markov": {
           "expected_top": [
             9,
-            6
+            4
           ],
           "picked": [
             9,
-            6
+            4
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -245,12 +338,12 @@
         },
         "stat": {
           "expected_top": [
-            9,
-            1
+            6,
+            3
           ],
           "picked": [
-            9,
-            1
+            6,
+            3
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -263,12 +356,12 @@
         },
         "review": {
           "expected_top": [
-            9,
-            4
+            4,
+            3
           ],
           "picked": [
-            9,
-            4
+            4,
+            3
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -304,12 +397,12 @@
         },
         "stat": {
           "expected_top": [
-            9,
-            4
+            6,
+            3
           ],
           "picked": [
-            9,
-            4
+            6,
+            3
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -322,11 +415,11 @@
         },
         "review": {
           "expected_top": [
-            9,
+            4,
             2
           ],
           "picked": [
-            9,
+            4,
             2
           ],
           "picked_subset_of_expected": true,
@@ -346,11 +439,11 @@
         "markov": {
           "expected_top": [
             9,
-            6
+            4
           ],
           "picked": [
             9,
-            6
+            4
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -363,12 +456,12 @@
         },
         "stat": {
           "expected_top": [
-            4,
-            10
+            6,
+            3
           ],
           "picked": [
-            4,
-            10
+            6,
+            3
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -381,12 +474,12 @@
         },
         "review": {
           "expected_top": [
-            9,
-            2
+            4,
+            8
           ],
           "picked": [
-            9,
-            2
+            4,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -405,11 +498,11 @@
         "markov": {
           "expected_top": [
             9,
-            2
+            4
           ],
           "picked": [
             9,
-            2
+            4
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -422,12 +515,12 @@
         },
         "stat": {
           "expected_top": [
-            10,
-            9
+            6,
+            5
           ],
           "picked": [
-            10,
-            9
+            6,
+            5
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -440,12 +533,12 @@
         },
         "review": {
           "expected_top": [
-            9,
-            2
+            4,
+            3
           ],
           "picked": [
-            9,
-            2
+            4,
+            3
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -481,12 +574,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            3
+            6,
+            5
           ],
           "picked": [
-            1,
-            3
+            6,
+            5
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -499,12 +592,12 @@
         },
         "review": {
           "expected_top": [
-            9,
-            2
+            4,
+            8
           ],
           "picked": [
-            9,
-            2
+            4,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -540,12 +633,12 @@
         },
         "stat": {
           "expected_top": [
-            9,
-            1
+            6,
+            5
           ],
           "picked": [
-            9,
-            1
+            6,
+            5
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -558,12 +651,12 @@
         },
         "review": {
           "expected_top": [
-            9,
-            7
+            4,
+            8
           ],
           "picked": [
-            9,
-            7
+            4,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -599,12 +692,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            9
+            6,
+            5
           ],
           "picked": [
-            1,
-            9
+            6,
+            5
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -617,12 +710,12 @@
         },
         "review": {
           "expected_top": [
-            9,
-            1
+            1,
+            8
           ],
           "picked": [
-            9,
-            1
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -658,12 +751,12 @@
         },
         "stat": {
           "expected_top": [
-            9,
-            1
+            6,
+            4
           ],
           "picked": [
-            9,
-            1
+            6,
+            4
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -676,12 +769,12 @@
         },
         "review": {
           "expected_top": [
-            9,
-            1
+            1,
+            8
           ],
           "picked": [
-            9,
-            1
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -717,12 +810,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            9
+            4,
+            6
           ],
           "picked": [
-            1,
-            9
+            4,
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -735,12 +828,12 @@
         },
         "review": {
           "expected_top": [
-            9,
-            4
+            1,
+            8
           ],
           "picked": [
-            9,
-            4
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -758,12 +851,12 @@
       "by_brain": {
         "markov": {
           "expected_top": [
-            2,
-            9
+            9,
+            6
           ],
           "picked": [
-            2,
-            9
+            9,
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -776,12 +869,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            9
+            6,
+            4
           ],
           "picked": [
-            1,
-            9
+            6,
+            4
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -794,12 +887,12 @@
         },
         "review": {
           "expected_top": [
-            2,
-            4
+            1,
+            8
           ],
           "picked": [
-            2,
-            4
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -817,12 +910,12 @@
       "by_brain": {
         "markov": {
           "expected_top": [
-            2,
-            9
+            9,
+            6
           ],
           "picked": [
-            2,
-            9
+            9,
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -835,12 +928,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            4
+            4,
+            6
           ],
           "picked": [
-            1,
-            4
+            4,
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -853,12 +946,12 @@
         },
         "review": {
           "expected_top": [
-            4,
-            2
+            1,
+            8
           ],
           "picked": [
-            4,
-            2
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -876,12 +969,12 @@
       "by_brain": {
         "markov": {
           "expected_top": [
-            2,
-            1
+            9,
+            6
           ],
           "picked": [
-            2,
-            1
+            9,
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -894,12 +987,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            7
+            4,
+            6
           ],
           "picked": [
-            1,
-            7
+            4,
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -912,12 +1005,12 @@
         },
         "review": {
           "expected_top": [
-            4,
-            9
+            1,
+            8
           ],
           "picked": [
-            4,
-            9
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -936,11 +1029,11 @@
         "markov": {
           "expected_top": [
             2,
-            1
+            9
           ],
           "picked": [
             2,
-            1
+            9
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -953,12 +1046,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            7
+            4,
+            9
           ],
           "picked": [
-            1,
-            7
+            4,
+            9
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -971,12 +1064,12 @@
         },
         "review": {
           "expected_top": [
-            4,
-            2
+            1,
+            8
           ],
           "picked": [
-            4,
-            2
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -995,11 +1088,11 @@
         "markov": {
           "expected_top": [
             2,
-            1
+            6
           ],
           "picked": [
             2,
-            1
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1012,12 +1105,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            4
+            4,
+            7
           ],
           "picked": [
-            1,
-            4
+            4,
+            7
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1030,12 +1123,12 @@
         },
         "review": {
           "expected_top": [
-            2,
-            4
+            1,
+            8
           ],
           "picked": [
-            2,
-            4
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1071,12 +1164,12 @@
         },
         "stat": {
           "expected_top": [
-            1,
-            4
+            4,
+            7
           ],
           "picked": [
-            1,
-            4
+            4,
+            7
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1089,12 +1182,12 @@
         },
         "review": {
           "expected_top": [
-            2,
-            4
+            1,
+            8
           ],
           "picked": [
-            2,
-            4
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1112,12 +1205,12 @@
       "by_brain": {
         "markov": {
           "expected_top": [
-            6,
-            2
+            2,
+            6
           ],
           "picked": [
-            6,
-            2
+            2,
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1130,12 +1223,12 @@
         },
         "stat": {
           "expected_top": [
-            4,
-            1
+            2,
+            6
           ],
           "picked": [
-            4,
-            1
+            2,
+            6
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1148,12 +1241,12 @@
         },
         "review": {
           "expected_top": [
-            7,
-            2
+            1,
+            8
           ],
           "picked": [
-            7,
-            2
+            1,
+            8
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1189,11 +1282,11 @@
         },
         "stat": {
           "expected_top": [
-            4,
+            7,
             2
           ],
           "picked": [
-            4,
+            7,
             2
           ],
           "picked_subset_of_expected": true,
@@ -1207,11 +1300,11 @@
         },
         "review": {
           "expected_top": [
-            7,
+            8,
             1
           ],
           "picked": [
-            7,
+            8,
             1
           ],
           "picked_subset_of_expected": true,
@@ -1248,12 +1341,12 @@
         },
         "stat": {
           "expected_top": [
-            2,
-            5
+            9,
+            7
           ],
           "picked": [
-            2,
-            5
+            9,
+            7
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1266,12 +1359,12 @@
         },
         "review": {
           "expected_top": [
-            1,
-            7
+            8,
+            1
           ],
           "picked": [
-            1,
-            7
+            8,
+            1
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1307,15 +1400,15 @@
         },
         "stat": {
           "expected_top": [
-            5,
-            4
+            9,
+            7
           ],
           "picked": [
-            5,
-            4
+            9,
+            7
           ],
           "picked_subset_of_expected": true,
-          "is_legacy_45": true,
+          "is_legacy_45": false,
           "labels": [
             "signal_top"
           ],
@@ -1325,12 +1418,12 @@
         },
         "review": {
           "expected_top": [
-            1,
-            2
+            8,
+            1
           ],
           "picked": [
-            1,
-            2
+            8,
+            1
           ],
           "picked_subset_of_expected": true,
           "is_legacy_45": false,
@@ -1366,15 +1459,15 @@
         },
         "stat": {
           "expected_top": [
-            5,
-            4
+            2,
+            9
           ],
           "picked": [
-            5,
-            4
+            2,
+            9
           ],
           "picked_subset_of_expected": true,
-          "is_legacy_45": true,
+          "is_legacy_45": false,
           "labels": [
             "signal_top"
           ],
@@ -1384,11 +1477,11 @@
         },
         "review": {
           "expected_top": [
-            7,
+            5,
             1
           ],
           "picked": [
-            7,
+            5,
             1
           ],
           "picked_subset_of_expected": true,
