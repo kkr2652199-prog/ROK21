@@ -57,6 +57,19 @@ CLAIM_HINTS = (
 # 게이트가 필요 없는 순수 기록물 표식
 RECORD_ONLY_VERDICTS = ("CATALOG", "DESIGN_HOLD", "SNAPSHOT", "MEASURED_ONLY")
 
+
+def is_raw_dump(name: str, obj: dict[str, Any]) -> bool:
+    """원자료 덤프는 판정이 아니므로 면제.
+
+    판정 도구가 저장한 회차별 원측정치 등. `best_of_5...` 같은 필드명 때문에
+    비교 주장으로 오탐되지만, 실제로는 아무것도 주장하지 않는다.
+    """
+    return (
+        obj.get("raw_data") is True
+        or str(obj.get("bench_id") or "").endswith("-RAW")
+        or name.endswith("_raw.json")
+    )
+
 MAX_DEPTH = 6
 
 
@@ -111,13 +124,16 @@ def scan() -> dict[str, Any]:
             continue
         comparative, hints = looks_comparative(obj)
         verdict_val = str(obj.get("verdict") or "")
+        raw_dump = is_raw_dump(name, obj)
         rows.append(
             {
                 "file": name,
                 "comparative": comparative,
                 "hints": hints,
                 "has_gate": has_gate(obj),
-                "record_only": any(v in verdict_val for v in RECORD_ONLY_VERDICTS),
+                "raw_dump": raw_dump,
+                "record_only": raw_dump
+                or any(v in verdict_val for v in RECORD_ONLY_VERDICTS),
             }
         )
 
@@ -233,6 +249,8 @@ def build_report(p: dict[str, Any]) -> str:
         "",
         "- 비교성 판정은 **키 이름 기반 휴리스틱**이다. 이름이 특이한 벤치는 놓칠 수 있다.",
         f"  현재 탐지 단서: {', '.join(CLAIM_HINTS)}",
+        "- 원자료 덤프(`*_raw.json` · `bench_id` 가 `-RAW` 로 끝남 · `raw_data:true`)는 면제한다.",
+        "  아무것도 주장하지 않는 측정치 저장소이기 때문이다.",
         "- legacy 면제는 최초 실행 시점의 스냅샷이다. 면제된 벤치의 과거 주장은",
         "  `reports/20260808_KSTAT_DECISION_GATE.md` 의 소급감사를 참고하라.",
         "- 이 도구는 게이트 기록 **유무**만 본다. 기록된 `n`·`k_cells` 가 정직한지는",

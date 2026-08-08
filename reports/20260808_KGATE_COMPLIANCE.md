@@ -1,7 +1,7 @@
 # K-GATE-COMPLIANCE — R38 판정 게이트 준수 검사
 
 - 날짜: 2026-08-08 · **판정: COMPLIANT**
-- 자기검증 통과 · 위반 없음 (게이트 기록 1건)
+- 자기검증 통과 · 위반 없음 (게이트 기록 2건)
 - 정책: READ-ONLY · 벤치 원본 무수정 · DB 미접촉
 
 ## 1. 게이트 모듈 자기검증
@@ -26,9 +26,9 @@
 
 ## 2. 벤치마크 준수 현황
 
-- 검사 파일: **184**개 (읽기 성공 184)
-- 비교·선택 주장 포함: **133**개
-- `decision_gate` 기록됨: **1**개
+- 검사 파일: **186**개 (읽기 성공 186)
+- 비교·선택 주장 포함: **135**개
+- `decision_gate` 기록됨: **2**개
 - legacy 면제(오늘 스냅샷): **132**개
 - **위반: 0개**
 
@@ -61,6 +61,8 @@ payload["decision_gate"] = gate_block(
 
 - 비교성 판정은 **키 이름 기반 휴리스틱**이다. 이름이 특이한 벤치는 놓칠 수 있다.
   현재 탐지 단서: delta, vs_base, vs_null, vs_baseline, vs_pin, best, candidate, grid, n_cells, sweep, holdout, tune_, improve
+- 원자료 덤프(`*_raw.json` · `bench_id` 가 `-RAW` 로 끝남 · `raw_data:true`)는 면제한다.
+  아무것도 주장하지 않는 측정치 저장소이기 때문이다.
 - legacy 면제는 최초 실행 시점의 스냅샷이다. 면제된 벤치의 과거 주장은
   `reports/20260808_KSTAT_DECISION_GATE.md` 의 소급감사를 참고하라.
 - 이 도구는 게이트 기록 **유무**만 본다. 기록된 `n`·`k_cells` 가 정직한지는

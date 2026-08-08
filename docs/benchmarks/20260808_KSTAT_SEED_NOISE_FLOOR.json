@@ -1,0 +1,556 @@
+{
+  "bench_id": "K-STAT-SEED-NOISE-FLOOR",
+  "date": "2026-08-08",
+  "ts": "2026-08-08T03:07:37.029036+00:00",
+  "wire": false,
+  "policy": {
+    "read_only": true,
+    "db_write": false,
+    "constant_change": false,
+    "ticket_path_change": false
+  },
+  "draw_range": [
+    53,
+    1235
+  ],
+  "n_draws": 1183,
+  "seeds": [
+    42,
+    0,
+    7,
+    99,
+    1,
+    2026,
+    314,
+    777,
+    12345,
+    8
+  ],
+  "p0": 0.113624,
+  "eval": "best_of_5 · signal_pool expand+repack (SEED-DIAG 와 동일 경로)",
+  "prior": {
+    "file": "docs/benchmarks/20260805_KSTAT_SEED_DIAG.json",
+    "n": 100,
+    "range_ge3": 0.14
+  },
+  "stat": {
+    "full_by_seed": {
+      "42": {
+        "ge3": 0.127642,
+        "mean": 1.76754
+      },
+      "0": {
+        "ge3": 0.114117,
+        "mean": 1.761623
+      },
+      "7": {
+        "ge3": 0.125106,
+        "mean": 1.770921
+      },
+      "99": {
+        "ge3": 0.113271,
+        "mean": 1.731192
+      },
+      "1": {
+        "ge3": 0.118343,
+        "mean": 1.754861
+      },
+      "2026": {
+        "ge3": 0.101437,
+        "mean": 1.72612
+      },
+      "314": {
+        "ge3": 0.127642,
+        "mean": 1.768385
+      },
+      "777": {
+        "ge3": 0.130178,
+        "mean": 1.792899
+      },
+      "12345": {
+        "ge3": 0.103973,
+        "mean": 1.741336
+      },
+      "8": {
+        "ge3": 0.094675,
+        "mean": 1.715976
+      }
+    },
+    "full_summary": {
+      "mean_ge3": 0.115638,
+      "std_ge3": 0.011754,
+      "min_ge3": 0.094675,
+      "max_ge3": 0.130178,
+      "range_ge3": 0.035503,
+      "mean_of_means": 1.753085
+    },
+    "noise_curve": [
+      {
+        "window_n": 50,
+        "n_tiles": 23,
+        "n_seeds": 10,
+        "seed_std_mean": 0.038032,
+        "seed_range_mean": 0.127826,
+        "seed_range_max": 0.18,
+        "binomial_se": 0.044881,
+        "inflation": 0.8474,
+        "is_full_range": false
+      },
+      {
+        "window_n": 100,
+        "n_tiles": 11,
+        "n_seeds": 10,
+        "seed_std_mean": 0.027652,
+        "seed_range_mean": 0.096364,
+        "seed_range_max": 0.14,
+        "binomial_se": 0.031735,
+        "inflation": 0.8713,
+        "is_full_range": false
+      },
+      {
+        "window_n": 200,
+        "n_tiles": 5,
+        "n_seeds": 10,
+        "seed_std_mean": 0.020387,
+        "seed_range_mean": 0.064,
+        "seed_range_max": 0.085,
+        "binomial_se": 0.02244,
+        "inflation": 0.9085,
+        "is_full_range": false
+      },
+      {
+        "window_n": 400,
+        "n_tiles": 2,
+        "n_seeds": 10,
+        "seed_std_mean": 0.01792,
+        "seed_range_mean": 0.0625,
+        "seed_range_max": 0.07,
+        "binomial_se": 0.015868,
+        "inflation": 1.1293,
+        "is_full_range": false
+      },
+      {
+        "window_n": 800,
+        "n_tiles": 1,
+        "n_seeds": 10,
+        "seed_std_mean": 0.015882,
+        "seed_range_mean": 0.05125,
+        "seed_range_max": 0.05125,
+        "binomial_se": 0.01122,
+        "inflation": 1.4155,
+        "is_full_range": false
+      },
+      {
+        "window_n": 1183,
+        "n_tiles": 1,
+        "n_seeds": 10,
+        "seed_std_mean": 0.011754,
+        "seed_range_mean": 0.035503,
+        "seed_range_max": 0.035503,
+        "binomial_se": 0.009227,
+        "inflation": 1.2739,
+        "is_full_range": true
+      }
+    ]
+  },
+  "markov": {
+    "full_by_seed": {
+      "42": {
+        "ge3": 0.123415,
+        "mean": 1.864751
+      },
+      "0": {
+        "ge3": 0.113271,
+        "mean": 1.83601
+      },
+      "7": {
+        "ge3": 0.125106,
+        "mean": 1.863905
+      },
+      "99": {
+        "ge3": 0.10989,
+        "mean": 1.812342
+      },
+      "1": {
+        "ge3": 0.110735,
+        "mean": 1.828402
+      },
+      "2026": {
+        "ge3": 0.127642,
+        "mean": 1.893491
+      },
+      "314": {
+        "ge3": 0.121724,
+        "mean": 1.826712
+      },
+      "777": {
+        "ge3": 0.121724,
+        "mean": 1.828402
+      },
+      "12345": {
+        "ge3": 0.113271,
+        "mean": 1.83601
+      },
+      "8": {
+        "ge3": 0.108199,
+        "mean": 1.803888
+      }
+    },
+    "full_summary": {
+      "mean_ge3": 0.117498,
+      "std_ge3": 0.006762,
+      "min_ge3": 0.108199,
+      "max_ge3": 0.127642,
+      "range_ge3": 0.019442,
+      "mean_of_means": 1.839391
+    },
+    "noise_curve": [
+      {
+        "window_n": 50,
+        "n_tiles": 23,
+        "n_seeds": 10,
+        "seed_std_mean": 0.039597,
+        "seed_range_mean": 0.126087,
+        "seed_range_max": 0.26,
+        "binomial_se": 0.044881,
+        "inflation": 0.8823,
+        "is_full_range": false
+      },
+      {
+        "window_n": 100,
+        "n_tiles": 11,
+        "n_seeds": 10,
+        "seed_std_mean": 0.025955,
+        "seed_range_mean": 0.084545,
+        "seed_range_max": 0.16,
+        "binomial_se": 0.031735,
+        "inflation": 0.8179,
+        "is_full_range": false
+      },
+      {
+        "window_n": 200,
+        "n_tiles": 5,
+        "n_seeds": 10,
+        "seed_std_mean": 0.017799,
+        "seed_range_mean": 0.061,
+        "seed_range_max": 0.09,
+        "binomial_se": 0.02244,
+        "inflation": 0.7932,
+        "is_full_range": false
+      },
+      {
+        "window_n": 400,
+        "n_tiles": 2,
+        "n_seeds": 10,
+        "seed_std_mean": 0.012507,
+        "seed_range_mean": 0.04,
+        "seed_range_max": 0.0475,
+        "binomial_se": 0.015868,
+        "inflation": 0.7882,
+        "is_full_range": false
+      },
+      {
+        "window_n": 800,
+        "n_tiles": 1,
+        "n_seeds": 10,
+        "seed_std_mean": 0.007846,
+        "seed_range_mean": 0.03125,
+        "seed_range_max": 0.03125,
+        "binomial_se": 0.01122,
+        "inflation": 0.6993,
+        "is_full_range": false
+      },
+      {
+        "window_n": 1183,
+        "n_tiles": 1,
+        "n_seeds": 10,
+        "seed_std_mean": 0.006762,
+        "seed_range_mean": 0.019442,
+        "seed_range_max": 0.019442,
+        "binomial_se": 0.009227,
+        "inflation": 0.7329,
+        "is_full_range": true
+      }
+    ]
+  },
+  "review": {
+    "full_by_seed": {
+      "42": {
+        "ge3": 0.12257,
+        "mean": 1.764159
+      },
+      "0": {
+        "ge3": 0.136095,
+        "mean": 1.759087
+      },
+      "7": {
+        "ge3": 0.107354,
+        "mean": 1.712595
+      },
+      "99": {
+        "ge3": 0.114117,
+        "mean": 1.74049
+      },
+      "1": {
+        "ge3": 0.117498,
+        "mean": 1.756551
+      },
+      "2026": {
+        "ge3": 0.12257,
+        "mean": 1.765004
+      },
+      "314": {
+        "ge3": 0.111581,
+        "mean": 1.730347
+      },
+      "777": {
+        "ge3": 0.10989,
+        "mean": 1.744717
+      },
+      "12345": {
+        "ge3": 0.118343,
+        "mean": 1.746407
+      },
+      "8": {
+        "ge3": 0.125951,
+        "mean": 1.737954
+      }
+    },
+    "full_summary": {
+      "mean_ge3": 0.118597,
+      "std_ge3": 0.008152,
+      "min_ge3": 0.107354,
+      "max_ge3": 0.136095,
+      "range_ge3": 0.02874,
+      "mean_of_means": 1.745731
+    },
+    "noise_curve": [
+      {
+        "window_n": 50,
+        "n_tiles": 23,
+        "n_seeds": 10,
+        "seed_std_mean": 0.043765,
+        "seed_range_mean": 0.145217,
+        "seed_range_max": 0.28,
+        "binomial_se": 0.044881,
+        "inflation": 0.9751,
+        "is_full_range": false
+      },
+      {
+        "window_n": 100,
+        "n_tiles": 11,
+        "n_seeds": 10,
+        "seed_std_mean": 0.028283,
+        "seed_range_mean": 0.092727,
+        "seed_range_max": 0.14,
+        "binomial_se": 0.031735,
+        "inflation": 0.8912,
+        "is_full_range": false
+      },
+      {
+        "window_n": 200,
+        "n_tiles": 5,
+        "n_seeds": 10,
+        "seed_std_mean": 0.018602,
+        "seed_range_mean": 0.055,
+        "seed_range_max": 0.09,
+        "binomial_se": 0.02244,
+        "inflation": 0.829,
+        "is_full_range": false
+      },
+      {
+        "window_n": 400,
+        "n_tiles": 2,
+        "n_seeds": 10,
+        "seed_std_mean": 0.011952,
+        "seed_range_mean": 0.0425,
+        "seed_range_max": 0.055,
+        "binomial_se": 0.015868,
+        "inflation": 0.7533,
+        "is_full_range": false
+      },
+      {
+        "window_n": 800,
+        "n_tiles": 1,
+        "n_seeds": 10,
+        "seed_std_mean": 0.009189,
+        "seed_range_mean": 0.0325,
+        "seed_range_max": 0.0325,
+        "binomial_se": 0.01122,
+        "inflation": 0.819,
+        "is_full_range": false
+      },
+      {
+        "window_n": 1183,
+        "n_tiles": 1,
+        "n_seeds": 10,
+        "seed_std_mean": 0.008152,
+        "seed_range_mean": 0.02874,
+        "seed_range_max": 0.02874,
+        "binomial_se": 0.009227,
+        "inflation": 0.8835,
+        "is_full_range": true
+      }
+    ]
+  },
+  "variance_model": {
+    "form": "seed_var(n) = a^2/n + b^2",
+    "a2": 0.0670655462460756,
+    "a": 0.25897,
+    "b2": 0.00010255509352849704,
+    "irreducible_seed_std": 0.010127,
+    "weighted_r2": 0.998519,
+    "points": [
+      {
+        "window_n": 50,
+        "observed_std": 0.038032,
+        "fitted_std": 0.037998
+      },
+      {
+        "window_n": 100,
+        "observed_std": 0.027652,
+        "fitted_std": 0.027807
+      },
+      {
+        "window_n": 200,
+        "observed_std": 0.020387,
+        "fitted_std": 0.020926
+      },
+      {
+        "window_n": 400,
+        "observed_std": 0.01792,
+        "fitted_std": 0.016438
+      },
+      {
+        "window_n": 800,
+        "observed_std": 0.015882,
+        "fitted_std": 0.013652
+      },
+      {
+        "window_n": 1183,
+        "observed_std": 0.011754,
+        "fitted_std": 0.012619
+      }
+    ],
+    "meaning_ko": "a²/n 은 회차를 늘리면 사라지는 잡음, b 는 아무리 늘려도 남는 바닥이다. b 보다 작은 Δ 는 백테스트를 무한히 길게 해도 판정할 수 없다."
+  },
+  "irreducible_seed_std": 0.010127,
+  "full_wf_delta_vs_null": 0.0047,
+  "full_wf_below_floor": true,
+  "inflated_gates": [
+    {
+      "n": 50,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.044881,
+      "ci95_halfwidth": 0.087966,
+      "mdd_single_pair": 0.124403,
+      "mdd_selection_p95": 0.16,
+      "mdd_selection_p99": 0.2,
+      "noise_delta_expected": 0.072672,
+      "seed_std_modeled": 0.037998,
+      "se_total": 0.058806,
+      "se_factor": 1.3103,
+      "mdd_single_pair_infl": 0.163001,
+      "mdd_selection_p95_infl": 0.209643
+    },
+    {
+      "n": 100,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.031735,
+      "ci95_halfwidth": 0.062201,
+      "mdd_single_pair": 0.087966,
+      "mdd_selection_p95": 0.11,
+      "mdd_selection_p99": 0.14,
+      "noise_delta_expected": 0.050702,
+      "seed_std_modeled": 0.027807,
+      "se_total": 0.042194,
+      "se_factor": 1.3296,
+      "mdd_single_pair_infl": 0.116957,
+      "mdd_selection_p95_infl": 0.146253
+    },
+    {
+      "n": 200,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.02244,
+      "ci95_halfwidth": 0.043983,
+      "mdd_single_pair": 0.062201,
+      "mdd_selection_p95": 0.08,
+      "mdd_selection_p99": 0.095,
+      "noise_delta_expected": 0.034371,
+      "seed_std_modeled": 0.020926,
+      "se_total": 0.030683,
+      "se_factor": 1.3673,
+      "mdd_single_pair_infl": 0.085049,
+      "mdd_selection_p95_infl": 0.109386
+    },
+    {
+      "n": 500,
+      "k_cells": 9,
+      "p0": 0.113624,
+      "se_single": 0.014192,
+      "ci95_halfwidth": 0.027817,
+      "mdd_single_pair": 0.03934,
+      "mdd_selection_p95": 0.05,
+      "mdd_selection_p99": 0.06,
+      "noise_delta_expected": 0.021454,
+      "seed_std_modeled": 0.015385,
+      "se_total": 0.020931,
+      "se_factor": 1.4748,
+      "mdd_single_pair_infl": 0.05802,
+      "mdd_selection_p95_infl": 0.073742
+    },
+    {
+      "n": 1183,
+      "k_cells": 1,
+      "p0": 0.113624,
+      "se_single": 0.009227,
+      "ci95_halfwidth": 0.018085,
+      "mdd_single_pair": 0.025575,
+      "mdd_selection_p95": 0.021978,
+      "mdd_selection_p99": 0.030431,
+      "noise_delta_expected": 0.000154,
+      "seed_std_modeled": 0.012619,
+      "se_total": 0.015633,
+      "se_factor": 1.6942,
+      "mdd_single_pair_infl": 0.04333,
+      "mdd_selection_p95_infl": 0.037236
+    }
+  ],
+  "interpretation_ko": "팽창계수가 1 을 넘으면, 우리가 보는 흔들림 중 일부는 추첨 탓이 아니라 **파이프라인 탓**이라는 뜻이다. 이 경우 게이트 임계를 그만큼 올려야 하고, 올리지 않으면 잡음을 신호로 착각한다.",
+  "verdict": {
+    "code": "IRREDUCIBLE_SEED_FLOOR",
+    "headline_ko": "회차를 아무리 늘려도 사라지지 않는 seed 잡음 바닥 0.010127 확인 — 이보다 작은 Δ 는 표본을 늘려도 판정 불가",
+    "detail_ko": "전구간 n=1183 · seed 10개에서 stat 의 ge3 는 0.094675~0.130178 (폭 **0.035503** · 표준편차 0.011754) 로 갈린다. 파라미터도 데이터도 추첨 결과도 전부 같은데 seed 하나로 이만큼 움직인다.\n\n더 중요한 건 잡음이 **1/√n 으로 줄지 않는다**는 점이다. 분산을 `a²/n + b²` 로 적합하면 b = **0.010127** 가 남는다(가중 R²=0.998519). 회차를 무한히 늘려도 seed 선택만으로 ge3 가 표준편차 0.010127 만큼 흔들린다는 뜻이다.\n\n이 바닥을 실제 판정에 대보면: 전구간 walk-forward 가 측정한 null 대비 Δ 는 **+0.0047** 였다. 바닥 0.010127 **보다 작다**. 즉 그 판정은 표본을 더 모아도 결론이 나지 않는다.\n\n실무 결론: n=50·10셀 판정의 보정 선택보정 임계는 **0.209643** 이다(보정 전 0.16). 이전 n=100 단일 추정(폭 0.14)은 이제 곡선과 바닥값으로 대체됐다."
+  },
+  "elapsed_sec": 0.2,
+  "walk_reused_from_raw": true,
+  "walk_elapsed_sec_original": 601.3,
+  "tool": "tools/_k_stat_seed_noise_floor.py",
+  "decision_gate": {
+    "gate": {
+      "n": 1183,
+      "k_cells": 10,
+      "p0": 0.113624,
+      "se_single": 0.009227,
+      "ci95_halfwidth": 0.018085,
+      "mdd_single_pair": 0.025575,
+      "mdd_selection_p95": 0.032122,
+      "mdd_selection_p99": 0.03973,
+      "noise_delta_expected": 0.014312
+    },
+    "delta": 0.035503,
+    "holdout_value": null,
+    "holdout_collapsed": null,
+    "verdict": "DECIDABLE",
+    "why_ko": "|Δ|=0.035503 ≥ 선택보정 임계 0.032122 (10셀) → 차이 주장 가능",
+    "actionable": true,
+    "rule": "R38",
+    "metric": "ge3 (seed 간 폭)",
+    "label": "seed 잡음 하한 실측 — 판정이 아니라 잡음 자체의 측정",
+    "module": "tools/k_gate.py",
+    "report_as_ko": "차이 있음"
+  }
+}
