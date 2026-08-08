@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`9582ac7` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`a142b77` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=9582ac7]
+[ROK21 젠스파크 압축복구 · HEAD=a142b77]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 9582ac7 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS**
-- 직전: K-BRAIN-CROWD-RESTRUCTURE · WIRE_SMOKE_OK
-- BOOT다음: hint 분리 PASS → **형 GO 후 뇌별 독립 튜닝** (FAIL였으면 롤백 `K_CROWD_PREFER=0`)
-- NEXT1: K-BRAIN-INDEPENDENT-WIRE-DONE — hint 분리 결과 + EV프록시 게이트 형 확인. **WIRE_CONFORMS 5/5** · EV=`MARGINAL`(delta−0.0927 · 3구간 consistent). 형 GO → 각 뇌 독립 튜닝 단계로 / PARTIAL·FAIL이었으면 추가 버그 수정 후 재검증(이번 턴은 CONFORMS)
+- HEAD: a142b77 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS 뇌별 **APPLY** · prefer↑/prize더음수/stat hit↑ · ge3미사용
+- 직전: K-BRAIN-INDEPENDENT-WIRE · WIRE_CONFORMS
+- BOOT다음: **형 선택** — ①군중 BLEND 소튜닝(review EV) ②과거학습 명분리뷰 ③정지
+- NEXT1: K-BRAIN-INDEPENDENT-TUNE-DONE — **SCORE_WEIGHTS 뇌별 APPLY 완료**. cand_A(stat 0.25/0.35/0.40 · markov·review 0.55/0.20/0.25). 축지표 1100~1235: prefer+0.023 · prize−0.027 · stat hit+0.005 · review 3구간 consistent. 형 1건 — **①군중 BLEND_STRENGTH 소튜닝**(review EV 강화 후보) / ②1235 과거학습 명분리뷰 / ③정지
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260808_KBRAIN_INDEPENDENT_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KBRAIN_INDEPENDENT_TUNE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KBRAIN_INDEPENDENT_TUNE.md
 - `20260808_KBRAIN_INDEPENDENT_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KBRAIN_INDEPENDENT_WIRE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KBRAIN_INDEPENDENT_WIRE.md
 - `20260808_KBRAIN_CROWD_RESTRUCTURE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KBRAIN_CROWD_RESTRUCTURE.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KBRAIN_INDEP_AUDIT.md
 - `20260808_KREPACK_SIGNAL_WIRE_VERIFY` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KREPACK_SIGNAL_WIRE_VERIFY.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KREPACK_SIGNAL_WIRE_VERIFY.md
-- `20260808_KPREDICT_RESET` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KPREDICT_RESET.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KPREDICT_RESET.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=9582ac7 · 지금=**K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS** · 다음=K-BRAIN-INDEPENDENT-WIRE-DONE
+1. 첫줄: [복귀] HEAD=a142b77 · 지금=**K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS 뇌별 **APPLY** · prefer↑/prize더음수/stat hit↑ · ge3미사용 · 다음=K-BRAIN-INDEPENDENT-TUNE-DONE
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 9582ac7_
+_generated: a142b77_

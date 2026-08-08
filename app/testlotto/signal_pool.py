@@ -42,12 +42,14 @@ POOL_SLOTS_PER_BRAIN: int = 2
 SIGNAL_TOP_BRAINS: frozenset[str] = frozenset(BRAIN_TAGS)
 
 # K-BRAIN-INDEPENDENT (20260808) — 뇌별로 따로 정할 수 있게 구조만 열어둔다.
-# **현재 값은 3뇌 전부 동일** = 성적 무변화. 값을 다르게 만드는 것은 성적 주장이
-# 필요한 튜닝이므로 R38 게이트를 통과한 뒤에 바꾼다.
+# K-BRAIN-INDEPENDENT-TUNE — 뇌별 점수축 분리 (축전용 지표 게이트 통과 후).
+# ge3 미사용 · markov prefer↑ / review prize↓ / stat hit 비악화.
 POOL_SLOTS_BY_BRAIN: dict[str, int] = dict.fromkeys(BRAIN_TAGS, POOL_SLOTS_PER_BRAIN)
-SCORE_WEIGHTS_BY_BRAIN: dict[str, tuple[float, float, float]] = dict.fromkeys(
-    BRAIN_TAGS, (W_HINT, W_FREQ, W_LEARN)
-)
+SCORE_WEIGHTS_BY_BRAIN: dict[str, tuple[float, float, float]] = {
+    "stat": (0.25, 0.35, 0.40),    # hint↓ freq/learn↑ — 과거패턴
+    "markov": (0.55, 0.20, 0.25),  # hint↑ — 선호번호
+    "review": (0.55, 0.20, 0.25),  # hint↑ — 금액뇌
+}
 LEARN_EMA_BY_BRAIN: dict[str, float] = dict.fromkeys(BRAIN_TAGS, LEARN_EMA)
 
 # K-BRAIN-INDEPENDENT-WIRE (20260808) — hint 를 뇌 특성축으로 분리.

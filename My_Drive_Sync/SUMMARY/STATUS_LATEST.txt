@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS**
+📌 사유: **[CURSOR] K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS 뇌별분리 **APPLY** · prefer↑/prize↓/stat hit↑ · ge3미사용
 
-📌 직전: **[CURSOR] K-BRAIN-CROWD-RESTRUCTURE** — 선호번호·금액뇌 WIRE_SMOKE_OK
+📌 직전: **[CURSOR] K-BRAIN-INDEPENDENT-WIRE** — WIRE_CONFORMS 5/5
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-BRAIN-INDEPENDENT-TUNE (형GO·패치승인후)** | **APPLY** — 형 「다음 진행·패치 잘됨」→ 뇌별 독립튜닝 1노브. **SCORE_WEIGHTS_BY_BRAIN** base 전뇌(0.40/0.25/0.35) → cand_A: stat**(0.25/0.35/0.40)** · markov/review**(0.55/0.20/0.25)**. 구간1100~1235 n136 seed42 · **축지표(ge3미사용)**: markov prefer_delta +0.226→**+0.249**(Δ+0.023) · review prize_delta −0.028→**−0.055**(Δ−0.027·더음수) · stat top15_hit 0.300→**0.305**. review 3구간 cand **전부음수**(base early는 양수였음). V1/V2 hint분리 유지. 롤백=전뇌(0.40/0.25/0.35). · `docs/benchmarks/20260808_KBRAIN_INDEPENDENT_TUNE.json` · `reports/20260808_KBRAIN_INDEPENDENT_TUNE.md` · `tools/_k_brain_independent_tune.py` |
 | **K-BRAIN-INDEPENDENT-WIRE (형GO)** | **WIRE_CONFORMS** — 형 「3뇌 독립 · 공유=lotto_draws만 · 몰아주기도 뇌별」. **[A] hint 분리**: `HINT_SPEC_BY_BRAIN` stat=`(26,miss_pattern)` · markov=`(None,crowd_prefer)` · review=`(None,crowd_prize)` · `hint_shared=False` · probe1235 top5 전부 상이(stat15/28/31… · markov12/7/3… · review40/37/45…). V1~V5 **5/5**(dead_wire live · signal_top 뇌별 · RNG C7 · draws공유). pool `PREDICT_MODULES`→실뇌패키지(deprecated 래퍼 제거). **[B] EV게이트** 1100~1235 n136 · ge3미사용 · `prize_proxy_delta=−0.092741` → **MARGINAL** · early/mid/late 전부음수 `consistent=True` · STRONG 아님(과장금지). coordinator/`random.choices`/`_get_draws_before` 미접촉. 롤백 `K_CROWD_PREFER=0 K_PRIZE_EV=0`. · `docs/benchmarks/20260808_KBRAIN_INDEPENDENT_WIRE.json` · `reports/20260808_KBRAIN_INDEPENDENT_WIRE.md` · `tools/_k_brain_independent_wire.py` |
 | **K-BRAIN-CROWD-RESTRUCTURE (형GO · 판단진행)** | **WIRE_SMOKE_OK** — 형 「과거학습 특성맞게 진행 · 흐름술사→선호번호 · 복습왕→금액뇌 · 엔진견고 · 학술벤치」. **역할**: `stat`=과거학습(당첨번호 숙제·패턴) 유지 · `markov`=**선호번호**(1등다수 회차+생일대 1~31) · `review`=**금액뇌**(저당첨자수·고번호·끝수0/8/9 비선호 → **당첨시 몫 EV**, P(win)↑ 비주장). **데이터한계**: 조합별 판매수 없음 → `first_winners`+`total_sales` 프록시 + 구조사전. **문헌**: Thaler&Ziemba JEP1988 · Ziemba ARFE2023 · Chernoff conscious selection. **배선**: `shared/crowd_signal.py` · 엔진 가중치만 `blend_weights`(STRENGTH0.55) · **`random.choices` 미수정** · `_get_draws_before` 유지. 롤백 `K_CROWD_PREFER=0`/`K_PRIZE_EV=0`. UI·registry·METHOD_TO_TAG(구명호환). 스모크 as_of1236: method 일치 · prefer_top≈저번호 · prize_top≈고번호. 과거학습 decay 튜닝은 게이트보류(이번 턴 범위 밖). · `docs/benchmarks/20260808_KBRAIN_CROWD_RESTRUCTURE.json` · `reports/20260808_KBRAIN_CROWD_RESTRUCTURE.md` |
 | **K-STAT-HOMEWORK-FILL (형GO ①)** | **20/20 OK** · 회차 **1216~1235** · 298.3초 · 확정길(N숙제←1..N-1·채점N). **발견**: 발권 쿼터만 쓰면 **stat가 lotto_predictions 0장**일 수 있음 → 매회 `brain_filter=("stat",)` 로 숙제 5장 추가. 후: pred **200**(scored) · stat **100** · learn **3** · evolve **60** · pool **60** · warrant **20**. 명분예 1235 set5 적중3 · `1yHot/Cold`. 튜닝아님 · DB로컬만 · `docs/benchmarks/20260808_KSTAT_HOMEWORK_FILL.json` · `reports/20260808_KSTAT_HOMEWORK_FILL.md` · `tools/_k_stat_homework_fill.py` |

@@ -3,11 +3,11 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BRAIN-INDEPENDENT-WIRE-DONE
-- 할일: hint 분리 결과 + EV프록시 게이트 형 확인. **WIRE_CONFORMS 5/5** · EV=`MARGINAL`(delta−0.0927 · 3구간 consistent). 형 GO → 각 뇌 독립 튜닝 단계로 / PARTIAL·FAIL이었으면 추가 버그 수정 후 재검증(이번 턴은 CONFORMS)
-- 완료조건: 형 GO
-- 선행완료: docs/benchmarks/20260808_KBRAIN_INDEPENDENT_WIRE.json · reports/20260808_KBRAIN_INDEPENDENT_WIRE.md · tools/_k_brain_independent_wire.py
-- 승인필요: 형 GO (다음 튜닝 착수)
+- ID: K-BRAIN-INDEPENDENT-TUNE-DONE
+- 할일: **SCORE_WEIGHTS 뇌별 APPLY 완료**. cand_A(stat 0.25/0.35/0.40 · markov·review 0.55/0.20/0.25). 축지표 1100~1235: prefer+0.023 · prize−0.027 · stat hit+0.005 · review 3구간 consistent. 형 1건 — **①군중 BLEND_STRENGTH 소튜닝**(review EV 강화 후보) / ②1235 과거학습 명분리뷰 / ③정지
+- 완료조건: 형이 ①~③ 중 1건 지정
+- 선행완료: docs/benchmarks/20260808_KBRAIN_INDEPENDENT_TUNE.json · reports/20260808_KBRAIN_INDEPENDENT_TUNE.md
+- 승인필요: 없음 (다음 선택만)
 - 선행조건: 없음
 - 최종갱신: 2026-08-08
 
@@ -19,5 +19,5 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- HOLD 복원: `lotto4.js` → `ROK21_TESTLOTTO_FOCUS_HOLD = false`
-- 롤백: `K_CROWD_PREFER=0` · `K_PRIZE_EV=0`
+- SCORE_WEIGHTS 롤백: 전뇌 `(0.40, 0.25, 0.35)`
+- 군중 롤백: `K_CROWD_PREFER=0` · `K_PRIZE_EV=0`

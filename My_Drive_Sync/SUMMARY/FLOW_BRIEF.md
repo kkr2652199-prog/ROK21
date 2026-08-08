@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `9582ac7` · WORK=`IDLE`
-- 지금: **K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS**
-- 직전: K-BRAIN-CROWD-RESTRUCTURE · WIRE_SMOKE_OK
-- BOOT다음: hint 분리 PASS → **형 GO 후 뇌별 독립 튜닝** (FAIL였으면 롤백 `K_CROWD_PREFER=0`)
-- NEXT1: K-BRAIN-INDEPENDENT-WIRE-DONE — hint 분리 결과 + EV프록시 게이트 형 확인. **WIRE_CONFORMS 5/5** · EV=`MARGINAL`(delta−0.0927 · 3구간 consistent). 형 GO → 각 뇌 독립 튜닝 단계로 / PARTIAL·FAIL이었으면 추가 버그 수정 후 재검증(이번 턴은 CONFORMS) (승인=형 GO (다음 튜닝 착수))
+- HEAD: `a142b77` · WORK=`IDLE`
+- 지금: **K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS 뇌별 **APPLY** · prefer↑/prize더음수/stat hit↑ · ge3미사용
+- 직전: K-BRAIN-INDEPENDENT-WIRE · WIRE_CONFORMS
+- BOOT다음: **형 선택** — ①군중 BLEND 소튜닝(review EV) ②과거학습 명분리뷰 ③정지
+- NEXT1: K-BRAIN-INDEPENDENT-TUNE-DONE — **SCORE_WEIGHTS 뇌별 APPLY 완료**. cand_A(stat 0.25/0.35/0.40 · markov·review 0.55/0.20/0.25). 축지표 1100~1235: prefer+0.023 · prize−0.027 · stat hit+0.005 · review 3구간 consistent. 형 1건 — **①군중 BLEND_STRENGTH 소튜닝**(review EV 강화 후보) / ②1235 과거학습 명분리뷰 / ③정지 (승인=없음 (다음 선택만))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

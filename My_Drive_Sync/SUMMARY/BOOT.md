@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BRAIN-INDEPENDENT-WIRE** — hint 3뇌 분리 **5/5** · EV프록시 **MARGINAL**(consistent) · **WIRE_CONFORMS**
-- 직전: K-BRAIN-CROWD-RESTRUCTURE · WIRE_SMOKE_OK
-- 다음: hint 분리 PASS → **형 GO 후 뇌별 독립 튜닝** (FAIL였으면 롤백 `K_CROWD_PREFER=0`)
+- 지금: **K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS 뇌별 **APPLY** · prefer↑/prize더음수/stat hit↑ · ge3미사용
+- 직전: K-BRAIN-INDEPENDENT-WIRE · WIRE_CONFORMS
+- 다음: **형 선택** — ①군중 BLEND 소튜닝(review EV) ②과거학습 명분리뷰 ③정지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

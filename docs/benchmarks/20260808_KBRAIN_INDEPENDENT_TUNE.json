@@ -1,0 +1,97 @@
+{
+  "id": "K-BRAIN-INDEPENDENT-TUNE",
+  "ts": "2026-08-08T19:35:01+09:00",
+  "draw_range": [
+    1100,
+    1235
+  ],
+  "seed": 42,
+  "weights": {
+    "base": {
+      "stat": [
+        0.4,
+        0.25,
+        0.35
+      ],
+      "markov": [
+        0.4,
+        0.25,
+        0.35
+      ],
+      "review": [
+        0.4,
+        0.25,
+        0.35
+      ]
+    },
+    "cand_A": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.55,
+        0.2,
+        0.25
+      ],
+      "review": [
+        0.55,
+        0.2,
+        0.25
+      ]
+    }
+  },
+  "base": {
+    "n": 136,
+    "markov_prefer_delta": 0.226051,
+    "review_prize_delta": -0.027791,
+    "stat_top15_hit": 0.300245,
+    "review_by_period": {
+      "early": 0.026514,
+      "mid": -0.034928,
+      "late": -0.073933,
+      "consistent_neg": false
+    }
+  },
+  "candidate": {
+    "n": 136,
+    "markov_prefer_delta": 0.249387,
+    "review_prize_delta": -0.054918,
+    "stat_top15_hit": 0.305147,
+    "review_by_period": {
+      "early": -0.011457,
+      "mid": -0.064005,
+      "late": -0.088546,
+      "consistent_neg": true
+    }
+  },
+  "decision": {
+    "markov_ok": true,
+    "review_ok": true,
+    "stat_ok": true,
+    "consistent_ok": true,
+    "apply": true,
+    "deltas": {
+      "markov_prefer": 0.023336,
+      "review_prize": -0.027127,
+      "stat_top15_hit": 0.004902
+    },
+    "reasons_block": [],
+    "verdict": "APPLY"
+  },
+  "applied": true,
+  "verdict": "APPLY",
+  "pass": true,
+  "ge3_used": false,
+  "metric_note_ko": "몰아주기 number_scores top15 기준. hint 테이블 자체는 불변 — SCORE_WEIGHTS만 뇌별 차별.",
+  "rollback": "SCORE_WEIGHTS_BY_BRAIN 를 (0.40,0.25,0.35) 동일로 복원",
+  "prior": "docs/benchmarks/20260808_KBRAIN_INDEPENDENT_WIRE.json",
+  "tool": "tools/_k_brain_independent_tune.py",
+  "forbid": [
+    "ge3 as pass metric",
+    "coordinator modify",
+    "random.choices modify",
+    "_get_draws_before modify"
+  ]
+}
