@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `854d1b4` · WORK=`IDLE`
+1. **HEAD:** `741de31` · WORK=`IDLE`
 2. **지금:** **K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF
 3. **다음1건:** K-STAT-HOMEWORK-FILL-PICK — UI는 테스트로또 집중 HOLD 중 · 형 1건 — **①회차 숙제 백테스트로 기록 채우기**(권장) / ②명분 샘플 리뷰 / ③재료 튜닝(게이트) / ④트랙정지 (승인필요=없음 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-08 | 전략X홀딩·테스트만 | UI HOLD·기본testlotto·예측autoload OFF | **HOLD** | (push후) |
+| 2026-08-08 | 전략X홀딩·테스트만 | UI HOLD·기본testlotto·예측autoload OFF | **HOLD** | 741de31 |
 | 2026-08-08 | 과거학습 뇌 패치준비 체크·인간관점 | READ-ONLY 점검 · 방향·cutoff·파이프 **준비** · learn/예측/명분DB **0행** → 튜닝 직전아님 · 확정길=회차숙제 | **READY_DIR/NOT_TUNE** | (본턴) |
 | 2026-08-08 | 「한번 더 버그를 찾아보자 · 없으면 stat 튜닝」 | **버그 2건 발견·수정 · 14/14** — ⑥`brain_tag` 죽은배선 ⑦hint축 또 검출·자동생성 · B6 신설 · 겹침 2.7배=공유hint | **INDEPENDENCE_OK** | 69b9c7d |
 | 2026-08-08 | 나머지 2뇌도 독립 패치 + 예측DB 리셋 | ④`expand_pool` 3뇌 **한 난수흐름**(stat→markov 오염) → 뇌별 시드리셋 ⑤pass0 시드=`seed+draw_no` → **pool1~5＝발권5세트**(C8) · 뇌별 상수dict 개방(값동일) · **hint 는 여전히 공유(명시)** · DB 3뇌예측 **7094행 삭제**(원천보존) · 검증 **9/9** | **WIRE_CONFORMS** | (본턴) |
