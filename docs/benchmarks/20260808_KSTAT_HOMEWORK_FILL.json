@@ -1,0 +1,341 @@
+{
+  "id": "K-STAT-HOMEWORK-FILL",
+  "generated_at": "2026-08-08T09:54:58.108955+00:00",
+  "lo": 1216,
+  "hi": 1235,
+  "elapsed_sec": 298.3,
+  "n_total": 20,
+  "n_ok": 20,
+  "cleared": {
+    "lotto_predictions": 20,
+    "pool_view_cache": 6,
+    "evolve_log": 6,
+    "learn_state": 3
+  },
+  "before": {
+    "lotto_predictions": 20,
+    "testlotto_brain_learn_state": 3,
+    "hit_warrant_log": 2,
+    "testlotto_evolve_log": 6,
+    "testlotto_pool_view_cache": 6,
+    "lotto_analysis": 0,
+    "predictions_scored": 20,
+    "predictions_stat": 10
+  },
+  "after": {
+    "lotto_predictions": 200,
+    "testlotto_brain_learn_state": 3,
+    "hit_warrant_log": 20,
+    "testlotto_evolve_log": 60,
+    "testlotto_pool_view_cache": 60,
+    "lotto_analysis": 0,
+    "predictions_scored": 200,
+    "predictions_stat": 100
+  },
+  "rows": [
+    {
+      "draw_no": 1216,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 13.04
+    },
+    {
+      "draw_no": 1217,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 13.07
+    },
+    {
+      "draw_no": 1218,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 13.23
+    },
+    {
+      "draw_no": 1219,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 13.04
+    },
+    {
+      "draw_no": 1220,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 13.15
+    },
+    {
+      "draw_no": 1221,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 15.17
+    },
+    {
+      "draw_no": 1222,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 15.29
+    },
+    {
+      "draw_no": 1223,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 14.17
+    },
+    {
+      "draw_no": 1224,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 16.24
+    },
+    {
+      "draw_no": 1225,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 14.31
+    },
+    {
+      "draw_no": 1226,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 15.87
+    },
+    {
+      "draw_no": 1227,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 18.46
+    },
+    {
+      "draw_no": 1228,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 14.93
+    },
+    {
+      "draw_no": 1229,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 15.1
+    },
+    {
+      "draw_no": 1230,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 15.83
+    },
+    {
+      "draw_no": 1231,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 14.43
+    },
+    {
+      "draw_no": 1232,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 15.54
+    },
+    {
+      "draw_no": 1233,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 17.43
+    },
+    {
+      "draw_no": 1234,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 14.0
+    },
+    {
+      "draw_no": 1235,
+      "predict_ok": true,
+      "predict_error": null,
+      "n_stat_sets": 5,
+      "scores_refreshed": true,
+      "pool_cache_ok": true,
+      "evolve_ok": true,
+      "evolve_error": null,
+      "sec": 13.81
+    }
+  ],
+  "sample_draw": 1235,
+  "sample_stat": [
+    {
+      "set": 1,
+      "nums": [
+        3,
+        13,
+        19,
+        30,
+        34,
+        35
+      ],
+      "matched": 0,
+      "conf": 57.0,
+      "reasoning": "과거학습: 빈도가중+끝수[0, 3, 4, 5, 9]+이월2개[19, 35]+미출30+없음 [과거학습:1yHot[3, 13, 19]|1yCold[34] Δ0.34] [학습조정 이월×1.00 끝수×1.00] [보조4뇌:0.79] 균형지킴이:홀4짝2 구간2-2-2 점수0.79 | 심판관:가중치 markov:0.33 review:0.33 stat:0.33"
+    },
+    {
+      "set": 2,
+      "nums": [
+        6,
+        13,
+        15,
+        16,
+        36,
+        41
+      ],
+      "matched": 2,
+      "conf": 56.4,
+      "reasoning": "과거학습: 빈도가중+끝수[1, 3, 5, 6]+이월1개[15]+미출30+없음 [과거학습:1yHot[13, 15, 16, 36] Δ0.4] [학습조정 이월×1.00 끝수×1.00] [보조4뇌:0.78] 균형지킴이:홀3짝3 구간3-1-2 점수0.78 | 심판관:가중치 markov:0.33 review:0.33 stat:0.33"
+    },
+    {
+      "set": 3,
+      "nums": [
+        9,
+        16,
+        21,
+        24,
+        29,
+        39
+      ],
+      "matched": 1,
+      "conf": 54.1,
+      "reasoning": "과거학습: 빈도가중+끝수[1, 4, 6, 9]+이월0개+미출30+없음 [과거학습:1yHot[9, 16, 24, 29]|1yCold[21] Δ0.44] [학습조정 이월×1.00 끝수×1.00] [보조4뇌:0.73] 균형지킴이:홀4짝2 구간1-4-1 점수0.73 | 심판관:가중치 markov:0.33 review:0.33 stat:0.33"
+    },
+    {
+      "set": 4,
+      "nums": [
+        1,
+        3,
+        20,
+        22,
+        30,
+        34
+      ],
+      "matched": 0,
+      "conf": 47.7,
+      "reasoning": "과거학습: 빈도가중+끝수[0, 1, 2, 3, 4]+이월1개[1]+미출30+없음 [과거학습:1yHot[1, 3]|1yCold[34] Δ0.24] [학습조정 이월×1.00 끝수×1.00] [보조4뇌:0.56] 균형지킴이:홀2짝4 구간2-3-1 점수0.56 | 심판관:가중치 markov:0.33 review:0.33 stat:0.33"
+    },
+    {
+      "set": 5,
+      "nums": [
+        7,
+        11,
+        31,
+        39,
+        42,
+        44
+      ],
+      "matched": 3,
+      "conf": 45.2,
+      "reasoning": "과거학습: 빈도가중+끝수[1, 2, 4, 7, 9]+이월1개[31]+미출30+없음 [과거학습:1yHot[31]|1yCold[7, 11] Δ0.18] [학습조정 이월×1.00 끝수×1.00] [보조4뇌:0.50] 균형지킴이:홀4짝2 구간2-0-4 점수0.50 | 심판관:가중치 markov:0.33 review:0.33 stat:0.33"
+    }
+  ],
+  "policy": {
+    "path": "N homework ← 1..N-1 · score with N actual",
+    "includes": [
+      "lotto_predictions",
+      "learn_state via _auto_feedback",
+      "matched_count refresh",
+      "pool_view_cache",
+      "evolve_log"
+    ],
+    "tuning": false
+  }
+}

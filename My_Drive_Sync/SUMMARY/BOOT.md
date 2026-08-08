@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF
-- 직전: K-STAT-PASTLEARN-READY-CHECK · 튜닝직전아님
-- 다음: 회차 숙제 백필 or 형 GO · **테스트로또만**
+- 지금: **K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그
+- 직전: K-STAT-PASTLEARN-READY-CHECK (방향준비·기록미준비)
+- 다음: **형 선택** — ①1235 명분 샘플 읽고 부족한 점 지적(권장) ②재료 튜닝(게이트) ③구간 확장(100회+) ④정지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

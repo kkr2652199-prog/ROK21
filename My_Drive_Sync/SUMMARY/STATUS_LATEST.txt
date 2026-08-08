@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-08 KST  
-📌 사유: **[CURSOR] K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 예측번호 자동표시 OFF
+📌 사유: **[CURSOR] K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 **1216~1235 · 20/20 OK · 298초**. 발권+**stat숙제5장강제** · 채점 · pool/evolve. pred200(stat100) · learn3 · evolve60 · pool60 · warrant20
 
-📌 직전: **[CURSOR] K-STAT-PASTLEARN-READY-CHECK** — 방향 준비 · 학습 DB 비어 튜닝 직전 아님
+📌 직전: **[CURSOR] K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-STAT-HOMEWORK-FILL (형GO ①)** | **20/20 OK** · 회차 **1216~1235** · 298.3초 · 확정길(N숙제←1..N-1·채점N). **발견**: 발권 쿼터만 쓰면 **stat가 lotto_predictions 0장**일 수 있음 → 매회 `brain_filter=("stat",)` 로 숙제 5장 추가. 후: pred **200**(scored) · stat **100** · learn **3** · evolve **60** · pool **60** · warrant **20**. 명분예 1235 set5 적중3 · `1yHot/Cold`. 튜닝아님 · DB로컬만 · `docs/benchmarks/20260808_KSTAT_HOMEWORK_FILL.json` · `reports/20260808_KSTAT_HOMEWORK_FILL.md` · `tools/_k_stat_homework_fill.py` |
 | **K-UI-TESTLOTTO-FOCUS-HOLD** | **HOLD_ON** — `ROK21_TESTLOTTO_FOCUS_HOLD=true` · 숨김=`predict`/`strategy-x`/`hyodo` · 기본뷰=`testlotto` · 진입 시 lotto4 예측 자동로드 **OFF**(1236 혼동 방지) · 복원=`false` · `docs/benchmarks/20260808_KUI_TESTLOTTO_FOCUS_HOLD.json` · `reports/20260808_KUI_TESTLOTTO_FOCUS_HOLD.md` |
 | **K-STAT-PASTLEARN-READY-CHECK (READ-ONLY)** | **방향 준비 · 기록 미준비** — 형 「확정 길로 패치 준비된 뇌인가?」 · **준비됨**: 워크포워드(`_get_draws_before` · target=`last+1`) · `ROK21_LEARN_CUTOFF`/`set_learn_as_of` 컨닝차단(미설정 시 learn 로드 `ValueError`) · 파이프 `transition(OFF)→engine(v2 ON via past_learn)→aux→past_learn soft→diversity` · `PAST_LEARN_WIRE=True` · ASSOC OFF · reasoning 문자열·`past_learn.tags` 존재(예 1235: `1yHot[…]`) · **미준비**: 리셋 후 `lotto_predictions=0` · `learn_state=0` · `hit_warrant_log=0` · `evolve_log=0` → 피드백·학습 boost·명분 누적 경로 무효(중립) · **확정 길 잠금**: N숙제 / 재료1..(N-1) / 채점 N / 깊은패턴=재료 · 다음=기록 채우기 먼저 · `reports/20260808_KSTAT_PASTLEARN_READY_CHECK.md` |
 | **K-BRAIN-INDEPENDENCE-AUDIT (형GO · 버그사냥)** | **INDEPENDENCE_OK 14/14** (1216~1235 · READ-ONLY · DB 무기록) — 형 지시 「각 뇌별 독립적으로 예측번호 공유 X · 각 독립적으로 뇌별 몰아주기 · 각 뇌가 10세트 예측하는지 한번 더 버그를 찾아보자」 · **버그 2건 추가 발견·수정** — **⑥`brain_tag` 죽은 배선**: `repack_by_brain` 이 `number_scores(pool, hint, num_t, pos_t, ...)` 로 호출해 `brain_tag` 를 안 넘겼다 → `SCORE_WEIGHTS_BY_BRAIN.get(brain_tag or "", 기본값)` 이 항상 기본값으로 떨어져 **이번 턴에 만든 뇌별 가중치가 한 번도 조회되지 않았다**. 처음 hint 절제가 정확히 `+0.0000` 이던 것이 이 버그의 증상이었다(절제가 물리적으로 불가능). 다른 5개 호출부는 전부 `brain_tag` 를 넘기고 있었고 **발권 분석 경로 하나만** 빠져 있었다 → `brain_tag=tag` 추가 · **⑦hint 축 죽은 배선**: `HINT_SPEC_BY_BRAIN` 을 열었더니 B6 가 즉시 검출(호출자가 `hint_by_brain` 을 안 넘기면 무시) → `repack_by_brain` 이 spec 이 갈릴 때 **직접 만들게** 수정(3뇌 동일인 현재는 분기 미진입 = 비용·결과 무변화) · **죽은배선 탐지기 B6 신설**: 뇌별 dict 값을 바꿔 결과가 안 바뀌면 실패 처리 → 앞으로 같은 종류 버그를 자동 검출 · **실측 수치**: 3뇌 점수세트 번호 겹침 Jaccard **0.664~0.687**(공유 번호 14.2~14.5개) vs **무작위 기대 0.250** = 약 **2.7배** · hint 가중치를 0 으로 두면 **0.743 → 0.30**(−0.439) → **공유 hint 가 주원인 확정**(가중치 0.40) · 점수세트 번호의 자기 pool 출신 비율 markov 0.789 / stat 0.822 / review 0.794 = **약 20% 가 pool 밖에서 유입** · **깨지지 않은 것**: 뇌별 10세트 정확 · set_no 1~10 · 번호형식 · **pass0≠pass1**(내가 의심했던 「10세트가 실은 5세트」 버그는 없었다 · 3뇌 전부 난수 사용) · 뇌 간 동일세트 0건(pool·몰아주기 모두) · pool 슬롯 뇌별 2자리 확보 · RNG 독립 · 학습 교차오염 없음 · **hint 축 개방은 성적 무변화 실증**(`_k_hint_neutrality_check.py` — 공용 hint 결과 == 뇌별 hint 결과, 1233~1235 전부 일치) · `docs/benchmarks/20260808_KBRAIN_INDEP_AUDIT.json` |

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `59418d4` · WORK=`IDLE`
-- 지금: **K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF
-- 직전: K-STAT-PASTLEARN-READY-CHECK · 튜닝직전아님
-- BOOT다음: 회차 숙제 백필 or 형 GO · **테스트로또만**
-- NEXT1: K-STAT-HOMEWORK-FILL-PICK — UI는 테스트로또 집중 HOLD 중 · 형 1건 — **①회차 숙제 백테스트로 기록 채우기**(권장) / ②명분 샘플 리뷰 / ③재료 튜닝(게이트) / ④트랙정지 (승인=없음)
+- HEAD: `23177cb` · WORK=`IDLE`
+- 지금: **K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그
+- 직전: K-STAT-PASTLEARN-READY-CHECK (방향준비·기록미준비)
+- BOOT다음: **형 선택** — ①1235 명분 샘플 읽고 부족한 점 지적(권장) ②재료 튜닝(게이트) ③구간 확장(100회+) ④정지
+- NEXT1: K-STAT-HOMEWORK-NEXT-PICK — **K-STAT-HOMEWORK-FILL 완료 20/20** (1216~1235). 확정 길로 기록 채움 — 발권 쿼터5장 + **stat 숙제 5장 강제**(쿼터만 쓰면 past학습이 DB에 0장이던 문제 해결) + matched 채점 + pool_view_cache + evolve_log. 후행수: predictions **200**(stat **100**) · learn_state **3** · evolve **60** · pool **60** · hit_warrant **20**. 형 1건 — **①1235 명분 샘플 리뷰**(권장 · 보고서 §3) / ②재료 튜닝 착수(게이트) / ③구간 확장 1136~1235 / ④정지 (승인=없음 (DB 로컬만 · 커밋 안 함))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

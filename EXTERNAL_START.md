@@ -10,15 +10,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `59418d4` |
+| HEAD(실측) | `23177cb` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF |
-| 직전 | K-STAT-PASTLEARN-READY-CHECK · 튜닝직전아님 |
-| BOOT다음 | 회차 숙제 백필 or 형 GO · **테스트로또만** |
-| NEXT1 ID | **K-STAT-HOMEWORK-FILL-PICK** |
-| NEXT1 할일 | UI는 테스트로또 집중 HOLD 중 · 형 1건 — **①회차 숙제 백테스트로 기록 채우기**(권장) / ②명분 샘플 리뷰 / ③재료 튜닝(게이트) / ④트랙정지 |
-| 승인필요 | 없음 |
+| 지금 | **K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그 |
+| 직전 | K-STAT-PASTLEARN-READY-CHECK (방향준비·기록미준비) |
+| BOOT다음 | **형 선택** — ①1235 명분 샘플 읽고 부족한 점 지적(권장) ②재료 튜닝(게이트) ③구간 확장(100회+) ④정지 |
+| NEXT1 ID | **K-STAT-HOMEWORK-NEXT-PICK** |
+| NEXT1 할일 | **K-STAT-HOMEWORK-FILL 완료 20/20** (1216~1235). 확정 길로 기록 채움 — 발권 쿼터5장 + **stat 숙제 5장 강제**(쿼터만 쓰면 past학습이 DB에 0장이던 문제 해결) + matched 채점 + pool_view_cache + evolve_log. 후행수: predictions **200**(stat **100**) · learn_state **3** · evolve **60** · pool **60** · hit_warrant **20**. 형 1건 — **①1235 명분 샘플 리뷰**(권장 · 보고서 §3) / ②재료 튜닝 착수(게이트) / ③구간 확장 1136~1235 / ④정지 |
+| 승인필요 | 없음 (DB 로컬만 · 커밋 안 함) |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=59418d4 · 지금=**K-UI-TESTLOTTO-FOCUS-HOLD** — 전략X·두뇌예측·효도 UI HOLD · 기본=테스트로또 · 1236예측 자동표시 OFF · 다음=K-STAT-HOMEWORK-FILL-PICK`
+1. 첫줄 `[복귀] HEAD=23177cb · 지금=**K-STAT-HOMEWORK-FILL**(형GO ①) — 회차 숙제 1216~1235 **20/20 OK** · 298초. 발권경로+stat숙제5장 · 채점 · pool/evolve. 후: pred200(stat100) · learn3 · evolve60 · pool60 · warrant20. 명분 샘플 1235 set5 적중3·1yHot/Cold 태그 · 다음=K-STAT-HOMEWORK-NEXT-PICK`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 59418d4_
+_generated: 23177cb_
