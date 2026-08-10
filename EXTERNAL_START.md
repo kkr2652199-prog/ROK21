@@ -10,11 +10,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0c4f640` |
+| HEAD(실측) | `3bb098d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — 두뇌예측·전략X·효도 탭 **HOLD 해제** (`FOCUS_HOLD=false`) |
-| 직전 | K-BRAIN-INDEPENDENT-TUNE · APPLY |
+| 지금 | **종료체크정정** — HOLD_OFF 보고서 `reports/20260810_*.md` + 커서보고서 동기 (오명 0808 삭제) |
+| 직전 | K-UI-TESTLOTTO-FOCUS-HOLD-OFF · HOLD_OFF |
 | BOOT다음 | **형 선택** — ①군중 BLEND 소튜닝 ②1235 명분리뷰 ③정지 |
 | NEXT1 ID | **K-UI-HOLD-OFF-DONE** |
 | NEXT1 할일 | **UI HOLD 해제 완료** — `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 두뇌예측·전략X·효도 다시 표시. 하드 리로드(Ctrl+F5) 후 탭 확인. 형 1건 — **①군중 BLEND 소튜닝** / ②1235 명분리뷰 / ③정지 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0c4f640 · 지금=**K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — 두뇌예측·전략X·효도 탭 **HOLD 해제** (`FOCUS_HOLD=false`) · 다음=K-UI-HOLD-OFF-DONE`
+1. 첫줄 `[복귀] HEAD=3bb098d · 지금=**종료체크정정** — HOLD_OFF 보고서 `reports/20260810_*.md` + 커서보고서 동기 (오명 0808 삭제) · 다음=K-UI-HOLD-OFF-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 0c4f640_
+_generated: 3bb098d_

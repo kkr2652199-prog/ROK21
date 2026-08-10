@@ -3,8 +3,8 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0c4f640` · WORK=`IDLE`
-2. **지금:** **K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — 두뇌예측·전략X·효도 탭 **HOLD 해제** (`FOCUS_HOLD=false`)
+1. **HEAD:** `3bb098d` · WORK=`IDLE`
+2. **지금:** **종료체크정정** — HOLD_OFF 보고서 `reports/20260810_*.md` + 커서보고서 동기 (오명 0808 삭제)
 3. **다음1건:** K-UI-HOLD-OFF-DONE — **UI HOLD 해제 완료** — `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 두뇌예측·전략X·효도 다시 표시. 하드 리로드(Ctrl+F5) 후 탭 확인. 형 1건 — **①군중 BLEND 소튜닝** / ②1235 명분리뷰 / ③정지 (승인필요=없음 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-10 | 홀딩 챕 다시 풀어줘 | `FOCUS_HOLD=false` · predict/strategy-x/hyodo 복원 · autoload 복원 | **HOLD_OFF** | (본턴) |
+| 2026-08-10 | 종료체크·20260810보고서없음 | HOLD_OFF를 `20260810_*`로 재기록·커서보고서동기 · 오명0808삭제 | **DOC_FIX** | (본턴) |
+| 2026-08-10 | 홀딩 챕 다시 풀어줘 | `FOCUS_HOLD=false` · predict/strategy-x/hyodo 복원 · autoload 복원 | **HOLD_OFF** | 0c4f640 |
 | 2026-08-08 | 다음진행·패치OK→독립튜닝 | SCORE_WEIGHTS cand_A **APPLY** · prefer+0.023 · prize−0.027 · hit+0.005 · V1/V2유지 | **APPLY** | 536360f |
 | 2026-08-08 | 3뇌독립·hint분리·EV게이트 | hint 3축 분리 V1~V5 **5/5** · EV Δ−0.09 **MARGINAL** consistent · PREDICT실뇌 | **WIRE_CONFORMS** | 9582ac7 |
 | 2026-08-08 | 선호번호·금액뇌 재구조·과거학습 판단진행 | 흐름술사→선호번호 · 복습왕→금액뇌 · crowd_signal+문헌 · SMOKE_OK · ge3주장없음 | **WIRE_SMOKE_OK** | e652318 |
@@ -45,7 +46,6 @@
 | 2026-08-08 | 나머지 2뇌도 독립 패치 + 예측DB 리셋 | ④`expand_pool` 3뇌 **한 난수흐름**(stat→markov 오염) → 뇌별 시드리셋 ⑤pass0 시드=`seed+draw_no` → **pool1~5＝발권5세트**(C8) · 뇌별 상수dict 개방(값동일) · **hint 는 여전히 공유(명시)** · DB 3뇌예측 **7094행 삭제**(원천보존) · 검증 **9/9** | **WIRE_CONFORMS** | (본턴) |
 | 2026-08-08 | 「성적판정 말고 신호강한세트로 몰아주기」 배선수정 GO | **배선결함 3건 수정** — ①3뇌 성적표공유(`for _tag`)→뇌별분리 ②`for sn in (4,5)`하드코딩→위치EMA상위(이탈률 1.0/1.0/0.9) ③markov 슬롯0→3뇌동일 · 검증 7/7 · 게이트대상아님(설계일치) | **WIRE_CONFORMS** | d338ac7 |
 | 2026-08-08 | 몰아주기 정상작동 패치+과거학습 계속 | stat단독 n1183×seed5 · pool최고 0.2152=무작위**10장** 0.2143 → **전제붕괴(장수산수)** · 특성11개 상관≈0 · 선별전략 전부 현행이하 | **POOL=RANDOM** | d3c2059 |
-| 2026-08-08 | ②seed평균화GO | n300·outer10×안쪽8 · R8 σ비 1.38배(√R 2.83 미달) · 해상도상한 1.4647배 · **회차로사면 5.99배싸다** → **배선안함** | **NOISE_CUT_NO** | 01e1bac |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

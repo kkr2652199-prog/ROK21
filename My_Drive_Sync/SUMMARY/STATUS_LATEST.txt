@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-10 KST  
-📌 사유: **[CURSOR] K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — 홀딩 챕 복원 · `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 두뇌예측·전략X·효도 다시 표시
+📌 사유: **[CURSOR] 종료체크정정** — HOLD_OFF 보고서를 `20260810_*`로 재기록 · reports/·커서보고서/ 배치 (오명 20260808 삭제)
 
-📌 직전: **[CURSOR] K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS APPLY
+📌 직전: **[CURSOR] K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — FOCUS_HOLD=false
 
 ---
 
@@ -12,7 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-UI-TESTLOTTO-FOCUS-HOLD-OFF (형GO)** | **HOLD_OFF** — 형 「홀딩 챕 다시 풀어줘」. `lotto4.js` `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 복원뷰=`predict`/`strategy-x`/`hyodo` · HOLD 배너 미표시 · 진입 시 예측 autoload 복원. 재홀딩=`true`. · `docs/benchmarks/20260808_KUI_TESTLOTTO_FOCUS_HOLD_OFF.json` · `reports/20260808_KUI_TESTLOTTO_FOCUS_HOLD_OFF.md` |
+| **K-UI-TESTLOTTO-FOCUS-HOLD-OFF (형GO)** | **HOLD_OFF** — 형 「홀딩 챕 다시 풀어줘」. `lotto4.js` `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 복원뷰=`predict`/`strategy-x`/`hyodo` · HOLD 배너 미표시 · 진입 시 예측 autoload 복원. 재홀딩=`true`. · **종료체크정정**: 보고서·벤치 파일명 `20260810_*`(구 `20260808_*` 오명 삭제). · `docs/benchmarks/20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF.json` · `reports/20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF.md` · 커서보고서 동기 |
 | **K-UI-TESTLOTTO-FOCUS-HOLD** | **HOLD_OFF**(해제됨 · 원판정 HOLD_ON 기록 유지) — 구: 숨김 predict/strategy-x/hyodo · 기본 testlotto · autoload OFF |
 | **K-BRAIN-INDEPENDENT-TUNE (형GO·패치승인후)** | **APPLY** — 형 「다음 진행·패치 잘됨」→ 뇌별 독립튜닝 1노브. **SCORE_WEIGHTS_BY_BRAIN** base 전뇌(0.40/0.25/0.35) → cand_A: stat**(0.25/0.35/0.40)** · markov/review**(0.55/0.20/0.25)**. 구간1100~1235 n136 seed42 · **축지표(ge3미사용)**: markov prefer_delta +0.226→**+0.249**(Δ+0.023) · review prize_delta −0.028→**−0.055**(Δ−0.027·더음수) · stat top15_hit 0.300→**0.305**. review 3구간 cand **전부음수**(base early는 양수였음). V1/V2 hint분리 유지. 롤백=전뇌(0.40/0.25/0.35). · `docs/benchmarks/20260808_KBRAIN_INDEPENDENT_TUNE.json` · `reports/20260808_KBRAIN_INDEPENDENT_TUNE.md` · `tools/_k_brain_independent_tune.py` |
 | **K-BRAIN-INDEPENDENT-WIRE (형GO)** | **WIRE_CONFORMS** — 형 「3뇌 독립 · 공유=lotto_draws만 · 몰아주기도 뇌별」. **[A] hint 분리**: `HINT_SPEC_BY_BRAIN` stat=`(26,miss_pattern)` · markov=`(None,crowd_prefer)` · review=`(None,crowd_prize)` · `hint_shared=False` · probe1235 top5 전부 상이(stat15/28/31… · markov12/7/3… · review40/37/45…). V1~V5 **5/5**(dead_wire live · signal_top 뇌별 · RNG C7 · draws공유). pool `PREDICT_MODULES`→실뇌패키지(deprecated 래퍼 제거). **[B] EV게이트** 1100~1235 n136 · ge3미사용 · `prize_proxy_delta=−0.092741` → **MARGINAL** · early/mid/late 전부음수 `consistent=True` · STRONG 아님(과장금지). coordinator/`random.choices`/`_get_draws_before` 미접촉. 롤백 `K_CROWD_PREFER=0 K_PRIZE_EV=0`. · `docs/benchmarks/20260808_KBRAIN_INDEPENDENT_WIRE.json` · `reports/20260808_KBRAIN_INDEPENDENT_WIRE.md` · `tools/_k_brain_independent_wire.py` |
