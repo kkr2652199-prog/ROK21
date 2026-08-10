@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `04e3be2` · WORK=`IDLE`
+- HEAD: `0c4f640` · WORK=`IDLE`
 - 지금: **K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — 두뇌예측·전략X·효도 탭 **HOLD 해제** (`FOCUS_HOLD=false`)
 - 직전: K-BRAIN-INDEPENDENT-TUNE · APPLY
 - BOOT다음: **형 선택** — ①군중 BLEND 소튜닝 ②1235 명분리뷰 ③정지

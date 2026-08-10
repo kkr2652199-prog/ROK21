@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `04e3be2` · WORK=`IDLE`
+1. **HEAD:** `0c4f640` · WORK=`IDLE`
 2. **지금:** **K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — 두뇌예측·전략X·효도 탭 **HOLD 해제** (`FOCUS_HOLD=false`)
 3. **다음1건:** K-UI-HOLD-OFF-DONE — **UI HOLD 해제 완료** — `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 두뇌예측·전략X·효도 다시 표시. 하드 리로드(Ctrl+F5) 후 탭 확인. 형 1건 — **①군중 BLEND 소튜닝** / ②1235 명분리뷰 / ③정지 (승인필요=없음 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
