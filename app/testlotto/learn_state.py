@@ -34,6 +34,12 @@ BOOST_CAPS: dict[str, float] = {
 # referee recent_avg_match 슬라이딩 윈도우 (누적평균 수렴≈0.80 방지)
 REFEREE_WINDOW: int = 30
 
+# K-M: 구식 `1+avg*0.15` 는 avg≈0.8 수렴 시 3뇌 거의 균등(실효격차≪1%p).
+# baseline=E[hits/set]=0.8 대비 편차에 GAIN을 곱해 발권 비중으로 전달.
+REFEREE_BASELINE: float = 0.8
+REFEREE_GAIN: float = 2.5
+REFEREE_RAW_FLOOR: float = 0.15
+
 
 def _empty_state() -> dict[str, Any]:
     return {
@@ -115,18 +121,26 @@ def get_all_learn_states() -> dict[str, dict[str, Any]]:
 
 
 def get_referee_weights() -> dict[str, float]:
-    """심판관: 최근 성적 기반 예측뇌 가중치.
+    """심판관: 최근 성적(mean 창) 기반 예측뇌 가중치.
 
     load_learn_state 와 동일 as_of 절단(CUTOFF ON + set_learn_as_of).
+    K-M: baseline(0.8) 대비 편차×GAIN → 정규화. 학습 0회면 균등.
     """
     states = get_all_learn_states()
-    weights: dict[str, float] = {}
+    n = len(PREDICT_BRAIN_TAGS)
+    equal = {t: 1.0 / n for t in PREDICT_BRAIN_TAGS}
+    if all(int(states.get(t, _empty_state()).get("review_count", 0) or 0) <= 0 for t in PREDICT_BRAIN_TAGS):
+        return equal
+
+    raw: dict[str, float] = {}
     for tag in PREDICT_BRAIN_TAGS:
-        s = states.get(tag, _empty_state())
-        avg = float(s.get("recent_avg_match", 0.0))
-        weights[tag] = 1.0 + avg * 0.15
-    total = sum(weights.values()) or 1.0
-    return {k: v / total for k, v in weights.items()}
+        avg = float(states.get(tag, _empty_state()).get("recent_avg_match", 0.0) or 0.0)
+        raw[tag] = max(
+            REFEREE_RAW_FLOOR,
+            1.0 + REFEREE_GAIN * (avg - REFEREE_BASELINE),
+        )
+    total = sum(raw.values()) or 1.0
+    return {k: v / total for k, v in raw.items()}
 
 
 def apply_feedback(

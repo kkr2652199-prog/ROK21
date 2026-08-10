@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5e11d7d` |
+| HEAD(실측) | `8ef2920` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M |
-| 직전 | K-PROCESS-STRUCTURE-QUERY · DOC_OK |
-| BOOT다음 | **형 GO** — ①K-M referee 가중 ②1237 예측 생성(개발) ③정지 |
-| NEXT1 ID | **K-M-REFEREE-WEIGHT** |
-| NEXT1 할일 | **K-N PATCHED 후**. K-M HOLD 해소 — referee 가중 실효격차(균등≈0) 설계·패치. (3뇌 테스트/개발 단계 · 1237 양산前 · mean 학습입력 정합 완료) |
+| 지금 | **K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0 |
+| 직전 | K-N-MEAN-INPUT-FIX · PATCHED |
+| BOOT다음 | **형 GO** — ①1237 예측 생성(개발) ②추가 샘플 ③정지 |
+| NEXT1 ID | **K-1237-DEV-PREDICT** |
+| NEXT1 할일 | **K-M/K-N/K-K 테스트 정합 완료**. 예측 DB 리셋됨(pred=0). 형 GO 시 **1237 예측 생성**(재료 as_of≤1236 · 개발단계). 양산 준비는 1237 개발 완료 후. |
 | 승인필요 | 형 GO |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5e11d7d · 지금=**K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M · 다음=K-M-REFEREE-WEIGHT`
+1. 첫줄 `[복귀] HEAD=8ef2920 · 지금=**K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0 · 다음=K-1237-DEV-PREDICT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

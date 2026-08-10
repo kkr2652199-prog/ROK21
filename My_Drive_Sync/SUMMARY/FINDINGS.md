@@ -44,7 +44,7 @@
 | K-J | OPEN | 가중치 이중 체계 | `testlotto_brain_weights.current_weight` vs live referee | DB 1.1687 ↔ live 0.3348. 어느 것이 진짜인지 불명 |
 | K-K | PATCHED | 클릭 예측이 feedback 미연결 → routes 연결 | `click_feedback.py` · `routes.py` | POST /predict·/fetch-latest → apply_draw_result_feedback · evolve_log note=`K-KK-FEEDBACK` · weight_applied=0.0 유지 · K-M HOLD · K-N PATCHED |
 | K-L | OPEN | R29 ↔ 실제 뇌 구성 전면 불일치 | `RULES_FIXED.md` R29 | 9뇌 중 실재 0개. 실제=3예측+4보조. **형만 수정 가능** |
-| K-M | HOLD | referee 가중 실효격차 0.33% (사실상 균등) | `learn_state.py:108` `get_referee_weights` | **원인확정**: w≈균등 · top5 멤버십차 5%. 학습→가중 전달 사실상 0. 조치 설계 대기 |
+| K-M | PATCHED | referee 가중 실효격차 0.33% (사실상 균등) | `learn_state.get_referee_weights` · GAIN=2.5·baseline=0.8 | 구식1+avg×0.15→baseline대비편차×GAIN · 100회 샘플복습 후 격차 확대 · K-N mean입력 선행 |
 | K-N | PATCHED | 학습지표 best → 고분산 뇌를 실력으로 오인 | `walkforward._learn_match_from_sets` · `FEEDBACK_MATCH_MODE=mean` | WF/클릭/coordinator 학습입력 **mean** · best는 표시·참고만 · K-M HOLD |
 | K-O | OPEN | 세트 mean=0.8 상수 → 서열화 불가 | 초기하 E[X]=6×6/45 | 배경확정. 벤치에서 mean 단독 서열 금지 |
 | K-P | OPEN | 세트 5적중 기대≈3.5/대규모백테 → 학습신호 부재 | P₅≈2.87e-5 | 상위등수 최적화 축 폐기 후보 |

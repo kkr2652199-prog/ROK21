@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`5e11d7d` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`8ef2920` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=5e11d7d]
+[ROK21 젠스파크 압축복구 · HEAD=8ef2920]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 5e11d7d · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M
-- 직전: K-PROCESS-STRUCTURE-QUERY · DOC_OK
-- BOOT다음: **형 GO** — ①K-M referee 가중 ②1237 예측 생성(개발) ③정지
-- NEXT1: K-M-REFEREE-WEIGHT — **K-N PATCHED 후**. K-M HOLD 해소 — referee 가중 실효격차(균등≈0) 설계·패치. (3뇌 테스트/개발 단계 · 1237 양산前 · mean 학습입력 정합 완료)
+- HEAD: 8ef2920 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0
+- 직전: K-N-MEAN-INPUT-FIX · PATCHED
+- BOOT다음: **형 GO** — ①1237 예측 생성(개발) ②추가 샘플 ③정지
+- NEXT1: K-1237-DEV-PREDICT — **K-M/K-N/K-K 테스트 정합 완료**. 예측 DB 리셋됨(pred=0). 형 GO 시 **1237 예측 생성**(재료 as_of≤1236 · 개발단계). 양산 준비는 1237 개발 완료 후.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260810_KM_REFEREE_WEIGHT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KM_REFEREE_WEIGHT.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KM_REFEREE_WEIGHT.md
 - `20260810_KN_MEAN_INPUT_FIX` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KN_MEAN_INPUT_FIX.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KN_MEAN_INPUT_FIX.md
 - `20260810_KPROCESS_STRUCTURE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KPROCESS_STRUCTURE.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KGENSPARK_IDEA_CHECK.md
 - `20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.md
-- `20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=5e11d7d · 지금=**K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M · 다음=K-M-REFEREE-WEIGHT
+1. 첫줄: [복귀] HEAD=8ef2920 · 지금=**K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0 · 다음=K-1237-DEV-PREDICT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 5e11d7d_
+_generated: 8ef2920_

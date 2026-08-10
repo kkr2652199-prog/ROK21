@@ -1,0 +1,104 @@
+{
+  "id": "K-M-REFEREE-WEIGHT",
+  "ts": "2026-08-10T22:59:30+09:00",
+  "stage": "3brain_test_dev",
+  "sample_range": [
+    1137,
+    1236
+  ],
+  "sample_n": 100,
+  "unit_formula": {
+    "probe_avgs": {
+      "stat": 0.7,
+      "markov": 0.8,
+      "review": 0.9
+    },
+    "legacy": {
+      "stat": 0.32886904761904756,
+      "markov": 0.3333333333333333,
+      "review": 0.337797619047619
+    },
+    "new": {
+      "stat": 0.24999999999999992,
+      "markov": 0.3333333333333333,
+      "review": 0.4166666666666667
+    },
+    "spread_legacy": 0.008929,
+    "spread_new": 0.166667,
+    "ok": true
+  },
+  "reset": {
+    "deleted": {
+      "lotto_predictions": 210,
+      "lotto_analysis": 0,
+      "testlotto_brain_review": 3,
+      "testlotto_brain_learn_state": 3,
+      "testlotto_brain_weights": 3,
+      "testlotto_backtest_runs": 0,
+      "testlotto_backtest_draw_results": 0,
+      "testlotto_pool_view_cache": 63,
+      "testlotto_evolve_log": 63,
+      "testlotto_evolve_auto_state": 1,
+      "hit_warrant_log": 20
+    },
+    "draws_preserved": 1236,
+    "pred_after": 0,
+    "learn_after": 0,
+    "evolve_after": 0
+  },
+  "review": {
+    "reviewed": 100,
+    "skipped": 0,
+    "start_draw": 1137,
+    "end_draw": 1236
+  },
+  "referee_after": {
+    "as_of": 1237,
+    "avgs": {
+      "stat": 0.8667,
+      "markov": 0.7,
+      "review": 0.8
+    },
+    "review_counts": {
+      "stat": 100,
+      "markov": 100,
+      "review": 100
+    },
+    "formula": {
+      "baseline": 0.8,
+      "gain": 2.5,
+      "legacy": "1+avg*0.15"
+    },
+    "weights_new": {
+      "stat": 0.40001714236736097,
+      "markov": 0.25713551041398813,
+      "review": 0.34284734721865096
+    },
+    "weights_legacy": {
+      "stat": 0.33681171861144765,
+      "markov": 0.32935867457723605,
+      "review": 0.33382960681131624
+    },
+    "spread_new": 0.142882,
+    "spread_legacy": 0.007453,
+    "quota_weights": {
+      "stat": 0.33601593561754517,
+      "markov": 0.31199251217970764,
+      "review": 0.3519915522027472
+    },
+    "quota_5": {
+      "stat": 2,
+      "markov": 1,
+      "review": 2
+    },
+    "spread_improved": true
+  },
+  "findings_update": {
+    "K-M": "PATCHED",
+    "K-N": "PATCHED (선행)"
+  },
+  "verdict": "PATCHED",
+  "wire": true,
+  "ge3_used": false,
+  "cursor_opinion": "예측 DB 리셋 후 1137~1236 mean-복습으로 학습 재축적. referee spread legacy=0.007453 → new=0.142882. 다음=1237 예측 생성(개발) 또는 정지."
+}

@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5e11d7d` · WORK=`IDLE`
-2. **지금:** **K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M
-3. **다음1건:** K-M-REFEREE-WEIGHT — **K-N PATCHED 후**. K-M HOLD 해소 — referee 가중 실효격차(균등≈0) 설계·패치. (3뇌 테스트/개발 단계 · 1237 양산前 · mean 학습입력 정합 완료) (승인필요=형 GO · 선행=없음)
+1. **HEAD:** `8ef2920` · WORK=`IDLE`
+2. **지금:** **K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0
+3. **다음1건:** K-1237-DEV-PREDICT — **K-M/K-N/K-K 테스트 정합 완료**. 예측 DB 리셋됨(pred=0). 형 GO 시 **1237 예측 생성**(재료 as_of≤1236 · 개발단계). 양산 준비는 1237 개발 완료 후. (승인필요=형 GO · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-10 | K-M+예측리셋+100회복습 | referee GAIN식 · pred0 · spread0.007→0.143 · quota2/1/2 | **PATCHED** | (본턴) |
 | 2026-08-10 | 테스트단계 다음진행(3뇌) | WF 학습입력 mean 정합 · unit/smoke · FINDINGS K-N | **PATCHED** | 5e11d7d |
 | 2026-08-10 | 프로세스 구조 질문(수정없음) | 예측/채점/evolve 흐름·API의미·1236/1237실측 문서화 | **DOC_OK** | 073e8ea |
 | 2026-08-10 | 1236 실전 피드백 검증 | nums확인·3뇌 evolve마크·weight0·dupSKIP · 단건참고만 | **VERIFY_OK** | af40d12 |
@@ -45,7 +46,6 @@
 | 2026-08-10 | 홀딩 챕 다시 풀어줘 | `FOCUS_HOLD=false` · predict/strategy-x/hyodo 복원 · autoload 복원 | **HOLD_OFF** | 0c4f640 |
 | 2026-08-08 | 다음진행·패치OK→독립튜닝 | SCORE_WEIGHTS cand_A **APPLY** · prefer+0.023 · prize−0.027 · hit+0.005 · V1/V2유지 | **APPLY** | 536360f |
 | 2026-08-08 | 3뇌독립·hint분리·EV게이트 | hint 3축 분리 V1~V5 **5/5** · EV Δ−0.09 **MARGINAL** consistent · PREDICT실뇌 | **WIRE_CONFORMS** | 9582ac7 |
-| 2026-08-08 | 선호번호·금액뇌 재구조·과거학습 판단진행 | 흐름술사→선호번호 · 복습왕→금액뇌 · crowd_signal+문헌 · SMOKE_OK · ge3주장없음 | **WIRE_SMOKE_OK** | e652318 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

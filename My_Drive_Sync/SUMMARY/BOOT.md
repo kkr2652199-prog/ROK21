@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M
-- 직전: K-PROCESS-STRUCTURE-QUERY · DOC_OK
-- 다음: **형 GO** — ①K-M referee 가중 ②1237 예측 생성(개발) ③정지
+- 지금: **K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0
+- 직전: K-N-MEAN-INPUT-FIX · PATCHED
+- 다음: **형 GO** — ①1237 예측 생성(개발) ②추가 샘플 ③정지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-M-REFEREE-WEIGHT
-- 할일: **K-N PATCHED 후**. K-M HOLD 해소 — referee 가중 실효격차(균등≈0) 설계·패치. (3뇌 테스트/개발 단계 · 1237 양산前 · mean 학습입력 정합 완료)
-- 완료조건: K-M 패치·검증·FINDINGS 갱신
-- 선행완료: docs/benchmarks/20260810_KN_MEAN_INPUT_FIX.json · K-KK · K-1236 VERIFY
+- ID: K-1237-DEV-PREDICT
+- 할일: **K-M/K-N/K-K 테스트 정합 완료**. 예측 DB 리셋됨(pred=0). 형 GO 시 **1237 예측 생성**(재료 as_of≤1236 · 개발단계). 양산 준비는 1237 개발 완료 후.
+- 완료조건: 1237 lotto_predictions 3뇌 발권·피드백 경로 확인
+- 선행완료: 20260810_KM_REFEREE_WEIGHT · KN_MEAN · KKK_FEEDBACK · K1236_VERIFY
 - 승인필요: 형 GO
 - 선행조건: 없음
 - 최종갱신: 2026-08-10
