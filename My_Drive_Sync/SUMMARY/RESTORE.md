@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `96470ff` · WORK=`IDLE`
+1. **HEAD:** `27286dd` · WORK=`IDLE`
 2. **지금:** **양산前** · 뇌독립 BY_BRAIN · review BLEND**0.85** APPLY · markov**0.55** HOLD
 3. **다음1건:** K-STAT-PATTERN-TUNE — **양산前**. 1236=마지막회차 · **1237 양산아님**. **뇌 독립 원칙**: 공유=`lotto_draws`만 · 예측과정/BLEND/W_*/hint 뇌별 분리. ①markov prefer BLEND=**NO_IMPROVE·0.55HOLD** · ②review prize BLEND=**0.85 APPLY** 완료. 다음=**③ stat 과거학습 패턴** 단독 튜닝(축·게이트 형 지정 또는 권장안). ge3 성적클레임 금지. 합동 smoke는 ④만. (승인필요=형 GO (stat 축 지정) 또는 「권장 진행」 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
