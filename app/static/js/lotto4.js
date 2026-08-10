@@ -9,9 +9,9 @@
 
   /**
    * 테스트로또 집중 HOLD — 전략X·두뇌예측(4군)·효도 예측번호 UI 숨김.
-   * 끄려면 false. (형: 1236 등 타탭 예측 혼동 방지)
+   * 2026-08-10 형: 홀딩 챕 다시 보이게 → false (HOLD_OFF).
    */
-  const ROK21_TESTLOTTO_FOCUS_HOLD = true;
+  const ROK21_TESTLOTTO_FOCUS_HOLD = false;
   const HOLD_HIDE_VIEWS = new Set(['predict', 'strategy-x', 'hyodo']);
   const HOLD_DEFAULT_VIEW = 'testlotto';
 

@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`536360f` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`04e3be2` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=536360f]
+[ROK21 젠스파크 압축복구 · HEAD=04e3be2]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 536360f · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS 뇌별 **APPLY** · prefer↑/prize더음수/stat hit↑ · ge3미사용
-- 직전: K-BRAIN-INDEPENDENT-WIRE · WIRE_CONFORMS
-- BOOT다음: **형 선택** — ①군중 BLEND 소튜닝(review EV) ②과거학습 명분리뷰 ③정지
-- NEXT1: K-BRAIN-INDEPENDENT-TUNE-DONE — **SCORE_WEIGHTS 뇌별 APPLY 완료**. cand_A(stat 0.25/0.35/0.40 · markov·review 0.55/0.20/0.25). 축지표 1100~1235: prefer+0.023 · prize−0.027 · stat hit+0.005 · review 3구간 consistent. 형 1건 — **①군중 BLEND_STRENGTH 소튜닝**(review EV 강화 후보) / ②1235 과거학습 명분리뷰 / ③정지
+- HEAD: 04e3be2 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — 두뇌예측·전략X·효도 탭 **HOLD 해제** (`FOCUS_HOLD=false`)
+- 직전: K-BRAIN-INDEPENDENT-TUNE · APPLY
+- BOOT다음: **형 선택** — ①군중 BLEND 소튜닝 ②1235 명분리뷰 ③정지
+- NEXT1: K-UI-HOLD-OFF-DONE — **UI HOLD 해제 완료** — `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 두뇌예측·전략X·효도 다시 표시. 하드 리로드(Ctrl+F5) 후 탭 확인. 형 1건 — **①군중 BLEND 소튜닝** / ②1235 명분리뷰 / ③정지
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260808_KUI_TESTLOTTO_FOCUS_HOLD_OFF` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KUI_TESTLOTTO_FOCUS_HOLD_OFF.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KUI_TESTLOTTO_FOCUS_HOLD_OFF.md
 - `20260808_KBRAIN_INDEPENDENT_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KBRAIN_INDEPENDENT_TUNE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KBRAIN_INDEPENDENT_TUNE.md
 - `20260808_KBRAIN_INDEPENDENT_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KBRAIN_INDEPENDENT_WIRE.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KGATE_COMPLIANCE.md
 - `20260808_KBRAIN_INDEP_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KBRAIN_INDEP_AUDIT.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KBRAIN_INDEP_AUDIT.md
-- `20260808_KREPACK_SIGNAL_WIRE_VERIFY` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260808_KREPACK_SIGNAL_WIRE_VERIFY.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260808_KREPACK_SIGNAL_WIRE_VERIFY.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=536360f · 지금=**K-BRAIN-INDEPENDENT-TUNE** — SCORE_WEIGHTS 뇌별 **APPLY** · prefer↑/prize더음수/stat hit↑ · ge3미사용 · 다음=K-BRAIN-INDEPENDENT-TUNE-DONE
+1. 첫줄: [복귀] HEAD=04e3be2 · 지금=**K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — 두뇌예측·전략X·효도 탭 **HOLD 해제** (`FOCUS_HOLD=false`) · 다음=K-UI-HOLD-OFF-DONE
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 536360f_
+_generated: 04e3be2_
