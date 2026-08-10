@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7034de0` · WORK=`IDLE`
+- HEAD: `25b62d6` · WORK=`IDLE`
 - 지금: **K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지
 - 직전: K-GENSPARK-IDEA-CHECK · CHECK_DONE
 - BOOT다음: **형 GO** — ①정지/다른축 ②임계완화 재스윕(비권장) ③명분리뷰
