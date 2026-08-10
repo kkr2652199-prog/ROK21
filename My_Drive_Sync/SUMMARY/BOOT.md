@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · 뇌독립 BY_BRAIN · review BLEND**0.85** APPLY · markov**0.55** HOLD
-- 직전: K-MARKOV prefer NO_IMPROVE · prize_drift0 독립실측
-- 다음: **형 GO** — ③ **stat 패턴** 단독 튜닝 (ge3클레임금지 · 1237아님)
+- 지금: **양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55**
+- 직전: K-STAT-PATTERN-TUNE · hit0.307→0.319 · prefer/prize drift0
+- 다음: **형 GO** — ④ **합동 smoke**만 (3뇌 동시·ge3클레임금지 · 1237아님)
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

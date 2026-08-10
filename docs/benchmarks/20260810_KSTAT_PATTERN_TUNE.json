@@ -1,0 +1,368 @@
+{
+  "id": "K-STAT-PATTERN-TUNE",
+  "ts": "2026-08-10T23:49:41+09:00",
+  "knob": "HINT_SPEC_BY_BRAIN['stat'].weeks",
+  "precheck": {
+    "stat_hint_spec": [
+      26,
+      "miss_pattern"
+    ],
+    "spec_ok": true,
+    "weights_ok": true,
+    "weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.55,
+        0.2,
+        0.25
+      ],
+      "review": [
+        0.55,
+        0.2,
+        0.25
+      ]
+    },
+    "blend_by_brain": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "ok": true
+  },
+  "sweep_range": [
+    13,
+    20,
+    26,
+    39,
+    52
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "draw_range": [
+    1137,
+    1236
+  ],
+  "base_hit": 0.306667,
+  "base_prefer_delta": 0.244449,
+  "base_prize_delta": -0.074379,
+  "abs_thr": 0.005,
+  "iso_thr": 0.005,
+  "results": [
+    {
+      "stat_weeks": 13,
+      "stat_top15_hit_mean": 0.311667,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": false,
+        "abs_dhit": 0.005,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    },
+    {
+      "stat_weeks": 20,
+      "stat_top15_hit_mean": 0.308333,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": false,
+        "abs_dhit": 0.001666,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    },
+    {
+      "stat_weeks": 26,
+      "stat_top15_hit_mean": 0.306667,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": true,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": true,
+        "abs_dhit": 0.0,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": true
+      },
+      "per_seed_n": 3
+    },
+    {
+      "stat_weeks": 39,
+      "stat_top15_hit_mean": 0.316667,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": true,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": true,
+        "abs_dhit": 0.01,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    },
+    {
+      "stat_weeks": 52,
+      "stat_top15_hit_mean": 0.319444,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": true,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": true,
+        "abs_dhit": 0.012777,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    }
+  ],
+  "results_detail": [
+    {
+      "stat_weeks": 13,
+      "stat_top15_hit_mean": 0.311667,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": false,
+        "abs_dhit": 0.005,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "stat_top15_hit": 0.303333,
+          "prefer_mean": 0.238625,
+          "prize_mean": -0.074848
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "stat_top15_hit": 0.306667,
+          "prefer_mean": 0.250115,
+          "prize_mean": -0.070072
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "stat_top15_hit": 0.325,
+          "prefer_mean": 0.244606,
+          "prize_mean": -0.078216
+        }
+      ]
+    },
+    {
+      "stat_weeks": 20,
+      "stat_top15_hit_mean": 0.308333,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": false,
+        "abs_dhit": 0.001666,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "stat_top15_hit": 0.298333,
+          "prefer_mean": 0.238625,
+          "prize_mean": -0.074848
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "stat_top15_hit": 0.31,
+          "prefer_mean": 0.250115,
+          "prize_mean": -0.070072
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "stat_top15_hit": 0.316667,
+          "prefer_mean": 0.244606,
+          "prize_mean": -0.078216
+        }
+      ]
+    },
+    {
+      "stat_weeks": 26,
+      "stat_top15_hit_mean": 0.306667,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": true,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": true,
+        "abs_dhit": 0.0,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": true
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "stat_top15_hit": 0.291667,
+          "prefer_mean": 0.238625,
+          "prize_mean": -0.074848
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "stat_top15_hit": 0.31,
+          "prefer_mean": 0.250115,
+          "prize_mean": -0.070072
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "stat_top15_hit": 0.318333,
+          "prefer_mean": 0.244606,
+          "prize_mean": -0.078216
+        }
+      ]
+    },
+    {
+      "stat_weeks": 39,
+      "stat_top15_hit_mean": 0.316667,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": true,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": true,
+        "abs_dhit": 0.01,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "stat_top15_hit": 0.305,
+          "prefer_mean": 0.238625,
+          "prize_mean": -0.074848
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "stat_top15_hit": 0.315,
+          "prefer_mean": 0.250115,
+          "prize_mean": -0.070072
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "stat_top15_hit": 0.33,
+          "prefer_mean": 0.244606,
+          "prize_mean": -0.078216
+        }
+      ]
+    },
+    {
+      "stat_weeks": 52,
+      "stat_top15_hit_mean": 0.319444,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.074379,
+      "gate_pass": true,
+      "gate_detail": {
+        "cond_improve": true,
+        "cond_abs": true,
+        "abs_dhit": 0.012777,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "prefer_drift": 0.0,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "stat_top15_hit": 0.318333,
+          "prefer_mean": 0.238625,
+          "prize_mean": -0.074848
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "stat_top15_hit": 0.318333,
+          "prefer_mean": 0.250115,
+          "prize_mean": -0.070072
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "stat_top15_hit": 0.321667,
+          "prefer_mean": 0.244606,
+          "prize_mean": -0.078216
+        }
+      ]
+    }
+  ],
+  "best_weeks": 52,
+  "best_reason": "hit 최대 weeks=52 (hit=0.319444, prefer_drift=0.0, prize_drift=0.0)",
+  "verdict": "APPLY",
+  "applied": true,
+  "applied_weeks": 52,
+  "current_weeks": 52,
+  "cursor_opinion": "HINT_SPEC_BY_BRAIN['stat']=(52, miss_pattern) APPLY. markov/review 불변 · drift0. 다음=④합동 smoke.",
+  "wire": true,
+  "ge3_used": false,
+  "independence": {
+    "shared": "lotto_draws only",
+    "tuned_knob": "HINT_SPEC_BY_BRAIN['stat']",
+    "frozen": [
+      "markov HINT/BLEND",
+      "review HINT/BLEND",
+      "SCORE_WEIGHTS"
+    ]
+  }
+}

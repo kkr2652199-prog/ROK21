@@ -59,7 +59,8 @@ LEARN_EMA_BY_BRAIN: dict[str, float] = dict.fromkeys(BRAIN_TAGS, LEARN_EMA)
 #   review → 금액뇌(crowd_prize · 비선호·저당첨자수)
 # 기존 (WINDOW_WEEKS, WINDOW_SIGNAL) 단일 hint 는 `_build_hint` fallback 으로만 유지.
 HINT_SPEC_BY_BRAIN: dict[str, tuple[int | None, str]] = {
-    "stat": (26, "miss_pattern"),
+    # K-STAT-PATTERN-TUNE APPLY: miss_pattern 창 26→52 (1137~1236·hit↑·iso OK)
+    "stat": (52, "miss_pattern"),
     "markov": (None, "crowd_prefer"),
     "review": (None, "crowd_prize"),
 }
