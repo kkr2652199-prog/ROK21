@@ -71,10 +71,11 @@ def _patch_blend(strength: float) -> Callable[[], None]:
         table: dict[int, float],
         *,
         strength: float | None = None,
+        brain: str | None = None,
     ) -> dict[int, float]:
-        # 엔진은 strength 미전달 → 정의시점 기본값 무시, 모듈 상수(스윕값) 강제
+        # 스윕값 강제. brain 인자는 호환용(구 공용 스윕).
         use = float(strength) if strength is not None else float(cs.BLEND_STRENGTH)
-        return orig(base, table, strength=use)
+        return orig(base, table, strength=use, brain=brain)
 
     cs.BLEND_STRENGTH = float(strength)
     cs.blend_weights = wrapped  # type: ignore[assignment]

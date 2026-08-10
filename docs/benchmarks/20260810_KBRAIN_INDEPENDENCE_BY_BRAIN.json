@@ -1,0 +1,41 @@
+{
+  "id": "K-BRAIN-INDEPENDENCE-BY-BRAIN",
+  "ts": "2026-08-10",
+  "verdict": "PATCHED",
+  "wire": true,
+  "principle": {
+    "shared_allowed": ["lotto_draws", "_get_draws_before"],
+    "shared_forbidden": [
+      "prediction_process",
+      "BLEND_STRENGTH_scalar_cross_brain",
+      "W_CROWD_scalar_cross_brain",
+      "hint_spec_cross_brain"
+    ]
+  },
+  "patched": {
+    "crowd_signal": [
+      "W_CROWD_BY_BRAIN",
+      "W_STRUCT_BY_BRAIN",
+      "BLEND_STRENGTH_BY_BRAIN",
+      "prefer_table(brain=)",
+      "prize_table(brain=)",
+      "blend_weights(brain=)"
+    ],
+    "call_sites": [
+      "markov_brain/engine.py",
+      "review_brain/engine.py",
+      "signal_pool.py"
+    ]
+  },
+  "isolation_smoke_markov_sweep": {
+    "source": "20260810_KMARKOV_PREFER_BLEND_TUNE.json",
+    "prize_drift_all_zero": true
+  },
+  "defaults": {
+    "BLEND_STRENGTH_BY_BRAIN": {"markov": 0.55, "review": 0.55},
+    "W_CROWD_BY_BRAIN": {"markov": 0.7, "review": 0.7},
+    "W_STRUCT_BY_BRAIN": {"markov": 0.3, "review": 0.3}
+  },
+  "ge3_used": false,
+  "freeze_untouched": ["random.choices", "_get_draws_before", "boost_caps"]
+}

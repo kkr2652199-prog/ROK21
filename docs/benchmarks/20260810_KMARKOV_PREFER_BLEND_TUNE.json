@@ -1,0 +1,492 @@
+{
+  "id": "K-MARKOV-PREFER-BLEND-TUNE",
+  "ts": "2026-08-10T23:24:37+09:00",
+  "precheck": {
+    "blend_by_brain": {
+      "markov": 0.55,
+      "review": 0.55
+    },
+    "blend_by_ok": true,
+    "weights_ok": true,
+    "weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.55,
+        0.2,
+        0.25
+      ],
+      "review": [
+        0.55,
+        0.2,
+        0.25
+      ]
+    },
+    "independence_api": {
+      "prefer_table_brain_kw": true,
+      "prize_table_brain_kw": true,
+      "blend_weights_brain_kw": true
+    },
+    "ok": true
+  },
+  "sweep_range": [
+    0.4,
+    0.5,
+    0.55,
+    0.65,
+    0.75,
+    0.85
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "draw_range": [
+    1137,
+    1236
+  ],
+  "base_prefer_delta": 0.244449,
+  "base_prize_delta": -0.063355,
+  "abs_thr": 0.01,
+  "prize_iso_thr": 0.005,
+  "results": [
+    {
+      "markov_blend": 0.4,
+      "prefer_delta_mean": 0.240827,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.239576,
+      "prefer_second_half_mean": 0.242078,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.003622,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    },
+    {
+      "markov_blend": 0.5,
+      "prefer_delta_mean": 0.242741,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.239888,
+      "prefer_second_half_mean": 0.245593,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.001708,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    },
+    {
+      "markov_blend": 0.55,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.239714,
+      "prefer_second_half_mean": 0.249184,
+      "gate_pass": true,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": true,
+        "cond_abs": true,
+        "abs_dprefer": 0.0,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": true
+      },
+      "per_seed_n": 3
+    },
+    {
+      "markov_blend": 0.65,
+      "prefer_delta_mean": 0.242816,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.239903,
+      "prefer_second_half_mean": 0.24573,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.001633,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    },
+    {
+      "markov_blend": 0.75,
+      "prefer_delta_mean": 0.243515,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.243172,
+      "prefer_second_half_mean": 0.243858,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.000934,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    },
+    {
+      "markov_blend": 0.85,
+      "prefer_delta_mean": 0.242633,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.245009,
+      "prefer_second_half_mean": 0.240256,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.001816,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed_n": 3
+    }
+  ],
+  "results_detail": [
+    {
+      "markov_blend": 0.4,
+      "prefer_delta_mean": 0.240827,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.239576,
+      "prefer_second_half_mean": 0.242078,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.003622,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prize_mean": -0.057155,
+          "prefer_mean": 0.230225,
+          "prefer_first_half": 0.235862,
+          "prefer_second_half": 0.224588,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prize_mean": -0.062596,
+          "prefer_mean": 0.252787,
+          "prefer_first_half": 0.249425,
+          "prefer_second_half": 0.25615,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prize_mean": -0.070314,
+          "prefer_mean": 0.239468,
+          "prefer_first_half": 0.23344,
+          "prefer_second_half": 0.245495,
+          "prefer_split_both_pos": true
+        }
+      ]
+    },
+    {
+      "markov_blend": 0.5,
+      "prefer_delta_mean": 0.242741,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.239888,
+      "prefer_second_half_mean": 0.245593,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.001708,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prize_mean": -0.057155,
+          "prefer_mean": 0.234096,
+          "prefer_first_half": 0.230471,
+          "prefer_second_half": 0.23772,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prize_mean": -0.062596,
+          "prefer_mean": 0.246187,
+          "prefer_first_half": 0.241861,
+          "prefer_second_half": 0.250514,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prize_mean": -0.070314,
+          "prefer_mean": 0.247939,
+          "prefer_first_half": 0.247333,
+          "prefer_second_half": 0.248546,
+          "prefer_split_both_pos": true
+        }
+      ]
+    },
+    {
+      "markov_blend": 0.55,
+      "prefer_delta_mean": 0.244449,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.239714,
+      "prefer_second_half_mean": 0.249184,
+      "gate_pass": true,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": true,
+        "cond_abs": true,
+        "abs_dprefer": 0.0,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": true
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prize_mean": -0.057155,
+          "prefer_mean": 0.238625,
+          "prefer_first_half": 0.228932,
+          "prefer_second_half": 0.248319,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prize_mean": -0.062596,
+          "prefer_mean": 0.250115,
+          "prefer_first_half": 0.243978,
+          "prefer_second_half": 0.256253,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prize_mean": -0.070314,
+          "prefer_mean": 0.244606,
+          "prefer_first_half": 0.246232,
+          "prefer_second_half": 0.24298,
+          "prefer_split_both_pos": true
+        }
+      ]
+    },
+    {
+      "markov_blend": 0.65,
+      "prefer_delta_mean": 0.242816,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.239903,
+      "prefer_second_half_mean": 0.24573,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.001633,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prize_mean": -0.057155,
+          "prefer_mean": 0.244157,
+          "prefer_first_half": 0.241362,
+          "prefer_second_half": 0.246951,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prize_mean": -0.062596,
+          "prefer_mean": 0.247892,
+          "prefer_first_half": 0.245057,
+          "prefer_second_half": 0.250728,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prize_mean": -0.070314,
+          "prefer_mean": 0.2364,
+          "prefer_first_half": 0.233289,
+          "prefer_second_half": 0.239511,
+          "prefer_split_both_pos": true
+        }
+      ]
+    },
+    {
+      "markov_blend": 0.75,
+      "prefer_delta_mean": 0.243515,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.243172,
+      "prefer_second_half_mean": 0.243858,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.000934,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prize_mean": -0.057155,
+          "prefer_mean": 0.239277,
+          "prefer_first_half": 0.235066,
+          "prefer_second_half": 0.243489,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prize_mean": -0.062596,
+          "prefer_mean": 0.253628,
+          "prefer_first_half": 0.254337,
+          "prefer_second_half": 0.252919,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prize_mean": -0.070314,
+          "prefer_mean": 0.23764,
+          "prefer_first_half": 0.240113,
+          "prefer_second_half": 0.235167,
+          "prefer_split_both_pos": true
+        }
+      ]
+    },
+    {
+      "markov_blend": 0.85,
+      "prefer_delta_mean": 0.242633,
+      "prize_delta_mean": -0.063355,
+      "prefer_split_both_pos": true,
+      "prefer_split_both_pos_rate": 1.0,
+      "prefer_first_half_mean": 0.245009,
+      "prefer_second_half_mean": 0.240256,
+      "gate_pass": false,
+      "gate_detail": {
+        "cond_prefer_pos": true,
+        "cond_split": true,
+        "cond_improve": false,
+        "cond_abs": false,
+        "abs_dprefer": 0.001816,
+        "prize_iso": true,
+        "prize_drift": 0.0,
+        "is_baseline": false
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prize_mean": -0.057155,
+          "prefer_mean": 0.23586,
+          "prefer_first_half": 0.239966,
+          "prefer_second_half": 0.231755,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prize_mean": -0.062596,
+          "prefer_mean": 0.251258,
+          "prefer_first_half": 0.249716,
+          "prefer_second_half": 0.252799,
+          "prefer_split_both_pos": true
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prize_mean": -0.070314,
+          "prefer_mean": 0.24078,
+          "prefer_first_half": 0.245346,
+          "prefer_second_half": 0.236214,
+          "prefer_split_both_pos": true
+        }
+      ]
+    }
+  ],
+  "best_blend": null,
+  "best_reason": "게이트 통과 개선 후보 없음",
+  "verdict": "NO_IMPROVE",
+  "current_markov_blend": 0.55,
+  "cursor_opinion": "개선 게이트 통과 후보 없음. markov BLEND=0.55 HOLD. 다음 권장: ② review prize BLEND 단독 스윕.",
+  "wire": false,
+  "ge3_used": false,
+  "independence": {
+    "shared": "lotto_draws only",
+    "tuned_knob": "BLEND_STRENGTH_BY_BRAIN['markov']",
+    "frozen_knob": "BLEND_STRENGTH_BY_BRAIN['review']"
+  }
+}

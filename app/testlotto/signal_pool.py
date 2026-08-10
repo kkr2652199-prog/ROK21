@@ -468,11 +468,11 @@ def _build_hint_for_spec(
     if signal == "crowd_prefer":
         from app.testlotto.brains.shared import crowd_signal
 
-        return _weights_to_hint(crowd_signal.prefer_table(draws))
+        return _weights_to_hint(crowd_signal.prefer_table(draws, brain="markov"))
     if signal == "crowd_prize":
         from app.testlotto.brains.shared import crowd_signal
 
-        return _weights_to_hint(crowd_signal.prize_table(draws))
+        return _weights_to_hint(crowd_signal.prize_table(draws, brain="review"))
     from tools._k_window_signal_survey import _build_hint as _bh
 
     return _bh(draws, weeks, signal, draw_no)

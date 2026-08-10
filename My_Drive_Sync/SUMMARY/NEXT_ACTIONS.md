@@ -3,11 +3,11 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BRAIN-SIGNAL-TUNE
-- 할일: **양산前**. DB 결과 최신=**1236을 마지막 회차**로 본다. **1237 예측/양산 준비 아님**. 1235·1234·그 이전으로 백테·샘플 테스트하며 **3뇌(stat/markov/review) 신호를 최고 성능으로 튜닝**. 형 GO 시 튜닝 축 지정(예: 금액뇌 EV / 선호번호 prefer / 과거학습 패턴). ge3를 성적클레임으로 쓰지 말 것.
-- 완료조건: 형 지정 축 튜닝·벤치·게이트
-- 선행완료: K-M/K-N/K-K PATCHED · 예측리셋·1137~1236 복습
-- 승인필요: 형 GO (어느 뇌·어느 축부터)
+- ID: K-STAT-PATTERN-TUNE
+- 할일: **양산前**. 1236=마지막회차 · **1237 양산아님**. **뇌 독립 원칙**: 공유=`lotto_draws`만 · 예측과정/BLEND/W_*/hint 뇌별 분리. ①markov prefer BLEND=**NO_IMPROVE·0.55HOLD** · ②review prize BLEND=**0.85 APPLY** 완료. 다음=**③ stat 과거학습 패턴** 단독 튜닝(축·게이트 형 지정 또는 권장안). ge3 성적클레임 금지. 합동 smoke는 ④만.
+- 완료조건: stat 축 벤치·게이트·(PASS시)뇌별노브만 APPLY
+- 선행완료: K-BRAIN-INDEPENDENCE-BY-BRAIN PATCHED · K-MARKOV-PREFER-BLEND-TUNE NO_IMPROVE · K-REVIEW-PRIZE-BLEND-TUNE APPLY
+- 승인필요: 형 GO (stat 축 지정) 또는 「권장 진행」
 - 선행조건: 없음
 - 최종갱신: 2026-08-10
 
@@ -21,3 +21,4 @@ IDLE
 
 - 1236 = 테스트 기준 최종 확정회차 · 1237은 아직 준비 단계 아님
 - 튜닝 재료 = 1235 이하(+필요시 1236 채점) · 미래회차 양산 발권 아님
+- BLEND_STRENGTH_BY_BRAIN: markov=0.55 · review=0.85

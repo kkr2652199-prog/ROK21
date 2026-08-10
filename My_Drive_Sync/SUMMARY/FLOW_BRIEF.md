@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `2f7788f` · WORK=`IDLE`
-- 지금: **양산前 테스트** — DB최신=**1236**=마지막회차 가정 · 1237 아직 아님
-- 직전: K-M/K-N/K-K PATCHED · 예측리셋·100회복습
-- BOOT다음: **형 GO** — 1235↓ 백테로 **뇌별 신호 최고성능 튜닝** (축 지정)
-- NEXT1: K-BRAIN-SIGNAL-TUNE — **양산前**. DB 결과 최신=**1236을 마지막 회차**로 본다. **1237 예측/양산 준비 아님**. 1235·1234·그 이전으로 백테·샘플 테스트하며 **3뇌(stat/markov/review) 신호를 최고 성능으로 튜닝**. 형 GO 시 튜닝 축 지정(예: 금액뇌 EV / 선호번호 prefer / 과거학습 패턴). ge3를 성적클레임으로 쓰지 말 것. (승인=형 GO (어느 뇌·어느 축부터))
+- HEAD: `674a12a` · WORK=`IDLE`
+- 지금: **양산前** · 뇌독립 BY_BRAIN · review BLEND**0.85** APPLY · markov**0.55** HOLD
+- 직전: K-MARKOV prefer NO_IMPROVE · prize_drift0 독립실측
+- BOOT다음: **형 GO** — ③ **stat 패턴** 단독 튜닝 (ge3클레임금지 · 1237아님)
+- NEXT1: K-STAT-PATTERN-TUNE — **양산前**. 1236=마지막회차 · **1237 양산아님**. **뇌 독립 원칙**: 공유=`lotto_draws`만 · 예측과정/BLEND/W_*/hint 뇌별 분리. ①markov prefer BLEND=**NO_IMPROVE·0.55HOLD** · ②review prize BLEND=**0.85 APPLY** 완료. 다음=**③ stat 과거학습 패턴** 단독 튜닝(축·게이트 형 지정 또는 권장안). ge3 성적클레임 금지. 합동 smoke는 ④만. (승인=형 GO (stat 축 지정) 또는 「권장 진행」)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

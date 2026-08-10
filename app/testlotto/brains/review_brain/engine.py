@@ -30,7 +30,9 @@ def build_review_weights(draws: list[dict], adj: dict | None = None) -> dict[int
 
         if crowd_signal.prize_on():
             weights = crowd_signal.blend_weights(
-                weights, crowd_signal.prize_table(draws)
+                weights,
+                crowd_signal.prize_table(draws, brain="review"),
+                brain="review",
             )
     except Exception:  # noqa: BLE001
         pass

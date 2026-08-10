@@ -24,11 +24,18 @@ from typing import Any
 PREFER_WIRE: bool = True   # markov → 선호번호
 PRIZE_WIRE: bool = True    # review → 금액뇌
 
-# 군중 신호 vs 구조 사전 혼합
+# 군중 신호 vs 구조 사전 혼합 (호환 스칼라 · 기본값)
 W_CROWD = 0.70
 W_STRUCT = 0.30
 # 엔진 가중치에 곱할 때 세기 (1.0 = ±100% 범위로 부드럽게)
 BLEND_STRENGTH = 0.55
+
+# K-BRAIN-INDEPENDENCE: 예측 과정 계수 뇌별 분리.
+# 공유 허용 = lotto_draws(과거 결과)만. markov↔review 노브 공유 금지.
+W_CROWD_BY_BRAIN: dict[str, float] = {"markov": 0.70, "review": 0.70}
+W_STRUCT_BY_BRAIN: dict[str, float] = {"markov": 0.30, "review": 0.30}
+# review=0.85: K-REVIEW-PRIZE-BLEND-TUNE APPLY (1137~1236·seed3·|Δprize|≥0.01·prefer_iso)
+BLEND_STRENGTH_BY_BRAIN: dict[str, float] = {"markov": 0.55, "review": 0.85}
 
 
 def _env_on(name: str, default: bool) -> bool:
@@ -140,21 +147,21 @@ def crowd_unpopular_from_draws(draws: list[dict]) -> dict[int, float]:
     return _normalize(acc)
 
 
-def prefer_table(draws: list[dict]) -> dict[int, float]:
+def prefer_table(draws: list[dict], *, brain: str = "markov") -> dict[int, float]:
     crowd = crowd_popular_from_draws(draws)
     struct = structural_popular_prior()
-    mixed = {
-        n: W_CROWD * crowd[n] + W_STRUCT * struct[n] for n in range(1, 46)
-    }
+    wc = float(W_CROWD_BY_BRAIN.get(brain, W_CROWD))
+    ws = float(W_STRUCT_BY_BRAIN.get(brain, W_STRUCT))
+    mixed = {n: wc * crowd[n] + ws * struct[n] for n in range(1, 46)}
     return _normalize(mixed)
 
 
-def prize_table(draws: list[dict]) -> dict[int, float]:
+def prize_table(draws: list[dict], *, brain: str = "review") -> dict[int, float]:
     crowd = crowd_unpopular_from_draws(draws)
     struct = structural_unpopular_prior()
-    mixed = {
-        n: W_CROWD * crowd[n] + W_STRUCT * struct[n] for n in range(1, 46)
-    }
+    wc = float(W_CROWD_BY_BRAIN.get(brain, W_CROWD))
+    ws = float(W_STRUCT_BY_BRAIN.get(brain, W_STRUCT))
+    mixed = {n: wc * crowd[n] + ws * struct[n] for n in range(1, 46)}
     return _normalize(mixed)
 
 
@@ -162,14 +169,23 @@ def blend_weights(
     base: dict[int, float],
     table: dict[int, float],
     *,
-    strength: float = BLEND_STRENGTH,
+    strength: float | None = None,
+    brain: str | None = None,
 ) -> dict[int, float]:
-    """기존 엔진 가중치 × (1 + strength*(table-1)). random.choices 미수정."""
+    """기존 엔진 가중치 × (1 + strength*(table-1)). random.choices 미수정.
+
+    brain 지정 시 BLEND_STRENGTH_BY_BRAIN 사용 (뇌별 독립).
+    """
+    if strength is None:
+        if brain and brain in BLEND_STRENGTH_BY_BRAIN:
+            strength = float(BLEND_STRENGTH_BY_BRAIN[brain])
+        else:
+            strength = float(BLEND_STRENGTH)
     out: dict[int, float] = {}
     for n in range(1, 46):
         b = max(1e-12, float(base.get(n, 0.0)))
         t = float(table.get(n, 1.0))
-        out[n] = b * max(0.05, 1.0 + strength * (t - 1.0))
+        out[n] = b * max(0.05, 1.0 + float(strength) * (t - 1.0))
     return out
 
 
@@ -186,7 +202,7 @@ def set_crowd_score(nums: list[int], table: dict[int, float]) -> tuple[float, li
 def annotate_prefer(draws: list[dict], candidates: list[dict]) -> list[dict]:
     if not prefer_on() or not candidates:
         return candidates
-    table = prefer_table(draws)
+    table = prefer_table(draws, brain="markov")
     out = []
     for c in candidates:
         nums = sorted(int(x) for x in c["nums"])
@@ -207,7 +223,7 @@ def annotate_prefer(draws: list[dict], candidates: list[dict]) -> list[dict]:
 def annotate_prize(draws: list[dict], candidates: list[dict]) -> list[dict]:
     if not prize_on() or not candidates:
         return candidates
-    table = prize_table(draws)
+    table = prize_table(draws, brain="review")
     out = []
     for c in candidates:
         nums = sorted(int(x) for x in c["nums"])
@@ -246,6 +262,10 @@ def flags_snapshot() -> dict[str, Any]:
         "W_CROWD": W_CROWD,
         "W_STRUCT": W_STRUCT,
         "BLEND_STRENGTH": BLEND_STRENGTH,
+        "W_CROWD_BY_BRAIN": dict(W_CROWD_BY_BRAIN),
+        "W_STRUCT_BY_BRAIN": dict(W_STRUCT_BY_BRAIN),
+        "BLEND_STRENGTH_BY_BRAIN": dict(BLEND_STRENGTH_BY_BRAIN),
+        "independence_ko": "공유=lotto_draws만 · 뇌별 예측계수 BY_BRAIN",
         "rollback": "K_CROWD_PREFER=0 · K_PRIZE_EV=0",
         "data_limit_ko": "조합별 판매수 없음 → first_winners 프록시 + 구조 사전",
         "lit": [

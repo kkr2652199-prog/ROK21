@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`2f7788f` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`674a12a` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=2f7788f]
+[ROK21 젠스파크 압축복구 · HEAD=674a12a]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 2f7788f · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前 테스트** — DB최신=**1236**=마지막회차 가정 · 1237 아직 아님
-- 직전: K-M/K-N/K-K PATCHED · 예측리셋·100회복습
-- BOOT다음: **형 GO** — 1235↓ 백테로 **뇌별 신호 최고성능 튜닝** (축 지정)
-- NEXT1: K-BRAIN-SIGNAL-TUNE — **양산前**. DB 결과 최신=**1236을 마지막 회차**로 본다. **1237 예측/양산 준비 아님**. 1235·1234·그 이전으로 백테·샘플 테스트하며 **3뇌(stat/markov/review) 신호를 최고 성능으로 튜닝**. 형 GO 시 튜닝 축 지정(예: 금액뇌 EV / 선호번호 prefer / 과거학습 패턴). ge3를 성적클레임으로 쓰지 말 것.
+- HEAD: 674a12a · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 뇌독립 BY_BRAIN · review BLEND**0.85** APPLY · markov**0.55** HOLD
+- 직전: K-MARKOV prefer NO_IMPROVE · prize_drift0 독립실측
+- BOOT다음: **형 GO** — ③ **stat 패턴** 단독 튜닝 (ge3클레임금지 · 1237아님)
+- NEXT1: K-STAT-PATTERN-TUNE — **양산前**. 1236=마지막회차 · **1237 양산아님**. **뇌 독립 원칙**: 공유=`lotto_draws`만 · 예측과정/BLEND/W_*/hint 뇌별 분리. ①markov prefer BLEND=**NO_IMPROVE·0.55HOLD** · ②review prize BLEND=**0.85 APPLY** 완료. 다음=**③ stat 과거학습 패턴** 단독 튜닝(축·게이트 형 지정 또는 권장안). ge3 성적클레임 금지. 합동 smoke는 ④만.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,12 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260810_KREVIEW_PRIZE_BLEND_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KREVIEW_PRIZE_BLEND_TUNE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KREVIEW_PRIZE_BLEND_TUNE.md
+- `20260810_KBRAIN_INDEPENDENCE_BY_BRAIN` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.md
+- `20260810_KMARKOV_PREFER_BLEND_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KMARKOV_PREFER_BLEND_TUNE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KMARKOV_PREFER_BLEND_TUNE.md
 - `20260810_KM_REFEREE_WEIGHT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KM_REFEREE_WEIGHT.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KM_REFEREE_WEIGHT.md
 - `20260810_KN_MEAN_INPUT_FIX` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KN_MEAN_INPUT_FIX.json
@@ -63,12 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_K1236_FEEDBACK_VERIFY.md
 - `20260810_KKK_FEEDBACK_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KKK_FEEDBACK_WIRE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KKK_FEEDBACK_WIRE.md
-- `20260810_KBLEND_STRENGTH_SWEEP` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KBLEND_STRENGTH_SWEEP.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KBLEND_STRENGTH_SWEEP.md
-- `20260810_KGENSPARK_IDEA_CHECK` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KGENSPARK_IDEA_CHECK.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KGENSPARK_IDEA_CHECK.md
-- `20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=2f7788f · 지금=**양산前 테스트** — DB최신=**1236**=마지막회차 가정 · 1237 아직 아님 · 다음=K-BRAIN-SIGNAL-TUNE
+1. 첫줄: [복귀] HEAD=674a12a · 지금=**양산前** · 뇌독립 BY_BRAIN · review BLEND**0.85** APPLY · markov**0.55** HOLD · 다음=K-STAT-PATTERN-TUNE
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 2f7788f_
+_generated: 674a12a_

@@ -145,7 +145,9 @@ def generate(draws: list[dict], n_sets: int = 5) -> list[dict]:
 
         if crowd_signal.prefer_on():
             visit_count = crowd_signal.blend_weights(
-                visit_count, crowd_signal.prefer_table(draws)
+                visit_count,
+                crowd_signal.prefer_table(draws, brain="markov"),
+                brain="markov",
             )
     except Exception as e:  # noqa: BLE001
         logger.debug("선호번호 군중신호 스킵: %s", e)

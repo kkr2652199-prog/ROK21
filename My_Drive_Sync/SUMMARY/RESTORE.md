@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2f7788f` · WORK=`IDLE`
-2. **지금:** **양산前 테스트** — DB최신=**1236**=마지막회차 가정 · 1237 아직 아님
-3. **다음1건:** K-BRAIN-SIGNAL-TUNE — **양산前**. DB 결과 최신=**1236을 마지막 회차**로 본다. **1237 예측/양산 준비 아님**. 1235·1234·그 이전으로 백테·샘플 테스트하며 **3뇌(stat/markov/review) 신호를 최고 성능으로 튜닝**. 형 GO 시 튜닝 축 지정(예: 금액뇌 EV / 선호번호 prefer / 과거학습 패턴). ge3를 성적클레임으로 쓰지 말 것. (승인필요=형 GO (어느 뇌·어느 축부터) · 선행=없음)
+1. **HEAD:** `674a12a` · WORK=`IDLE`
+2. **지금:** **양산前** · 뇌독립 BY_BRAIN · review BLEND**0.85** APPLY · markov**0.55** HOLD
+3. **다음1건:** K-STAT-PATTERN-TUNE — **양산前**. 1236=마지막회차 · **1237 양산아님**. **뇌 독립 원칙**: 공유=`lotto_draws`만 · 예측과정/BLEND/W_*/hint 뇌별 분리. ①markov prefer BLEND=**NO_IMPROVE·0.55HOLD** · ②review prize BLEND=**0.85 APPLY** 완료. 다음=**③ stat 과거학습 패턴** 단독 튜닝(축·게이트 형 지정 또는 권장안). ge3 성적클레임 금지. 합동 smoke는 ④만. (승인필요=형 GO (stat 축 지정) 또는 「권장 진행」 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-10 | 권장진행·뇌독립(draws만공유) | BY_BRAIN분리 · markov NO_IMPROVE · review0.85 APPLY | **APPLY** | (push후) |
 | 2026-08-10 | 1237아님·1236=마지막·뇌신호튜닝 | NEXT/BOOT 프레임정정 · 1237예측 제거 | **FRAME** | 2f7788f |
 | 2026-08-10 | K-M+예측리셋+100회복습 | referee GAIN식 · pred0 · spread0.007→0.143 · quota2/1/2 | **PATCHED** | b678490 |
 | 2026-08-10 | 테스트단계 다음진행(3뇌) | WF 학습입력 mean 정합 · unit/smoke · FINDINGS K-N | **PATCHED** | 5e11d7d |
@@ -45,7 +46,6 @@
 | 2026-08-10 | 다음패치전 논문·GH 정밀분석 | Thaler-Ziemba/conscious/Hai4320 등 · 배울점·금지점 · wire否 | **DOC_SURVEY** | 9d2670a |
 | 2026-08-10 | 종료체크·20260810보고서없음 | HOLD_OFF를 `20260810_*`로 재기록·커서보고서동기 · 오명0808삭제 | **DOC_FIX** | 373a1c8 |
 | 2026-08-10 | 홀딩 챕 다시 풀어줘 | `FOCUS_HOLD=false` · predict/strategy-x/hyodo 복원 · autoload 복원 | **HOLD_OFF** | 0c4f640 |
-| 2026-08-08 | 다음진행·패치OK→독립튜닝 | SCORE_WEIGHTS cand_A **APPLY** · prefer+0.023 · prize−0.027 · hit+0.005 · V1/V2유지 | **APPLY** | 536360f |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

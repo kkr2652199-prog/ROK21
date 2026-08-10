@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-10 KST  
-📌 사유: **[CURSOR] 프레임정정** — 양산前·1236=마지막회차 · 1237아님 · 다음=뇌별신호튜닝
+📌 사유: **[CURSOR] K-BRAIN-INDEPENDENCE + markov/review BLEND 단독튜닝** — 공유=draws만 · review**0.85** APPLY
 
-📌 직전: **[CURSOR] K-M-REFEREE-WEIGHT** — PATCHED · 예측리셋·100회복습
+📌 직전: **[CURSOR] 프레임정정** — 양산前·1236=마지막 · 1237아님
 
 ---
 
@@ -13,6 +13,10 @@
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
+| **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. |
+| **K-BRAIN-INDEPENDENCE-BY-BRAIN (형GO · wire)** | **PATCHED** — `W_*_BY_BRAIN` · `BLEND_STRENGTH_BY_BRAIN` · `prefer_table/prize_table/blend_weights(brain=)`. 호출: markov/review engine · signal_pool hint. 기본값 markov/review 당시 0.55/0.55 → review만 후속 APPLY. · `docs/benchmarks/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.json` · `reports/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.md` |
+| **K-MARKOV-PREFER-BLEND-TUNE (권장①)** | **NO_IMPROVE** · wire=**False**(측정) — 1137~1236 n100 · seed[0,42,123] · markov BLEND {0.40…0.85} · review고정. base prefer**+0.244449** · **전후보 prefer↓**(|Δ|≪0.01) · **prize_drift=0.000**(독립실측). best=null · **markov 0.55 HOLD**. · `docs/benchmarks/20260810_KMARKOV_PREFER_BLEND_TUNE.json` · `reports/20260810_KMARKOV_PREFER_BLEND_TUNE.md` · `tools/_k_markov_prefer_blend_tune.py` |
+| **K-REVIEW-PRIZE-BLEND-TUNE (권장②)** | **APPLY** — 동구간·동seed · review BLEND만. base prize**−0.063355** → **0.85: −0.074379** (|Δ|**0.011024**≥0.01) · prefer_drift**0** · cn_rate**1.0**. **`BLEND_STRENGTH_BY_BRAIN['review']=0.85`** · markov**0.55** 불변. ge3미사용. · `docs/benchmarks/20260810_KREVIEW_PRIZE_BLEND_TUNE.json` · `reports/20260810_KREVIEW_PRIZE_BLEND_TUNE.md` · `tools/_k_review_prize_blend_tune.py` |
 | **K-M-REFEREE-WEIGHT (형GO · 테스트단계)** | **PATCHED** — 형 「백테≈100·예측DB리셋후」. `get_referee_weights`: 구식`1+avg×0.15`→`1+GAIN×(avg−0.8)` GAIN**2.5**. 예측산출물 리셋(pred**0**/evolve**0** · draws**1236**보존). 복습 **1137~1236 n100** mean입력. avgs stat**0.867**/markov**0.70**/review**0.80** · spread legacy**0.007**→new**0.143** · quota5=**2/1/2**. FINDINGS K-M=**PATCHED**. · `docs/benchmarks/20260810_KM_REFEREE_WEIGHT.json` · `reports/20260810_KM_REFEREE_WEIGHT.md` |
 | **K-N-MEAN-INPUT-FIX (형GO · 테스트단계)** | **PATCHED** — 형 「개발중·3뇌테스트·1237완료후 양산」→ K-N 진행. `walkforward._learn_match_from_sets` · `FEEDBACK_MATCH_MODE=mean` 공유. apply_feedback 입력=**mean** · best는 tier/표시/`best_matched`만. unit: best=3 vs learn=1 오인사례 차단. smoke1235 3뇌 mode=mean · learn≠best 실측. FINDINGS K-N=**PATCHED**. · `docs/benchmarks/20260810_KN_MEAN_INPUT_FIX.json` · `reports/20260810_KN_MEAN_INPUT_FIX.md` |
 | **K-PROCESS-STRUCTURE-QUERY (형GO · READ)** | **DOC_OK** · wire=**False** · 코드/DB무수정. **예측**: UI`runPredict`→`routes.api_predict`→`engine.run_prediction`→`coordinator.run_coordinated_prediction` · 재료=`_get_draws_before(target)`=**target미만** · `set_learn_as_of(target)`. **채점**: `after_predict(N)`=**N-1** · `draw_result(N)`=**N** · 자동=예측클릭+_auto_feedback·fetch-latest. **실측**: max_draw1236 · pred1236=10 · pred1237=**0**. **evolve**: 예측만으론 안 쌓임 · evolve_auto/feedback마크 · weight_applied Phase1=**0고정**(K-M전). 젠스파크오해: after_predict(1236)≠1236채점. · `reports/20260810_KPROCESS_STRUCTURE.md` · `docs/benchmarks/20260810_KPROCESS_STRUCTURE.json` |
