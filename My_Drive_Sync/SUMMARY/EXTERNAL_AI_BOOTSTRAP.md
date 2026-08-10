@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `b525683` |
+| HEAD(실측) | `5e11d7d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=b525683 · 지금=**K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M · 다음=K-M-REFEREE-WEIGHT`
+1. 첫줄 `[복귀] HEAD=5e11d7d · 지금=**K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M · 다음=K-M-REFEREE-WEIGHT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

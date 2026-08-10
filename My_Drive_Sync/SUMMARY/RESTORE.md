@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `b525683` · WORK=`IDLE`
+1. **HEAD:** `5e11d7d` · WORK=`IDLE`
 2. **지금:** **K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M
 3. **다음1건:** K-M-REFEREE-WEIGHT — **K-N PATCHED 후**. K-M HOLD 해소 — referee 가중 실효격차(균등≈0) 설계·패치. (3뇌 테스트/개발 단계 · 1237 양산前 · mean 학습입력 정합 완료) (승인필요=형 GO · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-10 | 테스트단계 다음진행(3뇌) | WF 학습입력 mean 정합 · unit/smoke · FINDINGS K-N | **PATCHED** | (본턴) |
+| 2026-08-10 | 테스트단계 다음진행(3뇌) | WF 학습입력 mean 정합 · unit/smoke · FINDINGS K-N | **PATCHED** | 5e11d7d |
 | 2026-08-10 | 프로세스 구조 질문(수정없음) | 예측/채점/evolve 흐름·API의미·1236/1237실측 문서화 | **DOC_OK** | 073e8ea |
 | 2026-08-10 | 1236 실전 피드백 검증 | nums확인·3뇌 evolve마크·weight0·dupSKIP · 단건참고만 | **VERIFY_OK** | af40d12 |
 | 2026-08-10 | K-K 피드백 경로 연결 | routes+click_feedback · 1230~1235 마크18 · weight0 · guardOK | **PATCHED** | 36fc78f |

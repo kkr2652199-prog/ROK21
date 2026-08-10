@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b525683` · WORK=`IDLE`
+- HEAD: `5e11d7d` · WORK=`IDLE`
 - 지금: **K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M
 - 직전: K-PROCESS-STRUCTURE-QUERY · DOC_OK
 - BOOT다음: **형 GO** — ①K-M referee 가중 ②1237 예측 생성(개발) ③정지
