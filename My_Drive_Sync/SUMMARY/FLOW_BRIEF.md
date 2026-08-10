@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c1823af` · WORK=`IDLE`
+- HEAD: `96470ff` · WORK=`IDLE`
 - 지금: **양산前** · 뇌독립 BY_BRAIN · review BLEND**0.85** APPLY · markov**0.55** HOLD
 - 직전: K-MARKOV prefer NO_IMPROVE · prize_drift0 독립실측
 - BOOT다음: **형 GO** — ③ **stat 패턴** 단독 튜닝 (ge3클레임금지 · 1237아님)
