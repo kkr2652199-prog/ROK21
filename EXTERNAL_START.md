@@ -10,15 +10,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `b678490` |
+| HEAD(실측) | `8fd28f6` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0 |
-| 직전 | K-N-MEAN-INPUT-FIX · PATCHED |
-| BOOT다음 | **형 GO** — ①1237 예측 생성(개발) ②추가 샘플 ③정지 |
-| NEXT1 ID | **K-1237-DEV-PREDICT** |
-| NEXT1 할일 | **K-M/K-N/K-K 테스트 정합 완료**. 예측 DB 리셋됨(pred=0). 형 GO 시 **1237 예측 생성**(재료 as_of≤1236 · 개발단계). 양산 준비는 1237 개발 완료 후. |
-| 승인필요 | 형 GO |
+| 지금 | **양산前 테스트** — DB최신=**1236**=마지막회차 가정 · 1237 아직 아님 |
+| 직전 | K-M/K-N/K-K PATCHED · 예측리셋·100회복습 |
+| BOOT다음 | **형 GO** — 1235↓ 백테로 **뇌별 신호 최고성능 튜닝** (축 지정) |
+| NEXT1 ID | **K-BRAIN-SIGNAL-TUNE** |
+| NEXT1 할일 | **양산前**. DB 결과 최신=**1236을 마지막 회차**로 본다. **1237 예측/양산 준비 아님**. 1235·1234·그 이전으로 백테·샘플 테스트하며 **3뇌(stat/markov/review) 신호를 최고 성능으로 튜닝**. 형 GO 시 튜닝 축 지정(예: 금액뇌 EV / 선호번호 prefer / 과거학습 패턴). ge3를 성적클레임으로 쓰지 말 것. |
+| 승인필요 | 형 GO (어느 뇌·어느 축부터) |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=b678490 · 지금=**K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0 · 다음=K-1237-DEV-PREDICT`
+1. 첫줄 `[복귀] HEAD=8fd28f6 · 지금=**양산前 테스트** — DB최신=**1236**=마지막회차 가정 · 1237 아직 아님 · 다음=K-BRAIN-SIGNAL-TUNE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: b678490_
+_generated: 8fd28f6_
