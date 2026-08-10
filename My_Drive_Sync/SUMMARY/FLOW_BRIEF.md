@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `8007f21` · WORK=`IDLE`
+- HEAD: `073e8ea` · WORK=`IDLE`
 - 지금: **K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정
 - 직전: K-1236-FEEDBACK-VERIFY · VERIFY_OK
 - BOOT다음: **형 GO** — ①K-N mean입력 정합 ②K-M referee ③정지

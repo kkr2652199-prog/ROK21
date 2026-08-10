@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8007f21` · WORK=`IDLE`
+1. **HEAD:** `073e8ea` · WORK=`IDLE`
 2. **지금:** **K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정
 3. **다음1건:** K-N-MEAN-INPUT-FIX — **프로세스 구조 DOC 완료 후**. K-N HOLD 해소 — 학습입력 best오인→mean/볼지표 정합. (참고: after_predict(N)=N-1채점 · 1237예측 아직0 · 형 GO) (승인필요=형 GO · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-10 | 프로세스 구조 질문(수정없음) | 예측/채점/evolve 흐름·API의미·1236/1237실측 문서화 | **DOC_OK** | (본턴) |
+| 2026-08-10 | 프로세스 구조 질문(수정없음) | 예측/채점/evolve 흐름·API의미·1236/1237실측 문서화 | **DOC_OK** | 073e8ea |
 | 2026-08-10 | 1236 실전 피드백 검증 | nums확인·3뇌 evolve마크·weight0·dupSKIP · 단건참고만 | **VERIFY_OK** | af40d12 |
 | 2026-08-10 | K-K 피드백 경로 연결 | routes+click_feedback · 1230~1235 마크18 · weight0 · guardOK | **PATCHED** | 36fc78f |
 | 2026-08-10 | BLEND_STRENGTH 9점 스윕 | 전후보 cond3실패(|Δ|≪0.01) · best=null · 0.55유지 | **NO_IMPROVE** | 25b62d6 |

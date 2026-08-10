@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `8007f21` |
+| HEAD(실측) | `073e8ea` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=8007f21 · 지금=**K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정 · 다음=K-N-MEAN-INPUT-FIX`
+1. 첫줄 `[복귀] HEAD=073e8ea · 지금=**K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정 · 다음=K-N-MEAN-INPUT-FIX`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 8007f21_
+_generated: 073e8ea_
