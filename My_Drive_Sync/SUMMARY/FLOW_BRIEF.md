@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `24d8c80` · WORK=`IDLE`
+- HEAD: `9d2670a` · WORK=`IDLE`
 - 지금: **K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지
 - 직전: 종료체크정정 · HOLD_OFF 20260810 보고서
 - BOOT다음: **형 GO** — ①군중 BLEND 소튜닝(권장·EV/prefer축) ②명분리뷰 ③정지

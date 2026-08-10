@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `24d8c80` · WORK=`IDLE`
+1. **HEAD:** `9d2670a` · WORK=`IDLE`
 2. **지금:** **K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지
 3. **다음1건:** K-NEXT-ROUTE-SURVEY-DONE — **외부자료 정밀검토 완료(DOC_SURVEY)**. 노선 정합=금액EV(Thaler-Ziemba) · 선호편향(conscious selection) · 숙제≠P↑(Hai4320). 데이터갭=판매비율 없음→Stern-Cover급 금지. 형 GO — **①군중 BLEND 소튜닝**(권장 · prize/prefer축 · ge3금지 · period+split) / ②1235 명분리뷰 / ③정지 (승인필요=형 GO (패치 착수) · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
