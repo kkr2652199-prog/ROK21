@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `b40b70c` · WORK=`IDLE`
+1. **HEAD:** `1f0b957` · WORK=`IDLE`
 2. **지금:** **양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55**
 3. **다음1건:** K-BRAIN-JOINT-SMOKE — **양산前**. 1236=마지막 · **1237 양산아님**. 뇌별 단독튜닝 ①markov BLEND HOLD0.55 · ②review BLEND **0.85** · ③stat HINT **52** 완료. 다음=**④ 합동 smoke**만(3뇌 동시·축지표 prefer/prize/top15_hit 모니터 · ge3 성적클레임 금지). 공유=`lotto_draws`만. (승인필요=형 GO 또는 「다음 진행」 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-10 | 다음진행·stat패턴 | HINT miss_pattern 26→**52** · hit+0.013 · drift0 | **APPLY** | (push후) |
+| 2026-08-10 | 다음진행·stat패턴 | HINT miss_pattern 26→**52** · hit+0.013 · drift0 | **APPLY** | 1f0b957 |
 | 2026-08-10 | 권장진행·뇌독립(draws만공유) | BY_BRAIN분리 · markov NO_IMPROVE · review0.85 APPLY | **APPLY** | c1823af |
 | 2026-08-10 | 1237아님·1236=마지막·뇌신호튜닝 | NEXT/BOOT 프레임정정 · 1237예측 제거 | **FRAME** | 2f7788f |
 | 2026-08-10 | K-M+예측리셋+100회복습 | referee GAIN식 · pred0 · spread0.007→0.143 · quota2/1/2 | **PATCHED** | b678490 |

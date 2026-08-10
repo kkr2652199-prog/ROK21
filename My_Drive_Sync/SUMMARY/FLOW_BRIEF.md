@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b40b70c` · WORK=`IDLE`
+- HEAD: `1f0b957` · WORK=`IDLE`
 - 지금: **양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55**
 - 직전: K-STAT-PATTERN-TUNE · hit0.307→0.319 · prefer/prize drift0
 - BOOT다음: **형 GO** — ④ **합동 smoke**만 (3뇌 동시·ge3클레임금지 · 1237아님)
