@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8fd28f6` · WORK=`IDLE`
+1. **HEAD:** `2f7788f` · WORK=`IDLE`
 2. **지금:** **양산前 테스트** — DB최신=**1236**=마지막회차 가정 · 1237 아직 아님
 3. **다음1건:** K-BRAIN-SIGNAL-TUNE — **양산前**. DB 결과 최신=**1236을 마지막 회차**로 본다. **1237 예측/양산 준비 아님**. 1235·1234·그 이전으로 백테·샘플 테스트하며 **3뇌(stat/markov/review) 신호를 최고 성능으로 튜닝**. 형 GO 시 튜닝 축 지정(예: 금액뇌 EV / 선호번호 prefer / 과거학습 패턴). ge3를 성적클레임으로 쓰지 말 것. (승인필요=형 GO (어느 뇌·어느 축부터) · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
