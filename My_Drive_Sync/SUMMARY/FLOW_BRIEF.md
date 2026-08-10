@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `8ef2920` · WORK=`IDLE`
+- HEAD: `b678490` · WORK=`IDLE`
 - 지금: **K-M-REFEREE-WEIGHT** — referee GAIN식 **PATCHED** · 예측리셋·100회복습 · pred=0
 - 직전: K-N-MEAN-INPUT-FIX · PATCHED
 - BOOT다음: **형 GO** — ①1237 예측 생성(개발) ②추가 샘플 ③정지
