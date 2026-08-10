@@ -6,7 +6,11 @@ import json
 import logging
 from typing import Any
 
-from app.testlotto.brains.coordinator import PREDICT_MODULES, apply_coordinator_scoring
+from app.testlotto.brains.coordinator import (
+    FEEDBACK_MATCH_MODE,
+    PREDICT_MODULES,
+    apply_coordinator_scoring,
+)
 from app.testlotto.brains.registry import PREDICT_BRAINS, SETS_PER_PREDICT_BRAIN
 from app.testlotto.aux_analysis import build_brain_aux_json
 from app.testlotto.data_service import _get_draws_before
@@ -63,8 +67,48 @@ def _score_sets(
     return scored, best, best_idx + 1
 
 
+def _learn_match_from_sets(
+    scored_sets: list[dict[str, Any]],
+) -> tuple[int, list[int], int]:
+    """K-N: 학습 입력 = 뇌내 세트 mean (best 단독 금지).
+
+    Returns: (learn_matched, learn_nums, learn_set_no)
+    FEEDBACK_MATCH_MODE=='best' 일 때만 구경로(비권고).
+    """
+    if not scored_sets:
+        return 0, [], 0
+    if FEEDBACK_MATCH_MODE == "best":
+        best_idx = pick_best_set_index(scored_sets)
+        best = scored_sets[best_idx]
+        return (
+            int(best.get("matched_count") or 0),
+            list(best.get("nums") or []),
+            int(best.get("set_no") or best_idx + 1),
+        )
+    hits = [int(s.get("matched_count") or 0) for s in scored_sets]
+    mean_mc = sum(hits) / len(hits)
+    learn_matched = int(round(mean_mc))
+    # miss 태그용 세트 = mean에 가장 가까운 세트 (동점 시 hits 큰 쪽)
+    pick = min(
+        scored_sets,
+        key=lambda s: (
+            abs(int(s.get("matched_count") or 0) - mean_mc),
+            -int(s.get("matched_count") or 0),
+        ),
+    )
+    return (
+        learn_matched,
+        list(pick.get("nums") or []),
+        int(pick.get("set_no") or 0),
+    )
+
+
 def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str, Any]:
-    """한 회차 복습: 3예측뇌 각 5세트 → best 채점 → 오답분석 → 피드백."""
+    """한 회차 복습: 3예측뇌 각 5세트 → 표시용 best + 학습용 mean → 피드백.
+
+    K-N: apply_feedback 입력은 mean (고분산 best 오인 차단).
+    best/tier는 표시·리뷰 테이블 참고용으로만 유지.
+    """
     from app.testlotto.learn_state_cutoff import set_learn_as_of
 
     draws = _get_draws_before(draw_no)
@@ -91,25 +135,26 @@ def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str
         if not sets:
             results.append({"brain_tag": tag, "skipped": True})
             continue
-        # K-PIPE-A: live coordinator와 동일 AUX·referee confidence (best는 tier 기준 유지)
+        # K-PIPE-A: live coordinator와 동일 AUX·referee confidence (best는 tier 표시용)
         sets = apply_coordinator_scoring(sets, draws, draw_no)
         scored_sets, best, best_set_no = _score_sets(sets, actual_set, actual_list, bonus)
-        nums = best["nums"]
-        matched = int(best["matched_count"])
-        bonus_matched = int(best.get("bonus_matched") or 0)
-        missed = detect_missed_patterns(nums, actual_list, draws)
+        learn_matched, learn_nums, learn_set_no = _learn_match_from_sets(scored_sets)
+        missed = detect_missed_patterns(learn_nums, actual_list, draws)
         pending.append(
             {
                 "brain": brain,
                 "tag": tag,
-                "nums": nums,
-                "matched": matched,
-                "bonus_matched": bonus_matched,
+                "nums": learn_nums,
+                "matched": learn_matched,
+                "best_matched": int(best["matched_count"]),
+                "bonus_matched": int(best.get("bonus_matched") or 0),
                 "tier_rank": int(best.get("tier_rank") or 0),
                 "tier_label": best.get("tier_label") or "미적중",
                 "missed": missed,
                 "predicted_sets": scored_sets,
                 "best_set_no": best_set_no,
+                "learn_set_no": learn_set_no,
+                "feedback_mode": FEEDBACK_MATCH_MODE,
             }
         )
 
@@ -131,6 +176,10 @@ def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str
                 "missed_patterns": missed,
                 "adjustments": state.get("adjustments", {}),
                 "recent_avg_match": state.get("recent_avg_match", 0),
+                "feedback_mode": item.get("feedback_mode") or FEEDBACK_MATCH_MODE,
+                "mean_matched": matched,
+                "best_matched": int(item.get("best_matched") or 0),
+                "learn_set_no": int(item.get("learn_set_no") or 0),
             }
             weight_snap = get_all_learn_states()
             conn.execute(
@@ -168,10 +217,13 @@ def review_single_draw(draw_no: int, *, store_features: bool = True) -> dict[str
                     "brain_tag": tag,
                     "brain_name": brain["name"],
                     "matched_count": matched,
+                    "best_matched": int(item.get("best_matched") or 0),
+                    "feedback_mode": item.get("feedback_mode") or FEEDBACK_MATCH_MODE,
                     "bonus_matched": int(item.get("bonus_matched") or 0),
                     "tier_rank": int(item.get("tier_rank") or 0),
                     "tier_label": item.get("tier_label") or "미적중",
                     "best_set_no": item["best_set_no"],
+                    "learn_set_no": int(item.get("learn_set_no") or 0),
                     "sets_count": len(item["predicted_sets"]),
                     "missed_patterns": missed,
                     "predicted": nums,

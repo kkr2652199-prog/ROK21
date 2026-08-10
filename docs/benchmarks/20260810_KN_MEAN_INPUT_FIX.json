@@ -1,0 +1,51 @@
+{
+  "id": "K-N-MEAN-INPUT-FIX",
+  "ts": "2026-08-10T22:51:21+09:00",
+  "checks": {
+    "feedback_match_mode": "mean",
+    "mode_is_mean": true,
+    "unit_mean_vs_best": {
+      "learn_matched": 1,
+      "learn_set_no": 5,
+      "best_would_be_matched": 3,
+      "best_would_be_set": 3,
+      "unit_ok": true
+    },
+    "walkforward_uses_helper": true,
+    "walkforward_no_direct_best_feed": true,
+    "click_feedback_aligned": true,
+    "has_kn_comment": true
+  },
+  "smoke_review_1235": {
+    "draw_no": 1235,
+    "skipped": null,
+    "n_rows": 3,
+    "feedback_modes": [
+      "mean",
+      "mean",
+      "mean"
+    ],
+    "matched_counts_learn": [
+      0,
+      1,
+      1
+    ],
+    "best_matcheds": [
+      1,
+      2,
+      2
+    ],
+    "all_mode_mean": true,
+    "ok": true
+  },
+  "findings_update": {
+    "K-N": "PATCHED",
+    "K-M": "HOLD 유지"
+  },
+  "verdict": "PATCHED",
+  "stage_note": "3뇌 테스트/개발 단계 · 1237 양산 준비 전",
+  "next_step": "K-M-REFEREE-WEIGHT",
+  "wire": true,
+  "ge3_used": false,
+  "cursor_opinion": "walkforward 학습입력을 coordinator/click_feedback과 동일 mean으로 정합. best는 tier/표시만. K-M(referee 균등)이 다음 — 학습 신호가 mean으로 들어가도 referee가 평탄하면 발권 비중은 안 움직임."
+}

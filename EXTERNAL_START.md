@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `073e8ea` |
+| HEAD(실측) | `b525683` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정 |
-| 직전 | K-1236-FEEDBACK-VERIFY · VERIFY_OK |
-| BOOT다음 | **형 GO** — ①K-N mean입력 정합 ②K-M referee ③정지 |
-| NEXT1 ID | **K-N-MEAN-INPUT-FIX** |
-| NEXT1 할일 | **프로세스 구조 DOC 완료 후**. K-N HOLD 해소 — 학습입력 best오인→mean/볼지표 정합. (참고: after_predict(N)=N-1채점 · 1237예측 아직0 · 형 GO) |
+| 지금 | **K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M |
+| 직전 | K-PROCESS-STRUCTURE-QUERY · DOC_OK |
+| BOOT다음 | **형 GO** — ①K-M referee 가중 ②1237 예측 생성(개발) ③정지 |
+| NEXT1 ID | **K-M-REFEREE-WEIGHT** |
+| NEXT1 할일 | **K-N PATCHED 후**. K-M HOLD 해소 — referee 가중 실효격차(균등≈0) 설계·패치. (3뇌 테스트/개발 단계 · 1237 양산前 · mean 학습입력 정합 완료) |
 | 승인필요 | 형 GO |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=073e8ea · 지금=**K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정 · 다음=K-N-MEAN-INPUT-FIX`
+1. 첫줄 `[복귀] HEAD=b525683 · 지금=**K-N-MEAN-INPUT-FIX** — WF 학습입력 mean **PATCHED** · 3뇌 테스트단계 · 다음=K-M · 다음=K-M-REFEREE-WEIGHT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 073e8ea_
+_generated: b525683_
