@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `06915dc` · WORK=`IDLE`
+- HEAD: `36fc78f` · WORK=`IDLE`
 - 지금: **K-KK-FEEDBACK-WIRE** — routes 피드백 연결 **PATCHED** · weight=0 · K-M/K-N HOLD
 - 직전: K-BLEND-STRENGTH-SWEEP · NO_IMPROVE
 - BOOT다음: **형 GO** — ①K-M referee 설계 ②K-N mean입력 정합 ③정지
