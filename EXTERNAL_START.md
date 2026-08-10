@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `36fc78f` |
+| HEAD(실측) | `01abac1` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-KK-FEEDBACK-WIRE** — routes 피드백 연결 **PATCHED** · weight=0 · K-M/K-N HOLD |
-| 직전 | K-BLEND-STRENGTH-SWEEP · NO_IMPROVE |
-| BOOT다음 | **형 GO** — ①K-M referee 설계 ②K-N mean입력 정합 ③정지 |
-| NEXT1 ID | **K-KK-FEEDBACK-WIRE-DONE** |
-| NEXT1 할일 | **K-K PATCHED 완료**. routes 클릭/수집→feedback 연결 · weight_applied=0.0 유지. 형 판단 — ①K-M referee 가중 설계 ②K-N mean 입력 정합(권장 선행) ③정지. (피드백 경로 살아 있으나 referee 균등·best오인 HOLD) |
+| 지금 | **K-1236-FEEDBACK-VERIFY** — 1236 실전 **VERIFY_OK** · 다음=K-N-MEAN-INPUT-FIX |
+| 직전 | K-KK-FEEDBACK-WIRE · PATCHED |
+| BOOT다음 | **형 GO** — ①K-N mean입력 정합 ②K-M referee ③정지 |
+| NEXT1 ID | **K-N-MEAN-INPUT-FIX** |
+| NEXT1 할일 | **1236 피드백 실전 VERIFY_OK 후**. K-N HOLD 해소 — 학습입력을 best 오인→mean/볼지표로 정합. (선행=K-KK PATCHED·1236 VERIFY_OK · K-M은 K-N 후) |
 | 승인필요 | 형 GO |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=36fc78f · 지금=**K-KK-FEEDBACK-WIRE** — routes 피드백 연결 **PATCHED** · weight=0 · K-M/K-N HOLD · 다음=K-KK-FEEDBACK-WIRE-DONE`
+1. 첫줄 `[복귀] HEAD=01abac1 · 지금=**K-1236-FEEDBACK-VERIFY** — 1236 실전 **VERIFY_OK** · 다음=K-N-MEAN-INPUT-FIX · 다음=K-N-MEAN-INPUT-FIX`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 36fc78f_
+_generated: 01abac1_

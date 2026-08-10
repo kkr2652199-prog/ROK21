@@ -1,0 +1,130 @@
+{
+  "id": "K-1236-FEEDBACK-VERIFY",
+  "ts": "2026-08-10T22:27:42+09:00",
+  "draw_1236": {
+    "draw_no": 1236,
+    "numbers": [
+      12,
+      18,
+      21,
+      29,
+      34,
+      38
+    ],
+    "bonus": 10,
+    "first_winners": 11,
+    "in_db": true
+  },
+  "predict_prerequisite": {
+    "ran_predict": true,
+    "ran_modes": [
+      "stat"
+    ],
+    "pred_count": 10,
+    "by_brain": {
+      "markov": 4,
+      "review": 1,
+      "stat": 5
+    },
+    "predict_ok": true,
+    "note": "quota로 빠진 뇌는 brain_filter 보충 · 힌트 역산 없음"
+  },
+  "feedback_1236": {
+    "stat": {
+      "mean_hits": 1.0,
+      "best_hits": 1.0,
+      "weight_applied": 0.0,
+      "ok": true,
+      "note_has_kk": true
+    },
+    "markov": {
+      "mean_hits": 0.0,
+      "best_hits": 0.0,
+      "weight_applied": 0.0,
+      "ok": true,
+      "note_has_kk": true
+    },
+    "review": {
+      "mean_hits": 0.0,
+      "best_hits": 0.0,
+      "weight_applied": 0.0,
+      "ok": true,
+      "note_has_kk": true
+    },
+    "duplicate_skip_ok": true
+  },
+  "feedback_1236_meta": {
+    "api_note": "apply_feedback_after_predict(1236)→draw 1235; 1236 채점=apply_draw_result_feedback(1236)≡after_predict(1237)",
+    "after_predict_1236_target_draw": 1235,
+    "primary_call": {
+      "ok": true,
+      "skipped": null,
+      "brains": {
+        "stat": "ok",
+        "markov": "ok",
+        "review": "ok"
+      }
+    }
+  },
+  "score_1236": {
+    "stat_mean_hits": 1.0,
+    "markov_mean_hits": 0.0,
+    "review_mean_hits": 0.0,
+    "baseline": 0.8,
+    "note": "단건 참고값 · 서열화 불가"
+  },
+  "ev_check_1236": {
+    "review_hint_top15": [
+      40,
+      37,
+      45,
+      39,
+      34,
+      38,
+      43,
+      44,
+      20,
+      42,
+      27,
+      18,
+      33,
+      15,
+      35
+    ],
+    "markov_hint_top15": [
+      12,
+      7,
+      3,
+      13,
+      18,
+      27,
+      1,
+      6,
+      11,
+      4,
+      10,
+      17,
+      19,
+      8,
+      20
+    ],
+    "actual_1236": [
+      12,
+      18,
+      21,
+      29,
+      34,
+      38
+    ],
+    "review_hits_in_top15": 3,
+    "markov_hits_in_top15": 2,
+    "first_winners_1236": 11,
+    "note": "단건 방향 참고 · 통계 클레임 금지"
+  },
+  "verdict": "VERIFY_OK",
+  "next_step": "K-N-MEAN-INPUT-FIX",
+  "cursor_opinion": "1236 경로 실전 확인됨(발권→feedback→evolve마크·weight0·중복SKIP). 단건 mean/hint적중은 참고만·서열화 금지. K-N-MEAN-INPUT-FIX **바로 진행 가능**(피드백 입력이 살아 있음이 전제).",
+  "wire": false,
+  "ge3_used": false,
+  "no_peek": true
+}

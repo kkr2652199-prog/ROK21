@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `36fc78f` · WORK=`IDLE`
-2. **지금:** **K-KK-FEEDBACK-WIRE** — routes 피드백 연결 **PATCHED** · weight=0 · K-M/K-N HOLD
-3. **다음1건:** K-KK-FEEDBACK-WIRE-DONE — **K-K PATCHED 완료**. routes 클릭/수집→feedback 연결 · weight_applied=0.0 유지. 형 판단 — ①K-M referee 가중 설계 ②K-N mean 입력 정합(권장 선행) ③정지. (피드백 경로 살아 있으나 referee 균등·best오인 HOLD) (승인필요=형 GO · 선행=없음)
+1. **HEAD:** `01abac1` · WORK=`IDLE`
+2. **지금:** **K-1236-FEEDBACK-VERIFY** — 1236 실전 **VERIFY_OK** · 다음=K-N-MEAN-INPUT-FIX
+3. **다음1건:** K-N-MEAN-INPUT-FIX — **1236 피드백 실전 VERIFY_OK 후**. K-N HOLD 해소 — 학습입력을 best 오인→mean/볼지표로 정합. (선행=K-KK PATCHED·1236 VERIFY_OK · K-M은 K-N 후) (승인필요=형 GO · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-10 | 1236 실전 피드백 검증 | nums확인·3뇌 evolve마크·weight0·dupSKIP · 단건참고만 | **VERIFY_OK** | (본턴) |
 | 2026-08-10 | K-K 피드백 경로 연결 | routes+click_feedback · 1230~1235 마크18 · weight0 · guardOK | **PATCHED** | 36fc78f |
 | 2026-08-10 | BLEND_STRENGTH 9점 스윕 | 전후보 cond3실패(|Δ|≪0.01) · best=null · 0.55유지 | **NO_IMPROVE** | 25b62d6 |
 | 2026-08-10 | 젠스파크 4아이디어 사전검증 | seed5 cn안정 · weight0 · referee균등 · 게이트3 PASS · 의견제출 | **CHECK_DONE** | 0c03818 |
@@ -45,7 +46,6 @@
 | 2026-08-08 | 선호번호·금액뇌 재구조·과거학습 판단진행 | 흐름술사→선호번호 · 복습왕→금액뇌 · crowd_signal+문헌 · SMOKE_OK · ge3주장없음 | **WIRE_SMOKE_OK** | e652318 |
 | 2026-08-08 | 가장 추천방식(①기록채우기) GO | 1216~1235 **20/20** · stat숙제5장강제 · pred200(stat100) · learn3 · evolve60 · pool60 · 298초 | **FILL_OK** | (본턴) |
 | 2026-08-08 | 전략X홀딩·테스트만 | UI HOLD·기본testlotto·예측autoload OFF | **HOLD** | 741de31 |
-| 2026-08-08 | 과거학습 뇌 패치준비 체크·인간관점 | READ-ONLY · 방향준비·기록미준비 · 확정길=회차숙제 | **READY_DIR/NOT_TUNE** | 11a6890 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
