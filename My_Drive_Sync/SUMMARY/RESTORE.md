@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0c03818` · WORK=`IDLE`
-2. **지금:** **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD
-3. **다음1건:** K-GENSPARK-IDEA-CHECK-DONE — **젠스파크 아이디어 사전검증 완료**. 형→젠스파크에 `reports/20260810_KGENSPARK_IDEA_CHECK.md` 붙여넣기. 젠스파크가 커서 의견 합산 후 **BLEND 소튜닝 지시서** 작성. 커서 대기. (즉시반영=단일 BLEND_STRENGTH+EV/prefer게이트+다seed cn보조 · HOLD=뇌별W·stat튜닝·cn단독하드) (승인필요=형(붙여넣기) → 젠스파크 지시서 · 선행=없음)
+1. **HEAD:** `7034de0` · WORK=`IDLE`
+2. **지금:** **K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지
+3. **다음1건:** K-BLEND-STRENGTH-SWEEP-DONE — **BLEND_STRENGTH 스윕 완료(NO_IMPROVE)**. best=null · 현재 0.55 유지 · wire否. 형 판단 — ①정지 ②다른 축(비권장: thr완화/뇌별W) ③명분리뷰. APPLY 대기 아님. (승인필요=형 GO · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-10 | BLEND_STRENGTH 9점 스윕 | 전후보 cond3실패(|Δ|≪0.01) · best=null · 0.55유지 | **NO_IMPROVE** | (본턴) |
 | 2026-08-10 | 젠스파크 4아이디어 사전검증 | seed5 cn안정 · weight0 · referee균등 · 게이트3 PASS · 의견제출 | **CHECK_DONE** | 0c03818 |
 | 2026-08-10 | 다음패치전 논문·GH 정밀분석 | Thaler-Ziemba/conscious/Hai4320 등 · 배울점·금지점 · wire否 | **DOC_SURVEY** | 9d2670a |
 | 2026-08-10 | 종료체크·20260810보고서없음 | HOLD_OFF를 `20260810_*`로 재기록·커서보고서동기 · 오명0808삭제 | **DOC_FIX** | 373a1c8 |
@@ -45,8 +46,6 @@
 | 2026-08-08 | 전략X홀딩·테스트만 | UI HOLD·기본testlotto·예측autoload OFF | **HOLD** | 741de31 |
 | 2026-08-08 | 과거학습 뇌 패치준비 체크·인간관점 | READ-ONLY · 방향준비·기록미준비 · 확정길=회차숙제 | **READY_DIR/NOT_TUNE** | 11a6890 |
 | 2026-08-08 | 「한번 더 버그를 찾아보자 · 없으면 stat 튜닝」 | **버그 2건 발견·수정 · 14/14** — ⑥`brain_tag` 죽은배선 ⑦hint축 또 검출·자동생성 · B6 신설 · 겹침 2.7배=공유hint | **INDEPENDENCE_OK** | 69b9c7d |
-| 2026-08-08 | 나머지 2뇌도 독립 패치 + 예측DB 리셋 | ④`expand_pool` 3뇌 **한 난수흐름**(stat→markov 오염) → 뇌별 시드리셋 ⑤pass0 시드=`seed+draw_no` → **pool1~5＝발권5세트**(C8) · 뇌별 상수dict 개방(값동일) · **hint 는 여전히 공유(명시)** · DB 3뇌예측 **7094행 삭제**(원천보존) · 검증 **9/9** | **WIRE_CONFORMS** | (본턴) |
-| 2026-08-08 | 「성적판정 말고 신호강한세트로 몰아주기」 배선수정 GO | **배선결함 3건 수정** — ①3뇌 성적표공유(`for _tag`)→뇌별분리 ②`for sn in (4,5)`하드코딩→위치EMA상위(이탈률 1.0/1.0/0.9) ③markov 슬롯0→3뇌동일 · 검증 7/7 · 게이트대상아님(설계일치) | **WIRE_CONFORMS** | d338ac7 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

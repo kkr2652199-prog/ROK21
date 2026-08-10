@@ -8,15 +8,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0c03818` |
+| HEAD(실측) | `7034de0` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD |
-| 직전 | K-NEXT-ROUTE-LIT-GITHUB-SURVEY · DOC_SURVEY |
-| BOOT다음 | 형이 커서 결과를 젠스파크에 붙여넣기 → **BLEND 소튜닝 지시서** 수신 대기 |
-| NEXT1 ID | **K-GENSPARK-IDEA-CHECK-DONE** |
-| NEXT1 할일 | **젠스파크 아이디어 사전검증 완료**. 형→젠스파크에 `reports/20260810_KGENSPARK_IDEA_CHECK.md` 붙여넣기. 젠스파크가 커서 의견 합산 후 **BLEND 소튜닝 지시서** 작성. 커서 대기. (즉시반영=단일 BLEND_STRENGTH+EV/prefer게이트+다seed cn보조 · HOLD=뇌별W·stat튜닝·cn단독하드) |
-| 승인필요 | 형(붙여넣기) → 젠스파크 지시서 |
+| 지금 | **K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지 |
+| 직전 | K-GENSPARK-IDEA-CHECK · CHECK_DONE |
+| BOOT다음 | **형 GO** — ①정지/다른축 ②임계완화 재스윕(비권장) ③명분리뷰 |
+| NEXT1 ID | **K-BLEND-STRENGTH-SWEEP-DONE** |
+| NEXT1 할일 | **BLEND_STRENGTH 스윕 완료(NO_IMPROVE)**. best=null · 현재 0.55 유지 · wire否. 형 판단 — ①정지 ②다른 축(비권장: thr완화/뇌별W) ③명분리뷰. APPLY 대기 아님. |
+| 승인필요 | 형 GO |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0c03818 · 지금=**K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD · 다음=K-GENSPARK-IDEA-CHECK-DONE`
+1. 첫줄 `[복귀] HEAD=7034de0 · 지금=**K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지 · 다음=K-BLEND-STRENGTH-SWEEP-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

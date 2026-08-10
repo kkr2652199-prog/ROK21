@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0c03818` · WORK=`IDLE`
-- 지금: **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD
-- 직전: K-NEXT-ROUTE-LIT-GITHUB-SURVEY · DOC_SURVEY
-- BOOT다음: 형이 커서 결과를 젠스파크에 붙여넣기 → **BLEND 소튜닝 지시서** 수신 대기
-- NEXT1: K-GENSPARK-IDEA-CHECK-DONE — **젠스파크 아이디어 사전검증 완료**. 형→젠스파크에 `reports/20260810_KGENSPARK_IDEA_CHECK.md` 붙여넣기. 젠스파크가 커서 의견 합산 후 **BLEND 소튜닝 지시서** 작성. 커서 대기. (즉시반영=단일 BLEND_STRENGTH+EV/prefer게이트+다seed cn보조 · HOLD=뇌별W·stat튜닝·cn단독하드) (승인=형(붙여넣기) → 젠스파크 지시서)
+- HEAD: `7034de0` · WORK=`IDLE`
+- 지금: **K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지
+- 직전: K-GENSPARK-IDEA-CHECK · CHECK_DONE
+- BOOT다음: **형 GO** — ①정지/다른축 ②임계완화 재스윕(비권장) ③명분리뷰
+- NEXT1: K-BLEND-STRENGTH-SWEEP-DONE — **BLEND_STRENGTH 스윕 완료(NO_IMPROVE)**. best=null · 현재 0.55 유지 · wire否. 형 판단 — ①정지 ②다른 축(비권장: thr완화/뇌별W) ③명분리뷰. APPLY 대기 아님. (승인=형 GO)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
