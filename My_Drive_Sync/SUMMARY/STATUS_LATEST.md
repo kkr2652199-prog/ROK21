@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-10 KST  
-📌 사유: **[CURSOR] 종료체크정정** — HOLD_OFF 보고서를 `20260810_*`로 재기록 · reports/·커서보고서/ 배치 (오명 20260808 삭제)
+📌 사유: **[CURSOR] K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 다음패치 전 1티어 논문·정직 GitHub 정밀검토 · **DOC_SURVEY** · wire否
 
-📌 직전: **[CURSOR] K-UI-TESTLOTTO-FOCUS-HOLD-OFF** — FOCUS_HOLD=false
+📌 직전: **[CURSOR] 종료체크정정** — 20260810 보고서 배치
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-NEXT-ROUTE-LIT-GITHUB-SURVEY (형GO · READ)** | **DOC_SURVEY** · wire=**False** — 형 「다음진행전 논문·미친개발자 GH 검토·배울점」. **채택문헌**: Thaler&Ziemba JEP1988(금액EV·Pwin불변) · Ziemba ARFE2023(luck-skill) · conscious selection(Chernoff/Cook-Clotfelter) · Significance2012 · Wang JdDM(생일1–31) · Stern&Cover JASA1989(**pick marginal 필요→우리 데이터 없어 적용否**) · Moffitt-Ziemba(신디케이트·소액발권과장금지) · Baker-Lee JRSS(조합shape·HOLD). **GH채택프로세스**: Hai4320/vietlot-suggestion(정직null·split-half) · lgpcarames/lottery_numbers(생일회피=몫EV) · kyr0/lotto-ai(fancy RNG 고백). **GH불신**: wiserguy opaque점수 · powerpredict DL. **결론**: 우리 3축(숙제/인기/몫EV)은 1티어와 정합 · 다음패치=①BLEND만·ge3금지 · Stern-Cover/LSTM/해외리스트/buy-the-pot **금지**. · `docs/benchmarks/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.json` · `reports/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.md` |
 | **K-UI-TESTLOTTO-FOCUS-HOLD-OFF (형GO)** | **HOLD_OFF** — 형 「홀딩 챕 다시 풀어줘」. `lotto4.js` `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 복원뷰=`predict`/`strategy-x`/`hyodo` · HOLD 배너 미표시 · 진입 시 예측 autoload 복원. 재홀딩=`true`. · **종료체크정정**: 보고서·벤치 파일명 `20260810_*`(구 `20260808_*` 오명 삭제). · `docs/benchmarks/20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF.json` · `reports/20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF.md` · 커서보고서 동기 |
 | **K-UI-TESTLOTTO-FOCUS-HOLD** | **HOLD_OFF**(해제됨 · 원판정 HOLD_ON 기록 유지) — 구: 숨김 predict/strategy-x/hyodo · 기본 testlotto · autoload OFF |
 | **K-BRAIN-INDEPENDENT-TUNE (형GO·패치승인후)** | **APPLY** — 형 「다음 진행·패치 잘됨」→ 뇌별 독립튜닝 1노브. **SCORE_WEIGHTS_BY_BRAIN** base 전뇌(0.40/0.25/0.35) → cand_A: stat**(0.25/0.35/0.40)** · markov/review**(0.55/0.20/0.25)**. 구간1100~1235 n136 seed42 · **축지표(ge3미사용)**: markov prefer_delta +0.226→**+0.249**(Δ+0.023) · review prize_delta −0.028→**−0.055**(Δ−0.027·더음수) · stat top15_hit 0.300→**0.305**. review 3구간 cand **전부음수**(base early는 양수였음). V1/V2 hint분리 유지. 롤백=전뇌(0.40/0.25/0.35). · `docs/benchmarks/20260808_KBRAIN_INDEPENDENT_TUNE.json` · `reports/20260808_KBRAIN_INDEPENDENT_TUNE.md` · `tools/_k_brain_independent_tune.py` |

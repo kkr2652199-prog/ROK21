@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **종료체크정정** — HOLD_OFF 보고서 `reports/20260810_*.md` + 커서보고서 동기 (오명 0808 삭제)
-- 직전: K-UI-TESTLOTTO-FOCUS-HOLD-OFF · HOLD_OFF
-- 다음: **형 선택** — ①군중 BLEND 소튜닝 ②1235 명분리뷰 ③정지
+- 지금: **K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지
+- 직전: 종료체크정정 · HOLD_OFF 20260810 보고서
+- 다음: **형 GO** — ①군중 BLEND 소튜닝(권장·EV/prefer축) ②명분리뷰 ③정지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

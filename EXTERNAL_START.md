@@ -10,15 +10,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `373a1c8` |
+| HEAD(실측) | `24d8c80` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **종료체크정정** — HOLD_OFF 보고서 `reports/20260810_*.md` + 커서보고서 동기 (오명 0808 삭제) |
-| 직전 | K-UI-TESTLOTTO-FOCUS-HOLD-OFF · HOLD_OFF |
-| BOOT다음 | **형 선택** — ①군중 BLEND 소튜닝 ②1235 명분리뷰 ③정지 |
-| NEXT1 ID | **K-UI-HOLD-OFF-DONE** |
-| NEXT1 할일 | **UI HOLD 해제 완료** — `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 두뇌예측·전략X·효도 다시 표시. 하드 리로드(Ctrl+F5) 후 탭 확인. 형 1건 — **①군중 BLEND 소튜닝** / ②1235 명분리뷰 / ③정지 |
-| 승인필요 | 없음 |
+| 지금 | **K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지 |
+| 직전 | 종료체크정정 · HOLD_OFF 20260810 보고서 |
+| BOOT다음 | **형 GO** — ①군중 BLEND 소튜닝(권장·EV/prefer축) ②명분리뷰 ③정지 |
+| NEXT1 ID | **K-NEXT-ROUTE-SURVEY-DONE** |
+| NEXT1 할일 | **외부자료 정밀검토 완료(DOC_SURVEY)**. 노선 정합=금액EV(Thaler-Ziemba) · 선호편향(conscious selection) · 숙제≠P↑(Hai4320). 데이터갭=판매비율 없음→Stern-Cover급 금지. 형 GO — **①군중 BLEND 소튜닝**(권장 · prize/prefer축 · ge3금지 · period+split) / ②1235 명분리뷰 / ③정지 |
+| 승인필요 | 형 GO (패치 착수) |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=373a1c8 · 지금=**종료체크정정** — HOLD_OFF 보고서 `reports/20260810_*.md` + 커서보고서 동기 (오명 0808 삭제) · 다음=K-UI-HOLD-OFF-DONE`
+1. 첫줄 `[복귀] HEAD=24d8c80 · 지금=**K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지 · 다음=K-NEXT-ROUTE-SURVEY-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 373a1c8_
+_generated: 24d8c80_

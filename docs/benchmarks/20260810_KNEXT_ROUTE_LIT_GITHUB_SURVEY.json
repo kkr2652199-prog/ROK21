@@ -1,0 +1,51 @@
+{
+  "id": "K-NEXT-ROUTE-LIT-GITHUB-SURVEY",
+  "ts": "2026-08-10T21:01:00+09:00",
+  "verdict": "DOC_SURVEY",
+  "wire": false,
+  "ge3_claim": false,
+  "route": {
+    "stat": "past_learn_homework",
+    "markov": "crowd_prefer",
+    "review": "prize_share_ev"
+  },
+  "tier1_adopt": [
+    {"ref": "Thaler & Ziemba JEP 1988", "doi": "10.1257/jep.2.2.161", "for": "review_EV"},
+    {"ref": "Ziemba ARFE 2023", "doi": "10.1146/annurev-financial-053122-021925", "for": "role_language"},
+    {"ref": "Cook & Clotfelter conscious selection 1993", "for": "prefer_and_prize_premise"},
+    {"ref": "Significance 2012 stats know-how", "doi": "10.1111/j.1740-9713.2012.00540.x", "for": "Pwin_fixed_EV_only"},
+    {"ref": "Stern & Cover JASA 1989 maxent", "doi": "10.1080/01621459.1989.10478862", "for": "ideal_EV_needs_pick_marginals", "applicable_now": false},
+    {"ref": "Wang et al JdDM number preferences", "for": "birthday_1_31_prior"},
+    {"ref": "Baker-Lee JRSS 2011 combination preference", "doi": "10.1111/j.1467-985x.2011.00693.x", "for": "future_shape_hold"},
+    {"ref": "Moffitt & Ziemba arXiv 1801.02958", "for": "syndicate_covering_not_small_ticket"}
+  ],
+  "github_adopt_process": [
+    {"repo": "Hai4320/vietlot-suggestion", "lesson": "honest_null_gates_split_half", "url": "https://github.com/Hai4320/vietlot-suggestion"},
+    {"repo": "lgpcarames/lottery_numbers", "lesson": "avoid_birthday_for_share_EV_diversity", "url": "https://github.com/lgpcarames/lottery_numbers"},
+    {"repo": "kyr0/lotto-ai", "lesson": "self_label_fancy_RNG_reject_LSTM_wire", "url": "https://github.com/kyr0/lotto-ai"}
+  ],
+  "github_reject_or_reference_only": [
+    {"repo": "wiserguy1964/lottery_predictor", "reason": "opaque_scores_no_null"},
+    {"repo": "cpeoples/powerpredict", "reason": "DL_ensemble_entertainment_disclaimer"}
+  ],
+  "data_gap": {
+    "pick_marginal_freq": false,
+    "per_combo_sales": false,
+    "first_winners_proxy": true,
+    "ceiling_ko": "프록시 EV만 가능 · Stern-Cover급 금지"
+  },
+  "next_patch_reco": {
+    "recommended": "① BLEND_STRENGTH/W_CROWD 소튜닝 on prefer/prize axes with period consistent + split-half",
+    "hold": ["Stern-Cover without pick freq", "shape conscious selection", "covering reopen", "LSTM"],
+    "forbid": ["ge3 as EV metric", "foreign unpopular list hardcode", "buy-the-pot claim on 5 tickets"]
+  },
+  "prior": [
+    "docs/benchmarks/20260808_KBRAIN_CROWD_RESTRUCTURE.json",
+    "docs/benchmarks/20260808_KBRAIN_INDEPENDENT_WIRE.json",
+    "docs/benchmarks/20260808_KBRAIN_INDEPENDENT_TUNE.json",
+    "docs/benchmarks/20260808_KPAST_LEARN_YT_BENCH.json"
+  ],
+  "pass": true,
+  "tool": "manual_survey",
+  "report": "reports/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.md"
+}
