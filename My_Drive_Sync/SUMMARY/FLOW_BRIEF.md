@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3bb098d` · WORK=`IDLE`
+- HEAD: `373a1c8` · WORK=`IDLE`
 - 지금: **종료체크정정** — HOLD_OFF 보고서 `reports/20260810_*.md` + 커서보고서 동기 (오명 0808 삭제)
 - 직전: K-UI-TESTLOTTO-FOCUS-HOLD-OFF · HOLD_OFF
 - BOOT다음: **형 선택** — ①군중 BLEND 소튜닝 ②1235 명분리뷰 ③정지
