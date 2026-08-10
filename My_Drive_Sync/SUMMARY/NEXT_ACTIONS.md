@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-N-MEAN-INPUT-FIX
-- 할일: **1236 피드백 실전 VERIFY_OK 후**. K-N HOLD 해소 — 학습입력을 best 오인→mean/볼지표로 정합. (선행=K-KK PATCHED·1236 VERIFY_OK · K-M은 K-N 후)
+- 할일: **프로세스 구조 DOC 완료 후**. K-N HOLD 해소 — 학습입력 best오인→mean/볼지표 정합. (참고: after_predict(N)=N-1채점 · 1237예측 아직0 · 형 GO)
 - 완료조건: K-N 패치·검증·FINDINGS 갱신
-- 선행완료: docs/benchmarks/20260810_K1236_FEEDBACK_VERIFY.json · 20260810_KKK_FEEDBACK_WIRE.json
+- 선행완료: reports/20260810_KPROCESS_STRUCTURE.md · 20260810_K1236_FEEDBACK_VERIFY.json · KKK_FEEDBACK_WIRE
 - 승인필요: 형 GO
 - 선행조건: 없음
 - 최종갱신: 2026-08-10
@@ -14,9 +14,3 @@
 
 ## WORKSTATE
 IDLE
-
----
-
-## 메모 (커서 아님 · guard 무시)
-
-- 단건 1236 mean/hint는 참고만 · 서열화 금지

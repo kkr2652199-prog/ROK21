@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-10 KST  
-📌 사유: **[CURSOR] K-1236-FEEDBACK-VERIFY** — 1236 실전 피드백 **VERIFY_OK** · 다음=K-N
+📌 사유: **[CURSOR] K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 설명 · wire否 · 젠스파크 오해 정정
 
-📌 직전: **[CURSOR] K-KK-FEEDBACK-WIRE** — PATCHED
+📌 직전: **[CURSOR] K-1236-FEEDBACK-VERIFY** — VERIFY_OK
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-PROCESS-STRUCTURE-QUERY (형GO · READ)** | **DOC_OK** · wire=**False** · 코드/DB무수정. **예측**: UI`runPredict`→`routes.api_predict`→`engine.run_prediction`→`coordinator.run_coordinated_prediction` · 재료=`_get_draws_before(target)`=**target미만** · `set_learn_as_of(target)`. **채점**: `after_predict(N)`=**N-1** · `draw_result(N)`=**N** · 자동=예측클릭+_auto_feedback·fetch-latest. **실측**: max_draw1236 · pred1236=10 · pred1237=**0**. **evolve**: 예측만으론 안 쌓임 · evolve_auto/feedback마크 · weight_applied Phase1=**0고정**(K-M전). 젠스파크오해: after_predict(1236)≠1236채점. · `reports/20260810_KPROCESS_STRUCTURE.md` · `docs/benchmarks/20260810_KPROCESS_STRUCTURE.json` |
 | **K-1236-FEEDBACK-VERIFY (형GO · READ)** | **VERIFY_OK** · wire=**False** — draw1236 nums=**[12,18,21,29,34,38]** bonus**10** first_winners**11**. 통합발권 quota로 stat0장→`brain_filter(stat)` 보충 후 3뇌 feedback. evolve 3뇌 `K-KK-FEEDBACK` · weight**0.0** · 중복SKIP OK. mean_hits 단건참고 stat**1.0**/markov**0**/review**0**(baseline0.8·서열화금지). hint∩actual review**3**/markov**2**(단건방향·클레임금지). API: `after_predict(1236)`=1235채점 · 1236채점=`apply_draw_result_feedback(1236)`. 다음=**K-N-MEAN-INPUT-FIX**. · `docs/benchmarks/20260810_K1236_FEEDBACK_VERIFY.json` · `reports/20260810_K1236_FEEDBACK_VERIFY.md` |
 | **K-KK-FEEDBACK-WIRE (형GO · wire)** | **PATCHED** — K-K OPEN→연결. 신규 `click_feedback.py` · routes `POST /predict`·`/fetch-latest` 명시 호출. STEP0: routes 구미연결·coordinator `_auto_feedback` 기존재 · `apply_feedback(brain,draw,matched,missed)` · evolve 마크=`K-KK-FEEDBACK`. 검증: 1230~1235 **6회×3뇌=18행** · evolve 60→60(UPDATE) · weight_applied **0.0** · 중복SKIP·9999 SKIP · predict OK. FINDINGS K-K=**PATCHED** · K-M/K-N **HOLD**. · `docs/benchmarks/20260810_KKK_FEEDBACK_WIRE.json` · `reports/20260810_KKK_FEEDBACK_WIRE.md` |
 | **K-BLEND-STRENGTH-SWEEP (형GO · READ)** | **NO_IMPROVE** · wire=**False** — 사전확인 BLEND=0.55·SCORE_WEIGHTS=cand_A·IDEA_CHECK pass OK. 스윕 {0.35…0.75}×seed5×1100~1235. base prize**−0.059526** / prefer**+0.245772** / cn=**1.0**. 개선후보 전원 **cond3 실패**(|Δprize|최대≈0.0037≪0.01). 0.40이 prize 최음수(−0.0614)나 |Δ|=0.0019 noise. **best=null · APPLY 금지 · 0.55 HOLD**. ROLLBACK 아님. · `docs/benchmarks/20260810_KBLEND_STRENGTH_SWEEP.json` · `reports/20260810_KBLEND_STRENGTH_SWEEP.md` · `tools/_k_blend_strength_sweep.py` |

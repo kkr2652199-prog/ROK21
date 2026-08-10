@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-1236-FEEDBACK-VERIFY** — 1236 실전 **VERIFY_OK** · 다음=K-N-MEAN-INPUT-FIX
-- 직전: K-KK-FEEDBACK-WIRE · PATCHED
+- 지금: **K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정
+- 직전: K-1236-FEEDBACK-VERIFY · VERIFY_OK
 - 다음: **형 GO** — ①K-N mean입력 정합 ②K-M referee ③정지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

@@ -1,0 +1,59 @@
+{
+  "id": "K-PROCESS-STRUCTURE-QUERY",
+  "ts": "2026-08-10T22:35:00+09:00",
+  "wire": false,
+  "ge3_used": false,
+  "db_write": false,
+  "code_modified": false,
+  "q1_predict_flow": {
+    "ui": "lotto4.js runPredict → POST /api/testlotto/predict/{d}",
+    "chain": [
+      "routes.api_predict(target)",
+      "engine.run_prediction(target)",
+      "coordinator.run_coordinated_prediction(target)",
+      "_auto_feedback(target) [scores target-1]",
+      "set_learn_as_of(target)",
+      "_get_draws_before(target) [draws < target]",
+      "3brains.predict_sets → quota → lotto_predictions INSERT",
+      "routes: apply_feedback_after_predict(target) [scores target-1]"
+    ],
+    "material_as_of_max": "target-1",
+    "learn_cutoff": "set_learn_as_of(target) → load < target"
+  },
+  "q2_feedback_flow": {
+    "triggers": [
+      "predict click: coordinator._auto_feedback + routes.apply_feedback_after_predict",
+      "fetch-latest success: apply_draw_result_feedback(draw_no)",
+      "manual/batch: apply_draw_result_feedback / evolve_auto"
+    ],
+    "apply_feedback_after_predict_N_scores": "N-1",
+    "apply_draw_result_feedback_N_scores": "N",
+    "difference": "after_predict is thin wrapper: after_predict(N)==draw_result(N-1)"
+  },
+  "q3_1236_1237": {
+    "db_max_draw": 1236,
+    "pred_1236": 10,
+    "pred_1237": 0,
+    "evolve_1236_brains": ["stat", "markov", "review"],
+    "A_1236_material_as_of_max": 1235,
+    "B_score_1236_call": "apply_draw_result_feedback(1236) or apply_feedback_after_predict(1237)",
+    "C_1237_exists": false,
+    "C_1237_material_as_of_max_should_be": 1236,
+    "D_order": "score 1236 (or via predict 1237 auto) before relying on 1236-learn for 1237; if 1237 predicted before 1236 feedback, re-predict 1237"
+  },
+  "q4_evolve_log": {
+    "written_at_predict_only": false,
+    "written_at_feedback_mark": true,
+    "written_at_evolve_auto_score": true,
+    "weight_applied": 0.0,
+    "weight_change_requires": "Phase2/K-M unlock WEIGHT_APPLIED constant + wire into referee/learn (not K-K)"
+  },
+  "genspark_mistakes_called_out": [
+    "after_predict(1236) scores 1236 — FALSE, scores 1235",
+    "engine is main predict body — FALSE, coordinator is",
+    "predict always writes evolve_log — FALSE",
+    "K-K makes weight_applied nonzero — FALSE, Phase1 fixed 0"
+  ],
+  "report": "reports/20260810_KPROCESS_STRUCTURE.md",
+  "verdict": "DOC_OK"
+}

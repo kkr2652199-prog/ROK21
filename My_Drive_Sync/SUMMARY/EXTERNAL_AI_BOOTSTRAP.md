@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `af40d12` |
+| HEAD(실측) | `8007f21` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-1236-FEEDBACK-VERIFY** — 1236 실전 **VERIFY_OK** · 다음=K-N-MEAN-INPUT-FIX |
-| 직전 | K-KK-FEEDBACK-WIRE · PATCHED |
+| 지금 | **K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정 |
+| 직전 | K-1236-FEEDBACK-VERIFY · VERIFY_OK |
 | BOOT다음 | **형 GO** — ①K-N mean입력 정합 ②K-M referee ③정지 |
 | NEXT1 ID | **K-N-MEAN-INPUT-FIX** |
-| NEXT1 할일 | **1236 피드백 실전 VERIFY_OK 후**. K-N HOLD 해소 — 학습입력을 best 오인→mean/볼지표로 정합. (선행=K-KK PATCHED·1236 VERIFY_OK · K-M은 K-N 후) |
+| NEXT1 할일 | **프로세스 구조 DOC 완료 후**. K-N HOLD 해소 — 학습입력 best오인→mean/볼지표 정합. (참고: after_predict(N)=N-1채점 · 1237예측 아직0 · 형 GO) |
 | 승인필요 | 형 GO |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=af40d12 · 지금=**K-1236-FEEDBACK-VERIFY** — 1236 실전 **VERIFY_OK** · 다음=K-N-MEAN-INPUT-FIX · 다음=K-N-MEAN-INPUT-FIX`
+1. 첫줄 `[복귀] HEAD=8007f21 · 지금=**K-PROCESS-STRUCTURE-QUERY** — 예측/채점/evolve 흐름 DOC_OK · 젠스파크 오해 정정 · 다음=K-N-MEAN-INPUT-FIX`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
