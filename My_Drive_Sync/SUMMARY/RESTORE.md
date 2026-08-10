@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `9d2670a` · WORK=`IDLE`
-2. **지금:** **K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지
-3. **다음1건:** K-NEXT-ROUTE-SURVEY-DONE — **외부자료 정밀검토 완료(DOC_SURVEY)**. 노선 정합=금액EV(Thaler-Ziemba) · 선호편향(conscious selection) · 숙제≠P↑(Hai4320). 데이터갭=판매비율 없음→Stern-Cover급 금지. 형 GO — **①군중 BLEND 소튜닝**(권장 · prize/prefer축 · ge3금지 · period+split) / ②1235 명분리뷰 / ③정지 (승인필요=형 GO (패치 착수) · 선행=없음)
+1. **HEAD:** `88fe1d9` · WORK=`IDLE`
+2. **지금:** **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD
+3. **다음1건:** K-GENSPARK-IDEA-CHECK-DONE — **젠스파크 아이디어 사전검증 완료**. 형→젠스파크에 `reports/20260810_KGENSPARK_IDEA_CHECK.md` 붙여넣기. 젠스파크가 커서 의견 합산 후 **BLEND 소튜닝 지시서** 작성. 커서 대기. (즉시반영=단일 BLEND_STRENGTH+EV/prefer게이트+다seed cn보조 · HOLD=뇌별W·stat튜닝·cn단독하드) (승인필요=형(붙여넣기) → 젠스파크 지시서 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,8 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-10 | 다음패치전 논문·GH 정밀분석 | Thaler-Ziemba/conscious/Hai4320 등 · 배울점·금지점 · wire否 | **DOC_SURVEY** | (본턴) |
+| 2026-08-10 | 젠스파크 4아이디어 사전검증 | seed5 cn안정 · weight0 · referee균등 · 게이트3 PASS · 의견제출 | **CHECK_DONE** | (본턴) |
+| 2026-08-10 | 다음패치전 논문·GH 정밀분석 | Thaler-Ziemba/conscious/Hai4320 등 · 배울점·금지점 · wire否 | **DOC_SURVEY** | 9d2670a |
 | 2026-08-10 | 종료체크·20260810보고서없음 | HOLD_OFF를 `20260810_*`로 재기록·커서보고서동기 · 오명0808삭제 | **DOC_FIX** | 373a1c8 |
 | 2026-08-10 | 홀딩 챕 다시 풀어줘 | `FOCUS_HOLD=false` · predict/strategy-x/hyodo 복원 · autoload 복원 | **HOLD_OFF** | 0c4f640 |
 | 2026-08-08 | 다음진행·패치OK→독립튜닝 | SCORE_WEIGHTS cand_A **APPLY** · prefer+0.023 · prize−0.027 · hit+0.005 · V1/V2유지 | **APPLY** | 536360f |

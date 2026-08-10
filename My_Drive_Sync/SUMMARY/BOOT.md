@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지
-- 직전: 종료체크정정 · HOLD_OFF 20260810 보고서
-- 다음: **형 GO** — ①군중 BLEND 소튜닝(권장·EV/prefer축) ②명분리뷰 ③정지
+- 지금: **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD
+- 직전: K-NEXT-ROUTE-LIT-GITHUB-SURVEY · DOC_SURVEY
+- 다음: 형이 커서 결과를 젠스파크에 붙여넣기 → **BLEND 소튜닝 지시서** 수신 대기
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

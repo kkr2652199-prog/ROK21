@@ -1,0 +1,250 @@
+{
+  "id": "K-GENSPARK-IDEA-CHECK",
+  "ts": "2026-08-10T21:20:13+09:00",
+  "head_note": "READ-ONLY · no wire · no DB write",
+  "seeds": [
+    0,
+    42,
+    123,
+    999,
+    7
+  ],
+  "draw_range": [
+    1100,
+    1235
+  ],
+  "check1_result": {
+    "early_noise_range_ok": false,
+    "noise_band_approx": 0.03,
+    "early_se_seed42": 0.009294,
+    "base_early": 0.026514,
+    "cand_early": -0.011457,
+    "seed_sensitivity": {
+      "seed_0": {
+        "early_mean": -0.021578,
+        "early_neg": true,
+        "consistent_neg": true
+      },
+      "seed_42": {
+        "early_mean": -0.011457,
+        "early_neg": true,
+        "consistent_neg": true
+      },
+      "seed_123": {
+        "early_mean": -0.043869,
+        "early_neg": true,
+        "consistent_neg": true
+      },
+      "seed_999": {
+        "early_mean": -0.026881,
+        "early_neg": true,
+        "consistent_neg": true
+      },
+      "seed_7": {
+        "early_mean": -0.028317,
+        "early_neg": true,
+        "consistent_neg": true
+      }
+    },
+    "seed_early_sign_unstable": false,
+    "consistent_neg_as_gate_opinion": "조건부",
+    "reason": "cand early 부호는 seed 5/5 전부 음수·consistent_neg=True(안정). early SE≈0.009(n=45)라 ±0.03 단순 룰만으로 부호반전을 noise라 단정하긴 어렵고(|base→cand|Δ≈0.038>0.03). base early 양수는 다른 SCORE_WEIGHTS 대비라 과장 금지. → consistent_neg는 다seed 보조조건으로 동의, 단독 하드게이트는 비동의.",
+    "seed_sensitivity_early_neg_bool": {
+      "seed_0": true,
+      "seed_42": true,
+      "seed_123": true,
+      "seed_999": true,
+      "seed_7": true
+    }
+  },
+  "check2_result": {
+    "w_crowd_w_struct_separated_now": false,
+    "blend_strength_per_brain": false,
+    "current_values": {
+      "W_CROWD": 0.7,
+      "W_STRUCT": 0.3,
+      "BLEND_STRENGTH": 0.55
+    },
+    "separation_feasible": true,
+    "modification_scope": "crowd_signal.py에 W_*_BY_BRAIN / BLEND_STRENGTH_BY_BRAIN dict 추가 + prefer_table/prize_table/engine blend 호출부 strength·혼합비 인자화. coordinator/engine random.choices 불필요. 예상 1파일(+호출 2곳).",
+    "opinion": "지금 당장 BLEND_STRENGTH **단일 노브**로 충분하다. 문헌상 markov=STRUCT·review=CROWD 가설은 타당하나, 노브 2~3개 동시 스윕은 R38 선택편향·표본 n136에 위험. 단일 BLEND PASS 후 뇌별 분리는 2단계."
+  },
+  "check3_result": {
+    "evolve_log_weight_nonzero": false,
+    "stat_weight_applied_values": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "feedback_connected": false,
+    "feedback_detail": {
+      "coordinator_has_apply_feedback": true,
+      "routes_has_apply_feedback": false,
+      "findings_KK": "OPEN — 클릭 예측 feedback 미연결",
+      "summary_bool": true
+    },
+    "referee_weights_live": {
+      "stat": 0.333333,
+      "markov": 0.333333,
+      "review": 0.333333
+    },
+    "referee_spread": 0.0,
+    "weight_applied_constant": 0.0,
+    "n_evolve_log_rows": 60,
+    "opinion": "stat 내부 노브 튜닝은 **지금 하면 안 된다**. evolve weight_applied 상수=0.0 (Phase1 고정0) · referee 격차=0.0000 (K-M HOLD 유지) · K-K 클릭 feedback 미연결 OPEN. 피드백·referee가 죽인 상태에서 엔진 노브만 돌리면 원인 귀속 불가."
+  },
+  "check4_result": {
+    "gate_cond1_pass": true,
+    "gate_cond2_pass": true,
+    "gate_cond3_pass": true,
+    "cond3_abs_improve": 0.027127,
+    "split_half_n_ok": true,
+    "split_half_detail": {
+      "mid": 1167,
+      "n_first": 68,
+      "n_second": 68,
+      "prefer_first": 0.250886,
+      "prefer_second": 0.247888
+    },
+    "cond3_threshold_suggestion": 0.01,
+    "additional_gate_suggestion": "다seed(≥3)에서 consistent_neg 비율≥2/3 · prefer_delta 다seed 평균>0 · |prize_cand−prize_base|≥0.01 (seed간 prize σ≈0.01). 현재 cn_rate=1.00",
+    "multiseed_consistent_neg_rate": 1.0,
+    "idea_classify": {
+      "immediate": [
+        "CHECK-1_consistent_neg_as_soft_aux",
+        "CHECK-2_single_BLEND_STRENGTH_first",
+        "CHECK-3_verify_weight0_before_any_stat_tune",
+        "CHECK-4_gate_EV_prefer_no_ge3"
+      ],
+      "hold": [
+        "CHECK-1_consistent_neg_hard_gate",
+        "CHECK-2_per_brain_W_CROWD_W_STRUCT",
+        "CHECK-3_stat_internal_tune_until_KM_KN_KK",
+        "CHECK-4_hard_require_all_period_neg_without_multiseed"
+      ]
+    },
+    "final_opinion": "BLEND 소튜닝 게이트는 ge3 없이 (1) review prize_delta < base 및 <0 (2) markov prefer_delta>0 및 split-half 동부호 (3) |Δ|≥약 0.01 (4) **다seed 보조로** consistent_neg 확인 — consistent_neg 단독 필수는 비동의. 뇌별 W 분리는 BLEND 단일 통과 후. stat 튜닝은 K-M/K-N/K-K 후."
+  },
+  "per_seed_detail": [
+    {
+      "seed": 0,
+      "n": 136,
+      "early_n": 45,
+      "early_mean": -0.021578,
+      "early_sd": 0.059899,
+      "early_se": 0.008929,
+      "mid_mean": -0.051632,
+      "late_mean": -0.077304,
+      "consistent_neg": true,
+      "prefer_mean": 0.245319,
+      "prefer_first_half": 0.247647,
+      "prefer_second_half": 0.24299,
+      "prefer_split_both_pos": true,
+      "prize_mean": -0.050371,
+      "split_mid_draw": 1167,
+      "n_first": 68,
+      "n_second": 68
+    },
+    {
+      "seed": 42,
+      "n": 136,
+      "early_n": 45,
+      "early_mean": -0.011457,
+      "early_sd": 0.062348,
+      "early_se": 0.009294,
+      "mid_mean": -0.064005,
+      "late_mean": -0.088546,
+      "consistent_neg": true,
+      "prefer_mean": 0.249387,
+      "prefer_first_half": 0.250886,
+      "prefer_second_half": 0.247888,
+      "prefer_split_both_pos": true,
+      "prize_mean": -0.054918,
+      "split_mid_draw": 1167,
+      "n_first": 68,
+      "n_second": 68
+    },
+    {
+      "seed": 123,
+      "n": 136,
+      "early_n": 45,
+      "early_mean": -0.043869,
+      "early_sd": 0.052058,
+      "early_se": 0.00776,
+      "mid_mean": -0.068609,
+      "late_mean": -0.088131,
+      "consistent_neg": true,
+      "prefer_mean": 0.245127,
+      "prefer_first_half": 0.255926,
+      "prefer_second_half": 0.234329,
+      "prefer_split_both_pos": true,
+      "prize_mean": -0.067026,
+      "split_mid_draw": 1167,
+      "n_first": 68,
+      "n_second": 68
+    },
+    {
+      "seed": 999,
+      "n": 136,
+      "early_n": 45,
+      "early_mean": -0.026881,
+      "early_sd": 0.051544,
+      "early_se": 0.007684,
+      "mid_mean": -0.078904,
+      "late_mean": -0.093341,
+      "consistent_neg": true,
+      "prefer_mean": 0.241913,
+      "prefer_first_half": 0.25203,
+      "prefer_second_half": 0.231797,
+      "prefer_split_both_pos": true,
+      "prize_mean": -0.066574,
+      "split_mid_draw": 1167,
+      "n_first": 68,
+      "n_second": 68
+    },
+    {
+      "seed": 7,
+      "n": 136,
+      "early_n": 45,
+      "early_mean": -0.028317,
+      "early_sd": 0.068157,
+      "early_se": 0.01016,
+      "mid_mean": -0.045146,
+      "late_mean": -0.101803,
+      "consistent_neg": true,
+      "prefer_mean": 0.247114,
+      "prefer_first_half": 0.25189,
+      "prefer_second_half": 0.242339,
+      "prefer_split_both_pos": true,
+      "prize_mean": -0.058741,
+      "split_mid_draw": 1167,
+      "n_first": 68,
+      "n_second": 68
+    }
+  ],
+  "cursor_summary_ko": "젠스파크 4안 중 BLEND 즉시 반영=단일 BLEND_STRENGTH + EV/prefer 게이트(다seed 보조). consistent_neg 하드게이트·뇌별 W 분리·stat 내부튜닝은 HOLD. evolve weight=0 확정 · referee spread=0.0.",
+  "wire": false,
+  "pass": true,
+  "prior": [
+    "docs/benchmarks/20260808_KBRAIN_INDEPENDENT_TUNE.json",
+    "docs/benchmarks/20260808_KBRAIN_INDEPENDENT_WIRE.json",
+    "docs/benchmarks/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.json"
+  ]
+}

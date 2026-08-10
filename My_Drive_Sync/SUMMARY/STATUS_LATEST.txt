@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-10 KST  
-📌 사유: **[CURSOR] K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 다음패치 전 1티어 논문·정직 GitHub 정밀검토 · **DOC_SURVEY** · wire否
+📌 사유: **[CURSOR] K-GENSPARK-IDEA-CHECK** — 젠스파크 4아이디어 READ-ONLY 실측 · wire否 · BLEND 게이트 의견 제출
 
-📌 직전: **[CURSOR] 종료체크정정** — 20260810 보고서 배치
+📌 직전: **[CURSOR] K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — DOC_SURVEY
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-GENSPARK-IDEA-CHECK (형GO · READ)** | **CHECK_DONE** · wire=**False** — 젠스파크 4안 실측. **①consistent_neg**: cand early seed5/5 전부음수·cn=True(안정) · SE≈0.009 · **조건부**(다seed 보조 동의·단독하드 비동의). **②W_CROWD/STRUCT**: 공유상수(0.7/0.3)·BLEND_STRENGTH 공용0.55 · 뇌별분리 **미구현·가능** · 의견=**단일 BLEND 먼저**. **③evolve/feedback**: `testlotto_evolve_log` stat weight_applied **전부0**(상수0.0) · referee **완전균등 0.333**(spread0·K-M) · routes `apply_feedback` 없음(K-K) → **stat튜닝 HOLD**. **④게이트**: cand_A 조건1·2·3 **PASS** · split 68/68 prefer+/+ · thr0.01 · 다seed cn_rate=1.0. **즉시**=단일BLEND+EV/prefer게이트+다seed cn보조 · **HOLD**=뇌별W·stat튜닝·cn단독하드. · `docs/benchmarks/20260810_KGENSPARK_IDEA_CHECK.json` · `reports/20260810_KGENSPARK_IDEA_CHECK.md` · `tools/_k_genspark_idea_check.py` |
 | **K-NEXT-ROUTE-LIT-GITHUB-SURVEY (형GO · READ)** | **DOC_SURVEY** · wire=**False** — 형 「다음진행전 논문·미친개발자 GH 검토·배울점」. **채택문헌**: Thaler&Ziemba JEP1988(금액EV·Pwin불변) · Ziemba ARFE2023(luck-skill) · conscious selection(Chernoff/Cook-Clotfelter) · Significance2012 · Wang JdDM(생일1–31) · Stern&Cover JASA1989(**pick marginal 필요→우리 데이터 없어 적용否**) · Moffitt-Ziemba(신디케이트·소액발권과장금지) · Baker-Lee JRSS(조합shape·HOLD). **GH채택프로세스**: Hai4320/vietlot-suggestion(정직null·split-half) · lgpcarames/lottery_numbers(생일회피=몫EV) · kyr0/lotto-ai(fancy RNG 고백). **GH불신**: wiserguy opaque점수 · powerpredict DL. **결론**: 우리 3축(숙제/인기/몫EV)은 1티어와 정합 · 다음패치=①BLEND만·ge3금지 · Stern-Cover/LSTM/해외리스트/buy-the-pot **금지**. · `docs/benchmarks/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.json` · `reports/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.md` |
 | **K-UI-TESTLOTTO-FOCUS-HOLD-OFF (형GO)** | **HOLD_OFF** — 형 「홀딩 챕 다시 풀어줘」. `lotto4.js` `ROK21_TESTLOTTO_FOCUS_HOLD=false` · 복원뷰=`predict`/`strategy-x`/`hyodo` · HOLD 배너 미표시 · 진입 시 예측 autoload 복원. 재홀딩=`true`. · **종료체크정정**: 보고서·벤치 파일명 `20260810_*`(구 `20260808_*` 오명 삭제). · `docs/benchmarks/20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF.json` · `reports/20260810_KUI_TESTLOTTO_FOCUS_HOLD_OFF.md` · 커서보고서 동기 |
 | **K-UI-TESTLOTTO-FOCUS-HOLD** | **HOLD_OFF**(해제됨 · 원판정 HOLD_ON 기록 유지) — 구: 숨김 predict/strategy-x/hyodo · 기본 testlotto · autoload OFF |

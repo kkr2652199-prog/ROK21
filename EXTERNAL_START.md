@@ -10,15 +10,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `9d2670a` |
+| HEAD(실측) | `88fe1d9` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지 |
-| 직전 | 종료체크정정 · HOLD_OFF 20260810 보고서 |
-| BOOT다음 | **형 GO** — ①군중 BLEND 소튜닝(권장·EV/prefer축) ②명분리뷰 ③정지 |
-| NEXT1 ID | **K-NEXT-ROUTE-SURVEY-DONE** |
-| NEXT1 할일 | **외부자료 정밀검토 완료(DOC_SURVEY)**. 노선 정합=금액EV(Thaler-Ziemba) · 선호편향(conscious selection) · 숙제≠P↑(Hai4320). 데이터갭=판매비율 없음→Stern-Cover급 금지. 형 GO — **①군중 BLEND 소튜닝**(권장 · prize/prefer축 · ge3금지 · period+split) / ②1235 명분리뷰 / ③정지 |
-| 승인필요 | 형 GO (패치 착수) |
+| 지금 | **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD |
+| 직전 | K-NEXT-ROUTE-LIT-GITHUB-SURVEY · DOC_SURVEY |
+| BOOT다음 | 형이 커서 결과를 젠스파크에 붙여넣기 → **BLEND 소튜닝 지시서** 수신 대기 |
+| NEXT1 ID | **K-GENSPARK-IDEA-CHECK-DONE** |
+| NEXT1 할일 | **젠스파크 아이디어 사전검증 완료**. 형→젠스파크에 `reports/20260810_KGENSPARK_IDEA_CHECK.md` 붙여넣기. 젠스파크가 커서 의견 합산 후 **BLEND 소튜닝 지시서** 작성. 커서 대기. (즉시반영=단일 BLEND_STRENGTH+EV/prefer게이트+다seed cn보조 · HOLD=뇌별W·stat튜닝·cn단독하드) |
+| 승인필요 | 형(붙여넣기) → 젠스파크 지시서 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=9d2670a · 지금=**K-NEXT-ROUTE-LIT-GITHUB-SURVEY** — 논문·GH 정밀검토 DOC_SURVEY · 다음패치=BLEND만·Stern-Cover/LSTM 금지 · 다음=K-NEXT-ROUTE-SURVEY-DONE`
+1. 첫줄 `[복귀] HEAD=88fe1d9 · 지금=**K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD · 다음=K-GENSPARK-IDEA-CHECK-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 9d2670a_
+_generated: 88fe1d9_
