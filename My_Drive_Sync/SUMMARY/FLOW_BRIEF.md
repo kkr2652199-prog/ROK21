@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `01abac1` · WORK=`IDLE`
+- HEAD: `af40d12` · WORK=`IDLE`
 - 지금: **K-1236-FEEDBACK-VERIFY** — 1236 실전 **VERIFY_OK** · 다음=K-N-MEAN-INPUT-FIX
 - 직전: K-KK-FEEDBACK-WIRE · PATCHED
 - BOOT다음: **형 GO** — ①K-N mean입력 정합 ②K-M referee ③정지
