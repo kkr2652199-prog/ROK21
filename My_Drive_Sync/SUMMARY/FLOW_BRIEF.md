@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `25b62d6` · WORK=`IDLE`
-- 지금: **K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지
-- 직전: K-GENSPARK-IDEA-CHECK · CHECK_DONE
-- BOOT다음: **형 GO** — ①정지/다른축 ②임계완화 재스윕(비권장) ③명분리뷰
-- NEXT1: K-BLEND-STRENGTH-SWEEP-DONE — **BLEND_STRENGTH 스윕 완료(NO_IMPROVE)**. best=null · 현재 0.55 유지 · wire否. 형 판단 — ①정지 ②다른 축(비권장: thr완화/뇌별W) ③명분리뷰. APPLY 대기 아님. (승인=형 GO)
+- HEAD: `06915dc` · WORK=`IDLE`
+- 지금: **K-KK-FEEDBACK-WIRE** — routes 피드백 연결 **PATCHED** · weight=0 · K-M/K-N HOLD
+- 직전: K-BLEND-STRENGTH-SWEEP · NO_IMPROVE
+- BOOT다음: **형 GO** — ①K-M referee 설계 ②K-N mean입력 정합 ③정지
+- NEXT1: K-KK-FEEDBACK-WIRE-DONE — **K-K PATCHED 완료**. routes 클릭/수집→feedback 연결 · weight_applied=0.0 유지. 형 판단 — ①K-M referee 가중 설계 ②K-N mean 입력 정합(권장 선행) ③정지. (피드백 경로 살아 있으나 referee 균등·best오인 HOLD) (승인=형 GO)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

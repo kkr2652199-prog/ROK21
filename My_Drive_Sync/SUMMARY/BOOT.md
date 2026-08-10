@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지
-- 직전: K-GENSPARK-IDEA-CHECK · CHECK_DONE
-- 다음: **형 GO** — ①정지/다른축 ②임계완화 재스윕(비권장) ③명분리뷰
+- 지금: **K-KK-FEEDBACK-WIRE** — routes 피드백 연결 **PATCHED** · weight=0 · K-M/K-N HOLD
+- 직전: K-BLEND-STRENGTH-SWEEP · NO_IMPROVE
+- 다음: **형 GO** — ①K-M referee 설계 ②K-N mean입력 정합 ③정지
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

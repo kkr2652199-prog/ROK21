@@ -127,7 +127,17 @@ async def api_fetch_latest():
 
     result = fetch_latest_draw()
     if result:
-        return {"status": "성공", "draw": result}
+        # K-KK-FEEDBACK-WIRE: 추첨 결과가 DB에 들어오면 해당 회차 피드백
+        fb = None
+        try:
+            from app.testlotto.click_feedback import apply_draw_result_feedback
+
+            dno = int(result.get("draw_no") or result.get("drwNo") or 0)
+            if dno > 0:
+                fb = apply_draw_result_feedback(dno)
+        except Exception as e:  # noqa: BLE001
+            fb = {"ok": False, "error": str(e)}
+        return {"status": "성공", "draw": result, "click_feedback": fb}
     hint = get_collection_hint()
     return {
         "status": "신규 회차 없음",
@@ -396,6 +406,17 @@ async def api_predict(target_draw_no: int):
     from app.testlotto.engine import run_prediction
 
     result = run_prediction(target_draw_no)
+    # K-KK-FEEDBACK-WIRE: 클릭 발권 후 직전 회차 결과 → learn_state + evolve_log 마크
+    # (coordinator._auto_feedback 와 중복 가능 · evolve/last_draw guard 로 안전)
+    try:
+        from app.testlotto.click_feedback import apply_feedback_after_predict
+
+        result = dict(result) if isinstance(result, dict) else {"result": result}
+        result["click_feedback"] = apply_feedback_after_predict(int(target_draw_no))
+    except Exception as e:  # noqa: BLE001
+        if isinstance(result, dict):
+            result = dict(result)
+            result["click_feedback"] = {"ok": False, "error": str(e)}
     return result
 
 

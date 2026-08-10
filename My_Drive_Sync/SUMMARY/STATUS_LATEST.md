@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-10 KST  
-📌 사유: **[CURSOR] K-BLEND-STRENGTH-SWEEP** — 단일 BLEND 9점×5seed 스윕 · wire否 · **NO_IMPROVE** · 0.55 유지
+📌 사유: **[CURSOR] K-KK-FEEDBACK-WIRE** — 클릭/수집 피드백 경로 연결 · **PATCHED** · weight=0.0 · K-M/K-N HOLD
 
-📌 직전: **[CURSOR] K-GENSPARK-IDEA-CHECK** — 4안 실측
+📌 직전: **[CURSOR] K-BLEND-STRENGTH-SWEEP** — NO_IMPROVE · 0.55 유지
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-KK-FEEDBACK-WIRE (형GO · wire)** | **PATCHED** — K-K OPEN→연결. 신규 `click_feedback.py` · routes `POST /predict`·`/fetch-latest` 명시 호출. STEP0: routes 구미연결·coordinator `_auto_feedback` 기존재 · `apply_feedback(brain,draw,matched,missed)` · evolve 마크=`K-KK-FEEDBACK`. 검증: 1230~1235 **6회×3뇌=18행** · evolve 60→60(UPDATE) · weight_applied **0.0** · 중복SKIP·9999 SKIP · predict OK. FINDINGS K-K=**PATCHED** · K-M/K-N **HOLD**. · `docs/benchmarks/20260810_KKK_FEEDBACK_WIRE.json` · `reports/20260810_KKK_FEEDBACK_WIRE.md` |
 | **K-BLEND-STRENGTH-SWEEP (형GO · READ)** | **NO_IMPROVE** · wire=**False** — 사전확인 BLEND=0.55·SCORE_WEIGHTS=cand_A·IDEA_CHECK pass OK. 스윕 {0.35…0.75}×seed5×1100~1235. base prize**−0.059526** / prefer**+0.245772** / cn=**1.0**. 개선후보 전원 **cond3 실패**(|Δprize|최대≈0.0037≪0.01). 0.40이 prize 최음수(−0.0614)나 |Δ|=0.0019 noise. **best=null · APPLY 금지 · 0.55 HOLD**. ROLLBACK 아님. · `docs/benchmarks/20260810_KBLEND_STRENGTH_SWEEP.json` · `reports/20260810_KBLEND_STRENGTH_SWEEP.md` · `tools/_k_blend_strength_sweep.py` |
 | **K-GENSPARK-IDEA-CHECK (형GO · READ)** | **CHECK_DONE** · wire=**False** — 젠스파크 4안 실측. **①consistent_neg**: cand early seed5/5 전부음수·cn=True(안정) · SE≈0.009 · **조건부**(다seed 보조 동의·단독하드 비동의). **②W_CROWD/STRUCT**: 공유상수(0.7/0.3)·BLEND_STRENGTH 공용0.55 · 뇌별분리 **미구현·가능** · 의견=**단일 BLEND 먼저**. **③evolve/feedback**: `testlotto_evolve_log` stat weight_applied **전부0**(상수0.0) · referee **완전균등 0.333**(spread0·K-M) · routes `apply_feedback` 없음(K-K) → **stat튜닝 HOLD**. **④게이트**: cand_A 조건1·2·3 **PASS** · split 68/68 prefer+/+ · thr0.01 · 다seed cn_rate=1.0. **즉시**=단일BLEND+EV/prefer게이트+다seed cn보조 · **HOLD**=뇌별W·stat튜닝·cn단독하드. · `docs/benchmarks/20260810_KGENSPARK_IDEA_CHECK.json` · `reports/20260810_KGENSPARK_IDEA_CHECK.md` · `tools/_k_genspark_idea_check.py` |
 | **K-NEXT-ROUTE-LIT-GITHUB-SURVEY (형GO · READ)** | **DOC_SURVEY** · wire=**False** — 형 「다음진행전 논문·미친개발자 GH 검토·배울점」. **채택문헌**: Thaler&Ziemba JEP1988(금액EV·Pwin불변) · Ziemba ARFE2023(luck-skill) · conscious selection(Chernoff/Cook-Clotfelter) · Significance2012 · Wang JdDM(생일1–31) · Stern&Cover JASA1989(**pick marginal 필요→우리 데이터 없어 적용否**) · Moffitt-Ziemba(신디케이트·소액발권과장금지) · Baker-Lee JRSS(조합shape·HOLD). **GH채택프로세스**: Hai4320/vietlot-suggestion(정직null·split-half) · lgpcarames/lottery_numbers(생일회피=몫EV) · kyr0/lotto-ai(fancy RNG 고백). **GH불신**: wiserguy opaque점수 · powerpredict DL. **결론**: 우리 3축(숙제/인기/몫EV)은 1티어와 정합 · 다음패치=①BLEND만·ge3금지 · Stern-Cover/LSTM/해외리스트/buy-the-pot **금지**. · `docs/benchmarks/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.json` · `reports/20260810_KNEXT_ROUTE_LIT_GITHUB_SURVEY.md` |

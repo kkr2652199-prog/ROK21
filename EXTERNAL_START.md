@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `25b62d6` |
+| HEAD(실측) | `06915dc` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지 |
-| 직전 | K-GENSPARK-IDEA-CHECK · CHECK_DONE |
-| BOOT다음 | **형 GO** — ①정지/다른축 ②임계완화 재스윕(비권장) ③명분리뷰 |
-| NEXT1 ID | **K-BLEND-STRENGTH-SWEEP-DONE** |
-| NEXT1 할일 | **BLEND_STRENGTH 스윕 완료(NO_IMPROVE)**. best=null · 현재 0.55 유지 · wire否. 형 판단 — ①정지 ②다른 축(비권장: thr완화/뇌별W) ③명분리뷰. APPLY 대기 아님. |
+| 지금 | **K-KK-FEEDBACK-WIRE** — routes 피드백 연결 **PATCHED** · weight=0 · K-M/K-N HOLD |
+| 직전 | K-BLEND-STRENGTH-SWEEP · NO_IMPROVE |
+| BOOT다음 | **형 GO** — ①K-M referee 설계 ②K-N mean입력 정합 ③정지 |
+| NEXT1 ID | **K-KK-FEEDBACK-WIRE-DONE** |
+| NEXT1 할일 | **K-K PATCHED 완료**. routes 클릭/수집→feedback 연결 · weight_applied=0.0 유지. 형 판단 — ①K-M referee 가중 설계 ②K-N mean 입력 정합(권장 선행) ③정지. (피드백 경로 살아 있으나 referee 균등·best오인 HOLD) |
 | 승인필요 | 형 GO |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=25b62d6 · 지금=**K-BLEND-STRENGTH-SWEEP** — 9×5 스윕 **NO_IMPROVE** · BLEND=0.55 유지 · APPLY 금지 · 다음=K-BLEND-STRENGTH-SWEEP-DONE`
+1. 첫줄 `[복귀] HEAD=06915dc · 지금=**K-KK-FEEDBACK-WIRE** — routes 피드백 연결 **PATCHED** · weight=0 · K-M/K-N HOLD · 다음=K-KK-FEEDBACK-WIRE-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 25b62d6_
+_generated: 06915dc_
