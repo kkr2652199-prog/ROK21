@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `88fe1d9` |
+| HEAD(실측) | `0c03818` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=88fe1d9 · 지금=**K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD · 다음=K-GENSPARK-IDEA-CHECK-DONE`
+1. 첫줄 `[복귀] HEAD=0c03818 · 지금=**K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD · 다음=K-GENSPARK-IDEA-CHECK-DONE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 88fe1d9_
+_generated: 0c03818_

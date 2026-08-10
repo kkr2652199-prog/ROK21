@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `88fe1d9` · WORK=`IDLE`
+1. **HEAD:** `0c03818` · WORK=`IDLE`
 2. **지금:** **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD
 3. **다음1건:** K-GENSPARK-IDEA-CHECK-DONE — **젠스파크 아이디어 사전검증 완료**. 형→젠스파크에 `reports/20260810_KGENSPARK_IDEA_CHECK.md` 붙여넣기. 젠스파크가 커서 의견 합산 후 **BLEND 소튜닝 지시서** 작성. 커서 대기. (즉시반영=단일 BLEND_STRENGTH+EV/prefer게이트+다seed cn보조 · HOLD=뇌별W·stat튜닝·cn단독하드) (승인필요=형(붙여넣기) → 젠스파크 지시서 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-10 | 젠스파크 4아이디어 사전검증 | seed5 cn안정 · weight0 · referee균등 · 게이트3 PASS · 의견제출 | **CHECK_DONE** | (본턴) |
+| 2026-08-10 | 젠스파크 4아이디어 사전검증 | seed5 cn안정 · weight0 · referee균등 · 게이트3 PASS · 의견제출 | **CHECK_DONE** | 0c03818 |
 | 2026-08-10 | 다음패치전 논문·GH 정밀분석 | Thaler-Ziemba/conscious/Hai4320 등 · 배울점·금지점 · wire否 | **DOC_SURVEY** | 9d2670a |
 | 2026-08-10 | 종료체크·20260810보고서없음 | HOLD_OFF를 `20260810_*`로 재기록·커서보고서동기 · 오명0808삭제 | **DOC_FIX** | 373a1c8 |
 | 2026-08-10 | 홀딩 챕 다시 풀어줘 | `FOCUS_HOLD=false` · predict/strategy-x/hyodo 복원 · autoload 복원 | **HOLD_OFF** | 0c4f640 |

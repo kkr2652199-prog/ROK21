@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `88fe1d9` · WORK=`IDLE`
+- HEAD: `0c03818` · WORK=`IDLE`
 - 지금: **K-GENSPARK-IDEA-CHECK** — 4안 READ-ONLY 실측 · BLEND=단일노브+다seed cn보조 · 뇌별W·stat튜닝 HOLD
 - 직전: K-NEXT-ROUTE-LIT-GITHUB-SURVEY · DOC_SURVEY
 - BOOT다음: 형이 커서 결과를 젠스파크에 붙여넣기 → **BLEND 소튜닝 지시서** 수신 대기
