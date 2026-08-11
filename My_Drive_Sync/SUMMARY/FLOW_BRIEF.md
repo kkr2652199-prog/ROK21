@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f36f21e` · WORK=`IDLE`
+- HEAD: `d3e8b96` · WORK=`IDLE`
 - 지금: **양산前** · L2 원장SPEC **DOC_OK** · NEXT=L2b역할SPEC
 - 직전: L1 SMOKE_OK · prefer+0.295
 - BOOT다음: L2b K-TIER-ROLE-SLOTS-SPEC / 1237아님

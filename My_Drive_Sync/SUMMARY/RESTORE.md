@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f36f21e` · WORK=`IDLE`
+1. **HEAD:** `d3e8b96` · WORK=`IDLE`
 2. **지금:** **양산前** · L2 원장SPEC **DOC_OK** · NEXT=L2b역할SPEC
 3. **다음1건:** K-TIER-ROLE-SLOTS-SPEC — **양산前**. L2 원장SPEC **DOC_OK**(ledger+scatter 스키마·no_peek·1~6+보너스). 다음=**L2b** 역할슬롯 SPEC(DOC만 · skill5+cover_r3×3+shape_r2×2 · focus_r1 · 등수P↑PASS). **1237아님** · WIRE 아님 · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=L2 DOC_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
