@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5f924d0` · WORK=`IDLE`
+1. **HEAD:** `94cf214` · WORK=`IDLE`
 2. **지금:** **양산前** · LIST_V3 **DOC_OK** · 역할슬롯(5+3+2/몰아주기1등지향) 분석채택
 3. **다음1건:** K-POST-REFILL-JOINT-SMOKE — **양산前**. LIST_V3 **DOC_OK**(역할슬롯=skill5+cover_r3×3+shape_r2×2 · repack=focus_r1 · 등수P↑PASS). 다음=**L1** refill_v2 후 prefer/prize **합동smoke** 1건만. **1237아님** · ge3미클레임 · 역할/원장 코드 APPLY 전 · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=refill_v2 live)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
