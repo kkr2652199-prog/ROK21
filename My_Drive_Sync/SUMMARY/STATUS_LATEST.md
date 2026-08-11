@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-10 KST  
-📌 사유: **[CURSOR] K-STAT-PATTERN-TUNE** — miss_pattern 창 **52** APPLY · 다음=합동smoke
+📅 최종 갱신: 2026-08-11 KST  
+📌 사유: **[CURSOR] K-BRAIN-JOINT-SMOKE** — **SMOKE_OK** · 서버7021재가동 · ①~④완료
 
-📌 직전: **[CURSOR] K-BRAIN-INDEPENDENCE + review BLEND 0.85**
+📌 직전: **[CURSOR] K-STAT-PATTERN-TUNE** — HINT **52** APPLY
 
 ---
 
@@ -14,6 +14,8 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. |
+| **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 · UI「테스트로또」확인 |
+| **K-BRAIN-JOINT-SMOKE (권장④)** | **SMOKE_OK** · wire=**False** — 형 「서버재가동·다음진행」. knobs 실측 markovBLEND**0.55**/review**0.85**/statHINT**52**. 1137~1236×seed3: prefer**+0.244449** · prize**−0.074379** · hit**0.319444** · split1.0 · cn1.0 · **단독대비 drift0**. ge3미사용. · `docs/benchmarks/20260811_KBRAIN_JOINT_SMOKE.json` · `reports/20260811_KBRAIN_JOINT_SMOKE.md` · `tools/_k_brain_joint_smoke.py` |
 | **K-STAT-PATTERN-TUNE (권장③)** | **APPLY** — 형 「다음 진행」. knob=`HINT_SPEC_BY_BRAIN['stat'].weeks` · miss_pattern · 1137~1236 n100 · seed[0,42,123]. base@26 hit**0.306667** → **52: 0.319444** (|Δ|**0.012777**≥0.005) · 39도 PASS(0.316667). prefer/prize_drift**0**. markov/review HINT·BLEND 불변. decay/ASSOC/ge3 미사용. · `docs/benchmarks/20260810_KSTAT_PATTERN_TUNE.json` · `reports/20260810_KSTAT_PATTERN_TUNE.md` · `tools/_k_stat_pattern_hint_tune.py` |
 | **K-BRAIN-INDEPENDENCE-BY-BRAIN (형GO · wire)** | **PATCHED** — `W_*_BY_BRAIN` · `BLEND_STRENGTH_BY_BRAIN` · `prefer_table/prize_table/blend_weights(brain=)`. 호출: markov/review engine · signal_pool hint. 기본값 markov/review 당시 0.55/0.55 → review만 후속 APPLY. · `docs/benchmarks/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.json` · `reports/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.md` |
 | **K-MARKOV-PREFER-BLEND-TUNE (권장①)** | **NO_IMPROVE** · wire=**False**(측정) — 1137~1236 n100 · seed[0,42,123] · markov BLEND {0.40…0.85} · review고정. base prefer**+0.244449** · **전후보 prefer↓**(|Δ|≪0.01) · **prize_drift=0.000**(독립실측). best=null · **markov 0.55 HOLD**. · `docs/benchmarks/20260810_KMARKOV_PREFER_BLEND_TUNE.json` · `reports/20260810_KMARKOV_PREFER_BLEND_TUNE.md` · `tools/_k_markov_prefer_blend_tune.py` |

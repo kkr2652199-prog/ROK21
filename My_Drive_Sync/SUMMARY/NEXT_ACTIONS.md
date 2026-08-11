@@ -3,13 +3,13 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-BRAIN-JOINT-SMOKE
-- 할일: **양산前**. 1236=마지막 · **1237 양산아님**. 뇌별 단독튜닝 ①markov BLEND HOLD0.55 · ②review BLEND **0.85** · ③stat HINT **52** 완료. 다음=**④ 합동 smoke**만(3뇌 동시·축지표 prefer/prize/top15_hit 모니터 · ge3 성적클레임 금지). 공유=`lotto_draws`만.
-- 완료조건: 합동 smoke 벤치·판정(OK/이상)·보고서
-- 선행완료: K-BRAIN-INDEPENDENCE-BY-BRAIN · K-MARKOV-PREFER NO_IMPROVE · K-REVIEW-PRIZE APPLY · K-STAT-PATTERN APPLY
-- 승인필요: 형 GO 또는 「다음 진행」
+- ID: K-TUNE-CYCLE-HOLD
+- 할일: **양산前 완료분 고정**. 뇌별 단독①markov BLEND0.55 HOLD · ②review BLEND**0.85** · ③stat HINT**52** · ④합동 smoke **SMOKE_OK**(prefer+0.244/prize−0.074/hit0.319 · drift0). **1237 예측/양산 아님**. 형 다음 지시(추가 축·정지·UI확인 등) 대기. ge3 성적클레임 금지. 공유=`lotto_draws`만.
+- 완료조건: 형 새 지시 1건
+- 선행완료: K-BRAIN-JOINT-SMOKE SMOKE_OK · 서버7021 재가동
+- 승인필요: 형 다음 지시
 - 선행조건: 없음
-- 최종갱신: 2026-08-10
+- 최종갱신: 2026-08-11
 
 
 ## WORKSTATE
@@ -19,5 +19,5 @@ IDLE
 
 ## 메모 (커서 아님 · guard 무시)
 
-- BLEND_STRENGTH_BY_BRAIN: markov=0.55 · review=0.85
-- HINT_SPEC_BY_BRAIN stat=(52, miss_pattern)
+- 브라우저: http://127.0.0.1:7021/ · 테스트로또 탭
+- BLEND: markov=0.55 · review=0.85 · HINT stat=(52, miss_pattern)

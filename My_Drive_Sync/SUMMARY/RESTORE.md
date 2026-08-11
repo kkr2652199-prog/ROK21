@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `832830c` · WORK=`IDLE`
-2. **지금:** **양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55**
-3. **다음1건:** K-BRAIN-JOINT-SMOKE — **양산前**. 1236=마지막 · **1237 양산아님**. 뇌별 단독튜닝 ①markov BLEND HOLD0.55 · ②review BLEND **0.85** · ③stat HINT **52** 완료. 다음=**④ 합동 smoke**만(3뇌 동시·축지표 prefer/prize/top15_hit 모니터 · ge3 성적클레임 금지). 공유=`lotto_draws`만. (승인필요=형 GO 또는 「다음 진행」 · 선행=없음)
+1. **HEAD:** `368598c` · WORK=`IDLE`
+2. **지금:** **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52
+3. **다음1건:** K-TUNE-CYCLE-HOLD — **양산前 완료분 고정**. 뇌별 단독①markov BLEND0.55 HOLD · ②review BLEND**0.85** · ③stat HINT**52** · ④합동 smoke **SMOKE_OK**(prefer+0.244/prize−0.074/hit0.319 · drift0). **1237 예측/양산 아님**. 형 다음 지시(추가 축·정지·UI확인 등) 대기. ge3 성적클레임 금지. 공유=`lotto_draws`만. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-11 | 서버재가동·다음진행 | 7021재기동·합동smoke prefer/prize/hit·drift0 | **SMOKE_OK** | (push후) |
 | 2026-08-10 | 다음진행·stat패턴 | HINT miss_pattern 26→**52** · hit+0.013 · drift0 | **APPLY** | 1f0b957 |
 | 2026-08-10 | 권장진행·뇌독립(draws만공유) | BY_BRAIN분리 · markov NO_IMPROVE · review0.85 APPLY | **APPLY** | c1823af |
 | 2026-08-10 | 1237아님·1236=마지막·뇌신호튜닝 | NEXT/BOOT 프레임정정 · 1237예측 제거 | **FRAME** | 2f7788f |
@@ -45,7 +46,6 @@
 | 2026-08-10 | BLEND_STRENGTH 9점 스윕 | 전후보 cond3실패(|Δ|≪0.01) · best=null · 0.55유지 | **NO_IMPROVE** | 25b62d6 |
 | 2026-08-10 | 젠스파크 4아이디어 사전검증 | seed5 cn안정 · weight0 · referee균등 · 게이트3 PASS · 의견제출 | **CHECK_DONE** | 0c03818 |
 | 2026-08-10 | 다음패치전 논문·GH 정밀분석 | Thaler-Ziemba/conscious/Hai4320 등 · 배울점·금지점 · wire否 | **DOC_SURVEY** | 9d2670a |
-| 2026-08-10 | 종료체크·20260810보고서없음 | HOLD_OFF를 `20260810_*`로 재기록·커서보고서동기 · 오명0808삭제 | **DOC_FIX** | 373a1c8 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

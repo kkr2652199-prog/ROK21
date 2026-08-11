@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `832830c` · WORK=`IDLE`
-- 지금: **양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55**
-- 직전: K-STAT-PATTERN-TUNE · hit0.307→0.319 · prefer/prize drift0
-- BOOT다음: **형 GO** — ④ **합동 smoke**만 (3뇌 동시·ge3클레임금지 · 1237아님)
-- NEXT1: K-BRAIN-JOINT-SMOKE — **양산前**. 1236=마지막 · **1237 양산아님**. 뇌별 단독튜닝 ①markov BLEND HOLD0.55 · ②review BLEND **0.85** · ③stat HINT **52** 완료. 다음=**④ 합동 smoke**만(3뇌 동시·축지표 prefer/prize/top15_hit 모니터 · ge3 성적클레임 금지). 공유=`lotto_draws`만. (승인=형 GO 또는 「다음 진행」)
+- HEAD: `368598c` · WORK=`IDLE`
+- 지금: **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52
+- 직전: K-BRAIN-JOINT-SMOKE **SMOKE_OK** · drift0 · 서버7021재가동
+- BOOT다음: **형 지시 대기** — 1237양산 아님 · 추가축/정지 선택
+- NEXT1: K-TUNE-CYCLE-HOLD — **양산前 완료분 고정**. 뇌별 단독①markov BLEND0.55 HOLD · ②review BLEND**0.85** · ③stat HINT**52** · ④합동 smoke **SMOKE_OK**(prefer+0.244/prize−0.074/hit0.319 · drift0). **1237 예측/양산 아님**. 형 다음 지시(추가 축·정지·UI확인 등) 대기. ge3 성적클레임 금지. 공유=`lotto_draws`만. (승인=형 다음 지시)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

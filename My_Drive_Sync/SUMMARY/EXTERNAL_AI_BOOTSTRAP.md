@@ -8,15 +8,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `832830c` |
+| HEAD(실측) | `368598c` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55** |
-| 직전 | K-STAT-PATTERN-TUNE · hit0.307→0.319 · prefer/prize drift0 |
-| BOOT다음 | **형 GO** — ④ **합동 smoke**만 (3뇌 동시·ge3클레임금지 · 1237아님) |
-| NEXT1 ID | **K-BRAIN-JOINT-SMOKE** |
-| NEXT1 할일 | **양산前**. 1236=마지막 · **1237 양산아님**. 뇌별 단독튜닝 ①markov BLEND HOLD0.55 · ②review BLEND **0.85** · ③stat HINT **52** 완료. 다음=**④ 합동 smoke**만(3뇌 동시·축지표 prefer/prize/top15_hit 모니터 · ge3 성적클레임 금지). 공유=`lotto_draws`만. |
-| 승인필요 | 형 GO 또는 「다음 진행」 |
+| 지금 | **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52 |
+| 직전 | K-BRAIN-JOINT-SMOKE **SMOKE_OK** · drift0 · 서버7021재가동 |
+| BOOT다음 | **형 지시 대기** — 1237양산 아님 · 추가축/정지 선택 |
+| NEXT1 ID | **K-TUNE-CYCLE-HOLD** |
+| NEXT1 할일 | **양산前 완료분 고정**. 뇌별 단독①markov BLEND0.55 HOLD · ②review BLEND**0.85** · ③stat HINT**52** · ④합동 smoke **SMOKE_OK**(prefer+0.244/prize−0.074/hit0.319 · drift0). **1237 예측/양산 아님**. 형 다음 지시(추가 축·정지·UI확인 등) 대기. ge3 성적클레임 금지. 공유=`lotto_draws`만. |
+| 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=832830c · 지금=**양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55** · 다음=K-BRAIN-JOINT-SMOKE`
+1. 첫줄 `[복귀] HEAD=368598c · 지금=**양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52 · 다음=K-TUNE-CYCLE-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

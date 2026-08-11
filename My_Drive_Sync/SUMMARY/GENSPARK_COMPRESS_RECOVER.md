@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`832830c` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`368598c` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=832830c]
+[ROK21 젠스파크 압축복구 · HEAD=368598c]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 832830c · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55**
-- 직전: K-STAT-PATTERN-TUNE · hit0.307→0.319 · prefer/prize drift0
-- BOOT다음: **형 GO** — ④ **합동 smoke**만 (3뇌 동시·ge3클레임금지 · 1237아님)
-- NEXT1: K-BRAIN-JOINT-SMOKE — **양산前**. 1236=마지막 · **1237 양산아님**. 뇌별 단독튜닝 ①markov BLEND HOLD0.55 · ②review BLEND **0.85** · ③stat HINT **52** 완료. 다음=**④ 합동 smoke**만(3뇌 동시·축지표 prefer/prize/top15_hit 모니터 · ge3 성적클레임 금지). 공유=`lotto_draws`만.
+- HEAD: 368598c · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52
+- 직전: K-BRAIN-JOINT-SMOKE **SMOKE_OK** · drift0 · 서버7021재가동
+- BOOT다음: **형 지시 대기** — 1237양산 아님 · 추가축/정지 선택
+- NEXT1: K-TUNE-CYCLE-HOLD — **양산前 완료분 고정**. 뇌별 단독①markov BLEND0.55 HOLD · ②review BLEND**0.85** · ③stat HINT**52** · ④합동 smoke **SMOKE_OK**(prefer+0.244/prize−0.074/hit0.319 · drift0). **1237 예측/양산 아님**. 형 다음 지시(추가 축·정지·UI확인 등) 대기. ge3 성적클레임 금지. 공유=`lotto_draws`만.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260811_KBRAIN_JOINT_SMOKE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KBRAIN_JOINT_SMOKE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KBRAIN_JOINT_SMOKE.md
 - `20260810_KSTAT_PATTERN_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KSTAT_PATTERN_TUNE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KSTAT_PATTERN_TUNE.md
 - `20260810_KREVIEW_PRIZE_BLEND_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KREVIEW_PRIZE_BLEND_TUNE.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KN_MEAN_INPUT_FIX.md
 - `20260810_KPROCESS_STRUCTURE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KPROCESS_STRUCTURE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KPROCESS_STRUCTURE.md
-- `20260810_K1236_FEEDBACK_VERIFY` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_K1236_FEEDBACK_VERIFY.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_K1236_FEEDBACK_VERIFY.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=832830c · 지금=**양산前** · stat HINT **52** APPLY · review BLEND**0.85** · markov**0.55** · 다음=K-BRAIN-JOINT-SMOKE
+1. 첫줄: [복귀] HEAD=368598c · 지금=**양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52 · 다음=K-TUNE-CYCLE-HOLD
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 832830c_
+_generated: 368598c_

@@ -1,0 +1,115 @@
+{
+  "id": "K-BRAIN-JOINT-SMOKE",
+  "ts": "2026-08-11T11:47:19+09:00",
+  "precheck": {
+    "blend_by_brain": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "stat_hint": [
+      52,
+      "miss_pattern"
+    ],
+    "weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.55,
+        0.2,
+        0.25
+      ],
+      "review": [
+        0.55,
+        0.2,
+        0.25
+      ]
+    },
+    "ok": true
+  },
+  "expect_knobs": {
+    "markov_blend": 0.55,
+    "review_blend": 0.85,
+    "stat_hint": [
+      52,
+      "miss_pattern"
+    ]
+  },
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "draw_range": [
+    1137,
+    1236
+  ],
+  "metrics": {
+    "prefer_delta_mean": 0.244449,
+    "prize_delta_mean": -0.074379,
+    "stat_top15_hit_mean": 0.319444,
+    "prefer_split_both_pos_rate": 1.0,
+    "consistent_neg_rate": 1.0,
+    "prefer_first_half_mean": 0.239714,
+    "prefer_second_half_mean": 0.249184
+  },
+  "health": {
+    "prefer_pos": true,
+    "prefer_split": true,
+    "prize_neg": true,
+    "consistent_neg": true,
+    "knobs_ok": true
+  },
+  "solo_refs": {
+    "markov_prefer_solo_base": 0.244449,
+    "review_prize_after_085": -0.074379,
+    "stat_hit_after_52": 0.319444
+  },
+  "drift_vs_solo": {
+    "prefer_vs_solo": -0.0,
+    "prize_vs_solo": 0.0,
+    "hit_vs_solo": 0.0
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "n": 100,
+      "prefer_mean": 0.238625,
+      "prize_mean": -0.074848,
+      "stat_top15_hit": 0.318333,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.228932,
+      "prefer_second_half": 0.248319
+    },
+    {
+      "seed": 42,
+      "n": 100,
+      "prefer_mean": 0.250115,
+      "prize_mean": -0.070072,
+      "stat_top15_hit": 0.318333,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.243978,
+      "prefer_second_half": 0.256253
+    },
+    {
+      "seed": 123,
+      "n": 100,
+      "prefer_mean": 0.244606,
+      "prize_mean": -0.078216,
+      "stat_top15_hit": 0.321667,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.246232,
+      "prefer_second_half": 0.24298
+    }
+  ],
+  "verdict": "SMOKE_OK",
+  "cursor_opinion": "3축 건강 조건 충족. 뇌별 단독튜닝 값이 합동에서도 유지. ge3로 성적 주장 금지. 1237 양산 아님 — 형 다음 지시 대기.",
+  "wire": false,
+  "ge3_used": false,
+  "note": "합동 smoke=모니터. 성적클레임·양산 아님."
+}
