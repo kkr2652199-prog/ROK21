@@ -352,14 +352,22 @@ def init_testlotto_db():
                 conn.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typedef}")
             except Exception:
                 pass
-    seeds = [("stat", 1.5), ("markov", 1.0), ("review", 1.2)]
+    # K-J/K-REFEREE-BY-BRAIN: 시드도 균등 미러(1/3). 구 1.5/1.0/1.2 금지.
+    seeds = [("stat", 1.0 / 3.0), ("markov", 1.0 / 3.0), ("review", 1.0 / 3.0)]
     for brain_tag, weight in seeds:
         conn.execute(
             "INSERT OR IGNORE INTO testlotto_brain_weights (brain_tag, current_weight) VALUES (?, ?)",
             (brain_tag, weight),
         )
+    # 이미 있던 구시드 행은 live referee 로 덮어 맞춤
     conn.commit()
     conn.close()
+    try:
+        from app.testlotto.learn_state import sync_brain_weights_from_referee
+
+        sync_brain_weights_from_referee()
+    except Exception:
+        pass
 
 
 # 하위 호환 alias

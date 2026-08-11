@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-11 KST  
-📌 사유: **[CURSOR] K-BRAIN3-PRECISION-AUDIT** — 3뇌 정밀·버그사냥 **AUDIT_OK**
+📌 사유: **[CURSOR] K-REFEREE-BY-BRAIN** — 뇌별독립감독관 **WIRE_OK** · 예측감사OK
 
-📌 직전: **[CURSOR] K-HINT-WEIGHT-BY-BRAIN** — pick_score · 0.15 HOLD
+📌 직전: **[CURSOR] K-BRAIN3-PRECISION-AUDIT** — AUDIT_OK · 버그0
 
 ---
 
@@ -13,8 +13,9 @@
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
-| **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. |
+| **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-REFEREE-BY-BRAIN (형GO · 감독관→예측감사)** | **WIRE_OK** + 예측**AUDIT_OK** — ①뇌별엔진 `*_brain/referee.py`+`referee_by_brain.py` · `score_set`=해당뇌 learn만(타뇌변경에도 불변) · quota=뇌별raw→Σ1 · DB시드**1/3**+init sync(K-J). 검증교차의존0·미러OK. ②이어 예측버그감사 1226~1236 fails**0**(pool10/RNG/hint/peek/quota). FINDINGS K-REFEREE-BY-BRAIN=**PATCHED**. ge3미클레임·1237아님. · `docs/benchmarks/20260811_KREFEREE_BY_BRAIN_WIRE.json` · `20260811_KBRAIN_PREDICT_BUG_AUDIT.json` · `reports/20260811_KREFEREE_BY_BRAIN.md` |
 | **K-BRAIN3-PRECISION-AUDIT (형GO · 정밀·버그)** | **AUDIT_OK** · hard버그**0** — 1216~1236 n21 seed42. PASS: pool10/repack5·교차동일0·hint분리1.0·RNG단독=합동·SCORE/HINT_WEIGHT/W_CROWD/UNION 배선생존·assemble=`signal_union`·peek. 모니터(클레임아님): pool적중번호 mean s**4.43**/m**3.48**/r**3.67** → repack **2.48/2.62/2.24** · 보존비 **0.56/0.75/0.60** · pool>repack번호손실회 s19/m13/r15 → **몰아주기 전 각뇌10세트 품질이 병목**(형 요지와 정합). · `docs/benchmarks/20260811_KBRAIN3_PRECISION_AUDIT.json` · `reports/20260811_KBRAIN3_PRECISION_AUDIT.md` · `tools/_k_brain3_precision_audit.py` |
 | **K-HINT-WEIGHT-BY-BRAIN (형GO · 다음튜닝)** | **NO_IMPROVE_HOLD** + 배선**PATCHED** — I-AUX-HINT-WEIGHT. SSOT=`HINT_WEIGHT_BY_BRAIN` 기본0.15. v1스윕: prefer/prize 전w동일 → `diversity.pick(confidence)`가 aux재정렬 무시(**DEAD_WIRE**). 패치: `pick_score`·`conf_key=pick_score` 3뇌. v2: 축반응확인 · markov prefer/base최선 · review |Δ|≪0.005 · stat hit base최선 → **값0.15 HOLD·APPLY금지**. ge3미클레임·1237아님. · `docs/benchmarks/20260811_KHINT_WEIGHT_BY_BRAIN_TUNE.json` · `..._v2.json` · `reports/20260811_KHINT_WEIGHT_BY_BRAIN_TUNE.md` · `tools/_k_hint_weight_by_brain_tune.py` |
 | **K-REPACK-UNION (형GO · P1/P2패치)** | **APPLY** — `ASSEMBLE_MODE=signal_union` · slots**2**+pool cap**4**+classic보충. 게이트 seed3×1137~1236: prefer **0.172→0.211** · prize **−0.039→−0.072** · stat_hit **0.265→0.255**(slack) · pool>repack모니터↓. 강제BTv3 재적재 mean**2.58** · 4등**6**/5등**47**(모니터) · 손실 재측정 **37/37/34**(구캐시45/41/39). ge3미클레임·1237아님. · `docs/benchmarks/20260811_KREPACK_UNION_GATE.json` · `20260811_KFORCE_POOL_BACKTEST_100_v3.json` · `20260811_KREPACK_LOSS_AUDIT_POST_UNION.json` · `reports/20260811_KREPACK_UNION_APPLY.md` · `tools/_k_repack_union_gate.py` |

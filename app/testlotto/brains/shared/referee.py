@@ -1,6 +1,7 @@
-"""shared.referee — brain_w·K-M 메타 채점 (aux_referee 래핑).
+"""shared.referee — 뇌별 독립 감독관 디스패치 (K-REFEREE-BY-BRAIN).
 
-referee는 3뇌 파일에 넣지 않음 — coordinator/shared 공용.
+각 예측뇌 `*_brain/referee.py` 엔진이 SSOT.
+quota 정규화 가중만 learn_state.get_referee_weights() (뇌별 raw→Σ1).
 """
 
 from __future__ import annotations

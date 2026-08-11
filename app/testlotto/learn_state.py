@@ -121,29 +121,21 @@ def get_all_learn_states() -> dict[str, dict[str, Any]]:
 
 
 def _referee_from_states(states: dict[str, dict[str, Any]]) -> dict[str, float]:
-    n = len(PREDICT_BRAIN_TAGS)
-    equal = {t: 1.0 / n for t in PREDICT_BRAIN_TAGS}
-    if all(int(states.get(t, _empty_state()).get("review_count", 0) or 0) <= 0 for t in PREDICT_BRAIN_TAGS):
-        return equal
-    raw: dict[str, float] = {}
-    for tag in PREDICT_BRAIN_TAGS:
-        avg = float(states.get(tag, _empty_state()).get("recent_avg_match", 0.0) or 0.0)
-        raw[tag] = max(
-            REFEREE_RAW_FLOOR,
-            1.0 + REFEREE_GAIN * (avg - REFEREE_BASELINE),
-        )
-    total = sum(raw.values()) or 1.0
-    return {k: v / total for k, v in raw.items()}
+    """K-REFEREE-BY-BRAIN: 뇌별 엔진 raw → quota 정규화.
+
+    레거시 단일 GAIN/BASELINE 상수는 ENGINES 기본값과 동기(문서·호환).
+    """
+    from app.testlotto.brains.shared.referee_by_brain import quota_weights_from_states
+
+    return quota_weights_from_states(states)
 
 
 def get_referee_weights() -> dict[str, float]:
-    """심판관: 최근 성적(mean 창) 기반 예측뇌 가중치.
+    """심판관 quota 가중 (발권 SSOT).
 
-    K-J SSOT: coordinator/aux_referee 발권·UI 표시의 유일한 가중 원천.
-    DB `testlotto_brain_weights.current_weight` 는 미러(동기화)일 뿐 SSOT 아님.
-
-    load_learn_state 와 동일 as_of 절단(CUTOFF ON + set_learn_as_of).
-    K-M: baseline(0.8) 대비 편차×GAIN → 정규화. 학습 0회면 균등.
+    K-J: coordinator/UI 원천. DB current_weight 는 미러.
+    K-REFEREE-BY-BRAIN: 뇌별 엔진이 각자 raw 계산 후 Σ=1.
+    CUTOFF ON + set_learn_as_of. 학습 0회면 균등.
     """
     return _referee_from_states(get_all_learn_states())
 
@@ -152,6 +144,13 @@ def get_referee_weights_global() -> dict[str, float]:
     """전역 learn_state 행 기준 referee (apply_feedback 미러·CUTOFF 밖 동기화용)."""
     states = {tag: _load_global_learn_state(tag) for tag in PREDICT_BRAIN_TAGS}
     return _referee_from_states(states)
+
+
+def get_referee_independent_scores() -> dict[str, dict[str, float]]:
+    """뇌별 독립 set_score/raw (교차정규화 전) — CUTOFF 적용."""
+    from app.testlotto.brains.shared.referee_by_brain import independent_scores_from_states
+
+    return independent_scores_from_states(get_all_learn_states())
 
 
 def apply_feedback(

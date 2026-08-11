@@ -1,0 +1,116 @@
+{
+  "id": "K-BRAIN-PREDICT-BUG-AUDIT",
+  "ts": "2026-08-11T15:59:55+09:00",
+  "range": [
+    1226,
+    1236
+  ],
+  "seed": 42,
+  "n_draws": 11,
+  "verdict": "AUDIT_OK",
+  "n_fail": 0,
+  "fails_sample": [],
+  "sample_draws": [
+    {
+      "draw": 1226,
+      "peek_ok": true,
+      "brains": {
+        "stat": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            16,
+            27,
+            3
+          ]
+        },
+        "markov": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            12,
+            27,
+            18
+          ]
+        },
+        "review": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            40,
+            37,
+            27
+          ]
+        }
+      }
+    },
+    {
+      "draw": 1227,
+      "peek_ok": true,
+      "brains": {
+        "stat": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            16,
+            27,
+            28
+          ]
+        },
+        "markov": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            12,
+            13,
+            27
+          ]
+        },
+        "review": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            40,
+            37,
+            27
+          ]
+        }
+      }
+    },
+    {
+      "draw": 1236,
+      "peek_ok": true,
+      "brains": {
+        "stat": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            1,
+            15,
+            16
+          ]
+        },
+        "markov": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            12,
+            13,
+            7
+          ]
+        },
+        "review": {
+          "n5": 5,
+          "n10": 10,
+          "hint_top3": [
+            40,
+            37,
+            27
+          ]
+        }
+      }
+    }
+  ],
+  "referee_patch": "K-REFEREE-BY-BRAIN",
+  "ge3_used_as_claim": false
+}

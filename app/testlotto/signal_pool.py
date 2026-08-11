@@ -680,6 +680,7 @@ def tune_snapshot() -> dict[str, Any]:
     """UI용 최신 튜닝 knobs (성적클레임 아님 · 배선 표시)."""
     from app.testlotto.brains.shared import aux_hint as ah
     from app.testlotto.brains.shared import crowd_signal as cs
+    from app.testlotto.brains.shared import referee_by_brain as rbb
 
     return {
         "BLEND_STRENGTH_BY_BRAIN": dict(cs.BLEND_STRENGTH_BY_BRAIN),
@@ -691,8 +692,9 @@ def tune_snapshot() -> dict[str, Any]:
         "POOL_SLOTS_BY_BRAIN": dict(POOL_SLOTS_BY_BRAIN),
         "POOL_UNION_CAP_BY_BRAIN": dict(POOL_UNION_CAP_BY_BRAIN),
         "HINT_WEIGHT_BY_BRAIN": dict(ah.HINT_WEIGHT_BY_BRAIN),
+        "REFEREE_BY_BRAIN": rbb.knobs_snapshot(),
         "hint_shared_across_brains": hint_shared_across_brains(),
-        "independence_ko": "공유=lotto_draws만 · 예측과정 뇌별 분리",
+        "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }
 
 
