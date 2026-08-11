@@ -5,10 +5,11 @@ from __future__ import annotations
 from app.testlotto.brains import aux_pattern_spotlight
 from app.testlotto.brains.markov_brain import engine, learn
 from app.testlotto.brains.shared import crowd_signal, diversity
-from app.testlotto.brains.shared.aux_hint import rerank_by_aux
+from app.testlotto.brains.shared.aux_hint import HINT_WEIGHT_BY_BRAIN, rerank_by_aux
 from app.testlotto.features.draw_features import build_pair_freq, pair_set
 
-HINT_WEIGHT = 0.15  # PHASE5 · bench can monkeypatch to 0 / 0.10
+# monkeypatch 호환 · SSOT는 HINT_WEIGHT_BY_BRAIN["markov"]
+HINT_WEIGHT = float(HINT_WEIGHT_BY_BRAIN.get("markov", 0.15))
 METHOD_NAME = "선호번호"
 
 
@@ -18,7 +19,12 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
     base = engine.generate(draws, raw_n)
     target_draw_no = int(draws[-1]["draw_no"]) + 1 if draws else 0
     base = rerank_by_aux(
-        base, draws, target_draw_no, aux_pattern_spotlight, "markov", hint_weight=HINT_WEIGHT
+        base,
+        draws,
+        target_draw_no,
+        aux_pattern_spotlight,
+        "markov",
+        hint_weight=HINT_WEIGHT,
     )
     pair_freq = build_pair_freq(draws)
     learn_data = learn.get_adjustments()
@@ -37,12 +43,15 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 f" [학습조정 이월×{carry_boost:.2f}"
                 f" 끝수×{ending_boost:.2f} 미출×{overdue_boost:.2f}]"
             )
+        conf = float(r.get("confidence", 68))
+        aux_s = float(r.get("aux_hint_score", 0.5))
         tagged.append(
             {
                 "nums": nums,
-                "confidence": float(r.get("confidence", 68)),
-                "native_confidence": float(r.get("confidence", 68)),
-                "aux_hint_score": float(r.get("aux_hint_score", 0.5)),
+                "confidence": conf,
+                "native_confidence": conf,
+                "aux_hint_score": aux_s,
+                "pick_score": conf * (1.0 + HINT_WEIGHT * (aux_s - 0.5)),
                 "reasoning": (
                     f"{METHOD_NAME}: 인기회차(1등다수)학습+생일대선호"
                     f"+동반쌍{hot_pairs}{learn_note}"
@@ -56,7 +65,12 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
     for t in tagged:
         t["method"] = METHOD_NAME
         t["brain_tag"] = "markov"
-    return diversity.pick(tagged, n_sets)
+        # annotate 후 confidence가 바뀌면 pick_score 재동기
+        aux_s = float(t.get("aux_hint_score", 0.5))
+        t["pick_score"] = float(t.get("confidence", 68)) * (
+            1.0 + HINT_WEIGHT * (aux_s - 0.5)
+        )
+    return diversity.pick(tagged, n_sets, conf_key="pick_score")
 
 
 predict_sets = run

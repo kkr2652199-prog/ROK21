@@ -12,9 +12,22 @@ candidate pool 가중치에 hint로 반영한다.
   세트 후보 oversample 후 re-rank에 적용
 - 기존 random.choices 라인 수정 금지
   → generate 후 결과 리스트 re-rank 방식으로 구현
+
+K-HINT-WEIGHT-BY-BRAIN: 뇌별 강도 SSOT=`HINT_WEIGHT_BY_BRAIN`.
 """
 
 from __future__ import annotations
+
+DEFAULT_HINT_WEIGHT: float = 0.15
+HINT_WEIGHT_BY_BRAIN: dict[str, float] = {
+    "stat": 0.15,
+    "markov": 0.15,
+    "review": 0.15,
+}
+
+
+def hint_weight_for(brain_tag: str) -> float:
+    return float(HINT_WEIGHT_BY_BRAIN.get(brain_tag, DEFAULT_HINT_WEIGHT))
 
 
 def rerank_by_aux(
@@ -23,15 +36,18 @@ def rerank_by_aux(
     target_draw_no: int,
     aux_module,
     brain_tag: str,
-    hint_weight: float = 0.15,
+    hint_weight: float | None = None,
 ) -> list[dict]:
     """generate 결과 리스트를 aux score 기반으로 re-rank.
 
     candidates: engine.generate 반환 list[dict] (nums/confidence 포함)
     aux_module: score_set(nums, draws, target_draw_no, brain_tag) 인터페이스 보유
-    hint_weight: aux 반영 강도 (0=무효·기존동일, 1=완전 aux 우선)
+    hint_weight: aux 반영 강도 (0=무효·기존동일, 1=완전 aux 우선).
+      None 이면 HINT_WEIGHT_BY_BRAIN[brain_tag].
     반환: re-ranked list[dict] (nums·confidence 유지, aux_hint_score 추가)
     """
+    if hint_weight is None:
+        hint_weight = hint_weight_for(brain_tag)
     if not candidates or hint_weight == 0:
         return candidates
 
@@ -45,14 +61,18 @@ def rerank_by_aux(
             )
         except Exception:
             aux_s = 0.5
-        # confidence는 변경 금지 · 정렬용 hint_score만 별도 계산
+        # confidence 원본 유지. pick_score=aux 반영 정렬키
+        # (구버전은 리스트만 재정렬하고 diversity.pick이 confidence만 봐 DEAD_WIRE)
         hint_score = float(c.get("confidence", 60)) * (
             1.0 + hint_weight * (aux_s - 0.5)
         )
-        scored.append({**c, "aux_hint_score": round(aux_s, 4), "_hint_sort": hint_score})
+        scored.append(
+            {
+                **c,
+                "aux_hint_score": round(aux_s, 4),
+                "pick_score": round(hint_score, 6),
+            }
+        )
 
-    scored.sort(key=lambda x: x["_hint_sort"], reverse=True)
-    # _hint_sort 임시 키 제거
-    for s in scored:
-        s.pop("_hint_sort", None)
+    scored.sort(key=lambda x: x["pick_score"], reverse=True)
     return scored

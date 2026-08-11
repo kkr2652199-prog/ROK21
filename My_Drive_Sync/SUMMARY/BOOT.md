@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · signal_union APPLY · 강제BTv3
-- 직전: P1/P2게이트 PASS · pool>repack 45/41/39→37/37/34
+- 지금: **양산前** · HINT_WEIGHT pick_score배선 · 0.15 HOLD
+- 직전: DEAD_WIRE해소 · v2게이트 NO_IMPROVE
 - 다음: **형 지시** — 다음튜닝1건 / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

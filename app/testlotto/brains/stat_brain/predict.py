@@ -5,11 +5,11 @@ from __future__ import annotations
 
 from app.testlotto.brains import aux_balance_keeper
 from app.testlotto.brains.shared import diversity
-from app.testlotto.brains.shared.aux_hint import rerank_by_aux
+from app.testlotto.brains.shared.aux_hint import HINT_WEIGHT_BY_BRAIN, rerank_by_aux
 from app.testlotto.brains.stat_brain import engine, learn, past_learn, transition_v1
 from app.testlotto.features.draw_features import build_number_gaps, carry_over_from_prev
 
-HINT_WEIGHT = 0.15  # PHASE5 · bench can monkeypatch to 0 / 0.10
+HINT_WEIGHT = float(HINT_WEIGHT_BY_BRAIN.get("stat", 0.15))
 
 
 def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
@@ -30,7 +30,12 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
         used_transition = False
     target_draw_no = int(draws[-1]["draw_no"]) + 1 if draws else 0
     base = rerank_by_aux(
-        base, draws, target_draw_no, aux_balance_keeper, "stat", hint_weight=HINT_WEIGHT
+        base,
+        draws,
+        target_draw_no,
+        aux_balance_keeper,
+        "stat",
+        hint_weight=HINT_WEIGHT,
     )
     # 과거학습 soft·reasoning (ASSOC 기본 OFF)
     base = past_learn.apply_to_candidates(draws, base)
@@ -70,12 +75,14 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
             if learn_note:
                 reasoning += learn_note
             method = "과거학습"
+        aux_s = float(r.get("aux_hint_score", 0.5))
         tagged.append(
             {
                 "nums": sorted(nums),
                 "confidence": conf,
                 "native_confidence": conf,
-                "aux_hint_score": float(r.get("aux_hint_score", 0.5)),
+                "aux_hint_score": aux_s,
+                "pick_score": conf * (1.0 + HINT_WEIGHT * (aux_s - 0.5)),
                 "reasoning": reasoning,
                 "method": method,
                 "brain_tag": "stat",
@@ -83,7 +90,7 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 "past_learn": pl,
             }
         )
-    return diversity.pick(tagged, n_sets)
+    return diversity.pick(tagged, n_sets, conf_key="pick_score")
 
 
 predict_sets = run
