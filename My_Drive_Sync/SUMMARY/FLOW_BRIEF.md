@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `490312e` · WORK=`IDLE`
+- HEAD: `872c27a` · WORK=`IDLE`
 - 지금: **양산前** · 강제BTv2·repack손실조사·K-J PATCHED
 - 직전: 순서①②③ 완료 · 4등6·5등48 · pool_best탈락
 - BOOT다음: **형 지시** — 몰아주기 P1/P2게이트 승인여부 / 1237아님
