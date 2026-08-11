@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8c2d7ca` · WORK=`IDLE`
+1. **HEAD:** `0b0e6bd` · WORK=`IDLE`
 2. **지금:** **양산前** · HINT_WEIGHT pick_score배선 · 0.15 HOLD
 3. **다음1건:** K-HINT-WEIGHT-HOLD — **양산前**. HINT_WEIGHT 뇌별스윕: DEAD_WIRE→`pick_score` **PATCHED** · v2게이트 **NO_IMPROVE** → **0.15 HOLD**. signal_union유지. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
