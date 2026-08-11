@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d64db72` |
+| HEAD(실측) | `792e7cb` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d64db72 · 지금=**양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK · 다음=K-REFEREE-BY-BRAIN-HOLD`
+1. 첫줄 `[복귀] HEAD=792e7cb · 지금=**양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK · 다음=K-REFEREE-BY-BRAIN-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: d64db72_
+_generated: 792e7cb_

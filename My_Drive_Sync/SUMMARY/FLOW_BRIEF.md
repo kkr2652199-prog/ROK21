@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d64db72` · WORK=`IDLE`
+- HEAD: `792e7cb` · WORK=`IDLE`
 - 지금: **양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK
 - 직전: set_score교차의존제거 · DB시드1/3 · predict버그0
 - BOOT다음: **형 지시** — 뇌별 pool품질튜닝 / 1237아님
