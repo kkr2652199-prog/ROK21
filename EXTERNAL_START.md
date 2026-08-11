@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `81cc036` |
+| HEAD(실측) | `0169137` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · LIST_V2 **DOC_OK** · 원장1~6+보너스·뇌10세트 보강 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=81cc036 · 지금=**양산前** · LIST_V2 **DOC_OK** · 원장1~6+보너스·뇌10세트 보강 · 다음=K-POST-REFILL-JOINT-SMOKE`
+1. 첫줄 `[복귀] HEAD=0169137 · 지금=**양산前** · LIST_V2 **DOC_OK** · 원장1~6+보너스·뇌10세트 보강 · 다음=K-POST-REFILL-JOINT-SMOKE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 81cc036_
+_generated: 0169137_

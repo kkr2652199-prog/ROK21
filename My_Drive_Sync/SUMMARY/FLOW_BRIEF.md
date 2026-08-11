@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `81cc036` · WORK=`IDLE`
+- HEAD: `0169137` · WORK=`IDLE`
 - 지금: **양산前** · LIST_V2 **DOC_OK** · 원장1~6+보너스·뇌10세트 보강
 - 직전: 상위①②OK · 발권mean1.64(≥4=0)
 - BOOT다음: L1 post-refill 합동smoke / 1237아님
