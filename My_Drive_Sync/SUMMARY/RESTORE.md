@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `aed02a9` · WORK=`IDLE`
+1. **HEAD:** `b291681` · WORK=`IDLE`
 2. **지금:** **양산前** · ⑧quota min_each=1 **APPLY_OK** (m3/r1/s1)
 3. **다음1건:** K-QUOTA-MIN-EACH-HOLD — **양산前**. ⑧quota **APPLY_OK**(min_each1·live m3/r1/s1). 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-12 | 다음진행·quota | min_each1·m3/r1/s1 APPLY_OK | **APPLY** | (push후) |
+| 2026-08-12 | 다음진행·quota | min_each1·m3/r1/s1 APPLY_OK | **APPLY** | b291681 |
 | 2026-08-12 | 다음단계진행 | K-I WIRE_OK·post-refill SMOKE_OK | **DONE** | 7e09f74 |
 | 2026-08-12 | 순서①~⑤단계별 | smoke·HOLD·BTv4·refill·K-G ACTIVE | **DONE** | f80da83 |
 | 2026-08-12 | 단계③ 강제BTv4 | 리셋+100WF · mean2.5모니터 · REBUILT_OK | **REBUILT_OK** | dd0a404 |

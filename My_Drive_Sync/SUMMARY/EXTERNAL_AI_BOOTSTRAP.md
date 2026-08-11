@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `aed02a9` |
+| HEAD(실측) | `b291681` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · ⑧quota min_each=1 **APPLY_OK** (m3/r1/s1) |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=aed02a9 · 지금=**양산前** · ⑧quota min_each=1 **APPLY_OK** (m3/r1/s1) · 다음=K-QUOTA-MIN-EACH-HOLD`
+1. 첫줄 `[복귀] HEAD=b291681 · 지금=**양산前** · ⑧quota min_each=1 **APPLY_OK** (m3/r1/s1) · 다음=K-QUOTA-MIN-EACH-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
