@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4642e25` · WORK=`IDLE`
+1. **HEAD:** `1279f8a` · WORK=`IDLE`
 2. **지금:** **양산前** · 상세UI **10+5** PATCH · knobs strip · schema4
 3. **다음1건:** K-TUNE-CYCLE-HOLD — **양산前**. 뇌별 튜닝①~④·합동smoke OK · 상세페이지 **10+5 UI PATCHED**(schema4·knobs strip). **1237 양산아님**. 브라우저: `http://127.0.0.1:7021/static/testlotto-detail.html?draw=1236` 또는 메인→테스트로또→자세히 분석. 형 다음 지시 대기. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-11 | 상세UI 10+5·보기좋게 | tldSingleView pool-view·knobs·schema4 · 1236실측 | **PATCHED** | (push후) |
+| 2026-08-11 | 상세UI 10+5·보기좋게 | tldSingleView pool-view·knobs·schema4 · 1236실측 | **PATCHED** | 1279f8a |
 | 2026-08-11 | 서버재가동·다음진행 | 7021재기동·합동smoke prefer/prize/hit·drift0 | **SMOKE_OK** | d1c27e4 |
 | 2026-08-10 | 다음진행·stat패턴 | HINT miss_pattern 26→**52** · hit+0.013 · drift0 | **APPLY** | 1f0b957 |
 | 2026-08-10 | 권장진행·뇌독립(draws만공유) | BY_BRAIN분리 · markov NO_IMPROVE · review0.85 APPLY | **APPLY** | c1823af |

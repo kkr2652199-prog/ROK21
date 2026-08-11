@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4642e25` · WORK=`IDLE`
+- HEAD: `1279f8a` · WORK=`IDLE`
 - 지금: **양산前** · 상세UI **10+5** PATCH · knobs strip · schema4
 - 직전: K-UI-DETAIL-POOL10x5 · 1236 pool10/repack5 실측
 - BOOT다음: **형 지시 대기** — UI추가개선 / 정지 / 1237아님
