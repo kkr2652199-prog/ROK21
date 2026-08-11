@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d737572` · WORK=`IDLE`
+- HEAD: `c0c88a7` · WORK=`IDLE`
 - 지금: **양산前** · L2b 역할SPEC **DOC_OK** · NEXT=L3 원장WIRE
 - 직전: L2 원장SPEC DOC_OK
 - BOOT다음: L3 K-POOL-HIT-LEDGER-WIRE / 1237아님
