@@ -1,0 +1,203 @@
+{
+  "id": "K-REPACK-UNION-GATE",
+  "ts": "2026-08-11T14:13:11+09:00",
+  "range": [
+    1137,
+    1236
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "live_before": "signal_union",
+  "cand_params": {
+    "ASSEMBLE_MODE": "signal_union",
+    "POOL_SLOTS": 2,
+    "POOL_UNION_CAP": 4
+  },
+  "base": {
+    "name": "signal_top",
+    "prefer": 0.172099,
+    "prize": -0.038768,
+    "stat_hit": 0.265,
+    "pool_gt_repack_mean": {
+      "stat": 40,
+      "markov": 41,
+      "review": 37
+    },
+    "gate_pass": true,
+    "gate_detail": {
+      "is_baseline": true
+    },
+    "per_seed": [
+      {
+        "seed": 0,
+        "mode": "signal_top",
+        "n": 100,
+        "prefer": 0.172821,
+        "prize": -0.035102,
+        "stat_hit": 0.268333,
+        "pool_gt_repack": {
+          "review": 35,
+          "markov": 48,
+          "stat": 36
+        },
+        "repack_gt_pool": {
+          "markov": 7,
+          "review": 12,
+          "stat": 6
+        },
+        "tie": {
+          "stat": 58,
+          "markov": 45,
+          "review": 53
+        }
+      },
+      {
+        "seed": 42,
+        "mode": "signal_top",
+        "n": 100,
+        "prefer": 0.175671,
+        "prize": -0.034219,
+        "stat_hit": 0.256667,
+        "pool_gt_repack": {
+          "stat": 45,
+          "markov": 41,
+          "review": 39
+        },
+        "repack_gt_pool": {
+          "review": 11,
+          "stat": 8,
+          "markov": 6
+        },
+        "tie": {
+          "markov": 53,
+          "review": 50,
+          "stat": 47
+        }
+      },
+      {
+        "seed": 123,
+        "mode": "signal_top",
+        "n": 100,
+        "prefer": 0.167806,
+        "prize": -0.046984,
+        "stat_hit": 0.27,
+        "pool_gt_repack": {
+          "stat": 40,
+          "review": 39,
+          "markov": 34
+        },
+        "repack_gt_pool": {
+          "review": 19,
+          "stat": 8,
+          "markov": 12
+        },
+        "tie": {
+          "markov": 54,
+          "stat": 52,
+          "review": 42
+        }
+      }
+    ]
+  },
+  "cand": {
+    "name": "signal_union",
+    "prefer": 0.210554,
+    "prize": -0.072138,
+    "stat_hit": 0.255,
+    "pool_gt_repack_mean": {
+      "stat": 39,
+      "markov": 36,
+      "review": 33
+    },
+    "gate_pass": true,
+    "gate_detail": {
+      "prefer_ge": true,
+      "prize_le": true,
+      "stat_ok": true,
+      "loss_improve": true,
+      "abs_or_loss": true,
+      "dprefer": 0.038455,
+      "dprize": -0.03337,
+      "dhit": -0.01,
+      "is_baseline": false
+    },
+    "per_seed": [
+      {
+        "seed": 0,
+        "mode": "signal_union",
+        "n": 100,
+        "prefer": 0.218776,
+        "prize": -0.066573,
+        "stat_hit": 0.251667,
+        "pool_gt_repack": {
+          "stat": 39,
+          "review": 28,
+          "markov": 41
+        },
+        "repack_gt_pool": {
+          "markov": 4,
+          "review": 5,
+          "stat": 2
+        },
+        "tie": {
+          "stat": 59,
+          "review": 67,
+          "markov": 55
+        }
+      },
+      {
+        "seed": 42,
+        "mode": "signal_union",
+        "n": 100,
+        "prefer": 0.213143,
+        "prize": -0.064189,
+        "stat_hit": 0.256667,
+        "pool_gt_repack": {
+          "stat": 37,
+          "review": 34,
+          "markov": 37
+        },
+        "repack_gt_pool": {
+          "review": 6,
+          "markov": 2,
+          "stat": 2
+        },
+        "tie": {
+          "markov": 61,
+          "stat": 61,
+          "review": 60
+        }
+      },
+      {
+        "seed": 123,
+        "mode": "signal_union",
+        "n": 100,
+        "prefer": 0.199742,
+        "prize": -0.085653,
+        "stat_hit": 0.256667,
+        "pool_gt_repack": {
+          "stat": 41,
+          "review": 38,
+          "markov": 32
+        },
+        "repack_gt_pool": {
+          "review": 8,
+          "markov": 5,
+          "stat": 1
+        },
+        "tie": {
+          "markov": 63,
+          "stat": 58,
+          "review": 54
+        }
+      }
+    ]
+  },
+  "verdict": "APPLY",
+  "applied_mode": "signal_union",
+  "ge3_used_as_claim": false,
+  "note": "P1/P2 union · repack축 게이트 · 1237아님"
+}

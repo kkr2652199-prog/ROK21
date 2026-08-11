@@ -1,0 +1,448 @@
+{
+  "id": "K-REPACK-LOSS-AUDIT",
+  "ts": "2026-08-11T14:14:34+09:00",
+  "range": [
+    1137,
+    1236
+  ],
+  "n_draws_scored": 100,
+  "live_assemble": {
+    "ASSEMBLE_MODE": "signal_union",
+    "SIGNAL_TOP_BRAINS": [
+      "markov",
+      "review",
+      "stat"
+    ],
+    "POOL_SLOTS_BY_BRAIN": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
+    "REPACK_SETS_PER_BRAIN": 5
+  },
+  "totals": {
+    "pool_gt_repack": {
+      "stat": 37,
+      "review": 34,
+      "markov": 37
+    },
+    "repack_gt_pool": {
+      "review": 6,
+      "markov": 2,
+      "stat": 2
+    },
+    "tie": {
+      "markov": 61,
+      "stat": 61,
+      "review": 60
+    },
+    "sum_hit_delta_on_loss": 134,
+    "tier_downgrade_on_loss": {
+      "5->0": 33,
+      "4->5": 1,
+      "4->0": 2
+    }
+  },
+  "by_brain": {
+    "stat": {
+      "pool_gt_repack": 37,
+      "repack_gt_pool": 2,
+      "tie": 61,
+      "delta_hist": {
+        "1": 29,
+        "2": 7,
+        "3": 1
+      },
+      "pool_best_in_repack_when_loss": 0,
+      "pool_best_not_in_repack_when_loss": 37,
+      "pool_best_set_no_dist_loss": {
+        "7": 5,
+        "8": 7,
+        "5": 4,
+        "9": 4,
+        "4": 5,
+        "10": 1,
+        "2": 4,
+        "1": 3,
+        "3": 4
+      },
+      "assemble_on_loss": {
+        "signal_union": 37
+      }
+    },
+    "markov": {
+      "pool_gt_repack": 37,
+      "repack_gt_pool": 2,
+      "tie": 61,
+      "delta_hist": {
+        "1": 33,
+        "2": 2,
+        "3": 2
+      },
+      "pool_best_in_repack_when_loss": 0,
+      "pool_best_not_in_repack_when_loss": 37,
+      "pool_best_set_no_dist_loss": {
+        "9": 3,
+        "2": 4,
+        "3": 5,
+        "1": 7,
+        "7": 3,
+        "4": 5,
+        "6": 2,
+        "10": 4,
+        "8": 3,
+        "5": 1
+      },
+      "assemble_on_loss": {
+        "signal_union": 37
+      }
+    },
+    "review": {
+      "pool_gt_repack": 34,
+      "repack_gt_pool": 6,
+      "tie": 60,
+      "delta_hist": {
+        "1": 23,
+        "2": 11
+      },
+      "pool_best_in_repack_when_loss": 0,
+      "pool_best_not_in_repack_when_loss": 34,
+      "pool_best_set_no_dist_loss": {
+        "3": 5,
+        "1": 4,
+        "10": 4,
+        "7": 3,
+        "9": 6,
+        "8": 2,
+        "2": 3,
+        "4": 1,
+        "5": 5,
+        "6": 1
+      },
+      "assemble_on_loss": {
+        "signal_union": 34
+      }
+    }
+  },
+  "dominant_cause": "POOL_BEST_DROPPED_FROM_REPACK",
+  "loss_samples": [
+    {
+      "draw": 1137,
+      "brain": "stat",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 7,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1137,
+      "brain": "review",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 3,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1138,
+      "brain": "stat",
+      "pool_hits": 3,
+      "repack_hits": 2,
+      "delta": 1,
+      "pool_set_no": 8,
+      "pool_tier": 5,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1138,
+      "brain": "markov",
+      "pool_hits": 3,
+      "repack_hits": 2,
+      "delta": 1,
+      "pool_set_no": 9,
+      "pool_tier": 5,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1139,
+      "brain": "review",
+      "pool_hits": 3,
+      "repack_hits": 2,
+      "delta": 1,
+      "pool_set_no": 3,
+      "pool_tier": 5,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1141,
+      "brain": "stat",
+      "pool_hits": 3,
+      "repack_hits": 1,
+      "delta": 2,
+      "pool_set_no": 5,
+      "pool_tier": 5,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1141,
+      "brain": "review",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 1,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1143,
+      "brain": "stat",
+      "pool_hits": 1,
+      "repack_hits": 0,
+      "delta": 1,
+      "pool_set_no": 9,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1143,
+      "brain": "markov",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 2,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1144,
+      "brain": "markov",
+      "pool_hits": 4,
+      "repack_hits": 3,
+      "delta": 1,
+      "pool_set_no": 2,
+      "pool_tier": 4,
+      "repack_tier": 5,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1144,
+      "brain": "review",
+      "pool_hits": 3,
+      "repack_hits": 1,
+      "delta": 2,
+      "pool_set_no": 10,
+      "pool_tier": 5,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1145,
+      "brain": "markov",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 9,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1145,
+      "brain": "review",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 7,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1147,
+      "brain": "review",
+      "pool_hits": 3,
+      "repack_hits": 2,
+      "delta": 1,
+      "pool_set_no": 3,
+      "pool_tier": 5,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1148,
+      "brain": "markov",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 3,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1149,
+      "brain": "review",
+      "pool_hits": 2,
+      "repack_hits": 0,
+      "delta": 2,
+      "pool_set_no": 9,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1150,
+      "brain": "stat",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 4,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1150,
+      "brain": "review",
+      "pool_hits": 4,
+      "repack_hits": 2,
+      "delta": 2,
+      "pool_set_no": 8,
+      "pool_tier": 4,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1151,
+      "brain": "markov",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 1,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1152,
+      "brain": "stat",
+      "pool_hits": 1,
+      "repack_hits": 0,
+      "delta": 1,
+      "pool_set_no": 7,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1152,
+      "brain": "review",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 1,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1153,
+      "brain": "markov",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 7,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1154,
+      "brain": "stat",
+      "pool_hits": 3,
+      "repack_hits": 1,
+      "delta": 2,
+      "pool_set_no": 7,
+      "pool_tier": 5,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    },
+    {
+      "draw": 1154,
+      "brain": "markov",
+      "pool_hits": 2,
+      "repack_hits": 1,
+      "delta": 1,
+      "pool_set_no": 4,
+      "pool_tier": 0,
+      "repack_tier": 0,
+      "pool_best_in_repack": false,
+      "assemble": "signal_union"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "P1-PRESERVE-POOL-TOP-K",
+      "gate": "prefer/prize 축 iso · seed≥3 · |Δ|≥0.01",
+      "idea": "signal_top n_slots↑ 또는 pool 신호상위 K개를 repack 슬롯에 강제보존",
+      "rationale": "손실의 대부분이 pool_best ∉ repack — 신호순위≠사후히트",
+      "risk": "다양성↓ · classic score_repack 비중↓",
+      "status": "PROPOSE"
+    },
+    {
+      "id": "P2-ORACLE-FREE-UNION",
+      "gate": "동일 · 발권세트수 고정(5) 유지",
+      "idea": "repack = signal_top(pool) ∪ classic_repack 상위 재순위(중복제거 후 5)",
+      "rationale": "pool 보존과 번호점수몰아주기 절충",
+      "risk": "세트 중복·근친 증가",
+      "status": "PROPOSE"
+    },
+    {
+      "id": "P3-NO-CODE-HOLD",
+      "gate": "형 승인 전",
+      "idea": "손실은 사후정보(당첨) 기준 — live 신호로는 완전제거 불가. 측정만 유지",
+      "rationale": "pool>repack 은 실패라기보다 선택편향 모니터",
+      "risk": "없음",
+      "status": "HOLD_DEFAULT"
+    }
+  ],
+  "code_changed": false,
+  "verdict": "AUDIT_DONE_PROPOSE_HOLD",
+  "ge3_used_as_claim": false,
+  "note": "개선코드는 형 승인 후 P1/P2 게이트. 기본=P3 HOLD"
+}

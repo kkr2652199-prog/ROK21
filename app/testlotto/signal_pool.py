@@ -37,14 +37,21 @@ HYBRID_ASSEMBLE_MODE: str = "p45_r123"  # "" 이면 전원 baseline 몰아주기
 #      번호로 녹았다. 제외 근거는 백테스트 ablation 뿐이었다.
 # 통째 보존 슬롯 수(2)는 구 4·5 와 동수로 유지한다. 「몇 장을 보존할지」는
 # 성적 주장이 필요한 튜닝이므로 이번 수정 범위에서 제외.
-ASSEMBLE_MODE: str = "signal_top"  # "p45_r123"=구버전 · ""=전원 baseline
+#
+# K-REPACK-UNION (20260811 · P1/P2) — signal_top ∪ set-score pool 보존.
+# 구 signal_top 은 primary=슬롯2+classic3 으로 5장을 채워, 나머지 pool이
+# fillers에만 있어 사실상 탈락했다(pool_best∉repack). union은 신호상위
+# + 번호점수 합 상위 pool을 cap까지 primary에 넣고 classic으로 나머지를 채운다.
+ASSEMBLE_MODE: str = "signal_union"  # "signal_top"·"p45_r123"·""=baseline
 POOL_SLOTS_PER_BRAIN: int = 2
+POOL_UNION_CAP: int = 4  # primary에 넣을 pool 세트 상한 (≤ REPACK_SETS)
 SIGNAL_TOP_BRAINS: frozenset[str] = frozenset(BRAIN_TAGS)
 
 # K-BRAIN-INDEPENDENT (20260808) — 뇌별로 따로 정할 수 있게 구조만 열어둔다.
 # K-BRAIN-INDEPENDENT-TUNE — 뇌별 점수축 분리 (축전용 지표 게이트 통과 후).
 # ge3 미사용 · markov prefer↑ / review prize↓ / stat hit 비악화.
 POOL_SLOTS_BY_BRAIN: dict[str, int] = dict.fromkeys(BRAIN_TAGS, POOL_SLOTS_PER_BRAIN)
+POOL_UNION_CAP_BY_BRAIN: dict[str, int] = dict.fromkeys(BRAIN_TAGS, POOL_UNION_CAP)
 SCORE_WEIGHTS_BY_BRAIN: dict[str, tuple[float, float, float]] = {
     "stat": (0.25, 0.35, 0.40),    # hint↓ freq/learn↑ — 과거패턴
     "markov": (0.65, 0.15, 0.20),  # hint↑ — 선호번호
@@ -350,13 +357,63 @@ def assemble_signal_top(
     return _assemble(pool, classic_repack, tops, n_sets=n_sets)
 
 
+def _pool_set_score(nums: list[int], scores: dict[int, float]) -> float:
+    return sum(float(scores.get(int(n), 0.0)) for n in nums)
+
+
+def assemble_signal_union(
+    pool: list[dict],
+    classic_repack: list[list[int]],
+    pos_ema: dict[int, float],
+    scores: dict[int, float],
+    *,
+    n_slots: int = POOL_SLOTS_PER_BRAIN,
+    n_pool_cap: int = POOL_UNION_CAP,
+    n_sets: int = REPACK_SETS_PER_BRAIN,
+) -> list[dict]:
+    """K-REPACK-UNION P1/P2 — 신호상위 ∪ 세트점수 상위 pool 보존 + classic 보충.
+
+    n_slots: pos_ema 신호 상위 (P1 뼈대).
+    n_pool_cap: primary에 넣을 pool 총수 상한(≤n_sets). 나머지는 classic.
+    """
+    tops = list(signal_top_set_nos(pool, pos_ema, n_slots=n_slots))
+    p_by = {
+        int(c.get("pred_set_no") or c.get("set_no") or 0): [int(x) for x in c["nums"]]
+        for c in pool
+    }
+    top_set = set(tops)
+    others = sorted(
+        (sn for sn in p_by if sn not in top_set),
+        key=lambda sn: (-_pool_set_score(p_by[sn], scores), sn),
+    )
+    cap = max(len(tops), min(int(n_pool_cap), int(n_sets)))
+    need = max(0, cap - len(tops))
+    primary = tuple(tops + others[:need])
+    return _assemble(pool, classic_repack, primary, n_sets=n_sets)
+
+
 def _assembled_for_brain(
     tag: str,
     pool: list[dict],
     classic: list[list[int]],
     pos_t: dict[int, float],
+    scores: dict[int, float] | None = None,
 ) -> tuple[list[dict] | None, str]:
     """뇌별 조립 방식 선택. (조립결과, 라벨) — None 이면 baseline 점수몰아주기."""
+    if ASSEMBLE_MODE == "signal_union" and tag in SIGNAL_TOP_BRAINS:
+        n_slots = POOL_SLOTS_BY_BRAIN.get(tag, POOL_SLOTS_PER_BRAIN)
+        cap = POOL_UNION_CAP_BY_BRAIN.get(tag, POOL_UNION_CAP)
+        return (
+            assemble_signal_union(
+                pool,
+                classic,
+                pos_t,
+                scores or {},
+                n_slots=n_slots,
+                n_pool_cap=cap,
+            ),
+            "signal_union",
+        )
     if ASSEMBLE_MODE == "signal_top" and tag in SIGNAL_TOP_BRAINS:
         n_slots = POOL_SLOTS_BY_BRAIN.get(tag, POOL_SLOTS_PER_BRAIN)
         return assemble_signal_top(pool, classic, pos_t, n_slots=n_slots), "signal_top"
@@ -370,8 +427,9 @@ def _rows_for_brain(
     pool: list[dict],
     classic: list[list[int]],
     pos_t: dict[int, float],
+    scores: dict[int, float] | None = None,
 ) -> list[dict]:
-    assembled, label = _assembled_for_brain(tag, pool, classic, pos_t)
+    assembled, label = _assembled_for_brain(tag, pool, classic, pos_t, scores=scores)
     rows: list[dict] = []
     items: list[dict] = (
         assembled
@@ -437,7 +495,7 @@ def repack_by_brain(
             brain_tag=tag,
         )
         classic = repack_sets(scores)
-        assembled_rows = _rows_for_brain(tag, pool, classic, pos_t)
+        assembled_rows = _rows_for_brain(tag, pool, classic, pos_t, scores=scores)
 
         if (
             FEATURE_LAMBDA_WIRE
@@ -628,6 +686,9 @@ def tune_snapshot() -> dict[str, Any]:
         "W_STRUCT_BY_BRAIN": dict(cs.W_STRUCT_BY_BRAIN),
         "HINT_SPEC_BY_BRAIN": {t: list(v) for t, v in HINT_SPEC_BY_BRAIN.items()},
         "SCORE_WEIGHTS_BY_BRAIN": {t: list(v) for t, v in SCORE_WEIGHTS_BY_BRAIN.items()},
+        "ASSEMBLE_MODE": ASSEMBLE_MODE,
+        "POOL_SLOTS_BY_BRAIN": dict(POOL_SLOTS_BY_BRAIN),
+        "POOL_UNION_CAP_BY_BRAIN": dict(POOL_UNION_CAP_BY_BRAIN),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측과정 뇌별 분리",
     }
@@ -635,6 +696,17 @@ def tune_snapshot() -> dict[str, Any]:
 
 def _assemble_meta() -> dict[str, Any]:
     """실제 조립 배선을 그대로 보고. 상수를 바꾸면 이 값도 따라 바뀐다."""
+    if ASSEMBLE_MODE == "signal_union":
+        return {
+            "mode": "signal_union",
+            "brains": sorted(SIGNAL_TOP_BRAINS),
+            "pool_slots_by_brain": dict(POOL_SLOTS_BY_BRAIN),
+            "pool_union_cap_by_brain": dict(POOL_UNION_CAP_BY_BRAIN),
+            "pool_slot_rule": "신호상위∪세트점수 pool 보존 + classic 보충",
+            "rng_independent": True,
+            "hint_shared_across_brains": hint_shared_across_brains(),
+            "hint_spec_by_brain": {t: list(v) for t, v in HINT_SPEC_BY_BRAIN.items()},
+        }
     if ASSEMBLE_MODE == "signal_top":
         return {
             "mode": "signal_top",

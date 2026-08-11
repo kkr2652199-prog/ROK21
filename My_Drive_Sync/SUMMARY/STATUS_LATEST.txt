@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-11 KST  
-📌 사유: **[CURSOR] K-SEQ-FORCE-REPACK-KJ** — 강제BTv2 · 몰아주기손실조사 · K-J PATCHED
+📌 사유: **[CURSOR] K-REPACK-UNION** — P1/P2 signal_union **APPLY** · 강제BTv3
 
-📌 직전: **[CURSOR] K-BT100-DEEP-AUDIT** — tune_json 패치 · NO_HARD_BUG
+📌 직전: **[CURSOR] K-SEQ-FORCE-REPACK-KJ** — 강제BTv2 · 손실조사 · K-J PATCHED
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-REPACK-UNION (형GO · P1/P2패치)** | **APPLY** — `ASSEMBLE_MODE=signal_union` · slots**2**+pool cap**4**+classic보충. 게이트 seed3×1137~1236: prefer **0.172→0.211** · prize **−0.039→−0.072** · stat_hit **0.265→0.255**(slack) · pool>repack모니터↓. 강제BTv3 재적재 mean**2.58** · 4등**6**/5등**47**(모니터) · 손실 재측정 **37/37/34**(구캐시45/41/39). ge3미클레임·1237아님. · `docs/benchmarks/20260811_KREPACK_UNION_GATE.json` · `20260811_KFORCE_POOL_BACKTEST_100_v3.json` · `20260811_KREPACK_LOSS_AUDIT_POST_UNION.json` · `reports/20260811_KREPACK_UNION_APPLY.md` · `tools/_k_repack_union_gate.py` |
 | **K-SEQ-FORCE-REPACK-KJ (형GO · 순서①②③)** | **DONE** — ①강제BTv2: 리셋+1137~1236 · knobs cand_B·BLEND0.55/0.85 · pool300/bt100 · mean**2.59** · **4등6·5등48**(모니터) · deep_audit_v2 **NO_HARD_BUG**. ②repack손실: cause=`POOL_BEST_DROPPED_FROM_REPACK` · pool>repack stat**45**/markov**41**/review**39** · 손실시 pool_best∈repack**0** · slots**2** · 코드미적용 PROPOSE_HOLD(P1/P2). ③K-J **PATCHED**: SSOT=`get_referee_weights` · DB current_weight=미러(구식1+avg*0.1제거) · UI live표시 · tune_snapshot에 W_CROWD. ge3미클레임·1237아님. · `docs/benchmarks/20260811_KFORCE_POOL_BACKTEST_100_v2.json` · `20260811_KBT100_DEEP_AUDIT_v2.json` · `20260811_KREPACK_LOSS_AUDIT.json` · `reports/20260811_KSEQ_FORCE_REPACK_KJ.md` |
 | **K-F-REDEFINE-JUDGE (젠스파크답+형GO)** | **NO_EFFECT_CLOSE** · FINDINGS K-F=**PATCHED** — Q1=B재료+효과 · Q2=A prefer1차 · Q3=C재료후측정 · Q4=A FINDINGS정정. 백업 backups/20260811_KF전_DB전체/ 24파일·358MB. markov-only feedback 1137~1236 n**100** · brain_review100 · independence_ok · adj/miss 누적(carry0.2/ending0.3…). A/B seed3: prefer OFF**0.292578**→ON**0.292283**(Δ**−0.000295**·미달) · prize **−0.110095** iso0 · mean_hits모니터 0.805→0.783. **LEARN_WIRED=True 유지**(경로정상·효과없음). ge3미사용. · docs/benchmarks/20260811_KF_재정의_판정.json · reports/20260811_KF_재정의_판정.md · tools/_k_f_markov_learn_redefine.py |
 | **K-F-INSTRUCTION-FACTCHECK (형GO · 검토)** | **REJECT_REWRITE** · 실행**안함** — 형 「방향맞으면진행/틀리면젠스파크질문」. 방향(K-F후보)=OK · 지시서전제=틀림. 실측: `LEARN_WIRED=True`이미ON · live=`markov_brain`이미`apply_learn_boost` · learn_state**0**/adj**0**/evolve**0**→True/False A/B=noop · FINDINGS K-F인용`predict_flow_shaman`=DEPRECATED. 평균적중단독게이트=K-O/R38충돌가능. 젠스파크질문=`reports/20260811_KF_GENSPARK_QUESTIONS.md`. · `docs/benchmarks/20260811_KF_INSTRUCTION_FACTCHECK.json` · `reports/20260811_KF_INSTRUCTION_FACTCHECK.md` |

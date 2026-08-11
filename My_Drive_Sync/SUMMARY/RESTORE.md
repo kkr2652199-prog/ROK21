@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `ba28fa0` · WORK=`IDLE`
-2. **지금:** **양산前** · 강제BTv2·repack손실조사·K-J PATCHED
-3. **다음1건:** K-SEQ-DONE-HOLD — **양산前**. 순서①강제BTv2(cand_B·4등6·5등48·NO_HARD_BUG) · ②repack손실=POOL_BEST_DROPPED(stat45/mk41/rv39·slots2) PROPOSE_HOLD · ③K-J SSOT=live PATCHED. 다음=형 지시1건(P1/P2게이트승인 또는 다른튜닝). **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
+1. **HEAD:** `5bbeb83` · WORK=`IDLE`
+2. **지금:** **양산前** · signal_union APPLY · 강제BTv3
+3. **다음1건:** K-REPACK-UNION-HOLD — **양산前**. 몰아주기 P1/P2=`signal_union` **APPLY**(게이트PASS·prefer↑/prize↓/stat slack). 강제BTv3 재적재·손실 45/41/39→**37/37/34**. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-11 | 몰아주기P1/P2패치 | signal_union게이트PASS·BTv3·손실↓ | **APPLY** | (push후) |
 | 2026-08-11 | 순서대로①②③ | 강제BTv2·repack손실조사·K-J SSOT패치 | **DONE** | 64cff04 |
 | 2026-08-11 | 100BT정밀·버그/개선 | 4등5·5등51·tune_json패치·pool>repack | **AUDIT_OK** | f3dfd02 |
 | 2026-08-11 | K-F재정의 GO(재료+preferA/B) | fill100 · prefer무개선 · FINDINGS PATCHED · LEARN유지 | **NO_EFFECT_CLOSE** | c08a712 |
@@ -45,7 +46,6 @@
 | 2026-08-10 | 다음진행·stat패턴 | HINT miss_pattern 26→**52** · hit+0.013 · drift0 | **APPLY** | 1f0b957 |
 | 2026-08-10 | 권장진행·뇌독립(draws만공유) | BY_BRAIN분리 · markov NO_IMPROVE · review0.85 APPLY | **APPLY** | c1823af |
 | 2026-08-10 | 1237아님·1236=마지막·뇌신호튜닝 | NEXT/BOOT 프레임정정 · 1237예측 제거 | **FRAME** | 2f7788f |
-| 2026-08-10 | K-M+예측리셋+100회복습 | referee GAIN식 · pred0 · spread0.007→0.143 · quota2/1/2 | **PATCHED** | b678490 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

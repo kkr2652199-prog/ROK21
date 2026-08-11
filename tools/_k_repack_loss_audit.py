@@ -16,8 +16,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-OUT_JSON = ROOT / "docs" / "benchmarks" / "20260811_KREPACK_LOSS_AUDIT.json"
-OUT_MD = ROOT / "reports" / "20260811_KREPACK_LOSS_AUDIT.md"
+OUT_JSON = ROOT / "docs" / "benchmarks" / "20260811_KREPACK_LOSS_AUDIT_POST_UNION.json"
+OUT_MD = ROOT / "reports" / "20260811_KREPACK_LOSS_AUDIT_POST_UNION.md"
 DRIVE = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
 
 LO, HI = 1137, 1236
