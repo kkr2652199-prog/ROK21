@@ -1,0 +1,71 @@
+{
+  "id": "K-ISSUE-QUOTA-VERIFY",
+  "ts": "2026-08-12T07:34:44+09:00",
+  "targets": [
+    1234,
+    1235,
+    1236
+  ],
+  "rows": [
+    {
+      "target": 1234,
+      "min_each": 1,
+      "planned_quota": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "issued_total": 5,
+      "all_ge1": true,
+      "error": null,
+      "brain_errors": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "target": 1235,
+      "min_each": 1,
+      "planned_quota": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "issued_total": 5,
+      "all_ge1": true,
+      "error": null,
+      "brain_errors": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    },
+    {
+      "target": 1236,
+      "min_each": 1,
+      "planned_quota": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "issued_total": 5,
+      "all_ge1": true,
+      "error": null,
+      "brain_errors": null,
+      "status": "예측 완료 (3+4뇌 체계)"
+    }
+  ],
+  "verdict": "VERIFY_OK",
+  "ge3_used_as_claim": false,
+  "note": "단계⑪ · min_each=1 · 1237아님"
+}

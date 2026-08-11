@@ -22,13 +22,13 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-OUT_JSON = ROOT / "docs" / "benchmarks" / "20260812_KFORCE_POOL_BACKTEST_100_v4.json"
-OUT_MD = ROOT / "reports" / "20260812_KFORCE_POOL_BACKTEST_100_v4.md"
+OUT_JSON = ROOT / "docs" / "benchmarks" / "20260812_KFORCE_POOL_BACKTEST_100_v5.json"
+OUT_MD = ROOT / "reports" / "20260812_KFORCE_POOL_BACKTEST_100_v5.md"
 DRIVE = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
 
 LO, HI = 1137, 1236
-SURVEY_ID = "K-FORCE-POOL-BT-100-V4"
-STRATEGY_ID = "pool10_repack5_union_ov5"
+SURVEY_ID = "K-FORCE-POOL-BT-100-V5"
+STRATEGY_ID = "pool10_repack5_min1_ov5"
 
 
 def _reset() -> dict[str, Any]:
@@ -279,8 +279,8 @@ def main() -> int:
     OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     md = f"""# K-FORCE-POOL-BACKTEST-100 v4
 
-📅 2026-08-12 KST · **단계③** · 강제 리셋 + live knobs WF 재적재  
-(markov oversample×5 · cand_B · union · ①SMOKE_OK·②pool잔여HOLD 후)
+📅 2026-08-12 KST · **단계⑫** · 강제 리셋 + live knobs WF 재적재  
+(min_each=1 · oversample m5 · cand_B · union · ⑪발권 VERIFY_OK 후)
 
 ## 실행
 1. `_k_predict_reset` APPLY — 예측·pool캐시·백테·evolve 삭제 (draws 보존)

@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `bb9ff4a` · WORK=`IDLE`
-2. **지금:** **양산前** · ⑨SMOKE_OK(m3/r1/s1) · ⑩K-C **STALE_CLOSE**
-3. **다음1건:** K-SEQ-910-HOLD — **양산前**. ⑨min_each재스모크 **SMOKE_OK**(m3/r1/s1) · ⑩K-C **STALE_CLOSE**. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
+1. **HEAD:** `3e1c1c1` · WORK=`IDLE`
+2. **지금:** **양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3)
+3. **다음1건:** K-SEQ-1112-HOLD — **양산前**. ⑪발권quota **VERIFY_OK**(s1/m1/r3) · ⑫강제BTv5 **REBUILT_OK**(mean2.5모니터) · refill_v2. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 다음진행 | ⑪VERIFY_OK·⑫BTv5 REBUILT·refill_v2 s1/m1/r3 | **DONE** | (push후) |
 | 2026-08-12 | 다음진행 | ⑨SMOKE_OK·⑩K-C STALE_CLOSE | **DONE** | bb9ff4a |
 | 2026-08-12 | 다음진행·quota | min_each1·m3/r1/s1 APPLY_OK | **APPLY** | b291681 |
 | 2026-08-12 | 다음단계진행 | K-I WIRE_OK·post-refill SMOKE_OK | **DONE** | 7e09f74 |
@@ -45,10 +46,6 @@
 | 2026-08-11 | 진행(pool품질) | jaccard HOLD·oversample markov5 APPLY | **PARTIAL_APPLY** | 791ecfb |
 | 2026-08-11 | 뇌별독립감독관→예측버그 | WIRE_OK·predict AUDIT_OK fails0 | **PATCHED** | 792e7cb |
 | 2026-08-11 | 패치설명+3뇌정밀·버그 | AUDIT_OK·배선생존·하드버그0 | **AUDIT_OK** | 634491d |
-| 2026-08-11 | 다음진행(HINT튜닝) | DEAD_WIRE→pick_score·v2게이트0.15HOLD | **HOLD** | 8c2d7ca |
-| 2026-08-11 | 몰아주기P1/P2패치 | signal_union게이트PASS·BTv3·손실↓ | **APPLY** | e332fed |
-| 2026-08-11 | 순서대로①②③ | 강제BTv2·repack손실조사·K-J SSOT패치 | **DONE** | 64cff04 |
-| 2026-08-11 | 100BT정밀·버그/개선 | 4등5·5등51·tune_json패치·pool>repack | **AUDIT_OK** | f3dfd02 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

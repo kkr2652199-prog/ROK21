@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `bb9ff4a` |
+| HEAD(실측) | `3e1c1c1` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · ⑨SMOKE_OK(m3/r1/s1) · ⑩K-C **STALE_CLOSE** |
-| 직전 | ⑧quota min_each=1 APPLY_OK |
+| 지금 | **양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3) |
+| 직전 | ⑨SMOKE_OK · ⑩K-C STALE_CLOSE |
 | BOOT다음 | **형 지시** 1건 / 1237아님 |
-| NEXT1 ID | **K-SEQ-910-HOLD** |
-| NEXT1 할일 | **양산前**. ⑨min_each재스모크 **SMOKE_OK**(m3/r1/s1) · ⑩K-C **STALE_CLOSE**. 다음=형 지시1건. **1237아님**. |
+| NEXT1 ID | **K-SEQ-1112-HOLD** |
+| NEXT1 할일 | **양산前**. ⑪발권quota **VERIFY_OK**(s1/m1/r3) · ⑫강제BTv5 **REBUILT_OK**(mean2.5모니터) · refill_v2. 다음=형 지시1건. **1237아님**. |
 | 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=bb9ff4a · 지금=**양산前** · ⑨SMOKE_OK(m3/r1/s1) · ⑩K-C **STALE_CLOSE** · 다음=K-SEQ-910-HOLD`
+1. 첫줄 `[복귀] HEAD=3e1c1c1 · 지금=**양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3) · 다음=K-SEQ-1112-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: bb9ff4a_
+_generated: 3e1c1c1_
