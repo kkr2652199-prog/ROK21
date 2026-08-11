@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0d21d1b` · WORK=`IDLE`
+- HEAD: `bb9ff4a` · WORK=`IDLE`
 - 지금: **양산前** · ⑨SMOKE_OK(m3/r1/s1) · ⑩K-C **STALE_CLOSE**
 - 직전: ⑧quota min_each=1 APPLY_OK
 - BOOT다음: **형 지시** 1건 / 1237아님
