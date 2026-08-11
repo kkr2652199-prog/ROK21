@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7e09f74` |
+| HEAD(실측) | `aed02a9` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK** |
-| 직전 | 순서①~⑤ DONE |
+| 지금 | **양산前** · ⑧quota min_each=1 **APPLY_OK** (m3/r1/s1) |
+| 직전 | ⑥K-I WIRE_OK · ⑦post-refill SMOKE_OK |
 | BOOT다음 | **형 지시** 1건 / 1237아님 |
-| NEXT1 ID | **K-SEQ-67-HOLD** |
-| NEXT1 할일 | **양산前**. ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**(quota m4/r1/s0 모니터). 다음=형 지시1건. **1237아님**. |
+| NEXT1 ID | **K-QUOTA-MIN-EACH-HOLD** |
+| NEXT1 할일 | **양산前**. ⑧quota **APPLY_OK**(min_each1·live m3/r1/s1). 다음=형 지시1건. **1237아님**. |
 | 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7e09f74 · 지금=**양산前** · ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK** · 다음=K-SEQ-67-HOLD`
+1. 첫줄 `[복귀] HEAD=aed02a9 · 지금=**양산前** · ⑧quota min_each=1 **APPLY_OK** (m3/r1/s1) · 다음=K-QUOTA-MIN-EACH-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

@@ -57,8 +57,11 @@ MARKOV_WIRE_ENABLED: bool = True
 DEFAULT_QUOTA_WEIGHTS: dict[str, float] = {"stat": 0.25, "markov": 0.60, "review": 0.15}
 # K-FUSION-DYNAMIC-V2: 3뇌 solo ge3 — K-HIGHWAY-BACKTEST-100 by_brain (1135~1234)
 SOLO_GE3_PRIORS: dict[str, float] = {"stat": 0.09, "markov": 0.13, "review": 0.11}
-QUOTA_ADAPTIVE_MIN_EACH: int = 0
-# solo prior 기준 markov 1위(0.39) vs review 2위(0.33) ≈ 1.18 → 1.15로 4/5 floor 허용
+# K-QUOTA-MIN-EACH (20260812): 3뇌 독립 발권 — 뇌당 최소 1장 (total≥3)
+# 구값 0: dominance 시 3번째 뇌 0장(예: m4/r1/s0) 허용 → 과거학습 발권 누락
+QUOTA_ADAPTIVE_MIN_EACH: int = 1
+# solo prior 기준 markov 1위(0.39) vs review 2위(0.33) ≈ 1.18 → 1.15로 floor 허용
+# (min_each=1 이면 dominance 후에도 3뇌 ≥1 로 보정)
 QUOTA_DOMINANCE_FLOOR: float = 1.15
 # K-FUTURE-WIRE: 뇌 버킷 내 선별 — aux_hint_native | set_no_asc(legacy)
 BUCKET_SELECT_MODE: str = "aux_hint_native"
@@ -123,6 +126,12 @@ def _compute_dynamic_quota(
         quota: dict[str, int] = {t: 0 for t in tags_list}
         quota[top] = total - 1
         quota[winner] = 1
+        # min_each>0: dominance가 3번째 뇌를 0으로 두지 않음 (top 초과분에서 이체)
+        if min_each > 0 and total >= n * min_each:
+            for t in tags_list:
+                while quota[t] < min_each and quota[top] > min_each:
+                    quota[top] -= 1
+                    quota[t] += 1
         return quota
 
     floor_min = min_each * n

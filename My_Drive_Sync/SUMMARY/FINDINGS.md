@@ -41,6 +41,7 @@
 | K-G | PATCHED | ending boost 휴면 → 재누적 후 **ACTIVE** | `learn_state.apply_feedback` · coordinator `_detect_missed_patterns` · `20260812_KG_ENDING_BOOST_AUDIT` | 리셋후 0/0은 재료부재. refill후 전뇌 boost**0.3**(cap)·miss10~15. 상한변경 금지 · 효과튜닝=별도지시 |
 | K-H | PATCHED | 미등록 AUX 잔존 → **`brains/_unused/` 격리** | `aux_gap_scout.py` · `aux_structure_guard.py` · `20260728_KH_unused_aux.json` | live import0 · 3+4 유지 · 재배선 금지기본 · 예측력무관 |
 | K-I | PATCHED | per-brain fallback 없음 → 뇌별 try 보호 | `coordinator.run_coordinated_prediction` · `signal_pool.expand_pool` · `20260812_KI_BRAIN_FALLBACK_WIRE` | mock markov boom → pool stat/review10 · 발권 생존·`brain_errors` · 20260812 |
+| K-QUOTA-MIN-EACH | PATCHED | dominance 시 3번째 뇌 0장 → min_each=1 | `QUOTA_ADAPTIVE_MIN_EACH` · `_compute_dynamic_quota` · `20260812_KQUOTA_MIN_EACH_GATE` | live m4/r1/s0→**m3/r1/s1** · dominance이체보정 · 20260812 |
 | K-J | PATCHED | 가중치 이중 체계 → SSOT=live referee · DB=미러 | `get_referee_weights` · `apply_feedback` 미러동기 · detail_service | 발권/UI=`get_referee_weights` · DB `current_weight`는 미러(구식1+avg*0.1제거) · 20260811_KSEQ · init시드1/3+sync |
 | K-REFEREE-BY-BRAIN | PATCHED | 감독관 단일교차의존 → 뇌별 독립 엔진 | `referee_by_brain.py` · `*_brain/referee.py` · aux_referee | set_score=해당뇌 learn만 · quota만 상대정규화 · 20260811 |
 | K-POOL-JACCARD-BY-BRAIN | HOLD | pool diversify Jaccard 뇌별 스윕 | `diversity.JACCARD_PENALTY_BY_BRAIN` · `20260811_KPOOL_JACCARD_*` | 전뇌 0.85 유지 · |Δ|≪0.005 |

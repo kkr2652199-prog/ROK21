@@ -1,0 +1,93 @@
+{
+  "id": "K-QUOTA-MIN-EACH-GATE",
+  "ts": "2026-08-12T07:25:29+09:00",
+  "live_referee": {
+    "stat": 0.23531,
+    "markov": 0.41177,
+    "review": 0.35292
+  },
+  "quota_weights": {
+    "stat": 0.186541,
+    "markov": 0.471509,
+    "review": 0.341949
+  },
+  "quota_min0": {
+    "stat": 0,
+    "markov": 4,
+    "review": 1
+  },
+  "quota_min1": {
+    "stat": 1,
+    "markov": 3,
+    "review": 1
+  },
+  "cases": {
+    "live": {
+      "weights": {
+        "stat": 0.186541,
+        "markov": 0.471509,
+        "review": 0.341949
+      },
+      "min0": {
+        "stat": 0,
+        "markov": 4,
+        "review": 1
+      },
+      "min1": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "min1_all_ge1": true,
+      "min1_sum5": true
+    },
+    "flat": {
+      "weights": {
+        "stat": 0.333333,
+        "markov": 0.333333,
+        "review": 0.333333
+      },
+      "min0": {
+        "stat": 2,
+        "markov": 2,
+        "review": 1
+      },
+      "min1": {
+        "stat": 2,
+        "markov": 2,
+        "review": 1
+      },
+      "min1_all_ge1": true,
+      "min1_sum5": true
+    },
+    "dom_markov": {
+      "weights": {
+        "stat": 0.2,
+        "markov": 0.5,
+        "review": 0.3
+      },
+      "min0": {
+        "stat": 0,
+        "markov": 4,
+        "review": 1
+      },
+      "min1": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "min1_all_ge1": true,
+      "min1_sum5": true
+    }
+  },
+  "gate_detail": {
+    "live_min0_has_zero": true,
+    "live_min1_all_ge1": true,
+    "live_min1_sum5": true,
+    "cases_all_ge1": true,
+    "code_live_min_each": 1
+  },
+  "verdict": "APPLY_OK",
+  "ge3_used_as_claim": false,
+  "note": "단계⑧ · 1237아님 · dominance 보정+min_each=1"
+}
