@@ -3,21 +3,21 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-NEXT-LIST-HOLD
-- 할일: **양산前**. 다음리스트 DOC_OK(`20260812_KNEXT_LIST_BRIEF`). 후보=합동smoke/pool잔여/강제BT/learn재누적/K-G. 형 번호1건. **1237아님**.
-- 완료조건: 형 새 지시 1건
-- 선행완료: K-POOL-QUALITY · K-NEXT-LIST-BRIEF
-- 승인필요: 형 다음 지시
+- ID: K-POOL-RESIDUAL-TUNE
+- 할일: **양산前**. ①합동smoke **SMOKE_OK** 완료. 단계②=review/stat pool잔여(몫축·hit) 튜닝 1노브. **1237아님**.
+- 완료조건: 게이트 JSON+보고서 · APPLY/HOLD
+- 선행완료: K-BRAIN-JOINT-SMOKE-V2
+- 승인필요: 없음(형 순서진행)
 - 선행조건: 없음
 - 최종갱신: 2026-08-12
 
 
 ## WORKSTATE
-IDLE
+RUNNING:K-POOL-RESIDUAL-TUNE
 
 ---
 
 ## 메모
+- reports/20260812_KBRAIN_JOINT_SMOKE_V2.md
+- docs/benchmarks/20260812_KBRAIN_JOINT_SMOKE_V2.json
 - reports/20260812_KNEXT_LIST_BRIEF.md
-- reports/20260811_KPOOL_QUALITY_BY_BRAIN.md
-- docs/benchmarks/20260811_KPOOL_OVERSAMPLE_BY_BRAIN_TUNE.json

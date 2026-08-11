@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4965f1f` · WORK=`IDLE`
-2. **지금:** **양산前** · 다음리스트 DOC_OK · 종료체크 20260812보고서 보충
-3. **다음1건:** K-NEXT-LIST-HOLD — **양산前**. 다음리스트 DOC_OK(`20260812_KNEXT_LIST_BRIEF`). 후보=합동smoke/pool잔여/강제BT/learn재누적/K-G. 형 번호1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
+1. **HEAD:** `a4b243f` · WORK=`RUNNING:K-POOL-RESIDUAL-TUNE`
+2. **지금:** **양산前** · ①합동smoke **SMOKE_OK** · 다음② pool잔여
+3. **다음1건:** K-POOL-RESIDUAL-TUNE — **양산前**. ①합동smoke **SMOKE_OK** 완료. 단계②=review/stat pool잔여(몫축·hit) 튜닝 1노브. **1237아님**. (승인필요=없음(형 순서진행) · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 순서대로단계별·①합동smoke | knobs OK·prefer+0.294·prize−0.111·SMOKE_OK | **SMOKE_OK** | (push후) |
 | 2026-08-12 | 다음리스트간략·종료체크누락 | 20260812보고서+커서동기·후보5 | **DOC_OK** | d05979e |
 | 2026-08-11 | 진행(pool품질) | jaccard HOLD·oversample markov5 APPLY | **PARTIAL_APPLY** | 791ecfb |
 | 2026-08-11 | 뇌별독립감독관→예측버그 | WIRE_OK·predict AUDIT_OK fails0 | **PATCHED** | 792e7cb |

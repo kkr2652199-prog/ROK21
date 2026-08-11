@@ -1,0 +1,163 @@
+{
+  "id": "K-BRAIN-JOINT-SMOKE-V2",
+  "ts": "2026-08-12T06:50:31+09:00",
+  "precheck": {
+    "blend_by_brain": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "w_crowd_by_brain": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "stat_hint": [
+      52,
+      "miss_pattern"
+    ],
+    "weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "assemble": "signal_union",
+    "oversample": {
+      "stat": 3,
+      "markov": 5,
+      "review": 3
+    },
+    "jaccard": {
+      "stat": 0.85,
+      "markov": 0.85,
+      "review": 0.85
+    },
+    "ok": true
+  },
+  "expect_knobs": {
+    "markov_blend": 0.55,
+    "review_blend": 0.85,
+    "stat_hint": [
+      52,
+      "miss_pattern"
+    ],
+    "score_weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "w_crowd": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "assemble": "signal_union",
+    "oversample": {
+      "stat": 3,
+      "markov": 5,
+      "review": 3
+    },
+    "jaccard": {
+      "stat": 0.85,
+      "markov": 0.85,
+      "review": 0.85
+    }
+  },
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "draw_range": [
+    1137,
+    1236
+  ],
+  "metrics": {
+    "prefer_delta_mean": 0.294097,
+    "prize_delta_mean": -0.111224,
+    "stat_top15_hit_mean": 0.315555,
+    "prefer_split_both_pos_rate": 1.0,
+    "consistent_neg_rate": 1.0,
+    "prefer_first_half_mean": 0.28754,
+    "prefer_second_half_mean": 0.300655
+  },
+  "health": {
+    "prefer_pos": true,
+    "prefer_split": true,
+    "prize_neg": true,
+    "consistent_neg": true,
+    "knobs_ok": true
+  },
+  "joint_v1_refs": {
+    "joint_v1_prefer": 0.244449,
+    "joint_v1_prize": -0.074379,
+    "joint_v1_hit": 0.319444,
+    "source": "docs/benchmarks/20260811_KBRAIN_JOINT_SMOKE.json"
+  },
+  "drift_vs_v1": {
+    "prefer_vs_v1": 0.049648,
+    "prize_vs_v1": -0.036845,
+    "hit_vs_v1": -0.003889
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "n": 100,
+      "prefer_mean": 0.29129,
+      "prize_mean": -0.11448,
+      "stat_top15_hit": 0.315,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.285166,
+      "prefer_second_half": 0.297415
+    },
+    {
+      "seed": 42,
+      "n": 100,
+      "prefer_mean": 0.295661,
+      "prize_mean": -0.106851,
+      "stat_top15_hit": 0.308333,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.290677,
+      "prefer_second_half": 0.300645
+    },
+    {
+      "seed": 123,
+      "n": 100,
+      "prefer_mean": 0.295341,
+      "prize_mean": -0.112341,
+      "stat_top15_hit": 0.323333,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.286778,
+      "prefer_second_half": 0.303904
+    }
+  ],
+  "verdict": "SMOKE_OK",
+  "cursor_opinion": "3축 건강 조건 충족. markov oversample×5·cand_B·union 포함 live knobs 합동 OK. ge3 성적 주장 금지. 1237 아님 — 다음=② review/stat pool 잔여.",
+  "wire": false,
+  "ge3_used": false,
+  "note": "단계① 합동smoke · 성적클레임·양산 아님"
+}

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4965f1f` · WORK=`IDLE`
-- 지금: **양산前** · 다음리스트 DOC_OK · 종료체크 20260812보고서 보충
-- 직전: pool품질 · oversample markov**5** APPLY · jaccard HOLD
-- BOOT다음: **형 지시** 1건(합동smoke/pool잔여/BT/learn/K-G) / 1237아님
-- NEXT1: K-NEXT-LIST-HOLD — **양산前**. 다음리스트 DOC_OK(`20260812_KNEXT_LIST_BRIEF`). 후보=합동smoke/pool잔여/강제BT/learn재누적/K-G. 형 번호1건. **1237아님**. (승인=형 다음 지시)
+- HEAD: `a4b243f` · WORK=`RUNNING:K-POOL-RESIDUAL-TUNE`
+- 지금: **양산前** · ①합동smoke **SMOKE_OK** · 다음② pool잔여
+- 직전: 다음리스트 DOC_OK · 20260812보고서 보충
+- BOOT다음: ② review/stat pool잔여 / 1237아님
+- NEXT1: K-POOL-RESIDUAL-TUNE — **양산前**. ①합동smoke **SMOKE_OK** 완료. 단계②=review/stat pool잔여(몫축·hit) 튜닝 1노브. **1237아님**. (승인=없음(형 순서진행))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

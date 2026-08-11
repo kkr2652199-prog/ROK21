@@ -8,15 +8,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `4965f1f` |
+| HEAD(실측) | `a4b243f` |
 | BASELINE_PIN | `640cb67` |
-| WORK | `IDLE` |
-| 지금 | **양산前** · 다음리스트 DOC_OK · 종료체크 20260812보고서 보충 |
-| 직전 | pool품질 · oversample markov**5** APPLY · jaccard HOLD |
-| BOOT다음 | **형 지시** 1건(합동smoke/pool잔여/BT/learn/K-G) / 1237아님 |
-| NEXT1 ID | **K-NEXT-LIST-HOLD** |
-| NEXT1 할일 | **양산前**. 다음리스트 DOC_OK(`20260812_KNEXT_LIST_BRIEF`). 후보=합동smoke/pool잔여/강제BT/learn재누적/K-G. 형 번호1건. **1237아님**. |
-| 승인필요 | 형 다음 지시 |
+| WORK | `RUNNING:K-POOL-RESIDUAL-TUNE` |
+| 지금 | **양산前** · ①합동smoke **SMOKE_OK** · 다음② pool잔여 |
+| 직전 | 다음리스트 DOC_OK · 20260812보고서 보충 |
+| BOOT다음 | ② review/stat pool잔여 / 1237아님 |
+| NEXT1 ID | **K-POOL-RESIDUAL-TUNE** |
+| NEXT1 할일 | **양산前**. ①합동smoke **SMOKE_OK** 완료. 단계②=review/stat pool잔여(몫축·hit) 튜닝 1노브. **1237아님**. |
+| 승인필요 | 없음(형 순서진행) |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=4965f1f · 지금=**양산前** · 다음리스트 DOC_OK · 종료체크 20260812보고서 보충 · 다음=K-NEXT-LIST-HOLD`
+1. 첫줄 `[복귀] HEAD=a4b243f · 지금=**양산前** · ①합동smoke **SMOKE_OK** · 다음② pool잔여 · 다음=K-POOL-RESIDUAL-TUNE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
