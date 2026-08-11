@@ -65,7 +65,7 @@
 - 원장 스키마: hits0~6 · hit_nums · bonus · scatter/중복 · 회차×뇌×set_no.
 - (+권장) 사후 `best_tier` 모니터 필드(역할 기여 분석용 · 게이트 아님).
 
-### L2b K-TIER-ROLE-SLOTS-SPEC
+### L2b K-TIER-ROLE-SLOTS-SPEC — **DOC_OK**
 - role 필드·pass1 생성 규칙·no_bonus_peek 테스트 항목·게이트 초안 확정.
 - 근거: 본 분석 보고서. **등수P 문장 금지**.
 
@@ -120,8 +120,9 @@
 | L0a/L0b | **DOC_OK** |
 | L1 | **SMOKE_OK** |
 | L2 | **DOC_OK** |
-| **L2b** | **NEXT** |
-| L3~L12 | 대기 |
+| L2b | **DOC_OK** |
+| **L3** | **NEXT** |
+| L4~L12 | 대기 |
 
 ---
 

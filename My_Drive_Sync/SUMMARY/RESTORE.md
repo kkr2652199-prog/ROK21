@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d3e8b96` · WORK=`IDLE`
-2. **지금:** **양산前** · L2 원장SPEC **DOC_OK** · NEXT=L2b역할SPEC
-3. **다음1건:** K-TIER-ROLE-SLOTS-SPEC — **양산前**. L2 원장SPEC **DOC_OK**(ledger+scatter 스키마·no_peek·1~6+보너스). 다음=**L2b** 역할슬롯 SPEC(DOC만 · skill5+cover_r3×3+shape_r2×2 · focus_r1 · 등수P↑PASS). **1237아님** · WIRE 아님 · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=L2 DOC_OK)
+1. **HEAD:** `d737572` · WORK=`IDLE`
+2. **지금:** **양산前** · L2b 역할SPEC **DOC_OK** · NEXT=L3 원장WIRE
+3. **다음1건:** K-POOL-HIT-LEDGER-WIRE — **양산前**. L2b 역할SPEC **DOC_OK**(skill5+cover_r3×3+shape_r2×2+focus_r1 · 등수P↑PASS · no_bonus_peek). 다음=**L3** 원장 **WIRE**(ledger+scatter CREATE·결과확정 후 쓰기 · no_peek). **1237아님** · 역할슬롯 코드는 L4b · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=L2·L2b DOC_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 

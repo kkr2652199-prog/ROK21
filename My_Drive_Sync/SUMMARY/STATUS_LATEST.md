@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-POOL-HIT-LEDGER-SPEC** — L2 **DOC_OK** · NEXT=L2b 역할SPEC
+📌 사유: **[CURSOR] K-TIER-ROLE-SLOTS-SPEC** — L2b **DOC_OK** · NEXT=L3 원장WIRE
 
-📌 직전: **[CURSOR] K-POST-REFILL-JOINT-SMOKE** — L1 **SMOKE_OK**
+📌 직전: **[CURSOR] K-POOL-HIT-LEDGER-SPEC** — L2 **DOC_OK**
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-TIER-ROLE-SLOTS-SPEC (LIST_V3 L2b)** | **DOC_OK** · wire=**False** — 역할 `skill_native`×5 · `cover_r3`×3 · `shape_r2`×2 · `focus_r1`×5. 등수P↑·보너스맞춤2등 **PASS**. no_bonus_peek T-NB1~4 · L4b 게이트=prefer/prize. 코드 APPLY 안 함. ge3미클레임·1237아님. · `reports/20260812_KTIER_ROLE_SLOTS_SPEC.md` · `docs/benchmarks/20260812_KTIER_ROLE_SLOTS_SCHEMA.json` · 분석 `KTIER_ROLE_SLOTS_ANALYSIS` |
 | **K-POOL-HIT-LEDGER-SPEC (LIST_V3 L2)** | **DOC_OK** · wire=**False** — 원장 SSOT=`testlotto_pool_hit_ledger`(회차×뇌×kind×set_no) + 파생 `testlotto_pool_hit_scatter`(분산·중복). hits**0~6**·bonus·tier모니터. 쓰기=결과확정후 · 읽기=`draw_no<target`. evolve_log 비SSOT. L3 WIRE·L4소비. ge3미클레임·1237아님·강제BT보류. · `reports/20260812_KPOOL_HIT_LEDGER_SPEC.md` · `docs/benchmarks/20260812_KPOOL_HIT_LEDGER_SCHEMA.json` |
 | **K-POST-REFILL-JOINT-SMOKE (LIST_V3 L1)** | **SMOKE_OK** · wire=**False** — refill_v2 후 합동. knobs precheck OK. prefer **+0.294930** · prize **-0.111224** · hit 0.313333(모니터) · split1.0 · cn1.0. V2drift prefer+0.0008/prize+0.0000(클레임아님). 원장·역할슬롯 미적용. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KPOST_REFILL_JOINT_SMOKE.json` · `reports/20260812_KPOST_REFILL_JOINT_SMOKE.md` · `tools/_k_post_refill_joint_smoke.py` |
 | **K-NEXT-LIST-V3 (형GO · 역할슬롯보강)** | **DOC_OK** · wire=**False** — 형 「10세트=프로세스5 + 3등지향3 + 2등지향2 · 몰아주기5=1등지향」. 정밀분석: 등수P↑·보너스맞춤2등·10장1등보장 **PASS**. 채택=역할슬롯 skill_native/cover_r3/shape_r2/focus_r1. 문헌: wheeling/covering=포트폴리오만 · Thaler EV · K-P정합. 코드 APPLY 안 함. 순서 L1smoke→L2원장SPEC→L2b역할SPEC→L3~L4→L4b역할WIRE(게이트). 강제BT보류·1237아님. · 

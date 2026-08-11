@@ -1,0 +1,67 @@
+{
+  "id": "K-TIER-ROLE-SLOTS-SCHEMA",
+  "list_id": "L2b",
+  "ts": "2026-08-12T08:57:00+09:00",
+  "verdict": "DOC_OK",
+  "wire": false,
+  "ge3_used_as_claim": false,
+  "schema_version": 1,
+  "roles": {
+    "skill_native": {
+      "count": 5,
+      "set_nos": [1, 2, 3, 4, 5],
+      "pass": "pass0",
+      "kind": "pool",
+      "prize_p_claim": false,
+      "notes": "current predict_sets unchanged"
+    },
+    "cover_r3": {
+      "count": 3,
+      "set_nos": [6, 7, 8],
+      "pass": "pass1a",
+      "kind": "pool",
+      "prize_p_claim": false,
+      "target_label": "tier3_portfolio",
+      "notes": "coverage/diversity; not P(3rd) up"
+    },
+    "shape_r2": {
+      "count": 2,
+      "set_nos": [9, 10],
+      "pass": "pass1b",
+      "kind": "pool",
+      "prize_p_claim": false,
+      "target_label": "tier2_shape_only",
+      "no_bonus_peek": true,
+      "notes": "bonus not an input"
+    },
+    "focus_r1": {
+      "count": 5,
+      "set_nos": [1, 2, 3, 4, 5],
+      "pass": "repack",
+      "kind": "repack",
+      "prize_p_claim": false,
+      "target_label": "tier1_concentrate",
+      "notes": "ledger+signal_union; EV via review hint"
+    }
+  },
+  "pool_set_fields": ["set_no", "nums", "brain_tag", "kind", "role", "role_pass"],
+  "gates_L4b": {
+    "prefer_pos": true,
+    "prefer_split": true,
+    "prize_neg": true,
+    "consistent_neg": true,
+    "tier_counts_monitor_only": true,
+    "issue_path_monitor": true
+  },
+  "tests_no_bonus_peek": ["T-NB1", "T-NB2", "T-NB3", "T-NB4"],
+  "pass_hard": [
+    "P_tier_up_claim",
+    "bonus_targeted_r2",
+    "covering_guarantee_r1_with_10",
+    "code_apply_in_L2b"
+  ],
+  "wire_step": "L4b",
+  "report": "reports/20260812_KTIER_ROLE_SLOTS_SPEC.md",
+  "analysis": "reports/20260812_KTIER_ROLE_SLOTS_ANALYSIS.md",
+  "note": "LIST_V3 L2b · SPEC only · 1237아님"
+}
