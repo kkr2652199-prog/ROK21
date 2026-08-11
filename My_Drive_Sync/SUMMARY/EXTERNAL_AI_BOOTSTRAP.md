@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `f3dfd02` |
+| HEAD(실측) | `9c53b52` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · BT100정밀감사 **NO_HARD_BUG** · tune_json패치 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=f3dfd02 · 지금=**양산前** · BT100정밀감사 **NO_HARD_BUG** · tune_json패치 · 다음=K-BT100-FOLLOW-HOLD`
+1. 첫줄 `[복귀] HEAD=9c53b52 · 지금=**양산前** · BT100정밀감사 **NO_HARD_BUG** · tune_json패치 · 다음=K-BT100-FOLLOW-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
