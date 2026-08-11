@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-NEXT-LIST-V2** — 리스트보강 **DOC_OK** · NEXT=L1 smoke
+📌 사유: **[CURSOR] K-NEXT-LIST-V3** — 역할슬롯 분석·리스트보강 **DOC_OK** · NEXT=L1 smoke
 
-📌 직전: **[CURSOR] K-NEXT-UPPER-HIT-LIST** — ①**AUDIT_OK** · ②발권병기 **METRIC_OK**
+📌 직전: **[CURSOR] K-NEXT-LIST-V2** — 원장·뇌10세트 보강 **DOC_OK**
 
 ---
 
@@ -15,7 +15,10 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
-| **K-NEXT-LIST-V2 (형GO · 리스트보강)** | **DOC_OK** · wire=**False** — 형 「1~6·보너스·10세트분산 저장→다음반영」「뇌별10세트 엔진 스킬」「기존패치정리·정밀진행」. **두 기둥:** A뇌별10세트 · B몰아주기(원장SSOT). 합의: 적중신호=1·2고정아님·분산저장·과거분석(컨닝아님) · 패치중 강제BT보류. **순서:** L0DOC → **L1 smoke** → L2원장SPEC → L3원장WIRE → L4몰아주기소비 → L5뇌10감사 → L6~8뇌별스킬 → L9preserve → L10cover → L11축심화 → L12발권통합(형승인). 완료패치 재탕금지·동결유지. ge3미클레임·1237아님. · `reports/20260812_KNEXT_LIST_V2.md` · `My_Drive_Sync/커서보고서/20260812_KNEXT_LIST_V2.md` |
+| **K-NEXT-LIST-V3 (형GO · 역할슬롯보강)** | **DOC_OK** · wire=**False** — 형 「10세트=프로세스5 + 3등지향3 + 2등지향2 · 몰아주기5=1등지향」. 정밀분석: 등수P↑·보너스맞춤2등·10장1등보장 **PASS**. 채택=역할슬롯 skill_native/cover_r3/shape_r2/focus_r1. 문헌: wheeling/covering=포트폴리오만 · Thaler EV · K-P정합. 코드 APPLY 안 함. 순서 L1smoke→L2원장SPEC→L2b역할SPEC→L3~L4→L4b역할WIRE(게이트). 강제BT보류·1237아님. · 
+eports/20260812_KNEXT_LIST_V3.md · 20260812_KTIER_ROLE_SLOTS_ANALYSIS.md |
+| **K-NEXT-LIST-V2 (형GO · 리스트보강)** | **DOC_OK** · wire=**False** — 형 「1~6·보너스·10세트분산 저장→다음반영」「뇌별10세트 엔진 스킬」「기존패치정리·정밀진행」. **두 기둥:** A뇌별10세트 · B몰아주기(원장SSOT). 합의: 적중신호=1·2고정아님·분산저장·과거분석(컨닝아님) · 패치중 강제BT보류. 이후 **V3 승계**. · 
+eports/20260812_KNEXT_LIST_V2.md · My_Drive_Sync/커서보고서/20260812_KNEXT_LIST_V2.md |
 | **K-NEXT-UPPER-HIT-LIST (형GO · 현황+상위적중리스트)** | **DOC_OK**+①②실행 — 현황=①~⑫DONE. **중요:** BTv5 4등4/5등42는 **pool경로**(장수많음) · 발권5장 병기 mean**1.64** · ≥3 **12** · ≥4 **0**. 이후 순서 **V2로 승계**. · `reports/20260812_KNEXT_UPPER_HIT_LIST.md` · `20260812_KTIER45_SOURCE_AUDIT.md` · `20260812_KBT_ISSUE_PATH_METRIC.md` · 벤치 `KTIER45_*` · `KBT_ISSUE_PATH_METRIC` |
 | **K-TIER45-SOURCE-AUDIT (리스트①)** | **AUDIT_OK** — r4회차 1150/1160/1208/1214 · 발권재현 ≥4 **0/4** · pool≥4&repack<4 **2/100** · pool≥3&repack<3 **17/100**. · `docs/benchmarks/20260812_KTIER45_SOURCE_AUDIT.json` · `tools/_k_tier45_source_audit.py` |
 | **K-BT-ISSUE-PATH-METRIC (리스트②)** | **METRIC_OK** — 1137~1236 n100 · pool mean**2.5**/≥3**46**/≥4**4** vs 발권 mean**1.64**/≥3**12**/≥4**0**. gap ge3**34**·ge4**4**. APPLY근거=발권·prefer/prize. · `docs/benchmarks/20260812_KBT_ISSUE_PATH_METRIC.json` · `tools/_k_bt_issue_path_metric.py` |

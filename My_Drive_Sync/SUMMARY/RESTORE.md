@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0169137` · WORK=`IDLE`
-2. **지금:** **양산前** · LIST_V2 **DOC_OK** · 원장1~6+보너스·뇌10세트 보강
-3. **다음1건:** K-POST-REFILL-JOINT-SMOKE — **양산前**. LIST_V2 **DOC_OK**(원장=1~6·보너스·10세트분산·뇌별10세트스킬 보강). 다음=**L1** refill_v2 후 prefer/prize **합동smoke** 1건만. **1237아님** · ge3미클레임 · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=refill_v2 live · LIST_V2 SSOT)
+1. **HEAD:** `5f924d0` · WORK=`IDLE`
+2. **지금:** **양산前** · LIST_V3 **DOC_OK** · 역할슬롯(5+3+2/몰아주기1등지향) 분석채택
+3. **다음1건:** K-POST-REFILL-JOINT-SMOKE — **양산前**. LIST_V3 **DOC_OK**(역할슬롯=skill5+cover_r3×3+shape_r2×2 · repack=focus_r1 · 등수P↑PASS). 다음=**L1** refill_v2 후 prefer/prize **합동smoke** 1건만. **1237아님** · ge3미클레임 · 역할/원장 코드 APPLY 전 · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=refill_v2 live)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 역할슬롯5+3+2분석 | LIST_V3 DOC · 등수P↑PASS · NEXT=L1 | **DOC_OK** | 7799d81 |
 | 2026-08-12 | 리스트보강·원장1~6·뇌10 | LIST_V2 DOC · NEXT=L1 smoke | **DOC_OK** | 0169137 |
 | 2026-08-12 | 현황+상위리스트·①② | BT≠발권·issue mean1.64·≥4=0 · NEXT③ | **METRIC_OK** | 68a5e8d |
 | 2026-08-12 | 다음진행 | ⑪VERIFY_OK·⑫BTv5 REBUILT·refill_v2 s1/m1/r3 | **DONE** | 594cb9f |
@@ -45,7 +46,6 @@
 | 2026-08-12 | 단계② pool잔여 | reviewBLEND·statHINT 게이트미달 HOLD | **HOLD** | 194775e |
 | 2026-08-12 | 순서대로단계별·①합동smoke | knobs OK·prefer+0.294·prize−0.111·SMOKE_OK | **SMOKE_OK** | fc1350e |
 | 2026-08-12 | 다음리스트간략·종료체크누락 | 20260812보고서+커서동기·후보5 | **DOC_OK** | d05979e |
-| 2026-08-11 | 진행(pool품질) | jaccard HOLD·oversample markov5 APPLY | **PARTIAL_APPLY** | 791ecfb |
 
 ---
 

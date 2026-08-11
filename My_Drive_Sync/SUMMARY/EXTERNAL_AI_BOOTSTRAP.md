@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0169137` |
+| HEAD(실측) | `5f924d0` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · LIST_V2 **DOC_OK** · 원장1~6+보너스·뇌10세트 보강 |
-| 직전 | 상위①②OK · 발권mean1.64(≥4=0) |
+| 지금 | **양산前** · LIST_V3 **DOC_OK** · 역할슬롯(5+3+2/몰아주기1등지향) 분석채택 |
+| 직전 | LIST_V2 · 원장1~6+보너스 |
 | BOOT다음 | L1 post-refill 합동smoke / 1237아님 |
 | NEXT1 ID | **K-POST-REFILL-JOINT-SMOKE** |
-| NEXT1 할일 | **양산前**. LIST_V2 **DOC_OK**(원장=1~6·보너스·10세트분산·뇌별10세트스킬 보강). 다음=**L1** refill_v2 후 prefer/prize **합동smoke** 1건만. **1237아님** · ge3미클레임 · 강제BT보류. |
+| NEXT1 할일 | **양산前**. LIST_V3 **DOC_OK**(역할슬롯=skill5+cover_r3×3+shape_r2×2 · repack=focus_r1 · 등수P↑PASS). 다음=**L1** refill_v2 후 prefer/prize **합동smoke** 1건만. **1237아님** · ge3미클레임 · 역할/원장 코드 APPLY 전 · 강제BT보류. |
 | 승인필요 | 없음(리스트 순서) |
-| 선행 | refill_v2 live · LIST_V2 SSOT |
+| 선행 | refill_v2 live |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0169137 · 지금=**양산前** · LIST_V2 **DOC_OK** · 원장1~6+보너스·뇌10세트 보강 · 다음=K-POST-REFILL-JOINT-SMOKE`
+1. 첫줄 `[복귀] HEAD=5f924d0 · 지금=**양산前** · LIST_V3 **DOC_OK** · 역할슬롯(5+3+2/몰아주기1등지향) 분석채택 · 다음=K-POST-REFILL-JOINT-SMOKE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
