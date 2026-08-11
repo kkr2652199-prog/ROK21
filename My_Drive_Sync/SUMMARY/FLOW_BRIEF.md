@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a4b243f` · WORK=`RUNNING:K-POOL-RESIDUAL-TUNE`
+- HEAD: `fc1350e` · WORK=`RUNNING:K-POOL-RESIDUAL-TUNE`
 - 지금: **양산前** · ①합동smoke **SMOKE_OK** · 다음② pool잔여
 - 직전: 다음리스트 DOC_OK · 20260812보고서 보충
 - BOOT다음: ② review/stat pool잔여 / 1237아님
