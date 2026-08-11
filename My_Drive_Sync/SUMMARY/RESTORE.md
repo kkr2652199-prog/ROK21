@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `01499e3` · WORK=`IDLE`
-2. **지금:** **양산前** · L1 **SMOKE_OK** · prefer+0.295 · prize-0.111
-3. **다음1건:** K-POOL-HIT-LEDGER-SPEC — **양산前**. L1 **SMOKE_OK**(prefer+0.2949·prize-0.1112·V2drift모니터). 다음=**L2** 원장 SPEC(DOC·스키마만 · 1~6+보너스·분산 · 코드 WIRE 아님). **1237아님** · ge3미클레임 · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=L1 SMOKE_OK)
+1. **HEAD:** `f36f21e` · WORK=`IDLE`
+2. **지금:** **양산前** · L2 원장SPEC **DOC_OK** · NEXT=L2b역할SPEC
+3. **다음1건:** K-TIER-ROLE-SLOTS-SPEC — **양산前**. L2 원장SPEC **DOC_OK**(ledger+scatter 스키마·no_peek·1~6+보너스). 다음=**L2b** 역할슬롯 SPEC(DOC만 · skill5+cover_r3×3+shape_r2×2 · focus_r1 · 등수P↑PASS). **1237아님** · WIRE 아님 · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=L2 DOC_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | L2원장SPEC | ledger+scatter스키마 DOC_OK · NEXT=L2b | **DOC_OK** | 3131b55 |
 | 2026-08-12 | L1합동smoke | refill후 prefer/prize SMOKE_OK · NEXT=L2 | **SMOKE_OK** | 73e654e |
 | 2026-08-12 | 역할슬롯5+3+2분석 | LIST_V3 DOC · 등수P↑PASS · NEXT=L1 | **DOC_OK** | 7799d81 |
 | 2026-08-12 | 리스트보강·원장1~6·뇌10 | LIST_V2 DOC · NEXT=L1 smoke | **DOC_OK** | 0169137 |
@@ -45,7 +46,6 @@
 | 2026-08-12 | 순서①~⑤단계별 | smoke·HOLD·BTv4·refill·K-G ACTIVE | **DONE** | f80da83 |
 | 2026-08-12 | 단계③ 강제BTv4 | 리셋+100WF · mean2.5모니터 · REBUILT_OK | **REBUILT_OK** | dd0a404 |
 | 2026-08-12 | 단계② pool잔여 | reviewBLEND·statHINT 게이트미달 HOLD | **HOLD** | 194775e |
-| 2026-08-12 | 순서대로단계별·①합동smoke | knobs OK·prefer+0.294·prize−0.111·SMOKE_OK | **SMOKE_OK** | fc1350e |
 
 ---
 

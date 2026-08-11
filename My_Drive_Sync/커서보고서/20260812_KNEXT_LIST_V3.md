@@ -61,7 +61,7 @@
 ### L1 K-POST-REFILL-JOINT-SMOKE — **SMOKE_OK**
 - refill_v2 후 prefer/prize 합동 smoke (역할·원장 손대기 **전** 베이스).
 
-### L2 K-POOL-HIT-LEDGER-SPEC
+### L2 K-POOL-HIT-LEDGER-SPEC — **DOC_OK**
 - 원장 스키마: hits0~6 · hit_nums · bonus · scatter/중복 · 회차×뇌×set_no.
 - (+권장) 사후 `best_tier` 모니터 필드(역할 기여 분석용 · 게이트 아님).
 
@@ -119,8 +119,9 @@
 |----|------|
 | L0a/L0b | **DOC_OK** |
 | L1 | **SMOKE_OK** |
-| **L2** | **NEXT** |
-| L2b~L12 | 대기 |
+| L2 | **DOC_OK** |
+| **L2b** | **NEXT** |
+| L3~L12 | 대기 |
 
 ---
 

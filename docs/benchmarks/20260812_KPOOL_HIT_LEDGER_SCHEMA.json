@@ -1,0 +1,66 @@
+{
+  "id": "K-POOL-HIT-LEDGER-SCHEMA",
+  "list_id": "L2",
+  "ts": "2026-08-12T08:55:00+09:00",
+  "verdict": "DOC_OK",
+  "wire": false,
+  "ge3_used_as_claim": false,
+  "schema_version": 1,
+  "tables": {
+    "testlotto_pool_hit_ledger": {
+      "grain": "draw_no × brain_tag × kind × set_no",
+      "ssot": true,
+      "columns": {
+        "draw_no": "int",
+        "brain_tag": "stat|markov|review",
+        "kind": "pool|repack",
+        "set_no": "int (pool 1..10, repack 1..5)",
+        "nums_json": "int[6] sorted",
+        "hits": "int 0..6",
+        "hit_nums_json": "int[] sorted len==hits",
+        "miss_nums_json": "int[]",
+        "bonus": "int",
+        "bonus_hit": "0|1",
+        "tier_rank": "int 0..5 monitor only",
+        "role": "skill_native|cover_r3|shape_r2|focus_r1|null",
+        "seed": "int",
+        "schema_version": "int"
+      },
+      "primary_key": ["draw_no", "brain_tag", "kind", "set_no"]
+    },
+    "testlotto_pool_hit_scatter": {
+      "grain": "draw_no × brain_tag × kind",
+      "ssot": false,
+      "derived_from": "testlotto_pool_hit_ledger",
+      "fields": [
+        "union_hit_nums_json",
+        "num_set_count_json",
+        "dup_hit_nums_json",
+        "sets_with_hits",
+        "max_hits_in_set",
+        "sum_hits",
+        "bonus_hit_set_count"
+      ]
+    }
+  },
+  "rules": {
+    "hits_range": [0, 6],
+    "store_zero_hit_rows": true,
+    "not_only_1_or_2": true,
+    "write_after_result": true,
+    "read_draw_no_lt_target": true,
+    "no_peek": true,
+    "tier_not_gate": true,
+    "evolve_log_not_ssot": true
+  },
+  "write_paths_planned_L3": [
+    "result feedback / after_draw",
+    "walkforward backfill tool"
+  ],
+  "read_paths_planned_L4": [
+    "repack_by_brain focus_r1"
+  ],
+  "reset_policy": "delete with predict artifacts; redraws preserved; backfill after force BT",
+  "report": "reports/20260812_KPOOL_HIT_LEDGER_SPEC.md",
+  "note": "LIST_V3 L2 · SPEC only · 1237아님"
+}

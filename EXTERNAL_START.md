@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `01499e3` |
+| HEAD(실측) | `f36f21e` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L1 **SMOKE_OK** · prefer+0.295 · prize-0.111 |
-| 직전 | LIST_V3 DOC · 역할슬롯 분석채택 |
-| BOOT다음 | L2 원장SPEC / 1237아님 |
-| NEXT1 ID | **K-POOL-HIT-LEDGER-SPEC** |
-| NEXT1 할일 | **양산前**. L1 **SMOKE_OK**(prefer+0.2949·prize-0.1112·V2drift모니터). 다음=**L2** 원장 SPEC(DOC·스키마만 · 1~6+보너스·분산 · 코드 WIRE 아님). **1237아님** · ge3미클레임 · 강제BT보류. |
+| 지금 | **양산前** · L2 원장SPEC **DOC_OK** · NEXT=L2b역할SPEC |
+| 직전 | L1 SMOKE_OK · prefer+0.295 |
+| BOOT다음 | L2b K-TIER-ROLE-SLOTS-SPEC / 1237아님 |
+| NEXT1 ID | **K-TIER-ROLE-SLOTS-SPEC** |
+| NEXT1 할일 | **양산前**. L2 원장SPEC **DOC_OK**(ledger+scatter 스키마·no_peek·1~6+보너스). 다음=**L2b** 역할슬롯 SPEC(DOC만 · skill5+cover_r3×3+shape_r2×2 · focus_r1 · 등수P↑PASS). **1237아님** · WIRE 아님 · 강제BT보류. |
 | 승인필요 | 없음(리스트 순서) |
-| 선행 | L1 SMOKE_OK |
+| 선행 | L2 DOC_OK |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=01499e3 · 지금=**양산前** · L1 **SMOKE_OK** · prefer+0.295 · prize-0.111 · 다음=K-POOL-HIT-LEDGER-SPEC`
+1. 첫줄 `[복귀] HEAD=f36f21e · 지금=**양산前** · L2 원장SPEC **DOC_OK** · NEXT=L2b역할SPEC · 다음=K-TIER-ROLE-SLOTS-SPEC`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 01499e3_
+_generated: f36f21e_
