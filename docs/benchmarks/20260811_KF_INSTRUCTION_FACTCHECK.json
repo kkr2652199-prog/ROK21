@@ -1,0 +1,56 @@
+{
+  "id": "K-F-INSTRUCTION-FACTCHECK",
+  "ts": "2026-08-11T13:32:00+09:00",
+  "instruction_title": "K-F markov learn 배선 판정",
+  "aligns_with_next_queue": true,
+  "safe_to_execute_as_written": false,
+  "verdict": "REJECT_REWRITE",
+  "reasons": [
+    {
+      "id": "R1",
+      "severity": "지시서는 LEARN_WIRED=False(현재)라고 가정",
+      "fact": "app/testlotto/brains/markov_brain/learn.py LEARN_WIRED=True 이미 ON",
+      "impact": "켜는 패치 불가 · True/False A/B만 가능"
+    },
+    {
+      "id": "R2",
+      "severity": "배선하면 learn이 예측에 반영된다",
+      "fact": "live 경로 markov_brain.engine 이미 apply_learn_boost 호출",
+      "impact": "K-F '미배선' 전제 붕괴 · FINDINGS K-F(predict_flow_shaman)는 구경로"
+    },
+    {
+      "id": "R3",
+      "severity": "배선 전후 성적 차이로 유지/롤백",
+      "fact": "learn_state rows=0 · adjustments 전부 0.0 · evolve=0 (강제리셋 후)",
+      "impact": "LEARN_WIRED True/False 결과가 동일(noop) → 판정 무효"
+    },
+    {
+      "id": "R4",
+      "severity": "판정축=markov 평균 적중만",
+      "fact": "K-O mean단독서열금지 · R38 ge3분해능경고 · 최근 튜닝은 prefer/prize축",
+      "impact": "지시서 게이트가 현행 벤치 프로토콜과 충돌 가능"
+    },
+    {
+      "id": "R5",
+      "severity": "FINDINGS K-F OPEN = markov learn 미소비",
+      "fact": "감사(20260811) OPEN_LIKELY는 문자열검색 오진 가능 · 실제 learn.py는 load_learn_state('markov') 사용",
+      "impact": "닫을 대상 재정의 필요(배선 vs 재료 vs 효과)"
+    }
+  ],
+  "live_probe": {
+    "LEARN_WIRED": true,
+    "learn_state_rows": 0,
+    "adjustments_all_zero": true,
+    "evolve_rows": 0,
+    "pool_module": "markov_brain.predict",
+    "deprecated_path": "predict_flow_shaman→predict_markov (LEARN 없음)"
+  },
+  "recommended_rewrite": [
+    "STEP0: K-F 재정의 — (A) 이미 ON 확인 DOC_CLOSE / (B) learn 재료 채운 뒤 True vs False A/B / (C) boost 값 튜닝",
+    "재료 선행: 1137~1236 walkforward feedback으로 markov learn_state 누적 후 측정",
+    "판정축: prefer_delta(markov) 1차 · mean_hits 모니터병기 · ge3 클레임금지",
+    "LEARN_WIRED 토글 실험은 재료 nonzero 확인 후에만"
+  ],
+  "executed_instruction": false,
+  "genspark_questions_file": "reports/20260811_KF_GENSPARK_QUESTIONS.md"
+}

@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-11 KST  
-📌 사유: **[CURSOR] K-LIST2-5** — 분석LOCK · W0.9·SCORE cand_B APPLY · FGJ감사
+📌 사유: **[CURSOR] K-F-INSTRUCTION-FACTCHECK** — K-F지시서 REJECT_REWRITE · 젠스파크질문
 
-📌 직전: **[CURSOR] K-FORCE-POOL-BACKTEST-100** — 강제리셋+100회 pool백테 REBUILT
+📌 직전: **[CURSOR] K-LIST2-5** — 분석LOCK · W0.9·SCORE cand_B APPLY · FGJ감사
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-F-INSTRUCTION-FACTCHECK (형GO · 검토)** | **REJECT_REWRITE** · 실행**안함** — 형 「방향맞으면진행/틀리면젠스파크질문」. 방향(K-F후보)=OK · 지시서전제=틀림. 실측: `LEARN_WIRED=True`이미ON · live=`markov_brain`이미`apply_learn_boost` · learn_state**0**/adj**0**/evolve**0**→True/False A/B=noop · FINDINGS K-F인용`predict_flow_shaman`=DEPRECATED. 평균적중단독게이트=K-O/R38충돌가능. 젠스파크질문=`reports/20260811_KF_GENSPARK_QUESTIONS.md`. · `docs/benchmarks/20260811_KF_INSTRUCTION_FACTCHECK.json` · `reports/20260811_KF_INSTRUCTION_FACTCHECK.md` |
 | **K-ANALYSIS-LOCK-CYCLE1 (형GO · 확정)** | **LOCKED** — 형 「지금까지 분석 확정+리스트 이어서」. 잠금: markovBLEND**0.55** · reviewBLEND**0.85** · statHINT**52** · JOINT SMOKE_OK · UI schema4 · FORCE BT REBUILT · SCORE cand_A(이후 retune으로 갱신). ge3클레임금지·1237아님. · `docs/benchmarks/20260811_KANALYSIS_LOCK_CYCLE1.json` · `reports/20260811_KANALYSIS_LOCK_CYCLE1.md` |
 | **K-W-CROWD-BY-BRAIN-TUNE (리스트2)** | **APPLY** — W_CROWD 스윕{0.5…0.9}×seed3×1137~1236 · BLEND잠금. markov prefer base**0.243**→**0.9:0.282**(|Δ|≥0.01·prize_iso0) · review prize base**−0.074**→**0.9:−0.095**(|Δ|≥0.01·prefer_iso0). **`W_CROWD_BY_BRAIN` markov/review=0.90 · STRUCT=0.10**. ge3미사용. · `docs/benchmarks/20260811_KW_CROWD_BY_BRAIN_TUNE.json` · `reports/20260811_KW_CROWD_BY_BRAIN_TUNE.md` · `tools/_k_w_crowd_by_brain_tune.py` |
 | **K-SCORE-WEIGHTS-RETUNE (리스트3)** | **APPLY** — W=0.9 전제 · cand_A vs B/C/D. cand_B hint↑ markov/review**(0.65,0.15,0.20)** · prefer**0.293**/prize**−0.110**/stat_hit**0.308**(비악화) 게이트PASS. C/D FAIL. **`SCORE_WEIGHTS_BY_BRAIN` cand_B 적용**. · `docs/benchmarks/20260811_KSCORE_WEIGHTS_RETUNE.json` · `reports/20260811_KSCORE_WEIGHTS_RETUNE.md` · `tools/_k_score_weights_retune.py` |

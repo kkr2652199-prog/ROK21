@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · 분석LOCK · W0.9·SCOREcand_B **APPLY** · FGJ감사
-- 직전: 리스트2~5 실행 · evolve0·referee균등 · K-F/G/J OPEN기록
-- 다음: **형 지시** — 합동smoke / K-F배선 / K-J SSOT / 정지 / 1237아님
+- 지금: **양산前** · K-F지시서 **REJECT_REWRITE** · 젠스파크질문대기
+- 직전: LEARN_WIRED이미True·learn재료0 · 지시서실행보류
+- 다음: 젠스파크답+형GO → K-F재작성 지시 / 또는 다른후보
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
