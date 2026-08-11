@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d1c27e4` · WORK=`IDLE`
+1. **HEAD:** `3df4011` · WORK=`IDLE`
 2. **지금:** **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52
 3. **다음1건:** K-TUNE-CYCLE-HOLD — **양산前 완료분 고정**. 뇌별 단독①markov BLEND0.55 HOLD · ②review BLEND**0.85** · ③stat HINT**52** · ④합동 smoke **SMOKE_OK**(prefer+0.244/prize−0.074/hit0.319 · drift0). **1237 예측/양산 아님**. 형 다음 지시(추가 축·정지·UI확인 등) 대기. ge3 성적클레임 금지. 공유=`lotto_draws`만. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
