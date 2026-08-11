@@ -38,7 +38,7 @@
 | K-D | PATCHED | 클릭 경로 fusion 부재 → **의도 문서화·미호출 import 제거** | `engine.py` · `fusion.py` · `coordinator.py` · `20260728_KD_fusion_path.json` | run_prediction→coordinator only · AUX 0.25×4 · fusion 재배선금지 · 3+4유지 |
 | K-E | OPEN | seed 미고정 → 비재현 | `predict_statistical.py:234` · `predict_markov.py:57,59,150,156` · `predict_review_king.py:42` | 동일입력 2회 stat/markov/review 모두 False. **동결항목 — 형 승인 전 수정금지** · K-S 재현성 설계와 연계 |
 | K-F | PATCHED | markov learn 재정의(재료+효과) · live=`markov_brain` 이미 소비 · predict_flow_shaman DEPRECATED | `markov_brain/learn.py` · `20260811_KF_재정의_판정` | 재료채움후 효과미달 → 배선사실 PATCHED·효과없음 CLOSE기록 · LEARN_WIRED=True유지(경로정상) |
-| K-G | OPEN | ending boost 휴면 | `learn_state.py:134-150` | `ending_digit_boost=0.0` · miss ending=0. 경로는 살아있으나 무효 |
+| K-G | PATCHED | ending boost 휴면 → 재누적 후 **ACTIVE** | `learn_state.apply_feedback` · coordinator `_detect_missed_patterns` · `20260812_KG_ENDING_BOOST_AUDIT` | 리셋후 0/0은 재료부재. refill후 전뇌 boost**0.3**(cap)·miss10~15. 상한변경 금지 · 효과튜닝=별도지시 |
 | K-H | PATCHED | 미등록 AUX 잔존 → **`brains/_unused/` 격리** | `aux_gap_scout.py` · `aux_structure_guard.py` · `20260728_KH_unused_aux.json` | live import0 · 3+4 유지 · 재배선 금지기본 · 예측력무관 |
 | K-I | OPEN | per-brain fallback 없음 | `brains/coordinator.py:94-102` | 단일 뇌 예외 → 전체 실패. try 미보호 |
 | K-J | PATCHED | 가중치 이중 체계 → SSOT=live referee · DB=미러 | `get_referee_weights` · `apply_feedback` 미러동기 · detail_service | 발권/UI=`get_referee_weights` · DB `current_weight`는 미러(구식1+avg*0.1제거) · 20260811_KSEQ · init시드1/3+sync |

@@ -1,0 +1,577 @@
+{
+  "id": "K-LEARN-REFEREE-REFILL",
+  "ts": "2026-08-12T07:19:10+09:00",
+  "range": [
+    1137,
+    1236
+  ],
+  "before": {
+    "label": "before",
+    "as_of": 1237,
+    "review_counts": {
+      "stat": 0,
+      "markov": 0,
+      "review": 0
+    },
+    "avgs": {
+      "stat": 0.0,
+      "markov": 0.0,
+      "review": 0.0
+    },
+    "live_referee": {
+      "stat": 0.333333,
+      "markov": 0.333333,
+      "review": 0.333333
+    },
+    "global_referee": {
+      "stat": 0.333333,
+      "markov": 0.333333,
+      "review": 0.333333
+    },
+    "spread_live": 0.0,
+    "brain_review_counts": {},
+    "learn_state_rows": 0,
+    "pool_cache_draws": 100
+  },
+  "loop": {
+    "start_draw": 1137,
+    "end_draw": 1236,
+    "reviewed": 100,
+    "skipped": 0,
+    "learn_states": {
+      "stat": {
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.35,
+          "consecutive_boost": 0.5,
+          "overdue_boost": 0.2,
+          "odd_even_balance": 0.5
+        },
+        "miss_counts": {
+          "overdue": 11,
+          "carry_over": 11,
+          "consecutive": 19,
+          "ending_digit": 14,
+          "odd_even": 25,
+          "pair": 9
+        },
+        "review_count": 99,
+        "last_draw_no": 1235,
+        "recent_avg_match": 0.7,
+        "recent_match_window": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          2,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "markov": {
+        "adjustments": {
+          "carry_over_boost": 0.2,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.35,
+          "consecutive_boost": 0.5,
+          "overdue_boost": 0.2,
+          "odd_even_balance": 0.5
+        },
+        "miss_counts": {
+          "consecutive": 29,
+          "odd_even": 33,
+          "ending_digit": 15,
+          "overdue": 12,
+          "carry_over": 15,
+          "pair": 9
+        },
+        "review_count": 99,
+        "last_draw_no": 1235,
+        "recent_avg_match": 0.8667,
+        "recent_match_window": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "review": {
+        "adjustments": {
+          "carry_over_boost": 0.0,
+          "ending_digit_boost": 0.3,
+          "pair_boost": 0.39999999999999997,
+          "consecutive_boost": 0.5,
+          "overdue_boost": 0.2,
+          "odd_even_balance": 0.5
+        },
+        "miss_counts": {
+          "odd_even": 42,
+          "ending_digit": 10,
+          "consecutive": 27,
+          "overdue": 10,
+          "pair": 10
+        },
+        "review_count": 99,
+        "last_draw_no": 1235,
+        "recent_avg_match": 0.8,
+        "recent_match_window": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          2,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ]
+      }
+    },
+    "last_sample": {
+      "draw_no": 1236,
+      "reviews": [
+        {
+          "brain_tag": "stat",
+          "brain_name": "과거학습",
+          "matched_count": 0,
+          "best_matched": 1,
+          "feedback_mode": "mean",
+          "bonus_matched": 0,
+          "tier_rank": 0,
+          "tier_label": "미적중",
+          "best_set_no": 2,
+          "learn_set_no": 1,
+          "sets_count": 5,
+          "missed_patterns": [
+            "odd_even"
+          ],
+          "predicted": [
+            8,
+            15,
+            22,
+            27,
+            31,
+            35
+          ],
+          "predicted_sets": [
+            {
+              "set_no": 1,
+              "nums": [
+                8,
+                15,
+                22,
+                27,
+                31,
+                35
+              ],
+              "confidence": 58.1,
+              "reasoning": "과거학습: 빈도가중+끝수[1, 2, 5, 7, 8]+이월1개[15]+미출30+없음 [과거학습:1yHot[15, 27, 31] Δ0.3] [학습조정 이월×1.20 끝수×1.30] [보조4뇌:0.91] 균형지킴이:홀4짝2 구간2-2-2 점수0.91 | stat감독(과거학습감독):avg=0.700 score=0.42 n=99",
+              "matched_count": 0,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 2,
+              "nums": [
+                7,
+                9,
+                18,
+                26,
+                30,
+                45
+              ],
+              "confidence": 55.6,
+              "reasoning": "과거학습: 빈도가중+끝수[0, 5, 6, 7, 8, 9]+이월1개[7]+미출30+없음 [과거학습:1yHot[9]|1yCold[18] Δ0.14] [학습조정 이월×1.20 끝수×1.30] [보조4뇌:0.85] 균형지킴이:홀3짝3 구간2-3-1 점수0.85 | stat감독(과거학습감독):avg=0.700 score=0.42 n=99",
+              "matched_count": 1,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 3,
+              "nums": [
+                5,
+                13,
+                15,
+                19,
+                28,
+                42
+              ],
+              "confidence": 52.6,
+              "reasoning": "과거학습: 빈도가중+끝수[2, 3, 5, 8, 9]+이월1개[15]+미출30+없음 [과거학습:1yHot[13, 15, 19, 28]|1yCold[5] Δ0.44] [학습조정 이월×1.20 끝수×1.30] [보조4뇌:0.77] 균형지킴이:홀4짝2 구간3-2-1 점수0.77 | stat감독(과거학습감독):avg=0.700 score=0.42 n=99",
+              "matched_count": 0,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 4,
+              "nums": [
+                3,
+                20,
+                22,
+                24,
+                38,
+                43
+              ],
+              "confidence": 52.0,
+              "reasoning": "과거학습: 빈도가중+끝수[0, 2, 3, 4, 8]+이월1개[43]+미출30+없음 [과거학습:1yHot[3, 24, 38]|1yCold[43] Δ0.34] [학습조정 이월×1.20 끝수×1.30] [보조4뇌:0.76] 균형지킴이:홀2짝4 구간1-3-2 점수0.76 | stat감독(과거학습감독):avg=0.700 score=0.42 n=99",
+              "matched_count": 1,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 5,
+              "nums": [
+                8,
+                9,
+                19,
+                24,
+                32,
+                45
+              ],
+              "confidence": 57.8,
+              "reasoning": "과거학습: 빈도가중+끝수[2, 4, 5, 8, 9]+이월0개+미출30+없음 [과거학습:1yHot[9, 19, 24] Δ0.3] [학습조정 이월×1.20 끝수×1.30] [보조4뇌:0.90] 균형지킴이:홀3짝3 구간2-2-2 점수0.90 | stat감독(과거학습감독):avg=0.700 score=0.42 n=99",
+              "matched_count": 0,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            }
+          ]
+        },
+        {
+          "brain_tag": "markov",
+          "brain_name": "선호번호",
+          "matched_count": 1,
+          "best_matched": 1,
+          "feedback_mode": "mean",
+          "bonus_matched": 0,
+          "tier_rank": 0,
+          "tier_label": "미적중",
+          "best_set_no": 2,
+          "learn_set_no": 2,
+          "sets_count": 5,
+          "missed_patterns": [
+            "odd_even"
+          ],
+          "predicted": [
+            1,
+            11,
+            12,
+            28,
+            35,
+            39
+          ],
+          "predicted_sets": [
+            {
+              "set_no": 1,
+              "nums": [
+                4,
+                6,
+                15,
+                19,
+                28,
+                33
+              ],
+              "confidence": 68.1,
+              "reasoning": "선호번호: 인기회차(1등다수)학습+생일대선호+동반쌍30 [학습조정 이월×1.20 끝수×1.30 미출×1.20] [선호신호avg1.0248 Δ0.15] [보조4뇌:1.00] 패턴돋보기:AC8 연속0 점수1.00 | markov감독(선호번호감독):avg=0.867 score=0.55 n=99",
+              "matched_count": 0,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 2,
+              "nums": [
+                1,
+                11,
+                12,
+                28,
+                35,
+                39
+              ],
+              "confidence": 67.4,
+              "reasoning": "선호번호: 인기회차(1등다수)학습+생일대선호+동반쌍24 [학습조정 이월×1.20 끝수×1.30 미출×1.20] [선호신호avg1.0303|강[12] Δ0.18] [보조4뇌:0.99] 패턴돋보기:AC8 연속1 점수0.99 | markov감독(선호번호감독):avg=0.867 score=0.55 n=99",
+              "matched_count": 1,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 3,
+              "nums": [
+                3,
+                6,
+                13,
+                15,
+                36,
+                43
+              ],
+              "confidence": 67.7,
+              "reasoning": "선호번호: 인기회차(1등다수)학습+생일대선호+동반쌍41 [학습조정 이월×1.20 끝수×1.30 미출×1.20] [선호신호avg1.0263 Δ0.16] [보조4뇌:1.00] 패턴돋보기:AC8 연속0 점수1.00 | markov감독(선호번호감독):avg=0.867 score=0.55 n=99",
+              "matched_count": 0,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 4,
+              "nums": [
+                7,
+                12,
+                15,
+                27,
+                33,
+                36
+              ],
+              "confidence": 68.1,
+              "reasoning": "선호번호: 인기회차(1등다수)학습+생일대선호+동반쌍42 [학습조정 이월×1.20 끝수×1.30 미출×1.20] [선호신호avg1.0621|강[12] Δ0.37] [보조4뇌:1.00] 패턴돋보기:AC8 연속0 점수1.00 | markov감독(선호번호감독):avg=0.867 score=0.55 n=99",
+              "matched_count": 1,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 5,
+              "nums": [
+                4,
+                7,
+                9,
+                12,
+                33,
+                45
+              ],
+              "confidence": 67.4,
+              "reasoning": "선호번호: 인기회차(1등다수)학습+생일대선호+동반쌍30 [학습조정 이월×1.20 끝수×1.30 미출×1.20] [선호신호avg1.0419|강[12] Δ0.25] [보조4뇌:1.00] 패턴돋보기:AC8 연속0 점수1.00 | markov감독(선호번호감독):avg=0.867 score=0.55 n=99",
+              "matched_count": 1,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            }
+          ]
+        },
+        {
+          "brain_tag": "review",
+          "brain_name": "금액뇌",
+          "matched_count": 1,
+          "best_matched": 2,
+          "feedback_mode": "mean",
+          "bonus_matched": 0,
+          "tier_rank": 0,
+          "tier_label": "미적중",
+          "best_set_no": 2,
+          "learn_set_no": 3,
+          "sets_count": 5,
+          "missed_patterns": [
+            "odd_even"
+          ],
+          "predicted": [
+            2,
+            6,
+            7,
+            19,
+            21,
+            39
+          ],
+          "predicted_sets": [
+            {
+              "set_no": 1,
+              "nums": [
+                13,
+                15,
+                20,
+                23,
+                39,
+                43
+              ],
+              "confidence": 53.4,
+              "reasoning": "금액뇌: 저당첨자수회차·고번호비선호(당첨시몫↑) 이월힌트[15, 39, 43] [학습조정 이월×1.00] [금액신호avg1.0322|고번호2|합153 Δ0.59] [보조4뇌:0.75] 오답탐정:0.75 | review감독(금액뇌감독):avg=0.800 score=0.50 n=99",
+              "matched_count": 0,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 2,
+              "nums": [
+                6,
+                7,
+                8,
+                34,
+                38,
+                43
+              ],
+              "confidence": 53.0,
+              "reasoning": "금액뇌: 저당첨자수회차·고번호비선호(당첨시몫↑) 이월힌트[6, 7, 43] [학습조정 이월×1.00] [금액신호avg1.0057|고번호3|합136 Δ0.63] [보조4뇌:0.75] 오답탐정:0.75 | review감독(금액뇌감독):avg=0.800 score=0.50 n=99",
+              "matched_count": 2,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 3,
+              "nums": [
+                2,
+                6,
+                7,
+                19,
+                21,
+                39
+              ],
+              "confidence": 51.9,
+              "reasoning": "금액뇌: 저당첨자수회차·고번호비선호(당첨시몫↑) 이월힌트[6, 7, 39] [학습조정 이월×1.00] [금액신호avg0.9965|고번호1|합94 Δ-0.02] [보조4뇌:0.75] 오답탐정:0.75 | review감독(금액뇌감독):avg=0.800 score=0.50 n=99",
+              "matched_count": 1,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 4,
+              "nums": [
+                10,
+                11,
+                26,
+                27,
+                33,
+                43
+              ],
+              "confidence": 50.8,
+              "reasoning": "금액뇌: 저당첨자수회차·고번호비선호(당첨시몫↑) 이월힌트[11, 43] [학습조정 이월×1.00] [금액신호avg1.0208|고번호2|합150 Δ0.52] [보조4뇌:0.75] 오답탐정:0.75 | review감독(금액뇌감독):avg=0.800 score=0.50 n=99",
+              "matched_count": 0,
+              "bonus_matched": 1,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            },
+            {
+              "set_no": 5,
+              "nums": [
+                15,
+                24,
+                27,
+                31,
+                39,
+                44
+              ],
+              "confidence": 50.8,
+              "reasoning": "금액뇌: 저당첨자수회차·고번호비선호(당첨시몫↑) 이월힌트[15, 39] [학습조정 이월×1.00] [금액신호avg1.0458|고번호2|합180 Δ0.67] [보조4뇌:0.75] 오답탐정:0.75 | review감독(금액뇌감독):avg=0.800 score=0.50 n=99",
+              "matched_count": 0,
+              "bonus_matched": 0,
+              "tier_rank": 0,
+              "tier_label": "미적중"
+            }
+          ]
+        }
+      ],
+      "feature_stored": true
+    }
+  },
+  "after": {
+    "label": "after",
+    "as_of": 1237,
+    "review_counts": {
+      "stat": 100,
+      "markov": 100,
+      "review": 100
+    },
+    "avgs": {
+      "stat": 0.6667,
+      "markov": 0.8667,
+      "review": 0.8
+    },
+    "live_referee": {
+      "stat": 0.23531,
+      "markov": 0.41177,
+      "review": 0.35292
+    },
+    "global_referee": {
+      "stat": 0.23531,
+      "markov": 0.41177,
+      "review": 0.35292
+    },
+    "spread_live": 0.17646,
+    "brain_review_counts": {
+      "markov": 100,
+      "review": 100,
+      "stat": 100
+    },
+    "learn_state_rows": 3,
+    "pool_cache_draws": 100
+  },
+  "verdict": "REFILL_OK",
+  "ge3_used_as_claim": false,
+  "step": 4,
+  "note": "BT v4 pool 보존 · 1237아님"
+}

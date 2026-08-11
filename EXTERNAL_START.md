@@ -10,15 +10,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `2335d54` |
+| HEAD(실측) | `dd0a404` |
 | BASELINE_PIN | `640cb67` |
-| WORK | `RUNNING:K-LEARN-REFEREE-REFILL` |
-| 지금 | **양산前** · ③강제BTv4 **REBUILT_OK** · 다음④learn재누적 |
-| 직전 | ②pool잔여 HOLD |
-| BOOT다음 | ④ learn/referee 재누적 / 1237아님 |
-| NEXT1 ID | **K-LEARN-REFEREE-REFILL** |
-| NEXT1 할일 | **양산前**. ③BTv4 REBUILT_OK(mean**2.5**모니터·4등4/5등42). 단계④=learn/referee 재누적(균등0.333해소). **1237아님**. |
-| 승인필요 | 없음(형 순서진행) |
+| WORK | `IDLE` |
+| 지금 | **양산前** · 순서①~⑤ **DONE** (smoke·잔여HOLD·BTv4·refill·K-G) |
+| 직전 | ④referee refill spread0.176 · ⑤ending ACTIVE |
+| BOOT다음 | **형 지시** 1건 / 1237아님 |
+| NEXT1 ID | **K-SEQ-STEPS-HOLD** |
+| NEXT1 할일 | **양산前**. 순서①~⑤ DONE(smoke OK·pool잔여 HOLD·BTv4·refill OK·K-G ACTIVE). 다음=형 지시1건. **1237아님**. |
+| 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=2335d54 · 지금=**양산前** · ③강제BTv4 **REBUILT_OK** · 다음④learn재누적 · 다음=K-LEARN-REFEREE-REFILL`
+1. 첫줄 `[복귀] HEAD=dd0a404 · 지금=**양산前** · 순서①~⑤ **DONE** (smoke·잔여HOLD·BTv4·refill·K-G) · 다음=K-SEQ-STEPS-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 2335d54_
+_generated: dd0a404_

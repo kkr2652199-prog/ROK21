@@ -1,0 +1,17 @@
+{
+  "id": "K-G-ENDING-BOOST-AUDIT",
+  "ts": "2026-08-12T07:20:00+09:00",
+  "as_of": 1237,
+  "after_refill": true,
+  "adjustments": {
+    "stat": {"ending_digit_boost": 0.3, "miss_ending": 14},
+    "markov": {"ending_digit_boost": 0.3, "miss_ending": 15},
+    "review": {"ending_digit_boost": 0.3, "miss_ending": 10}
+  },
+  "cap": 0.3,
+  "frozen_cap": true,
+  "verdict": "ACTIVE_AFTER_REFILL",
+  "patch_applied": false,
+  "ge3_used_as_claim": false,
+  "note": "구 OPEN 휴면은 리셋후 재료0 상태. 재누적 후 cap도달. 상한변경 금지."
+}
