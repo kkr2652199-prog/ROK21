@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4e9b200` · WORK=`IDLE`
+1. **HEAD:** `8c2d7ca` · WORK=`IDLE`
 2. **지금:** **양산前** · HINT_WEIGHT pick_score배선 · 0.15 HOLD
 3. **다음1건:** K-HINT-WEIGHT-HOLD — **양산前**. HINT_WEIGHT 뇌별스윕: DEAD_WIRE→`pick_score` **PATCHED** · v2게이트 **NO_IMPROVE** → **0.15 HOLD**. signal_union유지. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-11 | 다음진행(HINT튜닝) | DEAD_WIRE→pick_score·v2게이트0.15HOLD | **HOLD** | (push후) |
+| 2026-08-11 | 다음진행(HINT튜닝) | DEAD_WIRE→pick_score·v2게이트0.15HOLD | **HOLD** | 8c2d7ca |
 | 2026-08-11 | 몰아주기P1/P2패치 | signal_union게이트PASS·BTv3·손실↓ | **APPLY** | e332fed |
 | 2026-08-11 | 순서대로①②③ | 강제BTv2·repack손실조사·K-J SSOT패치 | **DONE** | 64cff04 |
 | 2026-08-11 | 100BT정밀·버그/개선 | 4등5·5등51·tune_json패치·pool>repack | **AUDIT_OK** | f3dfd02 |

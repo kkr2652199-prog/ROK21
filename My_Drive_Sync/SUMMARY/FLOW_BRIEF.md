@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4e9b200` · WORK=`IDLE`
+- HEAD: `8c2d7ca` · WORK=`IDLE`
 - 지금: **양산前** · HINT_WEIGHT pick_score배선 · 0.15 HOLD
 - 직전: DEAD_WIRE해소 · v2게이트 NO_IMPROVE
 - BOOT다음: **형 지시** — 다음튜닝1건 / 1237아님
