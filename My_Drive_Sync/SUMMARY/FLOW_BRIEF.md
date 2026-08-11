@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `368598c` · WORK=`IDLE`
+- HEAD: `d1c27e4` · WORK=`IDLE`
 - 지금: **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52
 - 직전: K-BRAIN-JOINT-SMOKE **SMOKE_OK** · drift0 · 서버7021재가동
 - BOOT다음: **형 지시 대기** — 1237양산 아님 · 추가축/정지 선택

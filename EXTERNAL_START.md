@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `368598c` |
+| HEAD(실측) | `d1c27e4` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=368598c · 지금=**양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52 · 다음=K-TUNE-CYCLE-HOLD`
+1. 첫줄 `[복귀] HEAD=d1c27e4 · 지금=**양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52 · 다음=K-TUNE-CYCLE-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 368598c_
+_generated: d1c27e4_
