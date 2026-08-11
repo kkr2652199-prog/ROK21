@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `594cb9f` · WORK=`IDLE`
+1. **HEAD:** `7f0f9fe` · WORK=`IDLE`
 2. **지금:** **양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3)
 3. **다음1건:** K-SEQ-1112-HOLD — **양산前**. ⑪발권quota **VERIFY_OK**(s1/m1/r3) · ⑫강제BTv5 **REBUILT_OK**(mean2.5모니터) · refill_v2. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

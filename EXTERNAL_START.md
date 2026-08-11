@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `594cb9f` |
+| HEAD(실측) | `7f0f9fe` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3) |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=594cb9f · 지금=**양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3) · 다음=K-SEQ-1112-HOLD`
+1. 첫줄 `[복귀] HEAD=7f0f9fe · 지금=**양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3) · 다음=K-SEQ-1112-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 594cb9f_
+_generated: 7f0f9fe_
