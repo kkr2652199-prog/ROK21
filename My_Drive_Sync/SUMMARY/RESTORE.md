@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8525ff4` · WORK=`IDLE`
+1. **HEAD:** `19063e2` · WORK=`IDLE`
 2. **지금:** **양산前** · 강제100회 pool백테 **REBUILT** · UI backtest 적재
 3. **다음1건:** K-FORCE-POOL-BT-HOLD — **양산前**. 강제 리셋+1137~1236 n100 pool백테 **REBUILT_OK**(pool캐시300·bt_results100·API draw-index100). knobs=markov0.55/review0.85/statHINT52 · `_get_draws_before` nopeek. ge3는 모니터만. **1237 양산아님**. 브라우저 Ctrl+F5 후 테스트로또·백테패널/`testlotto-detail.html?draw=1236` 확인. 형 다음 지시 대기. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
