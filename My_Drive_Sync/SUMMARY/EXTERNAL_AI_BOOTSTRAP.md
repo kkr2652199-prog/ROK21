@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `194775e` |
+| HEAD(실측) | `2335d54` |
 | BASELINE_PIN | `640cb67` |
-| WORK | `RUNNING:K-FORCE-BT-RELOAD` |
-| 지금 | **양산前** · ②pool잔여 **HOLD**(reviewBLEND·statHINT) · 다음③BT |
-| 직전 | ①합동smoke SMOKE_OK |
-| BOOT다음 | ③ 강제BT100 재적재(모니터) / 1237아님 |
-| NEXT1 ID | **K-FORCE-BT-RELOAD** |
-| NEXT1 할일 | **양산前**. ①SMOKE_OK·②pool잔여 HOLD 완료. 단계③=강제BT100 재적재(모니터·ge3클레임금지). **1237아님**. |
+| WORK | `RUNNING:K-LEARN-REFEREE-REFILL` |
+| 지금 | **양산前** · ③강제BTv4 **REBUILT_OK** · 다음④learn재누적 |
+| 직전 | ②pool잔여 HOLD |
+| BOOT다음 | ④ learn/referee 재누적 / 1237아님 |
+| NEXT1 ID | **K-LEARN-REFEREE-REFILL** |
+| NEXT1 할일 | **양산前**. ③BTv4 REBUILT_OK(mean**2.5**모니터·4등4/5등42). 단계④=learn/referee 재누적(균등0.333해소). **1237아님**. |
 | 승인필요 | 없음(형 순서진행) |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=194775e · 지금=**양산前** · ②pool잔여 **HOLD**(reviewBLEND·statHINT) · 다음③BT · 다음=K-FORCE-BT-RELOAD`
+1. 첫줄 `[복귀] HEAD=2335d54 · 지금=**양산前** · ③강제BTv4 **REBUILT_OK** · 다음④learn재누적 · 다음=K-LEARN-REFEREE-REFILL`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

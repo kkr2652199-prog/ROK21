@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `194775e` · WORK=`RUNNING:K-FORCE-BT-RELOAD`
-- 지금: **양산前** · ②pool잔여 **HOLD**(reviewBLEND·statHINT) · 다음③BT
-- 직전: ①합동smoke SMOKE_OK
-- BOOT다음: ③ 강제BT100 재적재(모니터) / 1237아님
-- NEXT1: K-FORCE-BT-RELOAD — **양산前**. ①SMOKE_OK·②pool잔여 HOLD 완료. 단계③=강제BT100 재적재(모니터·ge3클레임금지). **1237아님**. (승인=없음(형 순서진행))
+- HEAD: `2335d54` · WORK=`RUNNING:K-LEARN-REFEREE-REFILL`
+- 지금: **양산前** · ③강제BTv4 **REBUILT_OK** · 다음④learn재누적
+- 직전: ②pool잔여 HOLD
+- BOOT다음: ④ learn/referee 재누적 / 1237아님
+- NEXT1: K-LEARN-REFEREE-REFILL — **양산前**. ③BTv4 REBUILT_OK(mean**2.5**모니터·4등4/5등42). 단계④=learn/referee 재누적(균등0.333해소). **1237아님**. (승인=없음(형 순서진행))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
