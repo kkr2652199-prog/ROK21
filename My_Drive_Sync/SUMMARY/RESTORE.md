@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `94f3e7c` · WORK=`IDLE`
+1. **HEAD:** `01499e3` · WORK=`IDLE`
 2. **지금:** **양산前** · L1 **SMOKE_OK** · prefer+0.295 · prize-0.111
 3. **다음1건:** K-POOL-HIT-LEDGER-SPEC — **양산前**. L1 **SMOKE_OK**(prefer+0.2949·prize-0.1112·V2drift모니터). 다음=**L2** 원장 SPEC(DOC·스키마만 · 1~6+보너스·분산 · 코드 WIRE 아님). **1237아님** · ge3미클레임 · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=L1 SMOKE_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

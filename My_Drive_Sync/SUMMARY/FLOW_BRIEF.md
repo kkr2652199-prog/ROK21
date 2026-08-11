@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `94f3e7c` · WORK=`IDLE`
+- HEAD: `01499e3` · WORK=`IDLE`
 - 지금: **양산前** · L1 **SMOKE_OK** · prefer+0.295 · prize-0.111
 - 직전: LIST_V3 DOC · 역할슬롯 분석채택
 - BOOT다음: L2 원장SPEC / 1237아님
