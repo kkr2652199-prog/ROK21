@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-FORCE-POOL-BT-HOLD
-- 할일: **양산前**. 강제 리셋+1137~1236 n100 pool백테 **REBUILT_OK**(pool캐시300·bt_results100·API draw-index100). knobs=markov0.55/review0.85/statHINT52 · `_get_draws_before` nopeek. ge3는 모니터만. **1237 양산아님**. 브라우저 Ctrl+F5 후 테스트로또·백테패널/`testlotto-detail.html?draw=1236` 확인. 형 다음 지시 대기.
+- ID: K-POST-LIST-HOLD
+- 할일: **양산前**. 분석LOCK완료 · W_CROWD markov/review **0.90** APPLY · SCORE **cand_B**(0.65/0.15/0.20) APPLY · evolve/FGJ **AUDIT_DONE**(evolve0·referee균등·K-F OPEN·K-G DORMANT·K-J DUAL). **다음후보**=합동smoke재검증 / K-F markov learn배선 / K-J referee SSOT. **1237 양산아님**. 형 다음 지시 1건.
 - 완료조건: 형 새 지시 1건
-- 선행완료: K-FORCE-POOL-BACKTEST-100 REBUILT_OK · K-UI-DETAIL-POOL10x5 PATCHED
+- 선행완료: K-ANALYSIS-LOCK · K-W-CROWD-BY-BRAIN APPLY · K-SCORE-WEIGHTS-RETUNE APPLY · K-EVOLVE-FGJ-AUDIT
 - 승인필요: 형 다음 지시
 - 선행조건: 없음
 - 최종갱신: 2026-08-11
@@ -19,5 +19,5 @@ IDLE
 
 ## 메모
 - 서버: `python run_v13.py` · 7021
-- Ctrl+F5 권장 (static ?v=20260811b)
-- 강제 재백테: `python tools/_k_force_pool_backtest_100.py`
+- knobs: BLEND m0.55/r0.85 · W 0.90/0.10 · SCORE cand_B · HINT stat52
+- 강제 재백테(노브변경 후 권장): `python tools/_k_force_pool_backtest_100.py`

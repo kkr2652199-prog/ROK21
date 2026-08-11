@@ -1,0 +1,62 @@
+{
+  "id": "K-ANALYSIS-LOCK-CYCLE1",
+  "ts": "2026-08-11T12:40:00+09:00",
+  "frame": "양산前 · 1236=마지막결과 · 1237양산아님",
+  "locked": true,
+  "ge3_used_as_claim": false,
+  "items": [
+    {
+      "id": "K-BRAIN-INDEPENDENCE-BY-BRAIN",
+      "verdict": "PATCHED",
+      "note": "W_*/BLEND BY_BRAIN wire · 공유=lotto_draws만"
+    },
+    {
+      "id": "K-MARKOV-PREFER-BLEND-TUNE",
+      "verdict": "NO_IMPROVE",
+      "locked_value": {"BLEND_STRENGTH_BY_BRAIN.markov": 0.55}
+    },
+    {
+      "id": "K-REVIEW-PRIZE-BLEND-TUNE",
+      "verdict": "APPLY",
+      "locked_value": {"BLEND_STRENGTH_BY_BRAIN.review": 0.85}
+    },
+    {
+      "id": "K-STAT-PATTERN-TUNE",
+      "verdict": "APPLY",
+      "locked_value": {"HINT_SPEC_BY_BRAIN.stat": [52, "miss_pattern"]}
+    },
+    {
+      "id": "K-BRAIN-JOINT-SMOKE",
+      "verdict": "SMOKE_OK",
+      "note": "단독대비 drift0 · prefer/prize/hit 유지"
+    },
+    {
+      "id": "K-UI-DETAIL-POOL10x5",
+      "verdict": "PATCHED",
+      "locked_value": {"pool_cache_schema": 4}
+    },
+    {
+      "id": "K-FORCE-POOL-BACKTEST-100",
+      "verdict": "REBUILT_OK",
+      "note": "1137~1236 n100 · pool300/bt100 · nopeek · 강제리셋후 패치knobs재예측"
+    },
+    {
+      "id": "K-BRAIN-INDEPENDENT-TUNE",
+      "verdict": "APPLY",
+      "locked_value": {
+        "SCORE_WEIGHTS_BY_BRAIN": {
+          "stat": [0.25, 0.35, 0.40],
+          "markov": [0.55, 0.20, 0.25],
+          "review": [0.55, 0.20, 0.25]
+        }
+      }
+    }
+  ],
+  "next_queue": [
+    "K-W-CROWD-BY-BRAIN-TUNE",
+    "K-SCORE-WEIGHTS-RETUNE",
+    "K-EVOLVE-REFEREE-AUDIT",
+    "K-F-G-J-AUDIT"
+  ],
+  "forbidden": ["1237양산", "ge3성적클레임", "동결토큰수정", "kweon쓰기"]
+}

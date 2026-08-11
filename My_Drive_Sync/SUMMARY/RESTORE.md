@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `dc97599` · WORK=`IDLE`
-2. **지금:** **양산前** · 강제100회 pool백테 **REBUILT** · UI backtest 적재
-3. **다음1건:** K-FORCE-POOL-BT-HOLD — **양산前**. 강제 리셋+1137~1236 n100 pool백테 **REBUILT_OK**(pool캐시300·bt_results100·API draw-index100). knobs=markov0.55/review0.85/statHINT52 · `_get_draws_before` nopeek. ge3는 모니터만. **1237 양산아님**. 브라우저 Ctrl+F5 후 테스트로또·백테패널/`testlotto-detail.html?draw=1236` 확인. 형 다음 지시 대기. (승인필요=형 다음 지시 · 선행=없음)
+1. **HEAD:** `57c31b4` · WORK=`IDLE`
+2. **지금:** **양산前** · 분석LOCK · W0.9·SCOREcand_B **APPLY** · FGJ감사
+3. **다음1건:** K-POST-LIST-HOLD — **양산前**. 분석LOCK완료 · W_CROWD markov/review **0.90** APPLY · SCORE **cand_B**(0.65/0.15/0.20) APPLY · evolve/FGJ **AUDIT_DONE**(evolve0·referee균등·K-F OPEN·K-G DORMANT·K-J DUAL). **다음후보**=합동smoke재검증 / K-F markov learn배선 / K-J referee SSOT. **1237 양산아님**. 형 다음 지시 1건. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-11 | 분석확정+리스트2~5이어서 | LOCK·W0.9·SCOREcand_B APPLY·FGJ감사 | **APPLY** | (이번) |
 | 2026-08-11 | 100회백테미기록·강제리셋재백테·컨닝금지 | 리셋+1137~1236 WF · pool300/bt100 · API100 · nopeek | **REBUILT_OK** | 7b84c49 |
 | 2026-08-11 | 상세UI 10+5·보기좋게 | tldSingleView pool-view·knobs·schema4 · 1236실측 | **PATCHED** | 1279f8a |
 | 2026-08-11 | 서버재가동·다음진행 | 7021재기동·합동smoke prefer/prize/hit·drift0 | **SMOKE_OK** | d1c27e4 |
@@ -45,7 +46,6 @@
 | 2026-08-10 | 프로세스 구조 질문(수정없음) | 예측/채점/evolve 흐름·API의미·1236/1237실측 문서화 | **DOC_OK** | 073e8ea |
 | 2026-08-10 | 1236 실전 피드백 검증 | nums확인·3뇌 evolve마크·weight0·dupSKIP · 단건참고만 | **VERIFY_OK** | af40d12 |
 | 2026-08-10 | K-K 피드백 경로 연결 | routes+click_feedback · 1230~1235 마크18 · weight0 · guardOK | **PATCHED** | 36fc78f |
-| 2026-08-10 | BLEND_STRENGTH 9점 스윕 | 전후보 cond3실패(|Δ|≪0.01) · best=null · 0.55유지 | **NO_IMPROVE** | 25b62d6 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

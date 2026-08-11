@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-11 KST  
-📌 사유: **[CURSOR] K-FORCE-POOL-BACKTEST-100** — 강제리셋+패치knobs 100회 pool백테 재적재
+📌 사유: **[CURSOR] K-LIST2-5** — 분석LOCK · W0.9·SCORE cand_B APPLY · FGJ감사
 
-📌 직전: **[CURSOR] K-UI-DETAIL-POOL10x5** — 상세UI 최신 10+5·knobs · schema4
+📌 직전: **[CURSOR] K-FORCE-POOL-BACKTEST-100** — 강제리셋+100회 pool백테 REBUILT
 
 ---
 
@@ -15,6 +15,10 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-ANALYSIS-LOCK-CYCLE1 (형GO · 확정)** | **LOCKED** — 형 「지금까지 분석 확정+리스트 이어서」. 잠금: markovBLEND**0.55** · reviewBLEND**0.85** · statHINT**52** · JOINT SMOKE_OK · UI schema4 · FORCE BT REBUILT · SCORE cand_A(이후 retune으로 갱신). ge3클레임금지·1237아님. · `docs/benchmarks/20260811_KANALYSIS_LOCK_CYCLE1.json` · `reports/20260811_KANALYSIS_LOCK_CYCLE1.md` |
+| **K-W-CROWD-BY-BRAIN-TUNE (리스트2)** | **APPLY** — W_CROWD 스윕{0.5…0.9}×seed3×1137~1236 · BLEND잠금. markov prefer base**0.243**→**0.9:0.282**(|Δ|≥0.01·prize_iso0) · review prize base**−0.074**→**0.9:−0.095**(|Δ|≥0.01·prefer_iso0). **`W_CROWD_BY_BRAIN` markov/review=0.90 · STRUCT=0.10**. ge3미사용. · `docs/benchmarks/20260811_KW_CROWD_BY_BRAIN_TUNE.json` · `reports/20260811_KW_CROWD_BY_BRAIN_TUNE.md` · `tools/_k_w_crowd_by_brain_tune.py` |
+| **K-SCORE-WEIGHTS-RETUNE (리스트3)** | **APPLY** — W=0.9 전제 · cand_A vs B/C/D. cand_B hint↑ markov/review**(0.65,0.15,0.20)** · prefer**0.293**/prize**−0.110**/stat_hit**0.308**(비악화) 게이트PASS. C/D FAIL. **`SCORE_WEIGHTS_BY_BRAIN` cand_B 적용**. · `docs/benchmarks/20260811_KSCORE_WEIGHTS_RETUNE.json` · `reports/20260811_KSCORE_WEIGHTS_RETUNE.md` · `tools/_k_score_weights_retune.py` |
+| **K-EVOLVE-FGJ-AUDIT (리스트4·5 · READ)** | **AUDIT_DONE** · wire=**False** — evolve_log**0**(강제리셋후) · weight_applied Phase1=0 · live referee **균등0.333** spread**0**(learn_state0) · DB brain_weights stat1.5/markov1.0/review1.2 ≠ live → **K-J DUAL_OPEN** · **K-F OPEN_LIKELY**(markov learn 미소비) · **K-G DORMANT**. 다음패치후보=합동smoke / K-F배선 / K-J SSOT. · `docs/benchmarks/20260811_KEVOLVE_FGJ_AUDIT.json` · `reports/20260811_KEVOLVE_FGJ_AUDIT.md` · `tools/_k_evolve_fgj_audit.py` |
 | **K-FORCE-POOL-BACKTEST-100 (형GO · DB)** | **REBUILT_OK** — 형 「100회백테 미기록·리셋후 재백테=패치기능·강제리셋·컨닝금지」. 사전실측: `backtest_draw_results=0` · `lotto_predictions=0` · pool캐시**15**(1225~1236일부) · `brain_review=300`(구 K-M복습≠UI백테). **강제**: `_k_predict_reset` APPLY(복습300·pool15 등 삭제·draws보존) → 1137~1236 n**100** · `_get_draws_before` · peek가드(max_material&lt;target) · `expand_pool`+`build_hint_by_brain`+`repack_by_brain` · knobs markovBLEND**0.55**/review**0.85**/statHINT**52**. 후: pool_view_cache **300행/100회** schema4 · `backtest_runs` run_id**9** · draw_results**100** · API `draw-index` n_draws**100**. mean_hits**2.6**/ge3_rate**0.56**=**모니터만·클레임금지**. 캐시 hit면 구예측 재사용 가능→강제리셋필수. · `docs/benchmarks/20260811_KFORCE_POOL_BACKTEST_100.json` · `reports/20260811_KFORCE_POOL_BACKTEST_100.md` · `tools/_k_force_pool_backtest_100.py` |
 | **K-UI-DETAIL-POOL10x5 (형GO · UI)** | **PATCHED** — 형 「tldSingleView 초창기→최신10+5·보기좋게」. 상세 ②=`pool-view` 뇌별**10+5** · knobs strip(markov0.55/review0.85/statHINT52) · 점프내비·요약칩·sticky탭·2열카드·적중하이라이트. 오답노트=③(구복습DB 별개 표기). 캐시 schema**4** · `tune_snapshot` API. 1236 refresh 실측 pool10/repack5. 메인 아코디언 카운트 `10+5`. · `docs/benchmarks/20260811_KUI_DETAIL_POOL10x5.json` · `reports/20260811_KUI_DETAIL_POOL10x5.md` |
 | **K-BRAIN-JOINT-SMOKE (권장④)** | **SMOKE_OK** · wire=**False** — 형 「서버재가동·다음진행」. knobs 실측 markovBLEND**0.55**/review**0.85**/statHINT**52**. 1137~1236×seed3: prefer**+0.244449** · prize**−0.074379** · hit**0.319444** · split1.0 · cn1.0 · **단독대비 drift0**. ge3미사용. · `docs/benchmarks/20260811_KBRAIN_JOINT_SMOKE.json` · `reports/20260811_KBRAIN_JOINT_SMOKE.md` · `tools/_k_brain_joint_smoke.py` |

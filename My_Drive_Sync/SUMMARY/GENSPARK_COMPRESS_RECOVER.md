@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`dc97599` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`57c31b4` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=dc97599]
+[ROK21 젠스파크 압축복구 · HEAD=57c31b4]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: dc97599 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 강제100회 pool백테 **REBUILT** · UI backtest 적재
-- 직전: 리셋+1137~1236 WF · pool300/bt100 · nopeek · 패치knobs
-- BOOT다음: **형 지시 대기** — UI확인 / 추가튜닝 / 정지 / 1237아님
-- NEXT1: K-FORCE-POOL-BT-HOLD — **양산前**. 강제 리셋+1137~1236 n100 pool백테 **REBUILT_OK**(pool캐시300·bt_results100·API draw-index100). knobs=markov0.55/review0.85/statHINT52 · `_get_draws_before` nopeek. ge3는 모니터만. **1237 양산아님**. 브라우저 Ctrl+F5 후 테스트로또·백테패널/`testlotto-detail.html?draw=1236` 확인. 형 다음 지시 대기.
+- HEAD: 57c31b4 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 분석LOCK · W0.9·SCOREcand_B **APPLY** · FGJ감사
+- 직전: 리스트2~5 실행 · evolve0·referee균등 · K-F/G/J OPEN기록
+- BOOT다음: **형 지시** — 합동smoke / K-F배선 / K-J SSOT / 정지 / 1237아님
+- NEXT1: K-POST-LIST-HOLD — **양산前**. 분석LOCK완료 · W_CROWD markov/review **0.90** APPLY · SCORE **cand_B**(0.65/0.15/0.20) APPLY · evolve/FGJ **AUDIT_DONE**(evolve0·referee균등·K-F OPEN·K-G DORMANT·K-J DUAL). **다음후보**=합동smoke재검증 / K-F markov learn배선 / K-J referee SSOT. **1237 양산아님**. 형 다음 지시 1건.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,14 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260811_KSCORE_WEIGHTS_RETUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KSCORE_WEIGHTS_RETUNE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KSCORE_WEIGHTS_RETUNE.md
+- `20260811_KEVOLVE_FGJ_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KEVOLVE_FGJ_AUDIT.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KEVOLVE_FGJ_AUDIT.md
+- `20260811_KW_CROWD_BY_BRAIN_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KW_CROWD_BY_BRAIN_TUNE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KW_CROWD_BY_BRAIN_TUNE.md
+- `20260811_KANALYSIS_LOCK_CYCLE1` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KANALYSIS_LOCK_CYCLE1.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KANALYSIS_LOCK_CYCLE1.md
 - `20260811_KFORCE_POOL_BACKTEST_100` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KFORCE_POOL_BACKTEST_100.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KFORCE_POOL_BACKTEST_100.md
 - `20260811_KUI_DETAIL_POOL10x5` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KUI_DETAIL_POOL10x5.json
@@ -61,14 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KBRAIN_JOINT_SMOKE.md
 - `20260810_KSTAT_PATTERN_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KSTAT_PATTERN_TUNE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KSTAT_PATTERN_TUNE.md
-- `20260810_KREVIEW_PRIZE_BLEND_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KREVIEW_PRIZE_BLEND_TUNE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KREVIEW_PRIZE_BLEND_TUNE.md
-- `20260810_KBRAIN_INDEPENDENCE_BY_BRAIN` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.md
-- `20260810_KMARKOV_PREFER_BLEND_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KMARKOV_PREFER_BLEND_TUNE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KMARKOV_PREFER_BLEND_TUNE.md
-- `20260810_KM_REFEREE_WEIGHT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KM_REFEREE_WEIGHT.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KM_REFEREE_WEIGHT.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=dc97599 · 지금=**양산前** · 강제100회 pool백테 **REBUILT** · UI backtest 적재 · 다음=K-FORCE-POOL-BT-HOLD
+1. 첫줄: [복귀] HEAD=57c31b4 · 지금=**양산前** · 분석LOCK · W0.9·SCOREcand_B **APPLY** · FGJ감사 · 다음=K-POST-LIST-HOLD
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: dc97599_
+_generated: 57c31b4_

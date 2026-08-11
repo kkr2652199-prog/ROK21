@@ -47,8 +47,8 @@ SIGNAL_TOP_BRAINS: frozenset[str] = frozenset(BRAIN_TAGS)
 POOL_SLOTS_BY_BRAIN: dict[str, int] = dict.fromkeys(BRAIN_TAGS, POOL_SLOTS_PER_BRAIN)
 SCORE_WEIGHTS_BY_BRAIN: dict[str, tuple[float, float, float]] = {
     "stat": (0.25, 0.35, 0.40),    # hint↓ freq/learn↑ — 과거패턴
-    "markov": (0.55, 0.20, 0.25),  # hint↑ — 선호번호
-    "review": (0.55, 0.20, 0.25),  # hint↑ — 금액뇌
+    "markov": (0.65, 0.15, 0.20),  # hint↑ — 선호번호
+    "review": (0.65, 0.15, 0.20),  # hint↑ — 금액뇌
 }
 LEARN_EMA_BY_BRAIN: dict[str, float] = dict.fromkeys(BRAIN_TAGS, LEARN_EMA)
 

@@ -1,0 +1,190 @@
+{
+  "id": "K-SCORE-WEIGHTS-RETUNE",
+  "ts": "2026-08-11T13:10:36+09:00",
+  "precheck": {
+    "ok": true,
+    "W_CROWD": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "blend": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.55,
+        0.2,
+        0.25
+      ],
+      "review": [
+        0.55,
+        0.2,
+        0.25
+      ]
+    }
+  },
+  "results": [
+    {
+      "name": "cand_A",
+      "prefer": 0.282167,
+      "prize": -0.095253,
+      "stat_hit": 0.308333,
+      "gate_pass": true,
+      "gate_detail": {
+        "is_baseline": true
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.277099,
+          "prize": -0.092567,
+          "stat_hit": 0.313333
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.289758,
+          "prize": -0.091781,
+          "stat_hit": 0.298333
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.279644,
+          "prize": -0.101412,
+          "stat_hit": 0.313333
+        }
+      ]
+    },
+    {
+      "name": "cand_B",
+      "prefer": 0.292578,
+      "prize": -0.110095,
+      "stat_hit": 0.308333,
+      "gate_pass": true,
+      "gate_detail": {
+        "prefer_ge": true,
+        "prize_le": true,
+        "stat_ok": true,
+        "abs_move": true,
+        "is_baseline": false,
+        "dprefer": 0.010411,
+        "dprize": -0.014842,
+        "dhit": -0.0
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.288265,
+          "prize": -0.113815,
+          "stat_hit": 0.313333
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.294609,
+          "prize": -0.105427,
+          "stat_hit": 0.298333
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.294861,
+          "prize": -0.111043,
+          "stat_hit": 0.313333
+        }
+      ]
+    },
+    {
+      "name": "cand_C",
+      "prefer": 0.261606,
+      "prize": -0.077543,
+      "stat_hit": 0.312778,
+      "gate_pass": false,
+      "gate_detail": {
+        "prefer_ge": false,
+        "prize_le": false,
+        "stat_ok": true,
+        "abs_move": true,
+        "is_baseline": false,
+        "dprefer": -0.020561,
+        "dprize": 0.01771,
+        "dhit": 0.004445
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.259604,
+          "prize": -0.071025,
+          "stat_hit": 0.315
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.275495,
+          "prize": -0.075602,
+          "stat_hit": 0.301667
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.249718,
+          "prize": -0.086001,
+          "stat_hit": 0.321667
+        }
+      ]
+    },
+    {
+      "name": "cand_D",
+      "prefer": 0.282167,
+      "prize": -0.095253,
+      "stat_hit": 0.309444,
+      "gate_pass": false,
+      "gate_detail": {
+        "prefer_ge": true,
+        "prize_le": true,
+        "stat_ok": true,
+        "abs_move": false,
+        "is_baseline": false,
+        "dprefer": 0.0,
+        "dprize": -0.0,
+        "dhit": 0.001111
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.277099,
+          "prize": -0.092567,
+          "stat_hit": 0.305
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.289758,
+          "prize": -0.091781,
+          "stat_hit": 0.305
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.279644,
+          "prize": -0.101412,
+          "stat_hit": 0.318333
+        }
+      ]
+    }
+  ],
+  "verdict": "APPLY",
+  "applied": "cand_B",
+  "ge3_used_as_claim": false
+}
