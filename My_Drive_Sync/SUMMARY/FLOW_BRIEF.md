@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `57c31b4` · WORK=`IDLE`
+- HEAD: `5c28e23` · WORK=`IDLE`
 - 지금: **양산前** · 분석LOCK · W0.9·SCOREcand_B **APPLY** · FGJ감사
 - 직전: 리스트2~5 실행 · evolve0·referee균등 · K-F/G/J OPEN기록
 - BOOT다음: **형 지시** — 합동smoke / K-F배선 / K-J SSOT / 정지 / 1237아님

@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `57c31b4` |
+| HEAD(실측) | `5c28e23` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · 분석LOCK · W0.9·SCOREcand_B **APPLY** · FGJ감사 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=57c31b4 · 지금=**양산前** · 분석LOCK · W0.9·SCOREcand_B **APPLY** · FGJ감사 · 다음=K-POST-LIST-HOLD`
+1. 첫줄 `[복귀] HEAD=5c28e23 · 지금=**양산前** · 분석LOCK · W0.9·SCOREcand_B **APPLY** · FGJ감사 · 다음=K-POST-LIST-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 57c31b4_
+_generated: 5c28e23_
