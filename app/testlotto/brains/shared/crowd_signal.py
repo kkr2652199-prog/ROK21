@@ -32,8 +32,9 @@ BLEND_STRENGTH = 0.55
 
 # K-BRAIN-INDEPENDENCE: 예측 과정 계수 뇌별 분리.
 # 공유 허용 = lotto_draws(과거 결과)만. markov↔review 노브 공유 금지.
-W_CROWD_BY_BRAIN: dict[str, float] = {"markov": 0.70, "review": 0.70}
-W_STRUCT_BY_BRAIN: dict[str, float] = {"markov": 0.30, "review": 0.30}
+# markov/review W_CROWD=0.90: K-W-CROWD-BY-BRAIN-TUNE APPLY (struct=0.10)
+W_CROWD_BY_BRAIN: dict[str, float] = {"markov": 0.90, "review": 0.90}
+W_STRUCT_BY_BRAIN: dict[str, float] = {"markov": 0.10, "review": 0.10}
 # review=0.85: K-REVIEW-PRIZE-BLEND-TUNE APPLY (1137~1236·seed3·|Δprize|≥0.01·prefer_iso)
 BLEND_STRENGTH_BY_BRAIN: dict[str, float] = {"markov": 0.55, "review": 0.85}
 
