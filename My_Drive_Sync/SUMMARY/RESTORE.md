@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2674010` · WORK=`IDLE`
+1. **HEAD:** `c08a712` · WORK=`IDLE`
 2. **지금:** **양산前** · K-F재정의 **NO_EFFECT_CLOSE** · FINDINGS PATCHED
 3. **다음1건:** K-POST-KF-HOLD — **양산前**. K-F재정의 **NO_EFFECT_CLOSE**(재료100·prefer Δ−0.0003·prize iso0 · LEARN_WIRED=True유지 · FINDINGS K-F **PATCHED**). 다음후보=합동smoke / K-J referee SSOT. **1237아님**. 형 다음 지시 1건. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-11 | K-F재정의 GO(재료+preferA/B) | fill100 · prefer무개선 · FINDINGS PATCHED · LEARN유지 | **NO_EFFECT_CLOSE** | (이번) |
+| 2026-08-11 | K-F재정의 GO(재료+preferA/B) | fill100 · prefer무개선 · FINDINGS PATCHED · LEARN유지 | **NO_EFFECT_CLOSE** | c08a712 |
 | 2026-08-11 | K-F지시서 방향검토 | LEARN이미ON·재료0 · 실행보류·젠스파크질문 | **REJECT_REWRITE** | 8e6d6d6 |
 | 2026-08-11 | 분석확정+리스트2~5이어서 | LOCK·W0.9·SCOREcand_B APPLY·FGJ감사 | **APPLY** | 5c28e23 |
 | 2026-08-11 | 100회백테미기록·강제리셋재백테·컨닝금지 | 리셋+1137~1236 WF · pool300/bt100 · API100 · nopeek | **REBUILT_OK** | 7b84c49 |

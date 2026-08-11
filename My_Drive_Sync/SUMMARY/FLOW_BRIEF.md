@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `2674010` · WORK=`IDLE`
+- HEAD: `c08a712` · WORK=`IDLE`
 - 지금: **양산前** · K-F재정의 **NO_EFFECT_CLOSE** · FINDINGS PATCHED
 - 직전: markov재료100채움 · prefer A/B 무개선 · LEARN_WIRED유지
 - BOOT다음: **형 지시** — 합동smoke / K-J SSOT / 정지 / 1237아님
