@@ -47,7 +47,6 @@
 | 2026-08-11 | 상세UI 10+5·보기좋게 | tldSingleView pool-view·knobs·schema4 · 1236실측 | **PATCHED** | 1279f8a |
 | 2026-08-11 | 서버재가동·다음진행 | 7021재기동·합동smoke prefer/prize/hit·drift0 | **SMOKE_OK** | d1c27e4 |
 | 2026-08-10 | 다음진행·stat패턴 | HINT miss_pattern 26→**52** · hit+0.013 · drift0 | **APPLY** | 1f0b957 |
-| 2026-08-10 | 권장진행·뇌독립(draws만공유) | BY_BRAIN분리 · markov NO_IMPROVE · review0.85 APPLY | **APPLY** | c1823af |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
