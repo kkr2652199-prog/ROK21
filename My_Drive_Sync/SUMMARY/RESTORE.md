@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3e1c1c1` · WORK=`IDLE`
+1. **HEAD:** `594cb9f` · WORK=`IDLE`
 2. **지금:** **양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3)
 3. **다음1건:** K-SEQ-1112-HOLD — **양산前**. ⑪발권quota **VERIFY_OK**(s1/m1/r3) · ⑫강제BTv5 **REBUILT_OK**(mean2.5모니터) · refill_v2. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-12 | 다음진행 | ⑪VERIFY_OK·⑫BTv5 REBUILT·refill_v2 s1/m1/r3 | **DONE** | (push후) |
+| 2026-08-12 | 다음진행 | ⑪VERIFY_OK·⑫BTv5 REBUILT·refill_v2 s1/m1/r3 | **DONE** | 594cb9f |
 | 2026-08-12 | 다음진행 | ⑨SMOKE_OK·⑩K-C STALE_CLOSE | **DONE** | bb9ff4a |
 | 2026-08-12 | 다음진행·quota | min_each1·m3/r1/s1 APPLY_OK | **APPLY** | b291681 |
 | 2026-08-12 | 다음단계진행 | K-I WIRE_OK·post-refill SMOKE_OK | **DONE** | 7e09f74 |
