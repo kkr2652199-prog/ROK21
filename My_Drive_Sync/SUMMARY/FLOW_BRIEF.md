@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f80da83` · WORK=`IDLE`
-- 지금: **양산前** · 순서①~⑤ **DONE** (smoke·잔여HOLD·BTv4·refill·K-G)
-- 직전: ④referee refill spread0.176 · ⑤ending ACTIVE
+- HEAD: `787fd21` · WORK=`IDLE`
+- 지금: **양산前** · ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**
+- 직전: 순서①~⑤ DONE
 - BOOT다음: **형 지시** 1건 / 1237아님
-- NEXT1: K-SEQ-STEPS-HOLD — **양산前**. 순서①~⑤ DONE(smoke OK·pool잔여 HOLD·BTv4·refill OK·K-G ACTIVE). 다음=형 지시1건. **1237아님**. (승인=형 다음 지시)
+- NEXT1: K-SEQ-67-HOLD — **양산前**. ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**(quota m4/r1/s0 모니터). 다음=형 지시1건. **1237아님**. (승인=형 다음 지시)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

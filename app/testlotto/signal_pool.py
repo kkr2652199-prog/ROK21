@@ -186,7 +186,12 @@ def expand_pool(draws: list[dict], draw_no: int, *, seed: int = MC_SEED) -> list
             if mod is None:
                 continue
             random.seed(s)  # 뇌마다 같은 시작점 → 서로 오염되지 않음
-            for i, c in enumerate(mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)):
+            # K-I: 단일 뇌 예외 → 타뇌 pool 계속
+            try:
+                sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
+            except Exception:  # noqa: BLE001
+                continue
+            for i, c in enumerate(sets):
                 base_sn = int(
                     c.get("rank") or c.get("set_no") or c.get("pred_set_no") or (i + 1)
                 )

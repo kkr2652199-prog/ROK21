@@ -501,6 +501,7 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
         return {"error": f"이전 당첨 데이터가 없습니다. {target_draw_no}회차 이전 회차를 먼저 수집하세요."}
 
     candidates: list[dict] = []
+    brain_errors: dict[str, str] = {}
     for brain in PREDICT_BRAINS:
         tag = brain["tag"]
         if not run(tag):
@@ -508,8 +509,14 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
         mod = PREDICT_MODULES[tag]
         _delete_predictions_for_brain(conn, target_draw_no, tag)
         # 독립뇌: 뇌마다 동일 회차 시드로 재시작 (stat RNG가 markov를 오염시키던 구조 제거)
+        # K-I: 단일 뇌 예외가 전체 실패로 전파되지 않게 try 보호
         _seed_independent_brain(target_draw_no)
-        sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
+        try:
+            sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
+        except Exception as exc:  # noqa: BLE001
+            brain_errors[tag] = f"{type(exc).__name__}: {exc}"
+            logger.exception("[테스트로또] %s 생성 실패 — 타뇌 계속", brain["name"])
+            continue
         for i, s in enumerate(sets):
             sn = int(s.get("rank") or s.get("set_no") or s.get("pred_set_no") or (i + 1))
             conf = float(s.get("confidence", 60))
@@ -542,7 +549,11 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
                 return None
             # 같은 뇌·같은 draws · 독립 시드로 1세트 재요청
             _seed_independent_brain(target_draw_no)
-            raw = mod.predict_sets(draws, 1)
+            try:
+                raw = mod.predict_sets(draws, 1)
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("[테스트로또] dedup regen %s 실패: %s", brain_tag, exc)
+                return None
             if not raw:
                 return None
             return _apply_aux_scoring(raw, draws, target_draw_no)[0]
@@ -618,6 +629,9 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
     out["status"] = "예측 완료 (3+4뇌 체계)"
     out["brain_system"] = "testlotto_3predict_4aux"
     out["dedup"] = dedup_stats
+    if brain_errors:
+        out["brain_errors"] = dict(brain_errors)
+        out["status"] = f"예측 완료 (일부뇌 스킵: {','.join(brain_errors)})"
     # 명분 라벨 데이터만 적재 (UI 노출 금지 · 산출/dedup 로직 무관)
     from app.testlotto.brains.warrant import get_brain_warrant
 

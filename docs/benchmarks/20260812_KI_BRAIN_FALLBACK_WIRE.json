@@ -1,0 +1,30 @@
+{
+  "id": "K-I-BRAIN-FALLBACK-WIRE",
+  "ts": "2026-08-12T07:22:29+09:00",
+  "target": 1236,
+  "checks": {
+    "expand_pool": {
+      "tags": {
+        "markov": 0,
+        "stat": 10,
+        "review": 10
+      },
+      "markov_zero": true,
+      "others_ok": true,
+      "no_raise": true
+    },
+    "coordinator": {
+      "error": null,
+      "brain_errors": {
+        "markov": "RuntimeError: K-I mock brain failure"
+      },
+      "markov_in_errors": true,
+      "survived": true,
+      "n_pred_hint": 5,
+      "status": "예측 완료 (일부뇌 스킵: markov)"
+    }
+  },
+  "verdict": "WIRE_OK",
+  "wire": true,
+  "note": "K-I · 1237아님 · ge3미사용"
+}

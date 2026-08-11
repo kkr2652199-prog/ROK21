@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `f80da83` |
+| HEAD(실측) | `787fd21` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 순서①~⑤ **DONE** (smoke·잔여HOLD·BTv4·refill·K-G) |
-| 직전 | ④referee refill spread0.176 · ⑤ending ACTIVE |
+| 지금 | **양산前** · ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK** |
+| 직전 | 순서①~⑤ DONE |
 | BOOT다음 | **형 지시** 1건 / 1237아님 |
-| NEXT1 ID | **K-SEQ-STEPS-HOLD** |
-| NEXT1 할일 | **양산前**. 순서①~⑤ DONE(smoke OK·pool잔여 HOLD·BTv4·refill OK·K-G ACTIVE). 다음=형 지시1건. **1237아님**. |
+| NEXT1 ID | **K-SEQ-67-HOLD** |
+| NEXT1 할일 | **양산前**. ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**(quota m4/r1/s0 모니터). 다음=형 지시1건. **1237아님**. |
 | 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=f80da83 · 지금=**양산前** · 순서①~⑤ **DONE** (smoke·잔여HOLD·BTv4·refill·K-G) · 다음=K-SEQ-STEPS-HOLD`
+1. 첫줄 `[복귀] HEAD=787fd21 · 지금=**양산前** · ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK** · 다음=K-SEQ-67-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: f80da83_
+_generated: 787fd21_

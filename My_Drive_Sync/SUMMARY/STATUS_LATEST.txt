@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-SEQ-STEPS-1TO5** — 순서①~⑤ **DONE** · IDLE
+📌 사유: **[CURSOR] K-SEQ-STEPS-6TO7** — ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**
 
-📌 직전: **[CURSOR] K-FORCE-POOL-BT-100-V4** — 단계③ 강제BT **REBUILT_OK**
+📌 직전: **[CURSOR] K-SEQ-STEPS-1TO5** — 순서①~⑤ **DONE**
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-SEQ-STEPS-6TO7 (형GO · 다음단계)** | **DONE** — ⑥K-I **WIRE_OK**: coordinator/expand_pool 뇌별 try · mock markov boom→타뇌생존·`brain_errors`. FINDINGS K-I=**PATCHED**. ⑦post-refill **SMOKE_OK**: prefer**+0.2995** · prize**−0.1069** · spread**0.176** · quota5 markov**4**/review**1**/stat**0**(dominance 모니터). ge3미클레임·1237아님. · `reports/20260812_KSEQ_STEPS_6TO7.md` · `docs/benchmarks/20260812_KI_BRAIN_FALLBACK_WIRE.json` · `20260812_KPOST_REFILL_QUOTA_SMOKE.json` |
 | **K-SEQ-STEPS-1TO5 (형GO · 순서단계별)** | **DONE** — ①합동smoke **SMOKE_OK**(prefer+0.294/prize−0.111). ②pool잔여 **HOLD**(reviewBLEND0.85·statHINT0.15). ③강제BTv4 **REBUILT_OK**(mean**2.5**모니터·4등4/5등42·pool300). ④learn/referee **REFILL_OK**(rc100×3·spread**0.176**·w≈0.235/0.412/0.353). ⑤K-G **ACTIVE_AFTER_REFILL**(ending boost 전뇌**0.3**cap·패치무). FINDINGS K-G=**PATCHED**. ge3미클레임·1237아님. · `reports/20260812_KSEQ_STEPS_1TO5.md` · 벤치 `20260812_KBRAIN_JOINT_SMOKE_V2` · `KPOOL_RESIDUAL_*` · `KFORCE_*_v4` · `KLEARN_REFEREE_REFILL` · `KG_ENDING_BOOST_AUDIT` |
 | **K-FORCE-POOL-BT-100-V4 (형GO · 단계③)** | **REBUILT_OK** — 강제리셋+1137~1236 n**100** · pool300/bt100 · run_id**12** · mean_hits**2.5** · ge3_rate**0.46**(모니터·클레임금지) · tiers 4등**4**/5등**42** · peek OK · knobs=oversample m5·cand_B·union. ge3미클레임·1237아님. 다음=④learn/referee재누적. · `docs/benchmarks/20260812_KFORCE_POOL_BACKTEST_100_v4.json` · `reports/20260812_KFORCE_POOL_BACKTEST_100_v4.md` |
 | **K-POOL-RESIDUAL-STEP2 (형GO · 단계②)** | **HOLD** — ②a review BLEND {0.85…1.0} pool prize → **0.85 HOLD**(|Δ|≪0.005). ②b stat HINT_WEIGHT {0…0.45} pool hit → **0.15 HOLD**(base최선). SCORE스윕=pool무관 기각. ge3미클레임·1237아님. 다음=③강제BT. · `docs/benchmarks/20260812_KPOOL_RESIDUAL_REVIEW_BLEND.json` · `20260812_KPOOL_RESIDUAL_STAT_HINT.json` · `reports/20260812_KPOOL_RESIDUAL_STEP2.md` |

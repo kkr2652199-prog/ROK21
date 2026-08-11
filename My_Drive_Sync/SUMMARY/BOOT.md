@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · 순서①~⑤ **DONE** (smoke·잔여HOLD·BTv4·refill·K-G)
-- 직전: ④referee refill spread0.176 · ⑤ending ACTIVE
+- 지금: **양산前** · ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**
+- 직전: 순서①~⑤ DONE
 - 다음: **형 지시** 1건 / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

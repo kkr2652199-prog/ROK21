@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-SEQ-STEPS-HOLD
-- 할일: **양산前**. 순서①~⑤ DONE(smoke OK·pool잔여 HOLD·BTv4·refill OK·K-G ACTIVE). 다음=형 지시1건. **1237아님**.
+- ID: K-SEQ-67-HOLD
+- 할일: **양산前**. ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**(quota m4/r1/s0 모니터). 다음=형 지시1건. **1237아님**.
 - 완료조건: 형 새 지시 1건
-- 선행완료: K-SEQ-STEPS-1TO5
+- 선행완료: K-I-BRAIN-FALLBACK · K-POST-REFILL-QUOTA-SMOKE
 - 승인필요: 형 다음 지시
 - 선행조건: 없음
 - 최종갱신: 2026-08-12
@@ -18,6 +18,6 @@ IDLE
 ---
 
 ## 메모
-- reports/20260812_KSEQ_STEPS_1TO5.md
-- docs/benchmarks/20260812_KLEARN_REFEREE_REFILL.json
-- docs/benchmarks/20260812_KG_ENDING_BOOST_AUDIT.json
+- reports/20260812_KSEQ_STEPS_6TO7.md
+- docs/benchmarks/20260812_KI_BRAIN_FALLBACK_WIRE.json
+- docs/benchmarks/20260812_KPOST_REFILL_QUOTA_SMOKE.json
