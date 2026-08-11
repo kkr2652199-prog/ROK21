@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `fc1350e` |
+| HEAD(실측) | `9782937` |
 | BASELINE_PIN | `640cb67` |
-| WORK | `RUNNING:K-POOL-RESIDUAL-TUNE` |
-| 지금 | **양산前** · ①합동smoke **SMOKE_OK** · 다음② pool잔여 |
-| 직전 | 다음리스트 DOC_OK · 20260812보고서 보충 |
-| BOOT다음 | ② review/stat pool잔여 / 1237아님 |
-| NEXT1 ID | **K-POOL-RESIDUAL-TUNE** |
-| NEXT1 할일 | **양산前**. ①합동smoke **SMOKE_OK** 완료. 단계②=review/stat pool잔여(몫축·hit) 튜닝 1노브. **1237아님**. |
+| WORK | `RUNNING:K-FORCE-BT-RELOAD` |
+| 지금 | **양산前** · ②pool잔여 **HOLD**(reviewBLEND·statHINT) · 다음③BT |
+| 직전 | ①합동smoke SMOKE_OK |
+| BOOT다음 | ③ 강제BT100 재적재(모니터) / 1237아님 |
+| NEXT1 ID | **K-FORCE-BT-RELOAD** |
+| NEXT1 할일 | **양산前**. ①SMOKE_OK·②pool잔여 HOLD 완료. 단계③=강제BT100 재적재(모니터·ge3클레임금지). **1237아님**. |
 | 승인필요 | 없음(형 순서진행) |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=fc1350e · 지금=**양산前** · ①합동smoke **SMOKE_OK** · 다음② pool잔여 · 다음=K-POOL-RESIDUAL-TUNE`
+1. 첫줄 `[복귀] HEAD=9782937 · 지금=**양산前** · ②pool잔여 **HOLD**(reviewBLEND·statHINT) · 다음③BT · 다음=K-FORCE-BT-RELOAD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: fc1350e_
+_generated: 9782937_

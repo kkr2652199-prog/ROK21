@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `fc1350e` · WORK=`RUNNING:K-POOL-RESIDUAL-TUNE`
-2. **지금:** **양산前** · ①합동smoke **SMOKE_OK** · 다음② pool잔여
-3. **다음1건:** K-POOL-RESIDUAL-TUNE — **양산前**. ①합동smoke **SMOKE_OK** 완료. 단계②=review/stat pool잔여(몫축·hit) 튜닝 1노브. **1237아님**. (승인필요=없음(형 순서진행) · 선행=없음)
+1. **HEAD:** `9782937` · WORK=`RUNNING:K-FORCE-BT-RELOAD`
+2. **지금:** **양산前** · ②pool잔여 **HOLD**(reviewBLEND·statHINT) · 다음③BT
+3. **다음1건:** K-FORCE-BT-RELOAD — **양산前**. ①SMOKE_OK·②pool잔여 HOLD 완료. 단계③=강제BT100 재적재(모니터·ge3클레임금지). **1237아님**. (승인필요=없음(형 순서진행) · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 단계② pool잔여 | reviewBLEND·statHINT 게이트미달 HOLD | **HOLD** | (push후) |
 | 2026-08-12 | 순서대로단계별·①합동smoke | knobs OK·prefer+0.294·prize−0.111·SMOKE_OK | **SMOKE_OK** | fc1350e |
 | 2026-08-12 | 다음리스트간략·종료체크누락 | 20260812보고서+커서동기·후보5 | **DOC_OK** | d05979e |
 | 2026-08-11 | 진행(pool품질) | jaccard HOLD·oversample markov5 APPLY | **PARTIAL_APPLY** | 791ecfb |

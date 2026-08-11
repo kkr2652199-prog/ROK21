@@ -1,0 +1,173 @@
+{
+  "id": "K-POOL-RESIDUAL-STAT-HINT",
+  "ts": "2026-08-12T07:11:57+09:00",
+  "range": [
+    1137,
+    1236
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "base_w": 0.15,
+  "cands": [
+    0.0,
+    0.15,
+    0.3,
+    0.45
+  ],
+  "live_before": {
+    "stat": 0.15,
+    "markov": 0.15,
+    "review": 0.15
+  },
+  "results": [
+    {
+      "w": 0.15,
+      "prefer": 0.09138,
+      "prize": 0.010907,
+      "stat_hit": 0.335556,
+      "gate_pass": true,
+      "gate_detail": {
+        "is_baseline": true
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.097128,
+          "prize": 0.010645,
+          "stat_hit": 0.33
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.101902,
+          "prize": 0.020355,
+          "stat_hit": 0.33
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.075109,
+          "prize": 0.001722,
+          "stat_hit": 0.346667
+        }
+      ]
+    },
+    {
+      "w": 0.0,
+      "prefer": 0.09138,
+      "prize": 0.010907,
+      "stat_hit": 0.331111,
+      "gate_pass": false,
+      "gate_detail": {
+        "improve": false,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "dhit": -0.004445
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.097128,
+          "prize": 0.010645,
+          "stat_hit": 0.325
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.101902,
+          "prize": 0.020355,
+          "stat_hit": 0.328333
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.075109,
+          "prize": 0.001722,
+          "stat_hit": 0.34
+        }
+      ]
+    },
+    {
+      "w": 0.3,
+      "prefer": 0.09138,
+      "prize": 0.010907,
+      "stat_hit": 0.334444,
+      "gate_pass": false,
+      "gate_detail": {
+        "improve": false,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "dhit": -0.001112
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.097128,
+          "prize": 0.010645,
+          "stat_hit": 0.328333
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.101902,
+          "prize": 0.020355,
+          "stat_hit": 0.33
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.075109,
+          "prize": 0.001722,
+          "stat_hit": 0.345
+        }
+      ]
+    },
+    {
+      "w": 0.45,
+      "prefer": 0.09138,
+      "prize": 0.010907,
+      "stat_hit": 0.332778,
+      "gate_pass": false,
+      "gate_detail": {
+        "improve": false,
+        "prefer_iso": true,
+        "prize_iso": true,
+        "dhit": -0.002778
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.097128,
+          "prize": 0.010645,
+          "stat_hit": 0.325
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.101902,
+          "prize": 0.020355,
+          "stat_hit": 0.33
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.075109,
+          "prize": 0.001722,
+          "stat_hit": 0.343333
+        }
+      ]
+    }
+  ],
+  "chosen": 0.15,
+  "verdict": "NO_IMPROVE_HOLD",
+  "ge3_used_as_claim": false,
+  "step": "2b",
+  "note": "양산前 · pool축 · SCORE미사용(풀생성무관) · 1237아님"
+}
