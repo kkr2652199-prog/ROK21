@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `19063e2` · WORK=`IDLE`
+- HEAD: `dc97599` · WORK=`IDLE`
 - 지금: **양산前** · 강제100회 pool백테 **REBUILT** · UI backtest 적재
 - 직전: 리셋+1137~1236 WF · pool300/bt100 · nopeek · 패치knobs
 - BOOT다음: **형 지시 대기** — UI확인 / 추가튜닝 / 정지 / 1237아님
