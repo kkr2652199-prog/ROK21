@@ -11,7 +11,7 @@ from app.testlotto.models import get_lotto_db, init_testlotto_db
 from app.testlotto.signal_pool import MC_SEED, build_pool_and_repack
 
 BRAIN_TAGS = ("stat", "markov", "review")
-CACHE_SCHEMA_VERSION = 3  # K-EVOLVE-FEAT-LAM: review feat_lam_0.3 + hybrid
+CACHE_SCHEMA_VERSION = 4  # K-UI-POOL10x5: tune_snapshot · review BLEND0.85 · stat HINT52
 
 
 def _row_to_brain_payload(pool_json: str, repack_json: str) -> tuple[list[dict], list[dict]]:
@@ -47,6 +47,8 @@ def _rows_to_pool_payload(
         pool_by_brain[tag] = pool
         repack_by_brain[tag] = repack
         computed_at = row.get("computed_at") or computed_at
+    from app.testlotto.signal_pool import tune_snapshot
+
     return {
         "ok": True,
         "target_draw_no": draw_no,
@@ -57,6 +59,7 @@ def _rows_to_pool_payload(
         "schema_version": schema_seen if require_schema is None else CACHE_SCHEMA_VERSION,
         "pool_by_brain": pool_by_brain,
         "repack_by_brain": repack_by_brain,
+        "tune_snapshot": tune_snapshot(),
         "cached": True,
         "computed_at": computed_at,
     }

@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-11 KST  
-📌 사유: **[CURSOR] K-BRAIN-JOINT-SMOKE** — **SMOKE_OK** · 서버7021재가동 · ①~④완료
+📌 사유: **[CURSOR] K-UI-DETAIL-POOL10x5** — 상세UI 최신 10+5·knobs · schema4
 
-📌 직전: **[CURSOR] K-STAT-PATTERN-TUNE** — HINT **52** APPLY
+📌 직전: **[CURSOR] K-BRAIN-JOINT-SMOKE** — SMOKE_OK
 
 ---
 
@@ -14,7 +14,8 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. |
-| **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 · UI「테스트로또」확인 |
+| **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-UI-DETAIL-POOL10x5 (형GO · UI)** | **PATCHED** — 형 「tldSingleView 초창기→최신10+5·보기좋게」. 상세 ②=`pool-view` 뇌별**10+5** · knobs strip(markov0.55/review0.85/statHINT52) · 점프내비·요약칩·sticky탭·2열카드·적중하이라이트. 오답노트=③(구복습DB 별개 표기). 캐시 schema**4** · `tune_snapshot` API. 1236 refresh 실측 pool10/repack5. 메인 아코디언 카운트 `10+5`. · `docs/benchmarks/20260811_KUI_DETAIL_POOL10x5.json` · `reports/20260811_KUI_DETAIL_POOL10x5.md` |
 | **K-BRAIN-JOINT-SMOKE (권장④)** | **SMOKE_OK** · wire=**False** — 형 「서버재가동·다음진행」. knobs 실측 markovBLEND**0.55**/review**0.85**/statHINT**52**. 1137~1236×seed3: prefer**+0.244449** · prize**−0.074379** · hit**0.319444** · split1.0 · cn1.0 · **단독대비 drift0**. ge3미사용. · `docs/benchmarks/20260811_KBRAIN_JOINT_SMOKE.json` · `reports/20260811_KBRAIN_JOINT_SMOKE.md` · `tools/_k_brain_joint_smoke.py` |
 | **K-STAT-PATTERN-TUNE (권장③)** | **APPLY** — 형 「다음 진행」. knob=`HINT_SPEC_BY_BRAIN['stat'].weeks` · miss_pattern · 1137~1236 n100 · seed[0,42,123]. base@26 hit**0.306667** → **52: 0.319444** (|Δ|**0.012777**≥0.005) · 39도 PASS(0.316667). prefer/prize_drift**0**. markov/review HINT·BLEND 불변. decay/ASSOC/ge3 미사용. · `docs/benchmarks/20260810_KSTAT_PATTERN_TUNE.json` · `reports/20260810_KSTAT_PATTERN_TUNE.md` · `tools/_k_stat_pattern_hint_tune.py` |
 | **K-BRAIN-INDEPENDENCE-BY-BRAIN (형GO · wire)** | **PATCHED** — `W_*_BY_BRAIN` · `BLEND_STRENGTH_BY_BRAIN` · `prefer_table/prize_table/blend_weights(brain=)`. 호출: markov/review engine · signal_pool hint. 기본값 markov/review 당시 0.55/0.55 → review만 후속 APPLY. · `docs/benchmarks/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.json` · `reports/20260810_KBRAIN_INDEPENDENCE_BY_BRAIN.md` |

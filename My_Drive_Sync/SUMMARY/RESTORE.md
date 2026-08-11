@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3df4011` · WORK=`IDLE`
-2. **지금:** **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52
-3. **다음1건:** K-TUNE-CYCLE-HOLD — **양산前 완료분 고정**. 뇌별 단독①markov BLEND0.55 HOLD · ②review BLEND**0.85** · ③stat HINT**52** · ④합동 smoke **SMOKE_OK**(prefer+0.244/prize−0.074/hit0.319 · drift0). **1237 예측/양산 아님**. 형 다음 지시(추가 축·정지·UI확인 등) 대기. ge3 성적클레임 금지. 공유=`lotto_draws`만. (승인필요=형 다음 지시 · 선행=없음)
+1. **HEAD:** `4642e25` · WORK=`IDLE`
+2. **지금:** **양산前** · 상세UI **10+5** PATCH · knobs strip · schema4
+3. **다음1건:** K-TUNE-CYCLE-HOLD — **양산前**. 뇌별 튜닝①~④·합동smoke OK · 상세페이지 **10+5 UI PATCHED**(schema4·knobs strip). **1237 양산아님**. 브라우저: `http://127.0.0.1:7021/static/testlotto-detail.html?draw=1236` 또는 메인→테스트로또→자세히 분석. 형 다음 지시 대기. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-11 | 상세UI 10+5·보기좋게 | tldSingleView pool-view·knobs·schema4 · 1236실측 | **PATCHED** | (push후) |
 | 2026-08-11 | 서버재가동·다음진행 | 7021재기동·합동smoke prefer/prize/hit·drift0 | **SMOKE_OK** | d1c27e4 |
 | 2026-08-10 | 다음진행·stat패턴 | HINT miss_pattern 26→**52** · hit+0.013 · drift0 | **APPLY** | 1f0b957 |
 | 2026-08-10 | 권장진행·뇌독립(draws만공유) | BY_BRAIN분리 · markov NO_IMPROVE · review0.85 APPLY | **APPLY** | c1823af |
@@ -45,7 +46,6 @@
 | 2026-08-10 | K-K 피드백 경로 연결 | routes+click_feedback · 1230~1235 마크18 · weight0 · guardOK | **PATCHED** | 36fc78f |
 | 2026-08-10 | BLEND_STRENGTH 9점 스윕 | 전후보 cond3실패(|Δ|≪0.01) · best=null · 0.55유지 | **NO_IMPROVE** | 25b62d6 |
 | 2026-08-10 | 젠스파크 4아이디어 사전검증 | seed5 cn안정 · weight0 · referee균등 · 게이트3 PASS · 의견제출 | **CHECK_DONE** | 0c03818 |
-| 2026-08-10 | 다음패치전 논문·GH 정밀분석 | Thaler-Ziemba/conscious/Hai4320 등 · 배울점·금지점 · wire否 | **DOC_SURVEY** | 9d2670a |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

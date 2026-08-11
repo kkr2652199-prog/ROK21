@@ -612,8 +612,22 @@ def build_pool_and_repack(
         },
         "hybrid": _assemble_meta(),
         "feature_lambda": _feature_lambda_meta(),
+        "tune_snapshot": tune_snapshot(),
         "pool_by_brain": by_brain_pool,
         "repack_by_brain": by_brain_repack,
+    }
+
+
+def tune_snapshot() -> dict[str, Any]:
+    """UI용 최신 튜닝 knobs (성적클레임 아님 · 배선 표시)."""
+    from app.testlotto.brains.shared import crowd_signal as cs
+
+    return {
+        "BLEND_STRENGTH_BY_BRAIN": dict(cs.BLEND_STRENGTH_BY_BRAIN),
+        "HINT_SPEC_BY_BRAIN": {t: list(v) for t, v in HINT_SPEC_BY_BRAIN.items()},
+        "SCORE_WEIGHTS_BY_BRAIN": {t: list(v) for t, v in SCORE_WEIGHTS_BY_BRAIN.items()},
+        "hint_shared_across_brains": hint_shared_across_brains(),
+        "independence_ko": "공유=lotto_draws만 · 예측과정 뇌별 분리",
     }
 
 

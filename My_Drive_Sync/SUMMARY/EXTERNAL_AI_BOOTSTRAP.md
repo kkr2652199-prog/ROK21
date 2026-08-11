@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `3df4011` |
+| HEAD(실측) | `4642e25` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52 |
-| 직전 | K-BRAIN-JOINT-SMOKE **SMOKE_OK** · drift0 · 서버7021재가동 |
-| BOOT다음 | **형 지시 대기** — 1237양산 아님 · 추가축/정지 선택 |
+| 지금 | **양산前** · 상세UI **10+5** PATCH · knobs strip · schema4 |
+| 직전 | K-UI-DETAIL-POOL10x5 · 1236 pool10/repack5 실측 |
+| BOOT다음 | **형 지시 대기** — UI추가개선 / 정지 / 1237아님 |
 | NEXT1 ID | **K-TUNE-CYCLE-HOLD** |
-| NEXT1 할일 | **양산前 완료분 고정**. 뇌별 단독①markov BLEND0.55 HOLD · ②review BLEND**0.85** · ③stat HINT**52** · ④합동 smoke **SMOKE_OK**(prefer+0.244/prize−0.074/hit0.319 · drift0). **1237 예측/양산 아님**. 형 다음 지시(추가 축·정지·UI확인 등) 대기. ge3 성적클레임 금지. 공유=`lotto_draws`만. |
+| NEXT1 할일 | **양산前**. 뇌별 튜닝①~④·합동smoke OK · 상세페이지 **10+5 UI PATCHED**(schema4·knobs strip). **1237 양산아님**. 브라우저: `http://127.0.0.1:7021/static/testlotto-detail.html?draw=1236` 또는 메인→테스트로또→자세히 분석. 형 다음 지시 대기. |
 | 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=3df4011 · 지금=**양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52 · 다음=K-TUNE-CYCLE-HOLD`
+1. 첫줄 `[복귀] HEAD=4642e25 · 지금=**양산前** · 상세UI **10+5** PATCH · knobs strip · schema4 · 다음=K-TUNE-CYCLE-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

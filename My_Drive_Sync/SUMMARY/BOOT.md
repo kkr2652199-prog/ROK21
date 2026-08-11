@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · ①~④완료 · knobs markov0.55/review0.85/statHINT52
-- 직전: K-BRAIN-JOINT-SMOKE **SMOKE_OK** · drift0 · 서버7021재가동
-- 다음: **형 지시 대기** — 1237양산 아님 · 추가축/정지 선택
+- 지금: **양산前** · 상세UI **10+5** PATCH · knobs strip · schema4
+- 직전: K-UI-DETAIL-POOL10x5 · 1236 pool10/repack5 실측
+- 다음: **형 지시 대기** — UI추가개선 / 정지 / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

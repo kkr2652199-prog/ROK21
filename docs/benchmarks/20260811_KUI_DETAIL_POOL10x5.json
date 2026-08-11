@@ -1,0 +1,19 @@
+{
+  "id": "K-UI-DETAIL-POOL10x5",
+  "ts": "2026-08-11",
+  "verdict": "PATCHED",
+  "wire": true,
+  "cache_schema": 4,
+  "smoke_draw": 1236,
+  "tune_snapshot": {
+    "markov_blend": 0.55,
+    "review_blend": 0.85,
+    "stat_hint": [52, "miss_pattern"]
+  },
+  "ui": {
+    "section_2": "pool 10 + repack 5 per brain",
+    "section_3": "legacy wrong-note / review DB",
+    "ux": ["jump_nav", "knob_strip", "brain_summary_chips", "sticky_subtabs", "2col_cards", "hit_highlight"]
+  },
+  "ge3_used": false
+}

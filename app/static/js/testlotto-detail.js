@@ -47,6 +47,10 @@ let _mode = 'single';
 let _detailCache = {};
 let _warrantByTag = {};
 let _warrantPolicy = null;
+let _poolViewCache = {};
+let _poolViewCurrent = null;
+let _poolKind = 'pool'; // pool | repack
+let _poolBrain = 'stat';
 
 function _tldEscape(s) {
   return String(s || '')
@@ -412,8 +416,9 @@ async function _loadProgressMeta() {
 }
 
 function _selectBrain(tag) {
-  if (_currentBrain === tag) return;
+  if (_currentBrain === tag && _poolBrain === tag) return;
   _currentBrain = tag;
+  _poolBrain = tag;
   _setUrl({ draw: _currentDraw, brain: tag, mode: _mode });
   const cached = _detailCache[_currentDraw];
   if (cached) {
@@ -429,6 +434,7 @@ function _selectBrain(tag) {
   } else {
     _refreshView();
   }
+  _renderPoolPanel(_detailCache[_currentDraw]);
   _loadHitDrawList(tag);
 }
 
@@ -1198,7 +1204,7 @@ function _renderBrainDetail(detail, brainTag) {
       ${_renderLearnFlowHint(brain, brainTag)}
       ${_renderWrongNote(detail, brain)}
       <details class="tld-sets-expand">
-        <summary class="tld-sets-expand__summary">전체 5세트 펼치기 <span class="tld-muted">(best ${bestNo}세트 · ${tierText})</span></summary>
+        <summary class="tld-sets-expand__summary">복습 DB 세트 펼치기 <span class="tld-muted">(best ${bestNo} · ${tierText} · ②의 10+5와 별개)</span></summary>
         <div class="tld-sets-expand__body">${_renderBrainSets(detail, brain)}</div>
       </details>`;
   }
@@ -1332,6 +1338,234 @@ async function _loadAnalog(drawNo) {
   }
 }
 
+function _tldActualNums(detail) {
+  const nums = (detail?.actual_nums || [])
+    .map((n) => parseInt(n, 10))
+    .filter((n) => Number.isFinite(n));
+  const bonus = detail?.bonus != null ? parseInt(detail.bonus, 10) : null;
+  return { nums, bonus, set: new Set(nums) };
+}
+
+function _tldMatchCount(predNums, actualSet, bonus) {
+  const pred = predNums.map((n) => parseInt(n, 10));
+  const matched = pred.filter((n) => actualSet.has(n)).length;
+  const bonusHit = bonus != null && pred.includes(bonus) ? 1 : 0;
+  return { matched, bonusHit };
+}
+
+function _tldRankLabel(matched, bonusHit) {
+  if (matched < 0) return { text: '추첨 전', cls: 'tld-pset--pending' };
+  if (matched === 6) return { text: '1등', cls: 'tld-pset--r1' };
+  if (matched === 5 && bonusHit) return { text: '2등', cls: 'tld-pset--r2' };
+  if (matched === 5) return { text: '3등', cls: 'tld-pset--r3' };
+  if (matched === 4) return { text: '4등', cls: 'tld-pset--r4' };
+  if (matched === 3) return { text: '5등', cls: 'tld-pset--r5' };
+  return { text: `${matched}개`, cls: 'tld-pset--low' };
+}
+
+function _tldKnobStripHtml(snap) {
+  if (!snap) {
+    return '<span class="tld-knob tld-knob--muted">knobs 미로드</span>';
+  }
+  const blend = snap.BLEND_STRENGTH_BY_BRAIN || {};
+  const hint = snap.HINT_SPEC_BY_BRAIN || {};
+  const st = hint.stat || [];
+  return (
+    `<span class="tld-knob">markov BLEND <strong>${blend.markov ?? '—'}</strong></span>` +
+    `<span class="tld-knob">review BLEND <strong>${blend.review ?? '—'}</strong></span>` +
+    `<span class="tld-knob">stat HINT <strong>${st[0] ?? '—'}</strong> · ${_tldEscape(st[1] || '')}</span>` +
+    `<span class="tld-knob tld-knob--ok">${_tldEscape(snap.independence_ko || '뇌별 독립')}</span>`
+  );
+}
+
+function _tldPoolBestHit(sets, actualSet, bonus) {
+  let best = -1;
+  (sets || []).forEach((s) => {
+    const { matched } = _tldMatchCount(s.nums || [], actualSet, bonus);
+    if (matched > best) best = matched;
+  });
+  return best;
+}
+
+function _renderPoolKnobAndSummary(detail) {
+  const knobEl = document.getElementById('tldKnobStrip');
+  const sumEl = document.getElementById('tldPoolSummary');
+  const pv = _poolViewCurrent;
+  if (knobEl) {
+    knobEl.innerHTML = _tldKnobStripHtml(pv?.tune_snapshot);
+  }
+  if (!sumEl) return;
+  if (!pv || !pv.ok) {
+    sumEl.innerHTML = pv?.message
+      ? `<p class="tld-pool-msg">${_tldEscape(pv.message)}</p>`
+      : '<p class="tld-pool-msg">아직 pool 없음 · 「최신 튜닝으로 재계산」을 눌러 주세요.</p>';
+    return;
+  }
+  const { set: actualSet, bonus } = _tldActualNums(detail || _detailCache[_currentDraw] || {});
+  const chips = BRAINS.map((b) => {
+    const pool = (pv.pool_by_brain || {})[b.tag] || [];
+    const rep = (pv.repack_by_brain || {})[b.tag] || [];
+    const bp = _tldPoolBestHit(pool, actualSet, bonus);
+    const br = _tldPoolBestHit(rep, actualSet, bonus);
+    return (
+      `<button type="button" class="tld-psum${_poolBrain === b.tag ? ' tld-psum--active' : ''}" data-brain="${b.tag}" style="--brain-color:${b.color}">` +
+      `<span class="tld-psum__name">${b.name}</span>` +
+      `<span class="tld-psum__meta">pool×${pool.length} best ${bp < 0 ? '—' : bp + '/6'}</span>` +
+      `<span class="tld-psum__meta">몰아×${rep.length} best ${br < 0 ? '—' : br + '/6'}</span>` +
+      `</button>`
+    );
+  }).join('');
+  const cacheNote = pv.cached
+    ? `캐시 · schema ${pv.schema_version ?? '—'}`
+    : `방금 계산 · ${pv.compute_ms || pv.cache_ms || '—'}ms`;
+  sumEl.innerHTML =
+    `<div class="tld-psum-row">${chips}</div>` +
+    `<p class="tld-pool-meta">${cacheNote} · seed ${pv.seed ?? '—'} · 공유=lotto_draws만</p>`;
+  sumEl.querySelectorAll('.tld-psum').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      _poolBrain = btn.dataset.brain;
+      _selectBrain(_poolBrain);
+    });
+  });
+}
+
+function _renderPoolBrainsBar() {
+  const wrap = document.getElementById('tldPoolBrains');
+  if (!wrap) return;
+  wrap.innerHTML = BRAINS.map((b) => (
+    `<button type="button" role="tab" class="tld-pool-brain${_poolBrain === b.tag ? ' tld-pool-brain--active' : ''}" ` +
+    `data-brain="${b.tag}" style="--brain-color:${b.color}">${b.name}<small>10+5</small></button>`
+  )).join('');
+  wrap.querySelectorAll('.tld-pool-brain').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      _poolBrain = btn.dataset.brain;
+      _selectBrain(_poolBrain);
+    });
+  });
+  document.querySelectorAll('.tld-pool-subtab').forEach((btn) => {
+    btn.classList.toggle('tld-pool-subtab--active', btn.dataset.kind === _poolKind);
+  });
+}
+
+function _renderPoolSets(detail) {
+  const el = document.getElementById('tldPoolSets');
+  if (!el) return;
+  const pv = _poolViewCurrent;
+  if (!pv || !pv.ok) {
+    el.innerHTML =
+      `<div class="tld-empty-box">` +
+      `<p>이 회차의 <strong>뇌별 10+5</strong>가 아직 없습니다.</p>` +
+      `<p class="tld-empty-hint">「최신 튜닝으로 재계산」→ markov BLEND 0.55 · review 0.85 · stat HINT 52 반영.</p>` +
+      `</div>`;
+    return;
+  }
+  const { set: actualSet, bonus } = _tldActualNums(detail || {});
+  const src = _poolKind === 'repack' ? (pv.repack_by_brain || {}) : (pv.pool_by_brain || {});
+  const sets = src[_poolBrain] || [];
+  const bmeta = BRAINS.find((b) => b.tag === _poolBrain);
+  if (!sets.length) {
+    el.innerHTML = `<p class="tld-muted">${bmeta?.name || _poolBrain} · ${_poolKind} 세트 없음</p>`;
+    return;
+  }
+  const cards = sets
+    .slice()
+    .sort((a, b) => (a.set_no || 0) - (b.set_no || 0))
+    .map((s) => {
+      const nums = (s.nums || []).map((n) => parseInt(n, 10));
+      const scored = actualSet.size === 6;
+      const { matched, bonusHit } = scored
+        ? _tldMatchCount(nums, actualSet, bonus)
+        : { matched: -1, bonusHit: 0 };
+      const rank = _tldRankLabel(matched, bonusHit);
+      const balls = nums
+        .map((n) => {
+          const hit = actualSet.has(n);
+          const isBonus = bonus != null && n === bonus;
+          const cls = hit ? 'tld-ball--hit' : isBonus ? 'tld-ball--bonus' : '';
+          return `<span class="tld-ball ${cls}">${n}</span>`;
+        })
+        .join('');
+      const srcBadge =
+        s.source || s.assemble
+          ? `<span class="tld-pset__src">${_tldEscape(s.source || s.assemble)}${
+              s.source_set_no != null ? ' · #' + s.source_set_no : ''
+            }</span>`
+          : '';
+      return (
+        `<article class="tld-pset ${rank.cls}">` +
+        `<header class="tld-pset__head">` +
+        `<span class="tld-pset__no">#${s.set_no || '?'}</span>` +
+        `<span class="tld-pset__rank">${rank.text}</span>` +
+        srcBadge +
+        `</header>` +
+        `<div class="tld-pset__balls">${balls}</div>` +
+        `</article>`
+      );
+    })
+    .join('');
+  el.innerHTML =
+    `<div class="tld-pset-headline">` +
+    `<strong style="color:${bmeta?.color || '#e2e8f0'}">${bmeta?.name || _poolBrain}</strong>` +
+    `<span>${_poolKind === 'repack' ? '몰아주기 5장' : '10장 pool'} · ${sets.length}세트</span>` +
+    `</div>` +
+    `<div class="tld-pset-grid">${cards}</div>`;
+}
+
+function _renderPoolPanel(detail) {
+  _poolBrain = _poolBrain || _currentBrain || 'stat';
+  _renderPoolKnobAndSummary(detail);
+  _renderPoolBrainsBar();
+  _renderPoolSets(detail);
+}
+
+async function _fetchPoolView(drawNo, { compute = false, refresh = false } = {}) {
+  const d = _asDrawNo(drawNo);
+  let url = `/api/testlotto/predict/pool-view/${d}`;
+  const q = [];
+  if (refresh) q.push('refresh=1');
+  else if (compute) q.push('compute=1');
+  if (q.length) url += '?' + q.join('&');
+  const data = await _fetchJson(url);
+  _poolViewCache[d] = data;
+  _poolViewCurrent = data;
+  return data;
+}
+
+async function _loadPoolView(drawNo, { compute = false, refresh = false } = {}) {
+  const d = _asDrawNo(drawNo);
+  const setsEl = document.getElementById('tldPoolSets');
+  if (setsEl && (compute || refresh)) {
+    setsEl.innerHTML = '<p class="tld-muted">최신 튜닝으로 계산 중… (수십 초 걸릴 수 있음)</p>';
+  }
+  try {
+    if (!compute && !refresh && _poolViewCache[d]?.ok) {
+      _poolViewCurrent = _poolViewCache[d];
+    } else {
+      await _fetchPoolView(d, { compute, refresh });
+    }
+  } catch (e) {
+    _poolViewCurrent = { ok: false, message: e.message || 'pool-view 실패' };
+  }
+  _renderPoolPanel(_detailCache[d]);
+}
+
+function _bindPoolEvents() {
+  document.getElementById('tldPoolLoadBtn')?.addEventListener('click', () => {
+    _loadPoolView(_currentDraw, { compute: true });
+  });
+  document.getElementById('tldPoolComputeBtn')?.addEventListener('click', () => {
+    _loadPoolView(_currentDraw, { refresh: true });
+  });
+  document.getElementById('tldPoolTabPool')?.addEventListener('click', () => {
+    _poolKind = 'pool';
+    _renderPoolPanel(_detailCache[_currentDraw]);
+  });
+  document.getElementById('tldPoolTabRepack')?.addEventListener('click', () => {
+    _poolKind = 'repack';
+    _renderPoolPanel(_detailCache[_currentDraw]);
+  });
+}
+
 async function _loadSingleDraw(drawNo) {
   const d = _asDrawNo(drawNo);
   if (!d) return;
@@ -1353,6 +1587,12 @@ async function _loadSingleDraw(drawNo) {
     document.title = `테스트로또 · 제 ${d}회 정밀 분석`;
     _renderDrawHeader(detail);
     _renderActual(detail);
+    _poolBrain = _currentBrain;
+    await _loadPoolView(d, { compute: false });
+    if (!_poolViewCurrent?.ok) {
+      // 캐시 miss면 자동 1회 계산 (상세 페이지 진입 시 최신 10+5 보장)
+      await _loadPoolView(d, { compute: true });
+    }
     _renderBrainVerdicts(detail);
     _renderBrainScorecards(detail);
     _renderBrainDetail(detail, _currentBrain);
@@ -1708,6 +1948,7 @@ function _bindHeatmapLinkEvents() {
 }
 
 function _bindEvents() {
+  _bindPoolEvents();
   document.getElementById('tldNavPrev')?.addEventListener('click', () => {
     const target = _navDrawStep(1);
     if (target != null) _goToDraw(target);

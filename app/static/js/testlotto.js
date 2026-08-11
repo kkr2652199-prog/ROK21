@@ -1300,13 +1300,18 @@ function _testlottoRenderAllBrainsAccordion(poolView, drawNo, actualRef, brainLi
     const subTabsHtml = _testlottoRenderSetSubTabsHtml(subTab, poolView);
     const poolCnt = poolView && poolView.pool_by_brain && poolView.pool_by_brain[b.tag]
       ? poolView.pool_by_brain[b.tag].length : 0;
+    const repackCnt = poolView && poolView.repack_by_brain && poolView.repack_by_brain[b.tag]
+      ? poolView.repack_by_brain[b.tag].length : 0;
+    const cntLabel = (poolCnt || repackCnt)
+      ? `${poolCnt || 0}+${repackCnt || 0}`
+      : '';
     return (
       `<details class="testlotto-brain-accordion" data-brain="${b.tag}" ${open ? 'open' : ''} ontoggle="testlottoToggleBrainAccordion('${b.tag}', this.open)">` +
       '<summary class="testlotto-brain-accordion__head">' +
       `<span class="testlotto-brain-accordion__chevron" aria-hidden="true"></span>` +
       `<span class="testlotto-brain-accordion__icon">${b.icon}</span>` +
       `<span class="testlotto-brain-accordion__name">${b.name}</span>` +
-      (poolCnt ? `<span class="testlotto-brain-accordion__cnt">${poolCnt}장</span>` : '') +
+      (cntLabel ? `<span class="testlotto-brain-accordion__cnt">${cntLabel}</span>` : '') +
       `<span class="testlotto-brain-accordion__tier" title="역대 1~5등 횟수">${tierTxt}</span>` +
       '</summary>' +
       `<div class="testlotto-brain-accordion__body">` +
