@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0b0e6bd` |
+| HEAD(실측) | `15741a0` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · HINT_WEIGHT pick_score배선 · 0.15 HOLD |
-| 직전 | DEAD_WIRE해소 · v2게이트 NO_IMPROVE |
-| BOOT다음 | **형 지시** — 다음튜닝1건 / 1237아님 |
-| NEXT1 ID | **K-HINT-WEIGHT-HOLD** |
-| NEXT1 할일 | **양산前**. HINT_WEIGHT 뇌별스윕: DEAD_WIRE→`pick_score` **PATCHED** · v2게이트 **NO_IMPROVE** → **0.15 HOLD**. signal_union유지. 다음=형 지시1건. **1237아님**. |
+| 지금 | **양산前** · 3뇌정밀감사 **AUDIT_OK** · 버그0 |
+| 직전 | 독립·배선생존 PASS · pool→repack보존모니터 |
+| BOOT다음 | **형 지시** — 뇌별 pool품질튜닝 / 1237아님 |
+| NEXT1 ID | **K-BRAIN3-AUDIT-HOLD** |
+| NEXT1 할일 | **양산前**. 3뇌정밀감사 **AUDIT_OK**(pool10/repack5·교차0·RNG·SCORE/HINT_WEIGHT/W_CROWD/UNION 배선생존·signal_union·peek). 하드버그**0**. 모니터: pool적중번호→repack보존 incomplete(stat보존~0.56). 형 요지=몰아주기극대화←각뇌10세트품질. 다음=형 지시1건(뇌별pool튜닝 등). **1237아님**. |
 | 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0b0e6bd · 지금=**양산前** · HINT_WEIGHT pick_score배선 · 0.15 HOLD · 다음=K-HINT-WEIGHT-HOLD`
+1. 첫줄 `[복귀] HEAD=15741a0 · 지금=**양산前** · 3뇌정밀감사 **AUDIT_OK** · 버그0 · 다음=K-BRAIN3-AUDIT-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

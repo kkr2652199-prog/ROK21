@@ -1,0 +1,956 @@
+{
+  "id": "K-BRAIN3-PRECISION-AUDIT",
+  "ts": "2026-08-11T15:50:07+09:00",
+  "range": [
+    1216,
+    1236
+  ],
+  "n_draws": 21,
+  "seed": 42,
+  "live_knobs": {
+    "ASSEMBLE_MODE": "signal_union",
+    "POOL_UNION_CAP": {
+      "markov": 4,
+      "stat": 4,
+      "review": 4
+    },
+    "POOL_SLOTS": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
+    "SCORE": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "HINT_SPEC": {
+      "stat": [
+        52,
+        "miss_pattern"
+      ],
+      "markov": [
+        null,
+        "crowd_prefer"
+      ],
+      "review": [
+        null,
+        "crowd_prize"
+      ]
+    },
+    "hint_shared": false,
+    "W_CROWD": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "BLEND": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "HINT_WEIGHT_BY_BRAIN": {
+      "stat": 0.15,
+      "markov": 0.15,
+      "review": 0.15
+    },
+    "HINT_WEIGHT_modules": {
+      "stat": 0.15,
+      "markov": 0.15,
+      "review": 0.15
+    },
+    "FEATURE_LAMBDA_WIRE": false
+  },
+  "checks": {
+    "A_완전성_pool10_repack5": {
+      "pass": true,
+      "fail_sample": [],
+      "n_fail": 0
+    },
+    "B_교차동일세트0": {
+      "pass": true,
+      "cross_pool": 0,
+      "cross_repack": 0
+    },
+    "B_hint테이블분리": {
+      "pass": true,
+      "distinct_rate": 1.0,
+      "hint_shared_flag": false
+    },
+    "C_RNG단독=합동": {
+      "pass": true,
+      "by_brain": {
+        "stat": true,
+        "markov": true,
+        "review": true
+      }
+    },
+    "C_배선생존_SCORE": {
+      "pass": true,
+      "detail": {
+        "live": true,
+        "restored": true
+      }
+    },
+    "C_배선생존_HINT_WEIGHT": {
+      "pass": true,
+      "detail": {
+        "live": true,
+        "restored": true
+      },
+      "note": "pick_score 경로"
+    },
+    "C_배선생존_W_CROWD": {
+      "pass": true,
+      "detail": {
+        "live": true,
+        "restored": true
+      }
+    },
+    "C_배선생존_UNION_CAP": {
+      "pass": true,
+      "detail": {
+        "live": true,
+        "restored": true
+      }
+    },
+    "D_assemble_signal_union": {
+      "pass": true,
+      "mode": "signal_union"
+    },
+    "D_peek_ok": {
+      "pass": true
+    },
+    "E_정보_pool적중번호포착": {
+      "pass": true,
+      "is_informational": true,
+      "mean_pool_hit_nums": {
+        "stat": 4.429,
+        "markov": 3.476,
+        "review": 3.667
+      },
+      "mean_repack_hit_nums": {
+        "stat": 2.476,
+        "markov": 2.619,
+        "review": 2.238
+      },
+      "mean_preserve_pool_to_repack": {
+        "stat": 0.5579,
+        "markov": 0.7458,
+        "review": 0.5992
+      },
+      "note": "클레임아님 · 몰아주기 전 pool에 적중번호가 얼마나 있는지만 모니터"
+    },
+    "E_정보_pick_score_pool잔존": {
+      "pass": true,
+      "is_informational": true,
+      "mean_fraction_in_pool_dicts": 1.0,
+      "note": "expand 결과가 pick_score를 안 실을 수 있음(predict내부만 사용) — 0이어도 배선과 무관할 수 있음"
+    }
+  },
+  "bugs": [],
+  "wire_liveness": {
+    "SCORE_markov": {
+      "live": true,
+      "restored": true
+    },
+    "HINT_WEIGHT_markov": {
+      "live": true,
+      "restored": true
+    },
+    "W_CROWD_markov": {
+      "live": true,
+      "restored": true
+    },
+    "UNION_CAP_stat": {
+      "live": true,
+      "restored": true
+    },
+    "HINT_SPEC_separated": {
+      "live": true,
+      "restored": true
+    }
+  },
+  "rng_solo_vs_joint": {
+    "stat": true,
+    "markov": true,
+    "review": true
+  },
+  "pool_hit_num_loss_draws": {
+    "stat": 19,
+    "markov": 13,
+    "review": 15
+  },
+  "verdict": "AUDIT_OK",
+  "ge3_used_as_claim": false,
+  "patch_summary_ko": [
+    "뇌독립: HINT/SCORE/W/BLEND BY_BRAIN · 공유=lotto_draws만",
+    "몰아주기: signal_union(slots2+cap4) · 뇌별 learner",
+    "aux: pick_score→diversity.pick · HINT_WEIGHT 0.15 HOLD",
+    "K-J: referee SSOT=live · DB미러",
+    "tune_json 캐시 보존"
+  ],
+  "sample_draws": [
+    {
+      "draw": 1216,
+      "max_material": 1215,
+      "peek_ok": true,
+      "per_brain": {
+        "stat": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            3,
+            10,
+            14,
+            15,
+            23,
+            24
+          ],
+          "repack_hit_nums": [
+            3,
+            23
+          ],
+          "hit_preserve_ratio": 0.3333,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "markov": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            3,
+            15,
+            23
+          ],
+          "repack_hit_nums": [
+            3,
+            23
+          ],
+          "hit_preserve_ratio": 0.6667,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "review": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            15,
+            23,
+            24
+          ],
+          "repack_hit_nums": [
+            15
+          ],
+          "hit_preserve_ratio": 0.3333,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        }
+      },
+      "cross_identical_pool": 0,
+      "cross_identical_repack": 0,
+      "hint_tops": {
+        "stat": [
+          27,
+          3,
+          16,
+          23,
+          38
+        ],
+        "markov": [
+          12,
+          27,
+          7,
+          13,
+          34
+        ],
+        "review": [
+          40,
+          37,
+          27,
+          34,
+          45
+        ]
+      },
+      "hint_tops_all_distinct": true
+    },
+    {
+      "draw": 1217,
+      "max_material": 1216,
+      "peek_ok": true,
+      "per_brain": {
+        "stat": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            8,
+            10,
+            15,
+            29,
+            31
+          ],
+          "repack_hit_nums": [
+            8,
+            10,
+            15,
+            31
+          ],
+          "hit_preserve_ratio": 0.8,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "markov": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            8,
+            15,
+            20,
+            29
+          ],
+          "repack_hit_nums": [
+            8,
+            15
+          ],
+          "hit_preserve_ratio": 0.5,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "review": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            8,
+            10,
+            15,
+            29,
+            31
+          ],
+          "repack_hit_nums": [
+            8,
+            10,
+            15
+          ],
+          "hit_preserve_ratio": 0.6,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        }
+      },
+      "cross_identical_pool": 0,
+      "cross_identical_repack": 0,
+      "hint_tops": {
+        "stat": [
+          27,
+          3,
+          16,
+          23,
+          24
+        ],
+        "markov": [
+          12,
+          27,
+          7,
+          13,
+          34
+        ],
+        "review": [
+          40,
+          37,
+          27,
+          34,
+          14
+        ]
+      },
+      "hint_tops_all_distinct": true
+    },
+    {
+      "draw": 1218,
+      "max_material": 1217,
+      "peek_ok": true,
+      "per_brain": {
+        "stat": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            3,
+            28,
+            31,
+            32,
+            42,
+            45
+          ],
+          "repack_hit_nums": [
+            3,
+            31,
+            42
+          ],
+          "hit_preserve_ratio": 0.5,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "markov": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            3,
+            28,
+            31,
+            32,
+            45
+          ],
+          "repack_hit_nums": [
+            3,
+            28,
+            32
+          ],
+          "hit_preserve_ratio": 0.6,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "review": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            28,
+            31,
+            32,
+            45
+          ],
+          "repack_hit_nums": [
+            28,
+            31,
+            32,
+            45
+          ],
+          "hit_preserve_ratio": 1.0,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        }
+      },
+      "cross_identical_pool": 0,
+      "cross_identical_repack": 0,
+      "hint_tops": {
+        "stat": [
+          3,
+          27,
+          16,
+          23,
+          24
+        ],
+        "markov": [
+          12,
+          27,
+          7,
+          13,
+          34
+        ],
+        "review": [
+          40,
+          37,
+          27,
+          34,
+          14
+        ]
+      },
+      "hint_tops_all_distinct": true
+    },
+    {
+      "draw": 1235,
+      "max_material": 1234,
+      "peek_ok": true,
+      "per_brain": {
+        "stat": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            6,
+            7,
+            11,
+            15,
+            39
+          ],
+          "repack_hit_nums": [
+            6,
+            15,
+            39
+          ],
+          "hit_preserve_ratio": 0.6,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "markov": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            7,
+            15,
+            39
+          ],
+          "repack_hit_nums": [
+            7,
+            39
+          ],
+          "hit_preserve_ratio": 0.6667,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "review": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            6,
+            7,
+            11,
+            15,
+            43
+          ],
+          "repack_hit_nums": [
+            7,
+            15,
+            43
+          ],
+          "hit_preserve_ratio": 0.6,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        }
+      },
+      "cross_identical_pool": 0,
+      "cross_identical_repack": 0,
+      "hint_tops": {
+        "stat": [
+          15,
+          16,
+          27,
+          28,
+          31
+        ],
+        "markov": [
+          12,
+          13,
+          34,
+          18,
+          27
+        ],
+        "review": [
+          40,
+          37,
+          27,
+          34,
+          45
+        ]
+      },
+      "hint_tops_all_distinct": true
+    },
+    {
+      "draw": 1236,
+      "max_material": 1235,
+      "peek_ok": true,
+      "per_brain": {
+        "stat": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            18,
+            21,
+            29,
+            34,
+            38
+          ],
+          "repack_hit_nums": [
+            34
+          ],
+          "hit_preserve_ratio": 0.2,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "markov": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            12,
+            21,
+            29
+          ],
+          "repack_hit_nums": [
+            12,
+            18,
+            21,
+            29
+          ],
+          "hit_preserve_ratio": 1.0,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        },
+        "review": {
+          "n_pool": 10,
+          "n_repack": 5,
+          "set_nos": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "dup_pool": 0,
+          "dup_repack": 0,
+          "bad_form": 0,
+          "pool_hit_nums": [
+            18,
+            29,
+            34,
+            38
+          ],
+          "repack_hit_nums": [
+            29,
+            34,
+            38
+          ],
+          "hit_preserve_ratio": 0.75,
+          "sources": {
+            "pool": 4,
+            "score_repack": 1
+          },
+          "assemble": {
+            "signal_union": 5
+          },
+          "pick_score_present_pool": 10
+        }
+      },
+      "cross_identical_pool": 0,
+      "cross_identical_repack": 0,
+      "hint_tops": {
+        "stat": [
+          1,
+          15,
+          16,
+          19,
+          27
+        ],
+        "markov": [
+          12,
+          13,
+          7,
+          34,
+          18
+        ],
+        "review": [
+          40,
+          37,
+          27,
+          34,
+          15
+        ]
+      },
+      "hint_tops_all_distinct": true
+    }
+  ]
+}

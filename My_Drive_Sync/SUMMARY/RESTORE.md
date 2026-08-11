@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0b0e6bd` · WORK=`IDLE`
-2. **지금:** **양산前** · HINT_WEIGHT pick_score배선 · 0.15 HOLD
-3. **다음1건:** K-HINT-WEIGHT-HOLD — **양산前**. HINT_WEIGHT 뇌별스윕: DEAD_WIRE→`pick_score` **PATCHED** · v2게이트 **NO_IMPROVE** → **0.15 HOLD**. signal_union유지. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
+1. **HEAD:** `15741a0` · WORK=`IDLE`
+2. **지금:** **양산前** · 3뇌정밀감사 **AUDIT_OK** · 버그0
+3. **다음1건:** K-BRAIN3-AUDIT-HOLD — **양산前**. 3뇌정밀감사 **AUDIT_OK**(pool10/repack5·교차0·RNG·SCORE/HINT_WEIGHT/W_CROWD/UNION 배선생존·signal_union·peek). 하드버그**0**. 모니터: pool적중번호→repack보존 incomplete(stat보존~0.56). 형 요지=몰아주기극대화←각뇌10세트품질. 다음=형 지시1건(뇌별pool튜닝 등). **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-11 | 패치설명+3뇌정밀·버그 | AUDIT_OK·배선생존·하드버그0 | **AUDIT_OK** | (push후) |
 | 2026-08-11 | 다음진행(HINT튜닝) | DEAD_WIRE→pick_score·v2게이트0.15HOLD | **HOLD** | 8c2d7ca |
 | 2026-08-11 | 몰아주기P1/P2패치 | signal_union게이트PASS·BTv3·손실↓ | **APPLY** | e332fed |
 | 2026-08-11 | 순서대로①②③ | 강제BTv2·repack손실조사·K-J SSOT패치 | **DONE** | 64cff04 |
