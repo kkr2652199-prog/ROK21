@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c08a712` · WORK=`IDLE`
+1. **HEAD:** `783dba6` · WORK=`IDLE`
 2. **지금:** **양산前** · K-F재정의 **NO_EFFECT_CLOSE** · FINDINGS PATCHED
 3. **다음1건:** K-POST-KF-HOLD — **양산前**. K-F재정의 **NO_EFFECT_CLOSE**(재료100·prefer Δ−0.0003·prize iso0 · LEARN_WIRED=True유지 · FINDINGS K-F **PATCHED**). 다음후보=합동smoke / K-J referee SSOT. **1237아님**. 형 다음 지시 1건. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
