@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-NEXT-UPPER-HIT-LIST** — ①**AUDIT_OK** · ②발권병기 **METRIC_OK** · NEXT=③smoke
+📌 사유: **[CURSOR] K-NEXT-LIST-V2** — 리스트보강 **DOC_OK** · NEXT=L1 smoke
 
-📌 직전: **[CURSOR] K-SEQ-STEPS-11TO12** — ⑪**VERIFY_OK** · ⑫BTv5 **REBUILT_OK** · refill_v2
+📌 직전: **[CURSOR] K-NEXT-UPPER-HIT-LIST** — ①**AUDIT_OK** · ②발권병기 **METRIC_OK**
 
 ---
 
@@ -15,7 +15,8 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
-| **K-NEXT-UPPER-HIT-LIST (형GO · 현황+상위적중리스트)** | **DOC_OK**+①②실행 — 현황=①~⑫DONE. **중요:** BTv5 4등4/5등42는 **pool경로**(장수많음) · 발권5장 병기 mean**1.64** · ≥3 **12** · ≥4 **0**. 상위적중=1등P↑금지 · 순서①AUDIT→②발권병기→③합동smoke→④repack보존probe→⑤5장cover→⑥review EV→⑦markov prefer→⑧stat. 문헌: Thaler/Ziemba몫EV · covering과장금지 · GH null정직. ge3미클레임·1237아님. · `reports/20260812_KNEXT_UPPER_HIT_LIST.md` · `20260812_KTIER45_SOURCE_AUDIT.md` · `20260812_KBT_ISSUE_PATH_METRIC.md` · 벤치 `KTIER45_*` · `KBT_ISSUE_PATH_METRIC` |
+| **K-NEXT-LIST-V2 (형GO · 리스트보강)** | **DOC_OK** · wire=**False** — 형 「1~6·보너스·10세트분산 저장→다음반영」「뇌별10세트 엔진 스킬」「기존패치정리·정밀진행」. **두 기둥:** A뇌별10세트 · B몰아주기(원장SSOT). 합의: 적중신호=1·2고정아님·분산저장·과거분석(컨닝아님) · 패치중 강제BT보류. **순서:** L0DOC → **L1 smoke** → L2원장SPEC → L3원장WIRE → L4몰아주기소비 → L5뇌10감사 → L6~8뇌별스킬 → L9preserve → L10cover → L11축심화 → L12발권통합(형승인). 완료패치 재탕금지·동결유지. ge3미클레임·1237아님. · `reports/20260812_KNEXT_LIST_V2.md` · `My_Drive_Sync/커서보고서/20260812_KNEXT_LIST_V2.md` |
+| **K-NEXT-UPPER-HIT-LIST (형GO · 현황+상위적중리스트)** | **DOC_OK**+①②실행 — 현황=①~⑫DONE. **중요:** BTv5 4등4/5등42는 **pool경로**(장수많음) · 발권5장 병기 mean**1.64** · ≥3 **12** · ≥4 **0**. 이후 순서 **V2로 승계**. · `reports/20260812_KNEXT_UPPER_HIT_LIST.md` · `20260812_KTIER45_SOURCE_AUDIT.md` · `20260812_KBT_ISSUE_PATH_METRIC.md` · 벤치 `KTIER45_*` · `KBT_ISSUE_PATH_METRIC` |
 | **K-TIER45-SOURCE-AUDIT (리스트①)** | **AUDIT_OK** — r4회차 1150/1160/1208/1214 · 발권재현 ≥4 **0/4** · pool≥4&repack<4 **2/100** · pool≥3&repack<3 **17/100**. · `docs/benchmarks/20260812_KTIER45_SOURCE_AUDIT.json` · `tools/_k_tier45_source_audit.py` |
 | **K-BT-ISSUE-PATH-METRIC (리스트②)** | **METRIC_OK** — 1137~1236 n100 · pool mean**2.5**/≥3**46**/≥4**4** vs 발권 mean**1.64**/≥3**12**/≥4**0**. gap ge3**34**·ge4**4**. APPLY근거=발권·prefer/prize. · `docs/benchmarks/20260812_KBT_ISSUE_PATH_METRIC.json` · `tools/_k_bt_issue_path_metric.py` |
 | **K-SEQ-STEPS-11TO12 (형GO · 단계⑪⑫)** | **DONE** — ⑪발권quota: 1234~1236 issued=planned · 전뇌≥1 · refill후 **s1/m1/r3** **VERIFY_OK**. ⑫강제BTv5: pool300/bt100 · run_id**13** · mean_hits**2.5**(모니터) · tiers 4등**4**/5등**42** **REBUILT_OK**(**=pool경로·발권과 다름**). 강제리셋→learn wipe → **refill_v2** avg s**0.7**/m**0.733**/r**0.9** · w≈**0.265/0.294/0.441** · spread~**0.176**. ge3미클레임·1237아님. · `reports/20260812_KSEQ_STEPS_11TO12.md` · `docs/benchmarks/20260812_KISSUE_QUOTA_VERIFY.json` · `20260812_KFORCE_POOL_BACKTEST_100_v5.json` · `20260812_KLEARN_REFEREE_REFILL_v2.json` · `tools/_k_issue_quota_verify.py` |

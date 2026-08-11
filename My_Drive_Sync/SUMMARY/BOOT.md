@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · 상위리스트①②OK · 발권mean1.64(≥4=0) · NEXT=③smoke
-- 직전: ⑪VERIFY · ⑫BTv5 · refill_v2
-- 다음: ③ post-refill 합동smoke / 1237아님
+- 지금: **양산前** · LIST_V2 **DOC_OK** · 원장1~6+보너스·뇌10세트 보강
+- 직전: 상위①②OK · 발권mean1.64(≥4=0)
+- 다음: L1 post-refill 합동smoke / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

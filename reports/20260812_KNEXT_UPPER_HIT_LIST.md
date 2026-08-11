@@ -145,14 +145,19 @@ BTv5 모니터(클레임 아님): mean_hits**2.5** · tiers **r1~r3=0 / r4=4 / r
 
 | # | ID | 판정 |
 |---|-----|------|
-| ① | K-TIER45-SOURCE-AUDIT | **AUDIT_OK** (본턴) |
-| ② | K-BT-ISSUE-PATH-METRIC | **METRIC_OK** (본턴) |
-| ③~⑧ | (위) | **대기** · NEXT=③ |
+| ① | K-TIER45-SOURCE-AUDIT | **AUDIT_OK** |
+| ② | K-BT-ISSUE-PATH-METRIC | **METRIC_OK** |
+| ③~⑧ | → **승계** | 이후 SSOT = `reports/20260812_KNEXT_LIST_V2.md` |
 
 ---
 
+## 후속
+**리스트 SSOT 교체:** `reports/20260812_KNEXT_LIST_V2.md`  
+(원장 1~6·보너스·분산 · 뇌별10세트 스킬 · L1=smoke 다음)
+
 ## 경로
-- `reports/20260812_KNEXT_UPPER_HIT_LIST.md`
+- `reports/20260812_KNEXT_UPPER_HIT_LIST.md` (이력)
+- `reports/20260812_KNEXT_LIST_V2.md` (**실행 SSOT**)
 - `reports/20260812_KTIER45_SOURCE_AUDIT.md`
 - `docs/benchmarks/20260812_KTIER45_SOURCE_AUDIT.json`
 - `tools/_k_tier45_source_audit.py`
