@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `dd0a404` · WORK=`IDLE`
+1. **HEAD:** `f80da83` · WORK=`IDLE`
 2. **지금:** **양산前** · 순서①~⑤ **DONE** (smoke·잔여HOLD·BTv4·refill·K-G)
 3. **다음1건:** K-SEQ-STEPS-HOLD — **양산前**. 순서①~⑤ DONE(smoke OK·pool잔여 HOLD·BTv4·refill OK·K-G ACTIVE). 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-12 | 순서①~⑤단계별 | smoke·HOLD·BTv4·refill·K-G ACTIVE | **DONE** | (push후) |
+| 2026-08-12 | 순서①~⑤단계별 | smoke·HOLD·BTv4·refill·K-G ACTIVE | **DONE** | f80da83 |
 | 2026-08-12 | 단계③ 강제BTv4 | 리셋+100WF · mean2.5모니터 · REBUILT_OK | **REBUILT_OK** | dd0a404 |
 | 2026-08-12 | 단계② pool잔여 | reviewBLEND·statHINT 게이트미달 HOLD | **HOLD** | 194775e |
 | 2026-08-12 | 순서대로단계별·①합동smoke | knobs OK·prefer+0.294·prize−0.111·SMOKE_OK | **SMOKE_OK** | fc1350e |
@@ -46,10 +46,6 @@
 | 2026-08-11 | 몰아주기P1/P2패치 | signal_union게이트PASS·BTv3·손실↓ | **APPLY** | e332fed |
 | 2026-08-11 | 순서대로①②③ | 강제BTv2·repack손실조사·K-J SSOT패치 | **DONE** | 64cff04 |
 | 2026-08-11 | 100BT정밀·버그/개선 | 4등5·5등51·tune_json패치·pool>repack | **AUDIT_OK** | f3dfd02 |
-| 2026-08-11 | K-F재정의 GO(재료+preferA/B) | fill100 · prefer무개선 · FINDINGS PATCHED · LEARN유지 | **NO_EFFECT_CLOSE** | c08a712 |
-| 2026-08-11 | K-F지시서 방향검토 | LEARN이미ON·재료0 · 실행보류·젠스파크질문 | **REJECT_REWRITE** | 8e6d6d6 |
-| 2026-08-11 | 분석확정+리스트2~5이어서 | LOCK·W0.9·SCOREcand_B APPLY·FGJ감사 | **APPLY** | 5c28e23 |
-| 2026-08-11 | 100회백테미기록·강제리셋재백테·컨닝금지 | 리셋+1137~1236 WF · pool300/bt100 · API100 · nopeek | **REBUILT_OK** | 7b84c49 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `dd0a404` · WORK=`IDLE`
+- HEAD: `f80da83` · WORK=`IDLE`
 - 지금: **양산前** · 순서①~⑤ **DONE** (smoke·잔여HOLD·BTv4·refill·K-G)
 - 직전: ④referee refill spread0.176 · ⑤ending ACTIVE
 - BOOT다음: **형 지시** 1건 / 1237아님
