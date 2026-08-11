@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e332fed` · WORK=`IDLE`
+1. **HEAD:** `6cf16a8` · WORK=`IDLE`
 2. **지금:** **양산前** · signal_union APPLY · 강제BTv3
 3. **다음1건:** K-REPACK-UNION-HOLD — **양산前**. 몰아주기 P1/P2=`signal_union` **APPLY**(게이트PASS·prefer↑/prize↓/stat slack). 강제BTv3 재적재·손실 45/41/39→**37/37/34**. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
