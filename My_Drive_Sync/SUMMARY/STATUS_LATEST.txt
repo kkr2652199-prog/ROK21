@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-QUOTA-MIN-EACH** — ⑧ min_each=1 **APPLY_OK** (m3/r1/s1)
+📌 사유: **[CURSOR] K-POST-MIN-EACH-SMOKE-KC** — ⑨**SMOKE_OK** · ⑩K-C **STALE_CLOSE**
 
-📌 직전: **[CURSOR] K-SEQ-STEPS-6TO7** — ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**
+📌 직전: **[CURSOR] K-QUOTA-MIN-EACH** — ⑧ min_each=1 **APPLY_OK**
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-POST-MIN-EACH-SMOKE-KC (형GO · 단계⑨⑩)** | **DONE** — ⑨min_each=1 재스모크 seed42: quota **m3/r1/s1** · prefer**+0.2995** · prize**−0.1069** · hit0.322(모니터) **SMOKE_OK**. ⑩K-C 재실측: avg s**0.667**/m**0.867**/r**0.800** · w s**0.235**/m**0.412**/r**0.353** · 최저avg≠최고가중 → **STALE_CLOSE**. FINDINGS K-C=**PATCHED**. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KPOST_MIN_EACH_SMOKE_KC.json` · `reports/20260812_KPOST_MIN_EACH_SMOKE_KC.md` · `tools/_k_post_min_each_smoke_kc.py` |
 | **K-QUOTA-MIN-EACH (형GO · 단계⑧)** | **APPLY_OK** — ⑦후 dominance로 stat**0**장. `QUOTA_ADAPTIVE_MIN_EACH` **0→1** · dominance 이체보정. live quota **m4/r1/s0 → m3/r1/s1**. 게이트 cases all≥1·Σ5. FINDINGS K-QUOTA-MIN-EACH=**PATCHED**. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KQUOTA_MIN_EACH_GATE.json` · `reports/20260812_KQUOTA_MIN_EACH.md` · `tools/_k_quota_min_each_gate.py` |
 | **K-SEQ-STEPS-6TO7 (형GO · 다음단계)** | **DONE** — ⑥K-I **WIRE_OK**: coordinator/expand_pool 뇌별 try · mock markov boom→타뇌생존·`brain_errors`. FINDINGS K-I=**PATCHED**. ⑦post-refill **SMOKE_OK**: prefer**+0.2995** · prize**−0.1069** · spread**0.176** · quota5 markov**4**/review**1**/stat**0**(dominance 모니터·⑧에서 보정). ge3미클레임·1237아님. · `reports/20260812_KSEQ_STEPS_6TO7.md` · `docs/benchmarks/20260812_KI_BRAIN_FALLBACK_WIRE.json` · `20260812_KPOST_REFILL_QUOTA_SMOKE.json` |
 | **K-SEQ-STEPS-1TO5 (형GO · 순서단계별)** | **DONE** — ①합동smoke **SMOKE_OK**(prefer+0.294/prize−0.111). ②pool잔여 **HOLD**(reviewBLEND0.85·statHINT0.15). ③강제BTv4 **REBUILT_OK**(mean**2.5**모니터·4등4/5등42·pool300). ④learn/referee **REFILL_OK**(rc100×3·spread**0.176**·w≈0.235/0.412/0.353). ⑤K-G **ACTIVE_AFTER_REFILL**(ending boost 전뇌**0.3**cap·패치무). FINDINGS K-G=**PATCHED**. ge3미클레임·1237아님. · `reports/20260812_KSEQ_STEPS_1TO5.md` · 벤치 `20260812_KBRAIN_JOINT_SMOKE_V2` · `KPOOL_RESIDUAL_*` · `KFORCE_*_v4` · `KLEARN_REFEREE_REFILL` · `KG_ENDING_BOOST_AUDIT` |

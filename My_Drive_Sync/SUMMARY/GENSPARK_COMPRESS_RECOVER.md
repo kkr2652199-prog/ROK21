@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`b291681` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`0d21d1b` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=b291681]
+[ROK21 젠스파크 압축복구 · HEAD=0d21d1b]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: b291681 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · ⑧quota min_each=1 **APPLY_OK** (m3/r1/s1)
-- 직전: ⑥K-I WIRE_OK · ⑦post-refill SMOKE_OK
+- HEAD: 0d21d1b · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · ⑨SMOKE_OK(m3/r1/s1) · ⑩K-C **STALE_CLOSE**
+- 직전: ⑧quota min_each=1 APPLY_OK
 - BOOT다음: **형 지시** 1건 / 1237아님
-- NEXT1: K-QUOTA-MIN-EACH-HOLD — **양산前**. ⑧quota **APPLY_OK**(min_each1·live m3/r1/s1). 다음=형 지시1건. **1237아님**.
+- NEXT1: K-SEQ-910-HOLD — **양산前**. ⑨min_each재스모크 **SMOKE_OK**(m3/r1/s1) · ⑩K-C **STALE_CLOSE**. 다음=형 지시1건. **1237아님**.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260812_KPOST_MIN_EACH_SMOKE_KC` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KPOST_MIN_EACH_SMOKE_KC.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KPOST_MIN_EACH_SMOKE_KC.md
 - `20260812_KQUOTA_MIN_EACH_GATE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KQUOTA_MIN_EACH_GATE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KQUOTA_MIN_EACH_GATE.md
 - `20260812_KPOST_REFILL_QUOTA_SMOKE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KPOST_REFILL_QUOTA_SMOKE.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KFORCE_POOL_BACKTEST_100_v4.md
 - `20260812_KPOOL_RESIDUAL_STAT_HINT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KPOOL_RESIDUAL_STAT_HINT.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KPOOL_RESIDUAL_STAT_HINT.md
-- `20260812_KPOOL_RESIDUAL_REVIEW_BLEND` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KPOOL_RESIDUAL_REVIEW_BLEND.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KPOOL_RESIDUAL_REVIEW_BLEND.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=b291681 · 지금=**양산前** · ⑧quota min_each=1 **APPLY_OK** (m3/r1/s1) · 다음=K-QUOTA-MIN-EACH-HOLD
+1. 첫줄: [복귀] HEAD=0d21d1b · 지금=**양산前** · ⑨SMOKE_OK(m3/r1/s1) · ⑩K-C **STALE_CLOSE** · 다음=K-SEQ-910-HOLD
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: b291681_
+_generated: 0d21d1b_

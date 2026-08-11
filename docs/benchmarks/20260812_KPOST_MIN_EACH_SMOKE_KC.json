@@ -1,0 +1,44 @@
+{
+  "id": "K-POST-MIN-EACH-SMOKE-KC",
+  "ts": "2026-08-12T07:27:38+09:00",
+  "step": "9+10",
+  "quota": {
+    "stat": 1,
+    "markov": 3,
+    "review": 1
+  },
+  "min_each": 1,
+  "metrics": {
+    "prefer": 0.299535,
+    "prize": -0.106851,
+    "stat_hit": 0.321667,
+    "n": 100
+  },
+  "health": {
+    "min_each": true,
+    "quota_all_ge1": true,
+    "quota_sum5": true,
+    "prefer_pos": true,
+    "prize_neg": true
+  },
+  "smoke_verdict": "SMOKE_OK",
+  "kc": {
+    "avgs": {
+      "stat": 0.6667,
+      "markov": 0.8667,
+      "review": 0.8
+    },
+    "live_referee": {
+      "stat": 0.23531,
+      "markov": 0.41177,
+      "review": 0.35292
+    },
+    "lowest_avg_brain": "stat",
+    "highest_weight_brain": "markov",
+    "reverse_ranking": false,
+    "verdict": "STALE_CLOSE",
+    "note": "구 K-C는 legacy 1+avg*0.15·균등 시기. K-M/J/refill 후 재실측."
+  },
+  "ge3_used_as_claim": false,
+  "note": "1237아님"
+}

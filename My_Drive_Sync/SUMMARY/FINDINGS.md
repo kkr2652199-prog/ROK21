@@ -34,7 +34,7 @@
 | K-12 | OPEN | RULES_FIXED 정합성 2건 (보고만) | `My_Drive_Sync/SUMMARY/RULES_FIXED.md` | (a) R33 복원 SSOT=kweon 기재 → ROK21 작업 오유도 → **RESTORE.md로 우회**. (b) R29 불일치 → **K-L로 승계**. **형만 수정 가능 · 동생/커서는 보고만** |
 | K-A | OPEN | stat mean 0.760 < baseline 0.788/이론 0.80 | `brains/predict_stat_fairy.py:12` · `predict_statistical.py` | 최근100회(1135-1234)·500세트. **단 K-B 해소 전 패치 금지** · K-O 이후 mean 서열 해석 재검토 |
 | K-B | PATCHED | 성능 표본 2종 충돌 → **BENCH SSOT 고정·기계검증** | `BENCH_PROTOCOL.md` · `20260727_KB_bench_ssot.json` | review100완결 · pred갭1149–1179=31 · 세트동일0. 실력=review JSON mean · pred는 UI전용. mean단독서열 금지 |
-| K-C | OPEN | referee 가중이 성적 역행 | `learn_state.py:108` `get_referee_weights` | 최저성적 stat이 최고가중 0.3348. 식 `(1+avg×0.15)/Σ` 의 avg 출처 검증 필요 · **K-M과 연계** |
+| K-C | PATCHED | referee 가중이 성적 역행 → **STALE_CLOSE** | `get_referee_weights` · K-M/J · `20260812_KPOST_MIN_EACH_SMOKE_KC` | 재실측 avg s0.67/m0.87/r0.80 · w s0.235/m0.412/r0.353 · 최저avg≠최고가중. 구식1+avg*0.15 시기 기록 |
 | K-D | PATCHED | 클릭 경로 fusion 부재 → **의도 문서화·미호출 import 제거** | `engine.py` · `fusion.py` · `coordinator.py` · `20260728_KD_fusion_path.json` | run_prediction→coordinator only · AUX 0.25×4 · fusion 재배선금지 · 3+4유지 |
 | K-E | OPEN | seed 미고정 → 비재현 | `predict_statistical.py:234` · `predict_markov.py:57,59,150,156` · `predict_review_king.py:42` | 동일입력 2회 stat/markov/review 모두 False. **동결항목 — 형 승인 전 수정금지** · K-S 재현성 설계와 연계 |
 | K-F | PATCHED | markov learn 재정의(재료+효과) · live=`markov_brain` 이미 소비 · predict_flow_shaman DEPRECATED | `markov_brain/learn.py` · `20260811_KF_재정의_판정` | 재료채움후 효과미달 → 배선사실 PATCHED·효과없음 CLOSE기록 · LEARN_WIRED=True유지(경로정상) |
