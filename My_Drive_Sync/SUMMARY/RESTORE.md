@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `872c27a` · WORK=`IDLE`
+1. **HEAD:** `ba28fa0` · WORK=`IDLE`
 2. **지금:** **양산前** · 강제BTv2·repack손실조사·K-J PATCHED
 3. **다음1건:** K-SEQ-DONE-HOLD — **양산前**. 순서①강제BTv2(cand_B·4등6·5등48·NO_HARD_BUG) · ②repack손실=POOL_BEST_DROPPED(stat45/mk41/rv39·slots2) PROPOSE_HOLD · ③K-J SSOT=live PATCHED. 다음=형 지시1건(P1/P2게이트승인 또는 다른튜닝). **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
