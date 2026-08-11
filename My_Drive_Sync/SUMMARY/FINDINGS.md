@@ -37,7 +37,7 @@
 | K-C | OPEN | referee 가중이 성적 역행 | `learn_state.py:108` `get_referee_weights` | 최저성적 stat이 최고가중 0.3348. 식 `(1+avg×0.15)/Σ` 의 avg 출처 검증 필요 · **K-M과 연계** |
 | K-D | PATCHED | 클릭 경로 fusion 부재 → **의도 문서화·미호출 import 제거** | `engine.py` · `fusion.py` · `coordinator.py` · `20260728_KD_fusion_path.json` | run_prediction→coordinator only · AUX 0.25×4 · fusion 재배선금지 · 3+4유지 |
 | K-E | OPEN | seed 미고정 → 비재현 | `predict_statistical.py:234` · `predict_markov.py:57,59,150,156` · `predict_review_king.py:42` | 동일입력 2회 stat/markov/review 모두 False. **동결항목 — 형 승인 전 수정금지** · K-S 재현성 설계와 연계 |
-| K-F | OPEN | markov가 learn_state 미소비 | `brains/predict_flow_shaman.py:9` | boost 미적용. 3뇌 중 유일 |
+| K-F | PATCHED | markov learn 재정의(재료+효과) · live=`markov_brain` 이미 소비 · predict_flow_shaman DEPRECATED | `markov_brain/learn.py` · `20260811_KF_재정의_판정` | 재료채움후 효과미달 → 배선사실 PATCHED·효과없음 CLOSE기록 · LEARN_WIRED=True유지(경로정상) |
 | K-G | OPEN | ending boost 휴면 | `learn_state.py:134-150` | `ending_digit_boost=0.0` · miss ending=0. 경로는 살아있으나 무효 |
 | K-H | PATCHED | 미등록 AUX 잔존 → **`brains/_unused/` 격리** | `aux_gap_scout.py` · `aux_structure_guard.py` · `20260728_KH_unused_aux.json` | live import0 · 3+4 유지 · 재배선 금지기본 · 예측력무관 |
 | K-I | OPEN | per-brain fallback 없음 | `brains/coordinator.py:94-102` | 단일 뇌 예외 → 전체 실패. try 미보호 |

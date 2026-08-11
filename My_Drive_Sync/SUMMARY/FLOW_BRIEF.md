@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fa6402f` · WORK=`IDLE`
-- 지금: **양산前** · K-F지시서 **REJECT_REWRITE** · 젠스파크질문대기
-- 직전: LEARN_WIRED이미True·learn재료0 · 지시서실행보류
-- BOOT다음: 젠스파크답+형GO → K-F재작성 지시 / 또는 다른후보
-- NEXT1: K-F-REWRITE-WAIT — **양산前**. K-F 지시서 **REJECT_REWRITE**(LEARN_WIRED이미True·learn재료0·구경로FINDINGS). 실행보류. 형이 젠스파크에 `reports/20260811_KF_GENSPARK_QUESTIONS.md` 붙여넣기 → 답+형GO 후 재지시. **1237아님**. (승인=형·젠스파크)
+- HEAD: `2674010` · WORK=`IDLE`
+- 지금: **양산前** · K-F재정의 **NO_EFFECT_CLOSE** · FINDINGS PATCHED
+- 직전: markov재료100채움 · prefer A/B 무개선 · LEARN_WIRED유지
+- BOOT다음: **형 지시** — 합동smoke / K-J SSOT / 정지 / 1237아님
+- NEXT1: K-POST-KF-HOLD — **양산前**. K-F재정의 **NO_EFFECT_CLOSE**(재료100·prefer Δ−0.0003·prize iso0 · LEARN_WIRED=True유지 · FINDINGS K-F **PATCHED**). 다음후보=합동smoke / K-J referee SSOT. **1237아님**. 형 다음 지시 1건. (승인=형 다음 지시)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

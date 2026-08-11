@@ -1,0 +1,251 @@
+{
+  "id": "K-F-REDEFINE-JUDGE",
+  "ts": "2026-08-11T13:45:39+09:00",
+  "genspark_answers": {
+    "Q1": "B",
+    "Q2": "A",
+    "Q3": "C",
+    "Q4": "A"
+  },
+  "backup": {
+    "ts": "2026-08-11T13:39:54+09:00",
+    "n_files": 24,
+    "total_bytes": 357826560,
+    "files": [
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_01.db",
+        "bytes": 14282752
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_02.db",
+        "bytes": 14340096
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_03.db",
+        "bytes": 14471168
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_04.db",
+        "bytes": 14655488
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_05.db",
+        "bytes": 14884864
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_06.db",
+        "bytes": 15085568
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_07.db",
+        "bytes": 15314944
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_08.db",
+        "bytes": 15179776
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_09.db",
+        "bytes": 15310848
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_10.db",
+        "bytes": 15208448
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_11.db",
+        "bytes": 15319040
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_12.db",
+        "bytes": 15372288
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_13.db",
+        "bytes": 15294464
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_14.db",
+        "bytes": 15327232
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_15.db",
+        "bytes": 15347712
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_16.db",
+        "bytes": 15400960
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_17.db",
+        "bytes": 15413248
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_18.db",
+        "bytes": 15503360
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_19.db",
+        "bytes": 15540224
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/combos/lotto_part_20.db",
+        "bytes": 15532032
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/lotto.db",
+        "bytes": 0
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/lotto4.db",
+        "bytes": 17981440
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/lotto_hyodo.db",
+        "bytes": 122880
+      },
+      {
+        "path": "backups/20260811_KF전_DB전체/lotto_testlotto.db",
+        "bytes": 36937728
+      }
+    ]
+  },
+  "fill": {
+    "n_filled": 100,
+    "peek_checks": 100,
+    "brain_review_markov": 100,
+    "brain_review_other_in_range": 0,
+    "markov_state_as_of": {
+      "review_count": 100,
+      "last_draw_no": 1236,
+      "recent_avg_match": 0.6,
+      "adjustments": {
+        "carry_over_boost": 0.2,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.25,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.2,
+        "odd_even_balance": 0.5
+      },
+      "miss_counts": {
+        "consecutive": 22,
+        "ending_digit": 19,
+        "overdue": 12,
+        "carry_over": 24,
+        "odd_even": 35,
+        "pair": 7
+      }
+    },
+    "markov_global": {
+      "review_count": 100,
+      "adjustments": {
+        "carry_over_boost": 0.2,
+        "ending_digit_boost": 0.3,
+        "pair_boost": 0.25,
+        "consecutive_boost": 0.5,
+        "overdue_boost": 0.2,
+        "odd_even_balance": 0.5
+      },
+      "miss_counts": {
+        "consecutive": 22,
+        "ending_digit": 19,
+        "overdue": 12,
+        "carry_over": 24,
+        "odd_even": 35,
+        "pair": 7
+      }
+    },
+    "stat_review_count": 0,
+    "review_review_count": 0,
+    "independence_ok": true,
+    "materials_nonzero": true
+  },
+  "ab": {
+    "seeds": [
+      0,
+      42,
+      123
+    ],
+    "off_per_seed": [
+      {
+        "seed": 0,
+        "wired": false,
+        "n": 100,
+        "prefer": 0.288265,
+        "prize": -0.113815,
+        "mean_hits": 0.827
+      },
+      {
+        "seed": 42,
+        "wired": false,
+        "n": 100,
+        "prefer": 0.294609,
+        "prize": -0.105427,
+        "mean_hits": 0.807
+      },
+      {
+        "seed": 123,
+        "wired": false,
+        "n": 100,
+        "prefer": 0.294861,
+        "prize": -0.111043,
+        "mean_hits": 0.782
+      }
+    ],
+    "on_per_seed": [
+      {
+        "seed": 0,
+        "wired": true,
+        "n": 100,
+        "prefer": 0.290791,
+        "prize": -0.113815,
+        "mean_hits": 0.756
+      },
+      {
+        "seed": 42,
+        "wired": true,
+        "n": 100,
+        "prefer": 0.292991,
+        "prize": -0.105427,
+        "mean_hits": 0.806
+      },
+      {
+        "seed": 123,
+        "wired": true,
+        "n": 100,
+        "prefer": 0.293067,
+        "prize": -0.111043,
+        "mean_hits": 0.788
+      }
+    ],
+    "off_agg": {
+      "prefer": 0.292578,
+      "prize": -0.110095,
+      "mean_hits": 0.805333
+    },
+    "on_agg": {
+      "prefer": 0.292283,
+      "prize": -0.110095,
+      "mean_hits": 0.783333
+    },
+    "decision": {
+      "prefer_off": 0.29257833333333333,
+      "prefer_on": 0.292283,
+      "prize_off": -0.110095,
+      "prize_on": -0.110095,
+      "mean_hits_off": 0.8053333333333333,
+      "mean_hits_on": 0.7833333333333333,
+      "dprefer": -0.000295,
+      "dprize": 0.0,
+      "prefer_improve": false,
+      "prize_non_worsen": true,
+      "keep_learn_effect": false,
+      "abs_thr": 0.005,
+      "prize_iso_thr": 0.005
+    }
+  },
+  "LEARN_WIRED_final": true,
+  "verdict": "NO_EFFECT_CLOSE",
+  "ge3_used_as_claim": false,
+  "findings_k_f": "PATCHED"
+}

@@ -10,15 +10,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `fa6402f` |
+| HEAD(실측) | `2674010` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · K-F지시서 **REJECT_REWRITE** · 젠스파크질문대기 |
-| 직전 | LEARN_WIRED이미True·learn재료0 · 지시서실행보류 |
-| BOOT다음 | 젠스파크답+형GO → K-F재작성 지시 / 또는 다른후보 |
-| NEXT1 ID | **K-F-REWRITE-WAIT** |
-| NEXT1 할일 | **양산前**. K-F 지시서 **REJECT_REWRITE**(LEARN_WIRED이미True·learn재료0·구경로FINDINGS). 실행보류. 형이 젠스파크에 `reports/20260811_KF_GENSPARK_QUESTIONS.md` 붙여넣기 → 답+형GO 후 재지시. **1237아님**. |
-| 승인필요 | 형·젠스파크 |
+| 지금 | **양산前** · K-F재정의 **NO_EFFECT_CLOSE** · FINDINGS PATCHED |
+| 직전 | markov재료100채움 · prefer A/B 무개선 · LEARN_WIRED유지 |
+| BOOT다음 | **형 지시** — 합동smoke / K-J SSOT / 정지 / 1237아님 |
+| NEXT1 ID | **K-POST-KF-HOLD** |
+| NEXT1 할일 | **양산前**. K-F재정의 **NO_EFFECT_CLOSE**(재료100·prefer Δ−0.0003·prize iso0 · LEARN_WIRED=True유지 · FINDINGS K-F **PATCHED**). 다음후보=합동smoke / K-J referee SSOT. **1237아님**. 형 다음 지시 1건. |
+| 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=fa6402f · 지금=**양산前** · K-F지시서 **REJECT_REWRITE** · 젠스파크질문대기 · 다음=K-F-REWRITE-WAIT`
+1. 첫줄 `[복귀] HEAD=2674010 · 지금=**양산前** · K-F재정의 **NO_EFFECT_CLOSE** · FINDINGS PATCHED · 다음=K-POST-KF-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: fa6402f_
+_generated: 2674010_
