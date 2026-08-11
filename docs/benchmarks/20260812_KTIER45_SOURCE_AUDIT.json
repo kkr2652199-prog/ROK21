@@ -1,0 +1,935 @@
+{
+  "id": "K-TIER45-SOURCE-AUDIT",
+  "ts": "2026-08-12T07:48:29+09:00",
+  "verdict": "AUDIT_OK",
+  "wire": false,
+  "ge3_used_as_claim": false,
+  "run": {
+    "run_id": 13,
+    "n": 100,
+    "range": [
+      1137,
+      1236
+    ],
+    "mean_hits": 2.5,
+    "ge3_rate": 0.46,
+    "tiers": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 4,
+      "r5": 42
+    },
+    "survey_id": "K-FORCE-POOL-BT-100-V5",
+    "strategy_id": "pool10_repack5_min1_ov5"
+  },
+  "r4": {
+    "draws": [
+      1150,
+      1160,
+      1208,
+      1214
+    ],
+    "brain_pool_winners": {
+      "review": 2,
+      "markov": 1
+    },
+    "brain_repack_winners": {
+      "markov": 1,
+      "review": 1
+    },
+    "pool_gt_repack": 2,
+    "repack_eq_pool": 1,
+    "issue_best_ge4": 0,
+    "issue_best_ge3": 0,
+    "detail": [
+      {
+        "draw_no": 1150,
+        "actual": [
+          8,
+          9,
+          18,
+          35,
+          39,
+          45
+        ],
+        "brains": {
+          "stat": {
+            "pool": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  13,
+                  14,
+                  26,
+                  34,
+                  35,
+                  45
+                ],
+                "hits": 2,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 0,
+              "best": {
+                "set_no": 1,
+                "nums": [
+                  3,
+                  16,
+                  19,
+                  22,
+                  27,
+                  41
+                ],
+                "hits": 0,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 3,
+                  "kind": "repack"
+                }
+              }
+            }
+          },
+          "markov": {
+            "pool": {
+              "best_hits": 1,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  6,
+                  7,
+                  11,
+                  24,
+                  33,
+                  45
+                ],
+                "hits": 1,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 1,
+              "best": {
+                "set_no": 5,
+                "nums": [
+                  7,
+                  12,
+                  13,
+                  18,
+                  33,
+                  34
+                ],
+                "hits": 1,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "score_repack",
+                  "source_set_no": 1,
+                  "kind": "repack"
+                }
+              }
+            }
+          },
+          "review": {
+            "pool": {
+              "best_hits": 4,
+              "best": {
+                "set_no": 8,
+                "nums": [
+                  8,
+                  9,
+                  21,
+                  26,
+                  35,
+                  45
+                ],
+                "hits": 4,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 1,
+                "nums": [
+                  11,
+                  27,
+                  32,
+                  36,
+                  39,
+                  45
+                ],
+                "hits": 2,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 3,
+                  "kind": "repack"
+                }
+              }
+            }
+          }
+        },
+        "pool_best_hits": 4,
+        "repack_best_hits": 2,
+        "pool_winners": [
+          "review"
+        ],
+        "repack_winners": [
+          "review"
+        ],
+        "issue_best_hits": 2,
+        "issue": [
+          {
+            "brain": "stat",
+            "nums": [
+              7,
+              12,
+              20,
+              28,
+              30,
+              31
+            ],
+            "hits": 0,
+            "tier": 0
+          },
+          {
+            "brain": "stat",
+            "nums": [
+              13,
+              14,
+              26,
+              34,
+              35,
+              45
+            ],
+            "hits": 2,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              6,
+              13,
+              19,
+              21,
+              24,
+              34
+            ],
+            "hits": 0,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              7,
+              11,
+              14,
+              26,
+              30,
+              36
+            ],
+            "hits": 0,
+            "tier": 0
+          },
+          {
+            "brain": "review",
+            "nums": [
+              21,
+              24,
+              28,
+              32,
+              35,
+              37
+            ],
+            "hits": 1,
+            "tier": 0
+          }
+        ],
+        "coord_error": null
+      },
+      {
+        "draw_no": 1160,
+        "actual": [
+          7,
+          13,
+          18,
+          36,
+          39,
+          45
+        ],
+        "brains": {
+          "stat": {
+            "pool": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 3,
+                "nums": [
+                  5,
+                  13,
+                  26,
+                  29,
+                  31,
+                  36
+                ],
+                "hits": 2,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 3,
+                "nums": [
+                  13,
+                  15,
+                  18,
+                  27,
+                  34,
+                  41
+                ],
+                "hits": 2,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 9,
+                  "kind": "repack"
+                }
+              }
+            }
+          },
+          "markov": {
+            "pool": {
+              "best_hits": 3,
+              "best": {
+                "set_no": 8,
+                "nums": [
+                  7,
+                  9,
+                  13,
+                  30,
+                  36,
+                  37
+                ],
+                "hits": 3,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 4,
+              "best": {
+                "set_no": 5,
+                "nums": [
+                  7,
+                  12,
+                  13,
+                  18,
+                  34,
+                  45
+                ],
+                "hits": 4,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "score_repack",
+                  "source_set_no": 1,
+                  "kind": "repack"
+                }
+              }
+            }
+          },
+          "review": {
+            "pool": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  3,
+                  7,
+                  16,
+                  26,
+                  35,
+                  39
+                ],
+                "hits": 2,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 1,
+              "best": {
+                "set_no": 3,
+                "nums": [
+                  13,
+                  16,
+                  19,
+                  28,
+                  34,
+                  43
+                ],
+                "hits": 1,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 10,
+                  "kind": "repack"
+                }
+              }
+            }
+          }
+        },
+        "pool_best_hits": 3,
+        "repack_best_hits": 4,
+        "pool_winners": [
+          "markov"
+        ],
+        "repack_winners": [
+          "markov"
+        ],
+        "issue_best_hits": 1,
+        "issue": [
+          {
+            "brain": "stat",
+            "nums": [
+              8,
+              15,
+              17,
+              21,
+              32,
+              44
+            ],
+            "hits": 0,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              3,
+              9,
+              16,
+              18,
+              24,
+              38
+            ],
+            "hits": 1,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              7,
+              16,
+              17,
+              26,
+              34,
+              38
+            ],
+            "hits": 1,
+            "tier": 0
+          },
+          {
+            "brain": "review",
+            "nums": [
+              5,
+              9,
+              11,
+              28,
+              33,
+              38
+            ],
+            "hits": 0,
+            "tier": 0
+          },
+          {
+            "brain": "review",
+            "nums": [
+              5,
+              14,
+              27,
+              28,
+              31,
+              36
+            ],
+            "hits": 1,
+            "tier": 0
+          }
+        ],
+        "coord_error": null
+      },
+      {
+        "draw_no": 1208,
+        "actual": [
+          6,
+          27,
+          30,
+          36,
+          38,
+          42
+        ],
+        "brains": {
+          "stat": {
+            "pool": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  5,
+                  13,
+                  27,
+                  28,
+                  36,
+                  39
+                ],
+                "hits": 2,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  6,
+                  12,
+                  14,
+                  27,
+                  35,
+                  37
+                ],
+                "hits": 2,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 6,
+                  "kind": "repack"
+                }
+              }
+            }
+          },
+          "markov": {
+            "pool": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  8,
+                  16,
+                  27,
+                  28,
+                  35,
+                  38
+                ],
+                "hits": 2,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 1,
+              "best": {
+                "set_no": 1,
+                "nums": [
+                  7,
+                  12,
+                  17,
+                  19,
+                  36,
+                  45
+                ],
+                "hits": 1,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 3,
+                  "kind": "repack"
+                }
+              }
+            }
+          },
+          "review": {
+            "pool": {
+              "best_hits": 4,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  6,
+                  10,
+                  18,
+                  27,
+                  30,
+                  38
+                ],
+                "hits": 4,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 4,
+              "best": {
+                "set_no": 1,
+                "nums": [
+                  6,
+                  10,
+                  18,
+                  27,
+                  30,
+                  38
+                ],
+                "hits": 4,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 2,
+                  "kind": "repack"
+                }
+              }
+            }
+          }
+        },
+        "pool_best_hits": 4,
+        "repack_best_hits": 4,
+        "pool_winners": [
+          "review"
+        ],
+        "repack_winners": [
+          "review"
+        ],
+        "issue_best_hits": 1,
+        "issue": [
+          {
+            "brain": "stat",
+            "nums": [
+              7,
+              15,
+              16,
+              28,
+              33,
+              35
+            ],
+            "hits": 0,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              8,
+              11,
+              17,
+              30,
+              37,
+              40
+            ],
+            "hits": 1,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              6,
+              17,
+              19,
+              33,
+              34,
+              45
+            ],
+            "hits": 1,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              7,
+              12,
+              26,
+              28,
+              31,
+              42
+            ],
+            "hits": 1,
+            "tier": 0
+          },
+          {
+            "brain": "review",
+            "nums": [
+              16,
+              20,
+              24,
+              27,
+              34,
+              45
+            ],
+            "hits": 1,
+            "tier": 0
+          }
+        ],
+        "coord_error": null
+      },
+      {
+        "draw_no": 1214,
+        "actual": [
+          10,
+          15,
+          19,
+          27,
+          30,
+          33
+        ],
+        "brains": {
+          "stat": {
+            "pool": {
+              "best_hits": 3,
+              "best": {
+                "set_no": 3,
+                "nums": [
+                  3,
+                  19,
+                  30,
+                  33,
+                  38,
+                  39
+                ],
+                "hits": 3,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 3,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  3,
+                  19,
+                  30,
+                  33,
+                  38,
+                  39
+                ],
+                "hits": 3,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 3,
+                  "kind": "repack"
+                }
+              }
+            }
+          },
+          "markov": {
+            "pool": {
+              "best_hits": 4,
+              "best": {
+                "set_no": 5,
+                "nums": [
+                  5,
+                  6,
+                  15,
+                  27,
+                  30,
+                  33
+                ],
+                "hits": 4,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 1,
+              "best": {
+                "set_no": 1,
+                "nums": [
+                  6,
+                  16,
+                  17,
+                  27,
+                  42,
+                  45
+                ],
+                "hits": 1,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 10,
+                  "kind": "repack"
+                }
+              }
+            }
+          },
+          "review": {
+            "pool": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 2,
+                "nums": [
+                  5,
+                  23,
+                  27,
+                  33,
+                  36,
+                  44
+                ],
+                "hits": 2,
+                "meta": {
+                  "kind": "pool"
+                }
+              }
+            },
+            "repack": {
+              "best_hits": 2,
+              "best": {
+                "set_no": 1,
+                "nums": [
+                  5,
+                  23,
+                  27,
+                  33,
+                  36,
+                  44
+                ],
+                "hits": 2,
+                "meta": {
+                  "assemble": "signal_union",
+                  "source": "pool",
+                  "source_set_no": 2,
+                  "kind": "repack"
+                }
+              }
+            }
+          }
+        },
+        "pool_best_hits": 4,
+        "repack_best_hits": 3,
+        "pool_winners": [
+          "markov"
+        ],
+        "repack_winners": [
+          "stat"
+        ],
+        "issue_best_hits": 2,
+        "issue": [
+          {
+            "brain": "stat",
+            "nums": [
+              6,
+              7,
+              16,
+              27,
+              39,
+              41
+            ],
+            "hits": 1,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              3,
+              6,
+              12,
+              26,
+              27,
+              36
+            ],
+            "hits": 1,
+            "tier": 0
+          },
+          {
+            "brain": "markov",
+            "nums": [
+              1,
+              11,
+              27,
+              28,
+              30,
+              37
+            ],
+            "hits": 2,
+            "tier": 0
+          },
+          {
+            "brain": "review",
+            "nums": [
+              8,
+              11,
+              27,
+              32,
+              38,
+              43
+            ],
+            "hits": 1,
+            "tier": 0
+          },
+          {
+            "brain": "review",
+            "nums": [
+              5,
+              23,
+              27,
+              33,
+              36,
+              44
+            ],
+            "hits": 2,
+            "tier": 0
+          }
+        ],
+        "coord_error": null
+      }
+    ]
+  },
+  "r5": {
+    "n": 42,
+    "brain_pool_winners": {
+      "stat": 21,
+      "markov": 18,
+      "review": 14
+    },
+    "brain_repack_winners": {
+      "stat": 11,
+      "markov": 13,
+      "review": 6
+    },
+    "pool_gt_repack": 16,
+    "pool_vs_repack_hits_hist_top": {
+      "pool3_repack3": 25,
+      "pool3_repack2": 14,
+      "pool3_repack1": 2,
+      "pool2_repack3": 1
+    }
+  },
+  "all100": {
+    "n": 100,
+    "pool_ge4_lost_in_repack": 2,
+    "pool_ge3_lost_in_repack": 17
+  },
+  "flags": {
+    "bt_best_is_pool_repack_path": true,
+    "issue_path_r4_ge4_count": 0,
+    "issue_path_r4_sample_n": 4,
+    "pool_ge4_lost_in_repack": 2,
+    "pool_ge3_lost_in_repack": 17,
+    "note": "UI/BT 4등이 발권5장 경로에서는 재현되지 않을 수 있음(장수효과)",
+    "next_patch_hint": "pool→repack 보존(상위 hit 손실) 우선 후보"
+  },
+  "frame": "양산前·1237아님·등수모니터·성적클레임금지"
+}

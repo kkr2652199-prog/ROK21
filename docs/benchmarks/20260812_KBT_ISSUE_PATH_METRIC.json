@@ -1,0 +1,1441 @@
+{
+  "id": "K-BT-ISSUE-PATH-METRIC",
+  "ts": "2026-08-12T07:51:58+09:00",
+  "verdict": "METRIC_OK",
+  "wire": false,
+  "ge3_used_as_claim": false,
+  "range": [
+    1137,
+    1236
+  ],
+  "n": 100,
+  "elapsed_s": 66.7,
+  "bt_run_id": 13,
+  "pool_path": {
+    "mean_hits": 2.5,
+    "ge3_count": 46,
+    "ge4_count": 4,
+    "tiers": {
+      "r4": 4,
+      "r5": 42
+    },
+    "note": "BTv5 best_of pool10+repack5×3"
+  },
+  "issue_path": {
+    "mean_hits": 1.64,
+    "ge3_count": 12,
+    "ge4_count": 0,
+    "tiers": {
+      "r5": 12
+    },
+    "note": "run_coordinated_prediction 발권5장"
+  },
+  "gap_pool_minus_issue": {
+    "ge3": 34,
+    "ge4": 4,
+    "mean_hits": 0.86
+  },
+  "frame": "양산前·1237아님·등수모니터·성적클레임금지·BT≠발권",
+  "per_draw": [
+    {
+      "draw_no": 1137,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1138,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1139,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1140,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1141,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1142,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1143,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1144,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1145,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 2,
+        "markov": 1,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1146,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 3,
+        "markov": 1,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1147,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 3,
+        "markov": 1,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1148,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 3,
+        "markov": 1,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1149,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 2,
+        "markov": 2,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1150,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 4,
+      "pool_path_best_tier": 4,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 2,
+        "markov": 2,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1151,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 2,
+        "markov": 2,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1152,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 2,
+        "markov": 2,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1153,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 2,
+        "markov": 2,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1154,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1155,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1156,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1157,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1158,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1159,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1160,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 4,
+      "pool_path_best_tier": 4,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1161,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1162,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1163,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1164,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1165,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1166,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1167,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1168,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1169,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1170,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1171,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1172,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1173,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1174,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1175,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1176,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1177,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1178,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1179,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1180,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1181,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1182,
+      "issue_best_hits": 0,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1183,
+      "issue_best_hits": 0,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1184,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1185,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1186,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1187,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1188,
+      "issue_best_hits": 0,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1189,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1190,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1191,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1192,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1193,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1194,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1195,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1196,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1197,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1198,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1199,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1200,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1201,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1202,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1203,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1204,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1205,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1206,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1207,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1208,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 4,
+      "pool_path_best_tier": 4,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1209,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1210,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1211,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1212,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 3,
+        "review": 1
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1213,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1214,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 4,
+      "pool_path_best_tier": 4,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1215,
+      "issue_best_hits": 3,
+      "issue_best_tier": 5,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1216,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1217,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1218,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1219,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1220,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1221,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1222,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1223,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1224,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1225,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1226,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1227,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1228,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1229,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1230,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1231,
+      "issue_best_hits": 0,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1232,
+      "issue_best_hits": 1,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1233,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 2,
+        "review": 2
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1234,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1235,
+      "issue_best_hits": 2,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 3,
+      "pool_path_best_tier": 5,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    },
+    {
+      "draw_no": 1236,
+      "issue_best_hits": 0,
+      "issue_best_tier": 0,
+      "pool_path_best_hits": 2,
+      "pool_path_best_tier": 0,
+      "issued_n": 5,
+      "issued_by_brain": {
+        "stat": 1,
+        "markov": 1,
+        "review": 3
+      },
+      "coord_error": null
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7f0f9fe` · WORK=`IDLE`
-- 지금: **양산前** · ⑪VERIFY_OK · ⑫BTv5 **REBUILT_OK** · refill_v2(s1/m1/r3)
-- 직전: ⑨SMOKE_OK · ⑩K-C STALE_CLOSE
-- BOOT다음: **형 지시** 1건 / 1237아님
-- NEXT1: K-SEQ-1112-HOLD — **양산前**. ⑪발권quota **VERIFY_OK**(s1/m1/r3) · ⑫강제BTv5 **REBUILT_OK**(mean2.5모니터) · refill_v2. 다음=형 지시1건. **1237아님**. (승인=형 다음 지시)
+- HEAD: `12b2a6e` · WORK=`IDLE`
+- 지금: **양산前** · 상위리스트①②OK · 발권mean1.64(≥4=0) · NEXT=③smoke
+- 직전: ⑪VERIFY · ⑫BTv5 · refill_v2
+- BOOT다음: ③ post-refill 합동smoke / 1237아님
+- NEXT1: K-POST-REFILL-JOINT-SMOKE — **양산前**. 상위적중리스트 ①AUDIT·②발권병기 **METRIC_OK**(발권 mean1.64·≥4=0·BT≠발권). 다음=③ refill_v2 후 prefer/prize **합동smoke**. **1237아님** · ge3미클레임. (승인=없음(리스트 순서 진행))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

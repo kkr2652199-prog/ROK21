@@ -274,6 +274,8 @@ def main() -> int:
         "verdict": "REBUILT_OK" if wf.get("post_counts", {}).get("pool_view_cache_draws") == 100 else "PARTIAL",
         "ge3_used_as_claim": False,
         "no_peek": True,
+        # pool/repack best ≠ 발권5장. 병기 측정: tools/_k_bt_issue_path_metric.py
+        "issue_path_note": "BT tiers are pool10+repack5 path · run _k_bt_issue_path_metric for issued-5 dual metric",
     }
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
