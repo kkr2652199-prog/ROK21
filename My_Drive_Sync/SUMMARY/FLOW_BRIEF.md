@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `94cf214` · WORK=`IDLE`
-- 지금: **양산前** · LIST_V3 **DOC_OK** · 역할슬롯(5+3+2/몰아주기1등지향) 분석채택
-- 직전: LIST_V2 · 원장1~6+보너스
-- BOOT다음: L1 post-refill 합동smoke / 1237아님
-- NEXT1: K-POST-REFILL-JOINT-SMOKE — **양산前**. LIST_V3 **DOC_OK**(역할슬롯=skill5+cover_r3×3+shape_r2×2 · repack=focus_r1 · 등수P↑PASS). 다음=**L1** refill_v2 후 prefer/prize **합동smoke** 1건만. **1237아님** · ge3미클레임 · 역할/원장 코드 APPLY 전 · 강제BT보류. (승인=없음(리스트 순서))
+- HEAD: `94f3e7c` · WORK=`IDLE`
+- 지금: **양산前** · L1 **SMOKE_OK** · prefer+0.295 · prize-0.111
+- 직전: LIST_V3 DOC · 역할슬롯 분석채택
+- BOOT다음: L2 원장SPEC / 1237아님
+- NEXT1: K-POOL-HIT-LEDGER-SPEC — **양산前**. L1 **SMOKE_OK**(prefer+0.2949·prize-0.1112·V2drift모니터). 다음=**L2** 원장 SPEC(DOC·스키마만 · 1~6+보너스·분산 · 코드 WIRE 아님). **1237아님** · ge3미클레임 · 강제BT보류. (승인=없음(리스트 순서))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

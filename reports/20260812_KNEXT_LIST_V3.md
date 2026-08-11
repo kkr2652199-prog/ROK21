@@ -58,7 +58,7 @@
 ### L0b LIST_V3+역할슬롯분석 · **DOC_OK (본턴)**
 - `20260812_KTIER_ROLE_SLOTS_ANALYSIS.md` · 본 문서.
 
-### L1 K-POST-REFILL-JOINT-SMOKE — **NEXT**
+### L1 K-POST-REFILL-JOINT-SMOKE — **SMOKE_OK**
 - refill_v2 후 prefer/prize 합동 smoke (역할·원장 손대기 **전** 베이스).
 
 ### L2 K-POOL-HIT-LEDGER-SPEC
@@ -118,8 +118,9 @@
 | ID | 판정 |
 |----|------|
 | L0a/L0b | **DOC_OK** |
-| **L1** | **NEXT** |
-| L2~L12 | 대기 |
+| L1 | **SMOKE_OK** |
+| **L2** | **NEXT** |
+| L2b~L12 | 대기 |
 
 ---
 

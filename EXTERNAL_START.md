@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `94cf214` |
+| HEAD(실측) | `94f3e7c` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · LIST_V3 **DOC_OK** · 역할슬롯(5+3+2/몰아주기1등지향) 분석채택 |
-| 직전 | LIST_V2 · 원장1~6+보너스 |
-| BOOT다음 | L1 post-refill 합동smoke / 1237아님 |
-| NEXT1 ID | **K-POST-REFILL-JOINT-SMOKE** |
-| NEXT1 할일 | **양산前**. LIST_V3 **DOC_OK**(역할슬롯=skill5+cover_r3×3+shape_r2×2 · repack=focus_r1 · 등수P↑PASS). 다음=**L1** refill_v2 후 prefer/prize **합동smoke** 1건만. **1237아님** · ge3미클레임 · 역할/원장 코드 APPLY 전 · 강제BT보류. |
+| 지금 | **양산前** · L1 **SMOKE_OK** · prefer+0.295 · prize-0.111 |
+| 직전 | LIST_V3 DOC · 역할슬롯 분석채택 |
+| BOOT다음 | L2 원장SPEC / 1237아님 |
+| NEXT1 ID | **K-POOL-HIT-LEDGER-SPEC** |
+| NEXT1 할일 | **양산前**. L1 **SMOKE_OK**(prefer+0.2949·prize-0.1112·V2drift모니터). 다음=**L2** 원장 SPEC(DOC·스키마만 · 1~6+보너스·분산 · 코드 WIRE 아님). **1237아님** · ge3미클레임 · 강제BT보류. |
 | 승인필요 | 없음(리스트 순서) |
-| 선행 | refill_v2 live |
+| 선행 | L1 SMOKE_OK |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=94cf214 · 지금=**양산前** · LIST_V3 **DOC_OK** · 역할슬롯(5+3+2/몰아주기1등지향) 분석채택 · 다음=K-POST-REFILL-JOINT-SMOKE`
+1. 첫줄 `[복귀] HEAD=94f3e7c · 지금=**양산前** · L1 **SMOKE_OK** · prefer+0.295 · prize-0.111 · 다음=K-POOL-HIT-LEDGER-SPEC`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 94cf214_
+_generated: 94f3e7c_

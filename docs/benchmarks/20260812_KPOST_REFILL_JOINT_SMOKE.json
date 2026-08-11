@@ -1,0 +1,164 @@
+{
+  "id": "K-POST-REFILL-JOINT-SMOKE",
+  "list_id": "L1",
+  "ts": "2026-08-12T08:43:45+09:00",
+  "precheck": {
+    "blend_by_brain": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "w_crowd_by_brain": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "stat_hint": [
+      52,
+      "miss_pattern"
+    ],
+    "weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "assemble": "signal_union",
+    "oversample": {
+      "stat": 3,
+      "markov": 5,
+      "review": 3
+    },
+    "jaccard": {
+      "stat": 0.85,
+      "markov": 0.85,
+      "review": 0.85
+    },
+    "ok": true
+  },
+  "expect_knobs": {
+    "markov_blend": 0.55,
+    "review_blend": 0.85,
+    "stat_hint": [
+      52,
+      "miss_pattern"
+    ],
+    "score_weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "w_crowd": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "assemble": "signal_union",
+    "oversample": {
+      "stat": 3,
+      "markov": 5,
+      "review": 3
+    },
+    "jaccard": {
+      "stat": 0.85,
+      "markov": 0.85,
+      "review": 0.85
+    }
+  },
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "draw_range": [
+    1137,
+    1236
+  ],
+  "metrics": {
+    "prefer_delta_mean": 0.29493,
+    "prize_delta_mean": -0.111224,
+    "stat_top15_hit_mean": 0.313333,
+    "prefer_split_both_pos_rate": 1.0,
+    "consistent_neg_rate": 1.0,
+    "prefer_first_half_mean": 0.289785,
+    "prefer_second_half_mean": 0.300076
+  },
+  "health": {
+    "prefer_pos": true,
+    "prefer_split": true,
+    "prize_neg": true,
+    "consistent_neg": true,
+    "knobs_ok": true
+  },
+  "joint_v2_refs": {
+    "prefer": 0.294097,
+    "prize": -0.111224,
+    "hit": 0.315555,
+    "source": "docs/benchmarks/20260812_KBRAIN_JOINT_SMOKE_V2.json"
+  },
+  "drift_vs_v2": {
+    "prefer_vs_v2": 0.000833,
+    "prize_vs_v2": 0.0,
+    "hit_vs_v2": -0.002222
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "n": 100,
+      "prefer_mean": 0.294312,
+      "prize_mean": -0.11448,
+      "stat_top15_hit": 0.306667,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.289224,
+      "prefer_second_half": 0.299401
+    },
+    {
+      "seed": 42,
+      "n": 100,
+      "prefer_mean": 0.293818,
+      "prize_mean": -0.106851,
+      "stat_top15_hit": 0.325,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.288462,
+      "prefer_second_half": 0.299175
+    },
+    {
+      "seed": 123,
+      "n": 100,
+      "prefer_mean": 0.296659,
+      "prize_mean": -0.112341,
+      "stat_top15_hit": 0.308333,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true,
+      "prefer_first_half": 0.291668,
+      "prefer_second_half": 0.301651
+    }
+  ],
+  "verdict": "SMOKE_OK",
+  "cursor_opinion": "LIST_V3 L1: refill_v2 후 합동 건강조건 충족. 원장·역할슬롯 코드 미적용(의도). ge3클레임금지·1237아님. 다음=L2 원장SPEC.",
+  "wire": false,
+  "ge3_used": false,
+  "note": "LIST_V3 L1 · refill_v2 후 베이스 · 성적클레임·양산 아님 · 강제BT보류"
+}
