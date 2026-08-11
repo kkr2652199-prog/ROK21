@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `913098f` · WORK=`IDLE`
+- HEAD: `c07d068` · WORK=`IDLE`
 - 지금: **양산前** · K-F지시서 **REJECT_REWRITE** · 젠스파크질문대기
 - 직전: LEARN_WIRED이미True·learn재료0 · 지시서실행보류
 - BOOT다음: 젠스파크답+형GO → K-F재작성 지시 / 또는 다른후보

@@ -1,101 +1,192 @@
-# RESTORE ? ROK21 æ–√‡ ∫πø¯ 1º¯¿ß (¿Ã ∆ƒ¿œ «œ≥™∏È ∫πø¯ øœ∑·)
+# RESTORE ? ROK21 ?? ?? 1?? (? ?? ??? ?? ??)
+
+
 
 <!-- ROK21_RESUME_BLOCK -->
-## µøª˝ ∫π±Õ 5¡Ÿ (¿⁄µø °§ guard_bootøÕ µø¿œ º“Ω∫)
+## ÎèôÏÉù Î≥µÍ∑Ä 5Ï§Ñ (ÏûêÎèô ¬∑ guard_bootÏôÄ ÎèôÏùº ÏÜåÏä§)
 
-1. **HEAD:** `913098f` °§ WORK=`IDLE`
-2. **¡ˆ±›:** **æÁªÍÓÒ** °§ K-F¡ˆΩ√º≠ **REJECT_REWRITE** °§ ¡®Ω∫∆ƒ≈©¡˙πÆ¥Î±‚
-3. **¥Ÿ¿Ω1∞«:** K-F-REWRITE-WAIT ? **æÁªÍÓÒ**. K-F ¡ˆΩ√º≠ **REJECT_REWRITE**(LEARN_WIRED¿ÃπÃTrue°§learn¿Á∑·0°§±∏∞Ê∑ŒFINDINGS). Ω««‡∫∏∑˘. «¸¿Ã ¡®Ω∫∆ƒ≈©ø° `reports/20260811_KF_GENSPARK_QUESTIONS.md` ∫Ÿø©≥÷±‚ °Ê ¥‰+«¸GO »ƒ ¿Á¡ˆΩ√. **1237æ∆¥‘**. (Ω¬¿Œ« ø‰=«¸°§¡®Ω∫∆ƒ≈© °§ º±«‡=æ¯¿Ω)
-4. **SSOT√Êµπ:** ºˆƒ°=`docs/benchmarks/*.json` °§ ∞·«‘=`FINDINGS.md` °§ ∂Û∫ß=`WARRANT.md` ∞° ø¯∫ª. BOOT/STATUS/RESTORE¥¬ ªÁ∫ª.
-5. **±›¡ˆø‰æ‡:** µø∞·≈‰≈´°§kweonπÃ¡¢√À°§ƒ¡¥◊±›¡ˆ°§DB¿¸√º√ ±‚»≠±›¡ˆ°§1~3±∫±‚∑œ±›¡ˆ°§√§∆√∞£∑´°¡πÆº≠æ–√‡.
+1. **HEAD:** `c07d068` ¬∑ WORK=`IDLE`
+2. **ÏßÄÍ∏à:** **ÏñëÏÇ∞Ââç** ¬∑ K-FÏßÄÏãúÏÑú **REJECT_REWRITE** ¬∑ Ï††Ïä§ÌååÌÅ¨ÏßàÎ¨∏ÎåÄÍ∏∞
+3. **Îã§Ïùå1Í±¥:** K-F-REWRITE-WAIT ‚Äî **ÏñëÏÇ∞Ââç**. K-F ÏßÄÏãúÏÑú **REJECT_REWRITE**(LEARN_WIREDÏù¥ÎØ∏True¬∑learnÏû¨Î£å0¬∑Íµ¨Í≤ΩÎ°úFINDINGS). Ïã§ÌñâÎ≥¥Î•ò. ÌòïÏù¥ Ï††Ïä§ÌååÌÅ¨Ïóê `reports/20260811_KF_GENSPARK_QUESTIONS.md` Î∂ôÏó¨ÎÑ£Í∏∞ ‚Üí Îãµ+ÌòïGO ÌõÑ Ïû¨ÏßÄÏãú. **1237ÏïÑÎãò**. (ÏäπÏù∏ÌïÑÏöî=Ìòï¬∑Ï††Ïä§ÌååÌÅ¨ ¬∑ ÏÑ†Ìñâ=ÏóÜÏùå)
+4. **SSOTÏ∂©Îèå:** ÏàòÏπò=`docs/benchmarks/*.json` ¬∑ Í≤∞Ìï®=`FINDINGS.md` ¬∑ ÎùºÎ≤®=`WARRANT.md` Í∞Ä ÏõêÎ≥∏. BOOT/STATUS/RESTOREÎäî ÏÇ¨Î≥∏.
+5. **Í∏àÏßÄÏöîÏïΩ:** ÎèôÍ≤∞ÌÜ†ÌÅ∞¬∑kweonÎØ∏Ï†ëÏ¥â¬∑Ïª®ÎãùÍ∏àÏßÄ¬∑DBÏ†ÑÏ≤¥Ï¥àÍ∏∞ÌôîÍ∏àÏßÄ¬∑1~3Íµ∞Í∏∞Î°ùÍ∏àÏßÄ¬∑Ï±ÑÌåÖÍ∞ÑÎûµ‚â†Î¨∏ÏÑúÏïïÏ∂ï.
 
-> ≈•: **µøª˝, EXTERNAL_START.md(∂«¥¬ RESTORE) ¿–∞Ì Ω√¿€«ÿ. GitHub 404∏È «¸¿Ã ∫Ÿø©¡ÿ LIVE ∫Ì∑œ∏∏ Ω·.**
+> ÌÅê: **ÎèôÏÉù, EXTERNAL_START.md(ÎòêÎäî RESTORE) ÏùΩÍ≥† ÏãúÏûëÌï¥. GitHub 404Î©¥ ÌòïÏù¥ Î∂ôÏó¨Ï§Ä LIVE Î∏îÎ°ùÎßå Ïç®.**
 <!-- /ROK21_RESUME_BLOCK -->
 
 
-> ªı ººº« Ω√¿€ ≈• = **"µøª˝, EXTERNAL_START.md ¿–∞Ì Ω√¿€«ÿ."** (GitHub 404∏È «¸¿Ã ∆ƒ¿œ ¿¸√º ∫Ÿø©≥÷±‚)  
-> **ºˆƒ° SSOT:** `docs/benchmarks/*.json` °§ **∞·«‘:** `FINDINGS.md` °§ **∏Ì∫– ∂Û∫ß:** `WARRANT.md`  
-> BOOT/STATUS/RESTORE/RESUME_HERE ¥¬ ªÁ∫ª ? √Êµπ Ω√ ¿ß ø¯∫ª¿Ã ¿Ã±‰¥Ÿ.  
-> ø‹∫ŒAI ¡¯¿‘ 1º¯¿ß(∑Á∆Æ): `EXTERNAL_START.md` °§ ∫∏¡∂: `FLOW_BRIEF.md` °§ `EXTERNAL_AI_BOOTSTRAP.md`
+
+
+
+> ? ?? ?? ? = **"??, EXTERNAL_START.md ?? ???."** (GitHub 404? ?? ?? ?? ????)  
+
+> **?? SSOT:** `docs/benchmarks/*.json` ? **??:** `FINDINGS.md` ? **?? ??:** `WARRANT.md`  
+
+> BOOT/STATUS/RESTORE/RESUME_HERE ? ?? ? ?? ? ? ??? ???.  
+
+> ??AI ?? 1??(??): `EXTERNAL_START.md` ? ??: `FLOW_BRIEF.md` ? `EXTERNAL_AI_BOOTSTRAP.md`
+
+
 
 ---
 
-## A) 30√  ø‰æ‡ (5¡Ÿ)
 
-1. **¡§√º:** ROK21 = µ∂∏≥ SSOT °§ `D:\ROK21` °§ ∆˜∆Æ **7021** °§ GitHub=`kkr2652199-prog/ROK21`
-2. **3¿⁄ ø™«“:** «¸=∞·¡§ / µøª˝(Claude)=∆«¥‹°§¡ˆΩ√º≠∏∏ / ƒøº≠=Ω««‡°§commit°§push
-3. **»Æ¡§ ∞·∑–:** ¿˚¡ﬂ√‡ **∆Û±‚**. EV πËº± ¿Ø¡ˆ(Y«Æ º¯1.033). **K-09 CLOSED**(Ω«¡˙ ¥©ºˆ π´«ÿ)°§¿¸¡¶∂Û∫ß ¡¶∞≈
-4. **π∞∏Æ ªÛºˆ:** 1¿Â mean=**0.80** °§ best-of-15 √µ¿Â=**2.27** (∞≥º± ∏Ò«• æ∆¥‘)
-5. **«ˆ¿Á √ ¡°:** **PINNED_BASELINE** `640cb67` °§ K-Z~AG øœ∑·∫– ∞Ì¡§ °§ ¥Ÿ¿Ω P1~P4.
+
+## A) 30? ?? (5?)
+
+
+
+1. **??:** ROK21 = ?? SSOT ? `D:\ROK21` ? ?? **7021** ? GitHub=`kkr2652199-prog/ROK21`
+
+2. **3? ??:** ?=?? / ??(Claude)=??????? / ??=???commit?push
+
+3. **?? ??:** ??? **??**. EV ?? ??(Y? ?1.033). **K-09 CLOSED**(?? ?? ??)????? ??
+
+4. **?? ??:** 1? mean=**0.80** ? best-of-15 ??=**2.27** (?? ?? ??)
+
+5. **?? ??:** **PINNED_BASELINE** `640cb67` ? K-Z~AG ??? ?? ? ?? P1~P4.
+
+
 
 ---
 
-## B) ≈œ ∑Œ±◊ (√÷Ω≈ °Ë °§ **√÷¥Î 12«‡** °§ √ ∞˙ Ω√ ø¿∑°µ» «‡ ªË¡¶)
 
-| ¿œΩ√ | «¸ ¡ˆΩ√ ø‰¡ˆ | ƒøº≠ Ω««‡ ∞·∞˙ | ∆«¡§ | ƒøπ‘ |
+
+## B) ? ?? (?? ? ? **?? 12?** ? ?? ? ??? ? ??)
+
+
+
+| ?? | ? ?? ?? | ?? ?? ?? | ?? | ?? |
+
 |------|--------------|----------------|------|------|
-| 2026-08-11 | K-F¡ˆΩ√º≠ πÊ«‚∞À≈‰ | LEARN¿ÃπÃON°§¿Á∑·0 °§ Ω««‡∫∏∑˘°§¡®Ω∫∆ƒ≈©¡˙πÆ | **REJECT_REWRITE** | 8e6d6d6 |
-| 2026-08-11 | ∫–ºÆ»Æ¡§+∏ÆΩ∫∆Æ2~5¿ÃæÓº≠ | LOCK°§W0.9°§SCOREcand_B APPLY°§FGJ∞®ªÁ | **APPLY** | 5c28e23 |
-| 2026-08-11 | 100»∏πÈ≈◊πÃ±‚∑œ°§∞≠¡¶∏Æº¬¿ÁπÈ≈◊°§ƒ¡¥◊±›¡ˆ | ∏Æº¬+1137~1236 WF °§ pool300/bt100 °§ API100 °§ nopeek | **REBUILT_OK** | 7b84c49 |
-| 2026-08-11 | ªÛººUI 10+5°§∫∏±‚¡¡∞‘ | tldSingleView pool-view°§knobs°§schema4 °§ 1236Ω«√¯ | **PATCHED** | 1279f8a |
-| 2026-08-11 | º≠πˆ¿Á∞°µø°§¥Ÿ¿Ω¡¯«‡ | 7021¿Á±‚µø°§«’µøsmoke prefer/prize/hit°§drift0 | **SMOKE_OK** | d1c27e4 |
-| 2026-08-10 | ¥Ÿ¿Ω¡¯«‡°§stat∆–≈œ | HINT miss_pattern 26°Ê**52** °§ hit+0.013 °§ drift0 | **APPLY** | 1f0b957 |
-| 2026-08-10 | ±«¿Â¡¯«‡°§≥˙µ∂∏≥(draws∏∏∞¯¿Ø) | BY_BRAIN∫–∏Æ °§ markov NO_IMPROVE °§ review0.85 APPLY | **APPLY** | c1823af |
-| 2026-08-10 | 1237æ∆¥‘°§1236=∏∂¡ˆ∏∑°§≥˙Ω≈»£∆©¥◊ | NEXT/BOOT «¡∑π¿”¡§¡§ °§ 1237øπ√¯ ¡¶∞≈ | **FRAME** | 2f7788f |
-| 2026-08-10 | K-M+øπ√¯∏Æº¬+100»∏∫πΩ¿ | referee GAINΩƒ °§ pred0 °§ spread0.007°Ê0.143 °§ quota2/1/2 | **PATCHED** | b678490 |
-| 2026-08-10 | ≈◊Ω∫∆Æ¥‹∞Ë ¥Ÿ¿Ω¡¯«‡(3≥˙) | WF «–Ω¿¿‘∑¬ mean ¡§«’ °§ unit/smoke °§ FINDINGS K-N | **PATCHED** | 5e11d7d |
-| 2026-08-10 | «¡∑ŒººΩ∫ ±∏¡∂ ¡˙πÆ(ºˆ¡§æ¯¿Ω) | øπ√¯/√§¡°/evolve »Â∏ß°§API¿«πÃ°§1236/1237Ω«√¯ πÆº≠»≠ | **DOC_OK** | 073e8ea |
-| 2026-08-10 | 1236 Ω«¿¸ ««µÂπÈ ∞À¡ı | nums»Æ¿Œ°§3≥˙ evolve∏∂≈©°§weight0°§dupSKIP °§ ¥‹∞«¬¸∞Ì∏∏ | **VERIFY_OK** | af40d12 |
+
+| 2026-08-11 | K-F??? ???? | LEARN??ON???0 ? ??????????? | **REJECT_REWRITE** | (??) |
+
+| 2026-08-11 | ????+???2~5??? | LOCK?W0.9?SCOREcand_B APPLY?FGJ?? | **APPLY** | 5c28e23 |
+
+| 2026-08-11 | 100??????????????????? | ??+1137~1236 WF ? pool300/bt100 ? API100 ? nopeek | **REBUILT_OK** | 7b84c49 |
+
+| 2026-08-11 | ??UI 10+5????? | tldSingleView pool-view?knobs?schema4 ? 1236?? | **PATCHED** | 1279f8a |
+
+| 2026-08-11 | ?????????? | 7021??????smoke prefer/prize/hit?drift0 | **SMOKE_OK** | d1c27e4 |
+
+| 2026-08-10 | ?????stat?? | HINT miss_pattern 26?**52** ? hit+0.013 ? drift0 | **APPLY** | 1f0b957 |
+
+| 2026-08-10 | ????????(draws???) | BY_BRAIN?? ? markov NO_IMPROVE ? review0.85 APPLY | **APPLY** | c1823af |
+
+| 2026-08-10 | 1237???1236=????????? | NEXT/BOOT ????? ? 1237?? ?? | **FRAME** | 2f7788f |
+
+| 2026-08-10 | K-M+????+100??? | referee GAIN? ? pred0 ? spread0.007?0.143 ? quota2/1/2 | **PATCHED** | b678490 |
+
+| 2026-08-10 | ????? ????(3?) | WF ???? mean ?? ? unit/smoke ? FINDINGS K-N | **PATCHED** | 5e11d7d |
+
+| 2026-08-10 | ???? ?? ??(????) | ??/??/evolve ???API???1236/1237?? ??? | **DOC_OK** | 073e8ea |
+
+| 2026-08-10 | 1236 ?? ??? ?? | nums???3? evolve???weight0?dupSKIP ? ????? | **VERIFY_OK** | af40d12 |
+
 ---
 
-## C) »Æ¡§ ªÁΩ« (µ⁄¡˝¿∏∑¡∏È ªı Ω«√¯ °§ ¿Á≥Ì¿Ô ±›¡ˆ)
 
-| ªÁΩ« | ºˆƒ° | ±Ÿ∞≈∆ƒ¿œ | √÷¡æ»Æ¿Œ ƒøπ‘«ÿΩ√ |
+
+## C) ?? ?? (????? ? ?? ? ??? ??)
+
+
+
+| ?? | ?? | ???? | ???? ???? |
+
 |------|------|----------|------------------|
-| ∫Ûµµ •ˆ©˜ p (main/bonus) | 0.965 / 0.877 | `docs/benchmarks/20260726_∑£¥˝º∫∞À¡§/` | πÃ»Æ¿Œ |
-| OOS ªÛ¿ß6 mean (freq/markov/recency) | 0.748 / 0.769 / 0.752 | µøªÛ step2 | πÃ»Æ¿Œ |
-| OOS CI«œ«— > 0.80 | **æ¯¿Ω** °Ê ¿˚¡ﬂ«–Ω¿√‡ ∆Û±‚ | K-11 °§ ∑£¥˝º∫∞À¡§ ∫∏∞Ìº≠ | πÃ»Æ¿Œ |
-| ¿Œ±‚µµ Ridge Spearman / ºˆ∑…πË¿≤ | 0.440 / 1.180°ø | µøªÛ step3 | πÃ»Æ¿Œ |
-| all3 mean (√÷±Ÿ100) | 0.797 CI[0.75, 0.845] | ≥˙∞®ªÁ audit | πÃ»Æ¿Œ |
-| 1¿Â E[¿˚¡ﬂ] | **0.80** | √ ±‚«œ °§ K-O | `93218f8` |
-| AC ¿Ã∑– √÷∫Û / «’ ¿Ã∑–∆Ú±’ | **8** / **138** | `docs/benchmarks/20260727_KZ_theory_constants.json` | `3791727` |
-| pattern/balance ∏Ì∫– | **Ω«¡ı** | `WARRANT.md` °§ K-AA | `bb3fa91` |
+
+| ?? ?? p (main/bonus) | 0.965 / 0.877 | `docs/benchmarks/20260726_?????/` | ??? |
+
+| OOS ??6 mean (freq/markov/recency) | 0.748 / 0.769 / 0.752 | ?? step2 | ??? |
+
+| OOS CI?? > 0.80 | **??** ? ????? ?? | K-11 ? ????? ??? | ??? |
+
+| ??? Ridge Spearman / ???? | 0.440 / 1.180? | ?? step3 | ??? |
+
+| all3 mean (??100) | 0.797 CI[0.75, 0.845] | ??? audit | ??? |
+
+| 1? E[??] | **0.80** | ??? ? K-O | `93218f8` |
+
+| AC ?? ?? / ? ???? | **8** / **138** | `docs/benchmarks/20260727_KZ_theory_constants.json` | `3791727` |
+
+| pattern/balance ?? | **??** | `WARRANT.md` ? K-AA | `bb3fa91` |
+
 | DEDUP E[k] (ON) | **100.000** | `docs/benchmarks/20260727_KV_dedup_verify.json` | `ba98f34` |
-| DB MAX lotto4 / testlotto / hyodo | **1234 / 1234 / 1234** | `docs/benchmarks/20260727_KAB_draw_gap.json` °§ DBΩ«√¯ | `e1a7cd2` |
+
+| DB MAX lotto4 / testlotto / hyodo | **1234 / 1234 / 1234** | `docs/benchmarks/20260727_KAB_draw_gap.json` ? DB?? | `e1a7cd2` |
+
+
 
 ---
 
-## D) ¿˝¥Î ±›¡ˆ (7¡Ÿ)
 
-1. `random.choices` **∂Û¿Œ ºˆ¡§** ±›¡ˆ (oversample »ƒ º±∫∞¿∫ «„øÎ)
-2. `_get_draws_before` ∫Ø∞Ê ±›¡ˆ
-3. boost ªÛ«— ∫Ø∞Ê ±›¡ˆ (carry 0.2 / ending 0.3 / overdue 0.2)
-4. πÈ≈◊ ƒ¡¥◊ ±›¡ˆ (target ¿Ã»ƒ draws°§««µÂπÈ ªÁøÎ)
-5. ø¯∫ª kweon(`D:\3kweon`)°§memoy æ≤±‚ ±›¡ˆ
-6. DB ¿¸√º√ ±‚»≠ ∫Ò±«∞Ì°§±›¡ˆø° ¡ÿ«‘
-7. STATUS°§BOOT ∫ªπÆ°§reports **æ–√‡ ±›¡ˆ** (√§∆√ °∏∞£∑´°π¿∫ √§∆√∏∏)
 
----
+## D) ?? ?? (7?)
 
-## E) ø≠∏∞ ∞·«‘ (FINDINGS.md ø¯∫ª °§ ø©±‚ ªÁ∫ª)
 
-**OPEN (23):** K-00 °§ K-02 °§ K-05 °§ K-08 °§ K-10 °§ K-11 °§ K-12 °§ K-A °§ K-C °§ K-E °§ K-F °§ K-G °§ K-I °§ K-J °§ K-K °§ K-L °§ K-O °§ K-P °§ K-Q °§ K-R °§ K-T °§ K-U °§ **K-Y(¿Ã∑¬)**  
 
-**HOLD (2):** K-M °§ K-N  
+1. `random.choices` **?? ??** ?? (oversample ? ??? ??)
 
-**PATCHED (¬¸∞Ì):** K-06 °§ K-07 °§ K-S °§ K-V °§ K-Z °§ K-AA °§ K-AB °§ K-AC °§ K-AD °§ K-AE °§ K-AF °§ **K-AG** °§ **K-X** °§ **K-W** °§ **K-B** °§ **K-H** °§ **K-D** °§ **K-P3** °§ **K-P5**  
+2. `_get_draws_before` ?? ??
 
-**CLOSED:** K-01 °§ K-03 °§ K-04 °§ K-09  
+3. boost ?? ?? ?? (carry 0.2 / ending 0.3 / overdue 0.2)
 
-°ÿ **K-07 = PATCHED** (OPEN æ∆¥‘). ªÛºº°§∫Ò∞Ì¥¬ `FINDINGS.md`∏∏ ºˆ¡§.
+4. ?? ?? ?? (target ?? draws???? ??)
+
+5. ?? kweon(`D:\3kweon`)?memoy ?? ??
+
+6. DB ????? ??????? ??
+
+7. STATUS?BOOT ???reports **?? ??** (?? ????? ???)
+
+
 
 ---
 
-## F) ¥ı ¿–¿ª ∆ƒ¿œ øÏº±º¯¿ß
+
+
+## E) ?? ?? (FINDINGS.md ?? ? ?? ??)
+
+
+
+**OPEN (23):** K-00 ? K-02 ? K-05 ? K-08 ? K-10 ? K-11 ? K-12 ? K-A ? K-C ? K-E ? K-F ? K-G ? K-I ? K-J ? K-K ? K-L ? K-O ? K-P ? K-Q ? K-R ? K-T ? K-U ? **K-Y(??)**  
+
+
+
+**HOLD (2):** K-M ? K-N  
+
+
+
+**PATCHED (??):** K-06 ? K-07 ? K-S ? K-V ? K-Z ? K-AA ? K-AB ? K-AC ? K-AD ? K-AE ? K-AF ? **K-AG** ? **K-X** ? **K-W** ? **K-B** ? **K-H** ? **K-D** ? **K-P3** ? **K-P5**  
+
+
+
+**CLOSED:** K-01 ? K-03 ? K-04 ? K-09  
+
+
+
+? **K-07 = PATCHED** (OPEN ??). ?????? `FINDINGS.md`? ??.
+
+
+
+---
+
+
+
+## F) ? ?? ?? ????
+
+
 
 1. `BOOT.md`
+
 2. `STATUS_LATEST.md`
+
 3. `FINDINGS.md`
-4. `WARRANT.md` (∏Ì∫– ∂Û∫ß)
-5. √÷Ω≈ `reports/YYYYMMDD_*.md` (øπ: `20260727_KAB_»∏¬˜∞∏¡§«’.md` °§ `20260727_KAC_*.md`)  
-   °ÿ ±∏ ¥‹µ∂∆–≈œ `YYYYMMDD_ROK21` ¡¢µŒ¥¬ ¥ı ¿ÃªÛ ±«¿Â«œ¡ˆ æ ¿Ω.
+
+4. `WARRANT.md` (?? ??)
+
+5. ?? `reports/YYYYMMDD_*.md` (?: `20260727_KAB_?????.md` ? `20260727_KAC_*.md`)  
+
+   ? ? ???? `YYYYMMDD_ROK21` ??? ? ?? ???? ??.
+
