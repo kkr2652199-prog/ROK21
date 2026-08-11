@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5bbeb83` · WORK=`IDLE`
+- HEAD: `e332fed` · WORK=`IDLE`
 - 지금: **양산前** · signal_union APPLY · 강제BTv3
 - 직전: P1/P2게이트 PASS · pool>repack 45/41/39→37/37/34
 - BOOT다음: **형 지시** — 다음튜닝1건 / 1237아님

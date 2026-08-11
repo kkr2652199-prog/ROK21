@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5bbeb83` · WORK=`IDLE`
+1. **HEAD:** `e332fed` · WORK=`IDLE`
 2. **지금:** **양산前** · signal_union APPLY · 강제BTv3
 3. **다음1건:** K-REPACK-UNION-HOLD — **양산前**. 몰아주기 P1/P2=`signal_union` **APPLY**(게이트PASS·prefer↑/prize↓/stat slack). 강제BTv3 재적재·손실 45/41/39→**37/37/34**. 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-11 | 몰아주기P1/P2패치 | signal_union게이트PASS·BTv3·손실↓ | **APPLY** | (push후) |
+| 2026-08-11 | 몰아주기P1/P2패치 | signal_union게이트PASS·BTv3·손실↓ | **APPLY** | e332fed |
 | 2026-08-11 | 순서대로①②③ | 강제BTv2·repack손실조사·K-J SSOT패치 | **DONE** | 64cff04 |
 | 2026-08-11 | 100BT정밀·버그/개선 | 4등5·5등51·tune_json패치·pool>repack | **AUDIT_OK** | f3dfd02 |
 | 2026-08-11 | K-F재정의 GO(재료+preferA/B) | fill100 · prefer무개선 · FINDINGS PATCHED · LEARN유지 | **NO_EFFECT_CLOSE** | c08a712 |
