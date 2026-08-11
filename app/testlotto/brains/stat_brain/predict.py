@@ -19,7 +19,7 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
       transition_v1(기본 OFF) → engine(v2 기본 ON via past_learn)
       → aux_hint → past_learn soft/태그 → learn boost → diversity
     """
-    raw_n = diversity.factor(n_sets)
+    raw_n = diversity.factor(n_sets, brain="stat")
     used_transition = False
     base: list[dict] | None = None
     if transition_v1._use_transition_v1():
@@ -90,7 +90,7 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 "past_learn": pl,
             }
         )
-    return diversity.pick(tagged, n_sets, conf_key="pick_score")
+    return diversity.pick(tagged, n_sets, brain="stat", conf_key="pick_score")
 
 
 predict_sets = run

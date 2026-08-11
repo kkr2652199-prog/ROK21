@@ -24,7 +24,7 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
     adj = learn_data.get("adjustments", {})
     carry_boost = 1.0 + float(adj.get("carry_over_boost", 0))
 
-    raw_n = diversity.factor(n_sets)
+    raw_n = diversity.factor(n_sets, brain="review")
     base = engine.generate(draws, raw_n, adj=adj)
     target_draw_no = int(draws[-1]["draw_no"]) + 1 if draws else 0
     base = rerank_by_aux(
@@ -68,7 +68,7 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
         t["pick_score"] = float(t.get("confidence", 60)) * (
             1.0 + HINT_WEIGHT * (aux_s - 0.5)
         )
-    return diversity.pick(tagged, n_sets, conf_key="pick_score")
+    return diversity.pick(tagged, n_sets, brain="review", conf_key="pick_score")
 
 
 predict_sets = run

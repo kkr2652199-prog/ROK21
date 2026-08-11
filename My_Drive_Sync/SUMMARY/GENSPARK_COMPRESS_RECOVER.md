@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`792e7cb` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`e431ccb` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=792e7cb]
+[ROK21 젠스파크 압축복구 · HEAD=e431ccb]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 792e7cb · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK
-- 직전: set_score교차의존제거 · DB시드1/3 · predict버그0
-- BOOT다음: **형 지시** — 뇌별 pool품질튜닝 / 1237아님
-- NEXT1: K-REFEREE-BY-BRAIN-HOLD — **양산前**. 뇌별독립감독관 **WIRE_OK**(set_score교차0·quota상대화·K-J미러). 이어 예측버그감사 **AUDIT_OK** fails0. 다음=형 지시1건(뇌별pool품질튜닝 등). **1237아님**.
+- HEAD: e431ccb · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD
+- 직전: 뇌별독립감독관 WIRE_OK · 예측감사OK
+- BOOT다음: **형 지시** 1건 / 1237아님
+- NEXT1: K-POOL-QUALITY-HOLD — **양산前**. pool품질: jaccard **HOLD**(0.85) · oversample markov**5** APPLY(stat/review3). 다음=형 지시1건. **1237아님**.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,10 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260811_KPOOL_OVERSAMPLE_BY_BRAIN_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KPOOL_OVERSAMPLE_BY_BRAIN_TUNE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KPOOL_OVERSAMPLE_BY_BRAIN_TUNE.md
+- `20260811_KPOOL_JACCARD_BY_BRAIN_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KPOOL_JACCARD_BY_BRAIN_TUNE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KPOOL_JACCARD_BY_BRAIN_TUNE.md
 - `20260811_KBRAIN_PREDICT_BUG_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KBRAIN_PREDICT_BUG_AUDIT.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KBRAIN_PREDICT_BUG_AUDIT.md
 - `20260811_KREFEREE_BY_BRAIN_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KREFEREE_BY_BRAIN_WIRE.json
@@ -65,10 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KHINT_WEIGHT_BY_BRAIN_TUNE.md
 - `20260811_KREPACK_LOSS_AUDIT_POST_UNION` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KREPACK_LOSS_AUDIT_POST_UNION.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KREPACK_LOSS_AUDIT_POST_UNION.md
-- `20260811_KFORCE_POOL_BACKTEST_100_v3` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KFORCE_POOL_BACKTEST_100_v3.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KFORCE_POOL_BACKTEST_100_v3.md
-- `20260811_KREPACK_UNION_GATE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KREPACK_UNION_GATE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KREPACK_UNION_GATE.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=792e7cb · 지금=**양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK · 다음=K-REFEREE-BY-BRAIN-HOLD
+1. 첫줄: [복귀] HEAD=e431ccb · 지금=**양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD · 다음=K-POOL-QUALITY-HOLD
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 792e7cb_
+_generated: e431ccb_

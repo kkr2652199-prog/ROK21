@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `792e7cb` |
+| HEAD(실측) | `e431ccb` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK |
-| 직전 | set_score교차의존제거 · DB시드1/3 · predict버그0 |
-| BOOT다음 | **형 지시** — 뇌별 pool품질튜닝 / 1237아님 |
-| NEXT1 ID | **K-REFEREE-BY-BRAIN-HOLD** |
-| NEXT1 할일 | **양산前**. 뇌별독립감독관 **WIRE_OK**(set_score교차0·quota상대화·K-J미러). 이어 예측버그감사 **AUDIT_OK** fails0. 다음=형 지시1건(뇌별pool품질튜닝 등). **1237아님**. |
+| 지금 | **양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD |
+| 직전 | 뇌별독립감독관 WIRE_OK · 예측감사OK |
+| BOOT다음 | **형 지시** 1건 / 1237아님 |
+| NEXT1 ID | **K-POOL-QUALITY-HOLD** |
+| NEXT1 할일 | **양산前**. pool품질: jaccard **HOLD**(0.85) · oversample markov**5** APPLY(stat/review3). 다음=형 지시1건. **1237아님**. |
 | 승인필요 | 형 다음 지시 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=792e7cb · 지금=**양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK · 다음=K-REFEREE-BY-BRAIN-HOLD`
+1. 첫줄 `[복귀] HEAD=e431ccb · 지금=**양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD · 다음=K-POOL-QUALITY-HOLD`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

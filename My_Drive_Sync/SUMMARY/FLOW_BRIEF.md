@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `792e7cb` · WORK=`IDLE`
-- 지금: **양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK
-- 직전: set_score교차의존제거 · DB시드1/3 · predict버그0
-- BOOT다음: **형 지시** — 뇌별 pool품질튜닝 / 1237아님
-- NEXT1: K-REFEREE-BY-BRAIN-HOLD — **양산前**. 뇌별독립감독관 **WIRE_OK**(set_score교차0·quota상대화·K-J미러). 이어 예측버그감사 **AUDIT_OK** fails0. 다음=형 지시1건(뇌별pool품질튜닝 등). **1237아님**. (승인=형 다음 지시)
+- HEAD: `e431ccb` · WORK=`IDLE`
+- 지금: **양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD
+- 직전: 뇌별독립감독관 WIRE_OK · 예측감사OK
+- BOOT다음: **형 지시** 1건 / 1237아님
+- NEXT1: K-POOL-QUALITY-HOLD — **양산前**. pool품질: jaccard **HOLD**(0.85) · oversample markov**5** APPLY(stat/review3). 다음=형 지시1건. **1237아님**. (승인=형 다음 지시)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

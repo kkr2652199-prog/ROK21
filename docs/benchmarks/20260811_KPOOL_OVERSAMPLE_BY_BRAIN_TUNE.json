@@ -1,0 +1,884 @@
+{
+  "id": "K-POOL-OVERSAMPLE-BY-BRAIN-TUNE",
+  "ts": "2026-08-11T17:04:11+09:00",
+  "range": [
+    1137,
+    1236
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "base_m": 3,
+  "cands": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "live_before": {
+    "stat": 3,
+    "markov": 5,
+    "review": 3
+  },
+  "results": {
+    "markov": [
+      {
+        "brain": "markov",
+        "m": 3,
+        "prefer": 0.083519,
+        "prize": 0.010907,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.343333,
+          "review": 0.322222
+        },
+        "gate_pass": true,
+        "gate_detail": {
+          "is_baseline": true,
+          "split": true
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010645,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.33,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.020355,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.33,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.001722,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.346667,
+              "review": 0.318333
+            }
+          }
+        ]
+      },
+      {
+        "brain": "markov",
+        "m": 4,
+        "prefer": 0.089677,
+        "prize": 0.010907,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.339444,
+          "review": 0.322222
+        },
+        "gate_pass": true,
+        "gate_detail": {
+          "prefer_pos": true,
+          "split": true,
+          "improve": true,
+          "abs": true,
+          "iso": true,
+          "dprefer": 0.006158,
+          "drift": 0.0
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.092628,
+            "prize": 0.010645,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.089324,
+            "prefer_hi": 0.095932,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.34,
+              "stat": 0.33,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.099761,
+            "prize": 0.020355,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.104893,
+            "prefer_hi": 0.094629,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.33,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.076642,
+            "prize": 0.001722,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.083866,
+            "prefer_hi": 0.069418,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.34,
+              "stat": 0.346667,
+              "review": 0.318333
+            }
+          }
+        ]
+      },
+      {
+        "brain": "markov",
+        "m": 5,
+        "prefer": 0.09138,
+        "prize": 0.010907,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.333333,
+          "review": 0.322222
+        },
+        "gate_pass": true,
+        "gate_detail": {
+          "prefer_pos": true,
+          "split": true,
+          "improve": true,
+          "abs": true,
+          "iso": true,
+          "dprefer": 0.007861,
+          "drift": 0.0
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.097128,
+            "prize": 0.010645,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.091824,
+            "prefer_hi": 0.102432,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.333333,
+              "stat": 0.33,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.101902,
+            "prize": 0.020355,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.107847,
+            "prefer_hi": 0.095958,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.33,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.075109,
+            "prize": 0.001722,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.083808,
+            "prefer_hi": 0.06641,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.328333,
+              "stat": 0.346667,
+              "review": 0.318333
+            }
+          }
+        ]
+      },
+      {
+        "brain": "markov",
+        "m": 6,
+        "prefer": 0.090687,
+        "prize": 0.010907,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.337778,
+          "review": 0.322222
+        },
+        "gate_pass": true,
+        "gate_detail": {
+          "prefer_pos": true,
+          "split": true,
+          "improve": true,
+          "abs": true,
+          "iso": true,
+          "dprefer": 0.007168,
+          "drift": 0.0
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.092809,
+            "prize": 0.010645,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.087099,
+            "prefer_hi": 0.098518,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.335,
+              "stat": 0.33,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.102531,
+            "prize": 0.020355,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.108251,
+            "prefer_hi": 0.096811,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.336667,
+              "stat": 0.33,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.07672,
+            "prize": 0.001722,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.084674,
+            "prefer_hi": 0.068766,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.341667,
+              "stat": 0.346667,
+              "review": 0.318333
+            }
+          }
+        ]
+      }
+    ],
+    "review": [
+      {
+        "brain": "review",
+        "m": 3,
+        "prefer": 0.083519,
+        "prize": 0.010907,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.343333,
+          "review": 0.322222
+        },
+        "gate_pass": true,
+        "gate_detail": {
+          "is_baseline": true,
+          "split_neg": false,
+          "pool_prize_nonneg_waive": true
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010645,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.33,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.020355,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.33,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.001722,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.346667,
+              "review": 0.318333
+            }
+          }
+        ]
+      },
+      {
+        "brain": "review",
+        "m": 4,
+        "prefer": 0.083519,
+        "prize": 0.0122,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.343333,
+          "review": 0.325
+        },
+        "gate_pass": false,
+        "gate_detail": {
+          "prize_ok": true,
+          "improve": false,
+          "abs": false,
+          "iso": true,
+          "dprize": 0.001293,
+          "drift": 0.0,
+          "need_neg": false
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010871,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.019054,
+            "prize_hi": 0.002688,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.33,
+              "review": 0.323333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.018759,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.023588,
+            "prize_hi": 0.01393,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.33,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.00697,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.007325,
+            "prize_hi": 0.006615,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.346667,
+              "review": 0.321667
+            }
+          }
+        ]
+      },
+      {
+        "brain": "review",
+        "m": 5,
+        "prefer": 0.083519,
+        "prize": 0.00989,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.343333,
+          "review": 0.318333
+        },
+        "gate_pass": false,
+        "gate_detail": {
+          "prize_ok": true,
+          "improve": true,
+          "abs": false,
+          "iso": true,
+          "dprize": -0.001017,
+          "drift": 0.0,
+          "need_neg": false
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010595,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.019877,
+            "prize_hi": 0.001312,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.33,
+              "review": 0.315
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.012993,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.018203,
+            "prize_hi": 0.007784,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.33,
+              "review": 0.328333
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.006082,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.009363,
+            "prize_hi": 0.002801,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.346667,
+              "review": 0.311667
+            }
+          }
+        ]
+      },
+      {
+        "brain": "review",
+        "m": 6,
+        "prefer": 0.083519,
+        "prize": 0.01205,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.343333,
+          "review": 0.325556
+        },
+        "gate_pass": false,
+        "gate_detail": {
+          "prize_ok": true,
+          "improve": false,
+          "abs": false,
+          "iso": true,
+          "dprize": 0.001143,
+          "drift": 0.0,
+          "need_neg": false
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010599,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.019887,
+            "prize_hi": 0.001311,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.33,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.018162,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.025862,
+            "prize_hi": 0.010462,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.33,
+              "review": 0.331667
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.007388,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.010835,
+            "prize_hi": 0.003941,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.346667,
+              "review": 0.326667
+            }
+          }
+        ]
+      }
+    ],
+    "stat": [
+      {
+        "brain": "stat",
+        "m": 3,
+        "prefer": 0.083519,
+        "prize": 0.010907,
+        "stat_hit": 0.335556,
+        "pool_hit_mon": {
+          "stat": 0.335556,
+          "markov": 0.343333,
+          "review": 0.322222
+        },
+        "gate_pass": true,
+        "gate_detail": {
+          "is_baseline": true
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010645,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.33,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.020355,
+            "stat_hit": 0.33,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.33,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.001722,
+            "stat_hit": 0.346667,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.346667,
+              "review": 0.318333
+            }
+          }
+        ]
+      },
+      {
+        "brain": "stat",
+        "m": 4,
+        "prefer": 0.083519,
+        "prize": 0.010907,
+        "stat_hit": 0.337222,
+        "pool_hit_mon": {
+          "stat": 0.337222,
+          "markov": 0.343333,
+          "review": 0.322222
+        },
+        "gate_pass": false,
+        "gate_detail": {
+          "stat_ok": true,
+          "improve": false,
+          "prefer_iso": true,
+          "prize_iso": true,
+          "dhit": 0.001666
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010645,
+            "stat_hit": 0.32,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.32,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.020355,
+            "stat_hit": 0.34,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.34,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.001722,
+            "stat_hit": 0.351667,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.351667,
+              "review": 0.318333
+            }
+          }
+        ]
+      },
+      {
+        "brain": "stat",
+        "m": 5,
+        "prefer": 0.083519,
+        "prize": 0.010907,
+        "stat_hit": 0.336667,
+        "pool_hit_mon": {
+          "stat": 0.336667,
+          "markov": 0.343333,
+          "review": 0.322222
+        },
+        "gate_pass": false,
+        "gate_detail": {
+          "stat_ok": true,
+          "improve": false,
+          "prefer_iso": true,
+          "prize_iso": true,
+          "dhit": 0.001111
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010645,
+            "stat_hit": 0.316667,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.316667,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.020355,
+            "stat_hit": 0.355,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.355,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.001722,
+            "stat_hit": 0.338333,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.338333,
+              "review": 0.318333
+            }
+          }
+        ]
+      },
+      {
+        "brain": "stat",
+        "m": 6,
+        "prefer": 0.083519,
+        "prize": 0.010907,
+        "stat_hit": 0.333889,
+        "pool_hit_mon": {
+          "stat": 0.333889,
+          "markov": 0.343333,
+          "review": 0.322222
+        },
+        "gate_pass": false,
+        "gate_detail": {
+          "stat_ok": true,
+          "improve": false,
+          "prefer_iso": true,
+          "prize_iso": true,
+          "dhit": -0.001667
+        },
+        "per_seed": [
+          {
+            "seed": 0,
+            "n": 100,
+            "prefer": 0.087523,
+            "prize": 0.010645,
+            "stat_hit": 0.315,
+            "prefer_lo": 0.081712,
+            "prefer_hi": 0.093334,
+            "prize_lo": 0.011526,
+            "prize_hi": 0.009765,
+            "pool_hit_mon": {
+              "markov": 0.345,
+              "stat": 0.315,
+              "review": 0.318333
+            }
+          },
+          {
+            "seed": 42,
+            "n": 100,
+            "prefer": 0.091472,
+            "prize": 0.020355,
+            "stat_hit": 0.35,
+            "prefer_lo": 0.097605,
+            "prefer_hi": 0.08534,
+            "prize_lo": 0.028802,
+            "prize_hi": 0.011909,
+            "pool_hit_mon": {
+              "markov": 0.338333,
+              "stat": 0.35,
+              "review": 0.33
+            }
+          },
+          {
+            "seed": 123,
+            "n": 100,
+            "prefer": 0.071561,
+            "prize": 0.001722,
+            "stat_hit": 0.336667,
+            "prefer_lo": 0.083734,
+            "prefer_hi": 0.059388,
+            "prize_lo": 0.00431,
+            "prize_hi": -0.000866,
+            "pool_hit_mon": {
+              "markov": 0.346667,
+              "stat": 0.336667,
+              "review": 0.318333
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "picks": {
+    "markov": {
+      "m": 5,
+      "gate": true
+    },
+    "review": null,
+    "stat": null
+  },
+  "chosen": {
+    "stat": 3,
+    "markov": 5,
+    "review": 3
+  },
+  "verdict": "APPLY",
+  "ge3_used_as_claim": false,
+  "note": "양산前 pool품질 · jaccard HOLD 후속 · 1237아님"
+}

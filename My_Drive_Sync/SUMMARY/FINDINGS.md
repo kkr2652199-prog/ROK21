@@ -43,6 +43,8 @@
 | K-I | OPEN | per-brain fallback 없음 | `brains/coordinator.py:94-102` | 단일 뇌 예외 → 전체 실패. try 미보호 |
 | K-J | PATCHED | 가중치 이중 체계 → SSOT=live referee · DB=미러 | `get_referee_weights` · `apply_feedback` 미러동기 · detail_service | 발권/UI=`get_referee_weights` · DB `current_weight`는 미러(구식1+avg*0.1제거) · 20260811_KSEQ · init시드1/3+sync |
 | K-REFEREE-BY-BRAIN | PATCHED | 감독관 단일교차의존 → 뇌별 독립 엔진 | `referee_by_brain.py` · `*_brain/referee.py` · aux_referee | set_score=해당뇌 learn만 · quota만 상대정규화 · 20260811 |
+| K-POOL-JACCARD-BY-BRAIN | HOLD | pool diversify Jaccard 뇌별 스윕 | `diversity.JACCARD_PENALTY_BY_BRAIN` · `20260811_KPOOL_JACCARD_*` | 전뇌 0.85 유지 · |Δ|≪0.005 |
+| K-POOL-OVERSAMPLE-BY-BRAIN | PATCHED | pool 후보배수 뇌별 스윕 | `diversity.OVERSAMPLE_MULT_BY_BRAIN` · predict factor(brain=) | markov**5** APPLY · prefer+0.0079 · stat/review3 |
 | K-K | PATCHED | 클릭 예측이 feedback 미연결 → routes 연결 | `click_feedback.py` · `routes.py` | POST /predict·/fetch-latest → apply_draw_result_feedback · evolve_log note=`K-KK-FEEDBACK` · weight_applied=0.0 유지 · K-M HOLD · K-N PATCHED |
 | K-L | OPEN | R29 ↔ 실제 뇌 구성 전면 불일치 | `RULES_FIXED.md` R29 | 9뇌 중 실재 0개. 실제=3예측+4보조. **형만 수정 가능** |
 | K-M | PATCHED | referee 가중 실효격차 0.33% (사실상 균등) | `learn_state.get_referee_weights` · GAIN=2.5·baseline=0.8 | 구식1+avg×0.15→baseline대비편차×GAIN · 100회 샘플복습 후 격차 확대 · K-N mean입력 선행 |

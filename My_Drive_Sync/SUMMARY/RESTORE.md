@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `792e7cb` · WORK=`IDLE`
-2. **지금:** **양산前** · 뇌별독립감독관 **WIRE_OK** · 예측감사OK
-3. **다음1건:** K-REFEREE-BY-BRAIN-HOLD — **양산前**. 뇌별독립감독관 **WIRE_OK**(set_score교차0·quota상대화·K-J미러). 이어 예측버그감사 **AUDIT_OK** fails0. 다음=형 지시1건(뇌별pool품질튜닝 등). **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
+1. **HEAD:** `e431ccb` · WORK=`IDLE`
+2. **지금:** **양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD
+3. **다음1건:** K-POOL-QUALITY-HOLD — **양산前**. pool품질: jaccard **HOLD**(0.85) · oversample markov**5** APPLY(stat/review3). 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-11 | 진행(pool품질) | jaccard HOLD·oversample markov5 APPLY | **PARTIAL_APPLY** | (push후) |
 | 2026-08-11 | 뇌별독립감독관→예측버그 | WIRE_OK·predict AUDIT_OK fails0 | **PATCHED** | 792e7cb |
 | 2026-08-11 | 패치설명+3뇌정밀·버그 | AUDIT_OK·배선생존·하드버그0 | **AUDIT_OK** | 634491d |
 | 2026-08-11 | 다음진행(HINT튜닝) | DEAD_WIRE→pick_score·v2게이트0.15HOLD | **HOLD** | 8c2d7ca |
@@ -45,8 +46,6 @@
 | 2026-08-11 | 분석확정+리스트2~5이어서 | LOCK·W0.9·SCOREcand_B APPLY·FGJ감사 | **APPLY** | 5c28e23 |
 | 2026-08-11 | 100회백테미기록·강제리셋재백테·컨닝금지 | 리셋+1137~1236 WF · pool300/bt100 · API100 · nopeek | **REBUILT_OK** | 7b84c49 |
 | 2026-08-11 | 상세UI 10+5·보기좋게 | tldSingleView pool-view·knobs·schema4 · 1236실측 | **PATCHED** | 1279f8a |
-| 2026-08-11 | 서버재가동·다음진행 | 7021재기동·합동smoke prefer/prize/hit·drift0 | **SMOKE_OK** | d1c27e4 |
-| 2026-08-10 | 다음진행·stat패턴 | HINT miss_pattern 26→**52** · hit+0.013 · drift0 | **APPLY** | 1f0b957 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

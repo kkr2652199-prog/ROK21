@@ -15,7 +15,7 @@ METHOD_NAME = "선호번호"
 
 def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
     """전이·동반 기반 생성 + 군중 선호(당첨자수 많은 회) 신호."""
-    raw_n = diversity.factor(n_sets)
+    raw_n = diversity.factor(n_sets, brain="markov")
     base = engine.generate(draws, raw_n)
     target_draw_no = int(draws[-1]["draw_no"]) + 1 if draws else 0
     base = rerank_by_aux(
@@ -70,7 +70,7 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
         t["pick_score"] = float(t.get("confidence", 68)) * (
             1.0 + HINT_WEIGHT * (aux_s - 0.5)
         )
-    return diversity.pick(tagged, n_sets, conf_key="pick_score")
+    return diversity.pick(tagged, n_sets, brain="markov", conf_key="pick_score")
 
 
 predict_sets = run
