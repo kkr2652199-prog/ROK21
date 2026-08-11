@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3675c0a` · WORK=`IDLE`
+- HEAD: `f3dfd02` · WORK=`IDLE`
 - 지금: **양산前** · BT100정밀감사 **NO_HARD_BUG** · tune_json패치
 - 직전: 4등5·5등51 재집계 · pool>repack · knobs드리프트
 - BOOT다음: **형 지시** — 강제BT재실행 / 몰아주기개선 / K-J / 1237아님
