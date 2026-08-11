@@ -3037,6 +3037,11 @@
       loadDashboard()
         .then(() => loadBrainMeta())
         .then(() => syncPredictionsForCurrentDraw());
+      // 기본 활성 탭이 테스트로또(#view-testlotto.active)인데 nav click이 없으면
+      // 회차 select가 비어 「정보 없음」처럼 보임 → 진입 시 항상 초기화
+      if (typeof initTestlottoDrawSearch === 'function') {
+        initTestlottoDrawSearch();
+      }
     }
 
     document.querySelectorAll('.nav-btn[data-view]').forEach((btn) => {
