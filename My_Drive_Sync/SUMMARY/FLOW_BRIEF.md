@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `9782937` · WORK=`RUNNING:K-FORCE-BT-RELOAD`
+- HEAD: `194775e` · WORK=`RUNNING:K-FORCE-BT-RELOAD`
 - 지금: **양산前** · ②pool잔여 **HOLD**(reviewBLEND·statHINT) · 다음③BT
 - 직전: ①합동smoke SMOKE_OK
 - BOOT다음: ③ 강제BT100 재적재(모니터) / 1237아님

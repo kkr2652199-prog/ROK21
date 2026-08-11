@@ -22,13 +22,13 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-OUT_JSON = ROOT / "docs" / "benchmarks" / "20260811_KFORCE_POOL_BACKTEST_100_v3.json"
-OUT_MD = ROOT / "reports" / "20260811_KFORCE_POOL_BACKTEST_100_v3.md"
+OUT_JSON = ROOT / "docs" / "benchmarks" / "20260812_KFORCE_POOL_BACKTEST_100_v4.json"
+OUT_MD = ROOT / "reports" / "20260812_KFORCE_POOL_BACKTEST_100_v4.md"
 DRIVE = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
 
 LO, HI = 1137, 1236
-SURVEY_ID = "K-FORCE-POOL-BT-100-V3"
-STRATEGY_ID = "pool10_repack5_union_candB"
+SURVEY_ID = "K-FORCE-POOL-BT-100-V4"
+STRATEGY_ID = "pool10_repack5_union_ov5"
 
 
 def _reset() -> dict[str, Any]:
@@ -277,13 +277,10 @@ def main() -> int:
     }
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    md = f"""# K-FORCE-POOL-BACKTEST-100
+    md = f"""# K-FORCE-POOL-BACKTEST-100 v4
 
-📅 2026-08-11 KST · **강제 리셋 + 최신 3뇌 WF 재적재**
-
-## 사전 실측 (문제)
-- 페이지에 100회 백테가 안 보임 → DB `backtest_draw_results=0` · `lotto_predictions=0`
-- pool 캐시는 일부 회차(1225~1236)만 잔존 · **100회 아님**
+📅 2026-08-12 KST · **단계③** · 강제 리셋 + live knobs WF 재적재  
+(markov oversample×5 · cand_B · union · ①SMOKE_OK·②pool잔여HOLD 후)
 
 ## 실행
 1. `_k_predict_reset` APPLY — 예측·pool캐시·백테·evolve 삭제 (draws 보존)
@@ -295,17 +292,13 @@ def main() -> int:
 - run_id={wf['run_id']} · n={wf['n']} · range={wf['draw_range']}
 - pool_draws={wf['post_counts']['pool_view_cache_draws']} · bt_rows={wf['post_counts']['backtest_draw_results']}
 - mean_hits={wf['mean_hits']} · ge3_rate={wf['ge3_rate']} (**모니터만 · 클레임금지**)
+- tiers={wf['tiers']}
 - elapsed={wf['elapsed_s']}s
-- knobs={wf['tune_snapshot'].get('BLEND_STRENGTH_BY_BRAIN')} / HINT={wf['tune_snapshot'].get('HINT_SPEC_BY_BRAIN')}
+- knobs={wf['tune_snapshot']}
 - peek_checks={wf['peek_checks']}
 
-## 답 (형 질문)
-| 질문 | 답 |
-|------|-----|
-| 100회 백테 기록이었나? | **의도 100회(1137~1236)** 였으나 UI용 backtest/pool 테이블엔 **미기록**(실측0). 복습 DB `brain_review`만 잔존 가능. |
-| 리셋 없이 재백테? | 캐시 hit면 **구 예측 재사용** 가능 → **강제 리셋 필수** |
-| 강제 백테 후? | **최신 knobs로 재예측** · 구값 재입력 아님 |
-| 컨닝? | `_get_draws_before` · max_material < target 가드 |
+## 판정
+- **verdict** = **{payload['verdict']}** · ge3미클레임 · 1237아님
 """
     OUT_MD.write_text(md, encoding="utf-8")
     DRIVE.parent.mkdir(parents=True, exist_ok=True)
