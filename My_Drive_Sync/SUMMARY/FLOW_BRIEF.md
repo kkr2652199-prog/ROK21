@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `791ecfb` · WORK=`IDLE`
+- HEAD: `6419304` · WORK=`IDLE`
 - 지금: **양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD
 - 직전: 뇌별독립감독관 WIRE_OK · 예측감사OK
 - BOOT다음: **형 지시** 1건 / 1237아님
