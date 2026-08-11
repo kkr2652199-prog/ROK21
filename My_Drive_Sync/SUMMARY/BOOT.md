@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · K-F재정의 **NO_EFFECT_CLOSE** · FINDINGS PATCHED
-- 직전: markov재료100채움 · prefer A/B 무개선 · LEARN_WIRED유지
-- 다음: **형 지시** — 합동smoke / K-J SSOT / 정지 / 1237아님
+- 지금: **양산前** · BT100정밀감사 **NO_HARD_BUG** · tune_json패치
+- 직전: 4등5·5등51 재집계 · pool>repack · knobs드리프트
+- 다음: **형 지시** — 강제BT재실행 / 몰아주기개선 / K-J / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

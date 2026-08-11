@@ -11,7 +11,7 @@ from app.testlotto.models import get_lotto_db, init_testlotto_db
 from app.testlotto.signal_pool import MC_SEED, build_pool_and_repack
 
 BRAIN_TAGS = ("stat", "markov", "review")
-CACHE_SCHEMA_VERSION = 4  # K-UI-POOL10x5: tune_snapshot · review BLEND0.85 · stat HINT52
+CACHE_SCHEMA_VERSION = 4  # K-UI-POOL10x5 · tune_json 컬럼은 부가(NULL이면 live 폴백)
 
 
 def _row_to_brain_payload(pool_json: str, repack_json: str) -> tuple[list[dict], list[dict]]:
@@ -33,6 +33,7 @@ def _rows_to_pool_payload(
     computed_at = None
     seed = MC_SEED
     schema_seen: int | None = None
+    stored_tune: dict[str, Any] | None = None
     for row in rows:
         tag = str(row["brain"])
         if tag not in BRAIN_TAGS:
@@ -47,7 +48,15 @@ def _rows_to_pool_payload(
         pool_by_brain[tag] = pool
         repack_by_brain[tag] = repack
         computed_at = row.get("computed_at") or computed_at
+        if stored_tune is None and row.get("tune_json"):
+            try:
+                stored_tune = json.loads(row["tune_json"])
+            except (TypeError, json.JSONDecodeError):
+                stored_tune = None
     from app.testlotto.signal_pool import tune_snapshot
+
+    # 저장 knobs 우선 · 없으면 live(구 schema4 폴백)
+    tune = stored_tune if isinstance(stored_tune, dict) and stored_tune else tune_snapshot()
 
     return {
         "ok": True,
@@ -59,7 +68,8 @@ def _rows_to_pool_payload(
         "schema_version": schema_seen if require_schema is None else CACHE_SCHEMA_VERSION,
         "pool_by_brain": pool_by_brain,
         "repack_by_brain": repack_by_brain,
-        "tune_snapshot": tune_snapshot(),
+        "tune_snapshot": tune,
+        "tune_from_cache": bool(stored_tune),
         "cached": True,
         "computed_at": computed_at,
     }
@@ -72,7 +82,7 @@ def get_cached_pool_view(draw_no: int) -> dict[str, Any] | None:
     try:
         rows = conn.execute(
             """
-            SELECT brain, pool_json, repack_json, computed_at, seed, schema_version
+            SELECT brain, pool_json, repack_json, computed_at, seed, schema_version, tune_json
             FROM testlotto_pool_view_cache
             WHERE draw_no = ? AND schema_version = ?
             ORDER BY brain
@@ -100,7 +110,7 @@ def get_cached_pool_view_any_schema(draw_no: int) -> dict[str, Any] | None:
             return None
         rows = conn.execute(
             """
-            SELECT brain, pool_json, repack_json, computed_at, seed, schema_version
+            SELECT brain, pool_json, repack_json, computed_at, seed, schema_version, tune_json
             FROM testlotto_pool_view_cache
             WHERE draw_no = ? AND schema_version = ?
             ORDER BY brain
@@ -121,7 +131,7 @@ def build_pool_view_index() -> dict[str, Any]:
     try:
         rows = conn.execute(
             """
-            SELECT c.draw_no, c.brain, c.pool_json, c.repack_json, c.computed_at, c.seed, c.schema_version
+            SELECT c.draw_no, c.brain, c.pool_json, c.repack_json, c.computed_at, c.seed, c.schema_version, c.tune_json
             FROM testlotto_pool_view_cache c
             WHERE c.schema_version = ?
               AND c.draw_no IN (SELECT DISTINCT draw_no FROM testlotto_backtest_draw_results)
@@ -207,19 +217,24 @@ def save_pool_view_cache(draw_no: int, payload: dict[str, Any]) -> None:
     pool_by = payload.get("pool_by_brain") or {}
     repack_by = payload.get("repack_by_brain") or {}
     seed = int(payload.get("seed") or MC_SEED)
+    from app.testlotto.signal_pool import tune_snapshot
+
+    tune = payload.get("tune_snapshot") or tune_snapshot()
+    tune_s = json.dumps(tune, ensure_ascii=False)
     conn = get_lotto_db()
     try:
         for tag in BRAIN_TAGS:
             conn.execute(
                 """
                 INSERT INTO testlotto_pool_view_cache
-                    (draw_no, brain, pool_json, repack_json, seed, schema_version, computed_at)
-                VALUES (?, ?, ?, ?, ?, ?, datetime('now','localtime'))
+                    (draw_no, brain, pool_json, repack_json, seed, schema_version, tune_json, computed_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now','localtime'))
                 ON CONFLICT(draw_no, brain) DO UPDATE SET
                     pool_json = excluded.pool_json,
                     repack_json = excluded.repack_json,
                     seed = excluded.seed,
                     schema_version = excluded.schema_version,
+                    tune_json = excluded.tune_json,
                     computed_at = excluded.computed_at
                 """,
                 (
@@ -229,6 +244,7 @@ def save_pool_view_cache(draw_no: int, payload: dict[str, Any]) -> None:
                     json.dumps(repack_by.get(tag, []), ensure_ascii=False),
                     seed,
                     CACHE_SCHEMA_VERSION,
+                    tune_s,
                 ),
             )
         conn.commit()

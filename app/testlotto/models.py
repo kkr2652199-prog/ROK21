@@ -343,6 +343,8 @@ def init_testlotto_db():
         ("testlotto_brain_page", "predicted_sets_json", "TEXT"),
         ("testlotto_brain_page", "best_set_no", "INTEGER DEFAULT 1"),
         ("testlotto_brain_page", "bonus_matched", "INTEGER DEFAULT 0"),
+        # K-BT100-DEEP-AUDIT: 산출 시점 knobs 보존 (live overlay 방지)
+        ("testlotto_pool_view_cache", "tune_json", "TEXT"),
     ):
         cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})").fetchall()]
         if col not in cols:

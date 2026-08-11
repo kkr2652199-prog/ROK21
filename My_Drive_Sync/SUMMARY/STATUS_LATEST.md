@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-11 KST  
-📌 사유: **[CURSOR] K-F-REDEFINE-JUDGE** — 재료채움+prefer A/B · NO_EFFECT_CLOSE
+📌 사유: **[CURSOR] K-BT100-DEEP-AUDIT** — 100회 정밀재분석 · tune_json 패치
 
-📌 직전: **[CURSOR] K-F-INSTRUCTION-FACTCHECK** — REJECT_REWRITE · 젠스파크질문
+📌 직전: **[CURSOR] K-F-REDEFINE-JUDGE** — NO_EFFECT_CLOSE
 
 ---
 
