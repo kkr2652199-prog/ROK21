@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `787fd21` · WORK=`IDLE`
+- HEAD: `7e09f74` · WORK=`IDLE`
 - 지금: **양산前** · ⑥K-I **WIRE_OK** · ⑦post-refill **SMOKE_OK**
 - 직전: 순서①~⑤ DONE
 - BOOT다음: **형 지시** 1건 / 1237아님
