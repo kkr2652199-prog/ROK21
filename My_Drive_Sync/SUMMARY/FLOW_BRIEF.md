@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `68a5e8d` · WORK=`IDLE`
+- HEAD: `abcb509` · WORK=`IDLE`
 - 지금: **양산前** · 상위리스트①②OK · 발권mean1.64(≥4=0) · NEXT=③smoke
 - 직전: ⑪VERIFY · ⑫BTv5 · refill_v2
 - BOOT다음: ③ post-refill 합동smoke / 1237아님

@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `68a5e8d` · WORK=`IDLE`
+1. **HEAD:** `abcb509` · WORK=`IDLE`
 2. **지금:** **양산前** · 상위리스트①②OK · 발권mean1.64(≥4=0) · NEXT=③smoke
 3. **다음1건:** K-POST-REFILL-JOINT-SMOKE — **양산前**. 상위적중리스트 ①AUDIT·②발권병기 **METRIC_OK**(발권 mean1.64·≥4=0·BT≠발권). 다음=③ refill_v2 후 prefer/prize **합동smoke**. **1237아님** · ge3미클레임. (승인필요=없음(리스트 순서 진행) · 선행=refill_v2 live)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-12 | 현황+상위리스트·①② | BT≠발권·issue mean1.64·≥4=0 · NEXT③ | **METRIC_OK** | (push후) |
+| 2026-08-12 | 현황+상위리스트·①② | BT≠발권·issue mean1.64·≥4=0 · NEXT③ | **METRIC_OK** | 68a5e8d |
 | 2026-08-12 | 다음진행 | ⑪VERIFY_OK·⑫BTv5 REBUILT·refill_v2 s1/m1/r3 | **DONE** | 594cb9f |
 | 2026-08-12 | 다음진행 | ⑨SMOKE_OK·⑩K-C STALE_CLOSE | **DONE** | bb9ff4a |
 | 2026-08-12 | 다음진행·quota | min_each1·m3/r1/s1 APPLY_OK | **APPLY** | b291681 |
@@ -46,7 +46,6 @@
 | 2026-08-12 | 다음리스트간략·종료체크누락 | 20260812보고서+커서동기·후보5 | **DOC_OK** | d05979e |
 | 2026-08-11 | 진행(pool품질) | jaccard HOLD·oversample markov5 APPLY | **PARTIAL_APPLY** | 791ecfb |
 | 2026-08-11 | 뇌별독립감독관→예측버그 | WIRE_OK·predict AUDIT_OK fails0 | **PATCHED** | 792e7cb |
-| 2026-08-11 | 패치설명+3뇌정밀·버그 | AUDIT_OK·배선생존·하드버그0 | **AUDIT_OK** | 634491d |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
