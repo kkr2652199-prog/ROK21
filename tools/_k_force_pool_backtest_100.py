@@ -22,13 +22,13 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-OUT_JSON = ROOT / "docs" / "benchmarks" / "20260811_KFORCE_POOL_BACKTEST_100.json"
-OUT_MD = ROOT / "reports" / "20260811_KFORCE_POOL_BACKTEST_100.md"
+OUT_JSON = ROOT / "docs" / "benchmarks" / "20260811_KFORCE_POOL_BACKTEST_100_v2.json"
+OUT_MD = ROOT / "reports" / "20260811_KFORCE_POOL_BACKTEST_100_v2.md"
 DRIVE = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
 
 LO, HI = 1137, 1236
-SURVEY_ID = "K-FORCE-POOL-BT-100"
-STRATEGY_ID = "pool10_repack5_tuned"
+SURVEY_ID = "K-FORCE-POOL-BT-100-V2"
+STRATEGY_ID = "pool10_repack5_candB_w09"
 
 
 def _reset() -> dict[str, Any]:

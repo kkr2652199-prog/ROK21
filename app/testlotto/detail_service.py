@@ -1002,6 +1002,18 @@ def get_brain_learning_summary(brain_tag: str) -> dict[str, Any]:
             (brain_tag, PHASE_REVIEW),
         ).fetchone()
         state = _parse_json(learn["state_json"] if learn else None, {})
+        # K-J: UI 표시 SSOT = live referee (발권과 동일). DB 행은 미러/레거시.
+        from app.testlotto.learn_state import (
+            get_referee_weights,
+            get_referee_weights_global,
+        )
+
+        try:
+            live_ref = get_referee_weights()
+        except ValueError:
+            live_ref = get_referee_weights_global()
+        live_w = float(live_ref.get(brain_tag, 1.0 / 3.0))
+        db_w = float(weight["current_weight"]) if weight else live_w
         return {
             "brain_tag": brain_tag,
             "brain_name": DISPLAY_NAMES.get(brain_tag, brain_tag),
@@ -1010,7 +1022,10 @@ def get_brain_learning_summary(brain_tag: str) -> dict[str, Any]:
             "recent_avg_match": float(state.get("recent_avg_match") or 0),
             "adjustments": state.get("adjustments", {}),
             "miss_counts": state.get("miss_counts", {}),
-            "current_weight": float(weight["current_weight"]) if weight else 1.0,
+            "current_weight": live_w,
+            "referee_weight": live_w,
+            "db_weight_mirror": db_w,
+            "weight_ssot": "live_get_referee_weights",
             "page_stats": {
                 "records": int(stats["cnt"] or 0) if stats else 0,
                 "avg_match": round(float(stats["avg_match"] or 0), 3) if stats else 0,

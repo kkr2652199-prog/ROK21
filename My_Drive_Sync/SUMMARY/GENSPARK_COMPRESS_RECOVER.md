@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`9c53b52` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`490312e` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=9c53b52]
+[ROK21 젠스파크 압축복구 · HEAD=490312e]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 9c53b52 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · BT100정밀감사 **NO_HARD_BUG** · tune_json패치
-- 직전: 4등5·5등51 재집계 · pool>repack · knobs드리프트
-- BOOT다음: **형 지시** — 강제BT재실행 / 몰아주기개선 / K-J / 1237아님
-- NEXT1: K-BT100-FOLLOW-HOLD — **양산前**. BT100정밀감사 **NO_HARD_BUG**(4등5·5등51·뇌별repack확인·peekOK). **tune_json PATCHED**. 잔여고우선=강제100회재실행(cand_B·W0.9) / 몰아주기손실(pool>repack) / K-J SSOT. **1237아님**. 형 다음 지시 1건.
+- HEAD: 490312e · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 강제BTv2·repack손실조사·K-J PATCHED
+- 직전: 순서①②③ 완료 · 4등6·5등48 · pool_best탈락
+- BOOT다음: **형 지시** — 몰아주기 P1/P2게이트 승인여부 / 1237아님
+- NEXT1: K-SEQ-DONE-HOLD — **양산前**. 순서①강제BTv2(cand_B·4등6·5등48·NO_HARD_BUG) · ②repack손실=POOL_BEST_DROPPED(stat45/mk41/rv39·slots2) PROPOSE_HOLD · ③K-J SSOT=live PATCHED. 다음=형 지시1건(P1/P2게이트승인 또는 다른튜닝). **1237아님**.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,12 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260811_KBT100_DEEP_AUDIT_v2` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KBT100_DEEP_AUDIT_v2.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KBT100_DEEP_AUDIT_v2.md
+- `20260811_KREPACK_LOSS_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KREPACK_LOSS_AUDIT.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KREPACK_LOSS_AUDIT.md
+- `20260811_KFORCE_POOL_BACKTEST_100_v2` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KFORCE_POOL_BACKTEST_100_v2.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KFORCE_POOL_BACKTEST_100_v2.md
 - `20260811_KBT100_DEEP_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KBT100_DEEP_AUDIT.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KBT100_DEEP_AUDIT.md
 - `20260811_KF_재정의_판정` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KF_재정의_판정.json
@@ -63,12 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KSCORE_WEIGHTS_RETUNE.md
 - `20260811_KEVOLVE_FGJ_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KEVOLVE_FGJ_AUDIT.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KEVOLVE_FGJ_AUDIT.md
-- `20260811_KW_CROWD_BY_BRAIN_TUNE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KW_CROWD_BY_BRAIN_TUNE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KW_CROWD_BY_BRAIN_TUNE.md
-- `20260811_KANALYSIS_LOCK_CYCLE1` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KANALYSIS_LOCK_CYCLE1.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KANALYSIS_LOCK_CYCLE1.md
-- `20260811_KFORCE_POOL_BACKTEST_100` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KFORCE_POOL_BACKTEST_100.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KFORCE_POOL_BACKTEST_100.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=9c53b52 · 지금=**양산前** · BT100정밀감사 **NO_HARD_BUG** · tune_json패치 · 다음=K-BT100-FOLLOW-HOLD
+1. 첫줄: [복귀] HEAD=490312e · 지금=**양산前** · 강제BTv2·repack손실조사·K-J PATCHED · 다음=K-SEQ-DONE-HOLD
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 9c53b52_
+_generated: 490312e_

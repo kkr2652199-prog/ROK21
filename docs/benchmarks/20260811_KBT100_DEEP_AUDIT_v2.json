@@ -1,0 +1,456 @@
+{
+  "id": "K-BT100-DEEP-AUDIT",
+  "ts": "2026-08-11T14:03:15+09:00",
+  "range": [
+    1137,
+    1236
+  ],
+  "n_draws_scored": 100,
+  "run": {
+    "run_id": 10,
+    "survey_id": "K-FORCE-POOL-BT-100-V2",
+    "survey_label_ko": "K-FORCE-POOL-BT-100-V2",
+    "strategy_id": "pool10_repack5_candB_w09",
+    "strategy_label_ko": "pool10_repack5_candB_w09",
+    "gate_mode": "force100",
+    "eval_mode": "best_of_pool10_repack5",
+    "n_draws": 100,
+    "seed": 42,
+    "draw_start": 1137,
+    "draw_end": 1236,
+    "ge3_rate": 0.54,
+    "mean_hits": 2.59,
+    "ge3_count": 54,
+    "tier_r1": 0,
+    "tier_r2": 0,
+    "tier_r3": 0,
+    "tier_r4": 6,
+    "tier_r5": 48,
+    "p_value": null,
+    "verdict": "MONITOR_ONLY",
+    "delta_ge3_vs_pin": null,
+    "source_json": "D:/ROK21/docs/benchmarks/20260811_KFORCE_POOL_BACKTEST_100_v2.json",
+    "note": "force reset+WF · tuned knobs · _get_draws_before · no peek · ge3 not claim",
+    "created_at": "2026-08-11 14:01:17"
+  },
+  "pool_cache_rows": 300,
+  "schema_dist": [
+    {
+      "schema_version": 4,
+      "c": 300
+    }
+  ],
+  "live_knobs": {
+    "BLEND": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "W_CROWD": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "W_STRUCT": {
+      "markov": 0.1,
+      "review": 0.1
+    },
+    "SCORE": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "HINT": {
+      "stat": [
+        52,
+        "miss_pattern"
+      ],
+      "markov": [
+        null,
+        "crowd_prefer"
+      ],
+      "review": [
+        null,
+        "crowd_prize"
+      ]
+    },
+    "FEATURE_LAMBDA_WIRE": false,
+    "CACHE_SCHEMA": 4
+  },
+  "cache_tune_snapshot": {
+    "sample_draw_tune_snapshot": {
+      "BLEND_STRENGTH_BY_BRAIN": {
+        "markov": 0.55,
+        "review": 0.85
+      },
+      "HINT_SPEC_BY_BRAIN": {
+        "stat": [
+          52,
+          "miss_pattern"
+        ],
+        "markov": [
+          null,
+          "crowd_prefer"
+        ],
+        "review": [
+          null,
+          "crowd_prize"
+        ]
+      },
+      "SCORE_WEIGHTS_BY_BRAIN": {
+        "stat": [
+          0.25,
+          0.35,
+          0.4
+        ],
+        "markov": [
+          0.65,
+          0.15,
+          0.2
+        ],
+        "review": [
+          0.65,
+          0.15,
+          0.2
+        ]
+      },
+      "hint_shared_across_brains": false,
+      "independence_ko": "공유=lotto_draws만 · 예측과정 뇌별 분리"
+    },
+    "sample_tune_from_cache": true,
+    "warning": "stored tune_json 우선; NULL이면 live tune_snapshot 폴백 (I-TUNE-SNAPSHOT-OVERLAY 코드패치 후 동작)"
+  },
+  "knob_drift": {
+    "score_build_vs_live": false,
+    "blend_build_vs_live": false,
+    "build_SCORE": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "live_SCORE": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "live_W_CROWD": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "build_BLEND": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "live_BLEND": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "tune_from_cache_draws": 100,
+    "tune_live_overlay_draws": 0,
+    "tune_json_filled_rows": 300,
+    "tune_json_total_rows": 300,
+    "api_overlays_live_when_tune_json_null": true,
+    "note": "강제100회 빌드 시점 SCORE=cand_A · 이후 cand_B·W0.9 적용. 구행은 tune_json NULL이라 get_cached_pool_view가 live tune_snapshot으로 폴백할 수 있음."
+  },
+  "global_best": {
+    "mean_hits": 2.59,
+    "tier_counts": {
+      "0": 46,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 6,
+      "5": 48
+    },
+    "r4_n": 6,
+    "r5_n": 48,
+    "r4_draws": [
+      {
+        "draw": 1144,
+        "hits": 4,
+        "bonus": 6
+      },
+      {
+        "draw": 1150,
+        "hits": 4,
+        "bonus": 25
+      },
+      {
+        "draw": 1160,
+        "hits": 4,
+        "bonus": 19
+      },
+      {
+        "draw": 1208,
+        "hits": 4,
+        "bonus": 25
+      },
+      {
+        "draw": 1214,
+        "hits": 4,
+        "bonus": 14
+      },
+      {
+        "draw": 1216,
+        "hits": 4,
+        "bonus": 25
+      }
+    ]
+  },
+  "by_brain": {
+    "stat": {
+      "pool_tier_counts": {
+        "0": 78,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 21
+      },
+      "repack_tier_counts": {
+        "0": 93,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 7
+      },
+      "pool_mean_best_hits": 1.98,
+      "repack_mean_best_hits": 1.54,
+      "pool_beats_repack": 45,
+      "repack_beats_pool": 8,
+      "tie": 47,
+      "repack_r4_draws": [],
+      "repack_r4_n": 0,
+      "repack_r5_n": 7
+    },
+    "markov": {
+      "pool_tier_counts": {
+        "0": 76,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 2,
+        "5": 22
+      },
+      "repack_tier_counts": {
+        "0": 89,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 10
+      },
+      "pool_mean_best_hits": 2.07,
+      "repack_mean_best_hits": 1.63,
+      "pool_beats_repack": 41,
+      "repack_beats_pool": 6,
+      "tie": 53,
+      "repack_r4_draws": [
+        1160
+      ],
+      "repack_r4_n": 1,
+      "repack_r5_n": 10
+    },
+    "review": {
+      "pool_tier_counts": {
+        "0": 84,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 2,
+        "5": 14
+      },
+      "repack_tier_counts": {
+        "0": 92,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 1,
+        "5": 7
+      },
+      "pool_mean_best_hits": 1.98,
+      "repack_mean_best_hits": 1.63,
+      "pool_beats_repack": 39,
+      "repack_beats_pool": 11,
+      "tie": 50,
+      "repack_r4_draws": [
+        1208
+      ],
+      "repack_r4_n": 1,
+      "repack_r5_n": 7
+    }
+  },
+  "bugs": {
+    "cache_miss_draws": [],
+    "bad_sets_n": 0,
+    "bad_sets_sample": [],
+    "bt_mismatch_n": 0,
+    "bt_mismatch_sample": [],
+    "peek_ok": true,
+    "peek": [
+      {
+        "draw": 1137,
+        "max_material": 1136,
+        "ok": true
+      },
+      {
+        "draw": 1187,
+        "max_material": 1186,
+        "ok": true
+      },
+      {
+        "draw": 1236,
+        "max_material": 1235,
+        "ok": true
+      }
+    ],
+    "hard_bugs_found": false
+  },
+  "improvements": [
+    {
+      "id": "I-REPACK-LOSS-stat",
+      "hypothesis": "stat 몰아주기가 pool 최고히트보다 낮아 손실",
+      "evidence": {
+        "pool_mean": 1.98,
+        "repack_mean": 1.54,
+        "pool_beats": 45,
+        "repack_beats": 8
+      },
+      "suggestion": "signal_top 슬롯·SCORE/HINT 재튜닝 또는 몰아주기 선별 특성 점검(기존 K-REPACK-SELECT-DIAG 참고)",
+      "severity": "medium",
+      "status": "OPEN"
+    },
+    {
+      "id": "I-REPACK-LOSS-markov",
+      "hypothesis": "markov 몰아주기가 pool 최고히트보다 낮아 손실",
+      "evidence": {
+        "pool_mean": 2.07,
+        "repack_mean": 1.63,
+        "pool_beats": 41,
+        "repack_beats": 6
+      },
+      "suggestion": "signal_top 슬롯·SCORE/HINT 재튜닝 또는 몰아주기 선별 특성 점검(기존 K-REPACK-SELECT-DIAG 참고)",
+      "severity": "medium",
+      "status": "OPEN"
+    },
+    {
+      "id": "I-REPACK-LOSS-review",
+      "hypothesis": "review 몰아주기가 pool 최고히트보다 낮아 손실",
+      "evidence": {
+        "pool_mean": 1.98,
+        "repack_mean": 1.63,
+        "pool_beats": 39,
+        "repack_beats": 11
+      },
+      "suggestion": "signal_top 슬롯·SCORE/HINT 재튜닝 또는 몰아주기 선별 특성 점검(기존 K-REPACK-SELECT-DIAG 참고)",
+      "severity": "medium",
+      "status": "OPEN"
+    },
+    {
+      "id": "I-TUNE-SNAPSHOT-OVERLAY",
+      "hypothesis": "get_cached_pool_view가 tune_snapshot을 live로 덮어씀",
+      "evidence": {
+        "code": "pool_view_cache._rows_to_pool_payload: stored tune_json 우선",
+        "tune_json_filled_rows": 300,
+        "tune_live_overlay_draws": 0,
+        "note": "코드는 패치됨. 강제100 구간 구행은 tune_json 비어 live 폴백 가능"
+      },
+      "suggestion": "tune_json 컬럼+저장/서빙 패치 유지(구행 NULL→live폴백). 신규 강제BT 시 시점보존.",
+      "severity": "high",
+      "status": "PATCHED_THIS_TURN"
+    },
+    {
+      "id": "I-MARKOV-LEARN-NO-EFFECT",
+      "hypothesis": "markov learn 경로가 히트에 실질 영향 없음",
+      "evidence": "20260811_KF_재정립판정 NO_EFFECT_CLOSE",
+      "suggestion": "learn boost·visit_count 경로 포함한 overdue/carry 조건 축소 · 선호번호 blend가 지배적인지 확인 후 boost 설계 재검토(동결상한 준수)",
+      "severity": "medium",
+      "status": "OPEN"
+    },
+    {
+      "id": "I-STAT-ENGINE-V2-FLAG",
+      "hypothesis": "stat ENGINE_V2 플래그/ past_learn 이중경로 혼선",
+      "evidence": {
+        "ENGINE_V2": false,
+        "file": "stat_brain/engine.py"
+      },
+      "suggestion": "엔진 v2 vs past_learn soft 이중경로 문서화·어느 쪽이 live 지배인지 측정",
+      "severity": "low",
+      "status": "OPEN"
+    },
+    {
+      "id": "I-FEATURE-LAMBDA-OFF",
+      "hypothesis": "feature lambda 와이어 OFF로 보조축 미사용",
+      "evidence": {
+        "FEATURE_LAMBDA_WIRE": false,
+        "ref": "K-EVOLVE-FEAT-LAM-REVAL HOLD"
+      },
+      "suggestion": "몰아주기 보조축으로 재개하려면 뇌별 λ 소규모 게이트(ge3금지·축분리)",
+      "severity": "low",
+      "status": "OPEN"
+    },
+    {
+      "id": "I-KJ-DUAL-WEIGHT",
+      "hypothesis": "발권 가중 SSOT 이중화(문서 vs live)",
+      "evidence": "K-EVOLVE-FGJ-AUDIT DUAL_OPEN",
+      "suggestion": "발권 SSOT=live referee로 문서·코드화 일치(K-J)",
+      "severity": "medium",
+      "status": "OPEN"
+    },
+    {
+      "id": "I-AUX-HINT-WEIGHT",
+      "hypothesis": "aux hint 가중 고정으로 뇌별 힌트 기여 과소/과다",
+      "evidence": {
+        "HINT_WEIGHT": 0.15,
+        "file": "markov_brain/predict.py"
+      },
+      "suggestion": "HINT_WEIGHT_BY_BRAIN 스윕(축=prefer/prize/hit · iso)",
+      "severity": "medium",
+      "status": "OPEN"
+    }
+  ],
+  "verdict": "AUDIT_DONE_NO_HARD_BUG",
+  "ge3_used_as_claim": false,
+  "user_note": "형 UI에서 4·5등·뇌별 몰아주기 확인 — 본 감사가 재집계로 교차검증",
+  "overlay_patch": {
+    "tune_json_column": true,
+    "serve_stored_first": true,
+    "schema_kept": 4,
+    "force100_rows_may_lack_tune_json": false
+  }
+}

@@ -41,7 +41,7 @@
 | K-G | OPEN | ending boost 휴면 | `learn_state.py:134-150` | `ending_digit_boost=0.0` · miss ending=0. 경로는 살아있으나 무효 |
 | K-H | PATCHED | 미등록 AUX 잔존 → **`brains/_unused/` 격리** | `aux_gap_scout.py` · `aux_structure_guard.py` · `20260728_KH_unused_aux.json` | live import0 · 3+4 유지 · 재배선 금지기본 · 예측력무관 |
 | K-I | OPEN | per-brain fallback 없음 | `brains/coordinator.py:94-102` | 단일 뇌 예외 → 전체 실패. try 미보호 |
-| K-J | OPEN | 가중치 이중 체계 | `testlotto_brain_weights.current_weight` vs live referee | DB 1.1687 ↔ live 0.3348. 어느 것이 진짜인지 불명 |
+| K-J | PATCHED | 가중치 이중 체계 → SSOT=live referee · DB=미러 | `get_referee_weights` · `apply_feedback` 미러동기 · detail_service | 발권/UI=`get_referee_weights` · DB `current_weight`는 미러(구식1+avg*0.1제거) · 20260811_KSEQ |
 | K-K | PATCHED | 클릭 예측이 feedback 미연결 → routes 연결 | `click_feedback.py` · `routes.py` | POST /predict·/fetch-latest → apply_draw_result_feedback · evolve_log note=`K-KK-FEEDBACK` · weight_applied=0.0 유지 · K-M HOLD · K-N PATCHED |
 | K-L | OPEN | R29 ↔ 실제 뇌 구성 전면 불일치 | `RULES_FIXED.md` R29 | 9뇌 중 실재 0개. 실제=3예측+4보조. **형만 수정 가능** |
 | K-M | PATCHED | referee 가중 실효격차 0.33% (사실상 균등) | `learn_state.get_referee_weights` · GAIN=2.5·baseline=0.8 | 구식1+avg×0.15→baseline대비편차×GAIN · 100회 샘플복습 후 격차 확대 · K-N mean입력 선행 |

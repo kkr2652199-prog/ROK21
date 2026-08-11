@@ -16,13 +16,13 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-OUT_JSON = ROOT / "docs" / "benchmarks" / "20260811_KBT100_DEEP_AUDIT.json"
-OUT_MD = ROOT / "reports" / "20260811_KBT100_DEEP_AUDIT.md"
+OUT_JSON = ROOT / "docs" / "benchmarks" / "20260811_KBT100_DEEP_AUDIT_v2.json"
+OUT_MD = ROOT / "reports" / "20260811_KBT100_DEEP_AUDIT_v2.md"
 DRIVE = ROOT / "My_Drive_Sync" / "커서보고서" / OUT_MD.name
 
 LO, HI = 1137, 1236
 BRAINS = ("stat", "markov", "review")
-FORCE_JSON = ROOT / "docs" / "benchmarks" / "20260811_KFORCE_POOL_BACKTEST_100.json"
+FORCE_JSON = ROOT / "docs" / "benchmarks" / "20260811_KFORCE_POOL_BACKTEST_100_v2.json"
 
 
 def _now_kst_iso() -> str:
@@ -401,10 +401,10 @@ def audit() -> dict[str, Any]:
         {
             "id": "I-KJ-DUAL-WEIGHT",
             "hypothesis": "발권 가중 SSOT 이중화(문서 vs live)",
-            "evidence": "K-EVOLVE-FGJ-AUDIT DUAL_OPEN",
+            "evidence": "K-J PATCHED: SSOT=get_referee_weights · DB=mirror",
             "suggestion": "발권 SSOT=live referee로 문서·코드화 일치(K-J)",
             "severity": "medium",
-            "status": "OPEN",
+            "status": "PATCHED",
         }
     )
 

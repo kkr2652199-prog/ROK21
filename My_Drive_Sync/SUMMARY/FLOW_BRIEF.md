@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `9c53b52` · WORK=`IDLE`
-- 지금: **양산前** · BT100정밀감사 **NO_HARD_BUG** · tune_json패치
-- 직전: 4등5·5등51 재집계 · pool>repack · knobs드리프트
-- BOOT다음: **형 지시** — 강제BT재실행 / 몰아주기개선 / K-J / 1237아님
-- NEXT1: K-BT100-FOLLOW-HOLD — **양산前**. BT100정밀감사 **NO_HARD_BUG**(4등5·5등51·뇌별repack확인·peekOK). **tune_json PATCHED**. 잔여고우선=강제100회재실행(cand_B·W0.9) / 몰아주기손실(pool>repack) / K-J SSOT. **1237아님**. 형 다음 지시 1건. (승인=형 다음 지시)
+- HEAD: `490312e` · WORK=`IDLE`
+- 지금: **양산前** · 강제BTv2·repack손실조사·K-J PATCHED
+- 직전: 순서①②③ 완료 · 4등6·5등48 · pool_best탈락
+- BOOT다음: **형 지시** — 몰아주기 P1/P2게이트 승인여부 / 1237아님
+- NEXT1: K-SEQ-DONE-HOLD — **양산前**. 순서①강제BTv2(cand_B·4등6·5등48·NO_HARD_BUG) · ②repack손실=POOL_BEST_DROPPED(stat45/mk41/rv39·slots2) PROPOSE_HOLD · ③K-J SSOT=live PATCHED. 다음=형 지시1건(P1/P2게이트승인 또는 다른튜닝). **1237아님**. (승인=형 다음 지시)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

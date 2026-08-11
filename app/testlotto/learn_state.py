@@ -120,18 +120,11 @@ def get_all_learn_states() -> dict[str, dict[str, Any]]:
     return {tag: load_learn_state(tag) for tag in PREDICT_BRAIN_TAGS}
 
 
-def get_referee_weights() -> dict[str, float]:
-    """심판관: 최근 성적(mean 창) 기반 예측뇌 가중치.
-
-    load_learn_state 와 동일 as_of 절단(CUTOFF ON + set_learn_as_of).
-    K-M: baseline(0.8) 대비 편차×GAIN → 정규화. 학습 0회면 균등.
-    """
-    states = get_all_learn_states()
+def _referee_from_states(states: dict[str, dict[str, Any]]) -> dict[str, float]:
     n = len(PREDICT_BRAIN_TAGS)
     equal = {t: 1.0 / n for t in PREDICT_BRAIN_TAGS}
     if all(int(states.get(t, _empty_state()).get("review_count", 0) or 0) <= 0 for t in PREDICT_BRAIN_TAGS):
         return equal
-
     raw: dict[str, float] = {}
     for tag in PREDICT_BRAIN_TAGS:
         avg = float(states.get(tag, _empty_state()).get("recent_avg_match", 0.0) or 0.0)
@@ -141,6 +134,24 @@ def get_referee_weights() -> dict[str, float]:
         )
     total = sum(raw.values()) or 1.0
     return {k: v / total for k, v in raw.items()}
+
+
+def get_referee_weights() -> dict[str, float]:
+    """심판관: 최근 성적(mean 창) 기반 예측뇌 가중치.
+
+    K-J SSOT: coordinator/aux_referee 발권·UI 표시의 유일한 가중 원천.
+    DB `testlotto_brain_weights.current_weight` 는 미러(동기화)일 뿐 SSOT 아님.
+
+    load_learn_state 와 동일 as_of 절단(CUTOFF ON + set_learn_as_of).
+    K-M: baseline(0.8) 대비 편차×GAIN → 정규화. 학습 0회면 균등.
+    """
+    return _referee_from_states(get_all_learn_states())
+
+
+def get_referee_weights_global() -> dict[str, float]:
+    """전역 learn_state 행 기준 referee (apply_feedback 미러·CUTOFF 밖 동기화용)."""
+    states = {tag: _load_global_learn_state(tag) for tag in PREDICT_BRAIN_TAGS}
+    return _referee_from_states(states)
 
 
 def apply_feedback(
@@ -196,24 +207,30 @@ def apply_feedback(
 
     save_learn_state(brain_tag, state)
 
+    # K-J: 발권 SSOT = live get_referee_weights().
+    # DB current_weight 는 미러 — 구식 1+avg*0.1 금지. 쓰기는 전역 행 기준(피드백과 동일).
+    ref = get_referee_weights_global()
     conn = get_lotto_db()
     try:
         conn.execute(
             """
             UPDATE testlotto_brain_weights
-            SET current_weight = ?, recent_avg_match = ?, total_predictions = total_predictions + 1,
+            SET recent_avg_match = ?, total_predictions = total_predictions + 1,
                 total_matches = total_matches + ?, last_updated_draw = ?,
                 updated_at = datetime('now','localtime')
             WHERE brain_tag = ?
             """,
-            (
-                max(0.5, 1.0 + new_avg * 0.1),
-                new_avg,
-                matched_count,
-                draw_no,
-                brain_tag,
-            ),
+            (new_avg, matched_count, draw_no, brain_tag),
         )
+        for tag in PREDICT_BRAIN_TAGS:
+            conn.execute(
+                """
+                UPDATE testlotto_brain_weights
+                SET current_weight = ?, updated_at = datetime('now','localtime')
+                WHERE brain_tag = ?
+                """,
+                (float(ref.get(tag, 1.0 / len(PREDICT_BRAIN_TAGS))), tag),
+            )
         conn.commit()
     finally:
         conn.close()
@@ -227,6 +244,29 @@ def apply_feedback(
         adj.get("carry_over_boost", 0),
     )
     return state
+
+
+def sync_brain_weights_from_referee() -> dict[str, float]:
+    """K-J: DB current_weight ← referee 미러. CUTOFF 밖에서는 전역 행 기준."""
+    try:
+        ref = get_referee_weights()
+    except ValueError:
+        ref = get_referee_weights_global()
+    conn = get_lotto_db()
+    try:
+        for tag in PREDICT_BRAIN_TAGS:
+            conn.execute(
+                """
+                UPDATE testlotto_brain_weights
+                SET current_weight = ?, updated_at = datetime('now','localtime')
+                WHERE brain_tag = ?
+                """,
+                (float(ref.get(tag, 1.0 / len(PREDICT_BRAIN_TAGS))), tag),
+            )
+        conn.commit()
+    finally:
+        conn.close()
+    return dict(ref)
 
 
 def reset_learn_states(conn=None) -> None:

@@ -624,6 +624,8 @@ def tune_snapshot() -> dict[str, Any]:
 
     return {
         "BLEND_STRENGTH_BY_BRAIN": dict(cs.BLEND_STRENGTH_BY_BRAIN),
+        "W_CROWD_BY_BRAIN": dict(cs.W_CROWD_BY_BRAIN),
+        "W_STRUCT_BY_BRAIN": dict(cs.W_STRUCT_BY_BRAIN),
         "HINT_SPEC_BY_BRAIN": {t: list(v) for t, v in HINT_SPEC_BY_BRAIN.items()},
         "SCORE_WEIGHTS_BY_BRAIN": {t: list(v) for t, v in SCORE_WEIGHTS_BY_BRAIN.items()},
         "hint_shared_across_brains": hint_shared_across_brains(),

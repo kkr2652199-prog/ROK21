@@ -10,6 +10,7 @@ from app.testlotto.learn_state import get_referee_weights
 
 
 def get_predict_brain_weights() -> dict[str, float]:
+    """K-J: 발권 가중 SSOT = live get_referee_weights()."""
     return get_referee_weights()
 
 
