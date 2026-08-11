@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `12b2a6e` · WORK=`IDLE`
+1. **HEAD:** `68a5e8d` · WORK=`IDLE`
 2. **지금:** **양산前** · 상위리스트①②OK · 발권mean1.64(≥4=0) · NEXT=③smoke
 3. **다음1건:** K-POST-REFILL-JOINT-SMOKE — **양산前**. 상위적중리스트 ①AUDIT·②발권병기 **METRIC_OK**(발권 mean1.64·≥4=0·BT≠발권). 다음=③ refill_v2 후 prefer/prize **합동smoke**. **1237아님** · ge3미클레임. (승인필요=없음(리스트 순서 진행) · 선행=refill_v2 live)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
