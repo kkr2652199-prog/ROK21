@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · 상세UI **10+5** PATCH · knobs strip · schema4
-- 직전: K-UI-DETAIL-POOL10x5 · 1236 pool10/repack5 실측
-- 다음: **형 지시 대기** — UI추가개선 / 정지 / 1237아님
+- 지금: **양산前** · 강제100회 pool백테 **REBUILT** · UI backtest 적재
+- 직전: 리셋+1137~1236 WF · pool300/bt100 · nopeek · 패치knobs
+- 다음: **형 지시 대기** — UI확인 / 추가튜닝 / 정지 / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

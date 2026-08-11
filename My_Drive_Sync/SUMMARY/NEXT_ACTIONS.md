@@ -3,10 +3,10 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
 
 ## NEXT (1건)
-- ID: K-TUNE-CYCLE-HOLD
-- 할일: **양산前**. 뇌별 튜닝①~④·합동smoke OK · 상세페이지 **10+5 UI PATCHED**(schema4·knobs strip). **1237 양산아님**. 브라우저: `http://127.0.0.1:7021/static/testlotto-detail.html?draw=1236` 또는 메인→테스트로또→자세히 분석. 형 다음 지시 대기.
+- ID: K-FORCE-POOL-BT-HOLD
+- 할일: **양산前**. 강제 리셋+1137~1236 n100 pool백테 **REBUILT_OK**(pool캐시300·bt_results100·API draw-index100). knobs=markov0.55/review0.85/statHINT52 · `_get_draws_before` nopeek. ge3는 모니터만. **1237 양산아님**. 브라우저 Ctrl+F5 후 테스트로또·백테패널/`testlotto-detail.html?draw=1236` 확인. 형 다음 지시 대기.
 - 완료조건: 형 새 지시 1건
-- 선행완료: K-UI-DETAIL-POOL10x5 PATCHED · JOINT-SMOKE OK
+- 선행완료: K-FORCE-POOL-BACKTEST-100 REBUILT_OK · K-UI-DETAIL-POOL10x5 PATCHED
 - 승인필요: 형 다음 지시
 - 선행조건: 없음
 - 최종갱신: 2026-08-11
@@ -19,4 +19,5 @@ IDLE
 
 ## 메모
 - 서버: `python run_v13.py` · 7021
-- Ctrl+F5 권장 (static ?v=20260811a)
+- Ctrl+F5 권장 (static ?v=20260811b)
+- 강제 재백테: `python tools/_k_force_pool_backtest_100.py`

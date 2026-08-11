@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`cf16dfc` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`0cc870d` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=cf16dfc]
+[ROK21 젠스파크 압축복구 · HEAD=0cc870d]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: cf16dfc · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 상세UI **10+5** PATCH · knobs strip · schema4
-- 직전: K-UI-DETAIL-POOL10x5 · 1236 pool10/repack5 실측
-- BOOT다음: **형 지시 대기** — UI추가개선 / 정지 / 1237아님
-- NEXT1: K-TUNE-CYCLE-HOLD — **양산前**. 뇌별 튜닝①~④·합동smoke OK · 상세페이지 **10+5 UI PATCHED**(schema4·knobs strip). **1237 양산아님**. 브라우저: `http://127.0.0.1:7021/static/testlotto-detail.html?draw=1236` 또는 메인→테스트로또→자세히 분석. 형 다음 지시 대기.
+- HEAD: 0cc870d · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 강제100회 pool백테 **REBUILT** · UI backtest 적재
+- 직전: 리셋+1137~1236 WF · pool300/bt100 · nopeek · 패치knobs
+- BOOT다음: **형 지시 대기** — UI확인 / 추가튜닝 / 정지 / 1237아님
+- NEXT1: K-FORCE-POOL-BT-HOLD — **양산前**. 강제 리셋+1137~1236 n100 pool백테 **REBUILT_OK**(pool캐시300·bt_results100·API draw-index100). knobs=markov0.55/review0.85/statHINT52 · `_get_draws_before` nopeek. ge3는 모니터만. **1237 양산아님**. 브라우저 Ctrl+F5 후 테스트로또·백테패널/`testlotto-detail.html?draw=1236` 확인. 형 다음 지시 대기.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260811_KFORCE_POOL_BACKTEST_100` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KFORCE_POOL_BACKTEST_100.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KFORCE_POOL_BACKTEST_100.md
 - `20260811_KUI_DETAIL_POOL10x5` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KUI_DETAIL_POOL10x5.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260811_KUI_DETAIL_POOL10x5.md
 - `20260811_KBRAIN_JOINT_SMOKE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260811_KBRAIN_JOINT_SMOKE.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KMARKOV_PREFER_BLEND_TUNE.md
 - `20260810_KM_REFEREE_WEIGHT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KM_REFEREE_WEIGHT.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KM_REFEREE_WEIGHT.md
-- `20260810_KN_MEAN_INPUT_FIX` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260810_KN_MEAN_INPUT_FIX.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260810_KN_MEAN_INPUT_FIX.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=cf16dfc · 지금=**양산前** · 상세UI **10+5** PATCH · knobs strip · schema4 · 다음=K-TUNE-CYCLE-HOLD
+1. 첫줄: [복귀] HEAD=0cc870d · 지금=**양산前** · 강제100회 pool백테 **REBUILT** · UI backtest 적재 · 다음=K-FORCE-POOL-BT-HOLD
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: cf16dfc_
+_generated: 0cc870d_
