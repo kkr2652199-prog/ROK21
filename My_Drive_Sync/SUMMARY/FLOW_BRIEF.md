@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `15741a0` · WORK=`IDLE`
+- HEAD: `634491d` · WORK=`IDLE`
 - 지금: **양산前** · 3뇌정밀감사 **AUDIT_OK** · 버그0
 - 직전: 독립·배선생존 PASS · pool→repack보존모니터
 - BOOT다음: **형 지시** — 뇌별 pool품질튜닝 / 1237아님
