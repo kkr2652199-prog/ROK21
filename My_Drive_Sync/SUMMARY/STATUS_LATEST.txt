@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-11 KST  
-📌 사유: **[CURSOR] K-POOL-QUALITY-BY-BRAIN** — oversample markov**5** APPLY · jaccard HOLD
+📅 최종 갱신: 2026-08-12 KST  
+📌 사유: **[CURSOR] K-NEXT-LIST-BRIEF** — 다음진행 후보리스트 DOC_OK · 종료체크 20260812보고서 보충
 
-📌 직전: **[CURSOR] K-REFEREE-BY-BRAIN** — WIRE_OK · 예측감사OK
+📌 직전: **[CURSOR] K-POOL-QUALITY-BY-BRAIN** — oversample markov**5** APPLY · jaccard HOLD
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-NEXT-LIST-BRIEF (형GO · 간략보고)** | **DOC_OK** · wire=**False** — 형 「다음 진행 리스트 간략」. IDLE·후보5: ①합동smoke재확인 ②review/stat pool잔여 ③강제BT모니터 ④learn/referee재누적 ⑤K-G ending. 종료체크 `20260812_*.md` 부재 → 본 보고서·커서보고서 동기 보충. 코드/DB무수정·1237아님. · `reports/20260812_KNEXT_LIST_BRIEF.md` · `My_Drive_Sync/커서보고서/20260812_KNEXT_LIST_BRIEF.md` |
 | **K-POOL-QUALITY-BY-BRAIN (형GO · pool품질)** | **PARTIAL_APPLY** — ①`JACCARD_PENALTY_BY_BRAIN` 스윕{0.55…1.25}×seed3×1137~1236 → **NO_IMPROVE_HOLD**(전뇌**0.85** · |Δ|≪0.005). ②`OVERSAMPLE_MULT_BY_BRAIN` 스윕{3…6} → markov **m=5** prefer **0.0835→0.0914**(Δ**+0.0079**≥0.005·prize iso0·split+) **APPLY** · review/stat **m=3 HOLD**. 배선: `diversity.py` + 3뇌 `factor/pick(brain=)`. ge3미클레임·1237아님. · `docs/benchmarks/20260811_KPOOL_JACCARD_BY_BRAIN_TUNE.json` · `20260811_KPOOL_OVERSAMPLE_BY_BRAIN_TUNE.json` · `reports/20260811_KPOOL_QUALITY_BY_BRAIN.md` · `tools/_k_pool_jaccard_by_brain_tune.py` · `_k_pool_oversample_by_brain_tune.py` |
 | **K-REFEREE-BY-BRAIN (형GO · 감독관→예측감사)** | **WIRE_OK** + 예측**AUDIT_OK** — ①뇌별엔진 `*_brain/referee.py`+`referee_by_brain.py` · `score_set`=해당뇌 learn만(타뇌변경에도 불변) · quota=뇌별raw→Σ1 · DB시드**1/3**+init sync(K-J). 검증교차의존0·미러OK. ②이어 예측버그감사 1226~1236 fails**0**(pool10/RNG/hint/peek/quota). FINDINGS K-REFEREE-BY-BRAIN=**PATCHED**. ge3미클레임·1237아님. · `docs/benchmarks/20260811_KREFEREE_BY_BRAIN_WIRE.json` · `20260811_KBRAIN_PREDICT_BUG_AUDIT.json` · `reports/20260811_KREFEREE_BY_BRAIN.md` |
 | **K-BRAIN3-PRECISION-AUDIT (형GO · 정밀·버그)** | **AUDIT_OK** · hard버그**0** — 1216~1236 n21 seed42. PASS: pool10/repack5·교차동일0·hint분리1.0·RNG단독=합동·SCORE/HINT_WEIGHT/W_CROWD/UNION 배선생존·assemble=`signal_union`·peek. 모니터(클레임아님): pool적중번호 mean s**4.43**/m**3.48**/r**3.67** → repack **2.48/2.62/2.24** · 보존비 **0.56/0.75/0.60** · pool>repack번호손실회 s19/m13/r15 → **몰아주기 전 각뇌10세트 품질이 병목**(형 요지와 정합). · `docs/benchmarks/20260811_KBRAIN3_PRECISION_AUDIT.json` · `reports/20260811_KBRAIN3_PRECISION_AUDIT.md` · `tools/_k_brain3_precision_audit.py` |

@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD
-- 직전: 뇌별독립감독관 WIRE_OK · 예측감사OK
-- 다음: **형 지시** 1건 / 1237아님
+- 지금: **양산前** · 다음리스트 DOC_OK · 종료체크 20260812보고서 보충
+- 직전: pool품질 · oversample markov**5** APPLY · jaccard HOLD
+- 다음: **형 지시** 1건(합동smoke/pool잔여/BT/learn/K-G) / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

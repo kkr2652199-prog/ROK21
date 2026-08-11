@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `6419304` · WORK=`IDLE`
-2. **지금:** **양산前** · pool품질 · oversample markov**5** APPLY · jaccard HOLD
-3. **다음1건:** K-POOL-QUALITY-HOLD — **양산前**. pool품질: jaccard **HOLD**(0.85) · oversample markov**5** APPLY(stat/review3). 다음=형 지시1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
+1. **HEAD:** `4b69c9c` · WORK=`IDLE`
+2. **지금:** **양산前** · 다음리스트 DOC_OK · 종료체크 20260812보고서 보충
+3. **다음1건:** K-NEXT-LIST-HOLD — **양산前**. 다음리스트 DOC_OK(`20260812_KNEXT_LIST_BRIEF`). 후보=합동smoke/pool잔여/강제BT/learn재누적/K-G. 형 번호1건. **1237아님**. (승인필요=형 다음 지시 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 다음리스트간략·종료체크누락 | 20260812보고서+커서동기·후보5 | **DOC_OK** | (push후) |
 | 2026-08-11 | 진행(pool품질) | jaccard HOLD·oversample markov5 APPLY | **PARTIAL_APPLY** | 791ecfb |
 | 2026-08-11 | 뇌별독립감독관→예측버그 | WIRE_OK·predict AUDIT_OK fails0 | **PATCHED** | 792e7cb |
 | 2026-08-11 | 패치설명+3뇌정밀·버그 | AUDIT_OK·배선생존·하드버그0 | **AUDIT_OK** | 634491d |
@@ -45,7 +46,6 @@
 | 2026-08-11 | K-F지시서 방향검토 | LEARN이미ON·재료0 · 실행보류·젠스파크질문 | **REJECT_REWRITE** | 8e6d6d6 |
 | 2026-08-11 | 분석확정+리스트2~5이어서 | LOCK·W0.9·SCOREcand_B APPLY·FGJ감사 | **APPLY** | 5c28e23 |
 | 2026-08-11 | 100회백테미기록·강제리셋재백테·컨닝금지 | 리셋+1137~1236 WF · pool300/bt100 · API100 · nopeek | **REBUILT_OK** | 7b84c49 |
-| 2026-08-11 | 상세UI 10+5·보기좋게 | tldSingleView pool-view·knobs·schema4 · 1236실측 | **PATCHED** | 1279f8a |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
