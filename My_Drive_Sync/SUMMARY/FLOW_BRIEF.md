@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f7bfe74` · WORK=`IDLE`
+- HEAD: `84dfd17` · WORK=`IDLE`
 - 지금: **양산前** · L4 몰아주기원장읽기 **WIRE_OK** · NEXT=L4b 역할슬롯WIRE
 - 직전: L3 원장WIRE WIRE_OK
 - BOOT다음: L4b K-TIER-ROLE-SLOTS-WIRE / 1237아님
