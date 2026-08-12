@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-12 | 다음진행 L10 | 발권5 커버스윕 신호有·prefer/prize FAIL · knobs OFF · NEXT=L11 | **HOLD** | 5ced401 |
+| 2026-08-12 | 다음진행 L10 | 발권5 커버스윕 신호有·prefer/prize FAIL · knobs OFF · NEXT=L11 | **HOLD** | 80631f3 |
 | 2026-08-12 | DATA저장감사·갭처리 | L9a AUDIT · L9b/c WIRE · L9d DOC · NEXT=L10 | **WIRE_OK** | 3db1831 |
 | 2026-08-12 | 다음진행 L9 | preserve/union 소형스윕 신호0 · knobs불변 · NEXT=L10 | **HOLD** | 89c3dc7 |
 | 2026-08-12 | 다음진행 L5 | 뇌10감사 AUDIT_OK · L6~8스킵 · NEXT=L9 | **AUDIT_OK** | ad33200 |
