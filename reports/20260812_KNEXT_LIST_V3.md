@@ -90,8 +90,10 @@
 ### L6~L8 뇌별 10세트 스킬 패치
 - L5 결함 시에만 (stat / markov / review) — **본턴 스킵**.
 
-### L9 K-REPACK-PRESERVE-PROBE — **다음**
-### L10 K-TICKET-COVER-LITE
+### L9 K-REPACK-PRESERVE-PROBE — **HOLD**
+- 소형 스윕 신호0 · slots2·cap4 불변.
+
+### L10 K-TICKET-COVER-LITE — **다음**
 ### L11 축 심화 잔여 (중복 스윕 주의)
 ### L12 발권↔10+5 통합 (형 승인)
 

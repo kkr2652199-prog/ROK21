@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 다음진행 L9 | preserve/union 소형스윕 신호0 · knobs불변 · NEXT=L10 | **HOLD** | 89c3dc7 |
 | 2026-08-12 | 다음진행 L5 | 뇌10감사 AUDIT_OK · L6~8스킵 · NEXT=L9 | **AUDIT_OK** | ad33200 |
 | 2026-08-12 | 외부패스·L4b | role 5+3+2 WIRE · prefer/prize PASS · NEXT=L5 | **WIRE_OK** | 0f86ec1 |
 | 2026-08-12 | L4 GO 지시서 | repack 원장소비 WIRE · EMA탈피 · NEXT=L4b | **WIRE_OK** | f7bfe74 |
@@ -45,7 +46,6 @@
 | 2026-08-12 | 현황+상위리스트·①② | BT≠발권·issue mean1.64·≥4=0 · NEXT③ | **METRIC_OK** | 68a5e8d |
 | 2026-08-12 | 다음진행 | ⑪VERIFY_OK·⑫BTv5 REBUILT·refill_v2 s1/m1/r3 | **DONE** | 594cb9f |
 | 2026-08-12 | 다음진행 | ⑨SMOKE_OK·⑩K-C STALE_CLOSE | **DONE** | bb9ff4a |
-| 2026-08-12 | 다음진행·quota | min_each1·m3/r1/s1 APPLY_OK | **APPLY** | b291681 |
 
 ---
 

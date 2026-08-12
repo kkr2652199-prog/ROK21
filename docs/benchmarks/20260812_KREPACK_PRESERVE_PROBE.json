@@ -1,0 +1,380 @@
+{
+  "id": "K-REPACK-PRESERVE-PROBE",
+  "list": "LIST_V3",
+  "step": "L9",
+  "status": "HOLD",
+  "ts": "2026-08-12T10:24:23+09:00",
+  "wire": false,
+  "apply": false,
+  "ge3_used_as_claim": false,
+  "range": [
+    1137,
+    1236
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "live": {
+    "ASSEMBLE_MODE": "signal_union",
+    "POOL_SLOTS_BY_BRAIN": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
+    "POOL_UNION_CAP_BY_BRAIN": {
+      "markov": 4,
+      "stat": 4,
+      "review": 4
+    },
+    "ROLE_SLOTS_WIRE": true,
+    "LEDGER_SIGNAL_WIRE": true,
+    "LEDGER_BLEND": 0.5
+  },
+  "configs": {
+    "base_s2_c4": {
+      "slots": 2,
+      "cap": 4,
+      "prefer": 0.216383,
+      "prize": -0.071525,
+      "preserve": 0.583944,
+      "pool_gt_repack_sum": 111.33,
+      "per_seed": [
+        {
+          "seed": 0,
+          "slots": 2,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.220464,
+          "prize": -0.060629,
+          "preserve": 0.619444,
+          "pool_gt_repack": {
+            "markov": 35,
+            "stat": 32,
+            "review": 39
+          },
+          "pool_gt_repack_sum": 106
+        },
+        {
+          "seed": 42,
+          "slots": 2,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.222219,
+          "prize": -0.07021,
+          "preserve": 0.558111,
+          "pool_gt_repack": {
+            "markov": 42,
+            "stat": 34,
+            "review": 37
+          },
+          "pool_gt_repack_sum": 113
+        },
+        {
+          "seed": 123,
+          "slots": 2,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.206465,
+          "prize": -0.083737,
+          "preserve": 0.574278,
+          "pool_gt_repack": {
+            "markov": 37,
+            "stat": 42,
+            "review": 36
+          },
+          "pool_gt_repack_sum": 115
+        }
+      ]
+    },
+    "cand_s2_c3": {
+      "slots": 2,
+      "cap": 3,
+      "prefer": 0.220198,
+      "prize": -0.074022,
+      "preserve": 0.588815,
+      "pool_gt_repack_sum": 116.33,
+      "per_seed": [
+        {
+          "seed": 0,
+          "slots": 2,
+          "cap": 3,
+          "n": 100,
+          "prefer": 0.225942,
+          "prize": -0.067098,
+          "preserve": 0.621,
+          "pool_gt_repack": {
+            "markov": 35,
+            "stat": 36,
+            "review": 38
+          },
+          "pool_gt_repack_sum": 109
+        },
+        {
+          "seed": 42,
+          "slots": 2,
+          "cap": 3,
+          "n": 100,
+          "prefer": 0.223974,
+          "prize": -0.073953,
+          "preserve": 0.555611,
+          "pool_gt_repack": {
+            "markov": 45,
+            "stat": 35,
+            "review": 38
+          },
+          "pool_gt_repack_sum": 118
+        },
+        {
+          "seed": 123,
+          "slots": 2,
+          "cap": 3,
+          "n": 100,
+          "prefer": 0.210677,
+          "prize": -0.081016,
+          "preserve": 0.589833,
+          "pool_gt_repack": {
+            "markov": 38,
+            "stat": 43,
+            "review": 41
+          },
+          "pool_gt_repack_sum": 122
+        }
+      ],
+      "gate": {
+        "name": "cand_s2_c3",
+        "slots": 2,
+        "cap": 3,
+        "d_prefer": 0.003815,
+        "d_prize": -0.002497,
+        "d_preserve": 0.004871,
+        "d_loss_sum": -5.0,
+        "health": true,
+        "non_worse": true,
+        "signal": false,
+        "pass": false
+      }
+    },
+    "cand_s2_c5": {
+      "slots": 2,
+      "cap": 5,
+      "prefer": 0.134309,
+      "prize": -0.020319,
+      "preserve": 0.604185,
+      "pool_gt_repack_sum": 102,
+      "per_seed": [
+        {
+          "seed": 0,
+          "slots": 2,
+          "cap": 5,
+          "n": 100,
+          "prefer": 0.140224,
+          "prize": -0.006543,
+          "preserve": 0.6295,
+          "pool_gt_repack": {
+            "markov": 33,
+            "stat": 31,
+            "review": 36
+          },
+          "pool_gt_repack_sum": 100
+        },
+        {
+          "seed": 42,
+          "slots": 2,
+          "cap": 5,
+          "n": 100,
+          "prefer": 0.142566,
+          "prize": -0.018617,
+          "preserve": 0.584056,
+          "pool_gt_repack": {
+            "markov": 35,
+            "stat": 27,
+            "review": 39
+          },
+          "pool_gt_repack_sum": 101
+        },
+        {
+          "seed": 123,
+          "slots": 2,
+          "cap": 5,
+          "n": 100,
+          "prefer": 0.120138,
+          "prize": -0.035796,
+          "preserve": 0.599,
+          "pool_gt_repack": {
+            "markov": 35,
+            "stat": 37,
+            "review": 33
+          },
+          "pool_gt_repack_sum": 105
+        }
+      ],
+      "gate": {
+        "name": "cand_s2_c5",
+        "slots": 2,
+        "cap": 5,
+        "d_prefer": -0.082074,
+        "d_prize": 0.051206,
+        "d_preserve": 0.020241,
+        "d_loss_sum": 9.33,
+        "health": true,
+        "non_worse": false,
+        "signal": true,
+        "pass": false
+      }
+    },
+    "cand_s3_c4": {
+      "slots": 3,
+      "cap": 4,
+      "prefer": 0.200035,
+      "prize": -0.062908,
+      "preserve": 0.606574,
+      "pool_gt_repack_sum": 103.33,
+      "per_seed": [
+        {
+          "seed": 0,
+          "slots": 3,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.203466,
+          "prize": -0.053796,
+          "preserve": 0.645389,
+          "pool_gt_repack": {
+            "markov": 30,
+            "stat": 36,
+            "review": 33
+          },
+          "pool_gt_repack_sum": 99
+        },
+        {
+          "seed": 42,
+          "slots": 3,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.206498,
+          "prize": -0.061559,
+          "preserve": 0.565444,
+          "pool_gt_repack": {
+            "markov": 42,
+            "stat": 35,
+            "review": 32
+          },
+          "pool_gt_repack_sum": 109
+        },
+        {
+          "seed": 123,
+          "slots": 3,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.19014,
+          "prize": -0.07337,
+          "preserve": 0.608889,
+          "pool_gt_repack": {
+            "markov": 36,
+            "stat": 35,
+            "review": 31
+          },
+          "pool_gt_repack_sum": 102
+        }
+      ],
+      "gate": {
+        "name": "cand_s3_c4",
+        "slots": 3,
+        "cap": 4,
+        "d_prefer": -0.016348,
+        "d_prize": 0.008617,
+        "d_preserve": 0.02263,
+        "d_loss_sum": 8.0,
+        "health": true,
+        "non_worse": false,
+        "signal": true,
+        "pass": false
+      }
+    },
+    "cand_s1_c4": {
+      "slots": 1,
+      "cap": 4,
+      "prefer": 0.229321,
+      "prize": -0.080402,
+      "preserve": 0.547537,
+      "pool_gt_repack_sum": 117.33,
+      "per_seed": [
+        {
+          "seed": 0,
+          "slots": 1,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.232314,
+          "prize": -0.064461,
+          "preserve": 0.562944,
+          "pool_gt_repack": {
+            "markov": 39,
+            "stat": 41,
+            "review": 40
+          },
+          "pool_gt_repack_sum": 120
+        },
+        {
+          "seed": 42,
+          "slots": 1,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.235818,
+          "prize": -0.081932,
+          "preserve": 0.528111,
+          "pool_gt_repack": {
+            "markov": 39,
+            "stat": 34,
+            "review": 39
+          },
+          "pool_gt_repack_sum": 112
+        },
+        {
+          "seed": 123,
+          "slots": 1,
+          "cap": 4,
+          "n": 100,
+          "prefer": 0.219831,
+          "prize": -0.094814,
+          "preserve": 0.551556,
+          "pool_gt_repack": {
+            "markov": 40,
+            "stat": 43,
+            "review": 37
+          },
+          "pool_gt_repack_sum": 120
+        }
+      ],
+      "gate": {
+        "name": "cand_s1_c4",
+        "slots": 1,
+        "cap": 4,
+        "d_prefer": 0.012938,
+        "d_prize": -0.008877,
+        "d_preserve": -0.036407,
+        "d_loss_sum": -6.0,
+        "health": true,
+        "non_worse": true,
+        "signal": false,
+        "pass": false
+      }
+    }
+  },
+  "base": "base_s2_c4",
+  "winners": [],
+  "best": null,
+  "thresholds": {
+    "PREF_EPS": 0.005,
+    "PRIZE_EPS": 0.005,
+    "PRESERVE_DELTA": 0.01,
+    "LOSS_DELTA": 3.0
+  },
+  "next": {
+    "step": "L10",
+    "id": "K-TICKET-COVER-LITE"
+  },
+  "force_bt": false,
+  "s1": false,
+  "note": "신호없음 HOLD · knobs 불변(slots2·cap4) · 다음 L10 · 1237아님"
+}

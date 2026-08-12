@@ -1,14 +1,12 @@
 # NEXT_ACTIONS.md — 다음 1건만 커서에 지시 (K-AD)
 
-> STEP1 guard_boot 는 **아래 ## NEXT (1건) 블록만** 읽는다. 다른 섹션 무시.
-
-## NEXT (1건)
-- ID: K-REPACK-PRESERVE-PROBE
-- 할일: **양산前**. L5 뇌10스킬감사 **AUDIT_OK**(하드PASS·소프트결함0·L6~L8스킵). 다음=**L9** 몰아주기 보존 **PROBE**(union/slots 소형·신호없으면 HOLD). **1237아님** · 강제BT보류 · S1 개별승인.
-- 완료조건: preserve/union 프로브 JSON · HOLD 또는 소형 후보 · ge3미클레임
-- 선행완료: K-BRAIN10-SKILL-AUDIT · L4b · L4
-- 승인필요: 없음(리스트 순서 · L6~L8 결함없음으로 점프)
-- 선행조건: L5 AUDIT_OK
+> STEP1 guard_boot 는 **아래 ## NEXT (1건)
+- ID: K-TICKET-COVER-LITE
+- 할일: **양산前**. L9 몰아주기보존 **HOLD**(slots2·cap4 불변·소형스윕 신호0). 다음=**L10** 발권5 겹침↓ **커버라이트**(부분당첨 분산·buy-the-pot금지). **1237아님** · 강제BT보류 · S1 개별승인.
+- 완료조건: 발권5 커버/겹침 프로브 JSON · HOLD 또는 소형후보 · ge3미클레임
+- 선행완료: K-REPACK-PRESERVE-PROBE · L5 AUDIT_OK
+- 승인필요: 없음(리스트 순서)
+- 선행조건: L9 HOLD/PROBE 완료
 - 최종갱신: 2026-08-12
 
 
@@ -18,5 +16,5 @@ IDLE
 ---
 
 ## 메모
-- reports/20260812_KBRAIN10_SKILL_AUDIT.md
-- docs/benchmarks/20260812_KBRAIN10_SKILL_AUDIT.json
+- reports/20260812_KREPACK_PRESERVE_PROBE.md
+- docs/benchmarks/20260812_KREPACK_PRESERVE_PROBE.json

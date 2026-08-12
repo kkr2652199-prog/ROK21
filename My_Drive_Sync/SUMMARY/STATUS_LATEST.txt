@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-BRAIN10-SKILL-AUDIT** — L5 **AUDIT_OK** · NEXT=L9 몰아주기보존
+📌 사유: **[CURSOR] K-REPACK-PRESERVE-PROBE** — L9 **HOLD** · NEXT=L10 발권커버
 
-📌 직전: **[CURSOR] K-TIER-ROLE-SLOTS-WIRE** — L4b **WIRE_OK**
+📌 직전: **[CURSOR] K-BRAIN10-SKILL-AUDIT** — L5 **AUDIT_OK**
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-REPACK-PRESERVE-PROBE (LIST_V3 L9)** | **HOLD** · wire=**False** · apply=**False** — slots/cap 소형스윕 seed3×1137~1236. base s2/c4 prefer**0.216**·prize**−0.072**·preserve**0.584**·loss_sum**111**. cands(s2c3/s2c5/s3c4/s1c4) 신호임계 미달 → knobs 불변. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KREPACK_PRESERVE_PROBE.json` · `reports/20260812_KREPACK_PRESERVE_PROBE.md` · `tools/_k_repack_preserve_probe.py` |
 | **K-BRAIN10-SKILL-AUDIT (LIST_V3 L5)** | **AUDIT_OK** · wire=**False**(감사) — 1216~1236 n21 seed42. HARD: pool10·역할5+3+2·pass0 ON=OFF·교차동일0·peek·C8 pool1~5=발권·hint분리 **PASS**. SOFT 스킬축 결함**0** → **L6~L8 스킵**. cover min-J vs skill 모니터만. ge3미클레임·1237아님·강제BT보류. 다음=L9. · `docs/benchmarks/20260812_KBRAIN10_SKILL_AUDIT.json` · `reports/20260812_KBRAIN10_SKILL_AUDIT.md` · `tools/_k_brain10_skill_audit.py` |
 | **K-TIER-ROLE-SLOTS-WIRE (LIST_V3 L4b)** | **WIRE_OK** · wire=**True** — `expand_pool` pass0=`skill_native`×5 · pass1a=`cover_r3`×3 · pass1b=`shape_r2`×2 · repack `focus_r1` 라벨. `ROLE_SLOTS_WIRE=True`. no_bonus_peek T-NB1~4 OK. 게이트 seed3×1137~1236: prefer**+0.294660** · prize**−0.114362** · split1.0 · cn1.0. L4소비·β0.5·1236계약45/6 유지. 외부패스. S1·강제BT 미포함. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KTIER_ROLE_SLOTS_WIRE.json` · `reports/20260812_KTIER_ROLE_SLOTS_WIRE.md` · `app/testlotto/role_slots.py` · `tools/_k_tier_role_slots_wire.py` |
 | **K-REPACK-READ-LEDGER (LIST_V3 L4)** | **WIRE_OK** · wire=**True** — `repack_by_brain`이 `ledger_signal_tables`+scatter 소비 · `LEDGER_SIGNAL_WIRE` · blend**0.5** · target=1236 시 draw_no∈{1234,1235} 소비 · ema_solo_exit**True** · no_peek OK · 1236계약 ledger**45**/scatter**6** · repack15. 역할라벨·S1 IMMEDIATE·강제BT 미포함. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KREPACK_READ_LEDGER.json` · `reports/20260812_KREPACK_READ_LEDGER.md` · `tools/_k_repack_read_ledger.py` |
