@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `250d04d` · WORK=`IDLE`
+- HEAD: `ad69952` · WORK=`IDLE`
 - 지금: **양산前** · L9a~d 데이터저장 **완료** · NEXT=L10 발권커버
 - 직전: L9b review미러 + L9c 스킬숙제 WIRE_OK · L9d DOC
 - BOOT다음: L10 K-TICKET-COVER-LITE / 1237아님
