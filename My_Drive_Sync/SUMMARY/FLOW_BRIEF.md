@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `de2dc0a` · WORK=`IDLE`
+- HEAD: `5fc516e` · WORK=`IDLE`
 - 지금: **양산前** · L9 몰아주기보존 **HOLD** · NEXT=L10 발권커버
 - 직전: L5 뇌10스킬감사 AUDIT_OK
 - BOOT다음: L10 K-TICKET-COVER-LITE / 1237아님

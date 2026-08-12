@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `de2dc0a` · WORK=`IDLE`
+1. **HEAD:** `5fc516e` · WORK=`IDLE`
 2. **지금:** **양산前** · L9 몰아주기보존 **HOLD** · NEXT=L10 발권커버
 3. **다음1건:** K-TICKET-COVER-LITE — **양산前**. L9 몰아주기보존 **HOLD**(slots2·cap4 불변·소형스윕 신호0). 다음=**L10** 발권5 겹침↓ **커버라이트**(부분당첨 분산·buy-the-pot금지). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L9 HOLD/PROBE 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
