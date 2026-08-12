@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c50c072` · WORK=`IDLE`
+1. **HEAD:** `f30b48f` · WORK=`IDLE`
 2. **지금:** **양산前** · L11b markov prefer **HOLD** · NEXT=L11c stat
 3. **다음1건:** K-STAT-HOMEWORK-QUALITY — **양산前**. L11b markov prefer **HOLD**(생일대보너스 prefer↓·BLEND/W_CROWD재탕안함). 다음=**L11c** stat homework 잔여(pool품질·hint weeks·기스윕노브재탕금지). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L11b 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
