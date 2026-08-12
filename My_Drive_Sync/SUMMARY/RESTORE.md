@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f116052` · WORK=`IDLE`
+1. **HEAD:** `d9b30d1` · WORK=`IDLE`
 2. **지금:** **양산前** · L11 review EV **HOLD** · NEXT=L11b markov prefer
 3. **다음1건:** K-MARKOV-PREFER-ALIGN — **양산前**. L11 review EV **HOLD**(shape세기 미개선·BLEND/W_CROWD 재탕안함). 다음=**L11b** markov prefer 잔여(구조사전 vs crowd·Wang생일대·기스윕노브재탕금지). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L11 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

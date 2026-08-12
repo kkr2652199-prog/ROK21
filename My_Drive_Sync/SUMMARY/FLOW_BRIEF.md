@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f116052` · WORK=`IDLE`
+- HEAD: `d9b30d1` · WORK=`IDLE`
 - 지금: **양산前** · L11 review EV **HOLD** · NEXT=L11b markov prefer
 - 직전: L11 K-REVIEW-EV-DEEPEN HOLD (shape |Δ|미달)
 - BOOT다음: L11b K-MARKOV-PREFER-ALIGN / 1237아님
