@@ -340,6 +340,15 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
         (prev_draw_no,),
     ).fetchall()
     if not pred_rows:
+        try:
+            from app.testlotto.pool_hit_ledger import write_pool_hit_ledger
+
+            write_pool_hit_ledger(prev_draw_no, note="auto_feedback_no_pred")
+        except Exception:
+            logger.exception(
+                "[K-POOL-HIT-LEDGER] auto_feedback write failed draw=%s",
+                prev_draw_no,
+            )
         return
 
     draws_before = _get_draws_before(prev_draw_no)
@@ -393,6 +402,22 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
             FEEDBACK_MATCH_MODE,
             matched_count,
             missed,
+        )
+
+    # L3: 직전 회차 원장 (예측 피드백과 독립 · 실패 무시)
+    try:
+        from app.testlotto.pool_hit_ledger import write_pool_hit_ledger
+
+        wr = write_pool_hit_ledger(prev_draw_no, note="auto_feedback")
+        if not wr.get("ok"):
+            logger.warning(
+                "[K-POOL-HIT-LEDGER] auto_feedback write skip draw=%s %s",
+                prev_draw_no,
+                wr,
+            )
+    except Exception:
+        logger.exception(
+            "[K-POOL-HIT-LEDGER] auto_feedback write failed draw=%s", prev_draw_no
         )
 
 

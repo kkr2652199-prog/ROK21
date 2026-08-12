@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · L2b 역할SPEC **DOC_OK** · NEXT=L3 원장WIRE
-- 직전: L2 원장SPEC DOC_OK
-- 다음: L3 K-POOL-HIT-LEDGER-WIRE / 1237아님
+- 지금: **양산前** · L3 원장WIRE **WIRE_OK** · NEXT=L4 몰아주기원장읽기
+- 직전: L2b 역할SPEC DOC_OK
+- 다음: L4 K-REPACK-READ-LEDGER / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

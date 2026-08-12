@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 다음진행 L3 | ledger+scatter WIRE · 1236×45 · no_peek · NEXT=L4 | **WIRE_OK** | (push후) |
 | 2026-08-12 | L2원장SPEC | ledger+scatter스키마 DOC_OK · NEXT=L2b | **DOC_OK** | 3131b55 |
 | 2026-08-12 | L1합동smoke | refill후 prefer/prize SMOKE_OK · NEXT=L2 | **SMOKE_OK** | 73e654e |
 | 2026-08-12 | 역할슬롯5+3+2분석 | LIST_V3 DOC · 등수P↑PASS · NEXT=L1 | **DOC_OK** | 7799d81 |
@@ -45,7 +46,6 @@
 | 2026-08-12 | 다음단계진행 | K-I WIRE_OK·post-refill SMOKE_OK | **DONE** | 7e09f74 |
 | 2026-08-12 | 순서①~⑤단계별 | smoke·HOLD·BTv4·refill·K-G ACTIVE | **DONE** | f80da83 |
 | 2026-08-12 | 단계③ 강제BTv4 | 리셋+100WF · mean2.5모니터 · REBUILT_OK | **REBUILT_OK** | dd0a404 |
-| 2026-08-12 | 단계② pool잔여 | reviewBLEND·statHINT 게이트미달 HOLD | **HOLD** | 194775e |
 
 ---
 

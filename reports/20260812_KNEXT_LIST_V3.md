@@ -69,8 +69,9 @@
 - role 필드·pass1 생성 규칙·no_bonus_peek 테스트 항목·게이트 초안 확정.
 - 근거: 본 분석 보고서. **등수P 문장 금지**.
 
-### L3 K-POOL-HIT-LEDGER-WIRE
+### L3 K-POOL-HIT-LEDGER-WIRE — **WIRE_OK**
 - DB 영속 + 결과확정 경로 기록.
+- 실측: 1236 ledger45·scatter6 · no_peek · reset목록 · `pool_hit_ledger.py`.
 
 ### L4 K-REPACK-READ-LEDGER
 - 몰아주기(`focus_r1`)가 원장 SSOT 소비.

@@ -319,6 +319,47 @@ def init_testlotto_db():
         CREATE INDEX IF NOT EXISTS idx_evolve_log_draw ON testlotto_evolve_log(draw_no);
         CREATE INDEX IF NOT EXISTS idx_evolve_log_brain ON testlotto_evolve_log(brain_tag);
 
+        -- K-POOL-HIT-LEDGER L3: 세트별 적중 원장 (1~6·보너스·분산 SSOT)
+        CREATE TABLE IF NOT EXISTS testlotto_pool_hit_ledger (
+            draw_no        INTEGER NOT NULL,
+            brain_tag      TEXT NOT NULL,
+            kind           TEXT NOT NULL,
+            set_no         INTEGER NOT NULL,
+            nums_json     TEXT NOT NULL,
+            hits           INTEGER NOT NULL,
+            hit_nums_json  TEXT NOT NULL,
+            miss_nums_json TEXT NOT NULL,
+            bonus          INTEGER NOT NULL DEFAULT 0,
+            bonus_hit      INTEGER NOT NULL DEFAULT 0,
+            tier_rank      INTEGER NOT NULL DEFAULT 0,
+            role           TEXT,
+            seed           INTEGER NOT NULL DEFAULT 42,
+            schema_version INTEGER NOT NULL DEFAULT 1,
+            note           TEXT DEFAULT '',
+            created_at     TEXT DEFAULT (datetime('now','localtime')),
+            PRIMARY KEY (draw_no, brain_tag, kind, set_no)
+        );
+        CREATE INDEX IF NOT EXISTS idx_pool_hit_ledger_draw
+            ON testlotto_pool_hit_ledger(draw_no);
+        CREATE INDEX IF NOT EXISTS idx_pool_hit_ledger_brain
+            ON testlotto_pool_hit_ledger(brain_tag, draw_no);
+
+        CREATE TABLE IF NOT EXISTS testlotto_pool_hit_scatter (
+            draw_no              INTEGER NOT NULL,
+            brain_tag            TEXT NOT NULL,
+            kind                 TEXT NOT NULL DEFAULT 'pool',
+            union_hit_nums_json  TEXT NOT NULL,
+            num_set_count_json   TEXT NOT NULL,
+            dup_hit_nums_json    TEXT NOT NULL,
+            sets_with_hits       INTEGER NOT NULL,
+            max_hits_in_set      INTEGER NOT NULL,
+            sum_hits             INTEGER NOT NULL,
+            bonus_hit_set_count  INTEGER NOT NULL DEFAULT 0,
+            schema_version       INTEGER NOT NULL DEFAULT 1,
+            updated_at           TEXT DEFAULT (datetime('now','localtime')),
+            PRIMARY KEY (draw_no, brain_tag, kind)
+        );
+
         -- K-EVOLVE-AUTO S1: 상태머신 (실행은 EVOLVE_AUTO=1 + 형 GO)
         CREATE TABLE IF NOT EXISTS testlotto_evolve_auto_state (
             id                   INTEGER PRIMARY KEY CHECK (id = 1),

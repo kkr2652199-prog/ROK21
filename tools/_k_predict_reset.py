@@ -43,6 +43,8 @@ DELETE_TABLES: dict[str, str] = {
     "testlotto_pool_view_cache": "10세트 pool·몰아주기 캐시",
     "testlotto_evolve_log": "회차·뇌별 pool/repack 채점 로그",
     "testlotto_evolve_auto_state": "evolve 자동화 상태",
+    "testlotto_pool_hit_ledger": "세트별 적중 원장 (K-POOL-HIT-LEDGER)",
+    "testlotto_pool_hit_scatter": "회차×뇌 적중 분산 요약",
     "hit_warrant_log": "적중 명분 로그 (예측 대조 산출)",
 }
 

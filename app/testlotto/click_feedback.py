@@ -170,6 +170,7 @@ def apply_draw_result_feedback(draw_no: int) -> dict[str, Any]:
 
     if not pred_rows:
         out["skipped"] = "no_predictions"
+        out["pool_hit_ledger"] = _write_pool_hit_ledger_safe(dno)
         return out
 
     actual_set = set(actual_nums)
@@ -253,7 +254,19 @@ def apply_draw_result_feedback(draw_no: int) -> dict[str, Any]:
     out["ok"] = True
     if not any_work and not out.get("skipped"):
         out["skipped"] = "all_brains_duplicate_or_empty"
+    out["pool_hit_ledger"] = _write_pool_hit_ledger_safe(dno)
     return out
+
+
+def _write_pool_hit_ledger_safe(draw_no: int) -> dict[str, Any]:
+    """L3: 결과 확정 회차 원장. 실패해도 피드백 본선을 막지 않음."""
+    try:
+        from app.testlotto.pool_hit_ledger import write_pool_hit_ledger
+
+        return write_pool_hit_ledger(int(draw_no), note="click_feedback")
+    except Exception as e:
+        logger.exception("[K-POOL-HIT-LEDGER] write failed draw=%s", draw_no)
+        return {"ok": False, "draw_no": int(draw_no), "error": str(e)}
 
 
 def apply_feedback_after_predict(target_draw_no: int) -> dict[str, Any]:

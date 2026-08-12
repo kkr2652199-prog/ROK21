@@ -1,0 +1,174 @@
+{
+  "id": "K-POOL-HIT-LEDGER-WIRE",
+  "list": "LIST_V3",
+  "step": "L3",
+  "status": "WIRE_OK",
+  "ts_kst": "2026-08-12 09:01:15",
+  "sample_draw": 1236,
+  "actual": [
+    12,
+    18,
+    21,
+    29,
+    34,
+    38
+  ],
+  "bonus": 10,
+  "seed": 42,
+  "n_ledger_sample": 45,
+  "n_scatter_sample": 6,
+  "expected_ledger": 45,
+  "expected_scatter": 6,
+  "structure_ok": true,
+  "by_kind": [
+    {
+      "kind": "pool",
+      "n": 30,
+      "max_hits": 2,
+      "sum_hits": 18
+    },
+    {
+      "kind": "repack",
+      "n": 15,
+      "max_hits": 2,
+      "sum_hits": 13
+    }
+  ],
+  "sample_pool_rows": [
+    {
+      "brain_tag": "markov",
+      "kind": "pool",
+      "set_no": 1,
+      "hits": 0,
+      "bonus_hit": 1,
+      "tier_rank": 0,
+      "role": null
+    },
+    {
+      "brain_tag": "markov",
+      "kind": "pool",
+      "set_no": 2,
+      "hits": 1,
+      "bonus_hit": 0,
+      "tier_rank": 0,
+      "role": null
+    },
+    {
+      "brain_tag": "markov",
+      "kind": "pool",
+      "set_no": 3,
+      "hits": 2,
+      "bonus_hit": 0,
+      "tier_rank": 0,
+      "role": null
+    },
+    {
+      "brain_tag": "markov",
+      "kind": "pool",
+      "set_no": 4,
+      "hits": 0,
+      "bonus_hit": 0,
+      "tier_rank": 0,
+      "role": null
+    },
+    {
+      "brain_tag": "markov",
+      "kind": "pool",
+      "set_no": 5,
+      "hits": 0,
+      "bonus_hit": 0,
+      "tier_rank": 0,
+      "role": null
+    },
+    {
+      "brain_tag": "markov",
+      "kind": "pool",
+      "set_no": 6,
+      "hits": 1,
+      "bonus_hit": 0,
+      "tier_rank": 0,
+      "role": null
+    }
+  ],
+  "scatter_pool": [
+    {
+      "brain_tag": "markov",
+      "kind": "pool",
+      "dup_hit_nums_json": "[12, 29]",
+      "sets_with_hits": 5,
+      "max_hits_in_set": 2,
+      "sum_hits": 7,
+      "bonus_hit_set_count": 2,
+      "union_hit_nums": [
+        12,
+        29,
+        38
+      ],
+      "dup_hit_nums": [
+        12,
+        29
+      ]
+    },
+    {
+      "brain_tag": "review",
+      "kind": "pool",
+      "dup_hit_nums_json": "[]",
+      "sets_with_hits": 3,
+      "max_hits_in_set": 2,
+      "sum_hits": 4,
+      "bonus_hit_set_count": 2,
+      "union_hit_nums": [
+        18,
+        29,
+        34,
+        38
+      ],
+      "dup_hit_nums": []
+    },
+    {
+      "brain_tag": "stat",
+      "kind": "pool",
+      "dup_hit_nums_json": "[18, 21]",
+      "sets_with_hits": 6,
+      "max_hits_in_set": 2,
+      "sum_hits": 7,
+      "bonus_hit_set_count": 2,
+      "union_hit_nums": [
+        18,
+        21,
+        29,
+        34,
+        38
+      ],
+      "dup_hit_nums": [
+        18,
+        21
+      ]
+    }
+  ],
+  "no_peek": {
+    "read_lt_1237": {
+      "ok": true,
+      "target": 1237,
+      "n_rows": 45,
+      "bad_draws": []
+    },
+    "read_lt_1236": {
+      "ok": true,
+      "target": 1236,
+      "n_rows": 0,
+      "bad_draws": []
+    },
+    "target_1236_excludes_1236": true,
+    "ok": true
+  },
+  "predict_reset_listed": true,
+  "counts_global": {
+    "ledger_rows": 45,
+    "scatter_rows": 6,
+    "draws": 1
+  },
+  "role_wire": false,
+  "note": "역할슬롯 코드는 L4b · repack 원장 소비는 L4 · 강제BT보류 · 1237아님",
+  "gates": "prefer/prize 미실행(원장 wire만)"
+}
