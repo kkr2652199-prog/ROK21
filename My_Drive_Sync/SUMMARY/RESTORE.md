@@ -1,11 +1,11 @@
-﻿# RESTORE ??ROK21 ?뺤텞 蹂듭썝 1?쒖쐞 (???뚯씪 ?섎굹硫?蹂듭썝 ?꾨즺)
+# RESTORE — ROK21 압축 복원 1순위 (이 파일 하나면 복원 완료)
 
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `56bc0c8` · WORK=`IDLE`
-2. **지금:** **양산前** · L4b 역할슬롯WIRE **WIRE_OK** · NEXT=L5 뇌10스킬감사
-3. **다음1건:** K-BRAIN10-SKILL-AUDIT — **양산前**. L4b 역할슬롯 **WIRE_OK**(skill×5+cover_r3×3+shape_r2×2 · focus_r1라벨 · prefer/prize게이트PASS · no_bonus_peek). 다음=**L5** 뇌별10세트 스킬 **감사**(역할 도입 전/후 정합). **1237아님** · 강제BT보류 · S1 IMMEDIATE 개별승인. (승인필요=없음(리스트 순서) · 선행=L4b WIRE_OK)
+1. **HEAD:** `84dfd17` · WORK=`IDLE`
+2. **지금:** **양산前** · L4 몰아주기원장읽기 **WIRE_OK** · NEXT=L4b 역할슬롯WIRE
+3. **다음1건:** K-TIER-ROLE-SLOTS-WIRE — **양산前**. L4 몰아주기원장 **WIRE_OK**(repack_by_brain이 ledger+scatter 소비·β=0.5·EMA단독탈피·no_peek·1236계약45/6). 다음=**L4b** 역할슬롯 **WIRE**(skill5+cover_r3×3+shape_r2×2 · no_bonus_peek · prefer/prize 게이트). **1237아님** · 강제BT보류 · S1 IMMEDIATE는 L4후 개별승인. (승인필요=없음(리스트 순서·형 L4 GO 후 본선) · 선행=L4 WIRE_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -13,90 +13,90 @@
 <!-- /ROK21_RESUME_BLOCK -->
 
 
-> ???몄뀡 ?쒖옉 ??= **"?숈깮, EXTERNAL_START.md ?쎄퀬 ?쒖옉??"** (GitHub 404硫??뺤씠 ?뚯씪 ?꾩껜 遺숈뿬?ｊ린)  
-> **?섏튂 SSOT:** `docs/benchmarks/*.json` 쨌 **寃고븿:** `FINDINGS.md` 쨌 **紐낅텇 ?쇰꺼:** `WARRANT.md`  
-> BOOT/STATUS/RESTORE/RESUME_HERE ???щ낯 ??異⑸룎 ?????먮낯???닿릿??  
-> ?몃?AI 吏꾩엯 1?쒖쐞(猷⑦듃): `EXTERNAL_START.md` 쨌 蹂댁“: `FLOW_BRIEF.md` 쨌 `EXTERNAL_AI_BOOTSTRAP.md`
+> 새 세션 시작 큐 = **"동생, EXTERNAL_START.md 읽고 시작해."** (GitHub 404면 형이 파일 전체 붙여넣기)  
+> **수치 SSOT:** `docs/benchmarks/*.json` · **결함:** `FINDINGS.md` · **명분 라벨:** `WARRANT.md`  
+> BOOT/STATUS/RESTORE/RESUME_HERE 는 사본 — 충돌 시 위 원본이 이긴다.  
+> 외부AI 진입 1순위(루트): `EXTERNAL_START.md` · 보조: `FLOW_BRIEF.md` · `EXTERNAL_AI_BOOTSTRAP.md`
 
 ---
 
-## A) 30珥??붿빟 (5以?
+## A) 30초 요약 (5줄)
 
-1. **?뺤껜:** ROK21 = ?낅┰ SSOT 쨌 `D:\ROK21` 쨌 ?ы듃 **7021** 쨌 GitHub=`kkr2652199-prog/ROK21`
-2. **3????븷:** ??寃곗젙 / ?숈깮(Claude)=?먮떒쨌吏?쒖꽌留?/ 而ㅼ꽌=?ㅽ뻾쨌commit쨌push
-3. **?뺤젙 寃곕줎:** ?곸쨷異?**?먭린**. EV 諛곗꽑 ?좎?(Y? ??.033). **K-09 CLOSED**(?ㅼ쭏 ?꾩닔 臾댄빐)쨌?꾩젣?쇰꺼 ?쒓굅
-4. **臾쇰━ ?곸닔:** 1??mean=**0.80** 쨌 best-of-15 泥쒖옣=**2.27** (媛쒖꽑 紐⑺몴 ?꾨떂)
-5. **?꾩옱 珥덉젏:** **PINNED_BASELINE** `640cb67` 쨌 K-Z~AG ?꾨즺遺?怨좎젙 쨌 ?ㅼ쓬 P1~P4.
+1. **정체:** ROK21 = 독립 SSOT · `D:\ROK21` · 포트 **7021** · GitHub=`kkr2652199-prog/ROK21`
+2. **3자 역할:** 형=결정 / 동생(Claude)=판단·지시서만 / 커서=실행·commit·push
+3. **확정 결론:** 적중축 **폐기**. EV 배선 유지(Y풀 순1.033). **K-09 CLOSED**(실질 누수 무해)·전제라벨 제거
+4. **물리 상수:** 1장 mean=**0.80** · best-of-15 천장=**2.27** (개선 목표 아님)
+5. **현재 초점:** **PINNED_BASELINE** `640cb67` · K-Z~AG 완료분 고정 · 다음 P1~P4.
 
 ---
 
-## B) ??濡쒓렇 (理쒖떊 ??쨌 **理쒕? 12??* 쨌 珥덇낵 ???ㅻ옒??????젣)
+## B) 턴 로그 (최신 ↑ · **최대 12행** · 초과 시 오래된 행 삭제)
 
-| ?쇱떆 | ??吏???붿? | 而ㅼ꽌 ?ㅽ뻾 寃곌낵 | ?먯젙 | 而ㅻ컠 |
+| 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-12 | ?몃??⑥뒪쨌L4b | role 5+3+2 WIRE 쨌 prefer/prize PASS 쨌 NEXT=L5 | **WIRE_OK** | (push?? |
-| 2026-08-12 | L4 GO 吏?쒖꽌 | repack ?먯옣?뚮퉬 WIRE 쨌 EMA?덊뵾 쨌 NEXT=L4b | **WIRE_OK** | f7bfe74 |
-| 2026-08-12 | ?ㅼ쓬吏꾪뻾 L3 | ledger+scatter WIRE 쨌 1236횞45 쨌 no_peek 쨌 NEXT=L4 | **WIRE_OK** | 05453be |
-| 2026-08-12 | L2?먯옣SPEC | ledger+scatter?ㅽ궎留?DOC_OK 쨌 NEXT=L2b | **DOC_OK** | 3131b55 |
-| 2026-08-12 | L1?⑸룞smoke | refill??prefer/prize SMOKE_OK 쨌 NEXT=L2 | **SMOKE_OK** | 73e654e |
-| 2026-08-12 | ??븷?щ’5+3+2遺꾩꽍 | LIST_V3 DOC 쨌 ?깆닔P?멠ASS 쨌 NEXT=L1 | **DOC_OK** | 7799d81 |
-| 2026-08-12 | 由ъ뒪?몃낫媛빧룹썝??~6쨌??0 | LIST_V2 DOC 쨌 NEXT=L1 smoke | **DOC_OK** | 0169137 |
-| 2026-08-12 | ?꾪솴+?곸쐞由ъ뒪?맞룐몺??| BT?좊컻沅뙿톓ssue mean1.64쨌??=0 쨌 NEXT??| **METRIC_OK** | 68a5e8d |
-| 2026-08-12 | ?ㅼ쓬吏꾪뻾 | ?챉ERIFY_OK쨌?첕Tv5 REBUILT쨌refill_v2 s1/m1/r3 | **DONE** | 594cb9f |
-| 2026-08-12 | ?ㅼ쓬吏꾪뻾 | ?쮁MOKE_OK쨌?쯏-C STALE_CLOSE | **DONE** | bb9ff4a |
-| 2026-08-12 | ?ㅼ쓬吏꾪뻾쨌quota | min_each1쨌m3/r1/s1 APPLY_OK | **APPLY** | b291681 |
-| 2026-08-12 | ?ㅼ쓬?④퀎吏꾪뻾 | K-I WIRE_OK쨌post-refill SMOKE_OK | **DONE** | 7e09f74 |
+| 2026-08-12 | 다음진행 L5 | 뇌10감사 AUDIT_OK · L6~8스킵 · NEXT=L9 | **AUDIT_OK** | ad33200 |
+| 2026-08-12 | 외부패스·L4b | role 5+3+2 WIRE · prefer/prize PASS · NEXT=L5 | **WIRE_OK** | 0f86ec1 |
+| 2026-08-12 | L4 GO 지시서 | repack 원장소비 WIRE · EMA탈피 · NEXT=L4b | **WIRE_OK** | f7bfe74 |
+| 2026-08-12 | 다음진행 L3 | ledger+scatter WIRE · 1236×45 · no_peek · NEXT=L4 | **WIRE_OK** | 05453be |
+| 2026-08-12 | L2원장SPEC | ledger+scatter스키마 DOC_OK · NEXT=L2b | **DOC_OK** | 3131b55 |
+| 2026-08-12 | L1합동smoke | refill후 prefer/prize SMOKE_OK · NEXT=L2 | **SMOKE_OK** | 73e654e |
+| 2026-08-12 | 역할슬롯5+3+2분석 | LIST_V3 DOC · 등수P↑PASS · NEXT=L1 | **DOC_OK** | 7799d81 |
+| 2026-08-12 | 리스트보강·원장1~6·뇌10 | LIST_V2 DOC · NEXT=L1 smoke | **DOC_OK** | 0169137 |
+| 2026-08-12 | 현황+상위리스트·①② | BT≠발권·issue mean1.64·≥4=0 · NEXT③ | **METRIC_OK** | 68a5e8d |
+| 2026-08-12 | 다음진행 | ⑪VERIFY_OK·⑫BTv5 REBUILT·refill_v2 s1/m1/r3 | **DONE** | 594cb9f |
+| 2026-08-12 | 다음진행 | ⑨SMOKE_OK·⑩K-C STALE_CLOSE | **DONE** | bb9ff4a |
+| 2026-08-12 | 다음진행·quota | min_each1·m3/r1/s1 APPLY_OK | **APPLY** | b291681 |
 
 ---
 
-## C) ?뺤젙 ?ъ떎 (?ㅼ쭛?쇰젮硫????ㅼ륫 쨌 ?щ끉??湲덉?)
+## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
 
-| ?ъ떎 | ?섏튂 | 洹쇨굅?뚯씪 | 理쒖쥌?뺤씤 而ㅻ컠?댁떆 |
+| 사실 | 수치 | 근거파일 | 최종확인 커밋해시 |
 |------|------|----------|------------------|
-| 鍮덈룄 ?짼 p (main/bonus) | 0.965 / 0.877 | `docs/benchmarks/20260726_?쒕뜡?깃???` | 誘명솗??|
-| OOS ?곸쐞6 mean (freq/markov/recency) | 0.748 / 0.769 / 0.752 | ?숈긽 step2 | 誘명솗??|
-| OOS CI?섑븳 > 0.80 | **?놁쓬** ???곸쨷?숈뒿異??먭린 | K-11 쨌 ?쒕뜡?깃???蹂닿퀬??| 誘명솗??|
-| ?멸린??Ridge Spearman / ?섎졊諛곗쑉 | 0.440 / 1.180횞 | ?숈긽 step3 | 誘명솗??|
-| all3 mean (理쒓렐100) | 0.797 CI[0.75, 0.845] | ?뚭컧??audit | 誘명솗??|
-| 1??E[?곸쨷] | **0.80** | 珥덇린??쨌 K-O | `93218f8` |
-| AC ?대줎 理쒕퉰 / ???대줎?됯퇏 | **8** / **138** | `docs/benchmarks/20260727_KZ_theory_constants.json` | `3791727` |
-| pattern/balance 紐낅텇 | **?ㅼ쬆** | `WARRANT.md` 쨌 K-AA | `bb3fa91` |
+| 빈도 χ² p (main/bonus) | 0.965 / 0.877 | `docs/benchmarks/20260726_랜덤성검정/` | 미확인 |
+| OOS 상위6 mean (freq/markov/recency) | 0.748 / 0.769 / 0.752 | 동상 step2 | 미확인 |
+| OOS CI하한 > 0.80 | **없음** → 적중학습축 폐기 | K-11 · 랜덤성검정 보고서 | 미확인 |
+| 인기도 Ridge Spearman / 수령배율 | 0.440 / 1.180× | 동상 step3 | 미확인 |
+| all3 mean (최근100) | 0.797 CI[0.75, 0.845] | 뇌감사 audit | 미확인 |
+| 1장 E[적중] | **0.80** | 초기하 · K-O | `93218f8` |
+| AC 이론 최빈 / 합 이론평균 | **8** / **138** | `docs/benchmarks/20260727_KZ_theory_constants.json` | `3791727` |
+| pattern/balance 명분 | **실증** | `WARRANT.md` · K-AA | `bb3fa91` |
 | DEDUP E[k] (ON) | **100.000** | `docs/benchmarks/20260727_KV_dedup_verify.json` | `ba98f34` |
-| DB MAX lotto4 / testlotto / hyodo | **1234 / 1234 / 1234** | `docs/benchmarks/20260727_KAB_draw_gap.json` 쨌 DB?ㅼ륫 | `e1a7cd2` |
+| DB MAX lotto4 / testlotto / hyodo | **1234 / 1234 / 1234** | `docs/benchmarks/20260727_KAB_draw_gap.json` · DB실측 | `e1a7cd2` |
 
 ---
 
-## D) ?덈? 湲덉? (7以?
+## D) 절대 금지 (7줄)
 
-1. `random.choices` **?쇱씤 ?섏젙** 湲덉? (oversample ???좊퀎? ?덉슜)
-2. `_get_draws_before` 蹂寃?湲덉?
-3. boost ?곹븳 蹂寃?湲덉? (carry 0.2 / ending 0.3 / overdue 0.2)
-4. 諛깊뀒 而⑤떇 湲덉? (target ?댄썑 draws쨌?쇰뱶諛??ъ슜)
-5. ?먮낯 kweon(`D:\3kweon`)쨌memoy ?곌린 湲덉?
-6. DB ?꾩껜珥덇린??鍮꾧텒怨졖룰툑吏??以??
-7. STATUS쨌BOOT 蹂몃Ц쨌reports **?뺤텞 湲덉?** (梨꾪똿 ?뚭컙?듐띿? 梨꾪똿留?
-
----
-
-## E) ?대┛ 寃고븿 (FINDINGS.md ?먮낯 쨌 ?ш린 ?щ낯)
-
-**OPEN (23):** K-00 쨌 K-02 쨌 K-05 쨌 K-08 쨌 K-10 쨌 K-11 쨌 K-12 쨌 K-A 쨌 K-C 쨌 K-E 쨌 K-F 쨌 K-G 쨌 K-I 쨌 K-J 쨌 K-K 쨌 K-L 쨌 K-O 쨌 K-P 쨌 K-Q 쨌 K-R 쨌 K-T 쨌 K-U 쨌 **K-Y(?대젰)**  
-
-**HOLD (2):** K-M 쨌 K-N  
-
-**PATCHED (李멸퀬):** K-06 쨌 K-07 쨌 K-S 쨌 K-V 쨌 K-Z 쨌 K-AA 쨌 K-AB 쨌 K-AC 쨌 K-AD 쨌 K-AE 쨌 K-AF 쨌 **K-AG** 쨌 **K-X** 쨌 **K-W** 쨌 **K-B** 쨌 **K-H** 쨌 **K-D** 쨌 **K-P3** 쨌 **K-P5**  
-
-**CLOSED:** K-01 쨌 K-03 쨌 K-04 쨌 K-09  
-
-??**K-07 = PATCHED** (OPEN ?꾨떂). ?곸꽭쨌鍮꾧퀬??`FINDINGS.md`留??섏젙.
+1. `random.choices` **라인 수정** 금지 (oversample 후 선별은 허용)
+2. `_get_draws_before` 변경 금지
+3. boost 상한 변경 금지 (carry 0.2 / ending 0.3 / overdue 0.2)
+4. 백테 컨닝 금지 (target 이후 draws·피드백 사용)
+5. 원본 kweon(`D:\3kweon`)·memoy 쓰기 금지
+6. DB 전체초기화 비권고·금지에 준함
+7. STATUS·BOOT 본문·reports **압축 금지** (채팅 「간략」은 채팅만)
 
 ---
 
-## F) ???쎌쓣 ?뚯씪 ?곗꽑?쒖쐞
+## E) 열린 결함 (FINDINGS.md 원본 · 여기 사본)
+
+**OPEN (23):** K-00 · K-02 · K-05 · K-08 · K-10 · K-11 · K-12 · K-A · K-C · K-E · K-F · K-G · K-I · K-J · K-K · K-L · K-O · K-P · K-Q · K-R · K-T · K-U · **K-Y(이력)**  
+
+**HOLD (2):** K-M · K-N  
+
+**PATCHED (참고):** K-06 · K-07 · K-S · K-V · K-Z · K-AA · K-AB · K-AC · K-AD · K-AE · K-AF · **K-AG** · **K-X** · **K-W** · **K-B** · **K-H** · **K-D** · **K-P3** · **K-P5**  
+
+**CLOSED:** K-01 · K-03 · K-04 · K-09  
+
+※ **K-07 = PATCHED** (OPEN 아님). 상세·비고는 `FINDINGS.md`만 수정.
+
+---
+
+## F) 더 읽을 파일 우선순위
 
 1. `BOOT.md`
 2. `STATUS_LATEST.md`
 3. `FINDINGS.md`
-4. `WARRANT.md` (紐낅텇 ?쇰꺼)
-5. 理쒖떊 `reports/YYYYMMDD_*.md` (?? `20260727_KAB_?뚯감媛?젙??md` 쨌 `20260727_KAC_*.md`)  
-   ??援??⑤룆?⑦꽩 `YYYYMMDD_ROK21` ?묐몢?????댁긽 沅뚯옣?섏? ?딆쓬.
+4. `WARRANT.md` (명분 라벨)
+5. 최신 `reports/YYYYMMDD_*.md` (예: `20260727_KAB_회차갭정합.md` · `20260727_KAC_*.md`)  
+   ※ 구 단독패턴 `YYYYMMDD_ROK21` 접두는 더 이상 권장하지 않음.

@@ -1,0 +1,158 @@
+{
+  "id": "K-BRAIN10-SKILL-AUDIT",
+  "list": "LIST_V3",
+  "step": "L5",
+  "status": "AUDIT_OK",
+  "ts": "2026-08-12T10:04:04+09:00",
+  "wire": false,
+  "ge3_used_as_claim": false,
+  "range": [
+    1216,
+    1236
+  ],
+  "n_draws": 21,
+  "seed": 42,
+  "hard": {
+    "pool10_complete": true,
+    "roles_ok_all": true,
+    "pass0_match_all": true,
+    "cross_identical_0": true,
+    "peek_ok_all": true,
+    "ROLE_SLOTS_WIRE": true,
+    "LEDGER_SIGNAL_WIRE": true,
+    "LEDGER_BLEND": 0.5,
+    "c8_pool1to5_eq_issue": true,
+    "hint_not_shared": true,
+    "hint_tops_distinct": true
+  },
+  "hard_ok": true,
+  "soft": {
+    "markov_prefer_ge_review_rate": 0.6667,
+    "review_prize_le_markov_rate": 0.5714,
+    "markov_axis_soft_fail": false,
+    "review_axis_soft_fail": false,
+    "stat_axis": "homework/pattern via HINT_SPEC — structural only (no soft gate)"
+  },
+  "cover_mean_min_jaccard_vs_skill": {
+    "stat": 0.0,
+    "markov": 0.0014,
+    "review": 0.0219
+  },
+  "c8_samples": [
+    {
+      "draw": 1234,
+      "brains": {
+        "stat": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        },
+        "markov": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        },
+        "review": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        }
+      },
+      "ok": true
+    },
+    {
+      "draw": 1235,
+      "brains": {
+        "stat": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        },
+        "markov": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        },
+        "review": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        }
+      },
+      "ok": true
+    },
+    {
+      "draw": 1236,
+      "brains": {
+        "stat": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        },
+        "markov": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        },
+        "review": {
+          "ok": true,
+          "n_issue": 5,
+          "n_pool5": 5
+        }
+      },
+      "ok": true
+    }
+  ],
+  "hint": {
+    "hint_shared_flag": false,
+    "tops_distinct": true,
+    "tops": {
+      "stat": [
+        1,
+        15,
+        16,
+        19,
+        27
+      ],
+      "markov": [
+        12,
+        13,
+        7,
+        34,
+        18
+      ],
+      "review": [
+        40,
+        37,
+        27,
+        34,
+        15
+      ]
+    }
+  },
+  "axis_sample_last": {
+    "draw": 1236,
+    "prefer_avg": {
+      "markov": 1.0143,
+      "review": 1.0127,
+      "stat": 0.9892
+    },
+    "prize_avg": {
+      "markov": 1.0037,
+      "review": 1.007,
+      "stat": 0.9803
+    },
+    "markov_prefer_ge_review": true,
+    "review_prize_le_markov": false
+  },
+  "defects_for_L6_L8": [],
+  "next": {
+    "step": "L9",
+    "id": "K-REPACK-PRESERVE-PROBE"
+  },
+  "force_bt": false,
+  "s1": false,
+  "note": "역할 ON vs OFF pass0 동일 · C8 pool1~5=발권 · 스킬축 모니터 · 1237아님",
+  "fail_draws_pass0": [],
+  "fail_draws_roles": []
+}
