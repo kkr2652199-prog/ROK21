@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `b162458` · WORK=`IDLE`
-2. **지금:** **양산前** · L9a~d 데이터저장 **완료** · NEXT=L10 발권커버
-3. **다음1건:** K-TICKET-COVER-LITE — **양산前**. L9a~L9d 데이터저장감사·미러·숙제·EMA문서 **완료**. 다음=**L10** 발권5 겹침↓ **커버라이트**(부분당첨 분산·buy-the-pot금지). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L9b~L9d 완료)
+1. **HEAD:** `4bf8260` · WORK=`IDLE`
+2. **지금:** **양산前** · L10 발권커버 **HOLD** · NEXT=L11 review EV
+3. **다음1건:** K-REVIEW-EV-DEEPEN — **양산前**. L10 발권커버 **HOLD**(커버신호 있으나 prefer/prize FAIL·TICKET_COVER off). 다음=**L11** 축심화 잔여 중 **review EV**(BLEND/W_CROWD/shape 프록시·Stern-Cover금지). **이미 HOLD/APPLY 노브 재탕 금지**. **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L10 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 다음진행 L10 | 발권5 커버스윕 신호有·prefer/prize FAIL · knobs OFF · NEXT=L11 | **HOLD** | 5ced401 |
 | 2026-08-12 | DATA저장감사·갭처리 | L9a AUDIT · L9b/c WIRE · L9d DOC · NEXT=L10 | **WIRE_OK** | 3db1831 |
 | 2026-08-12 | 다음진행 L9 | preserve/union 소형스윕 신호0 · knobs불변 · NEXT=L10 | **HOLD** | 89c3dc7 |
 | 2026-08-12 | 다음진행 L5 | 뇌10감사 AUDIT_OK · L6~8스킵 · NEXT=L9 | **AUDIT_OK** | ad33200 |
@@ -45,7 +46,6 @@
 | 2026-08-12 | 역할슬롯5+3+2분석 | LIST_V3 DOC · 등수P↑PASS · NEXT=L1 | **DOC_OK** | 7799d81 |
 | 2026-08-12 | 리스트보강·원장1~6·뇌10 | LIST_V2 DOC · NEXT=L1 smoke | **DOC_OK** | 0169137 |
 | 2026-08-12 | 현황+상위리스트·①② | BT≠발권·issue mean1.64·≥4=0 · NEXT③ | **METRIC_OK** | 68a5e8d |
-| 2026-08-12 | 다음진행 | ⑪VERIFY_OK·⑫BTv5 REBUILT·refill_v2 s1/m1/r3 | **DONE** | 594cb9f |
 
 ---
 

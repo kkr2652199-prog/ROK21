@@ -78,6 +78,47 @@ MARKOV_WIRE_BRAIN_QUOTA: dict[str, int] = {"markov": 3, "stat": 1, "review": 1}
 # None=production dynamic(구 0/4/1). 롤백 시 None 복원.
 BENCH_FIXED_QUOTA: dict[str, int] | None = None
 
+# K-TICKET-COVER-LITE (LIST_V3 L10): 발권5 선별 시 이미 고른 장과의 Jaccard 패널티.
+# buy-the-pot/전수커버 아님 · 부분당첨 기회 분산(겹침↓)만. 기본 OFF(프로브 HOLD 시 유지).
+TICKET_COVER_LITE: bool = False
+TICKET_COVER_JACCARD_PENALTY: float = 1.0
+
+
+def _cover_lite_pick(
+    bucket: list[dict],
+    k: int,
+    already: list[dict],
+    *,
+    penalty: float,
+) -> list[dict]:
+    """버킷에서 k장 · 이미 선택된 장과의 평균 Jaccard 를 깎아 탐욕 선택."""
+    from app.testlotto.set_diversity import jaccard
+
+    if k <= 0 or not bucket:
+        return []
+    remaining = list(bucket)
+    picked: list[dict] = []
+    context = list(already)
+
+    def _score(item: dict) -> float:
+        conf = float(item.get("aux_hint_score") or 0.0) * 50.0 + float(
+            item.get("native_confidence") or item.get("confidence") or 0.0
+        )
+        if not context:
+            return conf
+        nums = {int(x) for x in item["nums"]}
+        avg_j = sum(jaccard(nums, {int(x) for x in p["nums"]}) for p in context) / len(
+            context
+        )
+        return conf - float(penalty) * avg_j * 40.0
+
+    while len(picked) < k and remaining:
+        best = max(remaining, key=_score)
+        remaining.remove(best)
+        picked.append(best)
+        context.append(best)
+    return picked
+
 
 def _get_quota_weights() -> dict[str, float]:
     """K-FUSION-DYNAMIC-V2: referee × solo_ge3_prior (고정 DEFAULT 미사용).
@@ -238,22 +279,46 @@ def dynamic_brain_quota(candidates: list[dict]) -> list[dict]:
     selected: list[dict] = []
     for tag, cap in quota.items():
         bucket = _sort_brain_bucket(brain_buckets.get(tag) or [])
-        selected.extend(bucket[:cap])
+        if TICKET_COVER_LITE and int(cap) > 0:
+            selected.extend(
+                _cover_lite_pick(
+                    bucket,
+                    int(cap),
+                    selected,
+                    penalty=TICKET_COVER_JACCARD_PENALTY,
+                )
+            )
+        else:
+            selected.extend(bucket[:cap])
 
     if len(selected) < target_n:
         used = {id(c) for c in selected}
-        remainder = sorted(
-            [c for c in candidates if id(c) not in used],
-            key=lambda x: (
-                float(x.get("aux_hint_score") or 0),
-                float(x.get("native_confidence") or x.get("confidence") or 0),
-            ),
-            reverse=True,
-        )
-        for c in remainder:
-            selected.append(c)
-            if len(selected) >= target_n:
-                break
+        remainder = [
+            c for c in candidates if id(c) not in used
+        ]
+        if TICKET_COVER_LITE:
+            need = target_n - len(selected)
+            selected.extend(
+                _cover_lite_pick(
+                    _sort_brain_bucket(remainder),
+                    need,
+                    selected,
+                    penalty=TICKET_COVER_JACCARD_PENALTY,
+                )
+            )
+        else:
+            remainder = sorted(
+                remainder,
+                key=lambda x: (
+                    float(x.get("aux_hint_score") or 0),
+                    float(x.get("native_confidence") or x.get("confidence") or 0),
+                ),
+                reverse=True,
+            )
+            for c in remainder:
+                selected.append(c)
+                if len(selected) >= target_n:
+                    break
     return selected[:target_n]
 
 

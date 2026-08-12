@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-BRAIN-SKILL-DATA-PERSIST** — L9a~d **완료** · NEXT=L10 발권커버
+📌 사유: **[CURSOR] K-TICKET-COVER-LITE** — L10 **HOLD** · NEXT=L11 review EV
 
-📌 직전: **[CURSOR] K-REPACK-PRESERVE-PROBE** — L9 **HOLD**
+📌 직전: **[CURSOR] K-BRAIN-SKILL-DATA-PERSIST** — L9a~d **완료**
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-TICKET-COVER-LITE (LIST_V3 L10)** | **HOLD** · wire=**False** · apply=**False** — 발권5 dedup→quota Jaccard/union 스윕 seed3×1137~1236. base J**0.111**/union**20.88**/prefer**0.115**/prize**+0.014**. cands pen0.5~2.0 모두 J↓·union↑ 신호 있으나 prefer악화·prize비악화 FAIL → `TICKET_COVER_LITE=False` 유지. buy-the-pot금지·ge3미클레임·1237아님. · `docs/benchmarks/20260812_KTICKET_COVER_LITE.json` · `reports/20260812_KTICKET_COVER_LITE.md` · `tools/_k_ticket_cover_lite.py` |
 | **K-EMA-OR-LEDGER-SSOT (LIST_V3 L9d)** | **DOC_OK** · wire=**False** — 몰아주기 SSOT=`pool_hit_ledger` · EMA=`RollingSignalLearner` 메모리 warm only · EMA테이블 신설 보류. ge3미클레임·1237아님. · `reports/20260812_KEMA_OR_LEDGER_SSOT.md` |
 | **K-SKILL-HOMEWORK-PERSIST (LIST_V3 L9c)** | **WIRE_OK** · wire=**True** — `testlotto_skill_homework` · 뇌별 skill_kind(stat miss_pattern/markov crowd_prefer/review crowd_prize) · 결과확정 쓰기 · `as_of<target` 읽기 · `build_hint_by_brain` consume · payload=재계산 일치(max_abs0). ge3미클레임·1237아님. · `docs/benchmarks/20260812_KSKILL_HOMEWORK_PERSIST.json` · `reports/20260812_KSKILL_HOMEWORK_PERSIST.md` · `app/testlotto/skill_homework.py` · `tools/_k_skill_homework_persist.py` |
 | **K-LIVE-FEEDBACK-REVIEW-MIRROR (LIST_V3 L9b)** | **WIRE_OK** · wire=**True** — click/`_auto_feedback` → `testlotto_brain_review` UPSERT · CUTOFF 캐시 무효화 · learn 중복가드와 무관. · `docs/benchmarks/20260812_KLIVE_FEEDBACK_REVIEW_MIRROR.json` · `reports/20260812_KLIVE_FEEDBACK_REVIEW_MIRROR.md` · `app/testlotto/brain_review_mirror.py` · `tools/_k_live_feedback_review_mirror.py` |

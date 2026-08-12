@@ -110,10 +110,13 @@
 ### L9d K-EMA-OR-LEDGER-SSOT — **DOC_OK** (본턴)
 - 몰아주기 SSOT=원장(ledger) · EMA=메모리 warm only · EMA 테이블 신설 보류.
 
-### L10 K-TICKET-COVER-LITE — **다음**
-- 발권5 겹침↓ · 부분당첨 기회 분산 · buy-the-pot 금지.
+### L10 K-TICKET-COVER-LITE — **HOLD** (본턴)
+- 발권5 Jaccard/union 소형 스윕 · 신호는 있으나 prefer/prize 비악화 실패 → knobs OFF 유지.
+- `TICKET_COVER_LITE` 코드경로만 준비(기본 False).
 
-### L11 축 심화 잔여 (중복 스윕 주의)
+### L11 축 심화 잔여 — **다음**
+- review EV / markov prefer / stat homework 잔여 · **이미 HOLD/APPLY 노브 재탕 금지**.
+
 ### L12 발권↔10+5 통합 (형 승인)
 
 ---
@@ -151,8 +154,9 @@
 | L9a | **AUDIT_OK** |
 | L9b / L9c | **WIRE_OK** |
 | L9d | **DOC_OK** |
-| **L10** | **NEXT** |
-| L11~L12 | 대기 |
+| L10 | **HOLD** |
+| **L11** | **NEXT** |
+| L12 | 대기 |
 
 ---
 

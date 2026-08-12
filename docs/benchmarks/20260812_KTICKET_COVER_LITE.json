@@ -1,0 +1,306 @@
+{
+  "id": "K-TICKET-COVER-LITE",
+  "list": "LIST_V3",
+  "step": "L10",
+  "status": "HOLD",
+  "ts": "2026-08-12T10:47:32+09:00",
+  "wire": false,
+  "apply": false,
+  "ge3_used_as_claim": false,
+  "buy_the_pot": false,
+  "range": [
+    1137,
+    1236
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "live_before": {
+    "TICKET_COVER_LITE": false,
+    "TICKET_COVER_JACCARD_PENALTY": 1.0,
+    "QUOTA_ADAPTIVE_MIN_EACH": 1,
+    "MARKOV_WIRE_ENABLED": true
+  },
+  "live_after": {
+    "TICKET_COVER_LITE": false,
+    "TICKET_COVER_JACCARD_PENALTY": 1.0
+  },
+  "configs": {
+    "base_off": {
+      "enabled": false,
+      "penalty": 0.0,
+      "prefer": 0.114766,
+      "prize": 0.013622,
+      "mean_jaccard": 0.111309,
+      "mean_union": 20.88,
+      "mean_best_hits_monitor": 1.64,
+      "mean_hit_union_monitor": 2.72,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.114766,
+          "prize": 0.013622,
+          "mean_jaccard": 0.111309,
+          "mean_union": 20.88,
+          "mean_best_hits_monitor": 1.64,
+          "mean_hit_union_monitor": 2.72
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.114766,
+          "prize": 0.013622,
+          "mean_jaccard": 0.111309,
+          "mean_union": 20.88,
+          "mean_best_hits_monitor": 1.64,
+          "mean_hit_union_monitor": 2.72
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.114766,
+          "prize": 0.013622,
+          "mean_jaccard": 0.111309,
+          "mean_union": 20.88,
+          "mean_best_hits_monitor": 1.64,
+          "mean_hit_union_monitor": 2.72
+        }
+      ]
+    },
+    "cover_p0.5": {
+      "enabled": true,
+      "penalty": 0.5,
+      "prefer": 0.105177,
+      "prize": 0.020168,
+      "mean_jaccard": 0.099345,
+      "mean_union": 21.61,
+      "mean_best_hits_monitor": 1.71,
+      "mean_hit_union_monitor": 2.84,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.105177,
+          "prize": 0.020168,
+          "mean_jaccard": 0.099345,
+          "mean_union": 21.61,
+          "mean_best_hits_monitor": 1.71,
+          "mean_hit_union_monitor": 2.84
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.105177,
+          "prize": 0.020168,
+          "mean_jaccard": 0.099345,
+          "mean_union": 21.61,
+          "mean_best_hits_monitor": 1.71,
+          "mean_hit_union_monitor": 2.84
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.105177,
+          "prize": 0.020168,
+          "mean_jaccard": 0.099345,
+          "mean_union": 21.61,
+          "mean_best_hits_monitor": 1.71,
+          "mean_hit_union_monitor": 2.84
+        }
+      ],
+      "gate": {
+        "name": "cover_p0.5",
+        "penalty": 0.5,
+        "d_prefer": -0.009589,
+        "d_prize": 0.006546,
+        "d_jaccard": 0.011964,
+        "d_union": 0.73,
+        "health": false,
+        "non_worse": false,
+        "signal": true,
+        "pass": false
+      }
+    },
+    "cover_p1.0": {
+      "enabled": true,
+      "penalty": 1.0,
+      "prefer": 0.101899,
+      "prize": 0.020626,
+      "mean_jaccard": 0.089415,
+      "mean_union": 22.09,
+      "mean_best_hits_monitor": 1.73,
+      "mean_hit_union_monitor": 2.96,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.101899,
+          "prize": 0.020626,
+          "mean_jaccard": 0.089415,
+          "mean_union": 22.09,
+          "mean_best_hits_monitor": 1.73,
+          "mean_hit_union_monitor": 2.96
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.101899,
+          "prize": 0.020626,
+          "mean_jaccard": 0.089415,
+          "mean_union": 22.09,
+          "mean_best_hits_monitor": 1.73,
+          "mean_hit_union_monitor": 2.96
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.101899,
+          "prize": 0.020626,
+          "mean_jaccard": 0.089415,
+          "mean_union": 22.09,
+          "mean_best_hits_monitor": 1.73,
+          "mean_hit_union_monitor": 2.96
+        }
+      ],
+      "gate": {
+        "name": "cover_p1.0",
+        "penalty": 1.0,
+        "d_prefer": -0.012867,
+        "d_prize": 0.007004,
+        "d_jaccard": 0.021894,
+        "d_union": 1.21,
+        "health": false,
+        "non_worse": false,
+        "signal": true,
+        "pass": false
+      }
+    },
+    "cover_p1.5": {
+      "enabled": true,
+      "penalty": 1.5,
+      "prefer": 0.106406,
+      "prize": 0.022108,
+      "mean_jaccard": 0.081536,
+      "mean_union": 22.54,
+      "mean_best_hits_monitor": 1.73,
+      "mean_hit_union_monitor": 3.06,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.106406,
+          "prize": 0.022108,
+          "mean_jaccard": 0.081536,
+          "mean_union": 22.54,
+          "mean_best_hits_monitor": 1.73,
+          "mean_hit_union_monitor": 3.06
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.106406,
+          "prize": 0.022108,
+          "mean_jaccard": 0.081536,
+          "mean_union": 22.54,
+          "mean_best_hits_monitor": 1.73,
+          "mean_hit_union_monitor": 3.06
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.106406,
+          "prize": 0.022108,
+          "mean_jaccard": 0.081536,
+          "mean_union": 22.54,
+          "mean_best_hits_monitor": 1.73,
+          "mean_hit_union_monitor": 3.06
+        }
+      ],
+      "gate": {
+        "name": "cover_p1.5",
+        "penalty": 1.5,
+        "d_prefer": -0.00836,
+        "d_prize": 0.008486,
+        "d_jaccard": 0.029773,
+        "d_union": 1.66,
+        "health": false,
+        "non_worse": false,
+        "signal": true,
+        "pass": false
+      }
+    },
+    "cover_p2.0": {
+      "enabled": true,
+      "penalty": 2.0,
+      "prefer": 0.102945,
+      "prize": 0.016339,
+      "mean_jaccard": 0.076821,
+      "mean_union": 22.87,
+      "mean_best_hits_monitor": 1.76,
+      "mean_hit_union_monitor": 3.14,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.102945,
+          "prize": 0.016339,
+          "mean_jaccard": 0.076821,
+          "mean_union": 22.87,
+          "mean_best_hits_monitor": 1.76,
+          "mean_hit_union_monitor": 3.14
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.102945,
+          "prize": 0.016339,
+          "mean_jaccard": 0.076821,
+          "mean_union": 22.87,
+          "mean_best_hits_monitor": 1.76,
+          "mean_hit_union_monitor": 3.14
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.102945,
+          "prize": 0.016339,
+          "mean_jaccard": 0.076821,
+          "mean_union": 22.87,
+          "mean_best_hits_monitor": 1.76,
+          "mean_hit_union_monitor": 3.14
+        }
+      ],
+      "gate": {
+        "name": "cover_p2.0",
+        "penalty": 2.0,
+        "d_prefer": -0.011821,
+        "d_prize": 0.002717,
+        "d_jaccard": 0.034488,
+        "d_union": 1.99,
+        "health": false,
+        "non_worse": false,
+        "signal": true,
+        "pass": false
+      }
+    }
+  },
+  "base": "base_off",
+  "winners": [],
+  "best": null,
+  "thresholds": {
+    "PREF_EPS": 0.005,
+    "PRIZE_EPS": 0.005,
+    "JACCARD_DELTA": 0.015,
+    "UNION_DELTA": 0.5
+  },
+  "next": {
+    "step": "L11",
+    "id": "K-AXIS-DEEPEN-REST"
+  },
+  "force_bt": false,
+  "s1": false,
+  "note": "커버신호(J↓/union↑) 있으나 prefer/prize 비악화 FAIL → HOLD · TICKET_COVER_LITE=False · 다음 L11 · 1237아님"
+}
