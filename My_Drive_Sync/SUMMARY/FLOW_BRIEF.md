@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4bf8260` · WORK=`IDLE`
+- HEAD: `80631f3` · WORK=`IDLE`
 - 지금: **양산前** · L10 발권커버 **HOLD** · NEXT=L11 review EV
 - 직전: L10 K-TICKET-COVER-LITE HOLD (prefer/prize FAIL)
 - BOOT다음: L11 K-REVIEW-EV-DEEPEN / 1237아님

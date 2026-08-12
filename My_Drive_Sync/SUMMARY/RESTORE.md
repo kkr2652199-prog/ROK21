@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4bf8260` · WORK=`IDLE`
+1. **HEAD:** `80631f3` · WORK=`IDLE`
 2. **지금:** **양산前** · L10 발권커버 **HOLD** · NEXT=L11 review EV
 3. **다음1건:** K-REVIEW-EV-DEEPEN — **양산前**. L10 발권커버 **HOLD**(커버신호 있으나 prefer/prize FAIL·TICKET_COVER off). 다음=**L11** 축심화 잔여 중 **review EV**(BLEND/W_CROWD/shape 프록시·Stern-Cover금지). **이미 HOLD/APPLY 노브 재탕 금지**. **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L10 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
