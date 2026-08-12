@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d1adff5` |
+| HEAD(실측) | `de2dc0a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존 |
-| 직전 | L4b 역할슬롯WIRE WIRE_OK |
-| BOOT다음 | L9 K-REPACK-PRESERVE-PROBE / 1237아님 |
-| NEXT1 ID | **K-REPACK-PRESERVE-PROBE** |
-| NEXT1 할일 | **양산前**. L5 뇌10스킬감사 **AUDIT_OK**(하드PASS·소프트결함0·L6~L8스킵). 다음=**L9** 몰아주기 보존 **PROBE**(union/slots 소형·신호없으면 HOLD). **1237아님** · 강제BT보류 · S1 개별승인. |
-| 승인필요 | 없음(리스트 순서 · L6~L8 결함없음으로 점프) |
-| 선행 | L5 AUDIT_OK |
+| 지금 | **양산前** · L9 몰아주기보존 **HOLD** · NEXT=L10 발권커버 |
+| 직전 | L5 뇌10스킬감사 AUDIT_OK |
+| BOOT다음 | L10 K-TICKET-COVER-LITE / 1237아님 |
+| NEXT1 ID | **K-TICKET-COVER-LITE** |
+| NEXT1 할일 | **양산前**. L9 몰아주기보존 **HOLD**(slots2·cap4 불변·소형스윕 신호0). 다음=**L10** 발권5 겹침↓ **커버라이트**(부분당첨 분산·buy-the-pot금지). **1237아님** · 강제BT보류 · S1 개별승인. |
+| 승인필요 | 없음(리스트 순서) |
+| 선행 | L9 HOLD/PROBE 완료 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d1adff5 · 지금=**양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존 · 다음=K-REPACK-PRESERVE-PROBE`
+1. 첫줄 `[복귀] HEAD=de2dc0a · 지금=**양산前** · L9 몰아주기보존 **HOLD** · NEXT=L10 발권커버 · 다음=K-TICKET-COVER-LITE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d1adff5` · WORK=`IDLE`
-2. **지금:** **양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존
-3. **다음1건:** K-REPACK-PRESERVE-PROBE — **양산前**. L5 뇌10스킬감사 **AUDIT_OK**(하드PASS·소프트결함0·L6~L8스킵). 다음=**L9** 몰아주기 보존 **PROBE**(union/slots 소형·신호없으면 HOLD). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서 · L6~L8 결함없음으로 점프) · 선행=L5 AUDIT_OK)
+1. **HEAD:** `de2dc0a` · WORK=`IDLE`
+2. **지금:** **양산前** · L9 몰아주기보존 **HOLD** · NEXT=L10 발권커버
+3. **다음1건:** K-TICKET-COVER-LITE — **양산前**. L9 몰아주기보존 **HOLD**(slots2·cap4 불변·소형스윕 신호0). 다음=**L10** 발권5 겹침↓ **커버라이트**(부분당첨 분산·buy-the-pot금지). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L9 HOLD/PROBE 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
