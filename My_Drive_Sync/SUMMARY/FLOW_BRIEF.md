@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3a83dbf` · WORK=`IDLE`
+- HEAD: `d1adff5` · WORK=`IDLE`
 - 지금: **양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존
 - 직전: L4b 역할슬롯WIRE WIRE_OK
 - BOOT다음: L9 K-REPACK-PRESERVE-PROBE / 1237아님
