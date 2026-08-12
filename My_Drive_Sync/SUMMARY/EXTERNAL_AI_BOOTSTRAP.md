@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `84dfd17` |
+| HEAD(실측) | `0f86ec1` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L4 몰아주기원장읽기 **WIRE_OK** · NEXT=L4b 역할슬롯WIRE |
-| 직전 | L3 원장WIRE WIRE_OK |
-| BOOT다음 | L4b K-TIER-ROLE-SLOTS-WIRE / 1237아님 |
-| NEXT1 ID | **K-TIER-ROLE-SLOTS-WIRE** |
-| NEXT1 할일 | **양산前**. L4 몰아주기원장 **WIRE_OK**(repack_by_brain이 ledger+scatter 소비·β=0.5·EMA단독탈피·no_peek·1236계약45/6). 다음=**L4b** 역할슬롯 **WIRE**(skill5+cover_r3×3+shape_r2×2 · no_bonus_peek · prefer/prize 게이트). **1237아님** · 강제BT보류 · S1 IMMEDIATE는 L4후 개별승인. |
-| 승인필요 | 없음(리스트 순서·형 L4 GO 후 본선) |
-| 선행 | L4 WIRE_OK |
+| 지금 | **양산前** · L4b 역할슬롯WIRE **WIRE_OK** · NEXT=L5 뇌10스킬감사 |
+| 직전 | L4 몰아주기원장읽기 WIRE_OK |
+| BOOT다음 | L5 K-BRAIN10-SKILL-AUDIT / 1237아님 |
+| NEXT1 ID | **K-BRAIN10-SKILL-AUDIT** |
+| NEXT1 할일 | **양산前**. L4b 역할슬롯 **WIRE_OK**(skill×5+cover_r3×3+shape_r2×2 · focus_r1라벨 · prefer/prize게이트PASS · no_bonus_peek). 다음=**L5** 뇌별10세트 스킬 **감사**(역할 도입 전/후 정합). **1237아님** · 강제BT보류 · S1 IMMEDIATE 개별승인. |
+| 승인필요 | 없음(리스트 순서) |
+| 선행 | L4b WIRE_OK |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=84dfd17 · 지금=**양산前** · L4 몰아주기원장읽기 **WIRE_OK** · NEXT=L4b 역할슬롯WIRE · 다음=K-TIER-ROLE-SLOTS-WIRE`
+1. 첫줄 `[복귀] HEAD=0f86ec1 · 지금=**양산前** · L4b 역할슬롯WIRE **WIRE_OK** · NEXT=L5 뇌10스킬감사 · 다음=K-BRAIN10-SKILL-AUDIT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
