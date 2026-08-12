@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `56bc0c8` |
+| HEAD(실측) | `3a83dbf` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L4b 역할슬롯WIRE **WIRE_OK** · NEXT=L5 뇌10스킬감사 |
-| 직전 | L4 몰아주기원장읽기 WIRE_OK |
-| BOOT다음 | L5 K-BRAIN10-SKILL-AUDIT / 1237아님 |
-| NEXT1 ID | **K-BRAIN10-SKILL-AUDIT** |
-| NEXT1 할일 | **양산前**. L4b 역할슬롯 **WIRE_OK**(skill×5+cover_r3×3+shape_r2×2 · focus_r1라벨 · prefer/prize게이트PASS · no_bonus_peek). 다음=**L5** 뇌별10세트 스킬 **감사**(역할 도입 전/후 정합). **1237아님** · 강제BT보류 · S1 IMMEDIATE 개별승인. |
-| 승인필요 | 없음(리스트 순서) |
-| 선행 | L4b WIRE_OK |
+| 지금 | **양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존 |
+| 직전 | L4b 역할슬롯WIRE WIRE_OK |
+| BOOT다음 | L9 K-REPACK-PRESERVE-PROBE / 1237아님 |
+| NEXT1 ID | **K-REPACK-PRESERVE-PROBE** |
+| NEXT1 할일 | **양산前**. L5 뇌10스킬감사 **AUDIT_OK**(하드PASS·소프트결함0·L6~L8스킵). 다음=**L9** 몰아주기 보존 **PROBE**(union/slots 소형·신호없으면 HOLD). **1237아님** · 강제BT보류 · S1 개별승인. |
+| 승인필요 | 없음(리스트 순서 · L6~L8 결함없음으로 점프) |
+| 선행 | L5 AUDIT_OK |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=56bc0c8 · 지금=**양산前** · L4b 역할슬롯WIRE **WIRE_OK** · NEXT=L5 뇌10스킬감사 · 다음=K-BRAIN10-SKILL-AUDIT`
+1. 첫줄 `[복귀] HEAD=3a83dbf · 지금=**양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존 · 다음=K-REPACK-PRESERVE-PROBE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

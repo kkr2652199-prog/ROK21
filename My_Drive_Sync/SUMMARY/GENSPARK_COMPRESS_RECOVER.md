@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`56bc0c8` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`3a83dbf` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=56bc0c8]
+[ROK21 젠스파크 압축복구 · HEAD=3a83dbf]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 56bc0c8 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · L4b 역할슬롯WIRE **WIRE_OK** · NEXT=L5 뇌10스킬감사
-- 직전: L4 몰아주기원장읽기 WIRE_OK
-- BOOT다음: L5 K-BRAIN10-SKILL-AUDIT / 1237아님
-- NEXT1: K-BRAIN10-SKILL-AUDIT — **양산前**. L4b 역할슬롯 **WIRE_OK**(skill×5+cover_r3×3+shape_r2×2 · focus_r1라벨 · prefer/prize게이트PASS · no_bonus_peek). 다음=**L5** 뇌별10세트 스킬 **감사**(역할 도입 전/후 정합). **1237아님** · 강제BT보류 · S1 IMMEDIATE 개별승인.
+- HEAD: 3a83dbf · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존
+- 직전: L4b 역할슬롯WIRE WIRE_OK
+- BOOT다음: L9 K-REPACK-PRESERVE-PROBE / 1237아님
+- NEXT1: K-REPACK-PRESERVE-PROBE — **양산前**. L5 뇌10스킬감사 **AUDIT_OK**(하드PASS·소프트결함0·L6~L8스킵). 다음=**L9** 몰아주기 보존 **PROBE**(union/slots 소형·신호없으면 HOLD). **1237아님** · 강제BT보류 · S1 개별승인.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260812_KBRAIN10_SKILL_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KBRAIN10_SKILL_AUDIT.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KBRAIN10_SKILL_AUDIT.md
 - `20260812_KTIER_ROLE_SLOTS_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KTIER_ROLE_SLOTS_WIRE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KTIER_ROLE_SLOTS_WIRE.md
 - `20260812_KREPACK_READ_LEDGER` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KREPACK_READ_LEDGER.json
@@ -65,8 +67,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KPOST_REFILL_JOINT_SMOKE.md
 - `20260812_KBT_ISSUE_PATH_METRIC` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KBT_ISSUE_PATH_METRIC.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KBT_ISSUE_PATH_METRIC.md
-- `20260812_KTIER45_SOURCE_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KTIER45_SOURCE_AUDIT.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KTIER45_SOURCE_AUDIT.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -77,7 +77,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=56bc0c8 · 지금=**양산前** · L4b 역할슬롯WIRE **WIRE_OK** · NEXT=L5 뇌10스킬감사 · 다음=K-BRAIN10-SKILL-AUDIT
+1. 첫줄: [복귀] HEAD=3a83dbf · 지금=**양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존 · 다음=K-REPACK-PRESERVE-PROBE
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -109,4 +109,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 56bc0c8_
+_generated: 3a83dbf_

@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `84dfd17` · WORK=`IDLE`
-2. **지금:** **양산前** · L4 몰아주기원장읽기 **WIRE_OK** · NEXT=L4b 역할슬롯WIRE
-3. **다음1건:** K-TIER-ROLE-SLOTS-WIRE — **양산前**. L4 몰아주기원장 **WIRE_OK**(repack_by_brain이 ledger+scatter 소비·β=0.5·EMA단독탈피·no_peek·1236계약45/6). 다음=**L4b** 역할슬롯 **WIRE**(skill5+cover_r3×3+shape_r2×2 · no_bonus_peek · prefer/prize 게이트). **1237아님** · 강제BT보류 · S1 IMMEDIATE는 L4후 개별승인. (승인필요=없음(리스트 순서·형 L4 GO 후 본선) · 선행=L4 WIRE_OK)
+1. **HEAD:** `3a83dbf` · WORK=`IDLE`
+2. **지금:** **양산前** · L5 뇌10스킬감사 **AUDIT_OK** · NEXT=L9 몰아주기보존
+3. **다음1건:** K-REPACK-PRESERVE-PROBE — **양산前**. L5 뇌10스킬감사 **AUDIT_OK**(하드PASS·소프트결함0·L6~L8스킵). 다음=**L9** 몰아주기 보존 **PROBE**(union/slots 소형·신호없으면 HOLD). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서 · L6~L8 결함없음으로 점프) · 선행=L5 AUDIT_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
