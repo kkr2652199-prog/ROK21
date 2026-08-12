@@ -80,6 +80,13 @@ def hint_shared_across_brains() -> bool:
 # K-EVOLVE-FEAT-LAM-REVAL — full history에서 review λ0.3 기각 → OFF
 FEATURE_LAMBDA_WIRE: bool = False
 
+# K-REPACK-READ-LEDGER (LIST_V3 L4) — 몰아주기(focus_r1 경로)가 원장 SSOT 소비.
+# EMA warm은 병행 · β>0 이면 EMA 단독 탈피. 역할 라벨 부착은 L4b.
+LEDGER_SIGNAL_WIRE: bool = True
+LEDGER_BLEND: float = 0.50  # (1-β)*EMA + β*ledger
+LEDGER_WINDOW_DRAWS: int = 50
+_LAST_LEDGER_CONSUME: dict[str, Any] = {}
+
 
 SignalTable = dict[str, dict[int, float]]
 
@@ -459,6 +466,11 @@ def _rows_for_brain(
     return rows
 
 
+def last_ledger_consume() -> dict[str, Any]:
+    """직전 repack_by_brain 의 원장 소비 메타 (L4 검증용)."""
+    return dict(_LAST_LEDGER_CONSUME)
+
+
 def repack_by_brain(
     pool_by_brain: dict[str, list[dict]],
     hint: dict[int, float],
@@ -475,11 +487,71 @@ def repack_by_brain(
     `hint_by_brain` 을 안 주더라도 `HINT_SPEC_BY_BRAIN` 이 뇌마다 다르면 여기서 직접
     만든다. 호출자가 넘기는 걸 잊어도 뇌별 hint 가 조용히 무시되지 않게 하려는 것이다
     (`brain_tag` 를 빠뜨려 뇌별 가중치가 죽었던 K-REPACK-BRAINTAG-DEAD-WIRE 와 같은 함정).
+
+    L4: target_draw_no 가 있으면 ledger/scatter(draw_no < target) 를 EMA와 블렌드.
     """
+    global _LAST_LEDGER_CONSUME
     from app.testlotto.feature_lambda import FEATURE_LAMBDA_BY_BRAIN, apply_feature_lambda
 
     if hint_by_brain is None and target_draw_no is not None and not hint_shared_across_brains():
         hint_by_brain = build_hint_by_brain(_get_draws_before(target_draw_no), target_draw_no)
+
+    num_use: dict = num_ema
+    pos_use: dict = pos_ema
+    consume: dict[str, Any] = {
+        "ledger_wire": bool(LEDGER_SIGNAL_WIRE),
+        "consumed": False,
+        "ema_solo_exit": False,
+        "target": int(target_draw_no) if target_draw_no is not None else None,
+        "blend": float(LEDGER_BLEND),
+        "n_draws": 0,
+        "draw_range": [],
+        "no_peek_ok": None,
+        "skipped": None,
+    }
+    if LEDGER_SIGNAL_WIRE and target_draw_no is not None:
+        try:
+            from app.testlotto.pool_hit_ledger import (
+                blend_signal_tables,
+                ledger_signal_tables,
+            )
+
+            led = ledger_signal_tables(
+                int(target_draw_no),
+                kind="pool",
+                window_draws=LEDGER_WINDOW_DRAWS,
+                alpha=LEARN_EMA,
+            )
+            peek_ok = bool((led.get("no_peek") or {}).get("ok"))
+            consume["no_peek_ok"] = peek_ok
+            consume["n_draws"] = int(led.get("n_draws") or 0)
+            consume["draw_range"] = list(led.get("draw_range") or [])
+            consume["n_sets_with_hits"] = int(led.get("n_sets_with_hits") or 0)
+            consume["n_scatter_rows"] = int(led.get("n_scatter_rows") or 0)
+            if led.get("ok") and consume["n_draws"] > 0 and peek_ok:
+                num_use = blend_signal_tables(
+                    num_ema, led["num"], LEDGER_BLEND  # type: ignore[arg-type]
+                )
+                pos_use = blend_signal_tables(
+                    pos_ema, led["pos"], LEDGER_BLEND  # type: ignore[arg-type]
+                )
+                consume["consumed"] = True
+                consume["ema_solo_exit"] = True
+                consume["source"] = "testlotto_pool_hit_ledger+scatter"
+            else:
+                consume["skipped"] = (
+                    "no_ledger_rows"
+                    if consume["n_draws"] <= 0
+                    else ("peek_fail" if not peek_ok else "ledger_empty")
+                )
+        except Exception as e:  # noqa: BLE001 — 원장 실패 시 EMA 폴백
+            consume["skipped"] = f"error:{type(e).__name__}"
+            consume["error"] = str(e)
+    elif not LEDGER_SIGNAL_WIRE:
+        consume["skipped"] = "wire_off"
+    else:
+        consume["skipped"] = "no_target"
+    _LAST_LEDGER_CONSUME = consume
 
     out: list[dict] = []
     for tag in BRAIN_TAGS:
@@ -487,14 +559,14 @@ def repack_by_brain(
         if not pool:
             continue
         h = (hint_by_brain or {}).get(tag, hint)
-        pos_t = brain_signal(pos_ema, tag)
+        pos_t = brain_signal(pos_use, tag)
         # brain_tag 필수 — 빠뜨리면 SCORE_WEIGHTS_BY_BRAIN 이 조회되지 않아
         # 뇌별 가중치가 조용히 무시된다 (K-REPACK-BRAINTAG-DEAD-WIRE)
         scores = number_scores(
             pool,
             h,
-            num_ema,
-            pos_ema,
+            num_use,
+            pos_use,
             hint_only=hint_only,
             random_scores=random_repack,
             brain_tag=tag,
@@ -698,6 +770,9 @@ def tune_snapshot() -> dict[str, Any]:
         "POOL_UNION_CAP_BY_BRAIN": dict(POOL_UNION_CAP_BY_BRAIN),
         "HINT_WEIGHT_BY_BRAIN": dict(ah.HINT_WEIGHT_BY_BRAIN),
         "REFEREE_BY_BRAIN": rbb.knobs_snapshot(),
+        "LEDGER_SIGNAL_WIRE": bool(LEDGER_SIGNAL_WIRE),
+        "LEDGER_BLEND": float(LEDGER_BLEND),
+        "LEDGER_WINDOW_DRAWS": int(LEDGER_WINDOW_DRAWS),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }

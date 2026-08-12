@@ -73,8 +73,9 @@
 - DB 영속 + 결과확정 경로 기록.
 - 실측: 1236 ledger45·scatter6 · no_peek · reset목록 · `pool_hit_ledger.py`.
 
-### L4 K-REPACK-READ-LEDGER
-- 몰아주기(`focus_r1`)가 원장 SSOT 소비.
+### L4 K-REPACK-READ-LEDGER — **WIRE_OK**
+- 몰아주기(`focus_r1` 경로=`repack_by_brain`)가 원장 SSOT 소비.
+- 실측: blend0.5 · seed1234~1235 → target1236 consume · no_peek · 1236계약45/6.
 
 ### L4b K-TIER-ROLE-SLOTS-WIRE — **게이트 후**
 - pass0=`skill_native` 유지.

@@ -295,6 +295,164 @@ def assert_no_peek_read(target_draw_no: int) -> dict[str, Any]:
     }
 
 
+def read_scatter_before(
+    target_draw_no: int,
+    *,
+    brain_tag: str | None = None,
+    kind: str | None = "pool",
+    limit: int | None = None,
+) -> list[dict[str, Any]]:
+    """no_peek 읽기: scatter draw_no < target 만."""
+    init_testlotto_db()
+    target = int(target_draw_no)
+    sql = f"SELECT * FROM {SCATTER_TABLE} WHERE draw_no < ?"
+    args: list[Any] = [target]
+    if brain_tag:
+        sql += " AND brain_tag=?"
+        args.append(brain_tag)
+    if kind:
+        sql += " AND kind=?"
+        args.append(kind)
+    sql += " ORDER BY draw_no DESC, brain_tag"
+    if limit is not None:
+        sql += " LIMIT ?"
+        args.append(int(limit))
+    conn = get_lotto_db()
+    try:
+        rows = [dict(r) for r in conn.execute(sql, args).fetchall()]
+    finally:
+        conn.close()
+    return [r for r in rows if int(r["draw_no"]) < target]
+
+
+def _empty_num() -> dict[int, float]:
+    return dict.fromkeys(range(1, 46), 0.0)
+
+
+def _empty_pos() -> dict[int, float]:
+    return dict.fromkeys(range(1, 11), 0.0)
+
+
+def ledger_signal_tables(
+    target_draw_no: int,
+    *,
+    kind: str = "pool",
+    window_draws: int = 50,
+    alpha: float = 0.15,
+) -> dict[str, Any]:
+    """원장 → 뇌별 num/pos 신호표 (draw_no < target · EMA와 동일 credit=hits/6).
+
+    RollingSignalLearner.update_from_pool 과 같은 갱신식.
+    scatter num_set_count 는 번호축 소량 보강(중복 출현 신호).
+    """
+    target = int(target_draw_no)
+    peek = assert_no_peek_read(target)
+    rows = read_ledger_before(target, kind=kind, limit=None)
+    # 오래된 회차부터 적용
+    draw_nos = sorted({int(r["draw_no"]) for r in rows})
+    if window_draws > 0 and len(draw_nos) > window_draws:
+        draw_nos = draw_nos[-int(window_draws) :]
+    keep = set(draw_nos)
+
+    num: dict[str, dict[int, float]] = {t: _empty_num() for t in BRAIN_TAGS}
+    pos: dict[str, dict[int, float]] = {t: _empty_pos() for t in BRAIN_TAGS}
+    n_sets_used = 0
+    a = float(alpha)
+
+    by_draw: dict[int, list[dict[str, Any]]] = {}
+    for r in rows:
+        d = int(r["draw_no"])
+        if d not in keep:
+            continue
+        by_draw.setdefault(d, []).append(r)
+
+    for dno in draw_nos:
+        for r in by_draw.get(dno, []):
+            tag = str(r.get("brain_tag") or "")
+            if tag not in num:
+                continue
+            hits = int(r.get("hits") or 0)
+            if hits <= 0:
+                continue
+            credit = hits / 6.0
+            sn = int(r.get("set_no") or 0)
+            if 1 <= sn <= 10:
+                pos[tag][sn] = (1 - a) * pos[tag].get(sn, 0.0) + a * credit
+            hit_nums = r.get("hit_nums_json")
+            if isinstance(hit_nums, str):
+                try:
+                    hit_nums = json.loads(hit_nums)
+                except json.JSONDecodeError:
+                    hit_nums = []
+            for n in hit_nums or []:
+                ni = int(n)
+                if 1 <= ni <= 45:
+                    num[tag][ni] = (1 - a) * num[tag].get(ni, 0.0) + a * credit
+            n_sets_used += 1
+
+    # scatter 보강: 최근 회차 union/중복 번호
+    sca_rows = read_scatter_before(target, kind=kind, limit=window_draws * 3)
+    sca_by_draw = sorted({int(r["draw_no"]) for r in sca_rows})
+    if window_draws > 0 and len(sca_by_draw) > window_draws:
+        sca_keep = set(sca_by_draw[-int(window_draws) :])
+    else:
+        sca_keep = set(sca_by_draw)
+    n_scatter = 0
+    for r in sca_rows:
+        if int(r["draw_no"]) not in sca_keep:
+            continue
+        tag = str(r.get("brain_tag") or "")
+        if tag not in num:
+            continue
+        try:
+            cnt = json.loads(r.get("num_set_count_json") or "{}")
+        except json.JSONDecodeError:
+            cnt = {}
+        for ks, cv in cnt.items():
+            ni = int(ks)
+            c = int(cv)
+            if 1 <= ni <= 45 and c >= 1:
+                # 세트수 정규화 소량 credit
+                boost = min(1.0, c / 10.0) * a * 0.5
+                num[tag][ni] = num[tag].get(ni, 0.0) + boost
+        n_scatter += 1
+
+    return {
+        "ok": True,
+        "target": target,
+        "kind": kind,
+        "n_draws": len(draw_nos),
+        "draw_range": [draw_nos[0], draw_nos[-1]] if draw_nos else [],
+        "n_sets_with_hits": n_sets_used,
+        "n_scatter_rows": n_scatter,
+        "alpha": a,
+        "window_draws": int(window_draws),
+        "no_peek": peek,
+        "num": num,
+        "pos": pos,
+        "ema_solo_exit": bool(draw_nos),  # 원장 회차≥1이면 EMA 단독 탈피
+    }
+
+
+def blend_signal_tables(
+    ema_table: dict[str, dict[int, float]],
+    led_table: dict[str, dict[int, float]],
+    beta: float,
+) -> dict[str, dict[int, float]]:
+    """(1-β)*EMA + β*ledger. 키 합집합."""
+    b = max(0.0, min(1.0, float(beta)))
+    out: dict[str, dict[int, float]] = {}
+    tags = set(ema_table) | set(led_table)
+    for tag in tags:
+        e = ema_table.get(tag) or {}
+        l = led_table.get(tag) or {}
+        keys = set(e) | set(l)
+        out[tag] = {
+            k: (1.0 - b) * float(e.get(k, 0.0)) + b * float(l.get(k, 0.0)) for k in keys
+        }
+    return out
+
+
 def ledger_counts() -> dict[str, int]:
     init_testlotto_db()
     conn = get_lotto_db()

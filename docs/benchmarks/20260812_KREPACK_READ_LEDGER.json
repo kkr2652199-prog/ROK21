@@ -1,0 +1,85 @@
+{
+  "id": "K-REPACK-READ-LEDGER",
+  "list": "LIST_V3",
+  "step": "L4",
+  "status": "WIRE_OK",
+  "ts_kst": "2026-08-12 09:35:15",
+  "frame_draw": 1236,
+  "seed_draws": [
+    1234,
+    1235
+  ],
+  "seed_writes": [
+    {
+      "draw_no": 1234,
+      "ok": true,
+      "n_ledger": 45
+    },
+    {
+      "draw_no": 1235,
+      "ok": true,
+      "n_ledger": 45
+    }
+  ],
+  "contract_1236": {
+    "n_ledger": 45,
+    "n_scatter": 6,
+    "ok": true,
+    "actual": [
+      12,
+      18,
+      21,
+      29,
+      34,
+      38
+    ],
+    "bonus": 10
+  },
+  "consume": {
+    "ledger_wire": true,
+    "consumed": true,
+    "ema_solo_exit": true,
+    "target": 1236,
+    "blend": 0.5,
+    "n_draws": 2,
+    "draw_range": [
+      1234,
+      1235
+    ],
+    "no_peek_ok": true,
+    "skipped": null,
+    "n_sets_with_hits": 40,
+    "n_scatter_rows": 6,
+    "source": "testlotto_pool_hit_ledger+scatter"
+  },
+  "checks": {
+    "wire_flag": true,
+    "blend": 0.5,
+    "build_ok": true,
+    "repack_sets_total": 15,
+    "consumed": true,
+    "ema_solo_exit": true,
+    "no_peek_consume": true,
+    "no_peek_assert": true,
+    "consume_n_draws": 2,
+    "consume_draw_range": [
+      1234,
+      1235
+    ],
+    "contract_1236_ledger45": true,
+    "contract_1236_scatter6": true,
+    "ledger_rows_lt_1236": 90,
+    "source": "testlotto_pool_hit_ledger+scatter",
+    "skipped": null
+  },
+  "knobs": {
+    "LEDGER_SIGNAL_WIRE": true,
+    "LEDGER_BLEND": 0.5,
+    "LEDGER_WINDOW_DRAWS": 50,
+    "ASSEMBLE_MODE": "signal_union"
+  },
+  "role_wire": false,
+  "s1_begin_immediate": false,
+  "force_bt": false,
+  "note": "focus_r1 경로=repack_by_brain 원장 블렌드 · 역할라벨 L4b · 1237아님 · ge3미클레임"
+}
