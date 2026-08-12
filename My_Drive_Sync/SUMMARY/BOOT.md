@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · L9 몰아주기보존 **HOLD** · NEXT=L10 발권커버
-- 직전: L5 뇌10스킬감사 AUDIT_OK
+- 지금: **양산前** · L9a~d 데이터저장 **완료** · NEXT=L10 발권커버
+- 직전: L9b review미러 + L9c 스킬숙제 WIRE_OK · L9d DOC
 - 다음: L10 K-TICKET-COVER-LITE / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)

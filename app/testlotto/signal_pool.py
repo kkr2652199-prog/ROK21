@@ -675,10 +675,29 @@ def _build_hint(draws: list[dict], draw_no: int) -> dict[int, float]:
 
 
 def build_hint_by_brain(draws: list[dict], draw_no: int) -> dict[str, dict[int, float]]:
-    """뇌별 hint. `HINT_SPEC_BY_BRAIN` 이 다르면 테이블이 갈라진다."""
+    """뇌별 hint. `HINT_SPEC_BY_BRAIN` 이 다르면 테이블이 갈라진다.
+
+    L9c: SKILL_HOMEWORK_CONSUME 이면 as_of<target 숙제 스냅샷 우선.
+    없으면 기존처럼 draws 로 재계산.
+    """
+    stored: dict[str, dict[int, float]] = {}
+    try:
+        from app.testlotto.skill_homework import (
+            SKILL_HOMEWORK_CONSUME,
+            load_skill_homework_before,
+        )
+
+        if SKILL_HOMEWORK_CONSUME:
+            stored = load_skill_homework_before(int(draw_no))
+    except Exception:
+        stored = {}
+
     cache: dict[tuple[int | None, str], dict[int, float]] = {}
     out: dict[str, dict[int, float]] = {}
     for tag in BRAIN_TAGS:
+        if tag in stored and stored[tag]:
+            out[tag] = dict(stored[tag])
+            continue
         spec = HINT_SPEC_BY_BRAIN.get(tag, (WINDOW_WEEKS, WINDOW_SIGNAL))
         if spec not in cache:
             cache[spec] = _build_hint_for_spec(draws, spec[0], spec[1], draw_no)

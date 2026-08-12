@@ -1,0 +1,54 @@
+{
+  "id": "K-SKILL-HOMEWORK-PERSIST",
+  "list": "LIST_V3 L9c",
+  "verdict": "WIRE_OK",
+  "ts": "2026-08-12T10:39:55",
+  "as_of": 1236,
+  "target_read": 1237,
+  "max_abs_vs_recompute": 0.0,
+  "checks": {
+    "write_ok": true,
+    "write_3brains": true,
+    "rows_3": true,
+    "kind_stat": true,
+    "kind_markov": true,
+    "kind_review": true,
+    "load_3": true,
+    "no_peek": true,
+    "payload_eq_recompute": true,
+    "consume_wired": true,
+    "consume_matches_stored": true,
+    "wired_click": true,
+    "wired_auto": true
+  },
+  "write": {
+    "ok": true,
+    "as_of_draw": 1236,
+    "brains": {
+      "stat": {
+        "skill_kind": "miss_pattern",
+        "window_weeks": 52,
+        "n_keys": 45,
+        "sum": 5.451923
+      },
+      "markov": {
+        "skill_kind": "crowd_prefer",
+        "window_weeks": null,
+        "n_keys": 45,
+        "sum": -0.0
+      },
+      "review": {
+        "skill_kind": "crowd_prize",
+        "window_weeks": null,
+        "n_keys": 45,
+        "sum": -0.0
+      }
+    },
+    "note": "L9c_WIRE_VERIFY"
+  },
+  "notes": [
+    "skill별 저장: stat=miss_pattern(52) · markov=crowd_prefer · review=crowd_prize",
+    "읽기 as_of < target · 1237은 양산 아님(no_peek 검증용)",
+    "ge3 미클레임 · 강제BT 보류"
+  ]
+}

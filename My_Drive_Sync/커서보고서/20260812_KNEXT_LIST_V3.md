@@ -69,26 +69,50 @@
 - role 필드·pass1 생성 규칙·no_bonus_peek 테스트 항목·게이트 초안 확정.
 - 근거: 본 분석 보고서. **등수P 문장 금지**.
 
-### L3 K-POOL-HIT-LEDGER-WIRE
+### L3 K-POOL-HIT-LEDGER-WIRE — **WIRE_OK**
 - DB 영속 + 결과확정 경로 기록.
+- 실측: 1236 ledger45·scatter6 · no_peek · reset목록 · `pool_hit_ledger.py`.
 
-### L4 K-REPACK-READ-LEDGER
-- 몰아주기(`focus_r1`)가 원장 SSOT 소비.
+### L4 K-REPACK-READ-LEDGER — **WIRE_OK**
+- 몰아주기(`focus_r1` 경로=`repack_by_brain`)가 원장 SSOT 소비.
+- 실측: blend0.5 · seed1234~1235 → target1236 consume · no_peek · 1236계약45/6.
 
-### L4b K-TIER-ROLE-SLOTS-WIRE — **게이트 후**
+### L4b K-TIER-ROLE-SLOTS-WIRE — **WIRE_OK**
 - pass0=`skill_native` 유지.
 - pass1을 `cover_r3`×3 + `shape_r2`×2 로 분화(뇌 스킬 hint 유지·교차공유 금지).
 - repack 메타 `role=focus_r1`.
-- 실패 시 HOLD·롤백. 강제BT는 이후.
+- 실측: prefer+0.2947 · prize−0.1144 · no_bonus_peek · L4계약유지.
 
-### L5 K-BRAIN10-SKILL-AUDIT
+### L5 K-BRAIN10-SKILL-AUDIT — **AUDIT_OK**
 - 역할 도입 전/후 뇌 스킬 정합 감사.
+- 실측: HARD PASS · SOFT결함0 → L6~L8 스킵 · 다음 L9.
 
 ### L6~L8 뇌별 10세트 스킬 패치
-- L5 결함 시에만 (stat / markov / review).
+- L5 결함 시에만 (stat / markov / review) — **본턴 스킵**.
 
-### L9 K-REPACK-PRESERVE-PROBE
-### L10 K-TICKET-COVER-LITE
+### L9 K-REPACK-PRESERVE-PROBE — **HOLD**
+- 소형 스윕 신호0 · slots2·cap4 불변.
+
+### L9a K-BRAIN-SKILL-DATA-PERSIST-AUDIT — **AUDIT_OK** (본턴)
+- 뇌별 과거분석·예측前 DATA 저장/활용 실측.
+- 갭: live→review 미러 · 스킬 hint persist · EMA/ledger SSOT.
+- `reports/20260812_KBRAIN_SKILL_DATA_PERSIST_AUDIT.md`
+
+### L9b K-LIVE-FEEDBACK-REVIEW-MIRROR — **WIRE_OK** (본턴)
+- click/`_auto_feedback` → `testlotto_brain_review` UPSERT + CUTOFF 캐시 무효화.
+- learn 중복가드와 무관하게 review 미러.
+
+### L9c K-SKILL-HOMEWORK-PERSIST — **WIRE_OK** (본턴)
+- `testlotto_skill_homework` · 뇌별 skill_kind 분리 저장/소비.
+- stat=`miss_pattern` · markov=`crowd_prefer` · review=`crowd_prize`.
+- 쓰기=결과확정 · 읽기=`as_of < target` · `build_hint_by_brain` consume.
+
+### L9d K-EMA-OR-LEDGER-SSOT — **DOC_OK** (본턴)
+- 몰아주기 SSOT=원장(ledger) · EMA=메모리 warm only · EMA 테이블 신설 보류.
+
+### L10 K-TICKET-COVER-LITE — **다음**
+- 발권5 겹침↓ · 부분당첨 기회 분산 · buy-the-pot 금지.
+
 ### L11 축 심화 잔여 (중복 스윕 주의)
 ### L12 발권↔10+5 통합 (형 승인)
 
@@ -119,10 +143,16 @@
 |----|------|
 | L0a/L0b | **DOC_OK** |
 | L1 | **SMOKE_OK** |
-| L2 | **DOC_OK** |
-| L2b | **DOC_OK** |
-| **L3** | **NEXT** |
-| L4~L12 | 대기 |
+| L2 / L2b | **DOC_OK** |
+| L3 / L4 / L4b | **WIRE_OK** |
+| L5 | **AUDIT_OK** |
+| L6~L8 | 스킵 |
+| L9 | **HOLD** |
+| L9a | **AUDIT_OK** |
+| L9b / L9c | **WIRE_OK** |
+| L9d | **DOC_OK** |
+| **L10** | **NEXT** |
+| L11~L12 | 대기 |
 
 ---
 

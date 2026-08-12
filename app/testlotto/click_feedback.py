@@ -171,6 +171,7 @@ def apply_draw_result_feedback(draw_no: int) -> dict[str, Any]:
     if not pred_rows:
         out["skipped"] = "no_predictions"
         out["pool_hit_ledger"] = _write_pool_hit_ledger_safe(dno)
+        out["skill_homework"] = _write_skill_homework_safe(dno)
         return out
 
     actual_set = set(actual_nums)
@@ -182,14 +183,13 @@ def apply_draw_result_feedback(draw_no: int) -> dict[str, Any]:
             continue
         by_brain.setdefault(tag, []).append(row)
 
+    from app.testlotto.brain_review_mirror import upsert_brain_review_feedback
+
     any_work = False
     for tag in BRAIN_TAGS:
         rows = by_brain.get(tag) or []
         if not rows:
             out["brains"][tag] = {"status": "no_brain_preds"}
-            continue
-        if marked.get(tag):
-            out["brains"][tag] = {"status": "skip_duplicate_evolve"}
             continue
 
         scored: list[tuple[int, list[int], dict]] = []
@@ -206,12 +206,36 @@ def apply_draw_result_feedback(draw_no: int) -> dict[str, Any]:
             )
             matched_count = int(pick[0])
             pred_nums = pick[1]
+            best_set_no = int(pick[2].get("set_no") or pick[2].get("pred_set_no") or 1)
         else:
             mean_mc = sum(s[0] for s in scored) / len(scored)
             matched_count = int(round(mean_mc))
-            pred_nums = min(scored, key=lambda s: (abs(s[0] - mean_mc), -s[0]))[1]
+            pick = min(scored, key=lambda s: (abs(s[0] - mean_mc), -s[0]))
+            pred_nums = pick[1]
+            best_set_no = int(pick[2].get("set_no") or pick[2].get("pred_set_no") or 1)
 
         missed = _detect_missed_patterns(pred_nums, actual_nums, draws_before)
+        # L9b: CUTOFF SSOT — learn/evolve 중복이어도 brain_review 는 미러
+        review_status = upsert_brain_review_feedback(
+            dno,
+            tag,
+            predicted_nums=pred_nums,
+            matched_count=matched_count,
+            missed=missed,
+            best_set_no=best_set_no,
+            source="click_feedback",
+        )
+
+        if marked.get(tag):
+            out["brains"][tag] = {
+                "status": "skip_duplicate_evolve",
+                "brain_review": review_status,
+                "matched_count": matched_count,
+                "missed": missed,
+            }
+            any_work = True
+            continue
+
         state = _load_global_learn_state(tag)
         last = int(state.get("last_draw_no", 0) or 0)
         learn_applied = False
@@ -238,23 +262,26 @@ def apply_draw_result_feedback(draw_no: int) -> dict[str, Any]:
             "status": "ok",
             "learn_applied": learn_applied,
             "evolve_mark": mark,
+            "brain_review": review_status,
             "matched_count": matched_count,
             "missed": missed,
             "weight_applied": WEIGHT_APPLIED,
         }
         logger.info(
-            "[K-KK-FEEDBACK] %s draw=%d learn=%s evolve=%s match=%d",
+            "[K-KK-FEEDBACK] %s draw=%d learn=%s evolve=%s match=%d review=%s",
             tag,
             dno,
             learn_applied,
             mark,
             matched_count,
+            review_status,
         )
 
     out["ok"] = True
     if not any_work and not out.get("skipped"):
         out["skipped"] = "all_brains_duplicate_or_empty"
     out["pool_hit_ledger"] = _write_pool_hit_ledger_safe(dno)
+    out["skill_homework"] = _write_skill_homework_safe(dno)
     return out
 
 
@@ -267,6 +294,17 @@ def _write_pool_hit_ledger_safe(draw_no: int) -> dict[str, Any]:
     except Exception as e:
         logger.exception("[K-POOL-HIT-LEDGER] write failed draw=%s", draw_no)
         return {"ok": False, "draw_no": int(draw_no), "error": str(e)}
+
+
+def _write_skill_homework_safe(draw_no: int) -> dict[str, Any]:
+    """L9c: 뇌별 스킬 hint 숙제. 실패해도 피드백 본선 유지."""
+    try:
+        from app.testlotto.skill_homework import write_skill_homework
+
+        return write_skill_homework(int(draw_no), note="click_feedback")
+    except Exception as e:
+        logger.exception("[L9c-SKILL-HW] write failed draw=%s", draw_no)
+        return {"ok": False, "as_of_draw": int(draw_no), "error": str(e)}
 
 
 def apply_feedback_after_predict(target_draw_no: int) -> dict[str, Any]:

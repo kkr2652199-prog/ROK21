@@ -360,6 +360,20 @@ def init_testlotto_db():
             PRIMARY KEY (draw_no, brain_tag, kind)
         );
 
+        -- L9c: 뇌별 스킬 hint 숙제 스냅샷 (as_of=결과확정회차, 읽기=as_of<target)
+        CREATE TABLE IF NOT EXISTS testlotto_skill_homework (
+            as_of_draw      INTEGER NOT NULL,
+            brain_tag       TEXT NOT NULL,
+            skill_kind      TEXT NOT NULL,
+            window_weeks    INTEGER,
+            payload_json    TEXT NOT NULL,
+            schema_version  INTEGER DEFAULT 1,
+            note            TEXT,
+            created_at      TEXT DEFAULT (datetime('now','localtime')),
+            PRIMARY KEY (as_of_draw, brain_tag, skill_kind)
+        );
+        CREATE INDEX IF NOT EXISTS idx_skill_hw_asof ON testlotto_skill_homework(as_of_draw);
+
         -- K-EVOLVE-AUTO S1: 상태머신 (실행은 EVOLVE_AUTO=1 + 형 GO)
         CREATE TABLE IF NOT EXISTS testlotto_evolve_auto_state (
             id                   INTEGER PRIMARY KEY CHECK (id = 1),

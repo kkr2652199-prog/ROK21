@@ -349,6 +349,14 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
                 "[K-POOL-HIT-LEDGER] auto_feedback write failed draw=%s",
                 prev_draw_no,
             )
+        try:
+            from app.testlotto.skill_homework import write_skill_homework
+
+            write_skill_homework(prev_draw_no, note="auto_feedback_no_pred")
+        except Exception:
+            logger.exception(
+                "[L9c-SKILL-HW] auto_feedback write failed draw=%s", prev_draw_no
+            )
         return
 
     draws_before = _get_draws_before(prev_draw_no)
@@ -360,19 +368,11 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
             continue
         by_brain.setdefault(tag, []).append(dict(row))
 
+    from app.testlotto.brain_review_mirror import upsert_brain_review_feedback
+
     for tag in PREDICT_TAGS:
         rows = by_brain.get(tag)
         if not rows:
-            continue
-
-        state = _load_global_learn_state(tag)
-        if int(state.get("last_draw_no", 0) or 0) >= prev_draw_no:
-            logger.debug(
-                "[K-HIGHWAY-FEEDBACK] skip %s draw=%d (last_draw_no=%s)",
-                tag,
-                prev_draw_no,
-                state.get("last_draw_no"),
-            )
             continue
 
         scored: list[tuple[int, list[int], dict]] = []
@@ -387,13 +387,37 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
             pick = max(scored, key=lambda s: (s[0], float(s[2].get("confidence") or 0)))
             matched_count = int(pick[0])
             pred_nums = pick[1]
+            best_set_no = int(pick[2].get("set_no") or pick[2].get("pred_set_no") or 1)
         else:
             # mean: 실력 지표 · miss 태그는 mean에 가장 가까운 세트에서 추출
             mean_mc = sum(s[0] for s in scored) / len(scored)
             matched_count = int(round(mean_mc))
-            pred_nums = min(scored, key=lambda s: (abs(s[0] - mean_mc), -s[0]))[1]
+            pick = min(scored, key=lambda s: (abs(s[0] - mean_mc), -s[0]))
+            pred_nums = pick[1]
+            best_set_no = int(pick[2].get("set_no") or pick[2].get("pred_set_no") or 1)
 
         missed = _detect_missed_patterns(pred_nums, actual_nums, draws_before)
+        # L9b: learn 중복이어도 CUTOFF SSOT(brain_review)는 항상 미러
+        upsert_brain_review_feedback(
+            prev_draw_no,
+            tag,
+            predicted_nums=pred_nums,
+            matched_count=matched_count,
+            missed=missed,
+            best_set_no=best_set_no,
+            source="auto_feedback",
+        )
+
+        state = _load_global_learn_state(tag)
+        if int(state.get("last_draw_no", 0) or 0) >= prev_draw_no:
+            logger.debug(
+                "[K-HIGHWAY-FEEDBACK] learn-skip %s draw=%d (last_draw_no=%s) review=upserted",
+                tag,
+                prev_draw_no,
+                state.get("last_draw_no"),
+            )
+            continue
+
         apply_feedback(tag, prev_draw_no, matched_count, missed)
         logger.info(
             "[K-HIGHWAY-FEEDBACK] %s draw=%d mode=%s matched=%d missed=%s",
@@ -418,6 +442,22 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
     except Exception:
         logger.exception(
             "[K-POOL-HIT-LEDGER] auto_feedback write failed draw=%s", prev_draw_no
+        )
+
+    # L9c: 뇌별 스킬 hint 숙제 (원장과 독립 · 실패 무시)
+    try:
+        from app.testlotto.skill_homework import write_skill_homework
+
+        hw = write_skill_homework(prev_draw_no, note="auto_feedback")
+        if not hw.get("ok"):
+            logger.warning(
+                "[L9c-SKILL-HW] auto_feedback write skip draw=%s %s",
+                prev_draw_no,
+                hw,
+            )
+    except Exception:
+        logger.exception(
+            "[L9c-SKILL-HW] auto_feedback write failed draw=%s", prev_draw_no
         )
 
 

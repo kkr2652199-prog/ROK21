@@ -1,0 +1,50 @@
+{
+  "id": "K-LIVE-FEEDBACK-REVIEW-MIRROR",
+  "list": "LIST_V3 L9b",
+  "verdict": "WIRE_OK",
+  "ts": "2026-08-12T10:38:26",
+  "sample_draw": 1236,
+  "checks": {
+    "unit_upsert": true,
+    "cache_invalidated": true,
+    "unit_row_source": true,
+    "unit_restored": true,
+    "click_path_ran": true,
+    "click_has_preds": false,
+    "wired_click": true,
+    "wired_auto": true,
+    "no_unit_probe_residue": true
+  },
+  "hard_keys": [
+    "unit_upsert",
+    "cache_invalidated",
+    "unit_restored",
+    "no_unit_probe_residue",
+    "wired_click",
+    "wired_auto",
+    "click_path_ran"
+  ],
+  "detail": {
+    "click_feedback": {
+      "ok": false,
+      "skipped": "no_predictions",
+      "brains": {}
+    },
+    "census": {
+      "brain_review_n": 300,
+      "brain_review_by_tag": {
+        "markov": 100,
+        "review": 100,
+        "stat": 100
+      },
+      "predictions_n": 0,
+      "predictions_max_target": null
+    },
+    "stat_1236_source_after": null
+  },
+  "notes": [
+    "learn_state last_draw guard 와 무관하게 brain_review UPSERT",
+    "CUTOFF 재생 SSOT = testlotto_brain_review",
+    "ge3 미클레임 · 1237 아님 · 강제BT 보류"
+  ]
+}

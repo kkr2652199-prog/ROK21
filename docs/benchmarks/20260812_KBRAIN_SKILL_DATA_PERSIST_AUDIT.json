@@ -1,0 +1,22 @@
+{
+  "id": "K-BRAIN-SKILL-DATA-PERSIST-AUDIT",
+  "ts": "2026-08-12",
+  "verdict": "AUDIT_OK",
+  "last_settled_draw": 1236,
+  "gaps_found": [
+    {"id": "L9b", "severity": "HIGH", "title": "live_feedback_brain_review_mirror", "status": "WIRE_OK"},
+    {"id": "L9c", "severity": "HIGH", "title": "skill_homework_persist", "status": "WIRE_OK"},
+    {"id": "L9d", "severity": "MED", "title": "ema_or_ledger_ssot", "status": "DOC_OK"},
+    {"id": "L12", "severity": "HIGH", "title": "ticket5_vs_pool10_dual", "status": "DEFERRED_approval"}
+  ],
+  "stores": {
+    "lotto_draws": {"persist": true, "used_in_predict": true, "skill_split": false},
+    "testlotto_brain_learn_state": {"persist": true, "used_in_predict": true, "skill_split": "row_per_brain"},
+    "testlotto_brain_review": {"persist": true, "used_in_predict": "cutoff", "live_mirror": "L9b"},
+    "testlotto_pool_hit_ledger": {"persist": true, "used_in_predict": "repack_blend", "skill_split": true},
+    "testlotto_skill_homework": {"persist": true, "used_in_predict": "hint_consume", "skill_split": true},
+    "RollingSignalLearner_EMA": {"persist": false, "used_in_predict": "in_memory_warm", "skill_split": true},
+    "lotto_analysis": {"persist": "schema_only", "rows": 0, "used_in_predict": false}
+  },
+  "notes": ["ge3_not_claimed", "1237_not_production", "force_BT_hold"]
+}

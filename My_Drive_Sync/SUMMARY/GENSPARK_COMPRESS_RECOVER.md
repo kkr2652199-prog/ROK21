@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`5fc516e` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`75e0071` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=5fc516e]
+[ROK21 젠스파크 압축복구 · HEAD=75e0071]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 5fc516e · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · L9 몰아주기보존 **HOLD** · NEXT=L10 발권커버
-- 직전: L5 뇌10스킬감사 AUDIT_OK
+- HEAD: 75e0071 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · L9a~d 데이터저장 **완료** · NEXT=L10 발권커버
+- 직전: L9b review미러 + L9c 스킬숙제 WIRE_OK · L9d DOC
 - BOOT다음: L10 K-TICKET-COVER-LITE / 1237아님
-- NEXT1: K-TICKET-COVER-LITE — **양산前**. L9 몰아주기보존 **HOLD**(slots2·cap4 불변·소형스윕 신호0). 다음=**L10** 발권5 겹침↓ **커버라이트**(부분당첨 분산·buy-the-pot금지). **1237아님** · 강제BT보류 · S1 개별승인.
+- NEXT1: K-TICKET-COVER-LITE — **양산前**. L9a~L9d 데이터저장감사·미러·숙제·EMA문서 **완료**. 다음=**L10** 발권5 겹침↓ **커버라이트**(부분당첨 분산·buy-the-pot금지). **1237아님** · 강제BT보류 · S1 개별승인.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,12 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260812_KBRAIN_SKILL_DATA_PERSIST_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KBRAIN_SKILL_DATA_PERSIST_AUDIT.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KBRAIN_SKILL_DATA_PERSIST_AUDIT.md
+- `20260812_KSKILL_HOMEWORK_PERSIST` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KSKILL_HOMEWORK_PERSIST.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KSKILL_HOMEWORK_PERSIST.md
+- `20260812_KLIVE_FEEDBACK_REVIEW_MIRROR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KLIVE_FEEDBACK_REVIEW_MIRROR.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KLIVE_FEEDBACK_REVIEW_MIRROR.md
 - `20260812_KREPACK_PRESERVE_PROBE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KREPACK_PRESERVE_PROBE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KREPACK_PRESERVE_PROBE.md
 - `20260812_KBRAIN10_SKILL_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KBRAIN10_SKILL_AUDIT.json
@@ -63,10 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KREPACK_READ_LEDGER.md
 - `20260812_KPOOL_HIT_LEDGER_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KPOOL_HIT_LEDGER_WIRE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KPOOL_HIT_LEDGER_WIRE.md
-- `20260812_KTIER_ROLE_SLOTS_SCHEMA` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KTIER_ROLE_SLOTS_SCHEMA.json
-- `20260812_KPOOL_HIT_LEDGER_SCHEMA` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KPOOL_HIT_LEDGER_SCHEMA.json
-- `20260812_KPOST_REFILL_JOINT_SMOKE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260812_KPOST_REFILL_JOINT_SMOKE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260812_KPOST_REFILL_JOINT_SMOKE.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -77,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=5fc516e · 지금=**양산前** · L9 몰아주기보존 **HOLD** · NEXT=L10 발권커버 · 다음=K-TICKET-COVER-LITE
+1. 첫줄: [복귀] HEAD=75e0071 · 지금=**양산前** · L9a~d 데이터저장 **완료** · NEXT=L10 발권커버 · 다음=K-TICKET-COVER-LITE
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -109,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 5fc516e_
+_generated: 75e0071_
