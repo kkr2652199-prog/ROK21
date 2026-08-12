@@ -1,0 +1,209 @@
+{
+  "id": "K-TIER-ROLE-SLOTS-WIRE",
+  "list": "LIST_V3",
+  "step": "L4b",
+  "status": "WIRE_OK",
+  "ts": "2026-08-12T09:59:34+09:00",
+  "wire": true,
+  "ge3_used_as_claim": false,
+  "frame_draw": 1236,
+  "no_bonus_peek": {
+    "T-NB1": {
+      "ok": true,
+      "params": [
+        "brain_tag",
+        "draw_no",
+        "n",
+        "seed",
+        "skill_sets"
+      ],
+      "bad": []
+    },
+    "T-NB2": {
+      "ok": true,
+      "same": true,
+      "bonus_kw_rejected": true
+    },
+    "T-NB3": {
+      "ok": true,
+      "note": "shape/cover는 draws·seed만 · target 당첨행 미조회(코드경로)"
+    },
+    "T-NB4": {
+      "ok": true,
+      "note": "ledger write만 actual · role 생성과 분리"
+    }
+  },
+  "contracts": {
+    "build_ok": true,
+    "roles": {
+      "ok": true,
+      "issues": []
+    },
+    "focus_r1_all": true,
+    "ledger_consume": {
+      "consumed": true,
+      "blend": 0.5,
+      "ema_solo_exit": true,
+      "n_draws": 2
+    },
+    "contract_1236": {
+      "n_ledger": 45,
+      "n_scatter": 6,
+      "ok": true,
+      "write_ok": true
+    },
+    "ROLE_SLOTS_WIRE": true,
+    "LEDGER_BLEND": 0.5,
+    "sample_stat_roles": [
+      {
+        "set_no": 1,
+        "role": "skill_native",
+        "role_pass": "pass0"
+      },
+      {
+        "set_no": 2,
+        "role": "skill_native",
+        "role_pass": "pass0"
+      },
+      {
+        "set_no": 3,
+        "role": "skill_native",
+        "role_pass": "pass0"
+      },
+      {
+        "set_no": 4,
+        "role": "skill_native",
+        "role_pass": "pass0"
+      },
+      {
+        "set_no": 5,
+        "role": "skill_native",
+        "role_pass": "pass0"
+      },
+      {
+        "set_no": 6,
+        "role": "cover_r3",
+        "role_pass": "pass1a"
+      },
+      {
+        "set_no": 7,
+        "role": "cover_r3",
+        "role_pass": "pass1a"
+      },
+      {
+        "set_no": 8,
+        "role": "cover_r3",
+        "role_pass": "pass1a"
+      },
+      {
+        "set_no": 9,
+        "role": "shape_r2",
+        "role_pass": "pass1b"
+      },
+      {
+        "set_no": 10,
+        "role": "shape_r2",
+        "role_pass": "pass1b"
+      }
+    ]
+  },
+  "precheck": {
+    "blend_by_brain": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "w_crowd_by_brain": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "stat_hint": [
+      52,
+      "miss_pattern"
+    ],
+    "weights": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "assemble": "signal_union",
+    "oversample": {
+      "stat": 3,
+      "markov": 5,
+      "review": 3
+    },
+    "jaccard": {
+      "stat": 0.85,
+      "markov": 0.85,
+      "review": 0.85
+    },
+    "ok": true
+  },
+  "gate_runs": [
+    {
+      "seed": 0,
+      "n": 100,
+      "prefer_mean": 0.296459,
+      "prize_mean": -0.104674,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true
+    },
+    {
+      "seed": 42,
+      "n": 100,
+      "prefer_mean": 0.290239,
+      "prize_mean": -0.121153,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true
+    },
+    {
+      "seed": 123,
+      "n": 100,
+      "prefer_mean": 0.297283,
+      "prize_mean": -0.117258,
+      "prefer_split_both_pos": true,
+      "consistent_neg": true
+    }
+  ],
+  "gate_summary": {
+    "prefer": 0.29466,
+    "prize": -0.114362,
+    "split_rate": 1.0,
+    "cn_rate": 1.0,
+    "drift_vs_l1": {
+      "prefer": -0.00027,
+      "prize": -0.003138,
+      "note": "모니터만 · 단독 APPLY 근거 아님"
+    }
+  },
+  "health": {
+    "prefer_pos": true,
+    "prefer_split": true,
+    "prize_neg": true,
+    "consistent_neg": true,
+    "knobs_ok": true,
+    "roles_ok": true,
+    "focus_ok": true,
+    "no_bonus_peek": true,
+    "l4_consume": true,
+    "blend_050": true,
+    "contract_1236": true
+  },
+  "session_rollback_flag": false,
+  "ROLE_SLOTS_WIRE_after": true,
+  "s1_begin_immediate": false,
+  "force_bt": false,
+  "next_list": "L5 K-BRAIN10-SKILL-AUDIT",
+  "note": "외부패스 · SPEC 5+3+2 · expand_pool · 1237아님"
+}

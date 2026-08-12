@@ -77,11 +77,11 @@
 - 몰아주기(`focus_r1` 경로=`repack_by_brain`)가 원장 SSOT 소비.
 - 실측: blend0.5 · seed1234~1235 → target1236 consume · no_peek · 1236계약45/6.
 
-### L4b K-TIER-ROLE-SLOTS-WIRE — **게이트 후**
+### L4b K-TIER-ROLE-SLOTS-WIRE — **WIRE_OK**
 - pass0=`skill_native` 유지.
 - pass1을 `cover_r3`×3 + `shape_r2`×2 로 분화(뇌 스킬 hint 유지·교차공유 금지).
 - repack 메타 `role=focus_r1`.
-- 실패 시 HOLD·롤백. 강제BT는 이후.
+- 실측: prefer+0.2947 · prize−0.1144 · no_bonus_peek · L4계약유지.
 
 ### L5 K-BRAIN10-SKILL-AUDIT
 - 역할 도입 전/후 뇌 스킬 정합 감사.

@@ -87,6 +87,10 @@ LEDGER_BLEND: float = 0.50  # (1-β)*EMA + β*ledger
 LEDGER_WINDOW_DRAWS: int = 50
 _LAST_LEDGER_CONSUME: dict[str, Any] = {}
 
+# K-TIER-ROLE-SLOTS-WIRE (LIST_V3 L4b) — pool10 역할 분기.
+# False면 구 2×predict_sets(5) 경로(롤백).
+ROLE_SLOTS_WIRE: bool = True
+
 
 SignalTable = dict[str, dict[int, float]]
 
@@ -176,34 +180,80 @@ def _pass_seed(seed: int, draw_no: int, pass_idx: int) -> int:
 
 
 def expand_pool(draws: list[dict], draw_no: int, *, seed: int = MC_SEED) -> list[dict]:
-    """뇌별 10세트 pool = 뇌마다 2× predict_sets.
+    """뇌별 10세트 pool.
 
-    K-BRAIN-RNG-INDEPENDENT (20260808) — **뇌마다 시드를 리셋한다.** 이전에는
-    3뇌를 한 난수 흐름으로 순차 호출해서, 앞 뇌가 뽑기를 몇 번 하느냐에 따라
-    뒤 뇌의 결과가 바뀌었다(stat → markov 오염). 발권 경로(`coordinator`)는
-    이미 뇌마다 시드를 리셋하고 있었고 pool 경로만 빠져 있었다.
+    K-BRAIN-RNG-INDEPENDENT — 뇌마다 시드 리셋.
+    L4b ROLE_SLOTS_WIRE:
+      pass0 skill_native×5 (현행 predict_sets · 시드 불변)
+      pass1a cover_r3×3
+      pass1b shape_r2×2 (no_bonus_peek)
+    롤백: ROLE_SLOTS_WIRE=False → 구 2×predict_sets(5).
     """
     from tools._k_window_signal_survey import PREDICT_MODULES
 
-    pool: list[dict] = []
-    for pass_idx in range(2):
-        s = _pass_seed(seed, draw_no, pass_idx)
-        for tag in BRAIN_TAGS:
-            mod = PREDICT_MODULES.get(tag)
-            if mod is None:
-                continue
-            random.seed(s)  # 뇌마다 같은 시작점 → 서로 오염되지 않음
-            # K-I: 단일 뇌 예외 → 타뇌 pool 계속
-            try:
-                sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
-            except Exception:  # noqa: BLE001
-                continue
-            for i, c in enumerate(sets):
-                base_sn = int(
-                    c.get("rank") or c.get("set_no") or c.get("pred_set_no") or (i + 1)
-                )
-                sn = base_sn + pass_idx * SETS_PER_PREDICT_BRAIN
-                pool.append({**c, "brain_tag": tag, "pred_set_no": sn, "set_no": sn})
+    if not ROLE_SLOTS_WIRE:
+        pool: list[dict] = []
+        for pass_idx in range(2):
+            s = _pass_seed(seed, draw_no, pass_idx)
+            for tag in BRAIN_TAGS:
+                mod = PREDICT_MODULES.get(tag)
+                if mod is None:
+                    continue
+                random.seed(s)
+                try:
+                    sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
+                except Exception:  # noqa: BLE001
+                    continue
+                for i, c in enumerate(sets):
+                    base_sn = int(
+                        c.get("rank")
+                        or c.get("set_no")
+                        or c.get("pred_set_no")
+                        or (i + 1)
+                    )
+                    sn = base_sn + pass_idx * SETS_PER_PREDICT_BRAIN
+                    pool.append(
+                        {**c, "brain_tag": tag, "pred_set_no": sn, "set_no": sn}
+                    )
+        return pool
+
+    from app.testlotto.role_slots import (
+        build_cover_r3_sets,
+        build_shape_r2_sets,
+        label_skill_sets,
+    )
+
+    pool = []
+    for tag in BRAIN_TAGS:
+        mod = PREDICT_MODULES.get(tag)
+        if mod is None:
+            continue
+        # pass0 — 발권 경로와 동일 시드 (set 1~5)
+        random.seed(_pass_seed(seed, draw_no, 0))
+        try:
+            skill_raw = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
+        except Exception:  # noqa: BLE001
+            continue
+        skill = label_skill_sets(skill_raw, brain_tag=tag)
+        pool.extend(skill)
+        cover = build_cover_r3_sets(
+            mod.predict_sets,
+            draws,
+            brain_tag=tag,
+            skill_sets=skill,
+            seed=seed,
+            draw_no=draw_no,
+            n=3,
+        )
+        pool.extend(cover)
+        shape = build_shape_r2_sets(
+            skill,
+            brain_tag=tag,
+            seed=seed,
+            draw_no=draw_no,
+            n=2,
+        )
+        pool.extend(shape)
     return pool
 
 
@@ -586,6 +636,11 @@ def repack_by_brain(
                 out.extend(lam_rows)
                 continue
         out.extend(assembled_rows)
+
+    if ROLE_SLOTS_WIRE:
+        from app.testlotto.role_slots import label_repack_focus
+
+        out = label_repack_focus(out)
     return out
 
 
@@ -705,6 +760,14 @@ def build_pool_and_repack(
                 "nums": [int(x) for x in c["nums"]],
                 "brain_tag": tag,
                 "kind": "pool",
+                **(
+                    {
+                        "role": c.get("role"),
+                        "role_pass": c.get("role_pass"),
+                    }
+                    if c.get("role")
+                    else {}
+                ),
             }
             for c in sets
         ]
@@ -719,6 +782,9 @@ def build_pool_and_repack(
             "kind": "repack",
             "assemble": c.get("assemble") or "baseline_repack",
         }
+        if c.get("role"):
+            entry["role"] = c.get("role")
+            entry["role_pass"] = c.get("role_pass")
         if c.get("source"):
             entry["source"] = c["source"]
             entry["source_set_no"] = c.get("source_set_no")
@@ -773,6 +839,7 @@ def tune_snapshot() -> dict[str, Any]:
         "LEDGER_SIGNAL_WIRE": bool(LEDGER_SIGNAL_WIRE),
         "LEDGER_BLEND": float(LEDGER_BLEND),
         "LEDGER_WINDOW_DRAWS": int(LEDGER_WINDOW_DRAWS),
+        "ROLE_SLOTS_WIRE": bool(ROLE_SLOTS_WIRE),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }

@@ -174,30 +174,38 @@ def payload_from_wf_parts(
 
     by_brain_pool: dict[str, list[dict]] = {}
     for tag in BRAIN_TAGS:
-        sets = sorted(pool_by_brain.get(tag, []), key=lambda x: int(x.get("pred_set_no") or x.get("set_no") or 1))
-        by_brain_pool[tag] = [
-            {
+        sets = sorted(
+            pool_by_brain.get(tag, []),
+            key=lambda x: int(x.get("pred_set_no") or x.get("set_no") or 1),
+        )
+        by_brain_pool[tag] = []
+        for c in sets:
+            row = {
                 "set_no": int(c.get("pred_set_no") or c.get("set_no") or 1),
                 "nums": [int(x) for x in c["nums"]],
                 "brain_tag": tag,
                 "kind": "pool",
             }
-            for c in sets
-        ]
+            if c.get("role"):
+                row["role"] = c.get("role")
+                row["role_pass"] = c.get("role_pass")
+            by_brain_pool[tag].append(row)
 
     by_brain_repack: dict[str, list[dict]] = {t: [] for t in BRAIN_TAGS}
     for c in repacked:
         tag = str(c["brain_tag"])
         if tag not in BRAIN_TAGS:
             continue
-        by_brain_repack.setdefault(tag, []).append(
-            {
-                "set_no": int(c.get("repack_rank") or c.get("set_no") or 1),
-                "nums": [int(x) for x in c["nums"]],
-                "brain_tag": tag,
-                "kind": "repack",
-            }
-        )
+        entry = {
+            "set_no": int(c.get("repack_rank") or c.get("set_no") or 1),
+            "nums": [int(x) for x in c["nums"]],
+            "brain_tag": tag,
+            "kind": "repack",
+        }
+        if c.get("role"):
+            entry["role"] = c.get("role")
+            entry["role_pass"] = c.get("role_pass")
+        by_brain_repack.setdefault(tag, []).append(entry)
 
     return {
         "ok": True,

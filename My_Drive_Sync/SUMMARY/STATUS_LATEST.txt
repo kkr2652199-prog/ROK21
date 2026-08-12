@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-REPACK-READ-LEDGER** — L4 **WIRE_OK** · NEXT=L4b 역할슬롯WIRE
+📌 사유: **[CURSOR] K-TIER-ROLE-SLOTS-WIRE** — L4b **WIRE_OK** · NEXT=L5 뇌10스킬감사
 
-📌 직전: **[CURSOR] K-POOL-HIT-LEDGER-WIRE** — L3 **WIRE_OK**
+📌 직전: **[CURSOR] K-REPACK-READ-LEDGER** — L4 **WIRE_OK**
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-TIER-ROLE-SLOTS-WIRE (LIST_V3 L4b)** | **WIRE_OK** · wire=**True** — `expand_pool` pass0=`skill_native`×5 · pass1a=`cover_r3`×3 · pass1b=`shape_r2`×2 · repack `focus_r1` 라벨. `ROLE_SLOTS_WIRE=True`. no_bonus_peek T-NB1~4 OK. 게이트 seed3×1137~1236: prefer**+0.294660** · prize**−0.114362** · split1.0 · cn1.0. L4소비·β0.5·1236계약45/6 유지. 외부패스. S1·강제BT 미포함. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KTIER_ROLE_SLOTS_WIRE.json` · `reports/20260812_KTIER_ROLE_SLOTS_WIRE.md` · `app/testlotto/role_slots.py` · `tools/_k_tier_role_slots_wire.py` |
 | **K-REPACK-READ-LEDGER (LIST_V3 L4)** | **WIRE_OK** · wire=**True** — `repack_by_brain`이 `ledger_signal_tables`+scatter 소비 · `LEDGER_SIGNAL_WIRE` · blend**0.5** · target=1236 시 draw_no∈{1234,1235} 소비 · ema_solo_exit**True** · no_peek OK · 1236계약 ledger**45**/scatter**6** · repack15. 역할라벨·S1 IMMEDIATE·강제BT 미포함. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KREPACK_READ_LEDGER.json` · `reports/20260812_KREPACK_READ_LEDGER.md` · `tools/_k_repack_read_ledger.py` |
 | **K-POOL-HIT-LEDGER-WIRE (LIST_V3 L3)** | **WIRE_OK** · wire=**True** — CREATE `testlotto_pool_hit_ledger`+`testlotto_pool_hit_scatter` · writer `pool_hit_ledger.py` · click_feedback/`_auto_feedback` 결과확정 후 쓰기 · predict_reset 삭제목록 포함. 샘플1236: ledger**45**(3×15)·scatter**6** · actual[12,18,21,29,34,38] bonus10 · no_peek OK · role_wire=False. ge3미클레임·1237아님·강제BT보류. · `docs/benchmarks/20260812_KPOOL_HIT_LEDGER_WIRE.json` · `reports/20260812_KPOOL_HIT_LEDGER_WIRE.md` · `tools/_k_pool_hit_ledger_wire.py` |
 | **K-TIER-ROLE-SLOTS-SPEC (LIST_V3 L2b)** | **DOC_OK** · wire=**False** — 역할 `skill_native`×5 · `cover_r3`×3 · `shape_r2`×2 · `focus_r1`×5. 등수P↑·보너스맞춤2등 **PASS**. no_bonus_peek T-NB1~4 · L4b 게이트=prefer/prize. 코드 APPLY 안 함. ge3미클레임·1237아님. · `reports/20260812_KTIER_ROLE_SLOTS_SPEC.md` · `docs/benchmarks/20260812_KTIER_ROLE_SLOTS_SCHEMA.json` · 분석 `KTIER_ROLE_SLOTS_ANALYSIS` |
