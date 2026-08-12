@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `c0c88a7` |
+| HEAD(실측) | `05453be` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L2b 역할SPEC **DOC_OK** · NEXT=L3 원장WIRE |
-| 직전 | L2 원장SPEC DOC_OK |
-| BOOT다음 | L3 K-POOL-HIT-LEDGER-WIRE / 1237아님 |
-| NEXT1 ID | **K-POOL-HIT-LEDGER-WIRE** |
-| NEXT1 할일 | **양산前**. L2b 역할SPEC **DOC_OK**(skill5+cover_r3×3+shape_r2×2+focus_r1 · 등수P↑PASS · no_bonus_peek). 다음=**L3** 원장 **WIRE**(ledger+scatter CREATE·결과확정 후 쓰기 · no_peek). **1237아님** · 역할슬롯 코드는 L4b · 강제BT보류. |
+| 지금 | **양산前** · L3 원장WIRE **WIRE_OK** · NEXT=L4 몰아주기원장읽기 |
+| 직전 | L2b 역할SPEC DOC_OK |
+| BOOT다음 | L4 K-REPACK-READ-LEDGER / 1237아님 |
+| NEXT1 ID | **K-REPACK-READ-LEDGER** |
+| NEXT1 할일 | **양산前**. L3 원장 **WIRE_OK**(ledger+scatter CREATE·피드백경로쓰기·1236 45행·no_peek). 다음=**L4** 몰아주기(`focus_r1`)가 원장 SSOT **읽기**(draw_no<target · EMA단독탈피). **1237아님** · 역할슬롯 코드는 L4b · 강제BT보류. |
 | 승인필요 | 없음(리스트 순서) |
-| 선행 | L2·L2b DOC_OK |
+| 선행 | L3 WIRE_OK |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=c0c88a7 · 지금=**양산前** · L2b 역할SPEC **DOC_OK** · NEXT=L3 원장WIRE · 다음=K-POOL-HIT-LEDGER-WIRE`
+1. 첫줄 `[복귀] HEAD=05453be · 지금=**양산前** · L3 원장WIRE **WIRE_OK** · NEXT=L4 몰아주기원장읽기 · 다음=K-REPACK-READ-LEDGER`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
