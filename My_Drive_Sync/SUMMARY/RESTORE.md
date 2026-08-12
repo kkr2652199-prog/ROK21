@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0f86ec1` · WORK=`IDLE`
+1. **HEAD:** `56bc0c8` · WORK=`IDLE`
 2. **지금:** **양산前** · L4b 역할슬롯WIRE **WIRE_OK** · NEXT=L5 뇌10스킬감사
 3. **다음1건:** K-BRAIN10-SKILL-AUDIT — **양산前**. L4b 역할슬롯 **WIRE_OK**(skill×5+cover_r3×3+shape_r2×2 · focus_r1라벨 · prefer/prize게이트PASS · no_bonus_peek). 다음=**L5** 뇌별10세트 스킬 **감사**(역할 도입 전/후 정합). **1237아님** · 강제BT보류 · S1 IMMEDIATE 개별승인. (승인필요=없음(리스트 순서) · 선행=L4b WIRE_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
