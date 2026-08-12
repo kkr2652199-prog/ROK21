@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `4c3a6ec` · WORK=`IDLE`
-2. **지금:** **양산前** · L3 원장WIRE **WIRE_OK** · NEXT=L4 몰아주기원장읽기
-3. **다음1건:** K-REPACK-READ-LEDGER — **양산前**. L3 원장 **WIRE_OK**(ledger+scatter CREATE·피드백경로쓰기·1236 45행·no_peek). 다음=**L4** 몰아주기(`focus_r1`)가 원장 SSOT **읽기**(draw_no<target · EMA단독탈피). **1237아님** · 역할슬롯 코드는 L4b · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=L3 WIRE_OK)
+1. **HEAD:** `f7bfe74` · WORK=`IDLE`
+2. **지금:** **양산前** · L4 몰아주기원장읽기 **WIRE_OK** · NEXT=L4b 역할슬롯WIRE
+3. **다음1건:** K-TIER-ROLE-SLOTS-WIRE — **양산前**. L4 몰아주기원장 **WIRE_OK**(repack_by_brain이 ledger+scatter 소비·β=0.5·EMA단독탈피·no_peek·1236계약45/6). 다음=**L4b** 역할슬롯 **WIRE**(skill5+cover_r3×3+shape_r2×2 · no_bonus_peek · prefer/prize 게이트). **1237아님** · 강제BT보류 · S1 IMMEDIATE는 L4후 개별승인. (승인필요=없음(리스트 순서·형 L4 GO 후 본선) · 선행=L4 WIRE_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-12 | L4 GO 지시서 | repack 원장소비 WIRE · EMA탈피 · NEXT=L4b | **WIRE_OK** | (push후) |
+| 2026-08-12 | L4 GO 지시서 | repack 원장소비 WIRE · EMA탈피 · NEXT=L4b | **WIRE_OK** | f7bfe74 |
 | 2026-08-12 | 다음진행 L3 | ledger+scatter WIRE · 1236×45 · no_peek · NEXT=L4 | **WIRE_OK** | 05453be |
 | 2026-08-12 | L2원장SPEC | ledger+scatter스키마 DOC_OK · NEXT=L2b | **DOC_OK** | 3131b55 |
 | 2026-08-12 | L1합동smoke | refill후 prefer/prize SMOKE_OK · NEXT=L2 | **SMOKE_OK** | 73e654e |
