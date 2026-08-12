@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f9abe6c` · WORK=`IDLE`
+1. **HEAD:** `4c3a6ec` · WORK=`IDLE`
 2. **지금:** **양산前** · L3 원장WIRE **WIRE_OK** · NEXT=L4 몰아주기원장읽기
 3. **다음1건:** K-REPACK-READ-LEDGER — **양산前**. L3 원장 **WIRE_OK**(ledger+scatter CREATE·피드백경로쓰기·1236 45행·no_peek). 다음=**L4** 몰아주기(`focus_r1`)가 원장 SSOT **읽기**(draw_no<target · EMA단독탈피). **1237아님** · 역할슬롯 코드는 L4b · 강제BT보류. (승인필요=없음(리스트 순서) · 선행=L3 WIRE_OK)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
