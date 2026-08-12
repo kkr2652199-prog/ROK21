@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-12 | 다음진행 L11 | review shape세기 스윕 |Δ|미달 · BLEND/W_CROWD불변 · NEXT=L11b | **HOLD** | e10c565 |
+| 2026-08-12 | 다음진행 L11 | review shape세기 스윕 |Δ|미달 · BLEND/W_CROWD불변 · NEXT=L11b | **HOLD** | d9b30d1 |
 | 2026-08-12 | 다음진행 L10 | 발권5 커버스윕 신호有·prefer/prize FAIL · knobs OFF · NEXT=L11 | **HOLD** | 80631f3 |
 | 2026-08-12 | DATA저장감사·갭처리 | L9a AUDIT · L9b/c WIRE · L9d DOC · NEXT=L10 | **WIRE_OK** | 3db1831 |
 | 2026-08-12 | 다음진행 L9 | preserve/union 소형스윕 신호0 · knobs불변 · NEXT=L10 | **HOLD** | 89c3dc7 |
