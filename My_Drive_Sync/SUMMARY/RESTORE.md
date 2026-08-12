@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d9b30d1` · WORK=`IDLE`
-2. **지금:** **양산前** · L11 review EV **HOLD** · NEXT=L11b markov prefer
-3. **다음1건:** K-MARKOV-PREFER-ALIGN — **양산前**. L11 review EV **HOLD**(shape세기 미개선·BLEND/W_CROWD 재탕안함). 다음=**L11b** markov prefer 잔여(구조사전 vs crowd·Wang생일대·기스윕노브재탕금지). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L11 완료)
+1. **HEAD:** `c50c072` · WORK=`IDLE`
+2. **지금:** **양산前** · L11b markov prefer **HOLD** · NEXT=L11c stat
+3. **다음1건:** K-STAT-HOMEWORK-QUALITY — **양산前**. L11b markov prefer **HOLD**(생일대보너스 prefer↓·BLEND/W_CROWD재탕안함). 다음=**L11c** stat homework 잔여(pool품질·hint weeks·기스윕노브재탕금지). **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=없음(리스트 순서) · 선행=L11b 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-12 | 다음진행 L11b | markov 생일대세기 prefer↓ · BLEND/W_CROWD불변 · NEXT=L11c | **HOLD** | PENDING |
 | 2026-08-12 | 다음진행 L11 | review shape세기 스윕 |Δ|미달 · BLEND/W_CROWD불변 · NEXT=L11b | **HOLD** | d9b30d1 |
 | 2026-08-12 | 다음진행 L10 | 발권5 커버스윕 신호有·prefer/prize FAIL · knobs OFF · NEXT=L11 | **HOLD** | 80631f3 |
 | 2026-08-12 | DATA저장감사·갭처리 | L9a AUDIT · L9b/c WIRE · L9d DOC · NEXT=L10 | **WIRE_OK** | 3db1831 |
@@ -45,7 +46,6 @@
 | 2026-08-12 | L2원장SPEC | ledger+scatter스키마 DOC_OK · NEXT=L2b | **DOC_OK** | 3131b55 |
 | 2026-08-12 | L1합동smoke | refill후 prefer/prize SMOKE_OK · NEXT=L2 | **SMOKE_OK** | 73e654e |
 | 2026-08-12 | 역할슬롯5+3+2분석 | LIST_V3 DOC · 등수P↑PASS · NEXT=L1 | **DOC_OK** | 7799d81 |
-| 2026-08-12 | 리스트보강·원장1~6·뇌10 | LIST_V2 DOC · NEXT=L1 smoke | **DOC_OK** | 0169137 |
 
 ---
 

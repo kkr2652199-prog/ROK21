@@ -118,10 +118,13 @@
 - shape 세기(`PRIZE_SHAPE_STRENGTH`)만 스윕 · BLEND0.85/W_CROWD0.90 **재탕안함**.
 - prize |Δ| 미달 · base prize양수 → HOLD.
 
-### L11b K-MARKOV-PREFER-ALIGN — **다음**
-- prefer 축 잔여(구조사전 vs crowd) · 기스윕 노브 재탕 금지.
+### L11b K-MARKOV-PREFER-ALIGN — **HOLD** (본턴)
+- 생일대 세기(`PREFER_BDAY_STRENGTH`)만 스윕 · BLEND0.55/W_CROWD0.90 **재탕안함**.
+- 전후보 prefer↓ → HOLD(0.0).
 
-### L11c K-STAT-HOMEWORK-QUALITY — 후순위
+### L11c K-STAT-HOMEWORK-QUALITY — **다음**
+- pool 품질·hint weeks 잔여 · 기스윕 노브 재탕 금지.
+
 ### L12 발권↔10+5 통합 (형 승인)
 
 ---
@@ -161,8 +164,9 @@
 | L9d | **DOC_OK** |
 | L10 | **HOLD** |
 | L11 | **HOLD** |
-| **L11b** | **NEXT** |
-| L11c~L12 | 대기 |
+| L11b | **HOLD** |
+| **L11c** | **NEXT** |
+| L12 | 대기 |
 
 ---
 

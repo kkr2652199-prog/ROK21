@@ -1,0 +1,217 @@
+{
+  "id": "K-MARKOV-PREFER-ALIGN",
+  "list": "LIST_V3",
+  "step": "L11b",
+  "status": "HOLD",
+  "ts": "2026-08-12T11:23:15+09:00",
+  "wire": false,
+  "apply": false,
+  "ge3_used_as_claim": false,
+  "locked_not_reswept": {
+    "BLEND_STRENGTH_BY_BRAIN.markov": 0.55,
+    "W_CROWD_BY_BRAIN.markov": 0.9
+  },
+  "precheck": {
+    "BLEND_markov": 0.55,
+    "W_CROWD_markov": 0.9,
+    "PREFER_BDAY_STRENGTH": 0.0,
+    "lock_ok": true
+  },
+  "range": [
+    1137,
+    1236
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "knob": "PREFER_BDAY_STRENGTH",
+  "base": 0.0,
+  "cands": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "configs": {
+    "bday_0.0": {
+      "bday_strength": 0.0,
+      "prefer": 0.089332,
+      "prize": 0.006498,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.009448
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.012814
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002769
+        }
+      ],
+      "gate": {
+        "is_baseline": true,
+        "pass": true
+      }
+    },
+    "bday_0.5": {
+      "bday_strength": 0.5,
+      "prefer": 0.089262,
+      "prize": 0.006498,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092231,
+          "prize": 0.009448
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.095246,
+          "prize": 0.012814
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.08031,
+          "prize": -0.002769
+        }
+      ],
+      "gate": {
+        "d_prefer": -7e-05,
+        "d_prize": -0.0,
+        "improve": false,
+        "prize_iso": true,
+        "health": true,
+        "pass": false
+      }
+    },
+    "bday_1.0": {
+      "bday_strength": 1.0,
+      "prefer": 0.087972,
+      "prize": 0.006498,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.091764,
+          "prize": 0.009448
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.093258,
+          "prize": 0.012814
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.078895,
+          "prize": -0.002769
+        }
+      ],
+      "gate": {
+        "d_prefer": -0.00136,
+        "d_prize": -0.0,
+        "improve": false,
+        "prize_iso": true,
+        "health": true,
+        "pass": false
+      }
+    },
+    "bday_1.5": {
+      "bday_strength": 1.5,
+      "prefer": 0.087334,
+      "prize": 0.006498,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.090317,
+          "prize": 0.009448
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.093297,
+          "prize": 0.012814
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.078387,
+          "prize": -0.002769
+        }
+      ],
+      "gate": {
+        "d_prefer": -0.001998,
+        "d_prize": -0.0,
+        "improve": false,
+        "prize_iso": true,
+        "health": true,
+        "pass": false
+      }
+    },
+    "bday_2.0": {
+      "bday_strength": 2.0,
+      "prefer": 0.086021,
+      "prize": 0.006498,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.086293,
+          "prize": 0.009448
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.093781,
+          "prize": 0.012814
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.07799,
+          "prize": -0.002769
+        }
+      ],
+      "gate": {
+        "d_prefer": -0.003311,
+        "d_prize": -0.0,
+        "improve": false,
+        "prize_iso": true,
+        "health": true,
+        "pass": false
+      }
+    }
+  },
+  "winners": [],
+  "best": null,
+  "thresholds": {
+    "ABS_THR": 0.005,
+    "ISO_THR": 0.005
+  },
+  "live_after": {
+    "PREFER_BDAY_STRENGTH": 0.0
+  },
+  "next": {
+    "step": "L11c",
+    "id": "K-STAT-HOMEWORK-QUALITY"
+  },
+  "force_bt": false,
+  "s1": false,
+  "note": "신호없음 HOLD · PREFER_BDAY_STRENGTH=0.0 · BLEND/W_CROWD 불변 · 다음 L11c stat · 1237아님"
+}

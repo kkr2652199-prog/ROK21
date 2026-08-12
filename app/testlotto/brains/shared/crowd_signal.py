@@ -47,6 +47,13 @@ PRIZE_SHAPE_SUM_BONUS: float = 0.4
 PRIZE_SHAPE_HI_MIN: int = 3
 PRIZE_SHAPE_SUM_MIN: int = 140
 
+# K-MARKOV-PREFER-ALIGN (L11b): annotate_prefer 생일대(1~31) 보너스 세기.
+# Wang JdDM lite · BLEND/W_CROWD 재탕 금지 · 기본 0.0 = 기존(보너스 없음)과 동치.
+PREFER_BDAY_STRENGTH: float = 0.0
+PREFER_BDAY_BONUS: float = 0.5
+PREFER_BDAY_MIN: int = 4  # 세트 내 1~31 개수
+PREFER_BDAY_MAX_N: int = 31
+
 
 def _env_on(name: str, default: bool) -> bool:
     v = os.environ.get(name, "").strip().lower()
@@ -218,14 +225,24 @@ def annotate_prefer(draws: list[dict], candidates: list[dict]) -> list[dict]:
         nums = sorted(int(x) for x in c["nums"])
         avg, top = set_crowd_score(nums, table)
         delta = min(4.0, max(-2.0, (avg - 1.0) * 6.0))
+        n_bday = sum(1 for n in nums if n <= int(PREFER_BDAY_MAX_N))
+        if n_bday >= int(PREFER_BDAY_MIN):
+            delta += float(PREFER_BDAY_BONUS) * float(PREFER_BDAY_STRENGTH)
+        delta = min(4.0, delta)
         nc = dict(c)
         nc["nums"] = nums
         nc["confidence"] = min(95.0, float(c.get("confidence", 70)) + delta)
         nc["native_confidence"] = nc["confidence"]
-        tag = f"선호신호avg{avg}" + (f"|강{top}" if top else "")
+        tag = f"선호신호avg{avg}|생일대{n_bday}" + (f"|강{top}" if top else "")
         base_r = str(c.get("reasoning", "선호번호"))
         nc["reasoning"] = f"{base_r} [{tag} Δ{delta:.2f}]"
-        nc["crowd"] = {"mode": "prefer", "avg": avg, "top": top, "delta": delta}
+        nc["crowd"] = {
+            "mode": "prefer",
+            "avg": avg,
+            "top": top,
+            "n_bday": n_bday,
+            "delta": round(delta, 3),
+        }
         out.append(nc)
     return out
 
