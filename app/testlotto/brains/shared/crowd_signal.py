@@ -38,6 +38,15 @@ W_STRUCT_BY_BRAIN: dict[str, float] = {"markov": 0.10, "review": 0.10}
 # review=0.85: K-REVIEW-PRIZE-BLEND-TUNE APPLY (1137~1236·seed3·|Δprize|≥0.01·prefer_iso)
 BLEND_STRENGTH_BY_BRAIN: dict[str, float] = {"markov": 0.55, "review": 0.85}
 
+# K-REVIEW-EV-DEEPEN (L11): annotate_prize 조합 shape 보너스 세기.
+# Baker–Lee lite(고번호개수·합) · Stern-Cover/pick-marginal 아님.
+# BLEND/W_CROWD 재탕 금지 · 기본 1.0 = 기존 하드코드(0.6/0.4)와 동치.
+PRIZE_SHAPE_STRENGTH: float = 1.0
+PRIZE_SHAPE_HI_BONUS: float = 0.6
+PRIZE_SHAPE_SUM_BONUS: float = 0.4
+PRIZE_SHAPE_HI_MIN: int = 3
+PRIZE_SHAPE_SUM_MIN: int = 140
+
 
 def _env_on(name: str, default: bool) -> bool:
     v = os.environ.get(name, "").strip().lower()
@@ -232,10 +241,11 @@ def annotate_prize(draws: list[dict], candidates: list[dict]) -> list[dict]:
         n_hi = sum(1 for n in nums if n >= 32)
         s = sum(nums)
         delta = min(4.0, max(-2.0, (avg - 1.0) * 6.0))
-        if n_hi >= 3:
-            delta += 0.6
-        if s >= 140:
-            delta += 0.4
+        shape_s = float(PRIZE_SHAPE_STRENGTH)
+        if n_hi >= int(PRIZE_SHAPE_HI_MIN):
+            delta += float(PRIZE_SHAPE_HI_BONUS) * shape_s
+        if s >= int(PRIZE_SHAPE_SUM_MIN):
+            delta += float(PRIZE_SHAPE_SUM_BONUS) * shape_s
         delta = min(4.0, delta)
         nc = dict(c)
         nc["nums"] = nums

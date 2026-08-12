@@ -1,0 +1,219 @@
+{
+  "id": "K-REVIEW-EV-DEEPEN",
+  "list": "LIST_V3",
+  "step": "L11",
+  "status": "HOLD",
+  "ts": "2026-08-12T11:03:05+09:00",
+  "wire": false,
+  "apply": false,
+  "ge3_used_as_claim": false,
+  "stern_cover": false,
+  "locked_not_reswept": {
+    "BLEND_STRENGTH_BY_BRAIN.review": 0.85,
+    "W_CROWD_BY_BRAIN.review": 0.9
+  },
+  "precheck": {
+    "BLEND_review": 0.85,
+    "W_CROWD_review": 0.9,
+    "PRIZE_SHAPE_STRENGTH": 1.0,
+    "lock_ok": true,
+    "stern_cover": false
+  },
+  "range": [
+    1137,
+    1236
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "knob": "PRIZE_SHAPE_STRENGTH",
+  "base": 1.0,
+  "cands": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "configs": {
+    "shape_1.0": {
+      "shape_strength": 1.0,
+      "prefer": 0.089332,
+      "prize": 0.006498,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.009448
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.012814
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002769
+        }
+      ],
+      "gate": {
+        "is_baseline": true,
+        "pass": true
+      }
+    },
+    "shape_0.0": {
+      "shape_strength": 0.0,
+      "prefer": 0.089332,
+      "prize": 0.007816,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.013504
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.012623
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002679
+        }
+      ],
+      "gate": {
+        "d_prize": 0.001318,
+        "d_prefer": 0.0,
+        "improve": false,
+        "prefer_iso": true,
+        "health": false,
+        "pass": false
+      }
+    },
+    "shape_0.5": {
+      "shape_strength": 0.5,
+      "prefer": 0.089332,
+      "prize": 0.006602,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.012553
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.011656
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.004404
+        }
+      ],
+      "gate": {
+        "d_prize": 0.000104,
+        "d_prefer": 0.0,
+        "improve": false,
+        "prefer_iso": true,
+        "health": false,
+        "pass": false
+      }
+    },
+    "shape_1.5": {
+      "shape_strength": 1.5,
+      "prefer": 0.089332,
+      "prize": 0.005946,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.006409
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.010762
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": 0.000667
+        }
+      ],
+      "gate": {
+        "d_prize": -0.000552,
+        "d_prefer": 0.0,
+        "improve": false,
+        "prefer_iso": true,
+        "health": false,
+        "pass": false
+      }
+    },
+    "shape_2.0": {
+      "shape_strength": 2.0,
+      "prefer": 0.089332,
+      "prize": 0.00445,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.00623
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.009596
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002476
+        }
+      ],
+      "gate": {
+        "d_prize": -0.002048,
+        "d_prefer": 0.0,
+        "improve": false,
+        "prefer_iso": true,
+        "health": false,
+        "pass": false
+      }
+    }
+  },
+  "winners": [],
+  "best": null,
+  "thresholds": {
+    "ABS_THR": 0.005,
+    "ISO_THR": 0.005
+  },
+  "live_after": {
+    "PRIZE_SHAPE_STRENGTH": 1.0
+  },
+  "next": {
+    "step": "L11b",
+    "id": "K-MARKOV-PREFER-ALIGN"
+  },
+  "force_bt": false,
+  "s1": false,
+  "note": "신호없음 HOLD · PRIZE_SHAPE_STRENGTH=1.0 · BLEND/W_CROWD 불변 · 다음 L11b markov · 1237아님"
+}

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `80631f3` · WORK=`IDLE`
-- 지금: **양산前** · L10 발권커버 **HOLD** · NEXT=L11 review EV
-- 직전: L10 K-TICKET-COVER-LITE HOLD (prefer/prize FAIL)
-- BOOT다음: L11 K-REVIEW-EV-DEEPEN / 1237아님
-- NEXT1: K-REVIEW-EV-DEEPEN — **양산前**. L10 발권커버 **HOLD**(커버신호 있으나 prefer/prize FAIL·TICKET_COVER off). 다음=**L11** 축심화 잔여 중 **review EV**(BLEND/W_CROWD/shape 프록시·Stern-Cover금지). **이미 HOLD/APPLY 노브 재탕 금지**. **1237아님** · 강제BT보류 · S1 개별승인. (승인=없음(리스트 순서))
+- HEAD: `f116052` · WORK=`IDLE`
+- 지금: **양산前** · L11 review EV **HOLD** · NEXT=L11b markov prefer
+- 직전: L11 K-REVIEW-EV-DEEPEN HOLD (shape |Δ|미달)
+- BOOT다음: L11b K-MARKOV-PREFER-ALIGN / 1237아님
+- NEXT1: K-MARKOV-PREFER-ALIGN — **양산前**. L11 review EV **HOLD**(shape세기 미개선·BLEND/W_CROWD 재탕안함). 다음=**L11b** markov prefer 잔여(구조사전 vs crowd·Wang생일대·기스윕노브재탕금지). **1237아님** · 강제BT보류 · S1 개별승인. (승인=없음(리스트 순서))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

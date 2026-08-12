@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `80631f3` |
+| HEAD(실측) | `f116052` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L10 발권커버 **HOLD** · NEXT=L11 review EV |
-| 직전 | L10 K-TICKET-COVER-LITE HOLD (prefer/prize FAIL) |
-| BOOT다음 | L11 K-REVIEW-EV-DEEPEN / 1237아님 |
-| NEXT1 ID | **K-REVIEW-EV-DEEPEN** |
-| NEXT1 할일 | **양산前**. L10 발권커버 **HOLD**(커버신호 있으나 prefer/prize FAIL·TICKET_COVER off). 다음=**L11** 축심화 잔여 중 **review EV**(BLEND/W_CROWD/shape 프록시·Stern-Cover금지). **이미 HOLD/APPLY 노브 재탕 금지**. **1237아님** · 강제BT보류 · S1 개별승인. |
+| 지금 | **양산前** · L11 review EV **HOLD** · NEXT=L11b markov prefer |
+| 직전 | L11 K-REVIEW-EV-DEEPEN HOLD (shape |Δ|미달) |
+| BOOT다음 | L11b K-MARKOV-PREFER-ALIGN / 1237아님 |
+| NEXT1 ID | **K-MARKOV-PREFER-ALIGN** |
+| NEXT1 할일 | **양산前**. L11 review EV **HOLD**(shape세기 미개선·BLEND/W_CROWD 재탕안함). 다음=**L11b** markov prefer 잔여(구조사전 vs crowd·Wang생일대·기스윕노브재탕금지). **1237아님** · 강제BT보류 · S1 개별승인. |
 | 승인필요 | 없음(리스트 순서) |
-| 선행 | L10 완료 |
+| 선행 | L11 완료 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=80631f3 · 지금=**양산前** · L10 발권커버 **HOLD** · NEXT=L11 review EV · 다음=K-REVIEW-EV-DEEPEN`
+1. 첫줄 `[복귀] HEAD=f116052 · 지금=**양산前** · L11 review EV **HOLD** · NEXT=L11b markov prefer · 다음=K-MARKOV-PREFER-ALIGN`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

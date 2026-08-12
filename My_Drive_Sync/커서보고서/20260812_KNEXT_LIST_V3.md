@@ -114,9 +114,14 @@
 - 발권5 Jaccard/union 소형 스윕 · 신호는 있으나 prefer/prize 비악화 실패 → knobs OFF 유지.
 - `TICKET_COVER_LITE` 코드경로만 준비(기본 False).
 
-### L11 축 심화 잔여 — **다음**
-- review EV / markov prefer / stat homework 잔여 · **이미 HOLD/APPLY 노브 재탕 금지**.
+### L11 K-REVIEW-EV-DEEPEN — **HOLD** (본턴)
+- shape 세기(`PRIZE_SHAPE_STRENGTH`)만 스윕 · BLEND0.85/W_CROWD0.90 **재탕안함**.
+- prize |Δ| 미달 · base prize양수 → HOLD.
 
+### L11b K-MARKOV-PREFER-ALIGN — **다음**
+- prefer 축 잔여(구조사전 vs crowd) · 기스윕 노브 재탕 금지.
+
+### L11c K-STAT-HOMEWORK-QUALITY — 후순위
 ### L12 발권↔10+5 통합 (형 승인)
 
 ---
@@ -155,8 +160,9 @@
 | L9b / L9c | **WIRE_OK** |
 | L9d | **DOC_OK** |
 | L10 | **HOLD** |
-| **L11** | **NEXT** |
-| L12 | 대기 |
+| L11 | **HOLD** |
+| **L11b** | **NEXT** |
+| L11c~L12 | 대기 |
 
 ---
 
