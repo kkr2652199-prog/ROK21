@@ -10,7 +10,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `05453be` |
+| HEAD(실측) | `f9abe6c` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · L3 원장WIRE **WIRE_OK** · NEXT=L4 몰아주기원장읽기 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=05453be · 지금=**양산前** · L3 원장WIRE **WIRE_OK** · NEXT=L4 몰아주기원장읽기 · 다음=K-REPACK-READ-LEDGER`
+1. 첫줄 `[복귀] HEAD=f9abe6c · 지금=**양산前** · L3 원장WIRE **WIRE_OK** · NEXT=L4 몰아주기원장읽기 · 다음=K-REPACK-READ-LEDGER`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 05453be_
+_generated: f9abe6c_
