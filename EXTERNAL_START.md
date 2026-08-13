@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `8d75b76` |
+| HEAD(실측) | `03bfad6` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L12b 옵션E **WIRE_OK** · NEXT=형다음1건 |
-| 직전 | L12b K-TICKET-POOL-UNIFY-WIRE E WIRE_OK (quota5+캐시동기) |
-| BOOT다음 | 형 다음 1건 / LIST_V3완료 / 1237아님 |
+| 지금 | **양산前** · 리셋+BT200 **PASS** · NEXT=형다음1건 |
+| 직전 | K-POST-L12B-RESET-BT200 PASS (1037~1236 n200 · HARD버그0) |
+| BOOT다음 | 형 다음 1건 / 1237아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. LIST_V3 **L0~L12b 완료**. L12b 옵션**E** **WIRE_OK**(생성1회·quota5·pool캐시동기·C8 PASS·BT불변). 다음=**형 다음 1건**. **1237아님** · 강제BT보류. |
+| NEXT1 할일 | **양산前**. 리셋+스모크+BT200 **PASS**(1037~1236 n200·발권5 mean_all**0.79**·HARD버그0). SOFT=원장 writer 창밖1036 캐시. 다음=**형 다음 1건**(SOFT패치/L12b화면/HOLD재검토/V4). **1237아님**. |
 | 승인필요 | **형 다음 1건** |
-| 선행 | LIST_V3 완료 |
+| 선행 | LIST_V3 + BT200 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=8d75b76 · 지금=**양산前** · L12b 옵션E **WIRE_OK** · NEXT=형다음1건 · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=03bfad6 · 지금=**양산前** · 리셋+BT200 **PASS** · NEXT=형다음1건 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 8d75b76_
+_generated: 03bfad6_
