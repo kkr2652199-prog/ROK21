@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a86eb13` · WORK=`IDLE`
+1. **HEAD:** `e667960` · WORK=`IDLE`
 2. **지금:** **양산前** · L11c stat homework **HOLD** · NEXT=L12 형승인
 3. **다음1건:** K-TICKET-POOL-UNIFY — **양산前**. L11c stat homework **HOLD**(WIN_1Y=52·HINT/Jaccard/oversample재탕안함). 다음=**L12** 발권5↔pool10+repack5 **통합**(형 「패치 후 10세트도 발권」의도). **지금 강제 병합 금지 · 형 승인 후**. **1237아님** · 강제BT보류 · S1 개별승인. (승인필요=**형 승인** · 선행=L11c 완료)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-13 | 다음진행 L11c | stat WIN_1Y 스윕 |Δ|미달 · HINT/J/ov불변 · NEXT=L12형승인 | **HOLD** | 2694ee2 |
+| 2026-08-13 | 다음진행 L11c | stat WIN_1Y 스윕 |Δ|미달 · HINT/J/ov불변 · NEXT=L12형승인 | **HOLD** | e667960 |
 | 2026-08-12 | 다음진행 L11b | markov 생일대세기 prefer↓ · BLEND/W_CROWD불변 · NEXT=L11c | **HOLD** | 0cff974 |
 | 2026-08-12 | 다음진행 L11 | review shape세기 스윕 |Δ|미달 · BLEND/W_CROWD불변 · NEXT=L11b | **HOLD** | d9b30d1 |
 | 2026-08-12 | 다음진행 L10 | 발권5 커버스윕 신호有·prefer/prize FAIL · knobs OFF · NEXT=L11 | **HOLD** | 80631f3 |

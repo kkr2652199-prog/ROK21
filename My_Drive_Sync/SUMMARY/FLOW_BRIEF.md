@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a86eb13` · WORK=`IDLE`
+- HEAD: `e667960` · WORK=`IDLE`
 - 지금: **양산前** · L11c stat homework **HOLD** · NEXT=L12 형승인
 - 직전: L11c K-STAT-HOMEWORK-QUALITY HOLD (WIN_1Y |Δ|미달)
 - BOOT다음: L12 K-TICKET-POOL-UNIFY / 형승인 / 1237아님
