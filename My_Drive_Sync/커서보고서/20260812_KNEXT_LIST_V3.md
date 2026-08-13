@@ -122,10 +122,11 @@
 - 생일대 세기(`PREFER_BDAY_STRENGTH`)만 스윕 · BLEND0.55/W_CROWD0.90 **재탕안함**.
 - 전후보 prefer↓ → HOLD(0.0).
 
-### L11c K-STAT-HOMEWORK-QUALITY — **다음**
-- pool 품질·hint weeks 잔여 · 기스윕 노브 재탕 금지.
+### L11c K-STAT-HOMEWORK-QUALITY — **HOLD** (본턴)
+- `past_learn.WIN_1Y`만 스윕 · HINT52/WEIGHT0.15/J0.85/ov×3 **재탕안함**.
+- hit |Δ|≪0.005 · prefer/prize iso0 → HOLD(52).
 
-### L12 발권↔10+5 통합 (형 승인)
+### L12 발권↔10+5 통합 — **다음 (형 승인)**
 
 ---
 
@@ -165,8 +166,8 @@
 | L10 | **HOLD** |
 | L11 | **HOLD** |
 | L11b | **HOLD** |
-| **L11c** | **NEXT** |
-| L12 | 대기 |
+| L11c | **HOLD** |
+| **L12** | **NEXT (형 승인)** |
 
 ---
 

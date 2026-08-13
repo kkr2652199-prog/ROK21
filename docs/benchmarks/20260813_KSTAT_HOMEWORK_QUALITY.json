@@ -1,0 +1,250 @@
+{
+  "id": "K-STAT-HOMEWORK-QUALITY",
+  "list": "LIST_V3",
+  "step": "L11c",
+  "status": "HOLD",
+  "ts": "2026-08-13T10:09:58+09:00",
+  "wire": false,
+  "apply": false,
+  "ge3_used_as_claim": false,
+  "locked_not_reswept": {
+    "HINT_SPEC_BY_BRAIN.stat": [
+      52,
+      "miss_pattern"
+    ],
+    "HINT_WEIGHT_stat": 0.15,
+    "JACCARD_stat": 0.85,
+    "OVERSAMPLE_stat": 3,
+    "ASSOC": false
+  },
+  "precheck": {
+    "HINT_SPEC_stat": [
+      52,
+      "miss_pattern"
+    ],
+    "HINT_WEIGHT_stat": 0.15,
+    "JACCARD_stat": 0.85,
+    "OVERSAMPLE_stat": 3,
+    "ASSOC": false,
+    "WIN_1Y": 52,
+    "lock_ok": true
+  },
+  "range": [
+    1137,
+    1236
+  ],
+  "seeds": [
+    0,
+    42,
+    123
+  ],
+  "knob": "past_learn.WIN_1Y",
+  "base": 52,
+  "cands": [
+    26,
+    39,
+    52,
+    78,
+    104
+  ],
+  "configs": {
+    "win1y_52": {
+      "win_1y": 52,
+      "prefer": 0.089332,
+      "prize": 0.006498,
+      "stat_hit": 0.331667,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.009448,
+          "stat_hit": 0.326667
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.012814,
+          "stat_hit": 0.336667
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002769,
+          "stat_hit": 0.331667
+        }
+      ],
+      "gate": {
+        "is_baseline": true,
+        "pass": true
+      }
+    },
+    "win1y_26": {
+      "win_1y": 26,
+      "prefer": 0.089332,
+      "prize": 0.006498,
+      "stat_hit": 0.331667,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.009448,
+          "stat_hit": 0.326667
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.012814,
+          "stat_hit": 0.336667
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002769,
+          "stat_hit": 0.331667
+        }
+      ],
+      "gate": {
+        "d_stat_hit": 0.0,
+        "d_prefer": 0.0,
+        "d_prize": -0.0,
+        "improve": false,
+        "prefer_prize_iso": true,
+        "pass": false
+      }
+    },
+    "win1y_39": {
+      "win_1y": 39,
+      "prefer": 0.089332,
+      "prize": 0.006498,
+      "stat_hit": 0.330556,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.009448,
+          "stat_hit": 0.326667
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.012814,
+          "stat_hit": 0.336667
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002769,
+          "stat_hit": 0.328333
+        }
+      ],
+      "gate": {
+        "d_stat_hit": -0.001111,
+        "d_prefer": 0.0,
+        "d_prize": -0.0,
+        "improve": false,
+        "prefer_prize_iso": true,
+        "pass": false
+      }
+    },
+    "win1y_78": {
+      "win_1y": 78,
+      "prefer": 0.089332,
+      "prize": 0.006498,
+      "stat_hit": 0.331111,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.009448,
+          "stat_hit": 0.326667
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.012814,
+          "stat_hit": 0.336667
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002769,
+          "stat_hit": 0.33
+        }
+      ],
+      "gate": {
+        "d_stat_hit": -0.000556,
+        "d_prefer": 0.0,
+        "d_prize": -0.0,
+        "improve": false,
+        "prefer_prize_iso": true,
+        "pass": false
+      }
+    },
+    "win1y_104": {
+      "win_1y": 104,
+      "prefer": 0.089332,
+      "prize": 0.006498,
+      "stat_hit": 0.330556,
+      "per_seed": [
+        {
+          "seed": 0,
+          "n": 100,
+          "prefer": 0.092793,
+          "prize": 0.009448,
+          "stat_hit": 0.326667
+        },
+        {
+          "seed": 42,
+          "n": 100,
+          "prefer": 0.094721,
+          "prize": 0.012814,
+          "stat_hit": 0.336667
+        },
+        {
+          "seed": 123,
+          "n": 100,
+          "prefer": 0.080482,
+          "prize": -0.002769,
+          "stat_hit": 0.328333
+        }
+      ],
+      "gate": {
+        "d_stat_hit": -0.001111,
+        "d_prefer": 0.0,
+        "d_prize": -0.0,
+        "improve": false,
+        "prefer_prize_iso": true,
+        "pass": false
+      }
+    }
+  },
+  "winners": [],
+  "best": null,
+  "thresholds": {
+    "ABS_THR": 0.005,
+    "ISO_THR": 0.005
+  },
+  "live_after": {
+    "WIN_1Y": 52
+  },
+  "next": {
+    "step": "L12",
+    "id": "K-TICKET-POOL-UNIFY",
+    "approval": true
+  },
+  "force_bt": false,
+  "s1": false,
+  "note": "신호없음 HOLD · WIN_1Y=52 · HINT/Jaccard/oversample 불변 · 다음 L12 · 1237아님"
+}

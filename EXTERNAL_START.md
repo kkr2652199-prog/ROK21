@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `f30b48f` |
+| HEAD(실측) | `a86eb13` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L11b markov prefer **HOLD** · NEXT=L11c stat |
-| 직전 | L11b K-MARKOV-PREFER-ALIGN HOLD (생일대 prefer↓) |
-| BOOT다음 | L11c K-STAT-HOMEWORK-QUALITY / 1237아님 |
-| NEXT1 ID | **K-STAT-HOMEWORK-QUALITY** |
-| NEXT1 할일 | **양산前**. L11b markov prefer **HOLD**(생일대보너스 prefer↓·BLEND/W_CROWD재탕안함). 다음=**L11c** stat homework 잔여(pool품질·hint weeks·기스윕노브재탕금지). **1237아님** · 강제BT보류 · S1 개별승인. |
-| 승인필요 | 없음(리스트 순서) |
-| 선행 | L11b 완료 |
+| 지금 | **양산前** · L11c stat homework **HOLD** · NEXT=L12 형승인 |
+| 직전 | L11c K-STAT-HOMEWORK-QUALITY HOLD (WIN_1Y |Δ|미달) |
+| BOOT다음 | L12 K-TICKET-POOL-UNIFY / 형승인 / 1237아님 |
+| NEXT1 ID | **K-TICKET-POOL-UNIFY** |
+| NEXT1 할일 | **양산前**. L11c stat homework **HOLD**(WIN_1Y=52·HINT/Jaccard/oversample재탕안함). 다음=**L12** 발권5↔pool10+repack5 **통합**(형 「패치 후 10세트도 발권」의도). **지금 강제 병합 금지 · 형 승인 후**. **1237아님** · 강제BT보류 · S1 개별승인. |
+| 승인필요 | **형 승인** |
+| 선행 | L11c 완료 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=f30b48f · 지금=**양산前** · L11b markov prefer **HOLD** · NEXT=L11c stat · 다음=K-STAT-HOMEWORK-QUALITY`
+1. 첫줄 `[복귀] HEAD=a86eb13 · 지금=**양산前** · L11c stat homework **HOLD** · NEXT=L12 형승인 · 다음=K-TICKET-POOL-UNIFY`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: f30b48f_
+_generated: a86eb13_
