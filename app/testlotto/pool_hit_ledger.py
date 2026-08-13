@@ -85,13 +85,24 @@ def _scatter_from_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def load_sets_for_draw(draw_no: int) -> dict[str, Any]:
-    """pool/repack 소스: 캐시 우선 · 없으면 WF 빌드(캐시 저장)."""
-    from app.testlotto.pool_view_cache import get_or_build_pool_view
+def load_sets_for_draw(draw_no: int, *, allow_compute: bool = True) -> dict[str, Any]:
+    """pool/repack 소스: 캐시 우선.
 
-    payload = get_or_build_pool_view(int(draw_no), force_refresh=False)
-    if not payload.get("ok"):
-        return {"ok": False, "error": payload.get("error") or "pool_build_failed", "payload": payload}
+    allow_compute=False: 캐시 없으면 생성하지 않음 (BT auto_feedback이 창밖 회차를
+    get_or_build 해서 pool 캐시가 1건 늘어나던 SOFT 부작용 방지).
+    """
+    from app.testlotto.pool_view_cache import get_cached_pool_view, get_or_build_pool_view
+
+    dno = int(draw_no)
+    payload = get_cached_pool_view(dno)
+    if payload is None and allow_compute:
+        payload = get_or_build_pool_view(dno, force_refresh=False)
+    if not payload or not payload.get("ok"):
+        return {
+            "ok": False,
+            "error": (payload or {}).get("error") or "pool_cache_miss",
+            "payload": payload,
+        }
     return {
         "ok": True,
         "pool_by_brain": payload.get("pool_by_brain") or {},
@@ -105,6 +116,7 @@ def write_pool_hit_ledger(
     *,
     include_repack: bool = True,
     note: str = "L3",
+    allow_compute: bool = True,
 ) -> dict[str, Any]:
     """결과 확정 회차 draw_no 의 pool(+repack) 원장·scatter 기록.
 
@@ -122,7 +134,7 @@ def write_pool_hit_ledger(
     finally:
         conn.close()
 
-    src = load_sets_for_draw(dno)
+    src = load_sets_for_draw(dno, allow_compute=allow_compute)
     if not src.get("ok"):
         return {"ok": False, "draw_no": dno, "skipped": "no_pool", "error": src.get("error")}
 

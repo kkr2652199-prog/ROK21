@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-13 | 몰아주기복사·3등정밀·버그패치 | 복사=설계4/5 · 1210고유3등1·발권0 · SOFT allow_compute=False | **PATCHED** | 2ce54d9 |
 | 2026-08-13 | 리셋후1236까지200회 | 숙제포함리셋·스모크PASS·BT200 HARD0 · SOFT1036캐시 · NEXT=형다음 | **PASS** | 03bfad6 |
 | 2026-08-13 | 권고E로 L12b | 생성1회·quota5·pool캐시동기 · C8 PASS · BT불변 · NEXT=형다음1건 | **WIRE_OK** | 8d75b76 |
 | 2026-08-13 | 다음진행 L12 | 발권↔pool SPEC · C8 PASS · 강제병합안함 · 권고E · NEXT=형A~E | **DOC_OK** | 505c46d |
@@ -45,7 +46,6 @@
 | 2026-08-12 | 다음진행 L9 | preserve/union 소형스윕 신호0 · knobs불변 · NEXT=L10 | **HOLD** | 89c3dc7 |
 | 2026-08-12 | 다음진행 L5 | 뇌10감사 AUDIT_OK · L6~8스킵 · NEXT=L9 | **AUDIT_OK** | ad33200 |
 | 2026-08-12 | 외부패스·L4b | role 5+3+2 WIRE · prefer/prize PASS · NEXT=L5 | **WIRE_OK** | 0f86ec1 |
-| 2026-08-12 | L4 GO 지시서 | repack 원장소비 WIRE · EMA탈피 · NEXT=L4b | **WIRE_OK** | f7bfe74 |
 
 ---
 

@@ -2,11 +2,11 @@
 
 > STEP1 guard_boot 는 **아래 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 리셋+스모크+BT200 **PASS**(1037~1236 n200·발권5 mean_all**0.79**·HARD버그0). SOFT=원장 writer 창밖1036 캐시. 다음=**형 다음 1건**(SOFT패치/L12b화면/HOLD재검토/V4). **1237아님**.
+- 할일: **양산前**. 몰아주기 pool복사=**설계**(4/5·cap4). 1210 3등 **고유1·발권0**. SOFT 1036캐시 **패치**(auto_feedback allow_compute=False). 다음=**형 다음 1건**. **1237아님**.
 - 완료조건: 형 다음 지시 1건
-- 선행완료: K-POST-L12B-RESET-BT200 PASS
+- 선행완료: K-REPACK-COPY-TIER-AUDIT + SOFT패치
 - 승인필요: **형 다음 1건**
-- 선행조건: LIST_V3 + BT200
+- 선행조건: BT200 PASS
 - 최종갱신: 2026-08-13
 
 
@@ -16,5 +16,5 @@ IDLE
 ---
 
 ## 메모
-- reports/20260813_KPOST_L12B_RESET_BT200.md
-- docs/benchmarks/20260813_KPOST_L12B_RESET_BT200.json
+- reports/20260813_KREPACK_COPY_TIER_AUDIT.md
+- docs/benchmarks/20260813_KREPACK_COPY_TIER_AUDIT.json

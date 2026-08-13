@@ -205,6 +205,9 @@ def payload_from_wf_parts(
         if c.get("role"):
             entry["role"] = c.get("role")
             entry["role_pass"] = c.get("role_pass")
+        if c.get("source"):
+            entry["source"] = c["source"]
+            entry["source_set_no"] = c.get("source_set_no")
         by_brain_repack.setdefault(tag, []).append(entry)
 
     return {

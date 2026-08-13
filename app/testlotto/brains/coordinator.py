@@ -408,7 +408,7 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
         try:
             from app.testlotto.pool_hit_ledger import write_pool_hit_ledger
 
-            write_pool_hit_ledger(prev_draw_no, note="auto_feedback_no_pred")
+            write_pool_hit_ledger(prev_draw_no, note="auto_feedback_no_pred", allow_compute=False)
         except Exception:
             logger.exception(
                 "[K-POOL-HIT-LEDGER] auto_feedback write failed draw=%s",
@@ -497,7 +497,7 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
     try:
         from app.testlotto.pool_hit_ledger import write_pool_hit_ledger
 
-        wr = write_pool_hit_ledger(prev_draw_no, note="auto_feedback")
+        wr = write_pool_hit_ledger(prev_draw_no, note="auto_feedback", allow_compute=False)
         if not wr.get("ok"):
             logger.warning(
                 "[K-POOL-HIT-LEDGER] auto_feedback write skip draw=%s %s",

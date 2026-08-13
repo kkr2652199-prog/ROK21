@@ -1,0 +1,331 @@
+{
+  "id": "K-REPACK-COPY-TIER-AUDIT",
+  "ts": "2026-08-13T10:57:45+09:00",
+  "window": [
+    1037,
+    1236
+  ],
+  "n_draws": 200,
+  "ge3_used_as_claim": false,
+  "assemble": {
+    "mode": "signal_union",
+    "pool_slots": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
+    "union_cap": 4,
+    "union_cap_by_brain": {
+      "markov": 4,
+      "stat": 4,
+      "review": 4
+    },
+    "copy_is": "DESIGN",
+    "rule": "몰아주기 5장 중 최대 cap(기본4)장은 pool 10장에서 통째 보존(source=pool). 나머지는 점수몰아주기(source=score_repack)."
+  },
+  "copy": {
+    "repack_sets": 3000,
+    "exact_match_pool_nums": 2400,
+    "exact_match_rate": 0.8,
+    "source_field": {},
+    "source_pool": 0,
+    "source_score_repack": 0,
+    "by_brain": {
+      "stat": {},
+      "markov": {},
+      "review": {}
+    },
+    "copies_per_brain_draw_mean": 4.0,
+    "sample": [
+      {
+        "draw": 1037,
+        "brain": "stat",
+        "repack_set": 1,
+        "source": "no_source_field",
+        "source_set_no": null,
+        "nums": [
+          4,
+          5,
+          16,
+          27,
+          32,
+          45
+        ]
+      },
+      {
+        "draw": 1037,
+        "brain": "stat",
+        "repack_set": 2,
+        "source": "no_source_field",
+        "source_set_no": null,
+        "nums": [
+          5,
+          16,
+          18,
+          27,
+          32,
+          45
+        ]
+      },
+      {
+        "draw": 1037,
+        "brain": "stat",
+        "repack_set": 3,
+        "source": "no_source_field",
+        "source_set_no": null,
+        "nums": [
+          1,
+          7,
+          14,
+          32,
+          35,
+          45
+        ]
+      },
+      {
+        "draw": 1037,
+        "brain": "stat",
+        "repack_set": 4,
+        "source": "no_source_field",
+        "source_set_no": null,
+        "nums": [
+          4,
+          16,
+          27,
+          28,
+          32,
+          45
+        ]
+      },
+      {
+        "draw": 1037,
+        "brain": "markov",
+        "repack_set": 1,
+        "source": "no_source_field",
+        "source_set_no": null,
+        "nums": [
+          4,
+          18,
+          27,
+          34,
+          43,
+          44
+        ]
+      },
+      {
+        "draw": 1037,
+        "brain": "markov",
+        "repack_set": 2,
+        "source": "no_source_field",
+        "source_set_no": null,
+        "nums": [
+          4,
+          13,
+          18,
+          34,
+          43,
+          44
+        ]
+      },
+      {
+        "draw": 1037,
+        "brain": "markov",
+        "repack_set": 3,
+        "source": "no_source_field",
+        "source_set_no": null,
+        "nums": [
+          13,
+          17,
+          18,
+          34,
+          43,
+          44
+        ]
+      },
+      {
+        "draw": 1037,
+        "brain": "markov",
+        "repack_set": 4,
+        "source": "no_source_field",
+        "source_set_no": null,
+        "nums": [
+          5,
+          12,
+          18,
+          33,
+          35,
+          41
+        ]
+      }
+    ]
+  },
+  "set_level_tiers": {
+    "pool": {
+      "0": 5797,
+      "5": 149,
+      "4": 23,
+      "3": 1
+    },
+    "pool:markov": {
+      "0": 1925,
+      "5": 60,
+      "4": 4,
+      "3": 1
+    },
+    "pool:review": {
+      "0": 1939,
+      "5": 42,
+      "4": 9
+    },
+    "pool:stat": {
+      "0": 1933,
+      "5": 47,
+      "4": 10
+    },
+    "repack": {
+      "0": 2895,
+      "5": 73,
+      "4": 16,
+      "3": 1
+    },
+    "repack:markov": {
+      "0": 963,
+      "5": 30,
+      "4": 1,
+      "3": 1
+    },
+    "repack:review": {
+      "0": 968,
+      "4": 9,
+      "5": 18
+    },
+    "repack:stat": {
+      "0": 964,
+      "5": 25,
+      "4": 6
+    }
+  },
+  "draw_best_tiers": {
+    "pool_1037_1236": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 1,
+      "r4": 13,
+      "r5": 83,
+      "none": 103
+    },
+    "repack_1037_1236": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 1,
+      "r4": 10,
+      "r5": 43,
+      "none": 146
+    },
+    "pool_or_repack_1037_1236": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 1,
+      "r4": 14,
+      "r5": 88,
+      "none": 97
+    },
+    "pool_or_repack_1137_1236": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 1,
+      "r4": 9,
+      "r5": 41,
+      "none": 49
+    },
+    "ticket5_1037_1236": {
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 6,
+      "r5": 21,
+      "none": 173
+    }
+  },
+  "tier3_sets": {
+    "n": 2,
+    "by_kind": {
+      "pool": 1,
+      "repack": 1
+    },
+    "by_brain": {
+      "markov": 2
+    },
+    "rows": [
+      {
+        "draw": 1210,
+        "brain": "markov",
+        "kind": "pool",
+        "set_no": 3,
+        "hits": 5,
+        "bonus": 0
+      },
+      {
+        "draw": 1210,
+        "brain": "markov",
+        "kind": "repack",
+        "set_no": 3,
+        "hits": 5,
+        "bonus": 0
+      }
+    ]
+  },
+  "ticket_set_tiers": {
+    "0": 969,
+    "5": 24,
+    "4": 7
+  },
+  "ticket_tier3": [],
+  "v5_ref_1137_1236_pool_best": {
+    "source": "docs/benchmarks/20260812_KFORCE_POOL_BACKTEST_100_v5.json",
+    "n": 100,
+    "r3": 0,
+    "r4": 4,
+    "r5": 42,
+    "mean_hits": 2.5,
+    "note": "풀경로 best-of-many · 발권5 아님 · 창 n=100"
+  },
+  "verdict_copy": "DESIGN_NOT_BUG",
+  "note": "3등=세트 5적중 무보너스. 회차 best 등수와 세트 건수는 다름. 성적클레임 금지.",
+  "unique_tier3": [
+    {
+      "draw": 1210,
+      "brain": "markov",
+      "nums": [
+        1,
+        7,
+        12,
+        17,
+        27,
+        38
+      ],
+      "actual": [
+        1,
+        7,
+        9,
+        17,
+        27,
+        38
+      ],
+      "bonus": 31,
+      "issued": false
+    }
+  ],
+  "ticket_1210_markov": [
+    1,
+    12,
+    13,
+    20,
+    35,
+    45
+  ],
+  "patches": [
+    "allow_compute=False on auto_feedback",
+    "payload_from_wf_parts source"
+  ]
+}
