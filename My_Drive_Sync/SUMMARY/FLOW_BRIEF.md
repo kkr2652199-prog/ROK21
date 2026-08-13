@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `e667960` · WORK=`IDLE`
-- 지금: **양산前** · L11c stat homework **HOLD** · NEXT=L12 형승인
-- 직전: L11c K-STAT-HOMEWORK-QUALITY HOLD (WIN_1Y |Δ|미달)
-- BOOT다음: L12 K-TICKET-POOL-UNIFY / 형승인 / 1237아님
-- NEXT1: K-TICKET-POOL-UNIFY — **양산前**. L11c stat homework **HOLD**(WIN_1Y=52·HINT/Jaccard/oversample재탕안함). 다음=**L12** 발권5↔pool10+repack5 **통합**(형 「패치 후 10세트도 발권」의도). **지금 강제 병합 금지 · 형 승인 후**. **1237아님** · 강제BT보류 · S1 개별승인. (승인=**형 승인**)
+- HEAD: `df213bc` · WORK=`IDLE`
+- 지금: **양산前** · L12 발권↔pool SPEC **DOC_OK** · NEXT=L12b 형A~E
+- 직전: L12 K-TICKET-POOL-UNIFY-SPEC DOC_OK (강제병합안함·권고E)
+- BOOT다음: L12b WIRE / 형 A~E 선택 / 1237아님
+- NEXT1: K-TICKET-POOL-UNIFY-WIRE — **양산前**. L12 SPEC **DOC_OK**(강제병합안함·C8 PASS·권고E). 다음=**L12b** 형 옵션 **A~E** 선택 후 WIRE. A=분리유지 · B=pool10발권 · C=repack15발권 · D=10+5전부 · **E권고**=생성1회+pool캐시동기. **1237아님** · 강제BT보류. (승인=**형 A~E**)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

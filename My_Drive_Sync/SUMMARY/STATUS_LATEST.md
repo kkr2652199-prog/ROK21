@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-12 KST  
-📌 사유: **[CURSOR] K-STAT-HOMEWORK-QUALITY** — L11c **HOLD** · NEXT=L12 형승인
+📌 사유: **[CURSOR] K-TICKET-POOL-UNIFY-SPEC** — L12 **DOC_OK** · NEXT=L12b 형A~E
 
-📌 직전: **[CURSOR] K-MARKOV-PREFER-ALIGN** — L11b **HOLD**
+📌 직전: **[CURSOR] K-STAT-HOMEWORK-QUALITY** — L11c **HOLD**
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-TICKET-POOL-UNIFY-SPEC (LIST_V3 L12)** | **DOC_OK** · wire=**False** · apply=**False** — 강제병합안함. 발권=`lotto_predictions` quota5 · UI=`pool_view_cache` 10+5. C8 pool1~5=predict_sets5 **PASS**(시드42+N). 1236 cache3·ledger45·predictions0. 옵션A분리/B pool10/C repack15/D 45장/**E권고**생성1회+캐시동기. ge3미클레임·1237아님. · `docs/benchmarks/20260813_KTICKET_POOL_UNIFY_SPEC.json` · `reports/20260813_KTICKET_POOL_UNIFY_SPEC.md` · `tools/_k_ticket_pool_unify_spec.py` |
 | **K-STAT-HOMEWORK-QUALITY (LIST_V3 L11c)** | **HOLD** · wire=**False** · apply=**False** — 잔여노브=`past_learn.WIN_1Y`(1yHot/Cold) 스윕{26,39,52,78,104}·seed3×1137~1236. LOCKED HINT**52**/WEIGHT**0.15**/J**0.85**/ov**×3**/ASSOC OFF 재탕안함. base hit**0.331667** · 전후보 |Δhit|≪0.005 · prefer/prize iso0 → WIN_1Y**52** 유지. ge3미클레임·1237아님. · `docs/benchmarks/20260813_KSTAT_HOMEWORK_QUALITY.json` · `reports/20260813_KSTAT_HOMEWORK_QUALITY.md` · `tools/_k_stat_homework_quality.py` |
 | **K-MARKOV-PREFER-ALIGN (LIST_V3 L11b)** | **HOLD** · wire=**False** · apply=**False** — 잔여노브=`PREFER_BDAY_STRENGTH`(annotate_prefer 생일대1~31) 스윕{0..2}·seed3×1137~1236. LOCKED BLEND**0.55**/W_CROWD**0.90** 재탕안함. 전후보 prefer↓(base**0.089**→bday2.0 **0.086**) · prize iso0 → knobs **0.0** 유지. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KMARKOV_PREFER_ALIGN.json` · `reports/20260812_KMARKOV_PREFER_ALIGN.md` · `tools/_k_markov_prefer_align.py` |
 | **K-REVIEW-EV-DEEPEN (LIST_V3 L11)** | **HOLD** · wire=**False** · apply=**False** — 잔여노브=`PRIZE_SHAPE_STRENGTH`(annotate_prize 고번호·합) 스윕{0..2}·seed3×1137~1236. LOCKED BLEND**0.85**/W_CROWD**0.90** 재탕안함·Stern-Cover금지. base prize**+0.0065**(양수) · 최선 shape2.0 d_prize**−0.002**≪0.005 → knobs 1.0 유지. ge3미클레임·1237아님. · `docs/benchmarks/20260812_KREVIEW_EV_DEEPEN.json` · `reports/20260812_KREVIEW_EV_DEEPEN.md` · `tools/_k_review_ev_deepen.py` |

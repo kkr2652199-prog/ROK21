@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · L11c stat homework **HOLD** · NEXT=L12 형승인
-- 직전: L11c K-STAT-HOMEWORK-QUALITY HOLD (WIN_1Y |Δ|미달)
-- 다음: L12 K-TICKET-POOL-UNIFY / 형승인 / 1237아님
+- 지금: **양산前** · L12 발권↔pool SPEC **DOC_OK** · NEXT=L12b 형A~E
+- 직전: L12 K-TICKET-POOL-UNIFY-SPEC DOC_OK (강제병합안함·권고E)
+- 다음: L12b WIRE / 형 A~E 선택 / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

@@ -1,0 +1,77 @@
+{
+  "id": "K-TICKET-POOL-UNIFY-SPEC",
+  "list": "LIST_V3 L12",
+  "status": "DOC_OK",
+  "ts": "2026-08-13T10:14:51+09:00",
+  "wire": false,
+  "apply": false,
+  "force_merge": false,
+  "ge3_used_as_claim": false,
+  "sample_draw": 1236,
+  "checks": {
+    "census": {
+      "draw": 1236,
+      "lotto_predictions_n": 0,
+      "lotto_predictions_by_tag": {},
+      "pool_view_cache_rows": 3,
+      "pool_hit_ledger_n": 45,
+      "has_predictions": true,
+      "has_pool_cache": true,
+      "has_ledger": true
+    },
+    "pool_sizes": {
+      "markov": 10,
+      "stat": 10,
+      "review": 10
+    },
+    "repack_sizes": {
+      "markov": 5,
+      "stat": 5,
+      "review": 5
+    },
+    "pool10": true,
+    "repack5": true,
+    "c8_pool1to5_eq_predict5": {
+      "markov": true,
+      "stat": true,
+      "review": true
+    },
+    "c8_all": true,
+    "issued_n": 5,
+    "issued_by_tag": {
+      "stat": 1,
+      "markov": 1,
+      "review": 3
+    },
+    "issued_is_5": true,
+    "issued_ne_pool10": true,
+    "issued_ne_repack15": true,
+    "pass0_seed": 1278,
+    "coord_seed": 1278,
+    "pass0_eq_coord_seed": true,
+    "has_predictions": true,
+    "has_pool_cache": true
+  },
+  "hard_keys": [
+    "has_predictions",
+    "has_pool_cache",
+    "pool10",
+    "repack5",
+    "c8_all",
+    "issued_is_5",
+    "pass0_eq_coord_seed"
+  ],
+  "options": {
+    "A_keep_split": "현행 유지: 클릭=quota5 → lotto_predictions · UI=pool10+repack5 캐시",
+    "B_issue_pool10": "클릭 시 뇌별 pool10도 lotto_predictions에 기록(3×10=30장)",
+    "C_issue_repack5x3": "클릭 시 몰아주기5×3=15장을 발권 SSOT로",
+    "D_issue_all_10plus5": "형 문구 직역: 10세트+몰아주기5 전부 발권(3×15=45장)",
+    "E_same_gen_dual_write": "생성은 한 번(pool) · 발권5는 quota · 같은 회차 pool캐시 동시기록(병합 아닌 동기화)"
+  },
+  "recommend": "E_same_gen_dual_write",
+  "recommend_why": "C8로 skill1~5는 이미 동일 시드. 갭은 quota5 vs 10+5 저장/채점 분리. 강제 장수확대(B/D)는 발권 의미·비용 변경이라 형 GO 필수.",
+  "next": "형 옵션 A~E 선택 후 L12b WIRE",
+  "force_bt": false,
+  "s1": false,
+  "note": "강제병합 안 함 · 1237아님"
+}
