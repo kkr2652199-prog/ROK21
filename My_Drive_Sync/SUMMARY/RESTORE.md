@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `fa611ed` · WORK=`IDLE`
-2. **지금:** **양산前** · 몰아주기복사=설계 · SOFT패치 · NEXT=형다음1건
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 몰아주기 pool복사=**설계**(4/5·cap4). 1210 3등 **고유1·발권0**. SOFT 1036캐시 **패치**(auto_feedback allow_compute=False). 다음=**형 다음 1건**. **1237아님**. (승인필요=**형 다음 1건** · 선행=BT200 PASS)
+1. **HEAD:** `74a8fe7` · WORK=`IDLE`
+2. **지금:** **양산前** · 홈3등2=1210동일번호중복 · NEXT=형다음1건
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 홈 3등2=**1210 pool+몰아주기 같은번호**(고유1·발권0). 몰아주기복사=설계. 다음=**형 다음 1건**. **1237아님**. (승인필요=**형 다음 1건** · 선행=BT200 PASS)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-13 | 홈 백테 3등 2번 | 홈집계 pool+repack 행단위 · 1210 동일번호 2행 · 고유1·발권0 | **CONFIRM** | (본턴) |
 | 2026-08-13 | 몰아주기복사·3등정밀·버그패치 | 복사=설계4/5 · 1210고유3등1·발권0 · SOFT allow_compute=False | **PATCHED** | fa611ed |
 | 2026-08-13 | 리셋후1236까지200회 | 숙제포함리셋·스모크PASS·BT200 HARD0 · SOFT1036캐시 · NEXT=형다음 | **PASS** | 03bfad6 |
 | 2026-08-13 | 권고E로 L12b | 생성1회·quota5·pool캐시동기 · C8 PASS · BT불변 · NEXT=형다음1건 | **WIRE_OK** | 8d75b76 |
@@ -45,7 +46,6 @@
 | 2026-08-12 | DATA저장감사·갭처리 | L9a AUDIT · L9b/c WIRE · L9d DOC · NEXT=L10 | **WIRE_OK** | 3db1831 |
 | 2026-08-12 | 다음진행 L9 | preserve/union 소형스윕 신호0 · knobs불변 · NEXT=L10 | **HOLD** | 89c3dc7 |
 | 2026-08-12 | 다음진행 L5 | 뇌10감사 AUDIT_OK · L6~8스킵 · NEXT=L9 | **AUDIT_OK** | ad33200 |
-| 2026-08-12 | 외부패스·L4b | role 5+3+2 WIRE · prefer/prize PASS · NEXT=L5 | **WIRE_OK** | 0f86ec1 |
 
 ---
 

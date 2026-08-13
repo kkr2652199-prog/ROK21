@@ -1,0 +1,35 @@
+{
+  "id": "K-HOME-TIER3-DUP",
+  "as_of": "2026-08-13",
+  "claim": "homepage_3rd_count_2_is_1210_pool_plus_repack_same_nums",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "lotto_predictions_matched_ge5": 0,
+  "ledger_hits_ge5": [
+    {
+      "draw_no": 1210,
+      "brain_tag": "markov",
+      "kind": "pool",
+      "set_no": 3,
+      "hits": 5,
+      "bonus_hit": 0,
+      "tier_rank": 3,
+      "nums": [1, 7, 12, 17, 27, 38]
+    },
+    {
+      "draw_no": 1210,
+      "brain_tag": "markov",
+      "kind": "repack",
+      "set_no": 3,
+      "hits": 5,
+      "bonus_hit": 0,
+      "tier_rank": 3,
+      "nums": [1, 7, 12, 17, 27, 38]
+    }
+  ],
+  "unique_combo": 1,
+  "homepage_hit_summary_source": "pool+repack rows",
+  "dashboard_rank3_by_brain": {"stat": 0, "markov": 0, "review": 0},
+  "actual_1210": [1, 7, 9, 17, 27, 38],
+  "bonus_1210": 31
+}

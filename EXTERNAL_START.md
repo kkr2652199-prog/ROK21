@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `fa611ed` |
+| HEAD(실측) | `74a8fe7` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 몰아주기복사=설계 · SOFT패치 · NEXT=형다음1건 |
-| 직전 | 1210 3등 고유1·발권0 · allow_compute=False |
+| 지금 | **양산前** · 홈3등2=1210동일번호중복 · NEXT=형다음1건 |
+| 직전 | 홈 백테 3등2 확인 · DB 발권0·고유1 |
 | BOOT다음 | 형 다음 1건 / 1237아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 몰아주기 pool복사=**설계**(4/5·cap4). 1210 3등 **고유1·발권0**. SOFT 1036캐시 **패치**(auto_feedback allow_compute=False). 다음=**형 다음 1건**. **1237아님**. |
+| NEXT1 할일 | **양산前**. 홈 3등2=**1210 pool+몰아주기 같은번호**(고유1·발권0). 몰아주기복사=설계. 다음=**형 다음 1건**. **1237아님**. |
 | 승인필요 | **형 다음 1건** |
 | 선행 | BT200 PASS |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=fa611ed · 지금=**양산前** · 몰아주기복사=설계 · SOFT패치 · NEXT=형다음1건 · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=74a8fe7 · 지금=**양산前** · 홈3등2=1210동일번호중복 · NEXT=형다음1건 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: fa611ed_
+_generated: 74a8fe7_

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fa611ed` · WORK=`IDLE`
-- 지금: **양산前** · 몰아주기복사=설계 · SOFT패치 · NEXT=형다음1건
-- 직전: 1210 3등 고유1·발권0 · allow_compute=False
+- HEAD: `74a8fe7` · WORK=`IDLE`
+- 지금: **양산前** · 홈3등2=1210동일번호중복 · NEXT=형다음1건
+- 직전: 홈 백테 3등2 확인 · DB 발권0·고유1
 - BOOT다음: 형 다음 1건 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 몰아주기 pool복사=**설계**(4/5·cap4). 1210 3등 **고유1·발권0**. SOFT 1036캐시 **패치**(auto_feedback allow_compute=False). 다음=**형 다음 1건**. **1237아님**. (승인=**형 다음 1건**)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 홈 3등2=**1210 pool+몰아주기 같은번호**(고유1·발권0). 몰아주기복사=설계. 다음=**형 다음 1건**. **1237아님**. (승인=**형 다음 1건**)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
