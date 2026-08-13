@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `505c46d` |
+| HEAD(실측) | `8d75b76` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · L12 발권↔pool SPEC **DOC_OK** · NEXT=L12b 형A~E |
-| 직전 | L12 K-TICKET-POOL-UNIFY-SPEC DOC_OK (강제병합안함·권고E) |
-| BOOT다음 | L12b WIRE / 형 A~E 선택 / 1237아님 |
-| NEXT1 ID | **K-TICKET-POOL-UNIFY-WIRE** |
-| NEXT1 할일 | **양산前**. L12 SPEC **DOC_OK**(강제병합안함·C8 PASS·권고E). 다음=**L12b** 형 옵션 **A~E** 선택 후 WIRE. A=분리유지 · B=pool10발권 · C=repack15발권 · D=10+5전부 · **E권고**=생성1회+pool캐시동기. **1237아님** · 강제BT보류. |
-| 승인필요 | **형 A~E** |
-| 선행 | L12 SPEC 완료 |
+| 지금 | **양산前** · L12b 옵션E **WIRE_OK** · NEXT=형다음1건 |
+| 직전 | L12b K-TICKET-POOL-UNIFY-WIRE E WIRE_OK (quota5+캐시동기) |
+| BOOT다음 | 형 다음 1건 / LIST_V3완료 / 1237아님 |
+| NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
+| NEXT1 할일 | **양산前**. LIST_V3 **L0~L12b 완료**. L12b 옵션**E** **WIRE_OK**(생성1회·quota5·pool캐시동기·C8 PASS·BT불변). 다음=**형 다음 1건**. **1237아님** · 강제BT보류. |
+| 승인필요 | **형 다음 1건** |
+| 선행 | LIST_V3 완료 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=505c46d · 지금=**양산前** · L12 발권↔pool SPEC **DOC_OK** · NEXT=L12b 형A~E · 다음=K-TICKET-POOL-UNIFY-WIRE`
+1. 첫줄 `[복귀] HEAD=8d75b76 · 지금=**양산前** · L12b 옵션E **WIRE_OK** · NEXT=형다음1건 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
