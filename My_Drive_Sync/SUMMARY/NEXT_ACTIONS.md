@@ -2,11 +2,11 @@
 
 > STEP1 guard_boot 는 **아래 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. LIST_V3 **L0~L12b 완료**. L12b 옵션**E** **WIRE_OK**(생성1회·quota5·pool캐시동기·C8 PASS·BT불변). 다음=**형 다음 1건**. **1237아님** · 강제BT보류.
+- 할일: **양산前**. 리셋+스모크+BT200 **PASS**(1037~1236 n200·발권5 mean_all**0.79**·HARD버그0). SOFT=원장 writer 창밖1036 캐시. 다음=**형 다음 1건**(SOFT패치/L12b화면/HOLD재검토/V4). **1237아님**.
 - 완료조건: 형 다음 지시 1건
-- 선행완료: L12b E WIRE_OK
+- 선행완료: K-POST-L12B-RESET-BT200 PASS
 - 승인필요: **형 다음 1건**
-- 선행조건: LIST_V3 완료
+- 선행조건: LIST_V3 + BT200
 - 최종갱신: 2026-08-13
 
 
@@ -16,5 +16,5 @@ IDLE
 ---
 
 ## 메모
-- reports/20260813_KTICKET_POOL_UNIFY_WIRE.md
-- docs/benchmarks/20260813_KTICKET_POOL_UNIFY_WIRE.json
+- reports/20260813_KPOST_L12B_RESET_BT200.md
+- docs/benchmarks/20260813_KPOST_L12B_RESET_BT200.json

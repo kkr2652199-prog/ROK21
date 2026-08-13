@@ -1,11 +1,11 @@
 {
   "id": "K-PREDICT-RESET",
-  "generated_at": "2026-08-08T08:07:05.148450+00:00",
+  "generated_at": "2026-08-13T01:36:40.821429+00:00",
   "db": "D:/ROK21/data/lotto_testlotto.db",
   "applied": true,
   "backup": "없음 (형 지시)",
-  "db_mb_before": 51.98,
-  "db_mb_after": 34.43,
+  "db_mb_before": 37.39,
+  "db_mb_after": 34.67,
   "survey": {
     "tables": [
       "hit_warrant_log",
@@ -25,32 +25,38 @@
       "testlotto_draw_win_stores",
       "testlotto_evolve_auto_state",
       "testlotto_evolve_log",
+      "testlotto_pool_hit_ledger",
+      "testlotto_pool_hit_scatter",
       "testlotto_pool_view_cache",
       "testlotto_rare_bundle_catalog",
       "testlotto_rare_bundle_hits",
+      "testlotto_skill_homework",
       "transition_log"
     ],
     "counts_before": {
-      "hit_warrant_log": 1134,
+      "hit_warrant_log": 0,
       "lotto_analysis": 0,
-      "lotto_draws": 1235,
-      "lotto_predictions": 1000,
+      "lotto_draws": 1236,
+      "lotto_predictions": 0,
       "sqlite_sequence": 7,
-      "testlotto_backtest_draw_results": 800,
-      "testlotto_backtest_runs": 4,
+      "testlotto_backtest_draw_results": 100,
+      "testlotto_backtest_runs": 1,
       "testlotto_brain_learn_state": 3,
-      "testlotto_brain_page": 3698,
-      "testlotto_brain_review": 0,
+      "testlotto_brain_page": 3704,
+      "testlotto_brain_review": 300,
       "testlotto_brain_weights": 3,
       "testlotto_draw_detail": 1234,
-      "testlotto_draw_features": 1234,
+      "testlotto_draw_features": 1236,
       "testlotto_draw_prize_tiers": 6170,
       "testlotto_draw_win_stores": 0,
       "testlotto_evolve_auto_state": 1,
-      "testlotto_evolve_log": 3549,
-      "testlotto_pool_view_cache": 600,
+      "testlotto_evolve_log": 0,
+      "testlotto_pool_hit_ledger": 135,
+      "testlotto_pool_hit_scatter": 18,
+      "testlotto_pool_view_cache": 300,
       "testlotto_rare_bundle_catalog": 213,
       "testlotto_rare_bundle_hits": 1235,
+      "testlotto_skill_homework": 6,
       "transition_log": 1134
     },
     "brain_columns": {
@@ -72,71 +78,89 @@
       "testlotto_evolve_log": [
         "brain_tag"
       ],
+      "testlotto_pool_hit_ledger": [
+        "brain_tag"
+      ],
+      "testlotto_pool_hit_scatter": [
+        "brain_tag"
+      ],
       "testlotto_pool_view_cache": [
         "brain"
+      ],
+      "testlotto_skill_homework": [
+        "brain_tag"
       ]
     },
     "unknown_tables": [],
     "to_delete": {
-      "lotto_predictions": 1000,
+      "lotto_predictions": 0,
       "lotto_analysis": 0,
-      "testlotto_brain_review": 0,
+      "testlotto_brain_review": 300,
       "testlotto_brain_learn_state": 3,
       "testlotto_brain_weights": 3,
-      "testlotto_backtest_runs": 4,
-      "testlotto_backtest_draw_results": 800,
-      "testlotto_pool_view_cache": 600,
-      "testlotto_evolve_log": 3549,
+      "testlotto_backtest_runs": 1,
+      "testlotto_backtest_draw_results": 100,
+      "testlotto_pool_view_cache": 300,
+      "testlotto_evolve_log": 0,
       "testlotto_evolve_auto_state": 1,
-      "hit_warrant_log": 1134
+      "testlotto_pool_hit_ledger": 135,
+      "testlotto_pool_hit_scatter": 18,
+      "testlotto_skill_homework": 6,
+      "hit_warrant_log": 0
     },
     "to_keep": {
-      "lotto_draws": 1235,
-      "testlotto_draw_features": 1234,
+      "lotto_draws": 1236,
+      "testlotto_draw_features": 1236,
       "testlotto_draw_prize_tiers": 6170,
       "testlotto_draw_detail": 1234,
       "testlotto_draw_win_stores": 0,
       "testlotto_rare_bundle_catalog": 213,
       "testlotto_rare_bundle_hits": 1235,
       "transition_log": 1134,
-      "testlotto_brain_page": 3698,
+      "testlotto_brain_page": 3704,
       "sqlite_sequence": 7
     }
   },
   "deleted": {
-    "hit_warrant_log": 1134,
+    "hit_warrant_log": 0,
     "lotto_analysis": 0,
-    "lotto_predictions": 1000,
-    "testlotto_backtest_draw_results": 800,
-    "testlotto_backtest_runs": 4,
+    "lotto_predictions": 0,
+    "testlotto_backtest_draw_results": 100,
+    "testlotto_backtest_runs": 1,
     "testlotto_brain_learn_state": 3,
-    "testlotto_brain_review": 0,
+    "testlotto_brain_review": 300,
     "testlotto_brain_weights": 3,
     "testlotto_evolve_auto_state": 1,
-    "testlotto_evolve_log": 3549,
-    "testlotto_pool_view_cache": 600
+    "testlotto_evolve_log": 0,
+    "testlotto_pool_hit_ledger": 135,
+    "testlotto_pool_hit_scatter": 18,
+    "testlotto_pool_view_cache": 300,
+    "testlotto_skill_homework": 6
   },
   "counts_after": {
     "hit_warrant_log": 0,
     "lotto_analysis": 0,
-    "lotto_draws": 1235,
+    "lotto_draws": 1236,
     "lotto_predictions": 0,
     "sqlite_sequence": 7,
     "testlotto_backtest_draw_results": 0,
     "testlotto_backtest_runs": 0,
     "testlotto_brain_learn_state": 0,
-    "testlotto_brain_page": 3698,
+    "testlotto_brain_page": 3704,
     "testlotto_brain_review": 0,
     "testlotto_brain_weights": 3,
     "testlotto_draw_detail": 1234,
-    "testlotto_draw_features": 1234,
+    "testlotto_draw_features": 1236,
     "testlotto_draw_prize_tiers": 6170,
     "testlotto_draw_win_stores": 0,
     "testlotto_evolve_auto_state": 1,
     "testlotto_evolve_log": 0,
+    "testlotto_pool_hit_ledger": 0,
+    "testlotto_pool_hit_scatter": 0,
     "testlotto_pool_view_cache": 0,
     "testlotto_rare_bundle_catalog": 213,
     "testlotto_rare_bundle_hits": 1235,
+    "testlotto_skill_homework": 0,
     "transition_log": 1134
   }
 }

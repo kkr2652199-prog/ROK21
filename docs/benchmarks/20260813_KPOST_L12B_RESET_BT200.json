@@ -1,0 +1,138 @@
+{
+  "id": "K-POST-L12B-RESET-BT200",
+  "ts": "2026-08-13T10:44:27+09:00",
+  "verdict": "PASS",
+  "phase": "bt200",
+  "wire": false,
+  "ge3_used_as_claim": false,
+  "force_bt": true,
+  "window_smoke": [
+    1234,
+    1236
+  ],
+  "window_bt": [
+    1037,
+    1236
+  ],
+  "reset_homework_in_delete": true,
+  "reset_unknown": [],
+  "smoke": null,
+  "smoke_hard": false,
+  "bt200": {
+    "label": "bt200",
+    "lo": 1037,
+    "hi": 1236,
+    "n_ok": 200,
+    "n_target": 200,
+    "elapsed_s": 407.2,
+    "peek_fail": 0,
+    "issued_eq_5": 200,
+    "min_each_ok": 200,
+    "ticket": {
+      "n": 200,
+      "mean_best": 1.71,
+      "mean_all": 0.79,
+      "ge3_count": 27,
+      "ge3_rate": 0.135,
+      "eval_mode": "best_of_5",
+      "null_ge3": 0.1137,
+      "null_mean": 1.7289,
+      "monitor_only": true,
+      "p_value": 0.198612
+    },
+    "solo": {
+      "stat": {
+        "n": 200,
+        "mean_best": 1.805,
+        "mean_all": 0.828,
+        "ge3_count": 34,
+        "ge3_rate": 0.17,
+        "eval_mode": "best_of_5",
+        "null_ge3": 0.1137,
+        "null_mean": 1.7289,
+        "monitor_only": true,
+        "p_value": 0.011143
+      },
+      "markov": {
+        "n": 200,
+        "mean_best": 1.745,
+        "mean_all": 0.808,
+        "ge3_count": 30,
+        "ge3_rate": 0.15,
+        "eval_mode": "best_of_5",
+        "null_ge3": 0.1137,
+        "null_mean": 1.7289,
+        "monitor_only": true,
+        "p_value": 0.070087
+      },
+      "review": {
+        "n": 200,
+        "mean_best": 1.74,
+        "mean_all": 0.823,
+        "ge3_count": 29,
+        "ge3_rate": 0.145,
+        "eval_mode": "best_of_5",
+        "null_ge3": 0.1137,
+        "null_mean": 1.7289,
+        "monitor_only": true,
+        "p_value": 0.102441
+      }
+    },
+    "pool_best_of_many": {
+      "n": 200,
+      "mean_best": 2.575,
+      "mean_all": null,
+      "ge3_count": 103,
+      "ge3_rate": 0.515,
+      "eval_mode": "best_of_15",
+      "null_ge3": 0.3036,
+      "null_mean": 2.2692,
+      "monitor_only": true,
+      "p_value": 0.0
+    },
+    "bug_kinds": {},
+    "bugs_head": [],
+    "n_bugs": 0,
+    "errors_head": [],
+    "n_errors": 0
+  },
+  "census": {
+    "lotto_draws_max": 1236,
+    "predictions": 1000,
+    "pred_draws": 200,
+    "pool_cache": 603,
+    "pool_draws": 201,
+    "ledger": 9000,
+    "homework": 600,
+    "review": 597,
+    "pred_1237": 0
+  },
+  "improves": [
+    "SOFT: pool_view_cache에 창밖 1036이 1회 생김(원장 writer가 prev 회차 get_or_build). 발권 창 1037~1236은 정확",
+    "측정: 풀 ge3는 장수 45 효과. 발권5 실력으로 쓰지 말 것. best_of_15 null 비교도 부정확",
+    "클릭 L12b(생성1회+캐시동기)는 이번 BT(coordinator)에 없음. 화면 스모크 별도",
+    "L10~L11c HOLD 손잡이 재스윕 안 함",
+    "HARD 버그 0 (peek0 · issued5 200/200 · min_each 200/200 · 예외0)"
+  ],
+  "note": "1237아님 · draws보존 · ge3모니터 · 발권≠풀",
+  "smoke_prior": {
+    "n_ok": 3,
+    "issued_eq_5": 3,
+    "min_each_ok": 3,
+    "peek_fail": 0,
+    "n_bugs": 0,
+    "n_errors": 0,
+    "ticket_best_last": 2,
+    "note": "별도 smoke 실행 2026-08-13 24s · DB미기록"
+  },
+  "smoke_hard_prior": true,
+  "findings": {
+    "hard_bugs_200": 0,
+    "extra_pool_draw": 1036,
+    "extra_pool_why": "coordinator _auto_feedback -> write_pool_hit_ledger -> get_or_build_pool_view(prev)",
+    "review_597_why": "피드백은 직전회차. 1036은 발권0이라 review 미기록. 199*3=597 기대와 일치",
+    "pool_null_caveat": "pool_best는 3*(10+5)=45장 max · best_of_15 null과 직접비교 금지",
+    "ticket_mean_all": 0.79,
+    "theory_single_mean": 0.8
+  }
+}

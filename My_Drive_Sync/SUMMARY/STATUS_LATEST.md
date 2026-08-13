@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-13 KST  
-📌 사유: **[CURSOR] K-TICKET-POOL-UNIFY-WIRE** — L12b 옵션E **WIRE_OK** · NEXT=형다음1건
+📌 사유: **[CURSOR] K-POST-L12B-RESET-BT200** — 리셋+스모크+200회 **PASS** · NEXT=형다음1건
 
-📌 직전: **[CURSOR] K-TICKET-POOL-UNIFY-SPEC** — L12 **DOC_OK**
+📌 직전: **[CURSOR] K-TICKET-POOL-UNIFY-WIRE** — L12b 옵션E **WIRE_OK**
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-POST-L12B-RESET-BT200 (형GO)** | **PASS** · 테스트로또만 리셋(숙제테이블 추가삭제) · 스모크1234~1236 HARD · BT **1037~1236 n200**. 발권5 mean_all**0.79**/mean_best**1.71**/ge3**0.135**(모니터·null best_of_5). solo stat/markov/review mean_all 0.828/0.808/0.823. 풀 best**2.575**(45장·발권아님). HARD peek0·issued5 200/200·예외0. SOFT: 원장 writer가 prev **1036** 캐시 1회. 1237발권0 · draws MAX**1236** · DB커밋안함. · `docs/benchmarks/20260813_KPOST_L12B_RESET_BT200.json` · `reports/20260813_KPOST_L12B_RESET_BT200.md` · `tools/_k_post_l12b_reset_bt200.py` |
 | **K-TICKET-POOL-UNIFY-WIRE (LIST_V3 L12b)** | **WIRE_OK** · wire=**True** · apply=**True** · 옵션=**E** — 클릭=`run_live_issue_with_pool_sync` · 생성1회(`build_pool_and_repack return_raw`) · skill15→quota**5**(stat1/markov1/review3) · 같은회차 pool캐시 10+5. C8 **PASS**. BT/`run_prediction` 미수정. 롤백=`TICKET_POOL_SYNC=False`. ge3미클레임·1237아님. · `docs/benchmarks/20260813_KTICKET_POOL_UNIFY_WIRE.json` · `reports/20260813_KTICKET_POOL_UNIFY_WIRE.md` · `app/testlotto/ticket_pool_sync.py` · `tools/_k_ticket_pool_unify_wire.py` |
 | **K-TICKET-POOL-UNIFY-SPEC (LIST_V3 L12)** | **DOC_OK** · wire=**False** · apply=**False** — 강제병합안함. 발권=`lotto_predictions` quota5 · UI=`pool_view_cache` 10+5. C8 pool1~5=predict_sets5 **PASS**(시드42+N). 1236 cache3·ledger45·predictions0. 옵션A분리/B pool10/C repack15/D 45장/**E권고**생성1회+캐시동기. ge3미클레임·1237아님. · `docs/benchmarks/20260813_KTICKET_POOL_UNIFY_SPEC.json` · `reports/20260813_KTICKET_POOL_UNIFY_SPEC.md` · `tools/_k_ticket_pool_unify_spec.py` |
 | **K-STAT-HOMEWORK-QUALITY (LIST_V3 L11c)** | **HOLD** · wire=**False** · apply=**False** — 잔여노브=`past_learn.WIN_1Y`(1yHot/Cold) 스윕{26,39,52,78,104}·seed3×1137~1236. LOCKED HINT**52**/WEIGHT**0.15**/J**0.85**/ov**×3**/ASSOC OFF 재탕안함. base hit**0.331667** · 전후보 |Δhit|≪0.005 · prefer/prize iso0 → WIN_1Y**52** 유지. ge3미클레임·1237아님. · `docs/benchmarks/20260813_KSTAT_HOMEWORK_QUALITY.json` · `reports/20260813_KSTAT_HOMEWORK_QUALITY.md` · `tools/_k_stat_homework_quality.py` |

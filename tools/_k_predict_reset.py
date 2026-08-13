@@ -45,6 +45,7 @@ DELETE_TABLES: dict[str, str] = {
     "testlotto_evolve_auto_state": "evolve 자동화 상태",
     "testlotto_pool_hit_ledger": "세트별 적중 원장 (K-POOL-HIT-LEDGER)",
     "testlotto_pool_hit_scatter": "회차×뇌 적중 분산 요약",
+    "testlotto_skill_homework": "뇌별 스킬 숙제 (L9c · 예측 산출물)",
     "hit_warrant_log": "적중 명분 로그 (예측 대조 산출)",
 }
 
