@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `03bfad6` · WORK=`IDLE`
-2. **지금:** **양산前** · 리셋+BT200 **PASS** · NEXT=형다음1건
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 리셋+스모크+BT200 **PASS**(1037~1236 n200·발권5 mean_all**0.79**·HARD버그0). SOFT=원장 writer 창밖1036 캐시. 다음=**형 다음 1건**(SOFT패치/L12b화면/HOLD재검토/V4). **1237아님**. (승인필요=**형 다음 1건** · 선행=LIST_V3 + BT200)
+1. **HEAD:** `fa611ed` · WORK=`IDLE`
+2. **지금:** **양산前** · 몰아주기복사=설계 · SOFT패치 · NEXT=형다음1건
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 몰아주기 pool복사=**설계**(4/5·cap4). 1210 3등 **고유1·발권0**. SOFT 1036캐시 **패치**(auto_feedback allow_compute=False). 다음=**형 다음 1건**. **1237아님**. (승인필요=**형 다음 1건** · 선행=BT200 PASS)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-13 | 몰아주기복사·3등정밀·버그패치 | 복사=설계4/5 · 1210고유3등1·발권0 · SOFT allow_compute=False | **PATCHED** | 2ce54d9 |
+| 2026-08-13 | 몰아주기복사·3등정밀·버그패치 | 복사=설계4/5 · 1210고유3등1·발권0 · SOFT allow_compute=False | **PATCHED** | fa611ed |
 | 2026-08-13 | 리셋후1236까지200회 | 숙제포함리셋·스모크PASS·BT200 HARD0 · SOFT1036캐시 · NEXT=형다음 | **PASS** | 03bfad6 |
 | 2026-08-13 | 권고E로 L12b | 생성1회·quota5·pool캐시동기 · C8 PASS · BT불변 · NEXT=형다음1건 | **WIRE_OK** | 8d75b76 |
 | 2026-08-13 | 다음진행 L12 | 발권↔pool SPEC · C8 PASS · 강제병합안함 · 권고E · NEXT=형A~E | **DOC_OK** | 505c46d |
