@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `df213bc` · WORK=`IDLE`
+- HEAD: `505c46d` · WORK=`IDLE`
 - 지금: **양산前** · L12 발권↔pool SPEC **DOC_OK** · NEXT=L12b 형A~E
 - 직전: L12 K-TICKET-POOL-UNIFY-SPEC DOC_OK (강제병합안함·권고E)
 - BOOT다음: L12b WIRE / 형 A~E 선택 / 1237아님
