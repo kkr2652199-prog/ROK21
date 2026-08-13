@@ -606,8 +606,17 @@ def _apply_aux_scoring(candidates: list[dict], draws: list[dict], target_draw_no
     return out
 
 
-def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...] = ()) -> dict:
-    """3 미래예측 뇌 × 5세트 + 4 보조 뇌 채점."""
+def run_coordinated_prediction(
+    target_draw_no: int,
+    brain_filter: tuple[str, ...] = (),
+    *,
+    prebuilt_candidates: list[dict] | None = None,
+) -> dict:
+    """3 미래예측 뇌 × 5세트 + 4 보조 뇌 채점.
+
+    prebuilt_candidates: L12b E 전용. pool 생성1회에서 뽑은 skill1~5.
+    있으면 predict_sets를 다시 돌리지 않는다. quota5·BT 기본경로는 불변.
+    """
     from app.testlotto.learn_state_cutoff import set_learn_as_of
 
     init_lotto_db()
@@ -641,28 +650,45 @@ def run_coordinated_prediction(target_draw_no: int, brain_filter: tuple[str, ...
 
     candidates: list[dict] = []
     brain_errors: dict[str, str] = {}
-    for brain in PREDICT_BRAINS:
-        tag = brain["tag"]
-        if not run(tag):
-            continue
-        mod = PREDICT_MODULES[tag]
-        _delete_predictions_for_brain(conn, target_draw_no, tag)
-        # 독립뇌: 뇌마다 동일 회차 시드로 재시작 (stat RNG가 markov를 오염시키던 구조 제거)
-        # K-I: 단일 뇌 예외가 전체 실패로 전파되지 않게 try 보호
-        _seed_independent_brain(target_draw_no)
-        try:
-            sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
-        except Exception as exc:  # noqa: BLE001
-            brain_errors[tag] = f"{type(exc).__name__}: {exc}"
-            logger.exception("[테스트로또] %s 생성 실패 — 타뇌 계속", brain["name"])
-            continue
-        for i, s in enumerate(sets):
-            sn = int(s.get("rank") or s.get("set_no") or s.get("pred_set_no") or (i + 1))
+    if prebuilt_candidates is not None:
+        # L12b E: pool skill1~5를 발권 후보로. predict_sets 재실행 없음.
+        for brain in PREDICT_BRAINS:
+            tag = brain["tag"]
+            if run(tag):
+                _delete_predictions_for_brain(conn, target_draw_no, tag)
+        for s in prebuilt_candidates:
+            tag = str(s.get("brain_tag") or "")
+            if not run(tag):
+                continue
+            sn = int(s.get("rank") or s.get("set_no") or s.get("pred_set_no") or 1)
             conf = float(s.get("confidence", 60))
             candidates.append(
                 {**s, "confidence": conf, "pred_set_no": sn, "set_no": sn}
             )
-        logger.info("[테스트로또] %s %d세트", brain["name"], len(sets))
+        logger.info("[테스트로또] prebuilt skill 후보 %d장 (L12b E)", len(candidates))
+    else:
+        for brain in PREDICT_BRAINS:
+            tag = brain["tag"]
+            if not run(tag):
+                continue
+            mod = PREDICT_MODULES[tag]
+            _delete_predictions_for_brain(conn, target_draw_no, tag)
+            # 독립뇌: 뇌마다 동일 회차 시드로 재시작 (stat RNG가 markov를 오염시키던 구조 제거)
+            # K-I: 단일 뇌 예외가 전체 실패로 전파되지 않게 try 보호
+            _seed_independent_brain(target_draw_no)
+            try:
+                sets = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
+            except Exception as exc:  # noqa: BLE001
+                brain_errors[tag] = f"{type(exc).__name__}: {exc}"
+                logger.exception("[테스트로또] %s 생성 실패 — 타뇌 계속", brain["name"])
+                continue
+            for i, s in enumerate(sets):
+                sn = int(s.get("rank") or s.get("set_no") or s.get("pred_set_no") or (i + 1))
+                conf = float(s.get("confidence", 60))
+                candidates.append(
+                    {**s, "confidence": conf, "pred_set_no": sn, "set_no": sn}
+                )
+            logger.info("[테스트로또] %s %d세트", brain["name"], len(sets))
 
     if not candidates:
         conn.rollback()

@@ -745,8 +745,13 @@ def build_pool_and_repack(
     *,
     seed: int = MC_SEED,
     learner_warm_start: int | None = None,
+    return_raw: bool = False,
 ) -> dict[str, Any]:
-    """단일 회차 10세트 pool + 5 몰아주기 세트 (뇌별). walk-forward only."""
+    """단일 회차 10세트 pool + 5 몰아주기 세트 (뇌별). walk-forward only.
+
+    return_raw=True: L12b E 생성1회용. skill 후보(풀 dict)를 발권 quota에 넘긴다.
+    캐시 JSON에는 넣지 않는다.
+    """
     set_learn_as_of(target_draw_no)
     draws = _get_draws_before(target_draw_no)
     if not draws:
@@ -817,7 +822,7 @@ def build_pool_and_repack(
     #           by_brain_repack[tag] = policy_filter(annotate_sets(by_brain_repack[tag]))
     # 기본: pass-through (발권 불변)
 
-    return {
+    out: dict[str, Any] = {
         "ok": True,
         "target_draw_no": target_draw_no,
         "no_peek": True,
@@ -836,6 +841,10 @@ def build_pool_and_repack(
         "pool_by_brain": by_brain_pool,
         "repack_by_brain": by_brain_repack,
     }
+    if return_raw:
+        out["raw_pool_by_brain"] = pool_br
+        out["raw_repack"] = repacked
+    return out
 
 
 def tune_snapshot() -> dict[str, Any]:

@@ -404,8 +404,13 @@ async def api_predict(target_draw_no: int):
     """특정 회차에 대한 두뇌 예측을 실행한다.
     컨닝 방지: target_draw_no 이전 데이터만 LLM에게 제공."""
     from app.testlotto.engine import run_prediction
+    from app.testlotto.ticket_pool_sync import TICKET_POOL_SYNC, run_live_issue_with_pool_sync
 
-    result = run_prediction(target_draw_no)
+    # L12b E: 클릭만 생성1회+pool캐시 동기. BT/run_prediction 불변.
+    if TICKET_POOL_SYNC:
+        result = run_live_issue_with_pool_sync(target_draw_no)
+    else:
+        result = run_prediction(target_draw_no)
     # K-KK-FEEDBACK-WIRE: 클릭 발권 후 직전 회차 결과 → learn_state + evolve_log 마크
     # (coordinator._auto_feedback 와 중복 가능 · evolve/last_draw guard 로 안전)
     try:

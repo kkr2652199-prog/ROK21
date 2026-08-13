@@ -126,12 +126,15 @@
 - `past_learn.WIN_1Y`만 스윕 · HINT52/WEIGHT0.15/J0.85/ov×3 **재탕안함**.
 - hit |Δ|≪0.005 · prefer/prize iso0 → HOLD(52).
 
-### L12 K-TICKET-POOL-UNIFY-SPEC — **DOC_OK** (본턴)
+### L12 K-TICKET-POOL-UNIFY-SPEC — **DOC_OK**
 - 강제병합 **안 함**. 발권5 vs pool10+repack5 이중경로 실측.
 - C8 pool1~5=predict_sets5 **PASS** · quota 발권5 ≠ 10+5 저장.
 - 옵션 A~E · 권고 **E**(생성1회·캐시동기). WIRE는 형 선택 후 L12b.
 
-### L12b K-TICKET-POOL-UNIFY-WIRE — **다음 (형 A~E 선택)**
+### L12b K-TICKET-POOL-UNIFY-WIRE — **WIRE_OK** (본턴 · 옵션 E)
+- 클릭: 생성 1회 → skill15 → quota **5** → 같은 회차 pool 캐시 10+5.
+- C8 PASS · BT/`run_prediction` 불변 · `TICKET_POOL_SYNC=True`.
+- LIST_V3 L0~L12b **완료**. 다음=형 다음 1건.
 
 ---
 
@@ -173,7 +176,7 @@
 | L11b | **HOLD** |
 | L11c | **HOLD** |
 | L12 | **DOC_OK** |
-| **L12b** | **NEXT (형 A~E)** |
+| L12b | **WIRE_OK** (E) |
 
 ---
 

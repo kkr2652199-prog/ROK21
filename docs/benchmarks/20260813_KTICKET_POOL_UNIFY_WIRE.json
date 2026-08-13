@@ -1,0 +1,83 @@
+{
+  "id": "K-TICKET-POOL-UNIFY-WIRE",
+  "list": "LIST_V3 L12b",
+  "status": "WIRE_OK",
+  "ts": "2026-08-13T10:22:36+09:00",
+  "wire": true,
+  "apply": true,
+  "option": "E",
+  "force_merge": false,
+  "ge3_used_as_claim": false,
+  "sample_draw": 1236,
+  "checks": {
+    "ticket_pool_sync_on": true,
+    "api_predict_wired": true,
+    "engine_bt_unwired": true,
+    "prebuilt_param": true,
+    "option_e": true,
+    "skill_n": 15,
+    "skill_is_15": true,
+    "c8_pool1to5_eq_predict5": {
+      "markov": true,
+      "stat": true,
+      "review": true
+    },
+    "c8_all": true,
+    "pass0_eq_coord_seed": true,
+    "live_no_error": true,
+    "pool_sync_ok": true,
+    "wrote_cache": true,
+    "live_skill_n": 15,
+    "live_skill_is_15": true,
+    "issued_n": 5,
+    "issued_by_tag": {
+      "markov": 1,
+      "review": 3,
+      "stat": 1
+    },
+    "issued_is_5": true,
+    "issued_ne_pool10": true,
+    "issued_ne_repack15": true,
+    "issued_ne_all45": true,
+    "cache_rows_3": true,
+    "pool_sizes": {
+      "markov": 10,
+      "stat": 10,
+      "review": 10
+    },
+    "repack_sizes": {
+      "markov": 5,
+      "stat": 5,
+      "review": 5
+    },
+    "pool10": true,
+    "repack5": true,
+    "min_each_brain": true,
+    "restored": true
+  },
+  "hard_keys": [
+    "ticket_pool_sync_on",
+    "api_predict_wired",
+    "engine_bt_unwired",
+    "prebuilt_param",
+    "skill_is_15",
+    "c8_all",
+    "pass0_eq_coord_seed",
+    "live_no_error",
+    "pool_sync_ok",
+    "wrote_cache",
+    "live_skill_is_15",
+    "issued_is_5",
+    "issued_ne_pool10",
+    "issued_ne_repack15",
+    "issued_ne_all45",
+    "cache_rows_3",
+    "pool10",
+    "repack5",
+    "min_each_brain",
+    "restored"
+  ],
+  "note": "옵션E · quota5유지 · pool캐시동기 · BT경로불변 · 1237아님",
+  "force_bt": false,
+  "s1": false
+}

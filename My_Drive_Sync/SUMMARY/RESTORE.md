@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-13 | 권고E로 L12b | 생성1회·quota5·pool캐시동기 · C8 PASS · BT불변 · NEXT=형다음1건 | **WIRE_OK** | 2ce5c6b |
 | 2026-08-13 | 다음진행 L12 | 발권↔pool SPEC · C8 PASS · 강제병합안함 · 권고E · NEXT=형A~E | **DOC_OK** | 505c46d |
 | 2026-08-13 | 다음진행 L11c | stat WIN_1Y 스윕 |Δ|미달 · HINT/J/ov불변 · NEXT=L12형승인 | **HOLD** | e667960 |
 | 2026-08-12 | 다음진행 L11b | markov 생일대세기 prefer↓ · BLEND/W_CROWD불변 · NEXT=L11c | **HOLD** | 0cff974 |
@@ -45,7 +46,6 @@
 | 2026-08-12 | 외부패스·L4b | role 5+3+2 WIRE · prefer/prize PASS · NEXT=L5 | **WIRE_OK** | 0f86ec1 |
 | 2026-08-12 | L4 GO 지시서 | repack 원장소비 WIRE · EMA탈피 · NEXT=L4b | **WIRE_OK** | f7bfe74 |
 | 2026-08-12 | 다음진행 L3 | ledger+scatter WIRE · 1236×45 · no_peek · NEXT=L4 | **WIRE_OK** | 05453be |
-| 2026-08-12 | L2원장SPEC | ledger+scatter스키마 DOC_OK · NEXT=L2b | **DOC_OK** | 3131b55 |
 
 ---
 
