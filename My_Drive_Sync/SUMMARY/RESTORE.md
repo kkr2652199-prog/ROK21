@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a5efab1` · WORK=`IDLE`
+1. **HEAD:** `af14e34` · WORK=`IDLE`
 2. **지금:** **양산前** · stat 6~10복습 BT200 PASS · COVER_MIN_HITS=3 · NEXT=형다음(markov)
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. stat 6~10복습 **BT200 PASS** · COVER_MIN_HITS**3**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인필요=**형 다음 1건** · 선행=BT200 PASS)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
