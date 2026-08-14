@@ -97,6 +97,15 @@ ROLE_SLOTS_WIRE: bool = True
 ROLE_TIER_LEARN_WIRE: bool = True
 ROLE_TIER_LEARN_BRAINS: frozenset[str] = frozenset({"stat"})
 
+# K-STAT-REPACK-ROLE-QUOTA (S3) — 몰아주기 cap4 복사 역할 하한/상한.
+# cover 최소1 · shape 최대1 · skill 최소1. 나머지=신호/점수 순위.
+# 롤백: REPACK_ROLE_QUOTA_WIRE=False. stat만.
+REPACK_ROLE_QUOTA_WIRE: bool = True
+REPACK_ROLE_QUOTA_BRAINS: frozenset[str] = frozenset({"stat"})
+REPACK_QUOTA_SKILL_MIN: int = 1
+REPACK_QUOTA_COVER_MIN: int = 1
+REPACK_QUOTA_SHAPE_MAX: int = 1
+
 
 SignalTable = dict[str, dict[int, float]]
 
@@ -438,6 +447,50 @@ def _pool_set_score(nums: list[int], scores: dict[int, float]) -> float:
     return sum(float(scores.get(int(n), 0.0)) for n in nums)
 
 
+def _sn_role(sn: int) -> str:
+    if 1 <= sn <= 5:
+        return "skill"
+    if 6 <= sn <= 8:
+        return "cover"
+    if 9 <= sn <= 10:
+        return "shape"
+    return "other"
+
+
+def apply_repack_role_quota(ranked: list[int], *, cap: int) -> tuple[int, ...]:
+    """cap장 복사 목록에 skill/cover 하한 · shape 상한. 순위는 ranked 그대로."""
+    seen: list[int] = []
+    for sn in ranked:
+        if sn not in seen and sn > 0:
+            seen.append(sn)
+    ranked = seen
+    skill = [s for s in ranked if _sn_role(s) == "skill"]
+    cover = [s for s in ranked if _sn_role(s) == "cover"]
+    picked: list[int] = []
+    if skill and REPACK_QUOTA_SKILL_MIN > 0:
+        picked.append(skill[0])
+    if cover and REPACK_QUOTA_COVER_MIN > 0 and cover[0] not in picked:
+        picked.append(cover[0])
+    n_shape = sum(1 for s in picked if _sn_role(s) == "shape")
+    for sn in ranked:
+        if len(picked) >= cap:
+            break
+        if sn in picked:
+            continue
+        if _sn_role(sn) == "shape" and n_shape >= REPACK_QUOTA_SHAPE_MAX:
+            continue
+        picked.append(sn)
+        if _sn_role(sn) == "shape":
+            n_shape += 1
+    if len(picked) < cap:
+        for sn in ranked:
+            if len(picked) >= cap:
+                break
+            if sn not in picked:
+                picked.append(sn)
+    return tuple(picked[:cap])
+
+
 def assemble_signal_union(
     pool: list[dict],
     classic_repack: list[list[int]],
@@ -447,11 +500,13 @@ def assemble_signal_union(
     n_slots: int = POOL_SLOTS_PER_BRAIN,
     n_pool_cap: int = POOL_UNION_CAP,
     n_sets: int = REPACK_SETS_PER_BRAIN,
+    brain_tag: str | None = None,
 ) -> list[dict]:
     """K-REPACK-UNION P1/P2 — 신호상위 ∪ 세트점수 상위 pool 보존 + classic 보충.
 
     n_slots: pos_ema 신호 상위 (P1 뼈대).
     n_pool_cap: primary에 넣을 pool 총수 상한(≤n_sets). 나머지는 classic.
+    stat+REPACK_ROLE_QUOTA_WIRE: cap 복사에 cover≥1 · shape≤1 · skill≥1.
     """
     tops = list(signal_top_set_nos(pool, pos_ema, n_slots=n_slots))
     p_by = {
@@ -465,7 +520,14 @@ def assemble_signal_union(
     )
     cap = max(len(tops), min(int(n_pool_cap), int(n_sets)))
     need = max(0, cap - len(tops))
+    ranked = list(tops) + list(others)
     primary = tuple(tops + others[:need])
+    if (
+        REPACK_ROLE_QUOTA_WIRE
+        and brain_tag
+        and str(brain_tag) in REPACK_ROLE_QUOTA_BRAINS
+    ):
+        primary = apply_repack_role_quota(ranked, cap=cap)
     return _assemble(pool, classic_repack, primary, n_sets=n_sets)
 
 
@@ -488,6 +550,7 @@ def _assembled_for_brain(
                 scores or {},
                 n_slots=n_slots,
                 n_pool_cap=cap,
+                brain_tag=tag,
             ),
             "signal_union",
         )
@@ -895,6 +958,8 @@ def tune_snapshot() -> dict[str, Any]:
         "COVER_SELECT_BRAINS": sorted(COVER_SELECT_BRAINS),
         "SHAPE_CORE_MODE": SHAPE_CORE_MODE,
         "SHAPE_CORE_BRAINS": sorted(SHAPE_CORE_BRAINS),
+        "REPACK_ROLE_QUOTA_WIRE": bool(REPACK_ROLE_QUOTA_WIRE),
+        "REPACK_ROLE_QUOTA_BRAINS": sorted(REPACK_ROLE_QUOTA_BRAINS),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }

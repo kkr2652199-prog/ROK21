@@ -1,0 +1,92 @@
+{
+  "id": "K-STAT-REPACK-ROLE-QUOTA",
+  "as_of": "2026-08-14T22:07:58+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "iso_thr": 0.005,
+  "live_wire_after": true,
+  "smoke": {
+    "label": "smoke",
+    "lo": 1234,
+    "hi": 1236,
+    "n_ok": 3,
+    "n_target": 3,
+    "elapsed_s": 1.7,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "pool_same": 3,
+    "repack_diff": 3,
+    "miss_cover_off": 3,
+    "miss_cover_on": 0,
+    "copy_off": {
+      "skill": 10,
+      "shape": 2,
+      "recombine": 3
+    },
+    "copy_on": {
+      "skill": 8,
+      "cover": 3,
+      "shape": 1,
+      "recombine": 3
+    },
+    "cover_share_off": 0.0,
+    "cover_share_on": 0.2,
+    "shape_share_off": 0.1333,
+    "shape_share_on": 0.0667,
+    "prefer_off": 0.001178,
+    "prefer_on": -0.001467,
+    "prize_off": 0.003596,
+    "prize_on": 0.00519
+  },
+  "smoke_hard": true,
+  "gate100": {
+    "label": "gate100",
+    "lo": 1137,
+    "hi": 1236,
+    "n_ok": 100,
+    "n_target": 100,
+    "elapsed_s": 38.8,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "pool_same": 100,
+    "repack_diff": 94,
+    "miss_cover_off": 49,
+    "miss_cover_on": 0,
+    "copy_off": {
+      "cover": 56,
+      "skill": 217,
+      "recombine": 100,
+      "shape": 127
+    },
+    "copy_on": {
+      "skill": 214,
+      "cover": 106,
+      "recombine": 100,
+      "shape": 80
+    },
+    "cover_share_off": 0.112,
+    "cover_share_on": 0.212,
+    "shape_share_off": 0.254,
+    "shape_share_on": 0.16,
+    "prefer_off": 0.014541,
+    "prefer_on": 0.015031,
+    "prize_off": 0.007575,
+    "prize_on": 0.007247
+  },
+  "hard_ok": true,
+  "wire_alive": true,
+  "design_moved": true,
+  "prefer_not_worse": true,
+  "prize_not_worse": true,
+  "delta": {
+    "prefer": 0.00049,
+    "prize": -0.000328
+  },
+  "apply": true,
+  "verdict": "APPLY",
+  "rollback": "REPACK_ROLE_QUOTA_WIRE=False"
+}

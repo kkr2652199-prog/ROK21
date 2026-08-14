@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-14 KST  
-📌 사유: **[CURSOR] K-STAT-SHAPE-CONSENSUS-CORE** — S2 HOLD · 인기↑ 비악화실패 · 라이브 set1
+📌 사유: **[CURSOR] K-STAT-REPACK-ROLE-QUOTA** — S3 APPLY · 몰아주기 cover최소1·shape최대1
 
-📌 직전: **[CURSOR] K-STAT-COVER-OUTSIDE-UNION** — S1 APPLY · cover=skill union 밖 최대
+📌 직전: **[CURSOR] K-STAT-SHAPE-CONSENSUS-CORE** — S2 HOLD · 인기↑ 비악화실패 · 라이브 set1
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-STAT-REPACK-ROLE-QUOTA (S3)** | **APPLY** · `REPACK_ROLE_QUOTA_WIRE=True` · **stat만**. 몰아주기 cap4 복사: skill≥1 · cover≥1 · shape≤1. pool 1~10 HARD동일 **100**/100. 스모크 PASS. 게이트1137~1236 n100: 몰아주기변경 **94**/100. cover 0장회 **49→0**. cover비율 **0.112→0.212** · shape비율 **0.254→0.16**. prefer Δ**+0.00049** · prize Δ**-0.000328** 비악화. 롤백=`False`. ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260814_KSTAT_REPACK_ROLE_QUOTA.json` · `reports/20260814_KSTAT_REPACK_ROLE_QUOTA.md` · `app/testlotto/signal_pool.py` · `tools/_k_stat_repack_role_quota.py` |
 | **K-STAT-SHAPE-CONSENSUS-CORE (S2)** | **HOLD_ISO_FAIL** · live=`SHAPE_CORE_MODE=set1` · 롤백키 동명. HARD PASS: skill·cover 동일 **100**/100 · T-NB1 OK · shape변경 **100**/100 · source `shape_r2_consensus`×200. 설계 Jaccard set1 **0.7143→0.2856**(클론 해제). prefer Δ**+0.012169**≥0.005 **인기↑=비악화실패**. prize Δ**-0.00959**(몫축은 개선·단독APPLY불가). 코드는 플래그로 보존·라이브 구경로. ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260814_KSTAT_SHAPE_CONSENSUS_CORE.json` · `reports/20260814_KSTAT_SHAPE_CONSENSUS_CORE.md` · `app/testlotto/role_slots.py` · `tools/_k_stat_shape_consensus_core.py` |
 | **K-STAT-COVER-OUTSIDE-UNION (S1)** | **APPLY** · mode=`outside_union` · 롤백=`COVER_SELECT_MODE='jaccard'` · **stat만**. 6~8 선택을 Jaccard최저 → **skill union 밖 번호 최대**(동점=누적union→숙제→Jaccard). 1~5 HARD동일 **100**/100. 스모크1234~1236 PASS. 게이트1137~1236 n100: cover변경 **99**/100 · source `cover_r3_outside_union`×300. 설계 union10 **30.05→31.72** · 밖번호 **2.33→3.01** · cover-skill J **0.102→0.0799**. prefer Δ**-0.005541**(인기↓=비악화) · prize Δ**-0.002831**(비악화). |Δ|대칭 iso는 독립성용이라 EV개선을 실패로 치지 않음. ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260814_KSTAT_COVER_OUTSIDE_UNION.json` · `reports/20260814_KSTAT_COVER_OUTSIDE_UNION.md` · `app/testlotto/role_slots.py` · `tools/_k_stat_cover_outside_union.py` |
 | **K-STAT-ENGINE-EVOLVE-SPEC (형GO)** | **SPEC_OK** · wire=**False**(본턴 APPLY없음) · 범위=**stat만** — 패치200회 원장/캐시 실측. **6~8은 3등학습기 아님**(같은 predict_sets 재샘플+Jaccard). **9~10은 2등학습기 아님**(1번세트 1칸변형 J**0.7143**=5/7). 몰아주기=**복사4+점수상위6 1장**(분산번호 교차조합 아님) copy**0.80**. 고유4등**10**=skill6+shape4·cover0. 고유5등**53**=s29+shape11+cover12+focus1. union10 **29.76** / skill5 **22.72** / 몰아주기 **16.59**(더좁음). cover vs skill Jaccard **0.1059** > skill내부 **0.0806**. 문헌: covering=번호풀 먼저 · greedy Smart Coverage · Thaler P불변. 기각: 등수P↑·보너스맞춤·10장1등보장·Stern-Cover. 리스트 S1 cover-union → S2 shape합의코어 → S3 몰아주기역할쿼터 → S4 보완재조합 → S5 BT200. 게이트 prefer/prize. ge3미클레임·1237아님. · `docs/benchmarks/20260814_KSTAT_ENGINE_EVOLVE_SPEC.json` · `reports/20260814_KSTAT_ENGINE_EVOLVE_SPEC.md` · `tools/_k_stat_engine_evolve_spec.py` |
