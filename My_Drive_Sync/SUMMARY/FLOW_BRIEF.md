@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `edc991c` · WORK=`IDLE`
-- 지금: **양산前** · stat 1~5 학습고리 WIRE · prize게이트HOLD · NEXT=형다음(markov)
-- 직전: 200회 등수=1·2·3등0 4등1
+- HEAD: `6ff1680` · WORK=`IDLE`
+- 지금: **양산前** · 패치엔진 stat 리셋+200 PASS · NEXT=형다음(markov)
+- 직전: 패치BT 1·2·3등0 · 4등고유10 · 5등53(모니터)
 - BOOT다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. stat 1~5 학습고리 **WIRE_OK_HOLD**. prize Δ**-0.00037** 미달. 1~5변경 **196**/200. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인=**형 다음 1건**)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 패치엔진 stat 리셋+200 **PASS**. peek0 err0. 모니터 1~5 mean **0.83**. 등수 1·2·3=0 4등고유**10** 5등**53**. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인=**형 다음 1건**)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
