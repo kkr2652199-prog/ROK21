@@ -2,9 +2,9 @@
 
 > STEP1 guard_boot 는 **아래 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 홈 3등2=**1210 pool+몰아주기 같은번호**(고유1·발권0). 몰아주기복사=설계. 다음=**형 다음 1건**. **1237아님**.
+- 할일: **양산前**. 몰아주기 10세트복제=**시스템**(EMA2+점수 cap4·칸5=재조합). 고정 번째 아님. 다음=**형 다음 1건**. **1237아님**.
 - 완료조건: 형 다음 지시 1건
-- 선행완료: K-HOME-TIER3-DUP CONFIRM
+- 선행완료: K-REPACK-COPY-WHICH-SET SYSTEM_NOT_BUG
 - 승인필요: **형 다음 1건**
 - 선행조건: BT200 PASS
 - 최종갱신: 2026-08-14
@@ -16,7 +16,6 @@ IDLE
 ---
 
 ## 메모
+- reports/20260814_KREPACK_COPY_WHICH_SET.md
+- docs/benchmarks/20260814_KREPACK_COPY_WHICH_SET.json
 - reports/20260814_KENDCHECK_GAP.md
-- reports/20260813_KHOME_TIER3_DUP.md
-- docs/benchmarks/20260813_KHOME_TIER3_DUP.json
-- reports/20260813_KREPACK_COPY_TIER_AUDIT.md

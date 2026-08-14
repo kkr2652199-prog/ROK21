@@ -1,0 +1,720 @@
+{
+  "id": "K-REPACK-COPY-WHICH-SET",
+  "as_of": "2026-08-14T20:03:32+09:00",
+  "window": [
+    1037,
+    1236
+  ],
+  "ge3_claim": false,
+  "draw_1237": false,
+  "verdict": "SYSTEM_NOT_BUG",
+  "knobs": {
+    "ASSEMBLE_MODE": "signal_union",
+    "POOL_SLOTS_BY_BRAIN": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
+    "POOL_UNION_CAP_BY_BRAIN": {
+      "markov": 4,
+      "stat": 4,
+      "review": 4
+    },
+    "ROLE_SLOTS_WIRE": true,
+    "ROLE_BY_POOL_SET": {
+      "1": "skill_native",
+      "2": "skill_native",
+      "3": "skill_native",
+      "4": "skill_native",
+      "5": "skill_native",
+      "6": "cover_r3",
+      "7": "cover_r3",
+      "8": "cover_r3",
+      "9": "shape_r2",
+      "10": "shape_r2"
+    }
+  },
+  "n_cache_rows": 600,
+  "n_draw_brain": 600,
+  "n_repack": 3000,
+  "n_exact_pool_copy": 2400,
+  "copy_ratio": 0.8,
+  "n_not_exact_copy": 600,
+  "copies_per_draw_brain": {
+    "4": 600
+  },
+  "copy_from_pool_set_1to10": {
+    "1": 423,
+    "2": 226,
+    "3": 185,
+    "4": 197,
+    "5": 216,
+    "6": 155,
+    "7": 156,
+    "8": 171,
+    "9": 341,
+    "10": 330
+  },
+  "copy_from_role": {
+    "skill_native": 1247,
+    "shape_r2": 671,
+    "cover_r3": 482
+  },
+  "copy_from_pool_set_by_brain": {
+    "stat": {
+      "1": 168,
+      "2": 76,
+      "3": 45,
+      "4": 50,
+      "5": 79,
+      "6": 30,
+      "7": 43,
+      "8": 47,
+      "9": 133,
+      "10": 129
+    },
+    "markov": {
+      "1": 140,
+      "2": 70,
+      "3": 74,
+      "4": 65,
+      "5": 68,
+      "6": 73,
+      "7": 51,
+      "8": 65,
+      "9": 113,
+      "10": 81
+    },
+    "review": {
+      "1": 115,
+      "2": 80,
+      "3": 66,
+      "4": 82,
+      "5": 69,
+      "6": 52,
+      "7": 62,
+      "8": 59,
+      "9": 95,
+      "10": 120
+    }
+  },
+  "copy_to_repack_slot_1to5": {
+    "1": 600,
+    "2": 600,
+    "3": 600,
+    "4": 600,
+    "5": 0
+  },
+  "top_pool_to_repack_pairs": [
+    {
+      "pool_set": 1,
+      "repack_set": 3,
+      "n": 154
+    },
+    {
+      "pool_set": 1,
+      "repack_set": 4,
+      "n": 135
+    },
+    {
+      "pool_set": 9,
+      "repack_set": 4,
+      "n": 110
+    },
+    {
+      "pool_set": 10,
+      "repack_set": 2,
+      "n": 104
+    },
+    {
+      "pool_set": 10,
+      "repack_set": 4,
+      "n": 96
+    },
+    {
+      "pool_set": 2,
+      "repack_set": 1,
+      "n": 96
+    },
+    {
+      "pool_set": 9,
+      "repack_set": 3,
+      "n": 90
+    },
+    {
+      "pool_set": 1,
+      "repack_set": 2,
+      "n": 86
+    },
+    {
+      "pool_set": 9,
+      "repack_set": 1,
+      "n": 83
+    },
+    {
+      "pool_set": 5,
+      "repack_set": 1,
+      "n": 72
+    },
+    {
+      "pool_set": 2,
+      "repack_set": 2,
+      "n": 70
+    },
+    {
+      "pool_set": 10,
+      "repack_set": 1,
+      "n": 67
+    },
+    {
+      "pool_set": 5,
+      "repack_set": 2,
+      "n": 67
+    },
+    {
+      "pool_set": 10,
+      "repack_set": 3,
+      "n": 63
+    },
+    {
+      "pool_set": 3,
+      "repack_set": 1,
+      "n": 60
+    }
+  ],
+  "draw_brain_where_all_copies_from_set_le4": 3,
+  "source_field": {
+    "empty": 3000
+  },
+  "source_set_no_present": 0,
+  "source_set_no_vs_nums_mismatch": 0,
+  "draw_1210": {
+    "stat": {
+      "copies": [
+        {
+          "pool_set": 10,
+          "role": "shape_r2",
+          "repack_set": 1,
+          "nums": [
+            2,
+            6,
+            24,
+            27,
+            31,
+            37
+          ]
+        },
+        {
+          "pool_set": 4,
+          "role": "skill_native",
+          "repack_set": 2,
+          "nums": [
+            7,
+            11,
+            16,
+            24,
+            27,
+            38
+          ]
+        },
+        {
+          "pool_set": 1,
+          "role": "skill_native",
+          "repack_set": 3,
+          "nums": [
+            6,
+            16,
+            24,
+            27,
+            31,
+            37
+          ]
+        },
+        {
+          "pool_set": 9,
+          "role": "shape_r2",
+          "repack_set": 4,
+          "nums": [
+            16,
+            17,
+            24,
+            27,
+            31,
+            37
+          ]
+        }
+      ],
+      "n_copy": 4,
+      "pool_set_nos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "repack_all": [
+        {
+          "set_no": 1,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            2,
+            6,
+            24,
+            27,
+            31,
+            37
+          ],
+          "matched_pool_set": 10
+        },
+        {
+          "set_no": 2,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            7,
+            11,
+            16,
+            24,
+            27,
+            38
+          ],
+          "matched_pool_set": 4
+        },
+        {
+          "set_no": 3,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            6,
+            16,
+            24,
+            27,
+            31,
+            37
+          ],
+          "matched_pool_set": 1
+        },
+        {
+          "set_no": 4,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            16,
+            17,
+            24,
+            27,
+            31,
+            37
+          ],
+          "matched_pool_set": 9
+        },
+        {
+          "set_no": 5,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            3,
+            16,
+            24,
+            27,
+            37,
+            38
+          ],
+          "matched_pool_set": null
+        }
+      ]
+    },
+    "markov": {
+      "copies": [
+        {
+          "pool_set": 1,
+          "role": "skill_native",
+          "repack_set": 1,
+          "nums": [
+            1,
+            12,
+            13,
+            20,
+            35,
+            45
+          ]
+        },
+        {
+          "pool_set": 5,
+          "role": "skill_native",
+          "repack_set": 2,
+          "nums": [
+            2,
+            6,
+            17,
+            19,
+            36,
+            37
+          ]
+        },
+        {
+          "pool_set": 3,
+          "role": "skill_native",
+          "repack_set": 3,
+          "nums": [
+            1,
+            7,
+            12,
+            17,
+            27,
+            38
+          ]
+        },
+        {
+          "pool_set": 9,
+          "role": "shape_r2",
+          "repack_set": 4,
+          "nums": [
+            12,
+            13,
+            18,
+            20,
+            35,
+            45
+          ]
+        }
+      ],
+      "n_copy": 4,
+      "pool_set_nos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "repack_all": [
+        {
+          "set_no": 1,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            1,
+            12,
+            13,
+            20,
+            35,
+            45
+          ],
+          "matched_pool_set": 1
+        },
+        {
+          "set_no": 2,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            2,
+            6,
+            17,
+            19,
+            36,
+            37
+          ],
+          "matched_pool_set": 5
+        },
+        {
+          "set_no": 3,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            1,
+            7,
+            12,
+            17,
+            27,
+            38
+          ],
+          "matched_pool_set": 3
+        },
+        {
+          "set_no": 4,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            12,
+            13,
+            18,
+            20,
+            35,
+            45
+          ],
+          "matched_pool_set": 9
+        },
+        {
+          "set_no": 5,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            3,
+            7,
+            12,
+            13,
+            18,
+            27
+          ],
+          "matched_pool_set": null
+        }
+      ]
+    },
+    "review": {
+      "copies": [
+        {
+          "pool_set": 2,
+          "role": "skill_native",
+          "repack_set": 1,
+          "nums": [
+            3,
+            18,
+            24,
+            32,
+            35,
+            39
+          ]
+        },
+        {
+          "pool_set": 4,
+          "role": "skill_native",
+          "repack_set": 2,
+          "nums": [
+            18,
+            20,
+            25,
+            27,
+            37,
+            45
+          ]
+        },
+        {
+          "pool_set": 8,
+          "role": "cover_r3",
+          "repack_set": 3,
+          "nums": [
+            18,
+            28,
+            35,
+            37,
+            39,
+            45
+          ]
+        },
+        {
+          "pool_set": 1,
+          "role": "skill_native",
+          "repack_set": 4,
+          "nums": [
+            8,
+            19,
+            20,
+            34,
+            35,
+            43
+          ]
+        }
+      ],
+      "n_copy": 4,
+      "pool_set_nos": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "repack_all": [
+        {
+          "set_no": 1,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            3,
+            18,
+            24,
+            32,
+            35,
+            39
+          ],
+          "matched_pool_set": 2
+        },
+        {
+          "set_no": 2,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            18,
+            20,
+            25,
+            27,
+            37,
+            45
+          ],
+          "matched_pool_set": 4
+        },
+        {
+          "set_no": 3,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            18,
+            28,
+            35,
+            37,
+            39,
+            45
+          ],
+          "matched_pool_set": 8
+        },
+        {
+          "set_no": 4,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            8,
+            19,
+            20,
+            34,
+            35,
+            43
+          ],
+          "matched_pool_set": 1
+        },
+        {
+          "set_no": 5,
+          "source": null,
+          "source_set_no": null,
+          "nums": [
+            20,
+            27,
+            34,
+            37,
+            40,
+            45
+          ],
+          "matched_pool_set": null
+        }
+      ]
+    }
+  },
+  "sample": [
+    {
+      "draw": 1037,
+      "brain": "stat",
+      "pool_set": 1,
+      "role": "skill_native",
+      "repack_set": 1,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "stat",
+      "pool_set": 9,
+      "role": "shape_r2",
+      "repack_set": 2,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "stat",
+      "pool_set": 4,
+      "role": "skill_native",
+      "repack_set": 3,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "stat",
+      "pool_set": 10,
+      "role": "shape_r2",
+      "repack_set": 4,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "markov",
+      "pool_set": 10,
+      "role": "shape_r2",
+      "repack_set": 1,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "markov",
+      "pool_set": 1,
+      "role": "skill_native",
+      "repack_set": 2,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "markov",
+      "pool_set": 9,
+      "role": "shape_r2",
+      "repack_set": 3,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "markov",
+      "pool_set": 8,
+      "role": "cover_r3",
+      "repack_set": 4,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "review",
+      "pool_set": 1,
+      "role": "skill_native",
+      "repack_set": 1,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "review",
+      "pool_set": 9,
+      "role": "shape_r2",
+      "repack_set": 2,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "review",
+      "pool_set": 10,
+      "role": "shape_r2",
+      "repack_set": 3,
+      "source_field": "empty"
+    },
+    {
+      "draw": 1037,
+      "brain": "review",
+      "pool_set": 3,
+      "role": "skill_native",
+      "repack_set": 4,
+      "source_field": "empty"
+    }
+  ],
+  "notes": [
+    "고정 4·5번 복제가 아님(구 hybrid는 버그성 하드코딩이었고 이미 교체됨).",
+    "현행 signal_union: 위치EMA 상위 2장 + 세트점수 상위 보충 cap4 + 재조합 1장.",
+    "10세트 번호(1~10)는 역할 슬롯이지 '1등이 잘 맞는 순서'가 아님.",
+    "복사 대상이 1~10에 퍼지면 설계대로, 항상 1~4만이면 EMA0 초기편향 모니터."
+  ]
+}
