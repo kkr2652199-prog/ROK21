@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6ff1680` |
+| HEAD(실측) | `9443d1a` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 패치엔진 stat 리셋+200 PASS · NEXT=형다음(markov) |
-| 직전 | 패치BT 1·2·3등0 · 4등고유10 · 5등53(모니터) |
-| BOOT다음 | 형 다음 1건(권고=markov 동일배선) / 1237아님 |
-| NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 패치엔진 stat 리셋+200 **PASS**. peek0 err0. 모니터 1~5 mean **0.83**. 등수 1·2·3=0 4등고유**10** 5등**53**. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. |
-| 승인필요 | **형 다음 1건** |
-| 선행 | BT200 PASS |
+| 지금 | **양산前** · stat엔진진화 SPEC · NEXT=S1 cover-union |
+| 직전 | 6~10등수학습기아님 · 몰아주기=복사4+상위6 |
+| BOOT다음 | S1 K-STAT-COVER-OUTSIDE-UNION / 1237아님 |
+| NEXT1 ID | **K-STAT-COVER-OUTSIDE-UNION** |
+| NEXT1 할일 | **양산前**. S0 SPEC완료. **stat cover 6~8**을 Jaccard최저 → **skill union 밖 번호 최대**(동점=8장 union). 1~5불변. 게이트 prefer/prize iso. ge3미클레임. **1237아님**. |
+| 승인필요 | 없음(형 캠페인GO · stat엔진+몰아주기) |
+| 선행 | 패치BT200 PASS |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6ff1680 · 지금=**양산前** · 패치엔진 stat 리셋+200 PASS · NEXT=형다음(markov) · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=9443d1a · 지금=**양산前** · stat엔진진화 SPEC · NEXT=S1 cover-union · 다음=K-STAT-COVER-OUTSIDE-UNION`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 6ff1680_
+_generated: 9443d1a_
