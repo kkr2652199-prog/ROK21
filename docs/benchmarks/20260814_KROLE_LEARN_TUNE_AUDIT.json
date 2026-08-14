@@ -1,0 +1,236 @@
+{
+  "id": "K-ROLE-LEARN-TUNE-AUDIT",
+  "as_of": "2026-08-14T20:11:38+09:00",
+  "window": [
+    1037,
+    1236
+  ],
+  "ge3_claim": false,
+  "draw_1237": false,
+  "verdict_tune_now": "HOLD_NO_PER_BRAIN_ROLE_SWEEP",
+  "knobs": {
+    "ASSEMBLE_MODE": "signal_union",
+    "ROLE_SLOTS_WIRE": true,
+    "HINT_SPEC_BY_BRAIN": {
+      "stat": [
+        52,
+        "miss_pattern"
+      ],
+      "markov": [
+        null,
+        "crowd_prefer"
+      ],
+      "review": [
+        null,
+        "crowd_prize"
+      ]
+    },
+    "SCORE_WEIGHTS_BY_BRAIN": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "POOL_SLOTS_BY_BRAIN": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
+    "POOL_UNION_CAP_BY_BRAIN": {
+      "markov": 4,
+      "stat": 4,
+      "review": 4
+    },
+    "SKILL_KIND_BY_BRAIN": {
+      "stat": [
+        "miss_pattern",
+        52
+      ],
+      "markov": [
+        "crowd_prefer",
+        null
+      ],
+      "review": [
+        "crowd_prize",
+        null
+      ]
+    },
+    "SKILL_HOMEWORK_CONSUME": true
+  },
+  "n_ledger_rows": 8955,
+  "ledger_role_col_filled": 8955,
+  "skill_homework_rows": 600,
+  "brain_review_rows": 597,
+  "by_brain_role": {
+    "stat": {
+      "cover_r3": {
+        "n": 597,
+        "mean_hits": 0.7655,
+        "ge3": 8,
+        "ge4": 0,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 78
+      },
+      "focus_r1": {
+        "n": 995,
+        "mean_hits": 0.8291,
+        "ge3": 31,
+        "ge4": 6,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 141
+      },
+      "shape_r2": {
+        "n": 398,
+        "mean_hits": 0.8693,
+        "ge3": 14,
+        "ge4": 4,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 61
+      },
+      "skill_native": {
+        "n": 995,
+        "mean_hits": 0.8302,
+        "ge3": 35,
+        "ge4": 6,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 134
+      }
+    },
+    "markov": {
+      "cover_r3": {
+        "n": 597,
+        "mean_hits": 0.8007,
+        "ge3": 18,
+        "ge4": 2,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 93
+      },
+      "focus_r1": {
+        "n": 995,
+        "mean_hits": 0.7518,
+        "ge3": 32,
+        "ge4": 2,
+        "ge5": 1,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 1,
+        "bonus_hit_sets": 130
+      },
+      "shape_r2": {
+        "n": 398,
+        "mean_hits": 0.8015,
+        "ge3": 17,
+        "ge4": 1,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 56
+      },
+      "skill_native": {
+        "n": 995,
+        "mean_hits": 0.8121,
+        "ge3": 30,
+        "ge4": 2,
+        "ge5": 1,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 1,
+        "bonus_hit_sets": 126
+      }
+    },
+    "review": {
+      "cover_r3": {
+        "n": 597,
+        "mean_hits": 0.7923,
+        "ge3": 8,
+        "ge4": 1,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 96
+      },
+      "focus_r1": {
+        "n": 995,
+        "mean_hits": 0.809,
+        "ge3": 27,
+        "ge4": 9,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 124
+      },
+      "shape_r2": {
+        "n": 398,
+        "mean_hits": 0.8417,
+        "ge3": 13,
+        "ge4": 3,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 40
+      },
+      "skill_native": {
+        "n": 995,
+        "mean_hits": 0.8221,
+        "ge3": 30,
+        "ge4": 5,
+        "ge5": 0,
+        "r2_5plus_bonus": 0,
+        "r3_5_no_bonus": 0,
+        "bonus_hit_sets": 122
+      }
+    }
+  },
+  "mean_delta_vs_skill": {
+    "stat": {
+      "cover_minus_skill_mean": -0.0647,
+      "shape_minus_skill_mean": 0.0391,
+      "focus_minus_skill_mean": -0.0011
+    },
+    "markov": {
+      "cover_minus_skill_mean": -0.0114,
+      "shape_minus_skill_mean": -0.0106,
+      "focus_minus_skill_mean": -0.0603
+    },
+    "review": {
+      "cover_minus_skill_mean": -0.0298,
+      "shape_minus_skill_mean": 0.0196,
+      "focus_minus_skill_mean": -0.0131
+    }
+  },
+  "prior_gates": {
+    "L5_defects": [],
+    "L6_L8": "skip",
+    "L9_slots_cap": "HOLD",
+    "L11_review_shape": "HOLD",
+    "L11b_markov_bday": "HOLD",
+    "L11c_stat_win1y": "HOLD"
+  },
+  "structural": {
+    "cover_shape_have_own_learner": false,
+    "cover_uses_brain_predict_sets": true,
+    "shape_uses_skill_set1_morph": true,
+    "cover_shape_reread_hint": false,
+    "repack_role_aware_select": false,
+    "repack_selects_by": "pos_ema_set_no + set_score, cap4"
+  }
+}
