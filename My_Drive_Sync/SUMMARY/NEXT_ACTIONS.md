@@ -2,7 +2,7 @@
 
 > STEP1 guard_boot 는 **아래 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. stat 6~10복습 **BT200 PASS** · COVER_MIN_HITS**3**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**.
+- 할일: **양산前**. 7021 **재가동 HTTP200**. stat 6~10복습 **BT200 PASS** · COVER_MIN_HITS**3**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**.
 - 완료조건: 형 다음 지시 1건
 - 선행완료: K-STAT-ROLE-LEARN-BT200 PASS
 - 승인필요: **형 다음 1건**

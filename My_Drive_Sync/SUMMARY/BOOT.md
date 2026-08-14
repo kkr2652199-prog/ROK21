@@ -5,8 +5,8 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · stat 6~10복습 BT200 PASS · COVER_MIN_HITS=3 · NEXT=형다음(markov)
-- 직전: 리셋+stat만200 · v1표빔 → 3맞복습 패치 재BT
+- 지금: **양산前** · 7021 재가동 HTTP200 · NEXT=형다음(markov)
+- 직전: stat 6~10복습 BT200 PASS · COVER_MIN_HITS=3
 - 다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
