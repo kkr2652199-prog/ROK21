@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `811f9a3` · WORK=`IDLE`
-- 지금: **양산前** · 200회 프로세스·학습 AUDIT PASS · NEXT=형다음(markov)
-- 직전: 7021 재가동 HTTP200
+- HEAD: `251ec41` · WORK=`IDLE`
+- 지금: **양산前** · 200회 성적안내(모니터) · NEXT=형다음(markov)
+- 직전: 200회 프로세스·학습 AUDIT PASS
 - BOOT다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 200회 프로세스·학습 **AUDIT PASS**. COVER_MIN_HITS**3**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인=**형 다음 1건**)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 200회 성적 **모니터안내됨**(발권0·1~5 mean_all **0.798**). 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인=**형 다음 1건**)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

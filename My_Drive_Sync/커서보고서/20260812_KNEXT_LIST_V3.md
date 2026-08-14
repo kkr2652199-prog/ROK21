@@ -149,6 +149,9 @@
 - 지금 DB 200회 프로세스 5+3+2 HARD0. 학습=stat cover n_pos 증가. UI강제백테표 0=SOFT.
 - 다음=형 1건(markov).
 
+### L13d K-BT200-SCORE-CARD — **DOC_OK**
+- 지금200 성적 모니터. 발권0. 1~5 mean_all **0.798**≈이론0.80. ge3미클레임.
+
 ---
 
 ## 3) 매핑
@@ -193,6 +196,7 @@
 | L13 | **WIRE_OK** (stat 6~8/9~10 복습) |
 | L13b | **PASS** (stat BT200 · COVER_MIN_HITS=3) |
 | L13c | **PASS** (지금200 프로세스·학습 AUDIT) |
+| L13d | **DOC_OK** (200회 성적 모니터 안내) |
 
 ---
 
