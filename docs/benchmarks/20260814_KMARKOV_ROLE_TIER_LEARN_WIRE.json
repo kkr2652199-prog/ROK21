@@ -1,0 +1,80 @@
+{
+  "id": "K-MARKOV-ROLE-TIER-LEARN-WIRE",
+  "as_of": "2026-08-14T22:29:15+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "iso_thr": 0.005,
+  "live_brains_after": [
+    "markov",
+    "stat"
+  ],
+  "smoke": {
+    "label": "smoke",
+    "lo": 1234,
+    "hi": 1236,
+    "n_ok": 3,
+    "n_target": 3,
+    "elapsed_s": 2.3,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "tnb1": true,
+    "stat_same": 3,
+    "review_same": 3,
+    "markov_skill_same": 3,
+    "markov_cover_diff": 0,
+    "markov_shape_diff": 3,
+    "src_cover_on": {
+      "cover_r3_role_hw": 9
+    },
+    "src_shape_on": {
+      "shape_r2_role_hw": 6
+    },
+    "prefer_off": 0.020974,
+    "prefer_on": 0.01662,
+    "prize_off": 0.013303,
+    "prize_on": 0.011814
+  },
+  "smoke_hard": true,
+  "gate100": {
+    "label": "gate100",
+    "lo": 1137,
+    "hi": 1236,
+    "n_ok": 100,
+    "n_target": 100,
+    "elapsed_s": 63.7,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "tnb1": true,
+    "stat_same": 100,
+    "review_same": 100,
+    "markov_skill_same": 100,
+    "markov_cover_diff": 0,
+    "markov_shape_diff": 100,
+    "src_cover_on": {
+      "cover_r3_role_hw": 300
+    },
+    "src_shape_on": {
+      "shape_r2_role_hw": 200
+    },
+    "prefer_off": 0.018957,
+    "prefer_on": 0.017147,
+    "prize_off": 0.01193,
+    "prize_on": 0.00929
+  },
+  "hard_ok": true,
+  "wire_alive": true,
+  "design_moved": true,
+  "prefer_not_worse": true,
+  "prize_not_worse": true,
+  "delta": {
+    "prefer": -0.00181,
+    "prize": -0.00264
+  },
+  "apply": true,
+  "verdict": "WIRE_OK",
+  "rollback": "ROLE_TIER_LEARN_BRAINS=frozenset({\"stat\"})"
+}

@@ -2,7 +2,7 @@
 """6~8(cover_r3)·9~10(shape_r2) 역할 숙제 — 원장 복습.
 
 1~5 skill_native 불변. 타깃 회차 보너스/당첨 미사용 (as_of < target).
-등수P 게이트 아님. 한 뇌만 ROLE_TIER_LEARN_BRAINS 로 소비.
+등수P 게이트 아님. 소비 뇌=ROLE_TIER_LEARN_BRAINS (순차 추가 · 3뇌 동시 신규튜닝 금지).
 """
 from __future__ import annotations
 
