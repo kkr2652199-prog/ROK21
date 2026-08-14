@@ -1,0 +1,164 @@
+{
+  "id": "K-STAT-PATCHED-BT200",
+  "as_of": "2026-08-14T21:31:31+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "flags": {
+    "ROLE_SLOTS_WIRE": true,
+    "ROLE_TIER_LEARN_WIRE": true,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "COVER_MIN_HITS": 3,
+    "STAT_POOL_LEARN_WIRE": true
+  },
+  "reset_deleted": {
+    "lotto_predictions": 0,
+    "lotto_analysis": 0,
+    "testlotto_brain_review": 200,
+    "testlotto_brain_learn_state": 0,
+    "testlotto_brain_weights": 3,
+    "testlotto_backtest_runs": 0,
+    "testlotto_backtest_draw_results": 0,
+    "testlotto_pool_view_cache": 600,
+    "testlotto_evolve_log": 0,
+    "testlotto_evolve_auto_state": 1,
+    "testlotto_pool_hit_ledger": 3000,
+    "testlotto_pool_hit_scatter": 400,
+    "testlotto_skill_homework": 600,
+    "testlotto_role_homework": 1200,
+    "hit_warrant_log": 0
+  },
+  "smoke": {
+    "label": "smoke",
+    "lo": 1234,
+    "hi": 1236,
+    "n_ok": 3,
+    "n_target": 3,
+    "elapsed_s": 1.1,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "by_role": {
+      "skill_native": {
+        "n": 3,
+        "mean_all": 1.1333,
+        "mean_best": 2,
+        "ge3_best_count": 1,
+        "monitor_only": true
+      },
+      "cover_r3": {
+        "n": 3,
+        "mean_all": 1,
+        "mean_best": 1.6667,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      },
+      "shape_r2": {
+        "n": 3,
+        "mean_all": 1.1667,
+        "mean_best": 1.3333,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      },
+      "focus_r1": {
+        "n": 3,
+        "mean_all": 1.2,
+        "mean_best": 1.3333,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      }
+    },
+    "unique_combo_tier": {
+      "1등": 0,
+      "2등": 0,
+      "3등": 0,
+      "4등": 0,
+      "5등": 1,
+      "미적중": 32
+    },
+    "draw_best_tier": {
+      "1등": 0,
+      "2등": 0,
+      "3등": 0,
+      "4등": 0,
+      "5등": 1
+    },
+    "draws_with_any_tier": 1,
+    "monitor_only": true
+  },
+  "smoke_hard": true,
+  "bt200": {
+    "label": "bt200",
+    "lo": 1037,
+    "hi": 1236,
+    "n_ok": 200,
+    "n_target": 200,
+    "elapsed_s": 311.7,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "by_role": {
+      "skill_native": {
+        "n": 200,
+        "mean_all": 0.83,
+        "mean_best": 1.81,
+        "ge3_best_count": 34,
+        "monitor_only": true
+      },
+      "cover_r3": {
+        "n": 200,
+        "mean_all": 0.8183,
+        "mean_best": 1.46,
+        "ge3_best_count": 11,
+        "monitor_only": true
+      },
+      "shape_r2": {
+        "n": 200,
+        "mean_all": 0.8575,
+        "mean_best": 1.07,
+        "ge3_best_count": 11,
+        "monitor_only": true
+      },
+      "focus_r1": {
+        "n": 200,
+        "mean_all": 0.819,
+        "mean_best": 1.545,
+        "ge3_best_count": 21,
+        "monitor_only": true
+      }
+    },
+    "unique_combo_tier": {
+      "1등": 0,
+      "2등": 0,
+      "3등": 0,
+      "4등": 10,
+      "5등": 53,
+      "미적중": 2137
+    },
+    "draw_best_tier": {
+      "1등": 0,
+      "2등": 0,
+      "3등": 0,
+      "4등": 7,
+      "5등": 39
+    },
+    "draws_with_any_tier": 46,
+    "monitor_only": true
+  },
+  "census": {
+    "draws_max": 1236,
+    "pred": 0,
+    "pred_1237": 0,
+    "cache": 600,
+    "ledger": 3000,
+    "role_hw": 1200,
+    "skill_hw": 600,
+    "brain_review": 200,
+    "review_stat": 200
+  },
+  "hard_ok": true,
+  "verdict": "PASS"
+}
