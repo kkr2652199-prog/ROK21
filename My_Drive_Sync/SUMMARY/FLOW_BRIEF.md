@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5ff2beb` · WORK=`IDLE`
+- HEAD: `486f34e` · WORK=`IDLE`
 - 지금: **양산前** · 200회 등수=1·2·3등0 4등1 · NEXT=형다음(markov)
 - 직전: 200회 성적안내(모니터)
 - BOOT다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
