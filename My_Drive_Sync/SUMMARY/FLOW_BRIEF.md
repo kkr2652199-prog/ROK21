@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0052be3` · WORK=`IDLE`
+- HEAD: `0f5bf79` · WORK=`IDLE`
 - 지금: **양산前** · 몰아주기복제=시스템(cap4·1~10가변) · NEXT=형다음1건
 - 직전: 10세트 중 몇 번째 복제 분석 SYSTEM_NOT_BUG
 - BOOT다음: 형 다음 1건 / 1237아님
