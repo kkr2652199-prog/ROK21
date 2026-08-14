@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-14 KST  
-📌 사유: **[CURSOR] K-STAT-REPACK-MIX-RECOMBINE** — S4 APPLY · 5번째 장=복사밖 고점수6
+📌 사유: **[CURSOR] K-STAT-ENGINE-EVOLVE-BT200** — S5 PASS · 리셋+stat 200회 모니터
 
-📌 직전: **[CURSOR] K-STAT-REPACK-ROLE-QUOTA** — S3 APPLY · 몰아주기 cover최소1·shape최대1
+📌 직전: **[CURSOR] K-STAT-REPACK-MIX-RECOMBINE** — S4 APPLY · 5번째 장=복사밖 고점수6
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-STAT-ENGINE-EVOLVE-BT200 (S5)** | **PASS** · 모니터만 — S1~S4 라이브(S2 HOLD set1)로 예측산출물 리셋 후 **stat만** 1037~1236 n**200**. 플래그 ROLE_SLOTS+ROLE_TIER_LEARN(stat)+COVER_MIN_HITS**3**+STAT_POOL_LEARN+COVER `outside_union`+쿼터ON+RECOMBINE `complement`. HARD: peek**0** · err**0** · size**0** · n_ok**200** · pred_1237**0** · review_stat**200** · draws_max**1236**. 칸 mean_all 1~5 **0.83** / 6~8 **0.74** / 9~10 **0.8575** / 몰아주기 **0.798**(이론1장 0.80·클레임금지). prefer **0.009443** · prize **0.004396**. union10 **31.55** · union_repack **22.685** · 재조합J **0.0**. 고유조합 1등**0** 2등**0** 3등**0** 4등**12** 5등**55**. pool역할 4등 skill6+shape4+cover0 · 5등 s29+shape11+cover9. 회차최고 4등**8**회·5등**42**회·등수있는회 **50**/200. census cache**600** ledger**3000** role_hw**1200** skill_hw**600** brain_review**200**. 발권0·ge3미클레임·DB커밋안함·1237아님. · `docs/benchmarks/20260814_KSTAT_ENGINE_EVOLVE_BT200.json` · `reports/20260814_KSTAT_ENGINE_EVOLVE_BT200.md` · `tools/_k_stat_engine_evolve_bt200.py` |
 | **K-STAT-REPACK-MIX-RECOMBINE (S4)** | **APPLY** · mode=`complement` · 롤백=`REPACK_RECOMBINE_MODE="top6"` · **stat만**. 몰아주기 5번째 장=복사4 번호합을 뺀 고점수 6개(부족 시 top6). pool 1~10·복사4 HARD동일 **100**/100. 스모크 PASS. 게이트1137~1236 n100: 5장변경 **100**/100. Jaccard 복사4 **0.287264→0.0** · union_repack **17.69→22.66** · 보완∩복사 **0**. prefer Δ**-0.003394** · prize Δ**-0.002431** 비악화. ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260814_KSTAT_REPACK_MIX_RECOMBINE.json` · `reports/20260814_KSTAT_REPACK_MIX_RECOMBINE.md` · `app/testlotto/signal_pool.py` · `tools/_k_stat_repack_mix_recombine.py` |
 | **K-STAT-REPACK-ROLE-QUOTA (S3)** | **APPLY** · `REPACK_ROLE_QUOTA_WIRE=True` · **stat만**. 몰아주기 cap4 복사: skill≥1 · cover≥1 · shape≤1. pool 1~10 HARD동일 **100**/100. 스모크 PASS. 게이트1137~1236 n100: 몰아주기변경 **94**/100. cover 0장회 **49→0**. cover비율 **0.112→0.212** · shape비율 **0.254→0.16**. prefer Δ**+0.00049** · prize Δ**-0.000328** 비악화. 롤백=`False`. ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260814_KSTAT_REPACK_ROLE_QUOTA.json` · `reports/20260814_KSTAT_REPACK_ROLE_QUOTA.md` · `app/testlotto/signal_pool.py` · `tools/_k_stat_repack_role_quota.py` |
 | **K-STAT-SHAPE-CONSENSUS-CORE (S2)** | **HOLD_ISO_FAIL** · live=`SHAPE_CORE_MODE=set1` · 롤백키 동명. HARD PASS: skill·cover 동일 **100**/100 · T-NB1 OK · shape변경 **100**/100 · source `shape_r2_consensus`×200. 설계 Jaccard set1 **0.7143→0.2856**(클론 해제). prefer Δ**+0.012169**≥0.005 **인기↑=비악화실패**. prize Δ**-0.00959**(몫축은 개선·단독APPLY불가). 코드는 플래그로 보존·라이브 구경로. ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260814_KSTAT_SHAPE_CONSENSUS_CORE.json` · `reports/20260814_KSTAT_SHAPE_CONSENSUS_CORE.md` · `app/testlotto/role_slots.py` · `tools/_k_stat_shape_consensus_core.py` |
