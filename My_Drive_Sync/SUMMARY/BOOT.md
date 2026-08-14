@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · stat엔진진화 SPEC · NEXT=S1 cover-union
-- 직전: 6~10등수학습기아님 · 몰아주기=복사4+상위6
-- 다음: S1 K-STAT-COVER-OUTSIDE-UNION / 1237아님
+- 지금: **양산前** · S1 cover-union APPLY · NEXT=S2 shape코어
+- 직전: union10 30.05→31.72 · 1~5불변100 · prefer비악화
+- 다음: S2 K-STAT-SHAPE-CONSENSUS-CORE / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

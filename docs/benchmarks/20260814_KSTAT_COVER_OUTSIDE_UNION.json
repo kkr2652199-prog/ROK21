@@ -1,0 +1,84 @@
+{
+  "id": "K-STAT-COVER-OUTSIDE-UNION",
+  "as_of": "2026-08-14T21:58:27+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "iso_thr": 0.005,
+  "live_mode_after": "outside_union",
+  "smoke": {
+    "label": "smoke",
+    "lo": 1234,
+    "hi": 1236,
+    "n_ok": 3,
+    "n_target": 3,
+    "elapsed_s": 1.3,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "skill_same": 3,
+    "cover_diff": 3,
+    "src_on": {
+      "cover_r3_outside_union": 9
+    },
+    "geom_off": {
+      "union10": 31.3333,
+      "outside_mean": 1.8889,
+      "jac_cover_skill": 0.1011
+    },
+    "geom_on": {
+      "union10": 33.3333,
+      "outside_mean": 2.6667,
+      "jac_cover_skill": 0.075
+    },
+    "prefer_off": 0.004151,
+    "prefer_on": -0.004066,
+    "prize_off": 0.008622,
+    "prize_on": 0.00338
+  },
+  "smoke_hard": true,
+  "gate100": {
+    "label": "gate100",
+    "lo": 1137,
+    "hi": 1236,
+    "n_ok": 100,
+    "n_target": 100,
+    "elapsed_s": 20.9,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "skill_same": 100,
+    "cover_diff": 99,
+    "src_on": {
+      "cover_r3_outside_union": 300
+    },
+    "geom_off": {
+      "union10": 30.05,
+      "outside_mean": 2.3267,
+      "jac_cover_skill": 0.102
+    },
+    "geom_on": {
+      "union10": 31.72,
+      "outside_mean": 3.0067,
+      "jac_cover_skill": 0.0799
+    },
+    "prefer_off": 0.012046,
+    "prefer_on": 0.006505,
+    "prize_off": 0.00467,
+    "prize_on": 0.001839
+  },
+  "hard_ok": true,
+  "wire_alive": true,
+  "design_moved": true,
+  "prefer_prize_iso": true,
+  "prefer_not_worse": true,
+  "prize_not_worse": true,
+  "delta": {
+    "prefer": -0.005541,
+    "prize": -0.002831
+  },
+  "apply": true,
+  "verdict": "APPLY",
+  "rollback": "COVER_SELECT_MODE='jaccard'"
+}

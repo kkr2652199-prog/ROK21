@@ -16,6 +16,13 @@ ROLE_COVER = "cover_r3"
 ROLE_SHAPE = "shape_r2"
 ROLE_FOCUS = "focus_r1"
 
+# K-STAT-COVER-OUTSIDE-UNION (S1)
+# jaccard = 구경로(1~5와 최소 Jaccard).
+# outside_union = skill union 밖 번호 최대 → 8장 union → Jaccard/숙제 동점.
+# 롤백: COVER_SELECT_MODE="jaccard". stat만 (타뇌 구경로).
+COVER_SELECT_MODE: str = "outside_union"
+COVER_SELECT_BRAINS: frozenset[str] = frozenset({"stat"})
+
 ROLE_BY_POOL_SET: dict[int, tuple[str, str]] = {
     1: (ROLE_SKILL, "pass0"),
     2: (ROLE_SKILL, "pass0"),
@@ -40,6 +47,10 @@ def _jaccard(a: list[int], b: list[int]) -> float:
     if not u:
         return 0.0
     return len(sa & sb) / len(u)
+
+
+def _cover_outside_active(brain_tag: str) -> bool:
+    return COVER_SELECT_MODE == "outside_union" and str(brain_tag) in COVER_SELECT_BRAINS
 
 
 def label_skill_sets(
@@ -73,9 +84,11 @@ def build_cover_r3_sets(
     draw_no: int,
     n: int = 3,
 ) -> list[dict[str, Any]]:
-    """pass1a: 시드 오프셋 predict 후보에서 skill 대비 Jaccard 낮은 3장.
+    """pass1a: 시드 오프셋 predict 후보에서 cover 3장.
 
-    SPEC 후보 (A). 타깃 정답·bonus 미사용.
+    jaccard: skill 대비 Jaccard 낮은 순.
+    outside_union(stat): skill union 밖 번호 최대 → 누적 union → Jaccard/숙제.
+    타깃 정답·bonus 미사용.
     """
     from app.testlotto.signal_pool import _pass_seed
 
@@ -87,6 +100,9 @@ def build_cover_r3_sets(
 
     skill_keys = {_nums_key(s["nums"]) for s in skill_sets}
     skill_nums = [list(s["nums"]) for s in skill_sets]
+    skill_union: set[int] = set()
+    for sk in skill_nums:
+        skill_union |= {int(x) for x in sk}
 
     cover_w: dict[int, float] = {}
     use_hw = False
@@ -103,31 +119,36 @@ def build_cover_r3_sets(
         use_hw = False
         cover_w = {}
 
-    def cover_key(c: dict) -> tuple:
+    use_out = _cover_outside_active(brain_tag)
+
+    def _hw(nums: list[int]) -> float:
+        if use_hw and cover_w:
+            return -sum(float(cover_w.get(n, 0.0)) for n in nums)
+        return 0.0
+
+    def _jac_skill(nums: list[int]) -> float:
+        if not skill_nums:
+            return 0.0
+        return min(_jaccard(nums, sk) for sk in skill_nums)
+
+    def cover_key_jaccard(c: dict) -> tuple:
         nums = [int(x) for x in c.get("nums") or []]
         if len(nums) != 6:
             return (9.0, 0.0, _nums_key(nums))
-        jac = (
-            min(_jaccard(nums, sk) for sk in skill_nums) if skill_nums else 0.0
-        )
+        jac = _jac_skill(nums)
         if use_hw and cover_w:
-            sc = -sum(float(cover_w.get(n, 0.0)) for n in nums)
-            return (sc, jac, _nums_key(nums))
+            return (_hw(nums), jac, _nums_key(nums))
         return (jac, 0.0, _nums_key(nums))
 
-    ranked = sorted(cands, key=cover_key)
     picked: list[dict[str, Any]] = []
     picked_keys: set[tuple[int, ...]] = set()
-    for c in ranked:
-        nums = [int(x) for x in c.get("nums") or []]
-        if len(nums) != 6:
-            continue
-        key = _nums_key(nums)
-        if key in skill_keys or key in picked_keys:
-            continue
-        # 이미 고른 cover와도 너무 겹치면 스킵
-        if picked and min(_jaccard(nums, p["nums"]) for p in picked) > 0.85:
-            continue
+    src_label = (
+        "cover_r3_outside_union"
+        if use_out
+        else ("cover_r3_role_hw" if use_hw and cover_w else "cover_r3_jaccard")
+    )
+
+    def _accept(c: dict, nums: list[int]) -> None:
         sn = 6 + len(picked)
         picked.append(
             {
@@ -139,14 +160,63 @@ def build_cover_r3_sets(
                 "kind": "pool",
                 "role": ROLE_COVER,
                 "role_pass": "pass1a",
-                "source": "cover_r3_role_hw" if use_hw and cover_w else "cover_r3_jaccard",
+                "source": src_label,
             }
         )
-        picked_keys.add(key)
-        if len(picked) >= n:
-            break
+        picked_keys.add(_nums_key(nums))
 
-    # 부족 시: skill 변형(번호 1개 교체)으로 채움 — bonus 미사용
+    def _ok_overlap(nums: list[int]) -> bool:
+        key = _nums_key(nums)
+        if key in skill_keys or key in picked_keys:
+            return False
+        if picked and min(_jaccard(nums, p["nums"]) for p in picked) > 0.85:
+            return False
+        return True
+
+    if use_out:
+        remaining = [
+            c for c in cands if len([int(x) for x in (c.get("nums") or [])]) == 6
+        ]
+        acc_union = set(skill_union)
+        while len(picked) < n and remaining:
+            def out_key(c: dict) -> tuple:
+                nums = [int(x) for x in (c.get("nums") or [])]
+                ns = set(nums)
+                outside = len(ns - skill_union)
+                union8 = len(acc_union | ns)
+                return (
+                    -outside,
+                    -union8,
+                    _hw(nums),
+                    _jac_skill(nums),
+                    _nums_key(nums),
+                )
+
+            remaining.sort(key=out_key)
+            took = None
+            for c in remaining:
+                nums = [int(x) for x in (c.get("nums") or [])]
+                if not _ok_overlap(nums):
+                    continue
+                _accept(c, nums)
+                acc_union |= set(nums)
+                took = c
+                break
+            if took is None:
+                break
+            remaining = [c for c in remaining if c is not took]
+    else:
+        ranked = sorted(cands, key=cover_key_jaccard)
+        for c in ranked:
+            nums = [int(x) for x in c.get("nums") or []]
+            if len(nums) != 6:
+                continue
+            if not _ok_overlap(nums):
+                continue
+            _accept(c, nums)
+            if len(picked) >= n:
+                break
+
     rng = random.Random(_pass_seed(seed, draw_no, 1) + 777)
     while len(picked) < n and skill_sets:
         base = [int(x) for x in skill_sets[len(picked) % len(skill_sets)]["nums"]]
@@ -154,8 +224,17 @@ def build_cover_r3_sets(
             break
         drop = rng.randrange(6)
         core = [base[j] for j in range(6) if j != drop]
-        cands_n = [x for x in range(1, 46) if x not in set(base)]
-        rng.shuffle(cands_n)
+        used = set(base)
+        outside_pool = [x for x in range(1, 46) if x not in used and x not in skill_union]
+        inside_pool = [x for x in range(1, 46) if x not in used and x in skill_union]
+        if use_out and outside_pool:
+            rng.shuffle(outside_pool)
+            cands_n = outside_pool + inside_pool
+        else:
+            cands_n = [x for x in range(1, 46) if x not in used]
+            rng.shuffle(cands_n)
+        if not cands_n:
+            break
         nums = sorted(core + [cands_n[0]])
         key = _nums_key(nums)
         if key in skill_keys or key in picked_keys:
