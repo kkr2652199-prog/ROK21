@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4f17c7c` · WORK=`IDLE`
+- HEAD: `d106f51` · WORK=`IDLE`
 - 지금: **양산前** · 7021 재가동 HTTP200 · NEXT=형다음(markov)
 - 직전: stat 6~10복습 BT200 PASS · COVER_MIN_HITS=3
 - BOOT다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
