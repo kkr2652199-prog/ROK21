@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import inspect
 import random
+from collections import Counter
 from typing import Any, Callable
 
 ROLE_SKILL = "skill_native"
@@ -22,6 +23,13 @@ ROLE_FOCUS = "focus_r1"
 # 롤백: COVER_SELECT_MODE="jaccard". stat만 (타뇌 구경로).
 COVER_SELECT_MODE: str = "outside_union"
 COVER_SELECT_BRAINS: frozenset[str] = frozenset({"stat"})
+
+# K-STAT-SHAPE-CONSENSUS-CORE (S2)
+# set1 = 구경로(1번 세트에서 1칸 교체).
+# consensus = 1~5에서 2회 이상 번호로 core5, 부족 시 1번 보충. 6번째=숙제표.
+# 롤백: SHAPE_CORE_MODE="set1". stat만. 시그니처에 bonus/actual 금지(T-NB1).
+SHAPE_CORE_MODE: str = "set1"
+SHAPE_CORE_BRAINS: frozenset[str] = frozenset({"stat"})
 
 ROLE_BY_POOL_SET: dict[int, tuple[str, str]] = {
     1: (ROLE_SKILL, "pass0"),
@@ -260,6 +268,36 @@ def build_cover_r3_sets(
     return picked
 
 
+def _shape_consensus_active(brain_tag: str) -> bool:
+    return SHAPE_CORE_MODE == "consensus" and str(brain_tag) in SHAPE_CORE_BRAINS
+
+
+def _consensus_core5(skill_sets: list[dict[str, Any]]) -> list[int]:
+    """1~5에서 2회 이상 나온 번호 상위5. 부족 시 1번 세트 보충."""
+    cnt: Counter[int] = Counter()
+    for s in skill_sets:
+        for x in s.get("nums") or []:
+            n = int(x)
+            if 1 <= n <= 45:
+                cnt[n] += 1
+    ranked = sorted((n for n, c in cnt.items() if c >= 2), key=lambda n: (-cnt[n], n))
+    core = ranked[:5]
+    set1 = [int(x) for x in (skill_sets[0].get("nums") or [])] if skill_sets else []
+    for n in set1:
+        if len(core) >= 5:
+            break
+        if n not in core and 1 <= n <= 45:
+            core.append(n)
+    if len(core) < 5:
+        rest = sorted(cnt.keys(), key=lambda n: (-cnt[n], n))
+        for n in rest:
+            if n not in core:
+                core.append(n)
+            if len(core) >= 5:
+                break
+    return core[:5]
+
+
 def build_shape_r2_sets(
     skill_sets: list[dict[str, Any]],
     *,
@@ -295,12 +333,24 @@ def build_shape_r2_sets(
         use_hw = False
         shape_w = {}
 
+    use_cons = _shape_consensus_active(brain_tag)
+    cons5 = _consensus_core5(skill_sets) if use_cons else []
+    src = (
+        "shape_r2_consensus"
+        if use_cons
+        else ("shape_r2_role_hw" if use_hw and shape_w else "shape_core5_vary6")
+    )
+
     out: list[dict[str, Any]] = []
     used_sixth: set[int] = set()
     for i in range(n):
-        drop_idx = i % 6
-        core5 = [base[j] for j in range(6) if j != drop_idx]
-        used = set(base)
+        if use_cons and len(cons5) == 5:
+            core5 = list(cons5)
+            used = set(core5)
+        else:
+            drop_idx = i % 6
+            core5 = [base[j] for j in range(6) if j != drop_idx]
+            used = set(base)
         cands = [x for x in range(1, 46) if x not in used]
         if use_hw and shape_w:
             cands.sort(key=lambda x: (-float(shape_w.get(x, 0.0)), x))
@@ -325,7 +375,7 @@ def build_shape_r2_sets(
                 "kind": "pool",
                 "role": ROLE_SHAPE,
                 "role_pass": "pass1b",
-                "source": "shape_r2_role_hw" if use_hw and shape_w else "shape_core5_vary6",
+                "source": src,
             }
         )
     return out

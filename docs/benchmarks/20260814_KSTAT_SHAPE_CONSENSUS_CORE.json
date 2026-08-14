@@ -1,0 +1,71 @@
+{
+  "id": "K-STAT-SHAPE-CONSENSUS-CORE",
+  "as_of": "2026-08-14T22:02:42+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "iso_thr": 0.005,
+  "live_mode_after": "set1",
+  "smoke": {
+    "label": "smoke",
+    "lo": 1234,
+    "hi": 1236,
+    "n_ok": 3,
+    "n_target": 3,
+    "elapsed_s": 1.2,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "tnb1_ok": true,
+    "skill_same": 3,
+    "cover_same": 3,
+    "shape_diff": 3,
+    "src_on": {
+      "shape_r2_consensus": 6
+    },
+    "jac_off": 0.7143,
+    "jac_on": 0.2525,
+    "prefer_off": -0.008374,
+    "prefer_on": 0.000821,
+    "prize_off": 0.00148,
+    "prize_on": 0.000949
+  },
+  "smoke_hard": true,
+  "gate100": {
+    "label": "gate100",
+    "lo": 1137,
+    "hi": 1236,
+    "n_ok": 100,
+    "n_target": 100,
+    "elapsed_s": 20.2,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "tnb1_ok": true,
+    "skill_same": 100,
+    "cover_same": 100,
+    "shape_diff": 100,
+    "src_on": {
+      "shape_r2_consensus": 200
+    },
+    "jac_off": 0.7143,
+    "jac_on": 0.2856,
+    "prefer_off": 0.000322,
+    "prefer_on": 0.012491,
+    "prize_off": 0.001694,
+    "prize_on": -0.007896
+  },
+  "hard_ok": true,
+  "wire_alive": true,
+  "design_moved": true,
+  "prefer_not_worse": false,
+  "prize_not_worse": true,
+  "delta": {
+    "prefer": 0.012169,
+    "prize": -0.00959
+  },
+  "apply": false,
+  "verdict": "HOLD_ISO_FAIL",
+  "rollback": "SHAPE_CORE_MODE='set1'"
+}

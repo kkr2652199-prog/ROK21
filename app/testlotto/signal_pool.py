@@ -867,7 +867,12 @@ def tune_snapshot() -> dict[str, Any]:
     from app.testlotto.brains.shared import aux_hint as ah
     from app.testlotto.brains.shared import crowd_signal as cs
     from app.testlotto.brains.shared import referee_by_brain as rbb
-    from app.testlotto.role_slots import COVER_SELECT_BRAINS, COVER_SELECT_MODE
+    from app.testlotto.role_slots import (
+        COVER_SELECT_BRAINS,
+        COVER_SELECT_MODE,
+        SHAPE_CORE_BRAINS,
+        SHAPE_CORE_MODE,
+    )
 
     return {
         "BLEND_STRENGTH_BY_BRAIN": dict(cs.BLEND_STRENGTH_BY_BRAIN),
@@ -888,6 +893,8 @@ def tune_snapshot() -> dict[str, Any]:
         "ROLE_TIER_LEARN_BRAINS": sorted(ROLE_TIER_LEARN_BRAINS),
         "COVER_SELECT_MODE": COVER_SELECT_MODE,
         "COVER_SELECT_BRAINS": sorted(COVER_SELECT_BRAINS),
+        "SHAPE_CORE_MODE": SHAPE_CORE_MODE,
+        "SHAPE_CORE_BRAINS": sorted(SHAPE_CORE_BRAINS),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }
