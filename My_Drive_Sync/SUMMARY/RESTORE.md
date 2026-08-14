@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c075754` · WORK=`IDLE`
+1. **HEAD:** `811f9a3` · WORK=`IDLE`
 2. **지금:** **양산前** · 200회 프로세스·학습 AUDIT PASS · NEXT=형다음(markov)
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 200회 프로세스·학습 **AUDIT PASS**. COVER_MIN_HITS**3**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인필요=**형 다음 1건** · 선행=BT200 PASS)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-14 | 지금200회 프로세스·학습 정밀 | HARD0 · stat 5+3+2정상 · 숙제표증가 · UI백테표0 SOFT | **PASS** | (본턴) |
+| 2026-08-14 | 지금200회 프로세스·학습 정밀 | HARD0 · stat 5+3+2정상 · 숙제표증가 · UI백테표0 SOFT | **PASS** | 811f9a3 |
 | 2026-08-14 | 서버종료후 재가동 | 7021 미기동 확인 → run_v13.py · HTTP200 | **OK** | d106f51 |
 | 2026-08-14 | 리셋후 stat만200회+패치 | 1~5동일200 · v1표빔30회 → MIN_HITS3 · v2변경178 · PASS | **PASS** | a5efab1 |
 | 2026-08-14 | 뇌마다 6~8=3등 9~10=2등 복습 | stat만 WIRE · 1~5불변 · 원장숙제 as_of<target · HARD PASS | **WIRE_OK** | 5ad2672 |

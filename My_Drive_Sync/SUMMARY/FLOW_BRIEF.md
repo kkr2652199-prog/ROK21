@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c075754` · WORK=`IDLE`
+- HEAD: `811f9a3` · WORK=`IDLE`
 - 지금: **양산前** · 200회 프로세스·학습 AUDIT PASS · NEXT=형다음(markov)
 - 직전: 7021 재가동 HTTP200
 - BOOT다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
