@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fd74d8a` · WORK=`IDLE`
+- HEAD: `5ad2672` · WORK=`IDLE`
 - 지금: **양산前** · stat 6~8/9~10 원장복습 WIRE · NEXT=형다음(markov)
 - 직전: 1~5유지 · 역할숙제 테이블 · HARD PASS
 - BOOT다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
