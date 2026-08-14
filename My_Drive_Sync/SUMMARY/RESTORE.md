@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5ad2672` · WORK=`IDLE`
-2. **지금:** **양산前** · stat 6~8/9~10 원장복습 WIRE · NEXT=형다음(markov)
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. stat 6~8/9~10 원장복습 **WIRE_OK**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인필요=**형 다음 1건** · 선행=BT200 PASS)
+1. **HEAD:** `6d51588` · WORK=`IDLE`
+2. **지금:** **양산前** · stat 6~10복습 BT200 PASS · COVER_MIN_HITS=3 · NEXT=형다음(markov)
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. stat 6~10복습 **BT200 PASS** · COVER_MIN_HITS**3**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인필요=**형 다음 1건** · 선행=BT200 PASS)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-14 | 리셋후 stat만200회+패치 | 1~5동일200 · v1표빔30회 → MIN_HITS3 · v2변경178 · PASS | **PASS** | (본턴) |
 | 2026-08-14 | 뇌마다 6~8=3등 9~10=2등 복습 | stat만 WIRE · 1~5불변 · 원장숙제 as_of<target · HARD PASS | **WIRE_OK** | 5ad2672 |
 | 2026-08-14 | 6~10학습·뇌별튜닝 필요? | 등수학습기아님 · cover/shape 무학습 · HOLD 스윕불필요 | **HOLD** | d100743 |
 | 2026-08-14 | 10세트 중 몇번째 복제 버그? | signal_union cap4 · 1~10가변 · 칸5=재조합600/600 · SYSTEM_NOT_BUG | **SYSTEM** | 0f5bf79 |
@@ -45,7 +46,6 @@
 | 2026-08-13 | 다음진행 L12 | 발권↔pool SPEC · C8 PASS · 강제병합안함 · 권고E · NEXT=형A~E | **DOC_OK** | 505c46d |
 | 2026-08-13 | 다음진행 L11c | stat WIN_1Y 스윕 |Δ|미달 · HINT/J/ov불변 · NEXT=L12형승인 | **HOLD** | e667960 |
 | 2026-08-12 | 다음진행 L11b | markov 생일대세기 prefer↓ · BLEND/W_CROWD불변 · NEXT=L11c | **HOLD** | 0cff974 |
-| 2026-08-12 | 다음진행 L11 | review shape세기 스윕 |Δ|미달 · BLEND/W_CROWD불변 · NEXT=L11b | **HOLD** | d9b30d1 |
 
 ---
 

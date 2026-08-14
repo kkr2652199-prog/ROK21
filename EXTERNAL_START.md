@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5ad2672` |
+| HEAD(실측) | `6d51588` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · stat 6~8/9~10 원장복습 WIRE · NEXT=형다음(markov) |
-| 직전 | 1~5유지 · 역할숙제 테이블 · HARD PASS |
+| 지금 | **양산前** · stat 6~10복습 BT200 PASS · COVER_MIN_HITS=3 · NEXT=형다음(markov) |
+| 직전 | 리셋+stat만200 · v1표빔 → 3맞복습 패치 재BT |
 | BOOT다음 | 형 다음 1건(권고=markov 동일배선) / 1237아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. stat 6~8/9~10 원장복습 **WIRE_OK**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. |
+| NEXT1 할일 | **양산前**. stat 6~10복습 **BT200 PASS** · COVER_MIN_HITS**3**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. |
 | 승인필요 | **형 다음 1건** |
 | 선행 | BT200 PASS |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5ad2672 · 지금=**양산前** · stat 6~8/9~10 원장복습 WIRE · NEXT=형다음(markov) · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=6d51588 · 지금=**양산前** · stat 6~10복습 BT200 PASS · COVER_MIN_HITS=3 · NEXT=형다음(markov) · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 5ad2672_
+_generated: 6d51588_

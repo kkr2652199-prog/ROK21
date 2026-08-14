@@ -185,7 +185,13 @@ def _pass_seed(seed: int, draw_no: int, pass_idx: int) -> int:
     return int(seed) + int(draw_no) + pass_idx * 10000
 
 
-def expand_pool(draws: list[dict], draw_no: int, *, seed: int = MC_SEED) -> list[dict]:
+def expand_pool(
+    draws: list[dict],
+    draw_no: int,
+    *,
+    seed: int = MC_SEED,
+    brains: list[str] | None = None,
+) -> list[dict]:
     """뇌별 10세트 pool.
 
     K-BRAIN-RNG-INDEPENDENT — 뇌마다 시드 리셋.
@@ -194,14 +200,17 @@ def expand_pool(draws: list[dict], draw_no: int, *, seed: int = MC_SEED) -> list
       pass1a cover_r3×3
       pass1b shape_r2×2 (no_bonus_peek)
     롤백: ROLE_SLOTS_WIRE=False → 구 2×predict_sets(5).
+    brains: 일부 뇌만 (기본 3뇌). 시드 규칙은 전체 루프와 동일하게 해당 태그만.
     """
     from tools._k_window_signal_survey import PREDICT_MODULES
+
+    tags = [t for t in BRAIN_TAGS if t in (brains or BRAIN_TAGS)]
 
     if not ROLE_SLOTS_WIRE:
         pool: list[dict] = []
         for pass_idx in range(2):
             s = _pass_seed(seed, draw_no, pass_idx)
-            for tag in BRAIN_TAGS:
+            for tag in tags:
                 mod = PREDICT_MODULES.get(tag)
                 if mod is None:
                     continue
@@ -230,7 +239,7 @@ def expand_pool(draws: list[dict], draw_no: int, *, seed: int = MC_SEED) -> list
     )
 
     pool = []
-    for tag in BRAIN_TAGS:
+    for tag in tags:
         mod = PREDICT_MODULES.get(tag)
         if mod is None:
             continue

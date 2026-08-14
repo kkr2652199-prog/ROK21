@@ -17,6 +17,7 @@ logger = logging.getLogger(__name__)
 TABLE = "testlotto_role_homework"
 SCHEMA_VERSION = 1
 WINDOW_DRAWS = 50
+COVER_MIN_HITS = 3  # 4맞만 쓰면 표가 거의 빔(BT200 n_pos평균1). 3맞=5등 근사 복습.
 BRAIN_TAGS = ("stat", "markov", "review")
 ROLES = ("cover_r3", "shape_r2")
 
@@ -106,11 +107,15 @@ def compute_role_tables(brain_tag: str, as_of_draw: int) -> dict[str, dict[int, 
         bonus_hit = int(r.get("bonus_hit") or 0)
         hit_nums = _parse_int_list(r.get("hit_nums_json"))
         nums = _parse_int_list(r.get("nums_json"))
-        if hits >= 4:
+        if hits >= COVER_MIN_HITS:
             credit = hits / 6.0
             for n in hit_nums:
                 if 1 <= n <= 45:
                     cover[n] += credit
+            if hits >= 4:
+                for n in hit_nums:
+                    if 1 <= n <= 45:
+                        cover[n] += 0.5
             if hits >= 5:
                 for n in hit_nums:
                     if 1 <= n <= 45:

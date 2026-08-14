@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5ad2672` · WORK=`IDLE`
-- 지금: **양산前** · stat 6~8/9~10 원장복습 WIRE · NEXT=형다음(markov)
-- 직전: 1~5유지 · 역할숙제 테이블 · HARD PASS
+- HEAD: `6d51588` · WORK=`IDLE`
+- 지금: **양산前** · stat 6~10복습 BT200 PASS · COVER_MIN_HITS=3 · NEXT=형다음(markov)
+- 직전: 리셋+stat만200 · v1표빔 → 3맞복습 패치 재BT
 - BOOT다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. stat 6~8/9~10 원장복습 **WIRE_OK**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인=**형 다음 1건**)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. stat 6~10복습 **BT200 PASS** · COVER_MIN_HITS**3**. 1~5불변. 다음=**형 다음 1건**(권고: markov 동일 소비). **1237아님**. (승인=**형 다음 1건**)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

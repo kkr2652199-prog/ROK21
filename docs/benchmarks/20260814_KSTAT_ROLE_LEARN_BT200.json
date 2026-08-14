@@ -1,0 +1,194 @@
+{
+  "id": "K-STAT-ROLE-LEARN-BT200",
+  "as_of": "2026-08-14T20:39:21+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "brain": "stat",
+  "reset_deleted": {
+    "lotto_predictions": 0,
+    "lotto_analysis": 0,
+    "testlotto_brain_review": 0,
+    "testlotto_brain_learn_state": 0,
+    "testlotto_brain_weights": 3,
+    "testlotto_backtest_runs": 0,
+    "testlotto_backtest_draw_results": 0,
+    "testlotto_pool_view_cache": 600,
+    "testlotto_evolve_log": 0,
+    "testlotto_evolve_auto_state": 1,
+    "testlotto_pool_hit_ledger": 3000,
+    "testlotto_pool_hit_scatter": 400,
+    "testlotto_skill_homework": 0,
+    "testlotto_role_homework": 1200,
+    "hit_warrant_log": 0
+  },
+  "smoke": {
+    "label": "smoke",
+    "lo": 1234,
+    "hi": 1236,
+    "n_ok": 3,
+    "n_target": 3,
+    "elapsed_s": 1.8,
+    "peek_fail": 0,
+    "skill_1to5_same": 3,
+    "skill_1to5_diff": 0,
+    "cover_nums_diff_draws": 0,
+    "shape_nums_diff_draws": 0,
+    "by_role": {
+      "on_skill_native": {
+        "n": 3,
+        "mean_all": 1.1333,
+        "mean_best": 2,
+        "ge3_best_count": 1,
+        "monitor_only": true
+      },
+      "on_cover_r3": {
+        "n": 3,
+        "mean_all": 1,
+        "mean_best": 1.6667,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      },
+      "on_shape_r2": {
+        "n": 3,
+        "mean_all": 1.1667,
+        "mean_best": 1.3333,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      },
+      "on_focus_r1": {
+        "n": 3,
+        "mean_all": 1.2,
+        "mean_best": 1.3333,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      },
+      "off_skill_native": {
+        "n": 3,
+        "mean_all": 1.1333,
+        "mean_best": 2,
+        "ge3_best_count": 1,
+        "monitor_only": true
+      },
+      "off_cover_r3": {
+        "n": 3,
+        "mean_all": 1,
+        "mean_best": 1.6667,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      },
+      "off_shape_r2": {
+        "n": 3,
+        "mean_all": 1.1667,
+        "mean_best": 1.3333,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      },
+      "off_focus_r1": {
+        "n": 3,
+        "mean_all": 1.2,
+        "mean_best": 1.3333,
+        "ge3_best_count": 0,
+        "monitor_only": true
+      }
+    },
+    "hw_cover_npos_mean": null,
+    "hw_cover_npos_min": null,
+    "bug_kinds": {},
+    "bugs_head": [],
+    "n_bugs": 0,
+    "errors_head": [],
+    "n_errors": 0
+  },
+  "smoke_hard": true,
+  "bt200": {
+    "label": "bt200",
+    "lo": 1037,
+    "hi": 1236,
+    "n_ok": 200,
+    "n_target": 200,
+    "elapsed_s": 232.4,
+    "peek_fail": 0,
+    "skill_1to5_same": 200,
+    "skill_1to5_diff": 0,
+    "cover_nums_diff_draws": 178,
+    "shape_nums_diff_draws": 199,
+    "by_role": {
+      "on_skill_native": {
+        "n": 200,
+        "mean_all": 0.798,
+        "mean_best": 1.705,
+        "ge3_best_count": 25,
+        "monitor_only": true
+      },
+      "on_cover_r3": {
+        "n": 200,
+        "mean_all": 0.8083,
+        "mean_best": 1.465,
+        "ge3_best_count": 14,
+        "monitor_only": true
+      },
+      "on_shape_r2": {
+        "n": 200,
+        "mean_all": 0.835,
+        "mean_best": 1.04,
+        "ge3_best_count": 12,
+        "monitor_only": true
+      },
+      "on_focus_r1": {
+        "n": 200,
+        "mean_all": 0.807,
+        "mean_best": 1.61,
+        "ge3_best_count": 24,
+        "monitor_only": true
+      },
+      "off_skill_native": {
+        "n": 200,
+        "mean_all": 0.798,
+        "mean_best": 1.705,
+        "ge3_best_count": 25,
+        "monitor_only": true
+      },
+      "off_cover_r3": {
+        "n": 200,
+        "mean_all": 0.7833,
+        "mean_best": 1.385,
+        "ge3_best_count": 13,
+        "monitor_only": true
+      },
+      "off_shape_r2": {
+        "n": 200,
+        "mean_all": 0.82,
+        "mean_best": 1.02,
+        "ge3_best_count": 10,
+        "monitor_only": true
+      },
+      "off_focus_r1": {
+        "n": 200,
+        "mean_all": 0.808,
+        "mean_best": 1.565,
+        "ge3_best_count": 20,
+        "monitor_only": true
+      }
+    },
+    "hw_cover_npos_mean": 21.115,
+    "hw_cover_npos_min": 3,
+    "bug_kinds": {},
+    "bugs_head": [],
+    "n_bugs": 0,
+    "errors_head": [],
+    "n_errors": 0
+  },
+  "census": {
+    "lotto_draws_max": 1236,
+    "predictions": 0,
+    "pool_cache": 600,
+    "ledger": 3000,
+    "role_homework": 1200,
+    "skill_homework": 0,
+    "pred_1237": 0
+  },
+  "hard_ok": true,
+  "cover_min_hits": 3,
+  "v1_sparse": "docs/benchmarks/20260814_KSTAT_ROLE_LEARN_BT200_v1_hitsge4.json",
+  "baseline_src": "docs/benchmarks/20260813_KPOST_L12B_RESET_BT200.json"
+}

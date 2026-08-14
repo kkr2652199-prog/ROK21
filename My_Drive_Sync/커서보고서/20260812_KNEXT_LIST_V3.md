@@ -141,6 +141,10 @@
 - 소비 뇌=`stat`만. 타깃 보너스 미입력. ge3미클레임.
 - 다음 뇌=markov 는 형 1건.
 
+### L13b K-STAT-ROLE-LEARN-BT200 — **PASS**
+- 리셋+stat만 200회. 1~5 ON==OFF. COVER_MIN_HITS **3** 패치(v1 표빔).
+- 다음=형 1건(markov).
+
 ---
 
 ## 3) 매핑
@@ -183,6 +187,7 @@
 | L12 | **DOC_OK** |
 | L12b | **WIRE_OK** (E) |
 | L13 | **WIRE_OK** (stat 6~8/9~10 복습) |
+| L13b | **PASS** (stat BT200 · COVER_MIN_HITS=3) |
 
 ---
 
