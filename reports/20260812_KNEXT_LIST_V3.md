@@ -155,6 +155,9 @@
 ### L13e K-BT200-TIER-COUNTS — **DOC_OK**
 - 고유 1·2·3등 **0** · 4등 **1**(1117) · 5등 **55**. 발권0.
 
+### L13f K-STAT-POOL-LEARN-EVOLVE — **WIRE_OK_HOLD_KNOB**
+- 1~5 brain_review→CUTOFF. prize게이트 미달. 적중mean 클레임금지. 플래그 True(기록유지).
+
 ---
 
 ## 3) 매핑
@@ -201,6 +204,7 @@
 | L13c | **PASS** (지금200 프로세스·학습 AUDIT) |
 | L13d | **DOC_OK** (200회 성적 모니터 안내) |
 | L13e | **DOC_OK** (200회 등수 1·2·3=0 4=1 5=55) |
+| L13f | **WIRE_OK_HOLD_KNOB** (stat 1~5 학습고리) |
 
 ---
 

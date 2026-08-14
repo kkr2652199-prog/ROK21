@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-14 KST  
-📌 사유: **[CURSOR] K-BT200-TIER-COUNTS** — 지금200회 등수 1·2·3등0 · 4등고유1 · 5등고유55
+📌 사유: **[CURSOR] K-STAT-POOL-LEARN-EVOLVE** — 1~5 학습고리 WIRE · prize게이트 HOLD
 
-📌 직전: **[CURSOR] K-BT200-SCORE-CARD** — 지금200회 성적 모니터안내(발권0)
+📌 직전: **[CURSOR] K-BT200-TIER-COUNTS** — 지금200회 등수 1·2·3등0 · 4등고유1 · 5등고유55
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-STAT-POOL-LEARN-EVOLVE (형GO)** | **WIRE_OK_HOLD_KNOB** — 문헌: 적중mean 튜닝 **기각**(초기하0.80·Clotfelter GF·Thaler EV). 갭=풀BT 발권0→brain_review0→boost0. 배선 `STAT_POOL_LEARN_WIRE` skill1~5 mean→review→CUTOFF. HARD peek0 err0 n200. 1~5변경 **196**/200. prize Δ**-0.00037**≪0.005 · prefer Δ**+0.000451** iso. hit모니터 0.798→**0.83**(≈어제발권0.828·클레임금지). boost 상한부착 carry**0.2**/ending**0.3**/overdue**0.2**. WIN_1Y/HINT0.15 재탕안함. ge3미클레임·1237아님. · `docs/benchmarks/20260814_KSTAT_POOL_LEARN_EVOLVE.json` · `reports/20260814_KSTAT_POOL_LEARN_EVOLVE.md` · `app/testlotto/stat_pool_learn.py` · `tools/_k_stat_pool_learn_evolve.py` |
 | **K-BT200-TIER-COUNTS (형질문)** | **DOC_OK** · 모니터만 — 지금 stat 200회 **발권0**. 고유조합 1등**0** 2등**0** 3등**0** 4등**1**(1117 shape set10 `[3,4,22,30,33,43]` vs 당첨`[3,4,9,30,33,36]` 보너스7) 5등**55**. 세트행은 4등**2**/5등**79**(몰아주기 복사). 회차최고 4등**1**회·5등**46**회·등수없음 **153**/200. ge3미클레임·1237아님. · `docs/benchmarks/20260814_KBT200_TIER_COUNTS.json` · `reports/20260814_KBT200_TIER_COUNTS.md` · `tools/_k_bt200_tier_counts.py` |
 | **K-BT200-SCORE-CARD (형질문)** | **DOC_OK** · 모니터만 — 지금 stat 200회(1037~1236) **발권0**. 칸별 mean_all 1~5 **0.798** / 6~8 0.8083 / 9~10 0.835 / 몰아주기 0.807. mean_best 1.705/1.465/1.04/1.61. 회차최고≥3 = 25/14/12/24 (클레임금지). 이론1장 **0.80** · 발권5 null_mean(어제파일) **1.7289**. 어제 발권5 mean_all **0.79**/best **1.71**. ge3미클레임·1237아님. · `reports/20260814_KBT200_SCORE_CARD.md` · 근거 `docs/benchmarks/20260814_KSTAT_ROLE_LEARN_BT200.json` · `20260813_KPOST_L12B_RESET_BT200.json` |
 | **K-BT200-PROCESS-LEARN-AUDIT (형GO)** | **PASS** · READ-ONLY — 지금 DB 1037~1236 n**200**. HARD0: pool10/repack5 결손0 · 역할불일치0 · 번호무효0 · peek0 · pred1237=0. 역할카운트 skill**1000**/cover**600**/shape**400**/focus**1000**. 학습: role_hw **1200**(as_of 200) · stat cover n_pos초반**4**→후반**22.5** · markov/review cover n_pos**0**(원장없음·설계) · skill_hw/learn_state/review **0**(발권피드백없음). SOFT: 타뇌캐시빈**400** · UI `backtest_runs`**0** → pool-index n_draws**0**(원장≠강제백테표). ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260814_KBT200_PROCESS_LEARN_AUDIT.json` · `reports/20260814_KBT200_PROCESS_LEARN_AUDIT.md` · `tools/_k_bt200_process_learn_audit.py` |
