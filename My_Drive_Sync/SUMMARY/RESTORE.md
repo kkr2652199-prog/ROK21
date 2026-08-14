@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `ce29b7e` · WORK=`IDLE`
-2. **지금:** **양산前** · S4 보완조합 APPLY · NEXT=S5 BT200
-3. **다음1건:** K-STAT-ENGINE-EVOLVE-BT200 — **양산前**. S4 APPLY. 리셋 후 **stat만** 1037~1236 n200. HARD peek/size/1237=0. 등수·mean 모니터. prefer/prize 기록. **1237아님**. (승인필요=없음(형 캠페인GO · S1~S4 묶음 뒤 S5) · 선행=S4 APPLY)
+1. **HEAD:** `980bb65` · WORK=`IDLE`
+2. **지금:** **양산前** · S5 BT200 PASS · S1~S5묶음완료
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. S1~S5 묶음 완료(S2 HOLD). 다음=형 1건. markov 6~10은 지시 시. **1237아님**. (승인필요=형 다음지시 · 선행=S5 PASS)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-14 | 다음 S5 BT200 | 리셋+stat n200 PASS · 4등12·5등55 모니터 · J=0 | **PASS** | TBD |
+| 2026-08-14 | 다음 S5 BT200 | 리셋+stat n200 PASS · 4등12·5등55 모니터 · J=0 | **PASS** | 980bb65 |
 | 2026-08-14 | 다음 S4 보완조합 | J 0.29→0 · union 17.7→22.7 · 5장100 · 비악화 | **APPLY** | ce29b7e |
 | 2026-08-14 | 다음 S3 몰아주기쿼터 | cover0장49→0 · cover비 0.11→0.21 · shape 0.25→0.16 | **APPLY** | feef9c7 |
 | 2026-08-14 | 다음 S2 shape코어 | J 0.71→0.29나왔으나 prefer+0.012 · 라이브 set1 | **HOLD** | e3aa05c |
