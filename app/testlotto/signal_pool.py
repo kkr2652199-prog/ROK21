@@ -106,6 +106,12 @@ REPACK_QUOTA_SKILL_MIN: int = 1
 REPACK_QUOTA_COVER_MIN: int = 1
 REPACK_QUOTA_SHAPE_MAX: int = 1
 
+# K-STAT-REPACK-MIX-RECOMBINE (S4) — stat 몰아주기 5번째 장.
+# complement: 복사4장 번호합을 빼고 남은 고점수 6개. 부족하면 top6 폴백.
+# 롤백: REPACK_RECOMBINE_MODE="top6".
+REPACK_RECOMBINE_MODE: str = "complement"
+REPACK_RECOMBINE_BRAINS: frozenset[str] = frozenset({"stat"})
+
 
 SignalTable = dict[str, dict[int, float]]
 
@@ -348,6 +354,22 @@ def repack_sets(scores: dict[int, float], n_sets: int = REPACK_SETS_PER_BRAIN) -
     return sets
 
 
+def recombine_complement_ticket(
+    scores: dict[int, float],
+    copied_sets: list[list[int]],
+) -> list[int]:
+    """복사 세트에 없는 고점수 6개. 남은 번호가 6개 미만이면 전역 상위6."""
+    copied: set[int] = set()
+    for nums in copied_sets:
+        copied.update(int(x) for x in nums)
+    remain = [n for n in range(1, 46) if n not in copied]
+    remain.sort(key=lambda n: (-float(scores.get(n, 0.0)), n))
+    if len(remain) >= 6:
+        return sorted(remain[:6])
+    ranked = sorted(range(1, 46), key=lambda x: (-float(scores.get(x, 0.0)), x))
+    return sorted(ranked[:6])
+
+
 def _nums_key(nums: list[int]) -> tuple[int, ...]:
     return tuple(sorted(int(x) for x in nums))
 
@@ -507,6 +529,7 @@ def assemble_signal_union(
     n_slots: pos_ema 신호 상위 (P1 뼈대).
     n_pool_cap: primary에 넣을 pool 총수 상한(≤n_sets). 나머지는 classic.
     stat+REPACK_ROLE_QUOTA_WIRE: cap 복사에 cover≥1 · shape≤1 · skill≥1.
+    stat+REPACK_RECOMBINE_MODE=complement: 5번째 장은 복사4 밖 고점수 6개.
     """
     tops = list(signal_top_set_nos(pool, pos_ema, n_slots=n_slots))
     p_by = {
@@ -528,7 +551,18 @@ def assemble_signal_union(
         and str(brain_tag) in REPACK_ROLE_QUOTA_BRAINS
     ):
         primary = apply_repack_role_quota(ranked, cap=cap)
-    return _assemble(pool, classic_repack, primary, n_sets=n_sets)
+    classic = list(classic_repack)
+    if (
+        REPACK_RECOMBINE_MODE == "complement"
+        and brain_tag
+        and str(brain_tag) in REPACK_RECOMBINE_BRAINS
+    ):
+        copied = [p_by[sn] for sn in primary if sn in p_by]
+        n_rank = max(0, n_sets - len(primary))
+        if n_rank > 0 and copied:
+            comp = recombine_complement_ticket(scores, copied)
+            classic = [comp] + list(classic_repack[1:])
+    return _assemble(pool, classic, primary, n_sets=n_sets)
 
 
 def _assembled_for_brain(
@@ -960,6 +994,8 @@ def tune_snapshot() -> dict[str, Any]:
         "SHAPE_CORE_BRAINS": sorted(SHAPE_CORE_BRAINS),
         "REPACK_ROLE_QUOTA_WIRE": bool(REPACK_ROLE_QUOTA_WIRE),
         "REPACK_ROLE_QUOTA_BRAINS": sorted(REPACK_ROLE_QUOTA_BRAINS),
+        "REPACK_RECOMBINE_MODE": REPACK_RECOMBINE_MODE,
+        "REPACK_RECOMBINE_BRAINS": sorted(REPACK_RECOMBINE_BRAINS),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }
