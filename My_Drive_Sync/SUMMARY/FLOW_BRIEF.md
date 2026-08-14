@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `9443d1a` · WORK=`IDLE`
-- 지금: **양산前** · stat엔진진화 SPEC · NEXT=S1 cover-union
-- 직전: 6~10등수학습기아님 · 몰아주기=복사4+상위6
-- BOOT다음: S1 K-STAT-COVER-OUTSIDE-UNION / 1237아님
-- NEXT1: K-STAT-COVER-OUTSIDE-UNION — **양산前**. S0 SPEC완료. **stat cover 6~8**을 Jaccard최저 → **skill union 밖 번호 최대**(동점=8장 union). 1~5불변. 게이트 prefer/prize iso. ge3미클레임. **1237아님**. (승인=없음(형 캠페인GO · stat엔진+몰아주기))
+- HEAD: `d9b8088` · WORK=`IDLE`
+- 지금: **양산前** · S1 cover-union APPLY · NEXT=S2 shape코어
+- 직전: union10 30.05→31.72 · 1~5불변100 · prefer비악화
+- BOOT다음: S2 K-STAT-SHAPE-CONSENSUS-CORE / 1237아님
+- NEXT1: K-STAT-SHAPE-CONSENSUS-CORE — **양산前**. S1 APPLY. **stat shape 9~10** core5=1~5에서 2회이상 번호(부족시 1번보충). 6번째=보너스숙제표. T-NB1유지. 게이트 prefer/prize 비악화. 모니터 shape-set1 Jaccard↓. **1237아님**. (승인=없음(형 캠페인GO · stat엔진+몰아주기))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `9443d1a` · WORK=`IDLE`
-2. **지금:** **양산前** · stat엔진진화 SPEC · NEXT=S1 cover-union
-3. **다음1건:** K-STAT-COVER-OUTSIDE-UNION — **양산前**. S0 SPEC완료. **stat cover 6~8**을 Jaccard최저 → **skill union 밖 번호 최대**(동점=8장 union). 1~5불변. 게이트 prefer/prize iso. ge3미클레임. **1237아님**. (승인필요=없음(형 캠페인GO · stat엔진+몰아주기) · 선행=패치BT200 PASS)
+1. **HEAD:** `d9b8088` · WORK=`IDLE`
+2. **지금:** **양산前** · S1 cover-union APPLY · NEXT=S2 shape코어
+3. **다음1건:** K-STAT-SHAPE-CONSENSUS-CORE — **양산前**. S1 APPLY. **stat shape 9~10** core5=1~5에서 2회이상 번호(부족시 1번보충). 6번째=보너스숙제표. T-NB1유지. 게이트 prefer/prize 비악화. 모니터 shape-set1 Jaccard↓. **1237아님**. (승인필요=없음(형 캠페인GO · stat엔진+몰아주기) · 선행=S1 APPLY)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-14 | 다음진행 S1 cover-union | 1~5불변100 · union10 30→32 · prefer↓비악화 · mode=outside_union | **APPLY** | TBD |
+| 2026-08-14 | 다음진행 S1 cover-union | 1~5불변100 · union10 30→32 · prefer↓비악화 · mode=outside_union | **APPLY** | d9b8088 |
 | 2026-08-14 | 6~10·몰아주기정밀+문헌+패치리스트 | cover=재샘플 3등엔진아님 · 몰아주기=복사4+상위6 · 리스트S1~S5 | **SPEC_OK** | 9443d1a |
 | 2026-08-14 | 패치면 리셋후 과거학습만200 | 리셋+stat 1037~1236 n200 PASS · 4등고유10·5등53 모니터 | **PASS** | 6ff1680 |
 | 2026-08-14 | 과거학습 엔진진화·논문·정밀튜닝 | 적중튜닝기각 · 1~5학습고리WIRE · prize미달HOLD · 변경196 | **WIRE_HOLD** | edc991c |
