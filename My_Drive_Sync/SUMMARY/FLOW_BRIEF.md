@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d9b8088` · WORK=`IDLE`
-- 지금: **양산前** · S1 cover-union APPLY · NEXT=S2 shape코어
-- 직전: union10 30.05→31.72 · 1~5불변100 · prefer비악화
-- BOOT다음: S2 K-STAT-SHAPE-CONSENSUS-CORE / 1237아님
-- NEXT1: K-STAT-SHAPE-CONSENSUS-CORE — **양산前**. S1 APPLY. **stat shape 9~10** core5=1~5에서 2회이상 번호(부족시 1번보충). 6번째=보너스숙제표. T-NB1유지. 게이트 prefer/prize 비악화. 모니터 shape-set1 Jaccard↓. **1237아님**. (승인=없음(형 캠페인GO · stat엔진+몰아주기))
+- HEAD: `e3aa05c` · WORK=`IDLE`
+- 지금: **양산前** · S2 shape코어 HOLD · NEXT=S3 몰아주기쿼터
+- 직전: Jaccard 0.71→0.29 나왔으나 prefer+0.012 인기↑
+- BOOT다음: S3 K-STAT-REPACK-ROLE-QUOTA / 1237아님
+- NEXT1: K-STAT-REPACK-ROLE-QUOTA — **양산前**. S2 HOLD(set1). **stat 몰아주기** cap4 복사에 cover최소1·shape최대1·skill최소1. 게이트 prefer/prize 비악화. 모니터 copy_by_role. **1237아님**. (승인=없음(형 캠페인GO · stat엔진+몰아주기))
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `d9b8088` |
+| HEAD(실측) | `e3aa05c` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · S1 cover-union APPLY · NEXT=S2 shape코어 |
-| 직전 | union10 30.05→31.72 · 1~5불변100 · prefer비악화 |
-| BOOT다음 | S2 K-STAT-SHAPE-CONSENSUS-CORE / 1237아님 |
-| NEXT1 ID | **K-STAT-SHAPE-CONSENSUS-CORE** |
-| NEXT1 할일 | **양산前**. S1 APPLY. **stat shape 9~10** core5=1~5에서 2회이상 번호(부족시 1번보충). 6번째=보너스숙제표. T-NB1유지. 게이트 prefer/prize 비악화. 모니터 shape-set1 Jaccard↓. **1237아님**. |
+| 지금 | **양산前** · S2 shape코어 HOLD · NEXT=S3 몰아주기쿼터 |
+| 직전 | Jaccard 0.71→0.29 나왔으나 prefer+0.012 인기↑ |
+| BOOT다음 | S3 K-STAT-REPACK-ROLE-QUOTA / 1237아님 |
+| NEXT1 ID | **K-STAT-REPACK-ROLE-QUOTA** |
+| NEXT1 할일 | **양산前**. S2 HOLD(set1). **stat 몰아주기** cap4 복사에 cover최소1·shape최대1·skill최소1. 게이트 prefer/prize 비악화. 모니터 copy_by_role. **1237아님**. |
 | 승인필요 | 없음(형 캠페인GO · stat엔진+몰아주기) |
 | 선행 | S1 APPLY |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=d9b8088 · 지금=**양산前** · S1 cover-union APPLY · NEXT=S2 shape코어 · 다음=K-STAT-SHAPE-CONSENSUS-CORE`
+1. 첫줄 `[복귀] HEAD=e3aa05c · 지금=**양산前** · S2 shape코어 HOLD · NEXT=S3 몰아주기쿼터 · 다음=K-STAT-REPACK-ROLE-QUOTA`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
