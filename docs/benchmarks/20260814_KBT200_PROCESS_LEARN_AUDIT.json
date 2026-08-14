@@ -1,0 +1,279 @@
+{
+  "id": "K-BT200-PROCESS-LEARN-AUDIT",
+  "as_of": "2026-08-14T21:01:57+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "read_only": true,
+  "flags": {
+    "ROLE_SLOTS_WIRE": true,
+    "ROLE_TIER_LEARN_WIRE": true,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "COVER_MIN_HITS": 3
+  },
+  "census": {
+    "draws_max": 1236,
+    "draws_n": 1236,
+    "pred": 0,
+    "pred_1237": 0,
+    "cache": 600,
+    "ledger": 3000,
+    "scatter": 400,
+    "role_hw": 1200,
+    "skill_hw": 0,
+    "learn_state": 0,
+    "brain_review": 0,
+    "bt_runs": 0,
+    "bt_draws": 0,
+    "evolve_log": 0
+  },
+  "process": {
+    "n_draws": 200,
+    "brains": [
+      "stat"
+    ],
+    "rows": 3000,
+    "missing_n": 0,
+    "role_mismatch": 0,
+    "bad_nums": 0,
+    "incomplete_pool10": 0,
+    "incomplete_repack5": 0,
+    "role_counts": {
+      "skill_native": 1000,
+      "cover_r3": 600,
+      "shape_r2": 400,
+      "focus_r1": 1000
+    },
+    "kinds": {
+      "stat|pool": 2000,
+      "stat|repack": 1000
+    },
+    "cache_brains": {
+      "stat": 200,
+      "markov": 200,
+      "review": 200
+    },
+    "empty_other_brain_cache": 400,
+    "stat_cover_sources": {
+      "stat|pool|cover_r3|None": 600
+    },
+    "sample_1236": {
+      "stat": {
+        "pool_n": 10,
+        "repack_n": 5,
+        "pool_roles": [
+          {
+            "set_no": 1,
+            "role": "skill_native",
+            "source": null
+          },
+          {
+            "set_no": 2,
+            "role": "skill_native",
+            "source": null
+          },
+          {
+            "set_no": 3,
+            "role": "skill_native",
+            "source": null
+          },
+          {
+            "set_no": 4,
+            "role": "skill_native",
+            "source": null
+          },
+          {
+            "set_no": 5,
+            "role": "skill_native",
+            "source": null
+          },
+          {
+            "set_no": 6,
+            "role": "cover_r3",
+            "source": null
+          },
+          {
+            "set_no": 7,
+            "role": "cover_r3",
+            "source": null
+          },
+          {
+            "set_no": 8,
+            "role": "cover_r3",
+            "source": null
+          },
+          {
+            "set_no": 9,
+            "role": "shape_r2",
+            "source": null
+          },
+          {
+            "set_no": 10,
+            "role": "shape_r2",
+            "source": null
+          }
+        ],
+        "repack_roles": [
+          {
+            "set_no": 1,
+            "role": "focus_r1",
+            "source": "pool"
+          },
+          {
+            "set_no": 2,
+            "role": "focus_r1",
+            "source": "pool"
+          },
+          {
+            "set_no": 3,
+            "role": "focus_r1",
+            "source": "pool"
+          },
+          {
+            "set_no": 4,
+            "role": "focus_r1",
+            "source": "pool"
+          },
+          {
+            "set_no": 5,
+            "role": "focus_r1",
+            "source": "score_repack"
+          }
+        ]
+      },
+      "markov": {
+        "pool_n": 0,
+        "repack_n": 0,
+        "pool_roles": [],
+        "repack_roles": []
+      },
+      "review": {
+        "pool_n": 0,
+        "repack_n": 0,
+        "pool_roles": [],
+        "repack_roles": []
+      }
+    }
+  },
+  "learn": {
+    "role_hw_rows": 1200,
+    "role_hw_expected_if_full": 1200,
+    "asof_n": 200,
+    "asof_min": 1037,
+    "asof_max": 1236,
+    "brains": [
+      "markov",
+      "review",
+      "stat"
+    ],
+    "npos": {
+      "markov|cover_r3": {
+        "n": 200,
+        "npos_mean": 0,
+        "npos_min": 0,
+        "npos_max": 0,
+        "npos_first10_mean": 0,
+        "npos_last10_mean": 0
+      },
+      "markov|shape_r2": {
+        "n": 200,
+        "npos_mean": 30.19,
+        "npos_min": 26,
+        "npos_max": 35,
+        "npos_first10_mean": 32.8,
+        "npos_last10_mean": 30.1
+      },
+      "review|cover_r3": {
+        "n": 200,
+        "npos_mean": 0,
+        "npos_min": 0,
+        "npos_max": 0,
+        "npos_first10_mean": 0,
+        "npos_last10_mean": 0
+      },
+      "review|shape_r2": {
+        "n": 200,
+        "npos_mean": 30.19,
+        "npos_min": 26,
+        "npos_max": 35,
+        "npos_first10_mean": 32.8,
+        "npos_last10_mean": 30.1
+      },
+      "stat|cover_r3": {
+        "n": 200,
+        "npos_mean": 21.115,
+        "npos_min": 3,
+        "npos_max": 29,
+        "npos_first10_mean": 4,
+        "npos_last10_mean": 22.5
+      },
+      "stat|shape_r2": {
+        "n": 200,
+        "npos_mean": 30.19,
+        "npos_min": 26,
+        "npos_max": 35,
+        "npos_first10_mean": 32.8,
+        "npos_last10_mean": 30.1
+      }
+    },
+    "skill_hw": 0,
+    "learn_state": 0,
+    "brain_review": 0,
+    "consume_brains": [
+      "stat"
+    ],
+    "peek_hw_ge_1237": 0,
+    "note_skill_gap": "skill_homework=0 → 이번 경로 발권 피드백 없음. 1~5 miss_pattern 숙제 미누적(설계).",
+    "note_consume": "쓰기=3뇌×2역할. 소비=stat만. markov/review 6~10은 Jaccard/변형 구경로."
+  },
+  "monitor_hits": {
+    "stat|pool|cover_r3": {
+      "n": 600,
+      "mean_all": 0.8083,
+      "mean_best": 1.465,
+      "ge3_best_count": 14,
+      "theory": 0.8,
+      "claim": false
+    },
+    "stat|pool|shape_r2": {
+      "n": 400,
+      "mean_all": 0.835,
+      "mean_best": 1.04,
+      "ge3_best_count": 12,
+      "theory": 0.8,
+      "claim": false
+    },
+    "stat|pool|skill_native": {
+      "n": 1000,
+      "mean_all": 0.798,
+      "mean_best": 1.705,
+      "ge3_best_count": 25,
+      "theory": 0.8,
+      "claim": false
+    },
+    "stat|repack|focus_r1": {
+      "n": 1000,
+      "mean_all": 0.807,
+      "mean_best": 1.61,
+      "ge3_best_count": 24,
+      "theory": 0.8,
+      "claim": false
+    }
+  },
+  "http": {
+    "home_status": 200,
+    "pool_index_n": 0,
+    "draw_index_n": 0,
+    "runs_ok": true,
+    "pred_status": 200,
+    "d1236_status": 200
+  },
+  "hard": [],
+  "soft": [
+    "stat-only BT: markov/review cache empty [] n=400 (미실행·버그아님)"
+  ],
+  "hard_ok": true,
+  "engine_ok": true,
+  "verdict": "PASS"
+}
