@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `980bb65` |
+| HEAD(실측) | `03f8ed6` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · S5 BT200 PASS · S1~S5묶음완료 |
-| 직전 | n200 HARD · 고유4등12·5등55 모니터 |
-| BOOT다음 | 형 1건 / 1237아님 |
-| NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. S1~S5 묶음 완료(S2 HOLD). 다음=형 1건. markov 6~10은 지시 시. **1237아님**. |
-| 승인필요 | 형 다음지시 |
-| 선행 | S5 PASS |
+| 지금 | **양산前** · markov 6~10 숙제소비 WIRE_OK |
+| 직전 | shape변경100 · cover번호0 · 비악화 |
+| BOOT다음 | K-MARKOV-ROLE-LEARN-BT200 / 1237아님 |
+| NEXT1 ID | **K-MARKOV-ROLE-LEARN-BT200** |
+| NEXT1 할일 | **양산前**. markov WIRE_OK. 리셋 후 **markov만** 1037~1236 n200. 1~5 ON==OFF HARD. cover/shape 소비 누적. 등수·mean 모니터. **1237아님**. |
+| 승인필요 | 없음(형 「다음 진행」) |
+| 선행 | markov WIRE_OK |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=980bb65 · 지금=**양산前** · S5 BT200 PASS · S1~S5묶음완료 · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=03f8ed6 · 지금=**양산前** · markov 6~10 숙제소비 WIRE_OK · 다음=K-MARKOV-ROLE-LEARN-BT200`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 980bb65_
+_generated: 03f8ed6_
