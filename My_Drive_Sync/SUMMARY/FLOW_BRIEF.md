@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fc71402` · WORK=`IDLE`
+- HEAD: `edc991c` · WORK=`IDLE`
 - 지금: **양산前** · stat 1~5 학습고리 WIRE · prize게이트HOLD · NEXT=형다음(markov)
 - 직전: 200회 등수=1·2·3등0 4등1
 - BOOT다음: 형 다음 1건(권고=markov 동일배선) / 1237아님
