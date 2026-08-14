@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `03f8ed6` · WORK=`IDLE`
-- 지금: **양산前** · markov 6~10 숙제소비 WIRE_OK
-- 직전: shape변경100 · cover번호0 · 비악화
-- BOOT다음: K-MARKOV-ROLE-LEARN-BT200 / 1237아님
-- NEXT1: K-MARKOV-ROLE-LEARN-BT200 — **양산前**. markov WIRE_OK. 리셋 후 **markov만** 1037~1236 n200. 1~5 ON==OFF HARD. cover/shape 소비 누적. 등수·mean 모니터. **1237아님**. (승인=없음(형 「다음 진행」))
+- HEAD: `c03f0a5` · WORK=`IDLE`
+- 지금: **양산前** · markov 역할숙제 BT200 PASS
+- 직전: 1~5동일200 · cover165 · shape199 · n_pos17.4
+- BOOT다음: 형 1건 / 1237아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. stat S1~S5완료 · markov 6~10 숙제 WIRE+BT200 PASS. 다음=형 1건. markov S1~S4·review는 지시 시. **1237아님**. (승인=형 다음지시)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

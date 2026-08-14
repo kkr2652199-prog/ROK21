@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `03f8ed6` · WORK=`IDLE`
-2. **지금:** **양산前** · markov 6~10 숙제소비 WIRE_OK
-3. **다음1건:** K-MARKOV-ROLE-LEARN-BT200 — **양산前**. markov WIRE_OK. 리셋 후 **markov만** 1037~1236 n200. 1~5 ON==OFF HARD. cover/shape 소비 누적. 등수·mean 모니터. **1237아님**. (승인필요=없음(형 「다음 진행」) · 선행=markov WIRE_OK)
+1. **HEAD:** `c03f0a5` · WORK=`IDLE`
+2. **지금:** **양산前** · markov 역할숙제 BT200 PASS
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. stat S1~S5완료 · markov 6~10 숙제 WIRE+BT200 PASS. 다음=형 1건. markov S1~S4·review는 지시 시. **1237아님**. (승인필요=형 다음지시 · 선행=markov BT200 PASS)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-14 | 다음 markov 200회 | 1~5동일200 · cover165 · shape199 · n_pos17.4 | **PASS** | TBD |
+| 2026-08-14 | 다음 markov 200회 | 1~5동일200 · cover165 · shape199 · n_pos17.4 | **PASS** | c03f0a5 |
 | 2026-08-14 | 다음진행 markov숙제 | shape100 · cover번호0 · 1~5·타뇌불변 · 비악화 | **WIRE_OK** | 03f8ed6 |
 | 2026-08-14 | 다음 S5 BT200 | 리셋+stat n200 PASS · 4등12·5등55 모니터 · J=0 | **PASS** | 980bb65 |
 | 2026-08-14 | 다음 S4 보완조합 | J 0.29→0 · union 17.7→22.7 · 5장100 · 비악화 | **APPLY** | ce29b7e |
