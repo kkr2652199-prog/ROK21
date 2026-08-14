@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · markov 6~10 숙제소비 WIRE_OK
-- 직전: shape변경100 · cover번호0 · 비악화
-- 다음: K-MARKOV-ROLE-LEARN-BT200 / 1237아님
+- 지금: **양산前** · markov 역할숙제 BT200 PASS
+- 직전: 1~5동일200 · cover165 · shape199 · n_pos17.4
+- 다음: 형 1건 / 1237아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |
