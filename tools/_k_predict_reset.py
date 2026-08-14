@@ -46,6 +46,7 @@ DELETE_TABLES: dict[str, str] = {
     "testlotto_pool_hit_ledger": "세트별 적중 원장 (K-POOL-HIT-LEDGER)",
     "testlotto_pool_hit_scatter": "회차×뇌 적중 분산 요약",
     "testlotto_skill_homework": "뇌별 스킬 숙제 (L9c · 예측 산출물)",
+    "testlotto_role_homework": "6~8/9~10 역할 숙제 (원장 복습)",
     "hit_warrant_log": "적중 명분 로그 (예측 대조 산출)",
 }
 

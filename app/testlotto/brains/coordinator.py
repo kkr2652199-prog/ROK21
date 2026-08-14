@@ -422,6 +422,14 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
             logger.exception(
                 "[L9c-SKILL-HW] auto_feedback write failed draw=%s", prev_draw_no
             )
+        try:
+            from app.testlotto.role_homework import write_role_homework
+
+            write_role_homework(prev_draw_no, note="auto_feedback_no_pred")
+        except Exception:
+            logger.exception(
+                "[ROLE-HW] auto_feedback write failed draw=%s", prev_draw_no
+            )
         return
 
     draws_before = _get_draws_before(prev_draw_no)
@@ -523,6 +531,21 @@ def _auto_feedback(target_draw_no: int, conn) -> None:
     except Exception:
         logger.exception(
             "[L9c-SKILL-HW] auto_feedback write failed draw=%s", prev_draw_no
+        )
+
+    try:
+        from app.testlotto.role_homework import write_role_homework
+
+        rh = write_role_homework(prev_draw_no, note="auto_feedback")
+        if not rh.get("ok"):
+            logger.warning(
+                "[ROLE-HW] auto_feedback write skip draw=%s %s",
+                prev_draw_no,
+                rh,
+            )
+    except Exception:
+        logger.exception(
+            "[ROLE-HW] auto_feedback write failed draw=%s", prev_draw_no
         )
 
 

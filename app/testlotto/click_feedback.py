@@ -172,6 +172,7 @@ def apply_draw_result_feedback(draw_no: int) -> dict[str, Any]:
         out["skipped"] = "no_predictions"
         out["pool_hit_ledger"] = _write_pool_hit_ledger_safe(dno)
         out["skill_homework"] = _write_skill_homework_safe(dno)
+        out["role_homework"] = _write_role_homework_safe(dno)
         return out
 
     actual_set = set(actual_nums)
@@ -282,6 +283,7 @@ def apply_draw_result_feedback(draw_no: int) -> dict[str, Any]:
         out["skipped"] = "all_brains_duplicate_or_empty"
     out["pool_hit_ledger"] = _write_pool_hit_ledger_safe(dno)
     out["skill_homework"] = _write_skill_homework_safe(dno)
+    out["role_homework"] = _write_role_homework_safe(dno)
     return out
 
 
@@ -304,6 +306,17 @@ def _write_skill_homework_safe(draw_no: int) -> dict[str, Any]:
         return write_skill_homework(int(draw_no), note="click_feedback")
     except Exception as e:
         logger.exception("[L9c-SKILL-HW] write failed draw=%s", draw_no)
+        return {"ok": False, "as_of_draw": int(draw_no), "error": str(e)}
+
+
+def _write_role_homework_safe(draw_no: int) -> dict[str, Any]:
+    """6~8/9~10 역할 숙제. 실패해도 피드백 본선 유지."""
+    try:
+        from app.testlotto.role_homework import write_role_homework
+
+        return write_role_homework(int(draw_no), note="click_feedback")
+    except Exception as e:
+        logger.exception("[ROLE-HW] write failed draw=%s", draw_no)
         return {"ok": False, "as_of_draw": int(draw_no), "error": str(e)}
 
 

@@ -374,6 +374,20 @@ def init_testlotto_db():
         );
         CREATE INDEX IF NOT EXISTS idx_skill_hw_asof ON testlotto_skill_homework(as_of_draw);
 
+        -- 6~8 cover / 9~10 shape 원장 복습 (as_of=결과확정, 읽기=as_of<target)
+        CREATE TABLE IF NOT EXISTS testlotto_role_homework (
+            as_of_draw      INTEGER NOT NULL,
+            brain_tag       TEXT NOT NULL,
+            role            TEXT NOT NULL,
+            window_draws    INTEGER,
+            payload_json    TEXT NOT NULL,
+            schema_version  INTEGER DEFAULT 1,
+            note            TEXT,
+            created_at      TEXT DEFAULT (datetime('now','localtime')),
+            PRIMARY KEY (as_of_draw, brain_tag, role)
+        );
+        CREATE INDEX IF NOT EXISTS idx_role_hw_asof ON testlotto_role_homework(as_of_draw);
+
         -- K-EVOLVE-AUTO S1: 상태머신 (실행은 EVOLVE_AUTO=1 + 형 GO)
         CREATE TABLE IF NOT EXISTS testlotto_evolve_auto_state (
             id                   INTEGER PRIMARY KEY CHECK (id = 1),

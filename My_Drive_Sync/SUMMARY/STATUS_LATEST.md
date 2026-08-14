@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-14 KST  
-📌 사유: **[CURSOR] K-ROLE-LEARN-TUNE-AUDIT** — 6~10은 등수학습기 아님 · 뇌별역할스윕 HOLD
+📌 사유: **[CURSOR] K-ROLE-TIER-LEARN-WIRE** — stat만 6~8/9~10 원장복습 WIRE · 1~5불변
 
-📌 직전: **[CURSOR] K-REPACK-COPY-WHICH-SET** — 몰아주기 10세트 복제=시스템(cap4·1~10가변) · 버그아님
+📌 직전: **[CURSOR] K-ROLE-LEARN-TUNE-AUDIT** — 6~10은 등수학습기 아님 · 뇌별역할스윕 HOLD
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-ROLE-TIER-LEARN-WIRE (형GO)** | **WIRE_OK** · 첫뇌=**stat**. 1~5 불변. 6~8 cover=원장 4~5맞 복습표 · 9~10 shape=과거보너스+5맞 복습(타깃보너스금지). 테이블 `testlotto_role_homework` · 쓰기=결과확정 · 읽기=`as_of<target`. 소비=`ROLE_TIER_LEARN_BRAINS={stat}`. markov/review 6~10 구경로. HARD 15항 PASS. 롤백=플래그False. ge3미클레임·1237아님. · `docs/benchmarks/20260814_KROLE_TIER_LEARN_WIRE.json` · `reports/20260814_KROLE_TIER_LEARN_WIRE.md` · `app/testlotto/role_homework.py` · `tools/_k_role_tier_learn_wire.py` |
 | **K-ROLE-LEARN-TUNE-AUDIT (형GO)** | **HOLD_NO_PER_BRAIN_ROLE_SWEEP** — 6~8 cover/9~10 shape는 **자체 학습기 없음**(1~5 재료+Jaccard/1번변형). 3등·2등P 학습 안 함. 뇌 스킬만 다름(stat miss52 / markov prefer BLEND0.55 / review prize BLEND0.85). 원장 모니터 mean: cover가 skill보다 **낮음**(s−0.065/m−0.011/r−0.030) · 몰아주기는 역할무시 점수압축. L5결함0·L9/L11~L11c HOLD → **지금 뇌별 세부튜닝 불필요**. 다음=형 유지/역할보존몰아주기/등수엔진(비권고) 1건. ge3미클레임·1237아님. · `docs/benchmarks/20260814_KROLE_LEARN_TUNE_AUDIT.json` · `reports/20260814_KROLE_LEARN_TUNE_AUDIT.md` · `tools/_k_role_learn_tune_audit.py` |
 | **K-REPACK-COPY-WHICH-SET (형GO)** | **SYSTEM_NOT_BUG** — 몰아주기는 10세트 **고정 번째가 아님**. `signal_union` 위치EMA상위2 + 세트점수 보충 **cap4** + 재조합1. 200회 실측: 회차×뇌 **600/600이 정확히 4장 복사**(비율0.80) · 몰아주기칸1~4=복사·**5칸=재조합 600/600**. 원본세트 복제횟수 1:**423** / 2:226 / 3:185 / 4:197 / 5:216 / 6:155 / 7:156 / 8:171 / 9:**341** / 10:**330**. 역할 skill**1247**(52%) · shape**671**(28%) · cover**482**(20%). 1·9·10 많음=1번예측+한칸변형이 점수 높음(모니터·버그아님). 구 hybrid 항상4·5번은 이미 교체됨. 1210 markov 3등=pool**3번**→몰아주기3칸. ge3미클레임·1237아님. · `docs/benchmarks/20260814_KREPACK_COPY_WHICH_SET.json` · `reports/20260814_KREPACK_COPY_WHICH_SET.md` · `tools/_k_repack_copy_which_set.py` |
 | **K-ENDCHECK-GAP (형 종료체크)** | **DOC_OK** · wire=**False** — 형 「`20260814_*.md` 가 reports/·커서보고서/ 없음」. Glob 0건 확인. 선행 채팅=AliExpress 제휴URL(ROK21지시아님·미실행). 상태불변: **양산前** · K-AWAIT-HYUNG-NEXT · 홈3등2=1210 pool+repack 동일번호(고유1·발권0) · BT200 PASS. 코드/DB/knobs무수정·ge3미클레임·**1237아님**. · `reports/20260814_KENDCHECK_GAP.md` · `My_Drive_Sync/커서보고서/20260814_KENDCHECK_GAP.md` |

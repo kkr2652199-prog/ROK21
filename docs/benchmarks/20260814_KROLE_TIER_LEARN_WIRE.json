@@ -1,0 +1,184 @@
+{
+  "id": "K-ROLE-TIER-LEARN-WIRE",
+  "as_of": "2026-08-14T20:24:37+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "first_brain": "stat",
+  "skill_1to5": "unchanged",
+  "hard_ok": true,
+  "checks": {
+    "write_ok": true,
+    "load_before_target_has_stat": true,
+    "load_asof_not_self": true,
+    "peek_draws": true,
+    "roles_ok": true,
+    "tnb1": true,
+    "stat_cover_hw": true,
+    "markov_cover_jaccard": true,
+    "stat_shape_hw": true,
+    "markov_shape_classic": true,
+    "skill_5_each": true,
+    "reset_lists_table": true,
+    "wired_click": true,
+    "wired_auto": true,
+    "wire_flag": true,
+    "brains_stat_only": true,
+    "no_peek_load": true
+  },
+  "write_sample": {
+    "stat": {
+      "cover_r3": {
+        "sum": 13.333333,
+        "n_pos": 12
+      },
+      "shape_r2": {
+        "sum": 50.0,
+        "n_pos": 31
+      }
+    },
+    "markov": {
+      "cover_r3": {
+        "sum": 14.666667,
+        "n_pos": 10
+      },
+      "shape_r2": {
+        "sum": 51.5,
+        "n_pos": 32
+      }
+    },
+    "review": {
+      "cover_r3": {
+        "sum": 13.333333,
+        "n_pos": 11
+      },
+      "shape_r2": {
+        "sum": 50.0,
+        "n_pos": 31
+      }
+    }
+  },
+  "stat_cover_src": [
+    "cover_r3_role_hw",
+    "cover_r3_role_hw",
+    "cover_r3_role_hw"
+  ],
+  "markov_cover_src": [
+    "cover_r3_jaccard",
+    "cover_r3_jaccard",
+    "cover_r3_jaccard"
+  ],
+  "stat_shape_src": [
+    "shape_r2_role_hw",
+    "shape_r2_role_hw"
+  ],
+  "markov_shape_src": [
+    "shape_core5_vary6",
+    "shape_core5_vary6"
+  ],
+  "knobs": {
+    "BLEND_STRENGTH_BY_BRAIN": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "W_CROWD_BY_BRAIN": {
+      "markov": 0.9,
+      "review": 0.9
+    },
+    "W_STRUCT_BY_BRAIN": {
+      "markov": 0.1,
+      "review": 0.1
+    },
+    "HINT_SPEC_BY_BRAIN": {
+      "stat": [
+        52,
+        "miss_pattern"
+      ],
+      "markov": [
+        null,
+        "crowd_prefer"
+      ],
+      "review": [
+        null,
+        "crowd_prize"
+      ]
+    },
+    "SCORE_WEIGHTS_BY_BRAIN": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "ASSEMBLE_MODE": "signal_union",
+    "POOL_SLOTS_BY_BRAIN": {
+      "markov": 2,
+      "stat": 2,
+      "review": 2
+    },
+    "POOL_UNION_CAP_BY_BRAIN": {
+      "markov": 4,
+      "stat": 4,
+      "review": 4
+    },
+    "HINT_WEIGHT_BY_BRAIN": {
+      "stat": 0.15,
+      "markov": 0.15,
+      "review": 0.15
+    },
+    "REFEREE_BY_BRAIN": {
+      "stat": {
+        "role_ko": "과거학습감독",
+        "gain": 2.5,
+        "baseline": 0.8,
+        "floor": 0.15,
+        "set_scale": 0.75
+      },
+      "markov": {
+        "role_ko": "선호번호감독",
+        "gain": 2.5,
+        "baseline": 0.8,
+        "floor": 0.15,
+        "set_scale": 0.75
+      },
+      "review": {
+        "role_ko": "금액뇌감독",
+        "gain": 2.5,
+        "baseline": 0.8,
+        "floor": 0.15,
+        "set_scale": 0.75
+      }
+    },
+    "LEDGER_SIGNAL_WIRE": true,
+    "LEDGER_BLEND": 0.5,
+    "LEDGER_WINDOW_DRAWS": 50,
+    "ROLE_SLOTS_WIRE": true,
+    "ROLE_TIER_LEARN_WIRE": true,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "hint_shared_across_brains": false,
+    "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리"
+  },
+  "roles_issues": [],
+  "tnb1": {
+    "ok": true,
+    "params": [
+      "brain_tag",
+      "draw_no",
+      "n",
+      "seed",
+      "skill_sets"
+    ],
+    "bad": []
+  }
+}

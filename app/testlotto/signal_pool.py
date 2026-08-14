@@ -91,6 +91,12 @@ _LAST_LEDGER_CONSUME: dict[str, Any] = {}
 # False면 구 2×predict_sets(5) 경로(롤백).
 ROLE_SLOTS_WIRE: bool = True
 
+# K-ROLE-TIER-LEARN — 6~8 cover / 9~10 shape 가 원장 복습표를 소비.
+# 1~5 skill_native 불변. 한 뇌만 켜서 집중 (3뇌 동시 금지).
+# 롤백: ROLE_TIER_LEARN_WIRE=False 또는 BRAINS 비우기.
+ROLE_TIER_LEARN_WIRE: bool = True
+ROLE_TIER_LEARN_BRAINS: frozenset[str] = frozenset({"stat"})
+
 
 SignalTable = dict[str, dict[int, float]]
 
@@ -868,6 +874,8 @@ def tune_snapshot() -> dict[str, Any]:
         "LEDGER_BLEND": float(LEDGER_BLEND),
         "LEDGER_WINDOW_DRAWS": int(LEDGER_WINDOW_DRAWS),
         "ROLE_SLOTS_WIRE": bool(ROLE_SLOTS_WIRE),
+        "ROLE_TIER_LEARN_WIRE": bool(ROLE_TIER_LEARN_WIRE),
+        "ROLE_TIER_LEARN_BRAINS": sorted(ROLE_TIER_LEARN_BRAINS),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }

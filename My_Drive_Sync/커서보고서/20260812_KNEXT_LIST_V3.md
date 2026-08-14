@@ -136,6 +136,11 @@
 - C8 PASS · BT/`run_prediction` 불변 · `TICKET_POOL_SYNC=True`.
 - LIST_V3 L0~L12b **완료**. 다음=형 다음 1건.
 
+### L13 K-ROLE-TIER-LEARN-WIRE — **WIRE_OK** (stat만)
+- 1~5 불변. 6~8/9~10 **원장 복습** (`testlotto_role_homework`).
+- 소비 뇌=`stat`만. 타깃 보너스 미입력. ge3미클레임.
+- 다음 뇌=markov 는 형 1건.
+
 ---
 
 ## 3) 매핑
@@ -177,6 +182,7 @@
 | L11c | **HOLD** |
 | L12 | **DOC_OK** |
 | L12b | **WIRE_OK** (E) |
+| L13 | **WIRE_OK** (stat 6~8/9~10 복습) |
 
 ---
 

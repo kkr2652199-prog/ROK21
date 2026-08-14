@@ -88,14 +88,32 @@ def build_cover_r3_sets(
     skill_keys = {_nums_key(s["nums"]) for s in skill_sets}
     skill_nums = [list(s["nums"]) for s in skill_sets]
 
+    cover_w: dict[int, float] = {}
+    use_hw = False
+    try:
+        from app.testlotto.role_homework import (
+            brain_consumes_role_learn,
+            load_role_hint_for_brain,
+        )
+
+        use_hw = brain_consumes_role_learn(brain_tag)
+        if use_hw:
+            cover_w = load_role_hint_for_brain(draw_no, brain_tag, ROLE_COVER)
+    except Exception:
+        use_hw = False
+        cover_w = {}
+
     def cover_key(c: dict) -> tuple:
         nums = [int(x) for x in c.get("nums") or []]
         if len(nums) != 6:
-            return (9.0, _nums_key(nums))
+            return (9.0, 0.0, _nums_key(nums))
         jac = (
             min(_jaccard(nums, sk) for sk in skill_nums) if skill_nums else 0.0
         )
-        return (jac, _nums_key(nums))
+        if use_hw and cover_w:
+            sc = -sum(float(cover_w.get(n, 0.0)) for n in nums)
+            return (sc, jac, _nums_key(nums))
+        return (jac, 0.0, _nums_key(nums))
 
     ranked = sorted(cands, key=cover_key)
     picked: list[dict[str, Any]] = []
@@ -121,6 +139,7 @@ def build_cover_r3_sets(
                 "kind": "pool",
                 "role": ROLE_COVER,
                 "role_pass": "pass1a",
+                "source": "cover_r3_role_hw" if use_hw and cover_w else "cover_r3_jaccard",
             }
         )
         picked_keys.add(key)
@@ -170,7 +189,10 @@ def build_shape_r2_sets(
     draw_no: int,
     n: int = 2,
 ) -> list[dict[str, Any]]:
-    """pass1b: 핵심5 + 6번째 가변. bonus/actual 파라미터 없음 (T-NB1)."""
+    """pass1b: 핵심5 + 6번째 가변. bonus/actual 파라미터 없음 (T-NB1).
+
+    ROLE_TIER_LEARN 뇌: 6번째는 과거 보너스·5맞 복습표 상위 (타깃 보너스 미사용).
+    """
     from app.testlotto.signal_pool import _pass_seed
 
     if not skill_sets:
@@ -179,15 +201,40 @@ def build_shape_r2_sets(
     if len(base) != 6:
         return []
     rng = random.Random(_pass_seed(seed, draw_no, 2) + 90001)
+    shape_w: dict[int, float] = {}
+    use_hw = False
+    try:
+        from app.testlotto.role_homework import (
+            brain_consumes_role_learn,
+            load_role_hint_for_brain,
+        )
+
+        use_hw = brain_consumes_role_learn(brain_tag)
+        if use_hw:
+            shape_w = load_role_hint_for_brain(draw_no, brain_tag, ROLE_SHAPE)
+    except Exception:
+        use_hw = False
+        shape_w = {}
+
     out: list[dict[str, Any]] = []
+    used_sixth: set[int] = set()
     for i in range(n):
         drop_idx = i % 6
         core5 = [base[j] for j in range(6) if j != drop_idx]
         used = set(base)
         cands = [x for x in range(1, 46) if x not in used]
-        rng.shuffle(cands)
-        # i번째 shape는 서로 다른 6번째
-        sixth = cands[min(i, len(cands) - 1)]
+        if use_hw and shape_w:
+            cands.sort(key=lambda x: (-float(shape_w.get(x, 0.0)), x))
+        else:
+            rng.shuffle(cands)
+        sixth = None
+        for x in cands:
+            if x not in used_sixth:
+                sixth = x
+                break
+        if sixth is None:
+            sixth = cands[min(i, len(cands) - 1)]
+        used_sixth.add(sixth)
         nums = sorted(core5 + [sixth])
         sn = 9 + i
         out.append(
@@ -199,7 +246,7 @@ def build_shape_r2_sets(
                 "kind": "pool",
                 "role": ROLE_SHAPE,
                 "role_pass": "pass1b",
-                "source": "shape_core5_vary6",
+                "source": "shape_r2_role_hw" if use_hw and shape_w else "shape_core5_vary6",
             }
         )
     return out
