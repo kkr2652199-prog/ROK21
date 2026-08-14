@@ -1,0 +1,102 @@
+{
+  "id": "K-BT200-TIER-COUNTS",
+  "as_of": "2026-08-14T21:08:49+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "read_only": true,
+  "window": [
+    1037,
+    1236
+  ],
+  "n_draws": 200,
+  "brains": [
+    "stat"
+  ],
+  "issued": {
+    "predictions": 0,
+    "matched_ge3": 0,
+    "pred_1237": 0,
+    "note": "발권 0 → 산 티켓 등수 없음"
+  },
+  "set_rows": {
+    "n": 3000,
+    "by_tier": {
+      "1등": 0,
+      "2등": 0,
+      "3등": 0,
+      "4등": 2,
+      "5등": 79,
+      "미적중": 2919
+    },
+    "note": "풀10+몰아주기5 행 단위. 같은 번호 중복 가능"
+  },
+  "unique_combo": {
+    "n": 2200,
+    "by_tier": {
+      "1등": 0,
+      "2등": 0,
+      "3등": 0,
+      "4등": 1,
+      "5등": 55,
+      "미적중": 2144
+    },
+    "note": "회차×뇌×번호조합 1회"
+  },
+  "draw_best": {
+    "draws_with_any_tier": 47,
+    "draws_no_tier": 153,
+    "by_best_tier": {
+      "1등": 0,
+      "2등": 0,
+      "3등": 0,
+      "4등": 1,
+      "5등": 46
+    },
+    "note": "회차당 최고 등수 1개. 미적중 회차는 by_best에 안 넣음"
+  },
+  "hits_ge4_unique": [
+    {
+      "draw_no": 1117,
+      "brain": "stat",
+      "nums": [
+        3,
+        4,
+        22,
+        30,
+        33,
+        43
+      ],
+      "tier": 4,
+      "kind": "pool",
+      "role": "shape_r2",
+      "set_no": 10,
+      "hits": 4,
+      "bonus_hit": 0,
+      "label": "4등"
+    }
+  ],
+  "actual_1117": {
+    "nums": [
+      3,
+      4,
+      9,
+      30,
+      33,
+      36
+    ],
+    "bonus": 7
+  },
+  "set_by_role_prize": {
+    "skill_native|미적중": 975,
+    "skill_native|5등": 25,
+    "cover_r3|미적중": 586,
+    "shape_r2|미적중": 388,
+    "focus_r1|미적중": 970,
+    "cover_r3|5등": 14,
+    "focus_r1|5등": 29,
+    "shape_r2|5등": 11,
+    "shape_r2|4등": 1,
+    "focus_r1|4등": 1
+  },
+  "verdict": "DOC_OK"
+}
