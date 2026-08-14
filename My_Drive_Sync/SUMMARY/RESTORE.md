@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `e3aa05c` · WORK=`IDLE`
-2. **지금:** **양산前** · S2 shape코어 HOLD · NEXT=S3 몰아주기쿼터
-3. **다음1건:** K-STAT-REPACK-ROLE-QUOTA — **양산前**. S2 HOLD(set1). **stat 몰아주기** cap4 복사에 cover최소1·shape최대1·skill최소1. 게이트 prefer/prize 비악화. 모니터 copy_by_role. **1237아님**. (승인필요=없음(형 캠페인GO · stat엔진+몰아주기) · 선행=S1 APPLY)
+1. **HEAD:** `feef9c7` · WORK=`IDLE`
+2. **지금:** **양산前** · S3 몰아주기쿼터 APPLY · NEXT=S4 보완조합
+3. **다음1건:** K-STAT-REPACK-MIX-RECOMBINE — **양산前**. S3 APPLY. **stat 몰아주기 5번째 장**을 상위6절단 → 복사4장에 없는 고점수 보완. 폴백 top6. 게이트 prefer/prize 비악화. **1237아님**. (승인필요=없음(형 캠페인GO · stat엔진+몰아주기) · 선행=S3 APPLY)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-14 | 다음 S3 몰아주기쿼터 | cover0장49→0 · cover비 0.11→0.21 · shape 0.25→0.16 | **APPLY** | TBD |
+| 2026-08-14 | 다음 S3 몰아주기쿼터 | cover0장49→0 · cover비 0.11→0.21 · shape 0.25→0.16 | **APPLY** | feef9c7 |
 | 2026-08-14 | 다음 S2 shape코어 | J 0.71→0.29나왔으나 prefer+0.012 · 라이브 set1 | **HOLD** | e3aa05c |
 | 2026-08-14 | 다음진행 S1 cover-union | 1~5불변100 · union10 30→32 · prefer↓비악화 · mode=outside_union | **APPLY** | d9b8088 |
 | 2026-08-14 | 6~10·몰아주기정밀+문헌+패치리스트 | cover=재샘플 3등엔진아님 · 몰아주기=복사4+상위6 · 리스트S1~S5 | **SPEC_OK** | 9443d1a |
