@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-13 KST  
-📌 사유: **[CURSOR] K-HOME-TIER3-DUP** — 홈 3등2=1210 pool+repack 동일번호 · 고유1·발권0
+📅 최종 갱신: 2026-08-14 KST  
+📌 사유: **[CURSOR] K-ENDCHECK-GAP** — 종료체크 `20260814_*.md` 부재 → 날짜보고서 보충 · 코드/DB무수정
 
-📌 직전: **[CURSOR] K-POST-L12B-RESET-BT200** — 리셋+스모크+200회 **PASS**
+📌 직전: **[CURSOR] K-HOME-TIER3-DUP** — 홈 3등2=1210 pool+repack 동일번호 · 고유1·발권0
 
 ---
 
@@ -15,6 +15,7 @@
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **서버** | 2026-08-11 재가동 · `python run_v13.py` · http://127.0.0.1:7021/ · HTTP200 |
+| **K-ENDCHECK-GAP (형 종료체크)** | **DOC_OK** · wire=**False** — 형 「`20260814_*.md` 가 reports/·커서보고서/ 없음」. Glob 0건 확인. 선행 채팅=AliExpress 제휴URL(ROK21지시아님·미실행). 상태불변: **양산前** · K-AWAIT-HYUNG-NEXT · 홈3등2=1210 pool+repack 동일번호(고유1·발권0) · BT200 PASS. 코드/DB/knobs무수정·ge3미클레임·**1237아님**. · `reports/20260814_KENDCHECK_GAP.md` · `My_Drive_Sync/커서보고서/20260814_KENDCHECK_GAP.md` |
 | **K-HOME-TIER3-DUP (형확인)** | **CONFIRM** — 홈 「맞춘 결과 3등 2」=**맞음**. 집계=`_testlottoHitSummarySourceRows`(pool+repack 행단위). 원장 hits≥5는 **1210만** 2행 동일번호 `[1,7,12,17,27,38]` vs 당첨`[1,7,9,17,27,38]` 보너스31. 발권 `lotto_predictions` matched≥5 **0**. 대시보드 rank3 3뇌 **0**. 고유조합1·화면행2. UI합치기·발권편입 **미패치**. ge3미클레임·1237아님. · `docs/benchmarks/20260813_KHOME_TIER3_DUP.json` · `reports/20260813_KHOME_TIER3_DUP.md` |
 | **K-REPACK-COPY-TIER-AUDIT (형GO)** | **DESIGN_NOT_BUG** + SOFT패치 — 몰아주기 `signal_union` cap**4** → repack3000 중 pool일치 **2400**(0.80=4/5). 3등 원장2행=**1210 markov 동일번호** `[1,7,12,17,27,38]` vs 당첨`[1,7,9,17,27,38]` · **발권5에는 없음**. 발권 회차best 200회 r4**6**/r5**21**/r3**0**. auto_feedback `allow_compute=False` · payload source보존. ge3미클레임·1237아님. · `docs/benchmarks/20260813_KREPACK_COPY_TIER_AUDIT.json` · `reports/20260813_KREPACK_COPY_TIER_AUDIT.md` · `tools/_k_repack_copy_tier_audit.py` |
 | **K-POST-L12B-RESET-BT200 (형GO)** | **PASS** · 테스트로또만 리셋(숙제테이블 추가삭제) · 스모크1234~1236 HARD · BT **1037~1236 n200**. 발권5 mean_all**0.79**/mean_best**1.71**/ge3**0.135**(모니터·null best_of_5). solo stat/markov/review mean_all 0.828/0.808/0.823. 풀 best**2.575**(45장·발권아님). HARD peek0·issued5 200/200·예외0. SOFT: 원장 writer가 prev **1036** 캐시 1회. 1237발권0 · draws MAX**1236** · DB커밋안함. · `docs/benchmarks/20260813_KPOST_L12B_RESET_BT200.json` · `reports/20260813_KPOST_L12B_RESET_BT200.md` · `tools/_k_post_l12b_reset_bt200.py` |
