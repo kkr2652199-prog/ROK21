@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. evolve필드 SPEC_OK(**HOLD**·features_json만·WEIGHT0). 숙제ON·궁합 APPLY·covering휠·S2재탕 금지. **1237아님**.
-- 완료조건: 형 1건
-- 선행완료: K-EVOLVE-LOG-FIELD-SPEC SPEC_OK
+- 할일: **양산前**. 자동큐 소진(L15). 형 선택 1건(숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지.
+- 완료조건: 형이 위 중 1개 명시
+- 선행완료: K-NEXT-QUEUE-EXHAUST DOC_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-15
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260815_KNEXT_QUEUE_EXHAUST.md
 - reports/20260815_KEVOLVE_LOG_FIELD_SPEC.md
 - reports/20260815_KSTAT_COMBO_ANNOTATE_SPEC.md
 - reports/20260815_KTIER3_LEARN_CLOSE.md

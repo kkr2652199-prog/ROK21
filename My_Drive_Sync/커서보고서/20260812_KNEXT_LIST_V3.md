@@ -158,9 +158,12 @@
 ### L13f K-STAT-POOL-LEARN-EVOLVE — **WIRE_OK_HOLD_KNOB**
 - 1~5 brain_review→CUTOFF. prize게이트 미달. 적중mean 클레임금지. 플래그 True(기록유지).
 
-### L14 K-TIER3-LEARN-CLOSE — **DOC_OK** (본턴)
+### L14 K-TIER3-LEARN-CLOSE — **DOC_OK**
 - 3등 학습 엔진 트랙 **닫음**. 문장고정: cover≠3등엔진 · t=3=5등형태 · shape=3등형태(코드 재라벨 없음).
 - greedy t-cover는 별 GO. 코드/노브 불변. `reports/20260815_KTIER3_LEARN_CLOSE.md`
+
+### L15 K-NEXT-QUEUE-EXHAUST — **DOC_OK** (본턴)
+- 자동 순서 큐 **소진**. 다음 1건=형 선택(별 GO). `reports/20260815_KNEXT_QUEUE_EXHAUST.md`
 
 ---
 
@@ -211,6 +214,7 @@
 | L13e | **DOC_OK** (200회 등수 1·2·3=0 4=1 5=55) |
 | L13f | **WIRE_OK_HOLD_KNOB** (stat 1~5 학습고리) |
 | L14 | **DOC_OK** (3등 학습 엔진 닫기·문장고정) |
+| L15 | **DOC_OK** (자동 큐 소진 · 형 선택) |
 
 ---
 

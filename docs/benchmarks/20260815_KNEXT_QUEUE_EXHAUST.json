@@ -1,0 +1,58 @@
+{
+  "id": "K-NEXT-QUEUE-EXHAUST",
+  "as_of": "2026-08-15T15:39:36+09:00",
+  "verdict": "DOC_OK",
+  "apply": false,
+  "auto_next": null,
+  "draws_max": 1236,
+  "pred_1237": 0,
+  "role_learn_brains": [
+    "stat"
+  ],
+  "done_seq": [
+    "LIST_V3 L0–L14 (L9/L10/L11계 HOLD)",
+    "진단로그 SPEC/APPLY/READ/EXPAND",
+    "2뇌 엔진+문헌 DISCUSS",
+    "prize↔Ziemba SPEC · review W_STRUCT APPLY 0.20",
+    "권고#2 축모니터 · 권고4A 전이상태 HOLD",
+    "L14 3등엔진 CLOSE",
+    "COOCCUR A 궁합annotate SPEC HOLD",
+    "COOCCUR B evolve필드 SPEC HOLD"
+  ],
+  "locked": [
+    "숙제ON (라이브 {stat} · 형 정정)",
+    "궁합 APPLY (prefer_table 금지 · annotate HOLD)",
+    "covering 휠 APPLY (greedy t-cover 별 GO)",
+    "S2 consensus 재탕",
+    "L9/L11/L11b/L11c 재탕",
+    "1237 예측/양산"
+  ],
+  "pick": [
+    {
+      "id": "숙제 markov ON",
+      "need": "명시 ‘숙제 켜’",
+      "note": "코드 있음. 형 정정은 stat만."
+    },
+    {
+      "id": "covering 휠 H",
+      "need": "명시 ‘휠 APPLY’",
+      "note": "S1과 반대 기하. L14에서 별GO."
+    },
+    {
+      "id": "evolve features APPLY",
+      "need": "명시 ‘필드 넣어’",
+      "note": "B SPEC HOLD. WEIGHT 0 유지."
+    },
+    {
+      "id": "궁합 annotate APPLY",
+      "need": "명시 ‘annotate 켜’",
+      "note": "A SPEC HOLD. prefer 표 금지."
+    },
+    {
+      "id": "S2 대체 설계",
+      "need": "새 아이디어+GO",
+      "note": "consensus 재탕 금지."
+    }
+  ],
+  "hard_ok": true
+}
