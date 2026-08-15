@@ -1,0 +1,656 @@
+{
+  "id": "K-REPACK-COPY-AUDIT",
+  "as_of": "2026-08-15T16:11:32+09:00",
+  "verdict": "AUDIT_OK",
+  "apply": false,
+  "bug": false,
+  "design_mismatch": true,
+  "ui_draw": 1216,
+  "actual_1216": [
+    3,
+    10,
+    14,
+    15,
+    23,
+    24
+  ],
+  "bonus_1216": 25,
+  "ui_sets_are_stat_pool": true,
+  "snap_1216": {
+    "stat": {
+      "pool": [
+        {
+          "set_no": 1,
+          "role": "skill_native",
+          "nums": [
+            4,
+            11,
+            15,
+            26,
+            40,
+            45
+          ]
+        },
+        {
+          "set_no": 2,
+          "role": "skill_native",
+          "nums": [
+            7,
+            9,
+            23,
+            36,
+            41,
+            44
+          ]
+        },
+        {
+          "set_no": 3,
+          "role": "skill_native",
+          "nums": [
+            6,
+            8,
+            16,
+            25,
+            27,
+            45
+          ]
+        },
+        {
+          "set_no": 4,
+          "role": "skill_native",
+          "nums": [
+            3,
+            15,
+            23,
+            24,
+            27,
+            38
+          ]
+        },
+        {
+          "set_no": 5,
+          "role": "skill_native",
+          "nums": [
+            4,
+            9,
+            16,
+            19,
+            27,
+            35
+          ]
+        },
+        {
+          "set_no": 6,
+          "role": "cover_r3",
+          "nums": [
+            7,
+            12,
+            21,
+            30,
+            36,
+            42
+          ]
+        },
+        {
+          "set_no": 7,
+          "role": "cover_r3",
+          "nums": [
+            11,
+            13,
+            21,
+            28,
+            31,
+            44
+          ]
+        },
+        {
+          "set_no": 8,
+          "role": "cover_r3",
+          "nums": [
+            2,
+            6,
+            10,
+            27,
+            35,
+            45
+          ]
+        },
+        {
+          "set_no": 9,
+          "role": "shape_r2",
+          "nums": [
+            2,
+            11,
+            15,
+            26,
+            40,
+            45
+          ]
+        },
+        {
+          "set_no": 10,
+          "role": "shape_r2",
+          "nums": [
+            4,
+            15,
+            26,
+            31,
+            40,
+            45
+          ]
+        }
+      ],
+      "repack": [
+        {
+          "set_no": 1,
+          "nums": [
+            4,
+            9,
+            16,
+            19,
+            27,
+            35
+          ],
+          "source": "pool",
+          "source_set_no": 5,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 2,
+          "nums": [
+            2,
+            6,
+            10,
+            27,
+            35,
+            45
+          ],
+          "source": "pool",
+          "source_set_no": 8,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 3,
+          "nums": [
+            6,
+            8,
+            16,
+            25,
+            27,
+            45
+          ],
+          "source": "pool",
+          "source_set_no": 3,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 4,
+          "nums": [
+            3,
+            15,
+            23,
+            24,
+            27,
+            38
+          ],
+          "source": "pool",
+          "source_set_no": 4,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 5,
+          "nums": [
+            7,
+            11,
+            26,
+            31,
+            40,
+            44
+          ],
+          "source": "score_repack",
+          "source_set_no": 1,
+          "exact_pool_copy": false
+        }
+      ],
+      "n_copy": 4
+    },
+    "markov": {
+      "pool": [
+        {
+          "set_no": 1,
+          "role": "skill_native",
+          "nums": [
+            7,
+            8,
+            26,
+            30,
+            35,
+            45
+          ]
+        },
+        {
+          "set_no": 2,
+          "role": "skill_native",
+          "nums": [
+            3,
+            12,
+            23,
+            27,
+            33,
+            42
+          ]
+        },
+        {
+          "set_no": 3,
+          "role": "skill_native",
+          "nums": [
+            13,
+            15,
+            26,
+            28,
+            36,
+            44
+          ]
+        },
+        {
+          "set_no": 4,
+          "role": "skill_native",
+          "nums": [
+            7,
+            13,
+            18,
+            19,
+            30,
+            33
+          ]
+        },
+        {
+          "set_no": 5,
+          "role": "skill_native",
+          "nums": [
+            1,
+            7,
+            26,
+            29,
+            40,
+            45
+          ]
+        },
+        {
+          "set_no": 6,
+          "role": "cover_r3",
+          "nums": [
+            1,
+            7,
+            18,
+            31,
+            37,
+            44
+          ]
+        },
+        {
+          "set_no": 7,
+          "role": "cover_r3",
+          "nums": [
+            3,
+            9,
+            20,
+            30,
+            33,
+            38
+          ]
+        },
+        {
+          "set_no": 8,
+          "role": "cover_r3",
+          "nums": [
+            4,
+            17,
+            18,
+            27,
+            30,
+            36
+          ]
+        },
+        {
+          "set_no": 9,
+          "role": "shape_r2",
+          "nums": [
+            6,
+            8,
+            26,
+            30,
+            35,
+            45
+          ]
+        },
+        {
+          "set_no": 10,
+          "role": "shape_r2",
+          "nums": [
+            7,
+            23,
+            26,
+            30,
+            35,
+            45
+          ]
+        }
+      ],
+      "repack": [
+        {
+          "set_no": 1,
+          "nums": [
+            7,
+            8,
+            26,
+            30,
+            35,
+            45
+          ],
+          "source": "pool",
+          "source_set_no": 1,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 2,
+          "nums": [
+            3,
+            12,
+            23,
+            27,
+            33,
+            42
+          ],
+          "source": "pool",
+          "source_set_no": 2,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 3,
+          "nums": [
+            7,
+            13,
+            18,
+            19,
+            30,
+            33
+          ],
+          "source": "pool",
+          "source_set_no": 4,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 4,
+          "nums": [
+            4,
+            17,
+            18,
+            27,
+            30,
+            36
+          ],
+          "source": "pool",
+          "source_set_no": 8,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 5,
+          "nums": [
+            7,
+            12,
+            13,
+            18,
+            27,
+            34
+          ],
+          "source": "score_repack",
+          "source_set_no": 1,
+          "exact_pool_copy": false
+        }
+      ],
+      "n_copy": 4
+    },
+    "review": {
+      "pool": [
+        {
+          "set_no": 1,
+          "role": "skill_native",
+          "nums": [
+            6,
+            15,
+            19,
+            26,
+            42,
+            45
+          ]
+        },
+        {
+          "set_no": 2,
+          "role": "skill_native",
+          "nums": [
+            1,
+            5,
+            21,
+            30,
+            44,
+            45
+          ]
+        },
+        {
+          "set_no": 3,
+          "role": "skill_native",
+          "nums": [
+            6,
+            13,
+            19,
+            21,
+            27,
+            35
+          ]
+        },
+        {
+          "set_no": 4,
+          "role": "skill_native",
+          "nums": [
+            19,
+            23,
+            24,
+            29,
+            32,
+            45
+          ]
+        },
+        {
+          "set_no": 5,
+          "role": "skill_native",
+          "nums": [
+            13,
+            20,
+            27,
+            38,
+            40,
+            44
+          ]
+        },
+        {
+          "set_no": 6,
+          "role": "cover_r3",
+          "nums": [
+            2,
+            8,
+            10,
+            19,
+            21,
+            23
+          ]
+        },
+        {
+          "set_no": 7,
+          "role": "cover_r3",
+          "nums": [
+            11,
+            15,
+            21,
+            30,
+            38,
+            44
+          ]
+        },
+        {
+          "set_no": 8,
+          "role": "cover_r3",
+          "nums": [
+            13,
+            16,
+            21,
+            28,
+            33,
+            45
+          ]
+        },
+        {
+          "set_no": 9,
+          "role": "shape_r2",
+          "nums": [
+            7,
+            15,
+            19,
+            26,
+            42,
+            45
+          ]
+        },
+        {
+          "set_no": 10,
+          "role": "shape_r2",
+          "nums": [
+            6,
+            19,
+            24,
+            26,
+            42,
+            45
+          ]
+        }
+      ],
+      "repack": [
+        {
+          "set_no": 1,
+          "nums": [
+            6,
+            15,
+            19,
+            26,
+            42,
+            45
+          ],
+          "source": "pool",
+          "source_set_no": 1,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 2,
+          "nums": [
+            1,
+            5,
+            21,
+            30,
+            44,
+            45
+          ],
+          "source": "pool",
+          "source_set_no": 2,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 3,
+          "nums": [
+            13,
+            20,
+            27,
+            38,
+            40,
+            44
+          ],
+          "source": "pool",
+          "source_set_no": 5,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 4,
+          "nums": [
+            6,
+            13,
+            19,
+            21,
+            27,
+            35
+          ],
+          "source": "pool",
+          "source_set_no": 3,
+          "exact_pool_copy": true
+        },
+        {
+          "set_no": 5,
+          "nums": [
+            15,
+            27,
+            34,
+            37,
+            40,
+            45
+          ],
+          "source": "score_repack",
+          "source_set_no": 1,
+          "exact_pool_copy": false
+        }
+      ],
+      "n_copy": 4
+    }
+  },
+  "window": {
+    "stat": {
+      "draws": 200,
+      "copy_sets": 800,
+      "copy_per5": 4.0,
+      "src_pool": 800,
+      "src_score": 200
+    },
+    "markov": {
+      "draws": 200,
+      "copy_sets": 800,
+      "copy_per5": 4.0,
+      "src_pool": 800,
+      "src_score": 200
+    },
+    "review": {
+      "draws": 200,
+      "copy_sets": 800,
+      "copy_per5": 4.0,
+      "src_pool": 800,
+      "src_score": 200
+    }
+  },
+  "flags": {
+    "ASSEMBLE_MODE": "signal_union",
+    "SIGNAL_TOP_BRAINS": [
+      "markov",
+      "review",
+      "stat"
+    ],
+    "POOL_UNION_CAP": 4,
+    "REPACK_ROLE_QUOTA_BRAINS": [
+      "stat"
+    ],
+    "REPACK_RECOMBINE_MODE": "complement",
+    "REPACK_RECOMBINE_BRAINS": [
+      "stat"
+    ]
+  },
+  "pred_1237": 0,
+  "draws_max": 1236,
+  "hard_ok": true,
+  "intended_by_hyung": "10장 중 미당첨이지만 적중 강한 세트의 번호를 뽑아 새 5장",
+  "actual_code": "10장 중 신호/점수 상위 4장을 통째 복사 + 1장만 번호 재조합. 타깃 회차 적중은 안 봄."
+}

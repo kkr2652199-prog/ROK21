@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-3BRAIN-VECTOR-REFILL-200** — 3뇌 벡터 200 리셋+백필
+📌 사유: **[CURSOR] K-REPACK-COPY-AUDIT** — 몰아주기=pool 4장복사 실측(버그아님)
 
-📌 직전: **[CURSOR] K-NEXT-QUEUE-EXHAUST** — 자동 순서 큐 소진(형 선택만 남음)
+📌 직전: **[CURSOR] K-3BRAIN-VECTOR-REFILL-200** — 3뇌 벡터 200 리셋+백필
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-REPACK-COPY-AUDIT (형질문)** | **AUDIT_OK** · 버그**아님** · APPLY없음. UI숫자는 **1216** stat pool1–4. 몰아주기 5장 중 **4장=pool 통째복사** · 1장만 score_repack. 1037–1236 3뇌 각200회 copy_per5 **4.0**. `ASSEMBLE_MODE=signal_union` · `SIGNAL_TOP_BRAINS=3뇌`. 역할쿼터·보완=stat만. 타깃회 적중 미사용. 형정의(적중강한 미당첨에서 번호추출)는 코드에 없음. 4등=복사된 pool#4. 1237아님. · `docs/benchmarks/20260815_KREPACK_COPY_AUDIT.json` · `reports/20260815_KREPACK_COPY_AUDIT.md` · `tools/_k_repack_copy_audit.py` |
 | **K-3BRAIN-VECTOR-REFILL-200 (형GO)** | **REFILL_OK** · 1037–1236 벡터 리셋 후 3뇌 각 `expand_pool(brains=[tag])` **200**/0fail. 삭제 캐시**600** · pred**3000** · evolve**600**. 재생성 cache nonempty 3×**200** · evolve 3×**200** · pred 3×**1000**. fp 재현 stat `1030e5b6341dc581` · markov `cb8968f3ce9b4dff` · review `a505859e840ad332`. peek**0** · pred_1237**0** · MAX**1236**. 원장 stat**3000** 불변 · 숙제 600/1200 불변 · 소비 `{stat}`. DB git 안 함. 롤백=`backups/20260815_VECTOR전_DB전체/`. 1237아님. · `docs/benchmarks/20260815_K3BRAIN_VECTOR_REFILL_200.json` · `reports/20260815_K3BRAIN_VECTOR_REFILL_200.md` · `tools/_k_3brain_vector_refill_200.py` |
 | **K-NEXT-QUEUE-EXHAUST (형다음·L15)** | **DOC_OK** · 코드 **불변**. 자동 순서 큐 **소진**(LIST L0–L14 · 권고1–4A · ENGINE#1–2 · covering A · COOCCUR A·B). 잠금=숙제ON·궁합APPLY·covering휠·S2재탕·L9/L11계·1237. 형 선택: `숙제 켜` / `휠 APPLY` / `필드 넣어` / `annotate 켜` / `S2 새설계`. MAX**1236** · pred_1237**0**. · `docs/benchmarks/20260815_KNEXT_QUEUE_EXHAUST.json` · `reports/20260815_KNEXT_QUEUE_EXHAUST.md` · `tools/_k_next_queue_exhaust.py` |
 | **K-EVOLVE-LOG-FIELD-SPEC (형다음·COOCCUR B)** | **SPEC_OK** · **HOLD** · READ-ONLY · APPLY **없음**. 새테이블/ALTER **금지** · `features_json` 키만. 지금 키=`weight_applied,n_repack,n_pool,has_apply_learn_boost`. weight≠0 **0**/600 · as_of 전부 N-1 · peek**0** · FEATURE_LAMBDA **False** · EVOLVE_AUTO **OFF** · WEIGHT **0**. 제안키=`roll52_chi2`+세트 prefer/prize/consec/hi32 모니터. χ²게이트·예측입력 금지. 쓰기=`write_evolve_diag`만. 1237아님. · `docs/benchmarks/20260815_KEVOLVE_LOG_FIELD_SPEC.json` · `reports/20260815_KEVOLVE_LOG_FIELD_SPEC.md` · `tools/_k_evolve_log_field_spec.py` |
