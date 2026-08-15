@@ -1,0 +1,93 @@
+{
+  "id": "K-STAT-EVOLVE-DIAG-LOG-APPLY",
+  "as_of": "2026-08-15T14:18:53+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "verdict": "APPLY_OK",
+  "hard_ok": true,
+  "hard": {
+    "peek": 0,
+    "all_stat": true,
+    "other_brains": 0,
+    "ledger_unchanged": true,
+    "pred_unchanged": true,
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "evolve_auto": false,
+    "feature_lambda": false
+  },
+  "write": {
+    "n_ok": 200,
+    "n_skip": 0,
+    "n_fail": 0,
+    "skips": {},
+    "fails": []
+  },
+  "census_before": {
+    "evolve_n": 0,
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "draws_max": 1236,
+    "pred_n": 0,
+    "pred_1237": 0
+  },
+  "census_live_before": {
+    "evolve_n": 1,
+    "evolve_by": {
+      "stat": 1
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "peek_as_of_ge_draw": 0,
+    "pred_n": 0,
+    "pred_1237": 0,
+    "draws_max": 1236
+  },
+  "census_after": {
+    "evolve_n": 200,
+    "evolve_by": {
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "peek_as_of_ge_draw": 0,
+    "pred_n": 0,
+    "pred_1237": 0,
+    "draws_max": 1236
+  },
+  "gate": {
+    "prefer_before": 1.009444,
+    "prefer_after": 1.009444,
+    "d_prefer": 0.0,
+    "prize_before": 1.004395,
+    "prize_after": 1.004395,
+    "d_prize": 0.0,
+    "monitor_only": true
+  },
+  "flags": {
+    "EVOLVE_AUTO": false,
+    "FEATURE_LAMBDA_WIRE": false
+  }
+}

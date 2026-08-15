@@ -137,7 +137,16 @@ async def api_fetch_latest():
                 fb = apply_draw_result_feedback(dno)
         except Exception as e:  # noqa: BLE001
             fb = {"ok": False, "error": str(e)}
-        return {"status": "성공", "draw": result, "click_feedback": fb}
+        diag = None
+        try:
+            from app.testlotto.evolve_diag_stat import write_evolve_diag_stat
+
+            dno = int(result.get("draw_no") or result.get("drwNo") or 0)
+            if dno > 0:
+                diag = write_evolve_diag_stat(dno)
+        except Exception as e:  # noqa: BLE001
+            diag = {"ok": False, "error": str(e)}
+        return {"status": "성공", "draw": result, "click_feedback": fb, "evolve_diag_stat": diag}
     hint = get_collection_hint()
     return {
         "status": "신규 회차 없음",
@@ -332,6 +341,17 @@ async def api_evolve_log(draw_no: int):
     out = get_evolve_log(draw_no)
     if not out:
         return {"ok": False, "draw_no": draw_no, "error": "evolve_log 없음 · 백필 필요"}
+    return out
+
+
+@router.get("/evolve/diag-stat/{draw_no}")
+async def api_evolve_diag_stat(draw_no: int):
+    """K-STAT-EVOLVE-DIAG-LOG — brain_tag=stat만. 3뇌 합산 없음."""
+    from app.testlotto.evolve_diag_stat import get_evolve_diag_stat
+
+    out = get_evolve_diag_stat(int(draw_no))
+    if not out:
+        return {"ok": False, "draw_no": draw_no, "brain_tag": "stat", "error": "stat evolve_log 없음"}
     return out
 
 
