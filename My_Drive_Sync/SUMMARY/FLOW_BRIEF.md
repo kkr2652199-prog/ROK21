@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `eeeaa01` · WORK=`IDLE`
-- 지금: **양산前** · review 6~10 숙제소비 WIRE_OK
-- 직전: shape변경100 · cover번호0 · 비악화
-- BOOT다음: K-REVIEW-ROLE-LEARN-BT200 / 1237아님
-- NEXT1: K-REVIEW-ROLE-LEARN-BT200 — **양산前**. review WIRE_OK. 리셋 후 **review만** 1037~1236 n200. 1~5 ON==OFF HARD. cover/shape 소비 누적. 등수·mean 모니터. **1237아님**. (승인=없음(형 「다음 진행」))
+- HEAD: `dc96602` · WORK=`IDLE`
+- 지금: **양산前** · 숙제소비=과거학습만 RESTORE
+- 직전: 형정정 · review200 안함 · stat10장 불변100
+- BOOT다음: 형 1건(과거학습) / 1237아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. **과거학습(stat)만**. S1~S5완료. 숙제소비 라이브=`{stat}`. markov/review 숙제·S1~S4는 지시 시. **1237아님**. (승인=형 다음지시)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

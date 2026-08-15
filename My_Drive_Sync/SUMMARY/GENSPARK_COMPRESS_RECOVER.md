@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`eeeaa01` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`dc96602` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=eeeaa01]
+[ROK21 젠스파크 압축복구 · HEAD=dc96602]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: eeeaa01 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · review 6~10 숙제소비 WIRE_OK
-- 직전: shape변경100 · cover번호0 · 비악화
-- BOOT다음: K-REVIEW-ROLE-LEARN-BT200 / 1237아님
-- NEXT1: K-REVIEW-ROLE-LEARN-BT200 — **양산前**. review WIRE_OK. 리셋 후 **review만** 1037~1236 n200. 1~5 ON==OFF HARD. cover/shape 소비 누적. 등수·mean 모니터. **1237아님**.
+- HEAD: dc96602 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 숙제소비=과거학습만 RESTORE
+- 직전: 형정정 · review200 안함 · stat10장 불변100
+- BOOT다음: 형 1건(과거학습) / 1237아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. **과거학습(stat)만**. S1~S5완료. 숙제소비 라이브=`{stat}`. markov/review 숙제·S1~S4는 지시 시. **1237아님**.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260815_KSTAT_ONLY_CONSUME_RESTORE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KSTAT_ONLY_CONSUME_RESTORE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KSTAT_ONLY_CONSUME_RESTORE.md
 - `20260815_KREVIEW_ROLE_TIER_LEARN_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KREVIEW_ROLE_TIER_LEARN_WIRE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KREVIEW_ROLE_TIER_LEARN_WIRE.md
 - `20260814_KMARKOV_ROLE_LEARN_BT200` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260814_KMARKOV_ROLE_LEARN_BT200.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260814_KSTAT_REPACK_ROLE_QUOTA.md
 - `20260814_KSTAT_SHAPE_CONSENSUS_CORE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260814_KSTAT_SHAPE_CONSENSUS_CORE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260814_KSTAT_SHAPE_CONSENSUS_CORE.md
-- `20260814_KSTAT_COVER_OUTSIDE_UNION` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260814_KSTAT_COVER_OUTSIDE_UNION.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260814_KSTAT_COVER_OUTSIDE_UNION.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=eeeaa01 · 지금=**양산前** · review 6~10 숙제소비 WIRE_OK · 다음=K-REVIEW-ROLE-LEARN-BT200
+1. 첫줄: [복귀] HEAD=dc96602 · 지금=**양산前** · 숙제소비=과거학습만 RESTORE · 다음=K-AWAIT-HYUNG-NEXT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: eeeaa01_
+_generated: dc96602_

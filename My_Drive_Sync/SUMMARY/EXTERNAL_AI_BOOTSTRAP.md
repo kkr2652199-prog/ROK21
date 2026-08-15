@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `eeeaa01` |
+| HEAD(실측) | `dc96602` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · review 6~10 숙제소비 WIRE_OK |
-| 직전 | shape변경100 · cover번호0 · 비악화 |
-| BOOT다음 | K-REVIEW-ROLE-LEARN-BT200 / 1237아님 |
-| NEXT1 ID | **K-REVIEW-ROLE-LEARN-BT200** |
-| NEXT1 할일 | **양산前**. review WIRE_OK. 리셋 후 **review만** 1037~1236 n200. 1~5 ON==OFF HARD. cover/shape 소비 누적. 등수·mean 모니터. **1237아님**. |
-| 승인필요 | 없음(형 「다음 진행」) |
-| 선행 | review WIRE_OK |
+| 지금 | **양산前** · 숙제소비=과거학습만 RESTORE |
+| 직전 | 형정정 · review200 안함 · stat10장 불변100 |
+| BOOT다음 | 형 1건(과거학습) / 1237아님 |
+| NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
+| NEXT1 할일 | **양산前**. **과거학습(stat)만**. S1~S5완료. 숙제소비 라이브=`{stat}`. markov/review 숙제·S1~S4는 지시 시. **1237아님**. |
+| 승인필요 | 형 다음지시 |
+| 선행 | 형 정정(과거학습만) |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=eeeaa01 · 지금=**양산前** · review 6~10 숙제소비 WIRE_OK · 다음=K-REVIEW-ROLE-LEARN-BT200`
+1. 첫줄 `[복귀] HEAD=dc96602 · 지금=**양산前** · 숙제소비=과거학습만 RESTORE · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
