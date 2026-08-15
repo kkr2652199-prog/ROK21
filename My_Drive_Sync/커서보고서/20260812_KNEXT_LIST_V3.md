@@ -162,8 +162,11 @@
 - 3등 학습 엔진 트랙 **닫음**. 문장고정: cover≠3등엔진 · t=3=5등형태 · shape=3등형태(코드 재라벨 없음).
 - greedy t-cover는 별 GO. 코드/노브 불변. `reports/20260815_KTIER3_LEARN_CLOSE.md`
 
-### L15 K-NEXT-QUEUE-EXHAUST — **DOC_OK** (본턴)
+### L15 K-NEXT-QUEUE-EXHAUST — **DOC_OK**
 - 자동 순서 큐 **소진**. 다음 1건=형 선택(별 GO). `reports/20260815_KNEXT_QUEUE_EXHAUST.md`
+
+### L16 K-3BRAIN-VECTOR-REFILL-200 — **REFILL_OK** (본턴)
+- 1037–1236 캐시/예측/evolve 리셋 후 3뇌 각 200 백필. fp 재현(stat/markov/review 불변). 원장·숙제 보존. 1237아님.
 
 ---
 
@@ -215,6 +218,7 @@
 | L13f | **WIRE_OK_HOLD_KNOB** (stat 1~5 학습고리) |
 | L14 | **DOC_OK** (3등 학습 엔진 닫기·문장고정) |
 | L15 | **DOC_OK** (자동 큐 소진 · 형 선택) |
+| L16 | **REFILL_OK** (3뇌 벡터 200 리셋+백필) |
 
 ---
 

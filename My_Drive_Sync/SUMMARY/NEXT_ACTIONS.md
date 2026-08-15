@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 자동큐 소진(L15). 형 선택 1건(숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지.
+- 할일: **양산前**. 3뇌벡터 REFILL_OK(200×3·fp재현·원장불변). 형 선택 1건(숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지.
 - 완료조건: 형이 위 중 1개 명시
-- 선행완료: K-NEXT-QUEUE-EXHAUST DOC_OK
+- 선행완료: K-3BRAIN-VECTOR-REFILL-200 REFILL_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-15
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260815_K3BRAIN_VECTOR_REFILL_200.md
 - reports/20260815_KNEXT_QUEUE_EXHAUST.md
 - reports/20260815_KEVOLVE_LOG_FIELD_SPEC.md
 - reports/20260815_KSTAT_COMBO_ANNOTATE_SPEC.md

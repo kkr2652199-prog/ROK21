@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-15 | 3뇌 200 리셋+백필 | 캐시600·pred3000·evolve600 재생성 · fp재현 | **REFILL_OK** | (본턴) |
 | 2026-08-15 | 다음 진행 | 자동큐 소진 · 별GO만 남음 · 코드없음 | **DOC_OK** | b8b285a |
 | 2026-08-15 | evolve_log 필드 SPEC | features_json만 · χ²롤링52 · WEIGHT0 · HOLD | **SPEC_OK** | 3716272 |
 | 2026-08-15 | 궁합 세트annotate SPEC | 플래그OFF · prefer표금지 · HOLD · APPLY없음 | **SPEC_OK** | d5fb15a |
@@ -44,8 +45,6 @@
 | 2026-08-15 | prize↔Ziemba 대조 SPEC | 이미배선 · ρ crowd0.94 · HOLD · APPLY없음 | **SPEC_OK** | ffc8e63 |
 | 2026-08-15 | 2뇌 엔진가동+문헌 | 클론아님 J0.05~0.13 · review문헌채택 · APPLY없음 | **DISCUSS_OK** | 8a1246a |
 | 2026-08-15 | 진단로그 파트2 3뇌확장 | evolve 600분리 · peek0 · 원장3000 · drift0 | **EXPAND_OK** | 6811607 |
-| 2026-08-15 | 진단로그 READ 파트1 | stat200 role집계 · peek0 · write0 · 파트2대기 | **READ_OK** | de81295 |
-| 2026-08-15 | 종료체크 R37잔여 | GENSPARK+형제 핀 commit+push · DB제외 | **PIN_OK** | 405dfd5 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

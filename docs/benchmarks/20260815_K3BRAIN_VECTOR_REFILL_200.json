@@ -1,0 +1,138 @@
+{
+  "id": "K-3BRAIN-VECTOR-REFILL-200",
+  "as_of": "2026-08-15T15:54:26+09:00",
+  "verdict": "REFILL_OK",
+  "apply": true,
+  "db_git": false,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "hard_ok": true,
+  "deleted": {
+    "cache": 600,
+    "pred": 3000,
+    "evolve": 600
+  },
+  "fill": {
+    "stat": {
+      "ok": 200,
+      "fail": 0
+    },
+    "markov": {
+      "ok": 200,
+      "fail": 0
+    },
+    "review": {
+      "ok": 200,
+      "fail": 0
+    }
+  },
+  "peek_fill": 0,
+  "fp_before": {
+    "stat": "1030e5b6341dc581",
+    "markov": "cb8968f3ce9b4dff",
+    "review": "a505859e840ad332"
+  },
+  "fp_after": {
+    "stat": "1030e5b6341dc581",
+    "markov": "cb8968f3ce9b4dff",
+    "review": "a505859e840ad332"
+  },
+  "census_before": {
+    "evolve_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "cache_nonempty": {
+      "stat": 200,
+      "markov": 200,
+      "review": 200
+    },
+    "peek": 0,
+    "pred_n": 3000,
+    "pred_by": {
+      "markov": 1000,
+      "review": 1000,
+      "stat": 1000
+    },
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "census_mid": {
+    "evolve_by": {},
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {},
+    "cache_nonempty": {
+      "stat": 0,
+      "markov": 0,
+      "review": 0
+    },
+    "peek": 0,
+    "pred_n": 0,
+    "pred_by": {},
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "census_after": {
+    "evolve_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "cache_nonempty": {
+      "stat": 200,
+      "markov": 200,
+      "review": 200
+    },
+    "peek": 0,
+    "pred_n": 3000,
+    "pred_by": {
+      "markov": 1000,
+      "review": 1000,
+      "stat": 1000
+    },
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "ledger_unchanged": true,
+  "homework_unchanged": true,
+  "knobs": {
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "FEATURE_LAMBDA_WIRE": false,
+    "EVOLVE_AUTO": false
+  },
+  "backup": "D:\\ROK21\\backups\\20260815_VECTOR전_DB전체"
+}
