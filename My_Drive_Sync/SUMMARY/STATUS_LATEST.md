@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-LOTTO4-DASH-RECORD** — 4군 대시보드 적중기록 확인
+📌 사유: **[CURSOR] K-ENDCHECK-LEFTOVER** — 버그헌트보고 2파일 commit+push (`d5d1b68`)
 
-📌 직전: **[CURSOR] K-PATCH-BUG-HUNT** — 켠 패치 버그헌트(B1·B3)
+📌 직전: **[CURSOR] K-LOTTO4-DASH-RECORD** — 4군 대시보드 적중기록 확인
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-ENDCHECK-LEFTOVER (형종료체크)** | **COMMIT_OK** · 미커밋 2파일 `reports/20260815_KPATCH_BUG_HUNT.md` + `My_Drive_Sync/커서보고서/20260815_KPATCH_BUG_HUNT.md` → `d5d1b68` push. R37 pin `7ef7a12`. DB/backups **미커밋**. 1237아님. |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
 | **K-LOTTO4-DASH-RECORD (형질문)** | **READ_OK** · READ-ONLY · APPLY **없음**. 4군 대시보드=v13. MAX**1236** · pred_1237**0**. 채점은 수집 후 `refresh_army4_predictions_for_draw` **자동**. 예측 생성은 **수동**(두뇌 예측 실행). 최근200 가득35행 **137** · 예측0 **63**(1037–1099) · 전구간 예측0 **1099**. **v13_seq만** 1139–1188 **250행 미채점**. 가중치 last_updated_draw **0**(화면 ev1.523/cond_prob1.469은 고정·Hidden cond_prob는 신규예측 없음). 1100–1131 **32/32** 7뇌×5 채점됨. 1237아님. · `docs/benchmarks/20260815_KLOTTO4_DASH_RECORD.json` · `reports/20260815_KLOTTO4_DASH_RECORD.md` · `tools/_k_lotto4_dash_record.py` |

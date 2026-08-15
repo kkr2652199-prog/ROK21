@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d5d1b68` · WORK=`IDLE`
-- 지금: **양산前** · 4군대시보드기록 READ_OK
-- 직전: 패치버그헌트 BUGHUNT_OK
+- HEAD: `7ef7a12` · WORK=`IDLE`
+- 지금: **양산前** · leftover 버그헌트보고 COMMIT_OK
+- 직전: 4군대시보드기록 READ_OK
 - BOOT다음: 형 선택 1건 / 1237아님
 - NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 4군대시보드 READ_OK(채점자동·예측수동·seq 1139–1188 미채점·가중치 last=0). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
