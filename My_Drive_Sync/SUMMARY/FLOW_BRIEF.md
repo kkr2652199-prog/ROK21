@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `a3de9c2` · WORK=`IDLE`
-- 지금: **양산前** · 전이상태 READ_OK · HOLD
-- 직전: 축모니터 READ_OK
+- HEAD: `e2c78f0` · WORK=`IDLE`
+- 지금: **양산前** · 3등엔진 CLOSE DOC_OK
+- 직전: 전이상태 READ_OK · HOLD
 - BOOT다음: 형 1건 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 권고4A 전이상태 READ_OK(**HOLD**·끝수/대역이 더 평평). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. L14 3등엔진 CLOSE DOC_OK(문장고정·코드불변). 숙제ON·궁합prefer APPLY·covering휠·S2재탕 금지. **1237아님**. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
