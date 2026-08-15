@@ -1,0 +1,149 @@
+{
+  "id": "K-STAT-COOCCUR-PREFER-EVOLVE-DISCUSS",
+  "as_of": "2026-08-15T14:00:08+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "read_only": true,
+  "code_apply": false,
+  "verdict": "DISCUSS_OK",
+  "flags": {
+    "ROLE_TIER_LEARN_WIRE": true,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "STAT_POOL_LEARN_WIRE": true,
+    "HINT_SPEC_BY_BRAIN": {
+      "stat": [
+        52,
+        "miss_pattern"
+      ],
+      "markov": [
+        null,
+        "crowd_prefer"
+      ],
+      "review": [
+        null,
+        "crowd_prize"
+      ]
+    },
+    "SCORE_WEIGHTS_BY_BRAIN": {
+      "stat": [
+        0.25,
+        0.35,
+        0.4
+      ],
+      "markov": [
+        0.65,
+        0.15,
+        0.2
+      ],
+      "review": [
+        0.65,
+        0.15,
+        0.2
+      ]
+    },
+    "markov_LEARN_WIRED": true,
+    "review_has_apply_learn_boost": false,
+    "PREFER_WIRE": true,
+    "PRIZE_WIRE": true,
+    "PREFER_BDAY_STRENGTH": 0.0,
+    "PRIZE_SHAPE_STRENGTH": 1.0,
+    "BLEND_STRENGTH_BY_BRAIN": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "EVOLVE_AUTO": false,
+    "FEATURE_LAMBDA_WIRE": false,
+    "stat_calls_annotate_prefer": false
+  },
+  "measure": {
+    "n_draws": 1236,
+    "max_draw": 1236,
+    "pair_top5_all": [
+      {
+        "pair": [
+          11,
+          21
+        ],
+        "count": 34,
+        "exp": 18.73
+      },
+      {
+        "pair": [
+          33,
+          40
+        ],
+        "count": 33,
+        "exp": 18.73
+      },
+      {
+        "pair": [
+          6,
+          38
+        ],
+        "count": 31,
+        "exp": 18.73
+      },
+      {
+        "pair": [
+          12,
+          24
+        ],
+        "count": 31,
+        "exp": 18.73
+      },
+      {
+        "pair": [
+          37,
+          40
+        ],
+        "count": 30,
+        "exp": 18.73
+      }
+    ],
+    "pair_distinct_all": 990,
+    "consec_draw_rate": 0.517,
+    "consec_draws": 639,
+    "neighbor_same_draw_pairs": 817,
+    "next_draw_neighbor_hit_rate": 0.7757,
+    "next_draw_neighbor_n": 1235,
+    "next_draw_neighbor_null_approx": 0.8007,
+    "next_draw_neighbor_note": "이웃집합≈10이면 이론 P(≥1)≈1-C(35,6)/C(45,6)≈0.778. 실측≈이론. 예측신호 아님.",
+    "build_pair_freq_window100_pairs": 785,
+    "consecutive_pairs_mean_last200": 0.675,
+    "p_specific_pair": 0.015152,
+    "evolve_log_n": 0,
+    "evolve_log_by_brain": {},
+    "evolve_log_span": null,
+    "backtest_runs_n": 0,
+    "ledger_by_brain": {
+      "stat": 3000
+    },
+    "tables_present": {
+      "testlotto_evolve_log": true,
+      "testlotto_evolve_auto_state": true,
+      "testlotto_backtest_runs": true
+    }
+  },
+  "insert": {
+    "rec1": "stat_brain.predict after generate, before diversity.pick — set annotate only",
+    "rec1_forbid": [
+      "blend_weights",
+      "number_scores",
+      "prefer_table",
+      "engine.generate weights"
+    ],
+    "rec2": "extend testlotto_evolve_log via click_feedback/_auto_feedback/evolve_auto S2",
+    "rec2_forbid": [
+      "new table",
+      "EVOLVE_AUTO=1",
+      "per-draw chi2 as fairness"
+    ]
+  },
+  "live_paths": {
+    "markov": "app/testlotto/brains/markov_brain/predict.py",
+    "review": "app/testlotto/brains/review_brain/predict.py",
+    "review_king_deprecated": "app/testlotto/brains/predict_review_king.py"
+  }
+}
