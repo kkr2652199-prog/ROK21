@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `aacf89d` · WORK=`IDLE`
-- 지금: **양산前** · S5라이브감사 PASS
-- 직전: 3등 SPEC_OK · 학습부품 기각
-- BOOT다음: #3 K-A 구표본 DOC / 1237아님
-- NEXT1: K-A-STALE-DOC — **양산前**. **과거학습만**. DOC. FINDINGS K-A 수치를 구표본으로 표시. 패치 금지. mean으로 엔진 서열 금지. **1237아님**. (승인=없음(리스트#3))
+- HEAD: `e279650` · WORK=`IDLE`
+- 지금: **양산前** · K-A 구표본 HOLD · #1~#3끝
+- 직전: S5라이브감사 PASS
+- BOOT다음: 형 1건 (#4는 새아이디어만) / 1237아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 리스트 #1~#3 끝. #4 shape코어V2는 **새 아이디어 있을 때만**(S2 consensus 재탕 금지). 잠금재탕·발권·합동·타뇌는 형 지시 시. **1237아님**. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

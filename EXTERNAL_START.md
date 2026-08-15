@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `aacf89d` |
+| HEAD(실측) | `e279650` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · S5라이브감사 PASS |
-| 직전 | 3등 SPEC_OK · 학습부품 기각 |
-| BOOT다음 | #3 K-A 구표본 DOC / 1237아님 |
-| NEXT1 ID | **K-A-STALE-DOC** |
-| NEXT1 할일 | **양산前**. **과거학습만**. DOC. FINDINGS K-A 수치를 구표본으로 표시. 패치 금지. mean으로 엔진 서열 금지. **1237아님**. |
-| 승인필요 | 없음(리스트#3) |
-| 선행 | S5라이브감사 PASS |
+| 지금 | **양산前** · K-A 구표본 HOLD · #1~#3끝 |
+| 직전 | S5라이브감사 PASS |
+| BOOT다음 | 형 1건 (#4는 새아이디어만) / 1237아님 |
+| NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
+| NEXT1 할일 | **양산前**. 리스트 #1~#3 끝. #4 shape코어V2는 **새 아이디어 있을 때만**(S2 consensus 재탕 금지). 잠금재탕·발권·합동·타뇌는 형 지시 시. **1237아님**. |
+| 승인필요 | 형 1건 |
+| 선행 | #1~#3 종료 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=aacf89d · 지금=**양산前** · S5라이브감사 PASS · 다음=K-A-STALE-DOC`
+1. 첫줄 `[복귀] HEAD=e279650 · 지금=**양산前** · K-A 구표본 HOLD · #1~#3끝 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: aacf89d_
+_generated: e279650_
