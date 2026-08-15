@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2e2ad41` · WORK=`IDLE`
-2. **지금:** **양산前** · 과거학습 리스트종료점검 DOC
-3. **다음1건:** K-STAT-LEDGER-REALIGN-BT200 — **양산前**. **과거학습만**. 지금 ledger=markov3000. 리셋 후 **stat만** 1037~1236 n200으로 원장·숙제 맞춤. 새 knob없음. HARD peek/1~5/1237=0. **1237아님**. (승인필요=없음(형 점검+리스트 · 권고#1) · 선행=과거학습 리스트종료)
+1. **HEAD:** `a0679a5` · WORK=`IDLE`
+2. **지금:** **양산前** · 원장맞춤 PASS · ledger=stat3000
+3. **다음1건:** K-STAT-PROCESS-AUDIT-S5LIVE — **양산前**. **과거학습만**. READ. S5라이브(S1/S3/S4) source 라벨·역할 5+3+2·숙제 n_pos 재실측. 코드 APPLY 없음. **1237아님**. (승인필요=없음(리스트#2) · 선행=원장맞춤 PASS)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-15 | 1번부터 원장맞춤 | 리셋+stat n200 · ledger stat3000 · other0 · review200 | **PASS** | (push후) |
+| 2026-08-15 | 1번부터 원장맞춤 | 리셋+stat n200 · ledger stat3000 · other0 · review200 | **PASS** | a0679a5 |
 | 2026-08-15 | 과거학습끝맞냐+버그성능+리스트 | 리스트끝·HARD버그없음·원장갭 markov3000 · 다음#1맞춤 | **DOC_OK** | 2e2ad41 |
 | 2026-08-15 | 과거학습만맞냐+다음 | review200안함 · 소비={stat} · stat10장불변100 | **RESTORE_OK** | dc96602 |
 | 2026-08-15 | 다음진행 review숙제 | shape100 · cover번호0 · 1~5·타뇌불변 · 비악화 | **WIRE_OK** | eeeaa01 |

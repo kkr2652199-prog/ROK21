@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `2e2ad41` |
+| HEAD(실측) | `a0679a5` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 과거학습 리스트종료점검 DOC |
-| 직전 | S1~S5끝 · 원장=markov3000 갭 |
-| BOOT다음 | #1 원장맞춤 BT200 / 1237아님 |
-| NEXT1 ID | **K-STAT-LEDGER-REALIGN-BT200** |
-| NEXT1 할일 | **양산前**. **과거학습만**. 지금 ledger=markov3000. 리셋 후 **stat만** 1037~1236 n200으로 원장·숙제 맞춤. 새 knob없음. HARD peek/1~5/1237=0. **1237아님**. |
-| 승인필요 | 없음(형 점검+리스트 · 권고#1) |
-| 선행 | 과거학습 리스트종료 |
+| 지금 | **양산前** · 원장맞춤 PASS · ledger=stat3000 |
+| 직전 | #1 리셋+stat n200 HARD통과 |
+| BOOT다음 | #2 프로세스감사 READ / 1237아님 |
+| NEXT1 ID | **K-STAT-PROCESS-AUDIT-S5LIVE** |
+| NEXT1 할일 | **양산前**. **과거학습만**. READ. S5라이브(S1/S3/S4) source 라벨·역할 5+3+2·숙제 n_pos 재실측. 코드 APPLY 없음. **1237아님**. |
+| 승인필요 | 없음(리스트#2) |
+| 선행 | 원장맞춤 PASS |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=2e2ad41 · 지금=**양산前** · 과거학습 리스트종료점검 DOC · 다음=K-STAT-LEDGER-REALIGN-BT200`
+1. 첫줄 `[복귀] HEAD=a0679a5 · 지금=**양산前** · 원장맞춤 PASS · ledger=stat3000 · 다음=K-STAT-PROCESS-AUDIT-S5LIVE`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
