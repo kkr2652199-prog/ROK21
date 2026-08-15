@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `dc96602` |
+| HEAD(실측) | `2e2ad41` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 숙제소비=과거학습만 RESTORE |
-| 직전 | 형정정 · review200 안함 · stat10장 불변100 |
-| BOOT다음 | 형 1건(과거학습) / 1237아님 |
-| NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. **과거학습(stat)만**. S1~S5완료. 숙제소비 라이브=`{stat}`. markov/review 숙제·S1~S4는 지시 시. **1237아님**. |
-| 승인필요 | 형 다음지시 |
-| 선행 | 형 정정(과거학습만) |
+| 지금 | **양산前** · 과거학습 리스트종료점검 DOC |
+| 직전 | S1~S5끝 · 원장=markov3000 갭 |
+| BOOT다음 | #1 원장맞춤 BT200 / 1237아님 |
+| NEXT1 ID | **K-STAT-LEDGER-REALIGN-BT200** |
+| NEXT1 할일 | **양산前**. **과거학습만**. 지금 ledger=markov3000. 리셋 후 **stat만** 1037~1236 n200으로 원장·숙제 맞춤. 새 knob없음. HARD peek/1~5/1237=0. **1237아님**. |
+| 승인필요 | 없음(형 점검+리스트 · 권고#1) |
+| 선행 | 과거학습 리스트종료 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=dc96602 · 지금=**양산前** · 숙제소비=과거학습만 RESTORE · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=2e2ad41 · 지금=**양산前** · 과거학습 리스트종료점검 DOC · 다음=K-STAT-LEDGER-REALIGN-BT200`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: dc96602_
+_generated: 2e2ad41_
