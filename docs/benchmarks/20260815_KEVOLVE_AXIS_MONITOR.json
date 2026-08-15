@@ -1,0 +1,198 @@
+{
+  "id": "K-EVOLVE-AXIS-MONITOR",
+  "as_of": "2026-08-15T15:24:56+09:00",
+  "verdict": "READ_OK",
+  "apply": false,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "as_of_draw": 1236,
+  "hard": {
+    "peek_evolve": 0,
+    "peek_evolve_win": 0,
+    "peek_score_as_of_ge_target": 0,
+    "peek_table_ok": true,
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "evolve_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "n_scored_sets": 9000,
+    "role_learn_brains": [
+      "stat"
+    ],
+    "db_write": false,
+    "apply": false
+  },
+  "hard_ok": true,
+  "knobs": {
+    "W_CROWD": {
+      "markov": 0.9,
+      "review": 0.8
+    },
+    "W_STRUCT": {
+      "markov": 0.1,
+      "review": 0.2
+    },
+    "BLEND": {
+      "markov": 0.55,
+      "review": 0.85
+    },
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ]
+  },
+  "census": {
+    "evolve": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "ledger": {
+      "stat": 3000
+    },
+    "cache": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "pred_n": 3000,
+    "pred_1237": 0,
+    "draws_max": 1236
+  },
+  "axis_sets": {
+    "stat": {
+      "pool": {
+        "n_sets": 2000,
+        "prefer_mean": 1.0057,
+        "d_prefer": 0.0057,
+        "prize_mean": 1.0021,
+        "d_prize": 0.0021,
+        "hi32": 1.7875,
+        "d_hi32": -0.0792,
+        "end089": 1.469,
+        "d_end089": -0.131,
+        "bday": 4.2125,
+        "d_bday": 0.0792
+      },
+      "repack": {
+        "n_sets": 1000,
+        "prefer_mean": 1.0094,
+        "d_prefer": 0.0094,
+        "prize_mean": 1.0034,
+        "d_prize": 0.0034,
+        "hi32": 1.775,
+        "d_hi32": -0.0917,
+        "end089": 1.482,
+        "d_end089": -0.118,
+        "bday": 4.225,
+        "d_bday": 0.0917
+      }
+    },
+    "markov": {
+      "pool": {
+        "n_sets": 2000,
+        "prefer_mean": 1.0174,
+        "d_prefer": 0.0174,
+        "prize_mean": 1.0075,
+        "d_prize": 0.0075,
+        "hi32": 1.8615,
+        "d_hi32": -0.0052,
+        "end089": 1.443,
+        "d_end089": -0.157,
+        "bday": 4.1385,
+        "d_bday": 0.0052
+      },
+      "repack": {
+        "n_sets": 1000,
+        "prefer_mean": 1.0453,
+        "d_prefer": 0.0453,
+        "prize_mean": 1.0132,
+        "d_prize": 0.0132,
+        "hi32": 1.811,
+        "d_hi32": -0.0557,
+        "end089": 1.273,
+        "d_end089": -0.327,
+        "bday": 4.189,
+        "d_bday": 0.0557
+      }
+    },
+    "review": {
+      "pool": {
+        "n_sets": 2000,
+        "prefer_mean": 1.0078,
+        "d_prefer": 0.0078,
+        "prize_mean": 1.0093,
+        "d_prize": 0.0093,
+        "hi32": 1.9805,
+        "d_hi32": 0.1138,
+        "end089": 1.7445,
+        "d_end089": 0.1445,
+        "bday": 4.0195,
+        "d_bday": -0.1138
+      },
+      "repack": {
+        "n_sets": 1000,
+        "prefer_mean": 1.0174,
+        "d_prefer": 0.0174,
+        "prize_mean": 1.0399,
+        "d_prize": 0.0399,
+        "hi32": 2.529,
+        "d_hi32": 0.6623,
+        "end089": 1.756,
+        "d_end089": 0.156,
+        "bday": 3.471,
+        "d_bday": -0.6623
+      }
+    }
+  },
+  "table_mass": {
+    "prefer_markov": {
+      "hi32": 0.3039,
+      "end089": 0.2645,
+      "bday": 0.6961
+    },
+    "prize_review": {
+      "hi32": 0.328,
+      "end089": 0.2684,
+      "bday": 0.672
+    },
+    "struct_unpopular": {
+      "hi32": 0.3887,
+      "end089": 0.2896,
+      "bday": 0.6113
+    },
+    "uniform": {
+      "hi32": 0.3111,
+      "end089": 0.2667,
+      "bday": 0.6889
+    }
+  },
+  "transition_vs_uniform": {
+    "n_rows": 45,
+    "mean_tv": 0.176403,
+    "max_tv": 0.226643,
+    "mean_entropy": 3.714314,
+    "h_uniform": 3.806662,
+    "entropy_ratio": 0.97574,
+    "p_max": 0.060139,
+    "p_min": 0.006413,
+    "note": "TV·엔트로피 모니터. χ² APPLY 게이트 아님. 1.0=완전균일."
+  },
+  "null_occ": {
+    "hi32": 1.8667,
+    "end089": 1.6,
+    "bday": 4.1333
+  },
+  "read_rule": "prefer/prize 축·점유만. hits/ge3 서열 금지. 숙제ON/covering/S2/1237 없음."
+}
