@@ -1,0 +1,67 @@
+{
+  "id": "K-TL-DASH-BACKFILL-1236",
+  "as_of": "2026-08-15T19:25:59+09:00",
+  "lo": 1,
+  "hi": 1236,
+  "deleted": {
+    "pred": 3005,
+    "cache": 601,
+    "evolve": 601
+  },
+  "fill": {
+    "stat": {
+      "ok": 1235,
+      "fail": 1
+    },
+    "markov": {
+      "ok": 1234,
+      "fail": 2
+    },
+    "review": {
+      "ok": 1235,
+      "fail": 1
+    }
+  },
+  "ok": 3704,
+  "fail": 4,
+  "peek": 0,
+  "before": {
+    "pred_by": {
+      "markov": 1000,
+      "review": 1000,
+      "stat": 1005
+    },
+    "pred_n": 3005,
+    "pred_min": 2,
+    "pred_max": 1236,
+    "cache_min": 2,
+    "cache_max": 1236,
+    "cache_n": 601,
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "ledger_by": {
+      "stat": 3000
+    }
+  },
+  "after": {
+    "pred_by": {
+      "markov": 6170,
+      "review": 6175,
+      "stat": 6175
+    },
+    "pred_n": 18520,
+    "pred_min": 2,
+    "pred_max": 1236,
+    "cache_min": 2,
+    "cache_max": 1236,
+    "cache_n": 3704,
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "ledger_by": {
+      "stat": 3000
+    }
+  },
+  "ledger_same": true,
+  "hard_ok": false,
+  "pred_1237": 0
+}

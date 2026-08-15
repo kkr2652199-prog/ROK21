@@ -1,0 +1,11 @@
+{
+  "status": "done",
+  "start": 1,
+  "end": 1236,
+  "draw_no": 1236,
+  "ok": 3704,
+  "fail": 4,
+  "pred_n": 18520,
+  "hard_ok": false,
+  "as_of": "2026-08-15T19:25:59+09:00"
+}

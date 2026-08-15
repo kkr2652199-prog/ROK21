@@ -1,33 +1,45 @@
 # K-TL-DASH-BACKFILL-1236 (2026-08-15)
 
-- **판정:** `RUNNING` (작성 시점 · 백필 프로세스 진행 중)
-- 형 요청: 모든 예측번호 초기화 + **새 탭** 테스트 대시보드(기존 대시보드와 동일 레이아웃) + 1–1236 백필
+- **판정:** `BACKFILL_PARTIAL`
+- 형 요청: 예측 초기화 + **새 탭** 테스트 대시보드 + 1–1236 백필
+- 근거: `docs/benchmarks/20260815_KTL_DASH_BACKFILL_1236.json`
 
 ## UI
 
 | 항목 | 내용 |
 |------|------|
 | 새 탭 | 사이드바 `테스트 대시보드` · `data-view=tl-dash` |
-| 기존 대시보드 | 4군 요약 **유지**(숨기지 않음) |
-| 표시 | 카운트다운 · 타일4 · 적중비율 · 3뇌 1~5등 표 |
+| 기존 대시보드 | 4군 요약 **유지** |
+| 표시 | 카운트다운 · 타일4 · 적중비율(기록) · 3뇌 1~5등 표 |
 | 3뇌 | 과거학습(stat) · 선호번호(markov) · 금액뇌(review) |
 | API | `GET /api/testlotto/focus-dashboard` · `GET /api/testlotto/focus-dash/progress` |
-| 주의 | 1~5등 건수=**기록**. 우열/성능 클레임 금지 |
 
-## 백필
+## 백필 실측
 
-| 항목 | 내용 |
-|------|------|
-| 초기화 | `lotto_predictions` 3뇌 전부 · `testlotto_pool_view_cache` 전부 · evolve 1–1236 · pred_1237 |
-| 보존 | 원장 stat**3000** · 숙제/learn **미삭제** |
-| 범위 | 1–1236 · 3뇌 · 회차당 repack **5**장 |
-| 1회 | 과거 draws 0 → 3뇌 **empty_build 실패 예상** (2회부터 정상) |
-| 롤백 | `backups/20260815_TLDASH전_DB전체/` |
-| 1237 | 예측 **없음** |
+| 항목 | 값 |
+|------|-----|
+| 삭제 pred/cache/evolve | **3005** / **601** / **601** |
+| fill ok / fail | **3704** / **4** |
+| peek | **0** |
+| pred 후 | **18520** · **2–1236** · stat **6175** · markov **6170** · review **6175** |
+| cache 후 | **3704** · **2–1236** |
+| pred_1237 | **0** |
+| MAX | **1236** |
+| ledger 보존 | **True** · stat **3000** |
+
+## 실패 4건 (캐시 결측 실측)
+
+| 회차 | 뇌 | 이유 |
+|------|----|------|
+| 1 | stat·markov·review | 과거 draws **0** → empty_build |
+| 2 | markov만 | 과거 1회 → empty_build (재시도 동일) |
+
+- 우열/hits 클레임 금지. 대시보드 1~5등 숫자는 **기록**.
+- 롤백=`backups/20260815_TLDASH전_DB전체/`
+- 1237아님.
 
 ## 파일
 
-- `app/static/index.html` · `app/static/js/lotto4.js`
-- `app/testlotto/routes.py`
 - `tools/_k_tl_dash_backfill_1236.py`
-- 진행파일 `docs/benchmarks/_k_tl_dash_backfill_progress.json` (완료 후 벤치 JSON으로 교체)
+- `app/testlotto/routes.py` · `app/static/index.html` · `app/static/js/lotto4.js`
+- `docs/benchmarks/20260815_KTL_DASH_BACKFILL_1236.json`
