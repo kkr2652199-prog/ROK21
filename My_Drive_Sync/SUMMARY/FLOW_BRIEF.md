@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `3caa595` · WORK=`IDLE`
+- HEAD: `405dfd5` · WORK=`IDLE`
 - 지금: **양산前** · 진단로그 APPLY_OK · peek0·stat200
 - 직전: 진단로그 SPEC_OK
 - BOOT다음: 형 1건 / 1237아님
