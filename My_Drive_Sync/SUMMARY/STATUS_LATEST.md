@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-14 KST  
-📌 사유: **[CURSOR] K-MARKOV-ROLE-LEARN-BT200** — markov 리셋+200회 PASS · 1~5불변
+📅 최종 갱신: 2026-08-15 KST  
+📌 사유: **[CURSOR] K-REVIEW-ROLE-TIER-LEARN-WIRE** — review 6~10 원장복습 소비 WIRE_OK
 
-📌 직전: **[CURSOR] K-MARKOV-ROLE-TIER-LEARN-WIRE** — markov 6~10 원장복습 소비 WIRE_OK
+📌 직전: **[CURSOR] K-MARKOV-ROLE-LEARN-BT200** — markov 리셋+200회 PASS · 1~5불변
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-REVIEW-ROLE-TIER-LEARN-WIRE (형GO)** | **WIRE_OK** · BRAINS=`{stat, markov, review}` · 롤백=`{stat, markov}`. review 6~8/9~10이 `testlotto_role_homework` 소비(stat·markov 유지). 1~5 불변. S1~S4 review 미복사. HARD: stat·markov pool동일 **100**/100 · review 1~5동일 **100**/100 · T-NB1 OK. 스모크 PASS. 게이트1137~1236 n100: shape변경 **100**/100 · cover번호변경 **0**(source는 `cover_r3_role_hw`×300 · 원장 review행 빈 상태). prefer Δ**-0.001257** · prize Δ**-0.002567** 비악화. ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260815_KREVIEW_ROLE_TIER_LEARN_WIRE.json` · `reports/20260815_KREVIEW_ROLE_TIER_LEARN_WIRE.md` · `app/testlotto/signal_pool.py` · `tools/_k_review_role_tier_learn_wire.py` |
 | **K-MARKOV-ROLE-LEARN-BT200 (형GO)** | **PASS** · 모니터만 — 리셋 후 **markov만** 1037~1236 n**200**. BRAINS=`{stat,markov}` · COVER_MIN_HITS**3**. HARD: peek**0** · err**0** · size**0** · n_ok**200** · 1~5 ON==OFF **200**/200 · pred_1237**0** · draws_max**1236**. cover번호변경 **165**/200 · shape **199**/200 · cover n_pos평균 **17.42**(min0 max27). 칸 mean_all ON 1~5 **0.836**(OFF동일) / 6~8 **0.79** / 9~10 **0.805** / 몰아주기 **0.812**(이론0.80·클레임금지). 고유 1·2·3등**0** 4등**4** 5등**42**. 회차최고 4등**3**·5등**32**·등수회 **35**/200. census cache**600** ledger**3000** role_hw**1200** skill_hw**600**. 발권0·ge3미클레임·DB커밋안함·1237아님. · `docs/benchmarks/20260814_KMARKOV_ROLE_LEARN_BT200.json` · `reports/20260814_KMARKOV_ROLE_LEARN_BT200.md` · `tools/_k_markov_role_learn_bt200.py` |
 | **K-MARKOV-ROLE-TIER-LEARN-WIRE (형GO)** | **WIRE_OK** · BRAINS=`{stat, markov}` · 롤백=`{stat}`. markov 6~8/9~10이 `testlotto_role_homework` 소비(stat 유지). 1~5 불변. S1~S4 markov 미복사. HARD: stat·review pool동일 **100**/100 · markov 1~5동일 **100**/100 · T-NB1 OK. 스모크 PASS. 게이트1137~1236 n100: shape변경 **100**/100 · cover번호변경 **0**(source는 `cover_r3_role_hw`×300 · 원장 markov행 빈 상태). prefer Δ**-0.00181** · prize Δ**-0.00264** 비악화. ge3미클레임·DB쓰기없음·1237아님. · `docs/benchmarks/20260814_KMARKOV_ROLE_TIER_LEARN_WIRE.json` · `reports/20260814_KMARKOV_ROLE_TIER_LEARN_WIRE.md` · `app/testlotto/signal_pool.py` · `tools/_k_markov_role_tier_learn_wire.py` |
 | **K-STAT-ENGINE-EVOLVE-BT200 (S5)** | **PASS** · 모니터만 — S1~S4 라이브(S2 HOLD set1)로 예측산출물 리셋 후 **stat만** 1037~1236 n**200**. 플래그 ROLE_SLOTS+ROLE_TIER_LEARN(stat)+COVER_MIN_HITS**3**+STAT_POOL_LEARN+COVER `outside_union`+쿼터ON+RECOMBINE `complement`. HARD: peek**0** · err**0** · size**0** · n_ok**200** · pred_1237**0** · review_stat**200** · draws_max**1236**. 칸 mean_all 1~5 **0.83** / 6~8 **0.74** / 9~10 **0.8575** / 몰아주기 **0.798**(이론1장 0.80·클레임금지). prefer **0.009443** · prize **0.004396**. union10 **31.55** · union_repack **22.685** · 재조합J **0.0**. 고유조합 1등**0** 2등**0** 3등**0** 4등**12** 5등**55**. pool역할 4등 skill6+shape4+cover0 · 5등 s29+shape11+cover9. 회차최고 4등**8**회·5등**42**회·등수있는회 **50**/200. census cache**600** ledger**3000** role_hw**1200** skill_hw**600** brain_review**200**. 발권0·ge3미클레임·DB커밋안함·1237아님. · `docs/benchmarks/20260814_KSTAT_ENGINE_EVOLVE_BT200.json` · `reports/20260814_KSTAT_ENGINE_EVOLVE_BT200.md` · `tools/_k_stat_engine_evolve_bt200.py` |
