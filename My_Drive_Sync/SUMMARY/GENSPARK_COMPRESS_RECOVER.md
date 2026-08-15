@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`8a1246a` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`ffc8e63` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=8a1246a]
+[ROK21 젠스파크 압축복구 · HEAD=ffc8e63]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 8a1246a · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 2뇌스킬 DISCUSS_OK · 클론아님
-- 직전: 진단로그 EXPAND_OK
+- HEAD: ffc8e63 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · prize Ziemba SPEC_OK · HOLD
+- 직전: 2뇌스킬 DISCUSS_OK
 - BOOT다음: 형 1건 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 2뇌스킬 DISCUSS_OK(가동OK·클론아님). prize대조 SPEC·숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. prize Ziemba SPEC_OK(**HOLD**·이미배선). W_STRUCT↑·숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260815_KREVIEW_PRIZE_ZIEMBA_SPEC` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KREVIEW_PRIZE_ZIEMBA_SPEC.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KREVIEW_PRIZE_ZIEMBA_SPEC.md
 - `20260815_KMARKOV_REVIEW_SKILL_QUALITY` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KMARKOV_REVIEW_SKILL_QUALITY.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KMARKOV_REVIEW_SKILL_QUALITY.md
 - `20260815_KEVOLVE_DIAG_3BRAIN_EXPAND` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KEVOLVE_DIAG_3BRAIN_EXPAND.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KSTAT_COOCCUR_PREFER_EVOLVE_DISCUSS.md
 - `20260815_KSTAT_TIER3_COVERING_DISCUSS` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KSTAT_TIER3_COVERING_DISCUSS.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KSTAT_TIER3_COVERING_DISCUSS.md
-- `20260815_KA_STALE_DOC` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KA_STALE_DOC.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KA_STALE_DOC.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=8a1246a · 지금=**양산前** · 2뇌스킬 DISCUSS_OK · 클론아님 · 다음=K-AWAIT-HYUNG-NEXT
+1. 첫줄: [복귀] HEAD=ffc8e63 · 지금=**양산前** · prize Ziemba SPEC_OK · HOLD · 다음=K-AWAIT-HYUNG-NEXT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 8a1246a_
+_generated: ffc8e63_
