@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`5ef31ea` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`0b39eee` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=5ef31ea]
+[ROK21 젠스파크 압축복구 · HEAD=0b39eee]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 5ef31ea · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 4군/전략X탭 HOLD_ON
-- 직전: leftover 버그헌트보고 COMMIT_OK
-- BOOT다음: 형 선택 1건 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 4군/전략X탭 HOLD_ON(효도유지). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지.
+- HEAD: 0b39eee · WORK=RUNNING:K-TL-DASH-BACKFILL-1236 · SSOT=ROK21/7021
+- 지금: **양산前** · 테스트대시보드 백필 RUNNING
+- 직전: 4군/전략X탭 HOLD_ON
+- BOOT다음: 백필완료 확인 / 1237아님
+- NEXT1: K-TL-DASH-BACKFILL-1236 — **양산前**. 테스트 대시보드 탭 ON. 예측초기화 후 1–1236 3뇌 백필 RUNNING. 완료 후 대시보드 숫자 확인. 1237 금지.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=5ef31ea · 지금=**양산前** · 4군/전략X탭 HOLD_ON · 다음=K-AWAIT-HYUNG-NEXT
+1. 첫줄: [복귀] HEAD=0b39eee · 지금=**양산前** · 테스트대시보드 백필 RUNNING · 다음=K-TL-DASH-BACKFILL-1236
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 5ef31ea_
+_generated: 0b39eee_
