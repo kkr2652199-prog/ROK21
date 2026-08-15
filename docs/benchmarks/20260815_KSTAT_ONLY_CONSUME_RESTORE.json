@@ -1,0 +1,40 @@
+{
+  "id": "K-STAT-ONLY-CONSUME-RESTORE",
+  "as_of": "2026-08-15T11:58:41+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "review_bt200_ran": false,
+  "live_brains_after": [
+    "stat"
+  ],
+  "smoke": {
+    "label": "smoke",
+    "lo": 1234,
+    "hi": 1236,
+    "n_ok": 3,
+    "n_target": 3,
+    "elapsed_s": 1.3,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "stat_same": 3
+  },
+  "smoke_hard": true,
+  "gate100": {
+    "label": "gate100",
+    "lo": 1137,
+    "hi": 1236,
+    "n_ok": 100,
+    "n_target": 100,
+    "elapsed_s": 13.2,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "stat_same": 100
+  },
+  "hard_ok": true,
+  "verdict": "RESTORE_OK",
+  "note": "형 정정: 진행=과거학습만. markov/review WIRE 보고서는 보존·라이브 소비에서 제외."
+}

@@ -92,10 +92,11 @@ _LAST_LEDGER_CONSUME: dict[str, Any] = {}
 ROLE_SLOTS_WIRE: bool = True
 
 # K-ROLE-TIER-LEARN — 6~8 cover / 9~10 shape 가 원장 복습표를 소비.
-# 1~5 skill_native 불변. 소비 뇌는 순차 추가 (3뇌 동시 신규튜닝 금지).
-# 롤백: ROLE_TIER_LEARN_WIRE=False 또는 BRAINS 에서 해당 뇌 제거.
+# 1~5 skill_native 불변. 라이브 소비=과거학습(stat)만 (형 정정 20260815).
+# markov/review 숙제 소비 코드·보고서는 보존. 다시 켜려면 BRAINS에 추가.
+# 롤백: ROLE_TIER_LEARN_WIRE=False.
 ROLE_TIER_LEARN_WIRE: bool = True
-ROLE_TIER_LEARN_BRAINS: frozenset[str] = frozenset({"stat", "markov", "review"})
+ROLE_TIER_LEARN_BRAINS: frozenset[str] = frozenset({"stat"})
 
 # K-STAT-REPACK-ROLE-QUOTA (S3) — 몰아주기 cap4 복사 역할 하한/상한.
 # cover 최소1 · shape 최대1 · skill 최소1. 나머지=신호/점수 순위.
