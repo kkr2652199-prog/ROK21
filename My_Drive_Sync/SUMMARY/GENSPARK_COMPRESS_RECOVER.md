@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`9cd8e13` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`a3de9c2` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=9cd8e13]
+[ROK21 젠스파크 압축복구 · HEAD=a3de9c2]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 9cd8e13 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 축모니터 READ_OK
-- 직전: review W_STRUCT APPLY_OK · 0.20
+- HEAD: a3de9c2 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 전이상태 READ_OK · HOLD
+- 직전: 축모니터 READ_OK
 - BOOT다음: 형 1건 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 권고순서#2 축모니터 READ_OK(전이≈균일·prize점유 표만). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 권고4A 전이상태 READ_OK(**HOLD**·끝수/대역이 더 평평). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260815_KMARKOV_STATE_DEF_MONITOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KMARKOV_STATE_DEF_MONITOR.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KMARKOV_STATE_DEF_MONITOR.md
 - `20260815_KEVOLVE_AXIS_MONITOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KEVOLVE_AXIS_MONITOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KEVOLVE_AXIS_MONITOR.md
 - `20260815_KREVIEW_WSTRUCT_UP` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KREVIEW_WSTRUCT_UP.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KSTAT_EVOLVE_DIAG_READ.md
 - `20260815_KSTAT_EVOLVE_DIAG_LOG_APPLY` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KSTAT_EVOLVE_DIAG_LOG_APPLY.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KSTAT_EVOLVE_DIAG_LOG_APPLY.md
-- `20260815_KSTAT_EVOLVE_DIAG_LOG_SPEC` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KSTAT_EVOLVE_DIAG_LOG_SPEC.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KSTAT_EVOLVE_DIAG_LOG_SPEC.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=9cd8e13 · 지금=**양산前** · 축모니터 READ_OK · 다음=K-AWAIT-HYUNG-NEXT
+1. 첫줄: [복귀] HEAD=a3de9c2 · 지금=**양산前** · 전이상태 READ_OK · HOLD · 다음=K-AWAIT-HYUNG-NEXT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 9cd8e13_
+_generated: a3de9c2_
