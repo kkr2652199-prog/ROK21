@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `7a78fdf` · WORK=`IDLE`
+1. **HEAD:** `05d4d29` · WORK=`IDLE`
 2. **지금:** **양산前** · 궁합prefer+진단 DISCUSS_OK · APPLY없음
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 궁합prefer+진단 DISCUSS_OK(APPLY없음). 형 선택 A추천1 SPEC/B추천2 SPEC/C둘다 SPEC/D보류. covering·S2재탕 금지. **1237아님**. (승인필요=형 1건 · 선행=APPLY 금지(형 GO 전))
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.

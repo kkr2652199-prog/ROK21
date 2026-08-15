@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7a78fdf` · WORK=`IDLE`
+- HEAD: `05d4d29` · WORK=`IDLE`
 - 지금: **양산前** · 궁합prefer+진단 DISCUSS_OK · APPLY없음
 - 직전: covering논의 DISCUSS_OK
 - BOOT다음: 형 1건 (추천 A~D) / 1237아님
