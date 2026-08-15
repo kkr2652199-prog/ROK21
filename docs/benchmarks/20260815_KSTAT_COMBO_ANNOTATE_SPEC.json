@@ -1,0 +1,52 @@
+{
+  "id": "K-STAT-COMBO-ANNOTATE-SPEC",
+  "as_of": "2026-08-15T15:33:42+09:00",
+  "verdict": "SPEC_OK",
+  "apply": false,
+  "recommend": "HOLD",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "as_of_draw": 1236,
+  "hard_ok": true,
+  "peek_evolve": 0,
+  "peek_score": 0,
+  "pred_1237": 0,
+  "draws_max": 1236,
+  "role_learn_brains": [
+    "stat"
+  ],
+  "null": {
+    "P_specific_pair": 0.015152,
+    "E_consec_pairs": 0.6667,
+    "E_pair_count_window100": 1.5152,
+    "E_pair_sum_15": 22.7273
+  },
+  "baseline_stat_skill": {
+    "n_sets": 1000,
+    "mean_consec": 0.557,
+    "d_consec": -0.1097,
+    "mean_pair_sum": 27.454,
+    "d_pair_sum": 4.7267
+  },
+  "spec": {
+    "flag": "STAT_COMBO_ANNOTATE_WIRE",
+    "default": false,
+    "brain": "stat",
+    "hook": "app/testlotto/brains/stat_brain/predict.py: tagged[] 이후 · diversity.pick 직전",
+    "score": "세트 15쌍의 window100 pair_freq 합 + consecutive_pairs. pick_score에만 가산(별 GO).",
+    "forbid": [
+      "crowd_signal.prefer_table / prize_table 수정",
+      "stat number_scores / engine.generate 가중",
+      "markov annotate_prefer / blend_weights / pair_boost 복사",
+      "lotto4 lotto_cooccur_* 연결",
+      "random.choices 라인"
+    ],
+    "gate_if_apply": "prefer/prize 비악화 · peek0 · stat 캐시 외 불변",
+    "neighbor_def": "같은회 |a-b|=1 만 연번. 다음회 n±1은 markov 영역·이번 SPEC 제외."
+  },
+  "reason": "세트 annotate는 부착점·널이 있다. 켜면 pick이 바뀌어 발권 구성이 변한다. markov pair_boost와 같은 쌍통계를 반대로 쓰면 쿼터 혼합 시 상쇄. K-U 쌍층은 널. 플래그 OFF 유지. APPLY 없음."
+}
