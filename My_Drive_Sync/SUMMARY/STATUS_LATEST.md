@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-ENDCHECK-LEFTOVER** — 버그헌트보고 2파일 commit+push (`d5d1b68`)
+📌 사유: **[CURSOR] K-UI-HIDE-4GUN-SX** — 두뇌예측(4군)·전략X 탭 HOLD
 
-📌 직전: **[CURSOR] K-LOTTO4-DASH-RECORD** — 4군 대시보드 적중기록 확인
+📌 직전: **[CURSOR] K-ENDCHECK-LEFTOVER** — 버그헌트보고 2파일 commit+push (`d5d1b68`)
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-UI-HIDE-4GUN-SX (형요청)** | **HOLD_ON** · UI만. `ROK21_TESTLOTTO_FOCUS_HOLD=true` · 숨김=`predict`(두뇌예측=4군)+`strategy-x`. 효도 **유지**. 기본화면=테스트로또. 진입 시 4군/전략X 번호 자동로드 **OFF**. 대시보드 전략X 적중표 숨김. 엔진/DB **불변**. 복원=플래그 false. 1237아님. · `reports/20260815_KUI_HIDE_4GUN_SX.md` · `app/static/js/lotto4.js` |
 | **K-ENDCHECK-LEFTOVER (형종료체크)** | **COMMIT_OK** · 미커밋 2파일 `reports/20260815_KPATCH_BUG_HUNT.md` + `My_Drive_Sync/커서보고서/20260815_KPATCH_BUG_HUNT.md` → `d5d1b68` push. R37 pin `7ef7a12`. DB/backups **미커밋**. 1237아님. |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
