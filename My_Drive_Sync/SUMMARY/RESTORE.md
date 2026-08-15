@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `405dfd5` · WORK=`IDLE`
-2. **지금:** **양산前** · 진단로그 APPLY_OK · peek0·stat200
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 진단로그 APPLY_OK(stat 200·peek0·원장불변). 궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. (승인필요=형 1건 · 선행=없음)
+1. **HEAD:** `de81295` · WORK=`IDLE`
+2. **지금:** **양산前** · 진단로그 READ_OK · peek0·stat200
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 진단로그 READ_OK(stat200·peek0). 파트2 3뇌확장=형 GO 후. 궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. (승인필요=형 GO(파트2) 또는 다른 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-15 | 진단로그 READ 파트1 | stat200 role집계 · peek0 · write0 · 파트2대기 | **READ_OK** | (본턴) |
+| 2026-08-15 | 진단로그 READ 파트1 | stat200 role집계 · peek0 · write0 · 파트2대기 | **READ_OK** | de81295 |
 | 2026-08-15 | 종료체크 R37잔여 | GENSPARK+형제 핀 commit+push · DB제외 | **PIN_OK** | 405dfd5 |
 | 2026-08-15 | 진단로그 APPLY | write stat200 · peek0 · 원장3000불변 · preferΔ0 | **APPLY_OK** | e982bc0 |
 | 2026-08-15 | 진단로그 SPEC | brain_tag있음 · 쓰기=캐시stat만 · as_of=N-1 · APPLY없음 | **SPEC_OK** | 6d8e867 |
