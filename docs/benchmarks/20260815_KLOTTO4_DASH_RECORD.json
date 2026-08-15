@@ -1,0 +1,544 @@
+{
+  "id": "K-LOTTO4-DASH-RECORD",
+  "as_of": "2026-08-15T17:27:15+09:00",
+  "verdict": "READ_OK",
+  "apply": false,
+  "draws_max": 1236,
+  "draws_min": 1,
+  "n_draws": 1236,
+  "pred_1237": 0,
+  "brains_in_pred": [
+    "v13_diversity",
+    "v13_ensemble",
+    "v13_ev",
+    "v13_evolution",
+    "v13_gap",
+    "v13_seq",
+    "v13_struct"
+  ],
+  "by_brain": {
+    "v13_diversity": {
+      "n": 685,
+      "scored": 685,
+      "unscored": 0,
+      "draws": 137
+    },
+    "v13_ensemble": {
+      "n": 685,
+      "scored": 685,
+      "unscored": 0,
+      "draws": 137
+    },
+    "v13_ev": {
+      "n": 685,
+      "scored": 685,
+      "unscored": 0,
+      "draws": 137
+    },
+    "v13_evolution": {
+      "n": 685,
+      "scored": 685,
+      "unscored": 0,
+      "draws": 137
+    },
+    "v13_gap": {
+      "n": 685,
+      "scored": 685,
+      "unscored": 0,
+      "draws": 137
+    },
+    "v13_seq": {
+      "n": 685,
+      "scored": 435,
+      "unscored": 250,
+      "draws": 137
+    },
+    "v13_struct": {
+      "n": 685,
+      "scored": 685,
+      "unscored": 0,
+      "draws": 137
+    }
+  },
+  "recent200": {
+    "lo": 1037,
+    "hi": 1236,
+    "n": 200,
+    "full35": 137,
+    "thin": 0,
+    "none": 63,
+    "unscored_draws": 50,
+    "missing": [
+      1037,
+      1038,
+      1039,
+      1040,
+      1041,
+      1042,
+      1043,
+      1044,
+      1045,
+      1046,
+      1047,
+      1048,
+      1049,
+      1050,
+      1051,
+      1052,
+      1053,
+      1054,
+      1055,
+      1056,
+      1057,
+      1058,
+      1059,
+      1060,
+      1061,
+      1062,
+      1063,
+      1064,
+      1065,
+      1066,
+      1067,
+      1068,
+      1069,
+      1070,
+      1071,
+      1072,
+      1073,
+      1074,
+      1075,
+      1076
+    ],
+    "thin_draws": []
+  },
+  "ui_1100_1131": {
+    "n": 32,
+    "full35": 32,
+    "none": 0,
+    "rows": [
+      {
+        "draw_no": 1100,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1101,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1102,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1103,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1104,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1105,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1106,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1107,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1108,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1109,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1110,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1111,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1112,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1113,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1114,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1115,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1116,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1117,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1118,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1119,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1120,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1121,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1122,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1123,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1124,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1125,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1126,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1127,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1128,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1129,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1130,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      },
+      {
+        "draw_no": 1131,
+        "n_pred": 35,
+        "n_scored": 35,
+        "n_brains": 7
+      }
+    ]
+  },
+  "all_miss_n": 1099,
+  "all_miss_head": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "all_miss_tail": [
+    1080,
+    1081,
+    1082,
+    1083,
+    1084,
+    1085,
+    1086,
+    1087,
+    1088,
+    1089,
+    1090,
+    1091,
+    1092,
+    1093,
+    1094,
+    1095,
+    1096,
+    1097,
+    1098,
+    1099
+  ],
+  "stale_unscored_with_draw": [
+    1139,
+    1140,
+    1141,
+    1142,
+    1143,
+    1144,
+    1145,
+    1146,
+    1147,
+    1148,
+    1149,
+    1150,
+    1151,
+    1152,
+    1153,
+    1154,
+    1155,
+    1156,
+    1157,
+    1158,
+    1159,
+    1160,
+    1161,
+    1162,
+    1163,
+    1164,
+    1165,
+    1166,
+    1167,
+    1168,
+    1169,
+    1170,
+    1171,
+    1172,
+    1173,
+    1174,
+    1175,
+    1176,
+    1177,
+    1178,
+    1179,
+    1180,
+    1181,
+    1182,
+    1183,
+    1184,
+    1185,
+    1186,
+    1187,
+    1188
+  ],
+  "weights": [
+    {
+      "brain_tag": "v13_ev",
+      "current_weight": 1.523,
+      "last_updated_draw": 0
+    },
+    {
+      "brain_tag": "v13_cond_prob",
+      "current_weight": 1.469,
+      "last_updated_draw": 0
+    },
+    {
+      "brain_tag": "v13_ensemble",
+      "current_weight": 1.0079999999999998,
+      "last_updated_draw": 0
+    },
+    {
+      "brain_tag": "v13_struct",
+      "current_weight": 0.564,
+      "last_updated_draw": 0
+    },
+    {
+      "brain_tag": "v13_diversity",
+      "current_weight": 0.46399999999999997,
+      "last_updated_draw": 0
+    },
+    {
+      "brain_tag": "v13_cdm",
+      "current_weight": 0.421,
+      "last_updated_draw": 0
+    },
+    {
+      "brain_tag": "v13_gap",
+      "current_weight": 0.333,
+      "last_updated_draw": 0
+    },
+    {
+      "brain_tag": "v13_seq",
+      "current_weight": 0.321,
+      "last_updated_draw": 0
+    },
+    {
+      "brain_tag": "v13_evolution",
+      "current_weight": 0.3,
+      "last_updated_draw": 0
+    }
+  ],
+  "weight_last_draw": 0,
+  "brain_power": [
+    {
+      "brain_tag": "v13_diversity",
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 1,
+      "r5": 23,
+      "n": 685
+    },
+    {
+      "brain_tag": "v13_ensemble",
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 2,
+      "r5": 17,
+      "n": 685
+    },
+    {
+      "brain_tag": "v13_ev",
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 1,
+      "r5": 8,
+      "n": 685
+    },
+    {
+      "brain_tag": "v13_evolution",
+      "r1": 0,
+      "r2": 0,
+      "r3": 1,
+      "r4": 4,
+      "r5": 10,
+      "n": 685
+    },
+    {
+      "brain_tag": "v13_gap",
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 2,
+      "r5": 14,
+      "n": 685
+    },
+    {
+      "brain_tag": "v13_seq",
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 0,
+      "r5": 15,
+      "n": 435
+    },
+    {
+      "brain_tag": "v13_struct",
+      "r1": 0,
+      "r2": 0,
+      "r3": 0,
+      "r4": 0,
+      "r5": 24,
+      "n": 685
+    }
+  ],
+  "auto": {
+    "score_on_collect": true,
+    "predict_on_collect": false,
+    "predict_trigger": "두뇌 예측 실행 버튼 / API",
+    "hidden_not_predicted": [
+      "v13_cdm",
+      "v13_cond_prob"
+    ],
+    "predict_brains": [
+      "v13_struct",
+      "v13_seq",
+      "v13_diversity",
+      "v13_evolution",
+      "v13_gap",
+      "v13_ev",
+      "v13_ensemble"
+    ],
+    "rows_per_draw_expected": 35
+  },
+  "hard_ok": true
+}
