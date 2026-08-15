@@ -3,21 +3,22 @@
 > STEP1 guard_boot 는 **아래 ## NEXT (1건)** 만 SSOT.
 
 ## NEXT (1건)
-- ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 4군/전략X탭 HOLD_ON(효도유지). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지.
-- 완료조건: 형이 위 중 1개 명시
+- ID: K-TL-DASH-BACKFILL-1236
+- 할일: **양산前**. 테스트 대시보드 탭 ON. 예측초기화 후 1–1236 3뇌 백필 RUNNING. 완료 후 대시보드 숫자 확인. 1237 금지.
+- 완료조건: pred 2–1236 3뇌 기록 · pred_1237=0 · 진행파일 status=done
 - 선행완료: K-UI-HIDE-4GUN-SX HOLD_ON
-- 승인필요: 형 1건
+- 승인필요: 없음(형 지시 실행 중)
 - 선행조건: 없음
 - 최종갱신: 2026-08-15
 
 
 ## WORKSTATE
-IDLE
+RUNNING:K-TL-DASH-BACKFILL-1236
 
 ---
 
 ## 메모
+- reports/20260815_KTL_DASH_BACKFILL_1236.md
 - reports/20260815_KUI_HIDE_4GUN_SX.md
 - reports/20260815_KLOTTO4_DASH_RECORD.md
 - reports/20260815_KPATCH_BUG_HUNT.md

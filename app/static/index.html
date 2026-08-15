@@ -19,6 +19,7 @@
         테스트로또 집중 · 두뇌예측(4군)/전략X <strong>HOLD</strong>
       </div>
       <button type="button" class="nav-btn" data-view="dashboard">대시보드</button>
+      <button type="button" class="nav-btn" data-view="tl-dash">테스트 대시보드</button>
       <button type="button" class="nav-btn" data-view="predict">두뇌예측</button>
       <button type="button" class="nav-btn" data-view="hall">명예의전당</button>
       <button type="button" class="nav-btn" data-view="stats">통계분석</button>
@@ -96,6 +97,53 @@
                       <th>4등</th>
                       <th>5등</th>
                       <th>평균적중</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 테스트로또 전용 대시보드 (4군 대시보드와 동일 레이아웃) -->
+        <section id="view-tl-dash" class="view-panel" data-view-panel="tl-dash">
+          <div class="card">
+            <h2>테스트로또 대시보드</h2>
+            <p class="stats-hint" role="note">3뇌(과거학습·선호번호·금액뇌) 기록만 표시합니다. 1~5등 건수는 <strong>기록</strong>이지 성능 클레임이 아닙니다.</p>
+            <div class="countdown-widget" aria-live="polite">
+              <div class="countdown-head">다음 추첨까지 <span class="countdown-meta">(매주 토 20:45 KST)</span></div>
+              <div class="countdown-row">
+                <span class="countdown-label">예정 회차</span>
+                <strong id="tlDashNextDraw" class="countdown-next">-</strong>
+              </div>
+              <div class="countdown-row">
+                <span class="countdown-label">남은 시간</span>
+                <span id="tlDashTimer" class="countdown-timer">계산 중…</span>
+              </div>
+            </div>
+            <div class="rank-dropdown-wrap">
+              <button type="button" class="rank-dropdown-toggle" id="btnTlDashRankToggle" aria-expanded="false">
+                뇌별 기록 순위 <span class="rank-caret">▼</span>
+              </button>
+              <div id="tlDashRankBody" class="rank-dropdown-body"></div>
+            </div>
+            <button type="button" class="btn btn-secondary" id="btnRefreshTlDash">요약 새로고침</button>
+            <div id="tlDashBackfillStatus" class="status-line" style="margin-top:10px" aria-live="polite"></div>
+            <div id="tlDashboardBody" class="dash-grid" style="margin-top:14px"></div>
+            <div id="tlDashboardScores" class="dash-scores"></div>
+            <div style="margin-top:16px">
+              <h3 style="margin:0 0 8px;font-size:0.9rem;color:var(--muted)">두뇌별 적중 누적 (테스트로또 3뇌)</h3>
+              <div class="data-table-wrap">
+                <table class="brain-power-table" id="tlBrainPowerTable">
+                  <thead>
+                    <tr>
+                      <th>뇌</th>
+                      <th>1등</th>
+                      <th>2등</th>
+                      <th>3등</th>
+                      <th>4등</th>
+                      <th>5등</th>
                     </tr>
                   </thead>
                   <tbody></tbody>
@@ -613,6 +661,6 @@
 
   <script src="/static/js/hyodo.js?v=20260727p5"></script>
   <script src="/static/js/testlotto.js?v=20260803e"></script>
-  <script src="/static/js/lotto4.js?v=20260815hold"></script>
+  <script src="/static/js/lotto4.js?v=20260815tldash"></script>
 </body>
 </html>

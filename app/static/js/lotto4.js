@@ -2187,6 +2187,200 @@
     }
   }
 
+  const TL_DASH_BRAINS = [
+    { tag: 'stat', label: '과거학습' },
+    { tag: 'markov', label: '선호번호' },
+    { tag: 'review', label: '금액뇌' },
+  ];
+  let _tlDashCountdownTimer = null;
+  let _tlDashPollTimer = null;
+
+  function tlDashBrainLabel(tag) {
+    const t = String(tag || '').toLowerCase();
+    const hit = TL_DASH_BRAINS.find((b) => b.tag === t);
+    return hit ? hit.label : t;
+  }
+
+  function renderTlDashCountdown(nextDrawNo) {
+    const noEl = document.getElementById('tlDashNextDraw');
+    const timerEl = document.getElementById('tlDashTimer');
+    if (noEl) noEl.textContent = nextDrawNo != null ? String(nextDrawNo) + '회' : '-';
+    if (!timerEl) return;
+    const tick = function () {
+      const t = nextSat2045KstUtcMs(Date.now());
+      const sec = Math.floor(Math.max(0, t - Date.now()) / 1000);
+      const DD = Math.floor(sec / 86400);
+      const HH = Math.floor((sec % 86400) / 3600);
+      const MM = Math.floor((sec % 3600) / 60);
+      const SS = sec % 60;
+      timerEl.textContent =
+        DD + '일 ' + String(HH).padStart(2, '0') + '시간 ' + String(MM).padStart(2, '0') + '분 ' + String(SS).padStart(2, '0') + '초';
+    };
+    if (_tlDashCountdownTimer) clearInterval(_tlDashCountdownTimer);
+    tick();
+    _tlDashCountdownTimer = setInterval(tick, 1000);
+  }
+
+  function renderTlDashRank(brainPower) {
+    const body = document.getElementById('tlDashRankBody');
+    if (!body) return;
+    const rows = (brainPower || []).slice().sort(function (a, b) {
+      const sa = (a.rank1 || 0) * 100 + (a.rank2 || 0) * 50 + (a.rank3 || 0) * 10 + (a.rank4 || 0) * 2 + (a.rank5 || 0);
+      const sb = (b.rank1 || 0) * 100 + (b.rank2 || 0) * 50 + (b.rank3 || 0) * 10 + (b.rank4 || 0) * 2 + (b.rank5 || 0);
+      return sb - sa;
+    });
+    if (!rows.length) {
+      body.innerHTML = '<div class="status-line">백필 전이거나 기록 없음</div>';
+      return;
+    }
+    let html = '<ol class="rank-weight-list">';
+    rows.forEach(function (it, i) {
+      html +=
+        '<li><span class="rw-rank">#' +
+        (i + 1) +
+        '</span> <code>' +
+        (it.brain || '') +
+        '</code> <span class="rw-w-label">' +
+        tlDashBrainLabel(it.brain) +
+        '</span> <span class="rw-w">5등+' +
+        ((it.rank1 || 0) + (it.rank2 || 0) + (it.rank3 || 0) + (it.rank4 || 0) + (it.rank5 || 0)) +
+        '</span></li>';
+    });
+    html += '</ol><div class="status-line" style="margin-top:8px">순위는 기록 건수일 뿐 우열이 아닙니다.</div>';
+    body.innerHTML = html;
+  }
+
+  async function loadTlDashProgress() {
+    const el = document.getElementById('tlDashBackfillStatus');
+    if (!el) return;
+    try {
+      const res = await fetch('/api/testlotto/focus-dash/progress');
+      const p = await res.json();
+      if (!p || !p.status) {
+        el.textContent = '';
+        return;
+      }
+      if (p.status === 'running') {
+        el.textContent =
+          '백필 진행 중 · ' +
+          (p.draw_no || '-') +
+          '/' +
+          (p.end || 1236) +
+          ' · ok=' +
+          (p.ok || 0) +
+          ' fail=' +
+          (p.fail || 0);
+      } else if (p.status === 'done') {
+        el.textContent =
+          '백필 완료 · 1–' +
+          (p.end || 1236) +
+          ' · pred=' +
+          (p.pred_n || 0) +
+          ' · fail=' +
+          (p.fail || 0);
+      } else if (p.status === 'error') {
+        el.textContent = '백필 오류: ' + (p.error || '');
+      } else {
+        el.textContent = '백필 상태: ' + p.status;
+      }
+    } catch (e) {
+      el.textContent = '';
+    }
+  }
+
+  async function loadTlDashboard() {
+    const body = document.getElementById('tlDashboardBody');
+    const scoresEl = document.getElementById('tlDashboardScores');
+    const tbody = document.querySelector('#tlBrainPowerTable tbody');
+    try {
+      const res = await fetch('/api/testlotto/focus-dashboard');
+      const data = await res.json();
+      renderTlDashCountdown(data.next_draw_no);
+      renderTlDashRank(data.brain_power);
+      if (body) {
+        const lr = data.learning_range || {};
+        const rk = data.rankings || {};
+        body.innerHTML =
+          '<div class="dash-tile"><div class="k">다음 회차</div><div class="v">' +
+          (data.next_draw_no || '-') +
+          '</div><div style="font-size:0.78rem;color:var(--muted);margin-top:6px">' +
+          (data.next_draw_date || '') +
+          ' (' +
+          (data.next_draw_weekday || '') +
+          ')</div></div>' +
+          '<div class="dash-tile"><div class="k">학습 구간</div><div class="v">' +
+          (lr.start || '-') +
+          '–' +
+          (lr.end || '-') +
+          '</div><div style="font-size:0.78rem;color:var(--muted);margin-top:6px">총 ' +
+          (lr.total_draws || 0) +
+          '회차 데이터</div></div>' +
+          '<div class="dash-tile"><div class="k">예측 총 건수</div><div class="v">' +
+          (data.total_predictions || 0) +
+          '</div></div>' +
+          '<div class="dash-tile"><div class="k">1·2·3등 (건)</div><div class="v">' +
+          (rk.rank1_total || 0) +
+          ' / ' +
+          (rk.rank2_total || 0) +
+          ' / ' +
+          (rk.rank3_total || 0) +
+          '</div></div>';
+      }
+      if (scoresEl && data.scores) {
+        const s = data.scores;
+        scoresEl.innerHTML =
+          '<strong>전체 적중 비율(기록)</strong> · 1등 ' +
+          Number(s.rank1_pct || 0).toFixed(2) +
+          '% · 2등 ' +
+          Number(s.rank2_pct || 0).toFixed(2) +
+          '% · 3등 ' +
+          Number(s.rank3_pct || 0).toFixed(2) +
+          '% · 4등 ' +
+          Number(s.rank4_pct || 0).toFixed(2) +
+          '% · 5등 ' +
+          Number(s.rank5_pct || 0).toFixed(2) +
+          '% · 합계 ' +
+          Number(s.total_hit_pct || 0).toFixed(2) +
+          '%';
+      }
+      if (tbody && Array.isArray(data.brain_power)) {
+        tbody.innerHTML = '';
+        data.brain_power.forEach((b) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML =
+            '<td>' +
+            tlDashBrainLabel(b.brain) +
+            '</td><td>' +
+            (b.rank1 || 0) +
+            '</td><td>' +
+            (b.rank2 || 0) +
+            '</td><td>' +
+            (b.rank3 || 0) +
+            '</td><td>' +
+            (b.rank4 || 0) +
+            '</td><td>' +
+            (b.rank5 || 0) +
+            '</td>';
+          tbody.appendChild(tr);
+        });
+      }
+      await loadTlDashProgress();
+    } catch (e) {
+      if (body) {
+        body.innerHTML =
+          '<div class="status-line error">테스트 대시보드 실패: ' + (e.message || e) + '</div>';
+      }
+    }
+  }
+
+  function toggleTlDashRankDropdown() {
+    const body = document.getElementById('tlDashRankBody');
+    const btn = document.getElementById('btnTlDashRankToggle');
+    if (!body) return;
+    const open = body.classList.toggle('rank-dropdown-open');
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
   function renderFreqChart(elId, freqObj, title) {
     const host = document.getElementById(elId);
     if (!host) return;
@@ -3062,6 +3256,7 @@
           initHyodoDrawSearch();
           if (typeof hyodoLoadInfraPanel === 'function') hyodoLoadInfraPanel();
         }
+        if (v === 'tl-dash') loadTlDashboard();
         if (v === 'testlotto' && typeof initTestlottoDrawSearch === 'function') {
           initTestlottoDrawSearch();
         }
@@ -3075,6 +3270,18 @@
     });
 
     document.getElementById('btnRefreshDash')?.addEventListener('click', loadDashboard);
+    document.getElementById('btnRefreshTlDash')?.addEventListener('click', loadTlDashboard);
+    document.getElementById('btnTlDashRankToggle')?.addEventListener('click', toggleTlDashRankDropdown);
+    if (!_tlDashPollTimer) {
+      _tlDashPollTimer = setInterval(function () {
+        const panel = document.getElementById('view-tl-dash');
+        if (panel && panel.classList.contains('active')) {
+          loadTlDashboard();
+        } else {
+          loadTlDashProgress();
+        }
+      }, 8000);
+    }
     document.getElementById('btnReloadTruth')?.addEventListener('click', loadTruth);
 
     document.getElementById('btnStrategyXGenerate')?.addEventListener('click', () => {

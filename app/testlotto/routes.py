@@ -973,3 +973,157 @@ async def api_detail_sync_pages(start: int = 2, end: int = 1231):
 
     n = sync_brain_pages_from_reviews(start, end)
     return {"synced": n, "start": start, "end": end}
+
+
+FOCUS_DASH_BRAINS = ("stat", "markov", "review")
+FOCUS_DASH_LABELS = {"stat": "과거학습", "markov": "선호번호", "review": "금액뇌"}
+FOCUS_DASH_PROGRESS = "docs/benchmarks/_k_tl_dash_backfill_progress.json"
+
+
+@router.get("/focus-dashboard")
+async def api_focus_dashboard():
+    """테스트로또 전용 대시보드 — 4군 대시보드와 같은 키, 3뇌만."""
+    import datetime as dt
+    from datetime import datetime, timedelta, timezone
+
+    from app.testlotto.models import get_lotto_db
+
+    def _weekday_kr(d: dt.date) -> str:
+        return ["월", "화", "수", "목", "금", "토", "일"][d.weekday()]
+
+    tags = FOCUS_DASH_BRAINS
+    conn = get_lotto_db()
+    try:
+        row = conn.execute(
+            "SELECT draw_no, draw_date FROM lotto_draws ORDER BY draw_no DESC LIMIT 1"
+        ).fetchone()
+        last_no = int(row[0]) if row else 0
+        KST = timezone(timedelta(hours=9))
+        first_draw = datetime(2002, 12, 7, tzinfo=KST)
+        now = datetime.now(KST)
+        next_no = last_no + 1
+        next_date_candidate = first_draw + timedelta(weeks=next_no - 1)
+        next_draw_time = datetime(
+            next_date_candidate.year,
+            next_date_candidate.month,
+            next_date_candidate.day,
+            20,
+            45,
+            0,
+            tzinfo=KST,
+        )
+        if now > next_draw_time:
+            next_no += 1
+        next_date = (first_draw + timedelta(weeks=next_no - 1)).date()
+
+        ph = ",".join("?" * len(tags))
+        total_predictions = int(
+            conn.execute(
+                f"SELECT COUNT(1) FROM lotto_predictions WHERE brain_tag IN ({ph})",
+                tags,
+            ).fetchone()[0]
+        )
+        lr = conn.execute(
+            f"SELECT MIN(target_draw_no), MAX(target_draw_no) FROM lotto_predictions WHERE brain_tag IN ({ph})",
+            tags,
+        ).fetchone()
+        lr_start = int(lr[0]) if lr and lr[0] is not None else 0
+        lr_end = int(lr[1]) if lr and lr[1] is not None else 0
+        total_draws = int(conn.execute("SELECT MAX(draw_no) FROM lotto_draws").fetchone()[0] or 0)
+
+        def _rank_total(where_sql: str) -> int:
+            return int(
+                conn.execute(
+                    f"SELECT COUNT(1) FROM lotto_predictions WHERE {where_sql} AND brain_tag IN ({ph})",
+                    tags,
+                ).fetchone()[0]
+            )
+
+        rankings = {
+            "rank1_total": _rank_total("matched_count = 6"),
+            "rank2_total": _rank_total("matched_count = 5 AND bonus_matched = 1"),
+            "rank3_total": _rank_total(
+                "matched_count = 5 AND (bonus_matched = 0 OR bonus_matched IS NULL)"
+            ),
+        }
+
+        stats_map = {
+            str(r[0]): r
+            for r in conn.execute(
+                f"""
+                SELECT brain_tag,
+                  SUM(CASE WHEN matched_count=6 THEN 1 ELSE 0 END) AS r1,
+                  SUM(CASE WHEN matched_count=5 AND bonus_matched=1 THEN 1 ELSE 0 END) AS r2,
+                  SUM(CASE WHEN matched_count=5 AND (bonus_matched=0 OR bonus_matched IS NULL) THEN 1 ELSE 0 END) AS r3,
+                  SUM(CASE WHEN matched_count=4 THEN 1 ELSE 0 END) AS r4,
+                  SUM(CASE WHEN matched_count=3 THEN 1 ELSE 0 END) AS r5
+                FROM lotto_predictions
+                WHERE brain_tag IN ({ph}) AND matched_count >= 0
+                GROUP BY brain_tag
+                """,
+                tags,
+            ).fetchall()
+        }
+        brain_power = []
+        for tag in tags:
+            s = stats_map.get(tag)
+            brain_power.append(
+                {
+                    "brain": tag,
+                    "label": FOCUS_DASH_LABELS[tag],
+                    "rank1": int(s[1] or 0) if s else 0,
+                    "rank2": int(s[2] or 0) if s else 0,
+                    "rank3": int(s[3] or 0) if s else 0,
+                    "rank4": int(s[4] or 0) if s else 0,
+                    "rank5": int(s[5] or 0) if s else 0,
+                }
+            )
+
+        denom = total_predictions if total_predictions > 0 else 1
+        c6 = rankings["rank1_total"]
+        c5b = rankings["rank2_total"]
+        c5 = rankings["rank3_total"]
+        c4 = _rank_total("matched_count = 4")
+        c3 = _rank_total("matched_count = 3")
+        c3p = _rank_total("matched_count >= 3")
+        scores = {
+            "rank1_pct": c6 / denom * 100.0,
+            "rank1_cnt": c6,
+            "rank2_pct": c5b / denom * 100.0,
+            "rank2_cnt": c5b,
+            "rank3_pct": c5 / denom * 100.0,
+            "rank3_cnt": c5,
+            "rank4_pct": c4 / denom * 100.0,
+            "rank4_cnt": c4,
+            "rank5_pct": c3 / denom * 100.0,
+            "rank5_cnt": c3,
+            "total_hit_pct": c3p / denom * 100.0,
+        }
+        return {
+            "next_draw_no": next_no,
+            "next_draw_date": next_date.isoformat(),
+            "next_draw_weekday": _weekday_kr(next_date),
+            "total_predictions": total_predictions,
+            "learning_range": {"start": lr_start, "end": lr_end, "total_draws": total_draws},
+            "rankings": rankings,
+            "brain_power": brain_power,
+            "scores": scores,
+        }
+    finally:
+        conn.close()
+
+
+@router.get("/focus-dash/progress")
+async def api_focus_dash_progress():
+    """1–1236 백필 진행 파일. 없으면 idle."""
+    from pathlib import Path
+
+    p = Path(FOCUS_DASH_PROGRESS)
+    if not p.is_file():
+        return {"status": "idle"}
+    try:
+        import json
+
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "error": str(e)}
