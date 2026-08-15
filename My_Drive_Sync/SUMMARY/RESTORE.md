@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `c03d0ee` · WORK=`IDLE`
-2. **지금:** **양산前** · review W_STRUCT APPLY_OK · 0.20
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. review W_STRUCT APPLY_OK(0.20·hi32+0.017·stat/markov불변). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. (승인필요=형 1건 · 선행=없음)
+1. **HEAD:** `9cd8e13` · WORK=`IDLE`
+2. **지금:** **양산前** · 축모니터 READ_OK
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 권고순서#2 축모니터 READ_OK(전이≈균일·prize점유 표만). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-15 | 권고순서#2 축모니터 | 3뇌 prefer/prize·전이≈균일 · APPLY없음 | **READ_OK** | (본턴) |
+| 2026-08-15 | 권고순서#2 축모니터 | 3뇌 prefer/prize·전이≈균일 · APPLY없음 | **READ_OK** | 9cd8e13 |
 | 2026-08-15 | review W_STRUCT 소폭↑ | 0.10→0.20 · hi32+0.017 · fw iso · 타뇌불변 | **APPLY_OK** | c03d0ee |
 | 2026-08-15 | prize↔Ziemba 대조 SPEC | 이미배선 · ρ crowd0.94 · HOLD · APPLY없음 | **SPEC_OK** | ffc8e63 |
 | 2026-08-15 | 2뇌 엔진가동+문헌 | 클론아님 J0.05~0.13 · review문헌채택 · APPLY없음 | **DISCUSS_OK** | 8a1246a |

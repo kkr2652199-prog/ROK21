@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `c03d0ee` |
+| HEAD(실측) | `9cd8e13` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · review W_STRUCT APPLY_OK · 0.20 |
-| 직전 | prize Ziemba SPEC_OK |
+| 지금 | **양산前** · 축모니터 READ_OK |
+| 직전 | review W_STRUCT APPLY_OK · 0.20 |
 | BOOT다음 | 형 1건 / 1237아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. review W_STRUCT APPLY_OK(0.20·hi32+0.017·stat/markov불변). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. |
+| NEXT1 할일 | **양산前**. 권고순서#2 축모니터 READ_OK(전이≈균일·prize점유 표만). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=c03d0ee · 지금=**양산前** · review W_STRUCT APPLY_OK · 0.20 · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=9cd8e13 · 지금=**양산前** · 축모니터 READ_OK · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: c03d0ee_
+_generated: 9cd8e13_

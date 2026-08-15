@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `c03d0ee` · WORK=`IDLE`
-- 지금: **양산前** · review W_STRUCT APPLY_OK · 0.20
-- 직전: prize Ziemba SPEC_OK
+- HEAD: `9cd8e13` · WORK=`IDLE`
+- 지금: **양산前** · 축모니터 READ_OK
+- 직전: review W_STRUCT APPLY_OK · 0.20
 - BOOT다음: 형 1건 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. review W_STRUCT APPLY_OK(0.20·hi32+0.017·stat/markov불변). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 권고순서#2 축모니터 READ_OK(전이≈균일·prize점유 표만). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
