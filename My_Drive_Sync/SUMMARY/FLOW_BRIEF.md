@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7ef7a12` · WORK=`IDLE`
+- HEAD: `2279c6d` · WORK=`IDLE`
 - 지금: **양산前** · leftover 버그헌트보고 COMMIT_OK
 - 직전: 4군대시보드기록 READ_OK
 - BOOT다음: 형 선택 1건 / 1237아님
