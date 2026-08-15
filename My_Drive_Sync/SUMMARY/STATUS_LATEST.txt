@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-STAT-EVOLVE-DIAG-LOG-APPLY** — 자기진단 로그 APPLY(stat만)
+📌 사유: **[CURSOR] R37-PIN** — GENSPARK_COMPRESS_RECOVER 잔여 HEAD 핀 commit+push
 
-📌 직전: **[CURSOR] K-STAT-EVOLVE-DIAG-LOG-SPEC** — 자기진단 로그 SPEC(APPLY없음)
+📌 직전: **[CURSOR] K-STAT-EVOLVE-DIAG-LOG-APPLY** — 자기진단 로그 APPLY(stat만)
 
 ---
 

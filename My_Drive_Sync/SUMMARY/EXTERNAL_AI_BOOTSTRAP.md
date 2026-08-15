@@ -8,7 +8,7 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `a1b14ea` |
+| HEAD(실측) | `3caa595` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
 | 지금 | **양산前** · 진단로그 APPLY_OK · peek0·stat200 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=a1b14ea · 지금=**양산前** · 진단로그 APPLY_OK · peek0·stat200 · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=3caa595 · 지금=**양산前** · 진단로그 APPLY_OK · peek0·stat200 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

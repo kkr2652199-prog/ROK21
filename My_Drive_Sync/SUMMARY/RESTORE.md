@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `a1b14ea` · WORK=`IDLE`
+1. **HEAD:** `3caa595` · WORK=`IDLE`
 2. **지금:** **양산前** · 진단로그 APPLY_OK · peek0·stat200
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 진단로그 APPLY_OK(stat 200·peek0·원장불변). 궁합prefer APPLY·covering·S2재탕 금지. **1237아님**. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-15 | 종료체크 R37잔여 | GENSPARK+형제 핀 commit+push · DB제외 | **PIN_OK** | (본턴) |
 | 2026-08-15 | 진단로그 APPLY | write stat200 · peek0 · 원장3000불변 · preferΔ0 | **APPLY_OK** | e982bc0 |
 | 2026-08-15 | 진단로그 SPEC | brain_tag있음 · 쓰기=캐시stat만 · as_of=N-1 · APPLY없음 | **SPEC_OK** | 6d8e867 |
 | 2026-08-15 | 궁합prefer+자기진단 논의 | 2뇌브리핑 · 세트annotate만 · evolve_log행0 · APPLY없음 | **DISCUSS_OK** | 7a78fdf |
