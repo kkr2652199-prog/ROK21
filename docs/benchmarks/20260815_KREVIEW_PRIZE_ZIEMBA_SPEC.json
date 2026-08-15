@@ -1,0 +1,193 @@
+{
+  "id": "K-REVIEW-PRIZE-ZIEMBA-SPEC",
+  "as_of": "2026-08-15T15:09:39+09:00",
+  "verdict": "SPEC_OK",
+  "apply": false,
+  "recommend": "HOLD",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "as_of_draw": 1236,
+  "peek_ok": true,
+  "peek_max": 1235,
+  "draws_max": 1236,
+  "pred_1237": 0,
+  "fw_used": 1221,
+  "fw_zero_skip": 14,
+  "n_draws_before": 1235,
+  "knobs": {
+    "W_CROWD_review": 0.9,
+    "W_STRUCT_review": 0.1,
+    "BLEND_review": 0.85,
+    "PRIZE_SHAPE_STRENGTH": 1.0,
+    "PRIZE_WIRE": true
+  },
+  "already_wired": true,
+  "rho": {
+    "prize_vs_struct": 0.4425,
+    "prize_vs_crowd": 0.9353,
+    "crowd_vs_struct": 0.1366,
+    "prize_vs_ziemba_ca": -0.0717,
+    "prize_vs_hi32": 0.2957,
+    "prize_vs_end089": 0.0232,
+    "struct_vs_ziemba_ca": 0.3857
+  },
+  "top12": {
+    "prize": [
+      40,
+      37,
+      27,
+      34,
+      15,
+      45,
+      14,
+      20,
+      39,
+      13,
+      18,
+      43
+    ],
+    "struct": [
+      40,
+      38,
+      39,
+      41,
+      42,
+      43,
+      44,
+      45,
+      32,
+      33,
+      34,
+      35
+    ],
+    "crowd": [
+      27,
+      37,
+      40,
+      15,
+      14,
+      34,
+      20,
+      13,
+      45,
+      17,
+      1,
+      18
+    ],
+    "overlap_prize_struct": 5,
+    "overlap_prize_crowd": 10,
+    "overlap_prize_ziemba_ca": 3
+  },
+  "ziemba_ca_645": [
+    10,
+    12,
+    18,
+    29,
+    30,
+    32,
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "null_per_set": {
+    "hi32": 1.8667,
+    "hi40": 0.8,
+    "end089": 1.6,
+    "bday": 4.1333,
+    "ziemba_ca": 1.4667
+  },
+  "occupancy": {
+    "review": {
+      "pool": {
+        "n_sets": 2000,
+        "hi32": 1.9595,
+        "d_hi32": 0.0928,
+        "hi40": 0.801,
+        "d_hi40": 0.001,
+        "end089": 1.7595,
+        "d_end089": 0.1595,
+        "bday": 4.0405,
+        "d_bday": -0.0928,
+        "ziemba_ca": 1.46,
+        "d_ziemba_ca": -0.0067
+      },
+      "repack": {
+        "n_sets": 1000,
+        "hi32": 2.514,
+        "d_hi32": 0.6473,
+        "hi40": 1.104,
+        "d_hi40": 0.304,
+        "end089": 1.772,
+        "d_end089": 0.172,
+        "bday": 3.486,
+        "d_bday": -0.6473,
+        "ziemba_ca": 1.477,
+        "d_ziemba_ca": 0.0103
+      }
+    },
+    "stat": {
+      "pool": {
+        "n_sets": 2000,
+        "hi32": 1.7875,
+        "d_hi32": -0.0792,
+        "hi40": 0.7345,
+        "d_hi40": -0.0655,
+        "end089": 1.469,
+        "d_end089": -0.131,
+        "bday": 4.2125,
+        "d_bday": 0.0792,
+        "ziemba_ca": 1.4035,
+        "d_ziemba_ca": -0.0632
+      },
+      "repack": {
+        "n_sets": 1000,
+        "hi32": 1.775,
+        "d_hi32": -0.0917,
+        "hi40": 0.685,
+        "d_hi40": -0.115,
+        "end089": 1.482,
+        "d_end089": -0.118,
+        "bday": 4.225,
+        "d_bday": 0.0917,
+        "ziemba_ca": 1.409,
+        "d_ziemba_ca": -0.0577
+      }
+    },
+    "markov": {
+      "pool": {
+        "n_sets": 2000,
+        "hi32": 1.8615,
+        "d_hi32": -0.0052,
+        "hi40": 0.7415,
+        "d_hi40": -0.0585,
+        "end089": 1.443,
+        "d_end089": -0.157,
+        "bday": 4.1385,
+        "d_bday": 0.0052,
+        "ziemba_ca": 1.362,
+        "d_ziemba_ca": -0.1047
+      },
+      "repack": {
+        "n_sets": 1000,
+        "hi32": 1.811,
+        "d_hi32": -0.0557,
+        "hi40": 0.679,
+        "d_hi40": -0.121,
+        "end089": 1.273,
+        "d_end089": -0.327,
+        "bday": 4.189,
+        "d_bday": 0.0557,
+        "ziemba_ca": 1.529,
+        "d_ziemba_ca": 0.0623
+      }
+    }
+  },
+  "reason": "prize_table = 0.90*crowd_unpopular(first_winners) + 0.10*structural_unpopular_prior (고번호·끝 0/8/9). Ziemba 규칙은 struct에 이미 있음. 이번 APPLY 없음.",
+  "next_apply": "형 GO 전 금지. 후보=W_STRUCT↑는 prize 게이트 필요. apply_learn_boost 복사 금지."
+}
