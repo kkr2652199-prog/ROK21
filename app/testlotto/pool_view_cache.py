@@ -222,6 +222,53 @@ def payload_from_wf_parts(
     }
 
 
+def save_pool_view_cache_one(
+    draw_no: int,
+    brain: str,
+    payload: dict[str, Any],
+) -> None:
+    """한 뇌 캐시만 UPSERT. 타뇌 행 미접촉(stat 보존)."""
+    tag = str(brain or "").strip().lower()
+    if tag not in BRAIN_TAGS:
+        raise ValueError(f"bad brain {brain}")
+    init_testlotto_db()
+    pool_by = payload.get("pool_by_brain") or {}
+    repack_by = payload.get("repack_by_brain") or {}
+    seed = int(payload.get("seed") or MC_SEED)
+    from app.testlotto.signal_pool import tune_snapshot
+
+    tune = payload.get("tune_snapshot") or tune_snapshot()
+    tune_s = json.dumps(tune, ensure_ascii=False)
+    conn = get_lotto_db()
+    try:
+        conn.execute(
+            """
+            INSERT INTO testlotto_pool_view_cache
+                (draw_no, brain, pool_json, repack_json, seed, schema_version, tune_json, computed_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, datetime('now','localtime'))
+            ON CONFLICT(draw_no, brain) DO UPDATE SET
+                pool_json = excluded.pool_json,
+                repack_json = excluded.repack_json,
+                seed = excluded.seed,
+                schema_version = excluded.schema_version,
+                tune_json = excluded.tune_json,
+                computed_at = excluded.computed_at
+            """,
+            (
+                int(draw_no),
+                tag,
+                json.dumps(pool_by.get(tag, []), ensure_ascii=False),
+                json.dumps(repack_by.get(tag, []), ensure_ascii=False),
+                seed,
+                CACHE_SCHEMA_VERSION,
+                tune_s,
+            ),
+        )
+        conn.commit()
+    finally:
+        conn.close()
+
+
 def save_pool_view_cache(draw_no: int, payload: dict[str, Any]) -> None:
     """build_pool_and_repack 결과를 뇌별 행으로 저장."""
     init_testlotto_db()

@@ -139,14 +139,14 @@ async def api_fetch_latest():
             fb = {"ok": False, "error": str(e)}
         diag = None
         try:
-            from app.testlotto.evolve_diag_stat import write_evolve_diag_stat
+            from app.testlotto.evolve_diag import write_evolve_diag_confirmed
 
             dno = int(result.get("draw_no") or result.get("drwNo") or 0)
             if dno > 0:
-                diag = write_evolve_diag_stat(dno)
+                diag = write_evolve_diag_confirmed(dno)
         except Exception as e:  # noqa: BLE001
             diag = {"ok": False, "error": str(e)}
-        return {"status": "성공", "draw": result, "click_feedback": fb, "evolve_diag_stat": diag}
+        return {"status": "성공", "draw": result, "click_feedback": fb, "evolve_diag": diag}
     hint = get_collection_hint()
     return {
         "status": "신규 회차 없음",
@@ -352,6 +352,20 @@ async def api_evolve_diag_stat(draw_no: int):
     out = get_evolve_diag_stat(int(draw_no))
     if not out:
         return {"ok": False, "draw_no": draw_no, "brain_tag": "stat", "error": "stat evolve_log 없음"}
+    return out
+
+
+@router.get("/evolve/diag/{brain}/{draw_no}")
+async def api_evolve_diag_brain(brain: str, draw_no: int):
+    """뇌별 진단로그. brain 필수. 3뇌 합산 없음."""
+    from app.testlotto.evolve_diag import BRAINS, get_evolve_diag
+
+    tag = str(brain or "").strip().lower()
+    if tag not in BRAINS:
+        return {"ok": False, "error": "brain must be stat|markov|review", "brain_tag": tag}
+    out = get_evolve_diag(int(draw_no), tag)
+    if not out:
+        return {"ok": False, "draw_no": draw_no, "brain_tag": tag, "error": "evolve_log 없음"}
     return out
 
 

@@ -1,0 +1,158 @@
+{
+  "id": "K-EVOLVE-DIAG-3BRAIN-EXPAND",
+  "as_of": "2026-08-15T14:50:08+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "verdict": "EXPAND_OK",
+  "hard_ok": true,
+  "hard": {
+    "peek": 0,
+    "evolve_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "evolve_split_ok": true,
+    "ledger_unchanged": true,
+    "learn_unchanged": true,
+    "stat_fp_unchanged": true,
+    "filled_ok": true,
+    "cache_by_unchanged": true,
+    "drift": 0,
+    "cross_source": 0,
+    "pred_1237": 0,
+    "pred_n": 3000,
+    "draws_max": 1236,
+    "evolve_auto": false,
+    "feature_lambda": false,
+    "review_learn_boost": false,
+    "n_fill": 400
+  },
+  "write": {
+    "n_ok": 600,
+    "n_skip": 0,
+    "n_fail": 0,
+    "skips": {},
+    "fails": []
+  },
+  "pred_deleted": 0,
+  "pred_recorded": 3000,
+  "n_fill": 400,
+  "census_before": {
+    "evolve_n": 200,
+    "evolve_by": {
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "peek_as_of_ge_draw": 0,
+    "pred_n": 0,
+    "pred_by": {},
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "census_after": {
+    "evolve_n": 600,
+    "evolve_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "peek_as_of_ge_draw": 0,
+    "pred_n": 3000,
+    "pred_by": {
+      "markov": 1000,
+      "review": 1000,
+      "stat": 1000
+    },
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "cache_fp_before": {
+    "stat": "1030e5b6341dc581",
+    "markov": "812098440a664708",
+    "review": "812098440a664708"
+  },
+  "cache_fp_after": {
+    "stat": "1030e5b6341dc581",
+    "markov": "cb8968f3ce9b4dff",
+    "review": "21d7d3d861d99dae"
+  },
+  "independence": {
+    "drift_by": {
+      "stat": 0,
+      "markov": 0,
+      "review": 0
+    },
+    "n_ok_by": {
+      "stat": 200,
+      "markov": 200,
+      "review": 200
+    },
+    "drift": 0,
+    "cross_source": 0
+  },
+  "gate": {
+    "by_brain": {
+      "stat": {
+        "prefer_before": 1.009444,
+        "prefer_after": 1.009444,
+        "d_prefer": 0.0,
+        "prize_before": 1.004395,
+        "prize_after": 1.004395,
+        "d_prize": 0.0
+      },
+      "markov": {
+        "prefer_before": null,
+        "prefer_after": 1.045325,
+        "d_prefer": null,
+        "prize_before": null,
+        "prize_after": 1.016871,
+        "d_prize": null
+      },
+      "review": {
+        "prefer_before": null,
+        "prefer_after": 1.018102,
+        "d_prefer": null,
+        "prize_before": null,
+        "prize_after": 1.037964,
+        "d_prize": null
+      }
+    },
+    "all_delta_zero": true,
+    "monitor_only": true
+  },
+  "review_structure": {
+    "apply_learn_boost": false,
+    "carry_only": true,
+    "note": "review_brain/learn.py 에 apply_learn_boost 없음. engine은 carry_over_boost만."
+  },
+  "flags": {
+    "EVOLVE_AUTO": false,
+    "FEATURE_LAMBDA_WIRE": false
+  }
+}
