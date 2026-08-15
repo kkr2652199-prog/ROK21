@@ -1,0 +1,262 @@
+{
+  "id": "K-REPACK-HYENA-WIRE",
+  "as_of": "2026-08-15T16:44:55+09:00",
+  "apply": true,
+  "verdict": "APPLY_OK",
+  "iso_thr": 0.005,
+  "live_modes": {
+    "stat": "score5",
+    "markov": "score5",
+    "review": "score5"
+  },
+  "note": "score5가 keep1보다 ISO 우세. 세트우연일치를 복사로 본 HOLD_NO_DESIGN은 기각.",
+  "stages": [
+    {
+      "tag": "stat",
+      "mode": "score5",
+      "label": "S1-stat-score5-g",
+      "n_ok": 100,
+      "n_target": 100,
+      "elapsed_s": 113.1,
+      "peek_fail": 0,
+      "size_bad": 0,
+      "n_errors": 0,
+      "errors_head": [],
+      "pool_same": 100,
+      "changed": 100,
+      "copy_off": 4,
+      "copy_on": 0,
+      "union_off": 22.83,
+      "union_on": 30,
+      "prefer_off": 0.011116,
+      "prefer_on": 0.00779,
+      "prize_off": 0.003138,
+      "prize_on": 0.000275,
+      "delta_prefer": -0.003327,
+      "delta_prize": -0.002864,
+      "assemble_on": {
+        "hyena_score5": 500
+      },
+      "hard_ok": true,
+      "iso_ok": true,
+      "design_ok": true,
+      "apply": true,
+      "verdict": "APPLY",
+      "step": "S1"
+    },
+    {
+      "tag": "markov",
+      "mode": "score5",
+      "label": "S2-markov-score5-g",
+      "n_ok": 100,
+      "n_target": 100,
+      "elapsed_s": 103.2,
+      "peek_fail": 0,
+      "size_bad": 0,
+      "n_errors": 0,
+      "errors_head": [],
+      "pool_same": 100,
+      "changed": 100,
+      "copy_off": 4,
+      "copy_on": 0,
+      "union_off": 18.33,
+      "union_on": 30,
+      "prefer_off": 0.046423,
+      "prefer_on": 0.028746,
+      "prize_off": 0.01185,
+      "prize_on": 0.006706,
+      "delta_prefer": -0.017677,
+      "delta_prize": -0.005144,
+      "assemble_on": {
+        "hyena_score5": 500
+      },
+      "hard_ok": true,
+      "iso_ok": true,
+      "design_ok": true,
+      "apply": true,
+      "verdict": "APPLY",
+      "step": "S2"
+    },
+    {
+      "tag": "review",
+      "mode": "score5",
+      "label": "S3-review-score5-g",
+      "n_ok": 100,
+      "n_target": 100,
+      "elapsed_s": 103.8,
+      "peek_fail": 0,
+      "size_bad": 0,
+      "n_errors": 0,
+      "errors_head": [],
+      "pool_same": 100,
+      "changed": 100,
+      "copy_off": 4,
+      "copy_on": 0,
+      "union_off": 17.64,
+      "union_on": 30,
+      "prefer_off": 0.016167,
+      "prefer_on": 0.016187,
+      "prize_off": 0.04024,
+      "prize_on": 0.026571,
+      "delta_prefer": 2e-05,
+      "delta_prize": -0.013669,
+      "assemble_on": {
+        "hyena_score5": 500
+      },
+      "hard_ok": true,
+      "iso_ok": true,
+      "design_ok": true,
+      "apply": true,
+      "verdict": "APPLY",
+      "step": "S3"
+    }
+  ],
+  "joint_smoke": {
+    "modes": {
+      "stat": "score5",
+      "markov": "score5",
+      "review": "score5"
+    },
+    "draws": [
+      {
+        "draw_no": 1234,
+        "stat": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "markov": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "review": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        }
+      },
+      {
+        "draw_no": 1235,
+        "stat": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "markov": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "review": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        }
+      },
+      {
+        "draw_no": 1236,
+        "stat": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "markov": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "review": {
+          "pool": 10,
+          "repack": 5,
+          "copy": 0,
+          "assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        }
+      }
+    ],
+    "peek_fail": 0,
+    "ok": true
+  },
+  "refill": {
+    "skipped": false,
+    "applied": [
+      "stat",
+      "markov",
+      "review"
+    ],
+    "ok": 600,
+    "fail": 0
+  },
+  "db": {
+    "draws_max": 1236,
+    "pred_1237": 0,
+    "ledger": {
+      "stat": 3000
+    }
+  },
+  "rollback": "REPACK_HYENA_MODE_BY_BRAIN 전부 \"\"",
+  "pred_1237": 0,
+  "draws_max": 1236
+}

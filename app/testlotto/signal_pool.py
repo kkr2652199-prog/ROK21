@@ -113,6 +113,17 @@ REPACK_QUOTA_SHAPE_MAX: int = 1
 REPACK_RECOMBINE_MODE: str = "complement"
 REPACK_RECOMBINE_BRAINS: frozenset[str] = frozenset({"stat"})
 
+# K-REPACK-HYENA-WIRE (20260815) — 뇌별 몰아주기 조립.
+# "" = 구 signal_union(복사4). score5=H4 복사0·뇌별 number_scores 5장.
+# keep1=H2 점수최상위 pool 1장+점수 4장. 점수축은 SCORE_WEIGHTS+HINT_SPEC 그대로
+# (stat=과거빈도/원장 · markov=prefer · review=prize). 타깃 적중 입력 금지.
+# 롤백: 해당 뇌를 "".
+REPACK_HYENA_MODE_BY_BRAIN: dict[str, str] = {
+    "stat": "score5",
+    "markov": "score5",
+    "review": "score5",
+}
+
 
 SignalTable = dict[str, dict[int, float]]
 
@@ -566,6 +577,24 @@ def assemble_signal_union(
     return _assemble(pool, classic, primary, n_sets=n_sets)
 
 
+def assemble_hyena_score5(
+    classic: list[list[int]],
+    *,
+    n_sets: int = REPACK_SETS_PER_BRAIN,
+) -> list[dict]:
+    """H4 — 복사 0. 뇌별 number_scores 상위 30개를 6개씩 5장."""
+    out: list[dict] = []
+    for i, nums in enumerate(classic[:n_sets]):
+        out.append(
+            {
+                "nums": sorted(int(x) for x in nums),
+                "source": "score_repack",
+                "source_set_no": i + 1,
+            }
+        )
+    return out
+
+
 def _assembled_for_brain(
     tag: str,
     pool: list[dict],
@@ -574,6 +603,22 @@ def _assembled_for_brain(
     scores: dict[int, float] | None = None,
 ) -> tuple[list[dict] | None, str]:
     """뇌별 조립 방식 선택. (조립결과, 라벨) — None 이면 baseline 점수몰아주기."""
+    hyena = str(REPACK_HYENA_MODE_BY_BRAIN.get(tag) or "").strip()
+    if hyena == "score5":
+        return assemble_hyena_score5(classic), "hyena_score5"
+    if hyena == "keep1":
+        return (
+            assemble_signal_union(
+                pool,
+                classic,
+                pos_t,
+                scores or {},
+                n_slots=1,
+                n_pool_cap=1,
+                brain_tag=None,
+            ),
+            "hyena_keep1",
+        )
     if ASSEMBLE_MODE == "signal_union" and tag in SIGNAL_TOP_BRAINS:
         n_slots = POOL_SLOTS_BY_BRAIN.get(tag, POOL_SLOTS_PER_BRAIN)
         cap = POOL_UNION_CAP_BY_BRAIN.get(tag, POOL_UNION_CAP)
@@ -997,6 +1042,7 @@ def tune_snapshot() -> dict[str, Any]:
         "REPACK_ROLE_QUOTA_BRAINS": sorted(REPACK_ROLE_QUOTA_BRAINS),
         "REPACK_RECOMBINE_MODE": REPACK_RECOMBINE_MODE,
         "REPACK_RECOMBINE_BRAINS": sorted(REPACK_RECOMBINE_BRAINS),
+        "REPACK_HYENA_MODE_BY_BRAIN": dict(REPACK_HYENA_MODE_BY_BRAIN),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }
@@ -1004,6 +1050,16 @@ def tune_snapshot() -> dict[str, Any]:
 
 def _assemble_meta() -> dict[str, Any]:
     """실제 조립 배선을 그대로 보고. 상수를 바꾸면 이 값도 따라 바뀐다."""
+    hyena_on = {t: m for t, m in REPACK_HYENA_MODE_BY_BRAIN.items() if m}
+    if hyena_on:
+        return {
+            "mode": "hyena_by_brain",
+            "hyena_by_brain": dict(REPACK_HYENA_MODE_BY_BRAIN),
+            "fallback_union": ASSEMBLE_MODE == "signal_union",
+            "pool_union_cap_by_brain": dict(POOL_UNION_CAP_BY_BRAIN),
+            "hint_spec_by_brain": {t: list(v) for t, v in HINT_SPEC_BY_BRAIN.items()},
+            "score_weights_by_brain": {t: list(v) for t, v in SCORE_WEIGHTS_BY_BRAIN.items()},
+        }
     if ASSEMBLE_MODE == "signal_union":
         return {
             "mode": "signal_union",

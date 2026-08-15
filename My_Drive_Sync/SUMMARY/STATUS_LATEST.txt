@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-REPACK-HYENA-SCATTER** — 10장 1등6개 분산 vs 몰아주기 하이에나 브리핑
+📌 사유: **[CURSOR] K-REPACK-HYENA-WIRE** — 3뇌 몰아주기 H4 score5 APPLY
 
-📌 직전: **[CURSOR] K-REPACK-COPY-AUDIT** — 몰아주기=pool 4장복사 실측(버그아님)
+📌 직전: **[CURSOR] K-REPACK-HYENA-SCATTER** — 10장 1등6개 분산 vs 몰아주기 하이에나 브리핑
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-REPACK-HYENA-WIRE (형GO)** | **APPLY_OK** · 라이브 3뇌 `REPACK_HYENA_MODE_BY_BRAIN=score5`. 복사 **4→0** · 5장 union **30**. 게이트1137–1236 n100 peek0: stat Δprefer **−0.003327** Δprize **−0.002864** · markov **−0.017677 / −0.005144** · review **+0.000020 / −0.013669** (ISO 0.005 비악화). 합동스모크 1234–1236 OK. 캐시 1037–1236 3뇌 **600**/0. 원장 stat**3000** 불변 · pred_1237**0** · MAX**1236**. 점수축 불변(stat 과거/원장 · markov prefer · review prize). 타깃적중 미입력. 롤백=세 뇌 `""`. 1237아님. · `docs/benchmarks/20260815_KREPACK_HYENA_WIRE.json` · `reports/20260815_KREPACK_HYENA_WIRE.md` · `app/testlotto/signal_pool.py` · `tools/_k_repack_hyena_wire.py` |
 | **K-REPACK-HYENA-SCATTER (형질문)** | **DISCUSS_OK** · READ-ONLY · APPLY **없음**. 1037–1236 캐시 3뇌200. stat 10장 union **31.55** · win10 **4.195**(널 4.207) · **full6=22**(널기대 22.25) · scatter≤3 **18** · cluster≥4 **4**. full6회차: 1051,1056,1068,1070,1074,1085,1109,1112,1131,1132,1138,1140,1141,1161,1175,1176,1179,1192,1196,1210,1217,1222. 지금 몰아주기(복사4)는 full6의 6개를 5장 union **3.91**로 줄임(복사담 **2.77** · 재조합 **1.14**). 빈도신호 Δ **−0.5577**(당첨이 10장에서 더 희소). H1빈도코어 **비권고**(scatter win_in core8 **1.44** < live **3.78**). 권고 **H4**=복사0·점수5장 / 절충 **H2**=1장보존 / 유지 H3. 타깃적중 입력금지. 1216은 full6아님(14 없음)·4등=pool#4복사. 1237아님. · `docs/benchmarks/20260815_KREPACK_HYENA_SCATTER.json` · `reports/20260815_KREPACK_HYENA_SCATTER.md` · `tools/_k_repack_hyena_scatter.py` |
 | **K-REPACK-COPY-AUDIT (형질문)** | **AUDIT_OK** · 버그**아님** · APPLY없음. UI숫자는 **1216** stat pool1–4. 몰아주기 5장 중 **4장=pool 통째복사** · 1장만 score_repack. 1037–1236 3뇌 각200회 copy_per5 **4.0**. `ASSEMBLE_MODE=signal_union` · `SIGNAL_TOP_BRAINS=3뇌`. 역할쿼터·보완=stat만. 타깃회 적중 미사용. 형정의(적중강한 미당첨에서 번호추출)는 코드에 없음. 4등=복사된 pool#4. 1237아님. · `docs/benchmarks/20260815_KREPACK_COPY_AUDIT.json` · `reports/20260815_KREPACK_COPY_AUDIT.md` · `tools/_k_repack_copy_audit.py` |
 | **K-3BRAIN-VECTOR-REFILL-200 (형GO)** | **REFILL_OK** · 1037–1236 벡터 리셋 후 3뇌 각 `expand_pool(brains=[tag])` **200**/0fail. 삭제 캐시**600** · pred**3000** · evolve**600**. 재생성 cache nonempty 3×**200** · evolve 3×**200** · pred 3×**1000**. fp 재현 stat `1030e5b6341dc581` · markov `cb8968f3ce9b4dff` · review `a505859e840ad332`. peek**0** · pred_1237**0** · MAX**1236**. 원장 stat**3000** 불변 · 숙제 600/1200 불변 · 소비 `{stat}`. DB git 안 함. 롤백=`backups/20260815_VECTOR전_DB전체/`. 1237아님. · `docs/benchmarks/20260815_K3BRAIN_VECTOR_REFILL_200.json` · `reports/20260815_K3BRAIN_VECTOR_REFILL_200.md` · `tools/_k_3brain_vector_refill_200.py` |
