@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0b39eee` · WORK=`RUNNING:K-TL-DASH-BACKFILL-1236`
-- 지금: **양산前** · 테스트대시보드 백필 RUNNING
+- HEAD: `43f5fc3` · WORK=`IDLE`
+- 지금: **양산前** · 테스트대시보드 백필 PARTIAL
 - 직전: 4군/전략X탭 HOLD_ON
-- BOOT다음: 백필완료 확인 / 1237아님
-- NEXT1: K-TL-DASH-BACKFILL-1236 — **양산前**. 테스트 대시보드 탭 ON. 예측초기화 후 1–1236 3뇌 백필 RUNNING. 완료 후 대시보드 숫자 확인. 1237 금지. (승인=없음(형 지시 실행 중))
+- BOOT다음: 형 선택 1건 / 1237아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 테스트대시보드 BACKFILL_PARTIAL(pred 18520·2–1236·1회불가·markov2회 empty). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

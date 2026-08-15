@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `0b39eee` · WORK=`RUNNING:K-TL-DASH-BACKFILL-1236`
-2. **지금:** **양산前** · 테스트대시보드 백필 RUNNING
-3. **다음1건:** K-TL-DASH-BACKFILL-1236 — **양산前**. 테스트 대시보드 탭 ON. 예측초기화 후 1–1236 3뇌 백필 RUNNING. 완료 후 대시보드 숫자 확인. 1237 금지. (승인필요=없음(형 지시 실행 중) · 선행=없음)
+1. **HEAD:** `43f5fc3` · WORK=`IDLE`
+2. **지금:** **양산前** · 테스트대시보드 백필 PARTIAL
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 테스트대시보드 BACKFILL_PARTIAL(pred 18520·2–1236·1회불가·markov2회 empty). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-15 | 테스트대시보드+백필 | pred18520 · 2–1236 · fail4(1회+markov2) | **PARTIAL** | 0b39eee |
+| 2026-08-15 | 테스트대시보드+백필 | pred18520 · 2–1236 · fail4(1회+markov2) | **PARTIAL** | 43f5fc3 |
 | 2026-08-15 | 4군·전략X탭숨김 | 두뇌예측+전략X HOLD · 효도유지 | **HOLD_ON** | 5ef31ea |
 | 2026-08-15 | 종료체크 leftover | 버그헌트보고 2파일 commit+push | **COMMIT_OK** | d5d1b68 |
 | 2026-08-15 | 4군 대시보드기록 | 채점자동·예측수동 · seq50회미채점 | **READ_OK** | bb5241a |

@@ -8,15 +8,15 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0b39eee` |
+| HEAD(실측) | `43f5fc3` |
 | BASELINE_PIN | `640cb67` |
-| WORK | `RUNNING:K-TL-DASH-BACKFILL-1236` |
-| 지금 | **양산前** · 테스트대시보드 백필 RUNNING |
+| WORK | `IDLE` |
+| 지금 | **양산前** · 테스트대시보드 백필 PARTIAL |
 | 직전 | 4군/전략X탭 HOLD_ON |
-| BOOT다음 | 백필완료 확인 / 1237아님 |
-| NEXT1 ID | **K-TL-DASH-BACKFILL-1236** |
-| NEXT1 할일 | **양산前**. 테스트 대시보드 탭 ON. 예측초기화 후 1–1236 3뇌 백필 RUNNING. 완료 후 대시보드 숫자 확인. 1237 금지. |
-| 승인필요 | 없음(형 지시 실행 중) |
+| BOOT다음 | 형 선택 1건 / 1237아님 |
+| NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
+| NEXT1 할일 | **양산前**. 테스트대시보드 BACKFILL_PARTIAL(pred 18520·2–1236·1회불가·markov2회 empty). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지. |
+| 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
 
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0b39eee · 지금=**양산前** · 테스트대시보드 백필 RUNNING · 다음=K-TL-DASH-BACKFILL-1236`
+1. 첫줄 `[복귀] HEAD=43f5fc3 · 지금=**양산前** · 테스트대시보드 백필 PARTIAL · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
