@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. prize Ziemba SPEC_OK(**HOLD**·이미배선). W_STRUCT↑·숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
+- 할일: **양산前**. review W_STRUCT APPLY_OK(0.20·hi32+0.017·stat/markov불변). 숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
 - 완료조건: 형 1건
-- 선행완료: K-REVIEW-PRIZE-ZIEMBA-SPEC SPEC_OK
+- 선행완료: K-REVIEW-WSTRUCT-UP APPLY_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-15
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260815_KREVIEW_WSTRUCT_UP.md
 - reports/20260815_KREVIEW_PRIZE_ZIEMBA_SPEC.md
 - reports/20260815_KMARKOV_REVIEW_SKILL_QUALITY.md
 - reports/20260815_KEVOLVE_DIAG_3BRAIN_EXPAND.md

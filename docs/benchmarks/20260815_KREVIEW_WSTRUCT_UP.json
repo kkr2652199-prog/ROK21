@@ -1,0 +1,71 @@
+{
+  "id": "K-REVIEW-WSTRUCT-UP",
+  "as_of": "2026-08-15T15:14:12+09:00",
+  "verdict": "APPLY_OK",
+  "applied": true,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1137,
+    1236
+  ],
+  "seed": 42,
+  "base": {
+    "wc": 0.9,
+    "ws": 0.1,
+    "n": 100,
+    "peek": 0,
+    "fw_prize": -0.122235,
+    "hi32": 1.977,
+    "end089": 1.816
+  },
+  "cand": {
+    "wc": 0.8,
+    "ws": 0.2,
+    "n": 100,
+    "peek": 0,
+    "fw_prize": -0.120724,
+    "hi32": 1.994,
+    "end089": 1.815
+  },
+  "delta": {
+    "fw_prize": 0.001511,
+    "hi32": 0.017,
+    "end089": -0.001
+  },
+  "hard": {
+    "lock_ok": true,
+    "peek_base": 0,
+    "peek_cand": 0,
+    "n_base": 100,
+    "n_cand": 100,
+    "d_fw": 0.001511,
+    "d_hi32": 0.017,
+    "d_end089": -0.001,
+    "hi32_up": true,
+    "fw_iso": true,
+    "markov_untouched": true
+  },
+  "pre": {
+    "review_c": 0.9,
+    "review_s": 0.1,
+    "markov_c": 0.9,
+    "markov_s": 0.1
+  },
+  "gate": {
+    "hi32_up": true,
+    "fw_d_le_005": true,
+    "peek0": true
+  },
+  "rollback": "W_CROWD review=0.90 · W_STRUCT review=0.10",
+  "refill": {
+    "review_n": 200,
+    "evolve_review_rewrite": 200,
+    "stat_fp": "1030e5b6341dc581",
+    "markov_fp": "cb8968f3ce9b4dff",
+    "review_fp_before": "21d7d3d861d99dae",
+    "review_fp_after": "a505859e840ad332",
+    "stat_unchanged": true,
+    "markov_unchanged": true
+  }
+}
