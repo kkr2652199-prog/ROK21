@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-STAT-EXTERNAL-REVIEW-PACK** — 외부AI 검토용 읽기순서
+📌 사유: **[CURSOR] K-STAT-TIER3-COVERING-DISCUSS** — 3-covering 논의(APPLY없음)
 
-📌 직전: **[CURSOR] K-A-STALE-DOC** — FINDINGS K-A 구표본 HOLD
+📌 직전: **[CURSOR] K-STAT-EXTERNAL-REVIEW-PACK** — 외부AI 검토용 읽기순서
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-STAT-TIER3-COVERING-DISCUSS (형GO)** | **DISCUSS_OK** · READ-ONLY · 코드 APPLY **없음** · 범위=**stat만**. 현 `cover_r3`=**클론/재샘플**(같은 `predict_sets` 재호출+S1 밖번호 선택). 캐시200: shape-set1 J **0.7143**(S0동일) · cover-skill J **0.0829**(S0 0.1059→S1후). skill union **22.715** · union10 **31.55**. La Jolla C(7,6,3)=**4** · C(8,6,3)=**4** · C(9,6,3)=**7** · C(10,6,3)=**10** · C(12,6,3)=**15** · C(15,6,3)=30~31 · C(10,6,5)=**50**. 3장으로 N≥7 완전3-cover 불가. 이름: t=3은 **5등 형태** 보장이지 한국 3등(5맞) 아님. 끼움점=`build_cover_r3_sets` 교체(최소). 결정론 표는 cover칸만 seed무관(K-E 우회·1~5 동결유지). slots2/cap4=몰아주기 복사한도≠덮기장수. 발권 quota**5**. 모니터: V=skill union에 당첨3+ **139**/200 · 그 3묶음 장 **41** · 당첨5+ **21** · 5맞 **0**. 함정3=이름/장수폭증/S1·S3·S4 반대기하. 권고 APPLY금지·문장고정 후 SPEC. 1237아님·ge3미클레임. · `docs/benchmarks/20260815_KSTAT_TIER3_COVERING_DISCUSS.json` · `reports/20260815_KSTAT_TIER3_COVERING_DISCUSS.md` · `tools/_k_stat_tier3_covering_discuss.py` |
 | **K-STAT-EXTERNAL-REVIEW-PACK (형GO)** | **DOC_OK** · 코드/DB무수정. 외부AI 붙여넣기용: 프레임·S0~S5+#1~#3 과정·읽기순서 A~E·검토질문6. 진입=`EXTERNAL_START.md` → 본팩 → FINAL_REVIEW → S0 SPEC. 수치=벤치 JSON. 1237아님. · `reports/20260815_KSTAT_EXTERNAL_REVIEW_PACK.md` |
 | **K-A-STALE-DOC (형GO #3)** | **DOC_OK** · 코드/knob/DB **무수정**. FINDINGS K-A **OPEN→HOLD**. 라벨 **STALE_DOC**. 구표본 set-mean **0.760**(1135–1234·500세트)는 패치근거 아님. K-O: mean 서열 금지. K-B는 이미 PATCHED. 최신 모니터(다른창) 원장맞춤 skill mean_all **0.83** — 0.760과 빼서 향상 클레임 금지(이론 0.80 근처). · `reports/20260815_KA_STALE_DOC.md` · `docs/benchmarks/20260815_KA_STALE_DOC.json` · `My_Drive_Sync/SUMMARY/FINDINGS.md` |
 | **K-STAT-PROCESS-AUDIT-S5LIVE (형GO #2)** | **PASS** · READ-ONLY — 원장맞춤 후 1037~1236 n**200**. HARD 0. 역할 skill**1000**/cover**600**/shape**400**/focus**1000** · 번호무효0 · 불일치0. 라이브 S1 source `cover_r3_outside_union` **600**/600. S3 복사4 **800** · 쿼터실패 **0** (skill421/cover220/shape159). S4 복사4+보완1 · Jaccard **0.0** (0아닌회0) · 라벨은 `score_repack`×200(문자열 complement 아님·SOFT). 라이브↔캐시 번호불일치 **0** · peek**0**. 숙제 as_of200 peek1237=0. stat cover n_pos mean**21.035** 초반10=**3** 후반10=**26.3**. markov/review cover n_pos**0**(원장없음·설계). shape n_pos**30.19**(보너스표·3뇌동일). census ledger stat**3000** review_stat**200** skill_hw**600**. SOFT: UI backtest_runs**0**. 코드/DB쓰기없음·ge3미클레임·1237아님. · `docs/benchmarks/20260815_KSTAT_PROCESS_AUDIT_S5LIVE.json` · `reports/20260815_KSTAT_PROCESS_AUDIT_S5LIVE.md` · `tools/_k_stat_process_audit_s5live.py` |
