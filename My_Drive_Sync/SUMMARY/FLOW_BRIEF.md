@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `8264616` · WORK=`IDLE`
-- 지금: **양산前** · 자동큐 소진 DOC_OK
-- 직전: evolve필드 SPEC_OK · HOLD
+- HEAD: `011de1f` · WORK=`IDLE`
+- 지금: **양산前** · 3뇌벡터 REFILL_OK
+- 직전: 자동큐 소진 DOC_OK
 - BOOT다음: 형 선택 1건 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 자동큐 소진(L15). 형 선택 1건(숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 3뇌벡터 REFILL_OK(200×3·fp재현·원장불변). 형 선택 1건(숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
