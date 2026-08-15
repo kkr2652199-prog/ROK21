@@ -4,10 +4,10 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 진단로그 APPLY_OK(stat 200·peek0·원장불변). 궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
+- 할일: **양산前**. 진단로그 READ_OK(stat200·peek0). 파트2 3뇌확장=형 GO 후. 궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
 - 완료조건: 형 1건
-- 선행완료: K-STAT-EVOLVE-DIAG-LOG-APPLY APPLY_OK
-- 승인필요: 형 1건
+- 선행완료: K-STAT-EVOLVE-DIAG-READ READ_OK
+- 승인필요: 형 GO(파트2) 또는 다른 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-15
 
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260815_KSTAT_EVOLVE_DIAG_READ.md
 - reports/20260815_KSTAT_EVOLVE_DIAG_LOG_APPLY.md
 - reports/20260815_KSTAT_EVOLVE_DIAG_LOG_SPEC.md
 - reports/20260815_KSTAT_COOCCUR_PREFER_EVOLVE_DISCUSS.md

@@ -1,0 +1,334 @@
+{
+  "id": "K-STAT-EVOLVE-DIAG-READ",
+  "as_of": "2026-08-15T14:29:59+09:00",
+  "verdict": "READ_OK",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "part2_expand": "AWAIT_HYUNG_GO",
+  "e_hits": 0.8,
+  "note": "모니터 집계만. hits/tier/ge3 우열·성능 클레임 금지. 이론 0.80 대비 편차만.",
+  "hard_ok": true,
+  "hard": {
+    "n_stat": 200,
+    "all_stat": true,
+    "peek": 0,
+    "peek_ok": true,
+    "window": [
+      1037,
+      1236
+    ],
+    "window_ok": true,
+    "other_brains": 0,
+    "pred_1237": 0,
+    "draws_max": 1236,
+    "read_only": true,
+    "three_brain_sum": false
+  },
+  "census": {
+    "evolve_n": 200,
+    "evolve_by": {
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "peek_stat": 0,
+    "peek_all": 0,
+    "pred_n": 0,
+    "pred_1237": 0,
+    "draws_max": 1236
+  },
+  "row_monitor": {
+    "n": 200,
+    "repack5_mean_hits": 0.798,
+    "repack5_mean_hits_delta_vs_080": -0.002,
+    "repack5_best_hist": {
+      "0": 4,
+      "1": 78,
+      "2": 91,
+      "3": 22,
+      "4": 5,
+      "5": 0,
+      "6": 0
+    }
+  },
+  "raw_roles": {
+    "skill_native": 1000,
+    "cover_r3": 600,
+    "shape_r2": 400,
+    "focus_r1": 1000
+  },
+  "by_role": {
+    "skill": {
+      "n_sets": 1000,
+      "n_draws_present": 200,
+      "hits_sum": 830,
+      "mean_hits": 0.83,
+      "delta_vs_080": 0.03,
+      "hits_hist": {
+        "0": 391,
+        "1": 429,
+        "2": 145,
+        "3": 29,
+        "4": 6,
+        "5": 0,
+        "6": 0
+      },
+      "tier_hist": {
+        "미적중": 965,
+        "5등": 29,
+        "4등": 6
+      },
+      "n_draws_ge3": 34,
+      "cover_rate_ge3": 0.17
+    },
+    "cover": {
+      "n_sets": 600,
+      "n_draws_present": 200,
+      "hits_sum": 444,
+      "mean_hits": 0.74,
+      "delta_vs_080": -0.06,
+      "hits_hist": {
+        "0": 258,
+        "1": 249,
+        "2": 84,
+        "3": 9,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "tier_hist": {
+        "미적중": 591,
+        "5등": 9
+      },
+      "n_draws_ge3": 9,
+      "cover_rate_ge3": 0.045
+    },
+    "shape": {
+      "n_sets": 400,
+      "n_draws_present": 200,
+      "hits_sum": 343,
+      "mean_hits": 0.8575,
+      "delta_vs_080": 0.0575,
+      "hits_hist": {
+        "0": 154,
+        "1": 168,
+        "2": 63,
+        "3": 11,
+        "4": 4,
+        "5": 0,
+        "6": 0
+      },
+      "tier_hist": {
+        "미적중": 385,
+        "5등": 11,
+        "4등": 4
+      },
+      "n_draws_ge3": 11,
+      "cover_rate_ge3": 0.055
+    },
+    "focus": {
+      "n_sets": 1000,
+      "n_draws_present": 200,
+      "hits_sum": 798,
+      "mean_hits": 0.798,
+      "delta_vs_080": -0.002,
+      "hits_hist": {
+        "0": 413,
+        "1": 415,
+        "2": 140,
+        "3": 25,
+        "4": 7,
+        "5": 0,
+        "6": 0
+      },
+      "tier_hist": {
+        "미적중": 968,
+        "5등": 25,
+        "4등": 7
+      },
+      "n_draws_ge3": 27,
+      "cover_rate_ge3": 0.135
+    }
+  },
+  "by_kind": {
+    "pool": {
+      "skill": {
+        "n_sets": 1000,
+        "n_draws_present": 0,
+        "hits_sum": 830,
+        "mean_hits": 0.83,
+        "delta_vs_080": 0.03,
+        "hits_hist": {
+          "0": 391,
+          "1": 429,
+          "2": 145,
+          "3": 29,
+          "4": 6,
+          "5": 0,
+          "6": 0
+        },
+        "tier_hist": {
+          "미적중": 965,
+          "5등": 29,
+          "4등": 6
+        },
+        "n_draws_ge3": 0,
+        "cover_rate_ge3": null
+      },
+      "cover": {
+        "n_sets": 600,
+        "n_draws_present": 0,
+        "hits_sum": 444,
+        "mean_hits": 0.74,
+        "delta_vs_080": -0.06,
+        "hits_hist": {
+          "0": 258,
+          "1": 249,
+          "2": 84,
+          "3": 9,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "tier_hist": {
+          "미적중": 591,
+          "5등": 9
+        },
+        "n_draws_ge3": 0,
+        "cover_rate_ge3": null
+      },
+      "shape": {
+        "n_sets": 400,
+        "n_draws_present": 0,
+        "hits_sum": 343,
+        "mean_hits": 0.8575,
+        "delta_vs_080": 0.0575,
+        "hits_hist": {
+          "0": 154,
+          "1": 168,
+          "2": 63,
+          "3": 11,
+          "4": 4,
+          "5": 0,
+          "6": 0
+        },
+        "tier_hist": {
+          "미적중": 385,
+          "5등": 11,
+          "4등": 4
+        },
+        "n_draws_ge3": 0,
+        "cover_rate_ge3": null
+      },
+      "focus": {
+        "n_sets": 0,
+        "n_draws_present": 0,
+        "hits_sum": 0,
+        "mean_hits": null,
+        "delta_vs_080": null,
+        "hits_hist": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "tier_hist": {},
+        "n_draws_ge3": 0,
+        "cover_rate_ge3": null
+      }
+    },
+    "repack": {
+      "skill": {
+        "n_sets": 0,
+        "n_draws_present": 0,
+        "hits_sum": 0,
+        "mean_hits": null,
+        "delta_vs_080": null,
+        "hits_hist": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "tier_hist": {},
+        "n_draws_ge3": 0,
+        "cover_rate_ge3": null
+      },
+      "cover": {
+        "n_sets": 0,
+        "n_draws_present": 0,
+        "hits_sum": 0,
+        "mean_hits": null,
+        "delta_vs_080": null,
+        "hits_hist": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "tier_hist": {},
+        "n_draws_ge3": 0,
+        "cover_rate_ge3": null
+      },
+      "shape": {
+        "n_sets": 0,
+        "n_draws_present": 0,
+        "hits_sum": 0,
+        "mean_hits": null,
+        "delta_vs_080": null,
+        "hits_hist": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "tier_hist": {},
+        "n_draws_ge3": 0,
+        "cover_rate_ge3": null
+      },
+      "focus": {
+        "n_sets": 1000,
+        "n_draws_present": 0,
+        "hits_sum": 798,
+        "mean_hits": 0.798,
+        "delta_vs_080": -0.002,
+        "hits_hist": {
+          "0": 413,
+          "1": 415,
+          "2": 140,
+          "3": 25,
+          "4": 7,
+          "5": 0,
+          "6": 0
+        },
+        "tier_hist": {
+          "미적중": 968,
+          "5등": 25,
+          "4등": 7
+        },
+        "n_draws_ge3": 0,
+        "cover_rate_ge3": null
+      }
+    }
+  },
+  "n_draws_any_ge3": 50,
+  "n_draws_any_ge3_note": "stat 세트 중 hits>=3 이 1장 이상인 회차수. 성적 아님."
+}
