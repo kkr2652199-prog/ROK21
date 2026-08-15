@@ -1,6 +1,6 @@
 # K-PATCH-BUG-HUNT
 
-시각: 2026-08-15T17:14:25+09:00 · **BUGHUNT_OK** · READ-ONLY · APPLY **없음** · 1237아님
+시각: 2026-08-15T17:15:52+09:00 · **BUGHUNT_OK** · READ-ONLY · APPLY **없음** · 1237아님
 목적=켠 패치(특히 몰아주기 score5)에서 오동작만 실측. 성적 아님.
 
 HARD=통과. MAX=1236 · pred_1237=0 · 원장 {'stat': 3000}.
@@ -17,28 +17,39 @@ HARD=통과. MAX=1236 · pred_1237=0 · 원장 {'stat': 3000}.
 | markov | 200 | 0.0 | 0 | 0 | 30.0 | {'hyena_score5': 1000} |
 | review | 200 | 0.0 | 0 | 0 | 30.0 | {'hyena_score5': 1000} |
 
-## 2) 캐시 vs 라이브
+## 2) 캐시 vs 라이브 (샘플 7회×3뇌)
 
-cache≠cold **0**/15 (리필 경로 재현). cache≠live 몰아주기 **5**/6 · pool은 **6/6 동일**.
-1236 stat만 몰아주기가 라이브와 같음. 1216 3뇌·1236 markov/review는 다름.
+cache≠live 몰아주기 **19**/21 · cache≠live pool **0** · cold(리필경로)≠live **19** · cache≠cold **0**.
 
-| 회 | 뇌 | cache=cold | cache=live몰아 | cold=live | cache=live pool |
-|----|----|------------|----------------|-----------|-----------------|
-| 1037 | 3뇌 | True | — | — | — |
-| 1137 | 3뇌 | True | — | — | — |
-| 1234 | 3뇌 | True | — | — | — |
-| 1216 | stat | True | False | False | True |
-| 1216 | markov | True | False | False | True |
-| 1216 | review | True | False | False | True |
+| 회 | 뇌 | cache=live몰아 | cache=cold | cold=live | cache=live pool |
+|----|----|----------------|------------|-----------|-----------------|
+| 1037 | stat | False | True | False | True |
+| 1037 | markov | False | True | False | True |
+| 1037 | review | False | True | False | True |
+| 1100 | stat | False | True | False | True |
+| 1100 | markov | False | True | False | True |
+| 1100 | review | False | True | False | True |
+| 1137 | stat | True | True | True | True |
+| 1137 | markov | False | True | False | True |
+| 1137 | review | False | True | False | True |
+| 1216 | stat | False | True | False | True |
+| 1216 | markov | False | True | False | True |
+| 1216 | review | False | True | False | True |
+| 1234 | stat | False | True | False | True |
+| 1234 | markov | False | True | False | True |
+| 1234 | review | False | True | False | True |
+| 1235 | stat | False | True | False | True |
+| 1235 | markov | False | True | False | True |
+| 1235 | review | False | True | False | True |
 | 1236 | stat | True | True | True | True |
-| 1236 | markov | True | False | False | True |
-| 1236 | review | True | False | False | True |
+| 1236 | markov | False | True | False | True |
+| 1236 | review | False | True | False | True |
 
 ## 3) 버그 목록
 
 ### B1 · P1 · UI캐시 몰아주기 ≠ 라이브 build_pool_and_repack
 
-- 근거: live샘플 2회×3뇌 cache≠live_repack 5 · cold≠live 5 · cache≠cold 0/15
+- 근거: sample 7회×3뇌 중 cache≠live_repack 19 · cold≠live 19 · cache≠cold 0
 - 원인: 캐시 refill이 RollingSignalLearner() 빈 스냅샷. 라이브/발권은 warm_learner_to_draw(200). UI는 캐시 우선.
 
 ### B3 · P3 · S3역할쿼터·S4보완 플래그 ON인데 score5가 우회

@@ -1,6 +1,6 @@
 {
   "id": "K-PATCH-BUG-HUNT",
-  "as_of": "2026-08-15T17:14:25+09:00",
+  "as_of": "2026-08-15T17:15:52+09:00",
   "verdict": "BUGHUNT_OK",
   "apply": false,
   "hard_ok": true,
@@ -68,17 +68,15 @@
   },
   "sample": [
     {
-      "draw_no": 1216,
+      "draw_no": 1037,
       "peek": false,
-      "with_live": true,
       "brains": {
         "stat": {
-          "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5,
           "cache_vs_live_repack": false,
+          "cache_vs_cold_repack": true,
           "cold_vs_live_repack": false,
           "cache_vs_live_pool": true,
+          "n_cache": 5,
           "n_live": 5,
           "live_assemble": [
             "hyena_score5",
@@ -89,12 +87,11 @@
           ]
         },
         "markov": {
-          "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5,
           "cache_vs_live_repack": false,
+          "cache_vs_cold_repack": true,
           "cold_vs_live_repack": false,
           "cache_vs_live_pool": true,
+          "n_cache": 5,
           "n_live": 5,
           "live_assemble": [
             "hyena_score5",
@@ -105,12 +102,11 @@
           ]
         },
         "review": {
-          "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5,
           "cache_vs_live_repack": false,
+          "cache_vs_cold_repack": true,
           "cold_vs_live_repack": false,
           "cache_vs_live_pool": true,
+          "n_cache": 5,
           "n_live": 5,
           "live_assemble": [
             "hyena_score5",
@@ -123,17 +119,15 @@
       }
     },
     {
-      "draw_no": 1236,
+      "draw_no": 1100,
       "peek": false,
-      "with_live": true,
       "brains": {
         "stat": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5,
-          "cache_vs_live_repack": true,
-          "cold_vs_live_repack": true,
+          "cold_vs_live_repack": false,
           "cache_vs_live_pool": true,
+          "n_cache": 5,
           "n_live": 5,
           "live_assemble": [
             "hyena_score5",
@@ -144,12 +138,11 @@
           ]
         },
         "markov": {
-          "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5,
           "cache_vs_live_repack": false,
+          "cache_vs_cold_repack": true,
           "cold_vs_live_repack": false,
           "cache_vs_live_pool": true,
+          "n_cache": 5,
           "n_live": 5,
           "live_assemble": [
             "hyena_score5",
@@ -160,12 +153,11 @@
           ]
         },
         "review": {
-          "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5,
           "cache_vs_live_repack": false,
+          "cache_vs_cold_repack": true,
           "cold_vs_live_repack": false,
           "cache_vs_live_pool": true,
+          "n_cache": 5,
           "n_live": 5,
           "live_assemble": [
             "hyena_score5",
@@ -174,127 +166,270 @@
             "hyena_score5",
             "hyena_score5"
           ]
-        }
-      }
-    }
-  ],
-  "cold_sample": [
-    {
-      "draw_no": 1037,
-      "peek": false,
-      "with_live": false,
-      "brains": {
-        "stat": {
-          "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5
-        },
-        "markov": {
-          "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5
-        },
-        "review": {
-          "cache_vs_cold_repack": true,
-          "n_cache": 5,
-          "n_cold": 5
         }
       }
     },
     {
       "draw_no": 1137,
       "peek": false,
-      "with_live": false,
       "brains": {
         "stat": {
+          "cache_vs_live_repack": true,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": true,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         },
         "markov": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         },
         "review": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         }
       }
     },
     {
       "draw_no": 1216,
       "peek": false,
-      "with_live": false,
       "brains": {
         "stat": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         },
         "markov": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         },
         "review": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         }
       }
     },
     {
       "draw_no": 1234,
       "peek": false,
-      "with_live": false,
       "brains": {
         "stat": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         },
         "markov": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         },
         "review": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        }
+      }
+    },
+    {
+      "draw_no": 1235,
+      "peek": false,
+      "brains": {
+        "stat": {
+          "cache_vs_live_repack": false,
+          "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
+          "n_cache": 5,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "markov": {
+          "cache_vs_live_repack": false,
+          "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
+          "n_cache": 5,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "review": {
+          "cache_vs_live_repack": false,
+          "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
+          "n_cache": 5,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         }
       }
     },
     {
       "draw_no": 1236,
       "peek": false,
-      "with_live": false,
       "brains": {
         "stat": {
+          "cache_vs_live_repack": true,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": true,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         },
         "markov": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         },
         "review": {
+          "cache_vs_live_repack": false,
           "cache_vs_cold_repack": true,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
           "n_cache": 5,
-          "n_cold": 5
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
         }
       }
     }
   ],
   "mismatch": {
-    "n_sample_pairs": 6,
-    "cache_vs_live_repack": 5,
+    "n_sample_pairs": 21,
+    "cache_vs_live_repack": 19,
     "cache_vs_live_pool": 0,
-    "cold_vs_live_repack": 5,
+    "cold_vs_live_repack": 19,
     "cache_vs_cold_repack": 0
   },
   "bugs": [
@@ -302,7 +437,7 @@
       "id": "B1",
       "sev": "P1",
       "title": "UI캐시 몰아주기 ≠ 라이브 build_pool_and_repack",
-      "evidence": "live샘플 2회×3뇌 cache≠live_repack 5 · cold≠live 5 · cache≠cold 0/15",
+      "evidence": "sample 7회×3뇌 중 cache≠live_repack 19 · cold≠live 19 · cache≠cold 0",
       "cause": "캐시 refill이 RollingSignalLearner() 빈 스냅샷. 라이브/발권은 warm_learner_to_draw(200). UI는 캐시 우선."
     },
     {
