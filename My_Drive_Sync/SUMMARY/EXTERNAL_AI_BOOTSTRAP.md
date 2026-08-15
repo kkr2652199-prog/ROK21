@@ -8,16 +8,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `271e356` |
+| HEAD(실측) | `7a78fdf` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · covering논의 DISCUSS_OK · APPLY없음 |
-| 직전 | 외부검토팩 DOC · #1~#3끝 |
-| BOOT다음 | 형 1건 (문장 A~D) / 1237아님 |
+| 지금 | **양산前** · 궁합prefer+진단 DISCUSS_OK · APPLY없음 |
+| 직전 | covering논의 DISCUSS_OK |
+| BOOT다음 | 형 1건 (추천 A~D) / 1237아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. covering논의 DISCUSS_OK(APPLY없음). 형 선택 A문장고정/B N≤8 SPEC/C greedy모니터/D보류. #4 shape코어V2는 새 아이디어만(S2재탕금지). **1237아님**. |
+| NEXT1 할일 | **양산前**. 궁합prefer+진단 DISCUSS_OK(APPLY없음). 형 선택 A추천1 SPEC/B추천2 SPEC/C둘다 SPEC/D보류. covering·S2재탕 금지. **1237아님**. |
 | 승인필요 | 형 1건 |
-| 선행 | #1~#3 종료 · covering APPLY 금지(형 GO 전) |
+| 선행 | APPLY 금지(형 GO 전) |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=271e356 · 지금=**양산前** · covering논의 DISCUSS_OK · APPLY없음 · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=7a78fdf · 지금=**양산前** · 궁합prefer+진단 DISCUSS_OK · APPLY없음 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
