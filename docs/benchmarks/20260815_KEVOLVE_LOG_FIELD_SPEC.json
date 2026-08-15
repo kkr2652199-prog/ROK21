@@ -1,0 +1,94 @@
+{
+  "id": "K-EVOLVE-LOG-FIELD-SPEC",
+  "as_of": "2026-08-15T15:36:16+09:00",
+  "verdict": "SPEC_OK",
+  "apply": false,
+  "recommend": "HOLD",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "hard_ok": true,
+  "census": {
+    "draws_max": 1236,
+    "pred_1237": 0,
+    "peek": 0,
+    "evolve": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "weight_n": 600,
+    "weight_nonzero": 0,
+    "as_of_not_n_minus_1": {},
+    "columns": [
+      "draw_no",
+      "brain_tag",
+      "as_of",
+      "schema_version",
+      "weight_applied",
+      "actual_nums_json",
+      "pool_json",
+      "repack_json",
+      "pool_hits_json",
+      "repack_hits_json",
+      "best_hits",
+      "mean_hits",
+      "best_set_kind",
+      "best_set_no",
+      "features_json",
+      "miss_tags_json",
+      "assemble_mode",
+      "note",
+      "created_at",
+      "updated_at"
+    ],
+    "features_keys_now": {
+      "weight_applied": 20,
+      "n_repack": 20,
+      "n_pool": 20,
+      "has_apply_learn_boost": 20
+    },
+    "sample_features": {
+      "weight_applied": 0.0,
+      "n_repack": 5,
+      "n_pool": 10,
+      "has_apply_learn_boost": true
+    }
+  },
+  "live": {
+    "WEIGHT_APPLIED": 0.0,
+    "FEATURE_LAMBDA_WIRE": false,
+    "EVOLVE_AUTO": false,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ]
+  },
+  "spec": {
+    "new_table": false,
+    "alter_table": false,
+    "pk": "(draw_no, brain_tag)",
+    "write_into": "features_json only",
+    "writer": "write_evolve_diag(brain) only · click_feedback 본체 금지",
+    "as_of": "N-1",
+    "weight_applied": 0.0,
+    "roll_window": 52,
+    "proposed_keys": {
+      "roll52_chi2": "직전 52회 당첨번호 빈도 vs 균일 χ². 모니터만. APPLY 게이트 금지.",
+      "roll52_n": "창 길이(기본 52). 부족하면 그 길이.",
+      "repack_mean_consec": "repack5 연번쌍 평균. 세트 속성.",
+      "repack_mean_hi32": "repack5 고번호(≥32) 평균. prize 축 모니터.",
+      "repack_mean_prefer": "repack5 set_crowd_score(prefer_table). markov 축 모니터.",
+      "repack_mean_prize": "repack5 set_crowd_score(prize_table). review 축 모니터."
+    },
+    "chi2_is": "모니터. APPLY 게이트 아님. FEATURE_LAMBDA 입력 아님.",
+    "forbid": [
+      "새 테이블",
+      "회차 6개 χ²",
+      "EVOLVE_AUTO=1",
+      "FEATURE_LAMBDA_WIRE=True",
+      "weight_applied≠0",
+      "mean_hits를 예측 입력",
+      "궁합 prefer_table 반영"
+    ]
+  },
+  "reason": "이미 있는 features_json에 롤링 모니터 키만 추가하면 된다. 새 파이프 불필요. 이번 턴은 SPEC만. 키를 넣으면 쓰기 경로가 바뀌므로 APPLY는 별 GO."
+}

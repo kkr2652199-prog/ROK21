@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 궁합annotate SPEC_OK(**HOLD**·플래그OFF·prefer표 금지). 숙제ON·궁합 APPLY·covering휠·S2재탕 금지. **1237아님**.
+- 할일: **양산前**. evolve필드 SPEC_OK(**HOLD**·features_json만·WEIGHT0). 숙제ON·궁합 APPLY·covering휠·S2재탕 금지. **1237아님**.
 - 완료조건: 형 1건
-- 선행완료: K-STAT-COMBO-ANNOTATE-SPEC SPEC_OK
+- 선행완료: K-EVOLVE-LOG-FIELD-SPEC SPEC_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-15
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260815_KEVOLVE_LOG_FIELD_SPEC.md
 - reports/20260815_KSTAT_COMBO_ANNOTATE_SPEC.md
 - reports/20260815_KTIER3_LEARN_CLOSE.md
 - reports/20260815_KMARKOV_STATE_DEF_MONITOR.md

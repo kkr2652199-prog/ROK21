@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-15 | evolve_log 필드 SPEC | features_json만 · χ²롤링52 · WEIGHT0 · HOLD | **SPEC_OK** | (본턴) |
 | 2026-08-15 | 궁합 세트annotate SPEC | 플래그OFF · prefer표금지 · HOLD · APPLY없음 | **SPEC_OK** | d5fb15a |
 | 2026-08-15 | 3등엔진 닫기·문장고정 | cover≠3등 · t=3=5등형태 · 코드불변 | **DOC_OK** | e2c78f0 |
 | 2026-08-15 | 권고4A 전이상태 | 끝수/대역이 더평평 · odd=구성사전 · HOLD | **READ_OK** | a3de9c2 |
@@ -45,7 +46,6 @@
 | 2026-08-15 | 진단로그 READ 파트1 | stat200 role집계 · peek0 · write0 · 파트2대기 | **READ_OK** | de81295 |
 | 2026-08-15 | 종료체크 R37잔여 | GENSPARK+형제 핀 commit+push · DB제외 | **PIN_OK** | 405dfd5 |
 | 2026-08-15 | 진단로그 APPLY | write stat200 · peek0 · 원장3000불변 · preferΔ0 | **APPLY_OK** | e982bc0 |
-| 2026-08-15 | 진단로그 SPEC | brain_tag있음 · 쓰기=캐시stat만 · as_of=N-1 · APPLY없음 | **SPEC_OK** | 6d8e867 |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)
