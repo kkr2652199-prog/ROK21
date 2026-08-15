@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-15 | 권고4A 전이상태 | 끝수/대역이 더평평 · odd=구성사전 · HOLD | **READ_OK** | (본턴) |
 | 2026-08-15 | 권고순서#2 축모니터 | 3뇌 prefer/prize·전이≈균일 · APPLY없음 | **READ_OK** | 9cd8e13 |
 | 2026-08-15 | review W_STRUCT 소폭↑ | 0.10→0.20 · hi32+0.017 · fw iso · 타뇌불변 | **APPLY_OK** | c03d0ee |
 | 2026-08-15 | prize↔Ziemba 대조 SPEC | 이미배선 · ρ crowd0.94 · HOLD · APPLY없음 | **SPEC_OK** | ffc8e63 |
@@ -45,7 +46,6 @@
 | 2026-08-15 | 진단로그 SPEC | brain_tag있음 · 쓰기=캐시stat만 · as_of=N-1 · APPLY없음 | **SPEC_OK** | 6d8e867 |
 | 2026-08-15 | 궁합prefer+자기진단 논의 | 2뇌브리핑 · 세트annotate만 · evolve_log행0 · APPLY없음 | **DISCUSS_OK** | 7a78fdf |
 | 2026-08-15 | 3등=풀N+3-covering 논의 | cover=클론 · J 0.7143/0.0829 · C(12,6,3)=15 · APPLY없음 | **DISCUSS_OK** | 271e356 |
-| 2026-08-15 | 외부AI검토용 읽기순서 | 팩+S0~#3 파일지도 · APPLY없음 | **DOC_OK** | 096beef |
 ---
 
 ## C) 확정 사실 (뒤집으려면 새 실측 · 재논쟁 금지)

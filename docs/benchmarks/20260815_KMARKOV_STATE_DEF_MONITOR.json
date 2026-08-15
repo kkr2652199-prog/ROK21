@@ -1,0 +1,107 @@
+{
+  "id": "K-MARKOV-STATE-DEF-MONITOR",
+  "as_of": "2026-08-15T15:28:03+09:00",
+  "verdict": "READ_OK",
+  "apply": false,
+  "recommend": "HOLD",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "as_of_draw": 1236,
+  "n_draws_before": 1235,
+  "peek_max": 1235,
+  "peek_ok": true,
+  "draws_max": 1236,
+  "pred_1237": 0,
+  "evolve": {
+    "markov": 200,
+    "review": 200,
+    "stat": 200
+  },
+  "role_learn_brains": [
+    "stat"
+  ],
+  "decay": 0.02,
+  "laplace": 0.5,
+  "defs": {
+    "number_1to45": {
+      "n_states": 45,
+      "n_rows": 45,
+      "mean_tv": 0.176403,
+      "max_tv": 0.226643,
+      "mean_entropy": 3.714314,
+      "h_uniform": 3.806662,
+      "entropy_ratio": 0.97574,
+      "p_max": 0.060139,
+      "p_min": 0.006413,
+      "unit": "number_pair",
+      "note": "현행 엔진. 번호→번호 45×45"
+    },
+    "end_digit": {
+      "n_states": 10,
+      "n_rows": 10,
+      "mean_tv": 0.065996,
+      "max_tv": 0.094543,
+      "mean_entropy": 2.287558,
+      "h_uniform": 2.302585,
+      "entropy_ratio": 0.993474,
+      "p_max": 0.154834,
+      "p_min": 0.058805,
+      "unit": "number_pair",
+      "note": "끝수 0–9. Chernoff 자리 선호와 같은 칸"
+    },
+    "band15": {
+      "n_states": 3,
+      "n_rows": 3,
+      "mean_tv": 0.009995,
+      "max_tv": 0.020865,
+      "mean_entropy": 1.098234,
+      "h_uniform": 1.098612,
+      "entropy_ratio": 0.999656,
+      "p_max": 0.346894,
+      "p_min": 0.312469,
+      "unit": "number_pair",
+      "note": "1–15 / 16–30 / 31–45"
+    },
+    "decade": {
+      "n_states": 5,
+      "n_rows": 5,
+      "mean_tv": 0.097094,
+      "max_tv": 0.103315,
+      "mean_entropy": 1.573757,
+      "h_uniform": 1.609438,
+      "entropy_ratio": 0.97783,
+      "p_max": 0.249727,
+      "p_min": 0.096685,
+      "unit": "number_pair",
+      "note": "10단위. 41–45는 한 칸"
+    },
+    "odd_count": {
+      "n_states": 7,
+      "n_rows": 7,
+      "mean_tv": 0.248459,
+      "max_tv": 0.320537,
+      "mean_entropy": 1.767989,
+      "h_uniform": 1.94591,
+      "entropy_ratio": 0.908566,
+      "p_max": 0.358918,
+      "p_min": 0.026386,
+      "unit": "set",
+      "note": "세트 홀수개수 0–6. 세트해시 粗"
+    },
+    "sum_mod10": {
+      "n_states": 10,
+      "n_rows": 10,
+      "mean_tv": 0.18249,
+      "max_tv": 0.208851,
+      "mean_entropy": 2.21351,
+      "h_uniform": 2.302585,
+      "entropy_ratio": 0.961315,
+      "p_max": 0.206062,
+      "p_min": 0.039505,
+      "unit": "set",
+      "note": "세트 합 mod 10. 세트해시 粗"
+    }
+  },
+  "read_rule": "상태정의 모니터. χ²·entropy를 APPLY 게이트로 쓰지 않음. 당첨P 아님.",
+    "reason": "끝수·대역은 번호→번호보다 더 평평(end 0.993·band15 0.9997). odd_count 0.909는 홀짝 구성 사전이지 다음회 전이 신호 아님. 상태 교체 APPLY 없음."
+}

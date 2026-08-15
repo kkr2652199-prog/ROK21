@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-EVOLVE-AXIS-MONITOR** — 권고순서#2 뇌별 prefer/prize·전이vs균일 표(APPLY없음)
+📌 사유: **[CURSOR] K-MARKOV-STATE-DEF-MONITOR** — 권고4A 전이 상태정의 vs 균일(APPLY없음·HOLD)
 
-📌 직전: **[CURSOR] K-REVIEW-WSTRUCT-UP** — review W_STRUCT 0.10→0.20 APPLY
+📌 직전: **[CURSOR] K-EVOLVE-AXIS-MONITOR** — 권고순서#2 뇌별 prefer/prize·전이vs균일 표(APPLY없음)
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-MARKOV-STATE-DEF-MONITOR (형다음·권고4A)** | **READ_OK** · **HOLD** · READ-ONLY · APPLY **없음**. as_of1236 peek_max**1235** · n**1235** · pred_1237**0** · MAX**1236**. entropy_ratio: number **0.97574** · end **0.993474** · band15 **0.999656** · decade **0.97783** · odd_count **0.908566**(홀짝 구성사전) · sum_mod10 **0.961315**. 끝수/대역이 더 평평 → 상태교체 근거없음. χ²게이트 금지. 숙제 `{stat}` 유지. 1237아님. · `docs/benchmarks/20260815_KMARKOV_STATE_DEF_MONITOR.json` · `reports/20260815_KMARKOV_STATE_DEF_MONITOR.md` · `tools/_k_markov_state_def_monitor.py` |
 | **K-EVOLVE-AXIS-MONITOR (형다음·권고#2)** | **READ_OK** · READ-ONLY · APPLY **없음**. evolve/캐시 1037–1236 3뇌 각**200**. peek**0** · pred_1237**0** · MAX**1236** · 원장 stat**3000**. 세트축(널 prefer/prize=1 · hi32=1.8667): markov pool prefer **1.0174** · review pool prize **1.0093** / repack prize **1.0399** hi32 **2.529**(Δ+0.6623). 표질량 as_of1236 prize hi32 **0.328**(널0.3111) · prefer bday **0.6961**(널0.6889). 전이 mean TV **0.176403** · entropy_ratio **0.97574**(거의 평평). 우열/hits 클레임 금지. 숙제 `{stat}` 유지. 1237아님. · `docs/benchmarks/20260815_KEVOLVE_AXIS_MONITOR.json` · `reports/20260815_KEVOLVE_AXIS_MONITOR.md` · `tools/_k_evolve_axis_monitor.py` |
 | **K-REVIEW-WSTRUCT-UP (형다음)** | **APPLY_OK** · review만 `W_CROWD 0.90→0.80` · `W_STRUCT 0.10→0.20`. markov **0.90/0.10 불변**. 게이트 1137–1236 seed42 n100: peek**0** · hi32 **1.977→1.994** Δ**+0.017** · fw_prize **−0.122235→−0.120724** Δ**+0.001511**≤0.005. review 캐시 1037–1236 재생성 **200**/200 · stat/markov fp **불변**. evolve review 200 재채점. 원장 미기록. hi32 Δ작음·성적아님. 롤백=0.90/0.10. 1237아님. · `docs/benchmarks/20260815_KREVIEW_WSTRUCT_UP.json` · `reports/20260815_KREVIEW_WSTRUCT_UP.md` · `app/testlotto/brains/shared/crowd_signal.py` · `tools/_k_review_wstruct_up.py` |
 | **K-REVIEW-PRIZE-ZIEMBA-SPEC (형다음)** | **SPEC_OK** · **HOLD** · READ-ONLY · APPLY **없음**. `prize_table`에 Ziemba형 사전 **이미 있음**(고번호·끝0/8/9 · W_CROWD0.90+W_STRUCT0.10). as_of1236 peek OK · fw>0 **1221**. ρ prize-crowd **0.9353** · prize-struct **0.4425** · crowd-struct **0.1366** · 캐나다11 **−0.0717**(불이식). review repack hi32 **2.514**(널1.867 Δ+0.647) · bday **3.486**(Δ−0.647). 새 규칙 삽입 기각 · W_STRUCT↑는 별GO+prize게이트 · apply_learn_boost복사 기각. 1237아님. · `docs/benchmarks/20260815_KREVIEW_PRIZE_ZIEMBA_SPEC.json` · `reports/20260815_KREVIEW_PRIZE_ZIEMBA_SPEC.md` · `tools/_k_review_prize_ziemba_spec.py` |
