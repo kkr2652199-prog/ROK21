@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d5fb15a` · WORK=`IDLE`
-2. **지금:** **양산前** · 궁합annotate SPEC_OK · HOLD
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 궁합annotate SPEC_OK(**HOLD**·플래그OFF·prefer표 금지). 숙제ON·궁합 APPLY·covering휠·S2재탕 금지. **1237아님**. (승인필요=형 1건 · 선행=없음)
+1. **HEAD:** `3716272` · WORK=`IDLE`
+2. **지금:** **양산前** · evolve필드 SPEC_OK · HOLD
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. evolve필드 SPEC_OK(**HOLD**·features_json만·WEIGHT0). 숙제ON·궁합 APPLY·covering휠·S2재탕 금지. **1237아님**. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-15 | evolve_log 필드 SPEC | features_json만 · χ²롤링52 · WEIGHT0 · HOLD | **SPEC_OK** | (본턴) |
+| 2026-08-15 | evolve_log 필드 SPEC | features_json만 · χ²롤링52 · WEIGHT0 · HOLD | **SPEC_OK** | 3716272 |
 | 2026-08-15 | 궁합 세트annotate SPEC | 플래그OFF · prefer표금지 · HOLD · APPLY없음 | **SPEC_OK** | d5fb15a |
 | 2026-08-15 | 3등엔진 닫기·문장고정 | cover≠3등 · t=3=5등형태 · 코드불변 | **DOC_OK** | e2c78f0 |
 | 2026-08-15 | 권고4A 전이상태 | 끝수/대역이 더평평 · odd=구성사전 · HOLD | **READ_OK** | a3de9c2 |
