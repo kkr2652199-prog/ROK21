@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `096beef` · WORK=`IDLE`
-- 지금: **양산前** · 외부검토팩 DOC · #1~#3끝
-- 직전: K-A 구표본 HOLD
-- BOOT다음: 형 1건 (#4는 새아이디어만) / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 리스트 #1~#3 끝. #4 shape코어V2는 **새 아이디어 있을 때만**(S2 consensus 재탕 금지). 잠금재탕·발권·합동·타뇌는 형 지시 시. **1237아님**. (승인=형 1건)
+- HEAD: `271e356` · WORK=`IDLE`
+- 지금: **양산前** · covering논의 DISCUSS_OK · APPLY없음
+- 직전: 외부검토팩 DOC · #1~#3끝
+- BOOT다음: 형 1건 (문장 A~D) / 1237아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. covering논의 DISCUSS_OK(APPLY없음). 형 선택 A문장고정/B N≤8 SPEC/C greedy모니터/D보류. #4 shape코어V2는 새 아이디어만(S2재탕금지). **1237아님**. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

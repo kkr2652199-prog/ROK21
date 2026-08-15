@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `096beef` · WORK=`IDLE`
-2. **지금:** **양산前** · 외부검토팩 DOC · #1~#3끝
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 리스트 #1~#3 끝. #4 shape코어V2는 **새 아이디어 있을 때만**(S2 consensus 재탕 금지). 잠금재탕·발권·합동·타뇌는 형 지시 시. **1237아님**. (승인필요=형 1건 · 선행=#1~#3 종료)
+1. **HEAD:** `271e356` · WORK=`IDLE`
+2. **지금:** **양산前** · covering논의 DISCUSS_OK · APPLY없음
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. covering논의 DISCUSS_OK(APPLY없음). 형 선택 A문장고정/B N≤8 SPEC/C greedy모니터/D보류. #4 shape코어V2는 새 아이디어만(S2재탕금지). **1237아님**. (승인필요=형 1건 · 선행=#1~#3 종료 · covering APPLY 금지(형 GO 전))
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-15 | 3등=풀N+3-covering 논의 | cover=클론 · J 0.7143/0.0829 · C(12,6,3)=15 · APPLY없음 | **DISCUSS_OK** | (본턴) |
+| 2026-08-15 | 3등=풀N+3-covering 논의 | cover=클론 · J 0.7143/0.0829 · C(12,6,3)=15 · APPLY없음 | **DISCUSS_OK** | 271e356 |
 | 2026-08-15 | 외부AI검토용 읽기순서 | 팩+S0~#3 파일지도 · APPLY없음 | **DOC_OK** | 096beef |
 | 2026-08-15 | 다음 #3 K-A구표본 | FINDINGS K-A OPEN→HOLD STALE_DOC · 0.760패치금지 · 코드없음 | **DOC_OK** | e279650 |
 | 2026-08-15 | 다음진행 #2감사 | S1 600/600 · 쿼터0실패 · J=0 · 역할5+3+2 · n_pos 3→26.3 | **PASS** | aacf89d |

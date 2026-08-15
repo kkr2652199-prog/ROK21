@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`096beef` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`271e356` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=096beef]
+[ROK21 젠스파크 압축복구 · HEAD=271e356]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 096beef · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 외부검토팩 DOC · #1~#3끝
-- 직전: K-A 구표본 HOLD
-- BOOT다음: 형 1건 (#4는 새아이디어만) / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 리스트 #1~#3 끝. #4 shape코어V2는 **새 아이디어 있을 때만**(S2 consensus 재탕 금지). 잠금재탕·발권·합동·타뇌는 형 지시 시. **1237아님**.
+- HEAD: 271e356 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · covering논의 DISCUSS_OK · APPLY없음
+- 직전: 외부검토팩 DOC · #1~#3끝
+- BOOT다음: 형 1건 (문장 A~D) / 1237아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. covering논의 DISCUSS_OK(APPLY없음). 형 선택 A문장고정/B N≤8 SPEC/C greedy모니터/D보류. #4 shape코어V2는 새 아이디어만(S2재탕금지). **1237아님**.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260815_KSTAT_TIER3_COVERING_DISCUSS` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KSTAT_TIER3_COVERING_DISCUSS.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KSTAT_TIER3_COVERING_DISCUSS.md
 - `20260815_KA_STALE_DOC` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KA_STALE_DOC.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KA_STALE_DOC.md
 - `20260815_KSTAT_PROCESS_AUDIT_S5LIVE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KSTAT_PROCESS_AUDIT_S5LIVE.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KREVIEW_ROLE_TIER_LEARN_WIRE.md
 - `20260814_KMARKOV_ROLE_LEARN_BT200` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260814_KMARKOV_ROLE_LEARN_BT200.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260814_KMARKOV_ROLE_LEARN_BT200.md
-- `20260814_KMARKOV_ROLE_TIER_LEARN_WIRE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260814_KMARKOV_ROLE_TIER_LEARN_WIRE.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260814_KMARKOV_ROLE_TIER_LEARN_WIRE.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=096beef · 지금=**양산前** · 외부검토팩 DOC · #1~#3끝 · 다음=K-AWAIT-HYUNG-NEXT
+1. 첫줄: [복귀] HEAD=271e356 · 지금=**양산前** · covering논의 DISCUSS_OK · APPLY없음 · 다음=K-AWAIT-HYUNG-NEXT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 096beef_
+_generated: 271e356_
