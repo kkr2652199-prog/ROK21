@@ -158,6 +158,10 @@
 ### L13f K-STAT-POOL-LEARN-EVOLVE — **WIRE_OK_HOLD_KNOB**
 - 1~5 brain_review→CUTOFF. prize게이트 미달. 적중mean 클레임금지. 플래그 True(기록유지).
 
+### L14 K-TIER3-LEARN-CLOSE — **DOC_OK** (본턴)
+- 3등 학습 엔진 트랙 **닫음**. 문장고정: cover≠3등엔진 · t=3=5등형태 · shape=3등형태(코드 재라벨 없음).
+- greedy t-cover는 별 GO. 코드/노브 불변. `reports/20260815_KTIER3_LEARN_CLOSE.md`
+
 ---
 
 ## 3) 매핑
@@ -172,6 +176,7 @@
 ## 4) 금지 체크리스트 (추가)
 
 - [ ] “3등 전용 = 3등 확률↑” 문장/게이트
+- [ ] covering t=3 을 한국 3등(5맞)으로 쓰기 (고정: t=3=5등 형태)
 - [ ] 예측 시 보너스 번호를 2등 슬롯 입력으로 사용
 - [ ] 역할슬롯을 L1·L2 전에 코드 APPLY
 - [ ] BT r1/r2/r3로 APPLY
@@ -205,6 +210,7 @@
 | L13d | **DOC_OK** (200회 성적 모니터 안내) |
 | L13e | **DOC_OK** (200회 등수 1·2·3=0 4=1 5=55) |
 | L13f | **WIRE_OK_HOLD_KNOB** (stat 1~5 학습고리) |
+| L14 | **DOC_OK** (3등 학습 엔진 닫기·문장고정) |
 
 ---
 
