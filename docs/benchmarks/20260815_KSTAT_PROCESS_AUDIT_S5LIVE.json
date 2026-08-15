@@ -1,0 +1,153 @@
+{
+  "id": "K-STAT-PROCESS-AUDIT-S5LIVE",
+  "as_of": "2026-08-15T12:42:27+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "read_only": true,
+  "db_write": false,
+  "flags": {
+    "ROLE_SLOTS_WIRE": true,
+    "ROLE_TIER_LEARN_WIRE": true,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "COVER_MIN_HITS": 3,
+    "STAT_POOL_LEARN_WIRE": true,
+    "COVER_SELECT_MODE": "outside_union",
+    "SHAPE_CORE_MODE": "set1",
+    "REPACK_ROLE_QUOTA_WIRE": true,
+    "REPACK_RECOMBINE_MODE": "complement"
+  },
+  "census": {
+    "draws_max": 1236,
+    "pred": 0,
+    "pred_1237": 0,
+    "cache": 600,
+    "ledger": 3000,
+    "ledger_stat": 3000,
+    "ledger_other": 0,
+    "role_hw": 1200,
+    "skill_hw": 600,
+    "brain_review": 200,
+    "review_stat": 200,
+    "bt_runs": 0
+  },
+  "ledger": {
+    "n_draws": 200,
+    "role_counts": {
+      "skill_native": 1000,
+      "cover_r3": 600,
+      "shape_r2": 400,
+      "focus_r1": 1000
+    },
+    "bad_nums": 0,
+    "role_mismatch": 0,
+    "pool10_bad": 0,
+    "repack5_bad": 0
+  },
+  "homework": {
+    "asof_n": 200,
+    "asof_min": 1037,
+    "asof_max": 1236,
+    "npos": {
+      "markov|cover_r3": {
+        "n": 200,
+        "npos_mean": 0,
+        "npos_min": 0,
+        "npos_max": 0,
+        "npos_first10_mean": 0,
+        "npos_last10_mean": 0
+      },
+      "markov|shape_r2": {
+        "n": 200,
+        "npos_mean": 30.19,
+        "npos_min": 26,
+        "npos_max": 35,
+        "npos_first10_mean": 32.8,
+        "npos_last10_mean": 30.1
+      },
+      "review|cover_r3": {
+        "n": 200,
+        "npos_mean": 0,
+        "npos_min": 0,
+        "npos_max": 0,
+        "npos_first10_mean": 0,
+        "npos_last10_mean": 0
+      },
+      "review|shape_r2": {
+        "n": 200,
+        "npos_mean": 30.19,
+        "npos_min": 26,
+        "npos_max": 35,
+        "npos_first10_mean": 32.8,
+        "npos_last10_mean": 30.1
+      },
+      "stat|cover_r3": {
+        "n": 200,
+        "npos_mean": 21.035,
+        "npos_min": 3,
+        "npos_max": 30,
+        "npos_first10_mean": 3,
+        "npos_last10_mean": 26.3
+      },
+      "stat|shape_r2": {
+        "n": 200,
+        "npos_mean": 30.19,
+        "npos_min": 26,
+        "npos_max": 35,
+        "npos_first10_mean": 32.8,
+        "npos_last10_mean": 30.1
+      }
+    },
+    "peek_ge_1237": 0
+  },
+  "s1_cover_source": {
+    "live_cover_source": {
+      "cover_r3_outside_union": 600
+    },
+    "live_shape_source": {
+      "shape_core5_vary6": 2,
+      "shape_r2_role_hw": 398
+    },
+    "cache_pool_source": {
+      "": 2000
+    },
+    "note": "캐시는 pool source 미저장. 라이브 expand가 S1 라벨 SSOT."
+  },
+  "s3_quota": {
+    "copy4_fail": 0,
+    "quota_fail": 0,
+    "copied_role_counts": {
+      "skill": 421,
+      "cover": 220,
+      "shape": 159
+    },
+    "expect": "skill>=1 cover>=1 shape<=1 per draw ×4 copies"
+  },
+  "s4_complement": {
+    "cache_repack_source": {
+      "pool": 800,
+      "score_repack": 200
+    },
+    "live_repack_source": {
+      "pool": 800,
+      "score_repack": 200
+    },
+    "complement_jaccard_mean": 0.0,
+    "complement_jaccard_nonzero": 0,
+    "label_note": "보완1장 source=score_repack (complement 문자열 아님·SOFT). 번호 Jaccard=0이 S4 증거."
+  },
+  "live": {
+    "n_ok": 200,
+    "peek": 0,
+    "role_bad": 0,
+    "cache_mismatch": 0,
+    "elapsed_s": 46.8
+  },
+  "hard": [],
+  "soft": [
+    "UI backtest_runs=0 (원장≠강제백테표)"
+  ],
+  "hard_ok": true,
+  "verdict": "PASS"
+}

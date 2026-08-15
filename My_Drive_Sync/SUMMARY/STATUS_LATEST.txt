@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-STAT-TIER3-ENGINE-SPEC** — 3등 엔진 정밀 · 학습부품 기각
+📌 사유: **[CURSOR] K-STAT-PROCESS-AUDIT-S5LIVE** — S5라이브 프로세스 감사 PASS
 
-📌 직전: **[CURSOR] K-STAT-LEDGER-REALIGN-BT200** — 원장 맞춤 · ledger=stat3000
+📌 직전: **[CURSOR] K-STAT-TIER3-ENGINE-SPEC** — 3등 엔진 정밀 · 학습부품 기각
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-STAT-PROCESS-AUDIT-S5LIVE (형GO #2)** | **PASS** · READ-ONLY — 원장맞춤 후 1037~1236 n**200**. HARD 0. 역할 skill**1000**/cover**600**/shape**400**/focus**1000** · 번호무효0 · 불일치0. 라이브 S1 source `cover_r3_outside_union` **600**/600. S3 복사4 **800** · 쿼터실패 **0** (skill421/cover220/shape159). S4 복사4+보완1 · Jaccard **0.0** (0아닌회0) · 라벨은 `score_repack`×200(문자열 complement 아님·SOFT). 라이브↔캐시 번호불일치 **0** · peek**0**. 숙제 as_of200 peek1237=0. stat cover n_pos mean**21.035** 초반10=**3** 후반10=**26.3**. markov/review cover n_pos**0**(원장없음·설계). shape n_pos**30.19**(보너스표·3뇌동일). census ledger stat**3000** review_stat**200** skill_hw**600**. SOFT: UI backtest_runs**0**. 코드/DB쓰기없음·ge3미클레임·1237아님. · `docs/benchmarks/20260815_KSTAT_PROCESS_AUDIT_S5LIVE.json` · `reports/20260815_KSTAT_PROCESS_AUDIT_S5LIVE.md` · `tools/_k_stat_process_audit_s5live.py` |
 | **K-STAT-TIER3-ENGINE-SPEC (형GO)** | **SPEC_OK** · READ-ONLY · 범위=**stat만** — 3등=본번호5(보너스아님) 228/8,145,060. 200×15 E[3등]≈**0.084**. 원장 hits≥5 **0**(기대와 정합·성적아님). **6~8 cover는 3등학습기 아님**(라이브 source `cover_r3_outside_union`×60/60). **3등 형태=9~10 shape(5+1)**. 공식5코어 7416행·고유7395·반복21·빈도=5×1등빈도(불일치0)=skill중복 **기각**. 공식3등 당첨자합 2,402,450·티켓번호없음. Schönheim C(10,6,5)≥**42** · 3장 5맞보장 불가. 캐시200 역할5+3+2 **200**/200. t4 skill**74.99**/cover**45.00**/합**119.95**(거의 안 겹침). 밖번호 mean **2.94**. 채택: 학습부품 **아니오** · 휠 greedy-t4는 S1과 반대기하·별GO. 기각: 5맞손실·보너스입력·STRUCTURE/PAIR재탕·LSTM. 코드 APPLY없음·1237아님. · `docs/benchmarks/20260815_KSTAT_TIER3_ENGINE_SPEC.json` · `reports/20260815_KSTAT_TIER3_ENGINE_SPEC.md` · `tools/_k_stat_tier3_engine_spec.py` |
 | **K-STAT-LEDGER-REALIGN-BT200 (형GO #1)** | **PASS** · 모니터만 — markov잔여 리셋 후 **stat만** 1037~1236 n**200**. 새 knob없음. 플래그 ROLE_SLOTS+ROLE_TIER_LEARN(stat)+COVER_MIN_HITS**3**+STAT_POOL_LEARN+COVER `outside_union`+쿼터ON+RECOMBINE `complement`+S2 HOLD set1. HARD: peek**0** · err**0** · size**0** · skill_n**0** · n_ok**200** · pred_1237**0** · review_stat**200** · draws_max**1236** · ledger **stat 3000** · ledger_other**0**. 칸 mean_all 1~5 **0.83** / 6~8 **0.74** / 9~10 **0.8575** / 몰아주기 **0.798**(이론1장 0.80·클레임금지). prefer **0.009443** · prize **0.004396**. union10 **31.55** · union_repack **22.685** · 재조합J **0.0**. 고유 1·2·3등**0** 4등**12** 5등**55**. 회차최고 4등**8**·5등**42**·등수회 **50**/200. census cache**600** role_hw**1200** skill_hw**600** brain_review**200**. 발권0·ge3미클레임·DB커밋안함·1237아님. · `docs/benchmarks/20260815_KSTAT_LEDGER_REALIGN_BT200.json` · `reports/20260815_KSTAT_LEDGER_REALIGN_BT200.md` · `tools/_k_stat_ledger_realign_bt200.py` |
 | **K-STAT-FINAL-REVIEW-NEXT (형질문)** | **DOC_OK** · 캠페인 S1~S5 **리스트 튜닝은 끝**(S2 HOLD). 엔진완벽 아님. HARD버그 파일상 없음. 상태갭: ledger **markov 3000만**(stat 0)·brain_review **0** — markov리셋 후 소비만 stat으로 되돌림. S5 모니터 1~5 mean **0.83** / cover **0.74** / 고유 1·2·3=0 4=12 5=55(클레임금지). FINDINGS K-A 0.760=구표본. 권고다음=#1 원장맞춤 BT200. · `reports/20260815_KSTAT_FINAL_REVIEW_NEXT.md` |
