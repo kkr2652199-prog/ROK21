@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 몰아주기 3뇌 score5 APPLY_OK(복사4→0). 형 선택 1건(숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지.
+- 할일: **양산前**. 버그헌트 B1=캐시몰아≠발권(P1) · B3=S3/S4죽은스위치(P3). 형 선택 1건(B1캐시warm/B3스위치끄기/숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지.
 - 완료조건: 형이 위 중 1개 명시
-- 선행완료: K-REPACK-HYENA-WIRE APPLY_OK
+- 선행완료: K-PATCH-BUG-HUNT BUGHUNT_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-15
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260815_KPATCH_BUG_HUNT.md
 - reports/20260815_KREPACK_HYENA_WIRE.md
 - reports/20260815_KREPACK_HYENA_SCATTER.md
 - reports/20260815_KREPACK_COPY_AUDIT.md

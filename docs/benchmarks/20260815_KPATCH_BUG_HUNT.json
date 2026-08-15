@@ -1,0 +1,316 @@
+{
+  "id": "K-PATCH-BUG-HUNT",
+  "as_of": "2026-08-15T17:14:25+09:00",
+  "verdict": "BUGHUNT_OK",
+  "apply": false,
+  "hard_ok": true,
+  "draws_max": 1236,
+  "pred_1237": 0,
+  "ledger": {
+    "stat": 3000
+  },
+  "flags": {
+    "HYENA": {
+      "stat": "score5",
+      "markov": "score5",
+      "review": "score5"
+    },
+    "S3_QUOTA": true,
+    "S3_BRAINS": [
+      "stat"
+    ],
+    "S4_MODE": "complement",
+    "S4_BRAINS": [
+      "stat"
+    ],
+    "ASSEMBLE_MODE": "signal_union",
+    "COVER": "outside_union",
+    "SHAPE": "set1",
+    "ROLE_LEARN": [
+      "stat"
+    ],
+    "LEDGER": true
+  },
+  "census": {
+    "stat": {
+      "n": 200,
+      "copy_sets": 0,
+      "copy_per5": 0.0,
+      "bad_sets": 0,
+      "dup_in_repack5": 0,
+      "union_mean": 30.0,
+      "assemble": {
+        "hyena_score5": 1000
+      }
+    },
+    "markov": {
+      "n": 200,
+      "copy_sets": 0,
+      "copy_per5": 0.0,
+      "bad_sets": 0,
+      "dup_in_repack5": 0,
+      "union_mean": 30.0,
+      "assemble": {
+        "hyena_score5": 1000
+      }
+    },
+    "review": {
+      "n": 200,
+      "copy_sets": 0,
+      "copy_per5": 0.0,
+      "bad_sets": 0,
+      "dup_in_repack5": 0,
+      "union_mean": 30.0,
+      "assemble": {
+        "hyena_score5": 1000
+      }
+    }
+  },
+  "sample": [
+    {
+      "draw_no": 1216,
+      "peek": false,
+      "with_live": true,
+      "brains": {
+        "stat": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5,
+          "cache_vs_live_repack": false,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "markov": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5,
+          "cache_vs_live_repack": false,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "review": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5,
+          "cache_vs_live_repack": false,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        }
+      }
+    },
+    {
+      "draw_no": 1236,
+      "peek": false,
+      "with_live": true,
+      "brains": {
+        "stat": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5,
+          "cache_vs_live_repack": true,
+          "cold_vs_live_repack": true,
+          "cache_vs_live_pool": true,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "markov": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5,
+          "cache_vs_live_repack": false,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        },
+        "review": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5,
+          "cache_vs_live_repack": false,
+          "cold_vs_live_repack": false,
+          "cache_vs_live_pool": true,
+          "n_live": 5,
+          "live_assemble": [
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5",
+            "hyena_score5"
+          ]
+        }
+      }
+    }
+  ],
+  "cold_sample": [
+    {
+      "draw_no": 1037,
+      "peek": false,
+      "with_live": false,
+      "brains": {
+        "stat": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "markov": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "review": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        }
+      }
+    },
+    {
+      "draw_no": 1137,
+      "peek": false,
+      "with_live": false,
+      "brains": {
+        "stat": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "markov": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "review": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        }
+      }
+    },
+    {
+      "draw_no": 1216,
+      "peek": false,
+      "with_live": false,
+      "brains": {
+        "stat": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "markov": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "review": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        }
+      }
+    },
+    {
+      "draw_no": 1234,
+      "peek": false,
+      "with_live": false,
+      "brains": {
+        "stat": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "markov": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "review": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        }
+      }
+    },
+    {
+      "draw_no": 1236,
+      "peek": false,
+      "with_live": false,
+      "brains": {
+        "stat": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "markov": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        },
+        "review": {
+          "cache_vs_cold_repack": true,
+          "n_cache": 5,
+          "n_cold": 5
+        }
+      }
+    }
+  ],
+  "mismatch": {
+    "n_sample_pairs": 6,
+    "cache_vs_live_repack": 5,
+    "cache_vs_live_pool": 0,
+    "cold_vs_live_repack": 5,
+    "cache_vs_cold_repack": 0
+  },
+  "bugs": [
+    {
+      "id": "B1",
+      "sev": "P1",
+      "title": "UI캐시 몰아주기 ≠ 라이브 build_pool_and_repack",
+      "evidence": "live샘플 2회×3뇌 cache≠live_repack 5 · cold≠live 5 · cache≠cold 0/15",
+      "cause": "캐시 refill이 RollingSignalLearner() 빈 스냅샷. 라이브/발권은 warm_learner_to_draw(200). UI는 캐시 우선."
+    },
+    {
+      "id": "B3",
+      "sev": "P3",
+      "title": "S3역할쿼터·S4보완 플래그 ON인데 score5가 우회",
+      "evidence": "hyena=score5가 assemble_signal_union보다 먼저 return. quota/complement 미호출.",
+      "cause": "죽은 배선. 런타임 오동작은 아님. 문서/튜닝 혼선."
+    }
+  ]
+}
