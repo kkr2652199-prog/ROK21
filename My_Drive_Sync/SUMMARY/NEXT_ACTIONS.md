@@ -4,11 +4,11 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 궁합prefer+진단 DISCUSS_OK(APPLY없음). 형 선택 A추천1 SPEC/B추천2 SPEC/C둘다 SPEC/D보류. covering·S2재탕 금지. **1237아님**.
+- 할일: **양산前**. 진단로그 SPEC_OK(APPLY없음). 형 GO 시 별도 APPLY 지시서. 궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
 - 완료조건: 형 1건
-- 선행완료: K-STAT-COOCCUR-PREFER-EVOLVE-DISCUSS DISCUSS_OK
-- 승인필요: 형 1건
-- 선행조건: APPLY 금지(형 GO 전)
+- 선행완료: K-STAT-EVOLVE-DIAG-LOG-SPEC SPEC_OK
+- 승인필요: 형 GO(APPLY) 또는 다른 1건
+- 선행조건: 본 SPEC APPLY 금지(형 지시서 전)
 - 최종갱신: 2026-08-15
 
 
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260815_KSTAT_EVOLVE_DIAG_LOG_SPEC.md
 - reports/20260815_KSTAT_COOCCUR_PREFER_EVOLVE_DISCUSS.md
 - reports/20260815_KSTAT_TIER3_COVERING_DISCUSS.md
 - reports/20260815_KSTAT_EXTERNAL_REVIEW_PACK.md

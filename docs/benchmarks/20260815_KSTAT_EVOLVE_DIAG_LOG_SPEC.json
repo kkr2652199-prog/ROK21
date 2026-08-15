@@ -1,0 +1,83 @@
+{
+  "id": "K-STAT-EVOLVE-DIAG-LOG-SPEC",
+  "as_of": "2026-08-15T14:10:48+09:00",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "read_only": true,
+  "code_apply": false,
+  "verdict": "SPEC_OK",
+  "independence_ok_if_spec_followed": true,
+  "worsens_leaks_if_hooked_on_click_feedback": true,
+  "measure": {
+    "max_draw": 1236,
+    "evolve_log_columns": [
+      "draw_no",
+      "brain_tag",
+      "as_of",
+      "schema_version",
+      "weight_applied",
+      "actual_nums_json",
+      "pool_json",
+      "repack_json",
+      "pool_hits_json",
+      "repack_hits_json",
+      "best_hits",
+      "mean_hits",
+      "best_set_kind",
+      "best_set_no",
+      "features_json",
+      "miss_tags_json",
+      "assemble_mode",
+      "note",
+      "created_at",
+      "updated_at"
+    ],
+    "evolve_has_brain_tag": true,
+    "evolve_has_brain": false,
+    "evolve_n": 0,
+    "evolve_by_brain": {},
+    "ledger_columns": [
+      "draw_no",
+      "brain_tag",
+      "kind",
+      "set_no",
+      "nums_json",
+      "hits",
+      "hit_nums_json",
+      "miss_nums_json",
+      "bonus",
+      "bonus_hit",
+      "tier_rank",
+      "role",
+      "seed",
+      "schema_version",
+      "note",
+      "created_at"
+    ],
+    "ledger_n": 3000,
+    "ledger_by_brain": {
+      "stat": 3000
+    },
+    "ledger_by_role": {
+      "cover_r3": 600,
+      "focus_r1": 1000,
+      "shape_r2": 400,
+      "skill_native": 1000
+    },
+    "cache_by_brain": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "WEIGHT_APPLIED": 0.0,
+    "EVOLVE_AUTO": false,
+    "FEATURE_LAMBDA_WIRE": false,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "as_of_current_meaning": "build_evolve_row sets as_of=draw_no (채점회차). 형 HARD as_of<draw_no 와 불일치."
+  },
+  "trigger": "write_evolve_diag_stat after draw confirm; not click_feedback body; not EVOLVE_AUTO",
+  "as_of_hard": "as_of = draw_no-1; reject unless as_of < draw_no; cache only; no predict",
+  "brain_column": "brain_tag (exists). do not add brain."
+}
