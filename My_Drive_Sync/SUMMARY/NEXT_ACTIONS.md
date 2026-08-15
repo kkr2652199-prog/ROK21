@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 진단로그 EXPAND_OK(3뇌 각200·peek0·원장불변). 궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
+- 할일: **양산前**. 2뇌스킬 DISCUSS_OK(가동OK·클론아님). prize대조 SPEC·숙제ON·궁합prefer APPLY·covering·S2재탕 금지. **1237아님**.
 - 완료조건: 형 1건
-- 선행완료: K-EVOLVE-DIAG-3BRAIN-EXPAND EXPAND_OK
+- 선행완료: K-MARKOV-REVIEW-SKILL-QUALITY DISCUSS_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-15
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260815_KMARKOV_REVIEW_SKILL_QUALITY.md
 - reports/20260815_KEVOLVE_DIAG_3BRAIN_EXPAND.md
 - reports/20260815_KSTAT_EVOLVE_DIAG_READ.md
 - reports/20260815_KSTAT_EVOLVE_DIAG_LOG_APPLY.md

@@ -1,0 +1,109 @@
+{
+  "id": "K-MARKOV-REVIEW-SKILL-QUALITY",
+  "as_of": "2026-08-15T15:04:15+09:00",
+  "verdict": "DISCUSS_OK",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "apply": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "census": {
+    "cache": {
+      "stat": {
+        "n": 200,
+        "nonempty": 200,
+        "pool_ge10": 200,
+        "repack_ge5": 200
+      },
+      "markov": {
+        "n": 200,
+        "nonempty": 200,
+        "pool_ge10": 200,
+        "repack_ge5": 200
+      },
+      "review": {
+        "n": 200,
+        "nonempty": 200,
+        "pool_ge10": 200,
+        "repack_ge5": 200
+      }
+    },
+    "evolve_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "learn_n": 0,
+    "draws_max": 1236,
+    "pred_1237": 0
+  },
+  "clone_check": {
+    "exact_equal_1236": {
+      "stat_markov": 0,
+      "stat_review": 0,
+      "markov_review": 0
+    },
+    "mean_jaccard_1236": {
+      "stat_markov": 0.1345,
+      "stat_review": 0.1073,
+      "markov_review": 0.0564
+    },
+    "mean_jaccard_1217_1236": {
+      "stat_markov": 0.0936,
+      "stat_review": 0.1078,
+      "markov_review": 0.0894
+    },
+    "slot1_1236": {
+      "stat": [
+        8,
+        15,
+        16,
+        21,
+        39,
+        43
+      ],
+      "markov": [
+        10,
+        13,
+        16,
+        19,
+        28,
+        39
+      ],
+      "review": [
+        6,
+        10,
+        15,
+        27,
+        30,
+        43
+      ]
+    }
+  },
+  "flags": {
+    "ROLE_TIER_LEARN_WIRE": true,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "REPACK_ROLE_QUOTA_WIRE": true,
+    "REPACK_ROLE_QUOTA_BRAINS": [
+      "stat"
+    ],
+    "STAT_POOL_LEARN_WIRE": true,
+    "FEATURE_LAMBDA_WIRE": false,
+    "EVOLVE_AUTO": false,
+    "markov_LEARN_WIRED": true,
+    "review_has_apply_learn_boost": false
+  },
+  "engine": {
+    "stat": "ENGINE_OK",
+    "markov": "ENGINE_OK",
+    "review": "ENGINE_OK_PARTIAL_LEARN"
+  },
+  "note": "스킬품질=축 충실도(prefer/prize). hits/mean 우열 금지. APPLY없음."
+}

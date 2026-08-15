@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-EVOLVE-DIAG-3BRAIN-EXPAND** — 진단로그 markov/review 확장
+📌 사유: **[CURSOR] K-MARKOV-REVIEW-SKILL-QUALITY** — 2뇌 엔진가동+문헌벤치(APPLY없음)
 
-📌 직전: **[CURSOR] K-STAT-EVOLVE-DIAG-READ** — 진단로그 stat 200행 읽기 집계(WRITE없음)
+📌 직전: **[CURSOR] K-EVOLVE-DIAG-3BRAIN-EXPAND** — 진단로그 markov/review 확장
 
 ---
 
@@ -14,6 +14,7 @@
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
 | **프레임 (형 정정)** | **양산前 테스트**. DB결과 최신=**1236을 마지막 회차**로 본다. **1237은 준비 단계 아님·예측/양산 아님**. 1235·1234·이전으로 많이 테스트하며 **3뇌 신호 최고성능 튜닝**이 다음. (커서 오해: 1237예측을 다음으로 잡음 → 정정) |
 | **뇌독립 원칙 (형 확인)** | **공유 허용=`lotto_draws`(과거 결과값)만**. 뇌별 예측 과정·BLEND/W_*/hint·몰아주기는 **공유 금지**. 튜닝도 뇌별 단독 → 합동 smoke는 마지막만. **감독관도 뇌별 독립 엔진**(set_score 교차금지 · quota만 상대정규화). |
+| **K-MARKOV-REVIEW-SKILL-QUALITY (형질문)** | **DISCUSS_OK** · READ-ONLY · APPLY **없음**. markov **ENGINE_OK**(전이+prefer+LEARN_WIRED). review **ENGINE_OK_PARTIAL_LEARN**(이월+prize · apply_learn_boost없음). 캐시 1037–1236 3뇌 각 **200** nonempty 10+5. 1236 exact-equal **0/10** · J stat↔markov **0.1345** · stat↔review **0.1073** · markov↔review **0.0564**. 역할숙제/쿼터/STAT_POOL는 **stat만**. 품질=축충실(prefer/prize)이지 hits. 문헌채택: Thaler&Ziemba1988 · Ziemba1986 · Chernoff · Joe1990(경고) · KJAS2025. 기각: ICAMCS2016 Markov예측 · 상업Markov · 당첨간격논문(2뇌). 다음후보=prize_table↔비인기규칙 SPEC(별GO). 1237아님. · `docs/benchmarks/20260815_KMARKOV_REVIEW_SKILL_QUALITY.json` · `reports/20260815_KMARKOV_REVIEW_SKILL_QUALITY.md` · `tools/_k_markov_review_skill_quality.py` |
 | **K-EVOLVE-DIAG-3BRAIN-EXPAND (형GO 파트2)** | **EXPAND_OK** · `write_evolve_diag(brain)` 일반화. 소스=해당뇌 캐시만. as_of=N-1 peek HARD. review=`apply_learn_boost` **없음**(carry만). 트리거=`/fetch-latest` → `write_evolve_diag_confirmed`(뇌별 3회·합산없음). 읽기=`/evolve/diag/{brain}/{n}` brain필수. markov/review 캐시가 빈`[]`라 해당뇌만 `expand_pool(brains=[tag])` 400회 채움 · **stat 캐시 fp 불변**. `lotto_predictions` 리셋0 + 재기록 **3000**(뇌별1000). HARD: peek**0** · evolve {stat,markov,review} 각**200** · 원장 stat**3000** 불변 · learn/숙제 불변 · drift**0** · cross**0** · pred_1237**0** · MAX**1236**. stat prefer/prize Δ**0.0**. EVOLVE_AUTO/FEATURE_LAMBDA **False**. 3뇌합산·hits클레임 금지. 1237아님. · `docs/benchmarks/20260815_KEVOLVE_DIAG_3BRAIN_EXPAND.json` · `reports/20260815_KEVOLVE_DIAG_3BRAIN_EXPAND.md` · `app/testlotto/evolve_diag.py` · `tools/_k_evolve_diag_3brain_expand.py` |
 | **K-STAT-EVOLVE-DIAG-READ (형GO 파트1)** | **READ_OK** · READ-ONLY · **stat만** — evolve_log 200행 `WHERE brain_tag='stat'`. peek**0** · 타뇌행**0** · pred_1237**0** · MAX**1236** · 원장 stat**3000** 불변(미접촉). role mean Δvs0.80: skill **+0.03**(0.83/1000) · cover **-0.06**(0.74/600) · shape **+0.0575**(0.8575/400) · focus **-0.002**(0.798/1000). ge3회차 skill**34** cover**9** shape**11** focus**27** · 아무역할 **50**/200. 우열·성적 클레임 금지. 파트2 3뇌확장 **미실행**(형GO 후). 1237아님. · `docs/benchmarks/20260815_KSTAT_EVOLVE_DIAG_READ.json` · `reports/20260815_KSTAT_EVOLVE_DIAG_READ.md` · `tools/_k_stat_evolve_diag_read.py` |
 | **K-STAT-EVOLVE-DIAG-LOG-APPLY (형GO)** | **APPLY_OK** · **stat만** — `write_evolve_diag_stat` 신설. 소스=캐시 stat. as_of=N-1. peek HARD. 트리거=`/fetch-latest` 확정 후 한 줄(`click_feedback` 본체 미변경). 읽기=`/evolve/diag-stat/{n}` WHERE brain_tag=stat. EVOLVE_AUTO/FEATURE_LAMBDA **False**. WF 1037~1236: write **200**/0skip/0fail. HARD: peek**0** · 전부 stat · markov/review **0** · 원장 stat**3000** 불변 · predictions **0** · pred_1237**0** · MAX**1236**. prefer Δ**0.0** · prize Δ**0.0**. hits/tier 모니터·클레임금지. 롤백=호출제거+evolve stat DELETE. 1237아님. · `docs/benchmarks/20260815_KSTAT_EVOLVE_DIAG_LOG_APPLY.json` · `reports/20260815_KSTAT_EVOLVE_DIAG_LOG_APPLY.md` · `app/testlotto/evolve_diag_stat.py` · `tools/_k_stat_evolve_diag_log_apply.py` |
