@@ -10,16 +10,16 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `287d5c2` |
+| HEAD(실측) | `aacf89d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 3등엔진 SPEC_OK · 학습부품 기각 |
-| 직전 | 원장맞춤 PASS · ledger=stat3000 |
-| BOOT다음 | #2 프로세스감사 READ / 1237아님 |
-| NEXT1 ID | **K-STAT-PROCESS-AUDIT-S5LIVE** |
-| NEXT1 할일 | **양산前**. **과거학습만**. READ. S5라이브 source 라벨·역할 5+3+2·숙제 n_pos. 3등학습엔진 닫힘(SPEC_OK). greedy-t4는 S1충돌·별GO. **1237아님**. |
-| 승인필요 | 없음(리스트#2) |
-| 선행 | 3등 SPEC 종료 |
+| 지금 | **양산前** · S5라이브감사 PASS |
+| 직전 | 3등 SPEC_OK · 학습부품 기각 |
+| BOOT다음 | #3 K-A 구표본 DOC / 1237아님 |
+| NEXT1 ID | **K-A-STALE-DOC** |
+| NEXT1 할일 | **양산前**. **과거학습만**. DOC. FINDINGS K-A 수치를 구표본으로 표시. 패치 금지. mean으로 엔진 서열 금지. **1237아님**. |
+| 승인필요 | 없음(리스트#3) |
+| 선행 | S5라이브감사 PASS |
 | OPEN샘플 | K-00, K-02, K-05 |
 
 ### 역할
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=287d5c2 · 지금=**양산前** · 3등엔진 SPEC_OK · 학습부품 기각 · 다음=K-STAT-PROCESS-AUDIT-S5LIVE`
+1. 첫줄 `[복귀] HEAD=aacf89d · 지금=**양산前** · S5라이브감사 PASS · 다음=K-A-STALE-DOC`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 287d5c2_
+_generated: aacf89d_
