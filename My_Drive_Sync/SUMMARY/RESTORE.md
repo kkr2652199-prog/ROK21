@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `b8b285a` · WORK=`IDLE`
+1. **HEAD:** `8264616` · WORK=`IDLE`
 2. **지금:** **양산前** · 자동큐 소진 DOC_OK
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 자동큐 소진(L15). 형 선택 1건(숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,8 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-15 | 다음 진행 | 자동큐 소진 · 별GO만 남음 · 코드없음 | **DOC_OK** | (본턴) |
-| 2026-08-15 | 다음 진행 | 자동큐 소진 · 별GO만 남음 · 코드없음 | **DOC_OK** | (본턴) |
+| 2026-08-15 | 다음 진행 | 자동큐 소진 · 별GO만 남음 · 코드없음 | **DOC_OK** | b8b285a |
 | 2026-08-15 | evolve_log 필드 SPEC | features_json만 · χ²롤링52 · WEIGHT0 · HOLD | **SPEC_OK** | 3716272 |
 | 2026-08-15 | 궁합 세트annotate SPEC | 플래그OFF · prefer표금지 · HOLD · APPLY없음 | **SPEC_OK** | d5fb15a |
 | 2026-08-15 | 3등엔진 닫기·문장고정 | cover≠3등 · t=3=5등형태 · 코드불변 | **DOC_OK** | e2c78f0 |

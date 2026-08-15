@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b8b285a` · WORK=`IDLE`
+- HEAD: `8264616` · WORK=`IDLE`
 - 지금: **양산前** · 자동큐 소진 DOC_OK
 - 직전: evolve필드 SPEC_OK · HOLD
 - BOOT다음: 형 선택 1건 / 1237아님
