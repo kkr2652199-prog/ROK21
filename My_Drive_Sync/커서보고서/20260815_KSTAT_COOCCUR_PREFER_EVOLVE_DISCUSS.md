@@ -59,6 +59,11 @@
 공유 허용 실측: `lotto_draws` + 읽기 헬퍼(`draw_features`, `crowd_signal` 모듈). 노브는 `*_BY_BRAIN`. 테이블 `testlotto_brain_learn_state`는 brain_tag 행 분리.
 **겹침 주의:** `crowd_signal.py` 한 파일 · `annotate_prefer`가 `brain="markov"` 고정. hint 변환 `_build_hint_for_spec`도 crowd_prefer→markov 표 / crowd_prize→review 표. 예측 과정 계수는 분리되어 있으나 **군중 원자료(first_winners)는 같은 회차 컬럼**.
 
+독립성 누수(브리핑 대조 후 추가 · lotto_draws 밖):
+1. `feedback.get_feedback_summary` — markov·stat **엔진**과 review **aux_miss_detective**가 같은 trap/hit 집계를 읽음.
+2. `SKILL_HOMEWORK_CONSUME=True` — 몰아주기 hint는 3뇌 모두 숙제 스냅샷 우선(축은 뇌별).
+3. 발권 `coordinator` 융합 쿼터(`MARKOV_WIRE_ENABLED=True` · `QUOTA_ADAPTIVE_MIN_EACH=1`)는 엔진과 별층이지만 사는 장 배분은 섞임.
+
 ### A4) 라이브 ON/OFF
 
 - pool 생성: `expand_pool` 기본 3뇌 모두 생성 가능. 이번 캠페인 소비·튜닝은 **stat만**.

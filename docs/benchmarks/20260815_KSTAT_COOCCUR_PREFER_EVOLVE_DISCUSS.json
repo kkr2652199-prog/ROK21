@@ -141,6 +141,11 @@
       "per-draw chi2 as fairness"
     ]
   },
+  "independence_leaks": {
+    "shared_feedback_summary": "markov+stat engine, review aux_miss_detective",
+    "SKILL_HOMEWORK_CONSUME": true,
+    "issue_quota_mix": "MARKOV_WIRE_ENABLED + QUOTA_ADAPTIVE_MIN_EACH=1"
+  },
   "live_paths": {
     "markov": "app/testlotto/brains/markov_brain/predict.py",
     "review": "app/testlotto/brains/review_brain/predict.py",
