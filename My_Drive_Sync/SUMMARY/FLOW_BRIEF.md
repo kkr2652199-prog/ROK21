@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5f03ad6` · WORK=`IDLE`
-- 지금: **양산前** · 몰아주기하이에나 DISCUSS_OK
-- 직전: 몰아주기복사 AUDIT_OK
-- BOOT다음: 형 선택 H4/H2/H3 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 몰아주기하이에나 DISCUSS_OK. 형 선택 1건(H4복사0점수5장 / H2 1장보존 / H3유지 / 숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지. (승인=형 1건)
+- HEAD: `5cac80d` · WORK=`IDLE`
+- 지금: **양산前** · 몰아주기 H4 score5 APPLY_OK
+- 직전: 몰아주기하이에나 DISCUSS_OK
+- BOOT다음: 형 선택 1건 / 1237아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 몰아주기 3뇌 score5 APPLY_OK(복사4→0). 형 선택 1건(숙제켜/휠APPLY/필드넣어/annotate켜/S2새설계). 재탕·1237 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
