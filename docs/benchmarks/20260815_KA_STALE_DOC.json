@@ -1,0 +1,29 @@
+{
+  "id": "K-A-STALE-DOC",
+  "as_of": "2026-08-15T12:46:00+09:00",
+  "verdict": "DOC_OK",
+  "ge3_claim": false,
+  "draw_1237": false,
+  "code_apply": false,
+  "db_write": false,
+  "k_a": {
+    "old_status": "OPEN",
+    "new_status": "HOLD",
+    "label": "STALE_DOC",
+    "stale_mean": 0.76,
+    "stale_window": "1135-1234",
+    "stale_n_sets": 500,
+    "stale_baseline_then": 0.788,
+    "theory_mean": 0.8,
+    "patch_from_this": false,
+    "mean_rank_forbidden": true
+  },
+  "newer_monitor_not_claim": {
+    "source": "docs/benchmarks/20260815_KSTAT_LEDGER_REALIGN_BT200.json",
+    "window": "1037-1236",
+    "skill_mean_all": 0.83,
+    "note": "다른 창·경로. 0.760과 빼서 향상 클레임 금지. 이론 0.80 근처."
+  },
+  "k_o": "E[hits]=0.80 · set mean으로 뇌 서열 불가",
+  "k_b": "already PATCHED · no longer a patch-block reason"
+}
