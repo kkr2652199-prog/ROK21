@@ -10,11 +10,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `e279650` |
+| HEAD(실측) | `096beef` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · K-A 구표본 HOLD · #1~#3끝 |
-| 직전 | S5라이브감사 PASS |
+| 지금 | **양산前** · 외부검토팩 DOC · #1~#3끝 |
+| 직전 | K-A 구표본 HOLD |
 | BOOT다음 | 형 1건 (#4는 새아이디어만) / 1237아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
 | NEXT1 할일 | **양산前**. 리스트 #1~#3 끝. #4 shape코어V2는 **새 아이디어 있을 때만**(S2 consensus 재탕 금지). 잠금재탕·발권·합동·타뇌는 형 지시 시. **1237아님**. |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=e279650 · 지금=**양산前** · K-A 구표본 HOLD · #1~#3끝 · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=096beef · 지금=**양산前** · 외부검토팩 DOC · #1~#3끝 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: e279650_
+_generated: 096beef_
