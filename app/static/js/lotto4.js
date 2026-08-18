@@ -9,10 +9,9 @@
 
   /**
    * 테스트로또 집중 HOLD — 두뇌예측(4군)·전략X 탭/예측번호 UI 숨김.
-   * 2026-08-15 형: 신뢰 불가 예측번호 혼동 → true (효도는 유지).
-   * 복원: 이 플래그를 false.
+   * 2026-08-18 형: 4군·전략X 모두 보이게 → false (HOLD_OFF).
    */
-  const ROK21_TESTLOTTO_FOCUS_HOLD = true;
+  const ROK21_TESTLOTTO_FOCUS_HOLD = false;
   const HOLD_HIDE_VIEWS = new Set(['predict', 'strategy-x']);
   const HOLD_DEFAULT_VIEW = 'testlotto';
 

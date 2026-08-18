@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-15 KST  
-📌 사유: **[CURSOR] K-TL-DASH-BACKFILL-1236** — 테스트 대시보드 1–1236 백필 PARTIAL
+📅 최종 갱신: 2026-08-18 KST  
+📌 사유: **[CURSOR] K-UI-SHOW-4GUN-SX** — 두뇌예측(4군)·전략X 탭 HOLD_OFF
 
-📌 직전: **[CURSOR] K-UI-HIDE-4GUN-SX** — 두뇌예측(4군)·전략X 탭 HOLD
+📌 직전: **[CURSOR] K-TL-DASH-BACKFILL-1236** — 테스트 대시보드 1–1236 백필 PARTIAL
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-UI-SHOW-4GUN-SX (형요청)** | **HOLD_OFF**. `ROK21_TESTLOTTO_FOCUS_HOLD=false`. 두뇌예측(4군)·전략X 탭 **다시 표시**. 테스트 대시보드 탭 유지. 진입 시 4군/전략X 번호 자동로드 **ON**. 엔진/DB **불변**. 1237아님. · `reports/20260818_KUI_SHOW_4GUN_SX.md` · `app/static/js/lotto4.js` |
 | **K-TL-DASH-BACKFILL-1236 (형요청)** | **BACKFILL_PARTIAL**. 새 탭 `테스트 대시보드`. 초기화 pred**3005**/cache**601**/evolve**601**. fill ok**3704**/fail**4**. pred **18520** · **2–1236** · stat**6175** markov**6170** review**6175**. cache**3704**. 실패=1회 3뇌 empty + markov 2회 empty. peek**0** · pred_1237**0** · MAX**1236** · 원장 stat**3000** 보존. 1~5등=기록·우열금지. 롤백=`backups/20260815_TLDASH전_DB전체/`. 1237아님. · `docs/benchmarks/20260815_KTL_DASH_BACKFILL_1236.json` · `reports/20260815_KTL_DASH_BACKFILL_1236.md` · `tools/_k_tl_dash_backfill_1236.py` |
 | **K-UI-HIDE-4GUN-SX (형요청)** | **HOLD_ON** · UI만. `ROK21_TESTLOTTO_FOCUS_HOLD=true` · 숨김=`predict`(두뇌예측=4군)+`strategy-x`. 효도 **유지**. 기본화면=테스트로또. 진입 시 4군/전략X 번호 자동로드 **OFF**. 대시보드 전략X 적중표 숨김. 엔진/DB **불변**. 복원=플래그 false. 1237아님. · `reports/20260815_KUI_HIDE_4GUN_SX.md` · `app/static/js/lotto4.js` |
 | **K-ENDCHECK-LEFTOVER (형종료체크)** | **COMMIT_OK** · 미커밋 2파일 `reports/20260815_KPATCH_BUG_HUNT.md` + `My_Drive_Sync/커서보고서/20260815_KPATCH_BUG_HUNT.md` → `d5d1b68` push. R37 pin `7ef7a12`. DB/backups **미커밋**. 1237아님. |
