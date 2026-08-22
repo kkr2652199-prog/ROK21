@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 금액뇌합리장 APPLY_OK(SEQ OFF·REASONABLE ON·리필200). 홈페이지 1037–1236 금액뇌 확인. 1237예측 금지.
-- 완료조건: 형 다음 1건
-- 선행완료: K-REVIEW-REASONABLE-SET APPLY_OK
+- 할일: **양산前**. 금액뇌 사람다음 DISCUSS_OK. 확률은 안 오름. 다음1건=A몰아주기(점수자름) / B5장라벨 / C금액정체 / D패턴(갭작음) / E타뇌. 1237예측 금지.
+- 완료조건: 형이 A~E 중 1건
+- 선행완료: K-REVIEW-HUMAN-NEXT DISCUSS_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-22
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260822_KREVIEW_HUMAN_NEXT.md
 - reports/20260822_KREVIEW_REASONABLE_SET.md
 - reports/20260822_KREVIEW_INTENT_REREAD.md
 - reports/20260822_KREVIEW_SHAPE_CONSEC.md
