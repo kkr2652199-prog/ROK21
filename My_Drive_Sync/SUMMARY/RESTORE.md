@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `091b169` · WORK=`IDLE`
+1. **HEAD:** `1e331d2` · WORK=`IDLE`
 2. **지금:** **양산前** · 금액뇌벡터 AUDIT_NOTES
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌벡터 AUDIT_NOTES(캐시재기록200·발권=pool1-5). P2=#8~10리셋겹침. 1237캐시 앞채움잔존. 형 확인 후 타뇌. 1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
