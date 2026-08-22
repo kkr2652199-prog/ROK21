@@ -42,6 +42,16 @@ def build_review_weights(draws: list[dict], adj: dict | None = None) -> dict[int
             )
     except Exception:  # noqa: BLE001
         pass
+    try:
+        from app.testlotto.brains.review_brain.shape_table import (
+            REVIEW_SHAPE_WIRE,
+            apply_consec_flatten,
+        )
+
+        if REVIEW_SHAPE_WIRE:
+            weights = apply_consec_flatten(weights)
+    except Exception:  # noqa: BLE001
+        pass
     return weights
 
 

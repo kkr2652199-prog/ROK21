@@ -1,0 +1,90 @@
+{
+  "id": "K-REVIEW-SHAPE-CONSEC",
+  "ts": "2026-08-22T15:38:27+09:00",
+  "verdict": "APPLY_OK",
+  "census": {
+    "dmax": 1237,
+    "pred_1237": 0,
+    "n_draws": 1237,
+    "n_cache": 200,
+    "actual": {
+      "n": 1237,
+      "mean_pairs": 0.660469,
+      "p_pair": 0.516572,
+      "p_run3": 0.054163,
+      "p_run4": 0.00485,
+      "p_run6": 0.0,
+      "max_run_max": 4
+    },
+    "actual_table": {
+      "n": 1237,
+      "as_of": 1237,
+      "p_pair": 0.516572,
+      "p_run3": 0.054163,
+      "p_run4": 0.00485,
+      "mean_pairs": 0.660469,
+      "max_run_hist": {
+        "1": 598,
+        "2": 572,
+        "3": 61,
+        "4": 6,
+        "5": 0,
+        "6": 0
+      }
+    },
+    "review_skill5": {
+      "n": 1000,
+      "mean_pairs": 0.645,
+      "p_pair": 0.532,
+      "p_run3": 0.049,
+      "p_run4": 0.0,
+      "p_run6": 0.0,
+      "max_run_max": 3
+    },
+    "review_pool10": {
+      "n": 2000,
+      "mean_pairs": 0.66,
+      "p_pair": 0.537,
+      "p_run3": 0.053,
+      "p_run4": 0.0,
+      "p_run6": 0.0,
+      "max_run_max": 3
+    }
+  },
+  "gate": {
+    "elapsed_s": 3.9,
+    "n_ok": 100,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "changed": 99,
+    "hard_ok": true,
+    "iso_ok": true,
+    "design_ok": true,
+    "apply": true,
+    "off": {
+      "prefer": 0.00211,
+      "prize": 0.003108,
+      "mean_pairs": 0.642,
+      "p_run3": 0.052
+    },
+    "on": {
+      "prefer": 0.002078,
+      "prize": 0.00259,
+      "mean_pairs": 0.648,
+      "p_run3": 0.048
+    },
+    "delta_prefer": -3.2e-05,
+    "delta_prize": -0.000518,
+    "delta_pairs": 0.006,
+    "delta_run3": -0.004
+  },
+  "wire": true,
+  "refill": {
+    "ok": 200,
+    "fail": 0
+  },
+  "null_e_pairs": 0.6667,
+  "pred_1237_new": false
+}

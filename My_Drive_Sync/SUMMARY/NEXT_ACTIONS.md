@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 금액뇌벡터 AUDIT_NOTES(캐시재기록200·발권=pool1-5). P2=#8~10리셋겹침. 1237캐시 앞채움잔존. 형 확인 후 타뇌. 1237예측 금지.
-- 완료조건: 형이 확인 또는 다음 1건 명시
-- 선행완료: K-REVIEW-SEQ-VECTOR-AUDIT AUDIT_NOTES
+- 할일: **양산前**. 금액뇌연번표 APPLY_OK(1–1237 당첨 연번쌍0.660≈널0.667·run3=0.054·6연속0). 다음패치 형 1건(간격/홀짝/구간). 1237예측 금지.
+- 완료조건: 형이 다음 패턴 1건 명시
+- 선행완료: K-REVIEW-SHAPE-CONSEC APPLY_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-22
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260822_KREVIEW_SHAPE_CONSEC.md
 - reports/20260822_KREVIEW_SEQ_VECTOR_AUDIT.md
 - reports/20260822_KREVIEW_SEQ_DISTRIBUTE.md
 - reports/20260822_KBRAIN_FRONTLOAD_NEXT.md

@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-22 KST  
-📌 사유: **[CURSOR] K-REVIEW-SEQ-VECTOR-AUDIT** — 금액뇌 소진벡터 결과 정밀확인
+📌 사유: **[CURSOR] K-REVIEW-SHAPE-CONSEC** — 당첨1–1237 연번실측 + 금액뇌 예측전 형태표
 
-📌 직전: **[CURSOR] K-REVIEW-SEQ-DISTRIBUTE** — 금액뇌 세트분포 엔진(흩뿌림) 구조 변경
+📌 직전: **[CURSOR] K-REVIEW-SEQ-VECTOR-AUDIT** — 금액뇌 소진벡터 결과 정밀확인
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-SHAPE-CONSEC (형GO)** | **APPLY_OK**. 당첨1–1237 n**1237**: 연번쌍 **0.6605**≈널**0.6667** · 연번≥1 **0.5166** · run≥3 **0.0542**(61) · run≥4 **0.0049**(6) · run=6 **0**. 금액뇌 skill1000 패치전 쌍**0.645** run3**0.049**(당첨과 비슷·과다가 아님). 표=`shape_table.summarize(draws_before)`. 패치=3연속 고가중 가운데×0.75. 게이트 n100 peek**0** Δprefer **−0.000032** Δprize **−0.000518** Δrun3 **−0.004**. refill **200**. WIRE True. pred_1237**0**. 다음=간격/홀짝/구간 형1건. · `docs/benchmarks/20260822_KREVIEW_SHAPE_CONSEC.json` · `reports/20260822_KREVIEW_SHAPE_CONSEC.md` · `app/testlotto/brains/review_brain/shape_table.py` |
 | **K-REVIEW-SEQ-VECTOR-AUDIT (형질문)** | **AUDIT_NOTES**. 벡터=등수백테아님·캐시200. 1차리필 **구경로**(플래그메모리False) skill5합**21.385**. 재기록 후 skill5합 **30**/200 · #1∩#2 **0** · source `review_seq_deplete`×1000. 샘플3 캐시=라이브·발권5=pool1~5. **P2** #8~10∩(1~7) **16.815**(45소진 리셋). **P3** 1237캐시 앞채움잔존 #1=`[15,18,27,34,37,40]`. pred_1237**0**. APPLY없음. · `docs/benchmarks/20260822_KREVIEW_SEQ_VECTOR_AUDIT.json` · `reports/20260822_KREVIEW_SEQ_VECTOR_AUDIT.md` · `tools/_k_review_seq_vector_audit.py` |
 | **K-REVIEW-SEQ-DISTRIBUTE (형지시)** | **APPLY_OK** · 금액뇌만. 흩뿌림공식=세트마다1~45리셋+Jaccard0.85+cover멀리. 신=한풀 `random.choices`소진(#1=먼저6개). 라인동결. 앞채움3뇌 **OFF**. 게이트 n100 peek**0**: skill5합 **21.5→30** · Jaccard5 **0.109→0** · #1∩#2 **0.87→0** · 2장이상번호 **6.39→0**. Δprefer **−0.004589** Δprize **−0.00669** iso. refill review **200**. 타뇌캐시 앞채움되돌림 각200. pred_1237**0**. 확인=1037–1236 금액뇌. 롤백=`REVIEW_SEQ_DISTRIBUTE=False`. · `docs/benchmarks/20260822_KREVIEW_SEQ_DISTRIBUTE.json` · `reports/20260822_KREVIEW_SEQ_DISTRIBUTE.md` · `app/testlotto/brains/review_brain/engine.py` |
 | **K-BRAIN-FRONTLOAD-NEXT (형이어서)** | **APPLY_OK** · 공식없음·당첨미입력. 금액뇌 유지. markov·stat도 각 `number_scores`로 합집합 #1→#10 + ALIGN. 캐시 markov **1234** / stat **1235**. 게이트 n100 peek**0**: markov E Δprefer **−0.004645** Δprize **−0.001467** · stat **−0.00179 / −0.001345** iso. 엔진합집합 점수Δ 당첨−비당첨 markov **−0.000981** · stat **−0.002448**(핸들≈0·우열아님). refill 각 **200**/0. 1237 캐시재조립만 markov #1=`[1,3,7,12,17,27]` 0맞 · stat #1=`[3,15,16,29,34,38]` 1맞. 라이브 BRAINS `{markov,review,stat}` ALIGN True. 원장 stat**3000** · pred_1237**0**. · `docs/benchmarks/20260822_KBRAIN_FRONTLOAD_NEXT.json` · `reports/20260822_KBRAIN_FRONTLOAD_NEXT.md` · `tools/_k_brain_frontload_next.py` |
