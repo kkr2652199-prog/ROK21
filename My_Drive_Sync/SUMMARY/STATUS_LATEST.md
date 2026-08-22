@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-22 KST  
-📌 사유: **[CURSOR] K-REVIEW-SHAPE-CONSEC** — 당첨1–1237 연번실측 + 금액뇌 예측전 형태표
+📌 사유: **[CURSOR] K-REVIEW-INTENT-REREAD** — 형 의도 재해석. 흩뿌림=장마다 갈라짐. 소진은 반대(찌꺼기장)
 
-📌 직전: **[CURSOR] K-REVIEW-SEQ-VECTOR-AUDIT** — 금액뇌 소진벡터 결과 정밀확인
+📌 직전: **[CURSOR] K-REVIEW-SHAPE-CONSEC** — 당첨1–1237 연번실측 + 금액뇌 예측전 형태표
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-INTENT-REREAD (형질문)** | **DISCUSS_OK** · READ-ONLY · APPLY **없음**. 홈페이지=테스트로또 회차전환이 `testlotto_pool_view_cache` 읽음. 형이 본 벡터=금액뇌 **1037–1236** 200(소진+연번표). pred 2–1236은 8/15백필(숫자≠캐시가능). pred_1237**0**. 형의도=1237처럼 당첨이 장마다 갈라짐 → 한 장에 합리적으로. 내가한 소진=45소진 찌꺼기장(#2~#7). 1236 당첨 `12 18 21 29 34 38`이 pool #2~#7에 **1개씩**. 연번평탄=오해(예시를 본질문으로 읽음). 맞는방향(미적용)=장마다 1–45에서 합리한장 · Jaccard멀리없음 · 소진없음 · 장겹침허용. · `reports/20260822_KREVIEW_INTENT_REREAD.md` |
 | **K-REVIEW-SHAPE-CONSEC (형GO)** | **APPLY_OK**. 당첨1–1237 n**1237**: 연번쌍 **0.6605**≈널**0.6667** · 연번≥1 **0.5166** · run≥3 **0.0542**(61) · run≥4 **0.0049**(6) · run=6 **0**. 금액뇌 skill1000 패치전 쌍**0.645** run3**0.049**(당첨과 비슷·과다가 아님). 표=`shape_table.summarize(draws_before)`. 패치=3연속 고가중 가운데×0.75. 게이트 n100 peek**0** Δprefer **−0.000032** Δprize **−0.000518** Δrun3 **−0.004**. refill **200**. WIRE True. pred_1237**0**. 다음=간격/홀짝/구간 형1건. · `docs/benchmarks/20260822_KREVIEW_SHAPE_CONSEC.json` · `reports/20260822_KREVIEW_SHAPE_CONSEC.md` · `app/testlotto/brains/review_brain/shape_table.py` |
 | **K-REVIEW-SEQ-VECTOR-AUDIT (형질문)** | **AUDIT_NOTES**. 벡터=등수백테아님·캐시200. 1차리필 **구경로**(플래그메모리False) skill5합**21.385**. 재기록 후 skill5합 **30**/200 · #1∩#2 **0** · source `review_seq_deplete`×1000. 샘플3 캐시=라이브·발권5=pool1~5. **P2** #8~10∩(1~7) **16.815**(45소진 리셋). **P3** 1237캐시 앞채움잔존 #1=`[15,18,27,34,37,40]`. pred_1237**0**. APPLY없음. · `docs/benchmarks/20260822_KREVIEW_SEQ_VECTOR_AUDIT.json` · `reports/20260822_KREVIEW_SEQ_VECTOR_AUDIT.md` · `tools/_k_review_seq_vector_audit.py` |
 | **K-REVIEW-SEQ-DISTRIBUTE (형지시)** | **APPLY_OK** · 금액뇌만. 흩뿌림공식=세트마다1~45리셋+Jaccard0.85+cover멀리. 신=한풀 `random.choices`소진(#1=먼저6개). 라인동결. 앞채움3뇌 **OFF**. 게이트 n100 peek**0**: skill5합 **21.5→30** · Jaccard5 **0.109→0** · #1∩#2 **0.87→0** · 2장이상번호 **6.39→0**. Δprefer **−0.004589** Δprize **−0.00669** iso. refill review **200**. 타뇌캐시 앞채움되돌림 각200. pred_1237**0**. 확인=1037–1236 금액뇌. 롤백=`REVIEW_SEQ_DISTRIBUTE=False`. · `docs/benchmarks/20260822_KREVIEW_SEQ_DISTRIBUTE.json` · `reports/20260822_KREVIEW_SEQ_DISTRIBUTE.md` · `app/testlotto/brains/review_brain/engine.py` |
