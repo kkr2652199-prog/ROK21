@@ -126,7 +126,7 @@ REPACK_HYENA_MODE_BY_BRAIN: dict[str, str] = {
 
 # K-REVIEW-FRONTLOAD (20260822) — pool union을 점수순으로 #1→#10 선채움.
 # 타깃 회 당첨 입력 금지. 롤백: BRAINS=frozenset() · ALIGN=False.
-POOL_FRONTLOAD_BRAINS: frozenset[str] = frozenset({"review"})
+POOL_FRONTLOAD_BRAINS: frozenset[str] = frozenset({"markov", "review", "stat"})
 POOL_FRONTLOAD_MODE: str = "score_union"
 POOL_FRONTLOAD_ALIGN_REPACK: bool = True
 
