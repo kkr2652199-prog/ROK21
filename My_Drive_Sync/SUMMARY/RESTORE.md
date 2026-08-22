@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `10666ad` · WORK=`IDLE`
+1. **HEAD:** `37f7cd0` · WORK=`IDLE`
 2. **지금:** **양산前** · 금액뇌의도 재해석 DISCUSS_OK
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌의도 재해석 DISCUSS_OK. 홈페이지=캐시1037–1236. 소진=찌꺼기장(1236 당첨이 #2~#7에 1개씩). 연번패치는 오해. 맞는방향=장마다 합리한장(Jaccard멀리·45소진 없음). 형 확인 전 APPLY금지. 1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
