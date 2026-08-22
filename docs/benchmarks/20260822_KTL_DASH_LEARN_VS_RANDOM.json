@@ -1,0 +1,151 @@
+{
+  "id": "K-TL-DASH-LEARN-VS-RANDOM",
+  "as_of": "2026-08-22T14:03:39+09:00",
+  "read_only": true,
+  "draw_1237": false,
+  "n_pred": 18520,
+  "n_scored": 18520,
+  "hist": {
+    "-1": 0,
+    "0": 7430,
+    "1": 7912,
+    "2": 2743,
+    "3": 411,
+    "4": 24,
+    "5": 0,
+    "6": 0
+  },
+  "ge4": 24,
+  "ge3": 435,
+  "mean_hits": 0.7951943844492441,
+  "by_brain": {
+    "stat": {
+      "n": 6175,
+      "n_scored": 6175,
+      "hist": {
+        "-1": 0,
+        "0": 2446,
+        "1": 2681,
+        "2": 896,
+        "3": 145,
+        "4": 7,
+        "5": 0,
+        "6": 0
+      },
+      "ge4": 7,
+      "ge3": 152,
+      "mean_hits": 0.7993522267206478
+    },
+    "markov": {
+      "n": 6170,
+      "n_scored": 6170,
+      "hist": {
+        "-1": 0,
+        "0": 2484,
+        "1": 2627,
+        "2": 913,
+        "3": 135,
+        "4": 11,
+        "5": 0,
+        "6": 0
+      },
+      "ge4": 11,
+      "ge3": 146,
+      "mean_hits": 0.7944894651539708
+    },
+    "review": {
+      "n": 6175,
+      "n_scored": 6175,
+      "hist": {
+        "-1": 0,
+        "0": 2500,
+        "1": 2604,
+        "2": 934,
+        "3": 131,
+        "4": 6,
+        "5": 0,
+        "6": 0
+      },
+      "ge4": 6,
+      "ge3": 137,
+      "mean_hits": 0.7917408906882591
+    }
+  },
+  "hypergeometric": {
+    "C45_6": 8145060,
+    "E_hits": 0.8,
+    "P_k": {
+      "0": 0.40056463672459136,
+      "1": 0.4241272624142732,
+      "2": 0.15147402229081186,
+      "3": 0.02244059589493509,
+      "4": 0.0013646308314487555,
+      "5": 2.872907013576327e-05,
+      "6": 1.2277380399898834e-07
+    },
+    "P_ge4": 0.0013934826753885176,
+    "P_ge3": 0.023834078570323606,
+    "E_ge4_if_indep": 25.807299148195344,
+    "E_ge3_if_indep": 441.4071351223932,
+    "source": "Siegrist LibreTexts 13.7 · K-O · 20260814_KSTAT_POOL_LEARN_EVOLVE.json"
+  },
+  "evolve": {
+    "n": 3704,
+    "weight_applied_groups": [
+      [
+        0.0,
+        3704
+      ]
+    ],
+    "peek": 0,
+    "as_of_min": 1,
+    "as_of_max": 1235,
+    "draw_min": 2,
+    "draw_max": 1236
+  },
+  "learn_state_n": 0,
+  "learn_tags": [],
+  "adj_sample": {
+    "stat": null,
+    "markov": null,
+    "review": null
+  },
+  "skill_hw": 600,
+  "role_hw": 1200,
+  "ledger_by": {
+    "stat": 3000
+  },
+  "pred_1237": 0,
+  "draws_max": 1237,
+  "flags": {
+    "FEATURE_LAMBDA_WIRE": false,
+    "EVOLVE_AUTO_env": "0",
+    "evolve_auto_enabled": false,
+    "WEIGHT_APPLIED": 0.0,
+    "ROLE_TIER_LEARN_WIRE": true,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "STAT_POOL_LEARN_WIRE": true,
+    "PAST_LEARN_WIRE": true,
+    "MARKOV_LEARN_WIRED": true,
+    "review_apply_learn_boost": false,
+    "REPACK_HYENA_MODE_BY_BRAIN": {
+      "stat": "score5",
+      "markov": "score5",
+      "review": "score5"
+    },
+    "backfill_learner": "RollingSignalLearner() empty — warm_learner_to_draw 없음"
+  },
+  "verdict": {
+    "dashboard_ge4_zero": false,
+    "ge4_vs_indep_null": "below",
+    "mean_near_null_0_80": true,
+    "evolve_changes_weights": false,
+    "evolve_is_monitor_log": true,
+    "live_learn_consume": true,
+    "auto_evolve_running": false,
+    "prediction_is_pure_uniform_random": false,
+    "note": "발권은 균등 random.choices가 아님(빈도/prefer/prize·숙제·score5). 다만 진화 루프는 weight=0·EVOLVE_AUTO OFF라 적중을 학습해 다음 발권을 바꾸지 않음. 4등+는 널도 희귀. 독립가정 E[ge4]와 비교만. 우열 클레임 금지."
+  }
+}

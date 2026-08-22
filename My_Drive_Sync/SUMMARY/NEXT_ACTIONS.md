@@ -4,12 +4,12 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 4군/전략X탭 HOLD_OFF. 테스트대시보드 BACKFILL_PARTIAL. 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지.
+- 할일: **양산前**. 학습vs랜덤 DISCUSS_OK(4맞24≈널25·mean0.795·진화OFF·weight0). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지.
 - 완료조건: 형이 위 중 1개 명시
-- 선행완료: K-UI-SHOW-4GUN-SX HOLD_OFF
+- 선행완료: K-TL-DASH-LEARN-VS-RANDOM DISCUSS_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
-- 최종갱신: 2026-08-18
+- 최종갱신: 2026-08-22
 
 
 ## WORKSTATE
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260822_KTL_DASH_LEARN_VS_RANDOM.md
 - reports/20260818_KUI_SHOW_4GUN_SX.md
 - reports/20260815_KTL_DASH_BACKFILL_1236.md
 - reports/20260815_KUI_HIDE_4GUN_SX.md
