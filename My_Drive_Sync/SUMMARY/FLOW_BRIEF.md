@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `ed8fbc6` · WORK=`IDLE`
+- HEAD: `7f31af6` · WORK=`IDLE`
 - 지금: **양산前** · 금액뇌앞채움 APPLY_OK
 - 직전: 1237세트분산 DISCUSS_OK
 - BOOT다음: 형 선택 1건(테스트로또패치) / 1237예측아님
