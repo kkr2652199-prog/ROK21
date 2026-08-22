@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`253d01d` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`091b169` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=253d01d]
+[ROK21 젠스파크 압축복구 · HEAD=091b169]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: 253d01d · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 금액뇌소진분포 APPLY_OK
-- 직전: 3뇌앞채움 APPLY_OK
-- BOOT다음: 형 금액뇌 확인 후 / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌소진분포 APPLY_OK(Jaccard흩뿌림OFF·skill5합21.5→30·#1∩#2 0.87→0). 형이 금액뇌 확인. 타뇌패치 보류. 1237예측 금지.
+- HEAD: 091b169 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 금액뇌벡터 AUDIT_NOTES
+- 직전: 금액뇌소진분포 APPLY_OK
+- BOOT다음: 형 확인(P2리셋겹침·1237캐시) / 1237예측아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌벡터 AUDIT_NOTES(캐시재기록200·발권=pool1-5). P2=#8~10리셋겹침. 1237캐시 앞채움잔존. 형 확인 후 타뇌. 1237예측 금지.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260822_KREVIEW_SEQ_VECTOR_AUDIT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260822_KREVIEW_SEQ_VECTOR_AUDIT.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260822_KREVIEW_SEQ_VECTOR_AUDIT.md
 - `20260822_KREVIEW_SEQ_DISTRIBUTE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260822_KREVIEW_SEQ_DISTRIBUTE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260822_KREVIEW_SEQ_DISTRIBUTE.md
 - `20260822_KBRAIN_FRONTLOAD_NEXT` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260822_KBRAIN_FRONTLOAD_NEXT.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260822_KTL_DASH_LEARN_VS_RANDOM.md
 - `20260815_KTL_DASH_BACKFILL_1236` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KTL_DASH_BACKFILL_1236.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KTL_DASH_BACKFILL_1236.md
-- `20260815_KLOTTO4_DASH_RECORD` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260815_KLOTTO4_DASH_RECORD.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260815_KLOTTO4_DASH_RECORD.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=253d01d · 지금=**양산前** · 금액뇌소진분포 APPLY_OK · 다음=K-AWAIT-HYUNG-NEXT
+1. 첫줄: [복귀] HEAD=091b169 · 지금=**양산前** · 금액뇌벡터 AUDIT_NOTES · 다음=K-AWAIT-HYUNG-NEXT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: 253d01d_
+_generated: 091b169_
