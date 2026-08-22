@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5b76091` · WORK=`IDLE`
+- HEAD: `253d01d` · WORK=`IDLE`
 - 지금: **양산前** · 금액뇌소진분포 APPLY_OK
 - 직전: 3뇌앞채움 APPLY_OK
 - BOOT다음: 형 금액뇌 확인 후 / 1237예측아님

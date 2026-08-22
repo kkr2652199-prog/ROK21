@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `5b76091` · WORK=`IDLE`
+1. **HEAD:** `253d01d` · WORK=`IDLE`
 2. **지금:** **양산前** · 금액뇌소진분포 APPLY_OK
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌소진분포 APPLY_OK(Jaccard흩뿌림OFF·skill5합21.5→30·#1∩#2 0.87→0). 형이 금액뇌 확인. 타뇌패치 보류. 1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
