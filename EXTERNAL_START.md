@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `2830dd2` |
+| HEAD(실측) | `ae4164f` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 4군/전략X뇌 REMOVE_OK |
-| 직전 | 학습vs랜덤 DISCUSS_OK |
-| BOOT다음 | 형 선택 1건(테스트로또패치) / 1237아님 |
+| 지금 | **양산前** · 1237세트분산 DISCUSS_OK |
+| 직전 | 4군/전략X뇌 REMOVE_OK |
+| BOOT다음 | 형 선택 1건(테스트로또패치) / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 4군/전략X뇌 REMOVE_OK. 다음 패치 형 선택 1건(`B1캐시warm`/`B3스위치끄기`/`숙제 켜`/`휠 APPLY`). 4군seq채점 폐기. 재탕·1237 금지. |
+| NEXT1 할일 | **양산前**. 1237세트분산 DISCUSS_OK(review pool합=당첨6·몰아주기1장=3맞·컨닝모으기금지). 형 선택 1건(`B1캐시warm`/`B3스위치끄기`/`숙제 켜`/`휠 APPLY`). 재탕·1237예측 금지. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=2830dd2 · 지금=**양산前** · 4군/전략X뇌 REMOVE_OK · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=ae4164f · 지금=**양산前** · 1237세트분산 DISCUSS_OK · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 2830dd2_
+_generated: ae4164f_
