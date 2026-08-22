@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7e3ab2d` · WORK=`IDLE`
-- 지금: **양산前** · 금액뇌합리장 APPLY_OK
-- 직전: 금액뇌의도 재해석 DISCUSS_OK
-- BOOT다음: 형 확인(1037–1236 금액뇌) / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌합리장 APPLY_OK(SEQ OFF·REASONABLE ON·리필200). 홈페이지 1037–1236 금액뇌 확인. 1237예측 금지. (승인=형 1건)
+- HEAD: `5876273` · WORK=`IDLE`
+- 지금: **양산前** · 금액뇌 사람다음 DISCUSS_OK
+- 직전: 금액뇌합리장 APPLY_OK
+- BOOT다음: 형 1건(A몰아주기/B5장/C금액/D패턴/E타뇌) / 1237예측아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌 사람다음 DISCUSS_OK. 확률은 안 오름. 다음1건=A몰아주기(점수자름) / B5장라벨 / C금액정체 / D패턴(갭작음) / E타뇌. 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
