@@ -24,11 +24,11 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
     adj = learn_data.get("adjustments", {})
     carry_boost = 1.0 + float(adj.get("carry_over_boost", 0))
 
-    seq = bool(engine.REVIEW_SEQ_DISTRIBUTE)
-    raw_n = n_sets if seq else diversity.factor(n_sets, brain="review")
+    no_scatter = engine.review_compose_mode() in ("reasonable", "seq")
+    raw_n = n_sets if no_scatter else diversity.factor(n_sets, brain="review")
     base = engine.generate(draws, raw_n, adj=adj)
     target_draw_no = int(draws[-1]["draw_no"]) + 1 if draws else 0
-    if not seq:
+    if not no_scatter:
         base = rerank_by_aux(
             base,
             draws,
@@ -70,7 +70,7 @@ def run(draws: list[dict], n_sets: int = 5) -> list[dict]:
         t["pick_score"] = float(t.get("confidence", 60)) * (
             1.0 + HINT_WEIGHT * (aux_s - 0.5)
         )
-    if seq:
+    if no_scatter:
         return tagged[:n_sets]
     return diversity.pick(tagged, n_sets, brain="review", conf_key="pick_score")
 

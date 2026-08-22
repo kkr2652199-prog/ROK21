@@ -4,11 +4,20 @@ from __future__ import annotations
 
 import random
 
-# K-REVIEW-SEQ-DISTRIBUTE (20260822)
-# 구: 세트마다 1~45 재추출 → 같은 가중치가 장마다 흩어짐.
-# 신: 한 풀에서 random.choices로 소진. #1=먼저 나온 6개. 고갈 시 풀 리셋.
-# random.choices 라인 동결. 롤백: False.
-REVIEW_SEQ_DISTRIBUTE: bool = True
+# K-REVIEW-SEQ-DISTRIBUTE (20260822) — 45소진 찌꺼기장. 롤백용 잔존.
+REVIEW_SEQ_DISTRIBUTE: bool = False
+# K-REVIEW-REASONABLE-SET (20260822)
+# 장마다 1~45 리셋 후 합리한 장(tier1). Jaccard멀리·45소진 없음. #1=먼저 완성된 장.
+# 장끼리 같은 번호 겹침 허용. random.choices 라인 동결. 롤백: False.
+REVIEW_REASONABLE_SET: bool = True
+
+
+def review_compose_mode() -> str:
+    if REVIEW_REASONABLE_SET:
+        return "reasonable"
+    if REVIEW_SEQ_DISTRIBUTE:
+        return "seq"
+    return "legacy"
 
 from app.testlotto.features.draw_features import repeat_rate_after_draw, sorted_nums
 from app.testlotto.filters import tier1_filter
@@ -85,7 +94,7 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
     results: list[dict] = []
     used: set[tuple[int, ...]] = set()
     attempts = 0
-    seq = bool(REVIEW_SEQ_DISTRIBUTE)
+    seq = review_compose_mode() == "seq"
     pool = list(range(1, 46))
     w = [weights[n] for n in pool]
     while len(results) < n_sets and attempts < 3000:

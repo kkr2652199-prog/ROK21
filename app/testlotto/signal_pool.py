@@ -278,21 +278,29 @@ def expand_pool(
             continue
         # pass0 — 발권 경로와 동일 시드 (set 1~5)
         random.seed(_pass_seed(seed, draw_no, 0))
-        seq_review = False
+        review_mode = "legacy"
         if tag == "review":
             try:
                 import app.testlotto.brains.review_brain.engine as _rev_eng
 
-                seq_review = bool(_rev_eng.REVIEW_SEQ_DISTRIBUTE)
+                review_mode = _rev_eng.review_compose_mode()
             except Exception:  # noqa: BLE001
-                seq_review = False
+                review_mode = "legacy"
+        one_stream = review_mode in ("reasonable", "seq")
         try:
-            want = 10 if seq_review else SETS_PER_PREDICT_BRAIN
+            want = 10 if one_stream else SETS_PER_PREDICT_BRAIN
             skill_raw = mod.predict_sets(draws, want)
         except Exception:  # noqa: BLE001
             continue
-        if seq_review and len(skill_raw) >= 10:
+        if one_stream and len(skill_raw) >= 10:
+            src = (
+                "review_reasonable"
+                if review_mode == "reasonable"
+                else "review_seq_deplete"
+            )
             labeled = label_skill_sets(skill_raw[:5], brain_tag=tag)
+            for c in labeled:
+                c["source"] = src
             pool.extend(labeled)
             for i, c in enumerate(skill_raw[5:8]):
                 pool.append(
@@ -304,7 +312,7 @@ def expand_pool(
                         "kind": "pool",
                         "role": "cover_r3",
                         "role_pass": "pass1a",
-                        "source": "review_seq_deplete",
+                        "source": src,
                         "nums": [int(x) for x in c["nums"]],
                     }
                 )
@@ -318,7 +326,7 @@ def expand_pool(
                         "kind": "pool",
                         "role": "shape_r2",
                         "role_pass": "pass1b",
-                        "source": "review_seq_deplete",
+                        "source": src,
                         "nums": [int(x) for x in c["nums"]],
                     }
                 )
@@ -1131,7 +1139,11 @@ def build_pool_and_repack(
 
 def tune_snapshot() -> dict[str, Any]:
     """UI용 최신 튜닝 knobs (성적클레임 아님 · 배선 표시)."""
-    from app.testlotto.brains.review_brain.engine import REVIEW_SEQ_DISTRIBUTE
+    from app.testlotto.brains.review_brain.engine import (
+        REVIEW_REASONABLE_SET,
+        REVIEW_SEQ_DISTRIBUTE,
+        review_compose_mode,
+    )
     from app.testlotto.brains.shared import aux_hint as ah
     from app.testlotto.brains.shared import crowd_signal as cs
     from app.testlotto.brains.shared import referee_by_brain as rbb
@@ -1172,6 +1184,8 @@ def tune_snapshot() -> dict[str, Any]:
         "POOL_FRONTLOAD_MODE": POOL_FRONTLOAD_MODE,
         "POOL_FRONTLOAD_ALIGN_REPACK": POOL_FRONTLOAD_ALIGN_REPACK,
         "REVIEW_SEQ_DISTRIBUTE": bool(REVIEW_SEQ_DISTRIBUTE),
+        "REVIEW_REASONABLE_SET": bool(REVIEW_REASONABLE_SET),
+        "review_compose_mode": review_compose_mode(),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }

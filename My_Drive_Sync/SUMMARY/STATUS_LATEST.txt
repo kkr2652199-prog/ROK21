@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-22 KST  
-📌 사유: **[CURSOR] K-REVIEW-INTENT-REREAD** — 형 의도 재해석. 흩뿌림=장마다 갈라짐. 소진은 반대(찌꺼기장)
+📌 사유: **[CURSOR] K-REVIEW-REASONABLE-SET** — 장마다 합리한 장. 소진·Jaccard멀리 OFF. 리필200
 
-📌 직전: **[CURSOR] K-REVIEW-SHAPE-CONSEC** — 당첨1–1237 연번실측 + 금액뇌 예측전 형태표
+📌 직전: **[CURSOR] K-REVIEW-INTENT-REREAD** — 형 의도 재해석. 흩뿌림=장마다 갈라짐. 소진은 반대(찌꺼기장)
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-REASONABLE-SET (형GO)** | **APPLY_OK** · 금액뇌만. SEQ **False** · REASONABLE **True**. 장마다 1–45리셋+tier1. Jaccard선별·cover멀리·45소진 **없음**. #1=먼저완성장. 장겹침허용. 게이트 n100 peek**0** 설계OK: #1∩#2 **0→1.06** · skill5합 **30→21.72**. ISO vs소진 **Fail** Δprefer **+0.005623** Δprize **+0.006567**(찌꺼기장이 축↓). ISO vs원흩뿌림 Jaccard **Pass** Δprefer **+0.001002** Δprize **−0.000641**. 형GO로 적용. refill **200**/0. 1236 #1=`[6,7,11,24,26,42]` #2=`[6,21,22,26,32,39]` 겹침 6·26. pred_1237**0**. 롤백=`REVIEW_REASONABLE_SET=False`. · `docs/benchmarks/20260822_KREVIEW_REASONABLE_SET.json` · `reports/20260822_KREVIEW_REASONABLE_SET.md` · `app/testlotto/brains/review_brain/engine.py` |
 | **K-REVIEW-INTENT-REREAD (형질문)** | **DISCUSS_OK** · READ-ONLY · APPLY **없음**. 홈페이지=테스트로또 회차전환이 `testlotto_pool_view_cache` 읽음. 형이 본 벡터=금액뇌 **1037–1236** 200(소진+연번표). pred 2–1236은 8/15백필(숫자≠캐시가능). pred_1237**0**. 형의도=1237처럼 당첨이 장마다 갈라짐 → 한 장에 합리적으로. 내가한 소진=45소진 찌꺼기장(#2~#7). 1236 당첨 `12 18 21 29 34 38`이 pool #2~#7에 **1개씩**. 연번평탄=오해(예시를 본질문으로 읽음). 맞는방향(미적용)=장마다 1–45에서 합리한장 · Jaccard멀리없음 · 소진없음 · 장겹침허용. · `reports/20260822_KREVIEW_INTENT_REREAD.md` |
 | **K-REVIEW-SHAPE-CONSEC (형GO)** | **APPLY_OK**. 당첨1–1237 n**1237**: 연번쌍 **0.6605**≈널**0.6667** · 연번≥1 **0.5166** · run≥3 **0.0542**(61) · run≥4 **0.0049**(6) · run=6 **0**. 금액뇌 skill1000 패치전 쌍**0.645** run3**0.049**(당첨과 비슷·과다가 아님). 표=`shape_table.summarize(draws_before)`. 패치=3연속 고가중 가운데×0.75. 게이트 n100 peek**0** Δprefer **−0.000032** Δprize **−0.000518** Δrun3 **−0.004**. refill **200**. WIRE True. pred_1237**0**. 다음=간격/홀짝/구간 형1건. · `docs/benchmarks/20260822_KREVIEW_SHAPE_CONSEC.json` · `reports/20260822_KREVIEW_SHAPE_CONSEC.md` · `app/testlotto/brains/review_brain/shape_table.py` |
 | **K-REVIEW-SEQ-VECTOR-AUDIT (형질문)** | **AUDIT_NOTES**. 벡터=등수백테아님·캐시200. 1차리필 **구경로**(플래그메모리False) skill5합**21.385**. 재기록 후 skill5합 **30**/200 · #1∩#2 **0** · source `review_seq_deplete`×1000. 샘플3 캐시=라이브·발권5=pool1~5. **P2** #8~10∩(1~7) **16.815**(45소진 리셋). **P3** 1237캐시 앞채움잔존 #1=`[15,18,27,34,37,40]`. pred_1237**0**. APPLY없음. · `docs/benchmarks/20260822_KREVIEW_SEQ_VECTOR_AUDIT.json` · `reports/20260822_KREVIEW_SEQ_VECTOR_AUDIT.md` · `tools/_k_review_seq_vector_audit.py` |

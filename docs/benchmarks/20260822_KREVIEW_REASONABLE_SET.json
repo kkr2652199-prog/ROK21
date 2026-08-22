@@ -1,0 +1,247 @@
+{
+  "id": "K-REVIEW-REASONABLE-SET",
+  "ts": "2026-08-22T16:01:37+09:00",
+  "verdict": "APPLY_OK",
+  "seq": false,
+  "reasonable": true,
+  "mode": "reasonable",
+  "gate": {
+    "elapsed_s": 4.0,
+    "n_ok": 100,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "changed": 100,
+    "hard_ok": true,
+    "iso_ok": false,
+    "design_ok": true,
+    "apply": false,
+    "off": {
+      "prefer": 0.002078,
+      "prize": 0.00259,
+      "union5": 30.0,
+      "union10": 41.52,
+      "jaccard5": 0.0,
+      "s1_s2": 0.0,
+      "multi5": 0.0,
+      "wrap": 5.586667
+    },
+    "on": {
+      "prefer": 0.007701,
+      "prize": 0.009157,
+      "union5": 21.72,
+      "union10": 31.73,
+      "jaccard5": 0.098615,
+      "s1_s2": 1.06,
+      "multi5": 6.66,
+      "wrap": 4.02
+    },
+    "delta_prefer": 0.005623,
+    "delta_prize": 0.006567,
+    "delta_union5": -8.28,
+    "delta_jaccard5": 0.098615,
+    "delta_s1_s2": 1.06,
+    "delta_multi5": 6.66,
+    "delta_wrap": -1.566667,
+    "on_source_head": [
+      "review_reasonable",
+      "review_reasonable",
+      "review_reasonable"
+    ],
+    "iso_vs_jaccard_ok": true
+  },
+  "refill": {
+    "ok": 200,
+    "fail": 0,
+    "lo": 1037,
+    "hi": 1236,
+    "mode": "reasonable"
+  },
+  "sample_1236": {
+    "dno": 1236,
+    "actual": [
+      12,
+      18,
+      21,
+      29,
+      34,
+      38
+    ],
+    "sets": [
+      {
+        "set_no": 1,
+        "nums": [
+          6,
+          7,
+          11,
+          24,
+          26,
+          42
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": [
+          6,
+          7,
+          11,
+          24,
+          26,
+          42
+        ]
+      },
+      {
+        "set_no": 2,
+        "nums": [
+          6,
+          21,
+          22,
+          26,
+          32,
+          39
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": [
+          6,
+          26
+        ]
+      },
+      {
+        "set_no": 3,
+        "nums": [
+          13,
+          15,
+          27,
+          28,
+          36,
+          42
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": [
+          42
+        ]
+      },
+      {
+        "set_no": 4,
+        "nums": [
+          9,
+          20,
+          30,
+          35,
+          41,
+          43
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": []
+      },
+      {
+        "set_no": 5,
+        "nums": [
+          1,
+          10,
+          18,
+          28,
+          32,
+          34
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": []
+      },
+      {
+        "set_no": 6,
+        "nums": [
+          1,
+          7,
+          15,
+          19,
+          29,
+          32
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": [
+          7
+        ]
+      },
+      {
+        "set_no": 7,
+        "nums": [
+          6,
+          10,
+          15,
+          27,
+          30,
+          43
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": [
+          6
+        ]
+      },
+      {
+        "set_no": 8,
+        "nums": [
+          21,
+          27,
+          29,
+          34,
+          42,
+          43
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": [
+          42
+        ]
+      },
+      {
+        "set_no": 9,
+        "nums": [
+          9,
+          18,
+          19,
+          24,
+          42,
+          44
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": [
+          24,
+          42
+        ]
+      },
+      {
+        "set_no": 10,
+        "nums": [
+          10,
+          24,
+          28,
+          41,
+          42,
+          43
+        ],
+        "source": "review_reasonable",
+        "overlap_s1": [
+          24,
+          42
+        ]
+      }
+    ]
+  },
+  "hard_db": {
+    "draws_max": 1237,
+    "pred_1237": 0,
+    "ledger_stat": 3000
+  },
+  "pred_1237": 0,
+  "iso_vs_seq": {
+    "delta_prefer": 0.005623,
+    "delta_prize": 0.006567,
+    "iso_ok": false
+  },
+  "iso_vs_jaccard": {
+    "jaccard_prefer": 0.006699,
+    "jaccard_prize": 0.009798,
+    "delta_prefer": 0.001002,
+    "delta_prize": -0.000641,
+    "iso_ok": true
+  },
+  "apply_note": "vs SEQ leftover ISO fail by leftover low-axis; vs Jaccard scatter ISO pass; hyung GO reconstruct"
+}
