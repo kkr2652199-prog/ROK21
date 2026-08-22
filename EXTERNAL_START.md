@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `1e331d2` |
+| HEAD(실측) | `71cf6ef` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 금액뇌벡터 AUDIT_NOTES |
-| 직전 | 금액뇌소진분포 APPLY_OK |
-| BOOT다음 | 형 확인(P2리셋겹침·1237캐시) / 1237예측아님 |
+| 지금 | **양산前** · 금액뇌연번표 APPLY_OK |
+| 직전 | 금액뇌벡터 AUDIT_NOTES |
+| BOOT다음 | 형 다음1건(간격/홀짝 등) / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 금액뇌벡터 AUDIT_NOTES(캐시재기록200·발권=pool1-5). P2=#8~10리셋겹침. 1237캐시 앞채움잔존. 형 확인 후 타뇌. 1237예측 금지. |
+| NEXT1 할일 | **양산前**. 금액뇌연번표 APPLY_OK(1–1237 당첨 연번쌍0.660≈널0.667·run3=0.054·6연속0). 다음패치 형 1건(간격/홀짝/구간). 1237예측 금지. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=1e331d2 · 지금=**양산前** · 금액뇌벡터 AUDIT_NOTES · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=71cf6ef · 지금=**양산前** · 금액뇌연번표 APPLY_OK · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 1e331d2_
+_generated: 71cf6ef_
