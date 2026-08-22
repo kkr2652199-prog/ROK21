@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-22 KST  
-📌 사유: **[CURSOR] K-SET-SCATTER-1237** — 세트별 번호분산 정밀분석
+📌 사유: **[CURSOR] K-REVIEW-FRONTLOAD** — 금액뇌 pool 앞채움 전수조사 후 APPLY
 
-📌 직전: **[CURSOR] K-ARMY4-SX-BRAIN-REMOVE** — 4군·전략X 뇌/탭 삭제
+📌 직전: **[CURSOR] K-SET-SCATTER-1237** — 세트별 번호분산 정밀분석
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-FRONTLOAD (형GO)** | **APPLY_OK** · 금액뇌만. 당첨미입력. pool 합집합을 `number_scores`순 #1→#10, 몰아주기=새#1~#5(ALIGN). 캐시전수 review **1235**(2–1236): live set1 **0.7935** · oracle set1 **3.6955**(금지) · freq **0.7984**. 게이트1137–1236 n**100** peek**0**: E Δprefer **−0.003277** Δprize **−0.006942** iso · D도 iso. 채택 **E**. refill review **200**/0 (1037–1236). 1237은 캐시재조립만(predict없음) #1=`[15,18,27,34,37,40]` 3맞. 라이브 `POOL_FRONTLOAD_BRAINS={review}` · ALIGN True. 롤백=frozenset()+ALIGN False. 원장 stat**3000** · pred_1237**0** · MAX**1237**. 우열금지. · `docs/benchmarks/20260822_KREVIEW_FRONTLOAD.json` · `reports/20260822_KREVIEW_FRONTLOAD.md` · `app/testlotto/signal_pool.py` · `tools/_k_review_frontload_census.py` |
 | **K-SET-SCATTER-1237 (형질문)** | **DISCUSS_OK** · READ-ONLY. 화면=금액뇌(review) **pool10**. 당첨 10 20 23 34 37 40. pool 합집합 **6/6**(사후). #2=10·34 #3=37·40 #4=20 #5=34 #8=23. 1~5=`predict_sets`+`diversify_pick`(겹침↓) · 6~8=cover(다른방향) · 9~10=shape. 몰아주기1장 `[15,18,27,34,37,40]` **3맞** — 점수상위6이지 당첨6 아님. 당첨모아 1장=**컨닝금지**. APPLY없음. · `docs/benchmarks/20260822_KSET_SCATTER_1237.json` · `reports/20260822_KSET_SCATTER_1237.md` · `tools/_k_set_scatter_1237.py` |
 | **K-ARMY4-SX-BRAIN-REMOVE (형요청)** | **REMOVE_OK**. 4군 v13·전략X **뇌만**. UI숨김=4군대시보드·두뇌예측·전략X·명예의전당·두뇌상태. API 생성=`removed`. lotto4.db 예측 삭제 v13 **4830** · sx **24410** · 잔여 **0**. lotto_draws **1237** 유지. `lotto_testlotto.db` **미접촉**. 유지=combinadic·조회·전체조합·수집·효도·테스트로또. 소스 py는 디스크 잔존(공통 import). 1237예측없음. 다음패치=형 GO(`B1캐시warm` 등). · `docs/benchmarks/20260822_KARMY4_SX_BRAIN_REMOVE.json` · `reports/20260822_KARMY4_SX_BRAIN_REMOVE.md` · `app/lotto4/army4_brains_removed.py` |
 | **K-TL-DASH-LEARN-VS-RANDOM (형질문)** | **DISCUSS_OK** · READ-ONLY · APPLY **없음**. pred **18520** 전수채점. hist 0–6 = 7430/7912/2743/411/**24**/0/0. **1~3등 0** · **4맞 24**≈널E **25.27** · 3맞 **411**≈널 **415.6** · mean **0.795**≈0.80. EVOLVE_AUTO **OFF** · λ **OFF** · weight **0**/3704 · learn_state 행 **0**. 숙제소비 `{stat}`. 백필=빈 learner. 균등랜덤 아님·적중학습도 아님. draws MAX 실측 **1237** · pred_1237 **0**. 우열금지. · `docs/benchmarks/20260822_KTL_DASH_LEARN_VS_RANDOM.json` · `reports/20260822_KTL_DASH_LEARN_VS_RANDOM.md` · `tools/_k_tl_dash_learn_vs_random.py` |

@@ -124,6 +124,12 @@ REPACK_HYENA_MODE_BY_BRAIN: dict[str, str] = {
     "review": "score5",
 }
 
+# K-REVIEW-FRONTLOAD (20260822) — pool union을 점수순으로 #1→#10 선채움.
+# 타깃 회 당첨 입력 금지. 롤백: BRAINS=frozenset() · ALIGN=False.
+POOL_FRONTLOAD_BRAINS: frozenset[str] = frozenset({"review"})
+POOL_FRONTLOAD_MODE: str = "score_union"
+POOL_FRONTLOAD_ALIGN_REPACK: bool = True
+
 
 SignalTable = dict[str, dict[int, float]]
 
@@ -364,6 +370,71 @@ def repack_sets(scores: dict[int, float], n_sets: int = REPACK_SETS_PER_BRAIN) -
         idx += 6
         sets.append(sorted(chunk))
     return sets
+
+
+def frontload_pool_by_scores(
+    pool: list[dict],
+    scores: dict[int, float],
+    *,
+    n: int = POOL_SETS_PER_BRAIN,
+    brain_tag: str = "review",
+) -> list[dict]:
+    """pool 합집합을 점수 높은 번호부터 6개씩 #1→#n. 당첨 미입력.
+
+    합집합만 앞으로 모은다. 1~45 잔여를 새 장으로 넣지 않는다.
+    마지막 조각이 6개 미만이면 합집합 밖 고점수만 패딩.
+    칸이 남으면 원본 세트 중 아직 없는 장을 뒤에 둔다.
+    """
+    if not pool:
+        return []
+    tag = str(brain_tag or (pool[0].get("brain_tag") if pool else "review"))
+    union = {int(x) for c in pool for x in (c.get("nums") or [])}
+    ranked_u = sorted(union, key=lambda x: (-float(scores.get(x, 0.0)), int(x)))
+    ranked_out = [
+        n
+        for n in sorted(range(1, 46), key=lambda x: (-float(scores.get(x, 0.0)), int(x)))
+        if n not in union
+    ]
+    packed: list[list[int]] = []
+    i = 0
+    while i + 6 <= len(ranked_u) and len(packed) < n:
+        packed.append(sorted(ranked_u[i : i + 6]))
+        i += 6
+    leftover = ranked_u[i:]
+    if leftover and len(packed) < n:
+        need = 6 - len(leftover)
+        packed.append(sorted(leftover + ranked_out[:need]))
+    if len(packed) < n:
+        have = {tuple(s) for s in packed}
+        orig = sorted(
+            pool, key=lambda c: int(c.get("pred_set_no") or c.get("set_no") or 0)
+        )
+        for c in orig:
+            nums = sorted(int(x) for x in (c.get("nums") or []))
+            if len(nums) != 6:
+                continue
+            key = tuple(nums)
+            if key in have:
+                continue
+            packed.append(nums)
+            have.add(key)
+            if len(packed) >= n:
+                break
+
+    out: list[dict] = []
+    for i, nums in enumerate(packed[:n]):
+        out.append(
+            {
+                "nums": list(nums),
+                "pred_set_no": i + 1,
+                "set_no": i + 1,
+                "brain_tag": tag,
+                "role": "frontload_score" if i < 5 else "frontload_rest",
+                "role_pass": 0 if i < 5 else 1,
+                "kind": "pool",
+            }
+        )
+    return out
 
 
 def recombine_complement_ticket(
@@ -780,6 +851,18 @@ def repack_by_brain(
             brain_tag=tag,
         )
         classic = repack_sets(scores)
+        if (
+            tag in POOL_FRONTLOAD_BRAINS
+            and POOL_FRONTLOAD_MODE == "score_union"
+        ):
+            new_pool = frontload_pool_by_scores(
+                pool, scores, n=POOL_SETS_PER_BRAIN, brain_tag=tag
+            )
+            if new_pool:
+                pool_by_brain[tag] = new_pool
+                pool = new_pool
+                if POOL_FRONTLOAD_ALIGN_REPACK:
+                    classic = [list(c["nums"]) for c in new_pool[:REPACK_SETS_PER_BRAIN]]
         assembled_rows = _rows_for_brain(tag, pool, classic, pos_t, scores=scores)
 
         if (
@@ -1043,6 +1126,9 @@ def tune_snapshot() -> dict[str, Any]:
         "REPACK_RECOMBINE_MODE": REPACK_RECOMBINE_MODE,
         "REPACK_RECOMBINE_BRAINS": sorted(REPACK_RECOMBINE_BRAINS),
         "REPACK_HYENA_MODE_BY_BRAIN": dict(REPACK_HYENA_MODE_BY_BRAIN),
+        "POOL_FRONTLOAD_BRAINS": sorted(POOL_FRONTLOAD_BRAINS),
+        "POOL_FRONTLOAD_MODE": POOL_FRONTLOAD_MODE,
+        "POOL_FRONTLOAD_ALIGN_REPACK": POOL_FRONTLOAD_ALIGN_REPACK,
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }
