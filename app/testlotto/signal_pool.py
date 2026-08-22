@@ -126,9 +126,9 @@ REPACK_HYENA_MODE_BY_BRAIN: dict[str, str] = {
 
 # K-REVIEW-FRONTLOAD (20260822) — pool union을 점수순으로 #1→#10 선채움.
 # 타깃 회 당첨 입력 금지. 롤백: BRAINS=frozenset() · ALIGN=False.
-POOL_FRONTLOAD_BRAINS: frozenset[str] = frozenset({"markov", "review", "stat"})
+POOL_FRONTLOAD_BRAINS: frozenset[str] = frozenset()
 POOL_FRONTLOAD_MODE: str = "score_union"
-POOL_FRONTLOAD_ALIGN_REPACK: bool = True
+POOL_FRONTLOAD_ALIGN_REPACK: bool = False
 
 
 SignalTable = dict[str, dict[int, float]]
@@ -278,9 +278,50 @@ def expand_pool(
             continue
         # pass0 — 발권 경로와 동일 시드 (set 1~5)
         random.seed(_pass_seed(seed, draw_no, 0))
+        seq_review = False
+        if tag == "review":
+            try:
+                import app.testlotto.brains.review_brain.engine as _rev_eng
+
+                seq_review = bool(_rev_eng.REVIEW_SEQ_DISTRIBUTE)
+            except Exception:  # noqa: BLE001
+                seq_review = False
         try:
-            skill_raw = mod.predict_sets(draws, SETS_PER_PREDICT_BRAIN)
+            want = 10 if seq_review else SETS_PER_PREDICT_BRAIN
+            skill_raw = mod.predict_sets(draws, want)
         except Exception:  # noqa: BLE001
+            continue
+        if seq_review and len(skill_raw) >= 10:
+            labeled = label_skill_sets(skill_raw[:5], brain_tag=tag)
+            pool.extend(labeled)
+            for i, c in enumerate(skill_raw[5:8]):
+                pool.append(
+                    {
+                        **c,
+                        "brain_tag": tag,
+                        "pred_set_no": 6 + i,
+                        "set_no": 6 + i,
+                        "kind": "pool",
+                        "role": "cover_r3",
+                        "role_pass": "pass1a",
+                        "source": "review_seq_deplete",
+                        "nums": [int(x) for x in c["nums"]],
+                    }
+                )
+            for i, c in enumerate(skill_raw[8:10]):
+                pool.append(
+                    {
+                        **c,
+                        "brain_tag": tag,
+                        "pred_set_no": 9 + i,
+                        "set_no": 9 + i,
+                        "kind": "pool",
+                        "role": "shape_r2",
+                        "role_pass": "pass1b",
+                        "source": "review_seq_deplete",
+                        "nums": [int(x) for x in c["nums"]],
+                    }
+                )
             continue
         skill = label_skill_sets(skill_raw, brain_tag=tag)
         pool.extend(skill)
@@ -1090,6 +1131,7 @@ def build_pool_and_repack(
 
 def tune_snapshot() -> dict[str, Any]:
     """UI용 최신 튜닝 knobs (성적클레임 아님 · 배선 표시)."""
+    from app.testlotto.brains.review_brain.engine import REVIEW_SEQ_DISTRIBUTE
     from app.testlotto.brains.shared import aux_hint as ah
     from app.testlotto.brains.shared import crowd_signal as cs
     from app.testlotto.brains.shared import referee_by_brain as rbb
@@ -1129,6 +1171,7 @@ def tune_snapshot() -> dict[str, Any]:
         "POOL_FRONTLOAD_BRAINS": sorted(POOL_FRONTLOAD_BRAINS),
         "POOL_FRONTLOAD_MODE": POOL_FRONTLOAD_MODE,
         "POOL_FRONTLOAD_ALIGN_REPACK": POOL_FRONTLOAD_ALIGN_REPACK,
+        "REVIEW_SEQ_DISTRIBUTE": bool(REVIEW_SEQ_DISTRIBUTE),
         "hint_shared_across_brains": hint_shared_across_brains(),
         "independence_ko": "공유=lotto_draws만 · 예측·감독관 뇌별 분리",
     }

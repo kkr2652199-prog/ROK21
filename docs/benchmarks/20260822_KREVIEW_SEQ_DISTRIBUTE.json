@@ -1,0 +1,67 @@
+{
+  "id": "K-REVIEW-SEQ-DISTRIBUTE",
+  "ts": "2026-08-22T15:03:34+09:00",
+  "verdict": "APPLY_OK",
+  "gate": {
+    "elapsed_s": 11.5,
+    "n_ok": 100,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "changed": 100,
+    "hard_ok": true,
+    "iso_ok": true,
+    "design_ok": true,
+    "apply": true,
+    "off": {
+      "prefer": 0.006699,
+      "prize": 0.009798,
+      "union5": 21.5,
+      "union10": 28.82,
+      "jaccard5": 0.108527,
+      "s1_s2": 0.87,
+      "multi5": 6.39
+    },
+    "on": {
+      "prefer": 0.00211,
+      "prize": 0.003108,
+      "union5": 30.0,
+      "union10": 41.39,
+      "jaccard5": 0.0,
+      "s1_s2": 0.0,
+      "multi5": 0.0
+    },
+    "delta_prefer": -0.004589,
+    "delta_prize": -0.00669,
+    "delta_union5": 8.5,
+    "delta_jaccard5": -0.108527,
+    "delta_s1_s2": -0.87,
+    "delta_multi5": -6.39
+  },
+  "flag": true,
+  "frontload": [],
+  "refill": {
+    "ok": 200,
+    "fail": 0,
+    "lo": 1037,
+    "hi": 1236
+  },
+  "hard_db": {
+    "draws_max": 1237,
+    "pred_1237": 0,
+    "ledger_stat": 3000
+  },
+  "iso": 0.005,
+  "pred_1237_new": false,
+  "scatter_formula": [
+    "reset 1-45 every set",
+    "jaccard 0.85 pick",
+    "cover away"
+  ],
+  "new_formula": [
+    "one pool deplete",
+    "first 6 = set1",
+    "no jaccard pick"
+  ]
+}

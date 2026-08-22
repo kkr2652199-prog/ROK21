@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-22 KST  
-📌 사유: **[CURSOR] K-BRAIN-FRONTLOAD-NEXT** — 선호·과거학습 엔진앞채움 이어서 APPLY
+📌 사유: **[CURSOR] K-REVIEW-SEQ-DISTRIBUTE** — 금액뇌 세트분포 엔진(흩뿌림) 구조 변경
 
-📌 직전: **[CURSOR] K-REVIEW-FRONTLOAD** — 금액뇌 pool 앞채움 전수조사 후 APPLY
+📌 직전: **[CURSOR] K-BRAIN-FRONTLOAD-NEXT** — 선호·과거학습 엔진앞채움 이어서 APPLY
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-SEQ-DISTRIBUTE (형지시)** | **APPLY_OK** · 금액뇌만. 흩뿌림공식=세트마다1~45리셋+Jaccard0.85+cover멀리. 신=한풀 `random.choices`소진(#1=먼저6개). 라인동결. 앞채움3뇌 **OFF**. 게이트 n100 peek**0**: skill5합 **21.5→30** · Jaccard5 **0.109→0** · #1∩#2 **0.87→0** · 2장이상번호 **6.39→0**. Δprefer **−0.004589** Δprize **−0.00669** iso. refill review **200**. 타뇌캐시 앞채움되돌림 각200. pred_1237**0**. 확인=1037–1236 금액뇌. 롤백=`REVIEW_SEQ_DISTRIBUTE=False`. · `docs/benchmarks/20260822_KREVIEW_SEQ_DISTRIBUTE.json` · `reports/20260822_KREVIEW_SEQ_DISTRIBUTE.md` · `app/testlotto/brains/review_brain/engine.py` |
 | **K-BRAIN-FRONTLOAD-NEXT (형이어서)** | **APPLY_OK** · 공식없음·당첨미입력. 금액뇌 유지. markov·stat도 각 `number_scores`로 합집합 #1→#10 + ALIGN. 캐시 markov **1234** / stat **1235**. 게이트 n100 peek**0**: markov E Δprefer **−0.004645** Δprize **−0.001467** · stat **−0.00179 / −0.001345** iso. 엔진합집합 점수Δ 당첨−비당첨 markov **−0.000981** · stat **−0.002448**(핸들≈0·우열아님). refill 각 **200**/0. 1237 캐시재조립만 markov #1=`[1,3,7,12,17,27]` 0맞 · stat #1=`[3,15,16,29,34,38]` 1맞. 라이브 BRAINS `{markov,review,stat}` ALIGN True. 원장 stat**3000** · pred_1237**0**. · `docs/benchmarks/20260822_KBRAIN_FRONTLOAD_NEXT.json` · `reports/20260822_KBRAIN_FRONTLOAD_NEXT.md` · `tools/_k_brain_frontload_next.py` |
 | **K-REVIEW-FRONTLOAD (형GO)** | **APPLY_OK** · 금액뇌만. 당첨미입력. pool 합집합을 `number_scores`순 #1→#10, 몰아주기=새#1~#5(ALIGN). 캐시전수 review **1235**(2–1236): live set1 **0.7935** · oracle set1 **3.6955**(금지) · freq **0.7984**. 게이트1137–1236 n**100** peek**0**: E Δprefer **−0.003277** Δprize **−0.006942** iso · D도 iso. 채택 **E**. refill review **200**/0 (1037–1236). 1237은 캐시재조립만(predict없음) #1=`[15,18,27,34,37,40]` 3맞. 라이브 `POOL_FRONTLOAD_BRAINS={review}` · ALIGN True. 롤백=frozenset()+ALIGN False. 원장 stat**3000** · pred_1237**0** · MAX**1237**. 우열금지. · `docs/benchmarks/20260822_KREVIEW_FRONTLOAD.json` · `reports/20260822_KREVIEW_FRONTLOAD.md` · `app/testlotto/signal_pool.py` · `tools/_k_review_frontload_census.py` |
 | **K-SET-SCATTER-1237 (형질문)** | **DISCUSS_OK** · READ-ONLY. 화면=금액뇌(review) **pool10**. 당첨 10 20 23 34 37 40. pool 합집합 **6/6**(사후). #2=10·34 #3=37·40 #4=20 #5=34 #8=23. 1~5=`predict_sets`+`diversify_pick`(겹침↓) · 6~8=cover(다른방향) · 9~10=shape. 몰아주기1장 `[15,18,27,34,37,40]` **3맞** — 점수상위6이지 당첨6 아님. 당첨모아 1장=**컨닝금지**. APPLY없음. · `docs/benchmarks/20260822_KSET_SCATTER_1237.json` · `reports/20260822_KSET_SCATTER_1237.md` · `tools/_k_set_scatter_1237.py` |
