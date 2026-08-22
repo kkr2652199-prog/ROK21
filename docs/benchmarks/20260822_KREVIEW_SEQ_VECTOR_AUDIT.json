@@ -1,0 +1,553 @@
+{
+  "id": "K-REVIEW-SEQ-VECTOR-AUDIT",
+  "ts": "2026-08-22T15:22:40+09:00",
+  "verdict": "AUDIT_NOTES",
+  "prior": "20260822_KREVIEW_SEQ_DISTRIBUTE.json",
+  "elapsed_s": 1.1,
+  "cache": {
+    "n_rows": 200,
+    "n_ok": 200,
+    "size_bad": 0,
+    "draws_max": 1237,
+    "pred_1237": 0,
+    "ledger_stat": 3000,
+    "roles": {
+      "skill_native": 1000,
+      "cover_r3": 600,
+      "shape_r2": 400
+    },
+    "sources": {
+      "skill_native": 1000,
+      "review_seq_deplete": 1000
+    },
+    "union5": 30.0,
+    "union5_n30": 200,
+    "union7": 40.24,
+    "union10": 41.425,
+    "s1_s2": 0.0,
+    "s1_s2_n0": 200,
+    "multi5": 0.0,
+    "multi5_n0": 200,
+    "wrap_overlap7": 16.815,
+    "bad6_sum": 0,
+    "set1_hits": 0.85,
+    "max_hits": 2.125,
+    "samples": {
+      "1137": {
+        "sets": [
+          [
+            8,
+            13,
+            28,
+            30,
+            34,
+            40
+          ],
+          [
+            6,
+            9,
+            17,
+            20,
+            29,
+            42
+          ],
+          [
+            5,
+            11,
+            21,
+            22,
+            35,
+            38
+          ],
+          [
+            7,
+            10,
+            12,
+            19,
+            25,
+            27
+          ],
+          [
+            1,
+            3,
+            18,
+            24,
+            26,
+            32
+          ],
+          [
+            2,
+            4,
+            14,
+            16,
+            23,
+            31
+          ],
+          [
+            5,
+            7,
+            12,
+            13,
+            23,
+            26
+          ],
+          [
+            1,
+            16,
+            21,
+            27,
+            37,
+            43
+          ],
+          [
+            2,
+            6,
+            8,
+            30,
+            35,
+            44
+          ],
+          [
+            9,
+            17,
+            22,
+            33,
+            36,
+            45
+          ]
+        ],
+        "geom": {
+          "n": 10,
+          "union5": 30,
+          "union7": 36,
+          "union10": 42,
+          "s1_s2": 0,
+          "multi5": 0,
+          "wrap_n": 3,
+          "wrap_overlap7": 12,
+          "bad6": 0,
+          "roles": []
+        },
+        "roles": [
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "cover_r3",
+          "cover_r3",
+          "cover_r3",
+          "shape_r2",
+          "shape_r2"
+        ],
+        "sources": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete"
+        ]
+      },
+      "1186": {
+        "sets": [
+          [
+            5,
+            7,
+            11,
+            25,
+            34,
+            35
+          ],
+          [
+            6,
+            8,
+            21,
+            23,
+            29,
+            43
+          ],
+          [
+            9,
+            19,
+            32,
+            36,
+            37,
+            38
+          ],
+          [
+            1,
+            13,
+            27,
+            30,
+            33,
+            39
+          ],
+          [
+            3,
+            14,
+            15,
+            26,
+            44,
+            45
+          ],
+          [
+            20,
+            22,
+            24,
+            31,
+            41,
+            42
+          ],
+          [
+            5,
+            18,
+            24,
+            26,
+            32,
+            39
+          ],
+          [
+            6,
+            8,
+            20,
+            23,
+            30,
+            45
+          ],
+          [
+            19,
+            21,
+            27,
+            28,
+            35,
+            36
+          ],
+          [
+            2,
+            11,
+            16,
+            22,
+            33,
+            40
+          ]
+        ],
+        "geom": {
+          "n": 10,
+          "union5": 30,
+          "union7": 37,
+          "union10": 41,
+          "s1_s2": 0,
+          "multi5": 0,
+          "wrap_n": 3,
+          "wrap_overlap7": 14,
+          "bad6": 0,
+          "roles": []
+        },
+        "roles": [
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "cover_r3",
+          "cover_r3",
+          "cover_r3",
+          "shape_r2",
+          "shape_r2"
+        ],
+        "sources": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete"
+        ]
+      },
+      "1236": {
+        "sets": [
+          [
+            6,
+            7,
+            11,
+            24,
+            26,
+            42
+          ],
+          [
+            8,
+            21,
+            22,
+            28,
+            32,
+            40
+          ],
+          [
+            15,
+            16,
+            27,
+            30,
+            38,
+            43
+          ],
+          [
+            9,
+            19,
+            31,
+            34,
+            39,
+            44
+          ],
+          [
+            1,
+            3,
+            29,
+            33,
+            36,
+            45
+          ],
+          [
+            2,
+            10,
+            14,
+            18,
+            23,
+            25
+          ],
+          [
+            5,
+            12,
+            13,
+            20,
+            35,
+            37
+          ],
+          [
+            6,
+            10,
+            15,
+            27,
+            30,
+            43
+          ],
+          [
+            22,
+            28,
+            29,
+            34,
+            40,
+            42
+          ],
+          [
+            7,
+            16,
+            19,
+            21,
+            41,
+            44
+          ]
+        ],
+        "geom": {
+          "n": 10,
+          "union5": 30,
+          "union7": 42,
+          "union10": 43,
+          "s1_s2": 0,
+          "multi5": 0,
+          "wrap_n": 3,
+          "wrap_overlap7": 17,
+          "bad6": 0,
+          "roles": []
+        },
+        "roles": [
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "skill_native",
+          "cover_r3",
+          "cover_r3",
+          "cover_r3",
+          "shape_r2",
+          "shape_r2"
+        ],
+        "sources": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete",
+          "review_seq_deplete"
+        ]
+      }
+    },
+    "cache_1237": {
+      "ok": true,
+      "n": 10,
+      "geom": {
+        "n": 10,
+        "union5": 30,
+        "union7": 30,
+        "union10": 30,
+        "s1_s2": 0,
+        "multi5": 0,
+        "wrap_n": 3,
+        "wrap_overlap7": 16,
+        "bad6": 0,
+        "roles": []
+      },
+      "set1": [
+        15,
+        18,
+        27,
+        34,
+        37,
+        40
+      ],
+      "sources": [
+        "frontload_score",
+        "frontload_score",
+        "frontload_score",
+        "frontload_score",
+        "frontload_score",
+        "frontload_rest",
+        "frontload_rest",
+        "frontload_rest",
+        "frontload_rest",
+        "frontload_rest"
+      ],
+      "looks_seq": true,
+      "looks_frontload": true
+    }
+  },
+  "live": {
+    "samples": [
+      {
+        "dno": 1137,
+        "peek": false,
+        "live_n": 10,
+        "cache_n": 10,
+        "cache_eq_live": true,
+        "ticket5_eq_pool5": true,
+        "live_set1": [
+          8,
+          13,
+          28,
+          30,
+          34,
+          40
+        ],
+        "cache_set1": [
+          8,
+          13,
+          28,
+          30,
+          34,
+          40
+        ],
+        "ticket_set1": [
+          8,
+          13,
+          28,
+          30,
+          34,
+          40
+        ]
+      },
+      {
+        "dno": 1186,
+        "peek": false,
+        "live_n": 10,
+        "cache_n": 10,
+        "cache_eq_live": true,
+        "ticket5_eq_pool5": true,
+        "live_set1": [
+          5,
+          7,
+          11,
+          25,
+          34,
+          35
+        ],
+        "cache_set1": [
+          5,
+          7,
+          11,
+          25,
+          34,
+          35
+        ],
+        "ticket_set1": [
+          5,
+          7,
+          11,
+          25,
+          34,
+          35
+        ]
+      },
+      {
+        "dno": 1236,
+        "peek": false,
+        "live_n": 10,
+        "cache_n": 10,
+        "cache_eq_live": true,
+        "ticket5_eq_pool5": true,
+        "live_set1": [
+          6,
+          7,
+          11,
+          24,
+          26,
+          42
+        ],
+        "cache_set1": [
+          6,
+          7,
+          11,
+          24,
+          26,
+          42
+        ],
+        "ticket_set1": [
+          6,
+          7,
+          11,
+          24,
+          26,
+          42
+        ]
+      }
+    ],
+    "all_cache_eq_live": true,
+    "all_ticket_eq_pool5": true
+  },
+  "bugs": [
+    {
+      "id": "B-RESET-WRAP",
+      "sev": "P2",
+      "text": "#8~10이 1~7과 평균 16.815개 겹침. 45소진 후 풀 리셋(2바퀴). cover/shape 라벨이지만 실제는 재추출."
+    }
+  ],
+  "ideas": [
+    "리셋 금지: 45개만 7장+나머지3은 패딩 없이 멈추거나, 8~10은 빈칸/원본 미사용. 2바퀴 겹침 제거.",
+    "tier1 탈락 시 뽑은 6개를 풀에 되돌리거나, 필터를 소진 후에만 적용. 구멍(union5<30) 방지.",
+    "6~10 라벨 cover/shape는 허위. seq면 전부 skill_seq 또는 #6=2순위 엔진장으로 문서화.",
+    "발권5와 pool1~5가 같으면(이번 실측) 몰아주기 score5와 #1 정렬은 별 GO.",
+    "1237은 예측 재실행 없이 캐시만 소진재조립할지 형이 결정."
+  ],
+  "pred_1237_new": false
+}
