@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `8b7e28a` · WORK=`IDLE`
-2. **지금:** **양산前** · 4군/전략X탭 HOLD_OFF
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 4군/전략X탭 HOLD_OFF. 테스트대시보드 BACKFILL_PARTIAL. 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지. (승인필요=형 1건 · 선행=없음)
+1. **HEAD:** `a0430de` · WORK=`IDLE`
+2. **지금:** **양산前** · 학습vs랜덤 DISCUSS_OK
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 학습vs랜덤 DISCUSS_OK(4맞24≈널25·mean0.795·진화OFF·weight0). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-22 | 학습진화인가랜덤인가 | 4맞24≈널25 · mean0.795 · 진화OFF | **DISCUSS_OK** | (이턴) |
+| 2026-08-22 | 학습진화인가랜덤인가 | 4맞24≈널25 · mean0.795 · 진화OFF | **DISCUSS_OK** | a0430de |
 | 2026-08-18 | 4군·전략X탭풀기 | HOLD_OFF · 두뇌예측+전략X 다시표시 | **HOLD_OFF** | 8b7e28a |
 | 2026-08-15 | 테스트대시보드+백필 | pred18520 · 2–1236 · fail4(1회+markov2) | **PARTIAL** | 43f5fc3 |
 | 2026-08-15 | 4군·전략X탭숨김 | 두뇌예측+전략X HOLD · 효도유지 | **HOLD_ON** | 5ef31ea |

@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `8b7e28a` · WORK=`IDLE`
-- 지금: **양산前** · 4군/전략X탭 HOLD_OFF
-- 직전: 테스트대시보드 백필 PARTIAL
+- HEAD: `a0430de` · WORK=`IDLE`
+- 지금: **양산前** · 학습vs랜덤 DISCUSS_OK
+- 직전: 4군/전략X탭 HOLD_OFF
 - BOOT다음: 형 선택 1건 / 1237아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 4군/전략X탭 HOLD_OFF. 테스트대시보드 BACKFILL_PARTIAL. 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 학습vs랜덤 DISCUSS_OK(4맞24≈널25·mean0.795·진화OFF·weight0). 형 선택 1건(B1캐시warm/B3스위치끄기/4군seq채점/숙제켜/휠APPLY). 재탕·1237 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
