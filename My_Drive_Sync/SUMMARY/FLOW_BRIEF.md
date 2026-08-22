@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `71cf6ef` · WORK=`IDLE`
+- HEAD: `0bcfb4c` · WORK=`IDLE`
 - 지금: **양산前** · 금액뇌연번표 APPLY_OK
 - 직전: 금액뇌벡터 AUDIT_NOTES
 - BOOT다음: 형 다음1건(간격/홀짝 등) / 1237예측아님

@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `71cf6ef` · WORK=`IDLE`
+1. **HEAD:** `0bcfb4c` · WORK=`IDLE`
 2. **지금:** **양산前** · 금액뇌연번표 APPLY_OK
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌연번표 APPLY_OK(1–1237 당첨 연번쌍0.660≈널0.667·run3=0.054·6연속0). 다음패치 형 1건(간격/홀짝/구간). 1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
