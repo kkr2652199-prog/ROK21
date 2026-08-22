@@ -8,11 +8,11 @@
   const API = '/api/lotto4/v13';
 
   /**
-   * 테스트로또 집중 HOLD — 두뇌예측(4군)·전략X 탭/예측번호 UI 숨김.
-   * 2026-08-18 형: 4군·전략X 모두 보이게 → false (HOLD_OFF).
+   * 4군 v13·전략X 뇌 삭제 — 관련 탭 숨김. 테스트로또와 독립.
+   * 2026-08-22 형: 뇌만 삭제 · 공통기능 유지.
    */
-  const ROK21_TESTLOTTO_FOCUS_HOLD = false;
-  const HOLD_HIDE_VIEWS = new Set(['predict', 'strategy-x']);
+  const ROK21_TESTLOTTO_FOCUS_HOLD = true;
+  const HOLD_HIDE_VIEWS = new Set(['dashboard', 'predict', 'strategy-x', 'hall', 'brain']);
   const HOLD_DEFAULT_VIEW = 'testlotto';
 
   function applyTestlottoFocusHold() {
@@ -39,7 +39,7 @@
     }
     const brandSub = document.querySelector('.brand-sub');
     if (brandSub) {
-      brandSub.textContent = '포트 7021 · 테스트로또 집중 · 두뇌예측/전략X HOLD';
+      brandSub.textContent = '포트 7021 · 테스트로또 집중 · 4군/전략X 뇌 삭제';
     }
     const holdNote = document.getElementById('rok21HoldBanner');
     if (holdNote) holdNote.hidden = false;

@@ -1,0 +1,37 @@
+{
+  "id": "K-ARMY4-SX-BRAIN-REMOVE",
+  "as_of": "2026-08-22T14:11:42+09:00",
+  "db": "data/lotto4.db",
+  "testlotto_db_touched": false,
+  "kept": [
+    "app/lotto4/combinadic.py",
+    "app/lotto4/all_combos_service.py",
+    "app/lotto4/models.py",
+    "lotto_draws",
+    "combo lookup / all-combos / data collect / hyodo / testlotto"
+  ],
+  "removed_ui": [
+    "dashboard(4군)",
+    "predict",
+    "strategy-x",
+    "hall",
+    "brain"
+  ],
+  "before": {
+    "v13": 4830,
+    "strategy_x": 24410,
+    "other_pred": 0,
+    "draws": 1237,
+    "draws_max": 1237
+  },
+  "after": {
+    "v13": 0,
+    "strategy_x": 0,
+    "other_pred": 0,
+    "draws": 1237,
+    "draws_max": 1237
+  },
+  "deleted_v13": 4830,
+  "deleted_sx": 24410,
+  "pred_1237": 0
+}

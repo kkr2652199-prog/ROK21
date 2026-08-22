@@ -21,6 +21,11 @@ if __name__ == "__main__":
     import sys
 
     if len(sys.argv) > 1 and sys.argv[1] == "--mini-backtest":
+        from app.lotto4.army4_brains_removed import ARMY4_SX_BRAINS_REMOVED, removed_response
+
+        if ARMY4_SX_BRAINS_REMOVED:
+            print(json.dumps(removed_response(), ensure_ascii=False, indent=2))
+            sys.exit(0)
         from app.lotto4.v13_engine_v2 import run_v13_mini_backtest
 
         print(json.dumps(run_v13_mini_backtest(), ensure_ascii=False, indent=2))

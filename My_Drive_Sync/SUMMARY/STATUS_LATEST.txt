@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-22 KST  
-📌 사유: **[CURSOR] K-TL-DASH-LEARN-VS-RANDOM** — 학습진화 vs 랜덤 분석
+📌 사유: **[CURSOR] K-ARMY4-SX-BRAIN-REMOVE** — 4군·전략X 뇌/탭 삭제
 
-📌 직전: **[CURSOR] K-UI-SHOW-4GUN-SX** — 두뇌예측(4군)·전략X 탭 HOLD_OFF
+📌 직전: **[CURSOR] K-TL-DASH-LEARN-VS-RANDOM** — 학습진화 vs 랜덤 분석
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-ARMY4-SX-BRAIN-REMOVE (형요청)** | **REMOVE_OK**. 4군 v13·전략X **뇌만**. UI숨김=4군대시보드·두뇌예측·전략X·명예의전당·두뇌상태. API 생성=`removed`. lotto4.db 예측 삭제 v13 **4830** · sx **24410** · 잔여 **0**. lotto_draws **1237** 유지. `lotto_testlotto.db` **미접촉**. 유지=combinadic·조회·전체조합·수집·효도·테스트로또. 소스 py는 디스크 잔존(공통 import). 1237예측없음. 다음패치=형 GO(`B1캐시warm` 등). · `docs/benchmarks/20260822_KARMY4_SX_BRAIN_REMOVE.json` · `reports/20260822_KARMY4_SX_BRAIN_REMOVE.md` · `app/lotto4/army4_brains_removed.py` |
 | **K-TL-DASH-LEARN-VS-RANDOM (형질문)** | **DISCUSS_OK** · READ-ONLY · APPLY **없음**. pred **18520** 전수채점. hist 0–6 = 7430/7912/2743/411/**24**/0/0. **1~3등 0** · **4맞 24**≈널E **25.27** · 3맞 **411**≈널 **415.6** · mean **0.795**≈0.80. EVOLVE_AUTO **OFF** · λ **OFF** · weight **0**/3704 · learn_state 행 **0**. 숙제소비 `{stat}`. 백필=빈 learner. 균등랜덤 아님·적중학습도 아님. draws MAX 실측 **1237** · pred_1237 **0**. 우열금지. · `docs/benchmarks/20260822_KTL_DASH_LEARN_VS_RANDOM.json` · `reports/20260822_KTL_DASH_LEARN_VS_RANDOM.md` · `tools/_k_tl_dash_learn_vs_random.py` |
 | **K-UI-SHOW-4GUN-SX (형요청)** | **HOLD_OFF**. `ROK21_TESTLOTTO_FOCUS_HOLD=false`. 두뇌예측(4군)·전략X 탭 **다시 표시**. 테스트 대시보드 탭 유지. 진입 시 4군/전략X 번호 자동로드 **ON**. 엔진/DB **불변**. 1237아님. · `reports/20260818_KUI_SHOW_4GUN_SX.md` · `app/static/js/lotto4.js` |
 | **K-TL-DASH-BACKFILL-1236 (형요청)** | **BACKFILL_PARTIAL**. 새 탭 `테스트 대시보드`. 초기화 pred**3005**/cache**601**/evolve**601**. fill ok**3704**/fail**4**. pred **18520** · **2–1236** · stat**6175** markov**6170** review**6175**. cache**3704**. 실패=1회 3뇌 empty + markov 2회 empty. peek**0** · pred_1237**0** · MAX**1236** · 원장 stat**3000** 보존. 1~5등=기록·우열금지. 롤백=`backups/20260815_TLDASH전_DB전체/`. 1237아님. · `docs/benchmarks/20260815_KTL_DASH_BACKFILL_1236.json` · `reports/20260815_KTL_DASH_BACKFILL_1236.md` · `tools/_k_tl_dash_backfill_1236.py` |

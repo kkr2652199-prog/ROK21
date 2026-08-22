@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Query, Request
 
+from app.lotto4.army4_brains_removed import ARMY4_SX_BRAINS_REMOVED, removed_response
+
 router = APIRouter(prefix="/api/lotto4/v13", tags=["lotto4_v13"])
 
 
@@ -40,6 +42,8 @@ def _ensure_army4_scored_for_draw(target_draw_no: int) -> None:
 
 @router.post("/predict/{target_draw_no}")
 async def api_predict_v13(target_draw_no: int):
+    if ARMY4_SX_BRAINS_REMOVED:
+        return removed_response()
     from app.lotto4.v13_engine_v2 import run_prediction_v13
 
     return run_prediction_v13(target_draw_no)
@@ -47,6 +51,8 @@ async def api_predict_v13(target_draw_no: int):
 
 @router.post("/backtest_chunk")
 async def api_backtest_v13(start_draw: int, end_draw: int, checkpoint_every: int = 25):
+    if ARMY4_SX_BRAINS_REMOVED:
+        return removed_response()
     from app.lotto4.v13_engine_v2 import run_v13_chunk_backtest
 
     return run_v13_chunk_backtest(start_draw, end_draw, checkpoint_every)
@@ -1325,6 +1331,8 @@ async def api_v13_truth():
 @router.post("/strategy_x/popularity/{target_draw_no}")
 async def api_v13_strategy_x_popularity(target_draw_no: int):
     """전략 X 1뇌: 역사적 인기번호 기반 조합 생성 (5세트)."""
+    if ARMY4_SX_BRAINS_REMOVED:
+        return removed_response()
     from app.lotto4.brains.popularity_freq_brain import generate_popularity_sets
 
     return generate_popularity_sets(int(target_draw_no))
@@ -1333,6 +1341,8 @@ async def api_v13_strategy_x_popularity(target_draw_no: int):
 @router.post("/strategy_x/pair/{target_draw_no}")
 async def api_v13_strategy_x_pair(target_draw_no: int):
     """전략 X 2뇌: 역사적 인기번호쌍 기반 조합 생성 (5세트)."""
+    if ARMY4_SX_BRAINS_REMOVED:
+        return removed_response()
     from app.lotto4.brains.popularity_pair_brain import generate_pair_sets
 
     return generate_pair_sets(int(target_draw_no))
@@ -1341,6 +1351,8 @@ async def api_v13_strategy_x_pair(target_draw_no: int):
 @router.post("/strategy_x/shape/{target_draw_no}")
 async def api_v13_strategy_x_shape(target_draw_no: int):
     """전략 X 3뇌: 역사적 당첨 형태 기반 조합 생성 (5세트)."""
+    if ARMY4_SX_BRAINS_REMOVED:
+        return removed_response()
     from app.lotto4.brains.shape_brain import generate_shape_sets
 
     return generate_shape_sets(int(target_draw_no))
@@ -1349,6 +1361,8 @@ async def api_v13_strategy_x_shape(target_draw_no: int):
 @router.post("/strategy_x/hyena/{target_draw_no}")
 async def api_v13_strategy_x_hyena(target_draw_no: int):
     """전략 X 하이에나: 5뇌 walk-forward 조율 (5세트) + 예측 로깅."""
+    if ARMY4_SX_BRAINS_REMOVED:
+        return removed_response()
     from app.lotto4.strategy_x_logging import generate_and_save_hyena
 
     return generate_and_save_hyena(int(target_draw_no))
@@ -1357,6 +1371,8 @@ async def api_v13_strategy_x_hyena(target_draw_no: int):
 @router.post("/strategy_x/cooccur/{target_draw_no}")
 async def api_v13_strategy_x_cooccur(target_draw_no: int):
     """전략 X 5뇌: 동반출현 체인 기반 조합 생성 (5세트) + 예측 로깅."""
+    if ARMY4_SX_BRAINS_REMOVED:
+        return removed_response()
     from app.lotto4.strategy_x_logging import generate_and_save_cooccur
 
     return generate_and_save_cooccur(int(target_draw_no))
@@ -1365,6 +1381,8 @@ async def api_v13_strategy_x_cooccur(target_draw_no: int):
 @router.post("/strategy_x/recommend/{target_draw_no}")
 async def api_v13_strategy_x_recommend(target_draw_no: int):
     """전략 X 4뇌: 1~3뇌 신호 종합 최종 추천 (5세트) + 예측 로깅."""
+    if ARMY4_SX_BRAINS_REMOVED:
+        return removed_response()
     from app.lotto4.strategy_x_logging import generate_and_save_recommend
 
     return generate_and_save_recommend(int(target_draw_no))
