@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `7f31af6` · WORK=`IDLE`
-- 지금: **양산前** · 금액뇌앞채움 APPLY_OK
-- 직전: 1237세트분산 DISCUSS_OK
+- HEAD: `820770f` · WORK=`IDLE`
+- 지금: **양산前** · 3뇌앞채움 APPLY_OK
+- 직전: 금액뇌앞채움 APPLY_OK
 - BOOT다음: 형 선택 1건(테스트로또패치) / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌앞채움 APPLY_OK(`score_union`+ALIGN·캐시1235·게이트E iso·리필200). 형 선택 1건(`B1캐시warm`/`B3스위치끄기`/`숙제 켜`/`휠 APPLY`). 재탕·1237예측 금지. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 3뇌앞채움 APPLY_OK(review유지+markov/stat E iso·리필각200). 형 선택 1건(`B1캐시warm`/`B3스위치끄기`/`숙제 켜`/`휠 APPLY`). 재탕·1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
