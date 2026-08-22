@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `ae4164f` · WORK=`IDLE`
+1. **HEAD:** `a1e0434` · WORK=`IDLE`
 2. **지금:** **양산前** · 1237세트분산 DISCUSS_OK
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 1237세트분산 DISCUSS_OK(review pool합=당첨6·몰아주기1장=3맞·컨닝모으기금지). 형 선택 1건(`B1캐시warm`/`B3스위치끄기`/`숙제 켜`/`휠 APPLY`). 재탕·1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
