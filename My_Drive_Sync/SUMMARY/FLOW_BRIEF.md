@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `42bec95` · WORK=`IDLE`
+- HEAD: `3aa5317` · WORK=`IDLE`
 - 지금: **양산前** · leftover GENSPARK COMMIT_OK
 - 직전: 전체조합 극소패스 APPLY_OK
 - BOOT다음: 형 다음오더(다음 형태조각) / 1237예측아님
