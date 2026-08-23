@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-23 | 종료체크 leftover2 | GENSPARK HEAD핀 `3aa5317→fa402f7` | **COMMIT_OK** | (push후) |
+| 2026-08-23 | 종료체크 leftover2 | GENSPARK HEAD핀 `3aa5317→fa402f7` | **COMMIT_OK** | 446789e |
 | 2026-08-23 | 종료체크 leftover | GENSPARK+R37 HEAD핀 commit+push | **COMMIT_OK** | 42bec95 |
 | 2026-08-23 | 전체조합극소패스 | 목록21245·엔진패스·극소열·몰아주기불변 | **APPLY_OK** | 8197830 |
 | 2026-08-23 | 종료체크 leftover | DRAW_SHAPE_KB 보고시각 commit+push | **COMMIT_OK** | d758ab3 |
