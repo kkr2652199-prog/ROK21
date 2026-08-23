@@ -4,12 +4,12 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 금액뇌 사람다음 DISCUSS_OK. 확률은 안 오름. 다음1건=A몰아주기(점수자름) / B5장라벨 / C금액정체 / D패턴(갭작음) / E타뇌. 1237예측 금지.
-- 완료조건: 형이 A~E 중 1건
-- 선행완료: K-REVIEW-HUMAN-NEXT DISCUSS_OK
+- 할일: **양산前**. 금액뇌극소표 1단계 APPLY_OK(814만전수+1237·거절=arith/gap8/split/zone15/run5·리필200). 다음=2단계 형1건(몰아주기에도 거절 / 다음조각). 1237예측 금지.
+- 완료조건: 형 2단계 1건
+- 선행완료: K-REVIEW-RARE-SLICE APPLY_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
-- 최종갱신: 2026-08-22
+- 최종갱신: 2026-08-23
 
 
 ## WORKSTATE
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260823_KREVIEW_RARE_SLICE.md
 - reports/20260822_KREVIEW_HUMAN_NEXT.md
 - reports/20260822_KREVIEW_REASONABLE_SET.md
 - reports/20260822_KREVIEW_INTENT_REREAD.md

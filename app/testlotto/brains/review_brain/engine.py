@@ -122,6 +122,16 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
             continue
         if not tier1_filter(pick):
             continue
+        try:
+            from app.testlotto.brains.review_brain.rare_slice import (
+                REVIEW_RARE_SLICE_WIRE,
+                is_step1_rare,
+            )
+
+            if REVIEW_RARE_SLICE_WIRE and is_step1_rare(pick):
+                continue
+        except Exception:  # noqa: BLE001
+            pass
         used.add(key)
         repeat_hits = [n for n in pick if n in prev_nums]
         conf = 60 + len(repeat_hits) * 5 + sum(rates.get(n, 0) for n in repeat_hits) * 20

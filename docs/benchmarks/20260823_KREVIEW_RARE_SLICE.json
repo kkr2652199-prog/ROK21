@@ -1,0 +1,211 @@
+{
+  "id": "K-REVIEW-RARE-SLICE",
+  "ts": "2026-08-23T11:19:51+09:00",
+  "verdict": "APPLY_OK",
+  "wire": true,
+  "table": {
+    "c45_6": 8145060,
+    "as_of_draws": 1237,
+    "step1_reject": [
+      "arith6",
+      "exact_123_434445",
+      "gap8",
+      "run5plus",
+      "run6",
+      "split_l3h3",
+      "zone_1_15"
+    ],
+    "rows": [
+      {
+        "key": "run6",
+        "space": 40,
+        "p_space": 4.91e-06,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 0.0061,
+        "step1_reject": true
+      },
+      {
+        "key": "run5plus",
+        "space": 1600,
+        "p_space": 0.00019644,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 0.243,
+        "step1_reject": true
+      },
+      {
+        "key": "run4plus",
+        "space": 32800,
+        "p_space": 0.00402698,
+        "draws": 6,
+        "p_draws": 0.00485044,
+        "null_e": 4.9814,
+        "step1_reject": false
+      },
+      {
+        "key": "run3plus",
+        "space": 458420,
+        "p_space": 0.05628197,
+        "draws": 67,
+        "p_draws": 0.0541633,
+        "null_e": 69.6208,
+        "step1_reject": false
+      },
+      {
+        "key": "arith6",
+        "space": 180,
+        "p_space": 2.21e-05,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 0.0273,
+        "step1_reject": true
+      },
+      {
+        "key": "gap8",
+        "space": 210,
+        "p_space": 2.578e-05,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 0.0319,
+        "step1_reject": true
+      },
+      {
+        "key": "gap7",
+        "space": 5005,
+        "p_space": 0.00061448,
+        "draws": 1,
+        "p_draws": 0.00080841,
+        "null_e": 0.7601,
+        "step1_reject": false
+      },
+      {
+        "key": "split_l3h3",
+        "space": 14400,
+        "p_space": 0.00176794,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 2.1869,
+        "step1_reject": true
+      },
+      {
+        "key": "exact_123_434445",
+        "space": 1,
+        "p_space": 1.2e-07,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 0.0002,
+        "step1_reject": true
+      },
+      {
+        "key": "zone_1_15",
+        "space": 5005,
+        "p_space": 0.00061448,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 0.7601,
+        "step1_reject": true
+      },
+      {
+        "key": "zone_16_30",
+        "space": 5005,
+        "p_space": 0.00061448,
+        "draws": 2,
+        "p_draws": 0.00161681,
+        "null_e": 0.7601,
+        "step1_reject": false
+      },
+      {
+        "key": "zone_31_45",
+        "space": 5005,
+        "p_space": 0.00061448,
+        "draws": 1,
+        "p_draws": 0.00080841,
+        "null_e": 0.7601,
+        "step1_reject": false
+      },
+      {
+        "key": "all_odd",
+        "space": 100947,
+        "p_space": 0.01239365,
+        "draws": 19,
+        "p_draws": 0.01535974,
+        "null_e": 15.3309,
+        "step1_reject": false
+      },
+      {
+        "key": "all_even",
+        "space": 74613,
+        "p_space": 0.00916052,
+        "draws": 17,
+        "p_draws": 0.01374293,
+        "null_e": 11.3316,
+        "step1_reject": false
+      },
+      {
+        "key": "span_lt15",
+        "space": 65065,
+        "p_space": 0.00798828,
+        "draws": 12,
+        "p_draws": 0.00970089,
+        "null_e": 9.8815,
+        "step1_reject": false
+      },
+      {
+        "key": "span_lt20",
+        "space": 329460,
+        "p_space": 0.04044906,
+        "draws": 57,
+        "p_draws": 0.04607922,
+        "null_e": 50.0355,
+        "step1_reject": false
+      }
+    ]
+  },
+  "gate": {
+    "elapsed_s": 4.5,
+    "n_ok": 100,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "changed": 2,
+    "rare_off": 0.02,
+    "rare_on": 0,
+    "hard_ok": true,
+    "iso_ok": true,
+    "design_ok": true,
+    "apply": true,
+    "off": {
+      "prefer": 0.007701,
+      "prize": 0.009157
+    },
+    "on": {
+      "prefer": 0.007799,
+      "prize": 0.009237
+    },
+    "delta_prefer": 9.8e-05,
+    "delta_prize": 8e-05
+  },
+  "refill": {
+    "ok": 200,
+    "fail": 0,
+    "lo": 1037,
+    "hi": 1236
+  },
+  "catalog": {
+    "catalog_total": 213,
+    "catalog_ultra_rare": 183,
+    "historical_ultra_hits": 1,
+    "historical_consec_6": 0,
+    "ultra_never_drawn": 183
+  },
+  "catalog_n": 213,
+  "hits_n": 1238,
+  "hard_db": {
+    "draws_max": 1238,
+    "pred_1237": 0,
+    "ledger_stat": 3000
+  },
+  "pred_1237": 0
+}
