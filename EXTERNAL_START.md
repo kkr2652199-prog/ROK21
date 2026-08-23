@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `fa402f7` |
+| HEAD(실측) | `e0808e4` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · leftover GENSPARK COMMIT_OK |
-| 직전 | 전체조합 극소패스 APPLY_OK |
-| BOOT다음 | 형 다음오더(다음 형태조각) / 1237예측아님 |
+| 지금 | **양산前** · 극소연속 틀 APPLY_OK(중립) |
+| 직전 | leftover GENSPARK COMMIT_OK |
+| BOOT다음 | 형 다음오더(특성 기어) / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. leftover GENSPARK COMMIT_OK. 전체조합 극소패스 APPLY_OK(목록21245·엔진패스·극소열). 몰아주기 미접촉. 다음오더=형(다음 형태조각). 1237예측 금지. |
+| NEXT1 할일 | **양산前**. 극소연속 틀 APPLY_OK(11서명·1600·읽기만·기어중립). 몰아주기/금액뇌특성 미접촉. 다음오더=형(특성 기어). 1237예측 금지. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=fa402f7 · 지금=**양산前** · leftover GENSPARK COMMIT_OK · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=e0808e4 · 지금=**양산前** · 극소연속 틀 APPLY_OK(중립) · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: fa402f7_
+_generated: e0808e4_
