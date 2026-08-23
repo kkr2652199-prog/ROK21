@@ -16,6 +16,8 @@
 | `RESTORE.md` 복귀5줄 | HEAD `62f2e1c` |
 | `EXTERNAL_AI_BOOTSTRAP.md` | 동일 핀 |
 
+2차 종료체크: 같은 파일 HEAD핀 `3aa5317→fa402f7` (R37 1커밋 지연). 재`sync` 없이 커밋해 워킹트리 leftover 루프를 끊음.
+
 `data/*.db` · `data/combos/*.db` · `backups/` · `tools/_analyze_draw640_snapshot.py` **미커밋**.
 
 ## 불변

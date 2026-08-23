@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `3aa5317` · WORK=`IDLE`
+1. **HEAD:** `fa402f7` · WORK=`IDLE`
 2. **지금:** **양산前** · leftover GENSPARK COMMIT_OK
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. leftover GENSPARK COMMIT_OK. 전체조합 극소패스 APPLY_OK(목록21245·엔진패스·극소열). 몰아주기 미접촉. 다음오더=형(다음 형태조각). 1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,6 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
+| 2026-08-23 | 종료체크 leftover2 | GENSPARK HEAD핀 `3aa5317→fa402f7` | **COMMIT_OK** | (push후) |
 | 2026-08-23 | 종료체크 leftover | GENSPARK+R37 HEAD핀 commit+push | **COMMIT_OK** | 42bec95 |
 | 2026-08-23 | 전체조합극소패스 | 목록21245·엔진패스·극소열·몰아주기불변 | **APPLY_OK** | 8197830 |
 | 2026-08-23 | 종료체크 leftover | DRAW_SHAPE_KB 보고시각 commit+push | **COMMIT_OK** | d758ab3 |
