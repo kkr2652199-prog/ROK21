@@ -4,7 +4,7 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 전체조합 극소패스 APPLY_OK(목록21245·엔진패스·극소열). 몰아주기 미접촉. 다음오더=형(다음 형태조각). 1237예측 금지.
+- 할일: **양산前**. leftover GENSPARK COMMIT_OK. 전체조합 극소패스 APPLY_OK(목록21245·엔진패스·극소열). 몰아주기 미접촉. 다음오더=형(다음 형태조각). 1237예측 금지.
 - 완료조건: 형 다음 오더 1건
 - 선행완료: K-REVIEW-RARE-PASS APPLY_OK
 - 승인필요: 형 1건
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260823_KENDCHECK_RARE_PASS_LEFTOVER.md
 - reports/20260823_KREVIEW_RARE_PASS.md
 - reports/20260823_KREVIEW_DRAW_SHAPE_KB.md
 - reports/20260823_KREVIEW_RARE_SLICE.md

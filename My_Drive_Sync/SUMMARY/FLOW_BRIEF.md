@@ -1,6 +1,6 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `cefac15` · WORK=`IDLE`
+- HEAD: `62f2e1c` · WORK=`IDLE`
 - 지금: **양산前** · 전체조합 극소패스 APPLY_OK
 - 직전: 회차형태지식 leftover COMMIT_OK
 - BOOT다음: 형 다음오더(다음 형태조각) / 1237예측아님
