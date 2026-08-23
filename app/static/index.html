@@ -514,7 +514,7 @@
             <h2>전체 조합</h2>
             <div id="acSummary" class="allcombos-summary" aria-live="polite"></div>
             <p class="stats-hint allcombos-disclaimer" role="note">
-              814만 전체 조합 열람·기록 도구입니다. 순위 No.1 ~ No.8,145,060 (총 8,145,060개). 개별 당첨확률은 동일합니다. 극소는 <strong>형태가 얇은 조각</strong>(등차·5연속·저3고3 등)이며 예측 엔진이 패스합니다. 데이터는 <code>data/combos/</code> 20분할 DB(로컬 전용)에서 읽습니다.
+              814만 전체 조합 열람·기록 도구입니다. 순위 No.1 ~ No.8,145,060 (총 8,145,060개). 개별 당첨확률은 동일합니다. 극소는 <strong>형태가 얇은 조각</strong>이며, 연속은 <strong>붙는 번호 run 서명</strong>(예: 5+1, 3+3)입니다. 예측 엔진이 표를 읽습니다. 데이터는 <code>data/combos/</code> 20분할 DB(로컬 전용)에서 읽습니다.
             </p>
             <div class="allcombos-quick-search">
               <label class="allcombos-quick-label">빠른 찾기
@@ -540,6 +540,10 @@
                 <input type="checkbox" id="acRareOnly" />
                 극소만 보기
               </label>
+              <label class="allcombos-toggle">
+                <input type="checkbox" id="acConsecOnly" />
+                극소연속만
+              </label>
               <label>페이지당
                 <select id="acPerPageSelect" aria-label="페이지당 행 수">
                   <option value="80">80</option>
@@ -558,6 +562,7 @@
                     <th class="ac-col-nums">6번호</th>
                     <th class="ac-col-sum">합</th>
                     <th class="ac-col-rare">극소</th>
+                    <th class="ac-col-consec">연속</th>
                     <th class="ac-col-win">당첨</th>
                   </tr>
                 </thead>

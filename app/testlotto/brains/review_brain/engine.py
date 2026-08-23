@@ -100,6 +100,16 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
             summarize_before(draws)
     except Exception:  # noqa: BLE001
         pass
+    try:
+        from app.testlotto.brains.review_brain.rare_consec import (
+            REVIEW_CONSEC_KB_READ,
+            summarize_before as consec_kb,
+        )
+
+        if REVIEW_CONSEC_KB_READ:
+            consec_kb(draws)
+    except Exception:  # noqa: BLE001
+        pass
 
     results: list[dict] = []
     used: set[tuple[int, ...]] = set()

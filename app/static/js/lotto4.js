@@ -1070,6 +1070,7 @@
   let _acPage = 1;
   let _acWinnersOnly = false;
   let _acRareOnly = false;
+  let _acConsecOnly = false;
   let _acHighlightNo = null;
   let _acLastItems = [];
 
@@ -1112,6 +1113,7 @@
     const total = Number(_acMeta.combo_total) || AC_TOTAL;
     const winners = Number(_acMeta.winners) || 0;
     const rareN = _acMeta.rare_pass && _acMeta.rare_pass.n != null ? Number(_acMeta.rare_pass.n) : 0;
+    const consecN = _acMeta.rare_consec && _acMeta.rare_consec.n != null ? Number(_acMeta.rare_consec.n) : 0;
     el.innerHTML =
       '<strong>전체 ' +
       acFmtRank(total) +
@@ -1120,7 +1122,8 @@
       ')' +
       (winners ? ' · 역대 당첨 <strong>' + acFmtRank(winners) + '건</strong>' : '') +
       (rareN ? ' · 극소형태 <strong>' + acFmtRank(rareN) + '건</strong>(엔진 패스)' : '') +
-      '<span class="allcombos-summary-hint">순위 번호(예: 3826391) 또는 6번호로 바로 찾을 수 있습니다. 개별 확률은 동일 · 극소=얇은 형태.</span>';
+      (consecN ? ' · 극소연속 <strong>' + acFmtRank(consecN) + '건</strong>(표·읽기)' : '') +
+      '<span class="allcombos-summary-hint">순위 번호(예: 3826391) 또는 6번호로 바로 찾을 수 있습니다. 개별 확률은 동일 · 극소=얇은 형태 · 연속=run서명.</span>';
   }
 
   async function acGoToComboResult(data, st) {
@@ -1157,7 +1160,7 @@
     if (!tbody) return;
     _acLastItems = items || [];
     if (!items || !items.length) {
-      tbody.innerHTML = '<tr><td colspan="5">데이터 없음</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="6">데이터 없음</td></tr>';
       return;
     }
     tbody.innerHTML = items
@@ -1199,6 +1202,13 @@
               escapeHtml((row.rare_tags || []).join(',')) +
               '</span>'
             : '—') +
+          '</td>' +
+          '<td class="ac-col-consec">' +
+          (row.consec_step1
+            ? '<span class="allcombos-rare-badge">' +
+              escapeHtml(String(row.consec_sig || '')) +
+              '</span>'
+            : escapeHtml(row.consec_sig && row.consec_sig !== '1+1+1+1+1+1' ? String(row.consec_sig) : '—')) +
           '</td>' +
           '<td class="ac-col-win">' +
           winCell +
@@ -1262,7 +1272,8 @@
       page: String(p),
       per_page: String(perPage),
     });
-    if (_acRareOnly) params.set('rare_only', 'true');
+    if (_acConsecOnly) params.set('consec_only', 'true');
+    else if (_acRareOnly) params.set('rare_only', 'true');
     else if (_acWinnersOnly) params.set('winners_only', 'true');
     try {
       const res = await fetch(API + '/allcombos?' + params.toString());
@@ -1277,7 +1288,18 @@
         const first = data.items && data.items[0] ? data.items[0].combo_no : '—';
         const last = data.items && data.items.length ? data.items[data.items.length - 1].combo_no : '—';
         const totalAll = Number(data.combo_total) || AC_TOTAL;
-        if (_acRareOnly) {
+        if (_acConsecOnly) {
+          st.textContent =
+            '극소연속만 · 페이지 ' +
+            data.page +
+            '/' +
+            data.total_pages +
+            ' (연속STEP1 ' +
+            acFmtRank(data.total) +
+            '건 / 전체 ' +
+            acFmtRank(totalAll) +
+            '개)';
+        } else if (_acRareOnly) {
           st.textContent =
             '극소만 · 페이지 ' +
             data.page +
@@ -1416,7 +1438,7 @@
       if (st) st.textContent = '보낼 데이터 없음';
       return;
     }
-    const lines = ['combo_no,num1,num2,num3,num4,num5,num6,total,is_winner,rare_pass,rare_tags,win_draw_no,win_date'];
+    const lines = ['combo_no,num1,num2,num3,num4,num5,num6,total,is_winner,rare_pass,rare_tags,consec_sig,consec_step1,win_draw_no,win_date'];
     items.forEach((row) => {
       const ns = row.numbers || [];
       lines.push(
@@ -1432,6 +1454,8 @@
           row.is_winner ? 1 : 0,
           row.rare_pass ? 1 : 0,
           (row.rare_tags || []).join('|'),
+          row.consec_sig || '',
+          row.consec_step1 ? 1 : 0,
           row.win_draw_no || '',
           row.win_date || '',
         ].join(','),
@@ -1451,8 +1475,11 @@
     _acWinnersOnly = !!(cb && cb.checked);
     if (_acWinnersOnly) {
       _acRareOnly = false;
+      _acConsecOnly = false;
       const r = document.getElementById('acRareOnly');
       if (r) r.checked = false;
+      const c = document.getElementById('acConsecOnly');
+      if (c) c.checked = false;
     }
     _acHighlightNo = null;
     _acPage = 1;
@@ -1464,8 +1491,27 @@
     _acRareOnly = !!(cb && cb.checked);
     if (_acRareOnly) {
       _acWinnersOnly = false;
+      _acConsecOnly = false;
       const w = document.getElementById('acWinnersOnly');
       if (w) w.checked = false;
+      const c = document.getElementById('acConsecOnly');
+      if (c) c.checked = false;
+    }
+    _acHighlightNo = null;
+    _acPage = 1;
+    loadAcPage(1);
+  }
+
+  function acToggleConsecOnly() {
+    const cb = document.getElementById('acConsecOnly');
+    _acConsecOnly = !!(cb && cb.checked);
+    if (_acConsecOnly) {
+      _acWinnersOnly = false;
+      _acRareOnly = false;
+      const w = document.getElementById('acWinnersOnly');
+      if (w) w.checked = false;
+      const r = document.getElementById('acRareOnly');
+      if (r) r.checked = false;
     }
     _acHighlightNo = null;
     _acPage = 1;
@@ -3433,6 +3479,7 @@
     document.getElementById('btnAcCsv')?.addEventListener('click', acExportCsv);
     document.getElementById('acWinnersOnly')?.addEventListener('change', acToggleWinnersOnly);
     document.getElementById('acRareOnly')?.addEventListener('change', acToggleRareOnly);
+    document.getElementById('acConsecOnly')?.addEventListener('change', acToggleConsecOnly);
     document.getElementById('acPerPageSelect')?.addEventListener('change', () => loadAcPage(1));
     document.getElementById('acQuickSearch')?.addEventListener('keydown', (ev) => {
       if (ev.key === 'Enter') acDoQuickSearch();

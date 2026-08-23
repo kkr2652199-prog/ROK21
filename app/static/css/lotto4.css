@@ -1394,6 +1394,12 @@ a {
   font-size: 0.75rem;
 }
 
+.allcombos-table .ac-col-consec {
+  width: 5.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
 .allcombos-table .ac-col-win {
   width: 11rem;
 }

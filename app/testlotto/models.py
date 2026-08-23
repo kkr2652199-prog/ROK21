@@ -113,6 +113,22 @@ def init_testlotto_db():
             updated_at         TEXT DEFAULT (datetime('now','localtime'))
         );
 
+        -- K-REVIEW-RARE-CONSEC: 연속 run 서명 표 + STEP1 조합(읽기 틀)
+        CREATE TABLE IF NOT EXISTS testlotto_rare_consec_classes (
+            sig                TEXT PRIMARY KEY,
+            space              INTEGER NOT NULL,
+            draws              INTEGER NOT NULL,
+            null_e             REAL NOT NULL,
+            step1              INTEGER NOT NULL DEFAULT 0,
+            updated_at         TEXT DEFAULT (datetime('now','localtime'))
+        );
+        CREATE TABLE IF NOT EXISTS testlotto_rare_consec_combos (
+            combo_no           INTEGER PRIMARY KEY,
+            nums_json          TEXT NOT NULL,
+            sig                TEXT NOT NULL,
+            updated_at         TEXT DEFAULT (datetime('now','localtime'))
+        );
+
         -- 회차·뇌별 복습 기록 (예측→채점→오답분석→피드백)
         CREATE TABLE IF NOT EXISTS testlotto_brain_review (
             id                 INTEGER PRIMARY KEY AUTOINCREMENT,

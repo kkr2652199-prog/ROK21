@@ -11,6 +11,7 @@ from itertools import combinations
 from typing import Any, Iterable
 
 from app.lotto4.combinadic import combo_to_no
+from app.testlotto.brains.review_brain.rare_consec import is_step1_consec, sig_key
 from app.testlotto.brains.review_brain.rare_slice import (
     STEP1_REJECT,
     is_step1_rare,
@@ -154,6 +155,8 @@ def page_items(offset: int, limit: int) -> list[dict[str, Any]]:
                 "win_date": None,
                 "rare_pass": True,
                 "rare_tags": [t for t in json.loads(r[2]) if t in STEP1_REJECT] or pass_tags(nums),
+                "consec_sig": sig_key(nums),
+                "consec_step1": is_step1_consec(nums),
             }
         )
     return out

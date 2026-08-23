@@ -1721,6 +1721,7 @@ async def api_v13_allcombos(
     count: int = Query(default=120, ge=1, le=500),
     winners_only: bool = Query(default=False),
     rare_only: bool = Query(default=False),
+    consec_only: bool = Query(default=False),
 ):
     """페이지네이션(page·per_page) 또는 start·count 윈도우."""
     from app.lotto4.all_combos_service import fetch_combo_page, fetch_combo_range, get_meta
@@ -1733,7 +1734,13 @@ async def api_v13_allcombos(
             **meta,
         }
     if page is not None:
-        return fetch_combo_page(page, per_page, winners_only=winners_only, rare_only=rare_only)
+        return fetch_combo_page(
+            page,
+            per_page,
+            winners_only=winners_only,
+            rare_only=rare_only,
+            consec_only=consec_only,
+        )
     return fetch_combo_range(start, count, winners_only=winners_only)
 
 

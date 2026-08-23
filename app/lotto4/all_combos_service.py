@@ -90,12 +90,14 @@ def _draw_sorted_nums(row: dict | sqlite3.Row) -> tuple[int, ...]:
 def row_to_item(row: sqlite3.Row | dict) -> dict[str, Any]:
     d = dict(row)
     nums = [int(d[f"num{i}"]) for i in range(1, 7)]
+    from app.testlotto.brains.review_brain.rare_consec import is_step1_consec, sig_key
     from app.testlotto.brains.review_brain.rare_slice import is_step1_rare, pass_tags
 
     stored = d.get("rare_pass")
     rare = bool(int(stored)) if stored is not None else is_step1_rare(nums)
     if not rare:
         rare = is_step1_rare(nums)
+    csig = sig_key(nums)
     return {
         "combo_no": int(d["combo_no"]),
         "numbers": nums,
@@ -105,6 +107,8 @@ def row_to_item(row: sqlite3.Row | dict) -> dict[str, Any]:
         "win_date": d.get("win_date"),
         "rare_pass": rare,
         "rare_tags": pass_tags(nums) if rare else [],
+        "consec_sig": csig,
+        "consec_step1": is_step1_consec(nums),
     }
 
 
@@ -189,6 +193,7 @@ def get_meta() -> dict[str, Any]:
         "storage": str(COMBOS_DIR),
         "storage_note": "로컬 전용 - Drive 동기화 금지",
         "rare_pass": _rare_pass_meta(),
+        "rare_consec": _rare_consec_meta(),
     }
 
 
@@ -199,6 +204,15 @@ def _rare_pass_meta() -> dict[str, Any]:
         return {"n": catalog_count()}
     except Exception:  # noqa: BLE001
         return {"n": None}
+
+
+def _rare_consec_meta() -> dict[str, Any]:
+    try:
+        from app.testlotto.brains.review_brain.rare_consec_store import catalog_count
+
+        return {"n": catalog_count(), "gear": "neutral"}
+    except Exception:  # noqa: BLE001
+        return {"n": None, "gear": "neutral"}
 
 
 def ensure_rare_pass_columns(conn: sqlite3.Connection) -> None:
@@ -486,9 +500,32 @@ def fetch_combo_page(
     *,
     winners_only: bool = False,
     rare_only: bool = False,
+    consec_only: bool = False,
 ) -> dict[str, Any]:
     page = max(1, int(page))
     per_page = max(1, min(int(per_page), 500))
+    if consec_only:
+        from app.testlotto.brains.review_brain.rare_consec_store import (
+            catalog_count as consec_count,
+            page_items as consec_items,
+        )
+
+        offset = (page - 1) * per_page
+        items = consec_items(offset, per_page)
+        total = consec_count()
+        total_pages = max(1, (total + per_page - 1) // per_page) if total else 0
+        return {
+            "items": items,
+            "page": page,
+            "per_page": per_page,
+            "total_pages": total_pages,
+            "total": total,
+            "winners_only": False,
+            "rare_only": False,
+            "consec_only": True,
+            "combo_total": TOTAL_COMBOS,
+            "start_combo_no": items[0]["combo_no"] if items else None,
+        }
     if rare_only:
         from app.testlotto.brains.review_brain.rare_pass_store import catalog_count, page_items
 

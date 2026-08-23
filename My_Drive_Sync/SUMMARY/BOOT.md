@@ -5,9 +5,9 @@
 원본 kweon(`D:\3kweon` · 6124 · `kkr2652199-prog/kweon` · HEAD `264de3c`) **동결 — 쓰기·push·신규작업 금지**.
 
 ## 1) 현재 스레드 (매턴 이 섹션만 3줄 갱신)
-- 지금: **양산前** · leftover GENSPARK COMMIT_OK
-- 직전: 전체조합 극소패스 APPLY_OK
-- 다음: 형 다음오더(다음 형태조각) / 1237예측아님
+- 지금: **양산前** · 극소연속 틀 APPLY_OK(중립)
+- 직전: leftover GENSPARK COMMIT_OK
+- 다음: 형 다음오더(특성 기어) / 1237예측아님
 
 ## 2) 숫자 (근거 파일 없으면 미확인)
 | 지표 | 값 | 출처 |

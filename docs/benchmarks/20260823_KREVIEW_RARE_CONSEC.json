@@ -1,0 +1,153 @@
+{
+  "id": "K-REVIEW-RARE-CONSEC",
+  "ts": "2026-08-23T12:32:04+09:00",
+  "verdict": "APPLY_OK",
+  "rebuild": {
+    "classes": 11,
+    "combos": 1600,
+    "unique": 1600,
+    "sig_counts": {
+      "6": 40,
+      "5+1": 1560
+    },
+    "step1": [
+      "5+1",
+      "6"
+    ]
+  },
+  "smoke": {
+    "dno": 1236,
+    "n": 10,
+    "same": true,
+    "first": [
+      6,
+      7,
+      11,
+      24,
+      26,
+      42
+    ]
+  },
+  "hard": {
+    "draws_max": 1238,
+    "pred_1237": 0,
+    "pred_1239": 0,
+    "classes": 11,
+    "combos": 1600
+  },
+  "table": {
+    "c45_6": 8145060,
+    "as_of_draws": 1238,
+    "step1": [
+      "5+1",
+      "6"
+    ],
+    "gear": "neutral",
+    "pass_wire": false,
+    "rows": [
+      {
+        "sig": "6",
+        "space": 40,
+        "p_space": 4.91e-06,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 0.0061,
+        "step1": true
+      },
+      {
+        "sig": "5+1",
+        "space": 1560,
+        "p_space": 0.00019153,
+        "draws": 0,
+        "p_draws": 0.0,
+        "null_e": 0.2371,
+        "step1": true
+      },
+      {
+        "sig": "4+2",
+        "space": 1560,
+        "p_space": 0.00019153,
+        "draws": 1,
+        "p_draws": 0.00080775,
+        "null_e": 0.2371,
+        "step1": false
+      },
+      {
+        "sig": "4+1+1",
+        "space": 29640,
+        "p_space": 0.00363902,
+        "draws": 5,
+        "p_draws": 0.00403877,
+        "null_e": 4.5051,
+        "step1": false
+      },
+      {
+        "sig": "3+3",
+        "space": 780,
+        "p_space": 9.576e-05,
+        "draws": 1,
+        "p_draws": 0.00080775,
+        "null_e": 0.1186,
+        "step1": false
+      },
+      {
+        "sig": "3+2+1",
+        "space": 59280,
+        "p_space": 0.00727803,
+        "draws": 8,
+        "p_draws": 0.00646204,
+        "null_e": 9.0102,
+        "step1": false
+      },
+      {
+        "sig": "3+1+1+1",
+        "space": 365560,
+        "p_space": 0.04488119,
+        "draws": 52,
+        "p_draws": 0.04200323,
+        "null_e": 55.5629,
+        "step1": false
+      },
+      {
+        "sig": "2+2+2",
+        "space": 9880,
+        "p_space": 0.00121301,
+        "draws": 6,
+        "p_draws": 0.00484653,
+        "null_e": 1.5017,
+        "step1": false
+      },
+      {
+        "sig": "2+2+1+1",
+        "space": 548340,
+        "p_space": 0.06732179,
+        "draws": 82,
+        "p_draws": 0.06623586,
+        "null_e": 83.3444,
+        "step1": false
+      },
+      {
+        "sig": "2+1+1+1+1",
+        "space": 3290040,
+        "p_space": 0.40393073,
+        "draws": 484,
+        "p_draws": 0.39095315,
+        "null_e": 500.0662,
+        "step1": false
+      },
+      {
+        "sig": "1+1+1+1+1+1",
+        "space": 3838380,
+        "p_space": 0.47125251,
+        "draws": 599,
+        "p_draws": 0.48384491,
+        "null_e": 583.4106,
+        "step1": false
+      }
+    ]
+  },
+  "repack": "untouched",
+  "gear": "neutral",
+  "pass_wire": false,
+  "flatten_untouched": true
+}
