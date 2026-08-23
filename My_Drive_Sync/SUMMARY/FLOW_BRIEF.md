@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `4f80561` · WORK=`IDLE`
-- 지금: **양산前** · 금액뇌극소표 1단계 APPLY_OK
-- 직전: 금액뇌 사람다음 DISCUSS_OK
-- BOOT다음: 형 2단계 1건 / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 금액뇌극소표 1단계 APPLY_OK(814만전수+1237·거절=arith/gap8/split/zone15/run5·리필200). 다음=2단계 형1건(몰아주기에도 거절 / 다음조각). 1237예측 금지. (승인=형 1건)
+- HEAD: `eceb3c1` · WORK=`IDLE`
+- 지금: **양산前** · 회차형태지식 1오더 APPLY_OK
+- 직전: 금액뇌극소표 1단계 APPLY_OK
+- BOOT다음: 형 다음오더(전체조합 반영은 아직) / 1237예측아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 회차형태지식 1오더 APPLY_OK(1–1238 회차별 저장·엔진읽기만·발권불변). 몰아주기/전체조합 미접촉. 다음오더=형(전체조합 반영은 아직). 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

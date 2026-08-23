@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `4f80561` |
+| HEAD(실측) | `eceb3c1` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 금액뇌극소표 1단계 APPLY_OK |
-| 직전 | 금액뇌 사람다음 DISCUSS_OK |
-| BOOT다음 | 형 2단계 1건 / 1237예측아님 |
+| 지금 | **양산前** · 회차형태지식 1오더 APPLY_OK |
+| 직전 | 금액뇌극소표 1단계 APPLY_OK |
+| BOOT다음 | 형 다음오더(전체조합 반영은 아직) / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 금액뇌극소표 1단계 APPLY_OK(814만전수+1237·거절=arith/gap8/split/zone15/run5·리필200). 다음=2단계 형1건(몰아주기에도 거절 / 다음조각). 1237예측 금지. |
+| NEXT1 할일 | **양산前**. 회차형태지식 1오더 APPLY_OK(1–1238 회차별 저장·엔진읽기만·발권불변). 몰아주기/전체조합 미접촉. 다음오더=형(전체조합 반영은 아직). 1237예측 금지. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=4f80561 · 지금=**양산前** · 금액뇌극소표 1단계 APPLY_OK · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=eceb3c1 · 지금=**양산前** · 회차형태지식 1오더 APPLY_OK · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 4f80561_
+_generated: eceb3c1_
