@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `62f2e1c` · WORK=`IDLE`
-- 지금: **양산前** · 전체조합 극소패스 APPLY_OK
-- 직전: 회차형태지식 leftover COMMIT_OK
+- HEAD: `42bec95` · WORK=`IDLE`
+- 지금: **양산前** · leftover GENSPARK COMMIT_OK
+- 직전: 전체조합 극소패스 APPLY_OK
 - BOOT다음: 형 다음오더(다음 형태조각) / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 전체조합 극소패스 APPLY_OK(목록21245·엔진패스·극소열). 몰아주기 미접촉. 다음오더=형(다음 형태조각). 1237예측 금지. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. leftover GENSPARK COMMIT_OK. 전체조합 극소패스 APPLY_OK(목록21245·엔진패스·극소열). 몰아주기 미접촉. 다음오더=형(다음 형태조각). 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
