@@ -90,36 +90,19 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
     prev_nums = sorted_nums(prev)
     rates = repeat_rate_after_draw(draws)
     weights = build_review_weights(draws, adj)
+    kb7: dict = {}
     try:
-        from app.testlotto.brains.review_brain.draw_shape_kb import (
-            REVIEW_SHAPE_KB_READ,
-            summarize_before,
+        from app.testlotto.brains.review_brain.kb7_future import (
+            REVIEW_KB7_WIRE,
+            apply_kb7_weights,
+            collect_before,
         )
 
-        if REVIEW_SHAPE_KB_READ:
-            summarize_before(draws)
+        kb7 = collect_before(draws)
+        if REVIEW_KB7_WIRE:
+            weights = apply_kb7_weights(weights, kb7)
     except Exception:  # noqa: BLE001
-        pass
-    try:
-        from app.testlotto.brains.review_brain.rare_consec import (
-            REVIEW_CONSEC_KB_READ,
-            summarize_before as consec_kb,
-        )
-
-        if REVIEW_CONSEC_KB_READ:
-            consec_kb(draws)
-    except Exception:  # noqa: BLE001
-        pass
-    try:
-        from app.testlotto.brains.review_brain.draw_assoc import (
-            REVIEW_ASSOC_KB_READ,
-            summarize_before as assoc_kb,
-        )
-
-        if REVIEW_ASSOC_KB_READ:
-            assoc_kb(draws)
-    except Exception:  # noqa: BLE001
-        pass
+        kb7 = {}
 
     results: list[dict] = []
     used: set[tuple[int, ...]] = set()
@@ -157,6 +140,16 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
             from app.testlotto.brains.review_brain.rare_slice import REVIEW_RARE_SLICE_WIRE
 
             if REVIEW_RARE_SLICE_WIRE and should_pass(pick):
+                continue
+        except Exception:  # noqa: BLE001
+            pass
+        try:
+            from app.testlotto.brains.review_brain.kb7_future import (
+                REVIEW_KB7_WIRE,
+                should_skip_kb7,
+            )
+
+            if REVIEW_KB7_WIRE and should_skip_kb7(pick, kb7):
                 continue
         except Exception:  # noqa: BLE001
             pass

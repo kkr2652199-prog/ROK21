@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 패치브리핑 DISCUSS_OK. 맞는번호 패스·다른번호 세부패치 1건. 시동자동화 아직아님. 1237예측 금지.
-- 완료조건: 형 확인 후 오더 1건
-- 선행완료: K-REVIEW-PATCH-BRIEF DISCUSS_OK
+- 할일: **양산前**. 1·2·3패스. 7번자리 APPLY_OK(기어OFF). 다음=4상세/5상세/6상세/7한소스 중 형 1건. 1237예측 금지.
+- 완료조건: 형 오더 1건
+- 선행완료: K-REVIEW-KB7-SLOT APPLY_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-23
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260823_KREVIEW_KB7_SLOT.md
 - reports/20260823_KREVIEW_PATCH_BRIEF.md
 - reports/20260823_KREVIEW_DRAW_ASSOC.md
 - reports/20260823_KREVIEW_RARE_CONSEC.md

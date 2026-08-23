@@ -1,0 +1,27 @@
+{
+  "id": "K-REVIEW-KB7-SLOT",
+  "ts": "2026-08-23T13:26:29+09:00",
+  "verdict": "APPLY_OK",
+  "pass_123": true,
+  "smoke": {
+    "dno": 1236,
+    "same_off_on": true,
+    "n": 10,
+    "bundle_as_of": 1235,
+    "has_shape": true,
+    "has_consec": true,
+    "has_assoc": true,
+    "shape_n": 1235,
+    "assoc_n": 1235,
+    "consec_as_of": 1235
+  },
+  "hard": {
+    "draws_max": 1238,
+    "pred_1237": 0,
+    "pred_1239": 0,
+    "wire": false
+  },
+  "repack": "untouched",
+  "predict": false,
+  "automation": false
+}
