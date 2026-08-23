@@ -110,6 +110,16 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
             consec_kb(draws)
     except Exception:  # noqa: BLE001
         pass
+    try:
+        from app.testlotto.brains.review_brain.draw_assoc import (
+            REVIEW_ASSOC_KB_READ,
+            summarize_before as assoc_kb,
+        )
+
+        if REVIEW_ASSOC_KB_READ:
+            assoc_kb(draws)
+    except Exception:  # noqa: BLE001
+        pass
 
     results: list[dict] = []
     used: set[tuple[int, ...]] = set()

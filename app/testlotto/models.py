@@ -129,6 +129,23 @@ def init_testlotto_db():
             updated_at         TEXT DEFAULT (datetime('now','localtime'))
         );
 
+        -- K-REVIEW-DRAW-ASSOC: 회차 당첨 6+보너스 번호 연관 (읽기 틀)
+        CREATE TABLE IF NOT EXISTS testlotto_draw_assoc (
+            draw_no            INTEGER PRIMARY KEY,
+            draw_date          TEXT,
+            nums_json          TEXT NOT NULL,
+            bonus              INTEGER NOT NULL,
+            combo_rank_814     INTEGER,
+            pairs_json         TEXT NOT NULL,
+            bonus_links_json   TEXT NOT NULL,
+            consec_pairs_json  TEXT NOT NULL,
+            carry_json         TEXT NOT NULL,
+            similar4_json      TEXT NOT NULL,
+            similar5_json      TEXT NOT NULL,
+            share3_count       INTEGER NOT NULL DEFAULT 0,
+            updated_at         TEXT DEFAULT (datetime('now','localtime'))
+        );
+
         -- 회차·뇌별 복습 기록 (예측→채점→오답분석→피드백)
         CREATE TABLE IF NOT EXISTS testlotto_brain_review (
             id                 INTEGER PRIMARY KEY AUTOINCREMENT,
