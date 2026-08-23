@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-23 KST  
-📌 사유: **[CURSOR] K-REVIEW-DRAW-ASSOC** — 1–1237 당첨 6+보너스 연관 저장. 읽기만. 자동화 아님
+📌 사유: **[CURSOR] K-REVIEW-PATCH-BRIEF** — 통작업 6부품 브리핑. 시동미완·보완필요. APPLY없음
 
-📌 직전: **[CURSOR] K-REVIEW-RARE-CONSEC** — 연속 run 서명 표. 기어 중립. 발권불변
+📌 직전: **[CURSOR] K-REVIEW-DRAW-ASSOC** — 1–1237 당첨 6+보너스 연관 저장. 읽기만. 자동화 아님
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-PATCH-BRIEF (형질문)** | **DISCUSS_OK** · APPLY**없음** · 예측**없음**. 통작업 6부품: 1합리장**켜짐·사용** · 2연번평탄**켜짐·사용** · 3극소패스21245**켜짐·사용** · 4형태지식1238**읽기만·미사용** · 5극소연속1600**읽기만·PASS OFF** · 6연관1237**읽기만·미사용**. 예측경로=`_get_draws_before` 타깃미만. 학습진화 EVOLVE_AUTO **OFF**. fetch-latest는 assoc/kb **미재구축**. 시동자동화 **아직아님·보완필요**. 몰아주기 미접촉. · `reports/20260823_KREVIEW_PATCH_BRIEF.md` · `app/testlotto/brains/review_brain/engine.py` |
 | **K-REVIEW-DRAW-ASSOC (형GO)** | **APPLY_OK** · 통작업 세부·수동패치. 예측**없음**·자동화**아님**. 구간 **1–1237**(DB MAX**1238**은 표 밖). 회차별 본번호6+보너스1 · 본번호쌍15 · 보너스연결6 · 연번쌍 · 이월 · 비슷조합(본번호겹침·순서무관). 표 `testlotto_draw_assoc` **1237**/0. 4겹 회 **989** · 무방향쌍 **1001**. 5겹 회 **42** · 무방향쌍 **21**(예 4↔258 `14 27 30 31 40`). 1237=`10 20 23 34 37 40`+36 · 4겹상대 **1회**(겹 `10 23 37 40`) · 5겹 **0** · 3겹건수 **29**. 본번호쌍종류 **990** · 상위 11-21×**34**. 연번쌍평균 **0.6605** · 이월평균 **0.8246**. 엔진 `summarize_before` as_of=타깃이전(비슷상대도 as_of이하). 가중/거절/몰아주기 **불변**. 1236 pool **동일 True**. pred_1237**0** · pred_1239**0**. 롤백=`REVIEW_ASSOC_KB_READ=False`. · `docs/benchmarks/20260823_KREVIEW_DRAW_ASSOC.json` · `reports/20260823_KREVIEW_DRAW_ASSOC.md` · `app/testlotto/brains/review_brain/draw_assoc.py` |
 | **K-REVIEW-RARE-CONSEC (형GO)** | **APPLY_OK** · 순수엔진 틀. 814만 연속서명 11종 전수+당첨1–1238. STEP1(0회·얇음)=`6` **40** · `5+1` **1560**(합1600=기존 run5/6). `4+2`당첨1(292) · `3+3`당첨1(1152) · `2+2+2`당첨6 **제외**. 표 `testlotto_rare_consec_classes` 11 · `testlotto_rare_consec_combos` 1600. 엔진 `summarize_before` 읽기. `REVIEW_CONSEC_PASS_WIRE=False`(기어중립). flatten/가중/몰아주기 **불변**. 1236 pool **동일 True**. pred_1237**0** · pred_1239**0** · MAX**1238**. 롤백=`REVIEW_CONSEC_KB_READ=False`. · `docs/benchmarks/20260823_KREVIEW_RARE_CONSEC.json` · `reports/20260823_KREVIEW_RARE_CONSEC.md` · `app/testlotto/brains/review_brain/rare_consec.py` |
 | **K-ENDCHECK-LEFTOVER (형종료체크)** | **COMMIT_OK** · 1차 `42bec95` HEAD핀 `cefac15→62f2e1c`. 2차 동일파일 `3aa5317→fa402f7`(R37 1커밋지연). 코드/엔진 **불변**. `data/*.db`·`data/combos/*.db` **미커밋**. pred_1237**0**. · `reports/20260823_KENDCHECK_RARE_PASS_LEFTOVER.md` |

@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 회차연관 1–1237 APPLY_OK(읽기만·자동화아님). 몰아주기/금액뇌특성 미접촉. 다음오더=형(특성 기어). 1237예측 금지.
-- 완료조건: 형 다음 오더 1건
-- 선행완료: K-REVIEW-DRAW-ASSOC APPLY_OK
+- 할일: **양산前**. 패치브리핑 DISCUSS_OK. 맞는번호 패스·다른번호 세부패치 1건. 시동자동화 아직아님. 1237예측 금지.
+- 완료조건: 형 확인 후 오더 1건
+- 선행완료: K-REVIEW-PATCH-BRIEF DISCUSS_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-23
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260823_KREVIEW_PATCH_BRIEF.md
 - reports/20260823_KREVIEW_DRAW_ASSOC.md
 - reports/20260823_KREVIEW_RARE_CONSEC.md
 - reports/20260823_KENDCHECK_RARE_PASS_LEFTOVER.md
