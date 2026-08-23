@@ -1,0 +1,39 @@
+{
+  "id": "K-REVIEW-RARE-PASS",
+  "ts": "2026-08-23T12:05:33+09:00",
+  "verdict": "APPLY_OK",
+  "rebuild": {
+    "ok": 21245,
+    "unique": 21245,
+    "tag_counts": {
+      "run6": 40,
+      "run5plus": 1600,
+      "arith6": 180,
+      "zone_1_15": 5005,
+      "split_l3h3": 14400,
+      "exact_123_434445": 1,
+      "gap8": 210
+    }
+  },
+  "stamp": {
+    "parts": 20,
+    "marked": 21245
+  },
+  "smoke": {
+    "dno": 1236,
+    "n": 10,
+    "rare_in_pool": 0
+  },
+  "hard": {
+    "draws_max": 1238,
+    "pred_1237": 0,
+    "pred_1239": 0,
+    "pass_n": 21245
+  },
+  "repack": "untouched",
+  "idea_dual3": {
+    "space": 780,
+    "draws": 1,
+    "in_step1": false
+  }
+}

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import logging
 import math
 import sqlite3
@@ -88,13 +89,22 @@ def _draw_sorted_nums(row: dict | sqlite3.Row) -> tuple[int, ...]:
 
 def row_to_item(row: sqlite3.Row | dict) -> dict[str, Any]:
     d = dict(row)
+    nums = [int(d[f"num{i}"]) for i in range(1, 7)]
+    from app.testlotto.brains.review_brain.rare_slice import is_step1_rare, pass_tags
+
+    stored = d.get("rare_pass")
+    rare = bool(int(stored)) if stored is not None else is_step1_rare(nums)
+    if not rare:
+        rare = is_step1_rare(nums)
     return {
         "combo_no": int(d["combo_no"]),
-        "numbers": [int(d[f"num{i}"]) for i in range(1, 7)],
+        "numbers": nums,
         "total": int(d["total"]),
         "is_winner": bool(int(d.get("is_winner") or 0)),
         "win_draw_no": d.get("win_draw_no"),
         "win_date": d.get("win_date"),
+        "rare_pass": rare,
+        "rare_tags": pass_tags(nums) if rare else [],
     }
 
 
@@ -178,7 +188,53 @@ def get_meta() -> dict[str, Any]:
         "parts_ready": parts_ready,
         "storage": str(COMBOS_DIR),
         "storage_note": "로컬 전용 - Drive 동기화 금지",
+        "rare_pass": _rare_pass_meta(),
     }
+
+
+def _rare_pass_meta() -> dict[str, Any]:
+    try:
+        from app.testlotto.brains.review_brain.rare_pass_store import catalog_count
+
+        return {"n": catalog_count()}
+    except Exception:  # noqa: BLE001
+        return {"n": None}
+
+
+def ensure_rare_pass_columns(conn: sqlite3.Connection) -> None:
+    cols = {r[1] for r in conn.execute(f"PRAGMA table_info({TABLE})")}
+    if "rare_pass" not in cols:
+        conn.execute(f"ALTER TABLE {TABLE} ADD COLUMN rare_pass INTEGER NOT NULL DEFAULT 0")
+    if "rare_tags" not in cols:
+        conn.execute(f"ALTER TABLE {TABLE} ADD COLUMN rare_tags TEXT")
+
+
+def stamp_rare_pass_on_parts(entries: list[dict[str, Any]]) -> dict[str, Any]:
+    """극소 목록을 20분할 DB에 표시. git 커밋 대상 아님."""
+    by_part: dict[int, list[dict[str, Any]]] = {p: [] for p in range(1, PART_COUNT + 1)}
+    for e in entries:
+        cno = int(e["combo_no"])
+        by_part[part_no_for_combo(cno)].append(e)
+    marked = 0
+    parts = 0
+    for p, rows in by_part.items():
+        if not part_db_path(p).is_file():
+            continue
+        conn = open_part(p)
+        try:
+            ensure_rare_pass_columns(conn)
+            conn.execute(f"UPDATE {TABLE} SET rare_pass=0, rare_tags=NULL WHERE rare_pass=1")
+            for e in rows:
+                conn.execute(
+                    f"UPDATE {TABLE} SET rare_pass=1, rare_tags=? WHERE combo_no=?",
+                    (json.dumps(e.get("tags") or [], ensure_ascii=False), int(e["combo_no"])),
+                )
+                marked += 1
+            conn.commit()
+            parts += 1
+        finally:
+            conn.close()
+    return {"parts": parts, "marked": marked}
 
 
 def _mark_winners_on_part(part_no: int, draws: list[sqlite3.Row]) -> int:
@@ -429,9 +485,28 @@ def fetch_combo_page(
     per_page: int,
     *,
     winners_only: bool = False,
+    rare_only: bool = False,
 ) -> dict[str, Any]:
     page = max(1, int(page))
     per_page = max(1, min(int(per_page), 500))
+    if rare_only:
+        from app.testlotto.brains.review_brain.rare_pass_store import catalog_count, page_items
+
+        offset = (page - 1) * per_page
+        items = page_items(offset, per_page)
+        total = catalog_count()
+        total_pages = max(1, (total + per_page - 1) // per_page) if total else 0
+        return {
+            "items": items,
+            "page": page,
+            "per_page": per_page,
+            "total_pages": total_pages,
+            "total": total,
+            "winners_only": False,
+            "rare_only": True,
+            "combo_total": TOTAL_COMBOS,
+            "start_combo_no": items[0]["combo_no"] if items else None,
+        }
     if winners_only:
         offset = (page - 1) * per_page
         items = _fetch_winners_page(offset, per_page)

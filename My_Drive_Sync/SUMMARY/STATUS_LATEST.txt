@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-22 KST  
-📌 사유: **[CURSOR] K-REVIEW-DRAW-SHAPE-KB** — 당첨 회차별 형태지식 저장. 엔진읽기만. 전체조합 아직
+📅 최종 갱신: 2026-08-23 KST  
+📌 사유: **[CURSOR] K-REVIEW-RARE-PASS** — 전체조합 극소목록 저장·엔진패스. 몰아주기 미접촉
 
-📌 직전: **[CURSOR] K-REVIEW-RARE-SLICE** — 814만 극소형태 전수+1237표. 1단계거절. 리필200
+📌 직전: **[CURSOR] K-REVIEW-DRAW-SHAPE-KB** — 당첨 회차별 형태지식 저장. 엔진읽기만. 전체조합 아직
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-RARE-PASS (형GO)** | **APPLY_OK** · 금액뇌만. 814만 개별확률 동일. 얇은형태=패스목록. unique **21245**(run6 40·run5plus 1600·arith6 180·gap8 210·split_l3h3 14400·zone_1_15 5005·exact1). 표 `testlotto_rare_pass_combos`. 엔진 `should_pass`. 전체조합 극소열·극소만보기. 20분할 스탬프 20/21245(로컬·git안함). 1236 pool rare **0**/10. 이중3연속 780·당첨1 → **목록제외**. 몰아주기 **미접촉**. pred_1237**0** · pred_1239**0** · MAX**1238**. 롤백=`REVIEW_RARE_SLICE_WIRE=False`. · `docs/benchmarks/20260823_KREVIEW_RARE_PASS.json` · `reports/20260823_KREVIEW_RARE_PASS.md` · `app/testlotto/brains/review_brain/rare_pass_store.py` |
 | **K-REVIEW-DRAW-SHAPE-KB (형GO)** | **APPLY_OK**. 1번째오더=로또조회 당첨 회차별 형태 저장. 전체조합 **미반영**. 몰아주기 **미접촉**. 생성가중/거절 **불변**. 테이블 `testlotto_draw_shape_kb` **1238**/0 (DB MAX **1238**=2026-08-22 `2 13 18 32 38 42`+22 · 형은 1237까지 말함). 구 `draw_features`도 **1238**. 엔진 `summarize_before(draws)` 읽기 as_of=타깃이전. 1236 발권 동일 **True**. pred_1237**0**. 롤백=`REVIEW_SHAPE_KB_READ=False`. · `docs/benchmarks/20260823_KREVIEW_DRAW_SHAPE_KB.json` · `reports/20260823_KREVIEW_DRAW_SHAPE_KB.md` · `app/testlotto/brains/review_brain/draw_shape_kb.py` |
 | **K-REVIEW-RARE-SLICE (형GO)** | **APPLY_OK** · 금액뇌만. 개별확률=1/8145060. 814만 전수+당첨1237 형태표 저장. 1단계거절(1237=0·얇은조각)=arith6 **180** · gap8 **210** · split_l3h3 **14400**(널E2.187) · zone_1_15 **5005** · run5/6 · exact1. run4는 당첨6회라 안 자름. 게이트 n100 peek**0** 변경 **2** Δprefer **+0.000098** Δprize **+0.000080** iso. rare장 **0.02→0**. refill **200**/0. catalog 재기록 **213**/hits **1237**. pred_1237**0**. 롤백=`REVIEW_RARE_SLICE_WIRE=False`. · `docs/benchmarks/20260823_KREVIEW_RARE_SLICE.json` · `reports/20260823_KREVIEW_RARE_SLICE.md` · `app/testlotto/brains/review_brain/rare_slice.py` |
 | **K-REVIEW-HUMAN-NEXT (형질문)** | **DISCUSS_OK** · READ-ONLY · APPLY **없음**. 공정하면 장당 1/C(45,6). 맞힐확률 개선 클레임 금지. 사람개선=한장처럼·5장완전한추측·맞으면금액. 당첨1237 vs 금액뇌 skill1000: 홀3 **0.3339/0.327** · span **32.692/32.308** — 홀짝·폭 갭작음. 남은이상한층=몰아주기 `score5`(상위30을6개씩). 1236 몰아주기 #1=`[15,27,34,37,40,43]` #2=`[13,14,18,20,39,45]`. 다음1건 A몰아주기 / B5장라벨 / C금액정체 / D패턴 / E타뇌. pred_1237**0**. · `reports/20260822_KREVIEW_HUMAN_NEXT.md` |

@@ -1389,6 +1389,11 @@ a {
   text-align: center;
 }
 
+.allcombos-table .ac-col-rare {
+  width: 8.5rem;
+  font-size: 0.75rem;
+}
+
 .allcombos-table .ac-col-win {
   width: 11rem;
 }
@@ -1416,6 +1421,13 @@ a {
   color: var(--gold, #d4af37);
   font-size: 0.82rem;
   font-weight: 600;
+}
+
+.allcombos-rare-badge {
+  color: #f59e0b;
+  font-size: 0.72rem;
+  font-weight: 600;
+  word-break: break-all;
 }
 
 /* ----- 대시보드 카운트다운 · 순위 드롭다운 ----- */

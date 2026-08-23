@@ -105,6 +105,14 @@ def init_testlotto_db():
             updated_at         TEXT DEFAULT (datetime('now','localtime'))
         );
 
+        -- K-REVIEW-RARE-PASS: 814만 중 극소형태 조합(엔진 패스)
+        CREATE TABLE IF NOT EXISTS testlotto_rare_pass_combos (
+            combo_no           INTEGER PRIMARY KEY,
+            nums_json          TEXT NOT NULL,
+            tags_json          TEXT NOT NULL,
+            updated_at         TEXT DEFAULT (datetime('now','localtime'))
+        );
+
         -- 회차·뇌별 복습 기록 (예측→채점→오답분석→피드백)
         CREATE TABLE IF NOT EXISTS testlotto_brain_review (
             id                 INTEGER PRIMARY KEY AUTOINCREMENT,

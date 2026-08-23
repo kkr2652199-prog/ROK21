@@ -55,6 +55,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
 - `20260823_KREVIEW_DRAW_SHAPE_KB` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260823_KREVIEW_DRAW_SHAPE_KB.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260823_KREVIEW_DRAW_SHAPE_KB.md
+- `20260823_KREVIEW_RARE_PASS` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260823_KREVIEW_RARE_PASS.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260823_KREVIEW_RARE_PASS.md
 - `20260823_KREVIEW_RARE_SLICE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260823_KREVIEW_RARE_SLICE.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260823_KREVIEW_RARE_SLICE.md
 - `20260822_KREVIEW_REASONABLE_SET` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260822_KREVIEW_REASONABLE_SET.json

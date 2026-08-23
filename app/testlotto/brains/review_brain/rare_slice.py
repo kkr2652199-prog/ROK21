@@ -131,6 +131,11 @@ def tags(nums: list[int]) -> list[str]:
     return out
 
 
+def pass_tags(nums: list[int]) -> list[str]:
+    """패스 목록에 쓰는 STEP1 태그만 (run4plus·span 등 제외)."""
+    return [t for t in tags(nums) if t in STEP1_REJECT]
+
+
 def is_step1_rare(nums: list[int]) -> bool:
     return bool(STEP1_REJECT.intersection(tags(nums)))
 

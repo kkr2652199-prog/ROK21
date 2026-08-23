@@ -133,12 +133,10 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
         if not tier1_filter(pick):
             continue
         try:
-            from app.testlotto.brains.review_brain.rare_slice import (
-                REVIEW_RARE_SLICE_WIRE,
-                is_step1_rare,
-            )
+            from app.testlotto.brains.review_brain.rare_pass_store import should_pass
+            from app.testlotto.brains.review_brain.rare_slice import REVIEW_RARE_SLICE_WIRE
 
-            if REVIEW_RARE_SLICE_WIRE and is_step1_rare(pick):
+            if REVIEW_RARE_SLICE_WIRE and should_pass(pick):
                 continue
         except Exception:  # noqa: BLE001
             pass
