@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `77b8b4f` · WORK=`IDLE`
-- 지금: **양산前** · 회차연관 1–1237 APPLY_OK(읽기만)
-- 직전: 극소연속 틀 APPLY_OK(중립)
-- BOOT다음: 형 다음오더(특성 기어) / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 회차연관 1–1237 APPLY_OK(읽기만·자동화아님). 몰아주기/금액뇌특성 미접촉. 다음오더=형(특성 기어). 1237예측 금지. (승인=형 1건)
+- HEAD: `b4f1757` · WORK=`IDLE`
+- 지금: **양산前** · 패치브리핑 DISCUSS_OK(보완필요)
+- 직전: 회차연관 1–1237 APPLY_OK(읽기만)
+- BOOT다음: 형 확인(맞으면패스/다르면세부) / 1237예측아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 패치브리핑 DISCUSS_OK. 맞는번호 패스·다른번호 세부패치 1건. 시동자동화 아직아님. 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
