@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `5e0d7cf` · WORK=`IDLE`
-- 지금: **양산前** · 회차형태지식 1오더 APPLY_OK
-- 직전: 금액뇌극소표 1단계 APPLY_OK
+- HEAD: `d758ab3` · WORK=`IDLE`
+- 지금: **양산前** · 회차형태지식 leftover COMMIT_OK
+- 직전: 회차형태지식 1오더 APPLY_OK
 - BOOT다음: 형 다음오더(전체조합 반영은 아직) / 1237예측아님
 - NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 회차형태지식 1오더 APPLY_OK(1–1238 회차별 저장·엔진읽기만·발권불변). 몰아주기/전체조합 미접촉. 다음오더=형(전체조합 반영은 아직). 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05

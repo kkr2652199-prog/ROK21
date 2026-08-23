@@ -10,11 +10,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `5e0d7cf` |
+| HEAD(실측) | `d758ab3` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 회차형태지식 1오더 APPLY_OK |
-| 직전 | 금액뇌극소표 1단계 APPLY_OK |
+| 지금 | **양산前** · 회차형태지식 leftover COMMIT_OK |
+| 직전 | 회차형태지식 1오더 APPLY_OK |
 | BOOT다음 | 형 다음오더(전체조합 반영은 아직) / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
 | NEXT1 할일 | **양산前**. 회차형태지식 1오더 APPLY_OK(1–1238 회차별 저장·엔진읽기만·발권불변). 몰아주기/전체조합 미접촉. 다음오더=형(전체조합 반영은 아직). 1237예측 금지. |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=5e0d7cf · 지금=**양산前** · 회차형태지식 1오더 APPLY_OK · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=d758ab3 · 지금=**양산前** · 회차형태지식 leftover COMMIT_OK · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 5e0d7cf_
+_generated: d758ab3_
