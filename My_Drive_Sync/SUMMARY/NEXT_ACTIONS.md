@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 금액뇌극소표 1단계 APPLY_OK(814만전수+1237·거절=arith/gap8/split/zone15/run5·리필200). 다음=2단계 형1건(몰아주기에도 거절 / 다음조각). 1237예측 금지.
-- 완료조건: 형 2단계 1건
-- 선행완료: K-REVIEW-RARE-SLICE APPLY_OK
+- 할일: **양산前**. 회차형태지식 1오더 APPLY_OK(1–1238 회차별 저장·엔진읽기만·발권불변). 몰아주기/전체조합 미접촉. 다음오더=형(전체조합 반영은 아직). 1237예측 금지.
+- 완료조건: 형 다음 오더 1건
+- 선행완료: K-REVIEW-DRAW-SHAPE-KB APPLY_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-23
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260823_KREVIEW_DRAW_SHAPE_KB.md
 - reports/20260823_KREVIEW_RARE_SLICE.md
 - reports/20260822_KREVIEW_HUMAN_NEXT.md
 - reports/20260822_KREVIEW_REASONABLE_SET.md

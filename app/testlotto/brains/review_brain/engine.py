@@ -90,6 +90,16 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
     prev_nums = sorted_nums(prev)
     rates = repeat_rate_after_draw(draws)
     weights = build_review_weights(draws, adj)
+    try:
+        from app.testlotto.brains.review_brain.draw_shape_kb import (
+            REVIEW_SHAPE_KB_READ,
+            summarize_before,
+        )
+
+        if REVIEW_SHAPE_KB_READ:
+            summarize_before(draws)
+    except Exception:  # noqa: BLE001
+        pass
 
     results: list[dict] = []
     used: set[tuple[int, ...]] = set()

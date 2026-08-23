@@ -1,0 +1,61 @@
+{
+  "id": "K-REVIEW-DRAW-SHAPE-KB",
+  "ts": "2026-08-23T11:46:31+09:00",
+  "verdict": "APPLY_OK",
+  "summary": {
+    "ok": 1238,
+    "fail": 0,
+    "lo": 1,
+    "hi": 1238,
+    "n_src": 1238
+  },
+  "feat_upsert": 1238,
+  "read": {
+    "n": 1238,
+    "as_of": 1238,
+    "tag_hist": {
+      "run3plus": 67,
+      "span_lt20": 57,
+      "gap7": 1,
+      "zone_16_30": 2,
+      "span_lt15": 12,
+      "all_even": 17,
+      "run4plus": 6,
+      "all_odd": 19,
+      "zone_31_45": 1
+    },
+    "odd_hist": {
+      "0": 17,
+      "1": 83,
+      "2": 279,
+      "3": 413,
+      "4": 328,
+      "5": 99,
+      "6": 19
+    },
+    "run_hist": {
+      "1": 599,
+      "2": 572,
+      "3": 61,
+      "4": 6
+    },
+    "sum_mean": 138.2851,
+    "span_mean": 32.6979,
+    "ac_mean": 8.0016
+  },
+  "smoke": {
+    "dno": 1236,
+    "same": true,
+    "n": 10
+  },
+  "hard": {
+    "draws_max": 1238,
+    "pred_1237": 0,
+    "kb_n": 1238,
+    "kb_min": 1,
+    "kb_max": 1238,
+    "feat_n": 1238
+  },
+  "all_combos": "untouched",
+  "repack": "untouched"
+}

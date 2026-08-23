@@ -93,6 +93,18 @@ def init_testlotto_db():
             updated_at         TEXT DEFAULT (datetime('now','localtime'))
         );
 
+        -- K-REVIEW-DRAW-SHAPE-KB: 회차 당첨 형태 지식 (전체조합 반영 전)
+        CREATE TABLE IF NOT EXISTS testlotto_draw_shape_kb (
+            draw_no            INTEGER PRIMARY KEY,
+            draw_date          TEXT,
+            nums_json          TEXT NOT NULL,
+            bonus              INTEGER,
+            combo_rank_814     INTEGER,
+            features_json      TEXT NOT NULL,
+            tags_json          TEXT NOT NULL,
+            updated_at         TEXT DEFAULT (datetime('now','localtime'))
+        );
+
         -- 회차·뇌별 복습 기록 (예측→채점→오답분석→피드백)
         CREATE TABLE IF NOT EXISTS testlotto_brain_review (
             id                 INTEGER PRIMARY KEY AUTOINCREMENT,
