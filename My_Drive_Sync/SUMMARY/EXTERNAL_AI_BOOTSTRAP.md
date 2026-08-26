@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `6760cf7` |
+| HEAD(실측) | `f9ccfd5` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 5세분 net0 HOLD_NO_WIRE |
-| 직전 | 4번저울 라이브 ON APPLY_OK |
-| BOOT다음 | 형 1건(6상세) / 1237예측아님 |
+| 지금 | **양산前** · 6번몰림 p0.006 HOLD_NO_WIRE |
+| 직전 | 5세분 net0 HOLD_NO_WIRE |
+| BOOT다음 | 형 1건 / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 5세분 net=0 HOLD_NO_WIRE(PASS 켜지 않음·읽기만). 다음=6상세 형 1건. 1237예측 금지. |
+| NEXT1 할일 | **양산前**. 6번 crowd N20K3 net=6 p=0.006 HOLD_NO_WIRE(PASS 안켬·읽기만). 다음=형 1건(6잔여유사도 별도 또는 7번). 1237예측 금지. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=6760cf7 · 지금=**양산前** · 5세분 net0 HOLD_NO_WIRE · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=f9ccfd5 · 지금=**양산前** · 6번몰림 p0.006 HOLD_NO_WIRE · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
