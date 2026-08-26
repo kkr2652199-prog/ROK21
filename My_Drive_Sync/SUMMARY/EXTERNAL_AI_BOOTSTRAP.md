@@ -8,11 +8,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `b938160` |
+| HEAD(실측) | `b0d3a58` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 4번저울 APPLY_OK_HOLD_LIVE |
-| 직전 | 7번자리 APPLY_OK(기어OFF) |
+| 지금 | **양산前** · 종료체크 20260827보고서 보충 |
+| 직전 | 4번저울 APPLY_OK_HOLD_LIVE |
 | BOOT다음 | 형 1건(4번 켜기 / 5상세 / 6상세) / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
 | NEXT1 할일 | **양산前**. 4번저울 코드 APPLY_OK_HOLD_LIVE. `REVIEW_SHAPE_KB_WEIGHT_WIRE=False`. 게이트 iso통과. 다음=켜기GO / 5상세 / 6상세 중 형 1건. 1237예측 금지. |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=b938160 · 지금=**양산前** · 4번저울 APPLY_OK_HOLD_LIVE · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=b0d3a58 · 지금=**양산前** · 종료체크 20260827보고서 보충 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->

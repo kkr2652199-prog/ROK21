@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `b938160` · WORK=`IDLE`
-- 지금: **양산前** · 4번저울 APPLY_OK_HOLD_LIVE
-- 직전: 7번자리 APPLY_OK(기어OFF)
+- HEAD: `b0d3a58` · WORK=`IDLE`
+- 지금: **양산前** · 종료체크 20260827보고서 보충
+- 직전: 4번저울 APPLY_OK_HOLD_LIVE
 - BOOT다음: 형 1건(4번 켜기 / 5상세 / 6상세) / 1237예측아님
 - NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 4번저울 코드 APPLY_OK_HOLD_LIVE. `REVIEW_SHAPE_KB_WEIGHT_WIRE=False`. 게이트 iso통과. 다음=켜기GO / 5상세 / 6상세 중 형 1건. 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05

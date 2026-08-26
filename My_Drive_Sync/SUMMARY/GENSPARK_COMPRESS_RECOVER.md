@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`b938160` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`b0d3a58` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=b938160]
+[ROK21 젠스파크 압축복구 · HEAD=b0d3a58]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,9 +29,9 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: b938160 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · 4번저울 APPLY_OK_HOLD_LIVE
-- 직전: 7번자리 APPLY_OK(기어OFF)
+- HEAD: b0d3a58 · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 종료체크 20260827보고서 보충
+- 직전: 4번저울 APPLY_OK_HOLD_LIVE
 - BOOT다음: 형 1건(4번 켜기 / 5상세 / 6상세) / 1237예측아님
 - NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 4번저울 코드 APPLY_OK_HOLD_LIVE. `REVIEW_SHAPE_KB_WEIGHT_WIRE=False`. 게이트 iso통과. 다음=켜기GO / 5상세 / 6상세 중 형 1건. 1237예측 금지.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=b938160 · 지금=**양산前** · 4번저울 APPLY_OK_HOLD_LIVE · 다음=K-AWAIT-HYUNG-NEXT
+1. 첫줄: [복귀] HEAD=b0d3a58 · 지금=**양산前** · 종료체크 20260827보고서 보충 · 다음=K-AWAIT-HYUNG-NEXT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: b938160_
+_generated: b0d3a58_
