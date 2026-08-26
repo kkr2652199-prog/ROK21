@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `fb28d08` · WORK=`IDLE`
-- 지금: **양산前** · 7번자리 APPLY_OK(기어OFF)
-- 직전: 패치브리핑 DISCUSS_OK(1·2·3패스)
-- BOOT다음: 형 1건(4/5/6상세 또는 7한소스) / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 1·2·3패스. 7번자리 APPLY_OK(기어OFF). 다음=4상세/5상세/6상세/7한소스 중 형 1건. 1237예측 금지. (승인=형 1건)
+- HEAD: `b938160` · WORK=`IDLE`
+- 지금: **양산前** · 4번저울 APPLY_OK_HOLD_LIVE
+- 직전: 7번자리 APPLY_OK(기어OFF)
+- BOOT다음: 형 1건(4번 켜기 / 5상세 / 6상세) / 1237예측아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 4번저울 코드 APPLY_OK_HOLD_LIVE. `REVIEW_SHAPE_KB_WEIGHT_WIRE=False`. 게이트 iso통과. 다음=켜기GO / 5상세 / 6상세 중 형 1건. 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
