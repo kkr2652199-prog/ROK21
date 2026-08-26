@@ -1,0 +1,143 @@
+{
+  "id": "K-REVIEW-ASSOC-CROWD-NETCHECK",
+  "ts": "2026-08-27T04:45:31+09:00",
+  "verdict": "HOLD_NO_WIRE",
+  "s0": {
+    "def": {
+      "crowd_pair_count": "한 장 15쌍 중 as_of이전 상위N 본번호쌍에 든 개수",
+      "hot_n_primary": 20,
+      "k_primary": 3,
+      "almost_none": 0.02,
+      "mains_only": true,
+      "bonus_used": false
+    },
+    "dmax": 1238,
+    "pred_1237": 0,
+    "pred_1239": 0,
+    "assoc_n": 1237,
+    "elapsed_s": 27.7,
+    "n_ok": 100,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "bonus_in": 0,
+    "n_errors": 0,
+    "n_sets": 1000,
+    "review_by_hot_n": {
+      "10": {
+        "n": 1000,
+        "mean": 0.16,
+        "hist": {
+          "0": 851,
+          "1": 139,
+          "2": 9,
+          "3": 1
+        },
+        "p_ge_k": {
+          "2": 0.01,
+          "3": 0.001,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      "20": {
+        "n": 1000,
+        "mean": 0.387,
+        "hist": {
+          "0": 677,
+          "1": 266,
+          "2": 51,
+          "3": 5,
+          "4": 1
+        },
+        "p_ge_k": {
+          "2": 0.057,
+          "3": 0.006,
+          "4": 0.001,
+          "5": 0.0
+        }
+      },
+      "30": {
+        "n": 1000,
+        "mean": 0.548,
+        "hist": {
+          "0": 581,
+          "1": 311,
+          "2": 90,
+          "3": 15,
+          "4": 3
+        },
+        "p_ge_k": {
+          "2": 0.108,
+          "3": 0.018,
+          "4": 0.003,
+          "5": 0.0
+        }
+      }
+    },
+    "actual_by_hot_n": {
+      "10": {
+        "n": 100,
+        "mean": 0.14,
+        "hist": {
+          "0": 86,
+          "1": 14
+        },
+        "p_ge_k": {
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      "20": {
+        "n": 100,
+        "mean": 0.33,
+        "hist": {
+          "0": 73,
+          "1": 22,
+          "2": 4,
+          "3": 1
+        },
+        "p_ge_k": {
+          "2": 0.05,
+          "3": 0.01,
+          "4": 0.0,
+          "5": 0.0
+        }
+      },
+      "30": {
+        "n": 100,
+        "mean": 0.48,
+        "hist": {
+          "0": 62,
+          "1": 30,
+          "2": 6,
+          "3": 2
+        },
+        "p_ge_k": {
+          "2": 0.08,
+          "3": 0.02,
+          "4": 0.0,
+          "5": 0.0
+        }
+      }
+    },
+    "primary_p_ge_k": 0.006,
+    "primary_net_n": 6,
+    "flags": {
+      "REVIEW_ASSOC_KB_READ": true,
+      "PREDICT_USE_BONUS_LINKS": false,
+      "REVIEW_CONSEC_PASS_WIRE": false
+    }
+  },
+  "s1": "HOLD_NO_WIRE",
+  "reason": "주정의 N=20 K=3 net_n=6 p=0.006 (거의없음 기준 0.02). 라이브 배선 금지. 읽기만 유지.",
+  "s2": "skipped",
+  "apply": false,
+  "live_pass": false,
+  "repack": "untouched",
+  "all_combos": "untouched",
+  "automation": false,
+  "predict": false,
+  "similarity_idea": "excluded"
+}

@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 5세분 net=0 HOLD_NO_WIRE(PASS 켜지 않음·읽기만). 다음=6상세 형 1건. 1237예측 금지.
+- 할일: **양산前**. 6번 crowd N20K3 net=6 p=0.006 HOLD_NO_WIRE(PASS 안켬·읽기만). 다음=형 1건(6잔여유사도 별도 또는 7번). 1237예측 금지.
 - 완료조건: 형 오더 1건
-- 선행완료: K-REVIEW-RARE-CONSEC-NETCHECK HOLD_NO_WIRE
+- 선행완료: K-REVIEW-ASSOC-CROWD-NETCHECK HOLD_NO_WIRE
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-27
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260827_KREVIEW_ASSOC_CROWD_NETCHECK.md
 - reports/20260827_KREVIEW_RARE_CONSEC_NETCHECK.md
 - reports/20260827_KREVIEW_SHAPE_KB_LIVE_ON.md
 - reports/20260827_KENDCHECK_GAP.md
