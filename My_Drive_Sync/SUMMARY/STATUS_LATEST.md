@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-27 KST  
-📌 사유: **[CURSOR] K-REVIEW-ASSOC-CROWD-NETCHECK** — 6번 핫쌍몰림 net p=0.006. 배선 안 함. 읽기만 유지
+📌 사유: **[CURSOR] K-REVIEW-SIMILAR-NEXT-VERIFY** — 직전닮은과거→다음 널. 배선 안 함. 모니터만
 
-📌 직전: **[CURSOR] K-REVIEW-RARE-CONSEC-NETCHECK** — 5세분 net=0. 배선 안 함. 읽기만 유지
+📌 직전: **[CURSOR] K-REVIEW-ASSOC-CROWD-NETCHECK** — 6번 핫쌍몰림 net p=0.006. 배선 안 함. 읽기만 유지
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-SIMILAR-NEXT-VERIFY (형GO)** | **HOLD_NO_WIRE** · S0 READ-ONLY · S2 **안함** · WIRE **신설안함**. 정의 sim=직접겹침+이웃(±1) · 버킷0–5 · 닮음≥4. walk-forward T**2–1237** n_T**1236** peek**0**. 신규 thr4 **11**. 주정의 h=1 top6 n**1225** mean_hits **0.776327** 널**0.80** Δ **−0.023673** z **−1.057** p_greater **0.855**. hist 0–6 `509/511/176/28/1/0/0`. 무작위과거통제 mean **0.795**. h=5 Δ**+0.00886** p**0.347** · h=10 Δ**+0.00363** p**0.436**. 직접4겹만 n617 mean **0.755** p**0.922**. pred_1237**0** · MAX**1238** · assoc**1237**. 모니터=기존 similar4/5+본JSON · 신설테이블없음. 몰아주기/자동화/1237예측 **없음**. 롤백=WIRE해당없음 · READ `REVIEW_ASSOC_KB_READ=False`. · `docs/benchmarks/20260827_KREVIEW_SIMILAR_NEXT_VERIFY.json` · `reports/20260827_KREVIEW_SIMILAR_NEXT_VERIFY.md` · `tools/_k_review_similar_next_verify.py` |
 | **K-REVIEW-ASSOC-CROWD-NETCHECK (형GO)** | **HOLD_NO_WIRE** · S0 READ-ONLY · S2 **안함** · CROWD_PASS **신설안함**. 정의 crowd=한 장 15쌍 중 as_of이전 상위N 본번호쌍. 주정의 **N=20 K=3**. 1137–1236 n100 peek**0** sets**1000** bonus_in**0**. review hist N20 `0:677 1:266 2:51 3:5 4:1` 평균 **0.387**. p(≥3)=**0.006** net **6**/1000. N10 p(≥3)=0.001 · N30 p(≥3)=0.018(<0.02). 당첨모니터 N20 평균 0.33 p(≥3)=0.01. `REVIEW_ASSOC_KB_READ=True` 유지 · `PREDICT_USE_BONUS_LINKS=False`. 핫쌍가중/유사도/몰아주기/자동화/1237예측 **없음**. pred_1237**0** · MAX**1238** · assoc**1237**. 롤백=`REVIEW_ASSOC_KB_READ=False`. · `docs/benchmarks/20260827_KREVIEW_ASSOC_CROWD_NETCHECK.json` · `reports/20260827_KREVIEW_ASSOC_CROWD_NETCHECK.md` · `tools/_k_review_assoc_crowd_netcheck.py` |
 | **K-REVIEW-RARE-CONSEC-NETCHECK (형GO)** | **HOLD_NO_WIRE** · S0 READ-ONLY · S2 **안함** · PASS **안켬**. 5-바탕 `21245` · 5-세분 STEP1 `1600`(6=40·5+1=1560). 겹침 **1600** · **net 0** · 바탕만 19645. 세분⊆바탕. net 당첨1–1238 **0**. 가상추가패스 1137–1236 n100 peek**0** sets**1000** extra **0**/비율**0.0**. 출력 rare/consec STEP1 **0**(이미 3번이 거름). `REVIEW_CONSEC_PASS_WIRE=False` 유지 · `REVIEW_CONSEC_KB_READ=True`(모니터). pred_1237**0**. 몰아주기/자동화 미접촉. · `docs/benchmarks/20260827_KREVIEW_RARE_CONSEC_NETCHECK.json` · `reports/20260827_KREVIEW_RARE_CONSEC_NETCHECK.md` |
 | **K-REVIEW-SHAPE-KB-LIVE-ON (형GO)** | **APPLY_OK**. `REVIEW_SHAPE_KB_WEIGHT_WIRE=True` · review만. 재검증 1137–1236 n**100** peek**0** bonus_in**0** changed**100** Δprefer **−0.000631** Δprize **−0.001106** iso**True**. rare/run4 OFF=ON **0/0**. 1236 pool n**10** sample1 `[6,7,11,24,26,42]` peek**False**. pred_1237**0** · pred_1239**0** · MAX**1238**. 몰아주기/전체조합/자동화 **미접촉**. 롤백=`False`. · `docs/benchmarks/20260827_KREVIEW_SHAPE_KB_LIVE_ON.json` · `reports/20260827_KREVIEW_SHAPE_KB_LIVE_ON.md` · `app/testlotto/brains/review_brain/draw_shape_kb.py` |
