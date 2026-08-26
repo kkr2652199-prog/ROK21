@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 4번저울 라이브 ON APPLY_OK. `REVIEW_SHAPE_KB_WEIGHT_WIRE=True`. 다음=5상세/6상세 중 형 1건. 1237예측 금지.
+- 할일: **양산前**. 5세분 net=0 HOLD_NO_WIRE(PASS 켜지 않음·읽기만). 다음=6상세 형 1건. 1237예측 금지.
 - 완료조건: 형 오더 1건
-- 선행완료: K-REVIEW-SHAPE-KB-LIVE-ON APPLY_OK
+- 선행완료: K-REVIEW-RARE-CONSEC-NETCHECK HOLD_NO_WIRE
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-27
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260827_KREVIEW_RARE_CONSEC_NETCHECK.md
 - reports/20260827_KREVIEW_SHAPE_KB_LIVE_ON.md
 - reports/20260827_KENDCHECK_GAP.md
 - reports/20260827_KREVIEW_SHAPE_KB_WIRE.md

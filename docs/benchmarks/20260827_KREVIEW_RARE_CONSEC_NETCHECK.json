@@ -1,0 +1,56 @@
+{
+  "id": "K-REVIEW-RARE-CONSEC-NETCHECK",
+  "ts": "2026-08-27T04:36:35+09:00",
+  "verdict": "HOLD_NO_WIRE",
+  "s0": {
+    "pass_n": 21245,
+    "consec_n": 1600,
+    "overlap_n": 1600,
+    "net_n": 0,
+    "only_pass_n": 19645,
+    "equal_sets": false,
+    "consec_subset_of_pass": true,
+    "net_hits_1_1238": [],
+    "net_hit_n": 0,
+    "dmax": 1238,
+    "pred_1237": 0,
+    "pred_1239": 0,
+    "n_draws_1238": 1238,
+    "n_cls": 11,
+    "consec_sig_counts": {
+      "5+1": 1560,
+      "6": 40
+    }
+  },
+  "virtual": {
+    "elapsed_s": 19.7,
+    "n_ok": 100,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "bonus_in": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "n_sets": 1000,
+    "n_rare_pass_in_output": 0,
+    "n_consec_step1_in_output": 0,
+    "n_both": 0,
+    "n_extra_consec_not_rare": 0,
+    "extra_pass_rate": 0.0,
+    "live_consec_pass_wire": false,
+    "meaningful_extra": false
+  },
+  "s1": "HOLD_NO_WIRE",
+  "reason": "net=0 (STEP1 1600이 rare_pass에 전부 포함) · 추가 패스 0. 라이브 배선 금지. 읽기(세분 라벨)만 유지.",
+  "s2": "skipped",
+  "flags": {
+    "REVIEW_RARE_SLICE_WIRE": true,
+    "REVIEW_CONSEC_KB_READ": true,
+    "REVIEW_CONSEC_PASS_WIRE": false
+  },
+  "apply": false,
+  "live_pass": false,
+  "repack": "untouched",
+  "all_combos": "untouched",
+  "automation": false,
+  "predict": false
+}
