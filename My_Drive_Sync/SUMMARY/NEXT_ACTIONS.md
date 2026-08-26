@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 4번저울 코드 APPLY_OK_HOLD_LIVE. `REVIEW_SHAPE_KB_WEIGHT_WIRE=False`. 게이트 iso통과. 다음=켜기GO / 5상세 / 6상세 중 형 1건. 1237예측 금지.
+- 할일: **양산前**. 4번저울 라이브 ON APPLY_OK. `REVIEW_SHAPE_KB_WEIGHT_WIRE=True`. 다음=5상세/6상세 중 형 1건. 1237예측 금지.
 - 완료조건: 형 오더 1건
-- 선행완료: K-REVIEW-SHAPE-KB-WIRE APPLY_OK_HOLD_LIVE
+- 선행완료: K-REVIEW-SHAPE-KB-LIVE-ON APPLY_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-27
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260827_KREVIEW_SHAPE_KB_LIVE_ON.md
 - reports/20260827_KENDCHECK_GAP.md
 - reports/20260827_KREVIEW_SHAPE_KB_WIRE.md
 - reports/20260826_KREVIEW_SHAPE_KB_WIRE.md

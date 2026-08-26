@@ -26,9 +26,9 @@ from app.testlotto.models import get_lotto_db, init_testlotto_db
 
 # K-REVIEW-DRAW-SHAPE-KB (20260823) — 예측 전 읽기. 롤백: False
 REVIEW_SHAPE_KB_READ: bool = True
-# K-REVIEW-SHAPE-KB-WIRE (20260826) — 저울(가점). 칼/거절 아님. 라이브 켜기=형 확인.
-# 롤백: False
-REVIEW_SHAPE_KB_WEIGHT_WIRE: bool = False
+# K-REVIEW-SHAPE-KB-WIRE (20260826) — 저울(가점). 칼/거절 아님.
+# K-REVIEW-SHAPE-KB-LIVE-ON (20260827) — 형 GO 라이브 ON. 롤백: False
+REVIEW_SHAPE_KB_WEIGHT_WIRE: bool = True
 
 TABLE = "testlotto_draw_shape_kb"
 _LAST_READ: dict[str, Any] | None = None

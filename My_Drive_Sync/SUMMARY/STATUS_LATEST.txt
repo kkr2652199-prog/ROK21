@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-27 KST  
-📌 사유: **[CURSOR] K-ENDCHECK-GAP** — 20260827_*.md 부재 확인 후 reports/·커서보고서 보충. 코드불변
+📌 사유: **[CURSOR] K-REVIEW-SHAPE-KB-LIVE-ON** — 4번 저울 라이브 ON. 재검증 iso통과. 1236발권10
 
-📌 직전: **[CURSOR] K-REVIEW-SHAPE-KB-WIRE** — 4번 저울 코드. 게이트 통과. 라이브 OFF. 보너스=본번호6
+📌 직전: **[CURSOR] K-ENDCHECK-GAP** — 20260827_*.md 부재 확인 후 reports/·커서보고서 보충. 코드불변
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-SHAPE-KB-LIVE-ON (형GO)** | **APPLY_OK**. `REVIEW_SHAPE_KB_WEIGHT_WIRE=True` · review만. 재검증 1137–1236 n**100** peek**0** bonus_in**0** changed**100** Δprefer **−0.000631** Δprize **−0.001106** iso**True**. rare/run4 OFF=ON **0/0**. 1236 pool n**10** sample1 `[6,7,11,24,26,42]` peek**False**. pred_1237**0** · pred_1239**0** · MAX**1238**. 몰아주기/전체조합/자동화 **미접촉**. 롤백=`False`. · `docs/benchmarks/20260827_KREVIEW_SHAPE_KB_LIVE_ON.json` · `reports/20260827_KREVIEW_SHAPE_KB_LIVE_ON.md` · `app/testlotto/brains/review_brain/draw_shape_kb.py` |
 | **K-ENDCHECK-GAP (형종료체크)** | **DOC_OK** · 코드/플래그 **불변**. Glob `20260827_*.md` reports **0** · 커서보고서 **0**. 원인=당일 작업을 지시문 산출물명 `20260826_KREVIEW_SHAPE_KB_WIRE` 로 저장. 보충=`reports/20260827_KENDCHECK_GAP.md` + `reports/20260827_KREVIEW_SHAPE_KB_WIRE.md` + 커서보고서 복사. 수치 SSOT=`docs/benchmarks/20260826_KREVIEW_SHAPE_KB_WIRE.json`. WIRE **False** · pred_1237**0**. 1237아님. |
 | **K-REVIEW-SHAPE-KB-WIRE (형GO)** | **APPLY_OK_HOLD_LIVE**. 흐름OK(4상세). S0: 4번 특징 **본번호6만**(정정없음). 1–1237 sum**138.2797** span**32.692** odd**3.0719**. 가상6+보너스 차이 sum**+22.3581** span**+1.8521** odd**+0.5037**. 1237 feat합=본번호합. 5번 consec 보너스재료**아님**. 6번 유사=본번호 · `PREDICT_USE_BONUS_LINKS=False`. 채점 5+보너스=2등 **True**. S1: 저울 `keep_set_by_hist` · 3번 뒤 · 칼아님. S2 1137–1236 n**100** peek**0** changed**100** Δprefer **−0.000631** Δprize **−0.001106** iso**True** rare/run4 **0/0**. 플래그 **False**(라이브 형확인). 몰아주기/전체조합/자동화/1237예측 **없음**. 롤백=`REVIEW_SHAPE_KB_WEIGHT_WIRE=False`. · `docs/benchmarks/20260826_KREVIEW_SHAPE_KB_WIRE.json` · `reports/20260826_KREVIEW_SHAPE_KB_WIRE.md` · `reports/20260827_KREVIEW_SHAPE_KB_WIRE.md` · `app/testlotto/brains/review_brain/draw_shape_kb.py` |
 | **K-REVIEW-KB7-SLOT (형GO)** | **APPLY_OK** · 1·2·3 **패스**. 7번=`kb7_future.collect_before`가 4형태+5연속+6연관을 한 묶음. `REVIEW_KB7_WIRE=False` · apply/skip **빈자리**. 1236 pool OFF==ON **동일 True** n**10**. 묶음 as_of**1235** shape n**1235** assoc n**1235** consec 있음. pred_1237**0** · pred_1239**0** · MAX**1238**. 몰아주기/1·2·3 **불변**. 자동화 아님. 다음=4/5/6상세 또는 7한소스 형1건. 롤백=WIRE False(이미)+collect 호출제거. · `docs/benchmarks/20260823_KREVIEW_KB7_SLOT.json` · `reports/20260823_KREVIEW_KB7_SLOT.md` · `app/testlotto/brains/review_brain/kb7_future.py` |

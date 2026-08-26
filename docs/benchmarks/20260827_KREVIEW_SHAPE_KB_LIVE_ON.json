@@ -1,0 +1,65 @@
+{
+  "id": "K-REVIEW-SHAPE-KB-LIVE-ON",
+  "ts": "2026-08-27T04:26:21+09:00",
+  "verdict": "APPLY_OK",
+  "smoke": {
+    "dno": 1236,
+    "live": true,
+    "peek": false,
+    "n": 10,
+    "bonus_in": 0,
+    "bad_range": 0,
+    "sample1": [
+      6,
+      7,
+      11,
+      24,
+      26,
+      42
+    ],
+    "ok": true
+  },
+  "gate": {
+    "elapsed_s": 36.3,
+    "n_ok": 100,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "bonus_in_sets": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "changed": 100,
+    "hard_ok": true,
+    "iso_ok": true,
+    "extreme_ok": true,
+    "off": {
+      "prefer": 0.007799,
+      "prize": 0.009237,
+      "shape_score": 0.53537,
+      "p_rare_pass": 0.0,
+      "p_run4": 0.0
+    },
+    "on": {
+      "prefer": 0.007168,
+      "prize": 0.008131,
+      "shape_score": 0.574767,
+      "p_rare_pass": 0.0,
+      "p_run4": 0.0
+    },
+    "delta_prefer": -0.000631,
+    "delta_prize": -0.001106,
+    "restored_live": true
+  },
+  "hard": {
+    "dmax": 1238,
+    "pred_1237": 0,
+    "pred_1239": 0,
+    "src_wire_true": true,
+    "src_wire_false": false
+  },
+  "repack": "untouched",
+  "all_combos": "untouched",
+  "automation": false,
+  "predict": false,
+  "live_wire": true,
+  "rollback": "REVIEW_SHAPE_KB_WEIGHT_WIRE=False"
+}
