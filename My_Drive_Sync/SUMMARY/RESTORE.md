@@ -3,7 +3,7 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `f33799b` · WORK=`IDLE`
+1. **HEAD:** `f3706aa` · WORK=`IDLE`
 2. **지금:** **양산前** · 자리전이 널 HOLD_NO_WIRE
 3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 자리전이 널(Δ-0.028 p=0.89) HOLD_NO_WIRE(WIRE 안켬·모니터만). 다음=형 1건(7번 또는 잔여). 1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-27 | 1238회엑셀 GitHub저장 | data/external 78062B | **SAVE_OK** | (work) |
+| 2026-08-27 | 1238회엑셀 GitHub저장 | data/external 78062B | **SAVE_OK** | f3706aa |
 | 2026-08-27 | 자리값→다음회전이검증 | 널Δ-0.028 p0.89·배선안함 | **HOLD_NO_WIRE** | f33799b |
 | 2026-08-27 | 회차유사도다음검증 | 널Δ-0.024 p0.85·배선안함 | **HOLD_NO_WIRE** | 8e40dad |
 | 2026-08-27 | 6번핫쌍몰림순수증분 | N20K3 net6 p0.006·배선안함 | **HOLD_NO_WIRE** | f9ccfd5 |
