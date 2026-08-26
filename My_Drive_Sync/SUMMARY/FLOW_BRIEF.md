@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `f9ccfd5` · WORK=`IDLE`
-- 지금: **양산前** · 6번몰림 p0.006 HOLD_NO_WIRE
-- 직전: 5세분 net0 HOLD_NO_WIRE
+- HEAD: `8e40dad` · WORK=`IDLE`
+- 지금: **양산前** · 유사도다음 널 HOLD_NO_WIRE
+- 직전: 6번몰림 p0.006 HOLD_NO_WIRE
 - BOOT다음: 형 1건 / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 6번 crowd N20K3 net=6 p=0.006 HOLD_NO_WIRE(PASS 안켬·읽기만). 다음=형 1건(6잔여유사도 별도 또는 7번). 1237예측 금지. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 유사도-next 널(Δ-0.024 p=0.85) HOLD_NO_WIRE(WIRE 안켬·모니터만). 다음=형 1건(7번 또는 잔여). 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
