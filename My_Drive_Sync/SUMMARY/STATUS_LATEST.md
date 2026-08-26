@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-27 KST  
-📌 사유: **[CURSOR] K-REVIEW-SIMILAR-NEXT-VERIFY** — 직전닮은과거→다음 널. 배선 안 함. 모니터만
+📌 사유: **[CURSOR] K-REVIEW-POS-TRANSITION-VERIFY** — 자리값→다음회 널. 배선 안 함. 모니터만
 
-📌 직전: **[CURSOR] K-REVIEW-ASSOC-CROWD-NETCHECK** — 6번 핫쌍몰림 net p=0.006. 배선 안 함. 읽기만 유지
+📌 직전: **[CURSOR] K-REVIEW-SIMILAR-NEXT-VERIFY** — 직전닮은과거→다음 널. 배선 안 함. 모니터만
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-POS-TRANSITION-VERIFY (형GO)** | **HOLD_NO_WIRE** · S0 READ-ONLY · 배선**안함** · 신설표**없음**. 정의=정렬자리 pos1–6 값→다음회 본번호6 전체 빈도. 보너스미사용. walk-forward T**2–1237** n_T**1236** peek**0** 전이**1235**. 신규6자리모두 **3** · 1자리이상 **110** · 얇은T **566**. 주정의 값합산 top6 n**1233** mean **0.772101** 널**0.80** Δ **−0.027899** z **−1.250** p_greater **0.894**. hist `528/493/180/29/3/0/0`. 균등가중 0.756 · 무작위과거통제 0.806. 3구간 Δ **−0.059** p**0.996** · 5구간 Δ **−0.062** p**0.997**. 자리별 top6 전부 게이트미달(최대 pos1 Δ+0.013 p0.276). pred_1237**0** · MAX**1238**. DB조합결합 **제안안함**. 몰아주기/자동화/1237예측 **없음**. 롤백=WIRE해당없음. · `docs/benchmarks/20260827_KREVIEW_POS_TRANSITION_VERIFY.json` · `reports/20260827_KREVIEW_POS_TRANSITION_VERIFY.md` · `tools/_k_review_pos_transition_verify.py` |
 | **K-REVIEW-SIMILAR-NEXT-VERIFY (형GO)** | **HOLD_NO_WIRE** · S0 READ-ONLY · S2 **안함** · WIRE **신설안함**. 정의 sim=직접겹침+이웃(±1) · 버킷0–5 · 닮음≥4. walk-forward T**2–1237** n_T**1236** peek**0**. 신규 thr4 **11**. 주정의 h=1 top6 n**1225** mean_hits **0.776327** 널**0.80** Δ **−0.023673** z **−1.057** p_greater **0.855**. hist 0–6 `509/511/176/28/1/0/0`. 무작위과거통제 mean **0.795**. h=5 Δ**+0.00886** p**0.347** · h=10 Δ**+0.00363** p**0.436**. 직접4겹만 n617 mean **0.755** p**0.922**. pred_1237**0** · MAX**1238** · assoc**1237**. 모니터=기존 similar4/5+본JSON · 신설테이블없음. 몰아주기/자동화/1237예측 **없음**. 롤백=WIRE해당없음 · READ `REVIEW_ASSOC_KB_READ=False`. · `docs/benchmarks/20260827_KREVIEW_SIMILAR_NEXT_VERIFY.json` · `reports/20260827_KREVIEW_SIMILAR_NEXT_VERIFY.md` · `tools/_k_review_similar_next_verify.py` |
 | **K-REVIEW-ASSOC-CROWD-NETCHECK (형GO)** | **HOLD_NO_WIRE** · S0 READ-ONLY · S2 **안함** · CROWD_PASS **신설안함**. 정의 crowd=한 장 15쌍 중 as_of이전 상위N 본번호쌍. 주정의 **N=20 K=3**. 1137–1236 n100 peek**0** sets**1000** bonus_in**0**. review hist N20 `0:677 1:266 2:51 3:5 4:1` 평균 **0.387**. p(≥3)=**0.006** net **6**/1000. N10 p(≥3)=0.001 · N30 p(≥3)=0.018(<0.02). 당첨모니터 N20 평균 0.33 p(≥3)=0.01. `REVIEW_ASSOC_KB_READ=True` 유지 · `PREDICT_USE_BONUS_LINKS=False`. 핫쌍가중/유사도/몰아주기/자동화/1237예측 **없음**. pred_1237**0** · MAX**1238** · assoc**1237**. 롤백=`REVIEW_ASSOC_KB_READ=False`. · `docs/benchmarks/20260827_KREVIEW_ASSOC_CROWD_NETCHECK.json` · `reports/20260827_KREVIEW_ASSOC_CROWD_NETCHECK.md` · `tools/_k_review_assoc_crowd_netcheck.py` |
 | **K-REVIEW-RARE-CONSEC-NETCHECK (형GO)** | **HOLD_NO_WIRE** · S0 READ-ONLY · S2 **안함** · PASS **안켬**. 5-바탕 `21245` · 5-세분 STEP1 `1600`(6=40·5+1=1560). 겹침 **1600** · **net 0** · 바탕만 19645. 세분⊆바탕. net 당첨1–1238 **0**. 가상추가패스 1137–1236 n100 peek**0** sets**1000** extra **0**/비율**0.0**. 출력 rare/consec STEP1 **0**(이미 3번이 거름). `REVIEW_CONSEC_PASS_WIRE=False` 유지 · `REVIEW_CONSEC_KB_READ=True`(모니터). pred_1237**0**. 몰아주기/자동화 미접촉. · `docs/benchmarks/20260827_KREVIEW_RARE_CONSEC_NETCHECK.json` · `reports/20260827_KREVIEW_RARE_CONSEC_NETCHECK.md` |

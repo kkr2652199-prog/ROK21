@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 유사도-next 널(Δ-0.024 p=0.85) HOLD_NO_WIRE(WIRE 안켬·모니터만). 다음=형 1건(7번 또는 잔여). 1237예측 금지.
+- 할일: **양산前**. 자리전이 널(Δ-0.028 p=0.89) HOLD_NO_WIRE(WIRE 안켬·모니터만). 다음=형 1건(7번 또는 잔여). 1237예측 금지.
 - 완료조건: 형 오더 1건
-- 선행완료: K-REVIEW-SIMILAR-NEXT-VERIFY HOLD_NO_WIRE
+- 선행완료: K-REVIEW-POS-TRANSITION-VERIFY HOLD_NO_WIRE
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-27
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260827_KREVIEW_POS_TRANSITION_VERIFY.md
 - reports/20260827_KREVIEW_SIMILAR_NEXT_VERIFY.md
 - reports/20260827_KREVIEW_ASSOC_CROWD_NETCHECK.md
 - reports/20260827_KREVIEW_RARE_CONSEC_NETCHECK.md
