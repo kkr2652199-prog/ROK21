@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `2194e71` · WORK=`IDLE`
-- 지금: **양산前** · 4번저울 라이브 ON APPLY_OK
-- 직전: 종료체크 20260827보고서 보충
-- BOOT다음: 형 1건(5상세 / 6상세) / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 4번저울 라이브 ON APPLY_OK. `REVIEW_SHAPE_KB_WEIGHT_WIRE=True`. 다음=5상세/6상세 중 형 1건. 1237예측 금지. (승인=형 1건)
+- HEAD: `6760cf7` · WORK=`IDLE`
+- 지금: **양산前** · 5세분 net0 HOLD_NO_WIRE
+- 직전: 4번저울 라이브 ON APPLY_OK
+- BOOT다음: 형 1건(6상세) / 1237예측아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 5세분 net=0 HOLD_NO_WIRE(PASS 켜지 않음·읽기만). 다음=6상세 형 1건. 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

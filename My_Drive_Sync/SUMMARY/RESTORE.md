@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `2194e71` · WORK=`IDLE`
-2. **지금:** **양산前** · 4번저울 라이브 ON APPLY_OK
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 4번저울 라이브 ON APPLY_OK. `REVIEW_SHAPE_KB_WEIGHT_WIRE=True`. 다음=5상세/6상세 중 형 1건. 1237예측 금지. (승인필요=형 1건 · 선행=없음)
+1. **HEAD:** `6760cf7` · WORK=`IDLE`
+2. **지금:** **양산前** · 5세분 net0 HOLD_NO_WIRE
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 5세분 net=0 HOLD_NO_WIRE(PASS 켜지 않음·읽기만). 다음=6상세 형 1건. 1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
