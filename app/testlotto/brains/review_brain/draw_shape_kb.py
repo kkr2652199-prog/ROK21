@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 """회차 당첨 형태 지식 — 로또조회 1..(MAX) 회차별 저장.
 
+특징 계산은 본번호 6개만. 보너스는 라벨 칸(채점 2등)만 저장.
 타깃 회 당첨 미입력. load/summarize는 as_of=이미 지난 회만.
-전체조합 반영 없음. 몰아주기 미접촉. 가중치·거절 변경 없음(읽기만).
+전체조합 반영 없음. 몰아주기 미접촉. 자동화 시동 아님.
 """
 from __future__ import annotations
 
 import json
+import math
+import random
 from collections import Counter
-from statistics import mean
+from statistics import mean, pstdev
 from typing import Any
 
 from app.lotto4.combinadic import combo_to_no
@@ -21,8 +24,11 @@ from app.testlotto.features.draw_features import (
 )
 from app.testlotto.models import get_lotto_db, init_testlotto_db
 
-# K-REVIEW-DRAW-SHAPE-KB (20260823) — 예측 전 읽기만. 롤백: False
+# K-REVIEW-DRAW-SHAPE-KB (20260823) — 예측 전 읽기. 롤백: False
 REVIEW_SHAPE_KB_READ: bool = True
+# K-REVIEW-SHAPE-KB-WIRE (20260826) — 저울(가점). 칼/거절 아님. 라이브 켜기=형 확인.
+# 롤백: False
+REVIEW_SHAPE_KB_WEIGHT_WIRE: bool = False
 
 TABLE = "testlotto_draw_shape_kb"
 _LAST_READ: dict[str, Any] | None = None
@@ -226,6 +232,9 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "sum_mean": round(mean(sums), 4) if sums else None,
         "span_mean": round(mean(spans), 4) if spans else None,
         "ac_mean": round(mean(acs), 4) if acs else None,
+        "sum_std": round(pstdev(sums), 4) if len(sums) >= 2 else 0.0,
+        "span_std": round(pstdev(spans), 4) if len(spans) >= 2 else 0.0,
+        "ac_std": round(pstdev(acs), 4) if len(acs) >= 2 else 0.0,
     }
 
 
@@ -247,3 +256,73 @@ def summarize_before(draws: list[dict]) -> dict[str, Any]:
         return _LAST_READ
     _LAST_READ = summarize(rows)
     return _LAST_READ
+
+
+def last_read() -> dict[str, Any] | None:
+    return _LAST_READ
+
+
+def six_shape_feat(nums: list[int]) -> dict[str, int]:
+    """본번호 6개만. 보너스 금지."""
+    s = sorted(int(x) for x in nums)
+    if len(s) != 6:
+        return {"odd": 0, "max_run": 0, "sum": 0, "span": 0, "ac": 0}
+    run = 1
+    best = 1
+    for i in range(1, 6):
+        if s[i] == s[i - 1] + 1:
+            run += 1
+            best = max(best, run)
+        else:
+            run = 1
+    return {
+        "odd": int(sum(1 for n in s if n % 2 == 1)),
+        "max_run": int(best),
+        "sum": int(sum(s)),
+        "span": int(s[5] - s[0]),
+        "ac": int(ac_value(s)),
+    }
+
+
+def _gauss(x: float, mu: float | None, sd: float | None) -> float:
+    if mu is None:
+        return 1.0
+    sig = float(sd or 0.0) or 1.0
+    z = abs(float(x) - float(mu)) / sig
+    return math.exp(-0.5 * min(z, 4.0) ** 2)
+
+
+def set_shape_score(nums: list[int], hist: dict[str, Any] | None) -> float:
+    """역사 분포에 가까울수록 1에 가깝다. 보너스 미사용. 거절 점수 아님."""
+    if not hist or not hist.get("n"):
+        return 1.0
+    n = int(hist["n"])
+    f = six_shape_feat(nums)
+    oh = hist.get("odd_hist") or {}
+    rh = hist.get("run_hist") or {}
+    odd_p = float(oh.get(str(f["odd"]), 0)) / n
+    run_p = float(rh.get(str(f["max_run"]), 0)) / n
+    g = (
+        _gauss(f["sum"], hist.get("sum_mean"), hist.get("sum_std"))
+        * _gauss(f["span"], hist.get("span_mean"), hist.get("span_std"))
+        * _gauss(f["ac"], hist.get("ac_mean"), hist.get("ac_std"))
+    ) ** (1.0 / 3.0)
+    raw = math.sqrt(odd_p + 1e-9) * math.sqrt(run_p + 1e-9) * g
+    ref_odd = float(oh.get("3", n / 6)) / n
+    ref_run = float(rh.get("1", n / 2)) / n
+    ref = math.sqrt(ref_odd + 1e-9) * math.sqrt(ref_run + 1e-9)
+    return max(0.0, min(1.0, raw / max(ref, 1e-9)))
+
+
+def keep_set_by_hist(nums: list[int], hist: dict[str, Any] | None) -> bool:
+    """저울: 흔한 모양은 거의 통과, 드문 모양은 가끔만 다시 뽑음. 칼 아님.
+
+    3번(rare_slice/tier1)이 이미 극단을 거절한 뒤에만 호출할 것.
+    """
+    if not REVIEW_SHAPE_KB_WEIGHT_WIRE:
+        return True
+    if not hist or not hist.get("n"):
+        return True
+    score = set_shape_score(nums, hist)
+    p = 0.45 + 0.55 * score
+    return random.random() <= p

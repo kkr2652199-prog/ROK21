@@ -1,0 +1,107 @@
+{
+  "id": "K-REVIEW-SHAPE-KB-WIRE",
+  "ts": "2026-08-27T04:17:40+09:00",
+  "verdict": "APPLY_OK_HOLD_LIVE",
+  "s0": {
+    "shape_kb_features_mains6": true,
+    "shape_kb_bonus_is_label": true,
+    "sorted_nums_is_num1_to_num6": true,
+    "correction_needed": false,
+    "six_only": {
+      "n": 1237.0,
+      "sum_mean": 138.2797,
+      "span_mean": 32.692,
+      "odd_mean": 3.0719
+    },
+    "hypothetical_6plus_bonus": {
+      "n": 1237.0,
+      "sum_mean": 160.6378,
+      "span_mean": 34.5441,
+      "odd_mean": 3.5756
+    },
+    "delta_if_bonus_in_feat": {
+      "sum_mean": 22.3581,
+      "span_mean": 1.8521,
+      "odd_mean": 0.5037
+    },
+    "row_1237": {
+      "nums": [
+        10,
+        20,
+        23,
+        34,
+        37,
+        40
+      ],
+      "bonus_label": 36,
+      "feat_sum": 164,
+      "feat_span": 30,
+      "feat_odd": 2,
+      "sum_equals_six": true
+    },
+    "scan5_consec_predict_bonus_material": false,
+    "scan5_sig_from_sorted_nums": true,
+    "scan6_similar_mains": true,
+    "scan6_bonus_links_stored": true,
+    "scan6_predict_lock": true,
+    "scan_engine_picks_bonus": false,
+    "rank2_label": true,
+    "rank3_label": true,
+    "flags": {
+      "REVIEW_SHAPE_KB_READ": true,
+      "REVIEW_SHAPE_KB_WEIGHT_WIRE": false,
+      "REVIEW_CONSEC_PASS_WIRE": false
+    },
+    "kb_n": 1238,
+    "dmax": 1238,
+    "pred_1237": 0,
+    "pred_1239": 0
+  },
+  "s1": {
+    "flag": "REVIEW_SHAPE_KB_WEIGHT_WIRE",
+    "default": false,
+    "kind": "scale_not_knife",
+    "after": "rare_pass",
+    "brains": [
+      "review"
+    ]
+  },
+  "gate": {
+    "elapsed_s": 40.9,
+    "n_ok": 100,
+    "peek_fail": 0,
+    "size_bad": 0,
+    "bonus_in_sets": 0,
+    "n_errors": 0,
+    "errors_head": [],
+    "changed": 100,
+    "hard_ok": true,
+    "iso_ok": true,
+    "extreme_ok": true,
+    "design_ok": true,
+    "apply_code": true,
+    "live_on": false,
+    "off": {
+      "prefer": 0.007799,
+      "prize": 0.009237,
+      "shape_score": 0.53537,
+      "p_rare_pass": 0.0,
+      "p_run4": 0.0
+    },
+    "on": {
+      "prefer": 0.007168,
+      "prize": 0.008131,
+      "shape_score": 0.574767,
+      "p_rare_pass": 0.0,
+      "p_run4": 0.0
+    },
+    "delta_prefer": -0.000631,
+    "delta_prize": -0.001106,
+    "delta_shape_score": 0.039397
+  },
+  "repack": "untouched",
+  "all_combos": "untouched",
+  "automation": false,
+  "predict": false,
+  "live_wire": false
+}

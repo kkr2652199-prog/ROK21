@@ -144,6 +144,22 @@ def generate(draws: list[dict], n_sets: int = 5, adj: dict | None = None) -> lis
         except Exception:  # noqa: BLE001
             pass
         try:
+            from app.testlotto.brains.review_brain.draw_shape_kb import (
+                REVIEW_SHAPE_KB_WEIGHT_WIRE,
+                keep_set_by_hist,
+            )
+
+            if REVIEW_SHAPE_KB_WEIGHT_WIRE:
+                hist = (kb7 or {}).get("shape")
+                if hist is None:
+                    from app.testlotto.brains.review_brain.draw_shape_kb import last_read
+
+                    hist = last_read()
+                if not keep_set_by_hist(pick, hist):
+                    continue
+        except Exception:  # noqa: BLE001
+            pass
+        try:
             from app.testlotto.brains.review_brain.kb7_future import (
                 REVIEW_KB7_WIRE,
                 should_skip_kb7,

@@ -63,7 +63,7 @@ def collect_before(draws: list[dict]) -> dict[str, Any]:
 
 
 def apply_kb7_weights(weights: dict[int, float], bundle: dict[str, Any] | None) -> dict[int, float]:
-    """기어 OFF면 그대로. ON은 이후 단계 튜닝(형 GO)."""
+    """기어 OFF면 그대로. ON은 이후 단계 튜닝(형 GO). 보너스 링크 사용 금지."""
     del bundle
     if not REVIEW_KB7_WIRE:
         return weights

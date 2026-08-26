@@ -2,6 +2,7 @@
 """회차 당첨 6+보너스 번호 연관 — 로또조회 1..지정회 저장.
 
 비슷한 조합 = 당첨 본번호 6개 중 겹침(순서 무관).
+보너스는 라벨·별칸(bonus_links)만. 예측 재료로 쓰지 않음.
 타깃 회 당첨 미입력. load/summarize는 as_of=이미 지난 회만.
 가중치·거절·몰아주기 변경 없음(읽기만). 자동화 시동 아님.
 """
@@ -17,6 +18,8 @@ from app.testlotto.models import get_lotto_db, init_testlotto_db
 
 # K-REVIEW-DRAW-ASSOC (20260823) — 예측 전 읽기만. 롤백: False
 REVIEW_ASSOC_KB_READ: bool = True
+# 안 A: 예측 경로에서 bonus_links 사용 금지. 채점 라벨 전용.
+PREDICT_USE_BONUS_LINKS: bool = False
 
 TABLE = "testlotto_draw_assoc"
 _LAST_READ: dict[str, Any] | None = None
