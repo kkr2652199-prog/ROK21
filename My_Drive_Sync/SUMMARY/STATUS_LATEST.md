@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-27 KST  
-📌 사유: **[CURSOR] K-REVIEW-SHAPE-KB-WIRE** — 4번 저울 코드. 게이트 통과. 라이브 OFF. 보너스=본번호6
+📌 사유: **[CURSOR] K-ENDCHECK-GAP** — 20260827_*.md 부재 확인 후 reports/·커서보고서 보충. 코드불변
 
-📌 직전: **[CURSOR] K-REVIEW-KB7-SLOT** — 4·5·6 묶음 7번 자리. 기어 OFF. 1·2·3 패스
+📌 직전: **[CURSOR] K-REVIEW-SHAPE-KB-WIRE** — 4번 저울 코드. 게이트 통과. 라이브 OFF. 보너스=본번호6
 
 ---
 
@@ -12,7 +12,8 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
-| **K-REVIEW-SHAPE-KB-WIRE (형GO)** | **APPLY_OK_HOLD_LIVE**. 흐름OK(4상세). S0: 4번 특징 **본번호6만**(정정없음). 1–1237 sum**138.2797** span**32.692** odd**3.0719**. 가상6+보너스 차이 sum**+22.3581** span**+1.8521** odd**+0.5037**. 1237 feat합=본번호합. 5번 consec 보너스재료**아님**. 6번 유사=본번호 · `PREDICT_USE_BONUS_LINKS=False`. 채점 5+보너스=2등 **True**. S1: 저울 `keep_set_by_hist` · 3번 뒤 · 칼아님. S2 1137–1236 n**100** peek**0** changed**100** Δprefer **−0.000631** Δprize **−0.001106** iso**True** rare/run4 **0/0**. 플래그 **False**(라이브 형확인). 몰아주기/전체조합/자동화/1237예측 **없음**. 롤백=`REVIEW_SHAPE_KB_WEIGHT_WIRE=False`. · `docs/benchmarks/20260826_KREVIEW_SHAPE_KB_WIRE.json` · `reports/20260826_KREVIEW_SHAPE_KB_WIRE.md` · `app/testlotto/brains/review_brain/draw_shape_kb.py` |
+| **K-ENDCHECK-GAP (형종료체크)** | **DOC_OK** · 코드/플래그 **불변**. Glob `20260827_*.md` reports **0** · 커서보고서 **0**. 원인=당일 작업을 지시문 산출물명 `20260826_KREVIEW_SHAPE_KB_WIRE` 로 저장. 보충=`reports/20260827_KENDCHECK_GAP.md` + `reports/20260827_KREVIEW_SHAPE_KB_WIRE.md` + 커서보고서 복사. 수치 SSOT=`docs/benchmarks/20260826_KREVIEW_SHAPE_KB_WIRE.json`. WIRE **False** · pred_1237**0**. 1237아님. |
+| **K-REVIEW-SHAPE-KB-WIRE (형GO)** | **APPLY_OK_HOLD_LIVE**. 흐름OK(4상세). S0: 4번 특징 **본번호6만**(정정없음). 1–1237 sum**138.2797** span**32.692** odd**3.0719**. 가상6+보너스 차이 sum**+22.3581** span**+1.8521** odd**+0.5037**. 1237 feat합=본번호합. 5번 consec 보너스재료**아님**. 6번 유사=본번호 · `PREDICT_USE_BONUS_LINKS=False`. 채점 5+보너스=2등 **True**. S1: 저울 `keep_set_by_hist` · 3번 뒤 · 칼아님. S2 1137–1236 n**100** peek**0** changed**100** Δprefer **−0.000631** Δprize **−0.001106** iso**True** rare/run4 **0/0**. 플래그 **False**(라이브 형확인). 몰아주기/전체조합/자동화/1237예측 **없음**. 롤백=`REVIEW_SHAPE_KB_WEIGHT_WIRE=False`. · `docs/benchmarks/20260826_KREVIEW_SHAPE_KB_WIRE.json` · `reports/20260826_KREVIEW_SHAPE_KB_WIRE.md` · `reports/20260827_KREVIEW_SHAPE_KB_WIRE.md` · `app/testlotto/brains/review_brain/draw_shape_kb.py` |
 | **K-REVIEW-KB7-SLOT (형GO)** | **APPLY_OK** · 1·2·3 **패스**. 7번=`kb7_future.collect_before`가 4형태+5연속+6연관을 한 묶음. `REVIEW_KB7_WIRE=False` · apply/skip **빈자리**. 1236 pool OFF==ON **동일 True** n**10**. 묶음 as_of**1235** shape n**1235** assoc n**1235** consec 있음. pred_1237**0** · pred_1239**0** · MAX**1238**. 몰아주기/1·2·3 **불변**. 자동화 아님. 다음=4/5/6상세 또는 7한소스 형1건. 롤백=WIRE False(이미)+collect 호출제거. · `docs/benchmarks/20260823_KREVIEW_KB7_SLOT.json` · `reports/20260823_KREVIEW_KB7_SLOT.md` · `app/testlotto/brains/review_brain/kb7_future.py` |
 | **K-REVIEW-PATCH-BRIEF (형질문)** | **DISCUSS_OK** · APPLY**없음** · 예측**없음**. 통작업 6부품: 1합리장**켜짐·사용** · 2연번평탄**켜짐·사용** · 3극소패스21245**켜짐·사용** · 4형태지식1238**읽기만·미사용** · 5극소연속1600**읽기만·PASS OFF** · 6연관1237**읽기만·미사용**. 예측경로=`_get_draws_before` 타깃미만. 학습진화 EVOLVE_AUTO **OFF**. fetch-latest는 assoc/kb **미재구축**. 시동자동화 **아직아님·보완필요**. 몰아주기 미접촉. · `reports/20260823_KREVIEW_PATCH_BRIEF.md` · `app/testlotto/brains/review_brain/engine.py` |
 | **K-REVIEW-DRAW-ASSOC (형GO)** | **APPLY_OK** · 통작업 세부·수동패치. 예측**없음**·자동화**아님**. 구간 **1–1237**(DB MAX**1238**은 표 밖). 회차별 본번호6+보너스1 · 본번호쌍15 · 보너스연결6 · 연번쌍 · 이월 · 비슷조합(본번호겹침·순서무관). 표 `testlotto_draw_assoc` **1237**/0. 4겹 회 **989** · 무방향쌍 **1001**. 5겹 회 **42** · 무방향쌍 **21**(예 4↔258 `14 27 30 31 40`). 1237=`10 20 23 34 37 40`+36 · 4겹상대 **1회**(겹 `10 23 37 40`) · 5겹 **0** · 3겹건수 **29**. 본번호쌍종류 **990** · 상위 11-21×**34**. 연번쌍평균 **0.6605** · 이월평균 **0.8246**. 엔진 `summarize_before` as_of=타깃이전(비슷상대도 as_of이하). 가중/거절/몰아주기 **불변**. 1236 pool **동일 True**. pred_1237**0** · pred_1239**0**. 롤백=`REVIEW_ASSOC_KB_READ=False`. · `docs/benchmarks/20260823_KREVIEW_DRAW_ASSOC.json` · `reports/20260823_KREVIEW_DRAW_ASSOC.md` · `app/testlotto/brains/review_brain/draw_assoc.py` |
