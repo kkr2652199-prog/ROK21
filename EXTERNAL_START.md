@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `84ab55d` |
+| HEAD(실측) | `c21451d` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 자리전이 널 HOLD_NO_WIRE |
+| 지금 | **양산前** · 7번=읽기묶음 예측단계아님 |
 | 직전 | 종료체크 20260828 md없음 DOC_OK |
-| BOOT다음 | 형 1건(7번) / 1237예측아님 |
+| BOOT다음 | 형 1건(7번 기어 명시) / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 자리전이 널 HOLD_NO_WIRE. 다음=형 1건(7번 상세 GO). 1237예측 금지. |
+| NEXT1 할일 | **양산前**. 7번은 4·5·6 읽기묶음·WIRE False·예측단계 아님. 다음=형 1건(7번 기어 무엇 켤지 명시). 1237예측 금지. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=84ab55d · 지금=**양산前** · 자리전이 널 HOLD_NO_WIRE · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=c21451d · 지금=**양산前** · 7번=읽기묶음 예측단계아님 · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 84ab55d_
+_generated: c21451d_

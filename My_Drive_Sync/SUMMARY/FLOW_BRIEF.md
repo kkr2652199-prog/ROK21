@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `84ab55d` · WORK=`IDLE`
-- 지금: **양산前** · 자리전이 널 HOLD_NO_WIRE
+- HEAD: `c21451d` · WORK=`IDLE`
+- 지금: **양산前** · 7번=읽기묶음 예측단계아님
 - 직전: 종료체크 20260828 md없음 DOC_OK
-- BOOT다음: 형 1건(7번) / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 자리전이 널 HOLD_NO_WIRE. 다음=형 1건(7번 상세 GO). 1237예측 금지. (승인=형 1건)
+- BOOT다음: 형 1건(7번 기어 명시) / 1237예측아님
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 7번은 4·5·6 읽기묶음·WIRE False·예측단계 아님. 다음=형 1건(7번 기어 무엇 켤지 명시). 1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
