@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-27 KST  
-📌 사유: **[CURSOR] 1238회 CSV GitHub 저장** — `data/external/로또 회차 1회~1238회차.csv` 74,355B · 1238행 UTF-8 BOM
+📅 최종 갱신: 2026-08-28 KST  
+📌 사유: **[CURSOR] K-ENDCHECK-GAP** — 20260828_*.md 없음. 당일 패치 없어서 접두 공백. 본 보고서로 보충
 
-📌 직전: **[CURSOR] 1238회 엑셀 GitHub 저장** — `data/external/로또 회차 1회~1238회차.xlsx` 78,062B
+📌 직전: **[CURSOR] 1238회 CSV GitHub 저장** — `data/external/로또 회차 1회~1238회차.csv` 74,355B · 1238행 UTF-8 BOM
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-ENDCHECK-GAP (형종료체크)** | **DOC_OK** · 코드/플래그 **불변**. Glob `20260828_*.md` reports **0** · 커서보고서 **0** (본 파일 전). 원인=당일 캠페인 패치 없음(Q&A만). 전일 통작업은 `20260827_*` **7건** 양쪽 이미 존재(자리전이·유사도·핫쌍몰림·5세분·4번라이브·4번WIRE·전일종료체크). 전일 엑셀/CSV는 STATUS만. 보충=`reports/20260828_KENDCHECK_GAP.md` + 커서보고서 복사. 전일 캠페인 `20260828_` 복제 **안함**. pred_1237**0** · pred_1239**0** · MAX**1238**. 다음=7번 형GO. 1237아님. |
 | **로또 회차 CSV 1–1238 (형저장)** | **SAVE_OK**. xlsx 동일 폴더에 CSV 추가. `data/external/로또 회차 1회~1238회차.csv` · **74,355**B · 데이터 **1238**행 · UTF-8 BOM. 컬럼 `No,회차,당첨1–6,보너스,순위,당첨게임수,1게임당당첨금액`. 엔진/DB/플래그 **불변**. 1237예측 **없음**. GitHub `kkr2652199-prog/ROK21` main. |
 | **로또 회차 엑셀 1–1238 (형저장)** | **SAVE_OK**. 원본 `C:\Users\user\Downloads\로또 회차 1회~1238회차.xlsx` → 레포 `data/external/로또 회차 1회~1238회차.xlsx` · **78,062**B. 엔진/DB/플래그 **불변**. 1237예측 **없음**. GitHub `kkr2652199-prog/ROK21` main. |
 | **K-REVIEW-POS-TRANSITION-VERIFY (형GO)** | **HOLD_NO_WIRE** · S0 READ-ONLY · 배선**안함** · 신설표**없음**. 정의=정렬자리 pos1–6 값→다음회 본번호6 전체 빈도. 보너스미사용. walk-forward T**2–1237** n_T**1236** peek**0** 전이**1235**. 신규6자리모두 **3** · 1자리이상 **110** · 얇은T **566**. 주정의 값합산 top6 n**1233** mean **0.772101** 널**0.80** Δ **−0.027899** z **−1.250** p_greater **0.894**. hist `528/493/180/29/3/0/0`. 균등가중 0.756 · 무작위과거통제 0.806. 3구간 Δ **−0.059** p**0.996** · 5구간 Δ **−0.062** p**0.997**. 자리별 top6 전부 게이트미달(최대 pos1 Δ+0.013 p0.276). pred_1237**0** · MAX**1238**. DB조합결합 **제안안함**. 몰아주기/자동화/1237예측 **없음**. 롤백=WIRE해당없음. · `docs/benchmarks/20260827_KREVIEW_POS_TRANSITION_VERIFY.json` · `reports/20260827_KREVIEW_POS_TRANSITION_VERIFY.md` · `tools/_k_review_pos_transition_verify.py` |
