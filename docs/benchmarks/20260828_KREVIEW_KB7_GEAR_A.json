@@ -1,0 +1,65 @@
+{
+  "id": "K-REVIEW-KB7-GEAR-A",
+  "ts": "2026-08-28T11:04:00+09:00",
+  "verdict": "CONFIRM_OK",
+  "choice": "A",
+  "apply": false,
+  "live_pass": false,
+  "code_change": false,
+  "closed_next": {
+    "id": "K-AWAIT-HYUNG-NEXT",
+    "was": "7번 기어 무엇 켤지 명시",
+    "now": "A 확정. 7번 읽기묶음 전용. 예측=1~4"
+  },
+  "gear": {
+    "REVIEW_KB7_WIRE": false,
+    "role": "4·5·6 collect_before 읽기묶음 전용. 예측 단계 아님",
+    "predict_owners": "1·2·3·4",
+    "five_six": "모니터 유지. 7번 예측재료로 넣지 않음"
+  },
+  "verify": {
+    "target_for_collect": 1237,
+    "peek_as_of": 1236,
+    "peek_ok": true,
+    "n_draws": 1236,
+    "bundle_as_of": 1236,
+    "bundle_wire": false,
+    "has_shape": true,
+    "has_consec": true,
+    "has_assoc": true,
+    "shape_n": 1236,
+    "assoc_n": 1236,
+    "apply_kb7_weights_identity": true,
+    "should_skip_kb7_false": true,
+    "apply_src_identity": true,
+    "skip_src_false": true
+  },
+  "hard": {
+    "dmax": 1238,
+    "pred_1237": 0,
+    "pred_1239": 0
+  },
+  "flags": {
+    "REVIEW_KB7_WIRE": false,
+    "REVIEW_SHAPE_KB_WEIGHT_WIRE": true,
+    "REVIEW_SHAPE_KB_READ": true,
+    "REVIEW_CONSEC_KB_READ": true,
+    "REVIEW_CONSEC_PASS_WIRE": false,
+    "REVIEW_ASSOC_KB_READ": true,
+    "PREDICT_USE_BONUS_LINKS": false,
+    "REVIEW_RARE_SLICE_WIRE": true,
+    "REVIEW_REASONABLE_SET": true,
+    "REVIEW_SHAPE_WIRE": true
+  },
+  "hold_refs": {
+    "consec_netcheck": "docs/benchmarks/20260827_KREVIEW_RARE_CONSEC_NETCHECK.json",
+    "assoc_crowd": "docs/benchmarks/20260827_KREVIEW_ASSOC_CROWD_NETCHECK.json",
+    "similar_next": "docs/benchmarks/20260827_KREVIEW_SIMILAR_NEXT_VERIFY.json",
+    "pos_transition": "docs/benchmarks/20260827_KREVIEW_POS_TRANSITION_VERIFY.json"
+  },
+  "repack": "untouched",
+  "all_combos": "untouched",
+  "automation": false,
+  "predict": false,
+  "random_choices": "untouched"
+}

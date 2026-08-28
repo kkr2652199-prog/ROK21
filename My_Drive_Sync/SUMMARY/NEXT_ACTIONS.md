@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 7번은 4·5·6 읽기묶음·WIRE False·예측단계 아님. 다음=형 1건(7번 기어 무엇 켤지 명시). 1237예측 금지.
+- 할일: **양산前**. 7번 A **닫힘**(WIRE False·읽기묶음·예측=1~4·5·6모니터). 다음=형 1건. 시동·몰아주기·1237예측 금지.
 - 완료조건: 형 오더 1건
-- 선행완료: K-REVIEW-KB7-FLOW-CLARIFY DISCUSS_OK
+- 선행완료: K-REVIEW-KB7-GEAR-A CONFIRM_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-28
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260828_KREVIEW_KB7_GEAR_A.md
 - reports/20260828_KREVIEW_KB7_FLOW_CLARIFY.md
 - reports/20260828_KENDCHECK_GAP.md
 - reports/20260827_KREVIEW_POS_TRANSITION_VERIFY.md
