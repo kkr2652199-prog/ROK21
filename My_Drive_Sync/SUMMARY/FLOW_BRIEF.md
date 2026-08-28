@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d6c0aa4` · WORK=`IDLE`
-- 지금: **양산前** · 벡터200 REFILL_OK
-- 직전: 1037–1236 3뇌 리셋+재백필
+- HEAD: `127ec21` · WORK=`IDLE`
+- 지금: **양산前** · 금액DNA PARTIAL
+- 직전: 비인기축 코드ON·가중은이월
 - BOOT다음: 형 1건 / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-VECTOR-REFILL-200 REFILL_OK. 다음=형 1건. 시동·몰아주기·1237예측 금지. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-PRIZE-DNA-ALIVE DNA_PARTIAL. 다음=형 1건. 시동·몰아주기·1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축

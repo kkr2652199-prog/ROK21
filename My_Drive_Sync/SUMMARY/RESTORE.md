@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `d6c0aa4` · WORK=`IDLE`
-2. **지금:** **양산前** · 벡터200 REFILL_OK
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-VECTOR-REFILL-200 REFILL_OK. 다음=형 1건. 시동·몰아주기·1237예측 금지. (승인필요=형 1건 · 선행=없음)
+1. **HEAD:** `127ec21` · WORK=`IDLE`
+2. **지금:** **양산前** · 금액DNA PARTIAL
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-PRIZE-DNA-ALIVE DNA_PARTIAL. 다음=형 1건. 시동·몰아주기·1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-28 | 금액뇌 DNA 비인기조합 정밀분석 | 코드ON·가중이월·pool끝089·repack고번호 | **DNA_PARTIAL** | TBD |
+| 2026-08-28 | 금액뇌 DNA 비인기조합 정밀분석 | 코드ON·가중이월·pool끝089·repack고번호 | **DNA_PARTIAL** | 127ec21 |
 | 2026-08-28 | 200회백필 리셋후재생성 | 1037–1236 3뇌 600/0 · DB미커밋 | **REFILL_OK** | d6c0aa4 |
 | 2026-08-28 | 7번 A확정 WIRE False | 읽기묶음확인·APPLY없음 | **CONFIRM_OK** | 264638c |
 | 2026-08-28 | 7번=1~6예측단계냐 | 아님·읽기묶음·APPLY없음 | **DISCUSS_OK** | c21451d |
