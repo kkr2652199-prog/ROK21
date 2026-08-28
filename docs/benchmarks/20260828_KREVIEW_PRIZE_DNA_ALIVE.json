@@ -1,0 +1,232 @@
+{
+  "id": "K-REVIEW-PRIZE-DNA-ALIVE",
+  "as_of": "2026-08-28T11:35:34+09:00",
+  "verdict": "DNA_PARTIAL",
+  "apply": false,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "as_of_draw": 1236,
+  "peek_ok": true,
+  "peek_max": 1235,
+  "draws_max": 1238,
+  "pred_1237": 0,
+  "pred_1239": 0,
+  "fw_used": 1221,
+  "fw_zero_skip": 14,
+  "n_draws_before": 1235,
+  "n_review_pool_sets": 2000,
+  "code_live": true,
+  "output_live": true,
+  "end_pool_live": true,
+  "hi_pool_live": false,
+  "hi_repack_live": true,
+  "prize_pool_best": false,
+  "prize_repack_best": true,
+  "carry_owns_weights": true,
+  "crowd_dominates_table": true,
+  "knobs": {
+    "PRIZE_WIRE": true,
+    "W_CROWD_review": 0.8,
+    "W_STRUCT_review": 0.2,
+    "BLEND_review": 0.85,
+    "compose": "reasonable",
+    "REVIEW_REASONABLE_SET": true,
+    "REVIEW_SEQ_DISTRIBUTE": false,
+    "REVIEW_SHAPE_WIRE": true,
+    "REVIEW_RARE_SLICE_WIRE": true,
+    "REVIEW_SHAPE_KB_WEIGHT_WIRE": true,
+    "REVIEW_CONSEC_PASS_WIRE": false,
+    "REVIEW_KB7_WIRE": false
+  },
+  "rho_table": {
+    "prize_vs_struct": 0.68,
+    "prize_vs_crowd": 0.7937,
+    "crowd_vs_struct": 0.1366,
+    "prize_vs_hi32": 0.5211,
+    "prize_vs_end089": 0.1006
+  },
+  "rho_weights_asof1236": {
+    "full_vs_carry": 0.9853,
+    "full_vs_prize": 0.2523,
+    "full_vs_prize_blend": 0.9916,
+    "carry_vs_prize": 0.1927
+  },
+  "top12_asof1236": {
+    "full_weights": [
+      15,
+      43,
+      19,
+      40,
+      6,
+      7,
+      44,
+      28,
+      27,
+      32,
+      11,
+      34
+    ],
+    "prize": [
+      40,
+      37,
+      45,
+      34,
+      39,
+      27,
+      38,
+      43,
+      20,
+      15,
+      14,
+      18
+    ],
+    "carry": [
+      15,
+      6,
+      27,
+      7,
+      43,
+      19,
+      28,
+      44,
+      40,
+      32,
+      11,
+      34
+    ],
+    "overlap": {
+      "full_cap_prize": 5,
+      "full_cap_carry": 12,
+      "prize_cap_carry": 5
+    }
+  },
+  "null_per_set": {
+    "hi32": 1.8667,
+    "hi40": 0.8,
+    "end089": 1.6,
+    "bday": 4.1333
+  },
+  "occupancy": {
+    "review": {
+      "pool": {
+        "n_sets": 2000,
+        "hi32": 1.8315,
+        "d_hi32": -0.0352,
+        "hi40": 0.7795,
+        "d_hi40": -0.0205,
+        "end089": 1.8035,
+        "d_end089": 0.2035,
+        "bday": 4.1685,
+        "d_bday": 0.0352
+      },
+      "repack": {
+        "n_sets": 1000,
+        "hi32": 2.099,
+        "d_hi32": 0.2323,
+        "hi40": 0.838,
+        "d_hi40": 0.038,
+        "end089": 1.718,
+        "d_end089": 0.118,
+        "bday": 3.901,
+        "d_bday": -0.2323
+      }
+    },
+    "stat": {
+      "pool": {
+        "n_sets": 2000,
+        "hi32": 1.7875,
+        "d_hi32": -0.0792,
+        "hi40": 0.7345,
+        "d_hi40": -0.0655,
+        "end089": 1.469,
+        "d_end089": -0.131,
+        "bday": 4.2125,
+        "d_bday": 0.0792
+      },
+      "repack": {
+        "n_sets": 1000,
+        "hi32": 1.74,
+        "d_hi32": -0.1267,
+        "hi40": 0.663,
+        "d_hi40": -0.137,
+        "end089": 1.537,
+        "d_end089": -0.063,
+        "bday": 4.26,
+        "d_bday": 0.1267
+      }
+    },
+    "markov": {
+      "pool": {
+        "n_sets": 2000,
+        "hi32": 1.8615,
+        "d_hi32": -0.0052,
+        "hi40": 0.7415,
+        "d_hi40": -0.0585,
+        "end089": 1.443,
+        "d_end089": -0.157,
+        "bday": 4.1385,
+        "d_bday": 0.0052
+      },
+      "repack": {
+        "n_sets": 1000,
+        "hi32": 1.432,
+        "d_hi32": -0.4347,
+        "hi40": 0.515,
+        "d_hi40": -0.285,
+        "end089": 1.453,
+        "d_end089": -0.147,
+        "bday": 4.568,
+        "d_bday": 0.4347
+      }
+    }
+  },
+  "prize_score_vs_review_table": {
+    "review": {
+      "pool": {
+        "n": 2000,
+        "mean": 1.006781,
+        "d_null1": 0.006781
+      },
+      "repack": {
+        "n": 1000,
+        "mean": 1.024564,
+        "d_null1": 0.024564
+      }
+    },
+    "stat": {
+      "pool": {
+        "n": 2000,
+        "mean": 1.002128,
+        "d_null1": 0.002128
+      },
+      "repack": {
+        "n": 1000,
+        "mean": 1.000946,
+        "d_null1": 0.000946
+      }
+    },
+    "markov": {
+      "pool": {
+        "n": 2000,
+        "mean": 1.007512,
+        "d_null1": 0.007512
+      },
+      "repack": {
+        "n": 1000,
+        "mean": 1.007165,
+        "d_null1": 0.007165
+      }
+    }
+  },
+  "freq_review_pool_vs_asof1236": {
+    "rho_prize": 0.1872,
+    "rho_struct": 0.0297,
+    "rho_crowd": 0.295,
+    "rho_carry": 0.3355
+  },
+  "data_limit": "조합별 판매수 없음. first_winners 프록시 + 고번호·끝089 사전. 당첨P 불변."
+}

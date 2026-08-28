@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-28 KST  
-📌 사유: **[CURSOR] K-REVIEW-VECTOR-REFILL-200** — 1037–1236 3뇌 리셋+재백필. REFILL_OK. DB git 안 함.
+📌 사유: **[CURSOR] K-REVIEW-PRIZE-DNA-ALIVE** — 금액뇌 비인기 DNA 실측. DNA_PARTIAL. APPLY없음.
 
-📌 직전: **[CURSOR] K-REVIEW-KB7-GEAR-A** — 7번 A 확정. WIRE False 읽기묶음. APPLY없음. NEXT(기어명시) 닫음
+📌 직전: **[CURSOR] K-REVIEW-VECTOR-REFILL-200** — 1037–1236 3뇌 리셋+재백필. REFILL_OK. DB git 안 함.
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-PRIZE-DNA-ALIVE (형분석)** | **DNA_PARTIAL** · READ-ONLY · APPLY**없음**. 튜닝뇌=**review(금액뇌)** 맞음. `PRIZE_WIRE` True · W_CROWD**0.80** · W_STRUCT**0.20** · blend**0.85**. 가중치 as_of1236 ρ 최종↔이월 **0.9853** · ↔prize **0.2523** · top12 풀∩이월 **12**/12. pool n**2000** hi32 **1.8315** Δ널 **−0.0352** · end089 **1.8035** Δ **+0.2035**. repack n**1000** hi32 **2.099** Δ **+0.2323** · prize mean **1.024564**(stat 1.000946 · markov 1.007165). pool prize mean review **1.006781** < markov **1.007512**. 표 ρ prize-crowd **0.7937** · prize-struct **0.68**. 판매수없음·당첨P불변·hits금지. pred_1237**0** · MAX**1238**. · `docs/benchmarks/20260828_KREVIEW_PRIZE_DNA_ALIVE.json` · `reports/20260828_KREVIEW_PRIZE_DNA_ALIVE.md` · `tools/_k_review_prize_dna_alive.py` |
 | **K-REVIEW-VECTOR-REFILL-200 (형GO)** | **REFILL_OK** · 1037–1236 벡터 리셋 후 3뇌 각 `expand_pool(brains=[tag])` **200**/0fail. 삭제 캐시**600** · pred**3000** · evolve**600**. 재생성 cache nonempty 3×**200** · evolve창 3×**200** · pred 3×**1000**. fp 전→후 stat `a4aa43b5a5b7ca8a→5c1f719be70733b0` · markov `296a9b573d09b9d1→b2007a4f46ac774b` · review `78df639abd85667a→33b3e524aed5b7c5`. peek**0** · pred_1237**0** · pred_1239**0** · MAX**1238**. 원장 stat**3000** 불변 · 숙제 600/1200 불변 · 소비 `{stat}`. `REVIEW_KB7_WIRE=False` · EVOLVE_AUTO **OFF**. 몰아주기 공식 **미수정**(기존 score5 경로 재기록). DB git 안 함. 롤백=`backups/20260828_VECTOR전_DB전체/`. 1237/1239예측 **없음**. · `docs/benchmarks/20260828_KREVIEW_VECTOR_REFILL_200.json` · `reports/20260828_KREVIEW_VECTOR_REFILL_200.md` · `tools/_k_3brain_vector_refill_200_20260828.py` |
 | **K-REVIEW-KB7-GEAR-A (형GO)** | **CONFIRM_OK** · APPLY**없음** · 코드배선**없음**. 선택 **A**. `REVIEW_KB7_WIRE=False` 유지. 7번=4·5·6 `collect_before` 읽기묶음 전용(예측 아님). 예측=1·2·3·4. 5·6 모니터·7예측재료 **안넣음**. 스모크 타깃1237 **미생성** as_of**1236** peekOK shape/consec/assoc **True** n**1236**. apply identity **True** · skip **False**. pred_1237**0** · pred_1239**0** · MAX**1238**. 몰아주기/자동화/1237예측 **동결**. NEXT「7번 기어 명시」**닫힘**. · `docs/benchmarks/20260828_KREVIEW_KB7_GEAR_A.json` · `reports/20260828_KREVIEW_KB7_GEAR_A.md` · `kb7_future.py`(불변) |
 | **K-REVIEW-KB7-FLOW-CLARIFY (형질문)** | **DISCUSS_OK** · APPLY**없음** · 코드/플래그 **불변**. 7번≠1~6예측단계. 실제 6개 추출=`random.choices`. 1·2·3은 가중·tier1·rare_pass로 **이미** 장 변경. 4는 `REVIEW_SHAPE_KB_WEIGHT_WIRE=True` 저울(kb7.shape hist만 빌림). 7=`collect_before` 4+5+6 읽기 · `REVIEW_KB7_WIRE=False` · apply/skip 빈함수(WIRE True여도 가중·거절 불변). 5·6 HOLD라 이번 예측재료 안 켬. pred_1237**0**. 다음=형「7번 기어에 무엇을」명시. · `reports/20260828_KREVIEW_KB7_FLOW_CLARIFY.md` · `app/testlotto/brains/review_brain/engine.py` · `kb7_future.py` |
