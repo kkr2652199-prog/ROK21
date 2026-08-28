@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-28 KST  
-📌 사유: **[CURSOR] K-REVIEW-KB7-GEAR-A** — 7번 A 확정. WIRE False 읽기묶음. APPLY없음. NEXT(기어명시) 닫음
+📌 사유: **[CURSOR] K-REVIEW-VECTOR-REFILL-200** — 1037–1236 3뇌 리셋+재백필. REFILL_OK. DB git 안 함.
 
-📌 직전: **[CURSOR] K-REVIEW-KB7-FLOW-CLARIFY** — 7번=예측단계 아님. 읽기묶음·WIRE False. APPLY없음
+📌 직전: **[CURSOR] K-REVIEW-KB7-GEAR-A** — 7번 A 확정. WIRE False 읽기묶음. APPLY없음. NEXT(기어명시) 닫음
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-VECTOR-REFILL-200 (형GO)** | **REFILL_OK** · 1037–1236 벡터 리셋 후 3뇌 각 `expand_pool(brains=[tag])` **200**/0fail. 삭제 캐시**600** · pred**3000** · evolve**600**. 재생성 cache nonempty 3×**200** · evolve창 3×**200** · pred 3×**1000**. fp 전→후 stat `a4aa43b5a5b7ca8a→5c1f719be70733b0` · markov `296a9b573d09b9d1→b2007a4f46ac774b` · review `78df639abd85667a→33b3e524aed5b7c5`. peek**0** · pred_1237**0** · pred_1239**0** · MAX**1238**. 원장 stat**3000** 불변 · 숙제 600/1200 불변 · 소비 `{stat}`. `REVIEW_KB7_WIRE=False` · EVOLVE_AUTO **OFF**. 몰아주기 공식 **미수정**(기존 score5 경로 재기록). DB git 안 함. 롤백=`backups/20260828_VECTOR전_DB전체/`. 1237/1239예측 **없음**. · `docs/benchmarks/20260828_KREVIEW_VECTOR_REFILL_200.json` · `reports/20260828_KREVIEW_VECTOR_REFILL_200.md` · `tools/_k_3brain_vector_refill_200_20260828.py` |
 | **K-REVIEW-KB7-GEAR-A (형GO)** | **CONFIRM_OK** · APPLY**없음** · 코드배선**없음**. 선택 **A**. `REVIEW_KB7_WIRE=False` 유지. 7번=4·5·6 `collect_before` 읽기묶음 전용(예측 아님). 예측=1·2·3·4. 5·6 모니터·7예측재료 **안넣음**. 스모크 타깃1237 **미생성** as_of**1236** peekOK shape/consec/assoc **True** n**1236**. apply identity **True** · skip **False**. pred_1237**0** · pred_1239**0** · MAX**1238**. 몰아주기/자동화/1237예측 **동결**. NEXT「7번 기어 명시」**닫힘**. · `docs/benchmarks/20260828_KREVIEW_KB7_GEAR_A.json` · `reports/20260828_KREVIEW_KB7_GEAR_A.md` · `kb7_future.py`(불변) |
 | **K-REVIEW-KB7-FLOW-CLARIFY (형질문)** | **DISCUSS_OK** · APPLY**없음** · 코드/플래그 **불변**. 7번≠1~6예측단계. 실제 6개 추출=`random.choices`. 1·2·3은 가중·tier1·rare_pass로 **이미** 장 변경. 4는 `REVIEW_SHAPE_KB_WEIGHT_WIRE=True` 저울(kb7.shape hist만 빌림). 7=`collect_before` 4+5+6 읽기 · `REVIEW_KB7_WIRE=False` · apply/skip 빈함수(WIRE True여도 가중·거절 불변). 5·6 HOLD라 이번 예측재료 안 켬. pred_1237**0**. 다음=형「7번 기어에 무엇을」명시. · `reports/20260828_KREVIEW_KB7_FLOW_CLARIFY.md` · `app/testlotto/brains/review_brain/engine.py` · `kb7_future.py` |
 | **K-ENDCHECK-GAP (형종료체크)** | **DOC_OK** · 코드/플래그 **불변**. Glob `20260828_*.md` reports **0** · 커서보고서 **0** (본 파일 전). 원인=당일 캠페인 패치 없음(Q&A만). 전일 통작업은 `20260827_*` **7건** 양쪽 이미 존재(자리전이·유사도·핫쌍몰림·5세분·4번라이브·4번WIRE·전일종료체크). 전일 엑셀/CSV는 STATUS만. 보충=`reports/20260828_KENDCHECK_GAP.md` + 커서보고서 복사. 전일 캠페인 `20260828_` 복제 **안함**. pred_1237**0** · pred_1239**0** · MAX**1238**. 다음=7번 형GO. 1237아님. |

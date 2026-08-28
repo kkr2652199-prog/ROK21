@@ -1,0 +1,161 @@
+{
+  "id": "K-REVIEW-VECTOR-REFILL-200",
+  "as_of": "2026-08-28T11:24:43+09:00",
+  "verdict": "REFILL_OK",
+  "apply": true,
+  "db_git": false,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "draw_1239": false,
+  "window": [
+    1037,
+    1236
+  ],
+  "hard_ok": true,
+  "deleted": {
+    "cache": 600,
+    "pred": 3000,
+    "evolve": 600
+  },
+  "fill": {
+    "stat": {
+      "ok": 200,
+      "fail": 0
+    },
+    "markov": {
+      "ok": 200,
+      "fail": 0
+    },
+    "review": {
+      "ok": 200,
+      "fail": 0
+    }
+  },
+  "peek_fill": 0,
+  "fp_before": {
+    "stat": "a4aa43b5a5b7ca8a",
+    "markov": "296a9b573d09b9d1",
+    "review": "78df639abd85667a"
+  },
+  "fp_after": {
+    "stat": "5c1f719be70733b0",
+    "markov": "b2007a4f46ac774b",
+    "review": "33b3e524aed5b7c5"
+  },
+  "census_before": {
+    "evolve_by": {
+      "markov": 1234,
+      "review": 1235,
+      "stat": 1235
+    },
+    "evolve_window": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "cache_nonempty": {
+      "stat": 200,
+      "markov": 200,
+      "review": 200
+    },
+    "peek": 0,
+    "pred_n": 18520,
+    "pred_by": {
+      "markov": 1000,
+      "review": 1000,
+      "stat": 1000
+    },
+    "pred_1237": 0,
+    "pred_1238": 0,
+    "pred_1239": 0,
+    "draws_max": 1238,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "census_mid": {
+    "evolve_by": {
+      "markov": 1034,
+      "review": 1035,
+      "stat": 1035
+    },
+    "evolve_window": {},
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {},
+    "cache_nonempty": {
+      "stat": 0,
+      "markov": 0,
+      "review": 0
+    },
+    "peek": 0,
+    "pred_n": 15520,
+    "pred_by": {},
+    "pred_1237": 0,
+    "pred_1238": 0,
+    "pred_1239": 0,
+    "draws_max": 1238,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "census_after": {
+    "evolve_by": {
+      "markov": 1234,
+      "review": 1235,
+      "stat": 1235
+    },
+    "evolve_window": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "cache_by": {
+      "markov": 200,
+      "review": 200,
+      "stat": 200
+    },
+    "cache_nonempty": {
+      "stat": 200,
+      "markov": 200,
+      "review": 200
+    },
+    "peek": 0,
+    "pred_n": 18520,
+    "pred_by": {
+      "markov": 1000,
+      "review": 1000,
+      "stat": 1000
+    },
+    "pred_1237": 0,
+    "pred_1238": 0,
+    "pred_1239": 0,
+    "draws_max": 1238,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "ledger_unchanged": true,
+  "homework_unchanged": true,
+  "knobs": {
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ],
+    "FEATURE_LAMBDA_WIRE": false,
+    "REVIEW_KB7_WIRE": false,
+    "EVOLVE_AUTO": false
+  },
+  "backup": "D:\\ROK21\\backups\\20260828_VECTOR전_DB전체"
+}
