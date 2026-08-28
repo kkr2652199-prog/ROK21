@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 자리전이 널 HOLD_NO_WIRE. 다음=형 1건(7번 상세 GO). 1237예측 금지.
+- 할일: **양산前**. 7번은 4·5·6 읽기묶음·WIRE False·예측단계 아님. 다음=형 1건(7번 기어 무엇 켤지 명시). 1237예측 금지.
 - 완료조건: 형 오더 1건
-- 선행완료: K-ENDCHECK-GAP 20260828 DOC_OK
+- 선행완료: K-REVIEW-KB7-FLOW-CLARIFY DISCUSS_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-28
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260828_KREVIEW_KB7_FLOW_CLARIFY.md
 - reports/20260828_KENDCHECK_GAP.md
 - reports/20260827_KREVIEW_POS_TRANSITION_VERIFY.md
 - reports/20260827_KREVIEW_SIMILAR_NEXT_VERIFY.md

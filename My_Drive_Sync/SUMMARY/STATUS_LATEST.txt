@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-28 KST  
-📌 사유: **[CURSOR] K-ENDCHECK-GAP** — 20260828_*.md 없음. 당일 패치 없어서 접두 공백. 본 보고서로 보충
+📌 사유: **[CURSOR] K-REVIEW-KB7-FLOW-CLARIFY** — 7번=예측단계 아님. 읽기묶음·WIRE False. APPLY없음
 
-📌 직전: **[CURSOR] 1238회 CSV GitHub 저장** — `data/external/로또 회차 1회~1238회차.csv` 74,355B · 1238행 UTF-8 BOM
+📌 직전: **[CURSOR] K-ENDCHECK-GAP** — 20260828_*.md 없음. 당일 패치 없어서 접두 공백. 본 보고서로 보충
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-KB7-FLOW-CLARIFY (형질문)** | **DISCUSS_OK** · APPLY**없음** · 코드/플래그 **불변**. 7번≠1~6예측단계. 실제 6개 추출=`random.choices`. 1·2·3은 가중·tier1·rare_pass로 **이미** 장 변경. 4는 `REVIEW_SHAPE_KB_WEIGHT_WIRE=True` 저울(kb7.shape hist만 빌림). 7=`collect_before` 4+5+6 읽기 · `REVIEW_KB7_WIRE=False` · apply/skip 빈함수(WIRE True여도 가중·거절 불변). 5·6 HOLD라 이번 예측재료 안 켬. pred_1237**0**. 다음=형「7번 기어에 무엇을」명시. · `reports/20260828_KREVIEW_KB7_FLOW_CLARIFY.md` · `app/testlotto/brains/review_brain/engine.py` · `kb7_future.py` |
 | **K-ENDCHECK-GAP (형종료체크)** | **DOC_OK** · 코드/플래그 **불변**. Glob `20260828_*.md` reports **0** · 커서보고서 **0** (본 파일 전). 원인=당일 캠페인 패치 없음(Q&A만). 전일 통작업은 `20260827_*` **7건** 양쪽 이미 존재(자리전이·유사도·핫쌍몰림·5세분·4번라이브·4번WIRE·전일종료체크). 전일 엑셀/CSV는 STATUS만. 보충=`reports/20260828_KENDCHECK_GAP.md` + 커서보고서 복사. 전일 캠페인 `20260828_` 복제 **안함**. pred_1237**0** · pred_1239**0** · MAX**1238**. 다음=7번 형GO. 1237아님. |
 | **로또 회차 CSV 1–1238 (형저장)** | **SAVE_OK**. xlsx 동일 폴더에 CSV 추가. `data/external/로또 회차 1회~1238회차.csv` · **74,355**B · 데이터 **1238**행 · UTF-8 BOM. 컬럼 `No,회차,당첨1–6,보너스,순위,당첨게임수,1게임당당첨금액`. 엔진/DB/플래그 **불변**. 1237예측 **없음**. GitHub `kkr2652199-prog/ROK21` main. |
 | **로또 회차 엑셀 1–1238 (형저장)** | **SAVE_OK**. 원본 `C:\Users\user\Downloads\로또 회차 1회~1238회차.xlsx` → 레포 `data/external/로또 회차 1회~1238회차.xlsx` · **78,062**B. 엔진/DB/플래그 **불변**. 1237예측 **없음**. GitHub `kkr2652199-prog/ROK21` main. |
