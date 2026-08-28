@@ -10,14 +10,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `264638c` |
+| HEAD(실측) | `d6c0aa4` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 7번 A 확정 WIRE False |
-| 직전 | 7번=읽기묶음 예측단계아님 |
+| 지금 | **양산前** · 벡터200 REFILL_OK |
+| 직전 | 1037–1236 3뇌 리셋+재백필 |
 | BOOT다음 | 형 1건 / 1237예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 7번 A **닫힘**(WIRE False·읽기묶음·예측=1~4·5·6모니터). 다음=형 1건. 시동·몰아주기·1237예측 금지. |
+| NEXT1 할일 | **양산前**. 선행=K-REVIEW-VECTOR-REFILL-200 REFILL_OK. 다음=형 1건. 시동·몰아주기·1237예측 금지. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=264638c · 지금=**양산前** · 7번 A 확정 WIRE False · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=d6c0aa4 · 지금=**양산前** · 벡터200 REFILL_OK · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 264638c_
+_generated: d6c0aa4_
