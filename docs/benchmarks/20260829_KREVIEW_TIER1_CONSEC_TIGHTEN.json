@@ -1,0 +1,80 @@
+{
+  "id": "K-REVIEW-TIER1-CONSEC-TIGHTEN",
+  "as_of": "2026-08-29T13:17:42+09:00",
+  "verdict": "APPLY_OK",
+  "applied": true,
+  "rolled_back": false,
+  "apply": true,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1137,
+    1236
+  ],
+  "seed": 42,
+  "n": 100,
+  "peek": 0,
+  "s0": {
+    "before": {
+      "max": 4,
+      "run2_pass": true,
+      "run3_pass": true,
+      "run4_pass": false
+    },
+    "after_expected": {
+      "max": 3,
+      "run2_pass": true,
+      "run3_pass": false,
+      "run4_pass": false
+    },
+    "src_flag_3": true,
+    "src_flag_4": false,
+    "live_max": 3,
+    "other_tier1_kept": true,
+    "shape2_untouched": true,
+    "kb_run_neutral_false": true,
+    "prize_untouched": true
+  },
+  "before": {
+    "prize": 0.022583,
+    "struct": 0.036781,
+    "run2": 0.675,
+    "run3": 0.043
+  },
+  "after": {
+    "prize": 0.022954,
+    "struct": 0.035348,
+    "run2": 0.612,
+    "run3": 0
+  },
+  "delta_after_minus_before": {
+    "prize": 0.000371,
+    "struct": -0.001433,
+    "run2": -0.063,
+    "run3": -0.043
+  },
+  "gate": {
+    "run3_down": true,
+    "run2_not_up": true,
+    "prize_not_worse": true,
+    "size_bad0": true,
+    "peek0": true,
+    "n100": true,
+    "bonus_in0": true
+  },
+  "struct_plunge": false,
+  "size_bad": 0,
+  "bonus_in": 0,
+  "src_max_3": true,
+  "src_max_4": false,
+  "live_max": 3,
+  "rollback": "REVIEW_TIER1_CONSEC_MAX=4",
+  "pred_1237": 0,
+  "pred_1239": 0,
+  "draws_max": 1238,
+  "untouched": {
+    "shape2_075": true,
+    "run_neutral_false": true,
+    "prize_table": true
+  }
+}
