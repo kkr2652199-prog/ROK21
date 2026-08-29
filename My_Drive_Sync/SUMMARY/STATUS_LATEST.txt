@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-29 KST  
-📌 사유: **[CURSOR] K-REVIEW-PRIZE-BALANCE-DIAG** — 4번 저울 vs prize 축. SPEC_OK. APPLY없음.
+📌 사유: **[CURSOR] K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL** — run중립 게이트 미달 롤백. SPEC_OK.
 
-📌 직전: **[CURSOR] K-REVIEW-PROCESS-WALK** — 금액뇌 가동경로 부품실측. WALK_OK. APPLY없음.
+📌 직전: **[CURSOR] K-REVIEW-PRIZE-BALANCE-DIAG** — 4번 저울 vs prize 축. SPEC_OK. APPLY없음.
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL (형GO)** | **SPEC_OK** · APPLY**없음** · 즉시롤백. S0 연속성분=`run_hist`←`max_run`. 게이트1137–1236 n**100** peek**0** size_bad**0** bonus_in**0**. 패치상태 ON−OFF run2 **0.667→0.693** Δ**+0.026**>0.001 · Δprize **−0.001795**(전−0.00192 비악화OK) · Δstruct **−0.005616**(전−0.005521 악화). `REVIEW_SHAPE_KB_RUN_NEUTRAL=False` 복원 · WIRE **True**. prize표/choices/몰아주기 미수정. pred_1237**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL.json` · `reports/20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL.md` · `draw_shape_kb.py` |
 | **K-REVIEW-PRIZE-BALANCE-DIAG (형진단)** | **SPEC_OK** · READ-ONLY · APPLY**없음**. 표 W_CROWD**0.80** · W_STRUCT**0.20** · blend**0.85**. 게이트1137–1236 n**100** peek**0**. ON−OFF Δprefer **+0.000023** Δprize **−0.00192** Δstruct **−0.005521**. run2 **0.667→0.675** Δ**+0.008** · run3 **0.046→0.043** Δ**−0.003** · hi32 **2.252→2.186** Δ**−0.066**. S2 고정10장 후필터 Δprize **−0.000538** · |평균|<0.005 **True** · 생존 **7.43**/10. 파일 WIRE True 복원. pred_1237**0** · pred_1239**0** · MAX**1238**. · `docs/benchmarks/20260828_KREVIEW_PRIZE_BALANCE_DIAG.json` · `reports/20260828_KREVIEW_PRIZE_BALANCE_DIAG.md` · `tools/_k_review_prize_balance_diag.py` |
 | **K-REVIEW-PROCESS-WALK (형점검)** | **WALK_OK** · READ-ONLY · APPLY**없음** · 억지결함**안함**. 경로=`predict.run`→`generate(10)`→순위혼합0.70→choices→tier1/rare/shape_kb→pool 스티커. 1236 seed42: 10장 완성 attempts**18** reject shape_kb**6** tier1**2** rare**0**. 가중0 **없음**. 직전겹침평균 **1.1**. expand roles skill5/cover3/shape2 · source 전부 `review_reasonable`. 캐시1037–1236 **200**/10장미만**0**. fw>0 **1221** · 키없음**0**. learn adj 전부 **0**. 실체불일치=6~10 역할스티커. 설계거절=형태저울 추가RNG. 정상=프록시/learn빈값/7번읽기/10장완성. 몰아주기 범위밖. pred_1237**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_PROCESS_WALK.json` · `reports/20260829_KREVIEW_PROCESS_WALK.md` · `tools/_k_review_process_walk.py` |
 | **K-REVIEW-PRIZE-DNA-RANK (형GO)** | **APPLY_OK**. 원인=이월+neutralize 양수범위 **7.819배** vs prize **1.4983배** · 곱셈 극단뒤집힘 **False** · ρ곱셈↔이월 **0.9853** ↔prize **0.2523**. 패치=`REVIEW_PRIZE_RANK_MIX=True` · `mix_by_rank(α=0.70)` · `random.choices` 불변 · score5 **미접촉**. 게이트1137–1236 n**100** peek**0**: hi32 **1.872→2.186** Δ**+0.314** · prize축 **0.008131→0.022583** Δ**+0.014452** · prefer Δ**+0.004138**<0.005 · fw Δ**+0.003369**≤0.005 · ρ순위↔prize **0.8945**>이월 **0.5124**. review 리필 **200**/0. pred_1237**0** · MAX**1238**. 롤백=`False`. · `docs/benchmarks/20260829_KREVIEW_PRIZE_DNA_RANK.json` · `reports/20260829_KREVIEW_PRIZE_DNA_RANK.md` · `app/testlotto/brains/review_brain/engine.py` · `crowd_signal.mix_by_rank` |

@@ -29,6 +29,9 @@ REVIEW_SHAPE_KB_READ: bool = True
 # K-REVIEW-SHAPE-KB-WIRE (20260826) — 저울(가점). 칼/거절 아님.
 # K-REVIEW-SHAPE-KB-LIVE-ON (20260827) — 형 GO 라이브 ON. 롤백: False
 REVIEW_SHAPE_KB_WEIGHT_WIRE: bool = True
+# K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL (20260829) — 저울에서 run_hist만 제외.
+# 3번이 극단 연속을 이미 자름. 롤백: False
+REVIEW_SHAPE_KB_RUN_NEUTRAL: bool = False
 
 TABLE = "testlotto_draw_shape_kb"
 _LAST_READ: dict[str, Any] | None = None
@@ -307,10 +310,15 @@ def set_shape_score(nums: list[int], hist: dict[str, Any] | None) -> float:
         * _gauss(f["span"], hist.get("span_mean"), hist.get("span_std"))
         * _gauss(f["ac"], hist.get("ac_mean"), hist.get("ac_std"))
     ) ** (1.0 / 3.0)
-    raw = math.sqrt(odd_p + 1e-9) * math.sqrt(run_p + 1e-9) * g
-    ref_odd = float(oh.get("3", n / 6)) / n
-    ref_run = float(rh.get("1", n / 2)) / n
-    ref = math.sqrt(ref_odd + 1e-9) * math.sqrt(ref_run + 1e-9)
+    if REVIEW_SHAPE_KB_RUN_NEUTRAL:
+        raw = math.sqrt(odd_p + 1e-9) * g
+        ref_odd = float(oh.get("3", n / 6)) / n
+        ref = math.sqrt(ref_odd + 1e-9)
+    else:
+        raw = math.sqrt(odd_p + 1e-9) * math.sqrt(run_p + 1e-9) * g
+        ref_odd = float(oh.get("3", n / 6)) / n
+        ref_run = float(rh.get("1", n / 2)) / n
+        ref = math.sqrt(ref_odd + 1e-9) * math.sqrt(ref_run + 1e-9)
     return max(0.0, min(1.0, raw / max(ref, 1e-9)))
 
 

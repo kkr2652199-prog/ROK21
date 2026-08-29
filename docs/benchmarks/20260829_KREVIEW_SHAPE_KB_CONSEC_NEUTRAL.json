@@ -1,0 +1,77 @@
+{
+  "id": "K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL",
+  "as_of": "2026-08-29T12:47:58+09:00",
+  "verdict": "SPEC_OK",
+  "applied": false,
+  "rolled_back": true,
+  "apply": false,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1137,
+    1236
+  ],
+  "seed": 42,
+  "n": 100,
+  "peek": 0,
+  "s0": {
+    "score_parts": [
+      "odd_hist",
+      "run_hist(max_run)",
+      "sum_gauss",
+      "span_gauss",
+      "ac_gauss"
+    ],
+    "consec_part": "run_hist keyed by max_run (1=무연속, 2=run2포함, 3+=run3)",
+    "kept_after_patch": [
+      "odd_hist",
+      "sum",
+      "span",
+      "ac"
+    ],
+    "neutralized": "run_hist / max_run",
+    "WIRE": true,
+    "RUN_NEUTRAL": true,
+    "prize_table_untouched": true
+  },
+  "off": {
+    "prize": 0.024503,
+    "struct": 0.042302,
+    "run2": 0.667,
+    "run3": 0.046
+  },
+  "on": {
+    "prize": 0.022708,
+    "struct": 0.036686,
+    "run2": 0.693,
+    "run3": 0.056
+  },
+  "delta_on_minus_off": {
+    "prize": -0.001795,
+    "struct": -0.005616,
+    "run2": 0.026,
+    "run3": 0.01
+  },
+  "prev_delta": {
+    "prize": -0.00192,
+    "struct": -0.005521,
+    "run2": 0.008
+  },
+  "hard": {
+    "peek0": true,
+    "n100": true,
+    "size_bad0": true,
+    "bonus_in0": true,
+    "run2_le_001": false,
+    "prize_not_worse": true,
+    "struct_not_worse": false,
+    "wire_true": true
+  },
+  "size_bad": 0,
+  "bonus_in": 0,
+  "pred_1237": 0,
+  "pred_1239": 0,
+  "draws_max": 1238,
+  "src_run_neutral_true": false,
+  "rollback": "REVIEW_SHAPE_KB_RUN_NEUTRAL=False"
+}
