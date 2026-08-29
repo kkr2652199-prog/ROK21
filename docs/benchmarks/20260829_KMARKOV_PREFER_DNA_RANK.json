@@ -1,0 +1,74 @@
+{
+  "id": "K-MARKOV-PREFER-DNA-RANK",
+  "as_of": "2026-08-29T13:37:21+09:00",
+  "verdict": "APPLY_OK",
+  "applied": true,
+  "rolled_back": false,
+  "apply": true,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "brain": "markov",
+  "window": [
+    1137,
+    1236
+  ],
+  "seed": 42,
+  "n": 100,
+  "peek": 0,
+  "s0": {
+    "pipe": "transition walk → learn → prefer mix → top25 choices → aux → diversity",
+    "PREFER_WIRE": true,
+    "LEARN_WIRED": true,
+    "W_CROWD_markov": 0.9,
+    "W_STRUCT_markov": 0.1,
+    "BLEND_markov": 0.55,
+    "RANK_ALPHA": 0.7,
+    "as_of_weights": 1236,
+    "peek1236": true,
+    "rho_w_off_vs_prefer": 0.2248,
+    "rho_w_on_vs_prefer": 0.9266,
+    "prize_table_untouched": true,
+    "stat_weight_untouched": true,
+    "review_rank_untouched": true
+  },
+  "off": {
+    "prefer": 0.019451,
+    "prize": 0.008838,
+    "bday": 4.211,
+    "hi32": 1.789
+  },
+  "on": {
+    "prefer": 0.054215,
+    "prize": 0.021716,
+    "bday": 4.322,
+    "hi32": 1.678
+  },
+  "delta_on_minus_off": {
+    "prefer": 0.034764,
+    "prize": 0.012878,
+    "bday": 0.111,
+    "hi32": -0.111
+  },
+  "gate": {
+    "dna_up": true,
+    "prize_iso": true,
+    "size_bad0": true,
+    "bonus_in0": true,
+    "peek0": true,
+    "n100": true
+  },
+  "size_bad": 0,
+  "bonus_in": 0,
+  "src_mix_true": true,
+  "src_mix_false": false,
+  "live_mix": true,
+  "rollback": "MARKOV_PREFER_RANK_MIX=False",
+  "pred_1237": 0,
+  "pred_1239": 0,
+  "draws_max": 1238,
+  "untouched": {
+    "prize_w_crowd": true,
+    "stat_weight": true,
+    "review_rank": true
+  }
+}

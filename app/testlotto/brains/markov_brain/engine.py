@@ -10,6 +10,12 @@ from app.testlotto.brains.markov_brain import learn
 
 logger = logging.getLogger(__name__)
 
+# K-MARKOV-PREFER-DNA-RANK (20260829)
+# 선호표를 전이 방문과 순위혼합. 곱셈 블렌드는 방문횟수 스케일에 잠김.
+# prize/1y 표 미사용. 롤백: False → 기존 blend_weights.
+MARKOV_PREFER_RANK_MIX: bool = True
+MARKOV_PREFER_RANK_ALPHA: float = 0.70
+
 
 def build_transition_matrix(draws: list[dict], decay: float = 0.02) -> dict:
     """
@@ -101,25 +107,16 @@ def get_markov_prob_vector(draws: list[dict]) -> dict[int, float]:
     return {n: visit_count[n] / total for n in range(1, 46)}
 
 
-def generate(draws: list[dict], n_sets: int = 5) -> list[dict]:
-    """
-    Markov Chain 기반 예측.
-    1) 전이행렬 구축
-    2) 최근 회차 번호에서 Random Walk
-    3) 방문빈도 상위 번호로 가중 조합 생성
-    4) 1티어 필터 적용
-    """
+def build_weights(draws: list[dict]) -> dict[int, float]:
+    """전이 워크 + learn + 선호표. random.choices 라인은 generate에 남김."""
     if len(draws) < 2:
-        return []
+        return {n: 1.0 for n in range(1, 46)}
 
     matrix = build_transition_matrix(draws)
-
     last_draw = draws[-1]
     start_nums = [last_draw[f"num{k}"] for k in range(1, 7)]
-
     visit_count = markov_random_walk(matrix, start_nums, steps=80)
 
-    # ── 피드백 학습 고리 (Layer 2-a, as_of 절단) ──
     try:
         from app.testlotto.feedback import get_feedback_summary
 
@@ -133,24 +130,43 @@ def generate(draws: list[dict], n_sets: int = 5) -> list[dict]:
                 if hit_n in visit_count:
                     visit_count[hit_n] *= 1.15
     except Exception as e:  # noqa: BLE001
-        logger.debug("마르코프 피드백 반영 스킵 (_markov_predict): %s", e)
+        logger.debug("마르코프 피드백 반영 스킵: %s", e)
 
     if learn.LEARN_WIRED:
         visit_count = learn.apply_learn_boost(visit_count, draws)
 
-    # 선호번호뇌: 군중 인기 프록시(first_winners) + 생일대 사전을 가중치에만 혼합
-    # random.choices 라인은 그대로 · 가중치 테이블만 변경
     try:
         from app.testlotto.brains.shared import crowd_signal
 
         if crowd_signal.prefer_on():
-            visit_count = crowd_signal.blend_weights(
-                visit_count,
-                crowd_signal.prefer_table(draws, brain="markov"),
-                brain="markov",
-            )
+            table = crowd_signal.prefer_table(draws, brain="markov")
+            if MARKOV_PREFER_RANK_MIX:
+                visit_count = crowd_signal.mix_by_rank(
+                    visit_count, table, alpha_table=MARKOV_PREFER_RANK_ALPHA
+                )
+            else:
+                visit_count = crowd_signal.blend_weights(
+                    visit_count,
+                    table,
+                    brain="markov",
+                )
     except Exception as e:  # noqa: BLE001
         logger.debug("선호번호 군중신호 스킵: %s", e)
+    return visit_count
+
+
+def generate(draws: list[dict], n_sets: int = 5) -> list[dict]:
+    """
+    Markov Chain 기반 예측.
+    1) 전이행렬 구축
+    2) 최근 회차 번호에서 Random Walk
+    3) 방문빈도 상위 번호로 가중 조합 생성
+    4) 1티어 필터 적용
+    """
+    if len(draws) < 2:
+        return []
+
+    visit_count = build_weights(draws)
 
     top_candidates = sorted(visit_count.items(), key=lambda x: x[1], reverse=True)[:25]
     candidate_nums = [n for n, _ in top_candidates]
