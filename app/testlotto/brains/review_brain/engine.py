@@ -10,6 +10,11 @@ REVIEW_SEQ_DISTRIBUTE: bool = False
 # 장마다 1~45 리셋 후 합리한 장(tier1). Jaccard멀리·45소진 없음. #1=먼저 완성된 장.
 # 장끼리 같은 번호 겹침 허용. random.choices 라인 동결. 롤백: False.
 REVIEW_REASONABLE_SET: bool = True
+# K-REVIEW-PRIZE-DNA-RANK (20260829)
+# 금액표와 이월을 순위혼합. 곱셈 블렌드는 이월 스케일(약 7~8배)에 잠김.
+# 롤백: False → 기존 blend_weights.
+REVIEW_PRIZE_RANK_MIX: bool = True
+REVIEW_PRIZE_RANK_ALPHA: float = 0.70
 
 
 def review_compose_mode() -> str:
@@ -44,11 +49,17 @@ def build_review_weights(draws: list[dict], adj: dict | None = None) -> dict[int
         from app.testlotto.brains.shared import crowd_signal
 
         if crowd_signal.prize_on():
-            weights = crowd_signal.blend_weights(
-                weights,
-                crowd_signal.prize_table(draws, brain="review"),
-                brain="review",
-            )
+            table = crowd_signal.prize_table(draws, brain="review")
+            if REVIEW_PRIZE_RANK_MIX:
+                weights = crowd_signal.mix_by_rank(
+                    weights, table, alpha_table=REVIEW_PRIZE_RANK_ALPHA
+                )
+            else:
+                weights = crowd_signal.blend_weights(
+                    weights,
+                    table,
+                    brain="review",
+                )
     except Exception:  # noqa: BLE001
         pass
     try:

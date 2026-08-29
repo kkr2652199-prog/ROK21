@@ -207,6 +207,31 @@ def blend_weights(
     return out
 
 
+def mix_by_rank(
+    base: dict[int, float],
+    table: dict[int, float],
+    *,
+    alpha_table: float,
+) -> dict[int, float]:
+    """두 표를 순위공간에서 섞는다. 스케일 잠금 해제. random.choices 미수정.
+
+    alpha_table=1 → table 순위만. 0 → base 순위만.
+    """
+    def _rank_desc(d: dict[int, float]) -> dict[int, float]:
+        order = sorted(range(1, 46), key=lambda n: (-float(d.get(n, 0.0)), n))
+        return {n: float(i + 1) for i, n in enumerate(order)}
+
+    a = max(0.0, min(1.0, float(alpha_table)))
+    rb = _rank_desc(base)
+    rt = _rank_desc(table)
+    out: dict[int, float] = {}
+    for n in range(1, 46):
+        sb = 46.0 - rb[n]
+        st = 46.0 - rt[n]
+        out[n] = max(0.05, (1.0 - a) * sb + a * st)
+    return out
+
+
 def set_crowd_score(nums: list[int], table: dict[int, float]) -> tuple[float, list[int]]:
     """세트 평균 신호 + 상위 기여 번호."""
     if not nums:

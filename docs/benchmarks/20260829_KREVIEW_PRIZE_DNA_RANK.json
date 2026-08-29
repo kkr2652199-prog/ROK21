@@ -1,0 +1,92 @@
+{
+  "id": "K-REVIEW-PRIZE-DNA-RANK",
+  "as_of": "2026-08-29T10:29:47+09:00",
+  "verdict": "APPLY_OK",
+  "applied": true,
+  "apply": true,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "score5_untouched": true,
+  "alpha": 0.7,
+  "window_gate": [
+    1137,
+    1236
+  ],
+  "window_fill": [
+    1037,
+    1236
+  ],
+  "seed": 42,
+  "diag": {
+    "as_of": 1236,
+    "peek_ok": true,
+    "prev_nums": [
+      6,
+      7,
+      11,
+      15,
+      39,
+      43
+    ],
+    "carry_pos_min": 0.032807,
+    "carry_pos_max": 0.256514,
+    "carry_ratio": 7.819,
+    "prize_min": 0.789069,
+    "prize_max": 1.182272,
+    "prize_ratio": 1.4983,
+    "mul_flip_extreme": false,
+    "mul_hi_x_plo": 0.210523,
+    "mul_lo_x_phi": 0.037889,
+    "rho_mul_vs_carry": 0.9853,
+    "rho_mul_vs_prize": 0.2523,
+    "rho_rank_vs_carry": 0.5124,
+    "rho_rank_vs_prize": 0.8945,
+    "why": "이월 neutralize 후 양수 가중 범위가 prize 표보다 훨씬 커서 곱셈 블렌드가 순위를 못 뒤집음."
+  },
+  "base": {
+    "rank_mix": false,
+    "n": 100,
+    "peek": 0,
+    "hi32": 1.872,
+    "end089": 1.793,
+    "prize_axis": 0.008131,
+    "prefer_axis": 0.007168,
+    "fw_prize": -0.121031
+  },
+  "cand": {
+    "rank_mix": true,
+    "n": 100,
+    "peek": 0,
+    "hi32": 2.186,
+    "end089": 1.713,
+    "prize_axis": 0.022583,
+    "prefer_axis": 0.011306,
+    "fw_prize": -0.117662
+  },
+  "delta": {
+    "hi32": 0.314,
+    "end089": -0.08,
+    "prize_axis": 0.014452,
+    "prefer_axis": 0.004138,
+    "fw_prize": 0.003369
+  },
+  "hard": {
+    "peek0": true,
+    "n100": true,
+    "hi32_up": true,
+    "prize_not_worse": true,
+    "fw_iso": true,
+    "rho_prize_gt_carry": true,
+    "diag_no_mul_flip": true
+  },
+  "fill": {
+    "ok": 200,
+    "fail": 0,
+    "peek": 0
+  },
+  "pred_1237": 0,
+  "pred_1239": 0,
+  "draws_max": 1238,
+  "rollback": "REVIEW_PRIZE_RANK_MIX=False",
+  "null_hi32": 1.8667
+}
