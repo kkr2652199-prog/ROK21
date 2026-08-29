@@ -1,0 +1,168 @@
+{
+  "id": "K-REVIEW-CONSEC-ROOT-AND-PRIZE-ISOLATE",
+  "as_of": "2026-08-29T13:08:37+09:00",
+  "verdict": "SPEC_OK",
+  "apply": false,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1137,
+    1236
+  ],
+  "seed": 42,
+  "n": 100,
+  "peek": 0,
+  "s0": {
+    "tier1_rule": "max_consec >= 4 탈락 → 연번<4 (3연속까지 허용)",
+    "tier1_live_run3_pass": true,
+    "tier1_live_run4_fail": true,
+    "src_max_consec_ge4": true,
+    "shape2_factor": 0.75,
+    "shape2_wire": true,
+    "src_flat_075": true,
+    "kb4_wire": true,
+    "rng_branch_points": [
+      "keep_set_by_hist → random.random() (choices와 전역 RNG 공유)",
+      "저울 거절 시 generate 루프 추가 → random.choices 추가 소비"
+    ],
+    "prize_table_untouched": true,
+    "run_neutral_false": true
+  },
+  "part_a": {
+    "s1_tier1": {
+      "lt4": {
+        "n": 100,
+        "prize": 0.022583,
+        "struct": 0.036781,
+        "run2": 0.675,
+        "run3": 0.043
+      },
+      "lt3": {
+        "n": 100,
+        "prize": 0.022954,
+        "struct": 0.035348,
+        "run2": 0.612,
+        "run3": 0.0
+      },
+      "lt2": {
+        "n": 100,
+        "prize": 0.023369,
+        "struct": 0.037174,
+        "run2": 0.0,
+        "run3": 0.0
+      },
+      "d_lt3_minus_lt4": {
+        "run2": -0.063,
+        "run3": -0.043,
+        "prize": 0.000371,
+        "struct": -0.001433
+      },
+      "d_lt2_minus_lt4": {
+        "run2": -0.675,
+        "run3": -0.043,
+        "prize": 0.000786,
+        "struct": 0.000393
+      }
+    },
+    "s2_shape2": {
+      "f075": {
+        "n": 100,
+        "prize": 0.022583,
+        "struct": 0.036781,
+        "run2": 0.675,
+        "run3": 0.043
+      },
+      "f060": {
+        "n": 100,
+        "prize": 0.022235,
+        "struct": 0.035074,
+        "run2": 0.689,
+        "run3": 0.041
+      },
+      "f050": {
+        "n": 100,
+        "prize": 0.021634,
+        "struct": 0.034223,
+        "run2": 0.625,
+        "run3": 0.036
+      },
+      "d_f060_minus_f075": {
+        "run2": 0.014,
+        "run3": -0.002,
+        "prize": -0.000348,
+        "struct": -0.001707
+      },
+      "d_f050_minus_f075": {
+        "run2": -0.05,
+        "run3": -0.007,
+        "prize": -0.000949,
+        "struct": -0.002558
+      }
+    },
+    "run2_cuts": {
+      "tier1_<3": -0.063,
+      "tier1_<2": -0.675,
+      "shape2_0.60": 0.014,
+      "shape2_0.50": -0.05
+    },
+    "largest_run2_cut": "tier1_<2",
+    "root_axis": "tier1",
+    "prize_worse": {
+      "tier1_<3": false,
+      "tier1_<2": false,
+      "shape2_0.60": true,
+      "shape2_0.50": true
+    },
+    "struct_worse": {
+      "tier1_<3": true,
+      "tier1_<2": false,
+      "shape2_0.60": true,
+      "shape2_0.50": true
+    }
+  },
+  "part_b": {
+    "prev_branched": {
+      "prize": -0.00192,
+      "struct": -0.005521
+    },
+    "branched_this": {
+      "prize": -0.00192,
+      "struct": -0.005521,
+      "run2": 0.008,
+      "run3": -0.003
+    },
+    "frozen10_kept_vs_off": {
+      "prize": -0.000538,
+      "struct": 0.000381,
+      "run2": -0.011798,
+      "run3": -0.012306
+    },
+    "aligned10_vs_off": {
+      "prize": -0.000759,
+      "struct": 0.000415,
+      "run2": 0.001,
+      "run3": -0.012
+    },
+    "frozen_keep_mean": 7.43,
+    "frozen_skip": 0,
+    "aligned_skip": 0,
+    "culprit_prize": "RNG_분기",
+    "culprit_struct": "RNG_분기",
+    "culprit": "RNG_분기"
+  },
+  "hard": {
+    "peek0": true,
+    "n100": true,
+    "restored": true,
+    "pred_1237_0": true,
+    "pred_1239_0": true,
+    "src_tier1_ge4": true,
+    "src_flat_075": true,
+    "src_kb_wire_true": true,
+    "src_prize_untouched": true,
+    "apply_false": true
+  },
+  "pred_1237": 0,
+  "pred_1239": 0,
+  "draws_max": 1238
+}

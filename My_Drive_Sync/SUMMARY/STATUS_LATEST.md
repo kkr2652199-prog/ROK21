@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-29 KST  
-📌 사유: **[CURSOR] K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL** — run중립 게이트 미달 롤백. SPEC_OK.
+📌 사유: **[CURSOR] K-REVIEW-CONSEC-ROOT-AND-PRIZE-ISOLATE** — 쌍번호뿌리=tier1 · 비인기하락=RNG분기. SPEC_OK. APPLY없음.
 
-📌 직전: **[CURSOR] K-REVIEW-PRIZE-BALANCE-DIAG** — 4번 저울 vs prize 축. SPEC_OK. APPLY없음.
+📌 직전: **[CURSOR] K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL** — run중립 게이트 미달 롤백. SPEC_OK.
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-CONSEC-ROOT-AND-PRIZE-ISOLATE (형진단)** | **SPEC_OK** · READ-ONLY · APPLY**없음**. S0 tier1=**연번<4**(max_consec≥4탈락) · 2번=**×0.75**. 게이트1137–1236 n**100** peek**0**. A: run2 cut 연번<3 **−0.063** · 연번<2 **−0.675**(정의상0) · 2번×0.60 **+0.014** · ×0.50 **−0.05** → 뿌리=**tier1**. 연번<2 prize/struct 비악화. 2번 두칸 prize·struct 동반악화. B: 분기 Δprize **−0.00192** Δstruct **−0.005521**(직전BALANCE와동일). 고정10장 후필터 Δprize **−0.000538** Δstruct **+0.000381**. 정렬10vs10 Δprize **−0.000759** Δstruct **+0.000415** Δrun2 **+0.001**. 주범=**RNG_분기**. 파일플래그/prize표/choices 미수정. pred_1237**0** · pred_1239**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_CONSEC_ROOT_AND_PRIZE_ISOLATE.json` · `reports/20260829_KREVIEW_CONSEC_ROOT_AND_PRIZE_ISOLATE.md` · `tools/_k_review_consec_root_and_prize_isolate.py` |
 | **K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL (형GO)** | **SPEC_OK** · APPLY**없음** · 즉시롤백. S0 연속성분=`run_hist`←`max_run`. 게이트1137–1236 n**100** peek**0** size_bad**0** bonus_in**0**. 패치상태 ON−OFF run2 **0.667→0.693** Δ**+0.026**>0.001 · Δprize **−0.001795**(전−0.00192 비악화OK) · Δstruct **−0.005616**(전−0.005521 악화). `REVIEW_SHAPE_KB_RUN_NEUTRAL=False` 복원 · WIRE **True**. prize표/choices/몰아주기 미수정. pred_1237**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL.json` · `reports/20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL.md` · `draw_shape_kb.py` |
 | **K-REVIEW-PRIZE-BALANCE-DIAG (형진단)** | **SPEC_OK** · READ-ONLY · APPLY**없음**. 표 W_CROWD**0.80** · W_STRUCT**0.20** · blend**0.85**. 게이트1137–1236 n**100** peek**0**. ON−OFF Δprefer **+0.000023** Δprize **−0.00192** Δstruct **−0.005521**. run2 **0.667→0.675** Δ**+0.008** · run3 **0.046→0.043** Δ**−0.003** · hi32 **2.252→2.186** Δ**−0.066**. S2 고정10장 후필터 Δprize **−0.000538** · |평균|<0.005 **True** · 생존 **7.43**/10. 파일 WIRE True 복원. pred_1237**0** · pred_1239**0** · MAX**1238**. · `docs/benchmarks/20260828_KREVIEW_PRIZE_BALANCE_DIAG.json` · `reports/20260828_KREVIEW_PRIZE_BALANCE_DIAG.md` · `tools/_k_review_prize_balance_diag.py` |
 | **K-REVIEW-PROCESS-WALK (형점검)** | **WALK_OK** · READ-ONLY · APPLY**없음** · 억지결함**안함**. 경로=`predict.run`→`generate(10)`→순위혼합0.70→choices→tier1/rare/shape_kb→pool 스티커. 1236 seed42: 10장 완성 attempts**18** reject shape_kb**6** tier1**2** rare**0**. 가중0 **없음**. 직전겹침평균 **1.1**. expand roles skill5/cover3/shape2 · source 전부 `review_reasonable`. 캐시1037–1236 **200**/10장미만**0**. fw>0 **1221** · 키없음**0**. learn adj 전부 **0**. 실체불일치=6~10 역할스티커. 설계거절=형태저울 추가RNG. 정상=프록시/learn빈값/7번읽기/10장완성. 몰아주기 범위밖. pred_1237**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_PROCESS_WALK.json` · `reports/20260829_KREVIEW_PROCESS_WALK.md` · `tools/_k_review_process_walk.py` |
