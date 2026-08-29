@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `dfc0967` · WORK=`IDLE`
-2. **지금:** **양산前** · run중립 롤백 SPEC_OK
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL SPEC_OK(롤백). 다음=형 1건. 시동·1237예측 금지. (승인필요=형 1건 · 선행=없음)
+1. **HEAD:** `b7ee9bc` · WORK=`IDLE`
+2. **지금:** **양산前** · 쌍뿌리/비인기격리 SPEC_OK
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-CONSEC-ROOT-AND-PRIZE-ISOLATE SPEC_OK(APPLY없음). 다음=형 1건. 시동·1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-29 | 쌍뿌리+비인기격리진단 | 뿌리tier1·하락RNG분기 | **SPEC_OK** | TBD |
+| 2026-08-29 | 쌍뿌리+비인기격리진단 | 뿌리tier1·하락RNG분기 | **SPEC_OK** | b7ee9bc |
 | 2026-08-29 | 4번저울 연속가점만중립 | run2Δ+0.026 미달·즉시롤백 | **SPEC_OK** | dfc0967 |
 | 2026-08-29 | 4번저울 prize밸런스진단 | Δprize-0.0019·S2≈0·APPLY없음 | **SPEC_OK** | 7b7751a |
 | 2026-08-29 | 금액뇌 전경로 부품정밀검색 | 스티커/저울RNG·고장없음·APPLY없음 | **WALK_OK** | f377dd7 |

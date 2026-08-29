@@ -2,7 +2,7 @@
 
 > **압축되면 채팅 기억 버리고 이 파일 + EXTERNAL_START만 신뢰.**
 > 형 큐: `동생, GENSPARK_COMPRESS_RECOVER 붙여넣을게. JSON만 다시 읽어.`
-> 자동생성 HEAD=`dfc0967` · R37 `sync_all_resume_docs()`
+> 자동생성 HEAD=`b7ee9bc` · R37 `sync_all_resume_docs()`
 
 ## 0) 왜 필요한가
 
@@ -21,7 +21,7 @@
 ## 2) 붙여넣기 블록 (자동)
 
 ```
-[ROK21 젠스파크 압축복구 · HEAD=dfc0967]
+[ROK21 젠스파크 압축복구 · HEAD=b7ee9bc]
 
 ■ 신뢰 규칙 (필수)
 - 압축된 채팅 기억·긴 요약 = **불신**. 수치·판정은 아래 raw URL JSON만.
@@ -29,11 +29,11 @@
 - 당첨P↑·wire GO·quota 변경 = 형 명시 승인 전 금지.
 
 ■ LIVE
-- HEAD: dfc0967 · WORK=IDLE · SSOT=ROK21/7021
-- 지금: **양산前** · run중립 롤백 SPEC_OK
-- 직전: run2 Δ+0.026 게이트미달
+- HEAD: b7ee9bc · WORK=IDLE · SSOT=ROK21/7021
+- 지금: **양산前** · 쌍뿌리/비인기격리 SPEC_OK
+- 직전: 뿌리=tier1 · 하락=RNG분기 · APPLY없음
 - BOOT다음: 형 1건 / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL SPEC_OK(롤백). 다음=형 1건. 시동·1237예측 금지.
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-CONSEC-ROOT-AND-PRIZE-ISOLATE SPEC_OK(APPLY없음). 다음=형 1건. 시동·1237예측 금지.
 - kweon(D:\3kweon) 동결 · 1~3군 미기록
 
 ■ 기억 스토리보드 (보고서 읽기 순서 · Cursor)
@@ -53,6 +53,8 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_FULL.md
 - `20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260805_KTRANSITION_DIRECTION_BRIEF_CURSOR.md
+- `20260829_KREVIEW_CONSEC_ROOT_AND_PRIZE_ISOLATE` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260829_KREVIEW_CONSEC_ROOT_AND_PRIZE_ISOLATE.json
+  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260829_KREVIEW_CONSEC_ROOT_AND_PRIZE_ISOLATE.md
 - `20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL.md
 - `20260828_KREVIEW_PRIZE_BALANCE_DIAG` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260828_KREVIEW_PRIZE_BALANCE_DIAG.json
@@ -67,8 +69,6 @@
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260828_KREVIEW_VECTOR_REFILL_200.md
 - `20260828_KREVIEW_KB7_GEAR_A` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260828_KREVIEW_KB7_GEAR_A.json
   - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260828_KREVIEW_KB7_GEAR_A.md
-- `20260827_KREVIEW_POS_TRANSITION_VERIFY` → https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/docs/benchmarks/20260827_KREVIEW_POS_TRANSITION_VERIFY.json
-  - report: https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/reports/20260827_KREVIEW_POS_TRANSITION_VERIFY.md
 
 ■ 진입 파일
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md
@@ -79,7 +79,7 @@
 - https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/FLOW_BRIEF.md
 
 ■ 복구 후 할 일
-1. 첫줄: [복귀] HEAD=dfc0967 · 지금=**양산前** · run중립 롤백 SPEC_OK · 다음=K-AWAIT-HYUNG-NEXT
+1. 첫줄: [복귀] HEAD=b7ee9bc · 지금=**양산前** · 쌍뿌리/비인기격리 SPEC_OK · 다음=K-AWAIT-HYUNG-NEXT
 2. MEMORY_RESTORE → COLLECT_DESIGN → FULL JSON fetch → 표로 팩트체크
 3. 압축 전 장문과 불일치하면 **JSON 승** · 채팅 기억 폐기
 4. 승인 없으면 장문 지시서 금지 · 질문 1개
@@ -111,4 +111,4 @@ stat 즉시교체 클레임(수집 STEP 완료·교체는 STEP3)
 | LIVE | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/EXTERNAL_START.md` |
 | 대화요약 | `https://raw.githubusercontent.com/kkr2652199-prog/ROK21/main/My_Drive_Sync/SUMMARY/AI_COLLAB.md` |
 
-_generated: dfc0967_
+_generated: b7ee9bc_
