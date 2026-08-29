@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-29 KST  
-📌 사유: **[CURSOR] K-REVIEW-TIER1-CONSEC-TIGHTEN** — 연번<4→<3. APPLY_OK.
+📌 사유: **[CURSOR] K-STAT-PAST-LEARN-DNA-WEIGHT** — 과거학습 DNA 가중순위. APPLY_OK. stat만.
 
-📌 직전: **[CURSOR] K-REVIEW-CONSEC-ROOT-AND-PRIZE-ISOLATE** — 쌍번호뿌리=tier1 · 비인기하락=RNG분기. SPEC_OK. APPLY없음.
+📌 직전: **[CURSOR] K-REVIEW-TIER1-CONSEC-TIGHTEN** — 연번<4→<3. APPLY_OK.
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-STAT-PAST-LEARN-DNA-WEIGHT (형GO)** | **APPLY_OK** · **stat만** · review/markov **미접촉**. DNA=1y출현률+미출30+ (금액표 아님). S0 as_of1236 peekOK. ρ가중↔1y OFF **0.5279** → ON **0.8845**. learn adj 이월**0.2** 끝수**0.3** 미출**0.2**. 패치=`STAT_PAST_LEARN_WEIGHT_WIRE=True` · α**0.70** · 로컬 `_mix_by_rank`. 게이트1137–1236 n**100** peek**0** size_bad**0** bonus_in**0**. overdue **0.014→0.069** Δ**+0.055** · hot1y **3.023→3.346** Δ**+0.323** · rate1y Δ**+0.00434** · prize Δ**−0.000071** · prefer Δ**−0.000286**. pred_1237**0** · pred_1239**0** · MAX**1238**. 롤백=`False`. · `docs/benchmarks/20260829_KSTAT_PAST_LEARN_DNA_WEIGHT.json` · `reports/20260829_KSTAT_PAST_LEARN_DNA_WEIGHT.md` · `app/testlotto/brains/stat_brain/past_learn.py` · `engine.py` |
 | **K-REVIEW-TIER1-CONSEC-TIGHTEN (형GO)** | **APPLY_OK**. `REVIEW_TIER1_CONSEC_MAX=3` (롤백=4). S0 변경전 3연속통과·4연속탈락. 게이트1137–1236 n**100** peek**0** size_bad**0** bonus_in**0**. before→after run2 **0.675→0.612** Δ**−0.063** · run3 **0.043→0** Δ**−0.043** · prize **0.022583→0.022954** Δ**+0.000371** · struct **0.036781→0.035348** Δ**−0.001433**(급락아님). 2번×0.75 · 4번 RUN_NEUTRAL=False · prize표/choices/몰아주기 미수정. pred_1237**0** · pred_1239**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_TIER1_CONSEC_TIGHTEN.json` · `reports/20260829_KREVIEW_TIER1_CONSEC_TIGHTEN.md` · `app/testlotto/filters.py` |
 | **K-REVIEW-CONSEC-ROOT-AND-PRIZE-ISOLATE (형진단)** | **SPEC_OK** · READ-ONLY · APPLY**없음**. S0 tier1=**연번<4**(max_consec≥4탈락) · 2번=**×0.75**. 게이트1137–1236 n**100** peek**0**. A: run2 cut 연번<3 **−0.063** · 연번<2 **−0.675**(정의상0) · 2번×0.60 **+0.014** · ×0.50 **−0.05** → 뿌리=**tier1**. 연번<2 prize/struct 비악화. 2번 두칸 prize·struct 동반악화. B: 분기 Δprize **−0.00192** Δstruct **−0.005521**(직전BALANCE와동일). 고정10장 후필터 Δprize **−0.000538** Δstruct **+0.000381**. 정렬10vs10 Δprize **−0.000759** Δstruct **+0.000415** Δrun2 **+0.001**. 주범=**RNG_분기**. 파일플래그/prize표/choices 미수정. pred_1237**0** · pred_1239**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_CONSEC_ROOT_AND_PRIZE_ISOLATE.json` · `reports/20260829_KREVIEW_CONSEC_ROOT_AND_PRIZE_ISOLATE.md` · `tools/_k_review_consec_root_and_prize_isolate.py` |
 | **K-REVIEW-SHAPE-KB-CONSEC-NEUTRAL (형GO)** | **SPEC_OK** · APPLY**없음** · 즉시롤백. S0 연속성분=`run_hist`←`max_run`. 게이트1137–1236 n**100** peek**0** size_bad**0** bonus_in**0**. 패치상태 ON−OFF run2 **0.667→0.693** Δ**+0.026**>0.001 · Δprize **−0.001795**(전−0.00192 비악화OK) · Δstruct **−0.005616**(전−0.005521 악화). `REVIEW_SHAPE_KB_RUN_NEUTRAL=False` 복원 · WIRE **True**. prize표/choices/몰아주기 미수정. pred_1237**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL.json` · `reports/20260829_KREVIEW_SHAPE_KB_CONSEC_NEUTRAL.md` · `draw_shape_kb.py` |

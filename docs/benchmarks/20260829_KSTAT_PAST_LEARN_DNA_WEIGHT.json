@@ -1,0 +1,86 @@
+{
+  "id": "K-STAT-PAST-LEARN-DNA-WEIGHT",
+  "as_of": "2026-08-29T13:33:18+09:00",
+  "verdict": "APPLY_OK",
+  "applied": true,
+  "rolled_back": false,
+  "apply": true,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "brain": "stat",
+  "window": [
+    1137,
+    1236
+  ],
+  "seed": 42,
+  "n": 100,
+  "peek": 0,
+  "s0": {
+    "pipe": "transition(OFF) → engine(v2) → aux → past_learn soft → weight_mix → diversity",
+    "PAST_LEARN_WIRE": true,
+    "ENGINE_V2": true,
+    "ASSOC": false,
+    "TRANSITION_V1": false,
+    "WEIGHT_WIRE_file": true,
+    "WEIGHT_ALPHA": 0.7,
+    "learn_adj": {
+      "carry_over_boost": 0.2,
+      "ending_digit_boost": 0.3,
+      "overdue_boost": 0.2
+    },
+    "as_of_weights": 1236,
+    "rho_w_off_vs_rate1y": 0.5279,
+    "rho_w_off_vs_gap": -0.458,
+    "rho_w_on_vs_rate1y": 0.8845,
+    "rho_w_on_vs_gap": -0.3296,
+    "prize_table_untouched": true,
+    "review_rank_mix_untouched": true,
+    "peek1236": true
+  },
+  "off": {
+    "prize": 0.00127,
+    "prefer": 0.00564,
+    "overdue": 0.014,
+    "hot1y": 3.023,
+    "rate1y": 0.145737,
+    "gap": 4.4475
+  },
+  "on": {
+    "prize": 0.001199,
+    "prefer": 0.005354,
+    "overdue": 0.069,
+    "hot1y": 3.346,
+    "rate1y": 0.150077,
+    "gap": 4.911167
+  },
+  "delta_on_minus_off": {
+    "prize": -7.1e-05,
+    "prefer": -0.000286,
+    "overdue": 0.055,
+    "hot1y": 0.323,
+    "rate1y": 0.00434,
+    "gap": 0.463667
+  },
+  "gate": {
+    "dna_up": true,
+    "prize_iso": true,
+    "prefer_iso": true,
+    "size_bad0": true,
+    "bonus_in0": true,
+    "peek0": true,
+    "n100": true
+  },
+  "size_bad": 0,
+  "bonus_in": 0,
+  "src_wire_true": true,
+  "src_wire_false": false,
+  "live_wire": true,
+  "rollback": "STAT_PAST_LEARN_WEIGHT_WIRE=False",
+  "pred_1237": 0,
+  "pred_1239": 0,
+  "draws_max": 1238,
+  "untouched": {
+    "prize_table": true,
+    "review_rank_mix": true
+  }
+}

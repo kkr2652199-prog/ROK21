@@ -233,6 +233,12 @@ def build_weights(draws: list[dict]) -> tuple[
         logger.debug("피드백 반영 스킵: %s", e)
 
     weights = learn.apply_learn_boost(weights, draws, last_seen, latest_draw_no)
+    try:
+        from app.testlotto.brains.stat_brain import past_learn
+
+        weights = past_learn.apply_weight_mix(weights, draws)
+    except Exception:
+        pass
 
     return weights, freq, pair_freq, last_seen, latest_draw_no
 

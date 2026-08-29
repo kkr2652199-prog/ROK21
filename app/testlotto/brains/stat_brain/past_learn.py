@@ -8,12 +8,14 @@
   4) reasoning 태깅 · diversity.pick
 
 ASSOC 전수 NOISE_LIKE → PAST_LEARN_ASSOC_HINT 기본 OFF.
+K-STAT-PAST-LEARN-DNA-WEIGHT: 1y·미출 표를 가중 순위에 섞음(금액표 아님).
 발권 가중 대폭↑ 금지 · random.choices 미사용 · transition_v1 기본 OFF 유지.
 
 롤백:
   K_PAST_LEARN=0          → soft/annotate 최소(이름·method만)
   K_STAT_ENGINE_V2=0      → engine v1
   K_PAST_LEARN_ASSOC=1    → 연관 soft ON (튜닝용)
+  STAT_PAST_LEARN_WEIGHT_WIRE=False → 가중 순위혼합 해제
 """
 from __future__ import annotations
 
@@ -26,6 +28,10 @@ PAST_LEARN_WIRE: bool = True
 PAST_LEARN_ENGINE_V2: bool = True
 # ASSOC 리프트 soft — 전수 NOISE → 기본 OFF · 튜닝 시 env=1
 PAST_LEARN_ASSOC_HINT: bool = False
+# K-STAT-PAST-LEARN-DNA-WEIGHT (20260829) — 1y빈도·미출30+ 를 choices 가중 순위에.
+# prize/prefer 표 미사용. 롤백: False
+STAT_PAST_LEARN_WEIGHT_WIRE: bool = True
+STAT_PAST_LEARN_WEIGHT_ALPHA: float = 0.70
 
 # soft confidence 상한 (세트당)
 SOFT_CONF_CAP = 3.0
@@ -60,6 +66,63 @@ def use_engine_v2() -> bool:
 
 def assoc_hint_on() -> bool:
     return wire_on() and _env_flag("K_PAST_LEARN_ASSOC", PAST_LEARN_ASSOC_HINT)
+
+
+def weight_wire_on() -> bool:
+    return wire_on() and _env_flag("K_STAT_PAST_LEARN_WEIGHT", STAT_PAST_LEARN_WEIGHT_WIRE)
+
+
+def weight_alpha() -> float:
+    v = os.environ.get("K_STAT_PAST_LEARN_WEIGHT_ALPHA", "").strip()
+    if v:
+        try:
+            return max(0.0, min(1.0, float(v)))
+        except ValueError:
+            pass
+    return float(STAT_PAST_LEARN_WEIGHT_ALPHA)
+
+
+def past_weight_table(draws: list[dict]) -> dict[int, float]:
+    """stat DNA 표: 1년 출현률 + 미출30+. prize/prefer 아님."""
+    profile = build_past_profiles(draws)
+    r1 = profile.get("rate_1y") or {}
+    gap = profile.get("gap") or {}
+    out: dict[int, float] = {}
+    for n in range(1, 46):
+        overdue = 1.0 if float(gap.get(n, 0) or 0) >= 30 else 0.0
+        out[n] = 0.65 * float(r1.get(n, 0.0) or 0.0) + 0.35 * overdue
+    return out
+
+
+def _mix_by_rank(
+    base: dict[int, float],
+    table: dict[int, float],
+    *,
+    alpha_table: float,
+) -> dict[int, float]:
+    """순위공간 혼합. crowd_signal.prize 미호출. random.choices 미수정."""
+
+    def _rank_desc(d: dict[int, float]) -> dict[int, float]:
+        order = sorted(range(1, 46), key=lambda n: (-float(d.get(n, 0.0)), n))
+        return {n: float(i + 1) for i, n in enumerate(order)}
+
+    a = max(0.0, min(1.0, float(alpha_table)))
+    rb = _rank_desc(base)
+    rt = _rank_desc(table)
+    out: dict[int, float] = {}
+    for n in range(1, 46):
+        sb = 46.0 - rb[n]
+        st = 46.0 - rt[n]
+        out[n] = max(0.05, (1.0 - a) * sb + a * st)
+    return out
+
+
+def apply_weight_mix(weights: dict[int, float], draws: list[dict]) -> dict[int, float]:
+    """engine.build_weights 끝에서 호출. WIRE OFF면 그대로."""
+    if not weights or not draws or not weight_wire_on():
+        return weights
+    table = past_weight_table(draws)
+    return _mix_by_rank(weights, table, alpha_table=weight_alpha())
 
 
 def soft_weight() -> float:
@@ -228,9 +291,11 @@ def flags_snapshot() -> dict[str, Any]:
         "PAST_LEARN_WIRE": wire_on(),
         "PAST_LEARN_ENGINE_V2": use_engine_v2(),
         "PAST_LEARN_ASSOC_HINT": assoc_hint_on(),
+        "STAT_PAST_LEARN_WEIGHT_WIRE": weight_wire_on(),
+        "STAT_PAST_LEARN_WEIGHT_ALPHA": weight_alpha(),
         "SOFT_WEIGHT": soft_weight(),
         "SOFT_CONF_CAP": soft_conf_cap(),
-        "rollback": "K_PAST_LEARN=0 · K_STAT_ENGINE_V2=0 · K_PAST_LEARN_ASSOC=0",
+        "rollback": "K_PAST_LEARN=0 · K_STAT_ENGINE_V2=0 · K_PAST_LEARN_ASSOC=0 · STAT_PAST_LEARN_WEIGHT_WIRE=False",
     }
 
 
