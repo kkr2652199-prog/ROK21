@@ -1,0 +1,190 @@
+{
+  "id": "K-REVIEW-PROCESS-WALK",
+  "as_of": "2026-08-29T12:22:57+09:00",
+  "verdict": "WALK_OK",
+  "apply": false,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "as_of_draw": 1236,
+  "peek_ok": true,
+  "peek_max": 1235,
+  "draws_max": 1238,
+  "pred_1237": 0,
+  "fw_used": 1221,
+  "fw_zero": 14,
+  "fw_missing_key": 0,
+  "learn_adj": {
+    "carry_over_boost": 0.0,
+    "ending_digit_boost": 0.0,
+    "pair_boost": 0.0,
+    "consecutive_boost": 0.0,
+    "overdue_boost": 0.0,
+    "odd_even_balance": 0.0
+  },
+  "live": {
+    "PRIZE_WIRE": true,
+    "REVIEW_PRIZE_RANK_MIX": true,
+    "REVIEW_PRIZE_RANK_ALPHA": 0.7,
+    "REVIEW_REASONABLE_SET": true,
+    "compose": "reasonable",
+    "REVIEW_SHAPE_WIRE": true,
+    "REVIEW_RARE_SLICE_WIRE": true,
+    "REVIEW_SHAPE_KB_WEIGHT_WIRE": true,
+    "REVIEW_CONSEC_PASS_WIRE": false,
+    "REVIEW_KB7_WIRE": false,
+    "ROLE_SLOTS_WIRE": true,
+    "ROLE_TIER_LEARN_BRAINS": [
+      "stat"
+    ]
+  },
+  "instrument_1236": {
+    "n_want": 10,
+    "n_got": 10,
+    "attempts": 18,
+    "reject": {
+      "shape_kb": 6,
+      "accept": 10,
+      "tier1": 2
+    },
+    "zero_weight_after_build": [],
+    "sets": [
+      [
+        2,
+        3,
+        7,
+        15,
+        24,
+        29
+      ],
+      [
+        1,
+        14,
+        28,
+        31,
+        34,
+        40
+      ],
+      [
+        7,
+        11,
+        18,
+        19,
+        35,
+        44
+      ],
+      [
+        14,
+        28,
+        33,
+        35,
+        37,
+        40
+      ],
+      [
+        14,
+        16,
+        18,
+        19,
+        40,
+        44
+      ],
+      [
+        15,
+        16,
+        21,
+        26,
+        31,
+        43
+      ],
+      [
+        14,
+        21,
+        27,
+        31,
+        42,
+        45
+      ],
+      [
+        4,
+        6,
+        9,
+        22,
+        33,
+        39
+      ],
+      [
+        13,
+        16,
+        27,
+        40,
+        41,
+        43
+      ],
+      [
+        11,
+        27,
+        31,
+        33,
+        38,
+        39
+      ]
+    ],
+    "carry_in_sets_mean": 1.1
+  },
+  "expand_pool_1236": {
+    "n": 10,
+    "roles": {
+      "skill_native": 5,
+      "cover_r3": 3,
+      "shape_r2": 2
+    },
+    "sources": {
+      "review_reasonable": 10
+    },
+    "kinds": {
+      "pool": 10
+    }
+  },
+  "cache_1037_1236": {
+    "n": 200,
+    "short_lt10": 0,
+    "role_source": {
+      "skill_native|None": 1000,
+      "cover_r3|None": 600,
+      "shape_r2|None": 400
+    }
+  },
+  "findings": [
+    {
+      "id": "LABEL_STICKER",
+      "grade": "실체불일치",
+      "text": "6~8 cover / 9~10 shape는 별 엔진이 아님. 같은 generate 10장의 스티커."
+    },
+    {
+      "id": "SHAPE_KB_RNG",
+      "grade": "설계된거절",
+      "text": "형태저울이 추가 random으로 장을 다시 뽑게 함. 칼 아님. 시드 경로에 동전 한 장 더 있음."
+    },
+    {
+      "id": "FW_PROXY_OK",
+      "grade": "정상",
+      "text": "first_winners가 draws에 있음. 판매수 원본은 없음(프록시). 결함 아님."
+    },
+    {
+      "id": "LEARN_ADJ_IDLE",
+      "grade": "정상",
+      "text": "learn 조정값 비어 있음. 라이브 가중은 코드 상수(이월 1.8·순위혼합)로 돔."
+    },
+    {
+      "id": "TEN_OK",
+      "grade": "정상",
+      "text": "1236에서 10장 완성. attempts=18 reject={'shape_kb': 6, 'accept': 10, 'tier1': 2}"
+    },
+    {
+      "id": "KB7_IDLE",
+      "grade": "정상",
+      "text": "7번은 collect만 하고 가중/거절에 안 들어감. 예측 부품 아님."
+    }
+  ],
+  "out_of_scope": "몰아주기 score5 · 1237예측 · 적중클레임"
+}

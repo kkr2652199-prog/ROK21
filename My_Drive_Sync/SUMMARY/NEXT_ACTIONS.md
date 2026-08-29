@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 선행=K-REVIEW-PRIZE-DNA-RANK APPLY_OK. 몰아주기는 이후. 다음=형 1건. 시동·1237예측 금지.
+- 할일: **양산前**. 선행=K-REVIEW-PROCESS-WALK WALK_OK. 몰아주기는 이후. 다음=형 1건. 시동·1237예측 금지.
 - 완료조건: 형 오더 1건
-- 선행완료: K-REVIEW-PRIZE-DNA-RANK APPLY_OK
+- 선행완료: K-REVIEW-PROCESS-WALK WALK_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-29
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260829_KREVIEW_PROCESS_WALK.md
 - reports/20260829_KREVIEW_PRIZE_DNA_RANK.md
 - reports/20260828_KREVIEW_PRIZE_DNA_ALIVE.md
 - reports/20260828_KREVIEW_VECTOR_REFILL_200.md

@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
 📅 최종 갱신: 2026-08-29 KST  
-📌 사유: **[CURSOR] K-REVIEW-PRIZE-DNA-RANK** — 이월스케일잠금 원인. 순위혼합 APPLY. review 200리필.
+📌 사유: **[CURSOR] K-REVIEW-PROCESS-WALK** — 금액뇌 가동경로 부품실측. WALK_OK. APPLY없음.
 
-📌 직전: **[CURSOR] K-REVIEW-PRIZE-DNA-ALIVE** — 금액뇌 비인기 DNA 실측. DNA_PARTIAL. APPLY없음.
+📌 직전: **[CURSOR] K-REVIEW-PRIZE-DNA-RANK** — 이월스케일잠금 원인. 순위혼합 APPLY. review 200리필.
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-REVIEW-PROCESS-WALK (형점검)** | **WALK_OK** · READ-ONLY · APPLY**없음** · 억지결함**안함**. 경로=`predict.run`→`generate(10)`→순위혼합0.70→choices→tier1/rare/shape_kb→pool 스티커. 1236 seed42: 10장 완성 attempts**18** reject shape_kb**6** tier1**2** rare**0**. 가중0 **없음**. 직전겹침평균 **1.1**. expand roles skill5/cover3/shape2 · source 전부 `review_reasonable`. 캐시1037–1236 **200**/10장미만**0**. fw>0 **1221** · 키없음**0**. learn adj 전부 **0**. 실체불일치=6~10 역할스티커. 설계거절=형태저울 추가RNG. 정상=프록시/learn빈값/7번읽기/10장완성. 몰아주기 범위밖. pred_1237**0** · MAX**1238**. · `docs/benchmarks/20260829_KREVIEW_PROCESS_WALK.json` · `reports/20260829_KREVIEW_PROCESS_WALK.md` · `tools/_k_review_process_walk.py` |
 | **K-REVIEW-PRIZE-DNA-RANK (형GO)** | **APPLY_OK**. 원인=이월+neutralize 양수범위 **7.819배** vs prize **1.4983배** · 곱셈 극단뒤집힘 **False** · ρ곱셈↔이월 **0.9853** ↔prize **0.2523**. 패치=`REVIEW_PRIZE_RANK_MIX=True` · `mix_by_rank(α=0.70)` · `random.choices` 불변 · score5 **미접촉**. 게이트1137–1236 n**100** peek**0**: hi32 **1.872→2.186** Δ**+0.314** · prize축 **0.008131→0.022583** Δ**+0.014452** · prefer Δ**+0.004138**<0.005 · fw Δ**+0.003369**≤0.005 · ρ순위↔prize **0.8945**>이월 **0.5124**. review 리필 **200**/0. pred_1237**0** · MAX**1238**. 롤백=`False`. · `docs/benchmarks/20260829_KREVIEW_PRIZE_DNA_RANK.json` · `reports/20260829_KREVIEW_PRIZE_DNA_RANK.md` · `app/testlotto/brains/review_brain/engine.py` · `crowd_signal.mix_by_rank` |
 | **K-REVIEW-PRIZE-DNA-ALIVE (형분석)** | **DNA_PARTIAL** · READ-ONLY · APPLY**없음**. 튜닝뇌=**review(금액뇌)** 맞음. `PRIZE_WIRE` True · W_CROWD**0.80** · W_STRUCT**0.20** · blend**0.85**. 가중치 as_of1236 ρ 최종↔이월 **0.9853** · ↔prize **0.2523** · top12 풀∩이월 **12**/12. pool n**2000** hi32 **1.8315** Δ널 **−0.0352** · end089 **1.8035** Δ **+0.2035**. repack n**1000** hi32 **2.099** Δ **+0.2323** · prize mean **1.024564**(stat 1.000946 · markov 1.007165). pool prize mean review **1.006781** < markov **1.007512**. 표 ρ prize-crowd **0.7937** · prize-struct **0.68**. 판매수없음·당첨P불변·hits금지. pred_1237**0** · MAX**1238**. · `docs/benchmarks/20260828_KREVIEW_PRIZE_DNA_ALIVE.json` · `reports/20260828_KREVIEW_PRIZE_DNA_ALIVE.md` · `tools/_k_review_prize_dna_alive.py` |
 | **K-REVIEW-VECTOR-REFILL-200 (형GO)** | **REFILL_OK** · 1037–1236 벡터 리셋 후 3뇌 각 `expand_pool(brains=[tag])` **200**/0fail. 삭제 캐시**600** · pred**3000** · evolve**600**. 재생성 cache nonempty 3×**200** · evolve창 3×**200** · pred 3×**1000**. fp 전→후 stat `a4aa43b5a5b7ca8a→5c1f719be70733b0` · markov `296a9b573d09b9d1→b2007a4f46ac774b` · review `78df639abd85667a→33b3e524aed5b7c5`. peek**0** · pred_1237**0** · pred_1239**0** · MAX**1238**. 원장 stat**3000** 불변 · 숙제 600/1200 불변 · 소비 `{stat}`. `REVIEW_KB7_WIRE=False` · EVOLVE_AUTO **OFF**. 몰아주기 공식 **미수정**(기존 score5 경로 재기록). DB git 안 함. 롤백=`backups/20260828_VECTOR전_DB전체/`. 1237/1239예측 **없음**. · `docs/benchmarks/20260828_KREVIEW_VECTOR_REFILL_200.json` · `reports/20260828_KREVIEW_VECTOR_REFILL_200.md` · `tools/_k_3brain_vector_refill_200_20260828.py` |
