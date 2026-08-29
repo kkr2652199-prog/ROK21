@@ -8,14 +8,14 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `7f8964b` |
+| HEAD(실측) | `20d0049` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · markov 선호순위 APPLY_OK |
-| 직전 | ρprefer 0.22→0.93 · prefer+0.035 |
-| BOOT다음 | 형 1건 / 1237예측아님 |
+| 지금 | **양산前** · 2–1238 3뇌 벡터 REFILL_OK |
+| 직전 | 예측초기화 후 2–1238 재백필 |
+| BOOT다음 | 형 1건 / 1239예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
-| NEXT1 할일 | **양산前**. 선행=K-MARKOV-PREFER-DNA-RANK APPLY_OK(markov만). 다음=형 1건. 시동·1237예측 금지. |
+| NEXT1 할일 | **양산前**. 선행=K-3BRAIN-VECTOR-REFILL-2-1238 REFILL_OK(2–1238). 다음=형 1건. 시동·1239예측 금지. |
 | 승인필요 | 형 1건 |
 | 선행 | 없음 |
 | OPEN샘플 | K-00, K-02, K-05 |
@@ -31,7 +31,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=7f8964b · 지금=**양산前** · markov 선호순위 APPLY_OK · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=20d0049 · 지금=**양산前** · 2–1238 3뇌 벡터 REFILL_OK · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 <!-- /ROK21_LIVE_FLOW -->
