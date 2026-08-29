@@ -1,0 +1,150 @@
+{
+  "id": "K-3BRAIN-VECTOR-REFILL-2-1238",
+  "as_of": "2026-08-29T14:58:24+09:00",
+  "verdict": "REFILL_OK",
+  "apply": true,
+  "db_git": false,
+  "ge3_claim": false,
+  "draw_1239": false,
+  "window": [
+    2,
+    1238
+  ],
+  "skip_draw_1": "no_history",
+  "hard_ok": true,
+  "deleted": {
+    "cache": 3707,
+    "pred": 18520,
+    "evolve": 3704
+  },
+  "fill": {
+    "stat": {
+      "ok": 1237,
+      "fail": 0
+    },
+    "markov": {
+      "ok": 1236,
+      "fail": 1
+    },
+    "review": {
+      "ok": 1237,
+      "fail": 0
+    }
+  },
+  "peek_fill": 0,
+  "no_hist": 0,
+  "census_before": {
+    "cache_by": {
+      "markov": 1235,
+      "review": 1236,
+      "stat": 1236
+    },
+    "cache_nonempty": {
+      "stat": 1236,
+      "markov": 1235,
+      "review": 1236
+    },
+    "evolve_by": {
+      "markov": 1234,
+      "review": 1235,
+      "stat": 1235
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "pred_n": 18520,
+    "pred_by": {
+      "markov": 6170,
+      "review": 6175,
+      "stat": 6175
+    },
+    "pred_win": {
+      "markov": 6170,
+      "review": 6175,
+      "stat": 6175
+    },
+    "pred_min": 2,
+    "pred_max": 1236,
+    "peek": 0,
+    "pred_1237": 0,
+    "pred_1238": 0,
+    "pred_1239": 0,
+    "draws_min": 1,
+    "draws_max": 1238,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "census_mid": {
+    "cache_by": {},
+    "cache_nonempty": {
+      "stat": 0,
+      "markov": 0,
+      "review": 0
+    },
+    "evolve_by": {},
+    "ledger_by": {
+      "stat": 3000
+    },
+    "pred_n": 0,
+    "pred_by": {},
+    "pred_win": {},
+    "pred_min": null,
+    "pred_max": null,
+    "peek": 0,
+    "pred_1237": 0,
+    "pred_1238": 0,
+    "pred_1239": 0,
+    "draws_min": 1,
+    "draws_max": 1238,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "census_after": {
+    "cache_by": {
+      "markov": 1236,
+      "review": 1237,
+      "stat": 1237
+    },
+    "cache_nonempty": {
+      "stat": 1237,
+      "markov": 1236,
+      "review": 1237
+    },
+    "evolve_by": {
+      "markov": 1236,
+      "review": 1237,
+      "stat": 1237
+    },
+    "ledger_by": {
+      "stat": 3000
+    },
+    "pred_n": 18550,
+    "pred_by": {
+      "markov": 6180,
+      "review": 6185,
+      "stat": 6185
+    },
+    "pred_win": {
+      "markov": 6180,
+      "review": 6185,
+      "stat": 6185
+    },
+    "pred_min": 2,
+    "pred_max": 1238,
+    "peek": 0,
+    "pred_1237": 15,
+    "pred_1238": 15,
+    "pred_1239": 0,
+    "draws_min": 1,
+    "draws_max": 1238,
+    "learn_n": 0,
+    "skill_hw": 600,
+    "role_hw": 1200
+  },
+  "ledger_unchanged": true,
+  "homework_unchanged": true,
+  "backup": "D:\\ROK21\\backups\\20260829_VECTOR전_1_1238",
+  "ui": "테스트로또 회차 전환 · /api/testlotto/predictions/draw/{n} · pool-view 캐시"
+}

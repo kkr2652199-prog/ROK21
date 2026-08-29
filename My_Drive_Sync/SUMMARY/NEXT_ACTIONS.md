@@ -4,9 +4,9 @@
 
 ## NEXT (1건)
 - ID: K-AWAIT-HYUNG-NEXT
-- 할일: **양산前**. 선행=K-MARKOV-PREFER-DNA-RANK APPLY_OK(markov만). 다음=형 1건. 시동·1237예측 금지.
-- 완료조건: 형 오더 1건
-- 선행완료: K-MARKOV-PREFER-DNA-RANK APPLY_OK
+- 할일: **양산前**. 선행=K-3BRAIN-VECTOR-REFILL-2-1238 REFILL_OK(2–1238). 다음=형 1건. 시동·1239예측 금지.
+- 완료조건: 형 1건
+- 선행완료: K-3BRAIN-VECTOR-REFILL-2-1238 REFILL_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
 - 최종갱신: 2026-08-29
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260829_K3BRAIN_VECTOR_REFILL_2_1238.md
 - reports/20260829_KMARKOV_PREFER_DNA_RANK.md
 - reports/20260829_KSTAT_PAST_LEARN_DNA_WEIGHT.md
 - reports/20260829_KREVIEW_TIER1_CONSEC_TIGHTEN.md
