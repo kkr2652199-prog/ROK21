@@ -1,10 +1,10 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `d4b4bf8` · WORK=`IDLE`
-- 지금: **양산前** · 금액10세트 순위혼합 APPLY
-- 직전: 이월스케일잠금→mix_by_rank 0.70
+- HEAD: `f377dd7` · WORK=`IDLE`
+- 지금: **양산前** · 금액경로 WALK_OK
+- 직전: 10장프로세스 부품실측·APPLY없음
 - BOOT다음: 형 1건 / 1237예측아님
-- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-PRIZE-DNA-RANK APPLY_OK. 몰아주기는 이후. 다음=형 1건. 시동·1237예측 금지. (승인=형 1건)
+- NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-PROCESS-WALK WALK_OK. 몰아주기는 이후. 다음=형 1건. 시동·1237예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05
 - SSOT: 수치=docs/benchmarks/*.json · 결함=FINDINGS · 라벨=WARRANT
 - 금지: 동결토큰·kweon미접촉·컨닝·DB전체초기화·1~3군기록·채팅간략≠문서압축
