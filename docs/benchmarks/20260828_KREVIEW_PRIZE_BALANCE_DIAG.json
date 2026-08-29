@@ -1,0 +1,70 @@
+{
+  "id": "K-REVIEW-PRIZE-BALANCE-DIAG",
+  "as_of": "2026-08-29T12:34:57+09:00",
+  "verdict": "SPEC_OK",
+  "apply": false,
+  "ge3_claim": false,
+  "draw_1237": false,
+  "window": [
+    1137,
+    1236
+  ],
+  "seed": 42,
+  "n": 100,
+  "peek": 0,
+  "knobs": {
+    "W_CROWD_review": 0.8,
+    "W_STRUCT_review": 0.2,
+    "BLEND_review": 0.85,
+    "PRIZE_WIRE": true,
+    "REVIEW_SHAPE_KB_WEIGHT_WIRE_live": true,
+    "src_wire_true": true,
+    "REVIEW_PRIZE_RANK_MIX": true
+  },
+  "off": {
+    "n": 100,
+    "prefer": 0.011283,
+    "prize": 0.024503,
+    "struct": 0.042302,
+    "run2": 0.667,
+    "run3": 0.046,
+    "hi32": 2.252
+  },
+  "on": {
+    "n": 100,
+    "prefer": 0.011306,
+    "prize": 0.022583,
+    "struct": 0.036781,
+    "run2": 0.675,
+    "run3": 0.043,
+    "hi32": 2.186
+  },
+  "delta_on_minus_off": {
+    "prefer": 2.3e-05,
+    "prize": -0.00192,
+    "struct": -0.005521,
+    "run2": 0.008,
+    "run3": -0.003,
+    "hi32": -0.066
+  },
+  "s2_isolate_filter_on_frozen_off_sets": {
+    "n": 100,
+    "skip_empty": 0,
+    "keep_mean": 7.43,
+    "d_prize_mean": -0.000538,
+    "d_prize_abs_mean": 0.003736,
+    "near0_005": true
+  },
+  "hard": {
+    "peek0": true,
+    "n100": true,
+    "wire_restored": true,
+    "pred_1237_0": true,
+    "pred_1239_0": true,
+    "src_unchanged_true": true
+  },
+  "pred_1237": 0,
+  "pred_1239": 0,
+  "draws_max": 1238,
+  "note": "ON-OFF 발권은 저울 RNG가 choices 시드를 갈라 Δ에 섞일 수 있음. S2는 OFF 10장을 고정하고 저울만 후필터."
+}
