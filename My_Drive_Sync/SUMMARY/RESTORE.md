@@ -3,9 +3,9 @@
 <!-- ROK21_RESUME_BLOCK -->
 ## 동생 복귀 5줄 (자동 · guard_boot와 동일 소스)
 
-1. **HEAD:** `ca796e8` · WORK=`IDLE`
-2. **지금:** **양산前** · tier1 연번<3 APPLY_OK
-3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-REVIEW-TIER1-CONSEC-TIGHTEN APPLY_OK. 다음=형 1건. 시동·1237예측 금지. (승인필요=형 1건 · 선행=없음)
+1. **HEAD:** `a2bb3f3` · WORK=`IDLE`
+2. **지금:** **양산前** · stat DNA가중 APPLY_OK
+3. **다음1건:** K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-STAT-PAST-LEARN-DNA-WEIGHT APPLY_OK(stat만). 다음=형 1건. 시동·1237예측 금지. (승인필요=형 1건 · 선행=없음)
 4. **SSOT충돌:** 수치=`docs/benchmarks/*.json` · 결함=`FINDINGS.md` · 라벨=`WARRANT.md` 가 원본. BOOT/STATUS/RESTORE는 사본.
 5. **금지요약:** 동결토큰·kweon미접촉·컨닝금지·DB전체초기화금지·1~3군기록금지·채팅간략≠문서압축.
 
@@ -34,7 +34,7 @@
 
 | 일시 | 형 지시 요지 | 커서 실행 결과 | 판정 | 커밋 |
 |------|--------------|----------------|------|------|
-| 2026-08-29 | 과거학습뇌 DNA 살림 | 1y·미출 가중순위 α0.70 | **APPLY_OK** | TBD |
+| 2026-08-29 | 과거학습뇌 DNA 살림 | 1y·미출 가중순위 α0.70 | **APPLY_OK** | a2bb3f3 |
 | 2026-08-29 | tier1 연번<4→<3 | run2−0.063 run3=0 prize+ | **APPLY_OK** | ca796e8 |
 | 2026-08-29 | 쌍뿌리+비인기격리진단 | 뿌리tier1·하락RNG분기 | **SPEC_OK** | b7ee9bc |
 | 2026-08-29 | 4번저울 연속가점만중립 | run2Δ+0.026 미달·즉시롤백 | **SPEC_OK** | dfc0967 |
