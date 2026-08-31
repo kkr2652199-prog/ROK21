@@ -9,7 +9,7 @@
 - 선행완료: K-3BRAIN-VECTOR-REFILL-2-1238 REFILL_OK
 - 승인필요: 형 1건
 - 선행조건: 없음
-- 최종갱신: 2026-08-29
+- 최종갱신: 2026-08-31
 
 
 ## WORKSTATE
@@ -18,6 +18,7 @@ IDLE
 ---
 
 ## 메모
+- reports/20260831_KSERVER_RESTART.md
 - reports/20260829_K3BRAIN_VECTOR_REFILL_2_1238.md
 - reports/20260829_KMARKOV_PREFER_DNA_RANK.md
 - reports/20260829_KSTAT_PAST_LEARN_DNA_WEIGHT.md
