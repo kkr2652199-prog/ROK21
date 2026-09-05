@@ -1,9 +1,9 @@
 # STATUS_LATEST.md — ROK21 현재 상태
 
-📅 최종 갱신: 2026-08-31 KST  
-📌 사유: **[CURSOR] K-SERVER-RESTART** — 7021 재가동. OK. 코드 무수정.
+📅 최종 갱신: 2026-09-05 KST  
+📌 사유: **[CURSOR] K-SERVER-RESTART** — 8/31 기동분 exit1 후 재기동. OK.
 
-📌 직전: **[CURSOR] K-3BRAIN-VECTOR-REFILL-2-1238** — 예측초기화 후 2–1238 3뇌 재백필. REFILL_OK.
+📌 직전: **[CURSOR] K-SERVER-RESTART** — 7021 재가동. OK. 코드 무수정.
 
 ---
 
@@ -12,6 +12,7 @@
 | 항목 | 값 |
 |------|-----|
 | SSOT | kkr2652199-prog/ROK21 · **7021** |
+| **K-SERVER-RESTART (종료감지)** | **OK** · 8/31 `run_v13.py` 약 **5일** 후 exit **1**. 로그 Traceback **없음**. 마지막=스케줄러 miss 1초. Listen 없음. 재기동 후 draws API **200** · latest **1239**. 예측 생성 **없음**. 코드 무수정. DB git 안 함. · `reports/20260905_KSERVER_RESTART.md` |
 | **K-SERVER-RESTART (형요청)** | **OK** · 재가동 시 Listen **7021 없음**. `python run_v13.py` 기동. 로그 `Application startup complete` · `GET /` **200**. draws API **200**. 실측 draws max**1239**(당첨 `11 13 22 32 33 36`+8 · 2026-08-29) · pred_1238**15** · pred_1239**0**. 스케줄러 collect 기동. **1239 예측 생성 없음**. 코드/엔진 무수정. DB git 안 함. · `reports/20260831_KSERVER_RESTART.md` |
 | **K-3BRAIN-VECTOR-REFILL-2-1238 (형GO)** | **REFILL_OK** · 예측기록 초기화 후 창 **2–1238** 3뇌 `expand_pool(brains=[tag])`. 1회 스킵(이전회없음). 삭제 cache**3707** · pred**18520** · evolve**3704**. 재생성 stat **1237**/0 · markov **1236**/1(회차2 전이재료부족) · review **1237**/0. cache nonempty 1237/1236/1237. pred **18550**(stat6185+markov6180+review6185) min**2** max**1238**. pred_1237**15** · pred_1238**15** · pred_1239**0** · peek**0** · HARD통과. 원장 stat**3000** · skill_hw**600** · role_hw**1200** · learn**0** 불변. 브라우저 7021 테스트로또 회차전환: 1236·1238 3뇌 pool 표시 · computed_at 2026-08-29 14:58. 회차2는 markov없어 pool-view 3행미달. 새로고침 필요(탭 메모리캐시). DB git 안 함. 롤백=`backups/20260829_VECTOR전_1_1238/`. 1239예측 **없음**. 적중 클레임 금지. · `docs/benchmarks/20260829_K3BRAIN_VECTOR_REFILL_2_1238.json` · `reports/20260829_K3BRAIN_VECTOR_REFILL_2_1238.md` · `tools/_k_3brain_vector_refill_2_1238.py` |
 | **K-MARKOV-PREFER-DNA-RANK (형GO)** | **APPLY_OK** · **markov만** · review/stat **미접촉**. DNA=`prefer_table`(인기회+생일대). S0 as_of1236 peekOK. ρ가중↔prefer 곱셈 **0.2248** → 순위 **0.9266**. W_CROWD**0.90** · W_STRUCT**0.10** · BLEND**0.55** 불변. 패치=`MARKOV_PREFER_RANK_MIX=True` · α**0.70**. 게이트1137–1236 n**100** peek**0** size_bad**0** bonus_in**0**. prefer **0.019451→0.054215** Δ**+0.034764** · bday **4.211→4.322** Δ**+0.111** · hi32 **1.789→1.678** Δ**−0.111** · prize모니터 Δ**+0.012878**. pred_1237**0** · pred_1239**0** · MAX**1238**. 롤백=`False`. · `docs/benchmarks/20260829_KMARKOV_PREFER_DNA_RANK.json` · `reports/20260829_KMARKOV_PREFER_DNA_RANK.md` · `app/testlotto/brains/markov_brain/engine.py` |
