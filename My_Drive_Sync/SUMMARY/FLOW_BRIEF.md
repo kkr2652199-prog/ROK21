@@ -1,8 +1,8 @@
 # FLOW_BRIEF — 외부AI 매턴 흐름 요약 (자동 · R37)
 
-- HEAD: `0718ed2` · WORK=`IDLE`
-- 지금: **양산前** · 7021 재가동 OK
-- 직전: Listen없음 → run_v13.py · GET / 200
+- HEAD: `956c67e` · WORK=`IDLE`
+- 지금: **양산前** · 7021 재기동 OK
+- 직전: 5일 가동 후 exit1 · 예외로그없음
 - BOOT다음: 형 1건 / 1239예측아님
 - NEXT1: K-AWAIT-HYUNG-NEXT — **양산前**. 선행=K-3BRAIN-VECTOR-REFILL-2-1238 REFILL_OK(2–1238). 다음=형 1건. 시동·1239예측 금지. (승인=형 1건)
 - OPEN샘플: K-00, K-02, K-05

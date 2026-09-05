@@ -10,11 +10,11 @@
 
 | 키 | 값 |
 |----|-----|
-| HEAD(실측) | `0718ed2` |
+| HEAD(실측) | `956c67e` |
 | BASELINE_PIN | `640cb67` |
 | WORK | `IDLE` |
-| 지금 | **양산前** · 7021 재가동 OK |
-| 직전 | Listen없음 → run_v13.py · GET / 200 |
+| 지금 | **양산前** · 7021 재기동 OK |
+| 직전 | 5일 가동 후 exit1 · 예외로그없음 |
 | BOOT다음 | 형 1건 / 1239예측아님 |
 | NEXT1 ID | **K-AWAIT-HYUNG-NEXT** |
 | NEXT1 할일 | **양산前**. 선행=K-3BRAIN-VECTOR-REFILL-2-1238 REFILL_OK(2–1238). 다음=형 1건. 시동·1239예측 금지. |
@@ -33,7 +33,7 @@
 - 형 방향 = 전제 실증·쓸모 (적중↑ 랜덤앱 아님)
 
 ### 네가 할 일
-1. 첫줄 `[복귀] HEAD=0718ed2 · 지금=**양산前** · 7021 재가동 OK · 다음=K-AWAIT-HYUNG-NEXT`
+1. 첫줄 `[복귀] HEAD=956c67e · 지금=**양산前** · 7021 재기동 OK · 다음=K-AWAIT-HYUNG-NEXT`
 2. 승인 없으면 장문 지시서 금지 · 형에게 질문 1개
 3. 추가 파일 필요 시: `형, SUMMARY/○○.md 붙여줘`
 
@@ -54,4 +54,4 @@
 | 핀 베이스라인 | `My_Drive_Sync/SUMMARY/PINNED_BASELINE.md` |
 | 수치 | `docs/benchmarks/*.json` |
 
-_generated: 0718ed2_
+_generated: 956c67e_
